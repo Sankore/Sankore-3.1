@@ -562,48 +562,40 @@ int UBSettings::eraserWidthIndex()
     return value("Board/EraserCircleWidthIndex", 1).toInt();
 }
 
-
 void UBSettings::setEraserWidthIndex(int index)
 {
     setValue("Board/EraserCircleWidthIndex", index);
 }
-
 
 qreal UBSettings::eraserFineWidth()
 {
     return value("Board/EraserFineWidth", 16).toDouble();
 }
 
-
 void UBSettings::setEraserFineWidth(qreal width)
 {
     setValue("Board/EraserFineWidth", width);
 }
-
 
 qreal UBSettings::eraserMediumWidth()
 {
     return value("Board/EraserMediumWidth", 64).toDouble();
 }
 
-
 void UBSettings::setEraserMediumWidth(qreal width)
 {
     setValue("Board/EraserMediumWidth", width);
 }
-
 
 qreal UBSettings::eraserStrongWidth()
 {
     return value("Board/EraserStrongWidth", 128).toDouble();
 }
 
-
 void UBSettings::setEraserStrongWidth(qreal width)
 {
     setValue("Board/EraserStrongWidth", width);
 }
-
 
 qreal UBSettings::currentEraserWidth()
 {
@@ -629,7 +621,6 @@ qreal UBSettings::currentEraserWidth()
 
     return width;
 }
-
 
 bool UBSettings::isDarkBackground()
 {

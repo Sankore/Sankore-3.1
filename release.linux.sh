@@ -37,18 +37,18 @@ $QMAKE_PATH -spec linux-g++
 
 make -j 4 release-install
 
-VERSION=`cat build/linux/release/version`
-if [ ! -f build/linux/release/version ]; then
-    echo "version not found"
-    exit 1
-else
-    LAST_COMMITED_VERSION="`git describe $(git rev-list --tags --max-count=1)`"
-    if [ "v$VERSION" != "$LAST_COMMITED_VERSION" ]; then
-	echo creating a tag with the version $VERSION
-        git tag -a "v$VERSION" -m "Generating setup for v$VERSION"
-	git push origin --tags 
-    fi
-fi
+#VERSION=`cat build/linux/release/version`
+#if [ ! -f build/linux/release/version ]; then
+#    echo "version not found"
+#    exit 1
+#else
+#    LAST_COMMITED_VERSION="`git describe $(git rev-list --tags --max-count=1)`"
+#    if [ "v$VERSION" != "$LAST_COMMITED_VERSION" ]; then
+#	echo creating a tag with the version $VERSION
+#        git tag -a "v$VERSION" -m "Generating setup for v$VERSION"
+#	git push origin --tags 
+#    fi
+#fi
 
 cp resources/linux/run.sh build/linux/release/product
 chmod +x build/linux/release/product/run.sh
@@ -75,7 +75,7 @@ copyQtLibrary(){
 }
 
 copyQtLibrary libQtWebKit
-copyQtLibrary libphonon
+#copyQtLibrary libphonon
 copyQtLibrary libQtDBus
 copyQtLibrary libQtScript
 copyQtLibrary libQtSvg
@@ -85,6 +85,8 @@ copyQtLibrary libQtXml
 copyQtLibrary libQtGui
 copyQtLibrary libQtCore
 
+cp "$QT_LIBRARY_SOURCE_PATH/libphonon.so.4" "$QT_LIBRARY_DEST_PATH/"
+cp "$QT_LIBRARY_SOURCE_PATH/libphonon.so.4.3.1" "$QT_LIBRARY_DEST_PATH/"
 
 rm -rf install/linux
 mkdir -p install/linux
