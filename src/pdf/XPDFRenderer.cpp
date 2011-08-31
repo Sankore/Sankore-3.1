@@ -25,8 +25,6 @@ QAtomicInt XPDFRenderer::sInstancesCount = 0;
 
 XPDFRenderer::XPDFRenderer(const QString &filename, bool importingFile)
     : mDocument(0)
-    , mpSplashBitmap(0)
-    , mSplash(0)
 {
     if (!globalParams)
     {
@@ -50,17 +48,6 @@ XPDFRenderer::XPDFRenderer(const QString &filename, bool importingFile)
 
 XPDFRenderer::~XPDFRenderer()
 {
-    qDeleteAll(mThumbs);
-    mThumbs.clear();
-
-    qDeleteAll(mNumPageToPageMap);
-    mNumPageToPageMap.clear();
-
-    if(mSplash){
-        delete mSplash;
-        mSplash = NULL;
-    }
-
     if (mDocument)
     {
         delete mDocument;
@@ -175,7 +162,7 @@ void XPDFRenderer::render(QPainter *p, int pageNumber, const QRectF &bounds)
             {
 
                 // Generate the thumbnail
-                mThumbs << createPDFImage(pageNumber, xscale, yscale, bounds);
+                mThumbs << *createPDFImage(pageNumber, xscale, yscale, bounds);
                 mThumbMap[pageNumber - 1] = true;
                 if(pageNumber == mDocument->getNumPages())
                 {
@@ -188,7 +175,7 @@ void XPDFRenderer::render(QPainter *p, int pageNumber, const QRectF &bounds)
             if(!mPagesMap[pageNumber - 1] || bZoomChanged)
             {
                 // Generate the page
-                mNumPageToPageMap[pageNumber] = createPDFImage(pageNumber, xscale, yscale, bounds);
+                mNumPageToPageMap[pageNumber] = *createPDFImage(pageNumber, xscale, yscale, bounds);
                 mPagesMap[pageNumber - 1] = true;
                 if(mPagesMap.size() == mDocument->getNumPages())
                 {
@@ -197,7 +184,7 @@ void XPDFRenderer::render(QPainter *p, int pageNumber, const QRectF &bounds)
             }
         }
 
-        QImage *pdfImage;
+        QImage pdfImage;
 
         if(!bThumbGenerated || bFirstThumbnail)
         {
@@ -210,7 +197,10 @@ void XPDFRenderer::render(QPainter *p, int pageNumber, const QRectF &bounds)
 
         QTransform savedTransform = p->worldTransform();
         p->resetTransform();
-        p->drawImage(QPointF(savedTransform.dx() + mSliceX, savedTransform.dy() + mSliceY), *pdfImage);
+        QTime t;
+        t.start();
+        p->drawImage(QPointF(savedTransform.dx() + mSliceX, savedTransform.dy() + mSliceY), pdfImage);
+        //qDebug() << "XPDFRenderer::render(...) execution time: " << t.elapsed() << "ms";
         p->setWorldTransform(savedTransform);
     }
 }
@@ -221,8 +211,6 @@ QImage* XPDFRenderer::createPDFImage(int pageNumber, const qreal xscale, const q
     if (isValid())
     {
         SplashColor paperColor = {0xFF, 0xFF, 0xFF}; // white
-        if(mSplash)
-            delete mSplash;
         mSplash = new SplashOutputDev(splashModeRGB8, 1, gFalse, paperColor);
         mSplash->startDoc(mDocument->getXRef());
         int hResolution = 72;
@@ -253,7 +241,6 @@ QImage* XPDFRenderer::createPDFImage(int pageNumber, const qreal xscale, const q
         }
 
         mpSplashBitmap = mSplash->getBitmap();
-        delete img;
         img = new QImage(mpSplashBitmap->getDataPtr(), mpSplashBitmap->getWidth(), mpSplashBitmap->getHeight(), mpSplashBitmap->getWidth() * 3, QImage::Format_RGB888);
     }
     return img;
