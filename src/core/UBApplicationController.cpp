@@ -520,7 +520,8 @@ void UBApplicationController::ftpCommandFinished(int id, bool error)
    }
    else{
        QString responseString =  QString(mFtp->readAll());
-       if (!responseString.isEmpty() && responseString.contains("version:") && responseString.contains("url:")){
+       qDebug() << responseString;
+       if (!responseString.isEmpty() && responseString.contains("version") && responseString.contains("url")){
            mFtp->close();
            downloadJsonFinished(responseString);
        }
