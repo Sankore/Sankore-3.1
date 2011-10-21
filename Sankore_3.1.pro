@@ -7,7 +7,7 @@ CONFIG += debug_and_release \
    no_include_pwd
 
 VERSION_MAJ = 1
-VERSION_MIN = 25
+VERSION_MIN = 26
 VERSION_TYPE = r # a = alpha, b = beta, r = release, other => error
 VERSION_PATCH = 00
 

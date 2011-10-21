@@ -570,10 +570,10 @@ void UBApplicationController::downloadJsonFinished(QString currentJson)
 
 void UBApplicationController::checkUpdateAtLaunch()
 {
-    if(UBSettings::settings()->appEnableAutomaticSoftwareUpdates->get().toBool()){
-        isNoUpdateDisplayed = false;
-        checkUpdate ();
-    }
+//    if(UBSettings::settings()->appEnableAutomaticSoftwareUpdates->get().toBool()){
+//        isNoUpdateDisplayed = false;
+//        checkUpdate ();
+//    }
 }
 
 void UBApplicationController::checkUpdateRequest()
