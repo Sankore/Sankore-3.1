@@ -447,8 +447,8 @@ void UBApplication::decorateActionMenu(QAction* action)
             menu->addAction(mainWindow->actionHideApplication);
             menu->addAction(mainWindow->actionSleep);
 
-            menu->addSeparator();
-            menu->addAction(mainWindow->actionSankoreEditor);
+            //menu->addSeparator();
+            //menu->addAction(mainWindow->actionSankoreEditor);
 
             // SANKORE-48: Hide the check update action if the setting
             // EnableAutomaticSoftwareUpdates is false in Uniboard.config
