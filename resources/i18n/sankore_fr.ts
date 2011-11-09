@@ -1838,7 +1838,7 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     </message>
     <message>
         <source>Alone</source>
-        <translation>Seul</translation>
+        <translation>Individuelle</translation>
     </message>
     <message>
         <source>By Group</source>
@@ -1857,7 +1857,7 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     </message>
     <message>
         <source>Teacher</source>
-        <translation>Professeur</translation>
+        <translation>Enseignant</translation>
     </message>
     <message>
         <source>Student</source>

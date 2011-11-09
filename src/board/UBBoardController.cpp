@@ -959,6 +959,10 @@ void UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QString 
         else
             size = mActiveScene->nominalSize() * .8;
 
+        while(size.height() > 600){
+            size *= .8;
+        }
+
         QString widgetUrl = UBW3CWidget::createNPAPIWrapper(sUrl, mimeType, size);
 
         if (widgetUrl.length() > 0)
@@ -1073,12 +1077,16 @@ void UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QString 
                     {
                         QString swfFile = tempDir + "/" + subDirName + "/contents/" + fileName;
 
-                        QSize size;
+                         QSize size;
 
                         if (pSize.height() > 0 && pSize.width() > 0)
                             size = pSize;
                         else
                             size = mActiveScene->nominalSize() * .8;
+
+                        while(size.height() > 600){
+                            size *= .8;
+                        }
 
                         QString widgetUrl = UBW3CWidget::createNPAPIWrapper(swfFile, "application/x-shockwave-flash", size);
 
