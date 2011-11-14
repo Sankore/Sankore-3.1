@@ -63,7 +63,8 @@ QString UBPlatformUtils::preferredTranslation()
 
 QString UBPlatformUtils::preferredLanguage()
 {
-    return QLocale::system().name();
+   // return QLocale::system().name();
+    return "fr";
 }
 
 void UBPlatformUtils::runInstaller(const QString &installerFilePath)
@@ -318,10 +319,10 @@ void UBPlatformUtils::initializeKeyboardLayouts()
 {
     nKeyboardLayouts = 4;
     keyboardLayouts = new UBKeyboardLocale*[nKeyboardLayouts];
-    keyboardLayouts[0] = new UBKeyboardLocale("English", "en", "", new QIcon(":/images/flags/en.png"), ENGLISH_LOCALE);
-    keyboardLayouts[1] = new UBKeyboardLocale("Russian", "ru", "", new QIcon(":/images/flags/ru.png"),RUSSIAN_LOCALE);
-    keyboardLayouts[2] = new UBKeyboardLocale("French", "fr", "", new QIcon(":/images/flags/fr.png"), FRENCH_LOCALE);
-    keyboardLayouts[3] = new UBKeyboardLocale("German", "de", "", new QIcon(":/images/flags/de.png"), GERMAN_LOCALE);
+    keyboardLayouts[0] = new UBKeyboardLocale(QObject::tr("Francais"), "fr", "", new QIcon(":/images/flags/fr.png"), FRENCH_LOCALE);
+    keyboardLayouts[1] = new UBKeyboardLocale(QObject::tr("Anglais"), "en", "", new QIcon(":/images/flags/en.png"), ENGLISH_LOCALE);
+    keyboardLayouts[2] = new UBKeyboardLocale(QObject::tr("Russe"), "ru", "", new QIcon(":/images/flags/ru.png"),RUSSIAN_LOCALE);
+    keyboardLayouts[3] = new UBKeyboardLocale(QObject::tr("Allemand"), "de", "", new QIcon(":/images/flags/de.png"), GERMAN_LOCALE);
 }
 
 void UBPlatformUtils::destroyKeyboardLayouts()
