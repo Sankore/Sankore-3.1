@@ -1072,15 +1072,12 @@ UBGraphicsVideoItem* UBGraphicsScene::addVideo(const QUrl& pVideoFileUrl, bool s
     UBGraphicsItemUndoCommand* uc = new UBGraphicsItemUndoCommand(this, 0, videoItem);
     UBApplication::undoStack->push(uc);
 
-
+    videoItem->mediaObject()->play();
 
     if (!shouldPlayAsap)
     {
         videoItem->mediaObject()->pause();
         videoItem->mediaObject()->seek(0);
-    }
-    else{
-        videoItem->mediaObject()->play();
     }
 
     setDocumentUpdated();
@@ -1105,14 +1102,14 @@ UBGraphicsAudioItem* UBGraphicsScene::addAudio(const QUrl& pAudioFileUrl, bool s
     UBGraphicsItemUndoCommand* uc = new UBGraphicsItemUndoCommand(this, 0, audioItem);
     UBApplication::undoStack->push(uc);
 
-    if (!shouldPlayAsap)
-    {
+    audioItem->mediaObject()->play();
+
+//    if (!shouldPlayAsap)
+//    {
         audioItem->mediaObject()->pause();
         audioItem->mediaObject()->seek(0);
-    }
-    else{
-        audioItem->mediaObject()->play();
-    }
+//    }
+
 
     setDocumentUpdated();
 
