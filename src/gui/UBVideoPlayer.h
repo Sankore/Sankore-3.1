@@ -18,8 +18,8 @@
 
 
 #include <QtGui>
-#include <phonon/VideoPlayer>
-
+//#include <phonon/VideoPlayer>
+#include <phonon>
 class UBVideoPlayerTransport;
 
 class UBVideoPlayer : public QWidget

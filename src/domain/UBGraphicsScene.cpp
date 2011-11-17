@@ -1104,11 +1104,11 @@ UBGraphicsAudioItem* UBGraphicsScene::addAudio(const QUrl& pAudioFileUrl, bool s
 
     audioItem->mediaObject()->play();
 
-//    if (!shouldPlayAsap)
-//    {
+    if (!shouldPlayAsap)
+    {
         audioItem->mediaObject()->pause();
         audioItem->mediaObject()->seek(0);
-//    }
+    }
 
 
     setDocumentUpdated();

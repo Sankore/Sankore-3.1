@@ -16,10 +16,10 @@
 #include "UBVideoPlayer.h"
 
 #include <QtGui>
-
-#include <phonon/MediaObject>
-#include <phonon/SeekSlider>
-#include <phonon/VolumeSlider>
+#include <phonon>
+//#include <phonon/MediaObject>
+//#include <phonon/SeekSlider>
+//#include <phonon/VolumeSlider>
 
 #include "core/memcheck.h"
 

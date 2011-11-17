@@ -17,8 +17,8 @@
 #define UBGRAPHICSVIDEOITEMDELEGATE_H_
 
 #include <QtGui>
-#include <phonon/MediaObject>
-
+//#include <phonon/MediaObject>
+#include <phonon>
 #include "core/UB.h"
 #include "UBGraphicsItemDelegate.h"
 

@@ -1682,13 +1682,8 @@ UBGraphicsVideoItem* UBBoardController::addVideo(const QUrl& pSourceUrl, bool st
     QUuid uuid = QUuid::createUuid();
     QUrl concreteUrl = pSourceUrl;
 
-#ifdef Q_WS_X11
-    concreteUrl = QUrl::fromLocalFile(mActiveDocument->persistencePath() + "/" + UBPersistenceManager::persistenceManager()
-                                      ->addVideoFileToDocument(mActiveDocument, pSourceUrl.toLocalFile(), uuid));
-#else
     concreteUrl = QUrl::fromLocalFile(UBPersistenceManager::persistenceManager()
                                       ->addVideoFileToDocument(mActiveDocument, pSourceUrl.toLocalFile(), uuid));
-#endif
 
     qDebug() << concreteUrl;
 
@@ -1716,7 +1711,7 @@ UBGraphicsAudioItem* UBBoardController::addAudio(const QUrl& pSourceUrl, bool st
     concreteUrl = QUrl::fromLocalFile(UBPersistenceManager::persistenceManager()
                        ->addAudioFileToDocument(mActiveDocument, pSourceUrl.toLocalFile(), uuid));
 #endif
-
+    qDebug() << concreteUrl.toString();
     UBGraphicsAudioItem* vi = mActiveScene->addAudio(concreteUrl, startPlay, pos);
     mActiveDocument->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
 

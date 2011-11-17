@@ -15,7 +15,8 @@
 #ifndef UBGRAPHICSVIDEOITEM_H
 #define UBGRAPHICSVIDEOITEM_H
 
-#include <phonon/VideoWidget>
+#include <phonon>
+//#include <phonon/VideoWidget>
 #include "UBGraphicsMediaItem.h"
 #include "core/UB.h"
 

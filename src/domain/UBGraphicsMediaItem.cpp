@@ -12,7 +12,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #include "UBGraphicsMediaItem.h"
 #include "UBGraphicsScene.h"
 #include "UBGraphicsDelegateFrame.h"
@@ -66,16 +65,21 @@ QVariant UBGraphicsMediaItem::itemChange(GraphicsItemChange change, const QVaria
         {
             QString absoluteMediaFilename;
 
-            if (mMediaFileUrl.isRelative() && scene()->document())
-            {
+//            if (mMediaFileUrl.isRelative() && scene()->document())
+//            {
+            if (mMediaFileUrl.toLocalFile().startsWith("audios/")){
                 absoluteMediaFilename =
                     scene()->document()->persistencePath()
                     + "/"  + mMediaFileUrl.toLocalFile();
             }
-            else if (!mMediaFileUrl.isRelative())
-            {
+            else{
                 absoluteMediaFilename = mMediaFileUrl.toLocalFile();
             }
+//            }
+//            else if (!mMediaFileUrl.isRelative())
+//            {
+//                absoluteMediaFilename = mMediaFileUrl.toLocalFile();
+//            }
 
 
             if (absoluteMediaFilename.length() > 0)

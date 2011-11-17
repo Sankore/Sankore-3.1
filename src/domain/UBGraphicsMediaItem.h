@@ -16,9 +16,9 @@
 #define UBGRAPHICSMEDIAITEM_H
 
 #include "UBGraphicsProxyWidget.h"
-#include <phonon/AudioOutput>
-#include <phonon/MediaObject>
-
+//#include <phonon/AudioOutput>
+//#include <phonon/MediaObject>
+#include <phonon>
 
 class UBGraphicsMediaItem : public UBGraphicsProxyWidget
 {

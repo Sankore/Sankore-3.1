@@ -16,7 +16,8 @@
 #define UBGRAPHICSAUDIOITEMDELEGATE_H
 
 #include <QtGui>
-#include <phonon/MediaObject>
+//#include <phonon/MediaObject>
+#include <phonon>
 
 #include "core/UB.h"
 #include "UBGraphicsItemDelegate.h"
