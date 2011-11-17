@@ -24,7 +24,7 @@ UBGraphicsAudioItem::UBGraphicsAudioItem(const QUrl& pAudioFileUrl, QGraphicsIte
 {
     update();
 
-    mAudioOutput = new Phonon::AudioOutput ( Phonon::VideoCategory, this );
+    mAudioOutput = new Phonon::AudioOutput ( Phonon::MusicCategory, this );
     mMediaObject = new Phonon::MediaObject ( this );
     mMediaObject->setTickInterval ( 1000 );
     Phonon::createPath ( mMediaObject, mAudioOutput );
