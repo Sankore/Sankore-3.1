@@ -785,6 +785,14 @@ bool UBCFFSubsetAdaptor::UBCFFSubsetReader::parsePolygon()
                 point.setY(sCoord.at(1).toFloat());
                 polygon << point;
             }
+            else if (sCoord.size() == 4){
+                // the , is used to separate the decimals french system for example
+                QPointF point;
+                point.setX(QString(sCoord.at(0) + "." + sCoord.at(1)).toFloat());
+
+                point.setY(QString(sCoord.at(2) + "." + sCoord.at(3)).toFloat());
+                polygon << point;
+            }
             else {
                 qWarning() << "cannot make sense of a 'point' value" << sCoord;
             }
@@ -857,6 +865,14 @@ bool UBCFFSubsetAdaptor::UBCFFSubsetReader::parsePolyline()
                 QPointF point;
                 point.setX(sCoord.at(0).toFloat());
                 point.setY(sCoord.at(1).toFloat());
+                polygon << point;
+            }
+            else if (sCoord.size() == 4){
+                // the , is used to separate the decimals french system for example
+                QPointF point;
+                point.setX(QString(sCoord.at(0) + "." + sCoord.at(1)).toFloat());
+
+                point.setY(QString(sCoord.at(2) + "." + sCoord.at(3)).toFloat());
                 polygon << point;
             }
             else {

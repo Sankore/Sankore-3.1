@@ -1603,8 +1603,7 @@ QList<UBGraphicsPolygonItem*> UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItem
                 point.setY(QString(sCoord.at(2) + "." + sCoord.at(3)).toFloat());
                 points << point;
             }
-            else
-            {
+            else {
                 qWarning() << "cannot make sense of a 'point' value" << sCoord;
             }
         }
