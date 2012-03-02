@@ -45,6 +45,14 @@ UBTBPageEditWidget::UBTBPageEditWidget(UBTeacherBarDataMgr *pDataMgr, QWidget *p
     mContainerLayout.addWidget(mpTitleLabel, 0);
     mContainerLayout.addWidget(mpTitle, 0);
 
+    // Comments
+    mpCommentLabel = new QLabel(tr("Comments"), mpContainer);
+    mContainerLayout.addWidget(mpCommentLabel, 0);
+    mpComments = new QTextEdit(mpContainer);
+    mpComments->setObjectName("DockPaletteWidgetBox");
+    mpComments->setStyleSheet("background:white;");
+    mContainerLayout.addWidget(mpComments, 1);
+
     // Actions
     mpActionLabel = new QLabel(tr("Actions"), mpContainer);
     mContainerLayout.addWidget(mpActionLabel, 0);
@@ -75,14 +83,6 @@ UBTBPageEditWidget::UBTBPageEditWidget(UBTeacherBarDataMgr *pDataMgr, QWidget *p
     mLinkLayout.addWidget(mpLinkButton, 0);
     mLinkLayout.addStretch(1);
     mContainerLayout.addLayout(&mLinkLayout, 0);
-
-    // Comments
-    mpCommentLabel = new QLabel(tr("Comments"), mpContainer);
-    mContainerLayout.addWidget(mpCommentLabel, 0);
-    mpComments = new QTextEdit(mpContainer);
-    mpComments->setObjectName("DockPaletteWidgetBox");
-    mpComments->setStyleSheet("background:white;");
-    mContainerLayout.addWidget(mpComments, 1);
 
     mpPagePreviewButton = new QPushButton(tr("Preview"), this);
     mpPagePreviewButton->setObjectName("DockPaletteWidgetButton");
