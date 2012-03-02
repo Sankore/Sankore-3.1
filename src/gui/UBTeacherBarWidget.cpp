@@ -122,15 +122,15 @@ void UBTeacherBarWidget::loadContent(bool docChanged)
         mpDocPreviewWidget->updateFields();
     }
 
-    if(!isEmpty()){
-        onTBStateChanged(eTeacherBarState_PagePreview);
-    }else{
-        if(1 == UBApplication::boardController->activeDocument()->pageCount()){
-           onTBStateChanged(eTeacherBarState_DocumentEdit);
+//    if(!isEmpty()){
+//        onTBStateChanged(eTeacherBarState_PagePreview);
+//    }else{
+        if(0 == UBApplication::boardController->activeSceneIndex()){
+           onTBStateChanged(eTeacherBarState_DocumentPreview);
         }else{
-           onTBStateChanged(eTeacherBarState_PageEdit);
+           onTBStateChanged(eTeacherBarState_PagePreview);
         }
-    }
+//    }
 }
 
 bool UBTeacherBarWidget::isEmpty()

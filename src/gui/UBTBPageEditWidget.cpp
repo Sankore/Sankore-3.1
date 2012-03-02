@@ -103,6 +103,8 @@ UBTBPageEditWidget::UBTBPageEditWidget(UBTeacherBarDataMgr *pDataMgr, QWidget *p
     connect(mpActions, SIGNAL(closeWidget(QWidget*)), this, SLOT(onCloseWidget(QWidget*)));
     connect(mpLinks, SIGNAL(closeWidget(QWidget*)), this, SLOT(onCloseWidget(QWidget*)));
     connect(mpMediaContainer, SIGNAL(closeWidget(QWidget*)), this, SLOT(onCloseWidget(QWidget*)));
+
+    mpDocumentEditbutton->hide();
 }
 
 UBTBPageEditWidget::~UBTBPageEditWidget()

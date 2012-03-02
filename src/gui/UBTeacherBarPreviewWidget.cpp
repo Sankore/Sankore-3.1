@@ -224,6 +224,8 @@ UBTeacherBarPreviewWidget::UBTeacherBarPreviewWidget(UBTeacherBarDataMgr* pDataM
     connect(mpEditButton, SIGNAL(clicked()), this, SLOT(onEdit()));
     connect(mpDocumentButton, SIGNAL(clicked()), this, SLOT(onDocumentClicked()));
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
+
+    mpDocumentButton->hide();
 }
 
 UBTeacherBarPreviewWidget::~UBTeacherBarPreviewWidget()

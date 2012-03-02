@@ -120,6 +120,8 @@ UBTBDocumentPreviewWidget::UBTBDocumentPreviewWidget(UBTeacherBarDataMgr *pDataM
 
     connect(mpPageViewButton, SIGNAL(clicked()), this, SLOT(onPageView()));
     connect(mpEditButton, SIGNAL(clicked()), this, SLOT(onEdit()));
+
+    mpPageViewButton->hide();
 }
 
 UBTBDocumentPreviewWidget::~UBTBDocumentPreviewWidget()
