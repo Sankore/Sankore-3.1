@@ -34,32 +34,43 @@ UBMediaWidget::UBMediaWidget(eMediaType type, QWidget *parent, const char *name)
   , mBorder(5)
   , mpMediaContainer(NULL)
   , mpCover(NULL)
+  , mpTitleLabel(NULL)
+  , mpTitle(NULL)
+  , mpPicture(NULL)
+  , mpPreviewTitle(NULL)
 {
     setAttribute(Qt::WA_StyledBackground, true);
     setStyleSheet(UBApplication::globalStyleSheet());
+    mVizMode = eVizualisationMode_Edit;
 
     addAction(eAction_Close);
     mType = type;
     setLayout(&mLayout);
 
-    mpPlayStopButton = new UBMediaButton(this);
-    mpPlayStopButton->setPixmap(QPixmap(":images/play.svg"));
-    mpPauseButton = new UBMediaButton(this);
-    mpPauseButton->setPixmap(QPixmap(":images/pause.svg"));
-    mpPauseButton->setEnabled(false);
-    mpSlider = new QSlider(this);
-    mpSlider->setOrientation(Qt::Horizontal);
-    mpSlider->setMinimum(0);
-    mpSlider->setMaximum(0);
+    mpPreviewTitle = new UBMediaTitle(type, this);
+    mLayout.addWidget(mpPreviewTitle);
+    mpPreviewTitle->setVisible(false);
 
-    mSeekerLayout.addWidget(mpPlayStopButton, 0);
-    mSeekerLayout.addWidget(mpPauseButton, 0);
-    mSeekerLayout.addWidget(mpSlider, 1);
-    mSeekerLayout.setContentsMargins(0, 0, 0, 0);
+    if(eMediaType_Video == type || eMediaType_Audio == type){
+        mpPlayStopButton = new UBMediaButton(this);
+        mpPlayStopButton->setPixmap(QPixmap(":images/play.svg"));
+        mpPauseButton = new UBMediaButton(this);
+        mpPauseButton->setPixmap(QPixmap(":images/pause.svg"));
+        mpPauseButton->setEnabled(false);
+        mpSlider = new QSlider(this);
+        mpSlider->setOrientation(Qt::Horizontal);
+        mpSlider->setMinimum(0);
+        mpSlider->setMaximum(0);
 
-    connect(mpPlayStopButton, SIGNAL(clicked()), this, SLOT(onPlayStopClicked()));
-    connect(mpPauseButton, SIGNAL(clicked()), this, SLOT(onPauseClicked()));
-    connect(mpSlider, SIGNAL(valueChanged(int)), this, SLOT(onSliderChanged(int)));
+        mSeekerLayout.addWidget(mpPlayStopButton, 0);
+        mSeekerLayout.addWidget(mpPauseButton, 0);
+        mSeekerLayout.addWidget(mpSlider, 1);
+        mSeekerLayout.setContentsMargins(0, 0, 0, 0);
+
+        connect(mpPlayStopButton, SIGNAL(clicked()), this, SLOT(onPlayStopClicked()));
+        connect(mpPauseButton, SIGNAL(clicked()), this, SLOT(onPauseClicked()));
+        connect(mpSlider, SIGNAL(valueChanged(int)), this, SLOT(onSliderChanged(int)));
+    }
 }
 
 /**
@@ -68,13 +79,17 @@ UBMediaWidget::UBMediaWidget(eMediaType type, QWidget *parent, const char *name)
 UBMediaWidget::~UBMediaWidget()
 {
     unsetActionsParent();
+    DELETEPTR(mpPreviewTitle);
+    DELETEPTR(mpPicture);
+    DELETEPTR(mpTitle);
+    DELETEPTR(mpTitleLabel);
+    DELETEPTR(mpCover);
     DELETEPTR(mpSlider);
     DELETEPTR(mpPauseButton);
     DELETEPTR(mpPlayStopButton);
     DELETEPTR(mpAudioOutput);
     DELETEPTR(mpVideoWidget);
     DELETEPTR(mpMediaObject);
-    DELETEPTR(mpCover);
 }
 
 /**
@@ -91,7 +106,6 @@ void UBMediaWidget::setFile(const QString &filePath)
     connect(mpMediaObject, SIGNAL(totalTimeChanged(qint64)), this, SLOT(onTotalTimeChanged(qint64)));
     connect(mpMediaObject, SIGNAL(tick(qint64)), this, SLOT(onTick(qint64)));
     mpMediaObject->setCurrentSource(Phonon::MediaSource(filePath));
-    createMediaPlayer();
 }
 
 /**
@@ -105,15 +119,17 @@ eMediaType UBMediaWidget::mediaType()
 
 void UBMediaWidget::showEvent(QShowEvent* event)
 {
-    if(!mpVideoWidget){
-        mpVideoWidget = new Phonon::VideoWidget(this);
-        mMediaLayout.addStretch(1);
-        mMediaLayout.addWidget(mpVideoWidget, 0);
-        mMediaLayout.addStretch(1);
-        Phonon::createPath(mpMediaObject, mpVideoWidget);
-        adaptSizeToVideo();
-        mpMediaObject->play();
-        mpMediaObject->stop();
+    if(eMediaType_Video == mType){
+        if(!mpVideoWidget){
+            mpVideoWidget = new Phonon::VideoWidget(this);
+            mMediaLayout.addStretch(1);
+            mMediaLayout.addWidget(mpVideoWidget, 0);
+            mMediaLayout.addStretch(1);
+            Phonon::createPath(mpMediaObject, mpVideoWidget);
+            adaptSizeToVideo();
+            mpMediaObject->play();
+            mpMediaObject->stop();
+        }
     }
     QWidget::showEvent(event);
 }
@@ -123,37 +139,54 @@ void UBMediaWidget::showEvent(QShowEvent* event)
   */
 void UBMediaWidget::createMediaPlayer()
 {
-    mpMediaContainer = new QWidget(this);
-    mpMediaContainer->setObjectName("UBMediaVideoContainer");
-    mpMediaContainer->setLayout(&mMediaLayout);
+    if(eMediaType_Audio == mType || eMediaType_Video == mType){
+        mpMediaContainer = new QWidget(this);
+        mpMediaContainer->setObjectName("UBMediaVideoContainer");
+        mpMediaContainer->setLayout(&mMediaLayout);
 
-    if(eMediaType_Video == mType){
-        mMediaLayout.setContentsMargins(10, 10, 25, 10);
-        if(isVisible()){
-            mpVideoWidget = new Phonon::VideoWidget(this);
+        if(eMediaType_Video == mType){
+            mMediaLayout.setContentsMargins(10, 10, 25, 10);
+            if(isVisible()){
+                mpVideoWidget = new Phonon::VideoWidget(this);
+                mMediaLayout.addStretch(1);
+                mMediaLayout.addWidget(mpVideoWidget, 0);
+                mMediaLayout.addStretch(1);
+                Phonon::createPath(mpMediaObject, mpVideoWidget);
+                adaptSizeToVideo();
+            }
+            mpAudioOutput = new Phonon::AudioOutput(Phonon::VideoCategory, this);
+            Phonon::createPath(mpMediaObject, mpAudioOutput);
+        }else if(eMediaType_Audio == mType){
+            mMediaLayout.setContentsMargins(10, 10, 10, 10);
+            mpCover = new QLabel(mpMediaContainer);
+            mpMediaContainer->setStyleSheet(QString("background: none;"));
+            setAudioCover(":images/libpalette/soundIcon.svg");
+            mpCover->setScaledContents(true);
             mMediaLayout.addStretch(1);
-            mMediaLayout.addWidget(mpVideoWidget, 0);
+            mMediaLayout.addWidget(mpCover, 0);
             mMediaLayout.addStretch(1);
-            Phonon::createPath(mpMediaObject, mpVideoWidget);
-            adaptSizeToVideo();
+            mpAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
+            Phonon::createPath(mpMediaObject, mpAudioOutput);
         }
-        mpAudioOutput = new Phonon::AudioOutput(Phonon::VideoCategory, this);
-        Phonon::createPath(mpMediaObject, mpAudioOutput);
-    }else if(eMediaType_Audio == mType){
-        mMediaLayout.setContentsMargins(10, 10, 10, 10);
-        mpCover = new QLabel(mpMediaContainer);
-        mpMediaContainer->setStyleSheet(QString("background: none;"));
-        setAudioCover(":images/libpalette/soundIcon.svg");
-        mpCover->setScaledContents(true);
-        mMediaLayout.addStretch(1);
-        mMediaLayout.addWidget(mpCover, 0);
-        mMediaLayout.addStretch(1);
-        mpAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
-        Phonon::createPath(mpMediaObject, mpAudioOutput);
+
+        mLayout.addWidget(mpMediaContainer, 1);
+        mLayout.addLayout(&mSeekerLayout, 0);
+        setActionsParent(mpMediaContainer);
+    }else if(eMediaType_Picture == mType){
+        mpPicture = new QLabel(this);
+        QPixmap pix = QPixmap(mUrl);
+        pix.scaledToWidth(mpPicture->width());
+        mpPicture->resize(pix.width(), pix.height());
+        mpPicture->setPixmap(pix);
+        mpPicture->setScaledContents(true);
+        mLayout.addWidget(mpPicture);
+        setActionsParent(mpPicture);
     }
-    mLayout.addWidget(mpMediaContainer, 1);
-    mLayout.addLayout(&mSeekerLayout, 0);
-    setActionsParent(mpMediaContainer);
+    mpTitleLabel = new QLabel(tr("Title"), this);
+    mpTitle = new QLineEdit(this);
+    mpTitle->setObjectName("DockPaletteWidgetLineEdit");
+    mLayout.addWidget(mpTitleLabel, 0);
+    mLayout.addWidget(mpTitle, 0);
 }
 
 /**
@@ -289,6 +322,52 @@ void UBMediaWidget::setAudioCover(const QString &coverPath)
     }
 }
 
+void UBMediaWidget::setVizualisationMode(eVizualisationMode mode)
+{
+    switch(mode){
+    case eVizualisationMode_Edit:
+        mpPreviewTitle->setVisible(false);
+        mpTitleLabel->setVisible(true);
+        mpTitle->setVisible(true);
+        if(eMediaType_Audio == mType || eMediaType_Video == mType){
+            mpMediaContainer->setVisible(true);
+            mpPlayStopButton->setVisible(true);
+            mpPauseButton->setVisible(true);
+            mpSlider->setVisible(true);
+        }else if(eMediaType_Picture == mType){
+            mpPicture->setVisible(true);
+        }
+        break;
+    case eVizualisationMode_Full:
+        mpPreviewTitle->setVisible(true);
+        mpTitleLabel->setVisible(false);
+        mpTitle->setVisible(false);
+        if(eMediaType_Audio == mType || eMediaType_Video == mType){
+            mpMediaContainer->setVisible(true);
+            mpPlayStopButton->setVisible(true);
+            mpPauseButton->setVisible(true);
+            mpSlider->setVisible(true);
+        }else if(eMediaType_Picture == mType){
+            mpPicture->setVisible(true);
+        }
+        break;
+    case eVizualisationMode_Half:
+        mpPreviewTitle->setVisible(true);
+        mpTitleLabel->setVisible(false);
+        mpTitle->setVisible(false);
+        if(eMediaType_Audio == mType || eMediaType_Video == mType){
+            mpMediaContainer->setVisible(false);
+            mpPlayStopButton->setVisible(false);
+            mpPauseButton->setVisible(false);
+            mpSlider->setVisible(false);
+        }else if(eMediaType_Picture == mType){
+            mpPicture->setVisible(false);
+        }
+
+        break;
+    }
+}
+
 // -----------------------------------------------------------------------------------------------------------
 /**
   * \brief Constructor
@@ -332,4 +411,78 @@ void UBMediaButton::mouseReleaseEvent(QMouseEvent* ev)
         mPressed = false;
         emit clicked();
     }
+}
+
+// --------------------------------------------------------------------------------
+UBMediaTitle::UBMediaTitle(eMediaType type, QWidget *parent, const char *name):QWidget(parent)
+  , mpLayout(NULL)
+  , mpIcon(NULL)
+  , mpTitle(NULL)
+  , mpAddToPageButton(NULL)
+  , mpPlayFullscreenButton(NULL)
+{
+    setObjectName(name);
+
+    mpLayout = new QHBoxLayout();
+    setLayout(mpLayout);
+
+    // Icon
+    mpIcon = new QLabel(this);
+    // TODO: create icon and load them in the next lines after uncommenting them
+//    if(eMediaType_Video == type){
+//        mpIcon->setPixmap(QPixmap());
+//    }else if(eMediaType_Audio == type){
+//        mpIcon->setPixmap(QPixmap());
+//    }else if(eMediaType_Picture == type){
+//        mpIcon->setPixmap(QPixmap());
+//    }else if(eMediaType_App == type){
+//        mpIcon->setPixmap(QPixmap());
+//    }else if(eMediaType_Flash == type){
+//        mpIcon->setPixmap(QPixmap());
+//    }
+    mpLayout->addWidget(mpIcon, 0);
+
+    // Title
+    mpTitle = new QLabel(this);
+    mpLayout->addWidget(mpTitle, 1);
+
+    // "Add To Page" button
+    mpAddToPageButton = new QPushButton(this);
+    // TODO: create icon for this button and set it
+
+    mpAddToPageButton->setVisible(false);
+    mpLayout->addWidget(mpAddToPageButton, 0);
+    connect(mpAddToPageButton, SIGNAL(clicked()), this, SLOT(onAddToPage()));
+
+    // "Play Fullscreen" button
+    mpPlayFullscreenButton = new QPushButton(this);
+    // TODO: create icon for this button and set it
+
+    mpPlayFullscreenButton->setVisible(false);
+    mpLayout->addWidget(mpPlayFullscreenButton, 0);
+    connect(mpPlayFullscreenButton, SIGNAL(clicked()), this, SLOT(onPlayFullscreen()));
+}
+
+UBMediaTitle::~UBMediaTitle()
+{
+    DELETEPTR(mpPlayFullscreenButton);
+    DELETEPTR(mpAddToPageButton);
+    DELETEPTR(mpTitle);
+    DELETEPTR(mpIcon);
+    DELETEPTR(mpLayout);
+}
+
+void UBMediaTitle::setTitle(const QString &title)
+{
+    mpTitle->setText(title);
+}
+
+void UBMediaTitle::onAddToPage()
+{
+    // TODO: Implement me
+}
+
+void UBMediaTitle::onPlayFullscreen()
+{
+    // TODO: Implement me
 }

@@ -160,14 +160,16 @@ void UBTBPageEditWidget::onLinkButton()
 void UBTBPageEditWidget::onMediaDropped(const QString &url)
 {
     if("" != url){
-        QWidget* pMedia = mpMediaContainer->generateMediaWidget(url);
+        UBMediaWidget* pMedia = mpMediaContainer->generateMediaWidget(url);
         if(NULL != pMedia){
-            mMedias << pMedia;
-            mMediaUrls << url;
-            //mpDataMgr->medias()->append(pMedia);
-            //mpDataMgr->addMediaUrl(url);
-            mpMediaContainer->addWidget(pMedia);
-            connectActions(pMedia);
+            sMedia media;
+            media.widget = pMedia;
+            media.title = pMedia->title();
+            media.url = url;
+            mMedias << media;
+            //mMedias << pWidget;
+            mpMediaContainer->addWidget(media.widget);
+            connectActions(media.widget);
             emit valueChanged();
         }
     }
@@ -188,6 +190,11 @@ void UBTBPageEditWidget::onDocumentEditClicked()
 
 void UBTBPageEditWidget::onPagePreviewClicked()
 {
+//    foreach(sMedia media, *mpDataMgr->medias()){
+//        if(NULL != media.widget){
+//            media.widget->setVizualisationMode(eVizualisationMode_Half);
+//        }
+//    }
     emit changeTBState(eTeacherBarState_PagePreview);
 }
 
@@ -195,7 +202,6 @@ void UBTBPageEditWidget::saveFields()
 {
     mpDataMgr->actions()->clear();
     mpDataMgr->urls()->clear();
-    mpDataMgr->mediaUrls()->clear();
     mpDataMgr->medias()->clear();
 
     foreach(UBTeacherStudentAction* pAct, mActions){
@@ -210,12 +216,13 @@ void UBTBPageEditWidget::saveFields()
         link.link = pUrl->url();
         mpDataMgr->urls()->append(link);
     }
-    foreach(QString url, mMediaUrls){
-        qDebug() << "saving media :" << url;
-        mpDataMgr->mediaUrls()->append(url);
-    }
-    foreach(QWidget* pMedia, mMedias){
-        mpDataMgr->medias()->append(pMedia);
+    foreach(sMedia media, mMedias){
+        media.title = media.widget->title();
+        // Update the title in the preview title
+        media.widget->setTitle(media.title);
+        media.url = media.widget->url();
+        //media.widget->setVizualisationMode(eVizualisationMode_Half);
+        mpDataMgr->medias()->append(media);
     }
 }
 
@@ -233,14 +240,17 @@ void UBTBPageEditWidget::updateFields()
         connectActions(pAction);
     }
     // Medias
-    foreach(QString url, *mpDataMgr->mediaUrls()){
+    foreach(sMedia media, *mpDataMgr->medias()){
+        QString url = media.url;
         if(!url.isEmpty()){
-            mMediaUrls << url;
-            QWidget* pWidget = mpMediaContainer->generateMediaWidget(url);
+            UBMediaWidget* pWidget = mpMediaContainer->generateMediaWidget(url);
             if(pWidget != NULL){
-                mMedias << pWidget;
-                mpMediaContainer->addWidget(pWidget);
-                connectActions(pWidget);
+                media.widget = pWidget;
+                media.widget->setVizualisationMode(eVizualisationMode_Edit);
+                media.widget->setTitle(media.title);
+                mMedias << media;
+                mpMediaContainer->addWidget(media.widget);
+                connectActions(media.widget);
             }
         }
     }
@@ -270,14 +280,15 @@ void UBTBPageEditWidget::clearFields()
     }
     mActions.clear();
     // Medias
-    foreach(QWidget* pMedia, mMedias){
+    foreach(sMedia media, mMedias){
+        QWidget* pMedia = media.widget;
         if(NULL != pMedia){
             mpMediaContainer->removeWidget(pMedia);
             DELETEPTR(pMedia);
         }
     }
     mMedias.clear();
-    mMediaUrls.clear();
+
     // Links
     foreach(UBUrlWidget* pLink, mUrls){
         mpLinks->removeWidget(pLink);
@@ -304,17 +315,23 @@ void UBTBPageEditWidget::onCloseWidget(QWidget *w)
             mUrls.remove(mUrls.indexOf(pW));
             DELETEPTR(w);
         }else if("UBTBMediaPicture" == w->objectName()){
-            UBPictureWidget* pW = dynamic_cast<UBPictureWidget*>(w);
-            mMediaUrls.removeOne(pW->url());
             mpMediaContainer->removeWidget(w);
-            mMedias.remove(mMedias.indexOf(w));
-            DELETEPTR(w);
+            removeMediaWidget(w);
         }else if("UBMediaWidget" == w->objectName()){
-            UBMediaWidget* pW = dynamic_cast<UBMediaWidget*>(w);
-            mMediaUrls.removeOne(pW->url());
             mpMediaContainer->removeWidget(w);
-            mMedias.remove(mMedias.indexOf(w));
+            removeMediaWidget(w);
+        }
+    }
+}
+
+void UBTBPageEditWidget::removeMediaWidget(QWidget *w)
+{
+    for(int i=0; i<mMedias.size(); i++){
+        sMedia media = mMedias.at(i);
+        if(media.widget == w){
+            mMedias.remove(i);
             DELETEPTR(w);
+            break;
         }
     }
 }
@@ -473,9 +490,9 @@ void UBTBMediaContainer::cleanMedias()
     mMediaList.clear();
 }
 
-QWidget* UBTBMediaContainer::generateMediaWidget(const QString& url)
+UBMediaWidget* UBTBMediaContainer::generateMediaWidget(const QString& url)
 {
-    QWidget* pW = NULL;
+    UBMediaWidget* pW = NULL;
 
     if(!url.isEmpty())
         mMediaList.append(url);
@@ -484,20 +501,25 @@ QWidget* UBTBMediaContainer::generateMediaWidget(const QString& url)
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(url);
     if(mimeType.contains("image")){
-        QPixmap pix = QPixmap(url);
-        UBPictureWidget* pic = new UBPictureWidget();
-        pic->setUrl(url);
-        pix.scaledToWidth(pic->label()->width());
-        pic->label()->resize(pix.width(), pix.height());
-        pic->label()->setPixmap(pix);
-        pic->label()->setScaledContents(true);
-        pic->setObjectName("UBTBMediaPicture");
-        pW = pic;
+//        QPixmap pix = QPixmap(url);
+//        UBPictureWidget* pic = new UBPictureWidget();
+//        pic->setUrl(url);
+//        pix.scaledToWidth(pic->label()->width());
+//        pic->label()->resize(pix.width(), pix.height());
+//        pic->label()->setPixmap(pix);
+//        pic->label()->setScaledContents(true);
+//        pic->setObjectName("UBTBMediaPicture");
+//        pW = pic;
+        UBMediaWidget* mediaPicture = new UBMediaWidget(eMediaType_Picture);
+        mediaPicture->setUrl(url);
+        mediaPicture->createMediaPlayer();
+        pW = mediaPicture;
     }
     else if(mimeType.contains("video") || mimeType.contains("audio")){
         UBMediaWidget* mediaPlayer = new UBMediaWidget(mimeType.contains("audio")?eMediaType_Audio:eMediaType_Video);
         mediaPlayer->setFile(url);
         mediaPlayer->setUrl(url);
+        mediaPlayer->createMediaPlayer();
         pW = mediaPlayer;
     }
     else{
@@ -589,20 +611,29 @@ void UBTeacherStudentAction::setText(const QString& text)
 UBPictureWidget::UBPictureWidget(QWidget *parent, const char *name):UBActionableWidget(parent, name)
   , mpLayout(NULL)
   , mpLabel(NULL)
+  , mpTitleLabel(NULL)
+  , mpTitle(NULL)
 {
     addAction(eAction_Close);
     mpLayout = new QVBoxLayout(this);
     setLayout(mpLayout);
     mpLayout->setContentsMargins(10, 0, 10, 0);
+    mpTitleLabel = new QLabel(tr("Title"), this);
+    mpLayout->addWidget(mpTitleLabel, 0);
+    mpTitle = new QLineEdit(this);
+    mpTitle->setObjectName("DockPaletteWidgetLineEdit");
+    mpLayout->addWidget(mpTitle, 0);
     mpLabel = new QLabel(this);
-    mpLayout->addWidget(mpLabel);
-    mpLabel->setGeometry( 10, 10, width()-2*10, height());
+    mpLayout->addWidget(mpLabel, 1);
+    mpLabel->setGeometry( 10, 10, width()-2*10, height() - mpTitleLabel->height() - mpTitle->height() - 20);
     setActionsParent(mpLabel);
 }
 
 UBPictureWidget::~UBPictureWidget()
 {
     unsetActionsParent();
+    DELETEPTR(mpTitle);
+    DELETEPTR(mpTitleLabel);
     DELETEPTR(mpLabel);
     DELETEPTR(mpLayout);
 }
@@ -610,5 +641,5 @@ UBPictureWidget::~UBPictureWidget()
 void UBPictureWidget::resizeEvent(QResizeEvent *ev)
 {
     Q_UNUSED(ev);
-    mpLabel->setGeometry( 10, 10, width()-2*10, height());
+    mpLabel->setGeometry( 10, 10, width()-2*10, height() - mpTitleLabel->height() - mpTitle->height() - 20);
 }

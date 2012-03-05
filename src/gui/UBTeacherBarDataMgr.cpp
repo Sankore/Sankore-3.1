@@ -27,7 +27,6 @@ void UBTeacherBarDataMgr::clearLists()
     mActionList.clear();
     mUrlList.clear();
     mMediaList.clear();
-    mMediaUrls.clear();
 }
 
 void UBTeacherBarDataMgr::saveContent()
@@ -42,8 +41,8 @@ void UBTeacherBarDataMgr::saveContent()
         infos.actions << QString("%0;%1").arg(action.type).arg(action.content);
     }
     // Media
-    foreach(QString media, mMediaUrls){
-        infos.medias << media;
+    foreach(sMedia media, mMediaList){
+        infos.medias << QString("%0;%1").arg(media.title).arg(media.url);
     }
     // Links
     foreach(sLink link, mUrlList){
@@ -112,7 +111,16 @@ void UBTeacherBarDataMgr::loadContent(bool docChanged)
         // Do not retrieve it
     }
     else{
-        mMediaUrls = nextInfos.medias;
+        // title;url@title;url;...
+        foreach(QString media, nextInfos.medias){
+            QStringList qslMedia = media.split(';');
+            if(qslMedia.size() >= 2){
+                sMedia med;
+                med.title = qslMedia.at(0);
+                med.url = qslMedia.at(1);
+                mMediaList << med;
+            }
+        }
     }
 
     // Links

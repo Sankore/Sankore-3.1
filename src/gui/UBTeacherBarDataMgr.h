@@ -11,6 +11,8 @@
 #include <QComboBox>
 #include <QFrame>
 
+#include "customWidgets/UBMediaWidget.h"
+
 typedef enum{
     eTeacherBarState_DocumentEdit,
     eTeacherBarState_DocumentPreview,
@@ -41,6 +43,12 @@ typedef enum{
     eLicense_CCBYNC,
     eLicense_CCBYNCND
 }eLicense;
+
+typedef struct{
+    UBMediaWidget* widget;
+    QString url;
+    QString title;
+}sMedia;
 
 class UBTBSeparator : public QFrame
 {
@@ -88,9 +96,7 @@ public:
     QVector<sAction>* actions(){return &mActionList;}
 
     // Medias
-    QVector<QWidget*>* medias(){return &mMediaList;}
-    void addMediaUrl(const QString& url){mMediaUrls << url;}
-    QStringList* mediaUrls(){return &mMediaUrls;}
+    QVector<sMedia>* medias(){return &mMediaList;}
 
     // Urls
     QVector<sLink>* urls(){return &mUrlList;}
@@ -143,8 +149,7 @@ private:
 
     QVector<sAction> mActionList;
     QVector<sLink> mUrlList;
-    QVector<QWidget*> mMediaList;
-    QStringList mMediaUrls;
+    QVector<sMedia> mMediaList;
 };
 
 #endif // UBTEACHERBARDATAMGR_H

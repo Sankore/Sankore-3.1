@@ -239,6 +239,10 @@ void UBTeacherBarPreviewWidget::onActiveSceneChanged()
 
 void UBTeacherBarPreviewWidget::onEdit()
 {
+    foreach(sMedia media, *mpDataMgr->medias()){
+        media.widget->setVizualisationMode(eVizualisationMode_Edit);
+    }
+
     emit showEditMode();
 }
 
@@ -266,14 +270,14 @@ void UBTeacherBarPreviewWidget::updateFields()
         mpTitleContainer->setVisible(false);
     }
 
+    // Comments
+    generateComments();
+
     // Actions
     generateActions();
 
     // Media
     generateMedias();
-
-    // Comments
-    generateComments();
 
     // Links
     generateLinks();
@@ -320,17 +324,26 @@ void UBTeacherBarPreviewWidget::generateActions()
 void UBTeacherBarPreviewWidget::generateMedias()
 {
     if(isVisible()){
-        foreach(QString mediaUrl, *mpDataMgr->mediaUrls()){
+        foreach(sMedia media, *mpDataMgr->medias()){
+            QString mediaUrl = media.url;
             QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mediaUrl);
             if(mimeType.contains("image")){
-                mpTmpLabel = new UBDraggableLabel();
-                mpTmpLabel->loadImage(mediaUrl);
-                mStoredWidgets << mpTmpLabel;
-                mpContentContainer->addWidget(mpTmpLabel);
+                UBDraggableMedia* mediaPlayer = new UBDraggableMedia(eMediaType_Picture);
+                mediaPlayer->setUrl(mediaUrl);
+                mediaPlayer->setFile(mediaUrl);
+                mediaPlayer->createMediaPlayer();
+                mediaPlayer->setTitle(media.title);
+                mediaPlayer->setVizualisationMode(eVizualisationMode_Full);
+                mStoredWidgets << mediaPlayer;
+                mpContentContainer->addWidget(mediaPlayer);
             }
             else if(mimeType.contains("video") || mimeType.contains("audio")){
                 UBDraggableMedia* mediaPlayer = new UBDraggableMedia(mimeType.contains("audio")?eMediaType_Audio:eMediaType_Video);
+                mediaPlayer->setUrl(mediaUrl);
                 mediaPlayer->setFile(mediaUrl);
+                mediaPlayer->createMediaPlayer();
+                mediaPlayer->setTitle(media.title);
+                mediaPlayer->setVizualisationMode(eVizualisationMode_Full);
                 mStoredWidgets << mediaPlayer;
                 mpContentContainer->addWidget(mediaPlayer);
             }

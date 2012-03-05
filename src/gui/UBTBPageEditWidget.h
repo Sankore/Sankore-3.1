@@ -8,10 +8,12 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QPushButton>
+#include <QLineEdit>
 
 #include "core/UBPersistenceManager.h"
 #include "customWidgets/UBWidgetList.h"
 #include "customWidgets/UBActionableWidget.h"
+#include "customWidgets/UBMediaWidget.h"
 #include "interfaces/IDropable.h"
 #include "UBTeacherBarDataMgr.h"
 
@@ -74,6 +76,8 @@ private:
     QVBoxLayout* mpLayout;
     QLabel* mpLabel;
     QString mUrl;
+    QLabel* mpTitleLabel;
+    QLineEdit* mpTitle;
 };
 
 class UBTBMediaContainer : public UBWidgetList
@@ -84,7 +88,7 @@ public:
     UBTBMediaContainer(QWidget* parent=0, const char* name="UBTBMediaContainer");
     ~UBTBMediaContainer();
     QStringList mediaUrls();
-    QWidget* generateMediaWidget(const QString& url);
+    UBMediaWidget* generateMediaWidget(const QString& url);
     void cleanMedias();
 
 signals:
@@ -128,6 +132,7 @@ private slots:
 
 private:
     void connectActions(QWidget* w);
+    void removeMediaWidget(QWidget* w);
     QVBoxLayout mLayout;
     QHBoxLayout mTitleLayout;
     QVBoxLayout mContainerLayout;
@@ -155,8 +160,9 @@ private:
 
     QVector<UBTeacherStudentAction*> mActions;
     QVector<UBUrlWidget*> mUrls;
-    QVector<QWidget*> mMedias;
-    QStringList mMediaUrls;
+    QVector<sMedia> mMedias;
+    //QVector<QWidget*> mMedias;
+    //QStringList mMediaUrls;
     bool mClearingFields;
 };
 

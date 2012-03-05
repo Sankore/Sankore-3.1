@@ -21,6 +21,7 @@
 #include <QLabel>
 #include <QSlider>
 #include <QMouseEvent>
+#include <QLineEdit>
 
 #include <phonon/MediaObject>
 #include <phonon/VideoWidget>
@@ -37,8 +38,17 @@
   */
 typedef enum{
     eMediaType_Video,
-    eMediaType_Audio
+    eMediaType_Audio,
+    eMediaType_Picture,
+    eMediaType_App,
+    eMediaType_Flash
 }eMediaType;
+
+typedef enum{
+    eVizualisationMode_Edit,
+    eVizualisationMode_Half,
+    eVizualisationMode_Full
+}eVizualisationMode;
 
 class UBMediaButton : public QLabel
 {
@@ -59,6 +69,29 @@ private:
     bool mPressed;
 };
 
+class UBMediaTitle : public QWidget
+{
+    Q_OBJECT
+public:
+    UBMediaTitle(eMediaType type, QWidget* parent=0, const char* name="UBMediaTitle");
+    ~UBMediaTitle();
+    void setTitle(const QString& title);
+
+protected:
+    // Todo: overload the onhover method to make the addtopage & playfullscreen buttons visible
+
+private slots:
+    void onAddToPage();
+    void onPlayFullscreen();
+
+private:
+    QHBoxLayout* mpLayout;
+    QLabel* mpIcon;
+    QLabel* mpTitle;
+    QPushButton* mpAddToPageButton;
+    QPushButton* mpPlayFullscreenButton;
+};
+
 class UBMediaWidget : public UBActionableWidget
 {
     Q_OBJECT
@@ -71,12 +104,18 @@ public:
     void setAudioCover(const QString& coverPath);
     void setUrl(const QString& url){mUrl = url;}
     QString url(){return mUrl;}
+    void setTitle(const QString& title){mpTitle->setText(title); mpPreviewTitle->setTitle(title);}
+    QString title(){return mpTitle->text();}
+    void createMediaPlayer();
+    void setVizualisationMode(eVizualisationMode mode);
 
 protected:
     void resizeEvent(QResizeEvent* ev);
     void showEvent(QShowEvent* event);
     /** The current media file path */
     QString mFilePath;
+    /** The media title */
+    QString mTitle;
 
 private slots:
     void onPlayStopClicked();
@@ -87,7 +126,6 @@ private slots:
     void onSliderChanged(int value);
 
 private:
-    void createMediaPlayer();
     void adaptSizeToVideo();
 
     /** The current media type */
@@ -122,6 +160,16 @@ private:
     QLabel* mpCover;
     /** The media url */
     QString mUrl;
+    /** The title label */
+    QLabel* mpTitleLabel;
+    /** The title */
+    QLineEdit* mpTitle;
+    /** The label that will display the picture */
+    QLabel* mpPicture;
+    /** The title that will be visible in preview mode */
+    UBMediaTitle* mpPreviewTitle;
+    /** The vizualisation mode */
+    eVizualisationMode mVizMode;
 };
 
 #endif // UBMEDIAWIDGET_H
