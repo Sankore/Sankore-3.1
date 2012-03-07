@@ -422,28 +422,37 @@ UBMediaTitle::UBMediaTitle(eMediaType type, QWidget *parent, const char *name):Q
   , mpPlayFullscreenButton(NULL)
 {
     setObjectName(name);
-
     mpLayout = new QHBoxLayout();
+    mpLayout->setContentsMargins(0, 0, 0, 0);
     setLayout(mpLayout);
+    setMaximumHeight(42);
 
     // Icon
     mpIcon = new QLabel(this);
-    // TODO: create icon and load them in the next lines after uncommenting them
-//    if(eMediaType_Video == type){
-//        mpIcon->setPixmap(QPixmap());
-//    }else if(eMediaType_Audio == type){
-//        mpIcon->setPixmap(QPixmap());
-//    }else if(eMediaType_Picture == type){
-//        mpIcon->setPixmap(QPixmap());
-//    }else if(eMediaType_App == type){
-//        mpIcon->setPixmap(QPixmap());
-//    }else if(eMediaType_Flash == type){
-//        mpIcon->setPixmap(QPixmap());
-//    }
+    mpIcon->setStyleSheet("padding-top:-5px; padding-left:-5px;");
+    mpIcon->setMinimumSize(16,16);
+    //mpIcon->setMaximumSize(16, 16);
+    QImage icon;
+    if(eMediaType_Video == type){
+        icon = QImage(":/images/IconMovie.svg");
+     }else if(eMediaType_Audio == type){
+        icon = QImage(":/images/IconAudio.svg");
+    }else if(eMediaType_Picture == type){
+        icon = QImage(":/images/IconPicture.svg");
+    }else if(eMediaType_App == type){
+        icon = QImage(":/images/IconApp.svg");
+    }else if(eMediaType_Flash == type){
+        icon = QImage(":/images/IconFlash.svg");
+    }
+
+    mpIcon->setPixmap(QPixmap::fromImage(icon.scaledToHeight(24, Qt::SmoothTransformation)));
+    //mpIcon->setScaledContents(true);
+
     mpLayout->addWidget(mpIcon, 0);
 
     // Title
     mpTitle = new QLabel(this);
+    mpTitle->setAlignment(Qt::AlignLeft);
     mpLayout->addWidget(mpTitle, 1);
 
     // "Add To Page" button
