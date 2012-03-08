@@ -71,6 +71,7 @@ private slots:
     void onEdit();
     void onActiveSceneChanged();
     void onDocumentClicked();
+    void onToggleMedias();
 
 private:
     void generateActions();
@@ -120,6 +121,11 @@ private:
     UBDraggableMedia* mTmpMedia;
     /** A temporary label object */
     UBDraggableLabel* mpTmpLabel;
+    /** A media expander */
+    UBMediaExpander* mpExpander;
+
+    QList<UBDraggableMedia*> mMedias;
+    QList<QLabel*> mLinks;
 };
 
 #endif // UBTEACHERBARPREVIEWWIDGET_H

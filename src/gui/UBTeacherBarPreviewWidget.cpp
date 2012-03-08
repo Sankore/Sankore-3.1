@@ -154,6 +154,7 @@ UBTeacherBarPreviewWidget::UBTeacherBarPreviewWidget(UBTeacherBarDataMgr* pDataM
   , mpContentContainer(NULL)
   , mpScheduleLabel(NULL)
   , mpLicenseLabel(NULL)
+  , mpExpander(NULL)
 {
     setObjectName(name);
     mpDataMgr = pDataMgr;
@@ -220,7 +221,9 @@ UBTeacherBarPreviewWidget::UBTeacherBarPreviewWidget(UBTeacherBarDataMgr* pDataM
     mEditLayout.addStretch(1);
     mLayout.addLayout(&mEditLayout, 0);
 
+    mpExpander = new UBMediaExpander(this);
 
+    connect(mpExpander, SIGNAL(toggleMedias()), this, SLOT(onToggleMedias()));
     connect(mpEditButton, SIGNAL(clicked()), this, SLOT(onEdit()));
     connect(mpDocumentButton, SIGNAL(clicked()), this, SLOT(onDocumentClicked()));
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
@@ -276,11 +279,13 @@ void UBTeacherBarPreviewWidget::updateFields()
     // Actions
     generateActions();
 
+    // The media expander
+    mpContentContainer->addWidget(mpExpander);
     // Media
-    generateMedias();
+    //generateMedias();
 
     // Links
-    generateLinks();
+    //generateLinks();
 
     // License
     mpLicenseLabel->setLicense(mpDataMgr->sessionLicence());
@@ -333,8 +338,9 @@ void UBTeacherBarPreviewWidget::generateMedias()
                 mediaPlayer->setFile(mediaUrl);
                 mediaPlayer->createMediaPlayer();
                 mediaPlayer->setTitle(media.title);
-                mediaPlayer->setVizualisationMode(eVizualisationMode_Full);
+                mediaPlayer->setVizualisationMode(eVizualisationMode_Half);
                 mStoredWidgets << mediaPlayer;
+                mMedias << mediaPlayer;
                 mpContentContainer->addWidget(mediaPlayer);
             }
             else if(mimeType.contains("video") || mimeType.contains("audio")){
@@ -343,8 +349,9 @@ void UBTeacherBarPreviewWidget::generateMedias()
                 mediaPlayer->setFile(mediaUrl);
                 mediaPlayer->createMediaPlayer();
                 mediaPlayer->setTitle(media.title);
-                mediaPlayer->setVizualisationMode(eVizualisationMode_Full);
+                mediaPlayer->setVizualisationMode(eVizualisationMode_Half);
                 mStoredWidgets << mediaPlayer;
+                mMedias << mediaPlayer;
                 mpContentContainer->addWidget(mediaPlayer);
             }
         }
@@ -360,6 +367,7 @@ void UBTeacherBarPreviewWidget::generateLinks()
             mpTmpLink->setOpenExternalLinks(true);
             mpContentContainer->addWidget(mpTmpLink);
             mStoredWidgets << mpTmpLink;
+            mLinks << mpTmpLink;
         }
     }
 }
@@ -382,3 +390,26 @@ void UBTeacherBarPreviewWidget::showEvent(QShowEvent* ev)
     updateFields();
 }
 
+void UBTeacherBarPreviewWidget::onToggleMedias()
+{
+    if(mpExpander->isExpanded()){
+        generateMedias();
+        generateLinks();
+    }else{
+        // Remove the media
+        foreach(UBDraggableMedia* media, mMedias){
+            mpContentContainer->removeWidget(media);
+            mStoredWidgets.removeOne(media);
+            DELETEPTR(media);
+        }
+        mMedias.clear();
+
+        // Remove the links
+        foreach(QLabel* link, mLinks){
+            mpContentContainer->removeWidget(link);
+            mStoredWidgets.removeOne(link);
+            DELETEPTR(link);
+        }
+        mLinks.clear();
+    }
+}

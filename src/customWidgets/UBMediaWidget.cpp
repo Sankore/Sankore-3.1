@@ -145,7 +145,12 @@ void UBMediaWidget::createMediaPlayer()
         mpMediaContainer->setLayout(&mMediaLayout);
 
         if(eMediaType_Video == mType){
-            mMediaLayout.setContentsMargins(10, 10, 25, 10);
+            if(eVizualisationMode_Half == mVizMode){
+                mMediaLayout.setContentsMargins(0, 0, 0, 0);
+            }else{
+                mMediaLayout.setContentsMargins(10, 10, 25, 10);
+            }
+
             if(isVisible()){
                 mpVideoWidget = new Phonon::VideoWidget(this);
                 mMediaLayout.addStretch(1);
@@ -157,7 +162,11 @@ void UBMediaWidget::createMediaPlayer()
             mpAudioOutput = new Phonon::AudioOutput(Phonon::VideoCategory, this);
             Phonon::createPath(mpMediaObject, mpAudioOutput);
         }else if(eMediaType_Audio == mType){
-            mMediaLayout.setContentsMargins(10, 10, 10, 10);
+            if(eVizualisationMode_Half == mVizMode){
+                mMediaLayout.setContentsMargins(0, 0, 0, 0);
+            }else{
+                mMediaLayout.setContentsMargins(10, 10, 10, 10);
+            }
             mpCover = new QLabel(mpMediaContainer);
             mpMediaContainer->setStyleSheet(QString("background: none;"));
             setAudioCover(":images/libpalette/soundIcon.svg");
@@ -354,16 +363,25 @@ void UBMediaWidget::setVizualisationMode(eVizualisationMode mode)
     case eVizualisationMode_Half:
         mpPreviewTitle->setVisible(true);
         mpTitleLabel->setVisible(false);
+        mLayout.removeWidget(mpTitleLabel);
         mpTitle->setVisible(false);
+        mLayout.removeWidget(mpTitle);
         if(eMediaType_Audio == mType || eMediaType_Video == mType){
             mpMediaContainer->setVisible(false);
+            mLayout.removeWidget(mpMediaContainer);
             mpPlayStopButton->setVisible(false);
+            mLayout.removeWidget(mpPlayStopButton);
             mpPauseButton->setVisible(false);
+            mLayout.removeWidget(mpPauseButton);
             mpSlider->setVisible(false);
+            mLayout.removeWidget(mpSlider);
+            mLayout.removeItem(&mSeekerLayout);
         }else if(eMediaType_Picture == mType){
             mpPicture->setVisible(false);
+            mLayout.removeWidget(mpPicture);
         }
 
+        setMaximumHeight(80);
         break;
     }
 }
@@ -425,11 +443,12 @@ UBMediaTitle::UBMediaTitle(eMediaType type, QWidget *parent, const char *name):Q
     mpLayout = new QHBoxLayout();
     mpLayout->setContentsMargins(0, 0, 0, 0);
     setLayout(mpLayout);
+    setMinimumHeight(30);
     setMaximumHeight(42);
 
     // Icon
     mpIcon = new QLabel(this);
-    mpIcon->setStyleSheet("padding-top:-5px; padding-left:-5px;");
+    mpIcon->setStyleSheet("padding-top:-19px; padding-left:-4px;");
     mpIcon->setMinimumSize(16,16);
     //mpIcon->setMaximumSize(16, 16);
     QImage icon;
@@ -494,4 +513,53 @@ void UBMediaTitle::onAddToPage()
 void UBMediaTitle::onPlayFullscreen()
 {
     // TODO: Implement me
+}
+
+// ----------------------------------------------------------------------------------
+UBMediaExpander::UBMediaExpander(QWidget *parent, const char *name):QWidget(parent)
+  , mpLayout(NULL)
+  , mpButton(NULL)
+{
+    mpLayout = new QHBoxLayout();
+    setLayout(mpLayout);
+
+    mExpanded = false;
+
+    mpButton = new QLabel(this);
+    QImage icon = QImage(":/images/increase.svg");
+    mpButton->setPixmap(QPixmap::fromImage(icon.scaledToHeight(UBTOGGLER_SIZE, Qt::SmoothTransformation)));
+    mpLayout->addStretch(1);
+    mpLayout->addWidget(mpButton, 0);
+    mpLayout->addStretch(1);
+
+    connect(this, SIGNAL(toggleMedias()), this, SLOT(onToggleMedias()));
+}
+
+UBMediaExpander::~UBMediaExpander()
+{
+    DELETEPTR(mpButton);
+    DELETEPTR(mpLayout);
+}
+
+void UBMediaExpander::mousePressEvent(QMouseEvent* ev)
+{
+    if( ev->pos().x() >= mpButton->pos().x()
+        && ev->pos().x() <= mpButton->pos().x() + mpButton->width()
+        && ev->pos().y() >= mpButton->pos().y()
+        && ev->pos().y() <= mpButton->pos().y() + mpButton->height()){
+        emit toggleMedias();
+    }
+}
+
+void UBMediaExpander::onToggleMedias()
+{
+    mExpanded = !mExpanded;
+    QImage icon;
+    if(mExpanded){
+        icon = QImage(":/images/decrease.svg");
+    }else{
+        icon = QImage(":/images/increase.svg");
+    }
+
+    mpButton->setPixmap(QPixmap::fromImage(icon.scaledToHeight(UBTOGGLER_SIZE, Qt::SmoothTransformation)));
 }

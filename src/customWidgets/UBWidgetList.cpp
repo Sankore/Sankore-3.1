@@ -62,9 +62,9 @@ void UBWidgetList::addWidget(QWidget *widget)
 void UBWidgetList::removeWidget(QWidget *widget)
 {
     if(NULL != mpLayout && NULL != widget){
+        widget->setVisible(false);
         mpLayout->removeWidget(widget);
         mWidgetInfo.remove(widget);
-        widget->setVisible(false);
         updateView(size());
         if(0 == mpLayout->count()){
             mpEmptyLabel->setVisible(true);

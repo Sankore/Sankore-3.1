@@ -32,6 +32,7 @@
 
 #define UBMEDIABUTTON_SIZE              32
 #define TICK_INTERVAL                   1000
+#define UBTOGGLER_SIZE                  32
 
 /**
   * \brief The media type
@@ -49,6 +50,29 @@ typedef enum{
     eVizualisationMode_Half,
     eVizualisationMode_Full
 }eVizualisationMode;
+
+class UBMediaExpander : public QWidget
+{
+    Q_OBJECT
+public:
+    UBMediaExpander(QWidget* parent=0, const char* name="UBMediaExpander");
+    ~UBMediaExpander();
+    bool isExpanded(){return mExpanded;}
+
+signals:
+    void toggleMedias();
+
+protected:
+    void mousePressEvent(QMouseEvent* ev);
+
+private slots:
+    void onToggleMedias();
+
+private:
+    QHBoxLayout* mpLayout;
+    QLabel* mpButton;
+    bool mExpanded;
+};
 
 class UBMediaButton : public QLabel
 {
