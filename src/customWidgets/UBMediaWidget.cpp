@@ -136,6 +136,13 @@ void UBMediaWidget::showEvent(QShowEvent* event)
     QWidget::showEvent(event);
 }
 
+void UBMediaWidget::hideEvent(QHideEvent *event)
+{
+    if(mpMediaObject)
+        mpMediaObject->stop();
+    QWidget::hideEvent(event);
+}
+
 /**
   * \brief Create the media player
   */
@@ -233,7 +240,9 @@ void UBMediaWidget::adaptSizeToVideo()
   */
 void UBMediaWidget::onStateChanged(Phonon::State newState, Phonon::State oldState)
 {
-    if(!mGeneratingThumbnail){
+    // On changing from the previous to the edit mode if a media is playing the stop is sent, but
+    // this is wrong becase the media has already been freed.
+    if(!mGeneratingThumbnail && mpAudioOutput != NULL){
         if(Phonon::LoadingState == oldState && Phonon::StoppedState == newState){
             if(eMediaType_Video == mType){
                 // We do that here to generate the thumbnail of the video
@@ -364,7 +373,6 @@ void UBMediaWidget::setVizualisationMode(eVizualisationMode mode)
     case eVizualisationMode_Half:
         qDebug() << "--> Setting mode to Half";
         mpPreviewTitle->setVisible(true);
-        mpPreviewTitle->setStyleSheet("background:red;");
         mpTitleLabel->setVisible(false);
         mpTitle->setVisible(false);
         mLayout.removeWidget(mpTitleLabel);
@@ -380,41 +388,39 @@ void UBMediaWidget::setVizualisationMode(eVizualisationMode mode)
             mpPicture->setVisible(false);
             mLayout.removeWidget(mpPicture);
         }
-        //setMaximumHeight(80);
         break;
     case eVizualisationMode_Full:
         qDebug() << "--> Setting mode to Full";
-        // TODO: Update the height here
-        int h = maximumHeight();
         mpPreviewTitle->setVisible(true);
         mpTitleLabel->setVisible(false);
         mpTitle->setVisible(false);
         if(eMediaType_Audio == mType || eMediaType_Video == mType){
+//This should be uncommented if the half mode is enabled!
+            //            mLayout.addWidget(mpMediaContainer);
+//            mLayout.addItem(&mSeekerLayout);
             mpMediaContainer->setVisible(true);
-            h += mpMediaContainer->height();
             mpPlayStopButton->setVisible(true);
             mpPauseButton->setVisible(true);
             mpSlider->setVisible(true);
-            h += mpPlayStopButton->height();
         }else if(eMediaType_Picture == mType){
+ //           mLayout.addWidget(mpPicture);
             mpPicture->setVisible(true);
-            h += mpPicture->height();
         }
-        setMinimumHeight(300);
         break;
     }
+
     mVizMode = mode;
-    qDebug() << "Number of widgets: " << mLayout.count();
-    qDebug() << "Size: " << size();
+//    qDebug() << "Number of widgets: " << mLayout.count();
+//    qDebug() << "Size: " << size();
 }
 
 void UBMediaWidget::onTitleClicked()
 {
-    if(eVizualisationMode_Half == mVizMode){
-        setVizualisationMode(eVizualisationMode_Full);
-    }else if(eVizualisationMode_Full == mVizMode){
-        setVizualisationMode(eVizualisationMode_Half);
-    }
+//    if(eVizualisationMode_Half == mVizMode){
+//        setVizualisationMode(eVizualisationMode_Full);
+//    }else if(eVizualisationMode_Full == mVizMode){
+//        setVizualisationMode(eVizualisationMode_Half);
+//    }
 }
 
 // -----------------------------------------------------------------------------------------------------------
@@ -568,7 +574,8 @@ UBMediaExpander::UBMediaExpander(QWidget *parent, const char *name):QWidget(pare
     mpLayout = new QHBoxLayout();
     setLayout(mpLayout);
 
-    setStyleSheet("background:lightblue; padding: 0 0 0 0;");
+    //setStyleSheet("background:lightblue; padding: 0 0 0 0;");
+    setStyleSheet("padding: 0 0 0 0;");
     mExpanded = false;
 
     mpButton = new QLabel(this);

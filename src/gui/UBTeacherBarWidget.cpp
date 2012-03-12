@@ -122,16 +122,19 @@ void UBTeacherBarWidget::loadContent(bool docChanged)
         mpDocPreviewWidget->updateFields();
     }
 
-//    if(!isEmpty()){
-//        onTBStateChanged(eTeacherBarState_PagePreview);
-//    }else{
-        if(0 == UBApplication::boardController->activeSceneIndex()){
-           onTBStateChanged(eTeacherBarState_DocumentPreview);
-        }else{
-           onTBStateChanged(eTeacherBarState_PagePreview);
-        }
-//    }
+    if(!isEmpty()){
+        onTBStateChanged(eTeacherBarState_PagePreview);
+    }
+    else{
+
+        //        if(0 == UBApplication::boardController->activeSceneIndex()){
+        //           onTBStateChanged(eTeacherBarState_DocumentPreview);
+        //        }else{
+        onTBStateChanged(eTeacherBarState_PageEdit);
+        //        }
+    }
 }
+
 
 bool UBTeacherBarWidget::isEmpty()
 {

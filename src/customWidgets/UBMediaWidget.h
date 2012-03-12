@@ -140,6 +140,7 @@ public:
 protected:
     void resizeEvent(QResizeEvent* ev);
     void showEvent(QShowEvent* event);
+    void hideEvent(QHideEvent *event);
     /** The current media file path */
     QString mFilePath;
     /** The media title */

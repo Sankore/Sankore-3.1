@@ -100,6 +100,7 @@ int UBWidgetList::scaleWidgets(QSize pSize)
         }
         //Adding a vertical/horizontal space between each element of the list
         result += mListElementsSpacing;
+        qDebug() << "eachWidget : " << eachWidget << "  newWidgetHeight " << newWidgetHeight;
     }
     return result;
 }
