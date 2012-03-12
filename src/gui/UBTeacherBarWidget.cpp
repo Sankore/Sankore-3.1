@@ -158,15 +158,16 @@ void UBTeacherBarWidget::onShowDocumentPreview()
 
 void UBTeacherBarWidget::onTBStateChanged(eTeacherBarState state)
 {
+// for the 1.40 release we don't enable the first page. To be uncommented for the 1.50
     switch(state){
     case eTeacherBarState_DocumentEdit:
         //mpDocEditWidget->updateFields();
-        mpStackWidget->setCurrentWidget(mpDocEditWidget);
-        break;
+        //mpStackWidget->setCurrentWidget(mpDocEditWidget);
+        //break;
     case eTeacherBarState_DocumentPreview:
         //mpDocPreviewWidget->updateFields();
-        mpStackWidget->setCurrentWidget(mpDocPreviewWidget);
-        break;
+        //mpStackWidget->setCurrentWidget(mpDocPreviewWidget);
+        //break;
     case eTeacherBarState_PageEdit:
         mpPageEditWidget->clearFields();
         mpPageEditWidget->updateFields();
