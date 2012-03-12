@@ -1,9 +1,9 @@
+#include "UBTeacherBarPreviewWidget.h"
+#include "web/UBWebController.h"
 #include "core/UBApplication.h"
 #include "globals/UBGlobals.h"
 #include "board/UBBoardController.h"
 #include "frameworks/UBFileSystemUtils.h"
-
-#include "UBTeacherBarPreviewWidget.h"
 
 
 UBTeacherBarPreviewMedia::UBTeacherBarPreviewMedia(QWidget* parent, const char* name) : QWidget(parent)
@@ -359,13 +359,21 @@ void UBTeacherBarPreviewWidget::generateMedias()
     }
 }
 
+void UBTeacherBarPreviewWidget::onLinkActivated(const QString& url)
+{
+    qDebug() << url;
+    UBApplication::webController->loadUrl(QUrl(url));
+}
+
 void UBTeacherBarPreviewWidget::generateLinks()
 {
     if(!mpDataMgr->urls()->empty()){
         foreach(sLink link, *mpDataMgr->urls()){
             mpTmpLink = new QLabel(QString("<a href='%0'>%1</a>").arg(link.link).arg(link.title), this);
             mpTmpLink->setObjectName("UBLinkPreview");
-            mpTmpLink->setOpenExternalLinks(true);
+            mpTmpLink->setOpenExternalLinks(false);
+            mpTmpLink->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
+            connect(mpTmpLink,SIGNAL(linkActivated(const QString &)), this,SLOT(onLinkActivated(const QString &)));
             mpContentContainer->addWidget(mpTmpLink);
             mStoredWidgets << mpTmpLink;
             mLinks << mpTmpLink;

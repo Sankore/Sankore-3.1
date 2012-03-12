@@ -386,10 +386,8 @@ QString UBUrlWidget::url()
 {
     QString str;
 
-    if(NULL != mpUrl){
+    if(NULL != mpUrl)
         str = mpUrl->text().startsWith("http://") ? mpUrl->text() : QString("http://" + mpUrl->text());
-    }
-
     return str;
 }
 

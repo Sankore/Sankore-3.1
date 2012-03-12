@@ -72,6 +72,7 @@ private slots:
     void onActiveSceneChanged();
     void onDocumentClicked();
     void onToggleMedias();
+    void onLinkActivated(const QString &url);
 
 private:
     void generateActions();
