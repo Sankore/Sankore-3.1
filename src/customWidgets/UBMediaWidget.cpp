@@ -42,6 +42,7 @@ UBMediaWidget::UBMediaWidget(eMediaType type, QWidget *parent, const char *name)
     setAttribute(Qt::WA_StyledBackground, true);
     setStyleSheet(UBApplication::globalStyleSheet());
     mVizMode = eVizualisationMode_Edit;
+    mDragStarted = false;
 
     addAction(eAction_Close);
     mType = type;
@@ -71,6 +72,7 @@ UBMediaWidget::UBMediaWidget(eMediaType type, QWidget *parent, const char *name)
         connect(mpPauseButton, SIGNAL(clicked()), this, SLOT(onPauseClicked()));
         connect(mpSlider, SIGNAL(valueChanged(int)), this, SLOT(onSliderChanged(int)));
     }
+    connect(mpPreviewTitle, SIGNAL(clicked()), this, SLOT(onTitleClicked()));
 }
 
 /**
@@ -204,12 +206,23 @@ void UBMediaWidget::createMediaPlayer()
 void UBMediaWidget::adaptSizeToVideo()
 {
     if(NULL != mpMediaContainer){
-        int origW = mpMediaContainer->width();
-        int origH = mpMediaContainer->height();
+        Phonon::VideoWidget::AspectRatio ar = mpVideoWidget->aspectRatio();
         int newW = width();
-        float scaleFactor = (float)origW/(float)newW;
-        int newH = origH/scaleFactor;
-        resize(newW, height() + newH);
+        float ratio = 1.0;
+        switch(ar){
+            case Phonon::VideoWidget::AspectRatio16_9:
+                ratio = 16.0/9.0;
+            break;
+        case Phonon::VideoWidget::AspectRatio4_3:
+                ratio = 4.0/3.0;
+            break;
+        default:
+                ratio = mpVideoWidget->width() / mpVideoWidget->height();
+            break;
+        }
+
+        int newH = newW / ratio;
+        mpVideoWidget->resize(newW, newH);
     }
 }
 
@@ -335,6 +348,7 @@ void UBMediaWidget::setVizualisationMode(eVizualisationMode mode)
 {
     switch(mode){
     case eVizualisationMode_Edit:
+        qDebug() << "--> Setting mode to Edit";
         mpPreviewTitle->setVisible(false);
         mpTitleLabel->setVisible(true);
         mpTitle->setVisible(true);
@@ -347,42 +361,59 @@ void UBMediaWidget::setVizualisationMode(eVizualisationMode mode)
             mpPicture->setVisible(true);
         }
         break;
-    case eVizualisationMode_Full:
-        mpPreviewTitle->setVisible(true);
-        mpTitleLabel->setVisible(false);
-        mpTitle->setVisible(false);
-        if(eMediaType_Audio == mType || eMediaType_Video == mType){
-            mpMediaContainer->setVisible(true);
-            mpPlayStopButton->setVisible(true);
-            mpPauseButton->setVisible(true);
-            mpSlider->setVisible(true);
-        }else if(eMediaType_Picture == mType){
-            mpPicture->setVisible(true);
-        }
-        break;
     case eVizualisationMode_Half:
+        qDebug() << "--> Setting mode to Half";
         mpPreviewTitle->setVisible(true);
+        mpPreviewTitle->setStyleSheet("background:red;");
         mpTitleLabel->setVisible(false);
-        mLayout.removeWidget(mpTitleLabel);
         mpTitle->setVisible(false);
+        mLayout.removeWidget(mpTitleLabel);
         mLayout.removeWidget(mpTitle);
         if(eMediaType_Audio == mType || eMediaType_Video == mType){
             mpMediaContainer->setVisible(false);
-            mLayout.removeWidget(mpMediaContainer);
             mpPlayStopButton->setVisible(false);
-            mLayout.removeWidget(mpPlayStopButton);
             mpPauseButton->setVisible(false);
-            mLayout.removeWidget(mpPauseButton);
             mpSlider->setVisible(false);
-            mLayout.removeWidget(mpSlider);
+            mLayout.removeWidget(mpMediaContainer);
             mLayout.removeItem(&mSeekerLayout);
         }else if(eMediaType_Picture == mType){
             mpPicture->setVisible(false);
             mLayout.removeWidget(mpPicture);
         }
-
-        setMaximumHeight(80);
+        //setMaximumHeight(80);
         break;
+    case eVizualisationMode_Full:
+        qDebug() << "--> Setting mode to Full";
+        // TODO: Update the height here
+        int h = maximumHeight();
+        mpPreviewTitle->setVisible(true);
+        mpTitleLabel->setVisible(false);
+        mpTitle->setVisible(false);
+        if(eMediaType_Audio == mType || eMediaType_Video == mType){
+            mpMediaContainer->setVisible(true);
+            h += mpMediaContainer->height();
+            mpPlayStopButton->setVisible(true);
+            mpPauseButton->setVisible(true);
+            mpSlider->setVisible(true);
+            h += mpPlayStopButton->height();
+        }else if(eMediaType_Picture == mType){
+            mpPicture->setVisible(true);
+            h += mpPicture->height();
+        }
+        setMinimumHeight(300);
+        break;
+    }
+    mVizMode = mode;
+    qDebug() << "Number of widgets: " << mLayout.count();
+    qDebug() << "Size: " << size();
+}
+
+void UBMediaWidget::onTitleClicked()
+{
+    if(eVizualisationMode_Half == mVizMode){
+        setVizualisationMode(eVizualisationMode_Full);
+    }else if(eVizualisationMode_Full == mVizMode){
+        setVizualisationMode(eVizualisationMode_Half);
     }
 }
 
@@ -507,12 +538,25 @@ void UBMediaTitle::setTitle(const QString &title)
 
 void UBMediaTitle::onAddToPage()
 {
-    // TODO: Implement me
+    // TODO: Implement me v(^_^ )v
 }
 
 void UBMediaTitle::onPlayFullscreen()
 {
-    // TODO: Implement me
+    // TODO: Implement me v(^_^ )v
+}
+
+void UBMediaTitle::mouseReleaseEvent(QMouseEvent *ev)
+{
+    if(ev->pos().x() >= mpTitle->x() &&
+        ev->pos().x() <= mpTitle->x() + mpTitle->width() &&
+        ev->pos().y() >= mpTitle->y() &&
+        ev->pos().y() <= mpTitle->y() + mpTitle->height()){
+        UBMediaWidget* pMediaWidget = dynamic_cast<UBMediaWidget*>(parentWidget());
+        if(NULL != pMediaWidget && !pMediaWidget->dragStarted()){
+            emit clicked();
+        }
+    }
 }
 
 // ----------------------------------------------------------------------------------
@@ -520,9 +564,11 @@ UBMediaExpander::UBMediaExpander(QWidget *parent, const char *name):QWidget(pare
   , mpLayout(NULL)
   , mpButton(NULL)
 {
+    setObjectName(name);
     mpLayout = new QHBoxLayout();
     setLayout(mpLayout);
 
+    setStyleSheet("background:lightblue; padding: 0 0 0 0;");
     mExpanded = false;
 
     mpButton = new QLabel(this);

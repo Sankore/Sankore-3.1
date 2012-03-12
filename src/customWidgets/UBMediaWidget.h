@@ -101,8 +101,11 @@ public:
     ~UBMediaTitle();
     void setTitle(const QString& title);
 
+signals:
+    void clicked();
+
 protected:
-    // Todo: overload the onhover method to make the addtopage & playfullscreen buttons visible
+    void mouseReleaseEvent(QMouseEvent* ev);
 
 private slots:
     void onAddToPage();
@@ -132,6 +135,7 @@ public:
     QString title(){return mpTitle->text();}
     void createMediaPlayer();
     void setVizualisationMode(eVizualisationMode mode);
+    bool dragStarted(){return mDragStarted;}
 
 protected:
     void resizeEvent(QResizeEvent* ev);
@@ -140,6 +144,7 @@ protected:
     QString mFilePath;
     /** The media title */
     QString mTitle;
+    bool mDragStarted;
 
 private slots:
     void onPlayStopClicked();
@@ -148,6 +153,7 @@ private slots:
     void onTotalTimeChanged(qint64 total);
     void onTick(qint64 currentTime);
     void onSliderChanged(int value);
+    void onTitleClicked();
 
 private:
     void adaptSizeToVideo();

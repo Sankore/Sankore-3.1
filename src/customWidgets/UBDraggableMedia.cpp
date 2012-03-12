@@ -17,6 +17,7 @@ void UBDraggableMedia::mousePressEvent(QMouseEvent* ev)
 {
     if(Qt::LeftButton == ev->button()){
         mDragStartPos = ev->pos();
+        mDragStarted = false;
     }
 }
 
@@ -28,6 +29,7 @@ void UBDraggableMedia::mouseMoveEvent(QMouseEvent* ev)
     if((ev->pos() - mDragStartPos).manhattanLength() < QApplication::startDragDistance()){
         return;
     }
+    mDragStarted = true;
     QDrag *drag = new QDrag(this);
     QMimeData *mimeData = new QMimeData;
 
