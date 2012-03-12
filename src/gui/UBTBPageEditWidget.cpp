@@ -387,7 +387,7 @@ QString UBUrlWidget::url()
     QString str;
 
     if(NULL != mpUrl){
-        str = mpUrl->text();// + ";" + mpTitle->text();
+        str = mpUrl->text().startsWith("http://") ? mpUrl->text() : QString("http://" + mpUrl->text());
     }
 
     return str;
@@ -458,8 +458,6 @@ void UBTBMediaContainer::addMedia(const QString& mediaPath)
 {
     if(!mediaPath.isEmpty())
         mMediaList.append(mediaPath);
-    else
-        qWarning() << __FUNCTION__ <<  "empty path";
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mediaPath);
     if(mimeType.contains("image")){
@@ -496,20 +494,9 @@ UBMediaWidget* UBTBMediaContainer::generateMediaWidget(const QString& url)
 
     if(!url.isEmpty())
         mMediaList.append(url);
-    else
-        qWarning() << __FUNCTION__ <<  "empty path";
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(url);
     if(mimeType.contains("image")){
-//        QPixmap pix = QPixmap(url);
-//        UBPictureWidget* pic = new UBPictureWidget();
-//        pic->setUrl(url);
-//        pix.scaledToWidth(pic->label()->width());
-//        pic->label()->resize(pix.width(), pix.height());
-//        pic->label()->setPixmap(pix);
-//        pic->label()->setScaledContents(true);
-//        pic->setObjectName("UBTBMediaPicture");
-//        pW = pic;
         UBMediaWidget* mediaPicture = new UBMediaWidget(eMediaType_Picture);
         mediaPicture->setUrl(url);
         mediaPicture->createMediaPlayer();
