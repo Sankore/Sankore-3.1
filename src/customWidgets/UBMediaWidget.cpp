@@ -102,12 +102,14 @@ void UBMediaWidget::setFile(const QString &filePath)
 {
     Q_ASSERT("" != filePath);
     mFilePath = filePath;
-    mpMediaObject = new Phonon::MediaObject(this);
-    mpMediaObject->setTickInterval(TICK_INTERVAL);
-    connect(mpMediaObject, SIGNAL(stateChanged(Phonon::State,Phonon::State)), this, SLOT(onStateChanged(Phonon::State,Phonon::State)));
-    connect(mpMediaObject, SIGNAL(totalTimeChanged(qint64)), this, SLOT(onTotalTimeChanged(qint64)));
-    connect(mpMediaObject, SIGNAL(tick(qint64)), this, SLOT(onTick(qint64)));
-    mpMediaObject->setCurrentSource(Phonon::MediaSource(filePath));
+    if(mType==eMediaType_Audio || mType==eMediaType_Video){
+        mpMediaObject = new Phonon::MediaObject(this);
+        mpMediaObject->setTickInterval(TICK_INTERVAL);
+        connect(mpMediaObject, SIGNAL(stateChanged(Phonon::State,Phonon::State)), this, SLOT(onStateChanged(Phonon::State,Phonon::State)));
+        connect(mpMediaObject, SIGNAL(totalTimeChanged(qint64)), this, SLOT(onTotalTimeChanged(qint64)));
+        connect(mpMediaObject, SIGNAL(tick(qint64)), this, SLOT(onTick(qint64)));
+        mpMediaObject->setCurrentSource(Phonon::MediaSource(filePath));
+    }
 }
 
 /**
