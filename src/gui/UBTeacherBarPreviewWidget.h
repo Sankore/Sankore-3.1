@@ -66,6 +66,7 @@ signals:
 
 protected:
     void showEvent(QShowEvent* ev);
+    void hideEvent(QShowEvent* ev);
 
 private slots:
     void onEdit();

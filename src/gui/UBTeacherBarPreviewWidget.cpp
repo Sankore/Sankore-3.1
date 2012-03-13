@@ -309,6 +309,8 @@ void UBTeacherBarPreviewWidget::clearFields()
         }
         mStoredWidgets.clear();
     }
+    mLinks.clear();
+    mMedias.clear();
 
     // License
     mpLicenseLabel->setLicense(eLicense_CCBY);
@@ -393,9 +395,17 @@ void UBTeacherBarPreviewWidget::generateComments()
     }
 }
 
+void UBTeacherBarPreviewWidget::hideEvent(QShowEvent* ev)
+{
+    Q_UNUSED(ev);
+    clearFields();
+}
+
+
 void UBTeacherBarPreviewWidget::showEvent(QShowEvent* ev)
 {
     Q_UNUSED(ev);
+    clearFields();
     updateFields();
 }
 

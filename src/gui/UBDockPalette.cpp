@@ -555,7 +555,6 @@ void UBDockPalette::addTab(UBDockPaletteWidget *widget)
 {
     if(!mTabWidgets.contains(widget) && widget->visibleState())
     {
-        widget->setVisible(true);
         mTabWidgets.append(widget);
         mpStackWidget->addWidget(widget);
         mpStackWidget->setCurrentWidget(widget);
