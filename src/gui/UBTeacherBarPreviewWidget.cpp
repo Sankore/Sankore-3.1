@@ -111,12 +111,12 @@ void UBActionPreview::setOwner(int owner)
     if(NULL != mpOwner && NULL != mpContent){
         switch(owner){
             case eActionOwner_Teacher:
-                mpOwner->setText(tr("Teacher"));
+                mpOwner->setText(tr("Prof"));
                 mpContent->setStyleSheet("background:lightblue; border:lightblue;");
                 break;
 
             case eActionOwner_Student:
-                mpOwner->setText(tr("Student"));
+                mpOwner->setText(tr("Elève"));
                 mpContent->setStyleSheet("background:lightgreen; border:lightgreen;");
                 break;
         }
