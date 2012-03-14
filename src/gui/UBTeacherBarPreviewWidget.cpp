@@ -341,7 +341,7 @@ void UBTeacherBarPreviewWidget::generateMedias()
                 mediaPlayer->setFile(mediaUrl);
                 mediaPlayer->createMediaPlayer();
                 mediaPlayer->setTitle(media.title);
-                mediaPlayer->setVizualisationMode(eVizualisationMode_Full);
+                mediaPlayer->setVizualisationMode(eVizualisationMode_Half);
                 mStoredWidgets << mediaPlayer;
                 mMedias << mediaPlayer;
                 mpContentContainer->addWidget(mediaPlayer);
@@ -352,7 +352,7 @@ void UBTeacherBarPreviewWidget::generateMedias()
                 mediaPlayer->setFile(mediaUrl);
                 mediaPlayer->createMediaPlayer();
                 mediaPlayer->setTitle(media.title);
-                mediaPlayer->setVizualisationMode(eVizualisationMode_Full);
+                mediaPlayer->setVizualisationMode(eVizualisationMode_Half);
                 mStoredWidgets << mediaPlayer;
                 mMedias << mediaPlayer;
                 mpContentContainer->addWidget(mediaPlayer);
