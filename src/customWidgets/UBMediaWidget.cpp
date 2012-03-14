@@ -390,6 +390,7 @@ void UBMediaWidget::setVizualisationMode(eVizualisationMode mode)
             mpPicture->setVisible(false);
             mLayout.removeWidget(mpPicture);
         }
+        setMaximumHeight(80);
         break;
     case eVizualisationMode_Full:
         qDebug() << "--> Setting mode to Full";
