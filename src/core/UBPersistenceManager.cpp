@@ -39,6 +39,7 @@ const QString UBPersistenceManager::objectDirectory = "objects"; // added to UBP
 const QString UBPersistenceManager::widgetDirectory = "widgets"; // added to UBPersistenceManager::mAllDirectories
 const QString UBPersistenceManager::videoDirectory = "videos"; // added to UBPersistenceManager::mAllDirectories
 const QString UBPersistenceManager::audioDirectory = "audios"; // added to
+const QString UBPersistenceManager::teacherBarDirectory = "teacherBarObjects";
 
 UBPersistenceManager * UBPersistenceManager::sSingleton = 0;
 
@@ -820,6 +821,32 @@ void UBPersistenceManager::purgeEmptyDocuments()
 
         mHasPurgedDocuments = true;
     }
+}
+
+QString UBPersistenceManager::addObjectToTeacherBarDirectory(UBDocumentProxy* pDocumentProxy, QString pPath)
+{
+    QFileInfo fi(pPath);
+    QString uuid = QUuid::createUuid();
+
+    if (!fi.exists() || !pDocumentProxy)
+        return "";
+
+    QString fileName = UBPersistenceManager::teacherBarDirectory + "/" + uuid + "." + fi.suffix();
+
+    QString destPath = pDocumentProxy->persistencePath() + "/" + fileName;
+
+    if (!QFile::exists(destPath))
+    {
+        QDir dir;
+        dir.mkdir(pDocumentProxy->persistencePath() + "/" + UBPersistenceManager::teacherBarDirectory);
+
+        QFile source(pPath);
+
+        source.copy(destPath);
+    }
+
+    //return fileName;
+    return destPath;
 }
 
 

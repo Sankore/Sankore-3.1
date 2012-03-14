@@ -3,6 +3,9 @@
 #include "frameworks/UBFileSystemUtils.h"
 #include "gui/UBMediaPlayer.h"
 #include "customWidgets/UBMediaWidget.h"
+#include "core/UBApplication.h"
+#include "board/UBBoardController.h"
+#include "core/UBPersistenceManager.h"
 
 #include "UBTBPageEditWidget.h"
 
@@ -432,7 +435,8 @@ void UBTBMediaContainer::dropEvent(QDropEvent* pEvent)
         return;
     }
     if(!resourcePath.isEmpty()){
-        emit mediaDropped(resourcePath);
+        QString destinationPath  = UBPersistenceManager::persistenceManager()->addObjectToTeacherBarDirectory(UBApplication::boardController->activeDocument(),resourcePath);
+        emit mediaDropped(destinationPath);
         pEvent->acceptProposedAction();
     }
 }

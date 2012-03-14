@@ -50,6 +50,7 @@ class UBPersistenceManager : public QObject
         static const QString videoDirectory;
         static const QString audioDirectory;
         static const QString widgetDirectory;
+        static const QString teacherBarDirectory;
 
         static UBPersistenceManager* persistenceManager();
         static void destroy();
@@ -114,6 +115,8 @@ class UBPersistenceManager : public QObject
         virtual QString addAudioFileToDocument(UBDocumentProxy* pDocumentProxy, QUrl sourceUrl, QByteArray pPayload, QUuid objectUuid);
         virtual QString addPdfFileToDocument(UBDocumentProxy* pDocumentProxy, QString path, QUuid objectUuid);
         virtual QString addGraphicsWidgteToDocument(UBDocumentProxy *mDocumentProxy, QString path, QUuid objectUuid);
+
+        QString addObjectToTeacherBarDirectory(UBDocumentProxy* pDocumentProxy, QString pPath);
 
         bool mayHaveVideo(UBDocumentProxy* pDocumentProxy);
         bool mayHaveAudio(UBDocumentProxy* pDocumentProxy);

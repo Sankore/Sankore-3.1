@@ -42,7 +42,7 @@ void UBTeacherBarDataMgr::saveContent()
     }
     // Media
     foreach(sMedia media, mMediaList){
-        infos.medias << QString("%0;%1").arg(media.title).arg(media.url);
+        infos.medias << QString("%0;%1").arg(media.title).arg(media.url.remove(UBApplication::boardController->activeDocument()->persistencePath()));
     }
     // Links
     foreach(sLink link, mUrlList){
@@ -117,7 +117,7 @@ void UBTeacherBarDataMgr::loadContent(bool docChanged)
             if(qslMedia.size() >= 2){
                 sMedia med;
                 med.title = qslMedia.at(0);
-                med.url = qslMedia.at(1);
+                med.url = UBApplication::boardController->activeDocument()->persistencePath() + "/" + qslMedia.at(1);
                 mMediaList << med;
             }
         }
