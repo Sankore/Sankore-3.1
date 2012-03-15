@@ -529,6 +529,8 @@ UBTeacherStudentAction::UBTeacherStudentAction(QWidget *parent, const char *name
     setStyleSheet(UBApplication::globalStyleSheet());
     addAction(eAction_Close);
 
+    setMinimumHeight(40);
+
     // Create the GUI
     mpLayout = new QHBoxLayout(this);
     setLayout(mpLayout);
@@ -549,7 +551,7 @@ UBTeacherStudentAction::UBTeacherStudentAction(QWidget *parent, const char *name
     mpText->setObjectName("DockPaletteWidgetBox");
     mpText->setStyleSheet("background:white;");
 
-    mpLayout->addWidget(mpText, 1);
+    mpComboLayout->addWidget(mpText);
     setActionsParent(this);
 }
 

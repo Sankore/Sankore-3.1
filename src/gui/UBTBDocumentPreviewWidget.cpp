@@ -102,8 +102,8 @@ UBTBDocumentPreviewWidget::UBTBDocumentPreviewWidget(UBTeacherBarDataMgr *pDataM
     mContainerLayout.addWidget(&mMetadataSeparator, 0);
 
     // License
-    mpLicense = new UBTBLicenseWidget(mpContainer);
-    mContainerLayout.addWidget(mpLicense, 0);
+//    mpLicense = new UBTBLicenseWidget(mpContainer);
+//    mContainerLayout.addWidget(mpLicense, 0);
 
     mLayout.addWidget(mpContainer, 1);
 
@@ -145,7 +145,7 @@ void UBTBDocumentPreviewWidget::updateFields()
     mpAuthors->setText(mpDataMgr->authors());
     mpCreationDate->setText(tr("<b>Creation Date:</b> %0").arg(mpDataMgr->creationDate()));
     mpTarget->setText(mpDataMgr->sessionTarget());
-    mpLicense->setLicense(mpDataMgr->sessionLicence());
+//    mpLicense->setLicense(mpDataMgr->sessionLicence());
     mpKeyword->setText(mpDataMgr->keywords());
     mpLevel->setText(mpDataMgr->level());
     mpTopic->setText(mpDataMgr->topic());

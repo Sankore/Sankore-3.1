@@ -204,10 +204,10 @@ UBTeacherBarPreviewWidget::UBTeacherBarPreviewWidget(UBTeacherBarDataMgr* pDataM
     mpContentContainer = new UBTBPreviewContainer(mpContainer);
     mContainerLayout.addWidget(mpContentContainer, 1);
 
-    // License
-    mContainerLayout.addWidget(&mLicenseSeparator);
-    mpLicenseLabel = new UBTBLicenseWidget(mpContainer);
-    mContainerLayout.addWidget(mpLicenseLabel);
+//    // License
+//    mContainerLayout.addWidget(&mLicenseSeparator);
+//    mpLicenseLabel = new UBTBLicenseWidget(mpContainer);
+//    mContainerLayout.addWidget(mpLicenseLabel);
 
     // Document Button
     mpDocumentButton = new QPushButton(tr("Document View"), this);
@@ -289,7 +289,7 @@ void UBTeacherBarPreviewWidget::updateFields()
     //generateLinks();
 
     // License
-    mpLicenseLabel->setLicense(mpDataMgr->sessionLicence());
+//    mpLicenseLabel->setLicense(mpDataMgr->sessionLicence());
 
 }
 
@@ -313,7 +313,7 @@ void UBTeacherBarPreviewWidget::clearFields()
     mMedias.clear();
 
     // License
-    mpLicenseLabel->setLicense(eLicense_CCBY);
+//    mpLicenseLabel->setLicense(eLicense_CCBY);
 }
 
 void UBTeacherBarPreviewWidget::generateActions()
