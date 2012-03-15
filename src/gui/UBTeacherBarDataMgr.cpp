@@ -29,6 +29,8 @@ void UBTeacherBarDataMgr::clearLists()
     mMediaList.clear();
 }
 
+
+
 void UBTeacherBarDataMgr::saveContent()
 {
     // Store the page information in the UBZ
@@ -38,16 +40,16 @@ void UBTeacherBarDataMgr::saveContent()
     infos.title = mPageTitle;
     // Actions
     foreach(sAction action, mActionList){
-        infos.actions << QString("%0;%1").arg(action.type).arg(action.content);
+        infos.actions << QString("%0%1%2").arg(action.type).arg(UBPersistenceManager::gSeparator).arg(action.content);
     }
     // Media
     foreach(sMedia media, mMediaList){
-        infos.medias << QString("%0;%1").arg(media.title).arg(media.url.remove(UBApplication::boardController->activeDocument()->persistencePath()));
+        infos.medias << QString("%0%1%2").arg(media.title).arg(UBPersistenceManager::gSeparator).arg(media.url.remove(UBApplication::boardController->activeDocument()->persistencePath() + "/"));
     }
     // Links
     foreach(sLink link, mUrlList){
         if("" != link.title && "" != link.link){
-            infos.urls << QString("%0;%1").arg(link.title).arg(link.link);
+            infos.urls << QString("%0%1%2").arg(link.title).arg(UBPersistenceManager::gSeparator).arg(link.link);
         }
     }
     // Comments
@@ -98,7 +100,7 @@ void UBTeacherBarDataMgr::loadContent(bool docChanged)
     mPageTitle = nextInfos.title;
     // Actions
     foreach(QString eachAction, nextInfos.actions){
-        QStringList qslAction = eachAction.split(";");
+        QStringList qslAction = eachAction.split(UBPersistenceManager::gSeparator);
         if(2 <= qslAction.size()){
             sAction action;
             action.type = qslAction.at(0).toInt();
@@ -113,7 +115,7 @@ void UBTeacherBarDataMgr::loadContent(bool docChanged)
     else{
         // title;url@title;url;...
         foreach(QString media, nextInfos.medias){
-            QStringList qslMedia = media.split(';');
+            QStringList qslMedia = media.split(UBPersistenceManager::gSeparator);
             if(qslMedia.size() >= 2){
                 sMedia med;
                 med.title = qslMedia.at(0);
@@ -125,7 +127,7 @@ void UBTeacherBarDataMgr::loadContent(bool docChanged)
 
     // Links
     foreach(QString eachUrl, nextInfos.urls){
-        QStringList qslUrl = eachUrl.split(';');
+        QStringList qslUrl = eachUrl.split(UBPersistenceManager::gSeparator);
         if(2 <= qslUrl.size()){
             sLink link;
             link.title = qslUrl.at(0);

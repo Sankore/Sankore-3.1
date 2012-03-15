@@ -41,6 +41,10 @@ const QString UBPersistenceManager::videoDirectory = "videos"; // added to UBPer
 const QString UBPersistenceManager::audioDirectory = "audios"; // added to
 const QString UBPersistenceManager::teacherBarDirectory = "teacherBarObjects";
 
+
+const QString UBPersistenceManager::gId = "id";
+const QString UBPersistenceManager::gSeparator = "$$#@@!@#{}{{]][";
+
 UBPersistenceManager * UBPersistenceManager::sSingleton = 0;
 
 UBPersistenceManager::UBPersistenceManager(QObject *pParent)
@@ -1093,54 +1097,62 @@ void UBPersistenceManager::persistTeacherBar(UBDocumentProxy* pDocumentProxy, in
             if(f.open(QIODevice::ReadOnly))
             {
                 QDomDocument domDoc;
-                if(domDoc.setContent(f.readAll()))
+                QByteArray read = f.readAll();
+                if(domDoc.setContent(read))
                 {
                     f.close();
                     if(f.open(QIODevice::WriteOnly))
                     {
                         QDomElement rootElem = domDoc.documentElement();
                         QDomNode teacherBarNode = rootElem.namedItem("teacherBar");
-                        if(teacherBarNode.isNull())
-                        {
-                            // Create the element
-                            QDomElement teacherElem = domDoc.createElement("teacherBar");
-                            rootElem.appendChild(teacherElem);
-                            teacherBarNode = teacherElem;
+                        QDomElement teacherBarElem;
+                        if(!teacherBarNode.isNull()) {
+                            rootElem.removeChild(teacherBarNode);
                         }
 
-                        // Set the <teacherBar> element values
-                        QDomElement teacherBarElem = teacherBarNode.toElement();
-                        teacherBarElem.setAttribute("title", infos.title);
+                        teacherBarElem = domDoc.createElement("teacherBar");
+                        rootElem.appendChild(teacherBarElem);
+                        teacherBarElem.setAttribute("version","1.40");
 
-                        QString qsAct;
+                        QDomElement title = domDoc.createElement("title");
+                        title.setAttribute("value",infos.title);
+                        title.setAttribute(gId,0);
+                        teacherBarElem.appendChild(title);
+
+                        QDomElement comment = domDoc.createElement("comment");
+                        comment.setAttribute("value", infos.comments);
+                        comment.setAttribute(gId,1);
+                        teacherBarElem.appendChild(comment);
+                        int counter = 2;
+
                         for(int i=0; i<infos.actions.size(); i++){
-                            if(0 != i){
-                                qsAct.append('@');
-                            }
-                            qsAct.append(infos.actions.at(i));
+                            QDomElement action = domDoc.createElement("action");
+                            QStringList attribute = infos.actions.at(i).split(gSeparator);
+                            action.setAttribute("owner", attribute.at(0).toInt());
+                            action.setAttribute("task", attribute.at(1));
+                            action.setAttribute(gId,counter++);
+                            teacherBarElem.appendChild(action);
                         }
-                        teacherBarElem.setAttribute("actions", qsAct);
 
-                        QString qsMedias;
+
                         for(int j=0; j<infos.medias.size(); j++){
-                            if(0 != j){
-                                qsMedias.append('@');
-                            }
-                            qsMedias.append(infos.medias.at(j));
+                            QDomElement media = domDoc.createElement("media");
+                            QStringList attribute = infos.medias.at(j).split(gSeparator);
+                            media.setAttribute("title", attribute.at(0));
+                            media.setAttribute("relativePath", attribute.at(1));
+                            media.setAttribute(gId,counter++);
+                            teacherBarElem.appendChild(media);
                         }
-                        teacherBarElem.setAttribute("medias", qsMedias);
 
-                        QString qsUrls;
+
                         for(int k=0; k<infos.urls.size(); k++){
-                            if(0 != k){
-                                qsUrls.append('@');
-                            }
-                            qsUrls.append(infos.urls.at(k));
+                            QDomElement link = domDoc.createElement("link");
+                            QStringList attribute = infos.urls.at(k).split(gSeparator);
+                            link.setAttribute("title", attribute.at(0));
+                            link.setAttribute("url", attribute.at(1));
+                            link.setAttribute(gId,counter++);
+                            teacherBarElem.appendChild(link);
                         }
-                        teacherBarElem.setAttribute("links", qsUrls);
-
-                        teacherBarElem.setAttribute("comments", infos.comments);
-
                         // Save the file
                         f.write(domDoc.toString().toAscii());
                         f.close();
@@ -1168,12 +1180,39 @@ sTeacherBarInfos UBPersistenceManager::getTeacherBarInfos(UBDocumentProxy* pDocu
                 {
                     QDomElement rootElem = domDoc.documentElement();
                     QDomNode teacherBarNode = rootElem.namedItem("teacherBar");
-
-                    infos.title = teacherBarNode.toElement().attributeNode("title").value();
-                    infos.actions = teacherBarNode.toElement().attributeNode("actions").value().split("@");
-                    infos.medias = teacherBarNode.toElement().attributeNode("medias").value().split("@");
-                    infos.urls = teacherBarNode.toElement().attributeNode("links").value().split("@");
-                    infos.comments = teacherBarNode.toElement().attributeNode("comments").value();
+                    QDomNodeList childList = teacherBarNode.childNodes();
+                    QStringList medias;
+                    QStringList actions;
+                    QStringList urls;
+                    for(int i = 0; i < childList.count() ; i +=1 ){
+                        QDomElement element = childList.at(i).toElement();
+                        QString name = element.nodeName();
+                        qDebug() << name;
+                        if(name == "title")
+                            infos.title = element.attribute("value");
+                        else if (name == "comment")
+                            infos.comments = element.attribute("value");
+                        else if (name == "media"){
+                            QString media;
+                            media = element.attribute("title") + gSeparator + element.attribute("relativePath");
+                            medias << media;
+                        }
+                        else if (name == "action"){
+                            QString action;
+                            action = element.attribute("owner") + gSeparator + element.attribute("task");
+                            actions << action;
+                        }
+                        else if (name == "link"){
+                            QString url;
+                            url = element.attribute("title") + gSeparator + element.attribute("url");
+                            urls << url;
+                        }
+                        else
+                            qCritical() << "Error reading the ubz file";
+                    }
+                    infos.medias = medias;
+                    infos.actions = actions;
+                    infos.urls = urls;
                 }
                 f.close();
             }

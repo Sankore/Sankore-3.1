@@ -51,6 +51,8 @@ class UBPersistenceManager : public QObject
         static const QString audioDirectory;
         static const QString widgetDirectory;
         static const QString teacherBarDirectory;
+        static const QString gId;
+        static const QString gSeparator;
 
         static UBPersistenceManager* persistenceManager();
         static void destroy();
