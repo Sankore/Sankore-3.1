@@ -237,7 +237,7 @@ UBTeacherBarPreviewWidget::~UBTeacherBarPreviewWidget()
 
 void UBTeacherBarPreviewWidget::onActiveSceneChanged()
 {
-    mpPageNbrLabel->setText(tr("Page n° %0").arg(UBApplication::boardController->activeSceneIndex()));
+    mpPageNbrLabel->setText(tr("Page n° %0").arg(UBApplication::boardController->activeSceneIndex()+1));
 }
 
 void UBTeacherBarPreviewWidget::onEdit()
@@ -257,21 +257,22 @@ void UBTeacherBarPreviewWidget::onDocumentClicked()
 void UBTeacherBarPreviewWidget::updateFields()
 {
     // Session Title
-    if("" != mpDataMgr->sessionTitle()){
+ //   if("" != mpDataMgr->sessionTitle()){
         mpSessionTitle->setText(mpDataMgr->sessionTitle());
         mpSessionTitle->setVisible(true);
-    }else{
-        mpSessionTitle->setVisible(false);
-    }
+//    }else{
+//        mpSessionTitle->setVisible(false);
+//    }
 
     // Page Title
-    if("" != mpDataMgr->pageTitle()){
+//    if("" != mpDataMgr->pageTitle()){
         mpTitle->setText(mpDataMgr->pageTitle());
-        mpPageNbrLabel->setText(tr("Page n° %0").arg(UBApplication::boardController->activeSceneIndex()));
+        mpPageNbrLabel->setText(tr("Page n° %0").arg(UBApplication::boardController->activeSceneIndex()+1));
         mpTitleContainer->setVisible(true);
-    }else{
-        mpTitleContainer->setVisible(false);
-    }
+//    }
+//	else{
+//        mpTitleContainer->setVisible(false);
+//    }
 
     // Comments
     generateComments();

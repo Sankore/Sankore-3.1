@@ -476,7 +476,7 @@ void UBPersistenceManager::duplicateDocumentScene(UBDocumentProxy* proxy, int in
     proxy->incPageCount();
 
 	//due to architectural peculiarity we need to save teacher bar info, otherwise we'll see not exactly what we expect
-	sTeacherBarInfos properInfo = getTeacherBarInfos(proxy, index + 1);
+	sTeacherBarInfos properInfo = getTeacherBarInfos(proxy, index/* + 1*/);
 	//after the call below
 	emit documentSceneCreated(proxy, index + 1);
 	//restoring info

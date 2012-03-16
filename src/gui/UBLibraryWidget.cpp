@@ -699,9 +699,16 @@ void UBLibraryWidget::onAddDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl
     if(pSuccess)
     {
         QDir dir;
-        dir.mkdir("tmp");
+		QString tmpPath;
+#ifdef Q_WS_WIN
+		tmpPath = "c:/tmp";
+#else
+		tmpPath = "tmp";
+#endif
+
+		dir.mkdir(tmpPath);
         QString qsFileName = QFileInfo(sourceUrl.toString()).fileName();
-        QString qsFilePath = UBFileSystemUtils::normalizeFilePath(QString("tmp/%0").arg(qsFileName));
+		QString qsFilePath = UBFileSystemUtils::normalizeFilePath(QString("%0/%1").arg(tmpPath).arg(qsFileName));
         QFile f(qsFilePath);
         if(f.open(QIODevice::WriteOnly))
         {
@@ -710,7 +717,7 @@ void UBLibraryWidget::onAddDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl
         }
         mLibraryController->routeItem(qsFilePath);
         dir.remove(qsFileName);
-        dir.rmdir("tmp");       // Due to Qt, the directoy will be removed only if it's empty :)
+		dir.rmdir(tmpPath);       // Due to Qt, the directoy will be removed only if it's empty :)
     }
 }
 
