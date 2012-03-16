@@ -116,7 +116,7 @@ void UBTeacherBarWidget::loadContent(bool docChanged)
 
     // Update the fields
     mpPageEditWidget->updateFields();
-    //mpPreview->updateFields();
+    mpPreview->updateFields();
     if(docChanged){
         mpDocEditWidget->updateFields();
         mpDocPreviewWidget->updateFields();
@@ -179,9 +179,9 @@ void UBTeacherBarWidget::onTBStateChanged(eTeacherBarState state)
     case eTeacherBarState_PagePreview:
         saveContent();
         mpPreview->clearFields();
-//        if(mpPreview->isVisible()){
-//            mpPreview->updateFields();
-//        }
+        if(mpPreview->isVisible()){
+            mpPreview->updateFields();
+        }
         mpStackWidget->setCurrentWidget(mpPreview);
         break;
     }
