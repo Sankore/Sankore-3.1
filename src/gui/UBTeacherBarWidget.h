@@ -39,6 +39,8 @@ public:
     
     void loadContent(bool docChanged = false);
 
+    bool isEmpty();
+
 public slots:
     void saveContent();
 
@@ -51,7 +53,6 @@ private slots:
     void onShowDocumentPreview();
 
 private:
-    bool isEmpty();
 
     QVBoxLayout mLayout;
     QStackedWidget* mpStackWidget;

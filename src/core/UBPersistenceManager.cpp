@@ -32,6 +32,9 @@
 #include "adaptors/UBThumbnailAdaptor.h"
 #include "adaptors/UBMetadataDcSubsetAdaptor.h"
 
+#include "board/UBBoardController.h"
+#include "board/UBBoardPaletteManager.h"
+
 #include "core/memcheck.h"
 
 const QString UBPersistenceManager::imageDirectory = "images"; // added to UBPersistenceManager::mAllDirectories
@@ -785,6 +788,10 @@ bool UBPersistenceManager::isEmpty(UBDocumentProxy* pDocumentProxy)
 
     if (pDocumentProxy->pageCount() > 1)
         return false;
+
+	bool isTeacherBarEmpty = UBApplication::boardController->paletteManager()->teacherBarWidget()->isEmpty();
+	if(!isTeacherBarEmpty)
+		return false;
 
     UBGraphicsScene *theSoleScene = UBSvgSubsetAdaptor::loadScene(pDocumentProxy, 0);
 

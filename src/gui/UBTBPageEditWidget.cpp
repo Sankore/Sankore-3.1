@@ -227,6 +227,8 @@ void UBTBPageEditWidget::saveFields()
         //media.widget->setVizualisationMode(eVizualisationMode_Half);
         mpDataMgr->medias()->append(media);
     }
+	mpDataMgr->setPageTitle(mpTitle->text());
+	mpDataMgr->setComments(mpComments->toPlainText());
 }
 
 void UBTBPageEditWidget::updateFields()

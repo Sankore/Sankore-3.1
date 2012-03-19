@@ -1375,12 +1375,14 @@ void UBBoardController::lastWindowClosed()
 {
     if (!mCleanupDone)
     {
-        if (mActiveDocument->pageCount() == 1 && (!mActiveScene || mActiveScene->isEmpty()))
+		bool isTeacherBarEmpty = UBApplication::boardController->paletteManager()->teacherBarWidget()->isEmpty();
+        if (mActiveDocument->pageCount() == 1 && (!mActiveScene || mActiveScene->isEmpty()) && isTeacherBarEmpty)
         {
             UBPersistenceManager::persistenceManager()->deleteDocument(mActiveDocument);
         }
         else
         {
+			UBApplication::boardController->paletteManager()->teacherBarWidget()->saveContent();
             persistCurrentScene();
         }
 
