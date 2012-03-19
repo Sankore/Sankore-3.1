@@ -389,9 +389,14 @@ QString UBUrlWidget::url()
 {
     QString str;
 
-    if(NULL != mpUrl)
-        str = mpUrl->text().startsWith("http://") ? mpUrl->text() : QString("http://" + mpUrl->text());
-    return str;
+	QString urlString = mpUrl->text();
+	if(NULL != mpUrl){
+		if(urlString.startsWith("http") || urlString.startsWith("ftp") || urlString.startsWith("sftp"))
+			str = mpUrl->text();
+		else
+			str = QString("http://" + mpUrl->text());
+	}
+	return str;
 }
 
 void UBUrlWidget::setUrl(const QString &url)
