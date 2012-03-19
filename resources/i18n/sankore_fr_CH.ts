@@ -377,7 +377,7 @@
     </message>
     <message>
         <source>Show Desktop</source>
-        <translation>Afficher le bureau</translation>
+        <translation>Bureau</translation>
     </message>
     <message>
         <source>Ctrl+Shift+H</source>
@@ -866,11 +866,11 @@
     <name>UBActionPreview</name>
     <message>
         <source>pTeacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Prof</translation>
     </message>
     <message>
         <source>pStudent</source>
-        <translation type="unfinished"></translation>
+        <translation>Elève</translation>
     </message>
 </context>
 <context>
@@ -1601,7 +1601,7 @@
     <name>UBMediaWidget</name>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Titre</translation>
+        <translation>Titre</translation>
     </message>
 </context>
 <context>
@@ -1677,7 +1677,7 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     <name>UBPictureWidget</name>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Titre</translation>
+        <translation>Titre</translation>
     </message>
 </context>
 <context>
@@ -1807,7 +1807,7 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     <name>UBTBDocumentEditWidget</name>
     <message>
         <source>Session Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titre de la séance</translation>
     </message>
     <message>
         <source>Session Target</source>
@@ -1831,7 +1831,7 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation type="unfinished">Auteur</translation>
+        <translation>Auteur</translation>
     </message>
     <message>
         <source>License</source>
@@ -1843,7 +1843,7 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aperçu</translation>
     </message>
 </context>
 <context>
@@ -1886,7 +1886,7 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Editer</translation>
     </message>
     <message>
         <source>&lt;b&gt;Creation Date:&lt;/b&gt; %0</source>
@@ -1904,43 +1904,43 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     <name>UBTBPageEditWidget</name>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Titre</translation>
+        <translation>Titre</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Action</translation>
     </message>
     <message>
         <source>Add actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une action</translation>
     </message>
     <message>
         <source>Add action</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une action</translation>
     </message>
     <message>
         <source>Medias</source>
-        <translation type="unfinished"></translation>
+        <translation>Média</translation>
     </message>
     <message>
         <source>Drop media here</source>
-        <translation type="unfinished"></translation>
+        <translation>Glisser un média ici</translation>
     </message>
     <message>
         <source>Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Lien</translation>
     </message>
     <message>
         <source>Add link</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un lien</translation>
     </message>
     <message>
         <source>Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Commentaire</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Aperçu</translation>
     </message>
     <message>
         <source>Document View</source>
@@ -1951,15 +1951,15 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     <name>UBTeacherBarPreviewWidget</name>
     <message>
         <source>Session: </source>
-        <translation type="unfinished"></translation>
+        <translation>Session:</translation>
     </message>
     <message>
         <source>Activity</source>
-        <translation type="unfinished">Activité</translation>
+        <translation>Activité</translation>
     </message>
     <message>
         <source>Page nÂ° </source>
-        <translation type="unfinished"></translation>
+        <translation>Page numéro</translation>
     </message>
     <message>
         <source>Document View</source>
@@ -1967,11 +1967,11 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Editer</translation>
     </message>
     <message>
         <source>Page nÂ° %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Page numéro %0</translation>
     </message>
 </context>
 <context>
@@ -1985,11 +1985,11 @@ Voulez-vous ignorer les erreurs pour ce serveur?</translation>
     <name>UBTeacherStudentAction</name>
     <message>
         <source>Teacher</source>
-        <translation type="unfinished">Éducateur</translation>
+        <translation>Prof</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation type="unfinished">Étudiant</translation>
+        <translation>Elève</translation>
     </message>
 </context>
 <context>
@@ -2707,11 +2707,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Multi display</source>
-        <translation type="unfinished"></translation>
+        <translation>Multiple écrans</translation>
     </message>
     <message>
         <source>Swap control display and view display</source>
-        <translation type="unfinished"></translation>
+        <translation>Inverser les deux écrans</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
