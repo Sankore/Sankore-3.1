@@ -98,6 +98,7 @@ else
     LAST_COMMITED_VERSION="`git describe $(git rev-list --tags --max-count=1)`"
     if [ "v$VERSION" != "$LAST_COMMITED_VERSION" ]; then
 	echo creating a tag with the version $VERSION
+	VERSION="crdp"
 	git tag -a "v$VERSION" -m "Generated setup for v$VERSION"
 	git push origin --tags
     fi
