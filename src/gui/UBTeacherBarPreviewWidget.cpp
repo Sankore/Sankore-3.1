@@ -127,7 +127,8 @@ void UBActionPreview::setContent(const QString &content)
 {
     if(NULL != mpContent){
         mpContent->setText(content);
-        setMinimumHeight(mpOwner->height() + mpContent->document()->documentLayout()->documentSize().toSize().height());
+		setMinimumHeight(40);
+        //setMinimumHeight(mpOwner->height() + mpContent->document()->documentLayout()->documentSize().toSize().height());
     }
 }
 

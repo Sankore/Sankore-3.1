@@ -108,11 +108,6 @@ UBBoardPaletteManager::~UBBoardPaletteManager()
         delete mpDesktopLibWidget;
         mpDesktopLibWidget = NULL;
     }
-//     if(NULL != mDesktopRightPalette)
-//     {
-//         delete mDesktopRightPalette;
-//         mDesktopRightPalette = NULL;
-//     }
 }
 
 void UBBoardPaletteManager::initPalettesPosAtStartup()
