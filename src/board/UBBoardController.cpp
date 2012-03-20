@@ -499,6 +499,7 @@ void UBBoardController::duplicateScene()
         return;
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+    UBApplication::boardController->paletteManager()->teacherBarWidget()->saveContent();
     persistCurrentScene();
 
     UBPersistenceManager::persistenceManager()->duplicateDocumentScene(mActiveDocument, mActiveSceneIndex);
