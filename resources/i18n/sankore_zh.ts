@@ -865,11 +865,11 @@
 <context>
     <name>UBActionPreview</name>
     <message>
-        <source>pTeacher</source>
+        <source>Prof</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>pStudent</source>
+        <source>ElÃ¨ve</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
