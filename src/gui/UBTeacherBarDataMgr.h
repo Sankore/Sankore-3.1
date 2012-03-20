@@ -75,6 +75,7 @@ class UBTeacherBarDataMgr
 public:
     UBTeacherBarDataMgr();
     ~UBTeacherBarDataMgr();
+    bool couldSaveContent;
 
     // Session Title
     void setSessionTitle(const QString& title){mSessionTitle = title;}
@@ -150,6 +151,7 @@ private:
     QVector<sAction> mActionList;
     QVector<sLink> mUrlList;
     QVector<sMedia> mMediaList;
+
 };
 
 #endif // UBTEACHERBARDATAMGR_H

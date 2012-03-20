@@ -74,6 +74,22 @@ void UBTeacherBarWidget::onActiveDocumentChanged()
     loadContent(true);
 }
 
+
+void UBTeacherBarWidget::onWillMoveToIndex(int index)
+{
+    Q_UNUSED(index);
+    saveContent();
+    mData.couldSaveContent = false;
+}
+
+void UBTeacherBarWidget::onMovedToIndex(int index)
+{
+    Q_UNUSED(index);
+    mData.couldSaveContent = true;
+    loadContent(true);
+
+}
+
 void UBTeacherBarWidget::onValueChanged()
 {
     if(isEmpty())

@@ -46,6 +46,8 @@ public slots:
 
 private slots:
     void loadContentInfos();
+    void onWillMoveToIndex(int index);
+    void onMovedToIndex(int index);
     void onValueChanged();
     void onShowEditMode();
     void onTBStateChanged(eTeacherBarState state);

@@ -248,6 +248,10 @@ int UBApplication::exec(const QString& pFileToImport)
     webController = new UBWebController(mainWindow);
     documentController = new UBDocumentController(mainWindow);
 
+    connect(documentController,SIGNAL(willMoveToIndex(int)), boardController->paletteManager()->teacherBarWidget(), SLOT(onWillMoveToIndex(int)));
+
+    connect(documentController,SIGNAL(movedToIndex(int)), boardController->paletteManager()->teacherBarWidget(), SLOT(onMovedToIndex(int)));
+
     boardController->paletteManager()->connectToDocumentController();
 
     applicationController = new UBApplicationController(boardController->controlView(), boardController->displayView(), mainWindow, staticMemoryCleaner);

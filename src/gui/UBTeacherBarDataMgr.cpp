@@ -14,7 +14,7 @@
 
 UBTeacherBarDataMgr::UBTeacherBarDataMgr()
 {
-
+ couldSaveContent = true;
 }
 
 UBTeacherBarDataMgr::~UBTeacherBarDataMgr()
@@ -33,6 +33,9 @@ void UBTeacherBarDataMgr::clearLists()
 
 void UBTeacherBarDataMgr::saveContent()
 {
+    if (!couldSaveContent)
+        return;
+
     // Store the page information in the UBZ
     sTeacherBarInfos infos;
 

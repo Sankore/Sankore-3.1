@@ -55,6 +55,7 @@ class UBDocumentController : public QObject
         void refreshThumbnails();
         void exportDone();
         void movedToIndex(int index);
+        void willMoveToIndex(int index);
 
     public slots:
         void createNewDocument();

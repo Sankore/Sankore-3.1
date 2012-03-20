@@ -1144,6 +1144,7 @@ bool UBDocumentController::addFileToDocument(UBDocumentProxy* document)
 
 void UBDocumentController::moveSceneToIndex(UBDocumentProxy* proxy, int source, int target)
 {
+    emit willMoveToIndex(target);
     UBPersistenceManager::persistenceManager()->moveSceneToIndex(proxy, source, target);
 
     proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
