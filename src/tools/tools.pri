@@ -1,4 +1,5 @@
 
+include(camViewer/camViewer.pri)
 HEADERS      += src/tools/UBGraphicsRuler.h \
 		src/tools/UBGraphicsTriangle.h \
                 src/tools/UBGraphicsProtractor.h \
