@@ -91,6 +91,13 @@ UBToolsManager::UBToolsManager(QObject *parent)
     mDescriptors << cache;
 //  --------------------------------------------------------------------------------
 
+	camViewer.id = "uniboardTool://uniboard.mnemis.com/camViewer";
+    camViewer.icon = QPixmap(":/images/toolPalette/camViewerTool.png");
+    
+	camViewer.label = tr("Visualiseur");
+    camViewer.version = "1.0";
+    mToolsIcon.insert(camViewer.id, ":/images/toolPalette/camViewerTool.png");
+    mDescriptors << camViewer;
 }
 
 UBToolsManager::~UBToolsManager()

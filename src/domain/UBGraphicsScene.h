@@ -202,6 +202,7 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
         }
 
         void addRuler(QPointF center);
+		void addCamViewer(QPointF center);
         void addProtractor(QPointF center);
         void addCompass(QPointF center);
         void addTriangle(QPointF center);

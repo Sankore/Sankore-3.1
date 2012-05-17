@@ -1072,6 +1072,11 @@ void UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QString 
             mActiveScene->addProtractor(pPos);
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
         }
+		else if (sourceUrl.toString() == UBToolsManager::manager()->camViewer.id)
+        {
+            mActiveScene->addCamViewer(pPos);
+            UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+        }
         else if (sourceUrl.toString() == UBToolsManager::manager()->triangle.id)
         {
             mActiveScene->addTriangle(pPos);

@@ -38,6 +38,7 @@
 #include "tools/UBGraphicsTriangle.h"
 #include "tools/UBGraphicsCurtainItem.h"
 #include "tools/UBGraphicsCache.h"
+#include "tools/camViewer/QopenCvWidget.h"
 
 #include "document/UBDocumentProxy.h"
 
@@ -1918,6 +1919,29 @@ void UBGraphicsScene::addRuler(QPointF center)
     setModified(true);
 }
 
+void UBGraphicsScene::addCamViewer(QPointF center)
+{
+	//on crée un proxy pour transformée le widget en rectangle.
+	QopenCvWidget* camViewerProxy = new QopenCvWidget();
+	
+	//on rajoute l'outil et défini les dimentions.
+	mTools << camViewerProxy;
+	QRect rect = QRect(center.x() - camViewerProxy->QWidget::rect().width()/2, center.y() - camViewerProxy->QWidget::rect().height()/2, camViewerProxy->QWidget::rect().width(), camViewerProxy->QWidget::rect().height());
+	//graphicsItem->setRect();
+	camViewerProxy->QGraphicsProxyWidget::setGeometry(rect);
+   
+    //camViewerProxy->setFlag(QGraphicsItem::ItemIsMovable, true);
+    camViewerProxy->setFlag(QGraphicsItem::ItemIsSelectable, true);
+	//offset de l'outils
+    //UBGraphicsItem::assignZValue(camViewerProxy, toolLayerStart + toolOffsetRuler);
+	//camViewerProxy->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Tool));
+	
+	//on ajoute l'outils que l'on vien d'instancier a la scene.
+	addItem(camViewerProxy);
+	camViewerProxy->QGraphicsProxyWidget::show();
+	
+	setModified(true);
+}
 
 void UBGraphicsScene::addProtractor(QPointF center)
 {
