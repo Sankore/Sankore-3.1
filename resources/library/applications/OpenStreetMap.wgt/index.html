@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Open Street Map</title>
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+		<style type="text/css" media="all">
+			html, body, #demoMap {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				position: relative;
+				z-index: 0;
+			}
+
+			#search_form {
+				position: absolute;
+				z-index: 1;
+				bottom: 0.5em;
+				right: 0.5em;
+			}
+		</style>
+		<script src="api/OpenLayers.js"></script>
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script>			
+			function updateMap(coordinates, map) {
+				var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+				var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+				var position       = new OpenLayers.LonLat(coordinates["lng"], coordinates["lat"]).transform( fromProjection, toProjection);
+				map.addLayer(new OpenLayers.Layer.OSM());
+				map.setCenter(position, coordinates["zoom"]);
+			}				
+
+			function doSearch(query, map) {
+				$.ajax({
+					url: "http://api.geonames.org/searchJSON",
+					data: { q: unescape(encodeURIComponent(query)), maxRows: "1", username: "yimgo" },
+					success: function(data) {	
+						data = JSON.stringify(data);
+						data = JSON.parse(data);
+						
+						if (typeof data["geonames"][0]!= 'undefined') {
+							var coordinates = new Array();
+							coordinates["lng"] = data["geonames"][0].lng;
+							coordinates["lat"] = data["geonames"][0].lat;
+							if (data["geonames"][0].fcl == "A")
+								coordinates["zoom"] = 6;
+							else
+								coordinates["zoom"] = 12;
+							
+							updateMap(coordinates, map);
+						}
+					}
+					
+	  	  		});
+			}
+
+			window.onload = function() {
+				var map = new OpenLayers.Map("demoMap");
+		    	map.addLayer(new OpenLayers.Layer.OSM());
+				map.zoomToMaxExtent();
+		
+				$("#search_form").submit(function (event) {
+					doSearch($("#query").val(), map);
+					return false;
+				}); 
+			};
+		</script>
+	</head>
+	<body>
+		<div id="demoMap">	  
+		</div>
+
+		<form method="post" id="search_form" action="#" accept-charset="UTF-8">
+			<input type="text" value="" tabindex="1" name="query" id="query">
+			<input type="submit" value="Go" name="commit">
+		</form>
+	</body>
+</html>
