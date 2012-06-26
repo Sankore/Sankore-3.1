@@ -1774,7 +1774,8 @@ UBGraphicsPolygonItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemFromLin
         lineWidth = strokeWidth.toString().toFloat();
     }
 
-    UBGraphicsPolygonItem* polygonItem = new UBGraphicsPolygonItem(line, lineWidth);
+    // TODO: Handle correctly the pressure in this case
+    UBGraphicsPolygonItem* polygonItem = new UBGraphicsPolygonItem(line, lineWidth, lineWidth);
 
     QStringRef svgStroke = mXmlReader.attributes().value("stroke");
 
@@ -1951,7 +1952,8 @@ QList<UBGraphicsPolygonItem*> UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItem
 
         for (int i = 0; i < points.size() - 1; i++)
         {
-            UBGraphicsPolygonItem* polygonItem = new UBGraphicsPolygonItem(QLineF(points.at(i), points.at(i + 1)), lineWidth);
+        	// TODO: Handle correctly this case for the pressure
+            UBGraphicsPolygonItem* polygonItem = new UBGraphicsPolygonItem(QLineF(points.at(i), points.at(i + 1)), lineWidth, lineWidth);
             polygonItem->setColor(brushColor);
             UBGraphicsItem::assignZValue(polygonItem, zValue);
             polygonItem->setColorOnDarkBackground(colorOnDarkBackground);

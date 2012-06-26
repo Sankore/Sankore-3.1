@@ -456,7 +456,7 @@ void UBGraphicsRuler::StartLine(const QPointF& scenePos, qreal width)
 	itemPos = mapToScene(itemPos);
 
     scene()->moveTo(itemPos);
-    scene()->drawLineTo(itemPos, width, true);
+    scene()->drawLineTo(itemPos, width, width, true);
 }
 
 void UBGraphicsRuler::DrawLine(const QPointF& scenePos, qreal width)
@@ -481,7 +481,7 @@ void UBGraphicsRuler::DrawLine(const QPointF& scenePos, qreal width)
 	itemPos = mapToScene(itemPos);
 
 	// We have to use "pointed" line for marker tool
-    scene()->drawLineTo(itemPos, width, UBDrawingController::drawingController()->stylusTool() != UBStylusTool::Marker);
+    scene()->drawLineTo(itemPos, width, width, UBDrawingController::drawingController()->stylusTool() != UBStylusTool::Marker);
 }
 
 void UBGraphicsRuler::EndLine()

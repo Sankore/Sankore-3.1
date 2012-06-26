@@ -46,7 +46,11 @@ UBDrawingController::UBDrawingController(QObject * parent)
     , mStylusTool((UBStylusTool::Enum)-1)
     , mLatestDrawingTool((UBStylusTool::Enum)-1)
     , mDrawingMode(DRAWING_MODE)
-
+	, pressure(1.0)
+	, previousPressure(1.0)
+	, rotation(0.0)
+	, xTilt(0)
+	, yTilt(0)
 {
     connect(UBSettings::settings(), SIGNAL(colorContextChanged()), this, SIGNAL(colorPaletteChanged()));
 

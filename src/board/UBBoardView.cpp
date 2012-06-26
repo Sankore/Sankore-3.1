@@ -300,79 +300,71 @@ UBBoardView::event (QEvent * e)
 
 void UBBoardView::tabletEvent (QTabletEvent * event)
 {
-    if (!mUseHighResTabletEvent) {
-        event->setAccepted (false);
+    if(!mUseHighResTabletEvent){
+        event->setAccepted(false);
         return;
     }
 
-    UBDrawingController *dc = UBDrawingController::drawingController ();
+    UBDrawingController *dc = UBDrawingController::drawingController();
 
     QPointF tabletPos = event->pos();
-    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)dc->stylusTool ();
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)dc->stylusTool();
 
-    if (event->type () == QEvent::TabletPress || event->type () == QEvent::TabletEnterProximity) {
-        if (event->pointerType () == QTabletEvent::Eraser) {
-            dc->setStylusTool (UBStylusTool::Eraser);
+    // This part handle the pen eraser (= when the the user uses the reverse side of the pen)
+    if(event->type() == QEvent::TabletPress || event->type() == QEvent::TabletEnterProximity){
+        if(event->pointerType() == QTabletEvent::Eraser){
+            dc->setStylusTool(UBStylusTool::Eraser);
             mUsingTabletEraser = true;
         }
-        else {
-            if (mUsingTabletEraser && currentTool == UBStylusTool::Eraser)
-                dc->setStylusTool (dc->latestDrawingTool ());
-
+        else{
+            if(mUsingTabletEraser && currentTool == UBStylusTool::Eraser)
+                dc->setStylusTool(dc->latestDrawingTool());
             mUsingTabletEraser = false;
         }
     }
 
-    // if event are not Pen events, we drop the tablet stuff and route everything through mouse event
-    if (currentTool != UBStylusTool::Pen && currentTool != UBStylusTool::Line && currentTool != UBStylusTool::Marker && !mMarkerPressureSensitive){
+    // If event are not Pen events, we drop the tablet stuff and route everything through mouse event
+    if(currentTool != UBStylusTool::Pen && currentTool != UBStylusTool::Line && currentTool != UBStylusTool::Marker && !mMarkerPressureSensitive){
         event->setAccepted (false);
         return;
     }
 
-    QPointF scenePos = viewportTransform ().inverted ().map (tabletPos);
+    QPointF scenePos = viewportTransform().inverted().map(tabletPos);
 
     qreal pressure = 1.0;
-    if (((currentTool == UBStylusTool::Pen || currentTool == UBStylusTool::Line)
-         && mPenPressureSensitive)
-            || (currentTool == UBStylusTool::Marker && mMarkerPressureSensitive))
-        pressure = event->pressure ();
-
+    if (((currentTool == UBStylusTool::Pen || currentTool == UBStylusTool::Line) && mPenPressureSensitive) || (currentTool == UBStylusTool::Marker && mMarkerPressureSensitive)){
+    	pressure = event->pressure ();
+    	dc->previousPressure = dc->pressure;
+    	dc->pressure = event->pressure();
+    	dc->rotation = event->rotation();
+    	dc->xTilt = event->xTilt();
+    	dc->yTilt = event->yTilt();
+    }
 
     bool acceptEvent = true;
 
-    switch (event->type ()) {
-    case QEvent::TabletPress: {
+    switch(event->type()){
+    case QEvent::TabletPress:
         mTabletStylusIsPressed = true;
-        scene()->inputDevicePress (scenePos, pressure);
-
+        dc->previousPressure = dc->pressure;
+        scene()->inputDevicePress(scenePos);
         break;
-    }
-    case QEvent::TabletMove: {
-        if (mTabletStylusIsPressed)
-            scene ()->inputDeviceMove (scenePos, pressure);
-
+    case QEvent::TabletMove:
+        if(mTabletStylusIsPressed){
+        	scene()->inputDeviceMove(scenePos);
+        }
         acceptEvent = false; // rerouted to mouse move
-
         break;
-
-    }
-    case QEvent::TabletRelease: {
-        UBStylusTool::Enum currentTool = (UBStylusTool::Enum)dc->stylusTool ();
-        scene ()->setToolCursor (currentTool);
-        setToolCursor (currentTool);
-
-        scene ()->inputDeviceRelease ();
-
+    case QEvent::TabletRelease:
+        scene()->setToolCursor(currentTool);
+        setToolCursor(currentTool);
+        scene()->inputDeviceRelease();
         mPendingStylusReleaseEvent = false;
-
         mTabletStylusIsPressed = false;
         mMouseButtonIsPressed = false;
-
         break;
-    }
-    default: {
-        //NOOP - avoid compiler warning
-    }
+    default:
+    	break;
     }
 
     // ignore mouse press and mouse move tablet event so that it is rerouted to mouse events,
@@ -382,9 +374,7 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     //
     // This is a workaround to the fact that tablet event are not delivered to child widget (like palettes)
     //
-
-    event->setAccepted (acceptEvent);
-
+    event->setAccepted(acceptEvent);
 }
 
 bool UBBoardView::itemIsLocked(QGraphicsItem *item)
@@ -680,7 +670,8 @@ void UBBoardView::longPressEvent()
 void UBBoardView::mousePressEvent (QMouseEvent *event)
 {
     mIsDragInProgress = false;
-
+    UBDrawingController::drawingController()->pressure = 1.0;
+    UBDrawingController::drawingController()->previousPressure = 1.0;
     if (isAbsurdPoint (event->pos ()))
     {
         event->accept ();
@@ -896,7 +887,7 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
     {
       if (!mTabletStylusIsPressed && scene ())
       {           
-          scene ()->inputDeviceMove (mapToScene (UBGeometryUtils::pointConstrainedInRect (event->pos (), rect ())), mMouseButtonIsPressed);
+          scene ()->inputDeviceMove (mapToScene (UBGeometryUtils::pointConstrainedInRect (event->pos (), rect ())));
       }
       event->accept ();
     }

@@ -338,30 +338,31 @@ void UBGraphicsScene::updateGroupButtonState()
     }
 }
 
-bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pressure)
+bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos)
 {
     //mMesure1Ms = 0;
     //mMesure2Ms = 0;
 
     bool accepted = false;
+    UBDrawingController* dc = UBDrawingController::drawingController();
 
     if (mInputDeviceIsPressed)
     {
         qWarning() << "scene received input device pressed, without input device release, muting event as input device move";
-        accepted = inputDeviceMove(scenePos, pressure);
+        accepted = inputDeviceMove(scenePos);
     }
     else
     {
         mInputDeviceIsPressed = true;
+        UBStylusTool::Enum currentTool = (UBStylusTool::Enum)dc->stylusTool();
 
-        UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
-
-        if (UBDrawingController::drawingController()->isDrawingTool())
+        if (dc->isDrawingTool())
         {
             // -----------------------------------------------------------------
             // We fall here if we are using the Pen, the Marker or the Line tool
             // -----------------------------------------------------------------
-            qreal width = 0;
+            qreal width = 1;
+            qreal previouswidth = 1;
 
             // delete current stroke, if not assigned to any polygon
             if (mCurrentStroke && mCurrentStroke->polygons().empty()){
@@ -376,26 +377,30 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
 
             if (currentTool != UBStylusTool::Line){
                 // Handle the pressure
-                width = UBDrawingController::drawingController()->currentToolWidth() * pressure;
+                width = dc->currentToolWidth() * dc->pressure;
+                previouswidth = dc->currentToolWidth() * dc->previousPressure;
             }else{
                 // Ignore pressure for the line tool
                 width = UBDrawingController::drawingController()->currentToolWidth();
+                previouswidth = width;
             }
 
             width /= UBApplication::boardController->systemScaleFactor();
             width /= UBApplication::boardController->currentZoom();
+            previouswidth /= UBApplication::boardController->systemScaleFactor();
+            previouswidth /= UBApplication::boardController->currentZoom();
 
             mAddedItems.clear();
             mRemovedItems.clear();
 
-            if (UBDrawingController::drawingController()->mActiveRuler)
+            if (dc->mActiveRuler)
             {
-                UBDrawingController::drawingController()->mActiveRuler->StartLine(scenePos, width);
+                dc->mActiveRuler->StartLine(scenePos, width);
             }
             else
             {
                 moveTo(scenePos);
-                drawLineTo(scenePos, width, UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+                drawLineTo(scenePos, previouswidth, width, dc->stylusTool() == UBStylusTool::Line);
             }
             accepted = true;
         }
@@ -424,7 +429,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
     return accepted;
 }
 
-bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pressure)
+bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos)
 {
     bool accepted = false;
 
@@ -444,17 +449,22 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
         if (dc->isDrawingTool())
         {
             qreal width = 0;
+            qreal previousWidth = 0;
 
             if (currentTool != UBStylusTool::Line){
                 // Handle the pressure
-                width = dc->currentToolWidth() * pressure;
+                width = dc->currentToolWidth() * dc->pressure;
+                previousWidth = dc->currentToolWidth() * dc->previousPressure;
             }else{
                 // Ignore pressure for line tool
                 width = dc->currentToolWidth();
+                previousWidth = width;
             }
 
             width /= UBApplication::boardController->systemScaleFactor();
             width /= UBApplication::boardController->currentZoom();
+            previousWidth /= UBApplication::boardController->systemScaleFactor();
+            previousWidth /= UBApplication::boardController->currentZoom();
 
             if (currentTool == UBStylusTool::Line || dc->mActiveRuler)
             {
@@ -485,7 +495,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
             if(dc->mActiveRuler){
                 dc->mActiveRuler->DrawLine(position, width);
             }else{
-                drawLineTo(position, width, UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+                drawLineTo(position, previousWidth, width, dc->stylusTool() == UBStylusTool::Line);
             }
         }
         else if (currentTool == UBStylusTool::Eraser)
@@ -680,12 +690,9 @@ void UBGraphicsScene::moveTo(const QPointF &pPoint)
     mDrawWithCompass = false;
 }
 
-void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, bool bLineStyle)
+void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal& previousWidth, const qreal &pWidth, bool bLineStyle)
 {
-    if (mPreviousWidth == -1.0)
-        mPreviousWidth = pWidth;
-
-    UBGraphicsPolygonItem *polygonItem = lineToPolygonItem(QLineF(mPreviousPoint, pEndPoint), pWidth);
+    UBGraphicsPolygonItem *polygonItem = lineToPolygonItem(QLineF(mPreviousPoint, pEndPoint), previousWidth, pWidth);
 
     if (!polygonItem->brush().isOpaque())
     {
@@ -727,7 +734,6 @@ void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, 
     if (!bLineStyle)
     {
         mPreviousPoint = pEndPoint;
-        mPreviousWidth = pWidth;
     }
 }
 
@@ -1047,9 +1053,9 @@ void UBGraphicsScene::recolorAllItems()
     }
 }
 
-UBGraphicsPolygonItem* UBGraphicsScene::lineToPolygonItem(const QLineF &pLine, const qreal &pWidth)
+UBGraphicsPolygonItem* UBGraphicsScene::lineToPolygonItem(const QLineF &pLine, const qreal& previousWidth, const qreal &pWidth)
 {
-    UBGraphicsPolygonItem *polygonItem = new UBGraphicsPolygonItem(pLine, pWidth);
+    UBGraphicsPolygonItem *polygonItem = new UBGraphicsPolygonItem(pLine, previousWidth, pWidth);
 
     initPolygonItem(polygonItem);
 

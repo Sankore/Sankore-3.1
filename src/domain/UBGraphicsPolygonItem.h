@@ -31,7 +31,7 @@ class UBGraphicsPolygonItem : public QGraphicsPolygonItem, public UBItem
     public:
 
         UBGraphicsPolygonItem(QGraphicsItem * parent = 0 );
-        UBGraphicsPolygonItem(const QLineF& line, qreal pWidth);
+        UBGraphicsPolygonItem(const QLineF& line, const qreal& previousWidth, const qreal& pWidth);
         UBGraphicsPolygonItem(const QPolygonF & polygon, QGraphicsItem * parent = 0);
 
         ~UBGraphicsPolygonItem();

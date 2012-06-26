@@ -114,8 +114,8 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
         void clearItems();
         void clearAnnotations();
 
-        bool inputDevicePress(const QPointF& scenePos, const qreal& pressure = 1.0);
-        bool inputDeviceMove(const QPointF& scenePos, const qreal& pressure = 1.0);
+        bool inputDevicePress(const QPointF& scenePos);
+        bool inputDeviceMove(const QPointF& scenePos);
         bool inputDeviceRelease();
 
         void leaveEvent (QEvent* event);
@@ -166,7 +166,7 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
         QGraphicsItem *itemByUuid(QUuid uuid);
 
         void moveTo(const QPointF& pPoint);
-        void drawLineTo(const QPointF& pEndPoint, const qreal& pWidth, bool bLineStyle);
+        void drawLineTo(const QPointF& pEndPoint, const qreal& previousWidth, const qreal& pWidth, bool bLineStyle);
         void eraseLineTo(const QPointF& pEndPoint, const qreal& pWidth);
         void drawArcTo(const QPointF& pCenterPoint, qreal pSpanAngle);
 
@@ -328,7 +328,7 @@ public slots:
 
     protected:
 
-        UBGraphicsPolygonItem* lineToPolygonItem(const QLineF& pLine, const qreal& pWidth);
+        UBGraphicsPolygonItem* lineToPolygonItem(const QLineF& pLine, const qreal& previousWidth, const qreal& pWidth);
         UBGraphicsPolygonItem* arcToPolygonItem(const QLineF& pStartRadius, qreal pSpanAngle, qreal pWidth);
         UBGraphicsPolygonItem* polygonToPolygonItem(const QPolygonF pPolygon);
 

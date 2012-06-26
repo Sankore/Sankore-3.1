@@ -46,8 +46,8 @@ UBGraphicsPolygonItem::UBGraphicsPolygonItem (const QPolygonF & polygon, QGraphi
 }
 
 
-UBGraphicsPolygonItem::UBGraphicsPolygonItem (const QLineF& pLine, qreal pWidth)
-    : QGraphicsPolygonItem(UBGeometryUtils::lineToPolygon(pLine, pWidth))
+UBGraphicsPolygonItem::UBGraphicsPolygonItem (const QLineF& pLine, const qreal& previousWidth, const qreal& pWidth)
+    : QGraphicsPolygonItem(UBGeometryUtils::lineToPolygon(pLine.p1(), pLine.p2(), previousWidth, pWidth))
     , mOriginalLine(pLine)
     , mOriginalWidth(pWidth)
     , mIsNominalLine(true)
