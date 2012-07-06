@@ -96,6 +96,13 @@ class UBSettings : public QObject
         QString communityPassword();
         void setCommunityPassword(const QString& password);
 
+        bool interpolation();
+        void setInterpolation(bool i);
+        int interpolationLevel();
+        void setInterpolationLevel(int l);
+        int interpolationAccuracy();
+        void setInterpolationAccuracy(int a);
+
         void init();
         
         //user directories
@@ -120,7 +127,6 @@ class UBSettings : public QObject
         QString applicationInteractivesDirectory();
         QString applicationCustomizationDirectory();
         QString applicationCustomFontDirectory();
-
 
         QNetworkProxy* httpProxy();
 
@@ -201,6 +207,10 @@ class UBSettings : public QObject
 
         static QString defaultDocumentGroupName;
         static QString documentTrashGroupName;
+
+        static bool interpolationValue;
+        static int interpolationLevelValue;
+        static int interpolationAccuracyValue;
 
         UBSetting* productWebUrl;
 
@@ -338,6 +348,10 @@ class UBSettings : public QObject
         UBSetting* historyLimit;
         UBSetting* teacherGuidePageZeroActivated;
         UBSetting* teacherGuideLessonPagesActivated;
+
+        UBSetting* interpol;
+        UBSetting* interpolLevel;
+        UBSetting* interpolAccuracy;
 
     public slots:
 

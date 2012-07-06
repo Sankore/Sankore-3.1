@@ -106,6 +106,10 @@ QString UBSettings::appPingMessage = "__uniboard_ping";
 QString UBSettings::defaultDocumentGroupName;
 QString UBSettings::documentTrashGroupName;
 
+bool UBSettings::interpolationValue = true;
+int UBSettings::interpolationLevelValue = 3;
+int UBSettings::interpolationAccuracyValue = 10;
+
 UBSettings* UBSettings::settings()
 {
     if (!sSingleton)
@@ -119,7 +123,6 @@ void UBSettings::destroy()
         delete sSingleton;
     sSingleton = NULL;
 }
-
 
 QSettings* UBSettings::getAppSettings()
 {
@@ -140,7 +143,6 @@ QSettings* UBSettings::getAppSettings()
     return UBSettings::sAppSettings;
 }
 
-
 UBSettings::UBSettings(QObject *parent)
     : QObject(parent)
 {
@@ -154,7 +156,6 @@ UBSettings::UBSettings(QObject *parent)
 
     init();
 }
-
 
 UBSettings::~UBSettings()
 {
@@ -385,10 +386,13 @@ void UBSettings::init()
     teacherGuidePageZeroActivated = new UBSetting(this,"DockPalette","TeacherGuideActivatePageZero",true);
     teacherGuideLessonPagesActivated = new UBSetting(this,"DockPalette","TeacherGuideActivateLessonPages",true);
 
+    interpol = new UBSetting(this, "Drawing", "Interpolation", true);
+    interpolLevel = new UBSetting(this, "Drawing", "InterpolationLevel", 3);
+    interpolAccuracy = new UBSetting(this, "Drawing", "InterpolationAccuracy", 10);
+
     actionGroupText = "Group items";
     actionUngroupText = "Ungroup items";
 }
-
 
 QVariant UBSettings::value ( const QString & key, const QVariant & defaultValue) const
 {
@@ -400,18 +404,15 @@ QVariant UBSettings::value ( const QString & key, const QVariant & defaultValue)
     return mUserSettings->value(key, sAppSettings->value(key, defaultValue));
 }
 
-
 void UBSettings::setValue (const QString & key, const QVariant & value)
 {
     mUserSettings->setValue(key, value);
 }
 
-
 int UBSettings::penWidthIndex()
 {
     return value("Board/PenLineWidthIndex", 0).toInt();
 }
-
 
 void UBSettings::setPenWidthIndex(int index)
 {
@@ -420,7 +421,6 @@ void UBSettings::setPenWidthIndex(int index)
         setValue("Board/PenLineWidthIndex", index);
     }
 }
-
 
 qreal UBSettings::currentPenWidth()
 {
@@ -447,12 +447,10 @@ qreal UBSettings::currentPenWidth()
     return width;
 }
 
-
 int UBSettings::penColorIndex()
 {
     return value("Board/PenColorIndex", 0).toInt();
 }
-
 
 void UBSettings::setPenColorIndex(int index)
 {
@@ -462,19 +460,16 @@ void UBSettings::setPenColorIndex(int index)
     }
 }
 
-
 QColor UBSettings::currentPenColor()
 {
     return penColor(isDarkBackground());
 }
-
 
 QColor UBSettings::penColor(bool onDarkBackground)
 {
     QList<QColor> colors = penColors(onDarkBackground);
     return colors.at(penColorIndex());
 }
-
 
 QList<QColor> UBSettings::penColors(bool onDarkBackground)
 {
@@ -488,12 +483,10 @@ QList<QColor> UBSettings::penColors(bool onDarkBackground)
     }
 }
 
-
 int UBSettings::markerWidthIndex()
 {
     return value("Board/MarkerLineWidthIndex", 0).toInt();
 }
-
 
 void UBSettings::setMarkerWidthIndex(int index)
 {
@@ -502,7 +495,6 @@ void UBSettings::setMarkerWidthIndex(int index)
         setValue("Board/MarkerLineWidthIndex", index);
     }
 }
-
 
 qreal UBSettings::currentMarkerWidth()
 {
@@ -529,12 +521,10 @@ qreal UBSettings::currentMarkerWidth()
     return width;
 }
 
-
 int UBSettings::markerColorIndex()
 {
     return value("Board/MarkerColorIndex", 0).toInt();
 }
-
 
 void UBSettings::setMarkerColorIndex(int index)
 {
@@ -544,19 +534,16 @@ void UBSettings::setMarkerColorIndex(int index)
     }
 }
 
-
 QColor UBSettings::currentMarkerColor()
 {
     return markerColor(isDarkBackground());
 }
-
 
 QColor UBSettings::markerColor(bool onDarkBackground)
 {
     QList<QColor> colors = markerColors(onDarkBackground);
     return colors.at(markerColorIndex());
 }
-
 
 QList<QColor> UBSettings::markerColors(bool onDarkBackground)
 {
@@ -569,9 +556,6 @@ QList<QColor> UBSettings::markerColors(bool onDarkBackground)
         return boardMarkerLightBackgroundSelectedColors->colors();
     }
 }
-
-//----------------------------------------//
-// eraser
 
 int UBSettings::eraserWidthIndex()
 {
@@ -643,12 +627,10 @@ bool UBSettings::isDarkBackground()
     return value("Board/DarkBackground", 0).toBool();
 }
 
-
 bool UBSettings::isCrossedBackground()
 {
     return value("Board/CrossedBackground", 0).toBool();
 }
-
 
 void UBSettings::setDarkBackground(bool isDarkBackground)
 {
@@ -656,54 +638,45 @@ void UBSettings::setDarkBackground(bool isDarkBackground)
     emit colorContextChanged();
 }
 
-
 void UBSettings::setCrossedBackground(bool isCrossedBackground)
 {
     setValue("Board/CrossedBackground", isCrossedBackground);
 }
-
 
 void UBSettings::setPenPressureSensitive(bool sensitive)
 {
     boardPenPressureSensitive->set(sensitive);
 }
 
-
 void UBSettings::setMarkerPressureSensitive(bool sensitive)
 {
     boardMarkerPressureSensitive->set(sensitive);
 }
-
 
 bool UBSettings::isStylusPaletteVisible()
 {
     return value("Board/StylusPaletteIsVisible", true).toBool();
 }
 
-
 void UBSettings::setStylusPaletteVisible(bool visible)
 {
     setValue("Board/StylusPaletteIsVisible", visible);
 }
-
 
 QString UBSettings::fontFamily()
 {
     return value("Board/FontFamily", sDefaultFontFamily).toString();
 }
 
-
 void UBSettings::setFontFamily(const QString &family)
 {
     setValue("Board/FontFamily", family);
 }
 
-
 int UBSettings::fontPixelSize()
 {
     return value("Board/FontPixelSize", sDefaultFontPixelSize).toInt();
 }
-
 
 void UBSettings::setFontPixelSize(int pixelSize)
 {
@@ -725,24 +698,20 @@ bool UBSettings::isBoldFont()
     return value("Board/FontIsBold", false).toBool();
 }
 
-
 void UBSettings::setBoldFont(bool bold)
 {
     setValue("Board/FontIsBold", bold);
 }
-
 
 bool UBSettings::isItalicFont()
 {
     return value("Board/FontIsItalic", false).toBool();
 }
 
-
 void UBSettings::setItalicFont(bool italic)
 {
     setValue("Board/FontIsItalic", italic);
 }
-
 
 QString UBSettings::userDataDirectory()
 {
@@ -765,7 +734,6 @@ QString UBSettings::userDataDirectory()
     return dataDirPath;
 }
 
-
 QString UBSettings::userImageDirectory()
 {
     static QString imageDirectory = "";
@@ -785,7 +753,6 @@ QString UBSettings::userImageDirectory()
     }
     return imageDirectory;
 }
-
 
 QString UBSettings::userVideoDirectory()
 {
@@ -833,7 +800,6 @@ QString UBSettings::userAudioDirectory()
     return audioDirectory;
 }
 
-
 QString UBSettings::userPodcastRecordingDirectory()
 {
     static QString dirPath = "";
@@ -853,7 +819,6 @@ QString UBSettings::userPodcastRecordingDirectory()
     }
     return dirPath;
 }
-
 
 QString UBSettings::userDocumentDirectory()
 {
@@ -885,7 +850,6 @@ QString UBSettings::userTrashDirPath()
     }
     return trashPath;
 }
-
 
 QString UBSettings::applicationShapeLibraryDirectory()
 {
@@ -976,7 +940,6 @@ QString UBSettings::userInteractiveDirectory()
     return interactiveDirectory;
 }
 
-
 QString UBSettings::applicationInteractivesDirectory()
 {
     QString defaultRelativePath = QString("./library/interactivities");
@@ -1005,7 +968,6 @@ QString UBSettings::applicationApplicationsLibraryDirectory()
     }
 }
 
-
 QString UBSettings::userInteractiveFavoritesDirectory()
 {
     static QString dirPath = "";
@@ -1024,7 +986,6 @@ QString UBSettings::userInteractiveFavoritesDirectory()
     }
     return dirPath;
 }
-
 
 QNetworkProxy* UBSettings::httpProxy()
 {
@@ -1048,7 +1009,6 @@ QNetworkProxy* UBSettings::httpProxy()
     return proxy;
 }
 
-
 void UBSettings::setPassword(const QString& id, const QString& password)
 {
     QString encrypted = UBCryptoUtils::instance()->symetricEncrypt(password);
@@ -1056,12 +1016,10 @@ void UBSettings::setPassword(const QString& id, const QString& password)
     mUserSettings->setValue(QString("Vault/") + id, encrypted);
 }
 
-
 void UBSettings::removePassword(const QString& id)
 {
     mUserSettings->remove(QString("Vault/") + id);
 }
-
 
 QString UBSettings::password(const QString& id)
 {
@@ -1075,13 +1033,11 @@ QString UBSettings::password(const QString& id)
     return result;
 }
 
-
 QString UBSettings::proxyUsername()
 {
     QString idUsername = "http.proxy.user";
     return password(idUsername);
 }
-
 
 void UBSettings::setProxyUsername(const QString& username)
 {
@@ -1093,13 +1049,11 @@ void UBSettings::setProxyUsername(const QString& username)
         removePassword(idUsername);
 }
 
-
 QString UBSettings::proxyPassword()
 {
     QString idPassword = "http.proxy.pass";
     return password(idPassword);
 }
-
 
 void UBSettings::setProxyPassword(const QString& password)
 {
@@ -1132,7 +1086,6 @@ void UBSettings::setCommunityPassword(const QString &password)
     communityPsw->set(QVariant(password));
 }
 
-
 bool UBSettings::checkDirectory(QString& dirPath)
 {
     bool result = true;
@@ -1163,3 +1116,26 @@ QString UBSettings::replaceWildcard(QString& path)
     return result;
 }
 
+bool UBSettings::interpolation(){
+	return value("Drawing/Interpolation", false).toBool();
+}
+
+void UBSettings::setInterpolation(bool i){
+	interpol->set(QVariant(i));
+}
+
+int UBSettings::interpolationLevel(){
+	return value("Drwing/InterpolationLevel", false).toInt();
+}
+
+void UBSettings::setInterpolationLevel(int l){
+	interpolLevel->set(QVariant(l));
+}
+
+int UBSettings::interpolationAccuracy(){
+	return value("Drwing/InterpolationAccuracy", false).toInt();
+}
+
+void UBSettings::setInterpolationAccuracy(int a){
+	interpolAccuracy->set(QVariant(a));
+}

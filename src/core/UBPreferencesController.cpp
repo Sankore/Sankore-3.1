@@ -142,6 +142,9 @@ void UBPreferencesController::wire()
     connect(mPenProperties->mediumSlider, SIGNAL(valueChanged(int)), this, SLOT(widthSliderChanged(int)));
     connect(mPenProperties->strongSlider, SIGNAL(valueChanged(int)), this, SLOT(widthSliderChanged(int)));
     connect(mPenProperties->pressureSensitiveCheckBox, SIGNAL(clicked(bool)), settings, SLOT(setPenPressureSensitive(bool)));
+    connect(mPenProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
+    connect(mPenProperties->levelSlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationLevelChanged(int)));
+    connect(mPenProperties->accuracySlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationAccuracyChanged(int)));
 
     // marker
     QList<QColor> markerLightBackgroundColors = settings->boardMarkerLightBackgroundColors->colors();
@@ -160,6 +163,9 @@ void UBPreferencesController::wire()
     connect(mMarkerProperties->strongSlider, SIGNAL(valueChanged(int)), this, SLOT(widthSliderChanged(int)));
     connect(mMarkerProperties->pressureSensitiveCheckBox, SIGNAL(clicked(bool)), settings, SLOT(setMarkerPressureSensitive(bool)));
     connect(mMarkerProperties->opacitySlider, SIGNAL(valueChanged(int)), this, SLOT(opacitySliderChanged(int)));
+    connect(mMarkerProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
+	connect(mMarkerProperties->levelSlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationLevelChanged(int)));
+	connect(mMarkerProperties->accuracySlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationAccuracyChanged(int)));
 
     // about tab
     connect(mPreferencesUI->checkSoftwareUpdateAtLaunchCheckBox, SIGNAL(clicked(bool)), settings->appEnableAutomaticSoftwareUpdates, SLOT(setBool(bool)));
@@ -315,6 +321,10 @@ void UBPreferencesController::defaultSettings()
             mPenProperties->lightBackgroundColorPickers[i]->setSelectedColorIndex(lightBackgroundSelectedColors.indexOf(settings->penColors(false).at(i)));
             mPenProperties->darkBackgroundColorPickers[i]->setSelectedColorIndex(darkBackgroundSelectedColors.indexOf(settings->penColors(true).at(i)));
         }
+
+        settings->setInterpolation(true);
+        settings->setInterpolationAccuracy(10);
+        settings->setInterpolationLevel(3);
     }
     else if (mPreferencesUI->mainTabWidget->currentWidget() == mPreferencesUI->markerTab)
     {
@@ -336,6 +346,10 @@ void UBPreferencesController::defaultSettings()
             mMarkerProperties->lightBackgroundColorPickers[i]->setSelectedColorIndex(lightBackgroundSelectedColors.indexOf(settings->markerColors(false).at(i)));
             mMarkerProperties->darkBackgroundColorPickers[i]->setSelectedColorIndex(darkBackgroundSelectedColors.indexOf(settings->markerColors(true).at(i)));
         }
+
+        settings->setInterpolation(true);
+		settings->setInterpolationAccuracy(10);
+		settings->setInterpolationLevel(3);
     }
     else if (mPreferencesUI->mainTabWidget->currentWidget() == mPreferencesUI->aboutTab)
     {
@@ -551,4 +565,30 @@ UBBrushPropertiesFrame::UBBrushPropertiesFrame(QFrame* owner, const QList<QColor
         QObject::connect(picker, SIGNAL(colorSelected(const QColor&)), controller, SLOT(colorSelected(const QColor&)));
 
     }
+}
+
+void UBPreferencesController::onInterpolationChanged(int state){
+	disconnect(mPenProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
+	disconnect(mMarkerProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
+	if(Qt::Unchecked == state){
+		mPenProperties->interpolationCheckBox->setChecked(false);
+		mMarkerProperties->interpolationCheckBox->setChecked(false);
+		mPenProperties->interpolationGroupBox->setEnabled(false);
+		mMarkerProperties->interpolationGroupBox->setEnabled(false);
+	}else{
+		mPenProperties->interpolationCheckBox->setChecked(true);
+		mMarkerProperties->interpolationCheckBox->setChecked(true);
+		mPenProperties->interpolationGroupBox->setEnabled(true);
+		mMarkerProperties->interpolationGroupBox->setEnabled(true);
+	}
+	connect(mMarkerProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
+	connect(mPenProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
+}
+
+void UBPreferencesController::onInterpolationLevelChanged(int v){
+
+}
+
+void UBPreferencesController::onInterpolationAccuracyChanged(int v){
+
 }

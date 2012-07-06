@@ -83,6 +83,10 @@ class UBPreferencesController : public QObject
         void toolbarOrientationHorizontal(bool checked);
         void onCommunityUsernameChanged();
         void onCommunityPasswordChanged();
+        void onInterpolationChanged(int state);
+        void onInterpolationLevelChanged(int v);
+        void onInterpolationAccuracyChanged(int v);
+
 
     private:
 
