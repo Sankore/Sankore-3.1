@@ -1,15 +1,34 @@
+<!--
+ * OpenStreetMap Widget
+ * ==========================================================
+ * Copyright 2012 Guillaume Burel - Service ICAP - Université Claude Bernard Lyon 1
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Open Street Map</title>
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
 		<style type="text/css" media="all">
-			html, body, #demoMap {
+			html, body, #Map {
 				width: 100%;
 				height: 100%;
 				margin: 0;
 				position: relative;
 				z-index: 0;
+				background-color: white !important;
 			}
 
 			#search_form {
@@ -18,30 +37,53 @@
 				bottom: 0.5em;
 				right: 0.5em;
 			}
+
+			.olControlAttribution {
+				left: 0.5em !important;
+				bottom: 0.5em !important;				
+			}
+			
+			.olControlPanZoom {
+				top: auto !important;
+				bottom: 144px;
+			}
 		</style>
 		<script src="api/OpenLayers.js"></script>
 		<script src="js/jquery-1.7.2.min.js"></script>
-		<script>			
+		<script>
+			/* API identifier. There is some limitations with Geonames */
+			var geonamesUser = "yimgo";
+
+			/* updateMap() allow user to modify the considered zone, in case a change has been requested (e.g. user request). */	
 			function updateMap(coordinates, map) {
-				var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-				var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-				var position       = new OpenLayers.LonLat(coordinates["lng"], coordinates["lat"]).transform( fromProjection, toProjection);
-				map.addLayer(new OpenLayers.Layer.OSM());
+				/* transforming given coordinates, which have to be expressed in WGS-1984 projection, to map's projection */
+				var position = new OpenLayers.LonLat(coordinates["lng"], coordinates["lat"]).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+				/* centering in position with given zoom */
 				map.setCenter(position, coordinates["zoom"]);
 			}				
 
+			/* doSeearch() performs the request to geonames server with the given query, and updates the map in case of success. */
 			function doSearch(query, map) {
+				/* performing request with JSON API from geonames and global username (identifying request's author). Asking for only one result, to save resources and to allow the user to avoid a choice when doing the research. */
 				$.ajax({
 					url: "http://api.geonames.org/searchJSON",
-					data: { q: unescape(encodeURIComponent(query)), maxRows: "1", username: "yimgo" },
+					data: { 
+						q: unescape(encodeURIComponent(query)),
+						maxRows: "1",
+						username: geonamesUser
+					},
 					success: function(data) {	
+						/* parsing JSON response. This is not ok with Gecko but ok with webkit. This is not necessary with Chrome 22.0.1201.0 (Webkit rev. 145644) but it is with webkit embedded in Qt 4.8.2 (534.34). */
 						data = JSON.stringify(data);
 						data = JSON.parse(data);
 						
+						/* updating the map if response is ok */
 						if (typeof data["geonames"][0]!= 'undefined') {
 							var coordinates = new Array();
 							coordinates["lng"] = data["geonames"][0].lng;
 							coordinates["lat"] = data["geonames"][0].lat;
+							
+							/* if position represents a city, setting the zoom to 6 */
 							if (data["geonames"][0].fcl == "A")
 								coordinates["zoom"] = 6;
 							else
@@ -55,10 +97,15 @@
 			}
 
 			window.onload = function() {
-				var map = new OpenLayers.Map("demoMap");
-		    	map.addLayer(new OpenLayers.Layer.OSM());
-				map.zoomToMaxExtent();
-		
+				map = new OpenLayers.Map("Map");
+				OSMLayer = new OpenLayers.Layer.OSM("OSM");
+
+				/* avoiding out of bounds requests */
+				OSMLayer.displayOutsideMaxExtent = false;
+		    	map.addLayer(OSMLayer);
+
+        		map.zoomTo(2);
+
 				$("#search_form").submit(function (event) {
 					doSearch($("#query").val(), map);
 					return false;
@@ -67,7 +114,7 @@
 		</script>
 	</head>
 	<body>
-		<div id="demoMap">	  
+		<div id="Map">	  
 		</div>
 
 		<form method="post" id="search_form" action="#" accept-charset="UTF-8">
