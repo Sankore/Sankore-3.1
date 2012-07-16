@@ -217,14 +217,19 @@ void UBPreferencesController::init()
     mPenProperties->mediumSlider->setValue(settings->boardPenMediumWidth->get().toDouble() * sSliderRatio);
     mPenProperties->strongSlider->setValue(settings->boardPenStrongWidth->get().toDouble() * sSliderRatio);
     mPenProperties->pressureSensitiveCheckBox->setChecked(settings->boardPenPressureSensitive->get().toBool());
+    mPenProperties->levelSlider->setValue(settings->interpolLevel->get().toInt());
+    mPenProperties->accuracySlider->setValue(settings->interpolAccuracy->get().toInt());
+    mPenProperties->interpolationCheckBox->setChecked(settings->interpol->get().toBool());
 
     // marker tab
     mMarkerProperties->fineSlider->setValue(settings->boardMarkerFineWidth->get().toDouble() * sSliderRatio);
     mMarkerProperties->mediumSlider->setValue(settings->boardMarkerMediumWidth->get().toDouble() * sSliderRatio);
     mMarkerProperties->strongSlider->setValue(settings->boardMarkerStrongWidth->get().toDouble() * sSliderRatio);
     mMarkerProperties->pressureSensitiveCheckBox->setChecked(settings->boardMarkerPressureSensitive->get().toBool());
-
     mMarkerProperties->opacitySlider->setValue(settings->boardMarkerAlpha->get().toDouble() * 100);
+    mMarkerProperties->levelSlider->setValue(settings->interpolLevel->get().toInt());
+    mMarkerProperties->accuracySlider->setValue(settings->interpolAccuracy->get().toInt());
+    mMarkerProperties->interpolationCheckBox->setChecked(settings->interpol->get().toBool());
 
 }
 
@@ -575,20 +580,34 @@ void UBPreferencesController::onInterpolationChanged(int state){
 		mMarkerProperties->interpolationCheckBox->setChecked(false);
 		mPenProperties->interpolationGroupBox->setEnabled(false);
 		mMarkerProperties->interpolationGroupBox->setEnabled(false);
+		UBSettings::settings()->setInterpolation(false);
 	}else{
 		mPenProperties->interpolationCheckBox->setChecked(true);
 		mMarkerProperties->interpolationCheckBox->setChecked(true);
 		mPenProperties->interpolationGroupBox->setEnabled(true);
 		mMarkerProperties->interpolationGroupBox->setEnabled(true);
+		UBSettings::settings()->setInterpolation(true);
 	}
 	connect(mMarkerProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
 	connect(mPenProperties->interpolationCheckBox, SIGNAL(stateChanged(int)), this, SLOT(onInterpolationChanged(int)));
 }
 
 void UBPreferencesController::onInterpolationLevelChanged(int v){
-
+	disconnect(mPenProperties->levelSlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationLevelChanged(int)));
+	disconnect(mMarkerProperties->levelSlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationLevelChanged(int)));
+	UBSettings::settings()->setInterpolationLevel(v);
+	mPenProperties->interpolationLevelValueLabel->setText(QString("%0").arg(v));
+	mMarkerProperties->interpolationLevelValueLabel->setText(QString("%0").arg(v));
+	connect(mPenProperties->levelSlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationLevelChanged(int)));
+	connect(mMarkerProperties->levelSlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationLevelChanged(int)));
 }
 
 void UBPreferencesController::onInterpolationAccuracyChanged(int v){
-
+	disconnect(mPenProperties->accuracySlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationAccuracyChanged(int)));
+	disconnect(mMarkerProperties->accuracySlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationAccuracyChanged(int)));
+	UBSettings::settings()->setInterpolationAccuracy(v);
+	mPenProperties->interpolationAccuracyValueLabel->setText(QString("%0").arg(v));
+	mMarkerProperties->interpolationAccuracyValueLabel->setText(QString("%0").arg(v));
+	connect(mPenProperties->accuracySlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationAccuracyChanged(int)));
+	connect(mMarkerProperties->accuracySlider, SIGNAL(valueChanged(int)), this, SLOT(onInterpolationAccuracyChanged(int)));
 }

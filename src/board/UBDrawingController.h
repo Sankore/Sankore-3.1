@@ -48,6 +48,9 @@ class UBDrawingController : public QObject
         void setMarkerAlpha(qreal alpha);
         void setDrawingMode(eDrawingMode mode);
         eDrawingMode drawingMode();
+        bool isInInterpolateMode();
+        int interpolationLevel();
+        int interpolationAccuracy();
 
         UBAbstractDrawRuler* mActiveRuler;
         qreal pressure;

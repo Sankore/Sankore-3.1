@@ -358,7 +358,7 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     case QEvent::TabletRelease:
         scene()->setToolCursor(currentTool);
         setToolCursor(currentTool);
-        scene()->inputDeviceRelease();
+        scene()->inputDeviceRelease(scenePos);
         mPendingStylusReleaseEvent = false;
         mTabletStylusIsPressed = false;
         mMouseButtonIsPressed = false;
@@ -904,7 +904,7 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
   setToolCursor (currentTool);
   // first propagate device release to the scene
   if (scene ())
-    scene ()->inputDeviceRelease ();
+    scene ()->inputDeviceRelease (mapToScene (UBGeometryUtils::pointConstrainedInRect (event->pos (), rect ())));
 
   if (currentTool == UBStylusTool::Selector)
     {

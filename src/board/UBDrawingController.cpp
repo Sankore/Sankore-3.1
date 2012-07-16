@@ -417,3 +417,15 @@ eDrawingMode UBDrawingController::drawingMode()
 {
     return mDrawingMode;
 }
+
+bool UBDrawingController::isInInterpolateMode(){
+	return UBSettings::settings()->interpolationValue;
+}
+
+int UBDrawingController::interpolationLevel(){
+	return UBSettings::settings()->interpolationLevel();
+}
+
+int UBDrawingController::interpolationAccuracy(){
+	return UBSettings::settings()->interpolationAccuracy();
+}

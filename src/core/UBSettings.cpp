@@ -108,7 +108,7 @@ QString UBSettings::documentTrashGroupName;
 
 bool UBSettings::interpolationValue = true;
 int UBSettings::interpolationLevelValue = 3;
-int UBSettings::interpolationAccuracyValue = 10;
+int UBSettings::interpolationAccuracyValue = 5;
 
 UBSettings* UBSettings::settings()
 {
@@ -1117,15 +1117,20 @@ QString UBSettings::replaceWildcard(QString& path)
 }
 
 bool UBSettings::interpolation(){
-	return value("Drawing/Interpolation", false).toBool();
+	// I don't know why this @#%& UBSetting thing is not returning the value correctly
+	// I suppose it's because the value must be written to the settings file so I decided
+	// to use such a trick for performance reasons.
+	//return interpol->get().toBool();
+	return interpolationValue;
 }
 
 void UBSettings::setInterpolation(bool i){
 	interpol->set(QVariant(i));
+	interpolationValue = i;
 }
 
 int UBSettings::interpolationLevel(){
-	return value("Drwing/InterpolationLevel", false).toInt();
+	return interpolLevel->get().toInt();
 }
 
 void UBSettings::setInterpolationLevel(int l){
@@ -1133,7 +1138,7 @@ void UBSettings::setInterpolationLevel(int l){
 }
 
 int UBSettings::interpolationAccuracy(){
-	return value("Drwing/InterpolationAccuracy", false).toInt();
+	return interpolAccuracy->get().toInt();
 }
 
 void UBSettings::setInterpolationAccuracy(int a){

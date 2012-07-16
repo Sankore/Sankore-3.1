@@ -374,6 +374,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos)
             // Create a new Stroke. A Stroke is a collection of QGraphicsLines
             // ---------------------------------------------------------------
             mCurrentStroke = new UBGraphicsStroke();
+            mSampledPoints.clear();
 
             if (currentTool != UBStylusTool::Line){
                 // Handle the pressure
@@ -390,6 +391,13 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos)
             previouswidth /= UBApplication::boardController->systemScaleFactor();
             previouswidth /= UBApplication::boardController->currentZoom();
 
+            if(dc->isInInterpolateMode()){
+            	sPressurePoint pressurePoint;
+				pressurePoint.pos = scenePos;
+				pressurePoint.width = width;
+				mSampledPoints << pressurePoint;
+            }
+
             mAddedItems.clear();
             mRemovedItems.clear();
 
@@ -399,6 +407,11 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos)
             }
             else
             {
+            	if(dc->isInInterpolateMode()){
+            		mSampledPoints.clear();
+            		mInterpolatedPoints.clear();
+            	}
+
                 moveTo(scenePos);
                 drawLineTo(scenePos, previouswidth, width, dc->stylusTool() == UBStylusTool::Line);
             }
@@ -466,8 +479,18 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos)
             previousWidth /= UBApplication::boardController->systemScaleFactor();
             previousWidth /= UBApplication::boardController->currentZoom();
 
+            if(dc->isInInterpolateMode()){
+				sPressurePoint pressurePoint;
+				pressurePoint.pos = scenePos;
+				pressurePoint.width = width;
+				mSampledPoints << pressurePoint;
+			}
+
             if (currentTool == UBStylusTool::Line || dc->mActiveRuler)
             {
+            	// ------------------------------------------------------------------------
+				// This case is for the ruler or the line tool
+				// ------------------------------------------------------------------------
                 if(NULL != mpLastPolygon && NULL != mCurrentStroke && mAddedItems.size() > 0){
                     UBCoreGraphicsScene::removeItemFromDeletion(mpLastPolygon);
                     mAddedItems.remove(mpLastPolygon);
@@ -484,18 +507,31 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos)
                 qreal angle = radius.angle();
                 angle = qRound(angle / 45) * 45;
                 qreal radiusLength = radius.length();
-                QPointF newPosition(
-                    mPreviousPoint.x() + radiusLength * cos((angle * PI) / 180),
-                    mPreviousPoint.y() - radiusLength * sin((angle * PI) / 180));
+                QPointF newPosition(mPreviousPoint.x() + radiusLength * cos((angle * PI) / 180), mPreviousPoint.y() - radiusLength * sin((angle * PI) / 180));
                 QLineF chord(position, newPosition);
-                                    if (chord.length() < qMin((int)16, (int)(radiusLength / 20)))
+                if (chord.length() < qMin((int)16, (int)(radiusLength / 20)))
                     position = newPosition;
             }
 
             if(dc->mActiveRuler){
                 dc->mActiveRuler->DrawLine(position, width);
             }else{
-                drawLineTo(position, previousWidth, width, dc->stylusTool() == UBStylusTool::Line);
+            	if(dc->isInInterpolateMode() && mSampledPoints.size() >= dc->interpolationLevel()){
+            		qDebug() << "-- Sampling ----------------------------------";
+            		// Interpolate
+            		interpolateStroke();
+
+            		for(int i=0; i<mInterpolatedPoints.size(); i++){
+						sPressurePoint pt = mInterpolatedPoints.at(i);
+						drawLineTo(pt.pos, previousWidth, pt.width, dc->stylusTool() == UBStylusTool::Line);
+						previousWidth = pt.width;
+						mPreviousPolygonItems.last()->setToolTip(QString("%0").arg(i));
+            		}
+            		drawLineTo(position, previousWidth, width, dc->stylusTool() == UBStylusTool::Line);
+            		qDebug() << "-- Sampling Done ! ----------------------------";
+            	}else{
+            		drawLineTo(position, previousWidth, width, dc->stylusTool() == UBStylusTool::Line);
+            	}
             }
         }
         else if (currentTool == UBStylusTool::Eraser)
@@ -517,7 +553,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos)
     return accepted;
 }
 
-bool UBGraphicsScene::inputDeviceRelease()
+bool UBGraphicsScene::inputDeviceRelease(const QPointF& scenePos)
 {
     /*
     if (mMesure1Ms > 0 ||  mMesure2Ms > 0)
@@ -540,9 +576,35 @@ bool UBGraphicsScene::inputDeviceRelease()
     }
 
     UBDrawingController *dc = UBDrawingController::drawingController();
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)dc->stylusTool();
 
     if (dc->isDrawingTool() || mDrawWithCompass)
     {
+    	qreal width = 0;
+		qreal previousWidth = 0;
+
+		if (currentTool != UBStylusTool::Line){
+			// Handle the pressure
+			width = dc->currentToolWidth() * dc->pressure;
+			previousWidth = dc->currentToolWidth() * dc->previousPressure;
+		}else{
+			// Ignore pressure for line tool
+			width = dc->currentToolWidth();
+			previousWidth = width;
+		}
+
+		width /= UBApplication::boardController->systemScaleFactor();
+		width /= UBApplication::boardController->currentZoom();
+		previousWidth /= UBApplication::boardController->systemScaleFactor();
+		previousWidth /= UBApplication::boardController->currentZoom();
+
+		if(dc->isInInterpolateMode()){
+			sPressurePoint pressurePoint;
+			pressurePoint.pos = scenePos;
+			pressurePoint.width = width;
+			mSampledPoints << pressurePoint;
+		}
+
         if(mArcPolygonItem){
             if(eDrawingMode_Vector == dc->drawingMode()){
                 UBGraphicsStrokesGroup* pStrokes = new UBGraphicsStrokesGroup();
@@ -578,8 +640,6 @@ bool UBGraphicsScene::inputDeviceRelease()
                     poly->setStrokesGroup(pStrokes);
                     pStrokes->addToGroup(poly);
                 }
-
-                // TODO LATER : Generate well pressure-interpolated polygons and create the line group with them
 
                 mAddedItems.clear();
                 mAddedItems << pStrokes;
@@ -2378,4 +2438,117 @@ void UBGraphicsScene::setToolCursor(int tool)
     {
         deselectAllItems();
     }
+}
+void UBGraphicsScene::interpolateStroke(){
+	UBDrawingController* dc = UBDrawingController::drawingController();
+
+	// first, remove the segment that will be refreshed during the interpolation
+	int accuracy = dc->interpolationAccuracy();
+	int level = dc->interpolationLevel();
+	int nbToBeRemoved = ((level - 1)*accuracy) +1;
+
+	// First, remove the segments that will be redrawn
+	if(mPreviousPolygonItems.size() >= nbToBeRemoved){
+		QVector<UBGraphicsPolygonItem*> removedItems;
+		for(int i=mPreviousPolygonItems.size()-nbToBeRemoved; i<mPreviousPolygonItems.size(); i++){
+			UBGraphicsPolygonItem* pItem = mPreviousPolygonItems.at(i);
+			removedItems << pItem;
+			removeItem(pItem);
+			UBCoreGraphicsScene::removeItemFromDeletion(pItem);
+			mAddedItems.remove(pItem);
+			mCurrentStroke->remove(pItem);
+		}
+
+		foreach(UBGraphicsPolygonItem* it, removedItems){
+			mPreviousPolygonItems.removeAll(it);
+		}
+	}
+
+	// Update mPreviousPoint because we removed the last polygons
+	mPreviousPoint = mPreviousPolygonItems.last()->originalLine().p2();
+
+	// Then compute the new segments
+	mInterpolatedPoints.clear();
+	if(mSampledPoints.size() >= level){
+		QList<sPressureCoordinate> xCoords;
+		QList<sPressureCoordinate> yCoords;
+
+		int start = mSampledPoints.size() - 1 - level;
+		if(start < 0){
+			start = 0;
+		}
+
+		for(int i=start; i<mSampledPoints.size(); i++){
+			sPressureCoordinate xpc;
+			sPressureCoordinate ypc;
+			xpc.coord = mSampledPoints.at(i).pos.x();
+			xpc.width = mSampledPoints.at(i).width;
+			xCoords << xpc;
+			ypc.coord = mSampledPoints.at(i).pos.y();
+			ypc.width = mSampledPoints.at(i).width;
+			yCoords << ypc;
+		}
+
+		QList<UBCubicPolynomial> xPolys = getPolynomials(xCoords);
+		QList<UBCubicPolynomial> yPolys = getPolynomials(yCoords);
+
+		UBCubicPolynomial scpX = xPolys.at(0);
+		UBCubicPolynomial scpY = yPolys.at(0);
+		sPressurePoint origin;
+		sPressurePoint dest;
+		origin.pos = mSampledPoints.at(start).pos;
+		origin.width = mSampledPoints.at(start).width;
+		mInterpolatedPoints << origin;
+
+		for(int i=0; i<xPolys.size(); i++) {
+			qreal destWidth = xCoords.at(i).width;
+			qreal deltaWidth = (destWidth - origin.width)/(qreal)accuracy;
+			for(int j=1; j<=accuracy; j++){
+			  dest.width = origin.width + j*deltaWidth;
+			  float u = j / (float)accuracy;
+			  UBCubicPolynomial scpXU = xPolys.at(i);
+			  UBCubicPolynomial scpYU = yPolys.at(i);
+			  dest.pos.setX(roundf(scpXU.eval(u)));
+			  dest.pos.setY(roundf(scpYU.eval(u)));
+			  mInterpolatedPoints << dest;
+			  origin = dest;
+			}
+		}
+	}
+}
+
+QList<UBCubicPolynomial> UBGraphicsScene::getPolynomials(const QList<sPressureCoordinate>& coords){
+	QList<UBCubicPolynomial> pts;
+
+	int n = coords.size() - 1;
+
+	float gamma[n+1];
+	float delta[n+1];
+	float D[n+1];
+	int i;
+
+	gamma[0] = 1.0f/2.0f;
+	for(i=1; i<n; i++){
+		gamma[i] = 1/(4-gamma[i-1]);
+	}
+	gamma[n] = 1/(2-gamma[n-1]);
+
+	delta[0] = 3*(coords.at(1).coord-coords.at(0).coord)*gamma[0];
+	for(i=1; i<n; i++){
+		delta[i] = (3*(coords.at(i+1).coord-coords.at(i-1).coord)-delta[i-1])*gamma[i];
+	}
+	delta[n] = (3*(coords.at(n).coord-coords.at(n-1).coord)-delta[n-1])*gamma[n];
+
+	D[n] = delta[n];
+	for(i=n-1; i>=0; i--){
+		D[i] = delta[i] - gamma[i]*D[i+1];
+	}
+
+	// now compute the coefficients of the cubics
+	for(i=0; i < n; i++){
+		UBCubicPolynomial polyn = UBCubicPolynomial((float)coords.at(i).coord, D[i], 3*(coords.at(i+1).coord - coords.at(i).coord) - 2*D[i] - D[i+1], 2*(coords.at(i).coord - coords.at(i+1).coord) + D[i] + D[i+1]);
+		pts << polyn;
+	}
+
+	return pts;
 }

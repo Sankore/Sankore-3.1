@@ -24,6 +24,7 @@
 
 #include "UBItem.h"
 #include "tools/UBGraphicsCurtainItem.h"
+#include "core/UBCubicPolynomial.h"
 
 class UBGraphicsPixmapItem;
 class UBGraphicsProxyWidget;
@@ -50,6 +51,16 @@ class UBGraphicsCache;
 class UBGraphicsGroupContainerItem;
 
 const double PI = 4.0 * atan(1.0);
+
+typedef struct{
+	QPointF pos;
+	qreal width;
+}sPressurePoint;
+
+typedef struct{
+	qreal coord;
+	qreal width;
+}sPressureCoordinate;
 
 class UBZLayerController : public QObject
 {
@@ -116,7 +127,7 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
 
         bool inputDevicePress(const QPointF& scenePos);
         bool inputDeviceMove(const QPointF& scenePos);
-        bool inputDeviceRelease();
+        bool inputDeviceRelease(const QPointF& scenePos=QPointF());
 
         void leaveEvent (QEvent* event);
 
@@ -354,6 +365,8 @@ public slots:
         void setDocumentUpdated();
         void createEraiser();
         void createPointer();
+        void interpolateStroke();
+        QList<UBCubicPolynomial> getPolynomials(const QList<sPressureCoordinate>& coords);
 
         QGraphicsEllipseItem* mEraser;
         QGraphicsEllipseItem* mPointer;
@@ -410,6 +423,9 @@ public slots:
         UBGraphicsPolygonItem* mpLastPolygon;
 
         bool mDrawWithCompass;
+
+        QList<sPressurePoint> mSampledPoints;
+        QList<sPressurePoint> mInterpolatedPoints;
 
 };
 
