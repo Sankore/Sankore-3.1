@@ -1,7 +1,7 @@
 <!--
  * OpenStreetMap Widget
  * ==========================================================
- * Copyright 2012 Guillaume Burel - Service ICAP - Université Claude Bernard Lyon 1
+ * Copyright (C) Université Claude Bernard Lyon 1 (ICAP), Délégation Interministérielle à l'Éducation Numérique en Afrique, Guillaume Burel, 2012
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,16 +67,13 @@
 				/* performing request with JSON API from geonames and global username (identifying request's author). Asking for only one result, to save resources and to allow the user to avoid a choice when doing the research. */
 				$.ajax({
 					url: "http://api.geonames.org/searchJSON",
+					dataType: 'json',
 					data: { 
 						q: unescape(encodeURIComponent(query)),
 						maxRows: "1",
 						username: geonamesUser
 					},
 					success: function(data) {	
-						/* parsing JSON response. This is not ok with Gecko but ok with webkit. This is not necessary with Chrome 22.0.1201.0 (Webkit rev. 145644) but it is with webkit embedded in Qt 4.8.2 (534.34). */
-						data = JSON.stringify(data);
-						data = JSON.parse(data);
-						
 						/* updating the map if response is ok */
 						if (typeof data["geonames"][0]!= 'undefined') {
 							var coordinates = new Array();
