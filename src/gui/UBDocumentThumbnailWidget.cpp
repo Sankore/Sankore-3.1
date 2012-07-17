@@ -26,8 +26,10 @@ UBDocumentThumbnailWidget::UBDocumentThumbnailWidget(QWidget* parent)
     : UBThumbnailWidget(parent)
     , mDropCaretRectItem(0)
     , mClosestDropItem(0)
-	, mDragEnabled(true), mScrollMagnitude(0)
+	, mDragEnabled(true)
+    , mScrollMagnitude(0)
 {
+	bCanDrag=false;
     mScrollTimer = new QTimer(this);
 	connect(mScrollTimer, SIGNAL(timeout()), this, SLOT(autoScroll()));
 }
