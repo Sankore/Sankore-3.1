@@ -1935,7 +1935,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <name>UBWebPublisher</name>
     <message>
         <source>Publish Document on Sankore Web</source>
-        <translation>Publier un fichier Open-Sankore sur Planète Sankoré</translation>
+        <translation>Publier un fichier Open-Sankoré sur Planète Sankoré</translation>
     </message>
 </context>
 <context>
