@@ -1935,7 +1935,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <name>UBWebPublisher</name>
     <message>
         <source>Publish Document on Sankore Web</source>
-        <translation>Publier le document sur Planète Sankoré</translation>
+        <translation>Publier un fichier Open-Sankore sur Planète Sankoré</translation>
     </message>
 </context>
 <context>
@@ -2112,12 +2112,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <name>WBDownloadManager</name>
     <message>
         <source>%1 Downloads</source>
-        <comment>always &gt;= 2</comment>
-        <translation>%1 téléchargements</translation>
-    </message>
-    <message>
-        <source>1 Download</source>
-        <translation>1 téléchargement</translation>
+        <translation>%1 téléchargement(s)</translation>
     </message>
 </context>
 <context>
