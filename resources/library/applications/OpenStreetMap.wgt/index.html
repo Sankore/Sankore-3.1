@@ -99,27 +99,31 @@
 
 			window.onload = function() {
 				map = new OpenLayers.Map({
-					div: "map",
+					div: "map"
 				});
+
+				/* limiting max zoom, by overriding OpenLayers.Map::moveTo function */
+				map.newMoveTo = map.moveTo;
+				map.moveTo = function(lonlat, zoom, options) {
+    				return(zoom >= 2 && zoom <= 17) ? map.newMoveTo(lonlat,zoom,options) : false;
+				};
 
 				/* Standard layer */
 				classic = new OpenLayers.Layer.OSM("Classic");
 
 				/* avoiding out of bounds requests */
 				classic.displayOutsideMaxExtent = false;
-		    	/* then adding classic layer to the map */
-		    	map.addLayer(classic);
 
 		    	/* Landscape layer */
 		    	relief = new OpenLayers.Layer.OSM("Relief", [
 		    		'http://a.tile3.opencyclemap.org/landscape/${z}/${x}/${y}.png',
                     'http://b.tile3.opencyclemap.org/landscape/${z}/${x}/${y}.png',
                     'http://c.tile3.opencyclemap.org/landscape/${z}/${x}/${y}.png'
-                ]);
+            	]);
+            	relief.displayOutsideMaxExtent = false;
 
-				relief.displayOutsideMaxExtent = false;
-				/* then adding relief layer to the map */
-		    	map.addLayer(relief);
+				/* then adding layers to the map */
+		    	map.addLayers([classic, relief]);
 
 		    	/* allowing user to switch between layers */
 	    		map.addControl(new OpenLayers.Control.LayerSwitcher());
