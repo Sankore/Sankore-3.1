@@ -31,9 +31,9 @@
 				color: black;				
 			}
 			#layout_switch a:hover {
+				color: white;
 				background-color: black;
-				opacity: 0.5;	
-				color: white;			
+				opacity: 0.5;				
 			}			
 			.olControlPanZoom {
 				top: auto !important;
@@ -44,9 +44,11 @@
 			    bottom: 15px !important; 
 			}
 		</style>
-		<script src="api/OpenLayers.js"></script>
-		<script src="js/jquery-1.7.2.min.js"></script>
-		<script>
+		<script src="api/OpenLayers.js" type="text/javascript"></script>
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			<!--
+			
 			/*
 			 * OpenStreetMap Widget
 			 * ==========================================================
@@ -162,6 +164,7 @@
 					return false;
 				}); 
 			};
+			-->
 		</script>
 	</head>
 	<body>
@@ -173,8 +176,10 @@
 		</div>
 
 		<form method="post" id="search_form" action="#" accept-charset="UTF-8">
-			<input type="text" value="" tabindex="1" name="query" id="query">
-			<input type="submit" value="Go" name="commit">
+			<p>
+				<input type="text" value="" tabindex="1" id="query" />
+				<input type="submit" value="Go" />
+			</p>
 		</form>
 	</body>
 </html>
