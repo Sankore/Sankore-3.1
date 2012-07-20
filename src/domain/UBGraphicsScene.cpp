@@ -517,7 +517,6 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos)
                 dc->mActiveRuler->DrawLine(position, width);
             }else{
             	if(dc->isInInterpolateMode() && mSampledPoints.size() >= dc->interpolationLevel()){
-            		qDebug() << "-- Sampling ----------------------------------";
             		// Interpolate
             		interpolateStroke();
 
@@ -528,7 +527,6 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos)
 						mPreviousPolygonItems.last()->setToolTip(QString("%0").arg(i));
             		}
             		drawLineTo(position, previousWidth, width, dc->stylusTool() == UBStylusTool::Line);
-            		qDebug() << "-- Sampling Done ! ----------------------------";
             	}else{
             		drawLineTo(position, previousWidth, width, dc->stylusTool() == UBStylusTool::Line);
             	}
@@ -2440,9 +2438,14 @@ void UBGraphicsScene::setToolCursor(int tool)
     }
 }
 void UBGraphicsScene::interpolateStroke(){
+	sPressurePoint origin;
+	sPressurePoint dest;
+	sPressurePoint lastPrevious;
+	bool gotPrevious = false;
+
 	UBDrawingController* dc = UBDrawingController::drawingController();
 
-	// first, remove the segment that will be refreshed during the interpolation
+	// Remove the segment that will be refreshed during the interpolation
 	int accuracy = dc->interpolationAccuracy();
 	int level = dc->interpolationLevel();
 	int nbToBeRemoved = ((level - 1)*accuracy) +1;
@@ -2466,6 +2469,11 @@ void UBGraphicsScene::interpolateStroke(){
 
 	// Update mPreviousPoint because we removed the last polygons
 	mPreviousPoint = mPreviousPolygonItems.last()->originalLine().p2();
+
+	if(mInterpolatedPoints.size() > nbToBeRemoved){
+		lastPrevious = mInterpolatedPoints.at(mInterpolatedPoints.size()-nbToBeRemoved);
+		gotPrevious = true;
+	}
 
 	// Then compute the new segments
 	mInterpolatedPoints.clear();
@@ -2494,22 +2502,30 @@ void UBGraphicsScene::interpolateStroke(){
 
 		UBCubicPolynomial scpX = xPolys.at(0);
 		UBCubicPolynomial scpY = yPolys.at(0);
-		sPressurePoint origin;
-		sPressurePoint dest;
-		origin.pos = mSampledPoints.at(start).pos;
-		origin.width = mSampledPoints.at(start).width;
+
+		if(gotPrevious){
+			origin.pos = lastPrevious.pos;
+			origin.width = lastPrevious.width;
+		}else{
+			origin.pos = mSampledPoints.at(start).pos;
+			origin.width = mSampledPoints.at(start).width;
+		}
+
 		mInterpolatedPoints << origin;
 
 		for(int i=0; i<xPolys.size(); i++) {
+			qDebug() << "-- Sampled Point " << i << " -------------";
 			qreal destWidth = xCoords.at(i).width;
 			qreal deltaWidth = (destWidth - origin.width)/(qreal)accuracy;
 			for(int j=1; j<=accuracy; j++){
-			  dest.width = origin.width + j*deltaWidth;
+			  qreal currentWidth = origin.width;// + j*deltaWidth;
+			  dest.width = (currentWidth < 0) ? 0 : currentWidth;
 			  float u = j / (float)accuracy;
 			  UBCubicPolynomial scpXU = xPolys.at(i);
 			  UBCubicPolynomial scpYU = yPolys.at(i);
 			  dest.pos.setX(roundf(scpXU.eval(u)));
 			  dest.pos.setY(roundf(scpYU.eval(u)));
+			  qDebug() << "  w(" << dest.width << ")  pos: " << dest.pos;
 			  mInterpolatedPoints << dest;
 			  origin = dest;
 			}
