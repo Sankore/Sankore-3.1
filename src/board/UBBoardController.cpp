@@ -169,6 +169,8 @@ void UBBoardController::setupViews()
     mControlView->setMouseTracking(true);
 
     mControlView->grabGesture(Qt::SwipeGesture);
+    mControlView->grabGesture(Qt::PinchGesture);
+        mControlView->grabGesture(Qt::PanGesture);    // Not recognized correctly on OSX for the moment
 
     mControlView->setTransformationAnchor(QGraphicsView::NoAnchor);
 
@@ -780,6 +782,14 @@ void UBBoardController::showKeyboard(bool show)
     mPaletteManager->showVirtualKeyboard(show);
 }
 
+void UBBoardController::gestureZoom(QPointF center, qreal zoomFactor)
+{
+    if(1>= zoomFactor){
+        zoomOut(center);
+    }else{
+        zoomIn(center);
+    }
+}
 
 void UBBoardController::zoomIn(QPointF scenePoint)
 {

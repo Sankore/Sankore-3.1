@@ -166,6 +166,7 @@ class UBBoardController : public UBDocumentContainer
 
         QString actionGroupText(){ return mActionGroupText;}
         QString actionUngroupText(){ return mActionUngroupText;}
+        void gestureZoom(QPointF center, qreal zoomFactor);
 
     public slots:
         void showDocumentsDialog();

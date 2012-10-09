@@ -302,24 +302,54 @@ void UBBoardView::keyReleaseEvent(QKeyEvent *event)
 bool
 UBBoardView::event (QEvent * e)
 {
-  if (e->type () == QEvent::Gesture)
-    {
-      QGestureEvent *gestureEvent = dynamic_cast<QGestureEvent *> (e);
-      if (gestureEvent)
-        {
-          QSwipeGesture* swipe = dynamic_cast<QSwipeGesture*> (gestureEvent->gesture (Qt::SwipeGesture));
-          if (swipe)
-            {
-              if (swipe->horizontalDirection () == QSwipeGesture::Left)
-                {
-                  mController->previousScene ();
-                  gestureEvent->setAccepted (swipe, true);
+    if(e->type () == QEvent::Gesture){
+        QGestureEvent *gestureEvent = dynamic_cast<QGestureEvent *> (e);
+        if(gestureEvent){
+            QSwipeGesture* swipe = dynamic_cast<QSwipeGesture*> (gestureEvent->gesture (Qt::SwipeGesture));
+            QPanGesture* pan = dynamic_cast<QPanGesture*>(gestureEvent->gesture(Qt::PanGesture));
+            QPinchGesture* pinch = dynamic_cast<QPinchGesture*>(gestureEvent->gesture(Qt::PinchGesture));
+            if(swipe){
+                // SWIPE Gesture: change the current scene depending on the swipe direction.
+                if (swipe->horizontalDirection () == QSwipeGesture::Left){
+                    mController->previousScene ();
+                    gestureEvent->setAccepted (swipe, true);
                 }
 
-              if (swipe->horizontalDirection () == QSwipeGesture::Right)
-                {
-                  mController->nextScene ();
-                  gestureEvent->setAccepted (swipe, true);
+                if (swipe->horizontalDirection () == QSwipeGesture::Right){
+                        mController->nextScene ();
+                        gestureEvent->setAccepted (swipe, true);
+                }
+            }
+            if(pan){
+                // PAN Gesture: pan the whole scene like the free hand tool.
+                // NOTE: Not recognized on OSX for the moment, need to tweak qapplication_macx.mm maybe...
+                qDebug() << "PAN gesture recognized!";
+            }
+            if(pinch){
+                // PINCH Gesture:   If no item is selected: Modify the scene zoom factor according to the pinch.
+                //                  If an item is selected: Scale & Rotate the selected item according to the pinch.
+                QPointF center = pinch->centerPoint();
+                qreal sf = pinch->scaleFactor();
+                qreal angle = pinch->rotationAngle();
+                QList<QGraphicsItem*> selectedItems = scene()->selectedItems();
+                if(selectedItems.empty()){
+                    // Modifiy the scene zoom factor
+                    UBApplication::boardController->gestureZoom(center, sf);
+                }else{
+                    // Modifiy the selected items scale factors
+                    foreach(QGraphicsItem* pItem, selectedItems){
+                        if(pinch->lastRotationAngle() != angle){
+                            qreal radAngle = angle * PI / 180;
+                            pItem->translate(pItem->boundingRect().width()/2, pItem->boundingRect().height()/2);
+                            pItem->rotate(radAngle);
+                            pItem->translate(-pItem->boundingRect().width()/2, -pItem->boundingRect().height()/2);
+                            pinch->setLastRotationAngle(angle);
+                        }
+                        if(pinch->lastScaleFactor() != sf){
+                            pItem->setScale(sf);
+                            pinch->setLastScaleFactor(sf);
+                        }
+                    }
                 }
             }
         }
