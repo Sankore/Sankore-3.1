@@ -331,6 +331,8 @@ UBBoardView::event (QEvent * e)
                 QPointF center = pinch->centerPoint();
                 qreal sf = pinch->scaleFactor();
                 qreal angle = pinch->rotationAngle();
+                qreal totalRotationAngle = pinch->totalRotationAngle();
+                qDebug() << "angle: " << angle << ", total rotation: " << totalRotationAngle;
                 QList<QGraphicsItem*> selectedItems = scene()->selectedItems();
                 if(selectedItems.empty()){
                     // Modifiy the scene zoom factor
@@ -339,9 +341,9 @@ UBBoardView::event (QEvent * e)
                     // Modifiy the selected items scale factors
                     foreach(QGraphicsItem* pItem, selectedItems){
                         if(pinch->lastRotationAngle() != angle){
-                            qreal radAngle = angle * PI / 180;
+                            qreal tinyAngle = angle - pinch->lastRotationAngle();
                             pItem->translate(pItem->boundingRect().width()/2, pItem->boundingRect().height()/2);
-                            pItem->rotate(radAngle);
+                            pItem->rotate(tinyAngle);
                             pItem->translate(-pItem->boundingRect().width()/2, -pItem->boundingRect().height()/2);
                             pinch->setLastRotationAngle(angle);
                         }
