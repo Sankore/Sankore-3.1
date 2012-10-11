@@ -304,6 +304,13 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
 
         UBGraphicsPolygonItem* polygonToPolygonItem(const QPolygonF pPolygon);
 
+        void setRenderForControl(bool bControl) {mRenderintForControlScreen = bControl;} 
+
+        inline bool rendersForControl()
+        {
+            return mRenderintForControlScreen;
+        }
+
 public slots:
 		void initStroke();
         void hideEraser();
@@ -371,6 +378,8 @@ public slots:
         QSet<QGraphicsItem*> mRemovedItems;
 
         UBDocumentProxy* mDocument;
+
+        bool mRenderintForControlScreen;
 
         bool mDarkBackground;
         bool mCrossedBackground;

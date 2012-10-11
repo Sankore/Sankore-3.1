@@ -15,7 +15,7 @@
 
 #include "UBItem.h"
 
-#include "core/memcheck.h"
+#include "domain/UBGraphicsScene.h"
 
 #include "domain/UBGraphicsPixmapItem.h"
 #include "domain/UBGraphicsTextItem.h"
@@ -24,7 +24,10 @@
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
+#include "domain/UBGraphicsItemDelegate.h"
 #include "tools/UBGraphicsCurtainItem.h"
+
+#include "core/memcheck.h"
 
 UBItem::UBItem()
     : mUuid(QUuid())
@@ -110,4 +113,45 @@ UBGraphicsItemDelegate *UBGraphicsItem::Delegate(QGraphicsItem *pItem)
     }
 
     return result;
+}
+
+void UBGraphicsItem::setAsControl(bool isControl)
+{
+    mIsControl = isControl;
+}
+
+bool UBGraphicsItem::isControl()
+{
+    if (QGraphicsSvgItem::Type == type())
+        return true;
+
+    return (type() > UBGraphicsItemType::ControlItemType && type() < UBGraphicsItemType::UserTypesCount);
+}
+
+bool UBGraphicsItem::shouldPaint()
+{
+    if (mIsControl)
+        return false;
+
+    UBGraphicsScene *curScene;
+    if (!isControl())
+    {       
+        if (mDelegate && mDelegate->delegated())
+        {
+            curScene = qobject_cast<UBGraphicsScene *>(mDelegate->delegated()->scene());
+        }
+    }
+    else
+    {
+        QGraphicsItem *selfCasted = dynamic_cast<QGraphicsItem *>(this);
+        if (selfCasted)
+        {
+            curScene = qobject_cast<UBGraphicsScene *>(selfCasted->scene());
+        }
+    }
+    if (curScene)
+    {
+        return curScene->rendersForControl();
+    }
+    return false;
 }

@@ -25,6 +25,7 @@
 
 #include "core/memcheck.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
+#include "domain/UBGraphicsItemDelegate.h"
 
 UBGraphicsItemUndoCommand::UBGraphicsItemUndoCommand(UBGraphicsScene* pScene, const QSet<QGraphicsItem*>& pRemovedItems,
                                                      const QSet<QGraphicsItem*>& pAddedItems, const GroupDataTable &groupsMap)

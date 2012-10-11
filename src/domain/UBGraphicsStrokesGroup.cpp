@@ -1,6 +1,7 @@
 #include "UBGraphicsStrokesGroup.h"
 
 #include "domain/UBGraphicsPolygonItem.h"
+#include "domain/UBGraphicsItemDelegate.h"
 
 #include "core/memcheck.h"
 

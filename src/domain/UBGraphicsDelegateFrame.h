@@ -18,18 +18,22 @@
 
 #include <QtGui>
 #include "core/UB.h"
+#include "domain/UBItem.h"
 
 class QGraphicsSceneMouseEvent;
 class UBGraphicsItemDelegate;
 class QGraphicsSvgItem;
+class DelegateButton;
 
-
-class UBGraphicsDelegateFrame: public QGraphicsRectItem, public QObject
+class UBGraphicsDelegateFrame: public QGraphicsRectItem, public UBGraphicsItem, public QObject
 {
     public:
 
         UBGraphicsDelegateFrame(UBGraphicsItemDelegate* pDelegate, QRectF pRect, qreal pFrameWidth, bool respectRatio = true);
         virtual ~UBGraphicsDelegateFrame();
+
+        enum { Type = UBGraphicsItemType::DelegateFrameType };
+        virtual int type() const {return Type;}
 
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                 QWidget *widget);
@@ -40,7 +44,6 @@ class UBGraphicsDelegateFrame: public QGraphicsRectItem, public QObject
         QPointF getFixedPointFromPos();
         QSizeF getResizeVector(qreal moveX, qreal moveY);
         QSizeF resizeDelegate(qreal moveX, qreal moveY);
-        void scaleByPos(qreal scaleX, qreal scaleY);
         virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
         virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
@@ -109,12 +112,12 @@ class UBGraphicsDelegateFrame: public QGraphicsRectItem, public QObject
         QSizeF mOriginalSize;
         QPointF mFixedPoint;
 
-        QGraphicsSvgItem* mBottomRightResizeGripSvgItem;
-        QGraphicsSvgItem* mBottomResizeGripSvgItem;
-        QGraphicsSvgItem* mLeftResizeGripSvgItem;
-        QGraphicsSvgItem* mRightResizeGripSvgItem;
-        QGraphicsSvgItem* mTopResizeGripSvgItem;
-        QGraphicsSvgItem* mRotateButton;
+        DelegateButton* mBottomRightResizeGripSvgItem;
+        DelegateButton* mBottomResizeGripSvgItem;
+        DelegateButton* mLeftResizeGripSvgItem;
+        DelegateButton* mRightResizeGripSvgItem;
+        DelegateButton* mTopResizeGripSvgItem;
+        DelegateButton* mRotateButton;
 
         QGraphicsRectItem* mBottomRightResizeGrip;
         QGraphicsRectItem* mBottomResizeGrip;

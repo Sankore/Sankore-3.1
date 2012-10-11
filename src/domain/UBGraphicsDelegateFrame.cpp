@@ -65,11 +65,16 @@ UBGraphicsDelegateFrame::UBGraphicsDelegateFrame(UBGraphicsItemDelegate* pDelega
     setPen(Qt::NoPen);
     setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Control));
 
-    mBottomRightResizeGripSvgItem = new QGraphicsSvgItem(":/images/resize.svg", this);
-    mBottomResizeGripSvgItem = new QGraphicsSvgItem(":/images/resizeBottom.svg", this);
-    mLeftResizeGripSvgItem = new QGraphicsSvgItem(":/images/resizeLeft.svg", this);
-    mRightResizeGripSvgItem = new QGraphicsSvgItem(":/images/resizeRight.svg", this);
-    mTopResizeGripSvgItem = new QGraphicsSvgItem(":/images/resizeTop.svg", this);
+    mBottomRightResizeGripSvgItem = new DelegateButton(":/images/resize.svg", this, this);
+    mBottomRightResizeGripSvgItem->setTransparentToMouseEvent(true);
+    mBottomResizeGripSvgItem = new DelegateButton(":/images/resizeBottom.svg", this, this);
+    mBottomResizeGripSvgItem->setTransparentToMouseEvent(true);
+    mLeftResizeGripSvgItem = new DelegateButton(":/images/resizeLeft.svg", this, this);
+    mLeftResizeGripSvgItem->setTransparentToMouseEvent(true);
+    mRightResizeGripSvgItem = new DelegateButton(":/images/resizeRight.svg", this, this);
+    mRightResizeGripSvgItem->setTransparentToMouseEvent(true);
+    mTopResizeGripSvgItem = new DelegateButton(":/images/resizeTop.svg", this, this);
+    mTopResizeGripSvgItem->setTransparentToMouseEvent(true);
 
     mBottomRightResizeGrip = new QGraphicsRectItem(this);
     mBottomRightResizeGrip->setPen(Qt::NoPen);
@@ -82,7 +87,7 @@ UBGraphicsDelegateFrame::UBGraphicsDelegateFrame(UBGraphicsItemDelegate* pDelega
     mTopResizeGrip = new QGraphicsRectItem(this);
     mTopResizeGrip->setPen(Qt::NoPen);
 
-    mRotateButton = new QGraphicsSvgItem(":/images/rotate.svg", this);
+    mRotateButton = new DelegateButton(":/images/rotate.svg", this, this);
     mRotateButton->setCursor(UBResources::resources()->rotateCursor);
     mRotateButton->setVisible(mDelegate->canRotate());
 
@@ -121,6 +126,11 @@ void UBGraphicsDelegateFrame::paint(QPainter *painter, const QStyleOptionGraphic
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
+
+    if (!shouldPaint())
+    {
+        return;
+    }
 
     QPainterPath path;
     path.addRoundedRect(rect(), mFrameWidth / 2, mFrameWidth / 2);
@@ -379,12 +389,6 @@ QSizeF UBGraphicsDelegateFrame::resizeDelegate(qreal moveX, qreal moveY)
     }
 
     return incVector;
-}
-
-
-void UBGraphicsDelegateFrame::scaleByPos(qreal scaleX, qreal scaleY)
-{
-
 }
 
 void UBGraphicsDelegateFrame::mouseMoveEvent(QGraphicsSceneMouseEvent *event)

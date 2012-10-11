@@ -52,6 +52,7 @@
 #include "domain/UBGraphicsSvgItem.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsStrokesGroup.h"
+#include "domain/UBGraphicsDelegateControls.h"
 
 #include "document/UBDocumentProxy.h"
 
@@ -130,7 +131,7 @@ void UBBoardView::init ()
   setHorizontalScrollBarPolicy (Qt::ScrollBarAlwaysOff);
   setAcceptDrops (true);
 
-  setOptimizationFlag (QGraphicsView::IndirectPainting); // enable UBBoardView::drawItems filter
+  //setOptimizationFlag (QGraphicsView::IndirectPainting); // enable UBBoardView::drawItems filter
 
   mTabletStylusIsPressed = false;
   mMouseButtonIsPressed = false;
@@ -1304,6 +1305,12 @@ UBBoardView::leaveEvent (QEvent * event)
     scene ()->leaveEvent (event);
 
   QGraphicsView::leaveEvent (event);
+}
+
+void UBBoardView::paintEvent(QPaintEvent *event)
+{
+    scene()->setRenderForControl(isControl);
+    QGraphicsView::paintEvent(event);
 }
 
 void

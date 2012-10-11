@@ -133,7 +133,6 @@ struct UBGraphicsItemType
         PolygonItemType = QGraphicsItem::UserType + 1, 
 		PixmapItemType,
         SvgItemType, 
-        DelegateButtonType,
 		MediaItemType, 
 		PDFItemType, 
 		TextItemType,
@@ -149,6 +148,9 @@ struct UBGraphicsItemType
         groupContainerType,
         ToolWidgetItemType,
         GraphicsWidgetItemType,
+        ControlItemType, // not assigned to any item. Used for fast determine if item is control
+        DelegateFrameType,
+        DelegateButtonType,
         UserTypesCount // this line must be the last line in this enum because it is types counter.
     };
 };

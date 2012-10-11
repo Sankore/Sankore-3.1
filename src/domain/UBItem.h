@@ -16,12 +16,11 @@
 #define UBITEM_H
 
 #include <QtGui>
-#include "domain/UBGraphicsItemDelegate.h"
+
 #include "core/UB.h"
 
 class UBGraphicsScene;
-class UBGraphicsItem;
-
+class UBGraphicsItemDelegate;
 class UBItem
 {
     protected:
@@ -90,7 +89,9 @@ class UBItem
 class UBGraphicsItem
 {
 protected:
-    UBGraphicsItem() : mDelegate(NULL)
+    UBGraphicsItem()
+        : mDelegate(NULL)
+        , mIsControl(false)
     {
         // NOOP
     }
@@ -101,12 +102,16 @@ public:
 
     virtual int type() const = 0;
 
-    inline UBGraphicsItemDelegate *Delegate() const { return mDelegate; }
+    UBGraphicsItemDelegate *Delegate() const { return mDelegate; }
 
     static void assignZValue(QGraphicsItem*, qreal value);
     static bool isRotatable(QGraphicsItem *item);
     static bool isFlippable(QGraphicsItem *item);
     static QUuid getOwnUuid(QGraphicsItem *item);
+
+    void setAsControl(bool isControl = false);
+    bool isControl();
+    bool shouldPaint(); 
 
     static UBGraphicsItemDelegate *Delegate(QGraphicsItem *pItem);
 
@@ -116,6 +121,7 @@ public:
 
 private:
     UBGraphicsItemDelegate* mDelegate;
+    bool mIsControl;
 };
 
 #endif // UBITEM_H

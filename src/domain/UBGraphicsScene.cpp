@@ -61,6 +61,7 @@
 #include "UBGraphicsStrokesGroup.h"
 
 #include "domain/UBGraphicsGroupContainerItem.h"
+#include "domain/UBGraphicsItemDelegate.h"
 
 #include "UBGraphicsStroke.h"
 

@@ -82,6 +82,7 @@ class UBBoardView : public QGraphicsView
 
         virtual void focusOutEvent ( QFocusEvent * event );
 
+        virtual void paintEvent(QPaintEvent *event);
         virtual void drawItems(QPainter *painter, int numItems,
                                     QGraphicsItem *items[],
                                     const QStyleOptionGraphicsItem options[]);
