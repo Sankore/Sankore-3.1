@@ -996,6 +996,9 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
                 || contentType.startsWith("application/widget")
                 || contentType.startsWith("application/vnd.apple-widget");
 
+        if (isBackground)
+            mActiveScene->setURStackEnable(false);
+
         if (shouldLoadFileData)
         {
             QFile file(fileName);
@@ -1039,6 +1042,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
 
     if (isBackground && oldBackgroundObject != mActiveScene->backgroundObject())
     {
+        mActiveScene->setURStackEnable(true);
         if (mActiveScene->isURStackIsEnabled()) { //should be deleted after scene own undo stack implemented
             UBGraphicsItemUndoCommand* uc = new UBGraphicsItemUndoCommand(mActiveScene, oldBackgroundObject, mActiveScene->backgroundObject());
             UBApplication::undoStack->push(uc);
