@@ -2046,12 +2046,10 @@ void UBBoardController::grabScene(const QRectF& pSceneRect)
         painter.setRenderHint(QPainter::SmoothPixmapTransform);
         painter.setRenderHint(QPainter::Antialiasing);
 
-        mActiveScene->setRenderingContext(UBGraphicsScene::NonScreen);
         mActiveScene->setRenderingQuality(UBItem::RenderingQualityHigh);
 
         mActiveScene->render(&painter, targetRect, pSceneRect);
 
-        mActiveScene->setRenderingContext(UBGraphicsScene::Screen);
         mActiveScene->setRenderingQuality(UBItem::RenderingQualityNormal);
 
         mPaletteManager->addItem(QPixmap::fromImage(image));
