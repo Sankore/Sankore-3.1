@@ -37,30 +37,39 @@ private slots:
     void updateCacheColor(QColor color);
     void onColorClicked();
     void updateShapeButtons();
-    void onSizeChanged(int newSize);
+    void onWidthChanged(int newSize);
+    void onHeightChanged(int newSize);
     void onCacheEnabled();
 
 private:
     QVBoxLayout* mpLayout;
     QLabel* mpCachePropertiesLabel;
     QLabel* mpColorLabel;
+    QLabel* mpAlphaLabel;
     QLabel* mpShapeLabel;
-    QLabel* mpSizeLabel;
+    QLabel *mpGeometryLabel;
+    QLabel *mpWidthLabel;
+    QLabel *mpHeightLabel;
+    QCheckBox *mpKeepAspectRatioCheckbox;
     QPushButton* mpColor;
     QPushButton* mpSquareButton;
     QPushButton* mpCircleButton;
     QPushButton* mpCloseButton;
-    QSlider* mpSizeSlider;
+    QSlider *mpAplhaSlider;
+    QSlider* mpWidthSlider;
+    QSlider* mpHeightSlider;
     QHBoxLayout* mpColorLayout;
     QHBoxLayout* mpShapeLayout;
-    QHBoxLayout* mpSizeLayout;
+    QVBoxLayout* mpSizeLayout;
+    QHBoxLayout *mpWidthLayout;
+    QHBoxLayout *mpHeightLayout;
     QHBoxLayout* mpCloseLayout;
     QWidget* mpProperties;
     QVBoxLayout* mpPropertiesLayout;
     QColor mActualColor;
     eMaskShape mActualShape;
     UBGraphicsCache* mpCurrentCache;
-
+    bool mKeepAspectRatio;
 };
 
 #endif // UBCACHEPROPERTIESWIDGET_H

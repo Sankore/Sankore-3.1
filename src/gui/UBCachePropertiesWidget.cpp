@@ -20,12 +20,12 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
   , mpCachePropertiesLabel(NULL)
   , mpColorLabel(NULL)
   , mpShapeLabel(NULL)
-  , mpSizeLabel(NULL)
+  , mpWidthLabel(NULL)
   , mpColor(NULL)
   , mpSquareButton(NULL)
   , mpCircleButton(NULL)
   , mpCloseButton(NULL)
-  , mpSizeSlider(NULL)
+  , mpWidthSlider(NULL)
   , mpColorLayout(NULL)
   , mpShapeLayout(NULL)
   , mpSizeLayout(NULL)
@@ -33,6 +33,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
   , mpProperties(NULL)
   , mpPropertiesLayout(NULL)
   , mpCurrentCache(NULL)
+  , mKeepAspectRatio(true)
 {
     setObjectName(name);
 
@@ -61,7 +62,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpProperties->setLayout(mpPropertiesLayout);
 
 
-    // Color
+    // Color and Alpha
     mpColorLayout = new QHBoxLayout();
     mpColorLabel = new QLabel(tr("Color:"), mpProperties);
     mpColor = new QPushButton(mpProperties);
@@ -69,7 +70,16 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     updateCacheColor(Qt::black);
     mpColorLayout->addWidget(mpColorLabel, 0);
     mpColorLayout->addWidget(mpColor, 0);
-    mpColorLayout->addStretch(1);
+
+    mpAlphaLabel = new QLabel(tr("Alpha:"), mpProperties);
+    mpAplhaSlider = new QSlider(Qt::Horizontal, mpProperties);
+    mpAplhaSlider->setMinimumHeight(20);
+    mpAplhaSlider->setMinimum(0);
+    mpAplhaSlider->setMaximum(255);
+    mpColorLayout->addWidget(mpAlphaLabel, 0);
+    mpColorLayout->addWidget(mpAplhaSlider, 1);
+
+   // mpColorLayout->addStretch(1);
     mpPropertiesLayout->addLayout(mpColorLayout, 0);
 
     // Shape
@@ -92,14 +102,36 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpCircleButton->setChecked(true);
 
     // Shape Size
-    mpSizeLayout = new QHBoxLayout();
-    mpSizeLabel = new QLabel(tr("Size:"), mpProperties);
-    mpSizeSlider = new QSlider(Qt::Horizontal, mpProperties);
-    mpSizeSlider->setMinimumHeight(20);
-    mpSizeSlider->setMinimum(50);
-    mpSizeSlider->setMaximum(MAX_SHAPE_WIDTH);
-    mpSizeLayout->addWidget(mpSizeLabel, 0);
-    mpSizeLayout->addWidget(mpSizeSlider, 1);
+    mpSizeLayout = new QVBoxLayout();
+
+    mpGeometryLabel = new QLabel(tr("Geometry:"), mpProperties);
+    mpSizeLayout->addWidget(mpGeometryLabel, 1);
+
+    mpWidthLayout = new QHBoxLayout();
+    mpWidthLabel = new QLabel(tr("Width:"), mpProperties);
+    mpWidthSlider = new QSlider(Qt::Horizontal, mpProperties);
+    mpWidthSlider->setMinimumHeight(20);
+    mpWidthSlider->setMinimum(50);
+    mpWidthSlider->setMaximum(MAX_SHAPE_WIDTH);
+    mpWidthLayout->addWidget(mpWidthLabel, 0);
+    mpWidthLayout->addWidget(mpWidthSlider, 1);
+    mpSizeLayout->addLayout(mpWidthLayout, 0);
+
+    mpHeightLayout = new QHBoxLayout();
+    mpHeightLabel = new QLabel(tr("Height:"), mpProperties);
+    mpHeightSlider = new QSlider(Qt::Horizontal, mpProperties);
+    mpHeightSlider->setMinimumHeight(20);
+    mpHeightSlider->setMinimum(50);
+    mpHeightSlider->setMaximum(MAX_SHAPE_WIDTH);
+    mpHeightLayout->addWidget(mpHeightLabel, 0);
+    mpHeightLayout->addWidget(mpHeightSlider, 1);
+    mpSizeLayout->addLayout(mpHeightLayout, 0);
+
+    mpKeepAspectRatioCheckbox = new QCheckBox(tr("Keep proportions"), mpProperties);
+    mpKeepAspectRatioCheckbox->setTristate(false);
+
+    mpSizeLayout->addWidget(mpKeepAspectRatioCheckbox, 0);
+
     mpPropertiesLayout->addLayout(mpSizeLayout, 0);
 
     // Close
@@ -118,7 +150,8 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     connect(mpColor, SIGNAL(clicked()), this, SLOT(onColorClicked()));
     connect(mpCircleButton, SIGNAL(clicked()), this, SLOT(updateShapeButtons()));
     connect(mpSquareButton, SIGNAL(clicked()), this, SLOT(updateShapeButtons()));
-    connect(mpSizeSlider, SIGNAL(valueChanged(int)), this, SLOT(onSizeChanged(int)));
+    connect(mpWidthSlider, SIGNAL(valueChanged(int)), this, SLOT(onWidthChanged(int)));
+    connect(mpHeightSlider, SIGNAL(valueChanged(int)), this, SLOT(onHeightChanged(int)));
     connect(UBApplication::boardController, SIGNAL(pageChanged()), this, SLOT(updateCurrentCache()));
     connect(UBApplication::boardController, SIGNAL(cacheEnabled()), this, SLOT(onCacheEnabled()));
 }
@@ -140,10 +173,10 @@ UBCachePropertiesWidget::~UBCachePropertiesWidget()
         delete mpShapeLabel;
         mpShapeLabel = NULL;
     }
-    if(NULL != mpSizeLabel)
+    if(NULL != mpWidthLabel)
     {
-        delete mpSizeLabel;
-        mpSizeLabel = NULL;
+        delete mpWidthLabel;
+        mpWidthLabel = NULL;
     }
     if(NULL != mpColor)
     {
@@ -165,10 +198,10 @@ UBCachePropertiesWidget::~UBCachePropertiesWidget()
         delete mpCloseButton;
         mpCloseButton = NULL;
     }
-    if(NULL != mpSizeSlider)
+    if(NULL != mpWidthSlider)
     {
-        delete mpSizeSlider;
-        mpSizeSlider = NULL;
+        delete mpWidthSlider;
+        mpWidthSlider = NULL;
     }
     if(NULL != mpColorLayout)
     {
@@ -309,7 +342,7 @@ void UBCachePropertiesWidget::updateCurrentCache()
                 }
 
                 // Update the values of the cache properties
-                mpSizeSlider->setValue(mpCurrentCache->shapeWidth());
+                mpWidthSlider->setValue(mpCurrentCache->holeWidth());
                 updateCacheColor(mpCurrentCache->maskColor());
                 switch(mpCurrentCache->maskshape())
                 {
@@ -337,13 +370,22 @@ void UBCachePropertiesWidget::updateCurrentCache()
     setDisabled(true);
 }
 
-void UBCachePropertiesWidget::onSizeChanged(int newSize)
+void UBCachePropertiesWidget::onWidthChanged(int newSize)
 {
     if(NULL != mpCurrentCache)
     {
-        mpCurrentCache->setShapeWidth(newSize);
+        mpCurrentCache->setHoleWidth(newSize);
     }
 }
+
+void UBCachePropertiesWidget::onHeightChanged(int newSize)
+{
+    if(NULL != mpCurrentCache)
+    {
+        mpCurrentCache->setHoleHeight(newSize);
+    }
+}
+
 
 void UBCachePropertiesWidget::onCacheEnabled()
 {

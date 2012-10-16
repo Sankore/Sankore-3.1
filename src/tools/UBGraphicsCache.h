@@ -45,8 +45,14 @@ public:
     void setMaskColor(QColor color);
     eMaskShape maskshape();
     void setMaskShape(eMaskShape shape);
-    int shapeWidth();
-    void setShapeWidth(int width);
+    int holeWidth();
+
+    void setHoleWidth(int width);
+    void setHoleHeight(int height);
+
+    void setHoleSize(QSize size);
+
+    void setSimpleMode(bool isSimple);
 
 protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
@@ -62,10 +68,13 @@ private:
     int mShapeWidth;
     bool mDrawMask;
     QPointF mShapePos;
-    int mOldShapeWidth;
+    QSize mOldShapeSize;
     QPointF mOldShapePos;
     UBGraphicsScene* mScene;
-    
+
+    bool mIsSimpleMode;
+
+    QSize mHoleSize;
 
     UBGraphicsCache(UBGraphicsScene *scene);
     
