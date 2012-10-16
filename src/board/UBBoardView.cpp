@@ -331,27 +331,37 @@ UBBoardView::event (QEvent * e)
                 QPointF center = pinch->centerPoint();
                 qreal sf = pinch->scaleFactor();
                 qreal angle = pinch->rotationAngle();
-                qreal totalRotationAngle = pinch->totalRotationAngle();
-                qDebug() << "angle: " << angle << ", total rotation: " << totalRotationAngle;
                 QList<QGraphicsItem*> selectedItems = scene()->selectedItems();
                 if(selectedItems.empty()){
                     // Modifiy the scene zoom factor
-                    UBApplication::boardController->gestureZoom(center, sf);
+                    //UBApplication::boardController->gestureZoom(center, sf);
                 }else{
                     // Modifiy the selected items scale factors
                     foreach(QGraphicsItem* pItem, selectedItems){
-                        if(pinch->lastRotationAngle() != angle){
+                        QRectF bRect = pItem->boundingRect();
+                        QRectF bSceneRect = pItem->sceneBoundingRect();
+                        if(UBGraphicsItem::isRotatable(pItem) && pinch->lastRotationAngle() != angle){
                             qreal tinyAngle = angle - pinch->lastRotationAngle();
-                            pItem->translate(pItem->boundingRect().width()/2, pItem->boundingRect().height()/2);
+                            pItem->translate(bRect.width()/2, bRect.height()/2);
                             pItem->rotate(tinyAngle);
-                            pItem->translate(-pItem->boundingRect().width()/2, -pItem->boundingRect().height()/2);
-                            pinch->setLastRotationAngle(angle);
+                            pItem->translate(-bRect.width()/2, -bRect.height()/2);
                         }
                         if(pinch->lastScaleFactor() != sf){
-                            pItem->setScale(sf);
-                            pinch->setLastScaleFactor(sf);
+                            // TODO: scaling should use the element center point for scaling center
+                            UBGraphicsItem* pUBItem = dynamic_cast<UBGraphicsItem*>(pItem);
+                            if(NULL != pUBItem){
+                                UBGraphicsItemDelegate* pDelegate = pUBItem->Delegate();
+                                if(NULL != pDelegate){
+                                    //pItem->setScale(sf);
+                                    QTransform newTransform = pItem->transform();
+                                    newTransform.scale(sf, sf);
+                                    pItem->setTransform(newTransform);
+                                }
+                            }
                         }
                     }
+                    pinch->setLastRotationAngle(angle);
+                    pinch->setLastScaleFactor(sf);
                 }
             }
         }
