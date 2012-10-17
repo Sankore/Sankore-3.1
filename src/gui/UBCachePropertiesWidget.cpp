@@ -47,7 +47,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     setContentsMargins(10, 10, 10, 10);
 
     // Build the UI
-    mpLayout = new QVBoxLayout();
+    mpLayout = new QVBoxLayout(this);
     setLayout(mpLayout);
 
     // Title
@@ -59,12 +59,12 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpProperties = new QWidget(this);
     mpProperties->setObjectName("DockPaletteWidgetBox");
     mpLayout->addWidget(mpProperties, 1);
-    mpPropertiesLayout = new QVBoxLayout();
+    mpPropertiesLayout = new QVBoxLayout(this);
     mpProperties->setLayout(mpPropertiesLayout);
 
 
     // Color and Alpha
-    mpColorLayout = new QHBoxLayout();
+    mpColorLayout = new QHBoxLayout(mpProperties);
     mpColorLabel = new QLabel(tr("Color:"), mpProperties);
     mpColor = new QPushButton(mpProperties);
     mpColor->setObjectName("DockPaletteWidgetButton");
@@ -83,7 +83,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpPropertiesLayout->addLayout(mpColorLayout, 0);
 
     // Shape
-    mpShapeLayout = new QHBoxLayout();
+    mpShapeLayout = new QHBoxLayout(mpProperties);
     mpShapeLabel = new QLabel(tr("Shape:"), mpProperties);
     mpSquareButton = new QPushButton(mpProperties);
     mpSquareButton->setIcon(QIcon(":images/cache_square.png"));
@@ -102,14 +102,14 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpCircleButton->setChecked(true);
 
     // Shape Size
-    mpSizeLayout = new QVBoxLayout();
+    mpSizeLayout = new QVBoxLayout(mpProperties);
 
     mpGeometryLabel = new QLabel(tr("Geometry:"), mpProperties);
     mpSizeLayout->addWidget(mpGeometryLabel, 1);
 
     mKeepAspectRatio = UBSettings::settings()->cacheKeepAspectRatio->get().toBool();
 
-    mpWidthLayout = new QHBoxLayout();
+    mpWidthLayout = new QHBoxLayout(mpProperties);
     mpWidthLabel = new QLabel(tr("Width: "), mpProperties);
     mpWidthSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpWidthSlider->setMinimumHeight(20);
@@ -120,7 +120,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpWidthLayout->addWidget(mpWidthSlider, 1);
     mpSizeLayout->addLayout(mpWidthLayout, 0);
 
-    mpHeightLayout = new QHBoxLayout();
+    mpHeightLayout = new QHBoxLayout(mpProperties);
     mpHeightLabel = new QLabel(tr("Height:"), mpProperties);
     mpHeightSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpHeightSlider->setMinimumHeight(20);
@@ -139,8 +139,21 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
 
     mpPropertiesLayout->addLayout(mpSizeLayout, 0);
 
+    // Mode
+    mpModeLayout = new QVBoxLayout(mpProperties);
+    mpModeLabel = new QLabel(tr("Mode:"), mpProperties);
+    mpModeComboBox = new QComboBox(mpProperties);
+    mpModeComboBox->setObjectName("CacheModeSelectionComboBox");
+    mpModeComboBox->addItem("Construction", UBGraphicsCache::Construction);
+    mpModeComboBox->addItem("Presentation", UBGraphicsCache::Presentation);
+    mpModeLayout->addWidget(mpModeLabel);
+    mpModeLayout->addWidget(mpModeComboBox);
+
+    mpPropertiesLayout->addLayout(mpModeLayout, 0);
+
+
     // Close
-    mpCloseLayout =  new QHBoxLayout();
+    mpCloseLayout =  new QHBoxLayout(mpProperties);
     mpCloseButton = new QPushButton(tr("Close"), mpProperties);
     mpCloseButton->setObjectName("DockPaletteWidgetButton");
     mpCloseLayout->addWidget(mpCloseButton, 0);
@@ -158,6 +171,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     connect(mpWidthSlider, SIGNAL(valueChanged(int)), this, SLOT(onWidthChanged(int)));
     connect(mpHeightSlider, SIGNAL(valueChanged(int)), this, SLOT(onHeightChanged(int)));
     connect(mpKeepAspectRatioCheckbox, SIGNAL(stateChanged(int)), this, SLOT(onKeepAspectRatioChanged(int)));    
+    connect(mpModeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(onModeChanged(int)));
     connect(UBApplication::boardController, SIGNAL(pageChanged()), this, SLOT(updateCurrentCache()));
     connect(UBApplication::boardController, SIGNAL(cacheEnabled()), this, SLOT(onCacheEnabled()));
 
@@ -211,40 +225,10 @@ UBCachePropertiesWidget::~UBCachePropertiesWidget()
         delete mpWidthSlider;
         mpWidthSlider = NULL;
     }
-    if(NULL != mpColorLayout)
-    {
-        delete mpColorLayout;
-        mpColorLayout = NULL;
-    }
-    if(NULL != mpShapeLayout)
-    {
-        delete mpShapeLayout;
-        mpShapeLayout = NULL;
-    }
-    if(NULL != mpSizeLayout)
-    {
-        delete mpSizeLayout;
-        mpSizeLayout = NULL;
-    }
-    if(NULL != mpCloseLayout)
-    {
-        delete mpCloseLayout;
-        mpCloseLayout = NULL;
-    }
-    if(NULL != mpPropertiesLayout)
-    {
-        delete mpPropertiesLayout;
-        mpPropertiesLayout = NULL;
-    }
     if(NULL != mpProperties)
     {
         delete mpProperties;
         mpProperties = NULL;
-    }
-    if(NULL != mpLayout)
-    {
-        delete mpLayout;
-        mpLayout = NULL;
     }
 }
 
@@ -438,3 +422,7 @@ void UBCachePropertiesWidget::onCacheEnabled()
     emit showTab(this);
 }
 
+void UBCachePropertiesWidget::onModeChanged(int mode)
+{
+    mpCurrentCache->setMode(mode);
+}

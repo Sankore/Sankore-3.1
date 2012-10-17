@@ -29,6 +29,14 @@ typedef enum
 
 class UBGraphicsCache : public QGraphicsRectItem, public UBItem
 {
+
+public:
+    enum eMode
+    {
+        Construction = 0,
+        Presentation
+    };
+
 public:
     static UBGraphicsCache* instance(UBGraphicsScene *scene);
     ~UBGraphicsCache();
@@ -51,12 +59,16 @@ public:
     void setHoleWidth(int width);
     void setHoleHeight(int height);
 
+    void setHolePos(QPointF pos);
     void setHoleSize(QSize size);
 
-    void setSimpleMode(bool isSimple);
+    void setMode(int mode);
 
 protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+    void hoverMoveEvent(QGraphicsSceneHoverEvent *event);
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
@@ -67,12 +79,13 @@ private:
     QColor mMaskColor;
     eMaskShape mMaskShape;
     bool mDrawMask;
-    QPointF mShapePos;
+    QPointF mHolePos;
     QSize mOldShapeSize;
     QPointF mOldShapePos;
     UBGraphicsScene* mScene;
+    bool mShouldDrawAtHoverEnter;
 
-    bool mIsSimpleMode;
+    eMode mCurrentMode;
 
     QSize mHoleSize;
 

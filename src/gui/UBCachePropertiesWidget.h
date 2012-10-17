@@ -42,6 +42,7 @@ private slots:
     void onHeightChanged(int newSize);
     void onKeepAspectRatioChanged(int state);
     void onCacheEnabled();
+    void onModeChanged(int mode);
 
 private:
     QVBoxLayout* mpLayout;
@@ -52,6 +53,7 @@ private:
     QLabel *mpGeometryLabel;
     QLabel *mpWidthLabel;
     QLabel *mpHeightLabel;
+    QLabel *mpModeLabel;
     QCheckBox *mpKeepAspectRatioCheckbox;
     QPushButton* mpColor;
     QPushButton* mpSquareButton;
@@ -62,12 +64,14 @@ private:
     QSlider* mpHeightSlider;
     QHBoxLayout* mpColorLayout;
     QHBoxLayout* mpShapeLayout;
-    QVBoxLayout* mpSizeLayout;
     QHBoxLayout *mpWidthLayout;
     QHBoxLayout *mpHeightLayout;
     QHBoxLayout* mpCloseLayout;
     QWidget* mpProperties;
+    QVBoxLayout* mpSizeLayout;
     QVBoxLayout* mpPropertiesLayout;
+    QVBoxLayout *mpModeLayout;
+    QComboBox *mpModeComboBox;
     QColor mActualColor;
     eMaskShape mActualShape;
     UBGraphicsCache* mpCurrentCache;
