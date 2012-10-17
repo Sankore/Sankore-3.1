@@ -39,6 +39,7 @@ private slots:
     void updateShapeButtons();
     void onWidthChanged(int newSize);
     void onHeightChanged(int newSize);
+    void onKeepAspectRatioChanged(int state);
     void onCacheEnabled();
 
 private:
@@ -70,6 +71,8 @@ private:
     eMaskShape mActualShape;
     UBGraphicsCache* mpCurrentCache;
     bool mKeepAspectRatio;
+    bool mOtherSliderUsed;
+    QSize mOldHoleSize;
 };
 
 #endif // UBCACHEPROPERTIESWIDGET_H

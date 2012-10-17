@@ -34,6 +34,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
   , mpPropertiesLayout(NULL)
   , mpCurrentCache(NULL)
   , mKeepAspectRatio(true)
+  , mOtherSliderUsed(false)
 {
     setObjectName(name);
 
@@ -79,7 +80,6 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpColorLayout->addWidget(mpAlphaLabel, 0);
     mpColorLayout->addWidget(mpAplhaSlider, 1);
 
-   // mpColorLayout->addStretch(1);
     mpPropertiesLayout->addLayout(mpColorLayout, 0);
 
     // Shape
@@ -108,11 +108,12 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpSizeLayout->addWidget(mpGeometryLabel, 1);
 
     mpWidthLayout = new QHBoxLayout();
-    mpWidthLabel = new QLabel(tr("Width:"), mpProperties);
+    mpWidthLabel = new QLabel(tr("Width: "), mpProperties);
     mpWidthSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpWidthSlider->setMinimumHeight(20);
     mpWidthSlider->setMinimum(50);
     mpWidthSlider->setMaximum(MAX_SHAPE_WIDTH);
+    mpWidthSlider->setValue(50);
     mpWidthLayout->addWidget(mpWidthLabel, 0);
     mpWidthLayout->addWidget(mpWidthSlider, 1);
     mpSizeLayout->addLayout(mpWidthLayout, 0);
@@ -123,12 +124,14 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpHeightSlider->setMinimumHeight(20);
     mpHeightSlider->setMinimum(50);
     mpHeightSlider->setMaximum(MAX_SHAPE_WIDTH);
+    mpHeightSlider->setValue(50);
     mpHeightLayout->addWidget(mpHeightLabel, 0);
     mpHeightLayout->addWidget(mpHeightSlider, 1);
     mpSizeLayout->addLayout(mpHeightLayout, 0);
 
     mpKeepAspectRatioCheckbox = new QCheckBox(tr("Keep proportions"), mpProperties);
     mpKeepAspectRatioCheckbox->setTristate(false);
+    mpKeepAspectRatioCheckbox->setChecked(true);
 
     mpSizeLayout->addWidget(mpKeepAspectRatioCheckbox, 0);
 
@@ -152,8 +155,11 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     connect(mpSquareButton, SIGNAL(clicked()), this, SLOT(updateShapeButtons()));
     connect(mpWidthSlider, SIGNAL(valueChanged(int)), this, SLOT(onWidthChanged(int)));
     connect(mpHeightSlider, SIGNAL(valueChanged(int)), this, SLOT(onHeightChanged(int)));
+    connect(mpKeepAspectRatioCheckbox, SIGNAL(stateChanged(int)), this, SLOT(onKeepAspectRatioChanged(int)));    
     connect(UBApplication::boardController, SIGNAL(pageChanged()), this, SLOT(updateCurrentCache()));
     connect(UBApplication::boardController, SIGNAL(cacheEnabled()), this, SLOT(onCacheEnabled()));
+
+    mOldHoleSize = QSize(mpWidthSlider->value(), mpHeightSlider->value());
 }
 
 UBCachePropertiesWidget::~UBCachePropertiesWidget()
@@ -343,6 +349,7 @@ void UBCachePropertiesWidget::updateCurrentCache()
 
                 // Update the values of the cache properties
                 mpWidthSlider->setValue(mpCurrentCache->holeWidth());
+                mpHeightSlider->setValue(mpCurrentCache->holeHeight());
                 updateCacheColor(mpCurrentCache->maskColor());
                 switch(mpCurrentCache->maskshape())
                 {
@@ -374,7 +381,22 @@ void UBCachePropertiesWidget::onWidthChanged(int newSize)
 {
     if(NULL != mpCurrentCache)
     {
-        mpCurrentCache->setHoleWidth(newSize);
+    
+        if(mKeepAspectRatio)
+        {
+            if(!mOtherSliderUsed)
+            {
+                mOtherSliderUsed = true;
+                mpHeightSlider->setValue(mpHeightSlider->value()*newSize/mOldHoleSize.width());
+            }
+            mOldHoleSize.setHeight(mpHeightSlider->value());
+        }
+        else
+            mpCurrentCache->setHoleWidth(newSize);
+            
+        mOldHoleSize.setWidth(newSize);
+        mpCurrentCache->setHoleSize(mOldHoleSize);
+        mOtherSliderUsed = false;
     }
 }
 
@@ -382,10 +404,31 @@ void UBCachePropertiesWidget::onHeightChanged(int newSize)
 {
     if(NULL != mpCurrentCache)
     {
-        mpCurrentCache->setHoleHeight(newSize);
+        if (mKeepAspectRatio)
+        {
+            if(!mOtherSliderUsed)
+            {
+                mOtherSliderUsed = true;
+                mpWidthSlider->setValue(mpWidthSlider->value()*newSize/mOldHoleSize.width());
+            }
+             mOldHoleSize.setWidth(mpWidthSlider->value());
+        }
+        else
+            mpCurrentCache->setHoleHeight(newSize);
+        
+        mOldHoleSize.setHeight(newSize);
+        mpCurrentCache->setHoleSize(mOldHoleSize);
+        mOtherSliderUsed = false;
     }
 }
 
+
+void UBCachePropertiesWidget::onKeepAspectRatioChanged(int state)
+{
+    Qt::CheckState cur_state = static_cast<Qt::CheckState>(state);
+    mKeepAspectRatio = Qt::Checked == cur_state;
+
+}
 
 void UBCachePropertiesWidget::onCacheEnabled()
 {

@@ -40,6 +40,7 @@ UBGraphicsCache::UBGraphicsCache(UBGraphicsScene *scene) : QGraphicsRectItem()
   , mDrawMask(false)
   , mScene(scene)
   , mIsSimpleMode(true)
+  , mHoleSize(QSize(50,50))
 {
     // Get the board size and pass it to the shape
     QRect boardRect = UBApplication::boardController->displayView()->rect();
@@ -175,7 +176,12 @@ void UBGraphicsCache::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 int UBGraphicsCache::holeWidth()
 {
-    return mShapeWidth;
+    return mHoleSize.width();
+}
+
+int UBGraphicsCache::holeHeight()
+{
+    return mHoleSize.height();
 }
 
 void UBGraphicsCache::setHoleWidth(int width)

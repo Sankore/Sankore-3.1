@@ -46,6 +46,7 @@ public:
     eMaskShape maskshape();
     void setMaskShape(eMaskShape shape);
     int holeWidth();
+    int holeHeight();
 
     void setHoleWidth(int width);
     void setHoleHeight(int height);
