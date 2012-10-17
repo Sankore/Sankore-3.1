@@ -12,7 +12,8 @@
 #include "UBDockPaletteWidget.h"
 #include "tools/UBGraphicsCache.h"
 
-#define MAX_SHAPE_WIDTH     200
+#define MIN_SHAPE_WIDTH     100
+#define MAX_SHAPE_WIDTH     400
 
 class UBCachePropertiesWidget : public UBDockPaletteWidget
 {

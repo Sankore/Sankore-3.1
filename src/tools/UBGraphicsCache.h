@@ -66,7 +66,6 @@ private:
 
     QColor mMaskColor;
     eMaskShape mMaskShape;
-    int mShapeWidth;
     bool mDrawMask;
     QPointF mShapePos;
     QSize mOldShapeSize;

@@ -353,6 +353,10 @@ class UBSettings : public QObject
 
         UBSetting* magnifierDrawingMode;
 
+        UBSetting *cacheKeepAspectRatio;
+        UBSetting *casheLastHoleSize;
+        UBColorListSetting *cacheColor;
+
     public slots:
 
         void setPenWidthIndex(int index);

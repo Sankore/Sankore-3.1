@@ -36,12 +36,12 @@ UBGraphicsCache* UBGraphicsCache::instance(UBGraphicsScene *scene)
 UBGraphicsCache::UBGraphicsCache(UBGraphicsScene *scene) : QGraphicsRectItem()
   , mMaskColor(Qt::black)
   , mMaskShape(eMaskShape_Circle)
-  , mShapeWidth(100)
   , mDrawMask(false)
   , mScene(scene)
   , mIsSimpleMode(true)
-  , mHoleSize(QSize(50,50))
 {
+    mHoleSize = UBSettings::settings()->casheLastHoleSize->get().toSize();
+
     // Get the board size and pass it to the shape
     QRect boardRect = UBApplication::boardController->displayView()->rect();
     setRect(-15*boardRect.width(), -15*boardRect.height(), 30*boardRect.width(), 30*boardRect.height());
@@ -187,21 +187,21 @@ int UBGraphicsCache::holeHeight()
 void UBGraphicsCache::setHoleWidth(int width)
 {
     mHoleSize.setWidth(width);   
-
+    UBSettings::settings()->casheLastHoleSize->set(mHoleSize);
     update();
 }
 
 void UBGraphicsCache::setHoleHeight(int height)
 {
     mHoleSize.setHeight(height);
-
+    UBSettings::settings()->casheLastHoleSize->set(mHoleSize);
     update();
 }
 
 void UBGraphicsCache::setHoleSize(QSize size)
 {
     mHoleSize = size;
-
+    UBSettings::settings()->casheLastHoleSize->set(mHoleSize);
     update();
 }
 

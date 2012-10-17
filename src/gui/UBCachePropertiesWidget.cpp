@@ -107,13 +107,15 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpGeometryLabel = new QLabel(tr("Geometry:"), mpProperties);
     mpSizeLayout->addWidget(mpGeometryLabel, 1);
 
+    mKeepAspectRatio = UBSettings::settings()->cacheKeepAspectRatio->get().toBool();
+
     mpWidthLayout = new QHBoxLayout();
     mpWidthLabel = new QLabel(tr("Width: "), mpProperties);
     mpWidthSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpWidthSlider->setMinimumHeight(20);
-    mpWidthSlider->setMinimum(50);
+    mpWidthSlider->setMinimum(MIN_SHAPE_WIDTH);
     mpWidthSlider->setMaximum(MAX_SHAPE_WIDTH);
-    mpWidthSlider->setValue(50);
+    mpWidthSlider->setValue(MIN_SHAPE_WIDTH);
     mpWidthLayout->addWidget(mpWidthLabel, 0);
     mpWidthLayout->addWidget(mpWidthSlider, 1);
     mpSizeLayout->addLayout(mpWidthLayout, 0);
@@ -122,16 +124,16 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpHeightLabel = new QLabel(tr("Height:"), mpProperties);
     mpHeightSlider = new QSlider(Qt::Horizontal, mpProperties);
     mpHeightSlider->setMinimumHeight(20);
-    mpHeightSlider->setMinimum(50);
+    mpHeightSlider->setMinimum(MIN_SHAPE_WIDTH);
     mpHeightSlider->setMaximum(MAX_SHAPE_WIDTH);
-    mpHeightSlider->setValue(50);
+    mpHeightSlider->setValue(MIN_SHAPE_WIDTH);
     mpHeightLayout->addWidget(mpHeightLabel, 0);
     mpHeightLayout->addWidget(mpHeightSlider, 1);
     mpSizeLayout->addLayout(mpHeightLayout, 0);
 
     mpKeepAspectRatioCheckbox = new QCheckBox(tr("Keep proportions"), mpProperties);
     mpKeepAspectRatioCheckbox->setTristate(false);
-    mpKeepAspectRatioCheckbox->setChecked(true);
+    mpKeepAspectRatioCheckbox->setChecked(mKeepAspectRatio);
 
     mpSizeLayout->addWidget(mpKeepAspectRatioCheckbox, 0);
 
@@ -380,8 +382,7 @@ void UBCachePropertiesWidget::updateCurrentCache()
 void UBCachePropertiesWidget::onWidthChanged(int newSize)
 {
     if(NULL != mpCurrentCache)
-    {
-    
+    { 
         if(mKeepAspectRatio)
         {
             if(!mOtherSliderUsed)
@@ -427,6 +428,8 @@ void UBCachePropertiesWidget::onKeepAspectRatioChanged(int state)
 {
     Qt::CheckState cur_state = static_cast<Qt::CheckState>(state);
     mKeepAspectRatio = Qt::Checked == cur_state;
+
+    UBSettings::settings()->cacheKeepAspectRatio->set(mKeepAspectRatio);
 
 }
 
