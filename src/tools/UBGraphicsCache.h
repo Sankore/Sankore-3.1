@@ -73,6 +73,7 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
+private:
     void drawHole(bool draw);
 
 private:

@@ -74,7 +74,7 @@ private:
     QLabel *mpModeLabel;
     QLabel *mpPreviewLabel;
     QCheckBox *mpKeepAspectRatioCheckbox;
-    QPushButton* mpColor;
+    QPushButton* mpSelectColorButton;
     QPushButton* mpSquareButton;
     QPushButton* mpCircleButton;
     QPushButton* mpCloseButton;
@@ -83,8 +83,6 @@ private:
     QSlider* mpHeightSlider;
     QHBoxLayout* mpColorLayout;
     QHBoxLayout* mpShapeLayout;
-    QHBoxLayout *mpWidthLayout;
-    QHBoxLayout *mpHeightLayout;
     QHBoxLayout* mpCloseLayout;
     QWidget* mpProperties;
     UBCachePreviewWidget *mpPreviewWidget;
