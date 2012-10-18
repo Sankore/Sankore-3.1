@@ -49,6 +49,17 @@ UBGraphicsCache::UBGraphicsCache(UBGraphicsScene *scene) : QGraphicsRectItem()
     setRect(-15*boardRect.width(), -15*boardRect.height(), 30*boardRect.width(), 30*boardRect.height());
     setData(Qt::UserRole, QVariant("Cache"));
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::Cache)); //Necessary to set if we want z value to be assigned correctly
+
+    QPixmap cursorImage(1,1);
+    QPixmap cursorMask(1,1);
+    QPainter cursorPainter(&cursorImage);
+    QPainter cursorMaskPainter(&cursorMask);
+    cursorPainter.setBackground(Qt::transparent);
+    cursorMaskPainter.setBackground(Qt::transparent);
+    cursorPainter.fillRect(cursorImage.rect(), QColor(0,0,0,0));
+    cursorPainter.end();
+
+    mCursorForHole = QCursor(cursorImage, cursorMask);
 }
 
 UBGraphicsCache::~UBGraphicsCache()
@@ -116,7 +127,7 @@ void UBGraphicsCache::setMode(int mode)
     if (Presentation == mCurrentMode)
         setAcceptHoverEvents(true);
 
-    mDrawMask = false;
+    drawHole(false);
     mShouldDrawAtHoverEnter = false;
 }
 
@@ -125,9 +136,16 @@ void UBGraphicsCache::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
     Q_UNUSED(option);
     Q_UNUSED(widget);
 
-    painter->setBrush(mMaskColor);
-    painter->setPen(mMaskColor);
 
+    QColor maskColor;
+    maskColor = mMaskColor;
+    if(widget != UBApplication::boardController->controlView()->viewport())
+        maskColor.setAlpha(255);
+        
+ 
+    painter->setBrush(maskColor);
+    painter->setPen(maskColor);
+    
     // Draw the hole
     QPainterPath path;
     path.addRect(rect());
@@ -151,10 +169,12 @@ void UBGraphicsCache::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
 void UBGraphicsCache::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (Construction == mCurrentMode)
-        mDrawMask = true;
+    {
+        drawHole(true);
+    }
     
     if (Presentation == mCurrentMode)
-        mDrawMask = !mDrawMask;
+        drawHole(!mDrawMask);
 
     setHolePos(event->pos());
 }
@@ -162,7 +182,7 @@ void UBGraphicsCache::mousePressEvent(QGraphicsSceneMouseEvent *event)
 void UBGraphicsCache::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     if (mShouldDrawAtHoverEnter)
-        mDrawMask = true;
+        drawHole(true);
 
     mShouldDrawAtHoverEnter = false;
 
@@ -172,7 +192,7 @@ void UBGraphicsCache::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 void UBGraphicsCache::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     mShouldDrawAtHoverEnter = mDrawMask;
-    mDrawMask = false;
+    drawHole(false);
     update(updateRect(event->pos()));
 }
 
@@ -191,12 +211,25 @@ void UBGraphicsCache::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     Q_UNUSED(event);
 
     if (Construction == mCurrentMode)
-        mDrawMask = false;
+        drawHole(false);
 
     // Note: if refresh issues occure, replace the following 3 lines by: update();
     update(updateRect(event->pos()));
     mOldShapeSize = mHoleSize;
     mOldShapePos = event->pos();
+}
+
+void UBGraphicsCache::drawHole(bool draw)
+{
+    mDrawMask = draw;
+    if (mDrawMask)
+    {
+        mSavedCursor = cursor();
+        setCursor(mCursorForHole);
+    }
+    else
+        setCursor(mSavedCursor);
+        
 }
 
 void UBGraphicsCache::setHolePos(QPointF pos)

@@ -9,11 +9,64 @@
 #include "core/UBApplicationController.h"
 #include "globals/UBGlobals.h"
 #include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 #include "domain/UBGraphicsScene.h"
 
 #include "core/memcheck.h"
 
 static QVector<UBGraphicsCache*> mCaches;
+
+UBCachePreviewWidget::UBCachePreviewWidget(QWidget *parent)
+    : QWidget(parent)
+    , mHoleSize(QSize())
+{
+}
+
+void UBCachePreviewWidget::setHoleSize(QSize size)
+{
+    mHoleSize = size;
+    update();
+}
+
+void UBCachePreviewWidget::setMaskColor(QColor color)
+{
+    mMaskColor = color;
+    update();
+}
+
+QSize UBCachePreviewWidget::sizeHint() const
+{
+    return size();
+}
+
+void UBCachePreviewWidget::paintEvent(QPaintEvent *event)
+{
+    QWidget::paintEvent(event);
+
+    QPainter painter(this);
+    painter.setPen(mMaskColor);
+    painter.setBrush(mMaskColor);
+    painter.drawRect(rect());
+    painter.setBrush(QColor(Qt::white));
+
+    UBBoardView *view = UBApplication::boardController->controlView();
+    qreal scaleRatio = static_cast<qreal>(rect().width())/static_cast<qreal>(view->width());
+    painter.drawEllipse(rect().center(), static_cast<int>(mHoleSize.width()*scaleRatio/2), static_cast<int>(mHoleSize.height()*scaleRatio/2));
+}
+
+void UBCachePreviewWidget::resizeEvent(QResizeEvent *event)
+{
+    Q_UNUSED(event);
+    UBBoardView *view = UBApplication::boardController->controlView();
+    qreal aspectRatio = static_cast<qreal>(view->height())/static_cast<qreal>(view->width());
+
+    QSize newSize(width(),width()*aspectRatio);
+    updateGeometry();
+    resize(newSize);
+    
+
+    QWidget::resizeEvent(event);
+}
 
 UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *name):UBDockPaletteWidget(parent)
   , mpLayout(NULL)
@@ -68,7 +121,6 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpColorLabel = new QLabel(tr("Color:"), mpProperties);
     mpColor = new QPushButton(mpProperties);
     mpColor->setObjectName("DockPaletteWidgetButton");
-    updateCacheColor(Qt::black);
     mpColorLayout->addWidget(mpColorLabel, 0);
     mpColorLayout->addWidget(mpColor, 0);
 
@@ -77,6 +129,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpAplhaSlider->setMinimumHeight(20);
     mpAplhaSlider->setMinimum(0);
     mpAplhaSlider->setMaximum(255);
+    mpAplhaSlider->setValue(255);
     mpColorLayout->addWidget(mpAlphaLabel, 0);
     mpColorLayout->addWidget(mpAplhaSlider, 1);
 
@@ -151,6 +204,18 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
 
     mpPropertiesLayout->addLayout(mpModeLayout, 0);
 
+    // Preview
+    mpPreviewLayout = new QVBoxLayout(mpProperties);
+    mpPreviewLabel = new QLabel(tr("Preview:"), mpProperties);
+    mpPreviewWidget = new UBCachePreviewWidget(mpProperties);
+    QVBoxLayout *previewWidgetLayout = new QVBoxLayout(mpPreviewWidget);
+    previewWidgetLayout->addStretch(1);
+    mpPreviewWidget->setHoleSize(mOldHoleSize);
+
+    mpPreviewLayout->addWidget(mpPreviewLabel);
+    mpPreviewLayout->addWidget(mpPreviewWidget,0);
+
+    mpPropertiesLayout->addLayout(mpPreviewLayout,0);
 
     // Close
     mpCloseLayout =  new QHBoxLayout(mpProperties);
@@ -172,9 +237,11 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     connect(mpHeightSlider, SIGNAL(valueChanged(int)), this, SLOT(onHeightChanged(int)));
     connect(mpKeepAspectRatioCheckbox, SIGNAL(stateChanged(int)), this, SLOT(onKeepAspectRatioChanged(int)));    
     connect(mpModeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(onModeChanged(int)));
+    connect(mpAplhaSlider, SIGNAL(valueChanged(int)), this, SLOT(onAlphaChanged(int)));
     connect(UBApplication::boardController, SIGNAL(pageChanged()), this, SLOT(updateCurrentCache()));
     connect(UBApplication::boardController, SIGNAL(cacheEnabled()), this, SLOT(onCacheEnabled()));
 
+    updateCacheColor(Qt::black);
     mOldHoleSize = QSize(mpWidthSlider->value(), mpHeightSlider->value());
 }
 
@@ -256,6 +323,8 @@ void UBCachePropertiesWidget::updateCacheColor(QColor color)
 {
     mActualColor = color;
 
+    mActualColor.setAlpha(mpAplhaSlider->value());
+
     //  Update the color on the color button
     QPixmap pix(32, 32);
     QPainter p;
@@ -274,6 +343,8 @@ void UBCachePropertiesWidget::updateCacheColor(QColor color)
     {
         mpCurrentCache->setMaskColor(mActualColor);
     }
+
+    mpPreviewWidget->setMaskColor(mActualColor);
 }
 
 void UBCachePropertiesWidget::onColorClicked()
@@ -380,6 +451,7 @@ void UBCachePropertiesWidget::onWidthChanged(int newSize)
             mpCurrentCache->setHoleWidth(newSize);
             
         mOldHoleSize.setWidth(newSize);
+        mpPreviewWidget->setHoleSize(mOldHoleSize);
         mpCurrentCache->setHoleSize(mOldHoleSize);
         mOtherSliderUsed = false;
     }
@@ -400,8 +472,9 @@ void UBCachePropertiesWidget::onHeightChanged(int newSize)
         }
         else
             mpCurrentCache->setHoleHeight(newSize);
-        
+
         mOldHoleSize.setHeight(newSize);
+        mpPreviewWidget->setHoleSize(mOldHoleSize);
         mpCurrentCache->setHoleSize(mOldHoleSize);
         mOtherSliderUsed = false;
     }
@@ -425,4 +498,10 @@ void UBCachePropertiesWidget::onCacheEnabled()
 void UBCachePropertiesWidget::onModeChanged(int mode)
 {
     mpCurrentCache->setMode(mode);
+}
+
+void UBCachePropertiesWidget::onAlphaChanged(int alpha)
+{
+    mActualColor.setAlpha(alpha);
+    updateCacheColor(mActualColor);
 }

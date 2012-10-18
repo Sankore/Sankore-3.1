@@ -15,6 +15,23 @@
 #define MIN_SHAPE_WIDTH     100
 #define MAX_SHAPE_WIDTH     400
 
+class UBCachePreviewWidget : public QWidget
+{
+public:
+    UBCachePreviewWidget(QWidget *parent = NULL);
+    
+    void setHoleSize(QSize size);
+    void setMaskColor(QColor color);
+private:
+    QSize sizeHint() const;
+    void paintEvent(QPaintEvent *event);
+    void resizeEvent(QResizeEvent *event);
+
+private:
+    QSize mHoleSize;
+    QColor mMaskColor;
+};
+
 class UBCachePropertiesWidget : public UBDockPaletteWidget
 {
     Q_OBJECT
@@ -43,6 +60,7 @@ private slots:
     void onKeepAspectRatioChanged(int state);
     void onCacheEnabled();
     void onModeChanged(int mode);
+    void onAlphaChanged(int alpha);
 
 private:
     QVBoxLayout* mpLayout;
@@ -54,6 +72,7 @@ private:
     QLabel *mpWidthLabel;
     QLabel *mpHeightLabel;
     QLabel *mpModeLabel;
+    QLabel *mpPreviewLabel;
     QCheckBox *mpKeepAspectRatioCheckbox;
     QPushButton* mpColor;
     QPushButton* mpSquareButton;
@@ -68,9 +87,11 @@ private:
     QHBoxLayout *mpHeightLayout;
     QHBoxLayout* mpCloseLayout;
     QWidget* mpProperties;
+    UBCachePreviewWidget *mpPreviewWidget;
     QVBoxLayout* mpSizeLayout;
     QVBoxLayout* mpPropertiesLayout;
     QVBoxLayout *mpModeLayout;
+    QVBoxLayout *mpPreviewLayout;
     QComboBox *mpModeComboBox;
     QColor mActualColor;
     eMaskShape mActualShape;

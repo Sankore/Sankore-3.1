@@ -73,6 +73,8 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
+    void drawHole(bool draw);
+
 private:
     static QMap<UBGraphicsScene*, UBGraphicsCache*> sInstances;
 
@@ -93,6 +95,9 @@ private:
     
     void init();
     QRectF updateRect(QPointF currentPoint);
+
+    QCursor mSavedCursor;
+    QCursor mCursorForHole;
 };
 
 #endif // UBGRAPHICSCACHE_H
