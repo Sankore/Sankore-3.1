@@ -43,6 +43,21 @@ UBGraphicsCache::UBGraphicsCache(UBGraphicsScene *scene) : QGraphicsRectItem()
     setMode(static_cast<int>(Construction)); 
 
     mHoleSize = UBSettings::settings()->casheLastHoleSize->get().toSize();
+    
+    QColor cacheColor;
+    QStringList colors = UBSettings::settings()->cacheColor->get().toString().split(" ", QString::SkipEmptyParts);
+    if (colors.count())
+    {
+        if (3 == colors.count())
+            cacheColor = QColor(colors[0].toInt(),colors[1].toInt(),colors[2].toInt());
+        if (4 == colors.count())
+            cacheColor = QColor(colors[0].toInt(),colors[1].toInt(),colors[2].toInt(), colors[3].toInt());
+    }
+
+    if (cacheColor.isValid())
+        mMaskColor = cacheColor;
+    else
+        mMaskColor = QColor(255,255,255,190);
 
     // Get the board size and pass it to the shape
     QRect boardRect = UBApplication::boardController->displayView()->rect();

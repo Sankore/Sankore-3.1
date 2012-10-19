@@ -52,7 +52,7 @@ signals:
 
 private slots:
     void onCloseClicked();
-    void updateCacheColor(QColor color);
+    void syncCacheColor(QColor color);
     void onColorClicked();
     void updateShapeButtons();
     void onWidthChanged(int newSize);

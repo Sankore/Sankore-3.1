@@ -227,7 +227,6 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     connect(UBApplication::boardController, SIGNAL(pageChanged()), this, SLOT(updateCurrentCache()));
     connect(UBApplication::boardController, SIGNAL(cacheEnabled()), this, SLOT(onCacheEnabled()));
 
-    updateCacheColor(Qt::black);
     mOldHoleSize = QSize(mpWidthSlider->value(), mpHeightSlider->value());
 }
 
@@ -256,11 +255,10 @@ void UBCachePropertiesWidget::onCloseClicked()
     }
 }
 
-void UBCachePropertiesWidget::updateCacheColor(QColor color)
+void UBCachePropertiesWidget::syncCacheColor(QColor color)
 {
     mActualColor = color;
-
-    mActualColor.setAlpha(mpAplhaSlider->value());
+    mpAplhaSlider->setValue(color.alpha());
 
     //  Update the color on the color button
     QPixmap pix(32, 32);
@@ -282,13 +280,14 @@ void UBCachePropertiesWidget::updateCacheColor(QColor color)
     }
 
     mpPreviewWidget->setMaskColor(mActualColor);
+    UBSettings::settings()->cacheColor->set(QString("%1 %2 %3 %4").arg(mActualColor.red()).arg(mActualColor.green()).arg(mActualColor.blue()).arg(mActualColor.alpha()));
 }
 
 void UBCachePropertiesWidget::onColorClicked()
 {
     // Show the color picker
     QColor newColor = QColorDialog::getColor(mActualColor,this);
-    updateCacheColor(newColor);
+    syncCacheColor(newColor);
 }
 
 void UBCachePropertiesWidget::updateShapeButtons()
@@ -344,7 +343,7 @@ void UBCachePropertiesWidget::updateCurrentCache()
                 // Update the values of the cache properties
                 mpWidthSlider->setValue(mpCurrentCache->holeWidth());
                 mpHeightSlider->setValue(mpCurrentCache->holeHeight());
-                updateCacheColor(mpCurrentCache->maskColor());
+                syncCacheColor(mpCurrentCache->maskColor());
                 switch(mpCurrentCache->maskshape())
                 {
                     case eMaskShape_Circle:
@@ -440,5 +439,5 @@ void UBCachePropertiesWidget::onModeChanged(int mode)
 void UBCachePropertiesWidget::onAlphaChanged(int alpha)
 {
     mActualColor.setAlpha(alpha);
-    updateCacheColor(mActualColor);
+    syncCacheColor(mActualColor);
 }

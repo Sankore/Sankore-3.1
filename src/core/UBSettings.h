@@ -355,7 +355,7 @@ class UBSettings : public QObject
 
         UBSetting *cacheKeepAspectRatio;
         UBSetting *casheLastHoleSize;
-        UBColorListSetting *cacheColor;
+        UBSetting *cacheColor;
 
     public slots:
 

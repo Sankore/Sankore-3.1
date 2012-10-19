@@ -242,7 +242,7 @@ void UBSettings::init()
 
     cacheKeepAspectRatio = new UBSetting(this, "Cache", "KeepAspectRatio", true);
     casheLastHoleSize = new UBSetting(this, "Cache", "LastHoleSize", QSize(20,20));
-    cacheColor = new UBColorListSetting(this, "Cache", "Color", "0xFFFFFF", 1.0);
+    cacheColor = new UBColorListSetting(this, "Cache", "Color", "#000000", 0.75);
 
     ValidateKeyboardPaletteKeyBtnSize();
 
