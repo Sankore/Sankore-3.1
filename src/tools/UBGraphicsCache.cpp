@@ -71,7 +71,7 @@ UBGraphicsCache::UBGraphicsCache(UBGraphicsScene *scene) : QGraphicsRectItem()
     QPainter cursorMaskPainter(&cursorMask);
     cursorPainter.setBackground(Qt::transparent);
     cursorMaskPainter.setBackground(Qt::transparent);
-    cursorPainter.fillRect(cursorImage.rect(), QColor(0,0,0,0));
+    cursorPainter.fillRect(cursorImage.rect(), Qt::color0);
     cursorPainter.end();
 
     mCursorForHole = QCursor(cursorImage, cursorMask);
