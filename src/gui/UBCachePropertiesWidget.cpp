@@ -344,6 +344,7 @@ void UBCachePropertiesWidget::updateCurrentCache()
                 mpWidthSlider->setValue(mpCurrentCache->holeWidth());
                 mpHeightSlider->setValue(mpCurrentCache->holeHeight());
                 syncCacheColor(mpCurrentCache->maskColor());
+                mpPreviewWidget->setHoleSize(QSize(mpWidthSlider->value(), mpHeightSlider->value()));
                 switch(mpCurrentCache->maskshape())
                 {
                     case eMaskShape_Circle:

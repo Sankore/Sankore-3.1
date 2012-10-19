@@ -57,7 +57,7 @@ UBGraphicsCache::UBGraphicsCache(UBGraphicsScene *scene) : QGraphicsRectItem()
     if (cacheColor.isValid())
         mMaskColor = cacheColor;
     else
-        mMaskColor = QColor(255,255,255,190);
+        mMaskColor = QColor(0,0,0,190);
 
     // Get the board size and pass it to the shape
     QRect boardRect = UBApplication::boardController->displayView()->rect();

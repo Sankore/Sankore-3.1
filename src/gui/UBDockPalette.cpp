@@ -379,6 +379,7 @@ void UBDockPalette::addTab(UBDockPaletteWidget *widget)
 		mTabWidgets.append(widget);
 		mpStackWidget->addWidget(widget);
 		mpStackWidget->setCurrentWidget(widget);
+        showTabWidget(mTabWidgets.indexOf(widget));
 		resizeTabs();
 		update();
 	}
