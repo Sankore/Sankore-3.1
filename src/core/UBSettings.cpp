@@ -238,6 +238,12 @@ void UBSettings::init()
     boardUseHighResTabletEvent = new UBSetting(this, "Board", "UseHighResTabletEvent", true);
 
     boardKeyboardPaletteKeyBtnSize = new UBSetting(this, "Board", "KeyboardPaletteKeyBtnSize", "16x16");
+
+
+    cacheKeepAspectRatio = new UBSetting(this, "Cache", "KeepAspectRatio", true);
+    casheLastHoleSize = new UBSetting(this, "Cache", "LastHoleSize", QSize(20,20));
+    cacheColor = new UBColorListSetting(this, "Cache", "Color", "#000000", 0.75);
+
     ValidateKeyboardPaletteKeyBtnSize();
 
     pageSize = new UBSetting(this, "Board", "DefaultPageSize", documentSizes.value(DocumentSizeRatio::Ratio4_3));
