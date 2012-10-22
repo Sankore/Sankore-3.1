@@ -100,7 +100,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     setContentsMargins(10, 10, 10, 10);
 
     // Build the UI
-    mpLayout = new QVBoxLayout(this);
+    mpLayout = new QVBoxLayout(0);
     setLayout(mpLayout);
 
     // Title
@@ -112,7 +112,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpProperties = new QWidget(this);
     mpProperties->setObjectName("DockPaletteWidgetBox");
     mpLayout->addWidget(mpProperties, 1);
-    mpPropertiesLayout = new QVBoxLayout(this);
+    mpPropertiesLayout = new QVBoxLayout(0);
     mpProperties->setLayout(mpPropertiesLayout);
 
     // Color and Alpha
@@ -133,7 +133,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpPropertiesLayout->addLayout(mpColorLayout, 0);
 
     // Shape
-    mpShapeLayout = new QHBoxLayout(mpProperties);
+    mpShapeLayout = new QHBoxLayout(0);
     mpShapeLabel = new QLabel(tr("Shape:"), mpProperties);
     mpSquareButton = new QPushButton(mpProperties);
     mpSquareButton->setIcon(QIcon(":images/cache_square.png"));
@@ -151,7 +151,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpCircleButton->setChecked(true);
 
     // Shape Size
-    mpSizeLayout = new QVBoxLayout(mpProperties);
+    mpSizeLayout = new QVBoxLayout(0);
     mpGeometryLabel = new QLabel(tr("Geometry:"), mpProperties);
     mpSizeLayout->addWidget(mpGeometryLabel, 1);
     mKeepAspectRatio = UBSettings::settings()->cacheKeepAspectRatio->get().toBool();
@@ -181,7 +181,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpPropertiesLayout->addLayout(mpSizeLayout, 0);
 
     // Mode
-    mpModeLayout = new QVBoxLayout(mpProperties);
+    mpModeLayout = new QVBoxLayout(0);
     mpModeLabel = new QLabel(tr("Mode:"), mpProperties);
     mpModeComboBox = new QComboBox(mpProperties);
     mpModeComboBox->setObjectName("CacheModeSelectionComboBox");
@@ -193,10 +193,10 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpPropertiesLayout->addLayout(mpModeLayout, 0);
 
     // Preview
-    mpPreviewLayout = new QVBoxLayout(mpProperties);
+    mpPreviewLayout = new QVBoxLayout(0);
     mpPreviewLabel = new QLabel(tr("Preview:"), mpProperties);
     mpPreviewWidget = new UBCachePreviewWidget(mpProperties);
-    QVBoxLayout *previewWidgetLayout = new QVBoxLayout(mpPreviewWidget);
+    QVBoxLayout *previewWidgetLayout = new QVBoxLayout(0);
     previewWidgetLayout->addStretch(1);
     mpPreviewWidget->setHoleSize(mOldHoleSize);
     mpPreviewLayout->addWidget(mpPreviewLabel);
@@ -204,7 +204,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpPropertiesLayout->addLayout(mpPreviewLayout,0);
 
     // Close
-    mpCloseLayout =  new QHBoxLayout(mpProperties);
+    mpCloseLayout =  new QHBoxLayout(0);
     mpCloseButton = new QPushButton(tr("Close cache"), mpProperties);
     mpCloseButton->setObjectName("DockPaletteWidgetButton");
     mpCloseLayout->addWidget(mpCloseButton, 0);
