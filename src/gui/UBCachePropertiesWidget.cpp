@@ -109,7 +109,7 @@ UBCachePropertiesWidget::UBCachePropertiesWidget(QWidget *parent, const char *na
     mpLayout->addWidget(mpCachePropertiesLabel, 0);
 
     // Properties Box
-    mpProperties = new QWidget(this);
+    mpProperties = new QWidget(0);
     mpProperties->setObjectName("DockPaletteWidgetBox");
     mpLayout->addWidget(mpProperties, 1);
     mpPropertiesLayout = new QVBoxLayout(0);
