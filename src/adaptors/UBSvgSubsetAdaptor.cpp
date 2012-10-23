@@ -3231,7 +3231,7 @@ UBGraphicsCache* UBSvgSubsetAdaptor::UBSvgSubsetReader::cacheFromSvg()
     QColor color(colorR.toString().toInt(), colorG.toString().toInt(), colorB.toString().toInt(), colorA.toString().toInt());
 
     pCache->setMaskColor(color);
-    pCache->setShapeWidth(shapeSize.toString().toInt());
+    pCache->setHoleWidth(shapeSize.toString().toInt());
     pCache->setMaskShape(static_cast<eMaskShape>(shape.toString().toInt()));
 
     pCache->setVisible(true);
@@ -3252,7 +3252,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg(UBGraphicsCache* item)
     mXmlWriter.writeAttribute("colorB", QString("%1").arg(item->maskColor().blue()));
     mXmlWriter.writeAttribute("colorA", QString("%1").arg(item->maskColor().alpha()));
     mXmlWriter.writeAttribute("shape", QString("%1").arg(item->maskshape()));
-    mXmlWriter.writeAttribute("shapeSize", QString("%1").arg(item->shapeWidth()));
+    mXmlWriter.writeAttribute("shapeSize", QString("%1").arg(item->holeWidth()));
 
     QString zs;
     zs.setNum(item->zValue(), 'f'); // 'f' keeps precision

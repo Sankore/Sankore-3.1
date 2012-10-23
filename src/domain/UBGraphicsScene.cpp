@@ -1855,6 +1855,7 @@ void UBGraphicsScene::addMagnifier(UBMagnifierParams params)
     connect(magniferControlViewWidget, SIGNAL(magnifierClose_Signal()), this, SLOT(closeMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomIn_Signal()), this, SLOT(zoomInMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomOut_Signal()), this, SLOT(zoomOutMagnifier()));
+    connect(magniferControlViewWidget, SIGNAL(magnifierDrawingModeChange_Signal(int)), this, SLOT(changeMagnifierMode(int)));
     connect(magniferControlViewWidget, SIGNAL(magnifierResized_Signal(qreal)), this, SLOT(resizedMagnifier(qreal)));
 
     setModified(true);
@@ -1919,6 +1920,14 @@ void UBGraphicsScene::zoomOutMagnifier()
         magniferDisplayViewWidget->setZoom(magniferDisplayViewWidget->params.zoom - 0.5);
         setModified(true);
     }
+}
+
+void UBGraphicsScene::changeMagnifierMode(int mode)
+{
+    if(magniferControlViewWidget)
+        magniferControlViewWidget->setDrawingMode(mode);
+    if(magniferDisplayViewWidget)
+        magniferDisplayViewWidget->setDrawingMode(mode);
 }
 
 void UBGraphicsScene::resizedMagnifier(qreal newPercent)

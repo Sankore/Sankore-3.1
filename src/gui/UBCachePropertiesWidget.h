@@ -12,7 +12,25 @@
 #include "UBDockPaletteWidget.h"
 #include "tools/UBGraphicsCache.h"
 
-#define MAX_SHAPE_WIDTH     200
+#define MIN_SHAPE_WIDTH     100
+#define MAX_SHAPE_WIDTH     400
+
+class UBCachePreviewWidget : public QWidget
+{
+public:
+    UBCachePreviewWidget(QWidget *parent = NULL);
+    
+    void setHoleSize(QSize size);
+    void setMaskColor(QColor color);
+private:
+    QSize sizeHint() const;
+    void paintEvent(QPaintEvent *event);
+    void resizeEvent(QResizeEvent *event);
+
+private:
+    QSize mHoleSize;
+    QColor mMaskColor;
+};
 
 class UBCachePropertiesWidget : public UBDockPaletteWidget
 {
@@ -34,33 +52,51 @@ signals:
 
 private slots:
     void onCloseClicked();
-    void updateCacheColor(QColor color);
+    void syncCacheColor(QColor color);
     void onColorClicked();
     void updateShapeButtons();
-    void onSizeChanged(int newSize);
+    void onWidthChanged(int newSize);
+    void onHeightChanged(int newSize);
+    void onKeepAspectRatioChanged(int state);
     void onCacheEnabled();
+    void onModeChanged(int mode);
+    void onAlphaChanged(int alpha);
 
 private:
     QVBoxLayout* mpLayout;
     QLabel* mpCachePropertiesLabel;
     QLabel* mpColorLabel;
+    QLabel* mpAlphaLabel;
     QLabel* mpShapeLabel;
-    QLabel* mpSizeLabel;
-    QPushButton* mpColor;
+    QLabel *mpGeometryLabel;
+    QLabel *mpWidthLabel;
+    QLabel *mpHeightLabel;
+    QLabel *mpModeLabel;
+    QLabel *mpPreviewLabel;
+    QCheckBox *mpKeepAspectRatioCheckbox;
+    QPushButton* mpSelectColorButton;
     QPushButton* mpSquareButton;
     QPushButton* mpCircleButton;
     QPushButton* mpCloseButton;
-    QSlider* mpSizeSlider;
+    QSlider *mpAplhaSlider;
+    QSlider* mpWidthSlider;
+    QSlider* mpHeightSlider;
     QHBoxLayout* mpColorLayout;
     QHBoxLayout* mpShapeLayout;
-    QHBoxLayout* mpSizeLayout;
     QHBoxLayout* mpCloseLayout;
     QWidget* mpProperties;
+    UBCachePreviewWidget *mpPreviewWidget;
+    QVBoxLayout* mpSizeLayout;
     QVBoxLayout* mpPropertiesLayout;
+    QVBoxLayout *mpModeLayout;
+    QVBoxLayout *mpPreviewLayout;
+    QComboBox *mpModeComboBox;
     QColor mActualColor;
     eMaskShape mActualShape;
     UBGraphicsCache* mpCurrentCache;
-
+    bool mKeepAspectRatio;
+    bool mOtherSliderUsed;
+    QSize mOldHoleSize;
 };
 
 #endif // UBCACHEPROPERTIESWIDGET_H

@@ -291,7 +291,7 @@ void UBDesktopAnnotationController::showWindow()
 
     UBDrawingController::drawingController()->setStylusTool(mDesktopStylusTool);
 
-    mTransparentDrawingView->showFullScreen();
+    mTransparentDrawingView->show();
 
     UBPlatformUtils::setDesktopMode(true);
 
