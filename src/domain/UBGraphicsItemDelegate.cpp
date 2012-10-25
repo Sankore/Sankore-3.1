@@ -93,7 +93,7 @@ void DelegateButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     event->setAccepted(!mIsTransparentToMouseEvent);
 }
 
-UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar)
+UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar, bool showGoContentButton)
     : QObject(parent)
     , mDelegated(pDelegated)
     , mDeleteButton(NULL)
@@ -113,6 +113,7 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mMimeData(NULL)
     , mFlippable(false)
     , mToolBarUsed(useToolBar)
+    , mShowGoContentButton(showGoContentButton)
 {
     connect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
 }
@@ -137,6 +138,13 @@ void UBGraphicsItemDelegate::init()
     mMenuButton = new DelegateButton(":/images/menu.svg", mDelegated, mFrame, Qt::TopLeftSection);
     connect(mMenuButton, SIGNAL(clicked()), this, SLOT(showMenu()));
     mButtons << mMenuButton;
+
+    if (mShowGoContentButton)
+    {
+        mContentSourceButton = new DelegateButton(":/images/home.svg", mDelegated, mFrame, Qt::TopLeftSection);
+        connect(mContentSourceButton, SIGNAL(clicked()), this, SLOT(gotoContentSource()));
+        mButtons << mContentSourceButton;
+    }
 
     mZOrderUpButton = new DelegateButton(":/images/z_layer_up.svg", mDelegated, mFrame, Qt::BottomLeftSection);
     connect(mZOrderUpButton, SIGNAL(clicked()), this, SLOT(increaseZLevelUp()));
@@ -497,10 +505,8 @@ void UBGraphicsItemDelegate::showHide(bool show)
 }
 
 
-void UBGraphicsItemDelegate::gotoContentSource(bool checked)
+void UBGraphicsItemDelegate::gotoContentSource()
 {
-    Q_UNUSED(checked)
-
     UBItem* item = dynamic_cast<UBItem*>(mDelegated);
 
     if(item && !item->sourceUrl().isEmpty())
@@ -571,13 +577,6 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
     showIcon.addPixmap(QPixmap(":/images/eyeOpened.svg"), QIcon::Normal, QIcon::On);
     showIcon.addPixmap(QPixmap(":/images/eyeClosed.svg"), QIcon::Normal, QIcon::Off);
     mShowOnDisplayAction->setIcon(showIcon);
-
-    mGotoContentSourceAction = menu->addAction(tr("Go to Content Source"), this, SLOT(gotoContentSource(bool)));
-
-    QIcon sourceIcon;
-    sourceIcon.addPixmap(QPixmap(":/images/toolbar/internet.png"), QIcon::Normal, QIcon::On);
-    mGotoContentSourceAction->setIcon(sourceIcon);
-
 }
 
 void UBGraphicsItemDelegate::updateMenuActionState()

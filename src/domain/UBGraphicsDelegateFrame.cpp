@@ -381,12 +381,6 @@ QSizeF UBGraphicsDelegateFrame::resizeDelegate(qreal moveX, qreal moveY)
     return incVector;
 }
 
-
-void UBGraphicsDelegateFrame::scaleByPos(qreal scaleX, qreal scaleY)
-{
-
-}
-
 void UBGraphicsDelegateFrame::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     if (None == mCurrentTool)
