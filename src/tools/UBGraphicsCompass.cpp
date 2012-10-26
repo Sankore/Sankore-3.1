@@ -183,20 +183,21 @@ void UBGraphicsCompass::mousePressEvent(QGraphicsSceneMouseEvent *event)
         UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Play)
 		return;
 
+    bool closing = false;
+
     if (resizeButtonRect().contains(event->pos()))
     {
         mResizing = true;
-        mCloseSvgItem->setVisible(false);
+        mRotating = false;
         event->accept();
     }
     else if (hingeRect().contains(event->pos()))
     {
         mRotating = true;
-        mResizeSvgItem->setVisible(false);
-        mCloseSvgItem->setVisible(false);
+        mResizing = false;
         event->accept();
     }
-    else
+    else if (!closeButtonRect().contains(event->pos()))
     {
         mDrawing = event->pos().x() > rect().right() - sPencilLength - sPencilBaseLength;
         if (mDrawing)
@@ -206,12 +207,13 @@ void UBGraphicsCompass::mousePressEvent(QGraphicsSceneMouseEvent *event)
             scene()->initStroke();
             scene()->moveTo(mSceneArcStartPoint);
         }
-
-        mResizeSvgItem->setVisible(false);
-        mCloseSvgItem->setVisible(false);
-
         QGraphicsRectItem::mousePressEvent(event);
     }
+    else 
+        closing = true;
+
+    mResizeSvgItem->setVisible(mShowButtons && mResizing);
+    mCloseSvgItem->setVisible(mShowButtons && closing);
 }
 
 void UBGraphicsCompass::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
@@ -267,19 +269,16 @@ void UBGraphicsCompass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
     if (mResizing)
     {
-        mResizing = false;
         event->accept();
     }
     else if (mRotating)
     {
-        mRotating = false;
         updateResizeCursor();
         updateDrawCursor();
         event->accept();
     }
     else if (mDrawing)
     {
-        mDrawing = false;
         updateResizeCursor();
         updateDrawCursor();
         event->accept();
@@ -295,6 +294,8 @@ void UBGraphicsCompass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     {
         QGraphicsRectItem::mouseReleaseEvent(event);
     }
+    mResizing = false;
+    mDrawing = false;
 
     if (scene())
         scene()->setModified(true);
