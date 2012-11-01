@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
     //when importing a sankore file that contains a non standard character
     //the codecForLocale or the codecForCString is used to convert the file path
     //into a const char*. This is why in french windows setup the codec name shouldn't be
-    //set to UTF-8. For example, setting UTF-8, will convert "Haïti" into "HaÂ-ti.
+    //set to UTF-8. For example, setting UTF-8, will convert "HaÃ¯ti" into "HaÃ‚-ti.
 
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     //QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
