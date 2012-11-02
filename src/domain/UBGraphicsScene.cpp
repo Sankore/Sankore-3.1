@@ -368,6 +368,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
         mInputDeviceIsPressed = true;
 
         UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+        mLineIsDrawing = currentTool == UBStylusTool::PenLine || currentTool == UBStylusTool::MarkerLine;
 
         if (UBDrawingController::drawingController()->isDrawingTool())
         {
@@ -387,7 +388,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             // ---------------------------------------------------------------
             mCurrentStroke = new UBGraphicsStroke();
 
-            if (currentTool != UBStylusTool::Line){
+            if (!mLineIsDrawing){
                 // Handle the pressure
                 width = UBDrawingController::drawingController()->currentToolWidth() * pressure;
             }else{
@@ -408,7 +409,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             else
             {
                 moveTo(scenePos);
-                drawLineTo(scenePos, width, UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+                drawLineTo(scenePos, width, mLineIsDrawing);
             }
             accepted = true;
         }
@@ -463,7 +464,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
         {
             qreal width = 0;
 
-            if (currentTool != UBStylusTool::Line){
+            if (!mLineIsDrawing){
                 // Handle the pressure
                 width = dc->currentToolWidth() * pressure;
             }else{
@@ -474,7 +475,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
             width /= UBApplication::boardController->systemScaleFactor();
             width /= UBApplication::boardController->currentZoom();
 
-            if (currentTool == UBStylusTool::Line || dc->mActiveRuler)
+            if (mLineIsDrawing || dc->mActiveRuler)
             {
                 if (UBDrawingController::drawingController()->stylusTool() != UBStylusTool::Marker)
                 if(NULL != mpLastPolygon && NULL != mCurrentStroke && mAddedItems.size() > 0){
@@ -508,7 +509,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
             if(dc->mActiveRuler){
                 dc->mActiveRuler->DrawLine(position, width);
             }else{
-                drawLineTo(position, width, UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+                drawLineTo(position, width, mLineIsDrawing);
             }
         }
         else if (currentTool == UBStylusTool::Eraser)
@@ -959,7 +960,9 @@ void UBGraphicsScene::initPolygonItem(UBGraphicsPolygonItem* polygonItem)
     QColor colorOnDarkBG;
     QColor colorOnLightBG;
 
-    if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Marker)
+
+    if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Marker 
+        || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::MarkerLine)
     {
         colorOnDarkBG = UBApplication::boardController->markerColorOnDarkBackground();
         colorOnLightBG = UBApplication::boardController->markerColorOnLightBackground();

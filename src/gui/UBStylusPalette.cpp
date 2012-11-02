@@ -33,44 +33,38 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     : UBActionPalette(Qt::TopLeftCorner, parent, orient)
     , mLastSelectedId(-1)
 {
-    QList<QAction*> actions;
+    QList<QAction *> penActions;
 
-    actions << UBApplication::mainWindow->actionPen;
-    actions << UBApplication::mainWindow->actionEraser;
-    actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionSelector;
-    actions << UBApplication::mainWindow->actionPlay;
+    penActions << UBApplication::mainWindow->actionPen;
+    penActions << UBApplication::mainWindow->actionPenLine;
+    addActions(penActions);
 
-    actions << UBApplication::mainWindow->actionHand;
-    actions << UBApplication::mainWindow->actionZoomIn;
-    actions << UBApplication::mainWindow->actionZoomOut;
+    QList<QAction *> markerActions;
+    markerActions << UBApplication::mainWindow->actionMarker;
+    markerActions << UBApplication::mainWindow->actionMarkerLine;
+    addActions(markerActions);
 
-    actions << UBApplication::mainWindow->actionPointer;
-    actions << UBApplication::mainWindow->actionLine;
-    actions << UBApplication::mainWindow->actionText;
-    actions << UBApplication::mainWindow->actionCapture;
+    addAction(UBApplication::mainWindow->actionEraser);
+
+    addAction(UBApplication::mainWindow->actionSelector);
+    addAction(UBApplication::mainWindow->actionPlay);
+
+    addAction(UBApplication::mainWindow->actionHand);
+    addAction(UBApplication::mainWindow->actionZoomIn);
+    addAction(UBApplication::mainWindow->actionZoomOut);
+
+    addAction(UBApplication::mainWindow->actionPointer);
+    addAction(UBApplication::mainWindow->actionText);
+    addAction(UBApplication::mainWindow->actionCapture);
 
     if(UBPlatformUtils::hasVirtualKeyboard())
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
+        addAction(UBApplication::mainWindow->actionVirtualKeyboard, false);
 
-    setActions(actions);
+
     setButtonIconSize(QSize(42, 42));
 
-    if(!UBPlatformUtils::hasVirtualKeyboard())
-    {
-            groupActions();
-    }
-    else
-    {
-            // VirtualKeyboard action is not in group
-            // So, groupping all buttons, except last
-            mButtonGroup = new QButtonGroup(this);
-            for(int i=0; i < mButtons.size()-1; i++)
-            {
-                    mButtonGroup->addButton(mButtons[i], i);
-            }
+    if (mButtonGroup)
         connect(mButtonGroup, SIGNAL(buttonClicked(int)), this, SIGNAL(buttonGroupClicked(int)));
-    }
 
     adjustSizeAndPosition();
 

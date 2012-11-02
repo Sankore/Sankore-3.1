@@ -92,7 +92,8 @@ class UBDrawingController : public QObject
         void zoomInToolSelected(bool checked);
         void zoomOutToolSelected(bool checked);
         void pointerToolSelected(bool checked);
-        void lineToolSelected(bool checked);
+        void penLineToolSelected(bool checked);
+        void markerLineToolSelected(bool checked);
         void textToolSelected(bool checked);
         void captureToolSelected(bool checked);
 };

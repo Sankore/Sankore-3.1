@@ -42,16 +42,17 @@ struct UBStylusTool
 {
     enum Enum
     {
-        Pen = 0, 
+        Pen = 0,
+        PenLine,
 		Eraser, 
  		Marker, 
+        MarkerLine,
 		Selector, 
         Play,
 		Hand, 
 		ZoomIn, 
 		ZoomOut, 
 		Pointer, 
-		Line, 
 		Text, 
 		Capture
     };

@@ -1774,7 +1774,7 @@ void UBBoardController::setColorIndex(int pColorIndex)
     UBDrawingController::drawingController()->setColorIndex(pColorIndex);
 
     if (UBDrawingController::drawingController()->stylusTool() != UBStylusTool::Marker &&
-            UBDrawingController::drawingController()->stylusTool() != UBStylusTool::Line &&
+            UBDrawingController::drawingController()->stylusTool() != UBStylusTool::PenLine &&
             UBDrawingController::drawingController()->stylusTool() != UBStylusTool::Text &&
             UBDrawingController::drawingController()->stylusTool() != UBStylusTool::Selector)
     {
@@ -1782,7 +1782,7 @@ void UBBoardController::setColorIndex(int pColorIndex)
     }
 
     if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Pen ||
-            UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line ||
+            UBDrawingController::drawingController()->stylusTool() == UBStylusTool::PenLine ||
             UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Text ||
             UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector)
     {

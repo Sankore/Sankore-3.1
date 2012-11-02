@@ -357,7 +357,7 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     }
 
     // if event are not Pen events, we drop the tablet stuff and route everything through mouse event
-    if (currentTool != UBStylusTool::Pen && currentTool != UBStylusTool::Line && currentTool != UBStylusTool::Marker && !mMarkerPressureSensitive){
+    if (currentTool != UBStylusTool::Pen && currentTool != UBStylusTool::PenLine && currentTool != UBStylusTool::Marker && !mMarkerPressureSensitive){
         event->setAccepted (false);
         return;
     }
@@ -365,7 +365,7 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     QPointF scenePos = viewportTransform ().inverted ().map (tabletPos);
 
     qreal pressure = 1.0;
-    if (((currentTool == UBStylusTool::Pen || currentTool == UBStylusTool::Line) && mPenPressureSensitive) || (currentTool == UBStylusTool::Marker && mMarkerPressureSensitive))
+    if (((currentTool == UBStylusTool::Pen || currentTool == UBStylusTool::PenLine) && mPenPressureSensitive) || (currentTool == UBStylusTool::Marker && mMarkerPressureSensitive))
         pressure = event->pressure ();
 
 
@@ -1556,11 +1556,17 @@ UBBoardView::setToolCursor (int tool)
     case UBStylusTool::Pen:
       controlViewport->setCursor (UBResources::resources ()->penCursor);
       break;
+    case UBStylusTool::PenLine:
+      controlViewport->setCursor (UBResources::resources ()->penCursor);
+      break;
     case UBStylusTool::Eraser:
       controlViewport->setCursor (UBResources::resources ()->eraserCursor);
       scene()->hideEraser();
       break;
     case UBStylusTool::Marker:
+      controlViewport->setCursor (UBResources::resources ()->markerCursor);
+      break;
+    case UBStylusTool::MarkerLine:
       controlViewport->setCursor (UBResources::resources ()->markerCursor);
       break;
     case UBStylusTool::Pointer:
@@ -1580,9 +1586,6 @@ UBBoardView::setToolCursor (int tool)
       break;
     case UBStylusTool::Play:
       controlViewport->setCursor (UBResources::resources ()->playCursor);
-      break;
-    case UBStylusTool::Line:
-      controlViewport->setCursor (UBResources::resources ()->penCursor);
       break;
     case UBStylusTool::Text:
       controlViewport->setCursor (UBResources::resources ()->textCursor);

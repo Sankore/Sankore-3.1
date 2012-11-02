@@ -14,6 +14,7 @@
 #include "UBFloatingPalette.h"
 
 class UBActionPaletteButton;
+class UBActionPaletteMultiStateButton;
 
 class UBActionPalette : public UBFloatingPalette
 {
@@ -33,7 +34,8 @@ class UBActionPalette : public UBFloatingPalette
         QList<QAction*> actions();
         void setActions(QList<QAction*> actions);
         void groupActions();
-        void addAction(QAction* action);
+        void addAction(QAction* action, bool addToGroup = true);
+        void addActions(QList<QAction*> actions, bool addToGroup = true);
 
         void setClosable(bool closable);
         void setAutoClose(bool autoClose)
@@ -53,9 +55,10 @@ class UBActionPalette : public UBFloatingPalette
 
         UBActionPaletteButton* getButtonFromAction(QAction* action);
 
+        QButtonGroup *buttonGroup() { return mButtonGroup; }
+
     public slots:
         void close();
-
 
     signals:
         void closed();
@@ -79,13 +82,14 @@ class UBActionPalette : public UBFloatingPalette
         bool mAutoClose;
         QSize mButtonSize;
         QPoint mMousePos;
+        UBActionPaletteMultiStateButton *createPaletteButton(QList<QAction*> actions, QWidget *parent);
         UBActionPaletteButton *createPaletteButton(QAction* action, QWidget *parent);
 
     private slots:
+        void buttonClicked(int id);
         void buttonClicked();
         void actionChanged();
 };
-
 
 class UBActionPaletteButton : public QToolButton
 {
@@ -102,6 +106,27 @@ class UBActionPaletteButton : public QToolButton
         virtual void mouseDoubleClickEvent(QMouseEvent *event);
         virtual bool hitButton(const QPoint &pos) const;
 
+};
+
+
+class UBActionPaletteMultiStateButton : public UBActionPaletteButton
+{
+    Q_OBJECT
+
+public:
+    UBActionPaletteMultiStateButton(QList<QAction*> actions, QWidget *parent = 0);
+    virtual ~UBActionPaletteMultiStateButton();
+
+private:
+    virtual void nextCheckState();
+
+private slots:
+    void setActiveAction(QAction* action);
+
+private:
+    int mCurrentAction;
+    QList<QAction *> mActions;
+    QActionGroup *mActionsGroup;
 };
 
 #endif /* UBACTIONPALETTE_H_ */

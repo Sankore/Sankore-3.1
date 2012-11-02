@@ -128,7 +128,7 @@ void UBWidgetUniboardAPI::setTool(const QString& toolString)
     }
     else if (lower == "line")
     {
-        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Line);
+        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::PenLine);
     }
 }
 
@@ -232,7 +232,7 @@ void UBWidgetUniboardAPI::drawLineTo(const qreal x, const qreal y, const qreal p
 
     if (mScene)
     mScene->drawLineTo(QPointF(x, y), pWidth, 
-		UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+		UBDrawingController::drawingController()->stylusTool() == UBStylusTool::PenLine);
 }
 
 

@@ -27,29 +27,26 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     , mDisplaySelectAction(NULL)
     , rightPalette(_rightPalette)
 {
-    QList<QAction*> actions;
-
     mActionUniboard = new QAction(QIcon(":/images/toolbar/board.png"), tr("Show Open-Sankore"), this);
     connect(mActionUniboard, SIGNAL(triggered()), this, SIGNAL(uniboardClick()));
-    actions << mActionUniboard;
+    addAction(mActionUniboard);
 
-
-    actions << UBApplication::mainWindow->actionPen;
-    actions << UBApplication::mainWindow->actionEraser;
-    actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionSelector;
-    actions << UBApplication::mainWindow->actionPointer;
+    addAction(UBApplication::mainWindow->actionPen);
+    addAction(UBApplication::mainWindow->actionEraser);
+    addAction(UBApplication::mainWindow->actionMarker);
+    addAction(UBApplication::mainWindow->actionSelector);
+    addAction(UBApplication::mainWindow->actionPointer);
 
     if (UBPlatformUtils::hasVirtualKeyboard())
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
+        addAction(UBApplication::mainWindow->actionVirtualKeyboard, false);
 
     mActionCustomSelect = new QAction(QIcon(":/images/toolbar/captureArea.png"), tr("Capture Part of the Screen"), this);
     connect(mActionCustomSelect, SIGNAL(triggered()), this, SIGNAL(customClick()));
-    actions << mActionCustomSelect;
+    addAction(mActionCustomSelect);
 
     mDisplaySelectAction = new QAction(QIcon(":/images/toolbar/captureScreen.png"), tr("Capture the Screen"), this);
     connect(mDisplaySelectAction, SIGNAL(triggered()), this, SIGNAL(screenClick()));
-    actions << mDisplaySelectAction;
+    addAction(mDisplaySelectAction);
 
     QIcon showHideIcon;
     showHideIcon.addPixmap(QPixmap(":/images/toolbar/eyeOpened.png"), QIcon::Normal , QIcon::On);
@@ -58,9 +55,8 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     mShowHideAction->setCheckable(true);
 
     connect(mShowHideAction, SIGNAL(triggered(bool)), this, SLOT(showHideClick(bool)));
-    actions << mShowHideAction;
+    addAction(mShowHideAction);
 
-    setActions(actions);
     setButtonIconSize(QSize(42, 42));
 
     adjustSizeAndPosition();
@@ -149,23 +145,20 @@ void UBDesktopPalette::minimizeMe(eMinimizedLocation location)
 //  Called when the user wants to maximize the palette
 void UBDesktopPalette::maximizeMe()
 {
-    QList<QAction*> actions;
     clearLayout();
 
-    actions << mActionUniboard;
-    actions << UBApplication::mainWindow->actionPen;
-    actions << UBApplication::mainWindow->actionEraser;
-    actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionSelector;
-    actions << UBApplication::mainWindow->actionPointer;
+    addAction(mActionUniboard);
+    addAction(UBApplication::mainWindow->actionPen);
+    addAction(UBApplication::mainWindow->actionEraser);
+    addAction(UBApplication::mainWindow->actionMarker);
+    addAction(UBApplication::mainWindow->actionSelector);
+    addAction(UBApplication::mainWindow->actionPointer);
     if (UBPlatformUtils::hasVirtualKeyboard())
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
+        addAction(UBApplication::mainWindow->actionVirtualKeyboard, false);
 
-    actions << mActionCustomSelect;
-    actions << mDisplaySelectAction;
-    actions << mShowHideAction;
-
-    setActions(actions);
+    addAction(mActionCustomSelect);
+    addAction(mDisplaySelectAction);
+    addAction(mShowHideAction);
 
     adjustSizeAndPosition();
 

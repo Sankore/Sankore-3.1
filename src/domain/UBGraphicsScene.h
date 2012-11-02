@@ -419,6 +419,8 @@ public slots:
 
         bool mDrawWithCompass;
 
+        bool mLineIsDrawing;
+
 };
 
 

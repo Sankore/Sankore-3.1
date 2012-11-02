@@ -62,6 +62,10 @@ void UBActionPalette::init(Qt::Orientation orientation)
     else
         new QVBoxLayout(this);
 
+    mButtonGroup = new QButtonGroup(this);
+
+    connect(mButtonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonClicked(int)));
+
     updateLayout();
 }
 
@@ -77,15 +81,29 @@ void UBActionPalette::setActions(QList<QAction*> actions)
     actionChanged();
 }
 
+UBActionPaletteMultiStateButton* UBActionPalette::createPaletteButton(QList<QAction*> actions, QWidget *parent)
+{
+    UBActionPaletteMultiStateButton *button = new UBActionPaletteMultiStateButton(actions, parent);
+
+    button->setIconSize(mButtonSize);
+    button->setToolButtonStyle(mToolButtonStyle);
+
+    mButtons << button;
+
+    mMapActionToButton[actions[0]] = button;
+
+    connect(button, SIGNAL(clicked()), this, SLOT(buttonClicked()));
+    connect(actions[0], SIGNAL(changed()), this, SLOT(actionChanged()));
+
+    return button;
+
+}
 
 UBActionPaletteButton* UBActionPalette::createPaletteButton(QAction* action, QWidget *parent)
 {
     UBActionPaletteButton* button = new UBActionPaletteButton(action, parent);
     button->setIconSize(mButtonSize);
     button->setToolButtonStyle(mToolButtonStyle);
-
-    if (mButtonGroup)
-        mButtonGroup->addButton(button, mButtons.length());
 
     mButtons << button;
 
@@ -97,13 +115,59 @@ UBActionPaletteButton* UBActionPalette::createPaletteButton(QAction* action, QWi
     return button;
 }
 
-void UBActionPalette::addAction(QAction* action)
+
+void UBActionPalette::addActions(QList<QAction*> actions, bool addToGroup)
+{
+
+    UBActionPaletteMultiStateButton* button = createPaletteButton(actions, this);
+
+    if(!mButtonGroup)
+        mButtonGroup = new QButtonGroup(this);
+
+    if (addToGroup && mButtonGroup)
+        mButtonGroup->addButton(button);
+
+    layout()->addWidget(button);
+
+    mActions << actions;
+
+}
+
+void UBActionPalette::addAction(QAction* action, bool addToGroup)
 {
     UBActionPaletteButton* button = createPaletteButton(action, this);
+
+    if(!mButtonGroup)
+        mButtonGroup = new QButtonGroup(this);
+
+    if (addToGroup && mButtonGroup)
+        mButtonGroup->addButton(button);
 
     layout()->addWidget(button);
 
     mActions << action;
+}
+void UBActionPalette::buttonClicked(int id)
+{
+    if (mButtonGroup)
+    {
+        int checked = mButtonGroup->checkedId();
+
+        foreach (QAbstractButton *button, mButtonGroup->buttons())
+        {      
+            if (id != mButtonGroup->id(button))
+            {
+                QAbstractButton *currentButton = mButtonGroup->button(mButtonGroup->checkedId());
+                if (currentButton)
+                {
+                    foreach(QAction *buttonAction, currentButton->actions())
+                    {
+                     //   buttonAction->setChecked(false);
+                    }
+                }
+            }
+        }
+    }
 }
 
 void UBActionPalette::buttonClicked()
@@ -275,7 +339,6 @@ UBActionPaletteButton::~UBActionPaletteButton()
 
 }
 
-
 void UBActionPaletteButton::mouseDoubleClickEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
@@ -305,4 +368,73 @@ bool UBActionPaletteButton::hitButton(const QPoint &pos) const
 {
     Q_UNUSED(pos);
     return true;
+}
+
+
+
+UBActionPaletteMultiStateButton::UBActionPaletteMultiStateButton(QList<QAction*> actions, QWidget *parent)
+    : UBActionPaletteButton(actions[0], parent)
+    , mActions(actions)
+{
+    mActionsGroup = new QActionGroup(this);
+    for (int i = 1; i < mActions.count(); i++)
+    {
+        QToolButton::addAction(actions[i]);
+        mActionsGroup->addAction(actions[i]);
+        connect(mActionsGroup, SIGNAL(triggered(QAction*)), this, SLOT(setActiveAction(QAction*)));
+    }
+}
+
+UBActionPaletteMultiStateButton::~UBActionPaletteMultiStateButton()
+{
+
+}
+
+void UBActionPaletteMultiStateButton::nextCheckState()
+{
+    int id = -1;
+    int selfGroupId = -1; 
+
+    UBActionPalette *palette = qobject_cast<UBActionPalette *>(parent());
+    if (palette)
+    {
+        QButtonGroup *group = palette->buttonGroup();
+        if (group)
+        {
+            id = group->checkedId();
+            selfGroupId = group->id(this);
+        }
+
+        if (this->isChecked() && id == selfGroupId)
+        {
+            int newActionIndex = (mActions.indexOf(defaultAction())+1)%mActions.count();
+            QAction *newAction = mActions[newActionIndex];
+            setDefaultAction(newAction);
+            group->button(selfGroupId)->setChecked(true);
+            newAction->trigger();
+        }
+
+        if (!this->isChecked() && id != selfGroupId)
+        {
+            foreach (QAction *action, mActionsGroup->actions())
+            {
+                if(action->isChecked())
+                    action->trigger();
+            }
+           
+            group->button(selfGroupId)->setChecked(true);
+            defaultAction()->toggle();
+        }
+
+        if (id != selfGroupId)
+        {
+            group->button(selfGroupId)->setChecked(false);
+        }
+    }
+}
+
+void UBActionPaletteMultiStateButton::setActiveAction(QAction* action)
+{
+    //setChecked(true);
+   // setDefaultAction(action);
 }
