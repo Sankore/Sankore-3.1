@@ -18,6 +18,7 @@
 
 #include <QtGui>
 #include "document/UBDocumentContainer.h"
+#include "UBDocument.h"
 
 namespace Ui
 {
@@ -38,7 +39,7 @@ class UBDocumentToolsPalette;
 
 class UBDocumentController : public UBDocumentContainer
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBDocumentController(UBMainWindow* mainWindow);
@@ -50,13 +51,13 @@ class UBDocumentController : public UBDocumentContainer
         bool addFileToDocument(UBDocumentProxy* document);
         void deletePages(QList<QGraphicsItem*> itemsToDelete);
         int getSelectedItemIndex();
-
         bool pageCanBeMovedUp(int page);
         bool pageCanBeMovedDown(int page);
         bool pageCanBeDuplicated(int page);
         bool pageCanBeDeleted(int page);
         QString documentTrashGroupName(){ return mDocumentTrashGroupName;}
         QString defaultDocumentGroupName(){ return mDefaultDocumentGroupName;}
+        UBDocument* currentDocument();
 
     signals:
         void exportDone();
@@ -98,26 +99,6 @@ class UBDocumentController : public UBDocumentContainer
 
         LastSelectedElementType mSelectionType;
 
-    private:
-        QWidget *mParentWidget;
-        UBBoardController *mBoardController;
-        Ui::documents* mDocumentUI;
-        UBMainWindow* mMainWindow;
-        QWidget *mDocumentWidget;
-        QPointer<UBMessageWindow> mMessageWindow;
-        QAction* mAddFolderOfImagesAction;
-        QAction* mAddFileToDocumentAction;
-        QAction* mAddImagesAction;
-        bool mIsClosing;
-        UBDocumentToolsPalette *mToolsPalette;
-        bool mToolsPalettePositionned;
-        UBDocumentGroupTreeItem* mTrashTi;
-
-        void moveDocumentToTrash(UBDocumentGroupTreeItem* groupTi, UBDocumentProxyTreeItem *proxyTi);
-        void moveFolderToTrash(UBDocumentGroupTreeItem* groupTi);
-        QString mDocumentTrashGroupName;
-        QString mDefaultDocumentGroupName;
-
     private slots:
         void documentZoomSliderValueChanged (int value);
         void loadDocumentProxies();
@@ -137,10 +118,32 @@ class UBDocumentController : public UBDocumentContainer
         void addFolderOfImages();
         void addFileToDocument();
         void addImages();
-
         void refreshDocumentThumbnailsView(UBDocumentContainer* source);
+
+        void onDocumentSet(UBDocumentProxy* proxy);
+
+    private:
+        void moveDocumentToTrash(UBDocumentGroupTreeItem* groupTi, UBDocumentProxyTreeItem *proxyTi);
+        void moveFolderToTrash(UBDocumentGroupTreeItem* groupTi);
+
+        QWidget *mParentWidget;
+        UBBoardController *mBoardController;
+        Ui::documents* mDocumentUI;
+        UBMainWindow* mMainWindow;
+        QWidget *mDocumentWidget;
+        QPointer<UBMessageWindow> mMessageWindow;
+        QAction* mAddFolderOfImagesAction;
+        QAction* mAddFileToDocumentAction;
+        QAction* mAddImagesAction;
+        bool mIsClosing;
+        UBDocumentToolsPalette *mToolsPalette;
+        bool mToolsPalettePositionned;
+        UBDocumentGroupTreeItem* mTrashTi;
+        QString mDocumentTrashGroupName;
+        QString mDefaultDocumentGroupName;
+
+        /** The current document */
+        UBDocument* mpCurrentDocument;
 };
-
-
 
 #endif /* UBDOCUMENTCONTROLLER_H_ */

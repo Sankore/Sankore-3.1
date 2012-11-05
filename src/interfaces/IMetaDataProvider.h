@@ -19,19 +19,22 @@
 #include <QVector>
 
 typedef struct{
+    QString ns;
     QString key;
     QString value;
 }sMetaData;
 
+typedef struct{
+    QString name;
+    QString url;
+}sNamespace;
+
 class IMetaDataProvider{
 public:
     virtual ~IMetaDataProvider(){}
-    virtual void save()=0;
+    virtual void save(QList<sNamespace> &ns, QList<sMetaData> &md)=0;
     virtual QString nameSpace()=0;
     virtual QString nameSpaceUrl()=0;
-
-protected:
-    QVector<sMetaData> mMetaDatas;
 };
 
 #endif // IMETADATAPROVIDER_H

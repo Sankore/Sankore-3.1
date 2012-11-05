@@ -23,6 +23,7 @@
 #include "board/UBBoardController.h"
 
 #include "document/UBDocumentProxy.h"
+#include "document/UBDocumentController.h"
 
 #include "core/memcheck.h"
 
@@ -68,6 +69,11 @@ UBMetadataDcSubsetAdaptor::~UBMetadataDcSubsetAdaptor()
 
 void UBMetadataDcSubsetAdaptor::persist(UBDocumentProxy* proxy)
 {
+    // TODO: replace the call to this method by the one in UBDocument
+    if(NULL != UBApplication::documentController && NULL != UBApplication::documentController->currentDocument())
+        UBApplication::documentController->currentDocument()->persist(proxy->persistencePath());
+    // --------------------------------------------------------------
+
     if(!QDir(proxy->persistencePath()).exists()){
         //In this case the a document is an empty document so we do not persist it
         return;

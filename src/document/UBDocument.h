@@ -17,16 +17,16 @@
 
 #include <QVector>
 #include <QString>
-#include <QDate>
+#include <QDateTime>
 #include "UBDocumentPage.h"
-#include "interfaces/IMetaDataProvider.h"
+#include "abstract/UBAbstractMetaDataProvider.h"
 
-class UBDocument : public IMetaDataProvider{
+class UBDocument : public UBAbstractMetaDataProvider{
 public:
     UBDocument();
     ~UBDocument();
 
-    virtual void save();
+    virtual void save(QList<sNamespace> &ns, QList<sMetaData> &md);
     virtual QString nameSpace();
     virtual QString nameSpaceUrl();
 
@@ -35,27 +35,28 @@ public:
     void appendPage(UBDocumentPage* &page);
     void addPageAt(UBDocumentPage* &page, int index);
     void removePage(UBDocumentPage* &page);
-    void persist();
+    void persist(const QString& path);
     QString title();
     void setTitle(const QString& title);
     QString type();
     void setType(const QString& type);
-    QDate creationDate();
-    void setCreationDate(const QDate& date);
+    QDateTime creationDate();
+    void setCreationDate(const QDateTime& date);
     QString format();
     void setFormat(const QString& format);
     QString id();
     void setId(const QString& id);
     QString version();
     void setVersion(const QString& version);
-    QDate updatedDate();
-    void setUpdatedDate(const QDate& date);
+    QDateTime updatedDate();
+    void setUpdatedDate(const QDateTime& date);
     QString size();
     void setSize(const QString& size);
+    QString uuid();
+    void setUuid(const QString& uuid);
 
 private:
     void init();
-    void addMetaData(QString key, QString value="");
 
     /** Pages */
     QVector<UBDocumentPage*> mlPages;
@@ -66,7 +67,7 @@ private:
     /** Type */
     QString mType;
     /** Date */
-    QDate mDate;
+    QDateTime mDate;
     /** Format */
     QString mFormat;
     /** Identifier */
@@ -74,9 +75,11 @@ private:
     /** Document version */
     QString mVersion;
     /** Updated date */
-    QDate mUpdatedDate;
+    QDateTime mUpdatedDate;
     /** Size */
     QString mSize;  // Nobody knows what's this...
+    /** Uuid */
+    QString mUuid;
 };
 
 #endif // UBDOCUMENT_H

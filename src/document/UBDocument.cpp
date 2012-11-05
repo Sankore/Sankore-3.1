@@ -13,6 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "UBDocument.h"
+#include "frameworks/UBStringUtils.h"
+#include "adaptors/UBMetaDataAdaptor.h"
 
 const QString qsNamespace = "dc";
 const QString qsNameSpaceUrl = "http://purl.org/dc/elements/1.1/";
@@ -43,14 +45,29 @@ UBDocument::UBDocument(){
  * \brief Destructor
  */
 UBDocument::~UBDocument(){
-
+    QVector<IMetaDataProvider*>::const_iterator itMetaData;
+    for(itMetaData = mlMetaDataProviders.constBegin(); itMetaData != mlMetaDataProviders.constEnd(); itMetaData++)
+        unRegisterMetaDataProvider(*itMetaData);
 }
 
 /**
  * \brief Save the document information
  */
-void UBDocument::save(){
-    // TODO: save the metadatas in the file
+void UBDocument::save(QList<sNamespace> &ns, QList<sMetaData> &md){
+    QVector<sMetaData>::const_iterator itMetaData;
+    for(itMetaData = mMetaDatas.constBegin(); itMetaData != mMetaDatas.constEnd(); itMetaData++)
+        md.append(*itMetaData);
+
+    sNamespace docNs;
+    docNs.name = qsNamespace;
+    docNs.url = qsNameSpaceUrl;
+
+    sNamespace ubNs;
+    ubNs.name = qsUbNamespace;
+    ubNs.url = qsUbNamespaceUrl;
+
+    ns.append(docNs);
+    ns.append(ubNs);
 }
 
 /**
@@ -129,42 +146,35 @@ void UBDocument::removePage(UBDocumentPage *&page){
 /**
  * \brief Save the document
  */
-void UBDocument::persist(){
+void UBDocument::persist(const QString& path){
     //  -------------------------
     //  -- Save the meta datas
     //  -------------------------
     QVector<IMetaDataProvider*>::const_iterator itMetaData;
+
+    // Here we build the metadata structure
+    QList<sNamespace> qlNs;
+    QList<sMetaData> qlMd;
     for(itMetaData = mlMetaDataProviders.constBegin(); itMetaData != mlMetaDataProviders.constEnd(); itMetaData++)
-        (*itMetaData)->save();
+        (*itMetaData)->save(qlNs, qlMd);
+
+    // Then we persist the datas in a file
+    UBMetaDataAdaptor* adaptor = new UBMetaDataAdaptor();
+    adaptor->persist(path, qlNs, qlMd, mIdentifier.toAscii().constData());
 }
 
 /**
  * \brief Init the document
  */
 void UBDocument::init(){
-    addMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaTitle));
-    addMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaType));
-    addMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaDate));
-    addMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaFormat));
-    addMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaIdentifier));
-    addMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbVersion));
-    addMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbSize));
-    addMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbUpdate));
-}
-
-/**
- * \brief Add the given metadata to the metadata list
- * @param key as the metadata key
- * @param value as the metadata value
- */
-void UBDocument::addMetaData(QString key, QString value){
-    Q_ASSERT(!key.isEmpty());
-    if(!key.isEmpty()){
-        sMetaData metaData;
-        metaData.key = key;
-        metaData.value = value;
-        mMetaDatas.append(metaData);
-    }
+    addMetaData(nameSpace(), qsMetaTitle);
+    addMetaData(nameSpace(), qsMetaType);
+    addMetaData(nameSpace(), qsMetaDate);
+    addMetaData(nameSpace(), qsMetaFormat);
+    addMetaData(nameSpace(), qsMetaIdentifier);
+    addMetaData(qsUbNamespace, qsMetaUbVersion);
+    addMetaData(qsUbNamespace, qsMetaUbSize);
+    addMetaData(qsUbNamespace, qsMetaUbUpdate);
 }
 
 /**
@@ -181,6 +191,7 @@ QString UBDocument::title(){
  */
 void UBDocument::setTitle(const QString& title){
     mTitle = title;
+    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaTitle), mTitle);
 }
 
 /**
@@ -197,13 +208,14 @@ QString UBDocument::type(){
  */
 void UBDocument::setType(const QString& type){
     mType = type;
+    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaType), mType);
 }
 
 /**
  * \brief Get the document creation date
  * @return the document creation date
  */
-QDate UBDocument::creationDate(){
+QDateTime UBDocument::creationDate(){
     return mDate;
 }
 
@@ -211,8 +223,9 @@ QDate UBDocument::creationDate(){
  * \brief Set the document date
  * @param date as the document date
  */
-void UBDocument::setCreationDate(const QDate& date){
+void UBDocument::setCreationDate(const QDateTime& date){
     mDate = date;
+    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaDate), UBStringUtils::toUtcIsoDateTime(mDate));
 }
 
 /**
@@ -229,6 +242,7 @@ QString UBDocument::format(){
  */
 void UBDocument::setFormat(const QString& format){
     mFormat = format;
+    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaFormat), mFormat);
 }
 
 /**
@@ -245,6 +259,7 @@ QString UBDocument::id(){
  */
 void UBDocument::setId(const QString& id){
     mIdentifier = id;
+    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaIdentifier), mIdentifier);
 }
 
 /**
@@ -261,13 +276,14 @@ QString UBDocument::version(){
  */
 void UBDocument::setVersion(const QString& version){
     mVersion = version;
+    updateMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbVersion), mVersion);
 }
 
 /**
  * \brief Get the document update date
  * @return the document update date
  */
-QDate UBDocument::updatedDate(){
+QDateTime UBDocument::updatedDate(){
     return mUpdatedDate;
 }
 
@@ -275,8 +291,9 @@ QDate UBDocument::updatedDate(){
  * \brief Set the document update date
  * @param date as the document update date
  */
-void UBDocument::setUpdatedDate(const QDate& date){
+void UBDocument::setUpdatedDate(const QDateTime& date){
     mUpdatedDate = date;
+    updateMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbUpdate), UBStringUtils::toUtcIsoDateTime(mUpdatedDate));
 }
 
 /**
@@ -293,4 +310,21 @@ QString UBDocument::size(){
  */
 void UBDocument::setSize(const QString& size){
     mSize = size;
+    updateMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbSize), mSize);
+}
+
+/**
+ * \brief Get the document uuid
+ * @return the document uuid
+ */
+QString UBDocument::uuid(){
+    return mUuid;
+}
+
+/**
+ * \brief Set the document uuid
+ * @param uuid as the document uuid
+ */
+void UBDocument::setUuid(const QString &uuid){
+    mUuid = uuid;
 }

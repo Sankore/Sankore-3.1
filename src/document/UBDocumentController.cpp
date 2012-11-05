@@ -71,12 +71,14 @@ UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
    , mTrashTi(0)
    , mDocumentTrashGroupName(tr("Trash"))
    , mDefaultDocumentGroupName(tr("Untitled Documents"))
+   , mpCurrentDocument(new UBDocument())
 {
     setupViews();
     setupToolbar();
     this->selectDocument(UBApplication::boardController->selectedDocument());
     connect(this, SIGNAL(exportDone()), mMainWindow, SLOT(onExportDone()));
     connect(this, SIGNAL(documentThumbnailsUpdated(UBDocumentContainer*)), this, SLOT(refreshDocumentThumbnailsView(UBDocumentContainer*)));
+    connect(this, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onDocumentSet(UBDocumentProxy*)));
 }
 
 UBDocumentController::~UBDocumentController()
@@ -1704,4 +1706,36 @@ void UBDocumentController::refreshDocumentThumbnailsView(UBDocumentContainer*)
     }
 
     QApplication::restoreOverrideCursor();
+}
+
+/**
+ * \brief Get the current document
+ * @return the current document
+ */
+UBDocument* UBDocumentController::currentDocument(){
+    return mpCurrentDocument;
+}
+
+/**
+ * \brief set the current document
+ * @param proxy as the new document proxy
+ */
+void UBDocumentController::onDocumentSet(UBDocumentProxy *proxy){
+    Q_ASSERT(NULL != proxy);
+    if(NULL != proxy){
+        if(NULL != mpCurrentDocument){
+            // Save the previous document
+            mpCurrentDocument->persist(proxy->persistencePath());
+            delete mpCurrentDocument;
+        }
+        mpCurrentDocument = new UBDocument();
+        mpCurrentDocument->setTitle(proxy->metaData(UBSettings::documentName).toString());
+        mpCurrentDocument->setId(proxy->metaData(UBSettings::documentIdentifer).toString());
+        mpCurrentDocument->setCreationDate(QDateTime::fromString(proxy->metaData(UBSettings::documentDate).toString()));
+        mpCurrentDocument->setFormat("image/svg+xml"); // Seems to be always the same
+        mpCurrentDocument->setSize(""); // Nobody knows what's this so this is too great..
+        mpCurrentDocument->setType(""); // What's the type?
+        mpCurrentDocument->setUpdatedDate(QDateTime::fromString(proxy->metaData(UBSettings::documentUpdatedAt).toString()));
+        mpCurrentDocument->setVersion(proxy->metaData(UBSettings::documentVersion).toString());
+    }
 }
