@@ -86,7 +86,6 @@ class UBActionPalette : public UBFloatingPalette
         UBActionPaletteButton *createPaletteButton(QAction* action, QWidget *parent);
 
     private slots:
-        void buttonClicked(int id);
         void buttonClicked();
         void actionChanged();
 };
@@ -117,13 +116,18 @@ public:
     UBActionPaletteMultiStateButton(QList<QAction*> actions, QWidget *parent = 0);
     virtual ~UBActionPaletteMultiStateButton();
 
+    void addAction(QAction *action);
+
 private:
     virtual void nextCheckState();
 
 private slots:
     void setActiveAction(QAction* action);
+    void onActionTrigger(bool checked);
+    void onClick(bool checked);
 
 private:
+    QMenu *mActionsMenu;
     int mCurrentAction;
     QList<QAction *> mActions;
     QActionGroup *mActionsGroup;

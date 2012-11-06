@@ -91,7 +91,7 @@ void UBDrawingController::setStylusTool(int tool)
     {
     	UBApplication::boardController->activeScene()->deselectAllItems();
         if (mStylusTool == UBStylusTool::Pen || mStylusTool == UBStylusTool::Marker
-                || mStylusTool == UBStylusTool::PenLine)
+                || mStylusTool == UBStylusTool::PenLine || mStylusTool == UBStylusTool::MarkerLine)
         {
             mLatestDrawingTool = mStylusTool;
         }

@@ -64,8 +64,6 @@ void UBActionPalette::init(Qt::Orientation orientation)
 
     mButtonGroup = new QButtonGroup(this);
 
-    connect(mButtonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonClicked(int)));
-
     updateLayout();
 }
 
@@ -146,28 +144,6 @@ void UBActionPalette::addAction(QAction* action, bool addToGroup)
     layout()->addWidget(button);
 
     mActions << action;
-}
-void UBActionPalette::buttonClicked(int id)
-{
-    if (mButtonGroup)
-    {
-        int checked = mButtonGroup->checkedId();
-
-        foreach (QAbstractButton *button, mButtonGroup->buttons())
-        {      
-            if (id != mButtonGroup->id(button))
-            {
-                QAbstractButton *currentButton = mButtonGroup->button(mButtonGroup->checkedId());
-                if (currentButton)
-                {
-                    foreach(QAction *buttonAction, currentButton->actions())
-                    {
-                     //   buttonAction->setChecked(false);
-                    }
-                }
-            }
-        }
-    }
 }
 
 void UBActionPalette::buttonClicked()
@@ -374,20 +350,45 @@ bool UBActionPaletteButton::hitButton(const QPoint &pos) const
 
 UBActionPaletteMultiStateButton::UBActionPaletteMultiStateButton(QList<QAction*> actions, QWidget *parent)
     : UBActionPaletteButton(actions[0], parent)
-    , mActions(actions)
 {
+    mActionsMenu = new QMenu(this);
     mActionsGroup = new QActionGroup(this);
-    for (int i = 1; i < mActions.count(); i++)
-    {
-        QToolButton::addAction(actions[i]);
-        mActionsGroup->addAction(actions[i]);
-        connect(mActionsGroup, SIGNAL(triggered(QAction*)), this, SLOT(setActiveAction(QAction*)));
-    }
+  
+    setMenu(mActionsMenu);
+
+    foreach(QAction *action, actions)
+        addAction(action);
+
+    connect(this, SIGNAL(clicked(bool)), this, SLOT(onClick(bool)));
+
+    setPopupMode(QToolButton::MenuButtonPopup);
+
+
+    setStyleSheet(QString("QToolButton {color: white; font-weight: bold; font-family: Arial; background-color: transparent; border: none;} \
+                          QToolButton::menu-arrow {subcontrol-position: right bottom;} "));
 }
 
 UBActionPaletteMultiStateButton::~UBActionPaletteMultiStateButton()
 {
 
+}
+
+
+void UBActionPaletteMultiStateButton::addAction(QAction *action)
+{
+    mActions << action;
+    mActionsGroup->addAction(action);
+    mActionsMenu->addAction(action);
+    connect(action, SIGNAL(triggered(bool)), this, SLOT(onActionTrigger(bool)));
+    connect(action, SIGNAL(toggled(bool)), this, SLOT(onActionTrigger(bool)));
+    connect(menu(), SIGNAL(triggered(QAction*)), this, SLOT(setActiveAction(QAction*)));
+
+    if (1 == mActions.count())
+    {
+        setDefaultAction(action);
+        menu()->setDefaultAction(action);
+        menu()->setActiveAction(action);
+    }
 }
 
 void UBActionPaletteMultiStateButton::nextCheckState()
@@ -405,36 +406,68 @@ void UBActionPaletteMultiStateButton::nextCheckState()
             selfGroupId = group->id(this);
         }
 
-        if (this->isChecked() && id == selfGroupId)
+        if (this->isChecked() && id != selfGroupId)
         {
-            int newActionIndex = (mActions.indexOf(defaultAction())+1)%mActions.count();
-            QAction *newAction = mActions[newActionIndex];
-            setDefaultAction(newAction);
-            group->button(selfGroupId)->setChecked(true);
-            newAction->trigger();
-        }
-
-        if (!this->isChecked() && id != selfGroupId)
-        {
-            foreach (QAction *action, mActionsGroup->actions())
-            {
-                if(action->isChecked())
-                    action->trigger();
-            }
-           
-            group->button(selfGroupId)->setChecked(true);
-            defaultAction()->toggle();
-        }
-
-        if (id != selfGroupId)
-        {
+            // change from self to another
             group->button(selfGroupId)->setChecked(false);
+            foreach(QAction *action, menu()->actions())
+            {
+                action->setChecked(false);
+            }
         }
     }
 }
 
 void UBActionPaletteMultiStateButton::setActiveAction(QAction* action)
 {
-    //setChecked(true);
-   // setDefaultAction(action);
+    setDefaultAction(action);   
+    menu()->setDefaultAction(action);
+}
+
+void UBActionPaletteMultiStateButton::onActionTrigger(bool checked)
+{
+    if (checked && menu()->defaultAction())
+    {
+        foreach(QAction *action, actions())
+        {
+            if (action->isChecked())
+            {
+                setDefaultAction(action);
+                menu()->setDefaultAction(action);
+            }
+        }
+    }
+}
+
+void UBActionPaletteMultiStateButton::onClick(bool checked)
+{
+    int id = -1;
+    int selfGroupId = -1; 
+
+    UBActionPalette *palette = qobject_cast<UBActionPalette *>(parent());
+    if (palette)
+    {
+        QButtonGroup *group = palette->buttonGroup();
+        if (group)
+        {
+            id = group->checkedId();
+            selfGroupId = group->id(this);
+        }
+
+        if (this->isChecked() && id == selfGroupId && defaultAction())
+        {
+            // change from self to self
+            int newActionIndex = (mActions.indexOf(defaultAction())+1)%mActions.count();
+            QAction *newAction = mActions[newActionIndex];
+            setDefaultAction(newAction);
+            group->button(selfGroupId)->setChecked(true);
+            newAction->trigger();
+        }
+        else if (!this->isChecked() && id != selfGroupId && menu()->defaultAction())
+        { 
+            // change from another to self
+            menu()->defaultAction()->trigger();
+            setDefaultAction(menu()->defaultAction());
+        }
+    }
 }
