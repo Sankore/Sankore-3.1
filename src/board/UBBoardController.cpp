@@ -1545,7 +1545,9 @@ void UBBoardController::moveSceneToIndex(int source, int target)
         UBDocumentContainer::movePageToIndex(source, target);
 
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-        UBMetadataDcSubsetAdaptor::persist(selectedDocument());
+        UBMetadataDcSubsetAdaptor::persist(selectedDocument()); // Remove this one afer new metadata saving method validation
+        UBApplication::documentController->currentDocument()->persist(selectedDocument()->persistencePath());
+
         mMovingSceneIndex = source;
         setActiveDocumentScene(target);
         mMovingSceneIndex = -1;

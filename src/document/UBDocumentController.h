@@ -81,6 +81,7 @@ class UBDocumentController : public UBDocumentContainer
         void copy();
         void paste();
         void focusChanged(QWidget *old, QWidget *current);
+        void onDocumentSet(UBDocumentProxy* proxy);
 
     protected:
         virtual void setupViews();
@@ -119,8 +120,6 @@ class UBDocumentController : public UBDocumentContainer
         void addFileToDocument();
         void addImages();
         void refreshDocumentThumbnailsView(UBDocumentContainer* source);
-
-        void onDocumentSet(UBDocumentProxy* proxy);
 
     private:
         void moveDocumentToTrash(UBDocumentGroupTreeItem* groupTi, UBDocumentProxyTreeItem *proxyTi);

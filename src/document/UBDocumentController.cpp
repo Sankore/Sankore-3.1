@@ -78,7 +78,8 @@ UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
     this->selectDocument(UBApplication::boardController->selectedDocument());
     connect(this, SIGNAL(exportDone()), mMainWindow, SLOT(onExportDone()));
     connect(this, SIGNAL(documentThumbnailsUpdated(UBDocumentContainer*)), this, SLOT(refreshDocumentThumbnailsView(UBDocumentContainer*)));
-    connect(this, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onDocumentSet(UBDocumentProxy*)));
+    connect(UBApplication::boardController, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onDocumentSet(UBDocumentProxy*)));
+    onDocumentSet(UBApplication::boardController->selectedDocument());
 }
 
 UBDocumentController::~UBDocumentController()
@@ -505,8 +506,10 @@ void UBDocumentController::duplicateSelectedItem()
             duplicatePages(selectedSceneIndexes);
 
             selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-            UBMetadataDcSubsetAdaptor::persist(selectedDocument());
+            UBMetadataDcSubsetAdaptor::persist(selectedDocument()); // Remove this one afer new metadata saving method validation
+
             mDocumentUI->thumbnailWidget->selectItemAt(selectedSceneIndexes.last() + selectedSceneIndexes.size());
+            UBApplication::documentController->currentDocument()->persist(selectedDocument()->persistencePath());
         }
     }
     else
@@ -522,8 +525,8 @@ void UBDocumentController::duplicateSelectedItem()
 
             UBDocumentProxy* duplicatedDoc = UBPersistenceManager::persistenceManager()->duplicateDocument(source);
             duplicatedDoc->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-            UBMetadataDcSubsetAdaptor::persist(duplicatedDoc);
-
+            UBMetadataDcSubsetAdaptor::persist(duplicatedDoc); // Remove this one afer new metadata saving method validation
+            UBApplication::documentController->currentDocument()->persist(duplicatedDoc->persistencePath());
             selectDocument(duplicatedDoc, false);
 
             showMessage(tr("Document %1 copied").arg(docName), false);
@@ -1009,7 +1012,8 @@ void UBDocumentController::addFolderOfImages()
             else
             {
                 document->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-                UBMetadataDcSubsetAdaptor::persist(document);
+                UBMetadataDcSubsetAdaptor::persist(document); // Remove this one afer new metadata saving method validation
+                UBApplication::documentController->currentDocument()->persist(document->persistencePath());
                 reloadThumbnails();
             }
         }
@@ -1056,7 +1060,8 @@ bool UBDocumentController::addFileToDocument(UBDocumentProxy* document)
         if (success)
         {
             document->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-            UBMetadataDcSubsetAdaptor::persist(document);
+            UBMetadataDcSubsetAdaptor::persist(document); // Remove this one afer new metadata saving method validation
+            UBApplication::documentController->currentDocument()->persist(document->persistencePath());
         }
         else
         {
@@ -1075,7 +1080,8 @@ void UBDocumentController::moveSceneToIndex(UBDocumentProxy* proxy, int source, 
     if (UBDocumentContainer::movePageToIndex(source, target))
     {
         proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-        UBMetadataDcSubsetAdaptor::persist(proxy);
+        UBMetadataDcSubsetAdaptor::persist(proxy); // Remove this one afer new metadata saving method validation
+        UBApplication::documentController->currentDocument()->persist(proxy->persistencePath());
     
         mDocumentUI->thumbnailWidget->hightlightItem(target);
     }
@@ -1312,7 +1318,8 @@ void UBDocumentController::addToDocument()
         mDocumentUI->thumbnailWidget->selectItemAt(newActiveSceneIndex, false);
         selectDocument(mBoardController->selectedDocument());
         mBoardController->selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-        UBMetadataDcSubsetAdaptor::persist(mBoardController->selectedDocument());
+        UBMetadataDcSubsetAdaptor::persist(mBoardController->selectedDocument()); // Remove this one afer new metadata saving method validation
+        UBApplication::documentController->currentDocument()->persist(mBoardController->selectedDocument()->persistencePath());
 
         UBApplication::applicationController->showBoard();
     }
@@ -1490,7 +1497,8 @@ void UBDocumentController::addImages()
             else
             {
                 document->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-                UBMetadataDcSubsetAdaptor::persist(document);
+                UBMetadataDcSubsetAdaptor::persist(document); // Remove this one afer new metadata saving method validation
+                UBApplication::documentController->currentDocument()->persist(document->persistencePath());
                 reloadThumbnails();
             }
         }
@@ -1601,7 +1609,8 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
             UBDocumentContainer::deletePages(sceneIndexes);
 
             proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-            UBMetadataDcSubsetAdaptor::persist(proxy);
+            UBMetadataDcSubsetAdaptor::persist(proxy); // Remove this one afer new metadata saving method validation
+            UBApplication::documentController->currentDocument()->persist(proxy->persistencePath());
 
             int minIndex = proxy->pageCount() - 1;
             foreach (int i, sceneIndexes)
@@ -1726,16 +1735,17 @@ void UBDocumentController::onDocumentSet(UBDocumentProxy *proxy){
         if(NULL != mpCurrentDocument){
             // Save the previous document
             mpCurrentDocument->persist(proxy->persistencePath());
-            delete mpCurrentDocument;
         }
         mpCurrentDocument = new UBDocument();
         mpCurrentDocument->setTitle(proxy->metaData(UBSettings::documentName).toString());
         mpCurrentDocument->setId(proxy->metaData(UBSettings::documentIdentifer).toString());
-        mpCurrentDocument->setCreationDate(QDateTime::fromString(proxy->metaData(UBSettings::documentDate).toString()));
+        mpCurrentDocument->setCreationDate(QDateTime::fromString(proxy->metaData(UBSettings::documentDate).toString(), Qt::ISODate));
         mpCurrentDocument->setFormat("image/svg+xml"); // Seems to be always the same
-        mpCurrentDocument->setSize(""); // Nobody knows what's this so this is too great..
+        QString width = QString::number(proxy->defaultDocumentSize().width());
+        QString height = QString::number(proxy->defaultDocumentSize().height());
+        mpCurrentDocument->setSize(QString("%0x%1").arg(width).arg(height));
         mpCurrentDocument->setType(""); // What's the type?
-        mpCurrentDocument->setUpdatedDate(QDateTime::fromString(proxy->metaData(UBSettings::documentUpdatedAt).toString()));
+        mpCurrentDocument->setUpdatedDate(QDateTime::fromString(proxy->metaData(UBSettings::documentUpdatedAt).toString(), Qt::ISODate));
         mpCurrentDocument->setVersion(proxy->metaData(UBSettings::documentVersion).toString());
     }
 }

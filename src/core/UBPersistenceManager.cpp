@@ -38,6 +38,8 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
 
+#include "document/UBDocumentController.h"
+
 #include "interfaces/IDataStorage.h"
 
 #include "core/memcheck.h"
@@ -252,6 +254,8 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName,
     doc->setMetaData(UBSettings::documentUpdatedAt,currentDate);
     doc->setMetaData(UBSettings::documentDate,currentDate);
 
+    qDebug() << "currentDate: " << currentDate;
+
     if (withEmptyPage) createDocumentSceneAt(doc, 0);
 
     documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
@@ -293,7 +297,8 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
     doc->setUuid(QUuid::createUuid());
     doc->setPageCount(sceneCount(doc));
 
-    UBMetadataDcSubsetAdaptor::persist(doc);
+    UBMetadataDcSubsetAdaptor::persist(doc); // Remove this one afer new metadata saving method validation
+    UBApplication::documentController->currentDocument()->persist(doc->persistencePath());
 
     for(int i = 0; i < doc->pageCount(); i++)
     {
@@ -609,8 +614,11 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
     if(UBApplication::app()->boardController->currentPage() == pSceneIndex &&  paletteManager->teacherGuideDockWidget())
     	teacherGuideModified = paletteManager->teacherGuideDockWidget()->teacherGuideWidget()->isModified();
 
-    if (pDocumentProxy->isModified() || teacherGuideModified)
-        UBMetadataDcSubsetAdaptor::persist(pDocumentProxy);
+    if (pDocumentProxy->isModified() || teacherGuideModified){
+        UBMetadataDcSubsetAdaptor::persist(pDocumentProxy); // Remove this one afer new metadata saving method validation
+        if(NULL != UBApplication::documentController)
+            UBApplication::documentController->currentDocument()->persist(pDocumentProxy->persistencePath());
+    }
 
     if (pScene->isModified() || teacherGuideModified)
     {
@@ -627,7 +635,8 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
 
 UBDocumentProxy* UBPersistenceManager::persistDocumentMetadata(UBDocumentProxy* pDocumentProxy)
 {
-    UBMetadataDcSubsetAdaptor::persist(pDocumentProxy);
+    UBMetadataDcSubsetAdaptor::persist(pDocumentProxy); // Remove this one afer new metadata saving method validation
+    UBApplication::documentController->currentDocument()->persist(pDocumentProxy->persistencePath());
 
     emit documentMetadataChanged(pDocumentProxy);
 
@@ -777,7 +786,8 @@ void UBPersistenceManager::upgradeDocumentIfNeeded(UBDocumentProxy* pDocumentPro
 
     pDocumentProxy->setMetaData(UBSettings::documentVersion, UBSettings::currentFileVersion);
 
-    UBMetadataDcSubsetAdaptor::persist(pDocumentProxy);
+    UBMetadataDcSubsetAdaptor::persist(pDocumentProxy); // Remove this one afer new metadata saving method validation
+    UBApplication::documentController->currentDocument()->persist(pDocumentProxy->persistencePath());
 }
 
 

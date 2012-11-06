@@ -55,8 +55,13 @@ UBDocument::~UBDocument(){
  */
 void UBDocument::save(QList<sNamespace> &ns, QList<sMetaData> &md){
     QVector<sMetaData>::const_iterator itMetaData;
-    for(itMetaData = mMetaDatas.constBegin(); itMetaData != mMetaDatas.constEnd(); itMetaData++)
-        md.append(*itMetaData);
+    for(itMetaData = mMetaDatas.constBegin(); itMetaData != mMetaDatas.constEnd(); itMetaData++){
+        sMetaData meta;
+        meta.key = itMetaData->key;
+        meta.ns = itMetaData->ns;
+        meta.value = itMetaData->value;
+        md.append(meta);
+    }
 
     sNamespace docNs;
     docNs.name = qsNamespace;
@@ -191,7 +196,7 @@ QString UBDocument::title(){
  */
 void UBDocument::setTitle(const QString& title){
     mTitle = title;
-    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaTitle), mTitle);
+    updateMetaData(QString("%1").arg(qsMetaTitle), mTitle);
 }
 
 /**
@@ -208,7 +213,7 @@ QString UBDocument::type(){
  */
 void UBDocument::setType(const QString& type){
     mType = type;
-    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaType), mType);
+    updateMetaData(QString("%1").arg(qsMetaType), mType);
 }
 
 /**
@@ -225,7 +230,7 @@ QDateTime UBDocument::creationDate(){
  */
 void UBDocument::setCreationDate(const QDateTime& date){
     mDate = date;
-    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaDate), UBStringUtils::toUtcIsoDateTime(mDate));
+    updateMetaData(QString("%1").arg(qsMetaDate), UBStringUtils::toUtcIsoDateTime(mDate));
 }
 
 /**
@@ -242,7 +247,7 @@ QString UBDocument::format(){
  */
 void UBDocument::setFormat(const QString& format){
     mFormat = format;
-    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaFormat), mFormat);
+    updateMetaData(QString("%1").arg(qsMetaFormat), mFormat);
 }
 
 /**
@@ -259,7 +264,7 @@ QString UBDocument::id(){
  */
 void UBDocument::setId(const QString& id){
     mIdentifier = id;
-    updateMetaData(QString("%0:%1").arg(nameSpace()).arg(qsMetaIdentifier), mIdentifier);
+    updateMetaData(QString("%1").arg(qsMetaIdentifier), mIdentifier);
 }
 
 /**
@@ -276,7 +281,7 @@ QString UBDocument::version(){
  */
 void UBDocument::setVersion(const QString& version){
     mVersion = version;
-    updateMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbVersion), mVersion);
+    updateMetaData(QString("%1").arg(qsMetaUbVersion), mVersion);
 }
 
 /**
@@ -293,7 +298,7 @@ QDateTime UBDocument::updatedDate(){
  */
 void UBDocument::setUpdatedDate(const QDateTime& date){
     mUpdatedDate = date;
-    updateMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbUpdate), UBStringUtils::toUtcIsoDateTime(mUpdatedDate));
+    updateMetaData(QString("%1").arg(qsMetaUbUpdate), UBStringUtils::toUtcIsoDateTime(mUpdatedDate));
 }
 
 /**
@@ -310,7 +315,7 @@ QString UBDocument::size(){
  */
 void UBDocument::setSize(const QString& size){
     mSize = size;
-    updateMetaData(QString("%0:%1").arg(qsUbNamespace).arg(qsMetaUbSize), mSize);
+    updateMetaData(QString("%1").arg(qsMetaUbSize), mSize);
 }
 
 /**

@@ -35,12 +35,15 @@
 #include "domain/UBGraphicsWidgetItem.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 
+#include "document/UBDocumentController.h"
+
 #include "frameworks/UBFileSystemUtils.h"
 
 #include "UBCFFSubsetAdaptor.h"
 #include "UBMetadataDcSubsetAdaptor.h"
 #include "UBThumbnailAdaptor.h"
 #include "UBSvgSubsetAdaptor.h"
+#include "UBMetaDataAdaptor.h"
 
 #include "core/UBApplication.h"
 #include "QFile"
@@ -147,8 +150,8 @@ UBCFFSubsetAdaptor::UBCFFSubsetReader::UBCFFSubsetReader(UBDocumentProxy *proxy,
 }
 bool UBCFFSubsetAdaptor::UBCFFSubsetReader::parse()
 {
-    UBMetadataDcSubsetAdaptor::persist(mProxy);
-
+    UBMetadataDcSubsetAdaptor::persist(mProxy); // Remove this one afer new metadata saving method validation
+    UBApplication::documentController->currentDocument()->persist(mProxy->persistencePath());
     mIndent = "";
     if (!getTempFileName() || !createTempFlashPath())
         return false;

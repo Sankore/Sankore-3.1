@@ -18,7 +18,6 @@
 #include "core/UBPersistenceManager.h"
 #include "core/memcheck.h"
 
-
 UBDocumentContainer::UBDocumentContainer(QObject * parent)
     :QObject(parent)
     ,mCurrentDocument(NULL)
