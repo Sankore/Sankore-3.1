@@ -658,6 +658,7 @@ void UBDesktopAnnotationController::selectorActionPressed()
 
 void UBDesktopAnnotationController::selectorActionReleased()
 {
+    UBApplication::mainWindow->actionSelector->trigger();
     UBApplication::mainWindow->actionSelector->setChecked(true);
     switchCursor(UBStylusTool::Selector);
 }
@@ -670,6 +671,7 @@ void UBDesktopAnnotationController::pointerActionPressed()
 
 void UBDesktopAnnotationController::pointerActionReleased()
 {
+    UBApplication::mainWindow->actionPointer->trigger();
     UBApplication::mainWindow->actionPointer->setChecked(true);
     switchCursor(UBStylusTool::Pointer);
 }

@@ -91,7 +91,9 @@ UBActionPaletteMultiStateButton* UBActionPalette::createPaletteButton(QList<QAct
     mMapActionToButton[actions[0]] = button;
 
     connect(button, SIGNAL(clicked()), this, SLOT(buttonClicked()));
-    connect(actions[0], SIGNAL(changed()), this, SLOT(actionChanged()));
+
+    foreach(QAction *action, actions)
+        connect(action, SIGNAL(changed()), this, SLOT(actionChanged()));
 
     return button;
 
@@ -109,6 +111,8 @@ UBActionPaletteButton* UBActionPalette::createPaletteButton(QAction* action, QWi
 
     connect(button, SIGNAL(clicked()), this, SLOT(buttonClicked()));
     connect(action, SIGNAL(changed()), this, SLOT(actionChanged()));
+
+    button->setVisible(action->isVisible());
 
     return button;
 }
@@ -441,6 +445,8 @@ void UBActionPaletteMultiStateButton::onActionTrigger(bool checked)
 
 void UBActionPaletteMultiStateButton::onClick(bool checked)
 {
+    Q_UNUSED(checked)
+
     int id = -1;
     int selfGroupId = -1; 
 

@@ -29,7 +29,7 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
 {
     mActionUniboard = new QAction(QIcon(":/images/toolbar/board.png"), tr("Show Open-Sankore"), this);
     connect(mActionUniboard, SIGNAL(triggered()), this, SIGNAL(uniboardClick()));
-    addAction(mActionUniboard);
+    addAction(mActionUniboard, false);
 
     addAction(UBApplication::mainWindow->actionPen);
     addAction(UBApplication::mainWindow->actionEraser);
@@ -42,11 +42,11 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
 
     mActionCustomSelect = new QAction(QIcon(":/images/toolbar/captureArea.png"), tr("Capture Part of the Screen"), this);
     connect(mActionCustomSelect, SIGNAL(triggered()), this, SIGNAL(customClick()));
-    addAction(mActionCustomSelect);
+    addAction(mActionCustomSelect, false);
 
     mDisplaySelectAction = new QAction(QIcon(":/images/toolbar/captureScreen.png"), tr("Capture the Screen"), this);
     connect(mDisplaySelectAction, SIGNAL(triggered()), this, SIGNAL(screenClick()));
-    addAction(mDisplaySelectAction);
+    addAction(mDisplaySelectAction, false);
 
     QIcon showHideIcon;
     showHideIcon.addPixmap(QPixmap(":/images/toolbar/eyeOpened.png"), QIcon::Normal , QIcon::On);
@@ -55,7 +55,7 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     mShowHideAction->setCheckable(true);
 
     connect(mShowHideAction, SIGNAL(triggered(bool)), this, SLOT(showHideClick(bool)));
-    addAction(mShowHideAction);
+    addAction(mShowHideAction, false);
 
     setButtonIconSize(QSize(42, 42));
 
@@ -147,7 +147,7 @@ void UBDesktopPalette::maximizeMe()
 {
     clearLayout();
 
-    addAction(mActionUniboard);
+    addAction(mActionUniboard, false);
     addAction(UBApplication::mainWindow->actionPen);
     addAction(UBApplication::mainWindow->actionEraser);
     addAction(UBApplication::mainWindow->actionMarker);
@@ -156,9 +156,9 @@ void UBDesktopPalette::maximizeMe()
     if (UBPlatformUtils::hasVirtualKeyboard())
         addAction(UBApplication::mainWindow->actionVirtualKeyboard, false);
 
-    addAction(mActionCustomSelect);
-    addAction(mDisplaySelectAction);
-    addAction(mShowHideAction);
+    addAction(mActionCustomSelect, false);
+    addAction(mDisplaySelectAction, false);
+    addAction(mShowHideAction, false);
 
     adjustSizeAndPosition();
 

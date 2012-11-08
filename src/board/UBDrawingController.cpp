@@ -87,8 +87,12 @@ int UBDrawingController::latestDrawingTool()
 
 void UBDrawingController::setStylusTool(int tool)
 {
-    if (tool != mStylusTool)
+    static bool bToolSettingInProgress = false;
+
+    if (tool != mStylusTool && !bToolSettingInProgress)
     {
+        bToolSettingInProgress = true;
+
     	UBApplication::boardController->activeScene()->deselectAllItems();
         if (mStylusTool == UBStylusTool::Pen || mStylusTool == UBStylusTool::Marker
                 || mStylusTool == UBStylusTool::PenLine || mStylusTool == UBStylusTool::MarkerLine)
@@ -109,35 +113,42 @@ void UBDrawingController::setStylusTool(int tool)
 
         mStylusTool = (UBStylusTool::Enum)tool;
 
+        QAction *toolAction;
         if (mStylusTool == UBStylusTool::Pen)
-            UBApplication::mainWindow->actionPen->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionPen;
         else if (mStylusTool == UBStylusTool::Eraser)
-            UBApplication::mainWindow->actionEraser->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionEraser;
         else if (mStylusTool == UBStylusTool::Marker)
-            UBApplication::mainWindow->actionMarker->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionMarker;
         else if (mStylusTool == UBStylusTool::Selector)
-            UBApplication::mainWindow->actionSelector->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionSelector;
         else if (mStylusTool == UBStylusTool::Play)
-            UBApplication::mainWindow->actionPlay->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionPlay;
         else if (mStylusTool == UBStylusTool::Hand)
-            UBApplication::mainWindow->actionHand->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionHand;
         else if (mStylusTool == UBStylusTool::ZoomIn)
-            UBApplication::mainWindow->actionZoomIn->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionZoomIn;
         else if (mStylusTool == UBStylusTool::ZoomOut)
-            UBApplication::mainWindow->actionZoomOut->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionZoomOut;
         else if (mStylusTool == UBStylusTool::Pointer)
-            UBApplication::mainWindow->actionPointer->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionPointer;
         else if (mStylusTool == UBStylusTool::PenLine)
-            UBApplication::mainWindow->actionPenLine->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionPenLine;
         else if (mStylusTool == UBStylusTool::MarkerLine)
-            UBApplication::mainWindow->actionMarkerLine->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionMarkerLine;
         else if (mStylusTool == UBStylusTool::Text)
-            UBApplication::mainWindow->actionText->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionText;
         else if (mStylusTool == UBStylusTool::Capture)
-            UBApplication::mainWindow->actionCapture->setChecked(true);
+            toolAction = UBApplication::mainWindow->actionCapture;
+
+
+        toolAction->toggle();
+        toolAction->setChecked(true);
 
         emit stylusToolChanged(tool);
         emit colorPaletteChanged();
+
+        bToolSettingInProgress = false;
     }
 }
 
