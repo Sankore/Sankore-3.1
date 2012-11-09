@@ -531,7 +531,7 @@ void UBFeaturesController::initHardcodedData()
                                            ,QImage(":images/libpalette/TrashCategory.svg")           //Icon
                                            , tr("Trash")                                             //Translation name
                                            , QUrl::fromLocalFile(UBSettings::userTrashDirPath())     //Main path in file system
-                                           , FEATURE_CATEGORY                                        //UBFeature's type
+                                           , FEATURE_TRASH                                           //UBFeature's type
                                            , UBFeature::WRITE_P)                                     //UBFeature's permissions
                              //permissions for category subfolders. Scanning data
                              , UBFeature::WRITE_P | UBFeature::DELETE_P);
@@ -1196,7 +1196,7 @@ bool UBFeaturesController::isTrash( const QUrl &url )
 void UBFeaturesController::moveToTrash(UBFeature feature, bool deleteManualy)
 {
     featuresModel->moveData(feature, trashData.categoryFeature(), Qt::MoveAction, deleteManualy);
-    removeFromFavorite(feature.getFullPath());
+    removeFromFavorite(feature.getFullPath(), true);
     featuresModel->deleteFavoriteItem(UBFeaturesController::fileNameFromUrl(feature.getFullPath()));
 }
 

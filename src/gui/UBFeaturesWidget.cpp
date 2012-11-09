@@ -350,7 +350,9 @@ void UBFeaturesWidget::addElementsToFavorite()
         QModelIndexList selected = centralWidget->listView()->selectionModel()->selectedIndexes();
         for ( int i = 0; i < selected.size(); ++i ) {
             UBFeature feature = selected.at(i).data( Qt::UserRole + 1 ).value<UBFeature>();
-            controller->addToFavorite(feature.getFullPath());
+            if (feature.getType() != FEATURE_FOLDER) {
+                controller->addToFavorite(feature.getFullPath());
+            }
        }
     }
 
@@ -668,13 +670,13 @@ void UBFeaturesNewFolderDialog::setRegexp(const QRegExp pRegExp)
 }
 bool UBFeaturesNewFolderDialog::validString(const QString &pStr)
 {
-    return mLineEdit->hasAcceptableInput() && !mFileNameList.contains(pStr, Qt::CaseSensitive);
+    return mLineEdit->hasAcceptableInput() && !mFileNameList.contains(pStr.trimmed(), Qt::CaseSensitive);
 }
 
 void UBFeaturesNewFolderDialog::accept()
 {
 //     Setting all the constraints we need
-    emit createNewFolder(mLineEdit->text());
+    emit createNewFolder(mLineEdit->text().trimmed());
     mLineEdit->clear();
 }
 void UBFeaturesNewFolderDialog::reject()
