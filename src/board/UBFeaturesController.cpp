@@ -532,9 +532,9 @@ void UBFeaturesController::initHardcodedData()
                                            , tr("Trash")                                             //Translation name
                                            , QUrl::fromLocalFile(UBSettings::userTrashDirPath())     //Main path in file system
                                            , FEATURE_CATEGORY                                        //UBFeature's type
-                                           , UBFeature::NO_P)                                        //UBFeature's permissions
+                                           , UBFeature::WRITE_P)                                     //UBFeature's permissions
                              //permissions for category subfolders. Scanning data
-                             , UBFeature::NO_P);
+                             , UBFeature::WRITE_P | UBFeature::DELETE_P);
 
     webFolderData = CategoryData(CategoryData::PathData() //Path for incoming user web content.
                                 .insertr(CategoryData::Library, QUrl::fromLocalFile(UBSettings::settings()->userWidgetPath()))

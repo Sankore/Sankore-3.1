@@ -53,7 +53,7 @@ UBFeaturesWidget::UBFeaturesWidget(QWidget *parent, const char *name)
     layout->addWidget(centralWidget);
     layout->addWidget(mActionBar);
 
-    connect(centralWidget->listView(), SIGNAL(activated(QModelIndex)), this, SLOT(currentSelected(QModelIndex)));
+    connect(centralWidget->listView(), SIGNAL(clicked(QModelIndex)), this, SLOT(currentSelected(QModelIndex)));
     connect(centralWidget->listView()->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection))
             , this, SLOT(processViewSelectionChanged(QItemSelection,QItemSelection)));
     connect(this, SIGNAL(sendFileNameList(QStringList)), centralWidget, SIGNAL(sendFileNameList(QStringList)));
@@ -228,7 +228,6 @@ void UBFeaturesWidget::processViewSelectionChanged(const QItemSelection &selecte
     } else {
         foreach (QModelIndex curIndex, selected.indexes()) {
             UBFeature curFeature = curIndex.data(Qt::UserRole + 1).value<UBFeature>();
-            qDebug() << curFeature.getPermissions();
             if (!curFeature.isDeletable()) {
                 selectedDeletable = false;
                 break;
