@@ -37,6 +37,7 @@ enum UBFeaturesActionBarState
 class UBFeaturesActionBar : public QWidget
 {
 	Q_OBJECT
+
 public:
 	UBFeaturesActionBar(UBFeaturesController *controller, QWidget* parent=0, const char* name="UBFeaturesActionBar");
     ~UBFeaturesActionBar();
@@ -64,10 +65,12 @@ private slots:
     void onActionRescanModel();
     void lockIt();
     void unlockIt();
+    void allowNewFolderBtn(bool pAllow) {mpNewFolderBtn->setEnabled(pAllow);}
+    void allowDeleteButton(bool pAllow);
 
 protected:
-    void dragEnterEvent( QDragEnterEvent *event );
 	void dropEvent( QDropEvent *event );
+    bool eventFilter(QObject *, QEvent *);
 
 private:
 	void setButtons();

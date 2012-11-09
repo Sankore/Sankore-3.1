@@ -982,6 +982,16 @@ QString UBSettings::userInteractiveDirectory()
     return interactiveDirectory;
 }
 
+QString UBSettings::userWidgetPath()
+{
+    return userInteractiveDirectory() + tr("/Web");
+}
+
+QString UBSettings::userRelativeWidgetPath()
+{
+    QString result = userWidgetPath().replace(userInteractiveDirectory(), "");
+    return result.startsWith("/") ? result.right(result.count() - 1) : result;
+}
 
 QString UBSettings::applicationInteractivesDirectory()
 {

@@ -77,6 +77,8 @@ public:
 
 signals:
     void sendFileNameList(const QStringList lst);
+    void allowNewFolderButton(bool pAllow);
+    void allowDeleteButton(bool pAllow);
 
 private slots:
     void onPreviewLoaded(int id, bool pSuccess, QUrl sourceUrl, QUrl originalUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
@@ -93,6 +95,7 @@ private slots:
     void deleteSelectedElements();
     void rescanModel();
     void lockIt(bool pLock);
+    void processViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
 
 private:
     void switchToListView();
@@ -128,13 +131,13 @@ class UBFeaturesListView : public QListView
 	Q_OBJECT
 
 public:
-    UBFeaturesListView( QWidget* parent=0, const char* name="UBFeaturesListView" );
+    UBFeaturesListView(QWidget* parent=0, const char* name="UBFeaturesListView");
     virtual ~UBFeaturesListView() {;}
 
 protected:
-    virtual void dragEnterEvent( QDragEnterEvent *event );
-    virtual void dropEvent( QDropEvent *event );
-    virtual void dragMoveEvent( QDragMoveEvent *event );
+    virtual void dragEnterEvent(QDragEnterEvent *event);
+    virtual void dropEvent(QDropEvent *event);
+    virtual void dragMoveEvent(QDragMoveEvent *event);
 
 private slots:
     void thumbnailSizeChanged(int);
@@ -154,7 +157,7 @@ public:
 
 private:
     UBFeaturesListView *mListView;
-    QSlider *mListSlder;
+    QSlider *mListSlider;
 
 };
 
@@ -379,10 +382,12 @@ class UBFeaturesProxyModel : public QSortFilterProxyModel
 {
 	Q_OBJECT
 public:
-    UBFeaturesProxyModel(QObject *parent = 0) : QSortFilterProxyModel(parent) {;}
+    UBFeaturesProxyModel(QObject *parent = 0) : QSortFilterProxyModel(parent) {setDynamicSortFilter(true);}
     virtual ~UBFeaturesProxyModel() {}
+
 protected:
 	virtual bool filterAcceptsRow ( int sourceRow, const QModelIndex & sourceParent ) const;
+    virtual bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
 };
 
 class UBFeaturesSearchProxyModel : public QSortFilterProxyModel

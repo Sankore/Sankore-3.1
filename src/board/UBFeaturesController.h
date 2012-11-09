@@ -27,46 +27,6 @@ class UBFeaturesListView;
 class UBFeature;
 
 
-class UBFeaturesComputingThread : public QThread
-{
-    Q_OBJECT
-public:
-    explicit UBFeaturesComputingThread(QObject *parent = 0);
-    virtual ~UBFeaturesComputingThread();
-        void compute(const QList<QPair<QUrl, UBFeature> > &pScanningData, QSet<QUrl> *pFavoritesSet);
-
-protected:
-    void run();
-
-signals:
-    void sendFeature(UBFeature pFeature);
-    void featureSent();
-    void scanStarted();
-    void scanFinished();
-    void maxFilesCountEvaluated(int max);
-    void scanCategory(const QString &str);
-    void scanPath(const QString &str);
-
-public slots:
-
-private:
-    void scanFS(const QUrl & currentPath, const QString & currVirtualPath, const QSet<QUrl> &pFavoriteSet);
-    void scanAll(QList<QPair<QUrl, UBFeature> > pScanningData, const QSet<QUrl> &pFavoriteSet);
-    int featuresCount(const QUrl &pPath);
-    int featuresCountAll(QList<QPair<QUrl, UBFeature> > pScanningData);
-
-private:
-    QMutex mMutex;
-    QWaitCondition mWaitCondition;
-    QUrl mScanningPath;
-    QString mScanningVirtualPath;
-    QList<QPair<QUrl, UBFeature> > mScanningData;
-    QSet<QUrl> mFavoriteSet;
-    bool restart;
-    bool abort;
-};
-
-
 enum UBFeatureElementType
 {
     FEATURE_CATEGORY,
@@ -88,31 +48,52 @@ enum UBFeatureElementType
 class UBFeature
 {
 public:
+    enum Permission {
+        NO_P      = 0x0  //0000
+        ,DELETE_P = 0x1  //0001
+        , WRITE_P = 0x2  //0010
+        , ALL_P   = 0xF  //1111
+    };
+    Q_DECLARE_FLAGS(Permissions, Permission)
+
     UBFeature() {;}
 //    UBFeature(const UBFeature &f);
-    UBFeature(const QString &url, const QImage &icon, const QString &name, const QUrl &realPath, UBFeatureElementType type = FEATURE_CATEGORY);
+    UBFeature(const QString &url
+              , const QImage &icon
+              , const QString &name
+              , const QUrl &realPath
+              , UBFeatureElementType type = FEATURE_CATEGORY
+              , Permissions pOwnPermissions = ALL_P
+              , QString pSortKey = QString());
 //    UBFeature();
     virtual ~UBFeature();
     QString getName() const { return mName; }
     QString getDisplayName() const {return mDisplayName;}
     QImage getThumbnail() const {return mThumbnail;}
     QString getVirtualPath() const { return virtualDir; }
-	//QString getPath() const { return mPath; };
+    //QString getPath() const { return mPath; };
     QUrl getFullPath() const { return mPath; }
     QString getFullVirtualPath() const { return  virtualDir + "/" + mName; }
-	QString getUrl() const;
+    QString getUrl() const;
+    QString getSortKey() const {return mSortKey;}
     void setFullPath(const QUrl &newPath) {mPath = newPath;}
     void setFullVirtualPath(const QString &newVirtualPath) {virtualDir = newVirtualPath;}
     UBFeatureElementType getType() const { return elementType; }
+    UBFeature &markedWithSortKey(const QString &str);
 
-	bool isFolder() const;
+    bool isFolder() const;
     bool allowedCopy() const;
-	bool isDeletable() const;
+    bool isDeletable() const;
     bool inTrash() const;
-	bool operator ==( const UBFeature &f )const;
-	bool operator !=( const UBFeature &f )const;
-	const QMap<QString,QString> & getMetadata() const { return metadata; }
-	void setMetadata( const QMap<QString,QString> &data ) { metadata = data; }
+    Permissions getPermissions() const {return mOwnPermissions;}
+    bool testPermissions(Permissions pPermissions) const {return mOwnPermissions & pPermissions;}
+    void setPermissions(Permissions pPermissions) {mOwnPermissions = pPermissions;}
+    void addPermissions(Permissions pPermissions) {mOwnPermissions |= pPermissions;}
+    void unsetPermissions(Permissions pPermissions) {mOwnPermissions &= ~pPermissions;}
+    bool operator ==( const UBFeature &f )const;
+    bool operator !=( const UBFeature &f )const;
+    const QMap<QString,QString> & getMetadata() const { return metadata; }
+    void setMetadata( const QMap<QString,QString> &data ) { metadata = data; }
 
 
 private:
@@ -125,11 +106,115 @@ private:
     QImage mThumbnail;
     QString mName;
     QString mDisplayName;
-	QUrl mPath;
+    QUrl mPath;
     UBFeatureElementType elementType;
     QMap<QString,QString> metadata;
+    Permissions mOwnPermissions;
+    QString mSortKey;
 };
 Q_DECLARE_METATYPE( UBFeature )
+Q_DECLARE_OPERATORS_FOR_FLAGS(UBFeature::Permissions)
+
+//Describe files in virtual file system
+struct ComputingData
+{
+    ComputingData (const QUrl &pPath, UBFeature pFeature,UBFeature::Permissions pPermissions)
+        : path(pPath)
+        , feature(pFeature)
+        , permissions(pPermissions)
+    {;}
+    ComputingData() {;}
+
+    QUrl path;
+    //Permissions for all subdirectories
+    UBFeature feature;
+    UBFeature::Permissions permissions;
+};
+
+
+
+// Data class containing all the data about hardcoded items from library palette
+struct CategoryData
+{
+    enum pathType {
+        Library = 0
+        , UserDefined = 1
+    };
+    CategoryData() {;}
+
+    struct PathData : public QMultiMap<pathType, QUrl>
+    {
+        PathData& insertr (pathType pType, QUrl pUrl) {
+            insertMulti(pType, pUrl);
+            return *this;
+        }
+    };
+
+    CategoryData (const PathData &pPathData, UBFeature pFeature,UBFeature::Permissions psubFolderPermissions)
+        : mPathData(pPathData)
+        , mCategoryFeature(pFeature)
+        , mSubFolderPermissions(psubFolderPermissions)
+    {;}
+
+    PathData pathData() const {return mPathData;}
+    UBFeature categoryFeature() const {return mCategoryFeature;}
+    UBFeature::Permissions subFolderPermissions() const {return mSubFolderPermissions;}
+
+private:
+    PathData mPathData;
+    //Permissions for all subdirectories
+    UBFeature mCategoryFeature;
+    UBFeature::Permissions mSubFolderPermissions;
+};
+
+class UBFeaturesComputingThread : public QThread
+{
+    Q_OBJECT
+public:
+    explicit UBFeaturesComputingThread(QObject *parent = 0);
+    virtual ~UBFeaturesComputingThread();
+    void compute(const QList<CategoryData> &pcategoryList, const QPair<CategoryData, QSet<QUrl> > &pFavoriteInfo, const QList<CategoryData> &extData);
+
+protected:
+    void run();
+
+signals:
+    void sendFeature(UBFeature pFeature);
+    void featureSent();
+    void scanStarted();
+    void scanFinished();
+    void maxFilesCountEvaluated(int max);
+    void scanCategory(const QString &str);
+    void scanPath(const QString &str);
+
+public slots:
+
+private:
+    void scanFS(const QUrl & currentPath
+                , const QString & currVirtualPath
+                , const QPair<CategoryData, QSet<QUrl> > &pfavoriteInfo
+                , UBFeature::Permissions pPermissions
+                , const QList<CategoryData> &extData);
+    void scanAll(QList<CategoryData> pScanningData
+                 , const QPair<CategoryData
+                 , QSet<QUrl> > &pFavoriteInfo
+                 , const QList<CategoryData> &extData);
+    int featuresCount(const QUrl &pPath);
+    int featuresCountAll(QList<CategoryData> pScanningData);
+
+private:
+    QMutex mMutex;
+    QWaitCondition mWaitCondition;
+    QUrl mScanningPath;
+    QString mScanningVirtualPath;
+    QList<CategoryData> mScanningData;
+    QList<CategoryData> mExceptionData;
+    QPair<CategoryData, QSet<QUrl> > mFavoriteInfo;
+    bool restart;
+    bool abort;
+};
+
+
 
 class UBFeaturesController : public QObject
 {
@@ -143,14 +228,14 @@ public:
 
     QList <UBFeature>* getFeatures() const {return featuresList;}
 	
-    const QString& getRootPath()const {return rootPath;}
-    void scanFS();
+    void initHardcodedData();
+    void loadHardcodedItemsToModel();
 
     void addItemToPage(const UBFeature &item);
     void addItemAsBackground(const UBFeature &item);
     const UBFeature& getCurrentElement()const {return currentElement;}
     void setCurrentElement( const UBFeature &elem ) {currentElement = elem;}
-	const UBFeature & getTrashElement () const { return trashElement; }
+    UBFeature getTrashElement () const { return trashData.categoryFeature(); }
 
     void addDownloadedFile( const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle );
 
@@ -173,35 +258,38 @@ public:
     void removeFromFavorite(const QUrl &path, bool deleteManualy = false);
     void importImage(const QImage &image, const QString &fileName = QString());
     void importImage( const QImage &image, const UBFeature &destination, const QString &fileName = QString() );
+    bool newFolderAllowed() const {return currentElement.isFolder() && currentElement.testPermissions(UBFeature::WRITE_P);}
     QStringList getFileNamesInFolders();
 
-    void fileSystemScan(const QUrl &currPath, const QString & currVirtualPath);
-    int featuresCount(const QUrl &currPath);
     static UBFeatureElementType fileTypeFromUrl( const QString &path );
 
 	static QString fileNameFromUrl( const QUrl &url );
     static QImage getIcon( const QString &path, UBFeatureElementType pFType );
-	static bool isDeletable( const QUrl &url );
     static char featureTypeSplitter() {return ':';}
     static QString categoryNameForVirtualPath(const QString &str);
 
     static const QString virtualRootName;
 
-    void assignFeaturesListVeiw(UBFeaturesListView *pList);
+    void assignFeaturesListView(UBFeaturesListView *pList);
     void assignPathListView(UBFeaturesListView *pList);
 
 public:
-    static const QString rootPath;
-    static const QString audiosPath;
-    static const QString moviesPath;
-    static const QString picturesPath;
-    static const QString appPath;
-    static const QString flashPath;
-    static const QString shapesPath;
-    static const QString interactPath;
-    static const QString trashPath;
-    static const QString favoritePath;
-    static const QString webSearchPath;
+    //Hardcoded toplevel data
+    CategoryData rootData;
+    CategoryData audiosData;
+    CategoryData moviesData;
+    CategoryData picturesData;
+    CategoryData appData;
+    CategoryData flashData;
+    CategoryData shapesData;
+    CategoryData interactivityData;
+    CategoryData favoriteData;
+    CategoryData webSearchData;
+    CategoryData trashData;
+    CategoryData webFolderData;
+
+    QList<CategoryData> topLevelCategoryData;
+    QList<CategoryData> extentionPermissionsCategoryData;
 
 signals:
     void maxFilesCountEvaluated(int pLimit);
@@ -213,7 +301,7 @@ signals:
 
 private slots:
     void addNewFolder(QString name);
-    void startThread();
+    void scanFS();
     void createNpApiFeature(const QString &str);
 
 private:
@@ -240,44 +328,12 @@ private:
 
     QList <UBFeature> *featuresList;
 
-	QUrl mUserAudioDirectoryPath;
-    QUrl mUserVideoDirectoryPath;
-    QUrl mUserPicturesDirectoryPath;
-    QUrl mUserInteractiveDirectoryPath;
-    QUrl mUserAnimationDirectoryPath;
-
-	QString libraryPath;
-    QUrl mLibPicturesDirectoryPath;
-	QUrl mLibAudiosDirectoryPath;
-	QUrl mLibVideosDirectoryPath;
-    QUrl mLibInteractiveDirectoryPath;
-    QUrl mLibAnimationsDirectoryPath;
-	QUrl mLibApplicationsDirectoryPath;
-	QUrl mLibShapesDirectoryPath;
-
-	QUrl trashDirectoryPath;
-	QUrl mLibSearchDirectoryPath;
-
-
-
 	int mLastItemOffsetIndex;
 	UBFeature currentElement;
-
-    UBFeature rootElement;
-    UBFeature favoriteElement;
-	UBFeature audiosElement;
-	UBFeature moviesElement;
-	UBFeature picturesElement;
-	UBFeature interactElement;
-    UBFeature applicationsElement;
-	UBFeature flashElement;
-	UBFeature shapesElement;
-	UBFeature webSearchElement;
 
 	QSet <QUrl> *favoriteSet;
 
 public:
-    UBFeature trashElement;
     UBFeature getDestinationFeatureForUrl( const QUrl &url );
     UBFeature getDestinationFeatureForMimeType(const QString &pMmimeType);
 
