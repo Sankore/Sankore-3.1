@@ -5,6 +5,7 @@ html, body{
     padding: 0;
     border-radius: 35px;
     overflow: hidden;
+    font-family: sans-serif;
 }
 
 body{
@@ -42,13 +43,18 @@ body{
 }
 
 .img_block{
-    width: 120px;
+/*    width: 120px;
     height: 120px;
-    padding: 5px;
+    padding: 5px;*/
     display: inline-block;
     position: absolute;
     top: 100px;
     left: 350px;
+    -webkit-user-select: none;
+}
+
+.img_block img{
+    vertical-align: middle;
 }
 
 .img_gray{
@@ -354,7 +360,7 @@ li>div{
     margin: 10px 10px 0 10px;
     padding: 0;
     float: left;
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: sans-serif;
     font-size: 24px;
     color: #7F613F;
     text-shadow: #FFDCA9 0 1px 0;
@@ -364,7 +370,7 @@ li>div{
     cursor: pointer;
     margin: 10px 10px 0 0;
     float: right;
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: sans-serif;
     font-size: 24px;    
     line-height: 32px;
 }
@@ -479,7 +485,7 @@ li>div{
 
 .inline{
     display: inline-block;
-    font-family: "helvetica neue";
+    font-family: sans-serif;
     font-size: 14px;
     color: #666;
 }

@@ -628,9 +628,9 @@ bool UBGraphicsScene::inputDeviceRelease()
 
     if (mCurrentStroke && mCurrentStroke->polygons().empty()){
         delete mCurrentStroke;
-        mCurrentStroke = NULL;
     }
 
+    mCurrentStroke = NULL;
     return accepted;
 }
 
@@ -793,7 +793,7 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
         {
             #pragma omp critical
             {
-                // Compele remove item
+                // Compete remove item
                 intersectedItems << pi;
                 intersectedPolygons << QList<QPolygonF>();
             }
@@ -812,30 +812,29 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
 
     for(int i=0; i<intersectedItems.size(); i++)
     {
-        if (intersectedPolygons[i].empty())
-        {
-            removeItem(intersectedItems[i]);
-        }
-        else
-        {
-            UBGraphicsPolygonItem *pi = intersectedItems[i];
+        // item who intersects with eraser
+        UBGraphicsPolygonItem *intersectedPolygonItem = intersectedItems[i];
 
+        if (!intersectedPolygons[i].empty())
+        {
+            // intersected polygons generated as QList<QPolygon> QPainterPath::toFillPolygons(), 
+            // so each intersectedPolygonItem has one or couple of QPolygons who should be removed from it. 
             for(int j = 0; j < intersectedPolygons[i].size(); j++)
             {
-                QPolygonF p = intersectedPolygons[i][j];
-                if (j==0)
-                    pi->setPolygon(intersectedPolygons[i][j]);
-                else
-                {
-                    UBGraphicsPolygonItem* polygonItem = new UBGraphicsPolygonItem(intersectedPolygons[i][j], pi->parentItem());
-                    pi->copyItemParameters(polygonItem);
+                // create small polygon from couple of polygons to replace particular erased polygon
+                UBGraphicsPolygonItem* polygonItem = new UBGraphicsPolygonItem(intersectedPolygons[i][j], intersectedPolygonItem->parentItem());
 
-                    polygonItem->setStroke(pi->stroke());
-                    polygonItem->setStrokesGroup(pi->strokesGroup());
-                    pi->strokesGroup()->addToGroup(polygonItem);
-                }
+                intersectedPolygonItem->copyItemParameters(polygonItem);  
+                polygonItem->setStroke(intersectedPolygonItem->stroke());
+                polygonItem->setStrokesGroup(intersectedPolygonItem->strokesGroup());
+                intersectedPolygonItem->strokesGroup()->addToGroup(polygonItem);
+                mAddedItems << polygonItem;
             }
         }
+
+        //remove full polygon item for replace it by couple of polygons who creates the same stroke without a part which intersects with eraser
+        mRemovedItems << intersectedPolygonItem;
+        removeItem(intersectedPolygonItem);
     }
 
     if (!intersectedItems.empty())
@@ -1854,6 +1853,7 @@ void UBGraphicsScene::addMagnifier(UBMagnifierParams params)
     connect(magniferControlViewWidget, SIGNAL(magnifierClose_Signal()), this, SLOT(closeMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomIn_Signal()), this, SLOT(zoomInMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomOut_Signal()), this, SLOT(zoomOutMagnifier()));
+    connect(magniferControlViewWidget, SIGNAL(magnifierDrawingModeChange_Signal(int)), this, SLOT(changeMagnifierMode(int)));
     connect(magniferControlViewWidget, SIGNAL(magnifierResized_Signal(qreal)), this, SLOT(resizedMagnifier(qreal)));
 
     setModified(true);
@@ -1918,6 +1918,14 @@ void UBGraphicsScene::zoomOutMagnifier()
         magniferDisplayViewWidget->setZoom(magniferDisplayViewWidget->params.zoom - 0.5);
         setModified(true);
     }
+}
+
+void UBGraphicsScene::changeMagnifierMode(int mode)
+{
+    if(magniferControlViewWidget)
+        magniferControlViewWidget->setDrawingMode(mode);
+    if(magniferDisplayViewWidget)
+        magniferDisplayViewWidget->setDrawingMode(mode);
 }
 
 void UBGraphicsScene::resizedMagnifier(qreal newPercent)

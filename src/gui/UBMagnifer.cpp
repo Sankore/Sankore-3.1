@@ -50,6 +50,9 @@ UBMagnifier::UBMagnifier(QWidget *parent, bool isInteractive)
     sIncreasePixmap = new QPixmap(":/images/increase.svg");
     sDecreasePixmap = new QPixmap(":/images/decrease.svg");
     mResizeItem = new QPixmap(":/images/resize.svg");
+    sChangeModePixmap = new QPixmap();
+
+    setDrawingMode(UBSettings::settings()->magnifierDrawingMode->get().toInt());
 
     if (parent)
     {
@@ -92,6 +95,12 @@ UBMagnifier::~UBMagnifier()
         delete sDecreasePixmap;
         sDecreasePixmap = NULL;
     }
+
+    if (sChangeModePixmap)
+    {
+        delete sChangeModePixmap;
+        sChangeModePixmap = NULL;
+    }
 }
 
 void UBMagnifier::setSize(qreal percentFromScene) 
@@ -112,15 +121,30 @@ void UBMagnifier::setSize(qreal percentFromScene)
     else
         setGeometry(0, 0, size, size);
 
-    // prepare transparent bit mask
+    createMask();
+
+}
+
+void UBMagnifier::createMask()
+{
+    if(gView == NULL || mView == NULL) return;
+
+    // calculate object size
+    QSize sceneSize = mView->size();
+    qreal size = params.sizePercentFromScene * sceneSize.width() / 100;
+
     QImage mask_img(width(), height(), QImage::Format_Mono);
     mask_img.fill(0xff);
     QPainter mask_ptr(&mask_img);
     mask_ptr.setBrush( QBrush( QColor(0, 0, 0) ) );
-    mask_ptr.drawEllipse(QPointF(size/2, size/2), size / 2 - sClosePixmap->width(), size / 2 - sClosePixmap->width());
+
+    if (circular == mDrawingMode)
+        mask_ptr.drawEllipse(QPointF(size/2, size/2), size / 2 - sClosePixmap->width(), size / 2 - sClosePixmap->width());
+    else if (rectangular == mDrawingMode)
+        mask_ptr.drawRoundedRect(QRect(sClosePixmap->width(),sClosePixmap->width(), size- 2*sClosePixmap->width(), size- 2* sClosePixmap->width()), sClosePixmap->width()/2, sClosePixmap->width()/2);
+    
     bmpMask = QBitmap::fromImage(mask_img);
 
-    // prepare general image
     pMap = QPixmap(width(), height());
     pMap.fill(Qt::transparent);
     pMap.setMask(bmpMask);
@@ -143,22 +167,25 @@ void UBMagnifier::paintEvent(QPaintEvent * event)
     {
         painter.setBrush(QColor(127, 127, 127, 127));
         painter.drawRoundedRect(QRectF(size().width() / 2, size().height() / 2, ( size().width() - sClosePixmap->width() ) / 2, ( size().height() - sClosePixmap->width() ) / 2), 15, 15);
+    }
 
-        painter.setBrush(QColor(190, 190, 190, 255));
+
+    painter.setBrush(QColor(190, 190, 190, 255));
+    if (circular == mDrawingMode)
         painter.drawEllipse(QPoint( size().width() / 2, size().height() / 2), ( size().width() - sClosePixmap->width() ) / 2, ( size().height() -  sClosePixmap->height() ) / 2);
+    else if (rectangular == mDrawingMode)
+        painter.drawRoundedRect(QRect(sClosePixmap->width()/2, sClosePixmap->height()/2, size().width()- sClosePixmap->width(), size().width()- sClosePixmap->width()), sClosePixmap->width()/2, sClosePixmap->width()/2);
 
+    if (m_isInteractive)
+    {
+        painter.setBrush(QColor(190, 190, 190, 255));
         painter.drawPixmap(size().width() - sClosePixmap->width(), size().height() / 2 + sClosePixmap->height() * 1, *sClosePixmap);
         painter.drawPixmap(size().width() - sIncreasePixmap->width(), size().height() / 2 + sIncreasePixmap->height() * 2.5, *sIncreasePixmap);
         painter.drawPixmap(size().width() - sDecreasePixmap->width(), size().height() / 2 + sDecreasePixmap->height() * 3.6, *sDecreasePixmap);
-
-        painter.drawPixmap(size().width() - mResizeItem->width() - 20, size().height() - mResizeItem->height() - 20, *mResizeItem);
+        painter.drawPixmap(size().width() - sChangeModePixmap->width(), size().height() / 2 + sChangeModePixmap->height() * 4.7, *sChangeModePixmap);
+        painter.drawPixmap(size().width() - mResizeItem->width() - 14, size().height() - mResizeItem->height() - 14, *mResizeItem);
     }
-    else
-    {
-        painter.setBrush(QColor(127, 127, 127, 127));
-        painter.drawEllipse(QPoint( size().width() / 2, size().height() / 2), ( size().width() - sClosePixmap->width() ) / 2, ( size().height() -  sClosePixmap->height() ) / 2);
-    }
-
+    
     painter.drawPixmap(0, 0, pMap);
 }
 
@@ -169,10 +196,10 @@ void UBMagnifier::mousePressEvent ( QMouseEvent * event )
 
         QWidget::mousePressEvent(event);
 
-        if (event->pos().x() >= size().width() - mResizeItem->width() - 20 && 
-            event->pos().x() < size().width() - 20 && 
-            event->pos().y() >= size().height() - mResizeItem->height() - 20 && 
-            event->pos().y() < size().height() - - 20)
+        if (event->pos().x() >= size().width() - mResizeItem->width() - 14 && 
+            event->pos().x() < size().width() - 14 && 
+            event->pos().y() >= size().height() - mResizeItem->height() - 14 && 
+            event->pos().y() < size().height() - - 14)
         {
             mShouldResizeWidget = true;
         }
@@ -221,10 +248,10 @@ void UBMagnifier::mouseMoveEvent ( QMouseEvent * event )
             return;
         }
 
-        if (event->pos().x() >= size().width() - mResizeItem->width() - 20 && 
-            event->pos().x() < size().width() - 20 && 
-            event->pos().y() >= size().height() - mResizeItem->height() - 20 && 
-            event->pos().y() < size().height() - - 20 &&
+        if (event->pos().x() >= size().width() - mResizeItem->width() - 14 && 
+            event->pos().x() < size().width() - 14 && 
+            event->pos().y() >= size().height() - mResizeItem->height() - 14 && 
+            event->pos().y() < size().height() - - 14 &&
             isCusrsorAlreadyStored == false
            )
         {
@@ -273,6 +300,15 @@ void UBMagnifier::mouseReleaseEvent(QMouseEvent * event)
             emit magnifierZoomOut_Signal();
         }
         else
+        if (event->pos().x() >= size().width() - sChangeModePixmap->width() && 
+            event->pos().x() < size().width()&& 
+            event->pos().y() >= size().height() / 2 + sChangeModePixmap->height() * 4.7 && 
+            event->pos().y() < size().height() / 2 + sChangeModePixmap->height() * 5.7)
+        {
+            event->accept();
+            emit magnifierDrawingModeChange_Signal(static_cast<int>(mDrawingMode+1)%modesCount);
+        }
+        else
             QWidget::mouseReleaseEvent(event); // don't propgate to parent, the widget is deleted in UBApplication::boardController->removeTool
     }
     else
@@ -289,10 +325,10 @@ void UBMagnifier::slot_refresh()
     {
         QPoint globalCursorPos = QCursor::pos();
         QPoint cursorPos = mapFromGlobal(globalCursorPos);
-        if (cursorPos.x() < size().width() - mResizeItem->width() - 20 || 
-            cursorPos.x() > size().width() - 20 ||
-            cursorPos.y() < size().height() - mResizeItem->height() - 20 ||
-            cursorPos.y() > size().height() - - 20
+        if (cursorPos.x() < size().width() - mResizeItem->width() - 14 || 
+            cursorPos.x() > size().width() - 14 ||
+            cursorPos.y() < size().height() - mResizeItem->height() - 14 ||
+            cursorPos.y() > size().height() - - 14
             )
         {
             isCusrsorAlreadyStored = false;
@@ -394,3 +430,21 @@ void UBMagnifier::setGrabView(QWidget *view)
     mRefreshTimer.start();
 }
 
+void UBMagnifier::setDrawingMode(int mode) 
+{
+    mDrawingMode = static_cast<DrawingMode>(mode);
+
+    QString sMode;
+
+    if (circular == mDrawingMode)
+        sMode = "roundeRrectangle";
+
+    if (rectangular == mDrawingMode)
+        sMode = "circle";
+
+    sChangeModePixmap->load(":/images/"+sMode+".svg");
+
+    createMask();
+
+    UBSettings::settings()->magnifierDrawingMode->set(mode);
+}

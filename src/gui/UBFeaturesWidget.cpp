@@ -332,7 +332,6 @@ void UBFeaturesWidget::onPreviewLoaded(int id, bool pSuccess, QUrl sourceUrl, QU
 void UBFeaturesWidget::onAddDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl, QString pContentHeader, QByteArray pData, QString pTitle)
 {
     if (pSuccess) {
-		qDebug() << pData.length();
         controller->addDownloadedFile(sourceUrl, pData, pContentHeader, pTitle);
         controller->refreshModels();
     }
@@ -1476,7 +1475,6 @@ bool UBFeaturesPathProxyModel::filterAcceptsRow( int sourceRow, const QModelInde
     UBFeature feature = sourceModel()->data(index, Qt::UserRole + 1).value<UBFeature>();
 	
     return feature.isFolder() && path.startsWith( feature.getFullVirtualPath()) ;
-
 }
 
 QString	UBFeaturesItemDelegate::displayText ( const QVariant & value, const QLocale & locale ) const
