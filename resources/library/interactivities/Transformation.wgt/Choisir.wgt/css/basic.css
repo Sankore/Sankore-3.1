@@ -1,0 +1,627 @@
+/* 
+    Document   : basic
+    Created on : Sep 5, 2011, 12:01:33 PM
+    Author     : GEG.BY
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;    
+    border-radius: 35px;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url(../images/bg.png);
+}
+
+.toggleButton{
+    width: 20px;
+    height: 28px;
+    border: none;
+    background-image: url(../images/greySquare.png);
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #00C6FF;;
+    cursor: pointer;
+}
+
+.buttonDiv{
+    position: fixed;
+    float: right;
+    z-index: 1;
+}
+
+.addQstDiv{
+    float: left;
+    padding: 5px;
+    margin: 2px;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.addQstButton{    
+    margin: 0;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: 3px solid #ccc;
+    border-radius: 20px;
+}
+
+#addQsqSpan1{
+    font-size: 30px;
+    margin-right: 10px !important;
+}
+
+.qstDiv{
+    width: 90%;
+    margin: 2px auto;
+    padding: 5px;
+    float: left;
+    font-family: sans-serif;
+}
+
+.qstDivDisplay{
+    width: 90%;
+    margin: 5px 5%;
+    padding: 5px;
+    float: left;
+    font-family: sans-serif;
+    border: 2px solid #cccccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: #dadada -1px 0 4px;
+    -webkit-box-shadow: #dadada -1px 0 4px;
+    box-shadow: #dadada -1px 0 4px;
+}
+
+.spanOptConn{
+    float: left;
+    width: 100%;
+}
+
+.qstNumber{
+    float: left;
+    font-size: 30px;
+    margin-left: 10px !important;
+    color: white;
+}
+
+.qstOptions{
+    float: right;
+}
+
+.changeOptions{
+    border: none;
+    height: 25px;
+    background-color: white;
+    width: auto;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.applyChanges{
+    border: none;
+    height: 25px;
+    background-color: white;
+    width: auto;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.qstDelete{
+    border: none;
+    background-image: url(../images/bigBlackClose.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 45% 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: 0 5px;
+}
+
+.qstContent{
+    float: left;
+    padding: 3px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    max-height: 100px;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    font-size: small;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    box-shadow: #dadada -1px 0 4px;
+    color: white;
+    word-break: break-all;
+}
+
+.qstContentDisplay{
+    float: left;
+    padding: 5px;
+    margin: 10px;
+    width: 95%;
+    max-height: 120px;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    color: white;
+    border: 1px solid #DFDFDE;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    word-break: break-all;
+}
+
+.ansDiv{
+    float: left;
+    margin-left: 100px;
+    width: 80%;
+}
+
+.ansAdd{
+    border: none;
+    height: 25px;
+    background-color: white;
+    font-weight: bold;
+    width: auto;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.newAnswer{
+    float: left;
+    width: 100%;
+    margin: 3px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ansSpan{
+    border: none;    
+    color: white;
+    font-size: 14px;
+    float: left;
+    margin: 0 3px;
+    width: 20px;
+}
+
+.ansSpanDisplay{
+    color: white;
+    font-size: 14px;
+    float: left;
+    font-weight: bold;
+}
+
+.ansContent{
+    padding: 1px 3px 3px 3px;
+    margin-left: 5px;
+    font-family: sans-serif;
+    font-size: small;
+    width: 80%;
+    max-height: 60px;
+    overflow-x: hidden;
+    float: left;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    box-shadow: #dadada -1px 0 4px;
+    color: white;
+    word-break: break-all;
+}
+
+.ansContentDisplay{
+    padding: 1px 3px 3px 3px;
+    margin-left: 5px;
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    width: 80%;
+    max-height: 60px;
+    overflow-x: hidden;
+    float: left;
+    border: 1px solid #DFDFDE;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;   
+    color: white;
+    word-break: break-all;
+}
+
+.ansDelete{
+    width: 25px;
+    height: 25px;
+    float: left;
+    border: none;
+    background-image: url(../images/bigBlackClose.png);
+    background-repeat: no-repeat;
+    background-position: 45% 50%;
+    background-color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 15px;   
+}
+
+.qstOptChoice{    
+    width: 80%;
+    margin: 10px 10%;
+    float: left;
+    background-color: #F3F3F2;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #ECECEB;
+    border-right-color: #ECECEB;
+    border-bottom-color: #ECECEB;
+    border-left-color: #ECECEB;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    -webkit-box-shadow: #dededd 0 0 2px inset;
+    padding: 0;
+}
+
+.optDescImg{
+    padding: 2px;
+    margin: 5px;
+    background: url(../images/tool.png) -0px -0px no-repeat;
+    float: left;
+    margin-left: 20px;
+    width: 56px;
+    height: 51px;
+}
+
+.optDescText{
+    text-align: center;
+    width: 70%;
+    color: #666666;
+    float: left;
+    font-size: small;
+    font-family: sans-serif;
+    margin: 3px 5px;
+    padding: 5px;
+}
+
+.type{
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: #dadada -1px 0 4px;
+    -webkit-box-shadow: #dadada -1px 0 4px;
+    box-shadow: #dadada -1px 0 4px;
+}
+
+.contentType{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border-bottom: 1px solid #DFDFDE;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+}
+
+.divType1, .divType2, .divType3 {
+    width: 122px;
+    height: 97px;
+    padding: 0 15px;
+    margin-left: 30px;
+}
+
+.divType1{
+    background: url(../images/1thOption.png)-0px -0px no-repeat;
+}
+
+.divType2{
+    background: url(../images/2thOption.png)-0px -0px no-repeat;
+}
+
+.divType3{
+    background: url(../images/3thOption.png)-0px -0px no-repeat;
+}
+
+.textType{
+    width: 160px;
+    font-size: small;    
+    font-family: sans-serif;
+    color: #666;
+    padding: 3px;
+    margin-left: 20px;
+}
+
+.radioDiv{
+    background-color: #F5F5F5;
+    border-top: 1px solid white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    border-bottom-right-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+}
+
+.radioType{
+    float: right;
+    margin: 2px;
+    padding: 3px;
+}
+
+.popupWordInfo{
+    position: absolute;
+    display: none;
+    width: 100px;
+    min-height: 20px;
+    top: 0;
+    left: 0;
+    text-align: center;
+    border: 1px solid #B9B9B9;
+    background-color: #eaebeb;
+    color: black;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: #dadada -1px 0 4px;
+    box-shadow: #dadada -1px 0 4px;
+    z-index: 100;
+}
+
+#answerText{
+    padding: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+/*new design*/
+
+.body_table{
+    width: 100%;
+    height: 100%;
+    border-spacing: 0;
+}
+
+.selected{
+
+}
+
+/*top*/
+
+.b_top_left{
+    width: 54px;
+    background-image: url(../images/top_left.png);
+    background-repeat: no-repeat;
+}
+
+.b_top_right{
+    width: 54px;
+    background-image: url(../images/top_right.png);
+    background-repeat: no-repeat;
+}
+
+.b_top_center{
+    height: 54px;
+    background-image: url(../images/top.png);
+    background-repeat: repeat-x;
+}
+
+/*bottom*/
+
+.b_bottom_left{
+    width: 54px;
+    background-image: url(../images/bottom_left.png);
+    background-repeat: no-repeat;
+}
+
+.b_bottom_right{
+    width: 54px;
+    background-image: url(../images/bottom_right.png);
+    background-repeat: no-repeat;
+}
+
+.b_bottom_center{
+    background-image: url(../images/bottom.png);
+    background-repeat: repeat-x;
+}
+
+/*center*/
+
+.b_center_left{
+    width: 54px;
+    background-image: url(../images/left.png);
+    background-repeat: repeat-y;
+}
+
+.b_center_right{
+    width: 54px;
+    background-image: url(../images/right.png);
+    background-repeat: repeat-y;
+}
+
+#data{
+    width: 100%;
+    height: 100%;    
+    min-height: 250px;
+    overflow: auto;
+}
+
+#wgt_name{
+    height: 44px;
+    margin: 10px 10px 0 10px;
+    padding: 0;
+    float: left;
+    font-family: sans-serif;
+    font-size: 24px;
+    color: #7F613F;
+    text-shadow: #FFDCA9 0 1px 0;
+}
+
+#wgt_reload, #wgt_edit, #wgt_display, #wgt_help{
+    cursor: pointer;
+    margin: 10px 10px 0 0;
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;    
+    line-height: 32px;
+}
+
+#wgt_display{
+    padding-left: 35px;
+    background: url(../images/toolbar-edit.png) left -32px no-repeat;
+    color: white;
+    display: none;
+}
+
+#wgt_edit{    
+    padding-left: 35px;
+    background: url(../images/slate-toolbar-edit.png) left top no-repeat;
+    color: #7F613F;
+    text-shadow: #FFDCA9 0 1px 0;
+}
+
+#wgt_reload{
+    padding-left: 35px;
+    background: url(../images/slate-toolbar-reload.png) left top no-repeat;
+    color: #7F613F;
+    text-shadow: #FFDCA9 0 1px 0;
+}
+
+.btl_pad{
+    background-image: url(../images/pad-top-left.png) !important;
+}
+
+.btc_pad{
+    background-image: url(../images/pad-top.png) !important;
+}
+
+.btr_pad{
+    background-image: url(../images/pad-top-right.png) !important;
+}
+
+.bcl_pad{
+    background-image: url(../images/pad-left.png) !important;
+}
+
+.bcr_pad{
+    background-image: url(../images/pad-right.png) !important;
+}
+
+.bbl_pad{
+    background-image: url(../images/pad-bottom-left.png) !important;
+}
+
+.bbc_pad{
+    background-image: url(../images/pad-bottom.png) !important;
+}
+
+.bbr_pad{
+    background-image: url(../images/pad-bottom-right.png) !important;
+}
+
+.without_radius{
+    border-radius: 0 !important;
+}
+
+.without_back{
+    background: none !important;
+}
+
+.pad_color{
+    color: #FC9 !important;
+    text-shadow: none !important;
+}
+
+.pad_reload{
+    background: url(../images/toolbar-reload.png) left top no-repeat !important;
+}
+
+.pad_edit{
+    background: url(../images/toolbar-edit.png) left top no-repeat !important;    
+}
+
+.pad_help{
+    background: url(../images/toolbar-help.png) left top no-repeat !important;
+}
+
+.help_wood{
+    background: url(../images/slate-toolbar-help.png) left -32px no-repeat !important;
+    color: white !important;
+    text-shadow: #7F613F 0 -1px 0 !important;
+}
+
+.help_pad{
+    background: url(../images/toolbar-help.png) left -32px no-repeat !important;
+    color: white !important;
+}
+
+#wgt_help{
+    padding-left: 35px;
+    background: url(../images/slate-toolbar-help.png) left top no-repeat;
+    color: #7F613F;
+    text-shadow: #FFDCA9 0 1px 0;
+}
+
+#help{
+    height: 100%;    
+    overflow: auto;
+    display: none;
+    background-color: #ccc;
+    padding: 5px;
+}
+
+.open{
+
+}
+
+#parameters{    
+    display: none;
+    padding: 10px 20px;
+    background: url("../images/parameters-bg.png");
+    border-radius: 4px 4px 0 0;
+}
+
+.inline{
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+#parameters label {
+    font-style: italic;
+}
+
+#style_select{   
+    margin-left: 10px;
+}
+
+.display_wood{
+    background: url(../images/slate-toolbar-edit.png) left -32px no-repeat !important;
+    text-shadow: #7F613F 0 -1px 0;
+}
+
+.radius_ft{
+    border-radius: 45px !important;
+}
