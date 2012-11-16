@@ -64,7 +64,7 @@
 
 #include "pdf/PDFRenderer.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 //#include "qtlogger.h"
 
 const QString UBSvgSubsetAdaptor::nsSvg = "http://www.w3.org/2000/svg";
@@ -148,7 +148,7 @@ void UBSvgSubsetAdaptor::upgradeScene(UBDocumentProxy* proxy, const int pageInde
 
 QDomDocument UBSvgSubsetAdaptor::loadSceneDocument(UBDocumentProxy* proxy, const int pPageIndex)
 {
-    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg",pPageIndex);
+    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", UBDocumentContainer::pageFromSceneIndex(pPageIndex));
 
     QFile file(fileName);
     QDomDocument doc("page");
@@ -171,7 +171,7 @@ QDomDocument UBSvgSubsetAdaptor::loadSceneDocument(UBDocumentProxy* proxy, const
 
 void UBSvgSubsetAdaptor::setSceneUuid(UBDocumentProxy* proxy, const int pageIndex, QUuid pUuid)
 {
-    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg",pageIndex);
+    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg",UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
     QFile file(fileName);
 
@@ -239,7 +239,7 @@ QString UBSvgSubsetAdaptor::uniboardDocumentNamespaceUriFromVersion(int mFileVer
 
 UBGraphicsScene* UBSvgSubsetAdaptor::loadScene(UBDocumentProxy* proxy, const int pageIndex)
 {
-    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", pageIndex);
+    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", UBDocumentContainer::pageFromSceneIndex(pageIndex));
     qDebug() << fileName;
     QFile file(fileName);
 
@@ -264,7 +264,7 @@ UBGraphicsScene* UBSvgSubsetAdaptor::loadScene(UBDocumentProxy* proxy, const int
 
 QUuid UBSvgSubsetAdaptor::sceneUuid(UBDocumentProxy* proxy, const int pageIndex)
 {
-    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", pageIndex);
+    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
     QFile file(fileName);
 
@@ -320,7 +320,7 @@ QString UBSvgSubsetAdaptor::readTeacherGuideNode(int sceneIndex)
 {
     QString result;
 
-    QString fileName = UBApplication::boardController->selectedDocument()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", sceneIndex);
+    QString fileName = UBApplication::boardController->selectedDocument()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", UBDocumentContainer::pageFromSceneIndex(sceneIndex));
     QFile file(fileName);
     file.open(QIODevice::ReadOnly);
     QByteArray fileByteArray=file.readAll();
@@ -1501,7 +1501,7 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
         }
 
         mXmlWriter.writeEndDocument();
-        QString fileName = mDocumentPath + UBFileSystemUtils::digitFileFormat("/page%1.svg", mPageIndex);
+        QString fileName = mDocumentPath + UBFileSystemUtils::digitFileFormat("/page%1.svg", UBDocumentContainer::pageFromSceneIndex(mPageIndex));
         QFile file(fileName);
 
         if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))

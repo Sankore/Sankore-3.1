@@ -22,7 +22,7 @@
 #include "board/UBDrawingController.h"
 #include "domain/UBGraphicsScene.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 const QRect UBGraphicsTriangle::sDefaultRect =  QRect(0, 0, 800, 400);
 const UBGraphicsTriangle::UBGraphicsTriangleOrientation UBGraphicsTriangle::sDefaultOrientation = 

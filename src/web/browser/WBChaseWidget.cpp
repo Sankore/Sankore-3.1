@@ -57,7 +57,7 @@
 
 #include <QtGui>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 WBChaseWidget::WBChaseWidget(QWidget *parent, QPixmap pixmap, bool pixmapEnabled)
     : QWidget(parent)

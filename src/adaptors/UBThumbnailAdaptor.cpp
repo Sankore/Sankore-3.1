@@ -36,7 +36,7 @@
 
 #include "UBSvgSubsetAdaptor.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 void UBThumbnailAdaptor::generateMissingThumbnails(UBDocumentProxy* proxy)
 {
@@ -44,7 +44,7 @@ void UBThumbnailAdaptor::generateMissingThumbnails(UBDocumentProxy* proxy)
 
     for (int iPageNo = 0; iPageNo < existingPageCount; ++iPageNo)
     {
-        QString thumbFileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", iPageNo);
+        QString thumbFileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", UBDocumentContainer::pageFromSceneIndex(iPageNo));
 
         QFile thumbFile(thumbFileName);
 
@@ -75,7 +75,7 @@ void UBThumbnailAdaptor::generateMissingThumbnails(UBDocumentProxy* proxy)
 
 const QPixmap* UBThumbnailAdaptor::get(UBDocumentProxy* proxy, int pageIndex)
 {
-    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", pageIndex);
+    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
     QFile file(fileName);
     if (!file.exists())
@@ -99,7 +99,7 @@ const QPixmap* UBThumbnailAdaptor::get(UBDocumentProxy* proxy, int pageIndex)
 void UBThumbnailAdaptor::updateDocumentToHandleZeroPage(UBDocumentProxy* proxy)
 {
     if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool()){
-    	QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", 0);
+        QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", UBDocumentContainer::pageFromSceneIndex(0));
     	QFile file(fileName);
     	if(!file.exists()){
     		UBPersistenceManager::persistenceManager()->persistDocumentScene(proxy,new UBGraphicsScene(proxy),0);
@@ -121,7 +121,7 @@ void UBThumbnailAdaptor::load(UBDocumentProxy* proxy, QList<const QPixmap*>& lis
 
 void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* pScene, int pageIndex, bool overrideModified)
 {
-    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", pageIndex);
+    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
     QFile thumbFile(fileName);
 
@@ -157,11 +157,11 @@ void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* p
 
         pScene->render(&painter, imageRect, sceneRect, Qt::KeepAspectRatio);
 
-        if(UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()){
-            QPixmap toque(":images/toque.svg");
-            painter.setOpacity(0.6);
-            painter.drawPixmap(QPoint(width - toque.width(),0),toque);
-        }
+//        if(UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()){
+//            QPixmap toque(":images/toque.svg");
+//            painter.setOpacity(0.6);
+//            painter.drawPixmap(QPoint(width - toque.width(),0),toque);
+//        }
 
         pScene->setRenderingContext(UBGraphicsScene::Screen);
         pScene->setRenderingQuality(UBItem::RenderingQualityNormal);
@@ -173,7 +173,7 @@ void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* p
 
 QUrl UBThumbnailAdaptor::thumbnailUrl(UBDocumentProxy* proxy, int pageIndex)
 {
-    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", pageIndex);
+    QString fileName = proxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
     return QUrl::fromLocalFile(fileName);
 }

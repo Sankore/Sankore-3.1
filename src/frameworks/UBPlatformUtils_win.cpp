@@ -21,7 +21,7 @@
 #include <shellapi.h>
 
 #include "frameworks/UBFileSystemUtils.h"
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 void UBPlatformUtils::init()
 {

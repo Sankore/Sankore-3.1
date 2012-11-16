@@ -55,7 +55,7 @@
 
 #include "WBSqueezeLabel.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 WBSqueezeLabel::WBSqueezeLabel(QWidget *parent) : QLabel(parent)
 {

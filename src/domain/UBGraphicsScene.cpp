@@ -64,7 +64,7 @@
 
 #include "UBGraphicsStroke.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 qreal UBZLayerController::errorNumber = -20000001.0;
 

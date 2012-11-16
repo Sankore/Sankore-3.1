@@ -21,7 +21,7 @@
 #include <phonon/SeekSlider>
 #include <phonon/VolumeSlider>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBVideoPlayer::UBVideoPlayer(QWidget* pParent)
     : QWidget(pParent)

@@ -17,7 +17,7 @@
 
 #include "UBSpinningWheel.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBMessageWindow::UBMessageWindow(QWidget *parent)
     : UBFloatingPalette(Qt::BottomLeftCorner, parent)

@@ -20,7 +20,7 @@
 #include "core/UBPersistenceManager.h"
 #include "gui/UBMainWindow.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UniboardSankoreTransition::UniboardSankoreTransition(QObject *parent) :
     QObject(parent)

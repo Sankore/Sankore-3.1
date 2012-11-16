@@ -27,7 +27,7 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardView.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBRubberBand::UBRubberBand(Shape s, QWidget * p)
     : QRubberBand(s, p)

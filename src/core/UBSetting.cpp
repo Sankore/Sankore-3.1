@@ -19,7 +19,7 @@
 
 #include "UBSettings.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBSetting::UBSetting(UBSettings* parent) :
     QObject(parent)

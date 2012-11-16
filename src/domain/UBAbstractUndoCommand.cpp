@@ -15,7 +15,7 @@
 
 #include "UBAbstractUndoCommand.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBAbstractUndoCommand::UBAbstractUndoCommand()
 {

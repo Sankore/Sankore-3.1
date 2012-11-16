@@ -25,7 +25,7 @@
 #include "domain/UBGraphicsWidgetItem.h"
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 
 QPixmap* UBToolWidget::sClosePixmap = 0;

@@ -26,7 +26,7 @@
 #include "board/UBDrawingController.h"
 #include "core/UBSettings.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 QColor UBGraphicsTextItem::lastUsedTextColor;
 

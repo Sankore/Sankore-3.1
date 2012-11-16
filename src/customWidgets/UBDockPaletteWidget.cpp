@@ -1,6 +1,6 @@
 #include "UBDockPaletteWidget.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDockPaletteWidget::UBDockPaletteWidget(QWidget *parent, const char *name):QWidget(parent)
 {

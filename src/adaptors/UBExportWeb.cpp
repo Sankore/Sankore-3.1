@@ -30,7 +30,7 @@ THIRD_PARTY_WARNINGS_DISABLE
 #include "quazipfile.h"
 THIRD_PARTY_WARNINGS_ENABLE
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBExportWeb::UBExportWeb(QObject *parent)
     : UBExportAdaptor(parent)

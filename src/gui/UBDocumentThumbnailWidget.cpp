@@ -23,7 +23,7 @@
 
 #include "document/UBDocumentController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 
 UBDocumentThumbnailWidget::UBDocumentThumbnailWidget(QWidget* parent)

@@ -22,7 +22,7 @@
 #include "UBGraphicsCurtainItemDelegate.h"
 #include "UBGraphicsCurtainItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBGraphicsCurtainItemDelegate::UBGraphicsCurtainItemDelegate(UBGraphicsCurtainItem* pDelegated, QObject * parent)
     : UBGraphicsItemDelegate(pDelegated, parent, false, false, false)

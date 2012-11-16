@@ -19,7 +19,7 @@
 
 #include <frameworks/UBPlatformUtils.h>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 QAtomicInt XPDFRenderer::sInstancesCount = 0;
 

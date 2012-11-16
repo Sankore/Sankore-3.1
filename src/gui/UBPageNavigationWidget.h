@@ -24,7 +24,7 @@
 #include <QString>
 
 #include "UBDocumentNavigator.h"
-#include "UBDockPaletteWidget.h"
+#include "customWidgets/UBDockPaletteWidget.h"
 #include "document/UBDocumentProxy.h"
 
 class UBPageNavigationWidget : public UBDockPaletteWidget

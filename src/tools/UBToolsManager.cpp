@@ -15,7 +15,7 @@
 
 #include "UBToolsManager.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBToolsManager* UBToolsManager::sManager = 0;
 

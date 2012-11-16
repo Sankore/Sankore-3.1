@@ -57,7 +57,7 @@
 #include <Carbon/Carbon.h>
 #endif
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBApplicationController::UBApplicationController(UBBoardView *pControlView, 
                                                  UBBoardView *pDisplayView,

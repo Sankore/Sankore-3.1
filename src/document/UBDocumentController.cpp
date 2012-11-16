@@ -55,7 +55,7 @@
 #include "ui_documents.h"
 #include "ui_mainWindow.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
    : UBDocumentContainer(mainWindow->centralWidget())

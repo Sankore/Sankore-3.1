@@ -17,7 +17,7 @@
 
 #include "gui/UBRubberBand.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBCustomCaptureWindow::UBCustomCaptureWindow(QWidget *parent)
     : QDialog(parent, Qt::FramelessWindowHint  | Qt::Window)

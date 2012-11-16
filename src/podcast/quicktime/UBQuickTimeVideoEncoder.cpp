@@ -27,7 +27,7 @@
 
 #include "UBQuickTimeFile.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBQuickTimeVideoEncoder::UBQuickTimeVideoEncoder(QObject* pParent)
     : UBAbstractVideoEncoder(pParent)

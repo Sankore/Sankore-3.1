@@ -17,16 +17,16 @@
 
 #include <openssl/aes.h>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBCryptoUtils* UBCryptoUtils::sInstance(0);
 QString UBCryptoUtils::sAESKey("9ecHaspud9uD9ste5erAchehefrup3echej-caje6&thestawacuk=h#F3jet3aF");
 QString UBCryptoUtils::sAESSalt("6f0083e0-a90c-11de-ac21-0002a5d5c51b");
 
-UBCryptoUtils* UBCryptoUtils::instance()
+UBCryptoUtils* UBCryptoUtils::instance(QObject *memoryCleaner)
 {
     if(!sInstance)
-        sInstance = new UBCryptoUtils(UBApplication::staticMemoryCleaner);
+        sInstance = new UBCryptoUtils(memoryCleaner);
 
     return sInstance;
 }

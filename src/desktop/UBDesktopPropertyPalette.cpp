@@ -21,7 +21,7 @@
 #include "gui/UBToolbarButtonGroup.h"
 #include "gui/UBRightPalette.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDesktopPropertyPalette::UBDesktopPropertyPalette(QWidget *parent, UBRightPalette* _rightPalette)
     :UBPropertyPalette(Qt::Horizontal, parent)

@@ -64,7 +64,7 @@
 
 #include <math.h>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 /*!
     DownloadItem is a widget that is displayed in the download manager list.

@@ -30,7 +30,7 @@
 
 #include "gui/UBResources.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBGraphicsDelegateFrame::UBGraphicsDelegateFrame(UBGraphicsItemDelegate* pDelegate, QRectF pRect, qreal pFrameWidth, bool respectRatio)
     : QGraphicsRectItem(), QObject(pDelegate)

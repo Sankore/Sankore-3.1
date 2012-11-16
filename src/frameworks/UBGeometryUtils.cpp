@@ -15,7 +15,7 @@
 
 #include "UBGeometryUtils.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 const double PI = 4.0 * atan(1.0);
 const int UBGeometryUtils::centimeterGraduationHeight = 15;

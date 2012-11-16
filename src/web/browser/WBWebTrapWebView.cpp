@@ -24,7 +24,7 @@
 #include "core/UBApplicationController.h"
 #include "board/UBBoardController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 WBWebTrapWebView::WBWebTrapWebView(QWidget* parent)
     : QWebView(parent)

@@ -18,7 +18,7 @@
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBLibraryAPI::UBLibraryAPI(QWebView *pWebView)
     : QObject(pWebView)

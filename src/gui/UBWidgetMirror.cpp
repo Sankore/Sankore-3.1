@@ -15,7 +15,7 @@
 
 #include "UBWidgetMirror.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBWidgetMirror::UBWidgetMirror(QWidget* sourceWidget, QWidget* parent)
     : QWidget(parent, 0)

@@ -63,7 +63,7 @@
 #include "tools/UBGraphicsProtractor.h"
 #include "tools/UBGraphicsAristo.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool pIsControl)
 : QGraphicsView (pParent)

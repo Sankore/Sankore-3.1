@@ -17,7 +17,7 @@
 
 #include "network/UBNetworkAccessManager.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBHttpFileDownloader::UBHttpFileDownloader(QObject *parent)
     : QObject(parent)

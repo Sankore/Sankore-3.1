@@ -19,7 +19,7 @@
 #include "Utils.h"
 #include <string.h>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 using namespace merge_lib;
 #define ZLIB_MEM_DELTA 65535

@@ -14,7 +14,7 @@
  */
 #include "UBStringUtils.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 QStringList UBStringUtils::sortByLastDigit(const QStringList& sourceList)
 {

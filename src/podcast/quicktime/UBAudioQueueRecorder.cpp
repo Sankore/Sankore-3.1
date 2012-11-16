@@ -15,7 +15,7 @@
 
 #include "UBAudioQueueRecorder.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 AudioStreamBasicDescription UBAudioQueueRecorder::sAudioFormat;
 

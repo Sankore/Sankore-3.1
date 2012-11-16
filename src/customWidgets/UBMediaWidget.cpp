@@ -12,11 +12,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "core/UBApplication.h"
+//#include "core/UBApplication.h"
 #include "globals/UBGlobals.h"
 #include "UBMediaWidget.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 /**
   * \brief Constructor

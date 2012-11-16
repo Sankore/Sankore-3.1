@@ -42,7 +42,7 @@
 
 #include "../adaptors/UBExportWeb.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDocumentManager* UBDocumentManager::sDocumentManager = 0;
 

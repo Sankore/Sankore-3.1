@@ -3,7 +3,7 @@
 #include "document/UBDocumentProxy.h"
 #include "core/UBDocumentManager.h"
 #include "core/UBApplication.h"
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 
 UBExportCFF::UBExportCFF(QObject *parent)

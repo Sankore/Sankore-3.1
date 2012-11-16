@@ -30,7 +30,7 @@
 
 #include "ui_preferences.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 qreal UBPreferencesController::sSliderRatio = 10.0;
 qreal UBPreferencesController::sMinPenWidth = 0.5;

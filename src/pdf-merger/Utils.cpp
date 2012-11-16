@@ -24,7 +24,7 @@
 #include <fstream>
 #include <string.h>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 using namespace merge_lib;
 

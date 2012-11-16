@@ -19,7 +19,7 @@
 #include <QtCore>
 #include <QThread>
 
-#include "core/UB.h"
+#include "globals/UBGlobals.h"
 
 class QuaZipFile;
 class UBProcessingProgressListener;

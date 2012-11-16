@@ -9,7 +9,7 @@
 #include <QSlider>
 #include <QVector>
 
-#include "UBDockPaletteWidget.h"
+#include "customWidgets/UBDockPaletteWidget.h"
 #include "tools/UBGraphicsCache.h"
 
 #define MIN_SHAPE_WIDTH     100

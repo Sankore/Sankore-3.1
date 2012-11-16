@@ -15,7 +15,7 @@
 
 #include "UBWebKitUtils.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBWebKitUtils::UBWebKitUtils()
 {

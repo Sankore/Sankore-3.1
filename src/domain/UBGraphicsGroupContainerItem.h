@@ -4,7 +4,7 @@
 #include <QGraphicsItem>
 
 #include "domain/UBItem.h"
-#include "frameworks/UBCoreGraphicsScene.h"
+#include "domain/UBCoreGraphicsScene.h"
 
 class UBGraphicsGroupContainerItem : public QGraphicsItem, public UBItem, public UBGraphicsItem
 {

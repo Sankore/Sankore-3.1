@@ -15,7 +15,7 @@
 #include "UBLeftPalette.h"
 #include "core/UBSettings.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 /**
  * \brief The constructor

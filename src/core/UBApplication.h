@@ -120,11 +120,15 @@ class UBApplication : public QtSingleApplication
         void onScreenCountChanged(int newCount);
 
     private:
+        bool loadPlugins();
+        void initPlugin(QObject* plugin, const QString& name);
         void updateProtoActionsState();
         void setupTranslators(QStringList args);
         QList<QMenu*> mProtoMenus;
         bool mIsVerbose;
         QString checkLanguageAvailabilityForSankore(QString& language);
+        QStringList mPlugins;
+
     protected:
 
 #if defined(Q_WS_MACX) && !defined(QT_MAC_USE_COCOA)

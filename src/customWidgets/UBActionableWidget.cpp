@@ -18,7 +18,7 @@
 
 #include "UBActionableWidget.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBActionableWidget::UBActionableWidget(QWidget *parent, const char *name):QWidget(parent)
   , mShowActions(false)

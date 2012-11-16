@@ -15,7 +15,7 @@
 
 #include "UBResizableGraphicsItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBResizableGraphicsItem::UBResizableGraphicsItem()
 {

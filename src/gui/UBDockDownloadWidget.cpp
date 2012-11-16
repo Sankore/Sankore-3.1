@@ -17,7 +17,7 @@
 
 #include "globals/UBGlobals.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDockDownloadWidget::UBDockDownloadWidget(QWidget *parent, const char *name):UBDockPaletteWidget(parent, name)
   , mpLayout(NULL)

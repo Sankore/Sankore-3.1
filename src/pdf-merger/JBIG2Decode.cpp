@@ -15,7 +15,7 @@
 
 #include <QtGlobal>
 #include "JBIG2Decode.h"
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 using namespace merge_lib;
 

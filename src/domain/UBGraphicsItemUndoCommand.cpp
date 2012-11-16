@@ -23,7 +23,7 @@
 
 #include "board/UBBoardController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 
 UBGraphicsItemUndoCommand::UBGraphicsItemUndoCommand(UBGraphicsScene* pScene, const QSet<QGraphicsItem*>& pRemovedItems,

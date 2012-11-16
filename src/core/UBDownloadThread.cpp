@@ -20,7 +20,7 @@
 
 #include "UBDownloadThread.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 /**
  * \brief Constructor

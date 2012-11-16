@@ -19,13 +19,18 @@
 #include <QVector>
 
 typedef struct{
+    /** Namespace */
     QString ns;
+    /** Metadata name */
     QString key;
+    /** Value */
     QString value;
 }sMetaData;
 
 typedef struct{
+    /** Name */
     QString name;
+    /** Url */
     QString url;
 }sNamespace;
 

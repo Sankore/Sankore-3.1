@@ -18,7 +18,7 @@
 #include "core/UBApplication.h"
 #include "UBMainWindow.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBUpdateDlg::UBUpdateDlg(QWidget *parent, int nbFiles, const QString& bkpPath)
     : QDialog(parent)

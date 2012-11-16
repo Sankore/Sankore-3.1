@@ -7,6 +7,8 @@ CONFIG -= flat
 CONFIG += debug_and_release \
           no_include_pwd
 
+CORE_ROOT = .
+CORE_SRC = $$CORE_ROOT/src
 
 VERSION_MAJ = 2
 VERSION_MIN = 00 
@@ -35,28 +37,30 @@ QT += xmlpatterns
 INCLUDEPATH += src
 
 include($$THIRD_PARTY_PATH/libs.pri)
-include(src/adaptors/adaptors.pri)
-include(src/api/api.pri)
-include(src/board/board.pri)
-include(src/core/core.pri)
-include(src/document/document.pri)
-include(src/domain/domain.pri)
-include(src/frameworks/frameworks.pri)
-include(src/gui/gui.pri)
-include(src/network/network.pri)
-include(src/pdf/pdf.pri)
-include(src/podcast/podcast.pri)
-include(src/tools/tools.pri)
-include(src/desktop/desktop.pri)
-include(src/web/web.pri)
-include(src/transition/transition.pri)
-include(src/interfaces/interfaces.pri)
-include(src/customWidgets/customWidgets.pri)
-include(src/abstract/abstract.pri)
+include($$CORE_SRC/adaptors/adaptors.pri)
+include($$CORE_SRC/api/api.pri)
+include($$CORE_SRC/board/board.pri)
+include($$CORE_SRC/core/core.pri)
+include($$CORE_SRC/document/document.pri)
+include($$CORE_SRC/domain/domain.pri)
+include($$CORE_SRC/frameworks/frameworks.pri)
+include($$CORE_SRC/gui/gui.pri)
+include($$CORE_SRC/network/network.pri)
+include($$CORE_SRC/pdf/pdf.pri)
+include($$CORE_SRC/podcast/podcast.pri)
+include($$CORE_SRC/tools/tools.pri)
+include($$CORE_SRC/desktop/desktop.pri)
+include($$CORE_SRC/web/web.pri)
+include($$CORE_SRC/transition/transition.pri)
+include($$CORE_SRC/interfaces/interfaces.pri)
+include($$CORE_SRC/customWidgets/customWidgets.pri)
+include($$CORE_SRC/abstract/abstract.pri)
+include($$CORE_SRC/devtools/devtools.pri)
+include($$CORE_SRC/globals/globals.pri)
 
 DEPENDPATH += src/pdf-merger
 INCLUDEPATH += src/pdf-merger
-include(src/pdf-merger/pdfMerger.pri)
+include($$CORE_SRC/pdf-merger/pdfMerger.pri)
 
 #plugins
 include(plugins/plugins.pri)
@@ -87,6 +91,7 @@ UB_I18N.files = resources/i18n/*.qm
 UB_LIBRARY.files = resources/library
 UB_FONTS.files = resources/fonts
 UB_THIRDPARTY_INTERACTIVE.files = thirdparty/interactive
+UB_PLUGINS.files = plugins/bin
 
 DEFINES += NO_THIRD_PARTY_WARNINGS
 DEFINES += UBVERSION=\"\\\"$${LONG_VERSION}\"\\\" \
@@ -122,6 +127,7 @@ win32 {
    UB_I18N.path = $$DESTDIR/i18n
    UB_ETC.path = $$DESTDIR
    UB_THIRDPARTY_INTERACTIVE.path = $$DESTDIR/library
+   UB_PLUGINS.path = $$DESTDIR
    system(md $$replace(BUILD_DIR, /, \\))
    system(echo "$$VERSION" > $$BUILD_DIR/version)
    system(echo "$$LONG_VERSION" > $$BUILD_DIR/longversion)
@@ -164,9 +170,12 @@ macx {
    CONTENTS_DIR = "Contents"
    RESOURCES_DIR = "Contents/Resources"
    FRAMEWORKS_DIR = "Contents/Frameworks"
+   PLUGINS_DIR = "Contents/Plugins"
 
    UB_ETC.files = "resources/etc"
    UB_ETC.path = "$$RESOURCES_DIR"
+   UB_PLUGINS.files = "plugins/bin"
+   UB_PLUGINS.path = "$$PLUGINS_DIR"
    UB_LIBRARY.files = "resources/library"
    UB_LIBRARY.path = "$$RESOURCES_DIR"
    UB_FONTS.files = "resources/fonts"
@@ -356,6 +365,7 @@ macx {
    }
    
    QMAKE_BUNDLE_DATA += UB_ETC \
+       UB_PLUGINS \
        UB_LIBRARY \
        UB_FONTS \
        UB_THIRDPARTY_INTERACTIVE \
@@ -384,6 +394,7 @@ linux-g++* {
     UB_LIBRARY.path = $$DESTDIR
     UB_I18N.path = $$DESTDIR/i18n
     UB_ETC.path = $$DESTDIR
+    UB_PLUGINS.path = $$DESTDIR
     UB_THIRDPARTY_INTERACTIVE.path = $$DESTDIR/library
     system(mkdir -p $$BUILD_DIR)
     system(echo "$$VERSION" > $$BUILD_DIR/version)
@@ -425,6 +436,7 @@ TRANSLATIONS = resources/i18n/sankore_en.ts \
    resources/i18n/sankore_mg.ts
 
 INSTALLS = UB_ETC \
+   UB_PLUGINS \
    UB_I18N \
    UB_LIBRARY \
    UB_THIRDPARTY_INTERACTIVE

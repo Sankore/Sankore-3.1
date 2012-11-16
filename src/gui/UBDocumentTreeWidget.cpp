@@ -29,7 +29,7 @@
 #include "adaptors/UBSvgSubsetAdaptor.h"
 #include "frameworks/UBFileSystemUtils.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDocumentTreeWidget::UBDocumentTreeWidget(QWidget * parent)
     : QTreeWidget(parent)
@@ -329,8 +329,8 @@ void UBDocumentTreeWidget::dropEvent(QDropEvent *event)
 
                             //due to incorrect generation of thumbnails of invisible scene I've used direct copying of thumbnail files
                             //it's not universal and good way but it's faster
-                            QString from = sourceItem.documentProxy()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", sourceItem.sceneIndex());
-                            QString to  = targetDocProxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", targetDocProxy->pageCount());
+                            QString from = sourceItem.documentProxy()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", UBDocumentContainer::pageFromSceneIndex(sourceItem.sceneIndex()));
+                            QString to  = targetDocProxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", UBDocumentContainer::pageFromSceneIndex(targetDocProxy->pageCount()));
                             QFile::remove(to);
                             QFile::copy(from, to);
                           }

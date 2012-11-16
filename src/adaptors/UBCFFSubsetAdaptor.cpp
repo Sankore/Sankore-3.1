@@ -48,7 +48,7 @@
 #include "core/UBApplication.h"
 #include "QFile"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 //#include "qtlogger.h"
 
 //tag names definition. Use them everiwhere!

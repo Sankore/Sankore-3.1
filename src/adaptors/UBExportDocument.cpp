@@ -31,7 +31,7 @@ THIRD_PARTY_WARNINGS_ENABLE
 
 #include "transition/UniboardSankoreTransition.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBExportDocument::UBExportDocument(QObject *parent)
     : UBExportAdaptor(parent)

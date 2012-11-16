@@ -70,7 +70,7 @@
 #include <QtWebKit>
 #include <QtUiTools/QUiLoader>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 WBWebPage::WBWebPage(QObject *parent)
     : UBWebPage(parent)

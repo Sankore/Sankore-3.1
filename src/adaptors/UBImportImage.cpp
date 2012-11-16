@@ -25,7 +25,7 @@
 
 #include "pdf/PDFRenderer.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBImportImage::UBImportImage(QObject *parent)
     : UBPageBasedImportAdaptor(parent)

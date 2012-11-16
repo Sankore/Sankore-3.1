@@ -19,7 +19,7 @@
 #include <QStringList>
 
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBVersion::UBVersion()
     : mIsValid(false)

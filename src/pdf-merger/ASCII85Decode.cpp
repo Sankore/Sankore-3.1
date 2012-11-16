@@ -16,7 +16,7 @@
 #include <QtGlobal>
 #include "ASCII85Decode.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 using namespace merge_lib;
 static const unsigned long pow85[] = {

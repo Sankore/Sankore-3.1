@@ -17,7 +17,7 @@
 
 #include "Mmsystem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBWaveRecorder::UBWaveRecorder(QObject * pParent)
     : QObject(pParent)

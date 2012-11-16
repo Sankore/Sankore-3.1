@@ -28,6 +28,7 @@ class QScrollArea;
 #include "UBTeacherGuideWidgetsTools.h"
 
 #include "interfaces/IDataStorage.h"
+#include "abstract/UBAbstractMetaDataProvider.h"
 
 typedef enum
 {
@@ -127,7 +128,7 @@ private slots:
 /***************************************************************************
  *                  class    UBTeacherGuidePageZeroWidget                  *
  ***************************************************************************/
-class UBTeacherGuidePageZeroWidget : public QWidget
+class UBTeacherGuidePageZeroWidget : public QWidget, public UBAbstractMetaDataProvider
 {
     Q_OBJECT
 
@@ -137,6 +138,10 @@ public:
 
     QVector<tUBGEElementNode*> getData();
     bool isModified();
+
+    virtual void save(QList<sNamespace> &ns, QList<sMetaData> &md);
+    virtual QString nameSpace();
+    virtual QString nameSpaceUrl();
 
 signals:
 	void resized();

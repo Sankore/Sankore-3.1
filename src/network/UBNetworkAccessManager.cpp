@@ -27,7 +27,7 @@
 #include "UBCookieJar.h"
 
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBNetworkAccessManager *UBNetworkAccessManager::sNetworkAccessManager = 0;
 

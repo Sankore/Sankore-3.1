@@ -1,8 +1,6 @@
 
 #include "MacUtils.h"
 #include "UBPlatformUtils.h"
-#include "core/UBApplication.h"
-#include "core/UBSettings.h"
 #include "frameworks/UBFileSystemUtils.h"
 
 #include <QWidget>
@@ -218,7 +216,8 @@ QString UBPlatformUtils::systemLanguage()
 
 void UBPlatformUtils::runInstaller(const QString &installerFilePath)
 {
-    UBApplication::setDisabled(true);
+    // This method doesn't seem to be called...
+    //UBApplication::setDisabled(true);
 
     // Save app config file to temp directory (will be restored at launch)
     QString appSettings = UBPlatformUtils::applicationResourcesDirectory() + "/etc/Uniboard.config";

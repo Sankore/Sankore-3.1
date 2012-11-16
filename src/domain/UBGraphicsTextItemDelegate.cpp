@@ -28,7 +28,7 @@
 
 #include "board/UBBoardController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 const int UBGraphicsTextItemDelegate::sMinPixelSize = 8;
 const int UBGraphicsTextItemDelegate::sMinPointSize = 8;

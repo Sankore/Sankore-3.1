@@ -17,7 +17,7 @@
 
 #include <QtGui>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBColorPicker::UBColorPicker(QWidget* parent)
     : QFrame(parent)

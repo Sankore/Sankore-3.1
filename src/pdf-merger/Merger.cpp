@@ -21,7 +21,7 @@
 #include <map>
 #include <iostream>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 using namespace merge_lib;
 

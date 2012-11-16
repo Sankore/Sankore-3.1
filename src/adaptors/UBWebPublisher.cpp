@@ -21,7 +21,7 @@
 
 #include "transition/UniboardSankoreTransition.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBWebPublisher::UBWebPublisher(QObject *parent)
     : UBExportAdaptor(parent)

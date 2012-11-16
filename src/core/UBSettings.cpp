@@ -20,7 +20,7 @@
 
 #include "tools/UBToolsManager.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 QPointer<UBSettings> UBSettings::sSingleton = 0;
 
@@ -1110,7 +1110,7 @@ QNetworkProxy* UBSettings::httpProxy()
 
 void UBSettings::setPassword(const QString& id, const QString& password)
 {
-    QString encrypted = UBCryptoUtils::instance()->symetricEncrypt(password);
+    QString encrypted = UBCryptoUtils::instance(UBApplication::staticMemoryCleaner)->symetricEncrypt(password);
 
     mUserSettings->setValue(QString("Vault/") + id, encrypted);
 }
@@ -1129,7 +1129,7 @@ QString UBSettings::password(const QString& id)
     QString result = "";
 
     if (encrypted.length() > 0)
-        result =  UBCryptoUtils::instance()->symetricDecrypt(encrypted);
+        result =  UBCryptoUtils::instance(UBApplication::staticMemoryCleaner)->symetricDecrypt(encrypted);
 
     return result;
 }

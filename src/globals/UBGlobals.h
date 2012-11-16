@@ -69,5 +69,23 @@ _Pragma("GCC diagnostic ignored \"-Wsign-compare\"");
 // anyway on any OS
 #define THIRD_PARTY_WARNINGS_ENABLE WARNINGS_ENABLE
 
+struct UBMimeType
+{
+    enum Enum
+    {
+        RasterImage = 0,
+        VectorImage,
+        AppleWidget,
+        W3CWidget,
+        Video,
+        Audio,
+        Flash,
+        PDF,
+        UniboardTool,
+        Group,
+        UNKNOWN
+    };
+};
+
 #endif // UBGLOBALS_H
 

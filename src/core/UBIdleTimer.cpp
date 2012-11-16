@@ -25,7 +25,7 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardView.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBIdleTimer::UBIdleTimer(QObject *parent)
      : QObject(parent)

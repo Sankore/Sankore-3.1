@@ -25,7 +25,7 @@
 
 #include "gui/UBMainWindow.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBPodcastRecordingPalette::UBPodcastRecordingPalette(QWidget *parent)
      : UBActionPalette(Qt::Horizontal, parent)

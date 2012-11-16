@@ -21,7 +21,7 @@
 #include "UBGraphicsItemDelegate.h"
 #include "UBGraphicsPixmapItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBGraphicsSvgItem::UBGraphicsSvgItem(const QString& pFilePath, QGraphicsItem* parent)
     : QGraphicsSvgItem(pFilePath, parent)

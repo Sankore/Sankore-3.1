@@ -63,7 +63,7 @@
 #include "core/UBSettings.h"
 #include "network/UBAutoSaver.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 static const unsigned int HISTORY_VERSION = 23;
 

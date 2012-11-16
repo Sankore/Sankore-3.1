@@ -19,7 +19,6 @@
 
 #include "frameworks/UBFileSystemUtils.h"
 #include "frameworks/UBPlatformUtils.h"
-
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
 #include "core/UBSetting.h"
@@ -28,9 +27,7 @@
 #include "core/UBDocumentManager.h"
 #include "core/UBMimeData.h"
 #include "core/UBDownloadManager.h"
-
 #include "network/UBHttpGet.h"
-
 #include "gui/UBMessageWindow.h"
 #include "gui/UBResources.h"
 #include "gui/UBToolbarButtonGroup.h"
@@ -38,10 +35,8 @@
 #include "gui/UBToolWidget.h"
 #include "gui/UBKeyboardPalette.h"
 #include "gui/UBMagnifer.h"
-#include "gui/UBDockPaletteWidget.h"
 #include "gui/UBDockTeacherGuideWidget.h"
 #include "gui/UBTeacherGuideWidget.h"
-
 #include "domain/UBGraphicsPixmapItem.h"
 #include "domain/UBGraphicsItemUndoCommand.h"
 #include "domain/UBGraphicsProxyWidget.h"
@@ -55,27 +50,20 @@
 #include "domain/UBItem.h"
 #include "board/UBFeaturesController.h"
 #include "domain/UBGraphicsStrokesGroup.h"
-
 #include "gui/UBFeaturesWidget.h"
-
 #include "tools/UBToolsManager.h"
-
 #include "document/UBDocumentProxy.h"
 #include "document/UBDocumentController.h"
-
 #include "board/UBDrawingController.h"
 #include "board/UBBoardView.h"
-
 #include "podcast/UBPodcastController.h"
-
 #include "adaptors/UBMetadataDcSubsetAdaptor.h"
 #include "adaptors/UBSvgSubsetAdaptor.h"
-
 #include "UBBoardPaletteManager.h"
-
 #include "core/UBSettings.h"
+#include "customWidgets/UBDockPaletteWidget.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     : UBDocumentContainer(mainWindow->centralWidget())

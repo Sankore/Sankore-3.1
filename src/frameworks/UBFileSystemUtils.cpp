@@ -12,15 +12,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-#include "UBFileSystemUtils.h"
-
 #include <QtGui>
-
-#include "core/UBApplication.h"
-
-#include "document/UBDocumentContainer.h"
-
+#include "UBFileSystemUtils.h"
 #include "globals/UBGlobals.h"
 
 THIRD_PARTY_WARNINGS_DISABLE
@@ -28,7 +21,7 @@ THIRD_PARTY_WARNINGS_DISABLE
 #include <openssl/md5.h>
 THIRD_PARTY_WARNINGS_ENABLE
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 QStringList UBFileSystemUtils::sTempDirToCleanUp;
 
@@ -344,8 +337,7 @@ QString UBFileSystemUtils::normalizeFilePath(const QString& pFilePath)
 
 QString UBFileSystemUtils::digitFileFormat(const QString& s, int digit)
 {
-    int pageDigit = UBDocumentContainer::pageFromSceneIndex(digit);
-    return s.arg(pageDigit, 3, 10, QLatin1Char('0'));
+    return s.arg(digit, 3, 10, QLatin1Char('0'));
 }
 
 

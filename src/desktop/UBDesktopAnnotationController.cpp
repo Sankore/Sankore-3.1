@@ -43,7 +43,7 @@
 #include "gui/UBKeyboardPalette.h"
 #include "gui/UBResources.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UBRightPalette* rightPalette)
         : QObject(parent)

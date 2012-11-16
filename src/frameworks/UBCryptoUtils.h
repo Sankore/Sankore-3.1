@@ -19,16 +19,13 @@
 #include <QtCore>
 #include <openssl/evp.h>
 
-#include "core/UBApplication.h"
-
-
 class UBCryptoUtils : public QObject
 {
     Q_OBJECT;
 
     public:
 
-        static UBCryptoUtils* instance();
+        static UBCryptoUtils* instance(QObject* memoryCleaner);
         static void destroy();
 
 

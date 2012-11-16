@@ -18,7 +18,7 @@
 
 #include <QtGui>
 
-#include "frameworks/UBCoreGraphicsScene.h"
+#include "UBCoreGraphicsScene.h"
 
 #include "core/UB.h"
 

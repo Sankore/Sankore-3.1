@@ -56,7 +56,11 @@
 #include "tools/UBToolsManager.h"
 
 #include "UBDisplayManager.h"
-#include "core/memcheck.h"
+#include "interfaces/IDockable.h"
+#include "interfaces/IDocumentUser.h"
+#include "interfaces/IBoardUser.h"
+
+#include "devtools/memcheck.h"
 
 QPointer<QUndoStack> UBApplication::undoStack;
 
@@ -307,6 +311,25 @@ int UBApplication::exec(const QString& pFileToImport)
     connect(mainWindow->actionQuit, SIGNAL(triggered()), this, SLOT(closing()));
     connect(mainWindow, SIGNAL(closeEvent_Signal(QCloseEvent*)), this, SLOT(closeEvent(QCloseEvent*)));
 
+    //  --------------------------------------------------------------------------
+    //  W A R N I N G !
+    //  We can see here a dirty piece of code (from an architecture point of view)
+    //  First, UBBoardController is created and initialized.
+    //  Later on, UBDocumentController is created.
+    //  BUT! In UBBoardController::init, that is called before the creation of
+    //  UBDocumentController, the default document is created. So at this point
+    //  we have a document that is not related to UBDocumentController whose aim
+    //  is to manage the document, so this is a nonsense.
+    //  On top of that we cannot externalize the Teacher Guide as a plugin because
+    //  it is created during the initialization of UBBoardController so we cannot
+    //  do an automatic registration of it for saving datas in the SVG and the
+    //  metadatas.
+    //  In conclusion, we see here a wrong interpretation of the controller's role
+    //  and due to that we have a bad architecture with redundent dependencies.
+    //  So a huge rework of this part and a serious separation of the controller's
+    //  role is highly recommended. I'm not sure to have enough time to rework all
+    //  of that so at least I'll let this comment...
+    //  --------------------------------------------------------------------------
     boardController = new UBBoardController(mainWindow);
     boardController->init();
 
@@ -381,6 +404,12 @@ int UBApplication::exec(const QString& pFileToImport)
 
     onScreenCountChanged(1);
     connect(desktop(), SIGNAL(screenCountChanged(int)), this, SLOT(onScreenCountChanged(int)));
+
+    // Load the plugins
+    if(!loadPlugins()){
+        qDebug() << "ERROR: An error occured while loading the plugins";
+    }
+
     return QApplication::exec();
 }
 
@@ -733,4 +762,59 @@ bool UBApplication::isFromWeb(QString url)
     }
 
     return res;
+}
+
+/**
+ * \brief Load the plugins
+ */
+bool UBApplication::loadPlugins(){
+    bool bLoaded = true;
+    QDir pluginsDir(qApp->applicationDirPath());
+     #if defined(Q_OS_WIN)
+        // TODO: verify this part
+         if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
+             pluginsDir.cdUp();
+     #elif defined(Q_OS_MAC)
+        // TODO: verify this part
+         if (pluginsDir.dirName() == "MacOS") {
+             pluginsDir.cdUp();
+             pluginsDir.cdUp();
+             pluginsDir.cdUp();
+         }
+     #endif
+         pluginsDir.cd("plugins");
+         foreach(QString fileName, pluginsDir.entryList(QDir::Files)){
+             QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(fileName));
+             QObject *plugin = pluginLoader.instance();
+             if(plugin){
+                qDebug() << "Loading plugin " << fileName;
+                initPlugin(plugin, fileName);
+                mPlugins << fileName;
+                bLoaded &= true;
+             }else{
+                qDebug() << pluginLoader.errorString();
+                bLoaded &= false;
+             }
+         }
+
+         return bLoaded;
+}
+
+void UBApplication::initPlugin(QObject *plugin, const QString &name){
+    IDockable* dockable = qobject_cast<IDockable*>(plugin);
+    if(dockable){
+        qDebug() << "The plugin is dockable!";
+    }
+    IBoardUser* boardUser = qobject_cast<IBoardUser*>(plugin);
+    if(boardUser){
+        QObject* user = boardUser->boardUser();
+        if(NULL != user){
+            connect(boardController, SIGNAL(activeSceneChanged()), user, SLOT(onActiveSceneChanged()));
+            connect(boardController, SIGNAL(documentSet(UBDocumentProxy*)), user, SLOT(onActiveDocumentChanged()));
+        }
+    }
+    IDocumentUser* documentUser = qobject_cast<IDocumentUser*>(plugin);
+    if(documentUser){
+        qDebug() << "The plugin is a document user!";
+    }
 }

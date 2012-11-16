@@ -60,7 +60,7 @@
 
 #include "network/UBAutoSaver.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 /*
     ToolbarSearch is a very basic search widget that also contains a small history.

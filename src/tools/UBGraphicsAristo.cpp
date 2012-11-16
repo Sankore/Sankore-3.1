@@ -28,7 +28,7 @@
 #include <QRadialGradient>
 #include <QString>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 const QRectF UBGraphicsAristo::sDefaultRect =  QRectF(0, 0, 800, 500);
 const UBGraphicsAristo::Orientation UBGraphicsAristo::sDefaultOrientation = UBGraphicsAristo::Top;

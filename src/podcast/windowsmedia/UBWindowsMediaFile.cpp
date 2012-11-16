@@ -19,7 +19,7 @@
 
 #include "core/UBApplication.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBWindowsMediaFile::UBWindowsMediaFile(QObject * pParent)
     : QObject(pParent)

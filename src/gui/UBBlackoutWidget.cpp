@@ -17,7 +17,7 @@
 
 #include "UBBlackoutWidget.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBBlackoutWidget::UBBlackoutWidget(QWidget *parent)
     : QWidget(parent)

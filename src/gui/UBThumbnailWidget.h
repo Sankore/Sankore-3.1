@@ -21,7 +21,7 @@
 #include <QTime>
 #include <QGraphicsSceneHoverEvent>
 
-#include "frameworks/UBCoreGraphicsScene.h"
+#include "domain/UBCoreGraphicsScene.h"
 #include "core/UBSettings.h"
 #include "domain/UBItem.h"
 

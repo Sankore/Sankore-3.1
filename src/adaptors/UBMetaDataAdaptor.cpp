@@ -1,3 +1,17 @@
+/*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #include <QString>
 #include <QDir>
 #include <QFile>
@@ -9,14 +23,27 @@
 const QString metadataFilename = "metadata2.rdf";
 const QString nsRdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
+/**
+ * \brief Constructor
+ */
 UBMetaDataAdaptor::UBMetaDataAdaptor(){
 
 }
 
+/**
+ * \brief Destructor
+ */
 UBMetaDataAdaptor::~UBMetaDataAdaptor(){
 
 }
 
+/**
+ * \brief Persist the metadatas in a file on the file system
+ * @param path as the file path
+ * @param ns as the namespaces list
+ * @param md as the metadatas list
+ * @param desc as the description, for backward compatibility
+ */
 void UBMetaDataAdaptor::persist(const QString& path, QList<sNamespace> ns, QList<sMetaData> md, const QString& desc){
     if(!QDir(path).exists()){
         //In this case the a document is an empty document so we do not persist it
@@ -64,6 +91,9 @@ void UBMetaDataAdaptor::persist(const QString& path, QList<sNamespace> ns, QList
     file.close();
 }
 
+/**
+ * \brief Load the metadatas
+ */
 void UBMetaDataAdaptor::load(){
-
+    // TODO: Implement me!
 }

@@ -2,7 +2,7 @@
 
 #include "domain/UBGraphicsPolygonItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBGraphicsStrokesGroup::UBGraphicsStrokesGroup(QGraphicsItem *parent)
     :QGraphicsItemGroup(parent), UBGraphicsItem()

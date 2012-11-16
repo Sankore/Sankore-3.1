@@ -17,7 +17,7 @@
 #include "LZWDecode.h"
 #include "FilterPredictor.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 // method performs decoding
 using namespace merge_lib;

@@ -19,7 +19,7 @@
 #include "domain/UBGraphicsWidgetItem.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBCoreGraphicsScene::UBCoreGraphicsScene(QObject * parent)
     : QGraphicsScene ( parent  )
@@ -67,7 +67,6 @@ void UBCoreGraphicsScene::removeItem(QGraphicsItem* item, bool forceDelete)
     QGraphicsScene::removeItem(item);
     if (forceDelete)
     {
-        qDebug() << "force delete is " << forceDelete;
         deleteItem(item);
     }
     setModified(true);

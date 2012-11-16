@@ -15,7 +15,7 @@
 #include <QStackedWidget>
 #include <QDropEvent>
 
-#include "UBDockPaletteWidget.h"
+#include "customWidgets/UBDockPaletteWidget.h"
 #include "core/UBSettings.h"
 #include "board/UBFeaturesController.h"
 #include "api/UBWidgetUniboardAPI.h"

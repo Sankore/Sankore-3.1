@@ -27,7 +27,7 @@
 
  #include "board/UBBoardController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 #include "core/UBApplicationController.h"
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"

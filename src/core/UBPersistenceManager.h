@@ -82,8 +82,11 @@ class UBPersistenceManager : public QObject
         QString generateUniqueDocumentPath();
         QString generateUniqueDocumentPath(const QString& baseFolder);
 
+        // TODO: Remove this method and use something generic instead
         QString teacherGuideAbsoluteObjectPath(UBDocumentProxy* pDocumentProxy);
+        // TODO: Remove this method and use something generic instead
         QString addObjectToTeacherGuideDirectory(UBDocumentProxy* proxy, QString pPath);
+        // TODO: Remove this method and use something generic instead
         QString addWidgetToTeacherGuideDirectory(UBDocumentProxy* pDocumentProxy, QString pPath);
 
         bool addDirectoryContentToDocument(const QString& documentRootFolder, UBDocumentProxy* pDocument);

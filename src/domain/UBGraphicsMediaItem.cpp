@@ -21,7 +21,7 @@
 #include "document/UBDocumentProxy.h"
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 
 UBAudioPresentationWidget::UBAudioPresentationWidget(QWidget *parent)

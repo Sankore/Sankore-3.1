@@ -52,7 +52,7 @@
     #include "quicktime/UBAudioQueueRecorder.h"
 #endif
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBPodcastController* UBPodcastController::sInstance = 0;
 

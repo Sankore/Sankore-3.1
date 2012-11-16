@@ -20,7 +20,7 @@
 
 #include "network/UBNetworkAccessManager.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBServerXMLHttpRequest::UBServerXMLHttpRequest(UBNetworkAccessManager* pNam, const QString& contentType)
     : QObject(pNam)

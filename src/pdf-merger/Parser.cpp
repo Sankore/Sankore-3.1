@@ -25,7 +25,7 @@
 #include "Exception.h"
 #include "Utils.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 using namespace merge_lib;
 using namespace std;

@@ -47,9 +47,21 @@
 
 #include "domain/UBGraphicsTextItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 #define UBTG_SEPARATOR_FIXED_HEIGHT 3
+
+const QString qsNamespace = "ub";
+const QString qsNamespaceUrl = "http://uniboard.mnemis.com/document";
+
+const QString qsMetaTitle = "";
+const QString qsMetaAuthor = "";
+const QString qsMetaObjectives = "";
+const QString qsMetaKeywords = "";
+const QString qsMetaGradeLevel = "";
+const QString qsMetaSubjects = "";
+const QString qsMetaType = "";
+const QString qsMetaLicense = "";
 
 typedef enum {
     eUBTGAddSubItemWidgetType_None,
@@ -837,6 +849,18 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
 
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
     fillComboBoxes();
+
+    // Register the metadatas
+    addMetaData(nameSpace(), UBSettings::sessionTitle, mpSessionTitle->text());
+    addMetaData(nameSpace(), UBSettings::sessionAuthors, mpAuthors->text());
+    addMetaData(nameSpace(), UBSettings::sessionObjectives, mpObjectives->text());
+    addMetaData(nameSpace(), UBSettings::sessionKeywords, mpKeywords->text());
+    addMetaData(nameSpace(), UBSettings::sessionGradeLevel, mpSchoolLevelBox->currentText());
+    addMetaData(nameSpace(), UBSettings::sessionSubjects, mpSchoolSubjectsBox->currentText());
+    addMetaData(nameSpace(), UBSettings::sessionType, mpSchoolTypeBox->currentText());
+    addMetaData(nameSpace(), UBSettings::sessionLicence, QString("%0").arg(mpLicenceBox->currentIndex()));
+
+    UBApplication::documentController->currentDocument()->registerMetaDataProvider(this);
 }
 
 UBTeacherGuidePageZeroWidget::~UBTeacherGuidePageZeroWidget()
@@ -1003,14 +1027,14 @@ void UBTeacherGuidePageZeroWidget::persistData()
     // to NULL
     if (UBApplication::boardController) {
         UBDocumentProxy* documentProxy = UBApplication::boardController->selectedDocument();
-        documentProxy->setMetaData(UBSettings::sessionTitle, mpSessionTitle->text());
-        documentProxy->setMetaData(UBSettings::sessionAuthors, mpAuthors->text());
-        documentProxy->setMetaData(UBSettings::sessionObjectives, mpObjectives->text());
-        documentProxy->setMetaData(UBSettings::sessionKeywords, mpKeywords->text());
-        documentProxy->setMetaData(UBSettings::sessionGradeLevel, mpSchoolLevelBox->currentText());
-        documentProxy->setMetaData(UBSettings::sessionSubjects, mpSchoolSubjectsBox->currentText());
-        documentProxy->setMetaData(UBSettings::sessionType, mpSchoolTypeBox->currentText());
-        documentProxy->setMetaData(UBSettings::sessionLicence, mpLicenceBox->currentIndex());
+        documentProxy->setMetaData(qsMetaTitle, mpSessionTitle->text());
+        documentProxy->setMetaData(qsMetaAuthor, mpAuthors->text());
+        documentProxy->setMetaData(qsMetaObjectives, mpObjectives->text());
+        documentProxy->setMetaData(qsMetaKeywords, mpKeywords->text());
+        documentProxy->setMetaData(qsMetaGradeLevel, mpSchoolLevelBox->currentText());
+        documentProxy->setMetaData(qsMetaSubjects, mpSchoolSubjectsBox->currentText());
+        documentProxy->setMetaData(qsMetaType, mpSchoolTypeBox->currentText());
+        documentProxy->setMetaData(qsMetaLicense, mpLicenceBox->currentIndex());
     }
 }
 
@@ -1162,6 +1186,31 @@ void UBTeacherGuidePageZeroWidget::resizeEvent(QResizeEvent* ev)
 {
 	emit resized();
 	QWidget::resizeEvent(ev);
+}
+
+QString UBTeacherGuidePageZeroWidget::nameSpace(){
+    return qsNamespace;
+}
+
+QString UBTeacherGuidePageZeroWidget::nameSpaceUrl(){
+    return qsNamespaceUrl;
+}
+
+void UBTeacherGuidePageZeroWidget::save(QList<sNamespace> &ns, QList<sMetaData> &md){
+    QVector<sMetaData>::const_iterator itMetaData;
+    for(itMetaData = mMetaDatas.constBegin(); itMetaData != mMetaDatas.constEnd(); itMetaData++){
+        sMetaData meta;
+        meta.key = itMetaData->key;
+        meta.ns = itMetaData->ns;
+        meta.value = itMetaData->value;
+        md.append(meta);
+    }
+
+    sNamespace ubNs;
+    ubNs.name = qsNamespace;
+    ubNs.url = qsNamespaceUrl;
+
+    ns.append(ubNs);
 }
 
 /***************************************************************************

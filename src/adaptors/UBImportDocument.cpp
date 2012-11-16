@@ -30,7 +30,7 @@ THIRD_PARTY_WARNINGS_DISABLE
 #include "quazipfileinfo.h"
 THIRD_PARTY_WARNINGS_ENABLE
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBImportDocument::UBImportDocument(QObject *parent)
     :UBDocumentBasedImportAdaptor(parent)

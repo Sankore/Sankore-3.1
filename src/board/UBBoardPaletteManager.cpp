@@ -60,7 +60,7 @@
 
 #include "document/UBDocumentController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardController* pBoardController)
     : QObject(container)
@@ -136,11 +136,11 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
     mLeftPalette->registerWidget(mpPageNavigWidget);
     mLeftPalette->addTab(mpPageNavigWidget);
 
-    if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool() || UBSettings::settings()->teacherGuideLessonPagesActivated->get().toBool()){
-        mpTeacherGuideWidget = new UBDockTeacherGuideWidget();
-        mLeftPalette->registerWidget(mpTeacherGuideWidget);
-        mLeftPalette->addTab(mpTeacherGuideWidget);
-    }
+//    if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool() || UBSettings::settings()->teacherGuideLessonPagesActivated->get().toBool()){
+//        mpTeacherGuideWidget = new UBDockTeacherGuideWidget();
+//        mLeftPalette->registerWidget(mpTeacherGuideWidget);
+//        mLeftPalette->addTab(mpTeacherGuideWidget);
+//    }
 
     mLeftPalette->connectSignals();
 

@@ -15,7 +15,7 @@
 
 #include "UBActionPalette.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBActionPalette::UBActionPalette(QList<QAction*> actions, Qt::Orientation orientation, QWidget * parent)
     : UBFloatingPalette(Qt::TopRightCorner, parent)

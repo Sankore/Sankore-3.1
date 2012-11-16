@@ -20,7 +20,7 @@
 
 #include "pdf/UBWebPluginPDFWidget.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 class UBWebPluginFactory : public QWebPluginFactory
 {

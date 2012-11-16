@@ -78,7 +78,7 @@
 #include "ui_passworddialog.h"
 #include "WBWebView.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 WBDownloadManager *WBBrowserWindow::sDownloadManager = 0;
 WBHistoryManager *WBBrowserWindow::sHistoryManager = 0;

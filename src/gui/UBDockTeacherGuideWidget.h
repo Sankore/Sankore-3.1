@@ -19,7 +19,7 @@
 class QVBoxLayout;
 class UBTeacherGuideWidget;
 
-#include "UBDockPaletteWidget.h"
+#include "customWidgets/UBDockPaletteWidget.h"
 
 
 class UBDockTeacherGuideWidget : public UBDockPaletteWidget

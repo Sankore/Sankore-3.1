@@ -18,7 +18,7 @@
 #include <QWidget>
 #include <QVBoxLayout>
 
-#include "UBDockPaletteWidget.h"
+#include "customWidgets/UBDockPaletteWidget.h"
 #include "UBDownloadWidget.h"
 
 class UBDockDownloadWidget : public UBDockPaletteWidget

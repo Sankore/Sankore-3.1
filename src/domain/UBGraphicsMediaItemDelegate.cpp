@@ -29,7 +29,7 @@
 
 #include "domain/UBGraphicsMediaItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBGraphicsMediaItemDelegate::UBGraphicsMediaItemDelegate(UBGraphicsMediaItem* pDelegated, Phonon::MediaObject* pMedia, QObject * parent)
     : UBGraphicsItemDelegate(pDelegated, parent, true, false)

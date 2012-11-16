@@ -28,7 +28,7 @@
 #include "UBResources.h"
 #include "UBIconButton.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBWebToolsPalette::UBWebToolsPalette(QWidget *parent,bool tutorialMode=false)
     : UBActionPalette(Qt::TopRightCorner, parent)

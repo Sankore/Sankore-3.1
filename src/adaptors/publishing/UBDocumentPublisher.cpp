@@ -52,7 +52,7 @@ THIRD_PARTY_WARNINGS_ENABLE
 
 #include "../../core/UBApplication.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 
 UBDocumentPublisher::UBDocumentPublisher(UBDocumentProxy* pDocument, QObject *parent)
@@ -128,7 +128,7 @@ void UBDocumentPublisher::buildUbwFile()
         // remove all useless files
 
         for (int pageIndex = 0; pageIndex < mPublishingSize; pageIndex++) {
-            QString filename = mPublishingPath + UBFileSystemUtils::digitFileFormat("/page%1.svg",pageIndex);
+            QString filename = mPublishingPath + UBFileSystemUtils::digitFileFormat("/page%1.svg",UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
             QFile::remove(filename);
         }
@@ -189,7 +189,7 @@ void UBDocumentPublisher::rasterizeScenes()
         UBDocumentProxy publishingDocument(mPublishingPath);
         UBSvgSubsetRasterizer rasterizer(&publishingDocument, pageIndex);
 
-        QString filename = mPublishingPath + UBFileSystemUtils::digitFileFormat("/page%1.jpg",pageIndex);
+        QString filename = mPublishingPath + UBFileSystemUtils::digitFileFormat("/page%1.jpg",UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
         rasterizer.rasterizeToFile(filename);
 
@@ -254,7 +254,7 @@ void UBDocumentPublisher::upgradeDocumentForPublishing()
             }
         }
 
-        QString filename = mPublishingPath + UBFileSystemUtils::digitFileFormat("/page%1.json",pageIndex);
+        QString filename = mPublishingPath + UBFileSystemUtils::digitFileFormat("/page%1.json",UBDocumentContainer::pageFromSceneIndex(pageIndex));
 
         QFile jsonFile(filename);
         if (jsonFile.open(QIODevice::WriteOnly | QIODevice::Truncate))

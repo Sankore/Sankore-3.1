@@ -15,7 +15,7 @@
 
 #include "UBBase32.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 QString UBBase32::sBase32Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 

@@ -21,7 +21,7 @@
 #include "board/UBDrawingController.h"
 #include "UBAbstractDrawRuler.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 
 const QRectF UBGraphicsProtractor::sDefaultRect = QRectF(-175, -175, 350, 350);

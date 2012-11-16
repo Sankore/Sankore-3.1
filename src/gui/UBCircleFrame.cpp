@@ -14,7 +14,7 @@
  */
 
 #include "UBCircleFrame.h"
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBCircleFrame::UBCircleFrame(QWidget* parent)
     : QFrame(parent)

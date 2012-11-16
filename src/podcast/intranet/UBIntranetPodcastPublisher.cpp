@@ -28,7 +28,7 @@
 
 #include "gui/UBMainWindow.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 
 UBIntranetPodcastPublisher::UBIntranetPodcastPublisher(QObject* pParent)

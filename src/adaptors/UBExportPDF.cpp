@@ -30,7 +30,7 @@
 
 #include "pdf/GraphicsPDFItem.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBExportPDF::UBExportPDF(QObject *parent)
     : UBExportAdaptor(parent)

@@ -22,7 +22,7 @@
 #include "board/UBBoardController.h"
 
 #include "gui/UBMainWindow.h"
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBDrawingController* UBDrawingController::sDrawingController = 0;
 

@@ -28,7 +28,7 @@
 #include "document/UBDocumentProxy.h"
 #include "document/UBDocumentController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBThumbnailWidget::UBThumbnailWidget(QWidget* parent)
     : QGraphicsView(parent)

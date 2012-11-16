@@ -19,7 +19,7 @@
 
 #include <QtGui/QStyleOptionGraphicsItem>
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 GraphicsPDFItem::GraphicsPDFItem(PDFRenderer *renderer, int pageNumber, QGraphicsItem *parentItem)
     : QObject(0), QGraphicsItem(parentItem)

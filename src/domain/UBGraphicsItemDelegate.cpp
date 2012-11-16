@@ -46,7 +46,7 @@
 #include "frameworks/UBFileSystemUtils.h"
 #include "board/UBDrawingController.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 class UBGraphicsParaschoolEditorWidgetItem;
 

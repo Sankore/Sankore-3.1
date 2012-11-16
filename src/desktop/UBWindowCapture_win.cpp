@@ -21,7 +21,7 @@
 
 #include "board/UBBoardView.h"
 
-#include "core/memcheck.h"
+#include "devtools/memcheck.h"
 
 UBWindowCapture::UBWindowCapture(UBDesktopAnnotationController *parent)
         : QObject(parent)
