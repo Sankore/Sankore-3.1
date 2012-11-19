@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBYouTubePublisher.h"
 
@@ -94,16 +102,16 @@ void UBYouTubePublisher::postClientLoginRequest(const QString& userName, const Q
     QUrl url("https://www.google.com/youtube/accounts/ClientLogin");
 
     mAuthRequest = new UBServerXMLHttpRequest(UBNetworkAccessManager::defaultAccessManager()
-        , "application/x-www-form-urlencoded"); // destroyed in postClientLoginResponse
+                                              , "application/x-www-form-urlencoded"); // destroyed in postClientLoginResponse
 
     connect(mAuthRequest, SIGNAL(finished(bool, const QByteArray&)), this, SLOT(postClientLoginResponse(bool, const QByteArray&)));
 
     mAuthRequest->addHeader("X-GData-Key", sYouTubeDeveloperKey);
 
     QString payload = QString("Email=%1&Passwd=%2&service=youtube&source=%3")
-        .arg(userName)
-        .arg(password)
-        .arg(tr("OpenSankore"));
+            .arg(userName)
+            .arg(password)
+            .arg(tr("OpenSankore"));
 
     mAuthRequest->post(url, payload.toUtf8());
 
@@ -125,8 +133,8 @@ void UBYouTubePublisher::postClientLoginResponse(bool success, const QByteArray&
         {
             if(line.startsWith("Auth="))
             {
-               mAuthToken = line.replace("Auth=", "");
-               break;
+                mAuthToken = line.replace("Auth=", "");
+                break;
             }
         }
     }
@@ -137,7 +145,7 @@ void UBYouTubePublisher::postClientLoginResponse(bool success, const QByteArray&
     if(mAuthToken.length() == 0)
     {
         UBApplication::showMessage(tr("YouTube authentication failed."));
-//        success = false;
+        //        success = false;
         deleteLater();
     }
     else
@@ -188,7 +196,7 @@ void UBYouTubePublisher::postVideoUploadRequest()
     QString contentType = QString("multipart/related; boundary=\"%1\"").arg(boundary);
 
     mUploadRequest = new UBServerXMLHttpRequest(UBNetworkAccessManager::defaultAccessManager()
-        , contentType); // destroyed in postVideoUploadResponse
+                                                , contentType); // destroyed in postVideoUploadResponse
 
     mUploadRequest->setVerbose(true);
     connect(mUploadRequest, SIGNAL(progress(qint64, qint64)), this,  SLOT(progress(qint64, qint64)));
@@ -206,15 +214,15 @@ void UBYouTubePublisher::postVideoUploadRequest()
     QByteArray payload;
 
     payload.append(QString("\n--" + boundary + "\n").toUtf8())
-        .append(QString("Content-Type: application/atom+xml; charset=UTF-8\n\n").toUtf8())
-        .append(youtubeMetadata().toUtf8());
+            .append(QString("Content-Type: application/atom+xml; charset=UTF-8\n\n").toUtf8())
+            .append(youtubeMetadata().toUtf8());
 
     payload.append(QString("\n--" + boundary + "\n").toUtf8());
 
     QString videoMimeType = UBFileSystemUtils::mimeTypeFromFileName(mVideoFilePath);
 
     payload.append((QString("Content-Type: %1\n").arg(videoMimeType)).toUtf8())
-        .append(QString("Content-Transfer-Encoding: binary\n\n").toUtf8());
+            .append(QString("Content-Transfer-Encoding: binary\n\n").toUtf8());
 
     payload.append(videoFile.readAll());
 
@@ -335,23 +343,45 @@ UBYouTubePublishingDialog::UBYouTubePublishingDialog(const QString& videoFilePat
 
     connect(email, SIGNAL(textChanged(const QString&)), this, SLOT(updateUIState(const QString&)));
     connect(password, SIGNAL(textChanged(const QString&)), this, SLOT(updateUIState(const QString&)));
+    connect(youtubeCredentialsPersistence,SIGNAL(clicked()), this, SLOT(updateCredentialPersistenceState()));
 
     dialogButtons->button(QDialogButtonBox::Ok)->setEnabled(false);
     dialogButtons->button(QDialogButtonBox::Ok)->setText(tr("Upload"));
 
+    UBSettings* settings = UBSettings::settings();
+
+    email->setText(settings->youTubeUserEMail->get().toString());
+    password->setText(settings->password(email->text()));
+
+    youtubeCredentialsPersistence->setChecked(UBSettings::settings()->youTubeCredentialsPersistence->get().toBool());
+    updatePersistanceEnableState();
+}
+
+
+void UBYouTubePublishingDialog::updateCredentialPersistenceState()
+{
+    UBSettings::settings()->youTubeCredentialsPersistence->set(QVariant(youtubeCredentialsPersistence->checkState()));
+}
+
+void UBYouTubePublishingDialog::updatePersistanceEnableState()
+{
+    bool enabled = email->text().length() || password->text().length();
+    youtubeCredentialsPersistence->setEnabled(enabled);
+    youtubeCredentialsPersistence->setStyleSheet(enabled ? "color:black;" : "color : lightgrey;");
 }
 
 void UBYouTubePublishingDialog::updateUIState(const QString& string)
 {
     Q_UNUSED(string);
 
-        bool ok = title->text().length() > 0
-                        &&  description->toPlainText().length() > 0
-                        &&  keywords->text().length() > 0
-                        &&  email->text().length() > 0
-                        &&  password->text().length() > 0;
+    bool ok = title->text().length() > 0
+            &&  description->toPlainText().length() > 0
+            &&  keywords->text().length() > 0
+            &&  email->text().length() > 0
+            &&  password->text().length() > 0;
 
     dialogButtons->button(QDialogButtonBox::Ok)->setEnabled(ok);
+    updatePersistanceEnableState();
 }
 
 

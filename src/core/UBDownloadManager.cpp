@@ -1,17 +1,26 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
+
 #include "UBDownloadManager.h"
 #include "core/UBApplication.h"
 #include "core/UBPersistenceManager.h"
@@ -33,18 +42,17 @@ UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, Q
 
 UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 {
-    if (!QFile::exists(QUrl(mDesc.srcUrl).toLocalFile())) {
-        qDebug() << "file" << mDesc.srcUrl << "does not present in fs";
-        return this;
-    }
-
     start();
-
     return this;
 }
 
 void UBAsyncLocalFileDownloader::run()
 {
+
+    if(mDesc.srcUrl.startsWith("file://"))
+        mDesc.srcUrl = QUrl(mDesc.srcUrl).toLocalFile();
+    else
+        mDesc.srcUrl = QUrl::fromLocalFile(mDesc.srcUrl).toLocalFile();
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mDesc.srcUrl);
 
@@ -67,7 +75,7 @@ void UBAsyncLocalFileDownloader::run()
 
     QString uuid = QUuid::createUuid();
     UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(), 
-        QUrl(mDesc.srcUrl).toLocalFile(),
+        mDesc.srcUrl,
         destDirectory,
         uuid,
         mTo,
@@ -79,7 +87,7 @@ void UBAsyncLocalFileDownloader::run()
             QFile::remove(mTo);
     }
     else
-        emit signal_asyncCopyFinished(mDesc.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl::fromLocalFile(mDesc.originalSrcUrl), "", NULL, mDesc.pos, mDesc.size, mDesc.isBackground);
+        emit signal_asyncCopyFinished(mDesc.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(mDesc.originalSrcUrl), "", NULL, mDesc.pos, mDesc.size, mDesc.isBackground);
 }
 
 void UBAsyncLocalFileDownloader::abort()

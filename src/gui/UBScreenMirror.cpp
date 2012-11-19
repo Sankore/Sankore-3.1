@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBScreenMirror.h"
 
@@ -19,6 +27,11 @@
 #include "core/UBSetting.h"
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
+
+#if defined(Q_WS_MAC)
+#include <ApplicationServices/ApplicationServices.h>
+#endif
+
 #include "core/memcheck.h"
 
 
@@ -65,7 +78,6 @@ void UBScreenMirror::timerEvent(QTimerEvent *event)
     update();
 }
 
-
 void UBScreenMirror::grabPixmap()
 {
     if (mSourceWidget)
@@ -75,10 +87,15 @@ void UBScreenMirror::grabPixmap()
 
         mRect.setTopLeft(topLeft);
         mRect.setBottomRight(bottomRight);
+        mLastPixmap = QPixmap::grabWidget(mSourceWidget);
     }
-
-    mLastPixmap = QPixmap::grabWindow(qApp->desktop()->screen(mScreenIndex)->winId(),
-        mRect.x(), mRect.y(), mRect.width(), mRect.height());
+    else{
+        // WHY HERE?
+        // this is the case we are showing the desktop but the is no widget and we use the last widget rectagle to know
+        // what we have to grab. Not very good way of doing
+        WId windowID = qApp->desktop()->screen(mScreenIndex)->winId();
+        mLastPixmap = QPixmap::grabWindow(windowID, mRect.x(), mRect.y(), mRect.width(), mRect.height());
+    }
 
     mLastPixmap = mLastPixmap.scaled(width(), height(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
 }
@@ -116,7 +133,7 @@ void UBScreenMirror::start()
     }
     else
     {
-        qDebug() << "UBScreenMirror::start() : Timer alrady running ...";
+        qDebug() << "UBScreenMirror::start() : Timer already running ...";
     }
 }
 

@@ -1,3 +1,26 @@
+/*
+ * Copyright (C) 2012 Webdoc SA
+ *
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
+ */
+
+
 #include <QGraphicsItem>
 #include <QPointF>
 #include <QtGui>
@@ -310,7 +333,14 @@ bool UBFeature::allowedCopy() const
 
 bool UBFeature::isDeletable() const
 {
-    return testPermissions(DELETE_P);
+    return elementType == FEATURE_ITEM
+            || elementType == FEATURE_AUDIO
+            || elementType == FEATURE_VIDEO
+            || elementType == FEATURE_IMAGE
+            || elementType == FEATURE_FLASH
+            || elementType == FEATURE_FOLDER
+    //Ilia. Just a hotfix. Permission mechanism for UBFeatures should be reworked
+            || getVirtualPath().startsWith("/root/Applications/Web");
 }
 
 bool UBFeature::inTrash() const
@@ -700,7 +730,6 @@ void UBFeaturesController::addToFavorite( const QUrl &path )
 
 void UBFeaturesController::removeFromFavorite( const QUrl &path, bool deleteManualy)
 {
-//	QString filePath = fileNameFromUrl( path );
 	if ( favoriteSet->find( path ) != favoriteSet->end() )
 	{
 		favoriteSet->erase( favoriteSet->find( path ) );
@@ -725,14 +754,16 @@ UBFeatureElementType UBFeaturesController::fileTypeFromUrl(const QString &path)
 {
     QFileInfo fileInfo(path);
 
+    if ( path.contains("uniboardTool://"))
+        return FEATURE_INTERNAL;
+
     if (!fileInfo.exists()) {
         return FEATURE_INVALID;
     }
 
+    UBFeatureElementType fileType = FEATURE_INVALID;
     QString fileName = fileInfo.fileName();
     QString mimeString = UBFileSystemUtils::mimeTypeFromFileName(fileName);
-
-    UBFeatureElementType fileType = FEATURE_INVALID;
 
     if ( mimeString.contains("application")) {
         if (mimeString.contains("application/search")) {
@@ -742,8 +773,6 @@ UBFeatureElementType UBFeaturesController::fileTypeFromUrl(const QString &path)
         } else {
             fileType = FEATURE_INTERACTIVE;
         }
-    } else if ( path.contains("uniboardTool://")) {
-		fileType = FEATURE_INTERNAL;
     } else if (mimeString.contains("audio")) {
         fileType = FEATURE_AUDIO;
     } else if (mimeString.contains("video")) {

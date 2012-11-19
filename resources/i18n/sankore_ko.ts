@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="ko_KR" sourcelanguage="en_US">
 <context>
     <name>BlackoutWidget</name>
     <message>
@@ -769,59 +769,59 @@
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Quit Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré 종료</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré 편집기</translation>
     </message>
     <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré 위젯 편집기 표시</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré 숨기기</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré Application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré 응용 프로그램 숨기기</translation>
     </message>
     <message>
         <source>Import Uniboard Documents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">유니보드 문서 가져오기</translation>
     </message>
     <message>
         <source>Import old Sankore or Uniboard documents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">기존 Sankore 또는 유니보드 문서 가져오기</translation>
     </message>
     <message>
         <source>Group items</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">항목 그룹화</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">재생</translation>
     </message>
     <message>
         <source>Interact with items</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">항목과 상호 작용</translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">배경 지우기</translation>
     </message>
     <message>
         <source>Remove the backgound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">배경 제거</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">그룹화</translation>
     </message>
 </context>
 <context>
@@ -866,11 +866,11 @@
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">요소 ID = </translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">대상 형식으로 지원되지 않는 콘텐츠입니다.</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -878,7 +878,7 @@
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">선택한 문서 &apos;%0&apos;에서 1페이지를 제거하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -943,23 +943,23 @@
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">문서에서 %1페이지 삭제</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1페이지 삭제됨</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">파일 추가 작업 실패: 파일을 복사하는 도중 오류 발생</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">그룹화</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">그룹 해제</translation>
     </message>
 </context>
 <context>
@@ -970,7 +970,7 @@
     </message>
     <message>
         <source>CapturedImage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">캡처한 이미지</translation>
     </message>
 </context>
 <context>
@@ -1020,7 +1020,7 @@
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankore 표시</translation>
     </message>
 </context>
 <context>
@@ -1144,16 +1144,16 @@
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>선택한 문서 &apos;%1&apos;에서 %n페이지를 제거하시겠습니까?</numerusform>
         </translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">제목 페이지</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">폴더에 이미지 파일이 없습니다</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
@@ -1188,7 +1188,7 @@
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1/%2페이지 삽입 중</translation>
     </message>
     <message>
         <source>Import successful.</source>
@@ -1196,11 +1196,11 @@
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 파일 가져오기 완료.</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 파일 가져오는 중</translation>
     </message>
 </context>
 <context>
@@ -1211,7 +1211,7 @@
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">제목 페이지</translation>
     </message>
 </context>
 <context>
@@ -1258,7 +1258,10 @@
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform variants="yes">
+                <lengthvariant>%1 페이지 복사됨</lengthvariant>
+                <lengthvariant></lengthvariant>
+            </numerusform>
         </translation>
     </message>
 </context>
@@ -1266,7 +1269,7 @@
     <name>UBDownloadWidget</name>
     <message>
         <source>Downloading files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">파일 다운로드 중</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1277,18 +1280,18 @@
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">내보내는 도중 경고가 나타났습니다</translation>
     </message>
 </context>
 <context>
     <name>UBExportCFF</name>
     <message>
         <source>Export to IWB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IWB로 내보내기</translation>
     </message>
     <message>
         <source>Export as IWB File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IWB 파일로 내보내기</translation>
     </message>
     <message>
         <source>Exporting document...</source>
@@ -1450,7 +1453,7 @@
     </message>
     <message>
         <source>Rescan file system</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">파일 시스템 다시 스캔</translation>
     </message>
 </context>
 <context>
@@ -1489,11 +1492,11 @@
     </message>
     <message>
         <source>Favorites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">즐겨찾기</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">웹 검색</translation>
     </message>
     <message>
         <source>Trash</source>
@@ -1504,7 +1507,7 @@
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">적용</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1512,14 +1515,14 @@
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">새 폴더 이름 입력</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">불러오는 중</translation>
     </message>
 </context>
 <context>
@@ -1563,7 +1566,7 @@
     </message>
     <message>
         <source>Editable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">편집 가능</translation>
     </message>
 </context>
 <context>
@@ -1630,7 +1633,7 @@
     </message>
     <message>
         <source>Open-Sankore (*.ubz)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankore(*.ubz)</translation>
     </message>
 </context>
 <context>
@@ -1677,7 +1680,7 @@
     <name>UBKeyboardPalette</name>
     <message>
         <source>Enter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">입력</translation>
     </message>
 </context>
 <context>
@@ -1756,23 +1759,23 @@ Do you want to ignore these errors for this host?</source>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">영어</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">러시아어</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">독일어</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">프랑스어</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">스위스 프랑스어</translation>
     </message>
 </context>
 <context>
@@ -1791,7 +1794,7 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>on your desktop ...</source>
-        <translation>바탕 화면에</translation>
+        <translation type="unfinished">바탕 화면에 ...</translation>
     </message>
     <message>
         <source>in folder %1</source>
@@ -1842,7 +1845,7 @@ Do you want to ignore these errors for this host?</source>
     <name>UBPreferencesController</name>
     <message>
         <source>version: </source>
-        <translation>버전:</translation>
+        <translation type="unfinished">버전: </translation>
     </message>
     <message>
         <source>Marker is pressure sensitive</source>
@@ -1894,33 +1897,33 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">교사</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">학생</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 작업 입력 ...</translation>
     </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>
     <message>
         <source>drop media here ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 미디어 놓기 ...</translation>
     </message>
     <message>
         <source>Type title here...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 제목 입력...</translation>
     </message>
 </context>
 <context>
     <name>UBTGUrlWidget</name>
     <message>
         <source>Insert link title here...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 링크 제목 삽입...</translation>
     </message>
 </context>
 <context>
@@ -1934,138 +1937,140 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 제목 입력 ...</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 주석 입력 ...</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">작업 추가</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">미디어 추가</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">링크 추가</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">페이지: %0</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 세션 제목 입력 ...</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저자</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 저자 입력 ...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">목표</translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 목표 입력...</translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">리소스 인덱싱</translation>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">키워드:</translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">여기에 키워드 입력 ...</translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">레벨:</translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">주제:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">유형:</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">라이선스</translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저작자 표시 CC BY</translation>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저작자 표시-NoDerivs CC BY-ND</translation>
     </message>
     <message>
         <source>Attribution-ShareAlike CC BY-SA</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저작자 표시-ShareAlike CC BY-SA</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial CC BY-NC</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저작자 표시-NonCommercial CC BY-NC</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저작자 표시-NonCommercial-NoDerivs CC BY-NC-ND</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저작자 표시-NonCommercial-ShareAlike CC BY-NC-SA</translation>
     </message>
     <message>
         <source>Public domain</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">공용 도메인</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저작권</translation>
     </message>
     <message>
         <source>Created the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">만든 날짜:
+</translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">업데이트한 날짜:
+</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">제목 페이지</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">페이지: %0</translation>
     </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
     <message>
         <source>Generating preview thumbnails ...</source>
-        <translation>미리보기 썸네일 생성 중 ...</translation>
+        <translation type="unfinished">미리보기 썸네일 생성 중 ...</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
@@ -2104,7 +2109,7 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Aristo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aristo</translation>
     </message>
 </context>
 <context>
@@ -2130,7 +2135,7 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Backup path: </source>
-        <translation>백업 경로:</translation>
+        <translation type="unfinished">백업 경로: </translation>
     </message>
     <message>
         <source>Browse</source>
@@ -2168,7 +2173,7 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Remind me later</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">나중에 알림</translation>
     </message>
 </context>
 <context>
@@ -2208,11 +2213,11 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankore</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OpenSankore</translation>
     </message>
 </context>
 <context>
@@ -2289,11 +2294,11 @@ Please reboot the application to access the updated documents.</source>
     <name>UniboardSankoreTransition</name>
     <message>
         <source>Import old Uniboard/Sankore documents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">기존 유니보드/Sankore 문서 가져오기</translation>
     </message>
     <message>
         <source>There are no documents that should be imported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">가져와야 할 문서가 없습니다.</translation>
     </message>
 </context>
 <context>
@@ -2754,27 +2759,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open-Sankoré</translation>
     </message>
     <message>
         <source>Show internal web page content on secondary screen or projector</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">보조 화면 또는 프로젝터에 내부 웹 페이지 콘텐츠 표시</translation>
     </message>
     <message>
         <source>Multi display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">다중 디스플레이</translation>
     </message>
     <message>
         <source>Swap control display and view display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">컨트롤 디스플레이 스왑 및 디스플레이 보기</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">모드</translation>
     </message>
     <message>
         <source>Mode to start in:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">시작할 모드:</translation>
     </message>
     <message>
         <source>Board</source>
@@ -2782,27 +2787,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">바탕 화면</translation>
     </message>
     <message>
         <source>Proxy User:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">프록시 사용자:</translation>
     </message>
     <message>
         <source>Pass:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">패스:</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Planète Sankoré ID</translation>
     </message>
     <message>
         <source>User:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">사용자:</translation>
     </message>
     <message>
         <source>Pass: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">패스:</translation>
     </message>
     <message>
         <source>                  GNU LIBRARY GENERAL PUBLIC LICENSE
@@ -3243,11 +3248,12 @@ DAMAGES.
 
                      END OF TERMS AND CONDITIONS
 </source>
+        <translatorcomment>Translation needed</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Credits</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

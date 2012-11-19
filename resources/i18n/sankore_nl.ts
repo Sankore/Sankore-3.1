@@ -101,7 +101,7 @@
     </message>
     <message>
         <source>Undo</source>
-        <translation>ongedaan maken</translation>
+        <translation>Ongedaan maken</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
@@ -141,7 +141,7 @@
     </message>
     <message>
         <source>Manage Documents</source>
-        <translation>Document updater</translation>
+        <translation>Document beheren</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
@@ -149,7 +149,7 @@
     </message>
     <message>
         <source>Web Browsing</source>
-        <translation>Web browsing</translation>
+        <translation>Web surfen</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
@@ -417,19 +417,19 @@
     </message>
     <message>
         <source>Wide Size (16/9)</source>
-        <translation>Brede schermafmeting</translation>
+        <translation>Brede schermafmeting(16/9)</translation>
     </message>
     <message>
         <source>Use Document Wide Size (16/9)</source>
-        <translation>Document breedschermafmeting gebruiken</translation>
+        <translation>Document breedschermafmeting gebruiken(16/9)</translation>
     </message>
     <message>
         <source>Regular Size (4/3)</source>
-        <translation>Standaard schermafmeting</translation>
+        <translation>Standaard schermafmeting(4/3)</translation>
     </message>
     <message>
         <source>Use Document Regular Size (4/3)</source>
-        <translation>Document op standaard schermafmeting  gebruiken</translation>
+        <translation>Document op standaard schermafmeting gebruiken(4/3)</translation>
     </message>
     <message>
         <source>Custom Size</source>

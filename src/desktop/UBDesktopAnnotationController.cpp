@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include <QDesktopWidget>
 
@@ -54,7 +62,7 @@ UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UB
         , mDesktopMarkerPalette(NULL)
         , mDesktopEraserPalette(NULL)
         , mRightPalette(rightPalette)
-        , mWindowPositionInitialized(0)
+        , mWindowPositionInitialized(false)
         , mIsFullyTransparent(false)
         , mDesktopToolsPalettePositioned(false)
         , mPendingPenButtonPressed(false)
@@ -102,13 +110,9 @@ UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UB
     }
 
     connect(mDesktopPalette, SIGNAL(uniboardClick()), this, SLOT(goToUniboard()));
-    connect(mDesktopPalette, SIGNAL(uniboardClick()), this, SLOT(onToolClicked()));
     connect(mDesktopPalette, SIGNAL(customClick()), this, SLOT(customCapture()));
-    connect(mDesktopPalette, SIGNAL(customClick()), this, SLOT(onToolClicked()));
     connect(mDesktopPalette, SIGNAL(windowClick()), this, SLOT(windowCapture()));
-    connect(mDesktopPalette, SIGNAL(windowClick()), this, SLOT(onToolClicked()));
     connect(mDesktopPalette, SIGNAL(screenClick()), this, SLOT(screenCapture()));
-    connect(mDesktopPalette, SIGNAL(screenClick()), this, SLOT(onToolClicked()));
     connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered()), this, SLOT(onToolClicked()));
     connect(UBApplication::mainWindow->actionSelector, SIGNAL(triggered()), this, SLOT(onToolClicked()));
     connect(mDesktopPalette, SIGNAL(maximized()), this, SLOT(onDesktopPaletteMaximized()));
@@ -153,6 +157,7 @@ UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UB
 #ifdef Q_WS_X11
     connect(mDesktopPalette, SIGNAL(moving()), this, SLOT(refreshMask()));
     connect(UBApplication::boardController->paletteManager()->rightPalette(), SIGNAL(resized()), this, SLOT(refreshMask()));
+    connect(UBApplication::boardController->paletteManager()->addItemPalette(), SIGNAL(closed()), this, SLOT(refreshMask()));
 #endif
     onDesktopPaletteMaximized();
 
@@ -283,6 +288,7 @@ void UBDesktopAnnotationController::showWindow()
         mDesktopPalette->move(5, desktopRect.top() + 150);
 
         mWindowPositionInitialized = true;
+        mDesktopPalette->maximizeMe();
     }
 
     updateBackground();
@@ -291,8 +297,12 @@ void UBDesktopAnnotationController::showWindow()
 
     UBDrawingController::drawingController()->setStylusTool(mDesktopStylusTool);
 
+#ifndef Q_WS_X11
+    mTransparentDrawingView->showFullScreen();
+#else
+    // this is necessary to avoid unity to hide the panels
     mTransparentDrawingView->show();
-
+#endif
     UBPlatformUtils::setDesktopMode(true);
 
     mDesktopPalette->appear();
@@ -384,7 +394,6 @@ void UBDesktopAnnotationController::customCapture()
 
     mDesktopPalette->disappearForCapture();
     UBCustomCaptureWindow customCaptureWindow(mDesktopPalette);
-
     // need to show the window before execute it to avoid some glitch on windows.
 
 #ifndef Q_WS_WIN // Working only without this call on win32 desktop mode
@@ -436,7 +445,7 @@ void UBDesktopAnnotationController::windowCapture()
 
 void UBDesktopAnnotationController::screenCapture()
 {
-	onToolClicked();
+    onToolClicked();
     mIsFullyTransparent = true;
     updateBackground();
 
@@ -711,7 +720,6 @@ void UBDesktopAnnotationController::switchCursor(const int tool)
  */
 void UBDesktopAnnotationController::onDesktopPaletteMaximized()
 {
-
     // Pen
     UBActionPaletteButton* pPenButton = mDesktopPalette->getButtonFromAction(UBApplication::mainWindow->actionPen);
     if(NULL != pPenButton)
@@ -858,6 +866,16 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
             p.drawRect(tabsPalette);
         }
 
+#ifdef Q_WS_X11
+        //Rquiered only for compiz wm
+        //TODO. Window manager detection screen
+
+        if (UBApplication::boardController->paletteManager()->addItemPalette()->isVisible()) {
+            p.drawRect(UBApplication::boardController->paletteManager()->addItemPalette()->geometry());
+        }
+
+#endif
+
         p.end();
 
         // Then we add the annotations. We create another painter because we need to
@@ -902,19 +920,22 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
 
 void UBDesktopAnnotationController::refreshMask()
 {
-    if(mIsFullyTransparent
-            || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector
-            //Needed to work correctly when another actions on stylus are checked
-            || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Eraser
-            || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Pointer
-            || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Pen
-            || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Marker)
-    {
-        updateMask(true);
+    if (mTransparentDrawingScene && mTransparentDrawingView->isVisible()) {
+        if(mIsFullyTransparent
+                || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector
+                //Needed to work correctly when another actions on stylus are checked
+                || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Eraser
+                || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Pointer
+                || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Pen
+                || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Marker)
+        {
+            updateMask(true);
+        }
     }
 }
 
-void UBDesktopAnnotationController::onToolClicked(){
+void UBDesktopAnnotationController::onToolClicked()
+{
 	mDesktopEraserPalette->hide();
 	mDesktopMarkerPalette->hide();
 	mDesktopPenPalette->hide();

@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include <QtGui>
 #include <QtSvg>
@@ -101,10 +109,8 @@ void DelegateButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
     if (timeto < UBSettings::longClickInterval) {
         emit clicked();
-        qDebug() << "clicked";
     } else {
         emit longClicked();
-        qDebug() << "longClicked";
     }
 
     event->setAccepted(!mIsTransparentToMouseEvent);
@@ -118,7 +124,7 @@ void DelegateButton::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 
     if (mIsPressed && mShowProgressIndicator) {
         QPen pen;
-        pen.setBrush(Qt::darkRed);
+        pen.setBrush(Qt::white);
         pen.setWidth(3);
         painter->save();
 
@@ -146,7 +152,7 @@ void DelegateButton::startShowProgress()
     }
 }
 
-UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar)
+UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar, bool showGoContentButton)
     : QObject(parent)
     , mDelegated(pDelegated)
     , mDeleteButton(NULL)
@@ -166,6 +172,7 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mMimeData(NULL)
     , mFlippable(false)
     , mToolBarUsed(useToolBar)
+    , mShowGoContentButton(showGoContentButton)
 {
     connect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
 }
@@ -552,10 +559,8 @@ void UBGraphicsItemDelegate::showHide(bool show)
 }
 
 
-void UBGraphicsItemDelegate::gotoContentSource(bool checked)
+void UBGraphicsItemDelegate::gotoContentSource()
 {
-    Q_UNUSED(checked)
-
     UBItem* item = dynamic_cast<UBItem*>(mDelegated);
 
     if(item && !item->sourceUrl().isEmpty())
@@ -627,12 +632,14 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
     showIcon.addPixmap(QPixmap(":/images/eyeClosed.svg"), QIcon::Normal, QIcon::Off);
     mShowOnDisplayAction->setIcon(showIcon);
 
-    mGotoContentSourceAction = menu->addAction(tr("Go to Content Source"), this, SLOT(gotoContentSource(bool)));
+    if (mShowGoContentButton)
+    {
+        mGotoContentSourceAction = menu->addAction(tr("Go to Content Source"), this, SLOT(gotoContentSource()));
 
-    QIcon sourceIcon;
-    sourceIcon.addPixmap(QPixmap(":/images/toolbar/internet.png"), QIcon::Normal, QIcon::On);
-    mGotoContentSourceAction->setIcon(sourceIcon);
-
+        QIcon sourceIcon;
+        sourceIcon.addPixmap(QPixmap(":/images/toolbar/internet.png"), QIcon::Normal, QIcon::On);
+        mGotoContentSourceAction->setIcon(sourceIcon);
+    }
 }
 
 void UBGraphicsItemDelegate::updateMenuActionState()
