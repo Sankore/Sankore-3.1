@@ -1,7 +1,7 @@
 TARGET = "Open-Sankore"
 TEMPLATE = app
 
-THIRD_PARTY_PATH=../Sankore-ThirdParty
+
 
 CONFIG -= flat
 CONFIG += debug_and_release \
@@ -9,6 +9,7 @@ CONFIG += debug_and_release \
 
 CORE_ROOT = .
 CORE_SRC = $$CORE_ROOT/src
+THIRD_PARTY_PATH=$$CORE_SRC/../../Sankore-ThirdParty
 
 VERSION_MAJ = 2
 VERSION_MIN = 00 
