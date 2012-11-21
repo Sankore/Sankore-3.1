@@ -461,6 +461,7 @@ void UBWebController::setupPalettes()
 
         connect(mMainWindow->actionWebShowHideOnDisplay, SIGNAL(toggled(bool)), this, SLOT(toogleMirroring(bool)));
         connect(mMainWindow->actionWebTrap, SIGNAL(toggled(bool)), this, SLOT(toggleWebTrap(bool)));
+        connect(mMainWindow->actionWebTrapContent, SIGNAL(triggered()), this, SLOT(webTrapContent()));
 
         (*mToolsCurrentPalette)->hide();
         (*mToolsCurrentPalette)->adjustSizeAndPosition();
@@ -485,6 +486,11 @@ void UBWebController::toggleWebTrap(bool checked)
     {
         (*mCurrentWebBrowser)->currentTabWebView()->setIsTrapping(checked);
     }
+}
+
+void UBWebController::webTrapContent()
+{
+    mTrapFlashController->showTrapContent();
 }
 
 void UBWebController::toggleWebToolsPalette(bool checked)

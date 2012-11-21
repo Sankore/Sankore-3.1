@@ -26,6 +26,7 @@
 
 #include <QtGui>
 #include "UBWebKitUtils.h"
+#include "WBTrapWebPageContent.h"
 
 namespace Ui
 {
@@ -42,6 +43,9 @@ class UBTrapFlashController : public QObject
 
         void showTrapFlash();
         void hideTrapFlash();
+
+        void showTrapContent();
+        void hideTrapContent();
 
     public slots:
         void updateTrapFlashFromPage(QWebFrame* pCurrentWebFrame);
@@ -73,6 +77,8 @@ class UBTrapFlashController : public QObject
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
         QList<UBWebKitUtils::HtmlObject> mAvailableFlashes;
+
+        WBTrapWebPageContentWindow *mTrapWebContentDialog;
 };
 
 

@@ -143,6 +143,8 @@ class UBWebController : public QObject
 
         void toggleWebTrap(bool checked);
 
+        void webTrapContent();
+
         void onOEmbedParsed(QVector<sOEmbedContent> contents);
 //		void showKeyboard(bool checked);
 

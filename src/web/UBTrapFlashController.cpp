@@ -50,6 +50,7 @@ UBTrapFlashController::UBTrapFlashController(QWidget* parent)
     , mTrapFlashDialog(0)
     , mParentWidget(parent)
     , mCurrentWebFrame(0)
+    , mTrapWebContentDialog(NULL)
 {
     // NOOP
 }
@@ -134,6 +135,22 @@ void UBTrapFlashController::hideTrapFlash()
     {
         mTrapFlashDialog->hide();
     }
+}
+
+
+void UBTrapFlashController::showTrapContent()
+{
+    if (!mTrapWebContentDialog)
+        mTrapWebContentDialog = new WBTrapWebPageContentWindow(mParentWidget);
+
+    mTrapWebContentDialog->show();        
+
+
+}
+void UBTrapFlashController::hideTrapContent()
+{
+    if (mTrapWebContentDialog)
+        mTrapWebContentDialog->hide();
 }
 
 
