@@ -245,6 +245,8 @@ class UBSettings : public QObject
 
         UBSetting* appUseMultiscreen;
 
+        UBSetting* appStartupHintsEnabled;
+
         UBSetting* boardPenFineWidth;
         UBSetting* boardPenMediumWidth;
         UBSetting* boardPenStrongWidth;

@@ -48,6 +48,7 @@ class UBKeyboardPalette;
 class UBMainWindow;
 class UBApplicationController;
 class UBDockTeacherGuideWidget;
+class UBStartupHintsPalette;
 
 // Uncomment this to use old-styles lib paletter
 // #define USE_WEB_WIDGET
@@ -112,6 +113,7 @@ class UBBoardPaletteManager : public QObject
         UBStylusPalette *mStylusPalette;
 
         UBZoomPalette *mZoomPalette;
+        UBStartupHintsPalette* mTipPalette;
 
         /** The left dock palette */
         UBLeftPalette* mLeftPalette;

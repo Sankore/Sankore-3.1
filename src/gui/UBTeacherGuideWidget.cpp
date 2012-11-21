@@ -1288,4 +1288,3 @@ bool UBTeacherGuideWidget::isModified()
     else
         return mpEditionWidget->isModified();
 }
-

@@ -235,6 +235,8 @@ void UBSettings::init()
     appLastSessionPageIndex = new UBSetting(this, "App", "LastSessionPageIndex", 0);
     appUseMultiscreen = new UBSetting(this, "App", "UseMusliscreenMode", true);
 
+    appStartupHintsEnabled = new UBSetting(this,"App","EnableStartupHints",true);
+
     appStartMode = new UBSetting(this, "App", "StartMode", "");
 
     featureSliderPosition = new UBSetting(this, "Board", "FeatureSliderPosition", 40);

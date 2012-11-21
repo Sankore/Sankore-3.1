@@ -41,6 +41,7 @@
 #include "gui/UBActionPalette.h"
 #include "gui/UBFavoriteToolPalette.h"
 #include "gui/UBDockTeacherGuideWidget.h"
+#include "gui/UBStartupHintsPalette.h"
 
 
 #include "web/UBWebPage.h"
@@ -78,6 +79,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mBoardControler(pBoardController)
     , mStylusPalette(0)
     , mZoomPalette(0)
+    , mTipPalette(0)
     , mLeftPalette(NULL)
     , mRightPalette(NULL)
     , mBackgroundsPalette(0)
@@ -260,7 +262,7 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette->show(); // always show stylus palette at startup
 
     mZoomPalette = new UBZoomPalette(mContainer);
-
+    mTipPalette = new UBStartupHintsPalette(mContainer);
     mStylusPalette->stackUnder(mZoomPalette);
 
     QList<QAction*> backgroundsActions;
