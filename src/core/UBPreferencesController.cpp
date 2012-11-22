@@ -273,7 +273,6 @@ void UBPreferencesController::init()
     list.sort();
     mPreferencesUI->languageComboBox->addItems(list);
     QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
-    qDebug() << "Current iso language " << currentIsoLanguage;
     if(currentIsoLanguage.length()){
         QString language;
         foreach(QString eachKey, mIsoCodeAndLanguage.keys())
@@ -285,14 +284,16 @@ void UBPreferencesController::init()
         mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf("Default"));
 
     connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
+    connect(mPreferencesUI->quitOpenSankorePushButton,SIGNAL(clicked()),UBApplication::app(),SLOT(closing()));
+    mPreferencesUI->quitOpenSankorePushButton->setDisabled(true);
 
 }
 
 void UBPreferencesController::onLanguageChanged(QString currentItem)
 {
     QString isoCode = mIsoCodeAndLanguage[currentItem] == "NO_VALUE" ? "" : mIsoCodeAndLanguage[currentItem];
-    qDebug() << "isoCode " << isoCode;
     UBSettings::settings()->appPreferredLanguage->setString(isoCode);
+    mPreferencesUI->quitOpenSankorePushButton->setEnabled(true);
 }
 
 void UBPreferencesController::onCommunityUsernameChanged()
