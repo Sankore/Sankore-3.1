@@ -140,7 +140,6 @@ void UBPreferencesController::wire()
     connect(mPreferencesUI->horizontalChoice, SIGNAL(clicked(bool)), this, SLOT(toolbarOrientationHorizontal(bool)));
     connect(mPreferencesUI->verticalChoice, SIGNAL(clicked(bool)), this, SLOT(toolbarOrientationVertical(bool)));
     connect(mPreferencesUI->toolbarDisplayTextCheckBox, SIGNAL(clicked(bool)), settings->appToolBarDisplayText, SLOT(setBool(bool)));
-    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
 
     // pen
     QList<QColor> penLightBackgroundColors = settings->boardPenLightBackgroundColors->colors();
@@ -274,16 +273,25 @@ void UBPreferencesController::init()
     list.sort();
     mPreferencesUI->languageComboBox->addItems(list);
     QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
-    if(currentIsoLanguage.length())
-        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf(currentIsoLanguage));
+    qDebug() << "Current iso language " << currentIsoLanguage;
+    if(currentIsoLanguage.length()){
+        QString language;
+        foreach(QString eachKey, mIsoCodeAndLanguage.keys())
+            if(mIsoCodeAndLanguage[eachKey] == currentIsoLanguage)
+                language = eachKey;
+        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf(language));
+    }
     else
-        mPreferencesUI->languageComboBox->setCurrentIndex(0);
+        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf("Default"));
+
+    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
 
 }
 
 void UBPreferencesController::onLanguageChanged(QString currentItem)
 {
     QString isoCode = mIsoCodeAndLanguage[currentItem] == "NO_VALUE" ? "" : mIsoCodeAndLanguage[currentItem];
+    qDebug() << "isoCode " << isoCode;
     UBSettings::settings()->appPreferredLanguage->setString(isoCode);
 }
 
@@ -374,6 +382,7 @@ void UBPreferencesController::defaultSettings()
         mPreferencesUI->verticalChoice->setChecked(settings->appToolBarOrientationVertical->reset().toBool());
         mPreferencesUI->horizontalChoice->setChecked(!settings->appToolBarOrientationVertical->reset().toBool());
         mPreferencesUI->startModeComboBox->setCurrentIndex(0);
+        onLanguageChanged("Default");
     }
     else if (mPreferencesUI->mainTabWidget->currentWidget() == mPreferencesUI->penTab)
     {
