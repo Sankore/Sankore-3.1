@@ -140,6 +140,7 @@ void UBPreferencesController::wire()
     connect(mPreferencesUI->horizontalChoice, SIGNAL(clicked(bool)), this, SLOT(toolbarOrientationHorizontal(bool)));
     connect(mPreferencesUI->verticalChoice, SIGNAL(clicked(bool)), this, SLOT(toolbarOrientationVertical(bool)));
     connect(mPreferencesUI->toolbarDisplayTextCheckBox, SIGNAL(clicked(bool)), settings->appToolBarDisplayText, SLOT(setBool(bool)));
+    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
 
     // pen
     QList<QColor> penLightBackgroundColors = settings->boardPenLightBackgroundColors->colors();
@@ -237,6 +238,53 @@ void UBPreferencesController::init()
     mPreferencesUI->PSCredentialsPersistenceCheckBox->setChecked(settings->getCommunityDataPersistence());
     persistanceCheckboxUpdate();
 
+    mIsoCodeAndLanguage.insert(tr("Default"),"NO_VALUE");
+    mIsoCodeAndLanguage.insert(tr("Arabic"),"ar");
+    mIsoCodeAndLanguage.insert(tr("Bulgarian"),"bg");
+    mIsoCodeAndLanguage.insert(tr("Catalan"),"ca");
+    mIsoCodeAndLanguage.insert(tr("Czech"),"cs");
+    mIsoCodeAndLanguage.insert(tr("Danish"),"da");
+    mIsoCodeAndLanguage.insert(tr("German"),"de");
+    mIsoCodeAndLanguage.insert(tr("Greek"),"el");
+    mIsoCodeAndLanguage.insert(tr("English"),"en");
+    mIsoCodeAndLanguage.insert(tr("English UK"),"en_UK");
+    mIsoCodeAndLanguage.insert(tr("Spanish"),"es");
+    mIsoCodeAndLanguage.insert(tr("French"),"fr");
+    mIsoCodeAndLanguage.insert(tr("Swiss French"),"fr_CH");
+    mIsoCodeAndLanguage.insert(tr("Italian"),"it");
+    mIsoCodeAndLanguage.insert(tr("Hebrew"),"iw");
+    mIsoCodeAndLanguage.insert(tr("Japanese"),"ja");
+    mIsoCodeAndLanguage.insert(tr("Korean"),"ko");
+    mIsoCodeAndLanguage.insert(tr("Malagasy"),"mg");
+    mIsoCodeAndLanguage.insert(tr("Norwegian"),"nb");
+    mIsoCodeAndLanguage.insert(tr("Dutch"),"nl");
+    mIsoCodeAndLanguage.insert(tr("Polish"),"pl");
+    mIsoCodeAndLanguage.insert(tr("Romansh"),"rm");
+    mIsoCodeAndLanguage.insert(tr("Romanian"),"ro");
+    mIsoCodeAndLanguage.insert(tr("Russian"),"ru");
+    mIsoCodeAndLanguage.insert(tr("Slovak"),"sk");
+    mIsoCodeAndLanguage.insert(tr("Swedish"),"sv");
+    mIsoCodeAndLanguage.insert(tr("Turkish"),"tr");
+    mIsoCodeAndLanguage.insert(tr("Chinese"),"zh");
+    mIsoCodeAndLanguage.insert(tr("Chinese Simplified"),"zh_CN");
+    mIsoCodeAndLanguage.insert(tr("Chinese Traditional"),"zh_TN");
+
+    QStringList list;
+    list << mIsoCodeAndLanguage.keys();
+    list.sort();
+    mPreferencesUI->languageComboBox->addItems(list);
+    QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
+    if(currentIsoLanguage.length())
+        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf(currentIsoLanguage));
+    else
+        mPreferencesUI->languageComboBox->setCurrentIndex(0);
+
+}
+
+void UBPreferencesController::onLanguageChanged(QString currentItem)
+{
+    QString isoCode = mIsoCodeAndLanguage[currentItem] == "NO_VALUE" ? "" : mIsoCodeAndLanguage[currentItem];
+    UBSettings::settings()->appPreferredLanguage->setString(isoCode);
 }
 
 void UBPreferencesController::onCommunityUsernameChanged()

@@ -40,6 +40,7 @@ class UBSettings : public QObject
 
         static UBSettings* settings();
         static void destroy();
+        void init();
 
     private:
 
@@ -117,8 +118,6 @@ class UBSettings : public QObject
 
         int libraryIconSize();
         void setLibraryIconsize(const int& size);
-
-        void init();
 
         //user directories
         static QString userDataDirectory();

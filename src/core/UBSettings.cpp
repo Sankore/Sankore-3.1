@@ -165,7 +165,10 @@ UBSettings::UBSettings(QObject *parent)
 
     mUserSettings = new QSettings(userSettingsFile, QSettings::IniFormat, parent);
 
-    init();
+    appPreferredLanguage = new UBSetting(this,"App","PreferredLanguage", "");
+
+
+//    init();
 }
 
 
@@ -219,7 +222,6 @@ void UBSettings::init()
     appEnableAutomaticSoftwareUpdates = new UBSetting(this, "App", "EnableAutomaticSoftwareUpdates", true);
     appEnableSoftwareUpdates = new UBSetting(this, "App", "EnableSoftwareUpdates", true);
     appToolBarOrientationVertical = new UBSetting(this, "App", "ToolBarOrientationVertical", false);
-    appPreferredLanguage = new UBSetting(this,"App","PreferredLanguage", "");
 
     rightLibPaletteBoardModeWidth = new UBSetting(this, "Board", "RightLibPaletteBoardModeWidth", 270);
     rightLibPaletteBoardModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteBoardModeIsCollapsed",false);

@@ -228,14 +228,11 @@ void UBApplication::setupTranslators(QStringList args)
     QString forcedLanguage("");
     if(args.contains("-lang"))
         forcedLanguage=args.at(args.indexOf("-lang") + 1);
-// TODO claudio: this has been commented because some of the translation seem to be loaded at this time
-//               especially tools name. This is a workaround and we have to be able to load settings without
-//               impacting the translations
-//    else{
-//        QString setLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
-//        if(!setLanguage.isEmpty())
-//            forcedLanguage = setLanguage;
-//    }
+    else{
+        QString setLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
+        if(!setLanguage.isEmpty())
+            forcedLanguage = setLanguage;
+    }
 
     QString language("");
 
@@ -276,6 +273,8 @@ void UBApplication::setupTranslators(QStringList args)
 
     QLocale::setDefault(QLocale(language));
     qDebug() << "Running application in:" << language;
+    //Claudio: hack to avoid the lost of translations.
+    UBSettings::settings()->init();
 }
 
 int UBApplication::exec(const QString& pFileToImport)

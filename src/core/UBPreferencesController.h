@@ -74,6 +74,8 @@ class UBPreferencesController : public QObject
         void wire();
         void init();
 
+        QMap<QString,QString>mIsoCodeAndLanguage;
+
         UBPreferencesDialog* mPreferencesWindow;
         Ui::preferencesDialog* mPreferencesUI;
         UBBrushPropertiesFrame* mPenProperties;
@@ -92,6 +94,7 @@ class UBPreferencesController : public QObject
         void onCommunityUsernameChanged();
         void onCommunityPasswordChanged();
         void onCommunityPersistenceChanged();
+        void onLanguageChanged(QString currentItem);
 
     private slots:
         void adjustScreens(int screen);
