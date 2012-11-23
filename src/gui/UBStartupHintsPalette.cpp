@@ -27,31 +27,39 @@
 #include <QMouseEvent>
 #include <QWebView>
 #include <QCheckBox>
-#include "core/UBSettings.h"
 #include "UBStartupHintsPalette.h"
+
+#include "globals/UBGlobals.h"
+#include "core/UBSettings.h"
 
 UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
     UBFloatingPalette(Qt::BottomRightCorner,parent)
 {
     if(UBSettings::settings()->appStartupHintsEnabled->get().toBool()){
         setFixedSize(320,240);
-        QVBoxLayout* layout = new QVBoxLayout(this);
-        layout->setContentsMargins(10,28,10,10);
-        setLayout(layout);
+        mLayout = new QVBoxLayout();
+        mLayout->setContentsMargins(10,28,10,10);
+        setLayout(mLayout);
         QWebView* webView = new QWebView(this);
         webView->setHtml("<html><page><h1>pippo</h1></page></html>");
-        layout->addWidget(webView);
-        QHBoxLayout* buttonLayout = new QHBoxLayout(this);
-        layout->addLayout(buttonLayout);
+        mLayout->addWidget(webView);
+        mButtonLayout = new QHBoxLayout();
+        mLayout->addLayout(mButtonLayout);
         mShowNextTime = new QCheckBox(tr("Visible next time"),this);
         mShowNextTime->setCheckState(Qt::Checked);
         connect(mShowNextTime,SIGNAL(stateChanged(int)),this,SLOT(onShowNextTimeStateChanged(int)));
-        buttonLayout->addStretch();
-        buttonLayout->addWidget(mShowNextTime);
+        mButtonLayout->addStretch();
+        mButtonLayout->addWidget(mShowNextTime);
         updatePosition();
     }
     else
         hide();
+}
+
+UBStartupHintsPalette::~UBStartupHintsPalette()
+{
+    DELETEPTR(mButtonLayout);
+    DELETEPTR(mLayout);
 }
 
 void UBStartupHintsPalette::updatePosition()

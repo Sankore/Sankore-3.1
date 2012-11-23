@@ -41,6 +41,8 @@ protected:
     void updateMaxWidth();
     void mouseMoveEvent(QMouseEvent *event);
     void resizeEvent(QResizeEvent *event);
+    void showEvent(QShowEvent* event);
+    void hideEvent(QHideEvent* event);
 
 };
 

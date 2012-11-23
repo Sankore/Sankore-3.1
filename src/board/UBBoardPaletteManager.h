@@ -26,7 +26,7 @@
 
 #include <QtGui>
 #include <QtWebKit>
- 
+
 #include "gui/UBLeftPalette.h"
 #include "gui/UBRightPalette.h"
 #include "gui/UBPageNavigationWidget.h"
@@ -86,7 +86,6 @@ class UBBoardPaletteManager : public QObject
 
     signals:
         void connectToDocController();
-        void signal_changeMode(eUBDockPaletteWidgetMode newMode);
 
     public slots:
 
@@ -145,11 +144,11 @@ class UBBoardPaletteManager : public QObject
 
         /** The page navigator widget */
         UBPageNavigationWidget* mpPageNavigWidget;
-        
+
         /** The cache properties widget */
         UBCachePropertiesWidget* mpCachePropWidget;
 
-		UBFeaturesWidget *mpFeaturesWidget;
+        UBFeaturesWidget *mpFeaturesWidget;
 
         /** The download widget */
         UBDockDownloadWidget* mpDownloadWidget;

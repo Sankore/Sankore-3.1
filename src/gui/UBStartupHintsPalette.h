@@ -25,6 +25,8 @@
 #define UBSTARTUPTIPSPALETTE_H
 
 class QCheckBox;
+class QVBoxLayout;
+class QHBoxLayout;
 
 #include "UBFloatingPalette.h"
 
@@ -33,9 +35,11 @@ class UBStartupHintsPalette : public UBFloatingPalette
     Q_OBJECT;
 public:
     UBStartupHintsPalette(QWidget *parent = 0);
-    
+    ~UBStartupHintsPalette();
+
+
 signals:
-    
+
 public slots:
 
 protected:
@@ -47,6 +51,8 @@ private:
     int border();
     void updatePosition();
     QCheckBox* mShowNextTime;
+    QVBoxLayout* mLayout;
+    QHBoxLayout* mButtonLayout;
 
 private slots:
     void onShowNextTimeStateChanged(int state);

@@ -65,9 +65,9 @@ class UBWebController : public QObject
 
         void show(WebInstance type = UBWebController::WebBrowser);
 
-        WBBrowserWindow* GetCurrentWebBrowser() 
-        { 
-            if( mCurrentWebBrowser != NULL ) return *mCurrentWebBrowser; 
+        WBBrowserWindow* GetCurrentWebBrowser()
+        {
+            if( mCurrentWebBrowser != NULL ) return *mCurrentWebBrowser;
             else return NULL;
         };
 
@@ -123,8 +123,6 @@ class UBWebController : public QObject
         UBTrapFlashController* mTrapFlashController;
         UBWebToolsPalette** mToolsCurrentPalette;
         UBWebToolsPalette* mToolsPaletteList[TotalNumberOfWebInstances];
-// 		UBKeyboardPalette** mKeyboardCurrentPalette;
-// 		UBKeyboardPalette* mKeyboardPaletteList[TotalNumberOfWebInstances];
 
         bool mToolsPalettePositionned;
         bool mToolsPalettePositionnedList[TotalNumberOfWebInstances];
@@ -144,7 +142,8 @@ class UBWebController : public QObject
         void toggleWebTrap(bool checked);
 
         void onOEmbedParsed(QVector<sOEmbedContent> contents);
-//		void showKeyboard(bool checked);
+
+        void onActionBookmark();
 
     signals:
         /**

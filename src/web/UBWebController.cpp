@@ -71,7 +71,7 @@ UBWebController::UBWebController(UBMainWindow* mainWindow)
     , mDownloadViewIsVisible(false)
 {
     connect(mMainWindow->actionWebTools, SIGNAL(toggled(bool)), this, SLOT(toggleWebToolsPalette(bool)));
-
+    connect(mMainWindow->actionBookmark, SIGNAL(triggered()), this, SLOT(onActionBookmark()));
     mStackedWidget = new QStackedWidget();
     mStackedWidget->addWidget(new QWidget(mStackedWidget));
     mStackedWidget->addWidget(new QWidget(mStackedWidget));
@@ -232,7 +232,7 @@ void UBWebController::tutorialWebInstance()
 
         }
         else
-        	(*mCurrentWebBrowser)->loadUrl(currentUrl);
+            (*mCurrentWebBrowser)->loadUrl(currentUrl);
 
         mStackedWidget->setCurrentIndex(Tutorial);
         UBApplication::applicationController->setMirrorSourceWidget((*mCurrentWebBrowser)->paintWidget());
@@ -793,6 +793,13 @@ void UBWebController::paste()
     }
 }
 
+
+void UBWebController::onActionBookmark()
+{
+    QString title = (*mCurrentWebBrowser)->currentTabWebView()->page()->mainFrame()->title();
+    qDebug() << "title " << title;
+    qDebug() << "url " << (*mCurrentWebBrowser)->currentTabWebView()->page()->mainFrame()->url();
+}
 
 void UBWebController::cut()
 {

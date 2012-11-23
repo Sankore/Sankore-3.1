@@ -105,8 +105,8 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
 UBBoardPaletteManager::~UBBoardPaletteManager()
 {
 
-// mAddedItemPalette is delete automatically because of is parent 
-// that changes depending on the mode 
+// mAddedItemPalette is delete automatically because of is parent
+// that changes depending on the mode
 
 // mMainWindow->centralWidget is the parent of mStylusPalette
 // do not delete this here.
@@ -767,11 +767,12 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
         case eUBDockPaletteWidget_WEB:
             {
                 mAddItemPalette->setParent(UBApplication::mainWindow);
+
+                mRightPalette->assignParent(UBApplication::webController->GetCurrentWebBrowser());
+                mRightPalette->setVisible(rightPaletteVisible);
+
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {
-//                    tmp variable?
-//                    WBBrowserWindow* brWnd = UBApplication::webController->GetCurrentWebBrowser();
-
                     if(mKeyboardPalette->m_isVisible)
                     {
                         mKeyboardPalette->hide();
@@ -832,8 +833,6 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
 
     if( !isInit )
         UBApplication::boardController->notifyPageChanged();
-
-    emit signal_changeMode(newMode);
 }
 
 void UBBoardPaletteManager::addItem(const QPixmap& pPixmap, const QPointF& pos,  qreal scaleFactor, const QUrl& sourceUrl)
