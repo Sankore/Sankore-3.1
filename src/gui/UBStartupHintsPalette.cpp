@@ -33,8 +33,9 @@
 #include "core/UBSettings.h"
 
 UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
-    UBFloatingPalette(Qt::BottomRightCorner,parent)
+    UBFloatingPalette(Qt::TopRightCorner,parent)
 {
+    setObjectName("UBStartupHintsPalette");
     if(UBSettings::settings()->appStartupHintsEnabled->get().toBool()){
         setFixedSize(320,240);
         mLayout = new QVBoxLayout();
@@ -98,6 +99,13 @@ void UBStartupHintsPalette::onShowNextTimeStateChanged(int state)
 {
     UBSettings::settings()->appStartupHintsEnabled->setBool(state == Qt::Checked);
 }
+
+void UBStartupHintsPalette::showEvent(QShowEvent *event)
+{
+    Q_UNUSED(event);
+    adjustSizeAndPosition();
+    move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);}
+
 
 int UBStartupHintsPalette::border()
 {
