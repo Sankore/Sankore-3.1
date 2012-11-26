@@ -139,12 +139,10 @@ bool UBRightPalette::switchMode(eUBDockPaletteWidgetMode mode)
 
 void UBRightPalette::showEvent(QShowEvent* event)
 {
-    qDebug() << "right palette show event";
     UBDockPalette::showEvent(event);
 }
 
 void UBRightPalette::hideEvent(QHideEvent* event)
 {
-    qDebug() << "right palette hide event";
     UBDockPalette::hideEvent(event);
 }

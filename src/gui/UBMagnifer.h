@@ -76,6 +76,9 @@ signals:
 public slots:
     void slot_refresh();
 
+private:
+    void calculateButtonsPositions();
+
 protected:
     void paintEvent(QPaintEvent *);
 
@@ -88,12 +91,17 @@ protected:
     bool mShouldMoveWidget;
     bool mShouldResizeWidget;
 
-
+    int m_iButtonInterval;
     QPixmap *sClosePixmap;
+    QRect sClosePixmapButtonRect;
     QPixmap *sIncreasePixmap;
+    QRect sIncreasePixmapButtonRect;
     QPixmap *sDecreasePixmap;
+    QRect sDecreasePixmapButtonRect;
     QPixmap *sChangeModePixmap;
+    QRect sChangeModePixmapButtonRect;
     QPixmap *mResizeItem;
+    QRect mResizeItemButtonRect;
 
     bool isCusrsorAlreadyStored;
     QCursor mOldCursor;

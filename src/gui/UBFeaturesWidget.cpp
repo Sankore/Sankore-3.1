@@ -173,6 +173,7 @@ void UBFeaturesWidget::currentSelected(const QModelIndex &current)
             QString url;
             QFile bookmarkFile(feature.getFullPath().toLocalFile());
             url = QString::fromUtf8(bookmarkFile.readAll());
+            qDebug() << url;
             UBApplication::webController->loadUrl(QUrl(url));
         }
         else{
