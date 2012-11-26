@@ -104,7 +104,8 @@ void UBStartupHintsPalette::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event);
     adjustSizeAndPosition();
-    move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);}
+    move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
+}
 
 
 int UBStartupHintsPalette::border()

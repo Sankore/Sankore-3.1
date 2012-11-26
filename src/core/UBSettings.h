@@ -122,6 +122,7 @@ class UBSettings : public QObject
         //user directories
         static QString userDataDirectory();
         static QString userDocumentDirectory();
+        static QString userBookmarkDirectory();
         static QString userFavoriteListFilePath();
         static QString userTrashDirPath();
         static QString userImageDirectory();

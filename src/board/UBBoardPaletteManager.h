@@ -84,6 +84,8 @@ class UBBoardPaletteManager : public QObject
         void startDownloads();
         void stopDownloads();
 
+        UBFeaturesWidget* featuresWidget() { return mpFeaturesWidget;}
+
     signals:
         void connectToDocController();
 

@@ -797,8 +797,10 @@ void UBWebController::paste()
 void UBWebController::onActionBookmark()
 {
     QString title = (*mCurrentWebBrowser)->currentTabWebView()->page()->mainFrame()->title();
-    qDebug() << "title " << title;
-    qDebug() << "url " << (*mCurrentWebBrowser)->currentTabWebView()->page()->mainFrame()->url();
+    QString url = (*mCurrentWebBrowser)->currentTabWebView()->page()->mainFrame()->url().toString();
+    if(title.isEmpty())
+        title = url;
+    UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(title, url);
 }
 
 void UBWebController::cut()

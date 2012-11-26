@@ -262,8 +262,9 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette->show(); // always show stylus palette at startup
 
     mZoomPalette = new UBZoomPalette(mContainer);
-    mTipPalette = new UBStartupHintsPalette(mContainer);
     mStylusPalette->stackUnder(mZoomPalette);
+
+    mTipPalette = new UBStartupHintsPalette(mContainer);
 
     QList<QAction*> backgroundsActions;
 

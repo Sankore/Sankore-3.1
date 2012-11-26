@@ -31,6 +31,7 @@
 #include "core/UBDownloadManager.h"
 #include "globals/UBGlobals.h"
 #include "board/UBBoardController.h"
+#include "web/UBWebController.h"
 
 const char *UBFeaturesWidget::objNamePathList = "PathList";
 const char *UBFeaturesWidget::objNameFeatureList = "FeatureList";
@@ -168,8 +169,16 @@ void UBFeaturesWidget::currentSelected(const QModelIndex &current)
         }
 
     } else {
-        centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturePropertiesList);
-        mActionBar->setCurrentState( IN_PROPERTIES );
+        if(feature.getType() == FEATURE_BOOKMARK){
+            QString url;
+            QFile bookmarkFile(feature.getFullPath().toLocalFile());
+            url = QString::fromUtf8(bookmarkFile.readAll());
+            UBApplication::webController->loadUrl(QUrl(url));
+        }
+        else{
+            centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturePropertiesList);
+            mActionBar->setCurrentState( IN_PROPERTIES );
+        }
     }
 
     mActionBar->cleanText();
@@ -423,6 +432,11 @@ QStringList UBFeaturesMimeData::formats() const
 void UBFeaturesWidget::importImage(const QImage &image, const QString &fileName)
 {
     controller->importImage(image, fileName);
+}
+
+void UBFeaturesWidget::createBookmark(QString& title, QString& urlString)
+{
+    controller->createBookmark(title,urlString);
 }
 
 UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
@@ -1398,9 +1412,9 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
         deleteItem(source);
     }
 
-// Commented because of crashes on mac. But works fine. It is not predictable behavior. 
+// Commented because of crashes on mac. But works fine. It is not predictable behavior.
 // Please uncomment it if model will not refreshes
-//   emit dataRestructured();. 
+//   emit dataRestructured();.
 }
 
 Qt::ItemFlags UBFeaturesModel::flags( const QModelIndex &index ) const
@@ -1496,7 +1510,7 @@ bool UBFeaturesPathProxyModel::filterAcceptsRow( int sourceRow, const QModelInde
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
     UBFeature feature = sourceModel()->data(index, Qt::UserRole + 1).value<UBFeature>();
-	
+
     return feature.isFolder() && path.startsWith( feature.getFullVirtualPath()) ;
 }
 

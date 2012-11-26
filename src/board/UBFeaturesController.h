@@ -65,6 +65,7 @@ enum UBFeatureElementType
     FEATURE_TRASH,
     FEATURE_FAVORITE,
     FEATURE_SEARCH,
+    FEATURE_BOOKMARK,
     FEATURE_INVALID
 };
 
@@ -246,11 +247,11 @@ friend class UBFeaturesWidget;
 Q_OBJECT
 
 public:
-	UBFeaturesController(QWidget *parentWidget);
+    UBFeaturesController(QWidget *parentWidget);
     virtual ~UBFeaturesController();
 
     QList <UBFeature>* getFeatures() const {return featuresList;}
-	
+
     void initHardcodedData();
     void loadHardcodedItemsToModel();
 
@@ -262,8 +263,8 @@ public:
 
     void addDownloadedFile( const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle );
 
-	UBFeature moveItemToFolder( const QUrl &url, const UBFeature &destination );
-	UBFeature copyItemToFolder( const QUrl &url, const UBFeature &destination );
+    UBFeature moveItemToFolder( const QUrl &url, const UBFeature &destination );
+    UBFeature copyItemToFolder( const QUrl &url, const UBFeature &destination );
     void moveExternalData(const QUrl &url, const UBFeature &destination);
 
     void rescanModel();
@@ -273,20 +274,21 @@ public:
     void searchStarted(const QString &pattern, QListView *pOnView);
     void refreshModels();
 
-	void deleteItem( const QUrl &url );
+    void deleteItem( const QUrl &url );
     void deleteItem(const UBFeature &pFeature);
-	bool isTrash( const QUrl &url );
+    bool isTrash( const QUrl &url );
     void moveToTrash(UBFeature feature, bool deleteManualy = false);
     void addToFavorite( const QUrl &path );
     void removeFromFavorite(const QUrl &path, bool deleteManualy = false);
     void importImage(const QImage &image, const QString &fileName = QString());
     void importImage( const QImage &image, const UBFeature &destination, const QString &fileName = QString() );
+    void createBookmark(const QString& fileName, const QString &urlString);
     bool newFolderAllowed() const {return currentElement.isFolder() && currentElement.testPermissions(UBFeature::WRITE_P);}
     QStringList getFileNamesInFolders();
 
     static UBFeatureElementType fileTypeFromUrl( const QString &path );
 
-	static QString fileNameFromUrl( const QUrl &url );
+    static QString fileNameFromUrl( const QUrl &url );
     static QImage getIcon( const QString &path, UBFeatureElementType pFType );
     static char featureTypeSplitter() {return ':';}
     static QString categoryNameForVirtualPath(const QString &str);
@@ -310,6 +312,7 @@ public:
     CategoryData webSearchData;
     CategoryData trashData;
     CategoryData webFolderData;
+    CategoryData bookmarkData;
 
     QList<CategoryData> topLevelCategoryData;
     QList<CategoryData> extentionPermissionsCategoryData;
@@ -343,18 +346,18 @@ private:
 private:
 
     static QImage createThumbnail(const QString &path);
-	//void addImageToCurrentPage( const QString &path );
-	void loadFavoriteList();
-	void saveFavoriteList();
+    //void addImageToCurrentPage( const QString &path );
+    void loadFavoriteList();
+    void saveFavoriteList();
     QString uniqNameForFeature(const UBFeature &feature, const QString &pName = "Imported", const QString &pExtention = "") const;
     QString adjustName(const QString &str);
 
     QList <UBFeature> *featuresList;
 
-	int mLastItemOffsetIndex;
-	UBFeature currentElement;
+    int mLastItemOffsetIndex;
+    UBFeature currentElement;
 
-	QSet <QUrl> *favoriteSet;
+    QSet <QUrl> *favoriteSet;
 
 public:
     UBFeature getDestinationFeatureForUrl( const QUrl &url );
