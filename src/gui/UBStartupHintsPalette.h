@@ -50,7 +50,6 @@ protected:
 private:
     void close();
     int border();
-    void updatePosition();
     QCheckBox* mShowNextTime;
     QVBoxLayout* mLayout;
     QHBoxLayout* mButtonLayout;

@@ -148,6 +148,7 @@ class UBSettings : public QObject
         QString applicationAudiosLibraryDirectory();
         QString applicationVideosLibraryDirectory();
         QString applicationAnimationsLibraryDirectory();
+        QString applicationStartupHintsDirectory();
 
         QNetworkProxy* httpProxy();
 

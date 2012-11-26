@@ -37,12 +37,13 @@ UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
 {
     setObjectName("UBStartupHintsPalette");
     if(UBSettings::settings()->appStartupHintsEnabled->get().toBool()){
-        setFixedSize(320,240);
+        setFixedSize(700,450);
         mLayout = new QVBoxLayout();
         mLayout->setContentsMargins(10,28,10,10);
         setLayout(mLayout);
+        QString url = UBSettings::settings()->applicationStartupHintsDirectory() + "/index.html";
         QWebView* webView = new QWebView(this);
-        webView->setHtml("<html><page><h1>pippo</h1></page></html>");
+        webView->setUrl(QUrl::fromLocalFile(url));
         mLayout->addWidget(webView);
         mButtonLayout = new QHBoxLayout();
         mLayout->addLayout(mButtonLayout);
@@ -51,7 +52,6 @@ UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
         connect(mShowNextTime,SIGNAL(stateChanged(int)),this,SLOT(onShowNextTimeStateChanged(int)));
         mButtonLayout->addStretch();
         mButtonLayout->addWidget(mShowNextTime);
-        updatePosition();
     }
     else
         hide();
@@ -61,11 +61,6 @@ UBStartupHintsPalette::~UBStartupHintsPalette()
 {
     DELETEPTR(mButtonLayout);
     DELETEPTR(mLayout);
-}
-
-void UBStartupHintsPalette::updatePosition()
-{
-    //TODO
 }
 
 void UBStartupHintsPalette::paintEvent(QPaintEvent *event)
