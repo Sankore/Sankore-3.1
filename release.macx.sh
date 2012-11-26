@@ -124,6 +124,7 @@ $LRELEASE $BASE_QT_TRANSLATIONS_DIRECTORY/translations.pro
 addQtTranslations
 
 cp -R resources/customizations $PRODUCT_DIR/Open-Sankore.app/Contents/Resources
+cp -R resources/startupHints $PRODUCT_DIR/Open-Sankore.app/Contents/Resources
 
 notify "Tagging ..."
 VERSION=`cat "$BUILD_DIR/version"`

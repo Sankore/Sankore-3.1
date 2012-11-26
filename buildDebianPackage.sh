@@ -196,6 +196,9 @@ cp -R $PLUGINS_PATH $PRODUCT_PATH/
 # copying customization
 cp -R resources/customizations $PRODUCT_PATH/
 
+# copying startup hints
+cp -R resources/startupHints $PRODUCT_PATH/
+
 if [ $STANDARD_QT_USED == false ]; then 
 #copying custom qt library
   mkdir -p $QT_LIBRARY_DEST_PATH
