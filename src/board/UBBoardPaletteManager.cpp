@@ -155,18 +155,9 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
 
     mRightPalette = new UBRightPalette(mContainer);
     // RIGHT palette widgets
-#ifndef USE_WEB_WIDGET
     mpFeaturesWidget = new UBFeaturesWidget();
     mRightPalette->registerWidget(mpFeaturesWidget);
     mRightPalette->addTab(mpFeaturesWidget);
-#endif
-
-    //Do not show deprecated lib widget to prevent collisions. Uncomment to return lib widget
-
-#ifdef USE_WEB_WIDGET
-    mRightPalette->registerWidget(mpLibWidget);
-    mRightPalette->addTab(mpLibWidget);
-#endif
 
 
     // The cache widget will be visible only if a cache is put on the page
@@ -892,14 +883,9 @@ void UBBoardPaletteManager::addItemToLibrary()
         }
         QImage image = mPixmap.toImage();
 
-#ifdef USE_WEB_WIDGET
-        mpLibWidget->libNavigator()->libraryWidget()->libraryController()->importImageOnLibrary(image);
-#else
         QDateTime now = QDateTime::currentDateTime();
         QString capturedName  = tr("CapturedImage") + "-" + now.toString("dd-MM-yyyy hh-mm-ss") + ".png";
         mpFeaturesWidget->importImage(image, capturedName);
-#endif
-
     }
     else
     {

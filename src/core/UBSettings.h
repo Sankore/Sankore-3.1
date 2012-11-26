@@ -354,6 +354,8 @@ class UBSettings : public QObject
         UBSetting* rightLibPaletteBoardModeIsCollapsed;
         UBSetting* rightLibPaletteDesktopModeWidth;
         UBSetting* rightLibPaletteDesktopModeIsCollapsed;
+        UBSetting* rightLibPaletteWebModeWidth;
+        UBSetting* rightLibPaletteWebModeIsCollapsed;
         UBSetting* leftLibPaletteBoardModeWidth;
         UBSetting* leftLibPaletteBoardModeIsCollapsed;
         UBSetting* leftLibPaletteDesktopModeWidth;

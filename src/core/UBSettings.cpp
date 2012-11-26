@@ -227,6 +227,8 @@ void UBSettings::init()
     rightLibPaletteBoardModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteBoardModeIsCollapsed",false);
     rightLibPaletteDesktopModeWidth = new UBSetting(this, "Board", "RightLibPaletteDesktopModeWidth", 270);
     rightLibPaletteDesktopModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteDesktopModeIsCollapsed",false);
+    rightLibPaletteWebModeWidth = new UBSetting(this, "Board", "RightLibPaletteWebModeWidth", 270);
+    rightLibPaletteWebModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteWebModeIsCollapsed",false);
     leftLibPaletteBoardModeWidth = new UBSetting(this, "Board", "LeftLibPaletteBoardModeWidth",270);
     leftLibPaletteBoardModeIsCollapsed = new UBSetting(this,"Board","LeftLibPaletteBoardModeIsCollapsed",false);
     leftLibPaletteDesktopModeWidth = new UBSetting(this, "Board", "LeftLibPaletteDesktopModeWidth",270);
