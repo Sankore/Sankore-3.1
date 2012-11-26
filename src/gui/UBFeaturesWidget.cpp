@@ -172,9 +172,13 @@ void UBFeaturesWidget::currentSelected(const QModelIndex &current)
         if(feature.getType() == FEATURE_BOOKMARK){
             QString url;
             QFile bookmarkFile(feature.getFullPath().toLocalFile());
+            if(bookmarkFile.open(QIODevice::ReadOnly|QIODevice::Text)){
             url = QString::fromUtf8(bookmarkFile.readAll());
-            qDebug() << url;
+            bookmarkFile.close();
             UBApplication::webController->loadUrl(QUrl(url));
+            }
+            else
+                qWarning() << "failed to read file named " << feature.getFullPath().toLocalFile();
         }
         else{
             centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturePropertiesList);
