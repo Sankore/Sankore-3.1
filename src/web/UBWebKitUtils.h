@@ -36,21 +36,31 @@ class UBWebKitUtils
         {
 
             public:
-                HtmlObject(const QString& pSource, int pWidth, int pHeight)
+                HtmlObject(const QString& pSource, const QString &pTagName, int pWidth, int pHeight)
                     : source(pSource)
+                    , tagName(pTagName)
                     , width(pWidth)
                     , height(pHeight)
                 {
                     // NOOP
                 }
 
+                bool operator == (const HtmlObject &obj)
+                {
+                    return source == obj.source 
+                        && width == obj.width
+                        && height == obj.height
+                        && tagName == obj.tagName;
+                }
+
                 QString source;
+                QString tagName;
                 int width;
                 int height;
 
         };
 
-        static QList<UBWebKitUtils::HtmlObject> objectsInFrame(QWebFrame* frame);
+        static QList<UBWebKitUtils::HtmlObject> objectsInFrameByTag(QWebFrame* frame, QString tagName);
 
 };
 

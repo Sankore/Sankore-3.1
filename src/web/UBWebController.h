@@ -31,7 +31,7 @@
 
 class WBBrowserWindow;
 class UBApplication;
-class UBTrapFlashController;
+class UBTrapWebPageContentController;
 class UBMainWindow;
 class UBWebToolsPalette;
 class WBWebView;
@@ -120,11 +120,9 @@ class UBWebController : public QObject
         WBBrowserWindow** mCurrentWebBrowser;
 
         QWidget* mBrowserWidget;
-        UBTrapFlashController* mTrapFlashController;
+        UBTrapWebPageContentController* mTrapContentController;
         UBWebToolsPalette** mToolsCurrentPalette;
         UBWebToolsPalette* mToolsPaletteList[TotalNumberOfWebInstances];
-// 		UBKeyboardPalette** mKeyboardCurrentPalette;
-// 		UBKeyboardPalette* mKeyboardPaletteList[TotalNumberOfWebInstances];
 
         bool mToolsPalettePositionned;
         bool mToolsPalettePositionnedList[TotalNumberOfWebInstances];
@@ -146,7 +144,6 @@ class UBWebController : public QObject
         void webTrapContent();
 
         void onOEmbedParsed(QVector<sOEmbedContent> contents);
-//		void showKeyboard(bool checked);
 
     signals:
         /**

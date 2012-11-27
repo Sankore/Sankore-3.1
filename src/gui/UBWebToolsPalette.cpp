@@ -47,7 +47,7 @@ UBWebToolsPalette::UBWebToolsPalette(QWidget *parent,bool tutorialMode=false)
     }
     else{
         actions << UBApplication::mainWindow->actionWebTrapFlash;
-        actions << UBApplication::mainWindow->actionWebTrap;
+        //actions << UBApplication::mainWindow->actionWebTrap;
 
         actions << UBApplication::mainWindow->actionWebTrapContent;
 

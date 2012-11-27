@@ -30,7 +30,7 @@
 
 class WBWebTrapWebView : public QWebView
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         WBWebTrapWebView(QWidget* parent = 0);
@@ -44,6 +44,7 @@ class WBWebTrapWebView : public QWebView
         }
 
         void highliteElementAtPos(const QPoint& pos);
+        void trapContentFromHitTest(const QWebHitTestResult& hitTest);
         void trapElementAtPos(const QPoint& pos);
 
     signals:
@@ -54,8 +55,10 @@ class WBWebTrapWebView : public QWebView
 
         void webElementCaptured(const QUrl& pUrl, const QString& query);
 
-    protected:
+    private:
+        bool isFrameContentAtPos(const QPoint &point) const;
 
+    protected:
         virtual void mousePressEvent(QMouseEvent* event);
         virtual void mouseMoveEvent ( QMouseEvent * event );
         virtual void mouseReleaseEvent ( QMouseEvent * event );
@@ -77,19 +80,18 @@ class WBWebTrapWebView : public QWebView
         WebContentType mCurrentContentType;
 
         bool mIsTrapping;
-
-        QWidget* mTrapingWidget;
+        bool m_bContentForTrapSelected;
+        bool m_bScrollingInProcess;
 
     private slots:
-
         void viewLoadFinished(bool ok);
 };
-
-
+class UBTrapWebPageContentController;
 class UBWebTrapMouseEventMask : public QWidget
 {
     public:
         UBWebTrapMouseEventMask(WBWebTrapWebView* pWebView);
+        UBWebTrapMouseEventMask(WBWebTrapWebView* pWebView, UBTrapWebPageContentController *controller);
         virtual ~UBWebTrapMouseEventMask();
 
     protected:
@@ -101,6 +103,7 @@ class UBWebTrapMouseEventMask : public QWidget
 
    private:
        WBWebTrapWebView *mTrappedWebView;
+       UBTrapWebPageContentController *mTrapController;
 };
 
 #endif /* WBWEBTRAPWEBVIEW_H_ */

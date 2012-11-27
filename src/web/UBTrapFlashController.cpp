@@ -44,7 +44,10 @@
 
 #include "core/memcheck.h"
 
-UBTrapFlashController::UBTrapFlashController(QWidget* parent)
+#include "web/UBWebController.h"
+#include "browser/WBBrowserWindow.h"
+
+UBTrapWebPageContentController::UBTrapWebPageContentController(QWidget* parent)
     : QObject(parent)
     , mTrapFlashUi(0)
     , mTrapFlashDialog(0)
@@ -56,13 +59,13 @@ UBTrapFlashController::UBTrapFlashController(QWidget* parent)
 }
 
 
-UBTrapFlashController::~UBTrapFlashController()
+UBTrapWebPageContentController::~UBTrapWebPageContentController()
 {
     // NOOP
 }
 
 
-void UBTrapFlashController::showTrapFlash()
+void UBTrapWebPageContentController::showTrapFlash()
 {
     if (!mTrapFlashDialog)
     {
@@ -83,7 +86,7 @@ void UBTrapFlashController::showTrapFlash()
                 , viewWidth
                 , viewHeight);
 
-        connect(mTrapFlashUi->flashCombobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectFlash(int)));
+        connect(mTrapFlashUi->flashCombobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
         connect(mTrapFlashUi->widgetNameLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(text_Changed(const QString &)));
         connect(mTrapFlashUi->widgetNameLineEdit, SIGNAL(textEdited(const QString &)), this, SLOT(text_Edited(const QString &)));
         connect(mTrapFlashUi->createWidgetButton, SIGNAL(clicked(bool)), this, SLOT(createWidget()));
@@ -92,7 +95,7 @@ void UBTrapFlashController::showTrapFlash()
     mTrapFlashDialog->show();
 }
 
-void UBTrapFlashController::text_Changed(const QString &newText)
+void UBTrapWebPageContentController::text_Changed(const QString &newText)
 {
     QString new_text = newText;
 
@@ -119,17 +122,17 @@ void UBTrapFlashController::text_Changed(const QString &newText)
     if(new_text.indexOf(regExp) > -1)
     {
         new_text.remove(regExp);
-        mTrapFlashUi->widgetNameLineEdit->setText(new_text);
-        QToolTip::showText(mTrapFlashUi->widgetNameLineEdit->mapToGlobal(QPoint()), "Application name can`t contain any of the following characters:\r\n"+illegalCharList);
+        mTrapWebContentDialog->applicationNameLineEdit()->setText(new_text);
+        QToolTip::showText(mTrapWebContentDialog->applicationNameLineEdit()->mapToGlobal(QPoint()), "Application name can`t contain any of the following characters:\r\n"+illegalCharList);
     }
 }
 
-void UBTrapFlashController::text_Edited(const QString &newText)
+void UBTrapWebPageContentController::text_Edited(const QString &newText)
 {
     Q_UNUSED(newText);
 }
 
-void UBTrapFlashController::hideTrapFlash()
+void UBTrapWebPageContentController::hideTrapFlash()
 {
     if (mTrapFlashDialog)
     {
@@ -138,68 +141,89 @@ void UBTrapFlashController::hideTrapFlash()
 }
 
 
-void UBTrapFlashController::showTrapContent()
+void UBTrapWebPageContentController::showTrapContent()
 {
     if (!mTrapWebContentDialog)
-        mTrapWebContentDialog = new WBTrapWebPageContentWindow(mParentWidget);
+    {
+        mTrapWebContentDialog = new WBTrapWebPageContentWindow(this, mParentWidget);
+        mTrapWebContentDialog->webView()->page()->setNetworkAccessManager(UBNetworkAccessManager::defaultAccessManager());
+    }
 
-    mTrapWebContentDialog->show();        
-
-
+    mTrapWebContentDialog->show();  
+    mTrapWebContentDialog->setUrl(UBApplication::webController->currentPageUrl());
 }
-void UBTrapFlashController::hideTrapContent()
+void UBTrapWebPageContentController::hideTrapContent()
 {
     if (mTrapWebContentDialog)
         mTrapWebContentDialog->hide();
 }
 
 
-void UBTrapFlashController::updateListOfFlashes(const QList<UBWebKitUtils::HtmlObject>& pAllFlashes)
+void UBTrapWebPageContentController::setLastWebHitTestResult(const QWebHitTestResult &result)
 {
-    if (mTrapFlashDialog)
-    {
-        mAvailableFlashes = pAllFlashes;
-        disconnect(mTrapFlashUi->flashCombobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectFlash(int)));
-        mTrapFlashUi->flashCombobox->clear();
-        mTrapFlashUi->flashCombobox->addItem(tr("Whole page"));
+    mLastWebHitTestResult = result;
+}
 
-        foreach(UBWebKitUtils::HtmlObject wrapper, pAllFlashes)
+void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects)
+{
+    if (mTrapFlashDialog || mTrapWebContentDialog)
+    {
+        mAvaliableObjects = objects;
+
+        if (mTrapWebContentDialog)
         {
-            mTrapFlashUi->flashCombobox->addItem(widgetNameForObject(wrapper));
+            QComboBox *combobox = mTrapWebContentDialog->itemsComboBox();
+
+            disconnect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
+
+            combobox->clear();
+            combobox->addItem(tr("Whole page"));
+
+            QString lastTagName;
+            foreach(UBWebKitUtils::HtmlObject wrapper, mAvaliableObjects)
+            {
+                if (lastTagName != wrapper.tagName)
+                {
+                    lastTagName = wrapper.tagName;
+                    combobox->insertSeparator(combobox->count());
+                }
+                combobox->addItem(widgetNameForObject(wrapper));
+            }
+
+            connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
         }
 
-        connect(mTrapFlashUi->flashCombobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectFlash(int)));
-        selectFlash(mTrapFlashUi->flashCombobox->currentIndex());
     }
 }
 
 
-void UBTrapFlashController::selectFlash(int pFlashIndex)
+void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
 {
-    if (pFlashIndex == 0)
+    if (pObjectIndex == 0)
     {
-        mTrapFlashUi->webView->setHtml(generateFullPageHtml("", false));
+        mTrapWebContentDialog->webView()->setHtml(generateFullPageHtml("", false));
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.title");
-        mTrapFlashUi->widgetNameLineEdit->setText(res.toString().trimmed());
+        mTrapWebContentDialog->applicationNameLineEdit()->setText(res.toString().trimmed());
+
     }
-    else if (pFlashIndex > 0 && pFlashIndex <= mAvailableFlashes.size())
+    else if (pObjectIndex > 0 && pObjectIndex <= mAvaliableObjects.size())
     {
-        UBWebKitUtils::HtmlObject currentObject = mAvailableFlashes.at(pFlashIndex - 1);
-        mTrapFlashUi->webView->setHtml(generateHtml(currentObject, "", false));
-        mTrapFlashUi->widgetNameLineEdit->setText(widgetNameForObject(currentObject));
+        UBWebKitUtils::HtmlObject currentObject = mAvaliableObjects.at(pObjectIndex - 1);
+        mTrapWebContentDialog->webView()->setHtml(generateHtml(currentObject, "", false));
+        mTrapWebContentDialog->applicationNameLineEdit()->setText(widgetNameForObject(currentObject));
     }
 }
 
 
-void UBTrapFlashController::createWidget()
+void UBTrapWebPageContentController::createWidget()
 {
-    int selectedIndex = mTrapFlashUi->flashCombobox->currentIndex();
+    int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
 
     if (selectedIndex == 0)
     {
         // full page widget
-        QString tempDir = UBFileSystemUtils::createTempDir("TrapFlashRendering");
-        QDir widgetDir(tempDir + "/" + mTrapFlashUi->widgetNameLineEdit->text() + ".wgt");
+        QString tempDir = UBFileSystemUtils::createTempDir("TrapWebContentRendering");
+        QDir widgetDir(tempDir + "/" + mTrapWebContentDialog->applicationNameLineEdit()->text() + ".wgt");
 
         if (widgetDir.exists() && !UBFileSystemUtils::deleteDir(widgetDir.path()))
         {
@@ -222,19 +246,19 @@ void UBTrapFlashController::createWidget()
     else
     {
         // flash widget
-        UBWebKitUtils::HtmlObject selectedObject = mAvailableFlashes.at(selectedIndex - 1);
+        UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(selectedIndex - 1);
         UBApplication::applicationController->showBoard();
         UBApplication::boardController->downloadURL(QUrl(selectedObject.source), QString(), QPoint(0, 0), QSize(selectedObject.width, selectedObject.height));
     }
 
     QString freezedWidgetPath = UBPlatformUtils::applicationResourcesDirectory() + "/etc/freezedWidgetWrapper.html";
-    mTrapFlashUi->webView->load(QUrl::fromLocalFile(freezedWidgetPath));
+    mTrapWebContentDialog->webView()->load(QUrl::fromLocalFile(freezedWidgetPath));
 
-    mTrapFlashDialog->hide();
+    mTrapWebContentDialog->hide();
 }
 
 
-void UBTrapFlashController::importWidgetInLibrary(QDir pSourceDir)
+void UBTrapWebPageContentController::importWidgetInLibrary(QDir pSourceDir)
 {
     const QString userWidgetPath = UBSettings::settings()->userInteractiveDirectory() + "/" + tr("Web");
     QDir userWidgetDir(userWidgetPath);
@@ -270,18 +294,26 @@ void UBTrapFlashController::importWidgetInLibrary(QDir pSourceDir)
 }
 
 
-void UBTrapFlashController::updateTrapFlashFromPage(QWebFrame* pCurrentWebFrame)
+void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurrentWebFrame)
 {
-    if (pCurrentWebFrame && mTrapFlashDialog && mTrapFlashDialog->isVisible())
+    if (pCurrentWebFrame && (mTrapFlashDialog && mTrapFlashDialog->isVisible()) || (mTrapWebContentDialog && mTrapWebContentDialog->isVisible()))
     {
-        QList<UBWebKitUtils::HtmlObject> list = UBWebKitUtils::objectsInFrame(pCurrentWebFrame);
+        QList<UBWebKitUtils::HtmlObject> list;
+        if (mTrapWebContentDialog)
+        {
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "embed");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "img");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "image");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "audio");
+        }
+
         mCurrentWebFrame = pCurrentWebFrame;
-        updateListOfFlashes(list);
+        updateListOfContents(list);
     }
 }
 
 
-QString UBTrapFlashController::generateIcon(const QString& pDirPath)
+QString UBTrapWebPageContentController::generateIcon(const QString& pDirPath)
 {
     QDesktopWidget* desktop = QApplication::desktop();
     QPoint webViewPosition = mTrapFlashUi->webView->mapToGlobal(mTrapFlashUi->webView->pos());
@@ -307,7 +339,7 @@ QString UBTrapFlashController::generateIcon(const QString& pDirPath)
 }
 
 
-void UBTrapFlashController::generateConfig(int pWidth, int pHeight, const QString& pDestinationPath)
+void UBTrapWebPageContentController::generateConfig(int pWidth, int pHeight, const QString& pDestinationPath)
 {
     QFile configFile(pDestinationPath + "/" + "config.xml");
 
@@ -344,7 +376,7 @@ void UBTrapFlashController::generateConfig(int pWidth, int pHeight, const QStrin
 }
 
 
-QString UBTrapFlashController::generateFullPageHtml(const QString& pDirPath, bool pGenerateFile)
+QString UBTrapWebPageContentController::generateFullPageHtml(const QString& pDirPath, bool pGenerateFile)
 {
 
     QString htmlContentString;
@@ -391,7 +423,7 @@ QString UBTrapFlashController::generateFullPageHtml(const QString& pDirPath, boo
 }
 
 
-QString UBTrapFlashController::generateHtml(const UBWebKitUtils::HtmlObject& pObject,
+QString UBTrapWebPageContentController::generateHtml(const UBWebKitUtils::HtmlObject& pObject,
         const QString& pDirPath, bool pGenerateFile)
 {
     qDebug() << pObject.source;
@@ -494,7 +526,7 @@ QString UBTrapFlashController::generateHtml(const UBWebKitUtils::HtmlObject& pOb
     }
 }
 
-QString UBTrapFlashController::widgetNameForObject(UBWebKitUtils::HtmlObject pObject)
+QString UBTrapWebPageContentController::widgetNameForObject(UBWebKitUtils::HtmlObject pObject)
 {
     QString url = pObject.source;
     int parametersIndex = url.indexOf("?");

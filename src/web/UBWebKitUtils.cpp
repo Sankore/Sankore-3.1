@@ -35,13 +35,13 @@ UBWebKitUtils::~UBWebKitUtils()
     // NOOP
 }
 
-QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrame(QWebFrame* frame)
+QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* frame, QString tagName)
 {
     QList<UBWebKitUtils::HtmlObject> htmlObjects;
 
     if (frame)
     {
-        QVariant res = frame->evaluateJavaScript("window.document.getElementsByTagName('embed').length");
+        QVariant res = frame->evaluateJavaScript("window.document.getElementsByTagName('"+ tagName + "').length");
 
         bool ok;
 
@@ -50,11 +50,11 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrame(QWebFrame* frame)
         {
             for (int i = 0; i < count; i++)
             {
-                QString queryWidth = QString("window.document.getElementsByTagName('embed')[%1].width").arg(i);
+                QString queryWidth = QString("window.document.getElementsByTagName('"+ tagName + "')[%1].width").arg(i);
 
-                QString queryHeigth = QString("window.document.getElementsByTagName('embed')[%1].height").arg(i);
+                QString queryHeigth = QString("window.document.getElementsByTagName('"+ tagName + "')[%1].height").arg(i);
 
-                QString querySource = QString("window.document.getElementsByTagName('embed')[%1].src").arg(i);
+                QString querySource = QString("window.document.getElementsByTagName('"+ tagName + "')[%1].src").arg(i);
 
                 res = frame->evaluateJavaScript(queryWidth);
 
@@ -83,7 +83,9 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrame(QWebFrame* frame)
                 if (source.trimmed().length() == 0)
                     continue;
 
-                htmlObjects << UBWebKitUtils::HtmlObject(source, width, heigth);
+                UBWebKitUtils::HtmlObject obj(source, tagName, width, heigth);
+                if (!htmlObjects.contains(obj))
+                    htmlObjects << obj;
             }
         }
     }

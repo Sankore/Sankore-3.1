@@ -26,7 +26,7 @@
 
 #include <QtGui>
 #include "UBWebKitUtils.h"
-#include "WBTrapWebPageContent.h"
+#include "web\browser\WBTrapWebPageContent.h"
 
 namespace Ui
 {
@@ -34,12 +34,13 @@ namespace Ui
 }
 
 
-class UBTrapFlashController : public QObject
+class UBTrapWebPageContentController : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
+
     public:
-        UBTrapFlashController(QWidget* parent = 0);
-        virtual ~UBTrapFlashController();
+        UBTrapWebPageContentController(QWidget* parent = 0);
+        virtual ~UBTrapWebPageContentController();
 
         void showTrapFlash();
         void hideTrapFlash();
@@ -47,19 +48,21 @@ class UBTrapFlashController : public QObject
         void showTrapContent();
         void hideTrapContent();
 
+        void setLastWebHitTestResult(const QWebHitTestResult &result);
+
     public slots:
-        void updateTrapFlashFromPage(QWebFrame* pCurrentWebFrame);
+        void updateTrapContentFromPage(QWebFrame* pCurrentWebFrame);
         void text_Changed(const QString &);
         void text_Edited(const QString &);
 
 
     private slots:
-        void selectFlash(int pFlashIndex);
+        void selectHtmlObject(int pObjectIndex);
         void createWidget();
 
     private:
 
-        void updateListOfFlashes(const QList<UBWebKitUtils::HtmlObject>& pAllFlashes);
+        void updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects);
 
         QString widgetNameForObject(UBWebKitUtils::HtmlObject pObject);
 
@@ -76,9 +79,10 @@ class UBTrapFlashController : public QObject
         QDialog* mTrapFlashDialog;
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
-        QList<UBWebKitUtils::HtmlObject> mAvailableFlashes;
+        QList<UBWebKitUtils::HtmlObject> mAvaliableObjects;
 
         WBTrapWebPageContentWindow *mTrapWebContentDialog;
+        QWebHitTestResult mLastWebHitTestResult;
 };
 
 

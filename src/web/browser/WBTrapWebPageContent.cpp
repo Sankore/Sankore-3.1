@@ -1,13 +1,15 @@
 #include "WBTrapWebPageContent.h"
 
 #include "core/UBApplication.h"
+#include "core/UBApplicationController.h"
 #include "gui/UBMainWindow.h"
 
 WBTrapBar::WBTrapBar(QWidget *parent)
     : UBActionPalette(Qt::Vertical, parent)
 {
-    setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     layout()->setAlignment(Qt::AlignTop);
+
+    setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     setButtonIconSize(QSize(128, 128));    
 }
 
@@ -21,8 +23,9 @@ void WBTrapBar::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 }
 
-WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QWidget *parent)
+WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWidget *parent)
     : QDialog(parent)
+    , mController(controller)
 {
     mTrapApplicationHLayout = new QHBoxLayout(this);
     setLayout(mTrapApplicationHLayout);
@@ -39,25 +42,39 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QWidget *parent)
     mTrapActionsBar->addAction(UBApplication::mainWindow->actionWebTrapLinkToLibrary);
     mTrapActionsBar->addAction(UBApplication::mainWindow->actionWebTrapLinkToPage);
 
-    mTrapApplicationHLayout->addWidget(mTrapActionsBar);
-    mTrapApplicationHLayout->addLayout(mTrapApplicationVLayout);
+    foreach (QAction *barAction, mTrapActionsBar->actions())
+    {
+        mTrapActionsBar->getButtonFromAction(barAction)->setStyleSheet(QString("QToolButton{color: black; font: bold 14px; font-family: Arial; background-color: transparent; border: none}"));
+    }
 
+
+    mTrapApplicationHLayout->addLayout(mTrapApplicationVLayout);
+    mTrapApplicationHLayout->addWidget(mTrapActionsBar);
     mSelectContentLayout = new QHBoxLayout();
     mSelectContentLabel = new QLabel(tr("Select content to trap:"));
     mSelectContentCombobox = new QComboBox(this);
+    mSelectContentCombobox->setMaxVisibleItems(15);
     mSelectContentCombobox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed); 
-    
+
     mSelectContentLayout->addWidget(mSelectContentLabel);
     mSelectContentLayout->addWidget(mSelectContentCombobox);
 
     mTrapApplicationVLayout->addLayout(mSelectContentLayout);
 
-
-    mTrapContentPreview = new QWidget();
+    mTrapContentPreview = new WBWebView();
     mTrapContentPreview->setMinimumSize(QSize(640, 480));
     mTrapContentPreview->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); 
+    mTrapContentPreview->setIsTrapping(true);
+
+    mTrapingWidgetMask = new UBWebTrapMouseEventMask(mTrapContentPreview);
+    mTrapingWidgetMask->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    mTrapingWidgetMask->setAttribute(Qt::WA_TranslucentBackground, true);
+    mTrapingWidgetMask->move(0,0);
+    mTrapingWidgetMask->resize(size());
+    mTrapingWidgetMask->setVisible(true);
+
     mTrapApplicationVLayout->addWidget(mTrapContentPreview);
-    
+
     mApplicationNameLayout = new QHBoxLayout();
     mApplicationNameLabel = new QLabel(tr("Application name"));
     mApplicationNameEdit = new QLineEdit();
@@ -67,9 +84,22 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QWidget *parent)
     mTrapApplicationVLayout->addLayout(mApplicationNameLayout);
 
     mTrapApplicationVLayout->addLayout(mApplicationNameLayout);
+
+    connect(mTrapContentPreview, SIGNAL(pixmapCaptured(const QPixmap&, bool)), UBApplication::applicationController, SLOT(addCapturedPixmap(const QPixmap &, bool)));
+    connect(mTrapContentPreview, SIGNAL(embedCodeCaptured(const QString&)), UBApplication::applicationController, SLOT(addCapturedEmbedCode(const QString&)));
+
+    connect(mSelectContentCombobox, SIGNAL(currentIndexChanged(int)), mController, SLOT(selectHtmlObject(int)));
+    connect(mApplicationNameEdit, SIGNAL(textChanged(const QString &)), mController, SLOT(text_Changed(const QString &)));
+    connect(mApplicationNameEdit, SIGNAL(textEdited(const QString &)), mController, SLOT(text_Edited(const QString &)));
+    connect(UBApplication::mainWindow->actionWebTrapToLibrary, SIGNAL(triggered()), mController, SLOT(createWidget()));
 }
 
 WBTrapWebPageContentWindow::~WBTrapWebPageContentWindow()
 {
 
+}
+
+void WBTrapWebPageContentWindow::setUrl(const QUrl &url)
+{
+    mTrapContentPreview->setUrl(url);
 }
