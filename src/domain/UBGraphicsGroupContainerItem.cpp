@@ -39,12 +39,13 @@ UBGraphicsGroupContainerItem::UBGraphicsGroupContainerItem(QGraphicsItem *parent
 {
     setData(UBGraphicsItemData::ItemLayerType, UBItemLayerType::Object);
 
-   	setDelegate(new UBGraphicsGroupContainerItemDelegate(this, 0));
+    setDelegate(new UBGraphicsGroupContainerItemDelegate(this, 0));
     Delegate()->init();
 
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
+    Delegate()->setCanTrigAnAction(true);
 
     UBGraphicsGroupContainerItem::setAcceptHoverEvents(true);
 
@@ -140,7 +141,7 @@ void UBGraphicsGroupContainerItem::removeFromGroup(QGraphicsItem *item)
 
     UBCoreGraphicsScene *groupScene = corescene();
     if (groupScene)
-    {    
+    {
         groupScene->addItemToDeletion(item);
     }
 
@@ -165,7 +166,7 @@ void UBGraphicsGroupContainerItem::deselectCurrentItem()
               {
                   dynamic_cast<UBGraphicsMediaItem*>(mCurrentItem)->Delegate()->getToolBarItem()->hide();
               }
-              break;                   
+              break;
 
         }
         mCurrentItem->setSelected(false);
@@ -353,7 +354,7 @@ void UBGraphicsGroupContainerItem::pRemoveFromGroup(QGraphicsItem *item)
 
     UBGraphicsScene *Scene = dynamic_cast<UBGraphicsScene *>(item->scene());
     if (Scene)
-    {    
+    {
         Scene->addItem(item);
     }
 

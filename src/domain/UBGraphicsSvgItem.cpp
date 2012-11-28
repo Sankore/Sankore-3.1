@@ -65,6 +65,7 @@ void UBGraphicsSvgItem::init()
     Delegate()->init();
     Delegate()->setFlippable(true);
     Delegate()->setRotatable(true);
+    Delegate()->setCanTrigAnAction(true);
 
 
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);

@@ -38,6 +38,7 @@ class UBGraphicsProxyWidget;
 class UBGraphicsDelegateFrame;
 class UBGraphicsWidgetItem;
 class UBGraphicsMediaItem;
+class UBGraphicsItemAction;
 
 class DelegateButton: public QGraphicsSvgItem
 {
@@ -189,7 +190,7 @@ class UBGraphicsToolBarItem : public QGraphicsRectItem, public QObject
         bool isVisibleOnBoard() const { return mVisible; }
         void setVisibleOnBoard(bool visible) { mVisible = visible; }
         bool isShifting() const { return mShifting; }
-        void setShifting(bool shifting) { mShifting = shifting; } 
+        void setShifting(bool shifting) { mShifting = shifting; }
         QList<QGraphicsItem*> itemsOnToolBar() const { return mItemsOnToolBar; }
         void setItemsOnToolBar(QList<QGraphicsItem*> itemsOnToolBar) { mItemsOnToolBar = itemsOnToolBar;}
         int minWidth() { return mMinWidth; }
@@ -259,12 +260,15 @@ class UBGraphicsItemDelegate : public QObject
         void setRotatable(bool pCanRotate);
         bool isFlippable();
 
+        void setCanTrigAnAction(bool canTrig);
+
         void setButtonsVisible(bool visible);
 
         UBGraphicsToolBarItem* getToolBarItem() const { return mToolBarItem; }
 
         qreal antiScaleRatio() const { return mAntiScaleRatio; }
         virtual void update() {positionHandles();}
+
 
     signals:
         void showOnDisplayChanged(bool shown);
@@ -306,6 +310,8 @@ class UBGraphicsItemDelegate : public QObject
         QAction* mLockAction;
         QAction* mShowOnDisplayAction;
         QAction* mGotoContentSourceAction;
+        QAction* mShowPanelToAddAnAction;
+        QAction* mRemoveAnAction;
 
         UBGraphicsDelegateFrame* mFrame;
         qreal mFrameWidth;
@@ -314,6 +320,8 @@ class UBGraphicsItemDelegate : public QObject
         QList<DelegateButton*> mButtons;
         QList<DelegateButton*> mToolBarButtons;
         UBGraphicsToolBarItem* mToolBarItem;
+
+        UBGraphicsItemAction* mAction;
 
 protected slots:
         virtual void gotoContentSource();
@@ -332,6 +340,7 @@ private:
         bool mCanRotate;
         bool mCanDuplicate;
         bool mRespectRatio;
+        bool mCanTrigAnAction;
         QMimeData* mMimeData;
         QPixmap mDragPixmap;
 
@@ -340,6 +349,10 @@ private:
         bool mToolBarUsed;
 
         bool mShowGoContentButton;
+private slots:
+        void onAddActionClicked();
+        void onRemoveActionClicked();
+        void saveAction(UBGraphicsItemAction *action);
 };
 
 
