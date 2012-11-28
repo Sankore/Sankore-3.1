@@ -42,6 +42,7 @@
 #include "gui/UBFavoriteToolPalette.h"
 #include "gui/UBDockTeacherGuideWidget.h"
 #include "gui/UBStartupHintsPalette.h"
+#include "gui/UBCreateLinkPalette.h"
 
 
 #include "web/UBWebPage.h"
@@ -256,6 +257,7 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette->stackUnder(mZoomPalette);
 
     mTipPalette = new UBStartupHintsPalette(mContainer);
+    mLinkPalette = new UBCreateLinkPalette(mContainer);
 
     QList<QAction*> backgroundsActions;
 

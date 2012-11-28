@@ -49,6 +49,7 @@ class UBMainWindow;
 class UBApplicationController;
 class UBDockTeacherGuideWidget;
 class UBStartupHintsPalette;
+class UBCreateLinkPalette;
 
 class UBBoardPaletteManager : public QObject
 {
@@ -70,6 +71,8 @@ class UBBoardPaletteManager : public QObject
 
         UBKeyboardPalette *mKeyboardPalette;
 
+        UBCreateLinkPalette* linkPalette() { return mLinkPalette; }
+
         void setCurrentWebToolsPalette(UBWebToolsPalette *palette) {mWebToolsCurrentPalette = palette;}
         UBWebToolsPalette* mWebToolsCurrentPalette;
 
@@ -81,6 +84,7 @@ class UBBoardPaletteManager : public QObject
         void stopDownloads();
 
         UBFeaturesWidget* featuresWidget() { return mpFeaturesWidget;}
+
 
     signals:
         void connectToDocController();
@@ -111,6 +115,7 @@ class UBBoardPaletteManager : public QObject
 
         UBZoomPalette *mZoomPalette;
         UBStartupHintsPalette* mTipPalette;
+        UBCreateLinkPalette* mLinkPalette;
 
         /** The left dock palette */
         UBLeftPalette* mLeftPalette;
