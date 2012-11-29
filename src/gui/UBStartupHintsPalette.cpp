@@ -44,6 +44,7 @@ UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
         QString url = UBSettings::settings()->applicationStartupHintsDirectory() + "/index.html";
         QWebView* webView = new QWebView(this);
         webView->setUrl(QUrl::fromLocalFile(url));
+        webView->setAcceptDrops(false);
         mLayout->addWidget(webView);
         mButtonLayout = new QHBoxLayout();
         mLayout->addLayout(mButtonLayout);
