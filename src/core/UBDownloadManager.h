@@ -102,7 +102,7 @@ class UBAsyncLocalFileDownloader : public QThread
 public:
     UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QObject *parent = 0);
 
-    UBAsyncLocalFileDownloader *download();    
+    UBAsyncLocalFileDownloader *download();
     void run();
     void abort();
 

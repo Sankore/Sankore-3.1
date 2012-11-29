@@ -66,7 +66,7 @@ void UBAsyncLocalFileDownloader::run()
     QString destDirectory;
     if (UBMimeType::Video == itemMimeType)
         destDirectory = UBPersistenceManager::videoDirectory;
-    else 
+    else
         if (UBMimeType::Audio == itemMimeType)
             destDirectory = UBPersistenceManager::audioDirectory;
 
@@ -74,7 +74,7 @@ void UBAsyncLocalFileDownloader::run()
         mDesc.originalSrcUrl = mDesc.srcUrl;
 
     QString uuid = QUuid::createUuid();
-    UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(), 
+    UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
         mDesc.srcUrl,
         destDirectory,
         uuid,
@@ -285,7 +285,8 @@ void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl
                 desc.contentTypeHeader = pContentTypeHeader;
                 emit downloadFinished(pSuccess, desc, pData);
 
-            } else if(desc.dest == sDownloadFileDesc::board) {
+            }
+            else if(desc.dest == sDownloadFileDesc::board) {
                 // The downloaded file is modal so we must put it on the board
                 emit addDownloadedFileToBoard(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, isBackground);
             }
@@ -389,17 +390,17 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
             mDownloads[desc.id] = res;
     }
     else
-    {    
+    {
         UBDownloadHttpFile* http = new UBDownloadHttpFile(desc.id, this);
         connect(http, SIGNAL(downloadProgress(int, qint64,qint64)), this, SLOT(onDownloadProgress(int,qint64,qint64)));
         connect(http, SIGNAL(downloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)));
-    
+
         //the desc.srcUrl is encoded. So we have to decode it before.
         QUrl url;
         url.setEncodedUrl(desc.srcUrl.toUtf8());
         // We send here the request and store its reply in order to be able to cancel it if needed
         mDownloads[desc.id] = dynamic_cast<QObject *>(http->get(url, desc.pos, desc.size, desc.isBackground));
-    } 
+    }
 }
 
 /**
@@ -452,7 +453,7 @@ void UBDownloadManager::cancelDownloads()
         if (netReply)
             netReply->abort();
         else
-        {        
+        {
             UBAsyncLocalFileDownloader *localDownload = dynamic_cast<UBAsyncLocalFileDownloader *>(it.value());
             if (localDownload)
                 localDownload->abort();
@@ -470,7 +471,7 @@ void UBDownloadManager::cancelDownloads()
 void UBDownloadManager::onDownloadError(int id)
 {
     QNetworkReply *pReply = dynamic_cast<QNetworkReply *>(mDownloads.value(id));
-    
+
     if(NULL != pReply)
     {
         // Check which error occured:
@@ -502,7 +503,7 @@ void UBDownloadManager::cancelDownload(int id)
 {
     if (!mDownloads.size())
         return;
-   
+
     // Stop the download
 
     QNetworkReply *pNetworkDownload = dynamic_cast<QNetworkReply *>(mDownloads[id]);
@@ -514,7 +515,7 @@ void UBDownloadManager::cancelDownload(int id)
         if (pLocalDownload)
         {
             if (pLocalDownload->isRunning())
-                pLocalDownload->abort();                          
+                pLocalDownload->abort();
         }
     }
 

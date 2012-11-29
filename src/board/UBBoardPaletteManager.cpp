@@ -81,6 +81,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mStylusPalette(0)
     , mZoomPalette(0)
     , mTipPalette(0)
+    , mLinkPalette(0)
     , mLeftPalette(NULL)
     , mRightPalette(NULL)
     , mBackgroundsPalette(0)
@@ -257,7 +258,6 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette->stackUnder(mZoomPalette);
 
     mTipPalette = new UBStartupHintsPalette(mContainer);
-    mLinkPalette = new UBCreateLinkPalette(mContainer);
 
     QList<QAction*> backgroundsActions;
 
@@ -1004,3 +1004,13 @@ void UBBoardPaletteManager::stopDownloads()
         mRightPalette->removeTab(mpDownloadWidget);
     }
 }
+
+
+UBCreateLinkPalette* UBBoardPaletteManager::linkPalette()
+{
+    if(mLinkPalette)
+        delete mLinkPalette;
+    mLinkPalette = new UBCreateLinkPalette(mContainer);
+    return mLinkPalette;
+}
+

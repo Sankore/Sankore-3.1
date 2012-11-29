@@ -26,16 +26,80 @@
 #include <QStackedWidget>
 #include <QToolButton>
 #include <QPushButton>
-#include <QLabel>
 #include <QLineEdit>
 #include <QPainter>
 #include <QMouseEvent>
+#include <QCheckBox>
+#include <QButtonGroup>
+#include <QComboBox>
+
+#include "core/UBApplication.h"
+#include "core/UBDownloadManager.h"
+
+#include "document/UBDocumentController.h"
+
+#include "board/UBBoardController.h"
 
 #include "customWidgets/UBGraphicsItemAction.h"
 
+#include "frameworks/UBFileSystemUtils.h"
+
+
+UBCreateLinkLabel::UBCreateLinkLabel(QString labelText, QWidget *parent) :
+    QLabel(parent)
+{
+    setAcceptDrops(true);
+    mInitialText = labelText;
+    setText(mInitialText);
+    setMinimumSize(200, 200);
+    setFrameStyle(QFrame::Sunken | QFrame::StyledPanel);
+    setAlignment(Qt::AlignCenter);
+
+}
+
+void UBCreateLinkLabel::dragEnterEvent(QDragEnterEvent *event)
+{
+    setText(tr("<drop content>"));
+    setBackgroundRole(QPalette::Highlight);
+
+    event->acceptProposedAction();
+}
+
+void UBCreateLinkLabel::dropEvent(QDropEvent *event)
+{
+    const QMimeData *mimeData = event->mimeData();
+
+    QString path;
+
+    if (mimeData->hasImage())
+        setText(tr("Images are not accepted"));
+    else if (mimeData->hasHtml())
+        path = mimeData->html();
+    else if (mimeData->hasText())
+        path = mimeData->text();
+    else if (mimeData->hasUrls())
+        path = mimeData->urls().at(0).toLocalFile();
+    else
+        setText(tr("Cannot display data"));
+
+    if(UBFileSystemUtils::mimeTypeFromFileName(path).contains("audio"))
+        setText(path);
+    else
+        setText(tr("Dropped file isn't reconized to be an audio file"));
+
+    emit droppedFile(path);
+    event->acceptProposedAction();
+}
+
+void UBCreateLinkLabel::dragLeaveEvent(QDragLeaveEvent *event)
+{
+    setText(mInitialText);
+    event->accept();
+}
 
 UBCreateLinkPalette::UBCreateLinkPalette(QWidget *parent) :
     UBFloatingPalette(Qt::TopRightCorner, parent)
+  ,mButtonGroup(0)
 {
     setObjectName("UBCreateLinkPalette");
     mLayout = new QVBoxLayout(this);
@@ -90,7 +154,9 @@ void UBCreateLinkPalette::init()
     audioBackButtonLayout->addStretch();
     audioWidgetLayout->addLayout(audioBackButtonLayout);
     connect(audioBackButton,SIGNAL(clicked()),this,SLOT(onBackButtonClicked()));
-    audioWidgetLayout->addWidget(new QLabel(tr("Drag and drop the audio file from the library in this box"),mAudioWidget));
+    mpAudioLabel = new UBCreateLinkLabel(tr("Drag and drop the audio file from the library in this box"),mAudioWidget);
+    connect(mpAudioLabel,SIGNAL(droppedFile(QString&)),this,SLOT(onDroppedAudioFile(QString&)));
+    audioWidgetLayout->addWidget(mpAudioLabel);
     QHBoxLayout* audioOkButtonLayout = new QHBoxLayout();
     audioOkButtonLayout->addStretch();
     QPushButton* audioOkButton = new QPushButton(tr("Ok"),mAudioWidget);
@@ -110,6 +176,44 @@ void UBCreateLinkPalette::init()
     pageLinkBackButtonLayout->addWidget(pageLinkBackButton);
     pageLinkBackButtonLayout->addStretch();
     pageLinkWidgetLayout->addLayout(pageLinkBackButtonLayout);
+
+    int activeIndex = UBApplication::boardController->activeSceneIndex();
+    int lastSceneIndex = UBApplication::documentController->pageCount() - 1;
+    mButtonGroup = new QButtonGroup();
+    mButtonGroup->setExclusive(true);
+    QCheckBox* nextPageCheckBox = new QCheckBox(tr("Next Page"),this);
+    mButtonGroup->addButton(nextPageCheckBox,eMoveToNextPage);
+    pageLinkWidgetLayout->addWidget(nextPageCheckBox);
+    if(activeIndex >= lastSceneIndex)
+        nextPageCheckBox->setEnabled(false);
+    QCheckBox* previousPageCheckBox = new QCheckBox(tr("Previous Page"),this);
+    mButtonGroup->addButton(previousPageCheckBox,eMoveToPreviousPage);
+    if(activeIndex == 0)
+        previousPageCheckBox->setEnabled(false);
+    pageLinkWidgetLayout->addWidget(previousPageCheckBox);
+    QCheckBox* firstPageCheckBox = new QCheckBox(tr("First Page"),this);
+    mButtonGroup->addButton(firstPageCheckBox,eMoveToFirstPage);
+    pageLinkWidgetLayout->addWidget(firstPageCheckBox);
+    QCheckBox* lastPageCheckBox = new QCheckBox(tr("Last Page"),this);
+    mButtonGroup->addButton(lastPageCheckBox,eMoveToLastPage);
+    pageLinkWidgetLayout->addWidget(lastPageCheckBox);
+
+    QHBoxLayout* toPageNumberLayout = new QHBoxLayout();
+    QCheckBox* pageNumberCheckBox = new QCheckBox(tr("Page Number"),this);
+    mButtonGroup->addButton(pageNumberCheckBox,eMoveToPage);
+    toPageNumberLayout->addWidget(pageNumberCheckBox);
+    mPageComboBox = new QComboBox(this);
+    toPageNumberLayout->addWidget(mPageComboBox);
+    for(int sceneIndex = 0; sceneIndex <= lastSceneIndex;sceneIndex+=1)
+        if(sceneIndex != activeIndex)
+            mPageComboBox->insertItem(sceneIndex,QString("%1").arg(sceneIndex));
+    if(!mPageComboBox->count())
+        pageNumberCheckBox->setEnabled(false);
+    mPageComboBox->setEnabled(false);
+    connect(pageNumberCheckBox,SIGNAL(clicked(bool)),this,SLOT(onPageNumberCheckBoxClicked(bool)));
+    pageLinkWidgetLayout->addLayout(toPageNumberLayout);
+
+
     connect(pageLinkBackButton,SIGNAL(clicked()),this,SLOT(onBackButtonClicked()));
     QHBoxLayout* pageLinkOkButtonLayout = new QHBoxLayout();
     pageLinkOkButtonLayout->addStretch();
@@ -146,6 +250,19 @@ void UBCreateLinkPalette::init()
 
 }
 
+
+void UBCreateLinkPalette::onDroppedAudioFile(QString &path)
+{
+    Q_ASSERT(path.length());
+
+    mAudioFilePath = path;
+}
+
+void UBCreateLinkPalette::onPageNumberCheckBoxClicked(bool checked)
+{
+   mPageComboBox->setEnabled(checked);
+}
+
 void UBCreateLinkPalette::onBackButtonClicked()
 {
     mStackedWidget->setCurrentIndex(0);
@@ -172,13 +289,19 @@ void UBCreateLinkPalette::onAddLinkToWebClicked()
 
 void UBCreateLinkPalette::onOkAudioClicked()
 {
-    emit definedAction(new UBGraphicsItemPlayAudioAction("/home/claudio.wav"));
+    emit definedAction(new UBGraphicsItemPlayAudioAction(mAudioFilePath));
     close();
 }
 
 void UBCreateLinkPalette::onOkLinkToPageClicked()
 {
-    emit definedAction(new UBGraphicsItemMoveToPageAction(eMoveToNextNextPage));
+    eUBGraphicsItemMovePageAction id = (eUBGraphicsItemMovePageAction)mButtonGroup->checkedId();
+    UBGraphicsItemMoveToPageAction* action = 0;
+    if(id!= eMoveToPage)
+        action = new UBGraphicsItemMoveToPageAction(id);
+    else
+        action = new UBGraphicsItemMoveToPageAction(id,mPageComboBox->currentText().toInt());
+    emit definedAction(action);
     close();
 }
 

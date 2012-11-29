@@ -25,13 +25,14 @@
 #define UBGRAPHICSITEMSACTIONS_H
 
 #include <QObject>
+#include <phonon>
 
 
 enum eUBGraphicsItemMovePageAction {
     eMoveToFirstPage = 0,
     eMoveToLastPage,
     eMoveToPreviousPage,
-    eMoveToNextNextPage,
+    eMoveToNextPage,
     eMoveToPage
 } ;
 
@@ -65,12 +66,17 @@ class UBGraphicsItemPlayAudioAction : public UBGraphicsItemAction
     Q_OBJECT
 
 public:
-    UBGraphicsItemPlayAudioAction(QString audioFile, QObject* parent = 0);
+    UBGraphicsItemPlayAudioAction(QString audioFile, bool isNewAction = true, QObject* parent = 0);
+    ~UBGraphicsItemPlayAudioAction();
     void play();
     QString save();
+    void actionRemoved();
 
 private:
     QString mAudioPath;
+    Phonon::MediaObject *mMediaObject;
+    Phonon::AudioOutput *mAudioOutput;
+    bool mIsLoading;
 };
 
 

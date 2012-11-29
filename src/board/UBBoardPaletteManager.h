@@ -71,7 +71,7 @@ class UBBoardPaletteManager : public QObject
 
         UBKeyboardPalette *mKeyboardPalette;
 
-        UBCreateLinkPalette* linkPalette() { return mLinkPalette; }
+        UBCreateLinkPalette* linkPalette();
 
         void setCurrentWebToolsPalette(UBWebToolsPalette *palette) {mWebToolsCurrentPalette = palette;}
         UBWebToolsPalette* mWebToolsCurrentPalette;

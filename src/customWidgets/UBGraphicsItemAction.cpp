@@ -23,8 +23,13 @@
 
 #include "UBGraphicsItemAction.h"
 #include "core/UBApplication.h"
+#include "core/UBPersistenceManager.h"
 #include "board/UBBoardController.h"
 #include "web/UBWebController.h"
+#include "document/UBDocumentController.h"
+#include "document/UBDocumentProxy.h"
+
+
 
 UBGraphicsItemAction::UBGraphicsItemAction(eUBGraphicsItemLinkType linkType, QObject *parent) :
     QObject(parent)
@@ -33,21 +38,57 @@ UBGraphicsItemAction::UBGraphicsItemAction(eUBGraphicsItemLinkType linkType, QOb
 }
 
 
-UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, QObject *parent) :
+UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, bool isNewAction, QObject *parent) :
     UBGraphicsItemAction(eLinkToAudio,parent)
+  , mMediaObject(0)
+  , mIsLoading(true)
 {
     Q_ASSERT(audioFile.length() > 0);
-    mAudioPath = audioFile;
+    QString extension = QFileInfo(audioFile).completeSuffix();
+    if(isNewAction){
+        QString destDir = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::audioDirectory;
+        QString destFile = destDir + "/" + QUuid::createUuid().toString() + "." + extension;
+        if(!QDir(destDir).exists())
+            QDir(UBApplication::documentController->selectedDocument()->persistencePath()).mkdir(destDir);
+        QFile(audioFile).copy(destFile);
+        qDebug() << "from " << audioFile << " to " << destFile;
+        mAudioPath = destFile;
+    }
+    else
+        mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
+}
+
+UBGraphicsItemPlayAudioAction::~UBGraphicsItemPlayAudioAction()
+{
+    if(!mMediaObject && mMediaObject->state() == Phonon::PlayingState)
+        mMediaObject->stop();
 }
 
 void UBGraphicsItemPlayAudioAction::play()
 {
-    qDebug() << "playing the audio file " << mAudioPath;
+    if(!mMediaObject){
+        mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
+        mMediaObject = new Phonon::MediaObject(this);
+        Phonon::createPath(mMediaObject, mAudioOutput);
+        mMediaObject->setCurrentSource(Phonon::MediaSource(mAudioPath));
+    }
+    else{
+        mMediaObject->stop();
+        mMediaObject->seek(0);
+    }
+    mMediaObject->play();
 }
+
 
 QString UBGraphicsItemPlayAudioAction::save()
 {
-    return mAudioPath;
+    QString documentPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" ;
+    return mAudioPath.replace(documentPath,"");
+}
+
+void UBGraphicsItemPlayAudioAction::actionRemoved()
+{
+    QFile(mAudioPath).remove();
 }
 
 
@@ -72,7 +113,7 @@ void UBGraphicsItemMoveToPageAction::play()
     case eMoveToPreviousPage:
         boardController->previousScene();
         break;
-    case eMoveToNextNextPage:
+    case eMoveToNextPage:
         boardController->nextScene();
         break;
     case eMoveToPage:

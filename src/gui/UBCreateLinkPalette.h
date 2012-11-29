@@ -30,13 +30,38 @@ class QToolButton;
 class QWidget;
 class UBGraphicsItemAction;
 class QLineEdit;
+class QButtonGroup;
+class QComboBox;
+class QDropEvent;
 
 #include <QMap>
+#include <QLabel>
+
 #include "UBFloatingPalette.h"
+
+class UBCreateLinkLabel : public QLabel
+{
+    Q_OBJECT
+
+public:
+    explicit UBCreateLinkLabel(QString labelText, QWidget* parent = 0);
+
+signals:
+    void droppedFile(QString& path);
+
+protected:
+    void dropEvent(QDropEvent* event);
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dragLeaveEvent(QDragLeaveEvent *event);
+private:
+    QString mInitialText;
+
+};
+
 
 class UBCreateLinkPalette : public UBFloatingPalette
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     explicit UBCreateLinkPalette(QWidget *parent = 0);
     ~UBCreateLinkPalette();
@@ -65,6 +90,10 @@ private:
     QWidget* mUrlLinkWidget;
 
     QLineEdit* mUrlLineEdit;
+    QButtonGroup* mButtonGroup;
+    QComboBox* mPageComboBox;
+    UBCreateLinkLabel* mpAudioLabel;
+    QString mAudioFilePath;
 
 private slots:
     void onBackButtonClicked();
@@ -75,6 +104,10 @@ private slots:
     void onOkAudioClicked();
     void onOkLinkToPageClicked();
     void onOkLinkToWebClicked();
+
+    void onPageNumberCheckBoxClicked(bool checked);
+
+    void onDroppedAudioFile(QString& path);
 };
 
 #endif // UBCREATELINKPALETTE_H
