@@ -37,6 +37,11 @@ UBGraphicsItemAction::UBGraphicsItemAction(eUBGraphicsItemLinkType linkType, QOb
     mLinkType = linkType;
 }
 
+ void UBGraphicsItemAction::actionRemoved()
+ {
+    //NOOP
+ }
+
 
 UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, bool isNewAction, QObject *parent) :
     UBGraphicsItemAction(eLinkToAudio,parent)
@@ -51,11 +56,15 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
         if(!QDir(destDir).exists())
             QDir(UBApplication::documentController->selectedDocument()->persistencePath()).mkdir(destDir);
         QFile(audioFile).copy(destFile);
-        qDebug() << "from " << audioFile << " to " << destFile;
         mAudioPath = destFile;
     }
     else
         mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
+
+    mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
+    mMediaObject = new Phonon::MediaObject(this);
+    Phonon::createPath(mMediaObject, mAudioOutput);
+    mMediaObject->setCurrentSource(Phonon::MediaSource(mAudioPath));
 }
 
 UBGraphicsItemPlayAudioAction::~UBGraphicsItemPlayAudioAction()
@@ -66,13 +75,7 @@ UBGraphicsItemPlayAudioAction::~UBGraphicsItemPlayAudioAction()
 
 void UBGraphicsItemPlayAudioAction::play()
 {
-    if(!mMediaObject){
-        mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
-        mMediaObject = new Phonon::MediaObject(this);
-        Phonon::createPath(mMediaObject, mAudioOutput);
-        mMediaObject->setCurrentSource(Phonon::MediaSource(mAudioPath));
-    }
-    else{
+    if(mMediaObject->state() == Phonon::PlayingState){
         mMediaObject->stop();
         mMediaObject->seek(0);
     }

@@ -50,6 +50,7 @@ public:
     UBGraphicsItemAction(eUBGraphicsItemLinkType linkType,QObject* parent = 0);
     virtual void play() = 0;
     virtual QString save() = 0;
+    virtual void actionRemoved();
     eUBGraphicsItemLinkType linkType() { return mLinkType;}
 
 signals:

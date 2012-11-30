@@ -296,6 +296,14 @@ UBGraphicsScene *UBGraphicsItemDelegate::castUBGraphicsScene()
 
 bool UBGraphicsItemDelegate::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+    if(currentTool == UBStylusTool::Play){
+        if(mAction)
+            mAction->play();
+        return true;
+    }
+
     mDragStartPosition = event->pos();
 
     startUndoStep();
@@ -357,9 +365,6 @@ bool UBGraphicsItemDelegate::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     }
 
     commitUndoStep();
-
-    if(mAction)
-        mAction->play();
 
     return true;
 }

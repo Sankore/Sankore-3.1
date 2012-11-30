@@ -557,6 +557,8 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsSvgItem::Type:
     case UBGraphicsPixmapItem::Type:
     case UBGraphicsTextItem::Type:
+        if (currentTool == UBStylusTool::Play)
+            return true;
         if ((currentTool == UBStylusTool::Selector) && item->isSelected())
             return true;
         if ((currentTool == UBStylusTool::Selector) && item->parentItem() && item->parentItem()->isSelected())
@@ -564,12 +566,16 @@ Here we determines cases when items should to get mouse press event at pressing 
         if (currentTool != UBStylusTool::Selector)
             return false;
         break;
-
+    case UBGraphicsItemType::StrokeItemType:
+        if (currentTool == UBStylusTool::Play)
+            return true;
+        break;
     // Groups shouldn't reacts on any presses and moves for Play tool.
     case UBGraphicsGroupContainerItem::Type:
         if(currentTool == UBStylusTool::Play)
         {
             movingItem = NULL;
+            return true;
         }
         return false;
         break;
@@ -589,6 +595,7 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         return false;
         break;
+
     }
 
     return !isUBItem(item); // standard behavior of QGraphicsScene for not UB items. UB items should be managed upper.
