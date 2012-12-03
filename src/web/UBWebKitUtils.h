@@ -36,6 +36,13 @@ class UBWebKitUtils
         {
 
             public:
+                HtmlObject()
+                    : width(0)
+                    , height(0)
+                {
+                    // NOOP
+                }
+
                 HtmlObject(const QString& pSource, const QString &pTagName, int pWidth, int pHeight)
                     : source(pSource)
                     , tagName(pTagName)

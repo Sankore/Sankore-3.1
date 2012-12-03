@@ -91,6 +91,7 @@ class UBWebController : public QObject
             return mBrowserWidget;
         }
 
+        void captureoEmbed(QUrl currentUrl);
         void captureoEmbed();
         void captureEduMedia();
 

@@ -425,6 +425,11 @@ void UBFeaturesWidget::importImage(const QImage &image, const QString &fileName)
     controller->importImage(image, fileName);
 }
 
+QString UBFeaturesWidget::importFromUrl(const QUrl &url) const
+{
+    return controller->moveExternalData(url,UBFeature());
+}
+
 UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
     : QListView(parent)
 {

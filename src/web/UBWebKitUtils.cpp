@@ -41,52 +41,38 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
 
     if (frame)
     {
-        QVariant res = frame->evaluateJavaScript("window.document.getElementsByTagName('"+ tagName + "').length");
-
-        bool ok;
-
-        int count = res.toInt(&ok);
-        if (ok)
+        QWebElementCollection elements = frame->documentElement().findAll(tagName);
+        for (int i = 0; i < elements.count(); i++)
         {
-            for (int i = 0; i < count; i++)
+            QWebElement element = elements.at(i);
+        
+            bool ok;
+
+            int width = element.attribute("width").toInt(&ok);
+            if (width == 0 || !ok)
             {
-                QString queryWidth = QString("window.document.getElementsByTagName('"+ tagName + "')[%1].width").arg(i);
-
-                QString queryHeigth = QString("window.document.getElementsByTagName('"+ tagName + "')[%1].height").arg(i);
-
-                QString querySource = QString("window.document.getElementsByTagName('"+ tagName + "')[%1].src").arg(i);
-
-                res = frame->evaluateJavaScript(queryWidth);
-
-                int width = res.toInt(&ok);
-                if (width == 0 || !ok)
-                {
-                    qDebug() << "Width is not defined in pixel. 640 will be used";
-                    width = 640;
-                }
-
-                res = frame->evaluateJavaScript(queryHeigth);
-
-                int heigth = res.toInt(&ok);
-                if (heigth == 0 || !ok)
-                {
-                    qDebug() << "Height is not defined in pixel. 480 will be used";
-                    heigth = 480;
-                }
-                res = frame->evaluateJavaScript(querySource);
-
-                QUrl baseUrl = frame->url();
-                QUrl relativeUrl = QUrl(res.toString());
-
-                QString source = baseUrl.resolved(relativeUrl).toString();
-
-                if (source.trimmed().length() == 0)
-                    continue;
-
-                UBWebKitUtils::HtmlObject obj(source, tagName, width, heigth);
-                if (!htmlObjects.contains(obj))
-                    htmlObjects << obj;
+                qDebug() << "Width is not defined in pixel. 640 will be used";
+                width = 640;
             }
+
+            int heigth = element.attribute("height").toInt(&ok);
+            if (heigth == 0 || !ok)
+            {
+                qDebug() << "Height is not defined in pixel. 480 will be used";
+                heigth = 480;
+            }
+
+            QUrl baseUrl = frame->url();
+            QUrl relativeUrl = QUrl(element.attribute("src"));
+
+            QString source = baseUrl.resolved(relativeUrl).toString();
+
+            if (source.trimmed().length() == 0)
+                continue;
+
+            UBWebKitUtils::HtmlObject obj(source, tagName, width, heigth);
+            if (!htmlObjects.contains(obj))
+                htmlObjects << obj;
         }
     }
 

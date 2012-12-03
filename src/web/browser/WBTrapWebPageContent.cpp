@@ -64,14 +64,14 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     mTrapContentPreview = new WBWebView();
     mTrapContentPreview->setMinimumSize(QSize(640, 480));
     mTrapContentPreview->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); 
-    mTrapContentPreview->setIsTrapping(true);
+ //   mTrapContentPreview->setIsTrapping(true);
 
-    mTrapingWidgetMask = new UBWebTrapMouseEventMask(mTrapContentPreview);
+ /*   mTrapingWidgetMask = new UBWebTrapMouseEventMask(mTrapContentPreview);
     mTrapingWidgetMask->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     mTrapingWidgetMask->setAttribute(Qt::WA_TranslucentBackground, true);
     mTrapingWidgetMask->move(0,0);
-    mTrapingWidgetMask->resize(size());
-    mTrapingWidgetMask->setVisible(true);
+    mTrapingWidgetMask->resize(mTrapContentPreview->size()-);
+    mTrapingWidgetMask->setVisible(true);*/
 
     mTrapApplicationVLayout->addWidget(mTrapContentPreview);
 
@@ -91,7 +91,8 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     connect(mSelectContentCombobox, SIGNAL(currentIndexChanged(int)), mController, SLOT(selectHtmlObject(int)));
     connect(mApplicationNameEdit, SIGNAL(textChanged(const QString &)), mController, SLOT(text_Changed(const QString &)));
     connect(mApplicationNameEdit, SIGNAL(textEdited(const QString &)), mController, SLOT(text_Edited(const QString &)));
-    connect(UBApplication::mainWindow->actionWebTrapToLibrary, SIGNAL(triggered()), mController, SLOT(createWidget()));
+    connect(UBApplication::mainWindow->actionWebTrapToCurrentPage, SIGNAL(triggered()), mController, SLOT(createWidget()));
+    connect(UBApplication::mainWindow->actionWebTrapToLibrary, SIGNAL(clicked(bool)), this, SLOT(importWidgetInLibrary()));
 }
 
 WBTrapWebPageContentWindow::~WBTrapWebPageContentWindow()

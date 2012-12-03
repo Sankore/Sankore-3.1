@@ -59,9 +59,14 @@ class UBTrapWebPageContentController : public QObject
     private slots:
         void selectHtmlObject(int pObjectIndex);
         void createWidget();
+        void addItemToLibrary();
+        void addItemToBoard();
+        void addLinkToLibrary();
+        void AddLinkToBoard();
 
     private:
 
+        void creaiteItemFromSelectedContent();
         void updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects);
 
         QString widgetNameForObject(UBWebKitUtils::HtmlObject pObject);
@@ -75,11 +80,10 @@ class UBTrapWebPageContentController : public QObject
 
         void importWidgetInLibrary(QDir pSourceDir);
 
-        Ui::trapFlashDialog* mTrapFlashUi;
-        QDialog* mTrapFlashDialog;
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
         QList<UBWebKitUtils::HtmlObject> mAvaliableObjects;
+        QMap<int, int> mObjectNoByTrapWebComboboxIndex;
 
         WBTrapWebPageContentWindow *mTrapWebContentDialog;
         QWebHitTestResult mLastWebHitTestResult;

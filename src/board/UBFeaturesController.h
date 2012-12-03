@@ -264,7 +264,7 @@ public:
 
 	UBFeature moveItemToFolder( const QUrl &url, const UBFeature &destination );
 	UBFeature copyItemToFolder( const QUrl &url, const UBFeature &destination );
-    void moveExternalData(const QUrl &url, const UBFeature &destination);
+    QString moveExternalData(const QUrl &url, const UBFeature &destination);
 
     void rescanModel();
     void siftElements(const QString &pSiftValue);

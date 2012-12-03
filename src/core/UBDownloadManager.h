@@ -42,6 +42,7 @@ struct sDownloadFileDesc
         board //default for sDownloadFileDesc
         , library
         , graphicsWidget
+        , customPath
     };
     //creating constructor to make sure to have default values
     sDownloadFileDesc() :
@@ -62,6 +63,7 @@ struct sDownloadFileDesc
     int totalSize;
     int currentSize;
     QString srcUrl;
+    QString dstUrl; // destination url - used only with dest == customPath;
     QString originalSrcUrl;
     QString contentTypeHeader;
     bool modal;
@@ -100,7 +102,7 @@ class UBAsyncLocalFileDownloader : public QThread
 {
     Q_OBJECT
 public:
-    UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QObject *parent = 0);
+    UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QByteArray data = QByteArray(), QObject *parent = 0);
 
     UBAsyncLocalFileDownloader *download();    
     void run();
@@ -113,6 +115,7 @@ signals:
 
 private:
     sDownloadFileDesc mDesc;
+    QByteArray mData;
     bool m_bAborting;
     QString mFrom;
     QString mTo;
@@ -142,6 +145,7 @@ signals:
     void downloadModalFinished();
     void addDownloadedFileToBoard(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
     void addDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QString pTitle);
+    void customDownloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QUrl destinationUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
     void cancelAllDownloads();
     void allDownloadsFinished();
 

@@ -960,7 +960,7 @@ UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &
         if ( pMmimeType.contains( "x-shockwave-flash") )
             return flashData.categoryFeature();
         else
-            return interactivityData.categoryFeature();
+            return webFolderData.categoryFeature();
     }
     return UBFeature();
 }
@@ -1149,7 +1149,7 @@ UBFeature UBFeaturesController::copyItemToFolder( const QUrl &url, const UBFeatu
     return newElement;
 }
 
-void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &destination)
+QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &destination)
 {
     QString sourcePath = url.toLocalFile();
 
@@ -1168,7 +1168,7 @@ void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &de
     UBFeatureElementType type = fileTypeFromUrl(sourcePath);
 
     if (type == FEATURE_FOLDER) {
-        return;
+        return QString();
     }
 
     QString name = QFileInfo(sourcePath).fileName();
@@ -1177,7 +1177,7 @@ void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &de
     QString newFullPath = destPath + "/" + name;
 
     if (!sourcePath.compare(newFullPath, Qt::CaseInsensitive) || !UBFileSystemUtils::copy(sourcePath, newFullPath)) {
-        return;
+        return QString();
     }
 
     Q_ASSERT(QFileInfo(newFullPath).exists());
@@ -1186,6 +1186,8 @@ void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &de
     UBFeature newElement(destVirtualPath + "/" + name, thumb, name, QUrl::fromLocalFile(newFullPath), type);
 
     featuresModel->addItem(newElement);
+
+    return newFullPath;
 }
 
 void UBFeaturesController::deleteItem(const QUrl &url)

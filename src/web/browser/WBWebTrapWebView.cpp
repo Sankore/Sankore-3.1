@@ -308,10 +308,8 @@ void WBWebTrapWebView::mousePressEvent(QMouseEvent* event)
 {
     
     if (mIsTrapping && isFrameContentAtPos(event->pos()))
-     
     {
          highliteElementAtPos(event->pos());    
-         trapElementAtPos(event->pos());
     }
     else
     {

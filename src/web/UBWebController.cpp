@@ -584,6 +584,20 @@ void UBWebController::showTabAtTop(bool attop)
         (*mCurrentWebBrowser)->showTabAtTop(attop);
 }
 
+void UBWebController::captureoEmbed(QUrl currentUrl)
+{
+    if (isOEmbedable(currentUrl))
+    {
+        UBGraphicsW3CWidgetItem * widget = UBApplication::boardController->activeScene()->addOEmbed(currentUrl);
+
+        if(widget)
+        {
+            UBApplication::applicationController->showBoard();
+            UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+        }
+    }
+}
+
 void UBWebController::captureoEmbed()
 {
     if ( mCurrentWebBrowser  && (*mCurrentWebBrowser) && (*mCurrentWebBrowser)->currentTabWebView()){
