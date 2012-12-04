@@ -102,7 +102,7 @@ function start(){
     $("#wgt_reload, #wgt_display, #wgt_edit").mouseover(function(){
         exportData();
     });
-
+    
     $("#style_select").change(function (event){
         changeStyle($(this).find("option:selected").val());
     })
@@ -138,7 +138,11 @@ function start(){
                     tmp_array = shuffle(tmp_array);
                     for(var i = 0; i<tmp_array.length;i++)
                         tmp_array[i].appendTo(ul_cont);
-                    ul_cont.sortable({revert: true, placeholder: "highlight", update: checkResult});
+                    ul_cont.sortable({
+                        revert: true, 
+                        placeholder: "highlight", 
+                        update: checkResult
+                    });
                 });
                 $(this).css("display", "none");
                 $("#wgt_edit").css("display", "block");
@@ -270,7 +274,7 @@ function exportData(){
             cont_obj.text = $(this).find(".audio_desc").text();
             cont_obj.audio = $(this).find("source").attr("src");
             cont_obj.answer = $(this).find(".audio_answer").text();
-            cont_obj.cur_answer = "";
+            cont_obj.cur_answer = "";            
             array_to_export.push(cont_obj);
         });
     } else {
@@ -283,23 +287,15 @@ function exportData(){
             array_to_export.push(cont_obj);
         });
     }
-    if(window.sankore){
-        sankore.setPreference("ord_let", JSON.stringify(array_to_export));
-        sankore.setPreference("ord_let_locale", "en");
-    }
-    if($("#wgt_display").hasClass("selected")){
-        if(window.sankore)
-            sankore.setPreference("ord_let_state", "display");
-    }
-    else{
-        if(window.sankore)
-            sankore.setPreference("ord_let_state", "edit");
-    }
+    sankore.setPreference("ord_let", JSON.stringify(array_to_export));
+    if($("#wgt_display").hasClass("selected"))
+        sankore.setPreference("ord_let_state", "display");
+    else
+        sankore.setPreference("ord_let_state", "edit");
 }
 
 //import
 function importData(data){
-    
     var tmp = 0;    
     for(var i in data){        
         var tmp_array = [];
@@ -318,7 +314,6 @@ function importData(data){
         $("<input type='hidden'/>").appendTo(audio_block);
         $("<div class='audio_desc'>" + data[i].text + "</div>").appendTo(text);
         $("<input type='hidden' value='" + data[i].answer + "'/>").appendTo(container);
-        
         if(data[i].cur_answer)
             for(var j in data[i].cur_answer){
                 var tmp_letter = $("<li class='ui-state-default'>" + data[i].cur_answer[j] + "</li>");
@@ -339,11 +334,14 @@ function importData(data){
         for(j = 0; j<tmp_array.length;j++)
             tmp_array[j].appendTo(imgs_container);
         
-        imgs_container.sortable({revert: true, placeholder: "highlight"}).bind('sortupdate', function(event, ui) {
+        imgs_container.sortable({
+            revert: true, 
+            placeholder: "highlight"
+        }).bind('sortupdate', function(event, ui) {
             checkResult(event);
         }); 
         if(data[i].cur_answer)
-            imgs_container.trigger("sortupdate") 
+            imgs_container.trigger("sortupdate")
     }
 }
 
@@ -360,7 +358,7 @@ function showExample(){
     var audio_block = $("<div class='audio_block'>").appendTo(text);
     $("<div class='play'>").appendTo(audio_block);
     $("<div class='replay'>").appendTo(audio_block);
-    var source = $("<source/>").attr("src", "objects/beep.mp3");
+    var source = $("<source/>").attr("src", "../../objects/example_en.mp3");
     var audio = $("<audio>").appendTo(audio_block);
     audio.append(source);
     $("<input type='hidden'/>").appendTo(audio_block);
@@ -376,7 +374,10 @@ function showExample(){
     tmp_array = shuffle(tmp_array);
     for(var i = 0; i<tmp_array.length;i++)
         tmp_array[i].appendTo(imgs_container);
-    imgs_container.sortable({revert: true, placeholder: "highlight"}).bind('sortupdate', function(event, ui) {
+    imgs_container.sortable({
+        revert: true, 
+        placeholder: "highlight"
+    }).bind('sortupdate', function(event, ui) {
         checkResult(event);
     });
 }
@@ -387,7 +388,7 @@ function addContainer(){
     var sub_container = $("<div class='sub_cont'>").appendTo(container);
    
     $("<div class='number_cont'>"+ ($(".cont").size() + 1) +"</div>").appendTo(sub_container);
-    var text = $("<div class='text_cont'>").appendTo(sub_container);    
+    var text = $("<div class='text_cont'>").appendTo(sub_container);
     var audio_block = $("<div class='audio_block'>").appendTo(text);
     audio_block.attr("ondragenter", "return false;")
     .attr("ondragleave", "$(this).removeClass('audio_gray'); return false;")
@@ -515,7 +516,6 @@ function changeStyle(val){
     }
 }
 
-
 function onDropAudio(obj, event) {
     if (event.dataTransfer) {
         var format = "text/plain";
@@ -526,12 +526,12 @@ function onDropAudio(obj, event) {
         textData = stringToXML(textData);
         var tmp = textData.getElementsByTagName("path")[0].firstChild.textContent;
         var tmp_type = textData.getElementsByTagName("type")[0].firstChild.textContent;
-        if(tmp_type.substr(0, 5) == "audio"){       
+        if(tmp_type.substr(0, 5) == "audio"){            
             $(obj).find("audio").remove();
             $(obj).find(":first-child").removeClass("stop").addClass("play");
-            var source = $("<source/>").attr("src", tmp);
+            var source = $("<source/>").attr("src", "../../" + tmp);
             var audio = $("<audio>").appendTo($(obj));
-            audio.append(source);            
+            audio.append(source);   
         }
     }
     else {

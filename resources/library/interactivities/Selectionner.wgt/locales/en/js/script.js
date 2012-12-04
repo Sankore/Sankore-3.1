@@ -280,7 +280,7 @@ function exportData(){
                 tmp_block.state = "edit";
             if($(this).hasClass("img_block")){
                 if($(this).find(".audio_block").size() == 0){
-                    tmp_block.src = $(this).find("img").attr("src");
+                    tmp_block.src = $(this).find("img").attr("src").replace("../../","");
                     tmp_block.hidden = $(this).find("input:hidden").val();
                     tmp_block.h = $(this).find("img").height();
                     tmp_block.w = $(this).find("img").width(); 
@@ -289,7 +289,7 @@ function exportData(){
                 }
             }
             if($(this).hasClass("audio_block")){
-                tmp_block.src = $(this).find("source").attr("src");
+                tmp_block.src = $(this).find("source").attr("src").replace("../../","");
                 tmp_block.hidden = $(this).parent().find("input:hidden").val();
                 tmp_block.type = "audio";
                 tmp_block.checked = $(this).parent().find("input:checkbox").attr("checked");
@@ -334,7 +334,7 @@ function importData(data){
                     var img_block = $("<div class='img_block' style='text-align: center;'></div>").insertBefore(imgs_container.find(".clear"));
                     $("<input type='hidden' value='" + data[i].blocks[j].hidden + "'/>").appendTo(img_block); 
                     $("<input type='checkbox' class='ch_box'/>").attr("checked",(data[i].blocks[j].state == "display")?((data[i].blocks[j].checked == "checked")?true:false):false).appendTo(img_block)
-                    var img = $("<img src=\"" + data[i].blocks[j].src + "\" style=\"display: inline;\"/>").appendTo(img_block);
+                    var img = $("<img src=\"../../" + data[i].blocks[j].src + "\" style=\"display: inline;\"/>").appendTo(img_block);
                     img.height(data[i].blocks[j].h);
                     if((120 - data[i].blocks[j].h) > 0)
                         img.css("margin",(120 - data[i].blocks[j].h)/2 + "px 0");
@@ -344,7 +344,7 @@ function importData(data){
                     var audio_block = $("<div class='audio_block'>").appendTo(img_tmp);
                     $("<div class='play'>").appendTo(audio_block);
                     $("<div class='replay'>").appendTo(audio_block);
-                    var source = $("<source/>").attr("src", data[i].blocks[j].src);
+                    var source = $("<source/>").attr("src", "../../" + data[i].blocks[j].src);
                     var audio = $("<audio>").appendTo(audio_block);
                     audio.append(source);
                     $("<input type='hidden' value='" + data[i].blocks[j].hidden + "'/>").appendTo(img_tmp); 
@@ -525,7 +525,7 @@ function onDropTarget(obj, event) {
             $("<div class='close_img'>").appendTo(img_tmp);
             $("<div class='play'>").appendTo(audio_block);
             $("<div class='replay'>").appendTo(audio_block);
-            var source = $("<source/>").attr("src", tmp);
+            var source = $("<source/>").attr("src", "../../" + tmp);
             var audio = $("<audio>").appendTo(audio_block);
             audio.append(source);
             $("<input type='hidden' value='0'/>").appendTo(img_tmp); 
@@ -535,7 +535,7 @@ function onDropTarget(obj, event) {
             $("<div class='close_img'>").appendTo(img_block);
             $("<input type='hidden' value='0'/>").appendTo(img_block); 
             $("<input type='checkbox' class='ch_box'/>").appendTo(img_block)
-            var tmp_img = $("<img src=\"" + tmp + "\" style=\"display: inline;\"/>").appendTo(img_block);
+            var tmp_img = $("<img src=\"../../" + tmp + "\" style=\"display: inline;\"/>").appendTo(img_block);
             setTimeout(function(){
                 if(tmp_img.height() >= tmp_img.width())
                     tmp_img.attr("height", "120");
