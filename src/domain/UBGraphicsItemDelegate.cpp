@@ -814,6 +814,12 @@ void UBGraphicsItemDelegate::setButtonsVisible(bool visible)
     }
 }
 
+void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
+{
+    setCanTrigAnAction(true);
+    mAction = action;
+}
+
 
 UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) :
     QGraphicsRectItem(parent),

@@ -49,8 +49,8 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
   , mIsLoading(true)
 {
     Q_ASSERT(audioFile.length() > 0);
-    QString extension = QFileInfo(audioFile).completeSuffix();
     if(isNewAction){
+        QString extension = QFileInfo(audioFile).completeSuffix();
         QString destDir = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::audioDirectory;
         QString destFile = destDir + "/" + QUuid::createUuid().toString() + "." + extension;
         if(!QDir(destDir).exists())
@@ -83,10 +83,10 @@ void UBGraphicsItemPlayAudioAction::play()
 }
 
 
-QString UBGraphicsItemPlayAudioAction::save()
+QStringList UBGraphicsItemPlayAudioAction::save()
 {
     QString documentPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" ;
-    return mAudioPath.replace(documentPath,"");
+    return QStringList() << QString("%1").arg(eLinkToAudio) <<  mAudioPath.replace(documentPath,"");
 }
 
 void UBGraphicsItemPlayAudioAction::actionRemoved()
@@ -120,16 +120,19 @@ void UBGraphicsItemMoveToPageAction::play()
         boardController->nextScene();
         break;
     case eMoveToPage:
-        boardController->setActiveDocumentScene(mPage);
+        if(mPage > 0 && mPage < boardController->pageCount())
+            boardController->setActiveDocumentScene(mPage);
+        else
+            qWarning() << "scene number " << mPage << "ins't accessible anymore";
         break;
     default:
         break;
     }
 }
 
-QString UBGraphicsItemMoveToPageAction::save()
+QStringList UBGraphicsItemMoveToPageAction::save()
 {
-    qDebug() << "UBGraphicsItemMoveToPageAction";
+    return QStringList() << QString("%1").arg(eLinkToPage) << QString("%1").arg(mActionType) << QString("%1").arg(mPage);
 }
 
 
@@ -145,7 +148,7 @@ void UBGraphicsItemLinkToWebPageAction::play()
     UBApplication::webController->loadUrl(QUrl(mUrl));
 }
 
-QString UBGraphicsItemLinkToWebPageAction::save()
+QStringList UBGraphicsItemLinkToWebPageAction::save()
 {
-    return mUrl;
+    return QStringList() << QString("%1").arg(eLinkToWebUrl) << mUrl;
 }

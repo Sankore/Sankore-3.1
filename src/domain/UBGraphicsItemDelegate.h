@@ -269,6 +269,9 @@ class UBGraphicsItemDelegate : public QObject
         qreal antiScaleRatio() const { return mAntiScaleRatio; }
         virtual void update() {positionHandles();}
 
+        UBGraphicsItemAction* action() { return mAction; }
+        void setAction(UBGraphicsItemAction* action);
+
 
     signals:
         void showOnDisplayChanged(bool shown);

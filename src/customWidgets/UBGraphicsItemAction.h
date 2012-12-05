@@ -49,7 +49,7 @@ class UBGraphicsItemAction : public QObject
 public:
     UBGraphicsItemAction(eUBGraphicsItemLinkType linkType,QObject* parent = 0);
     virtual void play() = 0;
-    virtual QString save() = 0;
+    virtual QStringList save() = 0;
     virtual void actionRemoved();
     eUBGraphicsItemLinkType linkType() { return mLinkType;}
 
@@ -70,7 +70,7 @@ public:
     UBGraphicsItemPlayAudioAction(QString audioFile, bool isNewAction = true, QObject* parent = 0);
     ~UBGraphicsItemPlayAudioAction();
     void play();
-    QString save();
+    QStringList save();
     void actionRemoved();
 
 private:
@@ -88,7 +88,7 @@ class UBGraphicsItemMoveToPageAction : public UBGraphicsItemAction
 public:
     UBGraphicsItemMoveToPageAction(eUBGraphicsItemMovePageAction actionType, int page = 0, QObject* parent = 0);
     void play();
-    QString save();
+    QStringList save();
 
 private:
     eUBGraphicsItemMovePageAction mActionType;
@@ -103,7 +103,7 @@ class UBGraphicsItemLinkToWebPageAction : public UBGraphicsItemAction
 public:
     UBGraphicsItemLinkToWebPageAction(QString url, QObject* parent = 0);
     void play();
-    QString save();
+    QStringList save();
 
 private:
     QString mUrl;
