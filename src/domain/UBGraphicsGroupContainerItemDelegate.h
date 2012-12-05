@@ -46,6 +46,11 @@ protected:
 
 private:
     DelegateButton *mDestroyGroupButton;
+
+private slots:
+    void onAddActionClicked();
+    void onRemoveActionClicked();
+    void saveAction(UBGraphicsItemAction *action);
 };
 
 #endif // UBGRAPHICSGROUPCONTAINERITEMDELEGATE_H

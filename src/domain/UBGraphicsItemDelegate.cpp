@@ -644,7 +644,6 @@ void UBGraphicsItemDelegate::onAddActionClicked()
     UBCreateLinkPalette* linkPalette = UBApplication::boardController->paletteManager()->linkPalette();
     linkPalette->show();
     connect(linkPalette,SIGNAL(definedAction(UBGraphicsItemAction*)),this,SLOT(saveAction(UBGraphicsItemAction*)));
-
 }
 
 void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
@@ -672,6 +671,7 @@ void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
 void UBGraphicsItemDelegate::onRemoveActionClicked()
 {
     if(mAction){
+        mAction->actionRemoved();
         delete mAction;
         mAction = NULL;
     }
@@ -817,7 +817,13 @@ void UBGraphicsItemDelegate::setButtonsVisible(bool visible)
 void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
 {
     setCanTrigAnAction(true);
-    mAction = action;
+    if(!mMenu){
+        //TODO claudio
+        // Remove this very bad chunk of code
+        mMenu = new QMenu(UBApplication::boardController->controlView());
+        decorateMenu(mMenu);
+    }
+    saveAction(action);
 }
 
 

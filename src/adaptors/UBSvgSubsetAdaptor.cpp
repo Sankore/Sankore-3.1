@@ -1010,6 +1010,8 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(UBGraphicsItemAction* action)
 {
     UBGraphicsGroupContainerItem *group = new UBGraphicsGroupContainerItem();
+    if(action)
+        group->Delegate()->setAction(action);
     QMultiMap<QString, UBGraphicsPolygonItem *> strokesGroupsContainer;
     QList<QGraphicsItem *> groupContainer;
 
@@ -1115,17 +1117,10 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroupRoot()
         }
         else if (mXmlReader.isStartElement()){
             if (mXmlReader.name() == tGroup){
-                qDebug() << "actionType " << mXmlReader.attributes().value("actionType");
                 UBGraphicsItemAction* action = readAction();
                 UBGraphicsGroupContainerItem *curGroup = readGroup(action);
                 if (curGroup)
                     mScene->addGroup(curGroup);
-
-//                if(action){
-//                    UBGraphicsStrokesGroup* graphicsItem = dynamic_cast<UBGraphicsStrokesGroup*>(curGroup->group()->childItems().at(0));
-//                    graphicsItem->Delegate()->setAction(action);
-//                }
-
 
             }
             else {
@@ -1472,7 +1467,8 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             UBGraphicsGroupContainerItem *groupItem = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item);
             if (groupItem && groupItem->isVisible())
             {
-                persistGroupToDom(groupItem, &groupRoot, &groupDomDocument);
+
+                persistGroupToDom(groupItem, &groupRoot, &groupDomDocument,groupItem->Delegate()->action());
                 continue;
             }
         }
@@ -1559,12 +1555,19 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
     return true;
 }
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *groupDomDocument)
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *groupDomDocument, UBGraphicsItemAction* action)
 {
     QUuid uuid = UBGraphicsScene::getPersonalUuid(groupItem);
     if (!uuid.isNull()) {
         QDomElement curGroupElement = groupDomDocument->createElement(tGroup);
         curGroupElement.setAttribute(aId, uuid);
+        if(action){
+            QStringList actionParameter = action->save();
+            curGroupElement.setAttribute("actionType",actionParameter.at(0));
+            curGroupElement.setAttribute("actionFirstParameter",actionParameter.at(1));
+            if(actionParameter.count() > 2)
+                curGroupElement.setAttribute("actionSecondParameter",actionParameter.at(2));
+        }
         curParent->appendChild(curGroupElement);
 
         foreach (QGraphicsItem *item, groupItem->childItems()) {

@@ -83,7 +83,7 @@ void UBCreateLinkLabel::dropEvent(QDropEvent *event)
         setText(tr("Cannot display data"));
 
     if(UBFileSystemUtils::mimeTypeFromFileName(path).contains("audio"))
-        setText(path);
+        setText(QFileInfo(QUrl(path).toLocalFile()).completeBaseName());
     else
         setText(tr("Dropped file isn't reconized to be an audio file"));
 
