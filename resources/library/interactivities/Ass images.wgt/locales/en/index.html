@@ -9,7 +9,8 @@
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){ 
-                sankore.enableDropOnWidget(false);
+                if(window.sankore)
+                    sankore.enableDropOnWidget(false);
                 start();
             });
         </script>
@@ -27,7 +28,7 @@
                 </td>
                 <td class="b_top_right">&nbsp;</td>
             </tr>
-       
+
             <tr>
                 <td class="b_center_left">&nbsp;</td>
                 <td>
@@ -48,7 +49,7 @@
                 </td>
                 <td class="b_center_right">&nbsp;</td>
             </tr>     
-        
+
             <tr style="height: 54px;">
                 <td class="b_bottom_left">&nbsp;</td>
                 <td class="b_bottom_center">&nbsp;</td>

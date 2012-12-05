@@ -116,13 +116,13 @@ function start(){
                 $(this).addClass("selected");
                 $("#wgt_edit").removeClass("selected");
                 $("#parameters").css("display","none");
-                $(".add_block").remove();
+//                $(".add_block").remove();
                 $(".cont").each(function(){
                     var container = $(this);
                     
                     container.find(".text_cont").removeAttr("contenteditable");
                     container.find(".add_img").remove();
-                    container.find(".close_cont").remove();
+//                    container.find(".close_cont").remove();
                     container.find(".imgs_cont").removeAttr("ondragenter")
                     .removeAttr("ondragleave")
                     .removeAttr("ondragover")
@@ -148,7 +148,7 @@ function start(){
                 $(".cont").each(function(){
                     var container = $(this);
                     
-                    $("<div class='close_cont'>").appendTo(container);
+//                    $("<div class='close_cont'>").appendTo(container);
                     container.find(".text_cont").attr("contenteditable","true");
                     container.find(".imgs_cont").removeClass("right")
                     .attr("ondragenter", "return false;")
@@ -168,7 +168,7 @@ function start(){
                     add_img.insertBefore(container.find(".clear"));
                 });
                 
-                $("<div class='add_block'>" + sankoreLang.add + "</div>").appendTo("#data");
+//                $("<div class='add_block'>" + sankoreLang.add + "</div>").appendTo("#data");
                 $(this).css("display", "none");
                 $("#wgt_display").css("display", "block");
             }
@@ -176,9 +176,9 @@ function start(){
     });
     
     //add new block
-    $(".add_block").live("click", function(){
-        addContainer();
-    });
+//    $(".add_block").live("click", function(){
+//        addContainer();
+//    });
     
     //checkbox events
     $("input:checkbox").live("click", function(){
@@ -250,10 +250,10 @@ function start(){
     });
     
     //deleting a block
-    $(".close_cont").live("click",function(){
-        $(this).parent().remove();
-        refreshBlockNumbers();
-    });
+//    $(".close_cont").live("click",function(){
+//        $(this).parent().remove();
+//        refreshBlockNumbers();
+//    });
     
     //deleting the img block
     $(".close_img").live("click", function(){
@@ -311,7 +311,6 @@ function exportData(){
 //import
 function importData(data){
     
-    var tmp = 0;    
     for(var i in data){
         
         var container = $("<div class='cont'>").appendTo("#data");
@@ -319,7 +318,7 @@ function importData(data){
         var imgs_container = $("<div class='imgs_cont'>").appendTo(container); 
         $("<div class='clear'>").appendTo(imgs_container);
         
-        $("<div class='number_cont'>" + (++tmp) + "</div>").appendTo(sub_container);
+//        $("<div class='number_cont'>" + (++tmp) + "</div>").appendTo(sub_container);
         $("<div class='text_cont'>" + data[i].text + "</div>").appendTo(sub_container);
         
         for(var j in data[i].blocks){
@@ -377,7 +376,7 @@ function showExample(){
     var sub_container = $("<div class='sub_cont'>").appendTo(container);
     var imgs_container = $("<div class='imgs_cont'>").appendTo(container);
     
-    $("<div class='number_cont'>1</div>").appendTo(sub_container);
+//    $("<div class='number_cont'>1</div>").appendTo(sub_container);
     $("<div class='text_cont'>" + sankoreLang.short_desc + "</div>").appendTo(sub_container);
     
     var tmp1 = $("<div class='text_block'>").appendTo(imgs_container); 
@@ -406,23 +405,23 @@ function showExample(){
 }
 
 //add new container
-function addContainer(){
-    var container = $("<div class='cont'>");
-    var sub_container = $("<div class='sub_cont'>").appendTo(container);
-    var imgs_container = $("<div class='imgs_cont'>").appendTo(container);
-    imgs_container.attr("ondragenter", "return false;")
-    .attr("ondragleave", "$(this).removeClass('over'); return false;")
-    .attr("ondragover", "$(this).addClass('over'); return false;")
-    .attr("ondrop", "$(this).removeClass('over'); return onDropTarget(this,event);");
-    
-    $("<div class='close_cont'>").appendTo(container);
-    $("<div class='number_cont'>"+ ($(".cont").size() + 1) +"</div>").appendTo(sub_container);
-    var text = $("<div class='text_cont' contenteditable>" + sankoreLang.enter + "</div>").appendTo(sub_container);
-    
-    $("<div class='add_img'>").appendTo(imgs_container);
-    $("<div class='clear'>").appendTo(imgs_container);
-    container.insertBefore($(".add_block"));
-}
+//function addContainer(){
+//    var container = $("<div class='cont'>");
+//    var sub_container = $("<div class='sub_cont'>").appendTo(container);
+//    var imgs_container = $("<div class='imgs_cont'>").appendTo(container);
+//    imgs_container.attr("ondragenter", "return false;")
+//    .attr("ondragleave", "$(this).removeClass('over'); return false;")
+//    .attr("ondragover", "$(this).addClass('over'); return false;")
+//    .attr("ondrop", "$(this).removeClass('over'); return onDropTarget(this,event);");
+//    
+//    $("<div class='close_cont'>").appendTo(container);
+//    $("<div class='number_cont'>"+ ($(".cont").size() + 1) +"</div>").appendTo(sub_container);
+//    var text = $("<div class='text_cont' contenteditable>" + sankoreLang.enter + "</div>").appendTo(sub_container);
+//    
+//    $("<div class='add_img'>").appendTo(imgs_container);
+//    $("<div class='clear'>").appendTo(imgs_container);
+//    container.insertBefore($(".add_block"));
+//}
 
 //add new img block
 function addTextBlock(dest){
@@ -433,12 +432,12 @@ function addTextBlock(dest){
     $("<div class='close_img'>").appendTo(tmp);
 }
 
-function refreshBlockNumbers(){
-    var i = 0;
-    $(".cont").each(function(){
-        $(this).find(".number_cont").text(++i);
-    })
-}
+//function refreshBlockNumbers(){
+//    var i = 0;
+//    $(".cont").each(function(){
+//        $(this).find(".number_cont").text(++i);
+//    })
+//}
 
 function stringToXML(text){
     if (window.ActiveXObject){
@@ -560,4 +559,3 @@ function onDropTarget(obj, event) {
     }
     return false;
 }
-

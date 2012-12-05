@@ -112,7 +112,7 @@ function start(){
                 $(this).addClass("selected");
                 $("#wgt_edit").removeClass("selected");
                 $("#parameters").css("display","none");
-                $(".add_block").remove();
+//                $(".add_block").remove();
                 $(".cont").each(function(){
                     var container = $(this);
                     var tmp_i = 0;
@@ -121,7 +121,7 @@ function start(){
                     
                     container.find(".text_cont").removeAttr("contenteditable");
                     container.find(".add_img").remove();
-                    container.find(".close_cont").remove();
+//                    container.find(".close_cont").remove();
                     container.find(".img_block").each(function(){
                         if($(this).find("img").attr("src") != "img/drop_img.png"){
                             $(this).find(".close_img").remove();
@@ -162,7 +162,7 @@ function start(){
                 $(".cont").each(function(){
                     var container = $(this);
     
-                    $("<div class='close_cont'>").appendTo(container);
+//                    $("<div class='close_cont'>").appendTo(container);
                     container.find(".text_cont").attr("contenteditable","true");
                     //container.find(".imgs_cont").sortable("destroy");
                     container.find(".imgs_cont").css("background-color", "");
@@ -182,7 +182,7 @@ function start(){
                     container.find(".imgs_cont").append(add_img)
                 });                
                 
-                $("<div class='add_block'>" + sankoreLang.add + "</div>").appendTo("#data");
+//                $("<div class='add_block'>" + sankoreLang.add + "</div>").appendTo("#data");
                 $(this).css("display", "none");
                 $("#wgt_display").css("display", "block");
             }
@@ -190,9 +190,9 @@ function start(){
     });
     
     //add new block
-    $(".add_block").live("click", function(){
-        addContainer();
-    });
+//    $(".add_block").live("click", function(){
+//        addContainer();
+//    });
     
     //adding new img
     $(".add_img").live("click", function(){
@@ -200,10 +200,10 @@ function start(){
     });
     
     //deleting a block
-    $(".close_cont").live("click",function(){
-        $(this).parent().remove();
-        refreshBlockNumbers();
-    });
+//    $(".close_cont").live("click",function(){
+//        $(this).parent().remove();
+//        refreshBlockNumbers();
+//    });
     
     //deleting the img block
     $(".close_img").live("click", function(){
@@ -277,8 +277,7 @@ function exportData(){
 
 //import
 function importData(data){
-    
-    var tmp = 0;    
+        
     for(var i in data){
         if(data[i].tmp){
             changeStyle(data[i].style);
@@ -294,7 +293,7 @@ function importData(data){
             var sub_container = $("<div class='sub_cont'>").appendTo(container);
             var imgs_container = $("<div class='imgs_cont'>").appendTo(container);    
         
-            var number = $("<div class='number_cont'>"+ (++tmp) +"</div>").appendTo(sub_container);
+//            var number = $("<div class='number_cont'>"+ (++tmp) +"</div>").appendTo(sub_container);
             var text = $("<div class='text_cont'>" + data[i].text + "</div>").appendTo(sub_container);
     
             $("<input type='hidden' value='" + data[i].right + "'/>").appendTo(imgs_container);
@@ -336,7 +335,7 @@ function showExample(){
     var sub_container = $("<div class='sub_cont'>").appendTo(container);
     var imgs_container = $("<div class='imgs_cont'>").appendTo(container);
 
-    var number = $("<div class='number_cont'>1</div>").appendTo(sub_container);
+//    var number = $("<div class='number_cont'>1</div>").appendTo(sub_container);
     var text = $("<div class='text_cont'>" + sankoreLang.short_desc + "</div>").appendTo(sub_container);
     
     $("<input type='hidden' value='1*2*3*4*5*'/>").appendTo(imgs_container);
@@ -387,19 +386,19 @@ function checkResult(event)
 }
 
 //add new container
-function addContainer(){
-    var container = $("<div class='cont'>");
-    var sub_container = $("<div class='sub_cont'>").appendTo(container);
-    var imgs_container = $("<div class='imgs_cont'>").appendTo(container);
-    
-    var close = $("<div class='close_cont'>").appendTo(container);
-    var number = $("<div class='number_cont'>"+ ($(".cont").size() + 1) +"</div>").appendTo(sub_container);
-    var text = $("<div class='text_cont' contenteditable>" + sankoreLang.enter + "</div>").appendTo(sub_container);
-    
-    $("<input type='hidden' value='1*2*3*4*5*'/>").appendTo(imgs_container);
-    var add_img = $("<div class='add_img'>").appendTo(imgs_container);
-    container.insertBefore($(".add_block"));
-}
+//function addContainer(){
+//    var container = $("<div class='cont'>");
+//    var sub_container = $("<div class='sub_cont'>").appendTo(container);
+//    var imgs_container = $("<div class='imgs_cont'>").appendTo(container);
+//    
+//    var close = $("<div class='close_cont'>").appendTo(container);
+//    var number = $("<div class='number_cont'>"+ ($(".cont").size() + 1) +"</div>").appendTo(sub_container);
+//    var text = $("<div class='text_cont' contenteditable>" + sankoreLang.enter + "</div>").appendTo(sub_container);
+//    
+//    $("<input type='hidden' value='1*2*3*4*5*'/>").appendTo(imgs_container);
+//    var add_img = $("<div class='add_img'>").appendTo(imgs_container);
+//    container.insertBefore($(".add_block"));
+//}
 
 //add new img block
 function addImgBlock(dest){
@@ -412,12 +411,12 @@ function addImgBlock(dest){
     $("<img src='img/drop_img.png' height='120'/>").appendTo(img_block);
 }
 
-function refreshBlockNumbers(){
-    var i = 0;
-    $(".cont").each(function(){
-        $(this).find(".number_cont").text(++i);
-    })
-}
+//function refreshBlockNumbers(){
+//    var i = 0;
+//    $(".cont").each(function(){
+//        $(this).find(".number_cont").text(++i);
+//    })
+//}
 
 //shuffles an array
 function shuffle( arr )
