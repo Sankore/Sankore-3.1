@@ -45,6 +45,7 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     foreach (QAction *barAction, mTrapActionsBar->actions())
     {
         mTrapActionsBar->getButtonFromAction(barAction)->setStyleSheet(QString("QToolButton{color: black; font: bold 14px; font-family: Arial; background-color: transparent; border: none}"));
+        barAction->setEnabled(false);
     }
 
 
@@ -91,8 +92,11 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     connect(mSelectContentCombobox, SIGNAL(currentIndexChanged(int)), mController, SLOT(selectHtmlObject(int)));
     connect(mApplicationNameEdit, SIGNAL(textChanged(const QString &)), mController, SLOT(text_Changed(const QString &)));
     connect(mApplicationNameEdit, SIGNAL(textEdited(const QString &)), mController, SLOT(text_Edited(const QString &)));
-    connect(UBApplication::mainWindow->actionWebTrapToCurrentPage, SIGNAL(triggered()), mController, SLOT(createWidget()));
-    connect(UBApplication::mainWindow->actionWebTrapToLibrary, SIGNAL(clicked(bool)), this, SLOT(importWidgetInLibrary()));
+
+    connect(UBApplication::mainWindow->actionWebTrapToCurrentPage, SIGNAL(triggered()), mController, SLOT(addItemToBoard()));
+    connect(UBApplication::mainWindow->actionWebTrapToLibrary, SIGNAL(triggered()), mController, SLOT(addItemToLibrary()));
+    connect(UBApplication::mainWindow->actionWebTrapLinkToPage, SIGNAL(triggered()), mController, SLOT(addLinkToBoard()));
+    connect(UBApplication::mainWindow->actionWebTrapLinkToLibrary, SIGNAL(triggered()), mController, SLOT(addLinkToLibrary()));
 }
 
 WBTrapWebPageContentWindow::~WBTrapWebPageContentWindow()
@@ -103,4 +107,12 @@ WBTrapWebPageContentWindow::~WBTrapWebPageContentWindow()
 void WBTrapWebPageContentWindow::setUrl(const QUrl &url)
 {
     mTrapContentPreview->setUrl(url);
+}
+
+void WBTrapWebPageContentWindow::setReadyForTrap(bool bReady)
+{
+    foreach (QAction *barAction, mTrapActionsBar->actions())
+    {
+        barAction->setEnabled(bReady);
+    }
 }

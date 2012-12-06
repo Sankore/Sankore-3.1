@@ -359,6 +359,7 @@ private:
 public:
     UBFeature getDestinationFeatureForUrl( const QUrl &url );
     UBFeature getDestinationFeatureForMimeType(const QString &pMmimeType);
+    QString getFeaturePathByName(const QString &featureName) const;
 
 };
 

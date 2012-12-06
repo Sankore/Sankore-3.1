@@ -965,6 +965,16 @@ UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &
     return UBFeature();
 }
 
+QString UBFeaturesController::getFeaturePathByName(const QString &featureName) const
+{
+    foreach (UBFeature curFeature, *featuresList)
+    {
+        if (featureName == curFeature.getName())
+            return curFeature.getFullPath().toLocalFile();
+    }
+    return QString();
+}
+
 void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle)
 {
     UBFeature dest = getDestinationFeatureForMimeType(pContentSource);
@@ -985,13 +995,17 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
 
         filePath = dest.getFullPath().toLocalFile() + "/" + fileName;
 
-        QImage::fromData(pData).save(filePath);
-
+        QImage img;
+        img.loadFromData(pData);
+        importImage(img, fileName);
+     /*        
         UBFeature downloadedFeature = UBFeature(dest.getFullVirtualPath() + "/" + fileName, getIcon( filePath, fileTypeFromUrl(filePath)),
                                                  fileName, QUrl::fromLocalFile(filePath), FEATURE_ITEM);
         if (downloadedFeature != UBFeature()) {
             featuresModel->addItem(downloadedFeature);
+         
         }
+        */
 
     } else {
         fileName = QFileInfo( sourceUrl.toString() ).fileName();
@@ -1153,7 +1167,7 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
 {
     QString sourcePath = url.toLocalFile();
 
-    Q_ASSERT( QFileInfo( sourcePath ).exists() );
+    Q_ASSERT( QFileInfo(sourcePath ).exists());
 
     UBFeature possibleDest = getDestinationFeatureForUrl(url);
 

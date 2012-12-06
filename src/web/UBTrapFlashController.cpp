@@ -35,7 +35,9 @@
 #include "network/UBNetworkAccessManager.h"
 
 #include "domain/UBGraphicsScene.h"
+#include "domain/UBGraphicsWidgetItem.h"
 
+#include "board/UBBoardPaletteManager.h"
 #include "board/UBBoardController.h"
 
 #include "frameworks/UBPlatformUtils.h"
@@ -59,12 +61,7 @@ UBTrapWebPageContentController::UBTrapWebPageContentController(QWidget* parent)
 
 UBTrapWebPageContentController::~UBTrapWebPageContentController()
 {
-    // NOOP
-}
-
-
-void UBTrapWebPageContentController::showTrapFlash()
-{
+    freeTemp();
 }
 
 void UBTrapWebPageContentController::text_Changed(const QString &newText)
@@ -102,11 +99,6 @@ void UBTrapWebPageContentController::text_Changed(const QString &newText)
 void UBTrapWebPageContentController::text_Edited(const QString &newText)
 {
     Q_UNUSED(newText);
-}
-
-void UBTrapWebPageContentController::hideTrapFlash()
-{
-
 }
 
 
@@ -160,21 +152,18 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
                     combobox->insertSeparator(combobox->count());
                 }
                 mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), i);
-                combobox->addItem(widgetNameForObject(wrapper));
+                combobox->addItem(widgetNameForUrl(wrapper.source));
             }
-
             connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
         }
     }
 }
 
-
 void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
 {
-
     if (pObjectIndex == 0)
     {
-        mTrapWebContentDialog->webView()->setHtml(generateFullPageHtml("", false));
+        mTrapWebContentDialog->webView()->setHtml(generateFullPageHtml(mCurrentWebFrame->url(), "", false));
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.title");
         mTrapWebContentDialog->applicationNameLineEdit()->setText(res.toString().trimmed());
    
@@ -184,20 +173,20 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
         UBWebKitUtils::HtmlObject currentObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(pObjectIndex));
 
         mTrapWebContentDialog->webView()->setHtml(generateHtml(currentObject, "", false));
-        mTrapWebContentDialog->applicationNameLineEdit()->setText(widgetNameForObject(currentObject));
+        mTrapWebContentDialog->applicationNameLineEdit()->setText(widgetNameForUrl(currentObject.source));
     }
 }
 
-void UBTrapWebPageContentController::createWidget()
+QUrl UBTrapWebPageContentController::itemUrlFromSelectedContent(bool bUseAsLink)
 {
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
+    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
+    QString tempDir = UBFileSystemUtils::createTempDir("TrapWebContentRendering");
+    mTempDirectoriesUsed.insert(tempDir);
 
-    if (selectedIndex == 0)
+    if (selectedIndex == 0 || UBApplication::webController->isOEmbedable(QUrl(selectedObject.source)) || bUseAsLink)
     {
-        // full page widget
-        QString tempDir = UBFileSystemUtils::createTempDir("TrapWebContentRendering");
         QDir widgetDir(tempDir + "/" + mTrapWebContentDialog->applicationNameLineEdit()->text() + ".wgt");
-
         if (widgetDir.exists() && !UBFileSystemUtils::deleteDir(widgetDir.path()))
         {
             qWarning() << "Cannot delete " << widgetDir.path();
@@ -205,157 +194,101 @@ void UBTrapWebPageContentController::createWidget()
 
         widgetDir.mkpath(widgetDir.path());
 
-        generateFullPageHtml(widgetDir.path(), true);
-
-        generateIcon(widgetDir.path());
-        generateConfig(800, 600, widgetDir.path());
-
-        //generateDefaultPng(width, height, widgetDir.path());
-
-        importWidgetInLibrary(widgetDir);
-
-        UBFileSystemUtils::deleteDir(tempDir);
-    }
-    else
-    {
-        UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
         if (UBApplication::webController->isOEmbedable(QUrl(selectedObject.source)))
         {
-
-            UBApplication::webController->captureoEmbed(QUrl(selectedObject.source));
+            QString embedWidgetPath = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeaturePathByName("Sel video");
+            if (UBFileSystemUtils::copyDir(embedWidgetPath, widgetDir.path()))
+            {
+                UBGraphicsW3CWidgetItem *widget = new UBGraphicsW3CWidgetItem(QUrl::fromLocalFile(embedWidgetPath), 0);
+                if (widget)
+                {
+                    widget->setPreference("oembedUrl", selectedObject.source);
+                }
+            }
         }
-        else
+        else if (selectedIndex == 0)
+        {        
+            generateFullPageHtml(mCurrentWebFrame->url(), widgetDir.path(), true);
+            generateConfig(800, 600, widgetDir.path());
+        }
+        else if (bUseAsLink)
         {
-            // create widget from one HTML object
-            UBApplication::applicationController->showBoard();
-            UBApplication::boardController->downloadURL(QUrl(selectedObject.source), QString(), QPoint(0, 0), QSize(selectedObject.width, selectedObject.height));
+            generateFullPageHtml(QUrl(selectedObject.source), widgetDir.path(), true);
+            generateConfig(selectedObject.width, selectedObject.height, widgetDir.path());
         }
+
+        generateIcon(widgetDir.path());
+
+        return QUrl::fromLocalFile(widgetDir.path());
+       
     }
+    else
+        return QUrl(selectedObject.source);
 
-    QString freezedWidgetPath = UBPlatformUtils::applicationResourcesDirectory() + "/etc/freezedWidgetWrapper.html";
-    mTrapWebContentDialog->webView()->load(QUrl::fromLocalFile(freezedWidgetPath));
-
-    mTrapWebContentDialog->hide();
 }
 
 
+void UBTrapWebPageContentController::freeTemp()
+{
+    foreach(QString tempDir, mTempDirectoriesUsed)
+    {
+        UBFileSystemUtils::deleteDir(tempDir);
+    }
+}
+
 void UBTrapWebPageContentController::addItemToLibrary()
 {
- //   creaiteItemFromSelectedContent();
+    importItemInLibrary(itemUrlFromSelectedContent(false).toString());
+    freeTemp();
+    UBApplication::applicationController->showBoard();
 }
 
 void UBTrapWebPageContentController::addItemToBoard()
 {
- //   creaiteItemFromSelectedContent();
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
-
-    UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromUrl(selectedObject.source);
-
-
+    UBApplication::boardController->downloadURL(itemUrlFromSelectedContent(false), QString(), QPoint(0, 0), QSize(selectedObject.width, selectedObject.height));
+    freeTemp();
+    UBApplication::applicationController->showBoard();
 }
 
 void UBTrapWebPageContentController::addLinkToLibrary()
 {
 
-}
-
-void UBTrapWebPageContentController::AddLinkToBoard()
-{
 
 }
 
-
-void UBTrapWebPageContentController::creaiteItemFromSelectedContent()
+void UBTrapWebPageContentController::addLinkToBoard()
 {
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
+    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
+    UBApplication::boardController->downloadURL(itemUrlFromSelectedContent(true), QString(), QPoint(0, 0), QSize(selectedObject.width, selectedObject.height));
+    freeTemp();
+    UBApplication::applicationController->showBoard();
+}
 
-    if (selectedIndex == 0)
-    {
-        // full page widget
-        QString tempDir = UBFileSystemUtils::createTempDir("TrapWebContentRendering");
-        QDir widgetDir(tempDir + "/" + mTrapWebContentDialog->applicationNameLineEdit()->text() + ".wgt");
-
-        if (widgetDir.exists() && !UBFileSystemUtils::deleteDir(widgetDir.path()))
-        {
-            qWarning() << "Cannot delete " << widgetDir.path();
-        }
-
-        widgetDir.mkpath(widgetDir.path());
-
-        generateFullPageHtml(widgetDir.path(), true);
-
-        generateIcon(widgetDir.path());
-        generateConfig(800, 600, widgetDir.path());
-
-        //generateDefaultPng(width, height, widgetDir.path());
-
-        importWidgetInLibrary(widgetDir);
-
-        UBFileSystemUtils::deleteDir(tempDir);
+void UBTrapWebPageContentController::importItemInLibrary(QString pSourceDir)
+{
+    if (pSourceDir.startsWith("file://") || pSourceDir.startsWith("/"))
+    {    
+        QString widgetLibraryPath = UBApplication::boardController->paletteManager()->featuresWidget()->importFromUrl(QUrl::fromUserInput(pSourceDir));   
     }
     else
     {
+        int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
         UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
-        if (UBApplication::webController->isOEmbedable(QUrl(selectedObject.source)))
-        {
 
-            UBApplication::webController->captureoEmbed(QUrl(selectedObject.source));
-        }
-        else
-        {
-            // create widget from one HTML object
+        sDownloadFileDesc desc;
+        desc.isBackground = false;
+        desc.modal = false;
+        desc.dest = sDownloadFileDesc::library;
+        desc.name = widgetNameForUrl(pSourceDir);
+        qDebug() << desc.name;
+        desc.srcUrl = pSourceDir;
+        desc.size = QSize(selectedObject.width, selectedObject.height);
+        UBDownloadManager::downloadManager()->addFileToDownload(desc);
 
-            UBApplication::applicationController->showBoard();
-            UBApplication::boardController->downloadURL(QUrl(selectedObject.source), QString(), QPoint(0, 0), QSize(selectedObject.width, selectedObject.height));
-        }
     }
-
-    QString freezedWidgetPath = UBPlatformUtils::applicationResourcesDirectory() + "/etc/freezedWidgetWrapper.html";
-    mTrapWebContentDialog->webView()->load(QUrl::fromLocalFile(freezedWidgetPath));
-
-    mTrapWebContentDialog->hide();
-}
-
-#include "board\UBBoardPaletteManager.h"
-
-void UBTrapWebPageContentController::importWidgetInLibrary(QDir pSourceDir)
-{
-    const QString userWidgetPath = UBSettings::settings()->userInteractiveDirectory() + "/" + tr("Web");
-    QDir userWidgetDir(userWidgetPath);
-
-    if (!userWidgetDir.exists())
-    {
-        userWidgetDir.mkpath(userWidgetPath);
-    }
-
-    //QString widgetLibraryPath = userWidgetPath + "/" + mTrapWebContentDialog->applicationNameLineEdit()->text() + ".wgt";
-    //QDir widgetLibraryDir(widgetLibraryPath);
-/*
-    if (widgetLibraryDir.exists())
-    {
-        if (!UBFileSystemUtils::deleteDir(widgetLibraryDir.path()))
-        {
-            qWarning() << "Cannot delete old widget " << widgetLibraryDir.path();
-        }
-    }
-*/
-    QString widgetLibraryPath = UBApplication::boardController->paletteManager()->featuresWidget()->importFromUrl(QUrl::fromUserInput(pSourceDir.path()));
-    //UBFeaturesController:: moveExternalData
-
-    qDebug() << "Widget imported in path " << widgetLibraryPath;
-    //UBFileSystemUtils::copyDir(pSourceDir.path(), widgetLibraryPath);
-
-    // also add to current scene
-    if (UBApplication::applicationController)
-        UBApplication::applicationController->showBoard();
-
-    if (UBApplication::boardController &&
-        UBApplication::boardController->activeScene())
-    {
-        UBApplication::boardController->activeScene()->addWidget(QUrl::fromLocalFile(widgetLibraryPath));
-    }
-    
 }
 
 
@@ -374,6 +307,10 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
 
         mCurrentWebFrame = pCurrentWebFrame;
         updateListOfContents(list);
+        
+        mTrapWebContentDialog->applicationNameLineEdit()->setText(mCurrentWebFrame->title());
+
+        mTrapWebContentDialog->setReadyForTrap(!list.isEmpty());
     }
 }
 
@@ -441,16 +378,15 @@ void UBTrapWebPageContentController::generateConfig(int pWidth, int pHeight, con
 }
 
 
-QString UBTrapWebPageContentController::generateFullPageHtml(const QString& pDirPath, bool pGenerateFile)
+QString UBTrapWebPageContentController::generateFullPageHtml(const QUrl &srcUrl, const QString& pDirPath, bool pGenerateFile)
 {
-
     QString htmlContentString;
 
     htmlContentString = 
     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n \
     <html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n \
         <head>\r\n \
-            <meta http-equiv=\"refresh\" content=\"0; " + mCurrentWebFrame->url().toString() + "\">\r\n \
+            <meta http-equiv=\"refresh\" content=\"0; " + srcUrl.toString() + "\">\r\n \
         </head>\r\n \
         <body>\r\n \
             Redirect to target...\r\n \
@@ -593,9 +529,9 @@ QString UBTrapWebPageContentController::generateHtml(const UBWebKitUtils::HtmlOb
     }
 }
 
-QString UBTrapWebPageContentController::widgetNameForObject(UBWebKitUtils::HtmlObject pObject)
+QString UBTrapWebPageContentController::widgetNameForUrl(QString pObjectUrl)
 {
-    QString url = pObject.source;
+    QString url = pObjectUrl;
     int parametersIndex = url.indexOf("?");
     if(parametersIndex != -1)
         url = url.left(parametersIndex);

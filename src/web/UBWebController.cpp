@@ -327,14 +327,6 @@ void UBWebController::setSourceWidget(QWidget* pWidget)
     UBApplication::applicationController->setMirrorSourceWidget(pWidget);
 }
 
-
-void UBWebController::trapFlash()
-{
-    mTrapContentController->showTrapFlash();
-    activePageChanged();
-}
-
-
 void UBWebController::activePageChanged()
 {
     if (mCurrentWebBrowser && (*mCurrentWebBrowser)->currentTabWebView())
@@ -348,10 +340,6 @@ void UBWebController::activePageChanged()
 
         QUrl latestUrl = (*mCurrentWebBrowser)->currentTabWebView()->url();
 
-        // TODO : Uncomment the next line to continue the youtube button bugfix
-        //UBApplication::mainWindow->actionWebOEmbed->setEnabled(hasEmbeddedContent());
-        // And remove this line once the previous one is uncommented
-        UBApplication::mainWindow->actionWebOEmbed->setEnabled(isOEmbedable(latestUrl));
         UBApplication::mainWindow->actionEduMedia->setEnabled(isEduMedia(latestUrl));
 
         emit activeWebPageChanged((*mCurrentWebBrowser)->currentTabWebView());
@@ -453,10 +441,8 @@ void UBWebController::setupPalettes()
                     UBApplication::boardController->paletteManager()->mKeyboardPalette, SLOT(onDeactivated()));
 #endif
 
-        connect(mMainWindow->actionWebTrapFlash, SIGNAL(triggered()), this, SLOT(trapFlash()));
         connect(mMainWindow->actionWebCustomCapture, SIGNAL(triggered()), this, SLOT(customCapture()));
         connect(mMainWindow->actionWebWindowCapture, SIGNAL(triggered()), this, SLOT(captureWindow()));
-        connect(mMainWindow->actionWebOEmbed, SIGNAL(triggered()), this, SLOT(captureoEmbed()));
         connect(mMainWindow->actionEduMedia, SIGNAL(triggered()), this, SLOT(captureEduMedia()));
 
         connect(mMainWindow->actionWebShowHideOnDisplay, SIGNAL(toggled(bool)), this, SLOT(toogleMirroring(bool)));

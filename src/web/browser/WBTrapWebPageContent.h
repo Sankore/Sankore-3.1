@@ -29,6 +29,7 @@ public:
     virtual ~WBTrapWebPageContentWindow();
 
     void setUrl(const QUrl &url);
+    void setReadyForTrap(bool bReady);
     QWebView *webView() const {return mTrapContentPreview;}
     QComboBox *itemsComboBox() const {return mSelectContentCombobox;}
     QLineEdit *applicationNameLineEdit() const {return mApplicationNameEdit;}

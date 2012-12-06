@@ -138,7 +138,6 @@ class UBWebController : public QObject
     private slots:
 
         void activePageChanged();
-        void trapFlash();
 
         void toggleWebTrap(bool checked);
 

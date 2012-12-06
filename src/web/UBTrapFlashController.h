@@ -42,9 +42,6 @@ class UBTrapWebPageContentController : public QObject
         UBTrapWebPageContentController(QWidget* parent = 0);
         virtual ~UBTrapWebPageContentController();
 
-        void showTrapFlash();
-        void hideTrapFlash();
-
         void showTrapContent();
         void hideTrapContent();
 
@@ -54,31 +51,30 @@ class UBTrapWebPageContentController : public QObject
         void updateTrapContentFromPage(QWebFrame* pCurrentWebFrame);
         void text_Changed(const QString &);
         void text_Edited(const QString &);
-
-
-    private slots:
-        void selectHtmlObject(int pObjectIndex);
-        void createWidget();
         void addItemToLibrary();
         void addItemToBoard();
         void addLinkToLibrary();
-        void AddLinkToBoard();
+        void addLinkToBoard();
+
+    private slots:
+        void selectHtmlObject(int pObjectIndex);
 
     private:
 
-        void creaiteItemFromSelectedContent();
+        QUrl itemUrlFromSelectedContent(bool bUseAsLink);
+        void freeTemp();
         void updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects);
 
-        QString widgetNameForObject(UBWebKitUtils::HtmlObject pObject);
+        QString widgetNameForUrl(QString pObjectUrl);
 
-        QString generateFullPageHtml(const QString& pDirPath, bool pGenerateFile);
+        QString generateFullPageHtml(const QUrl &srcUrl, const QString& pDirPath, bool pGenerateFile);
         QString generateHtml(const UBWebKitUtils::HtmlObject& pObject, const QString& pDirPath, bool pGenerateFile);
 
         QString generateIcon(const QString& pDirPath);
 
         void generateConfig(int pWidth, int pHeight, const QString& pDestinationPath);
 
-        void importWidgetInLibrary(QDir pSourceDir);
+        void importItemInLibrary(QString pSourceDir);
 
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
@@ -87,6 +83,9 @@ class UBTrapWebPageContentController : public QObject
 
         WBTrapWebPageContentWindow *mTrapWebContentDialog;
         QWebHitTestResult mLastWebHitTestResult;
+
+        QUrl mCurrentItemUrl;
+        QSet<QString> mTempDirectoriesUsed;
 };
 
 
