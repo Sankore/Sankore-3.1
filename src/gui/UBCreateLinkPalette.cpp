@@ -54,7 +54,7 @@ UBCreateLinkLabel::UBCreateLinkLabel(QString labelText, QWidget *parent) :
     setMinimumSize(200, 200);
     setFrameStyle(QFrame::Sunken | QFrame::StyledPanel);
     setAlignment(Qt::AlignCenter);
-
+    setStyleSheet("border-style: dashed; border-color:#999999;border-radius: 10px; border-width: 2px ");
 }
 
 void UBCreateLinkLabel::dragEnterEvent(QDragEnterEvent *event)
@@ -67,6 +67,7 @@ void UBCreateLinkLabel::dragEnterEvent(QDragEnterEvent *event)
 
 void UBCreateLinkLabel::dropEvent(QDropEvent *event)
 {
+    setBackgroundRole(QPalette::NoRole);
     const QMimeData *mimeData = event->mimeData();
 
     QString path;
@@ -100,12 +101,15 @@ void UBCreateLinkLabel::dragLeaveEvent(QDragLeaveEvent *event)
 UBCreateLinkPalette::UBCreateLinkPalette(QWidget *parent) :
     UBFloatingPalette(Qt::TopRightCorner, parent)
   ,mButtonGroup(0)
+  ,mIsFirstTime(true)
 {
     setObjectName("UBCreateLinkPalette");
     mLayout = new QVBoxLayout(this);
     mLayout->setContentsMargins(10,28,10,10);
     setLayout(mLayout);
     mStackedWidget = new QStackedWidget(this);
+    mStackedWidget->setObjectName("UBCreateLinkPaletteStackedWidget");
+    mStackedWidget->setStyleSheet("QWidget#UBCreateLinkPaletteStackedWidget{background-color:#eeeeee; border-width: 2px; border-style: solid; border-radius: 10px; border-color:#999999;}");
     mLayout->addWidget(mStackedWidget);
     init();
     hide();
@@ -272,19 +276,19 @@ void UBCreateLinkPalette::onBackButtonClicked()
 void UBCreateLinkPalette::onPlayAudioClicked()
 {
     mStackedWidget->setCurrentIndex(1);
-    adjustGeometry();
+//    adjustGeometry();
 }
 
 void UBCreateLinkPalette::onAddLinkToPageClicked()
 {
     mStackedWidget->setCurrentIndex(2);
-    adjustGeometry();
+//    adjustGeometry();
 }
 
 void UBCreateLinkPalette::onAddLinkToWebClicked()
 {
     mStackedWidget->setCurrentIndex(3);
-    adjustGeometry();
+//    adjustGeometry();
 }
 
 void UBCreateLinkPalette::onOkAudioClicked()
@@ -347,6 +351,9 @@ void UBCreateLinkPalette::showEvent(QShowEvent *event)
 
 void UBCreateLinkPalette::adjustGeometry()
 {
-    adjustSizeAndPosition();
-    move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
+    if(mIsFirstTime){
+        adjustSizeAndPosition();
+        move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
+        mIsFirstTime = false;
+    }
 }

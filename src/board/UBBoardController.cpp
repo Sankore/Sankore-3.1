@@ -648,7 +648,7 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync)
 
         QList<QGraphicsItem*> duplicatedItems;
         QList<QGraphicsItem*> children = groupItem->childItems();
-          
+
         mActiveScene->setURStackEnable(false);
         foreach(QGraphicsItem* pIt, children){
             UBItem* pItem = dynamic_cast<UBItem*>(pIt);
@@ -992,6 +992,7 @@ void UBBoardController::groupButtonClicked()
         }
         UBGraphicsGroupContainerItem *currentGroup = dynamic_cast<UBGraphicsGroupContainerItem*>(selItems.first());
         if (currentGroup) {
+            currentGroup->Delegate()->setAction(0);
             currentGroup->destroy();
         }
     }

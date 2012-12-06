@@ -675,8 +675,10 @@ void UBGraphicsItemDelegate::onRemoveActionClicked()
         delete mAction;
         mAction = NULL;
     }
-    mMenu->removeAction(mRemoveAnAction);
-    mMenu->addAction(mShowPanelToAddAnAction);
+    if(mRemoveAnAction && mMenu){
+        mMenu->removeAction(mRemoveAnAction);
+        mMenu->addAction(mShowPanelToAddAnAction);
+    }
 }
 
 void UBGraphicsItemDelegate::updateMenuActionState()
@@ -816,14 +818,18 @@ void UBGraphicsItemDelegate::setButtonsVisible(bool visible)
 
 void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
 {
-    setCanTrigAnAction(true);
-    if(!mMenu){
-        //TODO claudio
-        // Remove this very bad chunk of code
-        mMenu = new QMenu(UBApplication::boardController->controlView());
-        decorateMenu(mMenu);
+    if(!action)
+        onRemoveActionClicked();
+    else{
+        setCanTrigAnAction(true);
+        if(!mMenu){
+            //TODO claudio
+            // Remove this very bad chunk of code
+            mMenu = new QMenu(UBApplication::boardController->controlView());
+            decorateMenu(mMenu);
+        }
+        saveAction(action);
     }
-    saveAction(action);
 }
 
 

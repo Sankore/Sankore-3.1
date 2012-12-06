@@ -94,6 +94,7 @@ private:
     QComboBox* mPageComboBox;
     UBCreateLinkLabel* mpAudioLabel;
     QString mAudioFilePath;
+    bool mIsFirstTime;
 
 private slots:
     void onBackButtonClicked();

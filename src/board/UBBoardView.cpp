@@ -73,6 +73,8 @@
 #include "tools/UBGraphicsProtractor.h"
 #include "tools/UBGraphicsAristo.h"
 
+#include "customWidgets/UBGraphicsItemAction.h"
+
 #include "core/memcheck.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool isControl, bool isDesktop)
@@ -695,6 +697,15 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
         // items like polygons placed in two groups nested, so we need to recursive call.
         if(item->parentItem() && UBGraphicsStrokesGroup::Type == item->parentItem()->type())
             return determineItemToPress(item->parentItem());
+
+        //TODO claudio
+        // another chuck of very good code
+        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type()){
+            UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
+            if(group && group->Delegate()->action())
+                group->Delegate()->action()->play();
+        }
+
     }
 
     return item;

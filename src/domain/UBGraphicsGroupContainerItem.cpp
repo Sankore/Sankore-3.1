@@ -69,6 +69,12 @@ void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item)
         return;
     }
 
+    //TODO claudio
+        UBGraphicsItem* ubGraphics = dynamic_cast<UBGraphicsItem*>(item);
+        if(ubGraphics && ubGraphics->Delegate())
+            ubGraphics->Delegate()->setAction(0);
+
+
     //Check if group is allready rotatable or flippable
     if (childItems().count()) {
         if (UBGraphicsItem::isFlippable(this) && !UBGraphicsItem::isFlippable(item)) {
