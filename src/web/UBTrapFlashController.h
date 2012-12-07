@@ -26,7 +26,7 @@
 
 #include <QtGui>
 #include "UBWebKitUtils.h"
-#include "web\browser\WBTrapWebPageContent.h"
+#include "web/browser/WBTrapWebPageContent.h"
 
 namespace Ui
 {
