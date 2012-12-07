@@ -759,6 +759,11 @@ UBThumbnail::~UBThumbnail()
         delete mSelectionItem;
 }
 
+UBSceneThumbnailPixmap::~UBSceneThumbnailPixmap()
+{
+    //NOOP
+}
+
 
 UBSceneThumbnailNavigPixmap::UBSceneThumbnailNavigPixmap(const QPixmap& pix, UBDocumentProxy* proxy, int pSceneIndex)
     : UBSceneThumbnailPixmap(pix, proxy, pSceneIndex)

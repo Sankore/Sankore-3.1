@@ -22,10 +22,9 @@ class UBExportAdaptor;
 class UBImportAdaptor;
 class UBDocumentProxy;
 
-
 class UBDocumentManager : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         static UBDocumentManager* documentManager();

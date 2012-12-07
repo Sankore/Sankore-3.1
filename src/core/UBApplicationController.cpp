@@ -338,14 +338,14 @@ void UBApplicationController::showBoard()
     mMainWindow->tutorialToolBar->hide();
     mMainWindow->boardToolBar->show();
 
-    if (mMainMode == Document)
-    {
-        int selectedSceneIndex = UBApplication::documentController->getSelectedItemIndex();
-        if (selectedSceneIndex != -1)
-        {
-            UBApplication::boardController->setActiveDocumentScene(UBApplication::documentController->selectedDocument(), selectedSceneIndex, true);
-        }
-    }
+//    if (mMainMode == Document)
+//    {
+//        int selectedSceneIndex = UBApplication::documentController->getSelectedItemIndex();
+//        if (selectedSceneIndex != -1)
+//        {
+//            UBApplication::boardController->setActiveDocumentScene(UBApplication::documentController->selectedDocument(), selectedSceneIndex, true);
+//        }
+//    }
 
     mMainMode = Board;
 

@@ -35,7 +35,7 @@ class UBThumbnail;
 
 class UBThumbnailWidget : public QGraphicsView
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBThumbnailWidget(QWidget* parent);
@@ -266,10 +266,7 @@ class UBSceneThumbnailPixmap : public UBThumbnailPixmap
             // NOOP
         }
 
-        virtual ~UBSceneThumbnailPixmap()
-        {
-            // NOOP
-        }
+        virtual ~UBSceneThumbnailPixmap();
 
         UBDocumentProxy* proxy()
         {

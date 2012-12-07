@@ -36,9 +36,88 @@ class UBDocumentProxyTreeItem;
 class UBMainWindow;
 class UBDocumentToolsPalette;
 
+
+class UBDocumentTreeNode
+{
+public:
+    enum Type {
+        Catalog
+        , Document
+    };
+
+    UBDocumentTreeNode(Type pType, const QString &pName, const QString &pDisplayName = QString(), UBDocumentProxy *pProxy = 0);
+    UBDocumentTreeNode() : mType(Catalog), mParent(0), mProxy(0) {;}
+    ~UBDocumentTreeNode();
+
+    QList<UBDocumentTreeNode*> children() const {return mChildren;}
+    UBDocumentTreeNode *parentNode() {return mParent;}
+    Type nodeType() const {return mType;}
+    QString nodeName() const {return mName;}
+    QString displayName() const {return mDisplayName;}
+    void addChild(UBDocumentTreeNode *pChild);
+    UBDocumentTreeNode *moveTo(const QString &pPath);
+    UBDocumentProxy *proxyData() const {return mProxy;}
+    bool isRoot() {return !mParent;}
+    bool isTopLevel() {return mParent && !mParent->mParent;}
+
+private:
+    Type mType;
+    QString mName;
+    QString mDisplayName;
+    UBDocumentTreeNode *mParent;
+    QList<UBDocumentTreeNode*> mChildren;
+    QPointer<UBDocumentProxy> mProxy;
+};
+Q_DECLARE_METATYPE(UBDocumentTreeNode*)
+
+class UBDocumentTreeModel : public QAbstractItemModel {
+    Q_OBJECT
+
+public:
+    UBDocumentTreeModel(QObject *parent = 0);
+    ~UBDocumentTreeModel();
+
+    QModelIndex index(int row, int column, const QModelIndex &parent) const;
+    QModelIndex parent(const QModelIndex &child) const;
+
+    int rowCount(const QModelIndex &parent) const;
+    int columnCount(const QModelIndex &parent) const;
+    QVariant data(const QModelIndex &index, int role) const;
+    bool setData(const QModelIndex &index, const QVariant &value, int role);
+    Qt::ItemFlags flags ( const QModelIndex & index ) const;
+    QModelIndex indexForNode(UBDocumentTreeNode *pNode) const;
+    QPersistentModelIndex persistentIndexForNode(UBDocumentTreeNode *pNode);
+//    bool insertRow(int row, const QModelIndex &parent);
+    void addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParent);
+    void addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent);
+    void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
+    QModelIndex indexForProxy(UBDocumentProxy *pSearch) const;
+    void setCurrentDocument(UBDocumentProxy *pDocument);
+    void setRootNode(UBDocumentTreeNode *pRoot);
+    UBDocumentProxy *proxyForIndex(const QModelIndex &pIndex) const;
+    QString virtualDirForIndex(const QModelIndex &pIndex) const;
+    QStringList nodeNameList(const QModelIndex &pIndex) const;
+    bool newFolderAllowed(const QModelIndex &pIndex)  const;
+
+private:
+    UBDocumentTreeNode *mRootNode;
+    UBDocumentTreeNode *mCurrentNode;
+    UBDocumentTreeNode *nodeFromIndex(const QModelIndex &pIndex) const;
+    UBDocumentTreeNode *findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const;
+    QModelIndex pIndexForNode(const QModelIndex &parent, UBDocumentTreeNode *pNode) const;
+};
+
+class UBDocumentTreeView : public QTreeView
+{
+    Q_OBJECT
+
+public:
+    UBDocumentTreeView (QWidget *parent = 0);
+};
+
 class UBDocumentController : public UBDocumentContainer
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBDocumentController(UBMainWindow* mainWindow);
@@ -58,6 +137,8 @@ class UBDocumentController : public UBDocumentContainer
         QString documentTrashGroupName(){ return mDocumentTrashGroupName;}
         QString defaultDocumentGroupName(){ return mDefaultDocumentGroupName;}
 
+        void setDocument(UBDocumentProxy *document, bool forceReload = false);
+
     signals:
         void exportDone();
 
@@ -71,6 +152,7 @@ class UBDocumentController : public UBDocumentContainer
         void importFile();
         void moveSceneToIndex(UBDocumentProxy* proxy, int source, int target);
         void selectDocument(UBDocumentProxy* proxy, bool setAsCurrentDocument = true);
+        void setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand = true);
         void show();
         void hide();
         void showMessage(const QString& message, bool showSpinningWheel = false);
@@ -87,6 +169,10 @@ class UBDocumentController : public UBDocumentContainer
         void setupPalettes();
         bool isOKToOpenDocument(UBDocumentProxy* proxy);
         UBDocumentProxy* selectedDocumentProxy();
+        UBDocumentProxy *firstSelectedTreeProxy();
+        QList<UBDocumentProxy*> selectedProxies();
+        QModelIndexList selectedTreeIndexes();
+        QModelIndex firstSelectedTreeIndex() {return selectedTreeIndexes().first();}
         UBDocumentProxyTreeItem* selectedDocumentProxyTreeItem();
         UBDocumentGroupTreeItem* selectedDocumentGroupTreeItem();
         QStringList allGroupNames();
@@ -118,9 +204,12 @@ class UBDocumentController : public UBDocumentContainer
         QString mDocumentTrashGroupName;
         QString mDefaultDocumentGroupName;
 
+        UBDocumentProxy *mCurrentTreeDocument;
+
     private slots:
         void documentZoomSliderValueChanged (int value);
         void loadDocumentProxies();
+        void TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
         void itemSelectionChanged();
         void exportDocument();
         void itemChanged(QTreeWidgetItem * item, int column);
@@ -129,6 +218,7 @@ class UBDocumentController : public UBDocumentContainer
         void selectionChanged();
         void documentSceneChanged(UBDocumentProxy* proxy, int pSceneIndex);
         void pageDoubleClicked(QGraphicsItem* item, int index);
+        void thumbnailPageDoubleClicked(QGraphicsItem* item, int index);
         void pageClicked(QGraphicsItem* item, int index);
         void itemClicked(QTreeWidgetItem * item, int column );
         void addToDocument();

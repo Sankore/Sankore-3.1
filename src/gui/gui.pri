@@ -92,6 +92,4 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBMessagesDialog.cpp
 win32:SOURCES += src/gui/UBKeyboardPalette_win.cpp
 macx:SOURCES += src/gui/UBKeyboardPalette_mac.cpp
-linux-g++:SOURCES += src/gui/UBKeyboardPalette_linux.cpp
-linux-g++-32:SOURCES += src/gui/UBKeyboardPalette_linux.cpp
-linux-g++-64:SOURCES += src/gui/UBKeyboardPalette_linux.cpp
+linux-*:SOURCES += src/gui/UBKeyboardPalette_linux.cpp

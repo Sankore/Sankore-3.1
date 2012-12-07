@@ -23,6 +23,8 @@
 class UBDocument;
 class UBDocumentProxy;
 class UBGraphicsScene;
+class UBDocumentTreeNode;
+class UBDocumentTreeModel;
 
 class UBPersistenceManager : public QObject
 {
@@ -42,6 +44,10 @@ class UBPersistenceManager : public QObject
         static const QString audioDirectory;
         static const QString widgetDirectory;
         static const QString teacherGuideDirectory;
+
+        static const QString myDocumentsName;
+        static const QString modelsName;
+        static const QString untitledDocumentsName;
 
         static UBPersistenceManager* persistenceManager();
         static void destroy();
@@ -72,6 +78,8 @@ class UBPersistenceManager : public QObject
         UBGraphicsScene *getDocumentScene(UBDocumentProxy* pDocumentProxy, int sceneIndex) {return mSceneCache.value(pDocumentProxy, sceneIndex);}
 
         QList<QPointer<UBDocumentProxy> > documentProxies;
+        UBDocumentTreeNode *mDocumentTreeStructure;
+        UBDocumentTreeModel *mDocumentTreeStructureModel;
 
         virtual QStringList allShapes();
         virtual QStringList allGips();
@@ -94,6 +102,8 @@ class UBPersistenceManager : public QObject
 
         virtual UBDocumentProxy* documentByUuid(const QUuid& pUuid);
 
+        UBDocumentTreeNode *createDocumentProxiesStructure();
+
         QStringList documentSubDirectories()
         {
             return mDocumentSubDirectories;
@@ -110,6 +120,9 @@ class UBPersistenceManager : public QObject
         bool mayHavePDF(UBDocumentProxy* pDocumentProxy);
         bool mayHaveSVGImages(UBDocumentProxy* pDocumentProxy);
         bool mayHaveWidget(UBDocumentProxy* pDocumentProxy);
+
+        QString adjustDocumentVirtualPath(const QString &str);
+
 
     signals:
 

@@ -122,8 +122,6 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
     //------------------------------------------------//
     // Create the widgets for the dock palettes
 
-    mpPageNavigWidget = new UBPageNavigationWidget();
-
     mpCachePropWidget = new UBCachePropertiesWidget();
 
     mpDownloadWidget = new UBDockDownloadWidget();
