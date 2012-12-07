@@ -160,3 +160,8 @@ bool UBGraphicsGroupContainerItemDelegate::mouseReleaseEvent(QGraphicsSceneMouse
 
     return false;
 }
+
+void UBGraphicsGroupContainerItemDelegate::setAction(UBGraphicsItemAction* action)
+{
+    setAction(action);
+}

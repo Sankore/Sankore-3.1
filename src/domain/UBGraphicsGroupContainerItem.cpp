@@ -58,7 +58,7 @@ UBGraphicsGroupContainerItem::~UBGraphicsGroupContainerItem()
 {
 }
 
-void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item)
+void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item,bool removeAction)
 {
     if (!item) {
         qWarning("UBGraphicsGroupContainerItem::addToGroup: cannot add null item");
@@ -70,9 +70,9 @@ void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item)
     }
 
     //TODO claudio
-        UBGraphicsItem* ubGraphics = dynamic_cast<UBGraphicsItem*>(item);
-        if(ubGraphics && ubGraphics->Delegate())
-            ubGraphics->Delegate()->setAction(0);
+    UBGraphicsItem* ubGraphics = dynamic_cast<UBGraphicsItem*>(item);
+    if(ubGraphics && ubGraphics->Delegate() && removeAction)
+        ubGraphics->Delegate()->setAction(0);
 
 
     //Check if group is allready rotatable or flippable

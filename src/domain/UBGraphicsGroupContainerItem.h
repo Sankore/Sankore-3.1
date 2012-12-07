@@ -36,7 +36,7 @@ public:
     UBGraphicsGroupContainerItem (QGraphicsItem *parent = 0);
     virtual ~UBGraphicsGroupContainerItem();
 
-    void addToGroup(QGraphicsItem *item);
+    void addToGroup(QGraphicsItem *item, bool removeAction=true);
     void removeFromGroup(QGraphicsItem *item);
     void setCurrentItem(QGraphicsItem *item){mCurrentItem = item;}
     QGraphicsItem *getCurrentItem() const {return mCurrentItem;}

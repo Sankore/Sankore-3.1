@@ -35,6 +35,7 @@ Q_OBJECT
 public:
     UBGraphicsGroupContainerItemDelegate(QGraphicsItem* pDelegated, QObject * parent = 0);
     UBGraphicsGroupContainerItem *delegated();
+    void setAction(UBGraphicsItemAction* action);
 
 protected:
     virtual void decorateMenu(QMenu *menu);
