@@ -967,12 +967,14 @@ UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &
 
 QString UBFeaturesController::getFeaturePathByName(const QString &featureName) const
 {
+    QString videoPickerWidgetPath;
     foreach (UBFeature curFeature, *featuresList)
     {
-        if (featureName == curFeature.getName())
-            return curFeature.getFullPath().toLocalFile();
+        if (curFeature.getName().contains(featureName))
+            videoPickerWidgetPath = curFeature.getFullPath().toLocalFile();
     }
-    return QString();
+    Q_ASSERT(!videoPickerWidgetPath.isEmpty());
+    return videoPickerWidgetPath;
 }
 
 void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle)

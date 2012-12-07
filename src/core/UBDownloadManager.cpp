@@ -50,12 +50,12 @@ UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 void UBAsyncLocalFileDownloader::run()
 {
 
-    if(mDesc.srcUrl.startsWith("file://"))
+    if(mDesc.srcUrl.startsWith("file://") || mDesc.srcUrl.startsWith("/"))
         mDesc.srcUrl = QUrl(mDesc.srcUrl).toLocalFile();
     else
         mDesc.srcUrl = QUrl::fromLocalFile(mDesc.srcUrl).toLocalFile();
 
-    if(mDesc.dstUrl.startsWith("file://"))
+    if(mDesc.dstUrl.startsWith("file://") || mDesc.dstUrl.startsWith("/"))
         mDesc.dstUrl = QUrl(mDesc.dstUrl).toLocalFile();
     else
         mDesc.dstUrl = QUrl::fromLocalFile(mDesc.dstUrl).toLocalFile();
@@ -315,7 +315,7 @@ void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl
             }
             else if(desc.dest == sDownloadFileDesc::customPath)
             {
-                emit customDownloadFinished(pSuccess, sourceUrl, contentUrl, QUrl(desc.dstUrl), pContentTypeHeader, pData, pPos, pSize, isBackground);
+                emit customDownloadFinished(pSuccess, sourceUrl, contentUrl, QUrl(desc.dstUrl), pContentTypeHeader, pData, pSize);
             }
 
             break;

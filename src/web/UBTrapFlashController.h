@@ -38,6 +38,13 @@ class UBTrapWebPageContentController : public QObject
 {
     Q_OBJECT
 
+    enum importDestination
+    {
+        library = 0,
+        board
+    };
+
+
     public:
         UBTrapWebPageContentController(QWidget* parent = 0);
         virtual ~UBTrapWebPageContentController();
@@ -58,11 +65,13 @@ class UBTrapWebPageContentController : public QObject
 
     private slots:
         void selectHtmlObject(int pObjectIndex);
+        void selectedItemReady(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QUrl destinationUrl, QString pContentTypeHeader, QByteArray pData, QSize pSize);
+        
+        void importItemInLibrary(QString pSourceDir);
 
     private:
 
-        QUrl itemUrlFromSelectedContent(bool bUseAsLink);
-        void freeTemp();
+        void prepareCurrentItemForImport(bool bUseAsLink);
         void updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects);
 
         QString widgetNameForUrl(QString pObjectUrl);
@@ -74,7 +83,6 @@ class UBTrapWebPageContentController : public QObject
 
         void generateConfig(int pWidth, int pHeight, const QString& pDestinationPath);
 
-        void importItemInLibrary(QString pSourceDir);
 
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
@@ -85,7 +93,7 @@ class UBTrapWebPageContentController : public QObject
         QWebHitTestResult mLastWebHitTestResult;
 
         QUrl mCurrentItemUrl;
-        QSet<QString> mTempDirectoriesUsed;
+        importDestination mCurrentItemImportDestination;
 };
 
 

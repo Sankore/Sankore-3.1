@@ -61,7 +61,7 @@ UBTrapWebPageContentController::UBTrapWebPageContentController(QWidget* parent)
 
 UBTrapWebPageContentController::~UBTrapWebPageContentController()
 {
-    freeTemp();
+    // NOOP
 }
 
 void UBTrapWebPageContentController::text_Changed(const QString &newText)
@@ -129,7 +129,7 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
 {
     if (mTrapWebContentDialog)
     {
-        mAvaliableObjects = objects;
+        mAvaliableObjects = QList<UBWebKitUtils::HtmlObject>() << UBWebKitUtils::HtmlObject(mCurrentWebFrame->baseUrl().toString(), "Whole Page", 800, 600) << objects;
 
         if (mTrapWebContentDialog)
         {
@@ -140,9 +140,10 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
             mObjectNoByTrapWebComboboxIndex.clear();
             combobox->clear();
             combobox->addItem(tr("Whole page")); 
+            mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), 0);
 
             QString lastTagName;
-            for(int i = 0; i < mAvaliableObjects.count(); i++)
+            for(int i = 1; i < mAvaliableObjects.count(); i++)
             {
                 UBWebKitUtils::HtmlObject wrapper = mAvaliableObjects.at(i);
 
@@ -177,13 +178,75 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
     }
 }
 
-QUrl UBTrapWebPageContentController::itemUrlFromSelectedContent(bool bUseAsLink)
+void UBTrapWebPageContentController::selectedItemReady(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QUrl destinationUrl, QString pContentTypeHeader, QByteArray pData, QSize pSize)
+{
+    disconnect(UBDownloadManager::downloadManager(), SIGNAL(customDownloadFinished(bool, QUrl, QUrl, QUrl, QString, QByteArray, QSize)), this, SLOT(selectedItemReady(bool, QUrl, QUrl, QUrl, QString, QByteArray, QSize)));
+    if (pSuccess)
+    {
+        QUrl dataContentUrl;
+        if (!pData.isEmpty())
+        {        
+            QFile file(destinationUrl.toLocalFile());
+            if ( file.open(QIODevice::WriteOnly ))
+            {
+                file.write(pData);
+                file.close();
+
+                dataContentUrl = destinationUrl;
+            }
+        }
+        else
+            dataContentUrl = sourceUrl;
+
+
+        if (library == mCurrentItemImportDestination)
+            importItemInLibrary(dataContentUrl.toString());
+        else
+            UBApplication::boardController->downloadURL(dataContentUrl, sourceUrl.toString(), QPointF(), pSize);
+    }
+
+
+    mTrapWebContentDialog->setReadyForTrap(true);
+}
+
+void UBTrapWebPageContentController::prepareCurrentItemForImport(bool bUseAsLink)
 {
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
     QString tempDir = UBFileSystemUtils::createTempDir("TrapWebContentRendering");
-    mTempDirectoriesUsed.insert(tempDir);
 
+    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(selectedObject.source);
+    UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
+    
+    QSize currentItemSize(selectedObject.width, selectedObject.height);
+
+    if (UBMimeType::Flash == itemMimeType && !UBApplication::webController->isOEmbedable(QUrl(selectedObject.source)))
+    {
+        if (bUseAsLink)
+        {
+            QString NPAPIWrapperDir = UBGraphicsW3CWidgetItem::createNPAPIWrapperInDir(selectedObject.source, tempDir, mimeType, currentItemSize, mTrapWebContentDialog->applicationNameLineEdit()->text());
+            selectedItemReady(true, QUrl::fromLocalFile(NPAPIWrapperDir), QUrl(selectedObject.source), QUrl::fromLocalFile(NPAPIWrapperDir), QString(), 0 , currentItemSize);
+        }
+        else
+        {
+            int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
+            UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
+
+            sDownloadFileDesc desc;
+            desc.isBackground = false;
+            desc.modal = false;
+            desc.dest = sDownloadFileDesc::customPath;
+            desc.name = widgetNameForUrl(selectedObject.source);
+            desc.dstUrl = QUrl::fromUserInput(tempDir+"/"+desc.name).toString();
+            desc.srcUrl = selectedObject.source;
+            desc.size = QSize(selectedObject.width, selectedObject.height);
+            UBDownloadManager::downloadManager()->addFileToDownload(desc);  
+
+            connect(UBDownloadManager::downloadManager(), SIGNAL(customDownloadFinished(bool, QUrl, QUrl, QUrl, QString, QByteArray, QSize)), this, SLOT(selectedItemReady(bool, QUrl, QUrl, QUrl, QString, QByteArray, QSize)));
+        }
+    }
+    else
+    //  it is whole page         it is for youtube, vimeo e.t.c. sites video
     if (selectedIndex == 0 || UBApplication::webController->isOEmbedable(QUrl(selectedObject.source)) || bUseAsLink)
     {
         QDir widgetDir(tempDir + "/" + mTrapWebContentDialog->applicationNameLineEdit()->text() + ".wgt");
@@ -196,15 +259,21 @@ QUrl UBTrapWebPageContentController::itemUrlFromSelectedContent(bool bUseAsLink)
 
         if (UBApplication::webController->isOEmbedable(QUrl(selectedObject.source)))
         {
+
+            // temporary -- just adding item on the board. It is creating a copy of videopicker and setting a property to it.
+            // that widget cannot be moved without svg where config stored.
+            UBApplication::boardController->activeScene()->addOEmbed(QUrl(selectedObject.source), QPointF());
+            return;
+
+            // !!!! Important
+            /* should  be like that - embed url should be placed in config file of widget but not in svg.
             QString embedWidgetPath = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeaturePathByName("Sel video");
             if (UBFileSystemUtils::copyDir(embedWidgetPath, widgetDir.path()))
             {
-                UBGraphicsW3CWidgetItem *widget = new UBGraphicsW3CWidgetItem(QUrl::fromLocalFile(embedWidgetPath), 0);
-                if (widget)
-                {
-                    widget->setPreference("oembedUrl", selectedObject.source);
-                }
+                generateConfig(800, 600, widgetDir.path()); // fix embed url
+                
             }
+            */
         }
         else if (selectedIndex == 0)
         {        
@@ -219,51 +288,42 @@ QUrl UBTrapWebPageContentController::itemUrlFromSelectedContent(bool bUseAsLink)
 
         generateIcon(widgetDir.path());
 
-        return QUrl::fromLocalFile(widgetDir.path());
-       
+        selectedItemReady(true, QUrl::fromLocalFile(widgetDir.path()), QUrl(selectedObject.source), QUrl(), mimeType, 0 , currentItemSize);
     }
     else
-        return QUrl(selectedObject.source);
-
-}
-
-
-void UBTrapWebPageContentController::freeTemp()
-{
-    foreach(QString tempDir, mTempDirectoriesUsed)
-    {
-        UBFileSystemUtils::deleteDir(tempDir);
-    }
+        selectedItemReady(true, QUrl(selectedObject.source), QUrl(selectedObject.source), QUrl(), mimeType, 0 , currentItemSize);
 }
 
 void UBTrapWebPageContentController::addItemToLibrary()
 {
-    importItemInLibrary(itemUrlFromSelectedContent(false).toString());
-    freeTemp();
+    mTrapWebContentDialog->setReadyForTrap(false);
+    mCurrentItemImportDestination = library;
+    prepareCurrentItemForImport(false);
     UBApplication::applicationController->showBoard();
 }
 
 void UBTrapWebPageContentController::addItemToBoard()
 {
-    int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
-    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
-    UBApplication::boardController->downloadURL(itemUrlFromSelectedContent(false), QString(), QPoint(0, 0), QSize(selectedObject.width, selectedObject.height));
-    freeTemp();
+    mTrapWebContentDialog->setReadyForTrap(false);
+    mCurrentItemImportDestination = board;
+    prepareCurrentItemForImport(false);
     UBApplication::applicationController->showBoard();
 }
 
 void UBTrapWebPageContentController::addLinkToLibrary()
 {
-
+    mTrapWebContentDialog->setReadyForTrap(false);
+    mCurrentItemImportDestination = library;
+    prepareCurrentItemForImport(true);
+    UBApplication::applicationController->showBoard();
 
 }
 
 void UBTrapWebPageContentController::addLinkToBoard()
 {
-    int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
-    UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
-    UBApplication::boardController->downloadURL(itemUrlFromSelectedContent(true), QString(), QPoint(0, 0), QSize(selectedObject.width, selectedObject.height));
-    freeTemp();
+    mTrapWebContentDialog->setReadyForTrap(false);
+    mCurrentItemImportDestination = board;
+    prepareCurrentItemForImport(true);
     UBApplication::applicationController->showBoard();
 }
 
@@ -287,8 +347,9 @@ void UBTrapWebPageContentController::importItemInLibrary(QString pSourceDir)
         desc.srcUrl = pSourceDir;
         desc.size = QSize(selectedObject.width, selectedObject.height);
         UBDownloadManager::downloadManager()->addFileToDownload(desc);
-
     }
+
+    mTrapWebContentDialog->setReadyForTrap(true);
 }
 
 
