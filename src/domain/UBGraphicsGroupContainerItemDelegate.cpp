@@ -163,5 +163,5 @@ bool UBGraphicsGroupContainerItemDelegate::mouseReleaseEvent(QGraphicsSceneMouse
 
 void UBGraphicsGroupContainerItemDelegate::setAction(UBGraphicsItemAction* action)
 {
-    setAction(action);
+    UBGraphicsItemDelegate::setAction(action);
 }
