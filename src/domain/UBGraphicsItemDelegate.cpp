@@ -240,17 +240,11 @@ UBGraphicsItemDelegate::~UBGraphicsItemDelegate()
         disconnect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
     // do not release mMimeData.
     // the mMimeData is owned by QDrag since the setMimeData call as specified in the documentation
-    if(mAction){
-        delete mAction;
-        mAction = NULL;
-    }
 }
 
 QVariant UBGraphicsItemDelegate::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value)
 {
-    if(change == QGraphicsItem::ItemChildAddedChange){
-
-    }else if (change == QGraphicsItem::ItemSelectedHasChanged) {
+    if (change == QGraphicsItem::ItemSelectedHasChanged) {
         bool ok;
         bool selected = value.toUInt(&ok);
         if (ok) {

@@ -154,7 +154,7 @@ class UBSvgSubsetAdaptor
 
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
-                UBGraphicsGroupContainerItem* readGroup(UBGraphicsItemAction *action = 0);
+                UBGraphicsGroupContainerItem* readGroup(UBGraphicsItemAction *action = 0, QString uuid = "");
 
                 void graphicsItemFromSvg(QGraphicsItem* gItem);
 

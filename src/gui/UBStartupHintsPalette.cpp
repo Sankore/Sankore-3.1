@@ -60,8 +60,8 @@ UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
 
 UBStartupHintsPalette::~UBStartupHintsPalette()
 {
-    DELETEPTR(mButtonLayout);
-    DELETEPTR(mLayout);
+//    DELETEPTR(mButtonLayout);
+//    DELETEPTR(mLayout);
 }
 
 void UBStartupHintsPalette::paintEvent(QPaintEvent *event)

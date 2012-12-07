@@ -38,6 +38,7 @@
 #include "domain/UBGraphicsStroke.h"
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
+#include "domain/UBGraphicsGroupContainerItemDelegate.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -1007,11 +1008,10 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 }
 
 
-UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(UBGraphicsItemAction* action)
+UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(UBGraphicsItemAction* action, QString uuid)
 {
+    bool isAnActionForStroke = false;
     UBGraphicsGroupContainerItem *group = new UBGraphicsGroupContainerItem();
-    if(action)
-        group->Delegate()->setAction(action);
     QMultiMap<QString, UBGraphicsPolygonItem *> strokesGroupsContainer;
     QList<QGraphicsItem *> groupContainer;
 
@@ -1036,6 +1036,9 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
                 QString itemId  = id.right(QUuid().toString().size());
                 QString groupId = id.left(QUuid().toString().size());
 
+                if(groupId == uuid)
+                    isAnActionForStroke = true;
+
                 QGraphicsItem *curItem = readElementFromGroup();
 
                 UBGraphicsPolygonItem *curPolygon = qgraphicsitem_cast<UBGraphicsPolygonItem *>(curItem);
@@ -1048,7 +1051,7 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
                         groupContainer.append(curItem);
                     else
                         qDebug() << "this is an error";
-                }
+                 }
             }
             else
                 mXmlReader.skipCurrentElement();
@@ -1060,7 +1063,7 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
     foreach (QString key, strokesGroupsContainer.keys().toSet())
     {
         UBGraphicsStrokesGroup* pStrokesGroup = new UBGraphicsStrokesGroup();
-        if(action)
+        if(action && isAnActionForStroke)
             pStrokesGroup->Delegate()->setAction(action);
         UBGraphicsStroke *currentStroke = new UBGraphicsStroke();
         foreach(UBGraphicsPolygonItem* poly, strokesGroupsContainer.values(key))
@@ -1093,7 +1096,13 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
     }
 
     foreach(QGraphicsItem* item, groupContainer)
-        group->addToGroup(item);
+        group->addToGroup(item,false);
+
+    if(action && !isAnActionForStroke){
+        UBGraphicsGroupContainerItemDelegate* delegate = dynamic_cast<UBGraphicsGroupContainerItemDelegate*>(group->Delegate());
+        delegate->setAction(action);
+    }
+
 
     if (group->childItems().count())
     {
@@ -1118,7 +1127,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroupRoot()
         else if (mXmlReader.isStartElement()){
             if (mXmlReader.name() == tGroup){
                 UBGraphicsItemAction* action = readAction();
-                UBGraphicsGroupContainerItem *curGroup = readGroup(action);
+                UBGraphicsGroupContainerItem *curGroup = readGroup(action, mXmlReader.attributes().value("id").toString());
                 if (curGroup)
                     mScene->addGroup(curGroup);
 
@@ -1141,9 +1150,6 @@ QGraphicsItem *UBSvgSubsetAdaptor::UBSvgSubsetReader::readElementFromGroup()
     QString id = mXmlReader.attributes().value(aId).toString();
     QString uuid = id.right(QUuid().toString().size());
     result = mScene->itemForUuid(QUuid(uuid));
-
-    if(!result)
-        qDebug() << "uuid " << uuid;
 
     mXmlReader.skipCurrentElement();
     mXmlReader.readNext();
