@@ -26,6 +26,7 @@
 
 #include <QtGui>
 #include "UBWebKitUtils.h"
+#include "web\browser\WBTrapWebPageContent.h"
 
 namespace Ui
 {
@@ -33,46 +34,66 @@ namespace Ui
 }
 
 
-class UBTrapFlashController : public QObject
+class UBTrapWebPageContentController : public QObject
 {
-    Q_OBJECT;
-    public:
-        UBTrapFlashController(QWidget* parent = 0);
-        virtual ~UBTrapFlashController();
+    Q_OBJECT
 
-        void showTrapFlash();
-        void hideTrapFlash();
+    enum importDestination
+    {
+        library = 0,
+        board
+    };
+
+
+    public:
+        UBTrapWebPageContentController(QWidget* parent = 0);
+        virtual ~UBTrapWebPageContentController();
+
+        void showTrapContent();
+        void hideTrapContent();
+
+        void setLastWebHitTestResult(const QWebHitTestResult &result);
 
     public slots:
-        void updateTrapFlashFromPage(QWebFrame* pCurrentWebFrame);
+        void updateTrapContentFromPage(QWebFrame* pCurrentWebFrame);
         void text_Changed(const QString &);
         void text_Edited(const QString &);
-
+        void addItemToLibrary();
+        void addItemToBoard();
+        void addLinkToLibrary();
+        void addLinkToBoard();
 
     private slots:
-        void selectFlash(int pFlashIndex);
-        void createWidget();
+        void selectHtmlObject(int pObjectIndex);
+        void selectedItemReady(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QUrl destinationUrl, QString pContentTypeHeader, QByteArray pData, QSize pSize);
+        
+        void importItemInLibrary(QString pSourceDir);
 
     private:
 
-        void updateListOfFlashes(const QList<UBWebKitUtils::HtmlObject>& pAllFlashes);
+        void prepareCurrentItemForImport(bool bUseAsLink);
+        void updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects);
 
-        QString widgetNameForObject(UBWebKitUtils::HtmlObject pObject);
+        QString widgetNameForUrl(QString pObjectUrl);
 
-        QString generateFullPageHtml(const QString& pDirPath, bool pGenerateFile);
+        QString generateFullPageHtml(const QUrl &srcUrl, const QString& pDirPath, bool pGenerateFile);
         QString generateHtml(const UBWebKitUtils::HtmlObject& pObject, const QString& pDirPath, bool pGenerateFile);
 
         QString generateIcon(const QString& pDirPath);
 
         void generateConfig(int pWidth, int pHeight, const QString& pDestinationPath);
 
-        void importWidgetInLibrary(QDir pSourceDir);
 
-        Ui::trapFlashDialog* mTrapFlashUi;
-        QDialog* mTrapFlashDialog;
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
-        QList<UBWebKitUtils::HtmlObject> mAvailableFlashes;
+        QList<UBWebKitUtils::HtmlObject> mAvaliableObjects;
+        QMap<int, int> mObjectNoByTrapWebComboboxIndex;
+
+        WBTrapWebPageContentWindow *mTrapWebContentDialog;
+        QWebHitTestResult mLastWebHitTestResult;
+
+        QUrl mCurrentItemUrl;
+        importDestination mCurrentItemImportDestination;
 };
 
 

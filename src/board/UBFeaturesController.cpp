@@ -960,9 +960,21 @@ UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &
         if ( pMmimeType.contains( "x-shockwave-flash") )
             return flashData.categoryFeature();
         else
-            return interactivityData.categoryFeature();
+            return webFolderData.categoryFeature();
     }
     return UBFeature();
+}
+
+QString UBFeaturesController::getFeaturePathByName(const QString &featureName) const
+{
+    QString videoPickerWidgetPath;
+    foreach (UBFeature curFeature, *featuresList)
+    {
+        if (curFeature.getName().contains(featureName))
+            videoPickerWidgetPath = curFeature.getFullPath().toLocalFile();
+    }
+    Q_ASSERT(!videoPickerWidgetPath.isEmpty());
+    return videoPickerWidgetPath;
 }
 
 void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle)
@@ -985,13 +997,17 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
 
         filePath = dest.getFullPath().toLocalFile() + "/" + fileName;
 
-        QImage::fromData(pData).save(filePath);
-
+        QImage img;
+        img.loadFromData(pData);
+        importImage(img, fileName);
+     /*        
         UBFeature downloadedFeature = UBFeature(dest.getFullVirtualPath() + "/" + fileName, getIcon( filePath, fileTypeFromUrl(filePath)),
                                                  fileName, QUrl::fromLocalFile(filePath), FEATURE_ITEM);
         if (downloadedFeature != UBFeature()) {
             featuresModel->addItem(downloadedFeature);
+         
         }
+        */
 
     } else {
         fileName = QFileInfo( sourceUrl.toString() ).fileName();
@@ -1149,11 +1165,11 @@ UBFeature UBFeaturesController::copyItemToFolder( const QUrl &url, const UBFeatu
     return newElement;
 }
 
-void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &destination)
+QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &destination)
 {
     QString sourcePath = url.toLocalFile();
 
-    Q_ASSERT( QFileInfo( sourcePath ).exists() );
+    Q_ASSERT( QFileInfo(sourcePath ).exists());
 
     UBFeature possibleDest = getDestinationFeatureForUrl(url);
 
@@ -1168,7 +1184,7 @@ void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &de
     UBFeatureElementType type = fileTypeFromUrl(sourcePath);
 
     if (type == FEATURE_FOLDER) {
-        return;
+        return QString();
     }
 
     QString name = QFileInfo(sourcePath).fileName();
@@ -1177,7 +1193,7 @@ void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &de
     QString newFullPath = destPath + "/" + name;
 
     if (!sourcePath.compare(newFullPath, Qt::CaseInsensitive) || !UBFileSystemUtils::copy(sourcePath, newFullPath)) {
-        return;
+        return QString();
     }
 
     Q_ASSERT(QFileInfo(newFullPath).exists());
@@ -1186,6 +1202,8 @@ void UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature &de
     UBFeature newElement(destVirtualPath + "/" + name, thumb, name, QUrl::fromLocalFile(newFullPath), type);
 
     featuresModel->addItem(newElement);
+
+    return newFullPath;
 }
 
 void UBFeaturesController::deleteItem(const QUrl &url)

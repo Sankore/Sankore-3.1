@@ -110,6 +110,7 @@ void UBActionPalette::addAction(QAction* action)
     UBActionPaletteButton* button = createPaletteButton(action, this);
 
     layout()->addWidget(button);
+    layout()->setAlignment(button,Qt::AlignHCenter | Qt::AlignVCenter);
 
     mActions << action;
 }
