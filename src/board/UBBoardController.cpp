@@ -25,6 +25,7 @@
 
 #include <QtGui>
 #include <QtWebKit>
+#include <QDir>
 
 #include "frameworks/UBFileSystemUtils.h"
 #include "frameworks/UBPlatformUtils.h"
@@ -1084,10 +1085,18 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
 }
 
 
+
+
 UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader,
                                             QByteArray pData, QPointF pPos, QSize pSize,
                                             bool isBackground, bool internalData)
 {
+
+    qDebug() << sourceUrl.toString();
+    qDebug() << contentUrl.toString();
+    qDebug() << pContentTypeHeader;
+    qDebug() << pData.length();
+
     QString mimeType = pContentTypeHeader;
 
     // In some cases "image/jpeg;charset=" is retourned by the drag-n-drop. That is
@@ -1095,11 +1104,16 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     if(mimeType.isEmpty())
       mimeType = UBFileSystemUtils::mimeTypeFromFileName(sourceUrl.toString());
 
+    qDebug() << mimeType;
+
     int position=mimeType.indexOf(";");
     if(position != -1)
         mimeType=mimeType.left(position);
 
     UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
+
+    if(itemMimeType == UBMimeType::UNKNOWN)
+        itemMimeType = UBFileSystemUtils::mimeTypeFromString(UBFileSystemUtils::mimeTypeFromFileName(sourceUrl.toString()));
 
     if (!pSuccess)
     {
@@ -1113,12 +1127,9 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     if (!sourceUrl.toString().startsWith("file://") && !sourceUrl.toString().startsWith("uniboardTool://"))
         showMessage(tr("Download finished"));
 
+
     if (UBMimeType::RasterImage == itemMimeType)
     {
-
-        qDebug() << "accepting mime type" << mimeType << "as raster image";
-
-
         QPixmap pix;
         if(pData.length() == 0){
             pix.load(sourceUrl.toLocalFile());
@@ -1153,9 +1164,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         svgItem->setSourceUrl(sourceUrl);
 
         if (isBackground)
-        {
             mActiveScene->setAsBackgroundObject(svgItem);
-        }
         else
         {
             mActiveScene->scaleToFitDocumentSize(svgItem, true, UBSettings::objectInControlViewMargin);
@@ -1193,24 +1202,17 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     }
     else if (UBMimeType::W3CWidget == itemMimeType)
     {
-        qDebug() << "accepting mime type" << mimeType << "as W3C widget";
         QUrl widgetUrl = sourceUrl;
 
         if (pData.length() > 0)
-        {
             widgetUrl = expandWidgetToTempDir(pData);
-        }
 
         UBGraphicsWidgetItem *w3cWidgetItem = addW3cWidget(widgetUrl, pPos);
 
         if (isBackground)
-        {
             mActiveScene->setAsBackgroundObject(w3cWidgetItem);
-        }
         else
-        {
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
-        }
 
         return w3cWidgetItem;
     }
@@ -2064,7 +2066,11 @@ QUrl UBBoardController::expandWidgetToTempDir(const QByteArray& pZipedData, cons
 
         if (UBFileSystemUtils::expandZipToDir(tmp, tmpDir))
         {
-            widgetUrl = QUrl::fromLocalFile(tmpDir);
+            QStringList directoryContent = QDir(tmpDir).entryList(QDir::AllDirs | QDir::NoDotAndDotDot);
+            if(directoryContent.count() == 1 && directoryContent.at(0).contains(".wgt"))
+                widgetUrl = QUrl::fromLocalFile(tmpDir + "/" + directoryContent.at(0));
+            else
+                widgetUrl = QUrl::fromLocalFile(tmpDir);
         }
     }
 

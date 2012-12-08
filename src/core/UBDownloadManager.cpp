@@ -69,7 +69,7 @@ void UBAsyncLocalFileDownloader::run()
         QFile::copy(mDesc.srcUrl, mTo);
     }
     else
-    { 
+    {
         int position=mimeType.indexOf(";");
         if(position != -1)
             mimeType=mimeType.left(position);
@@ -80,7 +80,7 @@ void UBAsyncLocalFileDownloader::run()
         QString destDirectory;
         if (UBMimeType::Video == itemMimeType)
             destDirectory = UBPersistenceManager::videoDirectory;
-        else 
+        else
             if (UBMimeType::Audio == itemMimeType)
                 destDirectory = UBPersistenceManager::audioDirectory;
 
@@ -88,7 +88,7 @@ void UBAsyncLocalFileDownloader::run()
             mDesc.originalSrcUrl = mDesc.srcUrl;
 
         QString uuid = QUuid::createUuid();
-        UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(), 
+        UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
             mDesc.srcUrl,
             destDirectory,
             uuid,

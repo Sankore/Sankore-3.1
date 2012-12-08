@@ -588,7 +588,7 @@ void UBFeaturesController::initHardcodedData()
                                  //UBFeature represented Trash element
                                  , UBFeature(rootData.categoryFeature().getFullVirtualPath()
                                              + "/Bookmarks"                //Virtual Path
-                                           , QImage(":images/toolbar/proto.png")         //Icon
+                                           , QImage(":images/BookmarkCategory.svg")         //Icon
                                            , tr("Bookmarks")                                             //Translation name
                                            , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())                 //Main path in file system
                                            , FEATURE_CATEGORY                                      //UBFeature's type
@@ -821,7 +821,7 @@ QImage UBFeaturesController::getIcon(const QString &path, UBFeatureElementType p
     } else if (pFType == FEATURE_VIDEO) {
         return QImage(":images/libpalette/movieIcon.svg");
     } else if (pFType == FEATURE_BOOKMARK) {
-        return QImage(":images/toolbar/proto.png");
+        return QImage(":images/libpalette/bookmarkIcon.svg");
     }
     else if (pFType == FEATURE_IMAGE) {
         QImage pix(path);
@@ -858,7 +858,7 @@ QImage UBFeaturesController::createThumbnail(const QString &path)
         thumbnailPath = ":images/libpalette/movieIcon.svg";
     }
     else if(mimetype.contains("bookmark")){
-        thumbnailPath = ":images/toolbar/proto.png";
+        thumbnailPath = ":images/libpalette/bookmarkIcon.svg";
     }
     else {
         QImage pix(path);
@@ -1048,12 +1048,12 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
         QImage img;
         img.loadFromData(pData);
         importImage(img, fileName);
-     /*        
+     /*
         UBFeature downloadedFeature = UBFeature(dest.getFullVirtualPath() + "/" + fileName, getIcon( filePath, fileTypeFromUrl(filePath)),
                                                  fileName, QUrl::fromLocalFile(filePath), FEATURE_ITEM);
         if (downloadedFeature != UBFeature()) {
             featuresModel->addItem(downloadedFeature);
-         
+
         }
         */
 

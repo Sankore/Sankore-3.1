@@ -141,10 +141,10 @@ void UBCreateLinkPalette::init()
     mInitialWidget = new QWidget(this);
     QHBoxLayout* initialWidgetLayout = new QHBoxLayout(mInitialWidget);
     mInitialWidget->setLayout(initialWidgetLayout);
-    QToolButton* actionPlayAudio = addInitiaWidgetButton(tr("Play an audio file"),QString(":images/toolbar/plusBlackOn.png"));
-    QToolButton* actionAddLinkToPage = addInitiaWidgetButton(tr("Add Link to Page"),":images/toolbar/plusBlackOn.png");
 
-    QToolButton* actionAddLinkToWeb = addInitiaWidgetButton(tr("Add Link to a Web page"),":images/toolbar/plusBlackOn.png");
+    QToolButton* actionPlayAudio = addInitiaWidgetButton(tr("Play an audio file"),":images/createLinkPalette/PlayAudio.svg");
+    QToolButton* actionAddLinkToPage = addInitiaWidgetButton(tr("Add Link to Page"),":images/createLinkPalette/LinkPage.svg");
+    QToolButton* actionAddLinkToWeb = addInitiaWidgetButton(tr("Add Link to a Web page"),":images/createLinkPalette/LinkWeb.svg");
 
     initialWidgetLayout->addWidget(actionPlayAudio);
     initialWidgetLayout->addWidget(actionAddLinkToPage);
