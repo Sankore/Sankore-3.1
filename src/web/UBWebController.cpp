@@ -65,7 +65,7 @@ UBWebController::UBWebController(UBMainWindow* mainWindow)
     , mMainWindow(mainWindow)
     , mCurrentWebBrowser(0)
     , mBrowserWidget(0)
-    , mTrapFlashController(0)
+    , mTrapContentController(0)
     , mToolsCurrentPalette(0)
     , mToolsPalettePositionned(false)
     , mDownloadViewIsVisible(false)
@@ -160,7 +160,7 @@ void UBWebController::webBrowserInstance()
 
             adaptToolBar();
 
-            mTrapFlashController = new UBTrapFlashController((*mCurrentWebBrowser));
+            mTrapContentController = new UBTrapWebPageContentController((*mCurrentWebBrowser));
 
             connect((*mCurrentWebBrowser), SIGNAL(activeViewPageChanged()), this, SLOT(activePageChanged()));
 
@@ -222,7 +222,7 @@ void UBWebController::tutorialWebInstance()
             mStackedWidget->insertWidget(Tutorial, (*mCurrentWebBrowser));
             adaptToolBar();
 
-            mTrapFlashController = new UBTrapFlashController((*mCurrentWebBrowser));
+            mTrapContentController = new UBTrapWebPageContentController((*mCurrentWebBrowser));
 
             connect((*mCurrentWebBrowser), SIGNAL(activeViewPageChanged()), this, SLOT(activePageChanged()));
             (*mCurrentWebBrowser)->loadUrl(currentUrl);
@@ -282,7 +282,7 @@ void UBWebController::paraschoolWebInstance()
 
             adaptToolBar();
 
-            mTrapFlashController = new UBTrapFlashController((*mCurrentWebBrowser));
+            mTrapContentController = new UBTrapWebPageContentController((*mCurrentWebBrowser));
 
             connect((*mCurrentWebBrowser), SIGNAL(activeViewPageChanged()), this, SLOT(activePageChanged()));
             (*mCurrentWebBrowser)->loadUrl(currentUrl);
@@ -327,31 +327,19 @@ void UBWebController::setSourceWidget(QWidget* pWidget)
     UBApplication::applicationController->setMirrorSourceWidget(pWidget);
 }
 
-
-void UBWebController::trapFlash()
-{
-    mTrapFlashController->showTrapFlash();
-    activePageChanged();
-}
-
-
 void UBWebController::activePageChanged()
 {
     if (mCurrentWebBrowser && (*mCurrentWebBrowser)->currentTabWebView())
     {
-        if (mTrapFlashController && (*mCurrentWebBrowser)->currentTabWebView()->page())
+        if (mTrapContentController && (*mCurrentWebBrowser)->currentTabWebView()->page())
         {
-            mTrapFlashController->updateTrapFlashFromPage((*mCurrentWebBrowser)->currentTabWebView()->page()->currentFrame());
+            mTrapContentController->updateTrapContentFromPage((*mCurrentWebBrowser)->currentTabWebView()->page()->currentFrame());
         }
 
         mMainWindow->actionWebTrap->setChecked(false);
 
         QUrl latestUrl = (*mCurrentWebBrowser)->currentTabWebView()->url();
 
-        // TODO : Uncomment the next line to continue the youtube button bugfix
-        //UBApplication::mainWindow->actionWebOEmbed->setEnabled(hasEmbeddedContent());
-        // And remove this line once the previous one is uncommented
-        UBApplication::mainWindow->actionWebOEmbed->setEnabled(isOEmbedable(latestUrl));
         UBApplication::mainWindow->actionEduMedia->setEnabled(isEduMedia(latestUrl));
 
         emit activeWebPageChanged((*mCurrentWebBrowser)->currentTabWebView());
@@ -453,14 +441,13 @@ void UBWebController::setupPalettes()
                     UBApplication::boardController->paletteManager()->mKeyboardPalette, SLOT(onDeactivated()));
 #endif
 
-        connect(mMainWindow->actionWebTrapFlash, SIGNAL(triggered()), this, SLOT(trapFlash()));
         connect(mMainWindow->actionWebCustomCapture, SIGNAL(triggered()), this, SLOT(customCapture()));
         connect(mMainWindow->actionWebWindowCapture, SIGNAL(triggered()), this, SLOT(captureWindow()));
-        connect(mMainWindow->actionWebOEmbed, SIGNAL(triggered()), this, SLOT(captureoEmbed()));
         connect(mMainWindow->actionEduMedia, SIGNAL(triggered()), this, SLOT(captureEduMedia()));
 
         connect(mMainWindow->actionWebShowHideOnDisplay, SIGNAL(toggled(bool)), this, SLOT(toogleMirroring(bool)));
-        connect(mMainWindow->actionWebTrap, SIGNAL(toggled(bool)), this, SLOT(toggleWebTrap(bool)));
+       // connect(mMainWindow->actionWebTrap, SIGNAL(toggled(bool)), this, SLOT(toggleWebTrap(bool)));
+        connect(mMainWindow->actionWebTrapContent, SIGNAL(triggered()), this, SLOT(webTrapContent()));
 
         (*mToolsCurrentPalette)->hide();
         (*mToolsCurrentPalette)->adjustSizeAndPosition();
@@ -485,6 +472,12 @@ void UBWebController::toggleWebTrap(bool checked)
     {
         (*mCurrentWebBrowser)->currentTabWebView()->setIsTrapping(checked);
     }
+}
+
+void UBWebController::webTrapContent()
+{
+    mTrapContentController->showTrapContent();
+    activePageChanged();
 }
 
 void UBWebController::toggleWebToolsPalette(bool checked)
@@ -575,6 +568,20 @@ void UBWebController::showTabAtTop(bool attop)
 {
     if (mCurrentWebBrowser && (*mCurrentWebBrowser))
         (*mCurrentWebBrowser)->showTabAtTop(attop);
+}
+
+void UBWebController::captureoEmbed(QUrl currentUrl)
+{
+    if (isOEmbedable(currentUrl))
+    {
+        UBGraphicsW3CWidgetItem * widget = UBApplication::boardController->activeScene()->addOEmbed(currentUrl);
+
+        if(widget)
+        {
+            UBApplication::applicationController->showBoard();
+            UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+        }
+    }
 }
 
 void UBWebController::captureoEmbed()
@@ -767,6 +774,11 @@ QWebView* UBWebController::createNewTab()
     }
 
     return (*mCurrentWebBrowser)->createNewTab();
+}
+
+QUrl UBWebController::currentPageUrl() const
+{
+    return (*mCurrentWebBrowser)->currentTabWebView()->url();
 }
 
 

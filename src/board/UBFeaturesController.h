@@ -265,7 +265,7 @@ public:
 
     UBFeature moveItemToFolder( const QUrl &url, const UBFeature &destination );
     UBFeature copyItemToFolder( const QUrl &url, const UBFeature &destination );
-    void moveExternalData(const QUrl &url, const UBFeature &destination);
+    QString moveExternalData(const QUrl &url, const UBFeature &destination);
 
     void rescanModel();
     void siftElements(const QString &pSiftValue);
@@ -362,6 +362,7 @@ private:
 public:
     UBFeature getDestinationFeatureForUrl( const QUrl &url );
     UBFeature getDestinationFeatureForMimeType(const QString &pMmimeType);
+    QString getFeaturePathByName(const QString &featureName) const;
 
 };
 

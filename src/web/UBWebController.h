@@ -31,7 +31,7 @@
 
 class WBBrowserWindow;
 class UBApplication;
-class UBTrapFlashController;
+class UBTrapWebPageContentController;
 class UBMainWindow;
 class UBWebToolsPalette;
 class WBWebView;
@@ -91,6 +91,7 @@ class UBWebController : public QObject
             return mBrowserWidget;
         }
 
+        void captureoEmbed(QUrl currentUrl);
         void captureoEmbed();
         void captureEduMedia();
 
@@ -120,7 +121,7 @@ class UBWebController : public QObject
         WBBrowserWindow** mCurrentWebBrowser;
 
         QWidget* mBrowserWidget;
-        UBTrapFlashController* mTrapFlashController;
+        UBTrapWebPageContentController* mTrapContentController;
         UBWebToolsPalette** mToolsCurrentPalette;
         UBWebToolsPalette* mToolsPaletteList[TotalNumberOfWebInstances];
 
@@ -137,9 +138,10 @@ class UBWebController : public QObject
     private slots:
 
         void activePageChanged();
-        void trapFlash();
 
         void toggleWebTrap(bool checked);
+
+        void webTrapContent();
 
         void onOEmbedParsed(QVector<sOEmbedContent> contents);
 

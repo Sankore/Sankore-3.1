@@ -444,6 +444,11 @@ void UBFeaturesWidget::createBookmark(QString& title, QString& urlString)
     controller->createBookmark(title,urlString);
 }
 
+QString UBFeaturesWidget::importFromUrl(const QUrl &url) const
+{
+    return controller->moveExternalData(url,UBFeature());
+}
+
 UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
     : QListView(parent)
 {

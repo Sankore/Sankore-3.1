@@ -32,9 +32,10 @@
 #include "core/memcheck.h"
 
 
-UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QObject *parent)
+UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QByteArray data, QObject *parent)
 : QThread(parent)
 , mDesc(desc)
+, mData(data)
 , m_bAborting(false)
 {
 
@@ -48,39 +49,52 @@ UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 
 void UBAsyncLocalFileDownloader::run()
 {
-
-    if(mDesc.srcUrl.startsWith("file://"))
-        mDesc.srcUrl = QUrl(mDesc.srcUrl).toLocalFile();
+    if(mDesc.dstUrl.startsWith("file://") || mDesc.dstUrl.startsWith("/"))
+        mDesc.dstUrl = QUrl(mDesc.dstUrl).toLocalFile();
     else
-        mDesc.srcUrl = QUrl::fromLocalFile(mDesc.srcUrl).toLocalFile();
+        mDesc.dstUrl = QUrl::fromLocalFile(mDesc.dstUrl).toLocalFile();
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mDesc.srcUrl);
 
-    int position=mimeType.indexOf(";");
-    if(position != -1)
-        mimeType=mimeType.left(position);
-
-    UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
-
-
-    QString destDirectory;
-    if (UBMimeType::Video == itemMimeType)
-        destDirectory = UBPersistenceManager::videoDirectory;
+    if (sDownloadFileDesc::customPath == mDesc.dest)
+    {
+        mTo = mDesc.dstUrl;
+        QDir().mkpath(mTo);
+        QFile::copy(mDesc.srcUrl, mTo);
+    }
+    else if (sDownloadFileDesc::customPath == mDesc.dest && !mDesc.srcUrl.isEmpty() && mData.isNull())
+    {
+        mTo = mDesc.dstUrl;
+        QDir().mkpath(mTo);
+        QFile::copy(mDesc.srcUrl, mTo);
+    }
     else
-        if (UBMimeType::Audio == itemMimeType)
-            destDirectory = UBPersistenceManager::audioDirectory;
+    { 
+        int position=mimeType.indexOf(";");
+        if(position != -1)
+            mimeType=mimeType.left(position);
 
-    if (mDesc.originalSrcUrl.isEmpty())
-        mDesc.originalSrcUrl = mDesc.srcUrl;
+        UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
 
-    QString uuid = QUuid::createUuid();
-    UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
-        mDesc.srcUrl,
-        destDirectory,
-        uuid,
-        mTo,
-        NULL);
 
+        QString destDirectory;
+        if (UBMimeType::Video == itemMimeType)
+            destDirectory = UBPersistenceManager::videoDirectory;
+        else 
+            if (UBMimeType::Audio == itemMimeType)
+                destDirectory = UBPersistenceManager::audioDirectory;
+
+        if (mDesc.originalSrcUrl.isEmpty())
+            mDesc.originalSrcUrl = mDesc.srcUrl;
+
+        QString uuid = QUuid::createUuid();
+        UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(), 
+            mDesc.srcUrl,
+            destDirectory,
+            uuid,
+            mTo,
+            NULL);
+    }
     if (m_bAborting)
     {
         if (QFile::exists(mTo))
@@ -290,9 +304,13 @@ void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl
                 // The downloaded file is modal so we must put it on the board
                 emit addDownloadedFileToBoard(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, isBackground);
             }
-            else
+            else if(desc.dest == sDownloadFileDesc::library)
             {
                 emit addDownloadedFileToLibrary(pSuccess, sourceUrl, pContentTypeHeader, pData, desc.name);
+            }
+            else if(desc.dest == sDownloadFileDesc::customPath)
+            {
+                emit customDownloadFinished(pSuccess, sourceUrl, contentUrl, QUrl(desc.dstUrl), pContentTypeHeader, pData, pSize);
             }
 
             break;
@@ -381,7 +399,7 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
 {
     if (desc.srcUrl.startsWith("file://") || desc.srcUrl.startsWith("/"))
     {
-        UBAsyncLocalFileDownloader * cpHelper = new UBAsyncLocalFileDownloader(desc, this);
+        UBAsyncLocalFileDownloader * cpHelper = new UBAsyncLocalFileDownloader(desc, QByteArray(), this);
         connect(cpHelper, SIGNAL(signal_asyncCopyFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl,QString, QByteArray, QPointF, QSize, bool)));
         QObject *res = dynamic_cast<QObject *>(cpHelper->download());
         if (!res)

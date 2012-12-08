@@ -62,6 +62,7 @@ class UBBoardPaletteManager : public QObject
         void setupLayout();
         UBLeftPalette* leftPalette(){return mLeftPalette;}
         UBRightPalette* rightPalette(){return mRightPalette;}
+        UBFeaturesWidget *featuresWidget(){return mpFeaturesWidget;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
         UBActionPalette *addItemPalette() {return mAddItemPalette;}
         void showVirtualKeyboard(bool show = true);
@@ -82,9 +83,6 @@ class UBBoardPaletteManager : public QObject
         void changeMode(eUBDockPaletteWidgetMode newMode, bool isInit = false);
         void startDownloads();
         void stopDownloads();
-
-        UBFeaturesWidget* featuresWidget() { return mpFeaturesWidget;}
-
 
     signals:
         void connectToDocController();

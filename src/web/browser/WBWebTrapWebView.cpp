@@ -38,7 +38,8 @@ WBWebTrapWebView::WBWebTrapWebView(QWidget* parent)
     : QWebView(parent)
     , mCurrentContentType(Unknown)
     , mIsTrapping(false)
-    , mTrapingWidget(0)
+    , m_bContentForTrapSelected(false)
+    , m_bScrollingInProcess(false)
 {
     connect(this, SIGNAL(loadFinished ( bool)), this, SLOT(viewLoadFinished(bool)));
 }
@@ -46,7 +47,6 @@ WBWebTrapWebView::WBWebTrapWebView(QWidget* parent)
 
 WBWebTrapWebView::~WBWebTrapWebView()
 {
-    delete mTrapingWidget;
 }
 
 
@@ -56,42 +56,14 @@ void WBWebTrapWebView::setIsTrapping(bool pIsTrapping)
 
     mDomElementRect = QRect();
     mCurrentContentType = Unknown;
-/*
-#if defined(Q_WS_WIN)
-
-    if(mIsTrapping)
-    {
-        if (!mTrapingWidget)
-        {
-            mTrapingWidget = new UBWebTrapMouseEventMask(this);
-            mTrapingWidget->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
-            mTrapingWidget->setAttribute(Qt::WA_TranslucentBackground, true);
-        }
-
-        QPoint topLeft = mapToGlobal (geometry().topLeft());
-        QRect geom(topLeft.x(), topLeft.y(), geometry().width(), geometry().height());
-
-        mTrapingWidget->setGeometry(geom);
-        mTrapingWidget->setVisible(true);
-
-    }
-    else if (mTrapingWidget)
-    {
-         mTrapingWidget->setVisible(false);
-    }
-
-#endif
-*/
 
     update();
 }
 
 void WBWebTrapWebView::hideEvent ( QHideEvent * event )
 {
-    setIsTrapping(false);
     QWebView::hideEvent(event);
 }
-
 
 void WBWebTrapWebView::highliteElementAtPos ( const QPoint& pos)
 {
@@ -252,6 +224,11 @@ QString WBWebTrapWebView::potentialEmbedCodeAtPos(const QPoint& pos)
 }
 
 
+void WBWebTrapWebView::trapContentFromHitTest(const QWebHitTestResult& hitTest)
+{
+    trapElementAtPos(hitTest.pos());
+}
+
 void WBWebTrapWebView::trapElementAtPos(const QPoint& pos)
 {
     QWebHitTestResult htr = page()->currentFrame()->hitTestContent(pos);
@@ -308,27 +285,37 @@ void WBWebTrapWebView::trapElementAtPos(const QPoint& pos)
     }
 }
 
+bool WBWebTrapWebView::isFrameContentAtPos(const QPoint &pos) const
+{
+    return !page()->mainFrame()->scrollBarGeometry(Qt::Vertical).contains(pos)
+        && !page()->mainFrame()->scrollBarGeometry(Qt::Horizontal).contains(pos);
+}
 
 void WBWebTrapWebView::mouseMoveEvent ( QMouseEvent * event )
 {
-    if (mIsTrapping)
+    if (mIsTrapping && !m_bScrollingInProcess)
     {
-        highliteElementAtPos(event->pos());
+        // NOOP - avoid event routing to web kit (accept is not enough)
     }
     else
     {
+
         QWebView::mouseMoveEvent(event);
     }
 }
 
 void WBWebTrapWebView::mousePressEvent(QMouseEvent* event)
 {
-    if (mIsTrapping)
+    
+    if (mIsTrapping && isFrameContentAtPos(event->pos()))
     {
-        // NOOP - avoid event routing to web kit (accept is not enough)
+         highliteElementAtPos(event->pos());    
     }
     else
     {
+        if (mIsTrapping)
+            m_bScrollingInProcess = true; 
+
         QWebView::mousePressEvent(event);
     }
 }
@@ -340,12 +327,15 @@ void WBWebTrapWebView::mouseReleaseEvent ( QMouseEvent * event )
 
     //qDebug() << "mouse release" << event->pos();
 
-    if (mIsTrapping)
+    if (!m_bScrollingInProcess && mIsTrapping && isFrameContentAtPos(event->pos()))
     {
-        trapElementAtPos(event->pos());
+       m_bContentForTrapSelected = true;
+       // trapElementAtPos(event->pos());
     }
     else
     {
+        m_bScrollingInProcess = false;
+
         QWebView::mouseReleaseEvent(event);
     }
 
@@ -439,7 +429,6 @@ void WBWebTrapWebView::paintEvent ( QPaintEvent * event )
 
 }
 
-
 void WBWebTrapWebView::viewLoadFinished ( bool ok )
 {
     Q_UNUSED(ok);
@@ -449,9 +438,19 @@ void WBWebTrapWebView::viewLoadFinished ( bool ok )
 
 
 UBWebTrapMouseEventMask::UBWebTrapMouseEventMask(WBWebTrapWebView* pWebView)
-    : mTrappedWebView(pWebView)
+    : QWidget(pWebView)
+    , mTrappedWebView(pWebView)
+    , mTrapController(NULL)
 {
-    setMouseTracking(true);
+
+}
+
+UBWebTrapMouseEventMask::UBWebTrapMouseEventMask(WBWebTrapWebView* pWebView, UBTrapWebPageContentController *controller)
+    : QWidget(pWebView)
+    , mTrappedWebView(pWebView)
+    , mTrapController(controller)
+{
+
 }
 
 UBWebTrapMouseEventMask::~UBWebTrapMouseEventMask()
@@ -463,7 +462,8 @@ void UBWebTrapMouseEventMask::mousePressEvent(QMouseEvent* event)
 {
     if (mTrappedWebView && mTrappedWebView->isTrapping())
     {
-        // NOOP
+        mTrappedWebView->highliteElementAtPos(event->pos());
+        mTrappedWebView->trapElementAtPos(event->pos());
     }
     else
     {
@@ -474,11 +474,7 @@ void UBWebTrapMouseEventMask::mousePressEvent(QMouseEvent* event)
 
 void UBWebTrapMouseEventMask::mouseMoveEvent ( QMouseEvent * event )
 {
-    if (mTrappedWebView && mTrappedWebView->isTrapping())
-    {
-        mTrappedWebView->highliteElementAtPos(event->pos());
-    }
-    else
+    if (!mTrappedWebView && !mTrappedWebView->isTrapping())
     {
         QWidget::mouseMoveEvent(event);
     }
@@ -487,11 +483,11 @@ void UBWebTrapMouseEventMask::mouseMoveEvent ( QMouseEvent * event )
 
 void UBWebTrapMouseEventMask::mouseReleaseEvent ( QMouseEvent * event )
 {
-    if (mTrappedWebView && mTrappedWebView->isTrapping())
-    {
-        mTrappedWebView->trapElementAtPos(event->pos());
-    }
-    else
+    //if (mTrappedWebView && mTrappedWebView->isTrapping())
+    //{
+        //mTrappedWebView->trapElementAtPos(event->pos());
+    //}
+    //else
     {
         QWidget::mouseReleaseEvent(event);
     }
