@@ -110,7 +110,7 @@ void UBTrapWebPageContentController::showTrapContent()
         mTrapWebContentDialog->webView()->page()->setNetworkAccessManager(UBNetworkAccessManager::defaultAccessManager());
     }
 
-    mTrapWebContentDialog->show();  
+    mTrapWebContentDialog->show();
     mTrapWebContentDialog->setUrl(UBApplication::webController->currentPageUrl());
 }
 void UBTrapWebPageContentController::hideTrapContent()
@@ -139,7 +139,7 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
 
             mObjectNoByTrapWebComboboxIndex.clear();
             combobox->clear();
-            combobox->addItem(tr("Whole page")); 
+            combobox->addItem(tr("Whole page"));
             mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), 0);
 
             QString lastTagName;
@@ -167,7 +167,7 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
         mTrapWebContentDialog->webView()->setHtml(generateFullPageHtml(mCurrentWebFrame->url(), "", false));
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.title");
         mTrapWebContentDialog->applicationNameLineEdit()->setText(res.toString().trimmed());
-   
+
     }
     else if (pObjectIndex > 0 && pObjectIndex <= mAvaliableObjects.size())
     {
@@ -185,7 +185,7 @@ void UBTrapWebPageContentController::selectedItemReady(bool pSuccess, QUrl sourc
     {
         QUrl dataContentUrl;
         if (!pData.isEmpty())
-        {        
+        {
             QFile file(destinationUrl.toLocalFile());
             if ( file.open(QIODevice::WriteOnly ))
             {
@@ -217,7 +217,7 @@ void UBTrapWebPageContentController::prepareCurrentItemForImport(bool bUseAsLink
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(selectedObject.source);
     UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
-    
+
     QSize currentItemSize(selectedObject.width, selectedObject.height);
 
     if (UBMimeType::Flash == itemMimeType && !UBApplication::webController->isOEmbedable(QUrl(selectedObject.source)))
@@ -240,7 +240,7 @@ void UBTrapWebPageContentController::prepareCurrentItemForImport(bool bUseAsLink
             desc.dstUrl = QUrl::fromUserInput(tempDir+"/"+desc.name).toString();
             desc.srcUrl = selectedObject.source;
             desc.size = QSize(selectedObject.width, selectedObject.height);
-            UBDownloadManager::downloadManager()->addFileToDownload(desc);  
+            UBDownloadManager::downloadManager()->addFileToDownload(desc);
 
             connect(UBDownloadManager::downloadManager(), SIGNAL(customDownloadFinished(bool, QUrl, QUrl, QUrl, QString, QByteArray, QSize)), this, SLOT(selectedItemReady(bool, QUrl, QUrl, QUrl, QString, QByteArray, QSize)));
         }
@@ -271,12 +271,12 @@ void UBTrapWebPageContentController::prepareCurrentItemForImport(bool bUseAsLink
             if (UBFileSystemUtils::copyDir(embedWidgetPath, widgetDir.path()))
             {
                 generateConfig(800, 600, widgetDir.path()); // fix embed url
-                
+
             }
             */
         }
         else if (selectedIndex == 0)
-        {        
+        {
             generateFullPageHtml(mCurrentWebFrame->url(), widgetDir.path(), true);
             generateConfig(800, 600, widgetDir.path());
         }
@@ -300,6 +300,7 @@ void UBTrapWebPageContentController::addItemToLibrary()
     mCurrentItemImportDestination = library;
     prepareCurrentItemForImport(false);
     UBApplication::applicationController->showBoard();
+    hideTrapContent();
 }
 
 void UBTrapWebPageContentController::addItemToBoard()
@@ -308,6 +309,7 @@ void UBTrapWebPageContentController::addItemToBoard()
     mCurrentItemImportDestination = board;
     prepareCurrentItemForImport(false);
     UBApplication::applicationController->showBoard();
+    hideTrapContent();
 }
 
 void UBTrapWebPageContentController::addLinkToLibrary()
@@ -316,7 +318,7 @@ void UBTrapWebPageContentController::addLinkToLibrary()
     mCurrentItemImportDestination = library;
     prepareCurrentItemForImport(true);
     UBApplication::applicationController->showBoard();
-
+    hideTrapContent();
 }
 
 void UBTrapWebPageContentController::addLinkToBoard()
@@ -325,13 +327,14 @@ void UBTrapWebPageContentController::addLinkToBoard()
     mCurrentItemImportDestination = board;
     prepareCurrentItemForImport(true);
     UBApplication::applicationController->showBoard();
+    hideTrapContent();
 }
 
 void UBTrapWebPageContentController::importItemInLibrary(QString pSourceDir)
 {
     if (pSourceDir.startsWith("file://") || pSourceDir.startsWith("/"))
-    {    
-        QString widgetLibraryPath = UBApplication::boardController->paletteManager()->featuresWidget()->importFromUrl(QUrl::fromUserInput(pSourceDir));   
+    {
+        QString widgetLibraryPath = UBApplication::boardController->paletteManager()->featuresWidget()->importFromUrl(QUrl::fromUserInput(pSourceDir));
     }
     else
     {
@@ -368,7 +371,7 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
 
         mCurrentWebFrame = pCurrentWebFrame;
         updateListOfContents(list);
-        
+
         mTrapWebContentDialog->applicationNameLineEdit()->setText(mCurrentWebFrame->title());
 
         mTrapWebContentDialog->setReadyForTrap(!list.isEmpty());
@@ -443,7 +446,7 @@ QString UBTrapWebPageContentController::generateFullPageHtml(const QUrl &srcUrl,
 {
     QString htmlContentString;
 
-    htmlContentString = 
+    htmlContentString =
     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n \
     <html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n \
         <head>\r\n \
@@ -506,7 +509,7 @@ QString UBTrapWebPageContentController::generateHtml(const UBWebKitUtils::HtmlOb
 
     QString htmlContentString;
 
-    htmlContentString = 
+    htmlContentString =
     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n \
     <html>\n \
         <head>\n \
