@@ -1091,20 +1091,12 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
                                             QByteArray pData, QPointF pPos, QSize pSize,
                                             bool isBackground, bool internalData)
 {
-
-    qDebug() << sourceUrl.toString();
-    qDebug() << contentUrl.toString();
-    qDebug() << pContentTypeHeader;
-    qDebug() << pData.length();
-
     QString mimeType = pContentTypeHeader;
 
     // In some cases "image/jpeg;charset=" is retourned by the drag-n-drop. That is
     // why we will check if an ; exists and take the first part (the standard allows this kind of mimetype)
     if(mimeType.isEmpty())
       mimeType = UBFileSystemUtils::mimeTypeFromFileName(sourceUrl.toString());
-
-    qDebug() << mimeType;
 
     int position=mimeType.indexOf(";");
     if(position != -1)
@@ -2066,6 +2058,7 @@ QUrl UBBoardController::expandWidgetToTempDir(const QByteArray& pZipedData, cons
 
         if (UBFileSystemUtils::expandZipToDir(tmp, tmpDir))
         {
+            //Claudio this is a workaround to know it the zip is the widget itself or a zipped widget
             QStringList directoryContent = QDir(tmpDir).entryList(QDir::AllDirs | QDir::NoDotAndDotDot);
             if(directoryContent.count() == 1 && directoryContent.at(0).contains(".wgt"))
                 widgetUrl = QUrl::fromLocalFile(tmpDir + "/" + directoryContent.at(0));

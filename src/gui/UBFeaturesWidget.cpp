@@ -1139,7 +1139,7 @@ void UBFeatureProperties::onAddToPage()
 
 void UBFeatureProperties::onAddToLib()
 {
-    if ( UBApplication::isFromWeb(  mpElement->getFullPath().toString() ) )
+    if ( UBApplication::isFromWeb(mpElement->getFullPath().toString() ) )
     {
         sDownloadFileDesc desc;
         desc.isBackground = false;

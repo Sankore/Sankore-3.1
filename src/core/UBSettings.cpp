@@ -1024,6 +1024,24 @@ QString UBSettings::userInteractiveDirectory()
     return interactiveDirectory;
 }
 
+QString UBSettings::userApplicationDirectory()
+{
+    static QString applicationDirectory = "";
+    if(applicationDirectory.isEmpty()){
+        if (sAppSettings && getAppSettings()->contains("App/UserApplicationDirectory")) {
+            applicationDirectory = getAppSettings()->value("App/UserApplicationDirectory").toString();
+            applicationDirectory = replaceWildcard(applicationDirectory);
+            if(checkDirectory(applicationDirectory))
+                return applicationDirectory;
+            else
+                qCritical() << "failed to create directory " << applicationDirectory;
+        }
+        applicationDirectory = userDataDirectory() + "/application";
+        checkDirectory(applicationDirectory);
+    }
+    return applicationDirectory;
+}
+
 QString UBSettings::userWidgetPath()
 {
     return userInteractiveDirectory() + tr("/Web");

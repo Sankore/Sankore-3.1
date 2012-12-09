@@ -131,6 +131,7 @@ class UBSettings : public QObject
         static QString userSearchDirectory();
         static QString userAnimationDirectory();
         static QString userInteractiveDirectory();
+        static QString userApplicationDirectory();
         static QString userWidgetPath();
         static QString userRelativeWidgetPath();
         static QString userInteractiveFavoritesDirectory();

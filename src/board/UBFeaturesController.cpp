@@ -508,6 +508,7 @@ void UBFeaturesController::initHardcodedData()
 
     interactivityData = CategoryData(CategoryData::PathData() //Static library paths for Interactivities category. Scanning data
                                      .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationInteractivesDirectory()))
+                                     .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userApplicationDirectory()))
                             //UBFeature represented Interactivities element
                             , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Interactivities"     //Virtual Path
                                            ,QImage(":images/libpalette/InteractivesCategory.svg")                //Icon
@@ -995,7 +996,7 @@ UBFeature UBFeaturesController::getDestinationFeatureForUrl( const QUrl &url )
     return getDestinationFeatureForMimeType(mimetype);
 }
 
-UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &pMmimeType)
+UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &pMmimeType,const QUrl& sourceUrl)
 {
     if ( pMmimeType.contains("audio") )
         return audiosData.categoryFeature();
@@ -1007,8 +1008,17 @@ UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &
     {
         if ( pMmimeType.contains( "x-shockwave-flash") )
             return flashData.categoryFeature();
-        else
-            return webFolderData.categoryFeature();
+        else{
+            QString source = sourceUrl.toString();
+            if(source.length()){
+                if(source.contains("?type=application"))
+                    return appData.categoryFeature();
+                else
+                    return interactivityData.categoryFeature();
+            }
+            else
+                return webFolderData.categoryFeature();
+        }
     }
     return UBFeature();
 }
@@ -1027,10 +1037,12 @@ QString UBFeaturesController::getFeaturePathByName(const QString &featureName) c
 
 void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle)
 {
-    UBFeature dest = getDestinationFeatureForMimeType(pContentSource);
+    UBFeature dest = getDestinationFeatureForMimeType(pContentSource,sourceUrl);
 
     if (dest == UBFeature())
         return;
+
+
 
     QString fileName;
     QString filePath;
@@ -1048,17 +1060,12 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
         QImage img;
         img.loadFromData(pData);
         importImage(img, fileName);
-     /*
-        UBFeature downloadedFeature = UBFeature(dest.getFullVirtualPath() + "/" + fileName, getIcon( filePath, fileTypeFromUrl(filePath)),
-                                                 fileName, QUrl::fromLocalFile(filePath), FEATURE_ITEM);
-        if (downloadedFeature != UBFeature()) {
-            featuresModel->addItem(downloadedFeature);
-
-        }
-        */
-
-    } else {
-        fileName = QFileInfo( sourceUrl.toString() ).fileName();
+    }
+    else {
+        QString url = sourceUrl.toString();
+        if(url.indexOf("?"))
+            url = url.left(url.indexOf("?"));
+        fileName = QFileInfo( url ).fileName();
         filePath = dest.getFullPath().toLocalFile() + "/" + fileName;
 
         QFile file( filePath );
@@ -1066,6 +1073,15 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
         {
             file.write(pData);
             file.close();
+
+            // check if it something like xxxx.wgt/xxx.wgt situation due to a wrong way to zip widgets
+            QStringList list = QDir(filePath).entryList(QDir::AllDirs | QDir::NoDotAndDotDot);
+            if(list.count() == 1 && list.at(0).contains(".wgt")){
+                QString subDirectoryName = filePath + "/" + list.at(0);
+                UBFileSystemUtils::copyDir(subDirectoryName, filePath);
+                UBFileSystemUtils::deleteDir(subDirectoryName);
+            }
+
 
             UBFeature downloadedFeature = UBFeature(dest.getFullVirtualPath() + "/" + fileName, getIcon( filePath, fileTypeFromUrl(filePath)),
                                                     fileName, QUrl::fromLocalFile(filePath), FEATURE_ITEM);
@@ -1079,9 +1095,6 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
 
 UBFeature UBFeaturesController::moveItemToFolder( const QUrl &url, const UBFeature &destination )
 {
-    /*UBFeature newElement = copyItemToFolder( url, destination );
-    deleteItem( url );
-    return newElement;*/
     QString sourcePath = url.toLocalFile();
 
     Q_ASSERT( QFileInfo( sourcePath ).exists() );
