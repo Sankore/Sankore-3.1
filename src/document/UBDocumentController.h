@@ -55,10 +55,12 @@ public:
     QString nodeName() const {return mName;}
     QString displayName() const {return mDisplayName;}
     void addChild(UBDocumentTreeNode *pChild);
+    void removeChild(int index);
     UBDocumentTreeNode *moveTo(const QString &pPath);
     UBDocumentProxy *proxyData() const {return mProxy;}
     bool isRoot() {return !mParent;}
     bool isTopLevel() {return mParent && !mParent->mParent;}
+
 
 private:
     Type mType;
@@ -85,6 +87,13 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     bool setData(const QModelIndex &index, const QVariant &value, int role);
     Qt::ItemFlags flags ( const QModelIndex & index ) const;
+    Qt::DropActions supportedDropActions() const {return Qt::MoveAction | Qt::CopyAction;}
+//    QMimeData *mimeData( const QModelIndexList &indexes ) const;
+    QStringList mimeTypes() const;
+    bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
+    bool removeRow(int row, const QModelIndex &parent);
+    bool removeRows(int row, int count, const QModelIndex &parent);
+
     QModelIndex indexForNode(UBDocumentTreeNode *pNode) const;
     QPersistentModelIndex persistentIndexForNode(UBDocumentTreeNode *pNode);
 //    bool insertRow(int row, const QModelIndex &parent);
@@ -105,6 +114,7 @@ private:
     UBDocumentTreeNode *nodeFromIndex(const QModelIndex &pIndex) const;
     UBDocumentTreeNode *findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const;
     QModelIndex pIndexForNode(const QModelIndex &parent, UBDocumentTreeNode *pNode) const;
+    bool removeChildFromModel(UBDocumentTreeNode *child, UBDocumentTreeModel *parent);
 };
 
 class UBDocumentTreeView : public QTreeView
@@ -113,6 +123,12 @@ class UBDocumentTreeView : public QTreeView
 
 public:
     UBDocumentTreeView (QWidget *parent = 0);
+
+protected:
+    void mousePressEvent(QMouseEvent *event);
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dragMoveEvent(QDragMoveEvent *event);
+    void dropEvent(QDropEvent *event);
 };
 
 class UBDocumentController : public UBDocumentContainer

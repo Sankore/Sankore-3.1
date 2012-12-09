@@ -77,6 +77,20 @@ void UBDocumentTreeNode::addChild(UBDocumentTreeNode *pChild)
     }
 }
 
+void UBDocumentTreeNode::removeChild(int index)
+{
+    if (index < 0 || index > mChildren.count() - 1) {
+        return;
+    }
+
+    UBDocumentTreeNode *curChild = mChildren[index];
+    while (curChild->mChildren.count()) {
+        curChild->removeChild(0);
+    }
+
+    mChildren.removeAt(index);
+}
+
 UBDocumentTreeNode *UBDocumentTreeNode::moveTo(const QString &pPath)
 {
     UBDocumentTreeNode *parentNode = this;
@@ -240,10 +254,57 @@ Qt::ItemFlags UBDocumentTreeModel::flags (const QModelIndex &index) const
 
         if (indexNode->nodeType() == UBDocumentTreeNode::Catalog) {
             resultFlags |= Qt::ItemIsDropEnabled;
+            qDebug() << "item is drop enabled";
         }
     }
 
-    return resultFlags |= Qt::ItemIsDropEnabled;
+    return resultFlags;
+}
+
+QStringList UBDocumentTreeModel::mimeTypes() const
+{
+    QStringList types;
+    types << "text/uri-list" << "image/png" << "image/tiff" << "image/gif" << "image/jpeg";
+    return types;
+}
+
+bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
+{
+//    qDebug() << "drop mime data catched";
+//    return QAbstractItemModel::dropMimeData(data, action, row, column, parent);
+
+    Q_UNUSED(data)
+    Q_UNUSED(action)
+    Q_UNUSED(row)
+    Q_UNUSED(column)
+    Q_UNUSED(parent)
+
+    return true;
+}
+
+bool UBDocumentTreeModel::removeRow(int row, const QModelIndex &parent)
+{
+    qDebug() << "remove row catched";
+    return QAbstractItemModel::removeRow(row, parent);
+}
+
+bool UBDocumentTreeModel::removeRows(int row, int count, const QModelIndex &parent)
+{
+    if (row < 0 || row + count > rowCount(parent))
+        return false;
+
+    beginRemoveRows( parent, row, row + count - 1);
+    //featuresList->remove( row, count );
+    UBDocumentTreeNode *parentNode = nodeFromIndex(parent);
+    for (int i = row; i < row + count; i++) {
+        if (parentNode->children().at(i)) {
+//            parentNode->children().removeAt(i);
+            parentNode->removeChild(i);
+        }
+    }
+//    featuresList->erase( featuresList->begin() + row, featuresList->begin() + row + count );
+    endRemoveRows();
+    return true;
 }
 
 QModelIndex UBDocumentTreeModel::indexForNode(UBDocumentTreeNode *pNode) const
@@ -284,6 +345,11 @@ QModelIndex UBDocumentTreeModel::pIndexForNode(const QModelIndex &parent, UBDocu
         }
     }
     return QModelIndex();
+}
+
+bool UBDocumentTreeModel::removeChildFromModel(UBDocumentTreeNode *child, UBDocumentTreeModel *parent)
+{
+    return true;
 }
 
 //bool UBDocumentTreeModel::insertRow(int row, const QModelIndex &parent)
@@ -425,6 +491,29 @@ UBDocumentTreeModel::~UBDocumentTreeModel()
 
 UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent) {
 
+}
+
+void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
+{
+    event->accept();
+    event->acceptProposedAction();
+}
+
+void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
+{
+    QTreeView::dragMoveEvent(event);
+}
+
+void UBDocumentTreeView::dropEvent(QDropEvent *event)
+{
+    qDebug() << "drop event catchded";
+    event->setDropAction(Qt::MoveAction);
+    QTreeView::dropEvent(event);
+}
+
+void UBDocumentTreeView::mousePressEvent(QMouseEvent *event)
+{
+    QTreeView::mousePressEvent(event);
 }
 
 UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
@@ -804,9 +893,10 @@ void UBDocumentController::setupViews()
 //        connect(mDocumentUI->documentTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(itemClicked(QTreeWidgetItem *, int)));
 
         mDocumentUI->documentTreeView->setModel(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel);
-        mDocumentUI->documentTreeView->setDragDropMode(QAbstractItemView::InternalMove);
+//        mDocumentUI->documentTreeView->setDragDropMode(QAbstractItemView::InternalMove);
         mDocumentUI->documentTreeView->setDragEnabled(true);
         mDocumentUI->documentTreeView->setAcceptDrops(true);
+        mDocumentUI->documentTreeView->viewport()->setAcceptDrops(true);
         mDocumentUI->documentTreeView->setDropIndicatorShown(true);
 
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(TreeViewSelectionChanged(QModelIndex,QModelIndex)));
