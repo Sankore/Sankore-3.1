@@ -494,7 +494,7 @@ void UBFeaturesController::initHardcodedData()
 
     appData = CategoryData(CategoryData::PathData()   //Static library paths for Applications category. Scanning data
                                      .insertr(CategoryData::Library,  QUrl::fromLocalFile(UBSettings::settings()->applicationApplicationsLibraryDirectory()))
-                                     .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userInteractiveDirectory()))
+                                     .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userApplicationDirectory()))
                             //UBFeature represented Applications element
                             , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Applications"   //Virtual Path
                                            ,QImage(":images/libpalette/ApplicationsCategory.svg")           //Icon
@@ -508,7 +508,7 @@ void UBFeaturesController::initHardcodedData()
 
     interactivityData = CategoryData(CategoryData::PathData() //Static library paths for Interactivities category. Scanning data
                                      .insertr(CategoryData::Library,     QUrl::fromLocalFile(UBSettings::settings()->applicationInteractivesDirectory()))
-                                     .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userApplicationDirectory()))
+                                     .insertr(CategoryData::UserDefined, QUrl::fromLocalFile(UBSettings::settings()->userInteractiveDirectory()))
                             //UBFeature represented Interactivities element
                             , UBFeature(rootData.categoryFeature().getFullVirtualPath() + "/Interactivities"     //Virtual Path
                                            ,QImage(":images/libpalette/InteractivesCategory.svg")                //Icon
@@ -1068,10 +1068,15 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
     }
     else {
         QString url = sourceUrl.toString();
-        if(url.indexOf("?"))
+        if(url.indexOf("?")){
             url = url.left(url.indexOf("?"));
-        fileName = QFileInfo( url ).fileName();
-        filePath = dest.getFullPath().toLocalFile() + "/" + fileName;
+            fileName = QFileInfo( url ).fileName();
+            filePath = QDir::tempPath() + "/" + QUuid::createUuid();
+        }
+        else{
+            fileName = QFileInfo( url ).fileName();
+            filePath = dest.getFullPath().toLocalFile() + "/" + fileName;
+        }
 
         QFile file( filePath );
         if ( file.open(QIODevice::WriteOnly ))
@@ -1079,12 +1084,17 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
             file.write(pData);
             file.close();
 
-            // check if it something like xxxx.wgt/xxx.wgt situation due to a wrong way to zip widgets
-            QStringList list = QDir(filePath).entryList(QDir::AllDirs | QDir::NoDotAndDotDot);
-            if(list.count() == 1 && list.at(0).contains(".wgt")){
-                QString subDirectoryName = filePath + "/" + list.at(0);
-                UBFileSystemUtils::copyDir(subDirectoryName, filePath);
-                UBFileSystemUtils::deleteDir(subDirectoryName);
+            if(url.indexOf("?")){
+                // this is a zipped widget extract it
+                filePath = QDir::tempPath() + "/" + fileName;
+                UBFileSystemUtils::expandZipToDir(file, QDir(filePath));
+                // check if it something like xxxx.wgt/xxx.wgt situation due to a wrong way to zip widgets
+                QStringList list = QDir(QDir::tempPath() + "/" + fileName).entryList(QDir::AllDirs | QDir::NoDotAndDotDot);
+                QString tmpWidgetDirectory = filePath;
+                if(list.count() == 1 && list.at(0).contains(".wgt"))
+                    tmpWidgetDirectory = filePath + "/" + list.at(0);
+                filePath = destData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + fileName;
+                UBFileSystemUtils::copyDir(tmpWidgetDirectory, filePath);
             }
 
 
