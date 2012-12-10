@@ -10,7 +10,7 @@ WBTrapBar::WBTrapBar(QWidget *parent)
     layout()->setAlignment(Qt::AlignTop);
 
     setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-    setButtonIconSize(QSize(128, 128));    
+    setButtonIconSize(QSize(128, 128));
 }
 
 void WBTrapBar::mouseMoveEvent(QMouseEvent *event)
@@ -27,6 +27,7 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     : QDialog(parent)
     , mController(controller)
 {
+    setModal(true);
     mTrapApplicationHLayout = new QHBoxLayout(this);
     setLayout(mTrapApplicationHLayout);
 
@@ -55,7 +56,7 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     mSelectContentLabel = new QLabel(tr("Select content to trap:"));
     mSelectContentCombobox = new QComboBox(this);
     mSelectContentCombobox->setMaxVisibleItems(15);
-    mSelectContentCombobox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed); 
+    mSelectContentCombobox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
     mSelectContentLayout->addWidget(mSelectContentLabel);
     mSelectContentLayout->addWidget(mSelectContentCombobox);
@@ -64,7 +65,7 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
 
     mTrapContentPreview = new WBWebView();
     mTrapContentPreview->setMinimumSize(QSize(640, 480));
-    mTrapContentPreview->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); 
+    mTrapContentPreview->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
  //   mTrapContentPreview->setIsTrapping(true);
 
  /*   mTrapingWidgetMask = new UBWebTrapMouseEventMask(mTrapContentPreview);

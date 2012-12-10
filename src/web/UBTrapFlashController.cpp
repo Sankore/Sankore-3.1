@@ -527,7 +527,12 @@ QString UBTrapWebPageContentController::generateHtml(const UBWebKitUtils::HtmlOb
 
     htmlContentString += "      <div align='center'>\n";
 
-    if (mCurrentWebFrame->url().toString().contains("youtube"))
+
+    if(UBFileSystemUtils::mimeTypeFromFileName(objectFullUrl).contains("image"))
+    {
+        htmlContentString += "<img src=" + objectFullUrl + ">\n";
+    }
+    else if (mCurrentWebFrame->url().toString().contains("youtube"))
     {
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.getElementById('embed_code').value");
 
@@ -536,30 +541,30 @@ QString UBTrapWebPageContentController::generateHtml(const UBWebKitUtils::HtmlOb
         QString s = res.toString();
         htmlContentString += s.replace("></embed>", " wmode='opaque'></embed>");
     }
-    else
-    {
+    else{
         htmlContentString += "            <object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000'\n \
-                        codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0'\n \
-                        width='" + QString::number(pObject.width)  + "' height='" + QString::number(pObject.height) + "'>\n \
-                        <param name='movie' value='" + objectFullUrl + "'>\n \
-                        <param name='quality' value='high'>\n \
-                        <param name='wmode' value='opaque'>\n \
-                        <embed src='" + objectFullUrl + "'\n \
-                            quality='high'\n \
-                            pluginspage='http://www.macromedia.com/go/getflashplayer'\n \
-                            type='application/x-shockwave-flash'\n \
-                             width='" + QString::number(pObject.width - 20) + "' height='" + QString::number(pObject.height - 20) + "' wmode='opaque'>\n \
-                        </embed>\n \
-                    </object>\n";
+            codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0'\n \
+            width='" + QString::number(pObject.width)  + "' height='" + QString::number(pObject.height) + "'>\n \
+            <param name='movie' value='" + objectFullUrl + "'>\n \
+            <param name='quality' value='high'>\n \
+            <param name='wmode' value='opaque'>\n \
+            <embed src='" + objectFullUrl + "'\n \
+            quality='high'\n \
+            pluginspage='http://www.macromedia.com/go/getflashplayer'\n \
+            type='application/x-shockwave-flash'\n \
+            width='" + QString::number(pObject.width - 20) + "' height='" + QString::number(pObject.height - 20) + "' wmode='opaque'>\n \
+            </embed>\n \
+            </object>\n";
     }
 
     htmlContentString += "        </div>\n \
-    </body>\n \
-    </html>\n";
+            </body>\n \
+            </html>\n";
 
     if (!pGenerateFile)
     {
-            return htmlContentString;
+         qDebug() << htmlContentString;
+         return htmlContentString;
     }
     else
     {
