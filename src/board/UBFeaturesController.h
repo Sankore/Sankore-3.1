@@ -164,7 +164,7 @@ struct CategoryData
         Library = 0
         , UserDefined = 1
     };
-    CategoryData() {;}
+    CategoryData() : mIsNull(true) {;}
 
     struct PathData : public QMultiMap<pathType, QUrl>
     {
@@ -178,17 +178,20 @@ struct CategoryData
         : mPathData(pPathData)
         , mCategoryFeature(pFeature)
         , mSubFolderPermissions(psubFolderPermissions)
+        , mIsNull(false)
     {;}
 
     PathData pathData() const {return mPathData;}
     UBFeature categoryFeature() const {return mCategoryFeature;}
     UBFeature::Permissions subFolderPermissions() const {return mSubFolderPermissions;}
+    bool isNull() const {return mIsNull;}
 
 private:
     PathData mPathData;
     //Permissions for all subdirectories
     UBFeature mCategoryFeature;
     UBFeature::Permissions mSubFolderPermissions;
+    bool mIsNull;
 };
 
 class UBFeaturesComputingThread : public QThread
@@ -360,8 +363,8 @@ private:
     QSet <QUrl> *favoriteSet;
 
 public:
-    UBFeature getDestinationFeatureForUrl( const QUrl &url );
-    UBFeature getDestinationFeatureForMimeType(const QString &pMmimeType, const QUrl &sourceUrl = QUrl());
+    CategoryData getDestinationCategoryForUrl( const QUrl &url );
+    CategoryData getDestinationCategoryForMimeType(const QString &pMmimeType, const QUrl &sourceUrl = QUrl());
     QString getFeaturePathByName(const QString &featureName) const;
 
 };
