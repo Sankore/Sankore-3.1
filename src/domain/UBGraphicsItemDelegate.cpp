@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include <QtGui>
 #include <QtSvg>
@@ -26,6 +34,7 @@
 
 #include "board/UBBoardController.h" // TODO UB 4.x clean that dependency
 #include "board/UBBoardView.h" // TODO UB 4.x clean that dependency
+#include "board/UBBoardPaletteManager.h"
 
 #include "core/UBApplication.h"
 #include "core/UBApplicationController.h"
@@ -45,6 +54,10 @@
 
 #include "frameworks/UBFileSystemUtils.h"
 #include "board/UBDrawingController.h"
+
+#include "gui/UBCreateLinkPalette.h"
+
+#include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
 
@@ -101,10 +114,8 @@ void DelegateButton::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
     if (timeto < UBSettings::longClickInterval) {
         emit clicked();
-        qDebug() << "clicked";
     } else {
         emit longClicked();
-        qDebug() << "longClicked";
     }
 
     event->setAccepted(!mIsTransparentToMouseEvent);
@@ -118,7 +129,7 @@ void DelegateButton::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 
     if (mIsPressed && mShowProgressIndicator) {
         QPen pen;
-        pen.setBrush(Qt::darkRed);
+        pen.setBrush(Qt::white);
         pen.setWidth(3);
         painter->save();
 
@@ -146,7 +157,7 @@ void DelegateButton::startShowProgress()
     }
 }
 
-UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar)
+UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar, bool showGoContentButton)
     : QObject(parent)
     , mDelegated(pDelegated)
     , mDeleteButton(NULL)
@@ -165,7 +176,10 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mRespectRatio(respectRatio)
     , mMimeData(NULL)
     , mFlippable(false)
+    , mCanTrigAnAction(false)
     , mToolBarUsed(useToolBar)
+    , mShowGoContentButton(showGoContentButton)
+    , mAction(0)
 {
     connect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
 }
@@ -230,9 +244,7 @@ UBGraphicsItemDelegate::~UBGraphicsItemDelegate()
 
 QVariant UBGraphicsItemDelegate::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value)
 {
-    if(change == QGraphicsItem::ItemChildAddedChange){
-
-    }else if (change == QGraphicsItem::ItemSelectedHasChanged) {
+    if (change == QGraphicsItem::ItemSelectedHasChanged) {
         bool ok;
         bool selected = value.toUInt(&ok);
         if (ok) {
@@ -278,6 +290,14 @@ UBGraphicsScene *UBGraphicsItemDelegate::castUBGraphicsScene()
 
 bool UBGraphicsItemDelegate::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+    if(currentTool == UBStylusTool::Play){
+        if(mAction)
+            mAction->play();
+        return true;
+    }
+
     mDragStartPosition = event->pos();
 
     startUndoStep();
@@ -318,15 +338,9 @@ bool UBGraphicsItemDelegate::weelEvent(QGraphicsSceneWheelEvent *event)
 {
     Q_UNUSED(event);
     if( delegated()->isSelected() )
-    {
-//        event->accept();
         return true;
-    }
     else
-    {
-//        event->ignore();
         return false;
-    }
 }
 
 bool UBGraphicsItemDelegate::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -352,17 +366,11 @@ bool UBGraphicsItemDelegate::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 void UBGraphicsItemDelegate::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     Q_UNUSED(event)
-//    if (!mDelegated->isSelected()) {
-//        setZOrderButtonsVisible(true);
-//    }
 }
 
 void UBGraphicsItemDelegate::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     Q_UNUSED(event)
-//    if (!mDelegated->isSelected()) {
-//        setZOrderButtonsVisible(false);
-//    }
 }
 
 QGraphicsItem *UBGraphicsItemDelegate::delegated()
@@ -433,22 +441,9 @@ void UBGraphicsItemDelegate::setZOrderButtonsVisible(bool visible)
 
 void UBGraphicsItemDelegate::remove(bool canUndo)
 {
-    /*UBGraphicsScene* scene = dynamic_cast<UBGraphicsScene*>(mDelegated->scene());
-    if (scene && canUndo)
-    {
-        UBGraphicsItemUndoCommand *uc = new UBGraphicsItemUndoCommand(scene, mDelegated, 0);
-        UBApplication::undoStack->push(uc);
-    }
-    mDelegated->hide();  */
-
     UBGraphicsScene* scene = dynamic_cast<UBGraphicsScene*>(mDelegated->scene());
     if (scene)
     {
-//        bool shownOnDisplay = mDelegated->data(UBGraphicsItemData::ItemLayerType).toInt() != UBItemLayerType::Control;
-//        showHide(shownOnDisplay);
-//        updateFrame();
-//        updateButtons();
-
         if (mFrame && !mFrame->scene() && mDelegated->scene())
         {
             mDelegated->scene()->addItem(mFrame);
@@ -552,10 +547,8 @@ void UBGraphicsItemDelegate::showHide(bool show)
 }
 
 
-void UBGraphicsItemDelegate::gotoContentSource(bool checked)
+void UBGraphicsItemDelegate::gotoContentSource()
 {
-    Q_UNUSED(checked)
-
     UBItem* item = dynamic_cast<UBItem*>(mDelegated);
 
     if(item && !item->sourceUrl().isEmpty())
@@ -627,12 +620,59 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
     showIcon.addPixmap(QPixmap(":/images/eyeClosed.svg"), QIcon::Normal, QIcon::Off);
     mShowOnDisplayAction->setIcon(showIcon);
 
-    mGotoContentSourceAction = menu->addAction(tr("Go to Content Source"), this, SLOT(gotoContentSource(bool)));
+    if (mShowGoContentButton)
+    {
+        mGotoContentSourceAction = menu->addAction(tr("Go to Content Source"), this, SLOT(gotoContentSource()));
 
-    QIcon sourceIcon;
-    sourceIcon.addPixmap(QPixmap(":/images/toolbar/internet.png"), QIcon::Normal, QIcon::On);
-    mGotoContentSourceAction->setIcon(sourceIcon);
+        QIcon sourceIcon;
+        sourceIcon.addPixmap(QPixmap(":/images/toolbar/internet.png"), QIcon::Normal, QIcon::On);
+        mGotoContentSourceAction->setIcon(sourceIcon);
+    }
 
+    if(mCanTrigAnAction)
+        mShowPanelToAddAnAction = menu->addAction(tr("Add an action"),this,SLOT(onAddActionClicked()));
+}
+
+void UBGraphicsItemDelegate::onAddActionClicked()
+{
+    UBCreateLinkPalette* linkPalette = UBApplication::boardController->paletteManager()->linkPalette();
+    linkPalette->show();
+    connect(linkPalette,SIGNAL(definedAction(UBGraphicsItemAction*)),this,SLOT(saveAction(UBGraphicsItemAction*)));
+}
+
+void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
+{
+    mAction = action;
+    mMenu->removeAction(mShowPanelToAddAnAction);
+    QString actionLabel;
+    switch (mAction->linkType()) {
+    case eLinkToAudio:
+        actionLabel= tr("Remove link to audio");
+        break;
+    case eLinkToPage:
+        actionLabel = tr("Remove link to page");
+        break;
+    case eLinkToWebUrl:
+        actionLabel = tr("Remove link to web url");
+    default:
+        break;
+    }
+
+    mRemoveAnAction = mMenu->addAction(actionLabel,this,SLOT(onRemoveActionClicked()));
+    mMenu->addAction(mRemoveAnAction);
+}
+
+void UBGraphicsItemDelegate::onRemoveActionClicked()
+{
+    if(mAction){
+        mAction->actionRemoved();
+        delete mAction;
+        mAction = NULL;
+    }
+    if(mRemoveAnAction && mMenu){
+        mMenu->removeAction(mRemoveAnAction);
+        mMenu->addAction(mShowPanelToAddAnAction);
+    }
 }
 
 void UBGraphicsItemDelegate::updateMenuActionState()
@@ -677,6 +717,11 @@ void UBGraphicsItemDelegate::setFlippable(bool flippable)
     if (mDelegated) {
         mDelegated->setData(UBGraphicsItemData::ItemFlippable, QVariant(flippable));
     }
+}
+
+void UBGraphicsItemDelegate::setCanTrigAnAction(bool canTrig)
+{
+    mCanTrigAnAction = canTrig;
 }
 
 void UBGraphicsItemDelegate::setRotatable(bool pCanRotate)
@@ -728,7 +773,7 @@ void UBGraphicsItemDelegate::updateButtons(bool showUpdated)
             mDelegated->scene()->addItem(mDeleteButton);
     }
 
-    if (showUpdated /*&& mFrame->isResizing()*/)
+    if (showUpdated)
         mDeleteButton->show();
 
     int i = 1, j = 0, k = 0;
@@ -765,8 +810,24 @@ void UBGraphicsItemDelegate::setButtonsVisible(bool visible)
     }
 }
 
+void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
+{
+    if(!action)
+        onRemoveActionClicked();
+    else{
+        setCanTrigAnAction(true);
+        if(!mMenu){
+            //TODO claudio
+            // Remove this very bad chunk of code
+            mMenu = new QMenu(UBApplication::boardController->controlView());
+            decorateMenu(mMenu);
+        }
+        saveAction(action);
+    }
+}
 
-UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) : 
+
+UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) :
     QGraphicsRectItem(parent),
     mShifting(true),
     mVisible(false),
@@ -779,7 +840,6 @@ UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) :
     rect.setWidth(parent->boundingRect().width());
     this->setRect(rect);
 
-  //  setBrush(QColor(UBSettings::paletteColor));             
     setPen(Qt::NoPen);
     hide();
 
@@ -809,14 +869,14 @@ void UBGraphicsToolBarItem::paint(QPainter *painter, const QStyleOptionGraphicsI
     Q_UNUSED(widget);
 
     QPainterPath path;
-    path.addRoundedRect(rect(), 10, 10);  
+    path.addRoundedRect(rect(), 10, 10);
 
     setBrush(QBrush(UBSettings::paletteColor));
 
     painter->fillPath(path, brush());
 }
 
-MediaTimer::MediaTimer(QGraphicsItem * parent): QGraphicsRectItem(parent) 
+MediaTimer::MediaTimer(QGraphicsItem * parent): QGraphicsRectItem(parent)
 {
     val        = 0;
     smallPoint = false;
@@ -872,11 +932,11 @@ void MediaTimer::drawDigit(const QPoint &pos, QPainter &p, int segLen,
      int  nUpdates;
      const char *segs;
      int  i,j;
- 
+
      const char erase      = 0;
      const char draw       = 1;
      const char leaveAlone = 2;
- 
+
      segs = getSegments(oldCh);
      for (nErases=0; segs[nErases] != 99; nErases++) {
          updates[nErases][0] = erase;            // get segments to erase to
@@ -904,8 +964,8 @@ void MediaTimer::drawDigit(const QPoint &pos, QPainter &p, int segLen,
      }
 }
 
-char MediaTimer::segments [][8] = 
-        { 
+char MediaTimer::segments [][8] =
+        {
               { 0, 1, 2, 4, 5, 6,99, 0},             // 0    0
               { 2, 5,99, 0, 0, 0, 0, 0},             // 1    1
               { 0, 2, 3, 4, 6,99, 0, 0},             // 2    2
@@ -928,7 +988,7 @@ const char* MediaTimer::getSegments(char ch)               // gets list of segme
         return segments[10];
      if (ch == ' ')
         return segments[11];
-     
+
      return NULL;
 }
 
@@ -940,7 +1000,7 @@ void MediaTimer::drawSegment(const QPoint &pos, char segmentNo, QPainter &p,
     QPoint ppt;
     QPoint pt = pos;
     int width = segLen/5;
- 
+
 #define LINETO(X,Y) addPoint(a, QPoint(pt.x() + (X),pt.y() + (Y)))
 #define LIGHT
 #define DARK
@@ -1229,7 +1289,7 @@ void DelegateMediaControl::paint(QPainter *painter,
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    
+
     QPainterPath path;
 
     mLCDTimerArea.setHeight(rect().height());
@@ -1282,7 +1342,7 @@ void DelegateMediaControl::positionHandles()
     selfRect.setHeight(parentItem()->boundingRect().height());
     setRect(selfRect);
 
-    lcdTimer->setPos(rect().width() - mLCDTimerArea.width(), 0); 
+    lcdTimer->setPos(rect().width() - mLCDTimerArea.width(), 0);
 }
 
 void DelegateMediaControl::update()
@@ -1311,9 +1371,9 @@ void DelegateMediaControl::totalTimeChanged(qint64 newTotalTime)
 void DelegateMediaControl::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
    qreal frameWidth =  mSeecArea.height()/2;
-    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0)) 
+    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0))
         && boundingRect().contains(event->pos() + QPointF(frameWidth,0)))
-    {  
+    {
         mDisplayCurrentTime = true;
         seekToMousePos(event->pos());
         this->update();
@@ -1325,9 +1385,9 @@ void DelegateMediaControl::mousePressEvent(QGraphicsSceneMouseEvent *event)
 void DelegateMediaControl::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     qreal frameWidth = mSeecArea.height() / 2;
-    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0)) 
+    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0))
         && boundingRect().contains(event->pos() + QPointF(frameWidth,0)))
-    {   
+    {
         seekToMousePos(event->pos());
         this->update();
         event->accept();

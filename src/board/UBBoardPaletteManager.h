@@ -1,24 +1,32 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #ifndef UBBOARDPALETTEMANAGER_H_
 #define UBBOARDPALETTEMANAGER_H_
 
 #include <QtGui>
 #include <QtWebKit>
- 
+
 #include "gui/UBLeftPalette.h"
 #include "gui/UBRightPalette.h"
 #include "gui/UBPageNavigationWidget.h"
@@ -40,10 +48,8 @@ class UBKeyboardPalette;
 class UBMainWindow;
 class UBApplicationController;
 class UBDockTeacherGuideWidget;
-
-// Uncomment this to use old-styles lib paletter
-// #define USE_WEB_WIDGET
-
+class UBStartupHintsPalette;
+class UBCreateLinkPalette;
 
 class UBBoardPaletteManager : public QObject
 {
@@ -56,13 +62,17 @@ class UBBoardPaletteManager : public QObject
         void setupLayout();
         UBLeftPalette* leftPalette(){return mLeftPalette;}
         UBRightPalette* rightPalette(){return mRightPalette;}
+        UBFeaturesWidget *featuresWidget(){return mpFeaturesWidget;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
+        UBActionPalette *addItemPalette() {return mAddItemPalette;}
         void showVirtualKeyboard(bool show = true);
         void initPalettesPosAtStartup();
         void connectToDocumentController();
         void refreshPalettes();
 
         UBKeyboardPalette *mKeyboardPalette;
+
+        UBCreateLinkPalette* linkPalette();
 
         void setCurrentWebToolsPalette(UBWebToolsPalette *palette) {mWebToolsCurrentPalette = palette;}
         UBWebToolsPalette* mWebToolsCurrentPalette;
@@ -76,7 +86,6 @@ class UBBoardPaletteManager : public QObject
 
     signals:
         void connectToDocController();
-        void signal_changeMode(eUBDockPaletteWidgetMode newMode);
 
     public slots:
 
@@ -103,6 +112,8 @@ class UBBoardPaletteManager : public QObject
         UBStylusPalette *mStylusPalette;
 
         UBZoomPalette *mZoomPalette;
+        UBStartupHintsPalette* mTipPalette;
+        UBCreateLinkPalette* mLinkPalette;
 
         /** The left dock palette */
         UBLeftPalette* mLeftPalette;
@@ -134,11 +145,11 @@ class UBBoardPaletteManager : public QObject
 
         /** The page navigator widget */
         UBPageNavigationWidget* mpPageNavigWidget;
-        
+
         /** The cache properties widget */
         UBCachePropertiesWidget* mpCachePropWidget;
 
-		UBFeaturesWidget *mpFeaturesWidget;
+        UBFeaturesWidget *mpFeaturesWidget;
 
         /** The download widget */
         UBDockDownloadWidget* mpDownloadWidget;

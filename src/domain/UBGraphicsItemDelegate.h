@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This prograscenem is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #ifndef UBGRAPHICSITEMDELEGATE_H_
 #define UBGRAPHICSITEMDELEGATE_H_
@@ -30,6 +38,7 @@ class UBGraphicsProxyWidget;
 class UBGraphicsDelegateFrame;
 class UBGraphicsWidgetItem;
 class UBGraphicsMediaItem;
+class UBGraphicsItemAction;
 
 class DelegateButton: public QGraphicsSvgItem
 {
@@ -181,7 +190,7 @@ class UBGraphicsToolBarItem : public QGraphicsRectItem, public QObject
         bool isVisibleOnBoard() const { return mVisible; }
         void setVisibleOnBoard(bool visible) { mVisible = visible; }
         bool isShifting() const { return mShifting; }
-        void setShifting(bool shifting) { mShifting = shifting; } 
+        void setShifting(bool shifting) { mShifting = shifting; }
         QList<QGraphicsItem*> itemsOnToolBar() const { return mItemsOnToolBar; }
         void setItemsOnToolBar(QList<QGraphicsItem*> itemsOnToolBar) { mItemsOnToolBar = itemsOnToolBar;}
         int minWidth() { return mMinWidth; }
@@ -207,7 +216,7 @@ class UBGraphicsItemDelegate : public QObject
     Q_OBJECT
 
     public:
-        UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent = 0,  bool respectRatio = true, bool canRotate = false, bool useToolBar = true);
+        UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent = 0,  bool respectRatio = true, bool canRotate = false, bool useToolBar = true, bool showGoContentButton = false);
 
         virtual ~UBGraphicsItemDelegate();
 
@@ -251,12 +260,18 @@ class UBGraphicsItemDelegate : public QObject
         void setRotatable(bool pCanRotate);
         bool isFlippable();
 
+        void setCanTrigAnAction(bool canTrig);
+
         void setButtonsVisible(bool visible);
 
         UBGraphicsToolBarItem* getToolBarItem() const { return mToolBarItem; }
 
         qreal antiScaleRatio() const { return mAntiScaleRatio; }
         virtual void update() {positionHandles();}
+
+        UBGraphicsItemAction* action() { return mAction; }
+        void setAction(UBGraphicsItemAction* action);
+
 
     signals:
         void showOnDisplayChanged(bool shown);
@@ -298,6 +313,8 @@ class UBGraphicsItemDelegate : public QObject
         QAction* mLockAction;
         QAction* mShowOnDisplayAction;
         QAction* mGotoContentSourceAction;
+        QAction* mShowPanelToAddAnAction;
+        QAction* mRemoveAnAction;
 
         UBGraphicsDelegateFrame* mFrame;
         qreal mFrameWidth;
@@ -307,8 +324,10 @@ class UBGraphicsItemDelegate : public QObject
         QList<DelegateButton*> mToolBarButtons;
         UBGraphicsToolBarItem* mToolBarItem;
 
+        UBGraphicsItemAction* mAction;
+
 protected slots:
-        virtual void gotoContentSource(bool checked);
+        virtual void gotoContentSource();
 
 private:
         void updateFrame();
@@ -324,12 +343,19 @@ private:
         bool mCanRotate;
         bool mCanDuplicate;
         bool mRespectRatio;
+        bool mCanTrigAnAction;
         QMimeData* mMimeData;
         QPixmap mDragPixmap;
 
         /** A boolean saying that this object can be flippable (mirror effect) */
         bool mFlippable;
         bool mToolBarUsed;
+
+        bool mShowGoContentButton;
+private slots:
+        void onAddActionClicked();
+        void onRemoveActionClicked();
+        void saveAction(UBGraphicsItemAction *action);
 };
 
 

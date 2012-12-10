@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBSvgSubsetAdaptor.h"
 
@@ -30,6 +38,7 @@
 #include "domain/UBGraphicsStroke.h"
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
+#include "domain/UBGraphicsGroupContainerItemDelegate.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -63,6 +72,8 @@
 #include "document/UBDocumentContainer.h"
 
 #include "pdf/PDFRenderer.h"
+
+#include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
 //#include "qtlogger.h"
@@ -946,7 +957,8 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                 QString value = mXmlReader.attributes().value("value").toString();
 
                 currentWidget->setDatastoreEntry(key, value);
-            } else if (mXmlReader.name() == tGroups) {
+            }
+            else if (mXmlReader.name() == tGroups) {
                 //considering groups section at the end of the document
 
                 readGroupRoot();
@@ -982,9 +994,8 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
         qWarning() << "error parsing Sankore file " << mXmlReader.errorString();
     }
 
-    if (mScene) {
+    if (mScene)
         mScene->setModified(false);
-    }
 
     if (annotationGroup)
     {
@@ -997,14 +1008,12 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 }
 
 
-UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup()
+UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(UBGraphicsItemAction* action, QString uuid)
 {
+    bool isAnActionForStroke = false;
     UBGraphicsGroupContainerItem *group = new UBGraphicsGroupContainerItem();
     QMultiMap<QString, UBGraphicsPolygonItem *> strokesGroupsContainer;
     QList<QGraphicsItem *> groupContainer;
-    QString currentStrokeIdentifier;
-
-    QUuid groupUuid = QUuid(mXmlReader.attributes().value(aId).toString());
 
     mXmlReader.readNext();
     while (!mXmlReader.atEnd())
@@ -1012,44 +1021,50 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup()
         if (mXmlReader.isEndElement()) {
             mXmlReader.readNext();
             break;
-        } else if (mXmlReader.isStartElement())
-        {
+        }
+        else if (mXmlReader.isStartElement()){
             if (mXmlReader.name() == tGroup)
             {
-                qDebug() << "came across the group id is" << mXmlReader.attributes().value(aId);
                 UBGraphicsGroupContainerItem *curGroup = readGroup();
                 if (curGroup)
                     groupContainer.append(curGroup);
+                else
+                    qDebug() << "this is an error";
             }
-            else if (mXmlReader.name() == tElement)
-            {
+            else if (mXmlReader.name() == tElement){
                 QString id = mXmlReader.attributes().value(aId).toString();
                 QString itemId  = id.right(QUuid().toString().size());
                 QString groupId = id.left(QUuid().toString().size());
+
+                if(groupId == uuid)
+                    isAnActionForStroke = true;
 
                 QGraphicsItem *curItem = readElementFromGroup();
 
                 UBGraphicsPolygonItem *curPolygon = qgraphicsitem_cast<UBGraphicsPolygonItem *>(curItem);
 
                 if (curPolygon && !groupId.isEmpty() && !itemId.isEmpty() && itemId != groupId)
-                {
                     strokesGroupsContainer.insert(groupId, curPolygon);
-                }
                 else // item
                 {
-                    groupContainer.append(curItem);
-                }
-            }else {
-                mXmlReader.skipCurrentElement();
+                    if(curItem)
+                        groupContainer.append(curItem);
+                    else
+                        qDebug() << "this is an error";
+                 }
             }
-        } else {
-            mXmlReader.readNext();
+            else
+                mXmlReader.skipCurrentElement();
         }
+        else
+            mXmlReader.readNext();
     }
 
     foreach (QString key, strokesGroupsContainer.keys().toSet())
     {
         UBGraphicsStrokesGroup* pStrokesGroup = new UBGraphicsStrokesGroup();
+        if(action && isAnActionForStroke)
+            pStrokesGroup->Delegate()->setAction(action);
         UBGraphicsStroke *currentStroke = new UBGraphicsStroke();
         foreach(UBGraphicsPolygonItem* poly, strokesGroupsContainer.values(key))
         {
@@ -1073,12 +1088,21 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup()
         if (pStrokesGroup)
         {
             QGraphicsItem *strokeGroup = qgraphicsitem_cast<QGraphicsItem *>(pStrokesGroup);
-            groupContainer.append(strokeGroup);
+            if(strokeGroup)
+                groupContainer.append(strokeGroup);
+            else
+                qDebug() << "this is an error";
         }
     }
 
     foreach(QGraphicsItem* item, groupContainer)
-        group->addToGroup(item);
+        group->addToGroup(item,false);
+
+    if(action && !isAnActionForStroke){
+        UBGraphicsGroupContainerItemDelegate* delegate = dynamic_cast<UBGraphicsGroupContainerItemDelegate*>(group->Delegate());
+        delegate->setAction(action);
+    }
+
 
     if (group->childItems().count())
     {
@@ -1099,16 +1123,22 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroupRoot()
         if (mXmlReader.isEndElement()) {
             mXmlReader.readNext();
             break;
-        } else if (mXmlReader.isStartElement()) {
-            if (mXmlReader.name() == tGroup) {
-               UBGraphicsGroupContainerItem *curGroup = readGroup();
-                if (curGroup) {
+        }
+        else if (mXmlReader.isStartElement()){
+            if (mXmlReader.name() == tGroup){
+                UBGraphicsItemAction* action = readAction();
+                UBGraphicsGroupContainerItem *curGroup = readGroup(action, mXmlReader.attributes().value("id").toString());
+                if (curGroup)
                     mScene->addGroup(curGroup);
-                }
-            }else {
-                mXmlReader.skipCurrentElement();
+
             }
-        } else {
+            else {
+                mXmlReader.skipCurrentElement();
+                qDebug() << "skypped elements :" << mXmlReader.name();
+            }
+        }
+        else {
+            qDebug() << "read next " << mXmlReader.name();
             mXmlReader.readNext();
         }
     }
@@ -1227,16 +1257,18 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
                 if (!strokesGroupItem->parentItem() && strokesGroupItem->childItems().count()) {
                     newGroupElement = groupDomDocument.createElement(tGroup);
                     newGroupElement.setAttribute(aId, strokesGroupItem->uuid().toString());
+                    UBGraphicsItemAction* action = strokesGroupItem->Delegate()->action();
+                    if(action){
+                        QStringList actionParameters = action->save();
+                        newGroupElement.setAttribute("actionType",actionParameters.at(0));
+                        newGroupElement.setAttribute("actionFirstParameter",actionParameters.at(1));
+                        if(actionParameters.count()>2)
+                            newGroupElement.setAttribute("actionSecondParameter",actionParameters.at(2));
+                    }
+
                     groupRoot.appendChild(newGroupElement);
                 }
 
-                //disabling g section parsing as a group of elements. Use groups refs instead
-//                mXmlWriter.writeStartElement("g");
-//                mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(strokesGroupItem->uuid()));
-//            	QMatrix matrix = item->sceneMatrix();
-//				if (!matrix.isIdentity()){
-//					mXmlWriter.writeAttribute("transform", toSvgTransform(matrix));
-//				}
 
                 // Add the polygons
                 foreach(QGraphicsItem* item, strokesGroupItem->childItems()){
@@ -1246,15 +1278,12 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
                         polygonItemToSvgPolygon(poly, true);
                         if (!newGroupElement.isNull()) {
                             QDomElement curPolygonElement = groupDomDocument.createElement(tElement);
-                            curPolygonElement.setAttribute(aId, strokesGroupItem->uuid().toString()
-                                                              + poly->uuid().toString());
+                            curPolygonElement.setAttribute(aId, strokesGroupItem->uuid().toString() + poly->uuid().toString());
                             newGroupElement.appendChild(curPolygonElement);
                         }
                         items.removeOne(poly);
                     }
                 }
-
-//                mXmlWriter.writeEndElement(); //g
             }
 
             // Is the item a polygon?
@@ -1444,7 +1473,8 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             UBGraphicsGroupContainerItem *groupItem = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item);
             if (groupItem && groupItem->isVisible())
             {
-                persistGroupToDom(groupItem, &groupRoot, &groupDomDocument);
+
+                persistGroupToDom(groupItem, &groupRoot, &groupDomDocument,groupItem->Delegate()->action());
                 continue;
             }
         }
@@ -1487,6 +1517,12 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
                 if (curElement.hasAttribute(aId)) {
                     mXmlWriter.writeStartElement(curElement.tagName());
                     mXmlWriter.writeAttribute(aId, curElement.attribute(aId));
+                    if(curElement.hasAttribute("actionType")){
+                        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri,"actionType",curElement.attribute("actionType"));
+                        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri,"actionFirstParameter",curElement.attribute("actionFirstParameter"));
+                        if(curElement.hasAttribute("actionSecondParameter"))
+                            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri,"actionSecondParameter",curElement.attribute("actionSecondParameter"));
+                    }
                     QDomElement curSubElement = curElement.firstChildElement();
                     while (!curSubElement.isNull()) {
                         if (curSubElement.hasAttribute(aId)) {
@@ -1525,12 +1561,19 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
     return true;
 }
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *groupDomDocument)
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *groupDomDocument, UBGraphicsItemAction* action)
 {
     QUuid uuid = UBGraphicsScene::getPersonalUuid(groupItem);
     if (!uuid.isNull()) {
         QDomElement curGroupElement = groupDomDocument->createElement(tGroup);
         curGroupElement.setAttribute(aId, uuid);
+        if(action){
+            QStringList actionParameter = action->save();
+            curGroupElement.setAttribute("actionType",actionParameter.at(0));
+            curGroupElement.setAttribute("actionFirstParameter",actionParameter.at(1));
+            if(actionParameter.count() > 2)
+                curGroupElement.setAttribute("actionSecondParameter",actionParameter.at(2));
+        }
         curParent->appendChild(curGroupElement);
 
         foreach (QGraphicsItem *item, groupItem->childItems()) {
@@ -1696,6 +1739,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::polygonItemToSvgPolygon(UBGraphicsPo
 
         QString points = pointsToSvgPointsAttribute(polygon);
         mXmlWriter.writeAttribute("points", points);
+        mXmlWriter.writeAttribute("transform",toSvgTransform(polygonItem->sceneMatrix()));
         mXmlWriter.writeAttribute("fill", polygonItem->brush().color().name());
 
         qreal alpha = polygonItem->brush().color().alphaF();
@@ -1783,6 +1827,16 @@ UBGraphicsPolygonItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemFromPol
     }
 
     polygonItem->setPolygon(polygon);
+
+    QStringRef svgTransform = mXmlReader.attributes().value("transform");
+
+    QMatrix itemMatrix;
+
+    if (!svgTransform.isNull())
+    {
+        itemMatrix = fromSvgTransform(svgTransform.toString());
+        polygonItem->setMatrix(itemMatrix);
+    }
 
     QStringRef svgFill = mXmlReader.attributes().value("fill");
 
@@ -2104,11 +2158,52 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(UBGraphicsPi
 
     mXmlWriter.writeAttribute(nsXLink, "href", fileName);
 
+    writeAction(pixmapItem->Delegate()->action());
     graphicsItemToSvg(pixmapItem);
 
     mXmlWriter.writeEndElement();
 }
 
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeAction(UBGraphicsItemAction* action)
+{
+    if(action){
+        QStringList actionParameters = action->save();
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri,"actionType",actionParameters.at(0));
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri,"actionFirstParameter",actionParameters.at(1));
+        if(actionParameters.count()>2)
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri,"actionSecondParameter",actionParameters.at(2));
+    }
+}
+
+UBGraphicsItemAction* UBSvgSubsetAdaptor::UBSvgSubsetReader::readAction()
+{
+    UBGraphicsItemAction* result = 0;
+    QXmlStreamAttributes attributes = mXmlReader.attributes();
+    QStringRef actionParameters = attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionType");
+    if(actionParameters.isEmpty())
+        return result;
+    switch (actionParameters.toString().toInt()) {
+    case eLinkToAudio:
+        result = new UBGraphicsItemPlayAudioAction(attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString(),false);
+        break;
+    case eLinkToPage:{
+        QString pageParameter = attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionSecondParameter").toString();
+        if(pageParameter.isEmpty())
+            result = new UBGraphicsItemMoveToPageAction((eUBGraphicsItemMovePageAction)attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString().toInt());
+        else
+            result = new UBGraphicsItemMoveToPageAction((eUBGraphicsItemMovePageAction)attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString().toInt(),pageParameter.toInt());
+        break;
+    }
+    case eLinkToWebUrl:
+        result = new UBGraphicsItemLinkToWebPageAction(mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString());
+        break;
+    default:
+        break;
+    }
+
+    return result;
+}
 
 UBGraphicsPixmapItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::pixmapItemFromSvg()
 {
@@ -2131,6 +2226,7 @@ UBGraphicsPixmapItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::pixmapItemFromSvg()
 
     graphicsItemFromSvg(pixmapItem);
 
+    pixmapItem->Delegate()->setAction(readAction());
     return pixmapItem;
 
 }
@@ -2162,6 +2258,8 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg(UBGraphicsSvgItem
 
     mXmlWriter.writeAttribute(nsXLink, "href", fileName);
 
+    writeAction(svgItem->Delegate()->action());
+
     graphicsItemToSvg(svgItem);
 
     mXmlWriter.writeEndElement();
@@ -2187,6 +2285,7 @@ UBGraphicsSvgItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::svgItemFromSvg()
     }
 
     graphicsItemFromSvg(svgItem);
+    svgItem->Delegate()->setAction(readAction());
 
     return svgItem;
 
@@ -2739,6 +2838,8 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* it
     mXmlWriter.writeStartElement("foreignObject");
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "type", "text");
 
+    writeAction(item->Delegate()->action());
+
     graphicsItemToSvg(item);
 
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "width", QString("%1").arg(item->textWidth()));
@@ -2771,6 +2872,7 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
     UBGraphicsTextItem* textItem = new UBGraphicsTextItem();
 
     graphicsItemFromSvg(textItem);
+    textItem->Delegate()->setAction(readAction());
 
     QStringRef ubFillOnDarkBackground = mXmlReader.attributes().value(mNamespaceUri, "fill-on-dark-background");
     QStringRef ubFillOnLightBackground = mXmlReader.attributes().value(mNamespaceUri, "fill-on-light-background");

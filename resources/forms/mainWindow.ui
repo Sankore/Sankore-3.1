@@ -111,6 +111,7 @@
    <addaction name="actionWebReload"/>
    <addaction name="actionStopLoading"/>
    <addaction name="actionHome"/>
+   <addaction name="actionBookmark"/>
    <addaction name="separator"/>
    <addaction name="actionWebBigger"/>
    <addaction name="actionWebSmaller"/>
@@ -1462,18 +1463,6 @@
     <string>Configure Podcast Recording</string>
    </property>
   </action>
-  <action name="actionWebTrapFlash">
-   <property name="icon">
-    <iconset resource="../sankore.qrc">
-     <normaloff>:/images/toolbar/addToolToLibrary.png</normaloff>:/images/toolbar/addToolToLibrary.png</iconset>
-   </property>
-   <property name="text">
-    <string>Flash Trap</string>
-   </property>
-   <property name="toolTip">
-    <string>Trap Flash Content</string>
-   </property>
-  </action>
   <action name="actionWebTrap">
    <property name="checkable">
     <bool>true</bool>
@@ -1512,21 +1501,6 @@
    </property>
    <property name="toolTip">
     <string>Capture a Window</string>
-   </property>
-  </action>
-  <action name="actionWebOEmbed">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../sankore.qrc">
-     <normaloff>:/images/extraPalette/oEmbed.png</normaloff>:/images/extraPalette/oEmbed.png</iconset>
-   </property>
-   <property name="text">
-    <string>Embed Web Content</string>
-   </property>
-   <property name="toolTip">
-    <string>Capture Embeddable Web Content</string>
    </property>
   </action>
   <action name="actionWebShowHideOnDisplay">
@@ -1676,6 +1650,94 @@
    </property>
    <property name="toolTip">
     <string>Remove the backgound</string>
+   </property>
+  </action>
+  <action name="actionBookmark">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/toolbar/proto.png</normaloff>:/images/toolbar/proto.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bookmark</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionWebTrapContent">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/toolbar/captureWindow.png</normaloff>
+     <normalon>:/images/toolbar/captureWindow.png</normalon>:/images/toolbar/captureWindow.png</iconset>
+   </property>
+   <property name="text">
+    <string>Web Trap</string>
+   </property>
+   <property name="toolTip">
+    <string>Trap Web Content</string>
+   </property>
+  </action>
+  <action name="actionWebTrapToLibrary">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/addItemToLibrary.svg</normaloff>:/images/addItemToLibrary.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Download to library</string>
+   </property>
+   <property name="toolTip">
+    <string>Download to library</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionWebTrapToCurrentPage">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/addItemToCurrentPage.svg</normaloff>:/images/addItemToCurrentPage.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Download to current page</string>
+   </property>
+   <property name="toolTip">
+    <string>Download to current page</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionWebTrapLinkToLibrary">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/addItemToLibrary.svg</normaloff>:/images/addItemToLibrary.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Add link to library</string>
+   </property>
+   <property name="toolTip">
+    <string>Add link to library</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionWebTrapLinkToPage">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/addItemToCurrentPage.svg</normaloff>:/images/addItemToCurrentPage.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Add link to current page</string>
+   </property>
+   <property name="toolTip">
+    <string>Add link to current page</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
    </property>
   </action>
  </widget>

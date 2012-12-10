@@ -1,9 +1,25 @@
 /*
- * UBSettings.h
+ * Copyright (C) 2012 Webdoc SA
  *
- *  Created on: Oct 29, 2008
- *      Author: luc
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #ifndef UBSETTINGS_H_
 #define UBSETTINGS_H_
@@ -24,18 +40,20 @@ class UBSettings : public QObject
 
         static UBSettings* settings();
         static void destroy();
+        void init();
 
     private:
 
         UBSettings(QObject *parent = 0);
         virtual ~UBSettings();
+        void cleanNonPersistentSettings();
 
     public:
 
         QStringList* supportedKeyboardSizes;
         void InitKeyboardPaletteKeyBtnSizes();
         void ValidateKeyboardPaletteKeyBtnSize();
-
+        void closing();
 
         int penWidthIndex();
 
@@ -95,15 +113,16 @@ class UBSettings : public QObject
         void setCommunityUsername(const QString& username);
         QString communityPassword();
         void setCommunityPassword(const QString& password);
+        bool getCommunityDataPersistence(){return communityCredentialsPersistence->get().toBool();}
+        void setCommunityPersistence(const bool persistence);
 
         int libraryIconSize();
         void setLibraryIconsize(const int& size);
 
-        void init();
-        
         //user directories
         static QString userDataDirectory();
         static QString userDocumentDirectory();
+        static QString userBookmarkDirectory();
         static QString userFavoriteListFilePath();
         static QString userTrashDirPath();
         static QString userImageDirectory();
@@ -112,14 +131,15 @@ class UBSettings : public QObject
         static QString userSearchDirectory();
         static QString userAnimationDirectory();
         static QString userInteractiveDirectory();
+        static QString userApplicationDirectory();
         static QString userWidgetPath();
         static QString userRelativeWidgetPath();
         static QString userInteractiveFavoritesDirectory();
         static QString userPodcastRecordingDirectory();
 
-		QString userGipLibraryDirectory();
-        
-		//application directory
+        QString userGipLibraryDirectory();
+
+        //application directory
         QString applicationShapeLibraryDirectory();
         QString applicationImageLibraryDirectory();
         QString applicationApplicationsLibraryDirectory();
@@ -129,6 +149,7 @@ class UBSettings : public QObject
         QString applicationAudiosLibraryDirectory();
         QString applicationVideosLibraryDirectory();
         QString applicationAnimationsLibraryDirectory();
+        QString applicationStartupHintsDirectory();
 
         QNetworkProxy* httpProxy();
 
@@ -226,6 +247,8 @@ class UBSettings : public QObject
 
         UBSetting* appUseMultiscreen;
 
+        UBSetting* appStartupHintsEnabled;
+
         UBSetting* boardPenFineWidth;
         UBSetting* boardPenMediumWidth;
         UBSetting* boardPenStrongWidth;
@@ -304,6 +327,7 @@ class UBSettings : public QObject
 
         UBSetting* podcastPublishToYoutube;
         UBSetting* youTubeUserEMail;
+        UBSetting* youTubeCredentialsPersistence;
 
         UBSetting* uniboardWebEMail;
         UBSetting* uniboardWebAuthor;
@@ -332,6 +356,8 @@ class UBSettings : public QObject
         UBSetting* rightLibPaletteBoardModeIsCollapsed;
         UBSetting* rightLibPaletteDesktopModeWidth;
         UBSetting* rightLibPaletteDesktopModeIsCollapsed;
+        UBSetting* rightLibPaletteWebModeWidth;
+        UBSetting* rightLibPaletteWebModeIsCollapsed;
         UBSetting* leftLibPaletteBoardModeWidth;
         UBSetting* leftLibPaletteBoardModeIsCollapsed;
         UBSetting* leftLibPaletteDesktopModeWidth;
@@ -339,6 +365,7 @@ class UBSettings : public QObject
 
         UBSetting* communityUser;
         UBSetting* communityPsw;
+        UBSetting* communityCredentialsPersistence;
 
         UBSetting* pageSize;
         UBSetting* pageDpi;

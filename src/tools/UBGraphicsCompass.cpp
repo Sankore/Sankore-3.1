@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "tools/UBGraphicsCompass.h"
 #include "domain/UBGraphicsScene.h"
@@ -51,6 +59,11 @@ UBGraphicsCompass::UBGraphicsCompass()
     , mDrewCenterCross(false)
 {
     setRect(sDefaultRect);
+    //TODO claudio: remove code duplication
+    QDesktopWidget* desktop = UBApplication::desktop();
+    int dpiCommon = (desktop->physicalDpiX() + desktop->physicalDpiY()) / 2;
+    mPixelsPerMillimeter = qRound(dpiCommon / 25.4f);
+
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
@@ -68,7 +81,7 @@ UBGraphicsCompass::UBGraphicsCompass()
     updateResizeCursor();
     updateDrawCursor();
 
-	unsetCursor();
+    unsetCursor();
 
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::CppTool)); //Necessary to set if we want z value to be assigned correctly
     setFlag(QGraphicsItem::ItemIsSelectable, false);
@@ -179,24 +192,25 @@ QVariant UBGraphicsCompass::itemChange(GraphicsItemChange change, const QVariant
 
 void UBGraphicsCompass::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-	if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
+    if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
         UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Play)
-		return;
+        return;
+
+    bool closing = false;
 
     if (resizeButtonRect().contains(event->pos()))
     {
         mResizing = true;
-        mCloseSvgItem->setVisible(false);
+        mRotating = false;
         event->accept();
     }
     else if (hingeRect().contains(event->pos()))
     {
         mRotating = true;
-        mResizeSvgItem->setVisible(false);
-        mCloseSvgItem->setVisible(false);
+        mResizing = false;
         event->accept();
     }
-    else
+    else if (!closeButtonRect().contains(event->pos()))
     {
         mDrawing = event->pos().x() > rect().right() - sPencilLength - sPencilBaseLength;
         if (mDrawing)
@@ -206,19 +220,20 @@ void UBGraphicsCompass::mousePressEvent(QGraphicsSceneMouseEvent *event)
             scene()->initStroke();
             scene()->moveTo(mSceneArcStartPoint);
         }
-
-        mResizeSvgItem->setVisible(false);
-        mCloseSvgItem->setVisible(false);
-
         QGraphicsRectItem::mousePressEvent(event);
     }
+    else 
+        closing = true;
+
+    mResizeSvgItem->setVisible(mShowButtons && mResizing);
+    mCloseSvgItem->setVisible(mShowButtons && closing);
 }
 
 void UBGraphicsCompass::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-	if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
+    if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
         UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Play)
-		return;
+        return;
 
     if (!mResizing && !mRotating && !mDrawing)
     {
@@ -261,25 +276,22 @@ void UBGraphicsCompass::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsCompass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-	if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
+    if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
         UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Play)
-		return;
+        return;
 
     if (mResizing)
     {
-        mResizing = false;
         event->accept();
     }
     else if (mRotating)
     {
-        mRotating = false;
         updateResizeCursor();
         updateDrawCursor();
         event->accept();
     }
     else if (mDrawing)
     {
-        mDrawing = false;
         updateResizeCursor();
         updateDrawCursor();
         event->accept();
@@ -295,6 +307,8 @@ void UBGraphicsCompass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     {
         QGraphicsRectItem::mouseReleaseEvent(event);
     }
+    mResizing = false;
+    mDrawing = false;
 
     if (scene())
         scene()->setModified(true);
@@ -302,9 +316,9 @@ void UBGraphicsCompass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsCompass::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-	if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector && 
+    if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
         UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Play)
-		return;
+        return;
 
     mOuterCursor = cursor();
     mShowButtons = shape().contains(event->pos());
@@ -332,9 +346,9 @@ void UBGraphicsCompass::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 
 void UBGraphicsCompass::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-	if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
+    if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
         UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Play)
-		return;
+        return;
 
     mShowButtons = false;
     mCloseSvgItem->setVisible(mShowButtons);
@@ -346,9 +360,9 @@ void UBGraphicsCompass::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 
 void UBGraphicsCompass::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
 {
-	if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
+    if (UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Selector &&
         UBDrawingController::drawingController ()->stylusTool() != UBStylusTool::Play)
-		return;
+        return;
 
     mShowButtons = shape().contains(event->pos());
     mCloseSvgItem->setVisible(mShowButtons);
@@ -399,7 +413,7 @@ void UBGraphicsCompass::paintAngleDisplay(QPainter *painter)
 
 void UBGraphicsCompass::paintRadiusDisplay(QPainter *painter)
 {
-    qreal radiusInCentimeters = rect().width() / (sPixelsPerMillimeter * 10);
+    qreal radiusInCentimeters = rect().width() / (mPixelsPerMillimeter * 10);
     QString format = rect().width() >= sDisplayRadiusUnitMinLength ? "%1 cm" : "%1";
     QString radiusText = QString(format).arg(radiusInCentimeters, 0, 'f', 1);
 
@@ -557,10 +571,10 @@ void UBGraphicsCompass::paintCenterCross()
     QPointF needleCrossCenter = mapToScene(needlePosition());
     scene()->moveTo(QPointF(needleCrossCenter.x() - 5, needleCrossCenter.y()));
     scene()->drawLineTo(QPointF(needleCrossCenter.x() + 5, needleCrossCenter.y()), 1,
-		UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+        UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
     scene()->moveTo(QPointF(needleCrossCenter.x(), needleCrossCenter.y() - 5));
     scene()->drawLineTo(QPointF(needleCrossCenter.x(), needleCrossCenter.y() + 5), 1,
-		UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
+        UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line);
 }
 
 QPointF UBGraphicsCompass::needlePosition() const

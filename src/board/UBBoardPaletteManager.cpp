@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBBoardPaletteManager.h"
 
@@ -33,6 +41,8 @@
 #include "gui/UBActionPalette.h"
 #include "gui/UBFavoriteToolPalette.h"
 #include "gui/UBDockTeacherGuideWidget.h"
+#include "gui/UBStartupHintsPalette.h"
+#include "gui/UBCreateLinkPalette.h"
 
 
 #include "web/UBWebPage.h"
@@ -70,6 +80,8 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mBoardControler(pBoardController)
     , mStylusPalette(0)
     , mZoomPalette(0)
+    , mTipPalette(0)
+    , mLinkPalette(0)
     , mLeftPalette(NULL)
     , mRightPalette(NULL)
     , mBackgroundsPalette(0)
@@ -94,13 +106,12 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
 
 UBBoardPaletteManager::~UBBoardPaletteManager()
 {
-    delete mAddItemPalette;
 
-    if(NULL != mStylusPalette)
-    {
-        delete mStylusPalette;
-        mStylusPalette = NULL;
-    }
+// mAddedItemPalette is delete automatically because of is parent
+// that changes depending on the mode
+
+// mMainWindow->centralWidget is the parent of mStylusPalette
+// do not delete this here.
 }
 
 void UBBoardPaletteManager::initPalettesPosAtStartup()
@@ -144,18 +155,9 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
 
     mRightPalette = new UBRightPalette(mContainer);
     // RIGHT palette widgets
-#ifndef USE_WEB_WIDGET
     mpFeaturesWidget = new UBFeaturesWidget();
-	mRightPalette->registerWidget(mpFeaturesWidget);
-	mRightPalette->addTab(mpFeaturesWidget);
-#endif
-
-    //Do not show deprecated lib widget to prevent collisions. Uncomment to return lib widget
-
-#ifdef USE_WEB_WIDGET
-    mRightPalette->registerWidget(mpLibWidget);
-    mRightPalette->addTab(mpLibWidget);
-#endif
+    mRightPalette->registerWidget(mpFeaturesWidget);
+    mRightPalette->addTab(mpFeaturesWidget);
 
 
     // The cache widget will be visible only if a cache is put on the page
@@ -251,8 +253,9 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette->show(); // always show stylus palette at startup
 
     mZoomPalette = new UBZoomPalette(mContainer);
-
     mStylusPalette->stackUnder(mZoomPalette);
+
+    mTipPalette = new UBStartupHintsPalette(mContainer);
 
     QList<QAction*> backgroundsActions;
 
@@ -330,15 +333,15 @@ void UBBoardPaletteManager::pagePaletteButtonReleased()
     {
         if( mPageButtonPressedTime.msecsTo(QTime::currentTime()) > 900)
         {
-        	// The palette is reinstanciated because the duplication depends on the current scene
-        	delete(mPagePalette);
-        	mPagePalette = 0;
-        	QList<QAction*>pageActions;
-        	pageActions << UBApplication::mainWindow->actionNewPage;
-        	UBBoardController* boardController = UBApplication::boardController;
-        	if(UBApplication::documentController->pageCanBeDuplicated(UBDocumentContainer::pageFromSceneIndex(boardController->activeSceneIndex()))){
-        		pageActions << UBApplication::mainWindow->actionDuplicatePage;
-        	}
+            // The palette is reinstanciated because the duplication depends on the current scene
+            delete(mPagePalette);
+            mPagePalette = 0;
+            QList<QAction*>pageActions;
+            pageActions << UBApplication::mainWindow->actionNewPage;
+            UBBoardController* boardController = UBApplication::boardController;
+            if(UBApplication::documentController->pageCanBeDuplicated(UBDocumentContainer::pageFromSceneIndex(boardController->activeSceneIndex()))){
+                pageActions << UBApplication::mainWindow->actionDuplicatePage;
+            }
             pageActions << UBApplication::mainWindow->actionImportPage;
 
             mPagePalette = new UBActionPalette(pageActions, Qt::Horizontal , mContainer);
@@ -349,9 +352,9 @@ void UBBoardPaletteManager::pagePaletteButtonReleased()
 
             // As we recreate the pagePalette every time, we must reconnect the slots
             connect(UBApplication::mainWindow->actionNewPage, SIGNAL(triggered()), mPagePalette, SLOT(close()));
-			connect(UBApplication::mainWindow->actionDuplicatePage, SIGNAL(triggered()), mPagePalette, SLOT(close()));
-			connect(UBApplication::mainWindow->actionImportPage, SIGNAL(triggered()), mPagePalette, SLOT(close()));
-			connect(mPagePalette, SIGNAL(closed()), this, SLOT(pagePaletteClosed()));
+            connect(UBApplication::mainWindow->actionDuplicatePage, SIGNAL(triggered()), mPagePalette, SLOT(close()));
+            connect(UBApplication::mainWindow->actionImportPage, SIGNAL(triggered()), mPagePalette, SLOT(close()));
+            connect(mPagePalette, SIGNAL(closed()), this, SLOT(pagePaletteClosed()));
 
             togglePagePalette(true);
         }
@@ -741,7 +744,7 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
                 mLeftPalette->setVisible(leftPaletteVisible);
                 mRightPalette->setVisible(rightPaletteVisible);
 #ifdef Q_WS_WIN
-                if (rightPaletteVisible)
+                if (rightPaletteVisible && UBSettings::settings()->appToolBarPositionedAtTop->get().toBool())
                     mRightPalette->setAdditionalVOffset(30);
 #endif
 
@@ -756,11 +759,12 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
         case eUBDockPaletteWidget_WEB:
             {
                 mAddItemPalette->setParent(UBApplication::mainWindow);
+
+                mRightPalette->assignParent(UBApplication::webController->GetCurrentWebBrowser());
+                mRightPalette->setVisible(rightPaletteVisible);
+
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {
-//                    tmp variable?
-//                    WBBrowserWindow* brWnd = UBApplication::webController->GetCurrentWebBrowser();
-
                     if(mKeyboardPalette->m_isVisible)
                     {
                         mKeyboardPalette->hide();
@@ -821,8 +825,6 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
 
     if( !isInit )
         UBApplication::boardController->notifyPageChanged();
-
-    emit signal_changeMode(newMode);
 }
 
 void UBBoardPaletteManager::addItem(const QPixmap& pPixmap, const QPointF& pos,  qreal scaleFactor, const QUrl& sourceUrl)
@@ -881,14 +883,9 @@ void UBBoardPaletteManager::addItemToLibrary()
         }
         QImage image = mPixmap.toImage();
 
-#ifdef USE_WEB_WIDGET
-        mpLibWidget->libNavigator()->libraryWidget()->libraryController()->importImageOnLibrary(image);
-#else
         QDateTime now = QDateTime::currentDateTime();
         QString capturedName  = tr("CapturedImage") + "-" + now.toString("dd-MM-yyyy hh-mm-ss") + ".png";
         mpFeaturesWidget->importImage(image, capturedName);
-#endif
-
     }
     else
     {
@@ -953,11 +950,11 @@ void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
     bool bVertical = var.toBool();
     bool bVisible = mStylusPalette->isVisible();
 
-	// Clean the old palette
+    // Clean the old palette
     if(NULL != mStylusPalette)
     {
-        // TODO : check why this line creates a crash in the application.
         delete mStylusPalette;
+        mStylusPalette = NULL;
     }
 
     // Create the new palette
@@ -993,7 +990,6 @@ void UBBoardPaletteManager::startDownloads()
         mDownloadInProgress = true;
         mpDownloadWidget->setVisibleState(true);
         mRightPalette->addTab(mpDownloadWidget);
-        mpDownloadWidget;
     }
 }
 
@@ -1006,3 +1002,13 @@ void UBBoardPaletteManager::stopDownloads()
         mRightPalette->removeTab(mpDownloadWidget);
     }
 }
+
+
+UBCreateLinkPalette* UBBoardPaletteManager::linkPalette()
+{
+    if(mLinkPalette)
+        delete mLinkPalette;
+    mLinkPalette = new UBCreateLinkPalette(mContainer);
+    return mLinkPalette;
+}
+

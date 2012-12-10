@@ -1,3 +1,26 @@
+/*
+ * Copyright (C) 2012 Webdoc SA
+ *
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
+ */
+
+
 #ifndef UBFEATURESWIDGET_H
 #define UBFEATURESWIDGET_H
 
@@ -53,20 +76,23 @@ class UBFeaturesWidget : public UBDockPaletteWidget
 {
     Q_OBJECT
 public:
-	UBFeaturesWidget(QWidget* parent=0, const char* name="UBFeaturesWidget");
+    UBFeaturesWidget(QWidget* parent=0, const char* name="UBFeaturesWidget");
     virtual ~UBFeaturesWidget();
 
-	bool visibleInMode(eUBDockPaletteWidgetMode mode)
+    bool visibleInMode(eUBDockPaletteWidgetMode mode)
     {
         return mode == eUBDockPaletteWidget_BOARD
-            || mode == eUBDockPaletteWidget_DESKTOP;
+            || mode == eUBDockPaletteWidget_DESKTOP
+            || mode == eUBDockPaletteWidget_WEB;
     }
     UBFeaturesController * getFeaturesController() const { return controller; }
     void importImage(const QImage &image, const QString &fileName = QString());
+    void createBookmark(QString& title, QString& urlString);
+    QString importFromUrl(const QUrl &url) const;
 
-	static const int minThumbnailSize = 20;
-	static const int maxThumbnailSize = 100;
-	static const int defaultThumbnailSize = 40;
+    static const int minThumbnailSize = 20;
+    static const int maxThumbnailSize = 100;
+    static const int defaultThumbnailSize = 40;
 
     static const char *objNamePathList;
     static const char *objNameFeatureList;
@@ -128,7 +154,7 @@ private:
 
 class UBFeaturesListView : public QListView
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
     UBFeaturesListView(QWidget* parent=0, const char* name="UBFeaturesListView");
@@ -317,7 +343,7 @@ private slots:
     //void onBack();
 
 private:
-	void populateMetadata();
+    void populateMetadata();
     void adaptSize();
 
     QVBoxLayout* mpLayout;
@@ -343,7 +369,7 @@ public:
 
 class UBFeaturesModel : public QAbstractListModel
 {
-	Q_OBJECT
+    Q_OBJECT
 
 signals:
     void dataRestructured();
@@ -352,18 +378,18 @@ public:
     UBFeaturesModel(QList<UBFeature> *pFeaturesList, QObject *parent = 0) : QAbstractListModel(parent), featuresList(pFeaturesList) {;}
     virtual ~UBFeaturesModel(){;}
 
-	void deleteFavoriteItem( const QString &path );
+    void deleteFavoriteItem( const QString &path );
     void deleteItem( const QString &path );
     void deleteItem(const UBFeature &feature);
 
-	QVariant data( const QModelIndex &index, int role = Qt::DisplayRole ) const;
-	QMimeData *mimeData( const QModelIndexList &indexes ) const;
-	QStringList mimeTypes() const;
-	int rowCount( const QModelIndex &parent ) const;
-	Qt::ItemFlags flags( const QModelIndex &index ) const;
+    QVariant data( const QModelIndex &index, int role = Qt::DisplayRole ) const;
+    QMimeData *mimeData( const QModelIndexList &indexes ) const;
+    QStringList mimeTypes() const;
+    int rowCount( const QModelIndex &parent ) const;
+    Qt::ItemFlags flags( const QModelIndex &index ) const;
     bool dropMimeData(const QMimeData *mimeData, Qt::DropAction action, int row, int column, const QModelIndex &parent);
-	bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
-	bool removeRow(int row, const QModelIndex &parent = QModelIndex());
+    bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
+    bool removeRow(int row, const QModelIndex &parent = QModelIndex());
     //bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
     //bool insertRow(int row, const QModelIndex &parent = QModelIndex());
 
@@ -375,71 +401,71 @@ public slots:
     void addItem( const UBFeature &item );
 
 private:
-	QList <UBFeature> *featuresList;
+    QList <UBFeature> *featuresList;
 };
 
 class UBFeaturesProxyModel : public QSortFilterProxyModel
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     UBFeaturesProxyModel(QObject *parent = 0) : QSortFilterProxyModel(parent) {setDynamicSortFilter(true);}
     virtual ~UBFeaturesProxyModel() {}
 
 protected:
-	virtual bool filterAcceptsRow ( int sourceRow, const QModelIndex & sourceParent ) const;
+    virtual bool filterAcceptsRow ( int sourceRow, const QModelIndex & sourceParent ) const;
     virtual bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
 };
 
 class UBFeaturesSearchProxyModel : public QSortFilterProxyModel
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     UBFeaturesSearchProxyModel(QObject *parent = 0) : QSortFilterProxyModel(parent), mFilterPrefix() {;}
     virtual ~UBFeaturesSearchProxyModel() {}
     void setFilterPrefix(const QString &newPrefix) {mFilterPrefix = newPrefix;}
 protected:
-	virtual bool filterAcceptsRow ( int sourceRow, const QModelIndex & sourceParent ) const;
+    virtual bool filterAcceptsRow ( int sourceRow, const QModelIndex & sourceParent ) const;
 private:
     QString mFilterPrefix;
 };
 
 class UBFeaturesPathProxyModel : public QSortFilterProxyModel
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     UBFeaturesPathProxyModel(QObject *parent = 0) : QSortFilterProxyModel(parent) {;}
     virtual ~UBFeaturesPathProxyModel() {}
     void setPath( const QString &p ) { path = p; }
 protected:
-	virtual bool filterAcceptsRow ( int sourceRow, const QModelIndex & sourceParent ) const;
+    virtual bool filterAcceptsRow ( int sourceRow, const QModelIndex & sourceParent ) const;
 private:
-	QString path;
+    QString path;
 };
 
 class UBFeaturesItemDelegate : public QStyledItemDelegate
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     UBFeaturesItemDelegate(QObject *parent = 0, const QListView *lw = 0) : QStyledItemDelegate(parent) { listView = lw; }
     ~UBFeaturesItemDelegate() {}
-	//UBFeaturesItemDelegate(const QListView *lw = 0) { listView = lw; };
-	//void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    //UBFeaturesItemDelegate(const QListView *lw = 0) { listView = lw; };
+    //void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
     //QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
-	virtual QString	displayText ( const QVariant & value, const QLocale & locale ) const;
+    virtual QString	displayText ( const QVariant & value, const QLocale & locale ) const;
 private:
-	const QListView *listView;
+    const QListView *listView;
 };
 
 class UBFeaturesPathItemDelegate : public QStyledItemDelegate
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     UBFeaturesPathItemDelegate(QObject *parent = 0);
-	~UBFeaturesPathItemDelegate();
-	virtual QString	displayText ( const QVariant & value, const QLocale & locale ) const;
-	void paint( QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    ~UBFeaturesPathItemDelegate();
+    virtual QString	displayText ( const QVariant & value, const QLocale & locale ) const;
+    void paint( QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 private:
-	QPixmap *arrowPixmap;
+    QPixmap *arrowPixmap;
 };
 
 

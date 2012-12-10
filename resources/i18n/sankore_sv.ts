@@ -801,27 +801,27 @@
     </message>
     <message>
         <source>Group items</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppobjekt</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Spela</translation>
     </message>
     <message>
         <source>Interact with items</source>
-        <translation type="unfinished"></translation>
+        <translation>Interagera med objekt</translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Radera bakgrund</translation>
     </message>
     <message>
         <source>Remove the backgound</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort bakgrund</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupp</translation>
     </message>
 </context>
 <context>
@@ -866,19 +866,19 @@
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation type="unfinished"></translation>
+        <translation>Element ID=</translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation type="unfinished"></translation>
+        <translation>Innehållet stöds inte i destinationsformatet</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation type="unfinished">Ta bort sida</translation>
+        <translation>Ta bort sida</translation>
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Är du säker på att du vill ta bort 1 sida från det valda dokumentet &apos;%0&apos;?</translation>
     </message>
 </context>
 <context>
@@ -943,23 +943,24 @@
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation type="unfinished"></translation>
+        <translation>Radera sida %1 från dokument</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>Sida %1 raderad</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till fil åtgärd misslyckad: filkopieringsfel</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Verb our a noun? Next segement is Ungorup = verb. If &quot;Group&quot; is a verb it should be &quot;Gruppera&quot; in sv.</translatorcomment>
+        <translation>Grupp</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Avgruppera</translation>
     </message>
 </context>
 <context>
@@ -970,7 +971,7 @@
     </message>
     <message>
         <source>CapturedImage</source>
-        <translation type="unfinished"></translation>
+        <translation>FångadBild</translation>
     </message>
 </context>
 <context>
@@ -1020,7 +1021,7 @@
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa öppen-Sankore</translation>
     </message>
 </context>
 <context>
@@ -1150,15 +1151,15 @@
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Titelsida</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation type="unfinished"></translation>
+        <translation>Foldern innehåller inga bildfiler</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation type="unfinished">Namnlösa dokument</translation>
+        <translation>Namnlösa dokument</translation>
     </message>
 </context>
 <context>
@@ -1189,19 +1190,19 @@
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga sida %1 av %2</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation type="unfinished">Import lyckades.</translation>
+        <translation>Import lyckades.</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Import av fil %1 lyckades.</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Importerar fil %1</translation>
     </message>
 </context>
 <context>
@@ -1212,7 +1213,7 @@
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Titelsida</translation>
     </message>
 </context>
 <context>
@@ -1279,30 +1280,30 @@
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation type="unfinished"></translation>
+        <translation>Varningar unde export dök upp</translation>
     </message>
 </context>
 <context>
     <name>UBExportCFF</name>
     <message>
         <source>Export to IWB</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter till IWB</translation>
     </message>
     <message>
         <source>Export as IWB File</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera som IWB-fil</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished">Exporterar dokument...</translation>
+        <translation>Exporterar dokument...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished">Export lyckades.</translation>
+        <translation>Export lyckades.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished">Export misslyckades.</translation>
+        <translation>Export misslyckades.</translation>
     </message>
 </context>
 <context>
@@ -1405,134 +1406,134 @@
     <name>UBFeatureProperties</name>
     <message>
         <source>Add to page</source>
-        <translation type="unfinished">Lägg till sida</translation>
+        <translation>Lägg till sida</translation>
     </message>
     <message>
         <source>Set as background</source>
-        <translation type="unfinished">Infoga som bakgrund</translation>
+        <translation>Infoga som bakgrund</translation>
     </message>
     <message>
         <source>Add to library</source>
-        <translation type="unfinished">Lägg till bibliotek</translation>
+        <translation>Lägg till bibliotek</translation>
     </message>
     <message>
         <source>Object informations</source>
-        <translation type="unfinished">Objekt information</translation>
+        <translation>Objektinformation</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
     <message>
         <source>Add to favorites</source>
-        <translation type="unfinished">Lägg till favoriter</translation>
+        <translation>Lägg till favoriter</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished">Dela</translation>
+        <translation>Dela</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Sök</translation>
+        <translation>Sök</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Radera</translation>
+        <translation>Radera</translation>
     </message>
     <message>
         <source>Back to folder</source>
-        <translation type="unfinished">Tillbaka till mapp</translation>
+        <translation>Tillbaka till mapp</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation type="unfinished">Ta bort från favoriter</translation>
+        <translation>Ta bort från favoriter</translation>
     </message>
     <message>
         <source>Create new folder</source>
-        <translation type="unfinished">Skapa ny mapp</translation>
+        <translation>Skapa ny mapp</translation>
     </message>
     <message>
         <source>Rescan file system</source>
-        <translation type="unfinished"></translation>
+        <translation>Scanna filsystemet igen</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesController</name>
     <message>
         <source>ImportedImage</source>
-        <translation type="unfinished">Importeradbild</translation>
+        <translation>ImporteradBild</translation>
     </message>
     <message>
         <source>Audios</source>
-        <translation type="unfinished">Ljudspår</translation>
+        <translation>Ljudspår</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation type="unfinished">Filmer</translation>
+        <translation>Filmer</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished">Foton</translation>
+        <translation>Foton</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation type="unfinished">Animationer</translation>
+        <translation>Animationer</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation type="unfinished">Interaktiviteter</translation>
+        <translation>Interaktiviteter</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation type="unfinished">Applikationer</translation>
+        <translation>Applikationer</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation type="unfinished">Former</translation>
+        <translation>Former</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>Favoriter</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation type="unfinished"></translation>
+        <translation>webbsökning</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">Papperskorg</translation>
+        <translation>Papperskorg</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Acceptera</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Avsluta</translation>
+        <translation>Avsluta</translation>
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange ett nytt mappnamn</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation type="unfinished"></translation>
+        <translation>Laddar</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation type="unfinished">Låst</translation>
+        <translation>Låst</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation type="unfinished">Synlig på utvidgad skärm</translation>
+        <translation>Synlig på utvidgad skärm</translation>
     </message>
 </context>
 <context>
@@ -1572,14 +1573,14 @@
     <name>UBGraphicsW3CWidgetItem</name>
     <message>
         <source>Web</source>
-        <translation type="unfinished">Nät</translation>
+        <translation>Nät</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation type="unfinished">Laddar ...</translation>
+        <translation>Laddar ...</translation>
     </message>
 </context>
 <context>
@@ -1701,7 +1702,7 @@
     <name>UBMessagesDialog</name>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Stäng</translation>
+        <translation>Stäng</translation>
     </message>
 </context>
 <context>
@@ -1758,23 +1759,23 @@ Vill du ignorera felen för den här värden?</translation>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Engelska</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryska</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyska</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Franska</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished"></translation>
+        <translation>Schweizisk franska</translation>
     </message>
 </context>
 <context>
@@ -1896,33 +1897,33 @@ Vill du ignorera felen för den här värden?</translation>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Lärare</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation type="unfinished"></translation>
+        <translation>Student</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange uppgift här ...</translation>
     </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>
     <message>
         <source>drop media here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>släpp media här ...</translation>
     </message>
     <message>
         <source>Type title here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv titel här...</translation>
     </message>
 </context>
 <context>
     <name>UBTGUrlWidget</name>
     <message>
         <source>Insert link title here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga länktitel här...</translation>
     </message>
 </context>
 <context>
@@ -1936,131 +1937,131 @@ Vill du ignorera felen för den här värden?</translation>
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv titel här ...</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv kommentar här ...</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg en åtgärd</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till media</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till en länk</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Sida: %0</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv sessionstyp här ...</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Författare</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange författare här ...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mål</translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange målen här</translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translation type="unfinished"></translation>
+        <translation>Resursindexering</translation>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyckeord:</translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange nyckelord här</translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivå:</translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ämnen:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>Licens</translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
-        <translation type="unfinished"></translation>
+        <translation>Erkännande CC BY</translation>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
-        <translation type="unfinished"></translation>
+        <translation>Erkännande-Inga bearbetningar CC BY-ND</translation>
     </message>
     <message>
         <source>Attribution-ShareAlike CC BY-SA</source>
-        <translation type="unfinished"></translation>
+        <translation>Erkännande-Dela lika CC BY-SA</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial CC BY-NC</source>
-        <translation type="unfinished"></translation>
+        <translation>Erkännande-NonCommercial CC BY-NC</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</source>
-        <translation type="unfinished"></translation>
+        <translation>Erkännande-Icke kommersiell-Inga bearbetningar CC BY-NC-ND</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</source>
-        <translation type="unfinished"></translation>
+        <translation>Erkännande-Icke kommersiell-Dela lika CC BY-NC-SA</translation>
     </message>
     <message>
         <source>Public domain</source>
-        <translation type="unfinished"></translation>
+        <translation>Allmän egendom</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Upphovsrätt</translation>
     </message>
     <message>
         <source>Created the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Skapad den:</translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdaterard den:</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Titelsida</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Sida: %0</translation>
     </message>
 </context>
 <context>
@@ -2106,7 +2107,7 @@ Vill du ignorera felen för den här värden?</translation>
     </message>
     <message>
         <source>Aristo</source>
-        <translation type="unfinished"></translation>
+        <translation>Aristo</translation>
     </message>
 </context>
 <context>
@@ -2210,11 +2211,11 @@ Vänligen starta om programmet för att komma åt uppdaterade dokument.</transla
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna-Sankore</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation type="unfinished"></translation>
+        <translation>ÖppnaSankore</translation>
     </message>
 </context>
 <context>
@@ -3249,7 +3250,7 @@ DAMAGES.
     </message>
     <message>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Poäng</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include <QtGui>
 #include <QDomDocument>
@@ -57,13 +65,13 @@ UBWebController::UBWebController(UBMainWindow* mainWindow)
     , mMainWindow(mainWindow)
     , mCurrentWebBrowser(0)
     , mBrowserWidget(0)
-    , mTrapFlashController(0)
+    , mTrapContentController(0)
     , mToolsCurrentPalette(0)
     , mToolsPalettePositionned(false)
     , mDownloadViewIsVisible(false)
 {
     connect(mMainWindow->actionWebTools, SIGNAL(toggled(bool)), this, SLOT(toggleWebToolsPalette(bool)));
-
+    connect(mMainWindow->actionBookmark, SIGNAL(triggered()), this, SLOT(onActionBookmark()));
     mStackedWidget = new QStackedWidget();
     mStackedWidget->addWidget(new QWidget(mStackedWidget));
     mStackedWidget->addWidget(new QWidget(mStackedWidget));
@@ -152,7 +160,7 @@ void UBWebController::webBrowserInstance()
 
             adaptToolBar();
 
-            mTrapFlashController = new UBTrapFlashController((*mCurrentWebBrowser));
+            mTrapContentController = new UBTrapWebPageContentController((*mCurrentWebBrowser));
 
             connect((*mCurrentWebBrowser), SIGNAL(activeViewPageChanged()), this, SLOT(activePageChanged()));
 
@@ -214,7 +222,7 @@ void UBWebController::tutorialWebInstance()
             mStackedWidget->insertWidget(Tutorial, (*mCurrentWebBrowser));
             adaptToolBar();
 
-            mTrapFlashController = new UBTrapFlashController((*mCurrentWebBrowser));
+            mTrapContentController = new UBTrapWebPageContentController((*mCurrentWebBrowser));
 
             connect((*mCurrentWebBrowser), SIGNAL(activeViewPageChanged()), this, SLOT(activePageChanged()));
             (*mCurrentWebBrowser)->loadUrl(currentUrl);
@@ -224,7 +232,7 @@ void UBWebController::tutorialWebInstance()
 
         }
         else
-        	(*mCurrentWebBrowser)->loadUrl(currentUrl);
+            (*mCurrentWebBrowser)->loadUrl(currentUrl);
 
         mStackedWidget->setCurrentIndex(Tutorial);
         UBApplication::applicationController->setMirrorSourceWidget((*mCurrentWebBrowser)->paintWidget());
@@ -274,7 +282,7 @@ void UBWebController::paraschoolWebInstance()
 
             adaptToolBar();
 
-            mTrapFlashController = new UBTrapFlashController((*mCurrentWebBrowser));
+            mTrapContentController = new UBTrapWebPageContentController((*mCurrentWebBrowser));
 
             connect((*mCurrentWebBrowser), SIGNAL(activeViewPageChanged()), this, SLOT(activePageChanged()));
             (*mCurrentWebBrowser)->loadUrl(currentUrl);
@@ -319,31 +327,19 @@ void UBWebController::setSourceWidget(QWidget* pWidget)
     UBApplication::applicationController->setMirrorSourceWidget(pWidget);
 }
 
-
-void UBWebController::trapFlash()
-{
-    mTrapFlashController->showTrapFlash();
-    activePageChanged();
-}
-
-
 void UBWebController::activePageChanged()
 {
     if (mCurrentWebBrowser && (*mCurrentWebBrowser)->currentTabWebView())
     {
-        if (mTrapFlashController && (*mCurrentWebBrowser)->currentTabWebView()->page())
+        if (mTrapContentController && (*mCurrentWebBrowser)->currentTabWebView()->page())
         {
-            mTrapFlashController->updateTrapFlashFromPage((*mCurrentWebBrowser)->currentTabWebView()->page()->currentFrame());
+            mTrapContentController->updateTrapContentFromPage((*mCurrentWebBrowser)->currentTabWebView()->page()->currentFrame());
         }
 
         mMainWindow->actionWebTrap->setChecked(false);
 
         QUrl latestUrl = (*mCurrentWebBrowser)->currentTabWebView()->url();
 
-        // TODO : Uncomment the next line to continue the youtube button bugfix
-        //UBApplication::mainWindow->actionWebOEmbed->setEnabled(hasEmbeddedContent());
-        // And remove this line once the previous one is uncommented
-        UBApplication::mainWindow->actionWebOEmbed->setEnabled(isOEmbedable(latestUrl));
         UBApplication::mainWindow->actionEduMedia->setEnabled(isEduMedia(latestUrl));
 
         emit activeWebPageChanged((*mCurrentWebBrowser)->currentTabWebView());
@@ -445,14 +441,13 @@ void UBWebController::setupPalettes()
                     UBApplication::boardController->paletteManager()->mKeyboardPalette, SLOT(onDeactivated()));
 #endif
 
-        connect(mMainWindow->actionWebTrapFlash, SIGNAL(triggered()), this, SLOT(trapFlash()));
         connect(mMainWindow->actionWebCustomCapture, SIGNAL(triggered()), this, SLOT(customCapture()));
         connect(mMainWindow->actionWebWindowCapture, SIGNAL(triggered()), this, SLOT(captureWindow()));
-        connect(mMainWindow->actionWebOEmbed, SIGNAL(triggered()), this, SLOT(captureoEmbed()));
         connect(mMainWindow->actionEduMedia, SIGNAL(triggered()), this, SLOT(captureEduMedia()));
 
         connect(mMainWindow->actionWebShowHideOnDisplay, SIGNAL(toggled(bool)), this, SLOT(toogleMirroring(bool)));
-        connect(mMainWindow->actionWebTrap, SIGNAL(toggled(bool)), this, SLOT(toggleWebTrap(bool)));
+       // connect(mMainWindow->actionWebTrap, SIGNAL(toggled(bool)), this, SLOT(toggleWebTrap(bool)));
+        connect(mMainWindow->actionWebTrapContent, SIGNAL(triggered()), this, SLOT(webTrapContent()));
 
         (*mToolsCurrentPalette)->hide();
         (*mToolsCurrentPalette)->adjustSizeAndPosition();
@@ -477,6 +472,12 @@ void UBWebController::toggleWebTrap(bool checked)
     {
         (*mCurrentWebBrowser)->currentTabWebView()->setIsTrapping(checked);
     }
+}
+
+void UBWebController::webTrapContent()
+{
+    mTrapContentController->showTrapContent();
+    activePageChanged();
 }
 
 void UBWebController::toggleWebToolsPalette(bool checked)
@@ -567,6 +568,20 @@ void UBWebController::showTabAtTop(bool attop)
 {
     if (mCurrentWebBrowser && (*mCurrentWebBrowser))
         (*mCurrentWebBrowser)->showTabAtTop(attop);
+}
+
+void UBWebController::captureoEmbed(QUrl currentUrl)
+{
+    if (isOEmbedable(currentUrl))
+    {
+        UBGraphicsW3CWidgetItem * widget = UBApplication::boardController->activeScene()->addOEmbed(currentUrl);
+
+        if(widget)
+        {
+            UBApplication::applicationController->showBoard();
+            UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+        }
+    }
 }
 
 void UBWebController::captureoEmbed()
@@ -761,6 +776,11 @@ QWebView* UBWebController::createNewTab()
     return (*mCurrentWebBrowser)->createNewTab();
 }
 
+QUrl UBWebController::currentPageUrl() const
+{
+    return (*mCurrentWebBrowser)->currentTabWebView()->url();
+}
+
 
 void UBWebController::copy()
 {
@@ -785,6 +805,15 @@ void UBWebController::paste()
     }
 }
 
+
+void UBWebController::onActionBookmark()
+{
+    QString title = (*mCurrentWebBrowser)->currentTabWebView()->page()->mainFrame()->title();
+    QString url = (*mCurrentWebBrowser)->currentTabWebView()->page()->mainFrame()->url().toString();
+    if(title.isEmpty())
+        title = url;
+    UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(title, url);
+}
 
 void UBWebController::cut()
 {

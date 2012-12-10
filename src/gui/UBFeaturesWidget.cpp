@@ -1,3 +1,26 @@
+/*
+ * Copyright (C) 2012 Webdoc SA
+ *
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
+ */
+
+
 #include <QDomDocument>
 #include <QWebView>
 
@@ -8,6 +31,7 @@
 #include "core/UBDownloadManager.h"
 #include "globals/UBGlobals.h"
 #include "board/UBBoardController.h"
+#include "web/UBWebController.h"
 
 const char *UBFeaturesWidget::objNamePathList = "PathList";
 const char *UBFeaturesWidget::objNameFeatureList = "FeatureList";
@@ -145,8 +169,21 @@ void UBFeaturesWidget::currentSelected(const QModelIndex &current)
         }
 
     } else {
-        centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturePropertiesList);
-        mActionBar->setCurrentState( IN_PROPERTIES );
+        if(feature.getType() == FEATURE_BOOKMARK){
+            QString url;
+            QFile bookmarkFile(feature.getFullPath().toLocalFile());
+            if(bookmarkFile.open(QIODevice::ReadOnly|QIODevice::Text)){
+            url = QString::fromUtf8(bookmarkFile.readAll());
+            bookmarkFile.close();
+            UBApplication::webController->loadUrl(QUrl(url));
+            }
+            else
+                qWarning() << "failed to read file named " << feature.getFullPath().toLocalFile();
+        }
+        else{
+            centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturePropertiesList);
+            mActionBar->setCurrentState( IN_PROPERTIES );
+        }
     }
 
     mActionBar->cleanText();
@@ -400,6 +437,16 @@ QStringList UBFeaturesMimeData::formats() const
 void UBFeaturesWidget::importImage(const QImage &image, const QString &fileName)
 {
     controller->importImage(image, fileName);
+}
+
+void UBFeaturesWidget::createBookmark(QString& title, QString& urlString)
+{
+    controller->createBookmark(title,urlString);
+}
+
+QString UBFeaturesWidget::importFromUrl(const QUrl &url) const
+{
+    return controller->moveExternalData(url,UBFeature());
 }
 
 UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
@@ -1092,7 +1139,7 @@ void UBFeatureProperties::onAddToPage()
 
 void UBFeatureProperties::onAddToLib()
 {
-    if ( UBApplication::isFromWeb(  mpElement->getFullPath().toString() ) )
+    if ( UBApplication::isFromWeb(mpElement->getFullPath().toString() ) )
     {
         sDownloadFileDesc desc;
         desc.isBackground = false;
@@ -1375,9 +1422,9 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
         deleteItem(source);
     }
 
-// Commented because of crashes on mac. But works fine. It is not predictable behavior. 
+// Commented because of crashes on mac. But works fine. It is not predictable behavior.
 // Please uncomment it if model will not refreshes
-//   emit dataRestructured();. 
+//   emit dataRestructured();.
 }
 
 Qt::ItemFlags UBFeaturesModel::flags( const QModelIndex &index ) const
@@ -1473,7 +1520,7 @@ bool UBFeaturesPathProxyModel::filterAcceptsRow( int sourceRow, const QModelInde
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
     UBFeature feature = sourceModel()->data(index, Qt::UserRole + 1).value<UBFeature>();
-	
+
     return feature.isFolder() && path.startsWith( feature.getFullVirtualPath()) ;
 }
 
@@ -1483,6 +1530,8 @@ QString	UBFeaturesItemDelegate::displayText ( const QVariant & value, const QLoc
 
     QString text = value.toString();
     text = text.replace(".wgt", "");
+    text = text.replace(".wgs", "");
+    text = text.replace(".swf","");
     if (listView)
     {
         const QFontMetrics fm = listView->fontMetrics();

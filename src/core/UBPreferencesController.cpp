@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBPreferencesController.h"
 
@@ -64,11 +72,12 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
     , mPenProperties(0)
     , mMarkerProperties(0)
 {
+    mDesktop = qApp->desktop();
     mPreferencesWindow = new UBPreferencesDialog(this,parent, Qt::Dialog);
     mPreferencesUI = new Ui::preferencesDialog();  // deleted in
     mPreferencesUI->setupUi(mPreferencesWindow);
-    connect(mPreferencesUI->Username_textBox, SIGNAL(editingFinished()), this, SLOT(onCommunityUsernameChanged()));
-    connect(mPreferencesUI->Password_textEdit, SIGNAL(editingFinished()), this, SLOT(onCommunityPasswordChanged()));
+    adjustScreens(1);
+    connect(mDesktop, SIGNAL(screenCountChanged(int)), this, SLOT(adjustScreens(int)));
 
     wire();
 }
@@ -76,7 +85,7 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
 
 UBPreferencesController::~UBPreferencesController()
 {
-	delete mPreferencesWindow;
+    delete mPreferencesWindow;
 
     delete mPreferencesUI;
 
@@ -85,6 +94,12 @@ UBPreferencesController::~UBPreferencesController()
     delete mMarkerProperties;
 }
 
+void UBPreferencesController::adjustScreens(int screen)
+{
+    Q_UNUSED(screen);
+    UBDisplayManager displayManager;
+    mPreferencesUI->multiDisplayGroupBox->setEnabled(displayManager.numScreens() > 1);
+}
 
 void UBPreferencesController::show()
 {
@@ -161,6 +176,12 @@ void UBPreferencesController::wire()
     connect(mMarkerProperties->pressureSensitiveCheckBox, SIGNAL(clicked(bool)), settings, SLOT(setMarkerPressureSensitive(bool)));
     connect(mMarkerProperties->opacitySlider, SIGNAL(valueChanged(int)), this, SLOT(opacitySliderChanged(int)));
 
+
+    //network
+    connect(mPreferencesUI->Username_textBox, SIGNAL(editingFinished()), this, SLOT(onCommunityUsernameChanged()));
+    connect(mPreferencesUI->Password_textEdit, SIGNAL(editingFinished()), this, SLOT(onCommunityPasswordChanged()));
+    connect(mPreferencesUI->PSCredentialsPersistenceCheckBox,SIGNAL(clicked()),this, SLOT(onCommunityPersistenceChanged()));
+
     // about tab
     connect(mPreferencesUI->checkSoftwareUpdateAtLaunchCheckBox, SIGNAL(clicked(bool)), settings->appEnableAutomaticSoftwareUpdates, SLOT(setBool(bool)));
 }
@@ -212,18 +233,93 @@ void UBPreferencesController::init()
 
     mMarkerProperties->opacitySlider->setValue(settings->boardMarkerAlpha->get().toDouble() * 100);
 
+    //network
+    mPreferencesUI->PSCredentialsPersistenceCheckBox->setChecked(settings->getCommunityDataPersistence());
+    persistanceCheckboxUpdate();
+
+    mIsoCodeAndLanguage.insert(tr("Default"),"NO_VALUE");
+    mIsoCodeAndLanguage.insert(tr("Arabic"),"ar");
+    mIsoCodeAndLanguage.insert(tr("Bulgarian"),"bg");
+    mIsoCodeAndLanguage.insert(tr("Catalan"),"ca");
+    mIsoCodeAndLanguage.insert(tr("Czech"),"cs");
+    mIsoCodeAndLanguage.insert(tr("Danish"),"da");
+    mIsoCodeAndLanguage.insert(tr("German"),"de");
+    mIsoCodeAndLanguage.insert(tr("Greek"),"el");
+    mIsoCodeAndLanguage.insert(tr("English"),"en");
+    mIsoCodeAndLanguage.insert(tr("English UK"),"en_UK");
+    mIsoCodeAndLanguage.insert(tr("Spanish"),"es");
+    mIsoCodeAndLanguage.insert(tr("French"),"fr");
+    mIsoCodeAndLanguage.insert(tr("Swiss French"),"fr_CH");
+    mIsoCodeAndLanguage.insert(tr("Italian"),"it");
+    mIsoCodeAndLanguage.insert(tr("Hebrew"),"iw");
+    mIsoCodeAndLanguage.insert(tr("Japanese"),"ja");
+    mIsoCodeAndLanguage.insert(tr("Korean"),"ko");
+    mIsoCodeAndLanguage.insert(tr("Malagasy"),"mg");
+    mIsoCodeAndLanguage.insert(tr("Norwegian"),"nb");
+    mIsoCodeAndLanguage.insert(tr("Dutch"),"nl");
+    mIsoCodeAndLanguage.insert(tr("Polish"),"pl");
+    mIsoCodeAndLanguage.insert(tr("Romansh"),"rm");
+    mIsoCodeAndLanguage.insert(tr("Romanian"),"ro");
+    mIsoCodeAndLanguage.insert(tr("Russian"),"ru");
+    mIsoCodeAndLanguage.insert(tr("Slovak"),"sk");
+    mIsoCodeAndLanguage.insert(tr("Swedish"),"sv");
+    mIsoCodeAndLanguage.insert(tr("Turkish"),"tr");
+    mIsoCodeAndLanguage.insert(tr("Chinese"),"zh");
+    mIsoCodeAndLanguage.insert(tr("Chinese Simplified"),"zh_CN");
+    mIsoCodeAndLanguage.insert(tr("Chinese Traditional"),"zh_TN");
+
+    QStringList list;
+    list << mIsoCodeAndLanguage.keys();
+    list.sort();
+    mPreferencesUI->languageComboBox->addItems(list);
+    QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
+    if(currentIsoLanguage.length()){
+        QString language;
+        foreach(QString eachKey, mIsoCodeAndLanguage.keys())
+            if(mIsoCodeAndLanguage[eachKey] == currentIsoLanguage)
+                language = eachKey;
+        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf(language));
+    }
+    else
+        mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf("Default"));
+
+    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
+    connect(mPreferencesUI->quitOpenSankorePushButton,SIGNAL(clicked()),UBApplication::app(),SLOT(closing()));
+    mPreferencesUI->quitOpenSankorePushButton->setDisabled(true);
+
+}
+
+void UBPreferencesController::onLanguageChanged(QString currentItem)
+{
+    QString isoCode = mIsoCodeAndLanguage[currentItem] == "NO_VALUE" ? "" : mIsoCodeAndLanguage[currentItem];
+    UBSettings::settings()->appPreferredLanguage->setString(isoCode);
+    mPreferencesUI->quitOpenSankorePushButton->setEnabled(true);
 }
 
 void UBPreferencesController::onCommunityUsernameChanged()
 {
     UBSettings* settings = UBSettings::settings();
     settings->setCommunityUsername(mPreferencesUI->Username_textBox->text());
+    persistanceCheckboxUpdate();
 }
 
 void UBPreferencesController::onCommunityPasswordChanged()
 {
     UBSettings* settings = UBSettings::settings();
     settings->setCommunityPassword(mPreferencesUI->Password_textEdit->text());
+    persistanceCheckboxUpdate();
+}
+
+void UBPreferencesController::onCommunityPersistenceChanged()
+{
+    UBSettings::settings()->setCommunityPersistence(mPreferencesUI->PSCredentialsPersistenceCheckBox->isChecked());
+}
+
+void UBPreferencesController::persistanceCheckboxUpdate()
+{
+    bool checkBoxEnabled = mPreferencesUI->Username_textBox->text().length() || mPreferencesUI->Password_textEdit->text().length();
+    mPreferencesUI->PSCredentialsPersistenceCheckBox->setEnabled(checkBoxEnabled);
+    mPreferencesUI->PSCredentialsPersistenceCheckBox->setStyleSheet(checkBoxEnabled ? "color:black;" : "color:lightgray;");
 }
 
 
@@ -287,6 +383,7 @@ void UBPreferencesController::defaultSettings()
         mPreferencesUI->verticalChoice->setChecked(settings->appToolBarOrientationVertical->reset().toBool());
         mPreferencesUI->horizontalChoice->setChecked(!settings->appToolBarOrientationVertical->reset().toBool());
         mPreferencesUI->startModeComboBox->setCurrentIndex(0);
+        onLanguageChanged("Default");
     }
     else if (mPreferencesUI->mainTabWidget->currentWidget() == mPreferencesUI->penTab)
     {

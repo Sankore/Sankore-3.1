@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBGraphicsGroupContainerItem.h"
 #include "UBGraphicsMediaItem.h"
@@ -36,7 +44,7 @@ void UBAudioPresentationWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     painter.fillRect(rect(), QBrush(Qt::white));
-    
+
     QPen borderPen;
     borderPen.setWidth(2);
     borderPen.setColor(QColor(Qt::black));
@@ -77,7 +85,7 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
     if ("" == mediaPath)
         mediaPath = pMediaFileUrl.toLocalFile();
 
-    if (mediaPath.toLower().contains("videos")) 
+    if (mediaPath.toLower().contains("videos"))
     {
         mMediaType = mediaType_Video;
 
@@ -94,7 +102,7 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
 
         haveLinkedImage = true;
     }
-    else    
+    else
     if (mediaPath.toLower().contains("audios"))
     {
         mMediaType = mediaType_Audio;
@@ -116,13 +124,13 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
     }
 
     Phonon::createPath(mMediaObject, mAudioOutput);
-    
+
     mSource = Phonon::MediaSource(pMediaFileUrl);
     mMediaObject->setCurrentSource(mSource);
 
     // we should create delegate after media objects because delegate uses his properties at creation.
     setDelegate(new UBGraphicsMediaItemDelegate(this, mMediaObject));
-    
+
     // delegate should be created earler because we setWidget calls resize event for graphics proxy widgt.
     // resize uses delegate.
     if (mediaType_Video == mMediaType)
@@ -195,7 +203,7 @@ void UBGraphicsMediaItem::setSourceUrl(const QUrl &pSourceUrl)
     UBAudioPresentationWidget* pAudioWidget = dynamic_cast<UBAudioPresentationWidget*>(mAudioWidget);
     if (pAudioWidget)
     {
-        pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toLocalFile()));
+        pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toString()));
     }
 
     UBItem::setSourceUrl(pSourceUrl);
@@ -312,13 +320,13 @@ void UBGraphicsMediaItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             {
                 QGraphicsItem *curItem = group->getCurrentItem();
                 if (curItem && this != curItem)
-                {   
-                    group->deselectCurrentItem();    
-                }   
+                {
+                    group->deselectCurrentItem();
+                }
                 group->setCurrentItem(this);
                 this->setSelected(true);
                 Delegate()->positionHandles();
-            }       
+            }
 
         }
     }
@@ -331,7 +339,7 @@ void UBGraphicsMediaItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             event->accept();
         }
     }
-    else 
+    else
     {
         mShouldMove = (event->buttons() & Qt::LeftButton);
         mMousePressPos = event->scenePos();

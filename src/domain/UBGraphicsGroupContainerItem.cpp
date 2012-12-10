@@ -1,3 +1,26 @@
+/*
+ * Copyright (C) 2012 Webdoc SA
+ *
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
+ */
+
+
 #include "UBGraphicsGroupContainerItem.h"
 
 #include <QtGui>
@@ -16,12 +39,13 @@ UBGraphicsGroupContainerItem::UBGraphicsGroupContainerItem(QGraphicsItem *parent
 {
     setData(UBGraphicsItemData::ItemLayerType, UBItemLayerType::Object);
 
-   	setDelegate(new UBGraphicsGroupContainerItemDelegate(this, 0));
+    setDelegate(new UBGraphicsGroupContainerItemDelegate(this, 0));
     Delegate()->init();
 
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
+    Delegate()->setCanTrigAnAction(true);
 
     UBGraphicsGroupContainerItem::setAcceptHoverEvents(true);
 
@@ -34,7 +58,7 @@ UBGraphicsGroupContainerItem::~UBGraphicsGroupContainerItem()
 {
 }
 
-void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item)
+void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item,bool removeAction)
 {
     if (!item) {
         qWarning("UBGraphicsGroupContainerItem::addToGroup: cannot add null item");
@@ -44,6 +68,12 @@ void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item)
         qWarning("UBGraphicsGroupContainerItem::addToGroup: cannot add a group to itself");
         return;
     }
+
+    //TODO claudio
+    UBGraphicsItem* ubGraphics = dynamic_cast<UBGraphicsItem*>(item);
+    if(ubGraphics && ubGraphics->Delegate() && removeAction)
+        ubGraphics->Delegate()->setAction(0);
+
 
     //Check if group is allready rotatable or flippable
     if (childItems().count()) {
@@ -117,7 +147,7 @@ void UBGraphicsGroupContainerItem::removeFromGroup(QGraphicsItem *item)
 
     UBCoreGraphicsScene *groupScene = corescene();
     if (groupScene)
-    {    
+    {
         groupScene->addItemToDeletion(item);
     }
 
@@ -142,7 +172,7 @@ void UBGraphicsGroupContainerItem::deselectCurrentItem()
               {
                   dynamic_cast<UBGraphicsMediaItem*>(mCurrentItem)->Delegate()->getToolBarItem()->hide();
               }
-              break;                   
+              break;
 
         }
         mCurrentItem->setSelected(false);
@@ -330,7 +360,7 @@ void UBGraphicsGroupContainerItem::pRemoveFromGroup(QGraphicsItem *item)
 
     UBGraphicsScene *Scene = dynamic_cast<UBGraphicsScene *>(item->scene());
     if (Scene)
-    {    
+    {
         Scene->addItem(item);
     }
 

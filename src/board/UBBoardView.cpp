@@ -1,17 +1,26 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
+
 #include "UBBoardView.h"
 
 #include <QtGui>
@@ -28,6 +37,7 @@
 #include "core/UBApplication.h"
 #include "core/UBSetting.h"
 #include "core/UBPersistenceManager.h"
+#include "core/UB.h"
 
 #include "network/UBHttpGet.h"
 
@@ -62,6 +72,8 @@
 #include "tools/UBGraphicsTriangle.h"
 #include "tools/UBGraphicsProtractor.h"
 #include "tools/UBGraphicsAristo.h"
+
+#include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
 
@@ -446,6 +458,16 @@ bool UBBoardView::isUBItem(QGraphicsItem *item)
     }
 }
 
+bool UBBoardView::isCppTool(QGraphicsItem *item)
+{
+    return (item->type() == UBGraphicsItemType::CompassItemType
+        || item->type() == UBGraphicsItemType::RulerItemType
+        || item->type() == UBGraphicsItemType::ProtractorItemType
+        || item->type() == UBGraphicsItemType::TriangleItemType
+        || item->type() == UBGraphicsItemType::AristoItemType
+        || item->type() == UBGraphicsItemType::CurtainItemType);
+}
+
 void UBBoardView::handleItemsSelection(QGraphicsItem *item)
 {
 // we need to select new pressed itemOnBoard and deselect all other items.
@@ -537,6 +559,8 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsSvgItem::Type:
     case UBGraphicsPixmapItem::Type:
     case UBGraphicsTextItem::Type:
+        if (currentTool == UBStylusTool::Play)
+            return true;
         if ((currentTool == UBStylusTool::Selector) && item->isSelected())
             return true;
         if ((currentTool == UBStylusTool::Selector) && item->parentItem() && item->parentItem()->isSelected())
@@ -544,12 +568,16 @@ Here we determines cases when items should to get mouse press event at pressing 
         if (currentTool != UBStylusTool::Selector)
             return false;
         break;
-
+    case UBGraphicsItemType::StrokeItemType:
+        if (currentTool == UBStylusTool::Play)
+            return true;
+        break;
     // Groups shouldn't reacts on any presses and moves for Play tool.
     case UBGraphicsGroupContainerItem::Type:
         if(currentTool == UBStylusTool::Play)
         {
             movingItem = NULL;
+            return true;
         }
         return false;
         break;
@@ -569,6 +597,7 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         return false;
         break;
+
     }
 
     return !isUBItem(item); // standard behavior of QGraphicsScene for not UB items. UB items should be managed upper.
@@ -668,6 +697,15 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
         // items like polygons placed in two groups nested, so we need to recursive call.
         if(item->parentItem() && UBGraphicsStrokesGroup::Type == item->parentItem()->type())
             return determineItemToPress(item->parentItem());
+
+        //TODO claudio
+        // another chuck of very good code
+        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type()){
+            UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
+            if(group && group->Delegate()->action())
+                group->Delegate()->action()->play();
+        }
+
     }
 
     return item;
@@ -874,6 +912,7 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
     mMouseDownPos = event->pos ();
 
     movingItem = scene()->itemAt(this->mapToScene(event->posF().toPoint()));
+
     if (!movingItem)
         emit clickOnBoard();
 
@@ -907,6 +946,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
                 event->ignore();
                 return;
             }
+
+            if (scene()->backgroundObject() == movingItem)
+                movingItem = NULL;
+
             connect(&mLongPressTimer, SIGNAL(timeout()), this, SLOT(longPressEvent()));
             if (!movingItem && !mController->cacheIsVisible())
                 mLongPressTimer.start();
@@ -1125,13 +1168,18 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
           graphicsItem->Delegate()->commitUndoStep();
 
       bool bReleaseIsNeed = true;
+      if (movingItem != determineItemToPress(scene()->itemAt(this->mapToScene(event->posF().toPoint()))))
+      {
+          movingItem = NULL;
+          bReleaseIsNeed = false;
+      }
       if (mWidgetMoved)
       {
           mWidgetMoved = false;
           movingItem = NULL;
       }
       else
-      if (movingItem)
+      if (movingItem && !isCppTool(movingItem))
       {
           if (suspendedMousePressEvent)
           {
@@ -1147,7 +1195,6 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
                 DelegateButton::Type != movingItem->type() &&
                 QGraphicsSvgItem::Type !=  movingItem->type() &&
                 UBGraphicsDelegateFrame::Type !=  movingItem->type() &&
-//                UBToolWidget::Type != movingItem->type() &&
                 UBGraphicsCache::Type != movingItem->type() &&
                 QGraphicsWebView::Type != movingItem->type() && // for W3C widgets as Tools.
                 !(!isMultipleSelectionEnabled() && movingItem->parentItem() && UBGraphicsWidgetItem::Type == movingItem->type() && UBGraphicsGroupContainerItem::Type == movingItem->parentItem()->type()))
@@ -1169,6 +1216,8 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
              }
           }
       }
+      else
+          bReleaseIsNeed = true;
 
       if (mUBRubberBand && mUBRubberBand->isVisible()) {
           mUBRubberBand->hide();

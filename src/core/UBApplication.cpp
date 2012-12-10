@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBApplication.h"
 
@@ -55,6 +63,7 @@
 #include "frameworks/UBCryptoUtils.h"
 #include "tools/UBToolsManager.h"
 
+#include "UBDisplayManager.h"
 #include "core/memcheck.h"
 
 QPointer<QUndoStack> UBApplication::undoStack;
@@ -219,14 +228,11 @@ void UBApplication::setupTranslators(QStringList args)
     QString forcedLanguage("");
     if(args.contains("-lang"))
         forcedLanguage=args.at(args.indexOf("-lang") + 1);
-// TODO claudio: this has been commented because some of the translation seem to be loaded at this time
-//               especially tools name. This is a workaround and we have to be able to load settings without
-//               impacting the translations
-//    else{
-//        QString setLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
-//        if(!setLanguage.isEmpty())
-//            forcedLanguage = setLanguage;
-//    }
+    else{
+        QString setLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
+        if(!setLanguage.isEmpty())
+            forcedLanguage = setLanguage;
+    }
 
     QString language("");
 
@@ -267,6 +273,8 @@ void UBApplication::setupTranslators(QStringList args)
 
     QLocale::setDefault(QLocale(language));
     qDebug() << "Running application in:" << language;
+    //Claudio: hack to avoid the lost of translations.
+    UBSettings::settings()->init();
 }
 
 int UBApplication::exec(const QString& pFileToImport)
@@ -378,7 +386,16 @@ int UBApplication::exec(const QString& pFileToImport)
     else
         applicationController->showBoard();
 
+    onScreenCountChanged(1);
+    connect(desktop(), SIGNAL(screenCountChanged(int)), this, SLOT(onScreenCountChanged(int)));
     return QApplication::exec();
+}
+
+void UBApplication::onScreenCountChanged(int newCount)
+{
+    Q_UNUSED(newCount);
+    UBDisplayManager displayManager;
+    mainWindow->actionMultiScreen->setEnabled(displayManager.numScreens() > 1);
 }
 
 void UBApplication::importUniboardFiles()
@@ -475,6 +492,8 @@ void UBApplication::closing()
 
     if (webController)
         webController->closing();
+
+    UBSettings::settings()->closing();
 
     UBSettings::settings()->appToolBarPositionedAtTop->set(mainWindow->toolBarArea(mainWindow->boardToolBar) == Qt::TopToolBarArea);
 

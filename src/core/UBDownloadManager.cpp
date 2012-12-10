@@ -1,17 +1,26 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
+
 #include "UBDownloadManager.h"
 #include "core/UBApplication.h"
 #include "core/UBPersistenceManager.h"
@@ -23,9 +32,10 @@
 #include "core/memcheck.h"
 
 
-UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QObject *parent)
+UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QByteArray data, QObject *parent)
 : QThread(parent)
 , mDesc(desc)
+, mData(data)
 , m_bAborting(false)
 {
 
@@ -33,53 +43,65 @@ UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, Q
 
 UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 {
-    if (!QFile::exists(QUrl(mDesc.srcUrl).toLocalFile())) {
-        qDebug() << "file" << mDesc.srcUrl << "does not present in fs";
-        return this;
-    }
-
     start();
-
     return this;
 }
 
 void UBAsyncLocalFileDownloader::run()
 {
+    if(mDesc.dstUrl.startsWith("file://") || mDesc.dstUrl.startsWith("/"))
+        mDesc.dstUrl = QUrl(mDesc.dstUrl).toLocalFile();
+    else
+        mDesc.dstUrl = QUrl::fromLocalFile(mDesc.dstUrl).toLocalFile();
 
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mDesc.srcUrl);
 
-    int position=mimeType.indexOf(";");
-    if(position != -1)
-        mimeType=mimeType.left(position);
+    if (sDownloadFileDesc::customPath == mDesc.dest)
+    {
+        mTo = mDesc.dstUrl;
+        QDir().mkpath(mTo);
+        QFile::copy(mDesc.srcUrl, mTo);
+    }
+    else if (sDownloadFileDesc::customPath == mDesc.dest && !mDesc.srcUrl.isEmpty() && mData.isNull())
+    {
+        mTo = mDesc.dstUrl;
+        QDir().mkpath(mTo);
+        QFile::copy(mDesc.srcUrl, mTo);
+    }
+    else
+    {
+        int position=mimeType.indexOf(";");
+        if(position != -1)
+            mimeType=mimeType.left(position);
 
-    UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
+        UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
 
 
-    QString destDirectory;
-    if (UBMimeType::Video == itemMimeType)
-        destDirectory = UBPersistenceManager::videoDirectory;
-    else 
-        if (UBMimeType::Audio == itemMimeType)
-            destDirectory = UBPersistenceManager::audioDirectory;
+        QString destDirectory;
+        if (UBMimeType::Video == itemMimeType)
+            destDirectory = UBPersistenceManager::videoDirectory;
+        else
+            if (UBMimeType::Audio == itemMimeType)
+                destDirectory = UBPersistenceManager::audioDirectory;
 
-    if (mDesc.originalSrcUrl.isEmpty())
-        mDesc.originalSrcUrl = mDesc.srcUrl;
+        if (mDesc.originalSrcUrl.isEmpty())
+            mDesc.originalSrcUrl = mDesc.srcUrl;
 
-    QString uuid = QUuid::createUuid();
-    UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(), 
-        QUrl(mDesc.srcUrl).toLocalFile(),
-        destDirectory,
-        uuid,
-        mTo,
-        NULL);
-
+        QString uuid = QUuid::createUuid();
+        UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
+            mDesc.srcUrl,
+            destDirectory,
+            uuid,
+            mTo,
+            NULL);
+    }
     if (m_bAborting)
     {
         if (QFile::exists(mTo))
             QFile::remove(mTo);
     }
     else
-        emit signal_asyncCopyFinished(mDesc.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl::fromLocalFile(mDesc.originalSrcUrl), "", NULL, mDesc.pos, mDesc.size, mDesc.isBackground);
+        emit signal_asyncCopyFinished(mDesc.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(mDesc.originalSrcUrl), "", NULL, mDesc.pos, mDesc.size, mDesc.isBackground);
 }
 
 void UBAsyncLocalFileDownloader::abort()
@@ -277,13 +299,18 @@ void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl
                 desc.contentTypeHeader = pContentTypeHeader;
                 emit downloadFinished(pSuccess, desc, pData);
 
-            } else if(desc.dest == sDownloadFileDesc::board) {
+            }
+            else if(desc.dest == sDownloadFileDesc::board) {
                 // The downloaded file is modal so we must put it on the board
                 emit addDownloadedFileToBoard(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, isBackground);
             }
-            else
+            else if(desc.dest == sDownloadFileDesc::library)
             {
                 emit addDownloadedFileToLibrary(pSuccess, sourceUrl, pContentTypeHeader, pData, desc.name);
+            }
+            else if(desc.dest == sDownloadFileDesc::customPath)
+            {
+                emit customDownloadFinished(pSuccess, sourceUrl, contentUrl, QUrl(desc.dstUrl), pContentTypeHeader, pData, pSize);
             }
 
             break;
@@ -372,7 +399,7 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
 {
     if (desc.srcUrl.startsWith("file://") || desc.srcUrl.startsWith("/"))
     {
-        UBAsyncLocalFileDownloader * cpHelper = new UBAsyncLocalFileDownloader(desc, this);
+        UBAsyncLocalFileDownloader * cpHelper = new UBAsyncLocalFileDownloader(desc, QByteArray(), this);
         connect(cpHelper, SIGNAL(signal_asyncCopyFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl,QString, QByteArray, QPointF, QSize, bool)));
         QObject *res = dynamic_cast<QObject *>(cpHelper->download());
         if (!res)
@@ -381,17 +408,17 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
             mDownloads[desc.id] = res;
     }
     else
-    {    
+    {
         UBDownloadHttpFile* http = new UBDownloadHttpFile(desc.id, this);
         connect(http, SIGNAL(downloadProgress(int, qint64,qint64)), this, SLOT(onDownloadProgress(int,qint64,qint64)));
         connect(http, SIGNAL(downloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)));
-    
+
         //the desc.srcUrl is encoded. So we have to decode it before.
         QUrl url;
         url.setEncodedUrl(desc.srcUrl.toUtf8());
         // We send here the request and store its reply in order to be able to cancel it if needed
         mDownloads[desc.id] = dynamic_cast<QObject *>(http->get(url, desc.pos, desc.size, desc.isBackground));
-    } 
+    }
 }
 
 /**
@@ -444,7 +471,7 @@ void UBDownloadManager::cancelDownloads()
         if (netReply)
             netReply->abort();
         else
-        {        
+        {
             UBAsyncLocalFileDownloader *localDownload = dynamic_cast<UBAsyncLocalFileDownloader *>(it.value());
             if (localDownload)
                 localDownload->abort();
@@ -462,7 +489,7 @@ void UBDownloadManager::cancelDownloads()
 void UBDownloadManager::onDownloadError(int id)
 {
     QNetworkReply *pReply = dynamic_cast<QNetworkReply *>(mDownloads.value(id));
-    
+
     if(NULL != pReply)
     {
         // Check which error occured:
@@ -494,7 +521,7 @@ void UBDownloadManager::cancelDownload(int id)
 {
     if (!mDownloads.size())
         return;
-   
+
     // Stop the download
 
     QNetworkReply *pNetworkDownload = dynamic_cast<QNetworkReply *>(mDownloads[id]);
@@ -506,7 +533,7 @@ void UBDownloadManager::cancelDownload(int id)
         if (pLocalDownload)
         {
             if (pLocalDownload->isRunning())
-                pLocalDownload->abort();                          
+                pLocalDownload->abort();
         }
     }
 

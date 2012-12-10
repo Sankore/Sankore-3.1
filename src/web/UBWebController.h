@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #ifndef UBWEBCONTROLLER_H_
 #define UBWEBCONTROLLER_H_
@@ -23,7 +31,7 @@
 
 class WBBrowserWindow;
 class UBApplication;
-class UBTrapFlashController;
+class UBTrapWebPageContentController;
 class UBMainWindow;
 class UBWebToolsPalette;
 class WBWebView;
@@ -57,9 +65,9 @@ class UBWebController : public QObject
 
         void show(WebInstance type = UBWebController::WebBrowser);
 
-        WBBrowserWindow* GetCurrentWebBrowser() 
-        { 
-            if( mCurrentWebBrowser != NULL ) return *mCurrentWebBrowser; 
+        WBBrowserWindow* GetCurrentWebBrowser()
+        {
+            if( mCurrentWebBrowser != NULL ) return *mCurrentWebBrowser;
             else return NULL;
         };
 
@@ -83,6 +91,7 @@ class UBWebController : public QObject
             return mBrowserWidget;
         }
 
+        void captureoEmbed(QUrl currentUrl);
         void captureoEmbed();
         void captureEduMedia();
 
@@ -112,11 +121,9 @@ class UBWebController : public QObject
         WBBrowserWindow** mCurrentWebBrowser;
 
         QWidget* mBrowserWidget;
-        UBTrapFlashController* mTrapFlashController;
+        UBTrapWebPageContentController* mTrapContentController;
         UBWebToolsPalette** mToolsCurrentPalette;
         UBWebToolsPalette* mToolsPaletteList[TotalNumberOfWebInstances];
-// 		UBKeyboardPalette** mKeyboardCurrentPalette;
-// 		UBKeyboardPalette* mKeyboardPaletteList[TotalNumberOfWebInstances];
 
         bool mToolsPalettePositionned;
         bool mToolsPalettePositionnedList[TotalNumberOfWebInstances];
@@ -131,12 +138,14 @@ class UBWebController : public QObject
     private slots:
 
         void activePageChanged();
-        void trapFlash();
 
         void toggleWebTrap(bool checked);
 
+        void webTrapContent();
+
         void onOEmbedParsed(QVector<sOEmbedContent> contents);
-//		void showKeyboard(bool checked);
+
+        void onActionBookmark();
 
     signals:
         /**

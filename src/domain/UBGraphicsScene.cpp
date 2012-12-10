@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include "UBGraphicsScene.h"
 
@@ -195,7 +203,7 @@ qreal UBZLayerController::changeZLevelTo(QGraphicsItem *item, moveDestination de
                 qreal nextZ = iCurElement.next().value()->data(UBGraphicsItemData::ItemOwnZValue).toReal();
 
                 ItemLayerTypeData curItemLayerTypeData = scopeMap.value(curItemLayerType);
-//
+
                 //if we have some free space between lowest graphics item and layer's bottom bound,
                 //insert element close to first element in layer
                 if (nextZ > curItemLayerTypeData.bottomLimit + curItemLayerTypeData.incStep) {
@@ -287,6 +295,7 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     mShouldUseOMP = QSysInfo::MacintoshVersion >= QSysInfo::MV_10_5;
 #endif
 
+    setUuid(QUuid::createUuid());
     setDocument(parent);
     createEraiser();
     createPointer();
@@ -299,7 +308,7 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     }
 
 //    Just for debug. Do not delete please
-    connect(this, SIGNAL(selectionChanged()), this, SLOT(selectionChangedProcessing()));
+//    connect(this, SIGNAL(selectionChanged()), this, SLOT(selectionChangedProcessing()));
     connect(this, SIGNAL(selectionChanged()), this, SLOT(updateGroupButtonState()));
 }
 
@@ -328,7 +337,7 @@ void UBGraphicsScene::updateGroupButtonState()
 
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
     if (UBStylusTool::Selector != currentTool)
-        return;
+        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
     QAction *groupAction = UBApplication::mainWindow->actionGroupItems;
     QList<QGraphicsItem*> selItems = selectedItems();
@@ -834,6 +843,7 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
 
         //remove full polygon item for replace it by couple of polygons who creates the same stroke without a part which intersects with eraser
         mRemovedItems << intersectedPolygonItem;
+        intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
         removeItem(intersectedPolygonItem);
     }
 

@@ -1,17 +1,25 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
 
 #include <QtGui>
 #include "UBGraphicsGroupContainerItem.h"
@@ -42,17 +50,16 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Resizing);
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
+    Delegate()->setCanTrigAnAction(true);
 
     mTypeTextHereLabel = tr("<Type Text Here>");
 
 
     setData(UBGraphicsItemData::ItemLayerType, UBItemLayerType::Object);
-//    setData(UBGraphicsItemData::ItemEditable, QVariant(true));
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
 
 
     setFlag(QGraphicsItem::ItemIsSelectable, true);
-//    setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 
     setTextInteractionFlags(Qt::TextEditorInteraction);
@@ -83,10 +90,11 @@ QVariant UBGraphicsTextItem::itemChange(GraphicsItemChange change, const QVarian
 
 void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    // scene()->itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes. 
-    // It is a cludge... 
+    // It is a cludge...
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
+        if(Delegate())
+            Delegate()->mousePressEvent(event);
         event->accept();
         clearFocus();
         return;
@@ -102,13 +110,13 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             {
                 QGraphicsItem *curItem = group->getCurrentItem();
                 if (curItem && this != curItem)
-                {   
-                    group->deselectCurrentItem();    
-                }   
+                {
+                    group->deselectCurrentItem();
+                }
                 group->setCurrentItem(this);
                 this->setSelected(true);
                 Delegate()->positionHandles();
-            }       
+            }
 
         }
         else
@@ -170,8 +178,8 @@ void UBGraphicsTextItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-    // scene()->itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes. 
-    // It is a cludge... 
+    // scene()->itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes.
+    // It is a cludge...
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
         event->accept();

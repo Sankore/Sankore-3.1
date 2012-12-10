@@ -1,17 +1,26 @@
 /*
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Copyright (C) 2012 Webdoc SA
  *
- * This program is distributed in the hope that it will be useful,
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation, version 2,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU Library General Public
+ * License along with Open-Sankoré; if not, see
+ * <http://www.gnu.org/licenses/>.
  */
+
+
 #ifndef UBDOWNLOADMANAGER_H
 #define UBDOWNLOADMANAGER_H
 
@@ -33,6 +42,7 @@ struct sDownloadFileDesc
         board //default for sDownloadFileDesc
         , library
         , graphicsWidget
+        , customPath
     };
     //creating constructor to make sure to have default values
     sDownloadFileDesc() :
@@ -53,6 +63,7 @@ struct sDownloadFileDesc
     int totalSize;
     int currentSize;
     QString srcUrl;
+    QString dstUrl; // destination url - used only with dest == customPath;
     QString originalSrcUrl;
     QString contentTypeHeader;
     bool modal;
@@ -91,9 +102,9 @@ class UBAsyncLocalFileDownloader : public QThread
 {
     Q_OBJECT
 public:
-    UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QObject *parent = 0);
+    UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QByteArray data = QByteArray(), QObject *parent = 0);
 
-    UBAsyncLocalFileDownloader *download();    
+    UBAsyncLocalFileDownloader *download();
     void run();
     void abort();
 
@@ -104,6 +115,7 @@ signals:
 
 private:
     sDownloadFileDesc mDesc;
+    QByteArray mData;
     bool m_bAborting;
     QString mFrom;
     QString mTo;
@@ -133,6 +145,7 @@ signals:
     void downloadModalFinished();
     void addDownloadedFileToBoard(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
     void addDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QString pTitle);
+    void customDownloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QUrl destinationUrl, QString pContentTypeHeader, QByteArray pData, QSize pSize);
     void cancelAllDownloads();
     void allDownloadsFinished();
 

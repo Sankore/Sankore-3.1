@@ -801,27 +801,28 @@
     </message>
     <message>
         <source>Group items</source>
-        <translation type="unfinished"></translation>
+        <translation>פריטי קבוצה</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>נגן</translation>
     </message>
     <message>
         <source>Interact with items</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>There is no direct translation of this sentence- please provide contexte</translatorcomment>
+        <translation type="unfinished">לתפעל את הפריט</translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation type="unfinished"></translation>
+        <translation>מחק רקע</translation>
     </message>
     <message>
         <source>Remove the backgound</source>
-        <translation type="unfinished"></translation>
+        <translation>הסר רקע</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>קבוצה</translation>
     </message>
 </context>
 <context>
@@ -866,19 +867,19 @@
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation type="unfinished"></translation>
+        <translation>זהות הרכיב:</translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation type="unfinished"></translation>
+        <translation>התוכן אינו נתמך בפורמט היעד</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation type="unfinished">הסר את הדף</translation>
+        <translation>הסר את הדף</translation>
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>האם אתה בטוח שברצונך למחוק דף 1 מהמסמך שנבחר %0?</translation>
     </message>
 </context>
 <context>
@@ -943,23 +944,23 @@
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation type="unfinished"></translation>
+        <translation>מחק עמוד %1 מהמסמך</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation type="unfinished"></translation>
+        <translation>דף %1 נמחק</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation type="unfinished"></translation>
+        <translation>הוספת פעולת קובץ נכשלה: אירעה שגיאה בהעתקת הקובץ</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>קבץ</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation type="unfinished"></translation>
+        <translation>בטל קיבוץ</translation>
     </message>
 </context>
 <context>
@@ -970,7 +971,7 @@
     </message>
     <message>
         <source>CapturedImage</source>
-        <translation type="unfinished"></translation>
+        <translation>תמונה שנלכדה</translation>
     </message>
 </context>
 <context>
@@ -1020,7 +1021,7 @@
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>הראה סאנקור פתוח</translation>
     </message>
 </context>
 <context>
@@ -1150,15 +1151,15 @@
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>דף כותרת</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation type="unfinished"></translation>
+        <translation>התיקיה אינה מכילה כל קבצי תמונות</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation type="unfinished">מסמכים ללא שם</translation>
+        <translation>מסמכים ללא שם</translation>
     </message>
 </context>
 <context>
@@ -1189,19 +1190,19 @@
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>מכניס עמוד %1 מתוך %2</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation type="unfinished">הייבוא בוצע בהצלחה.</translation>
+        <translation>הייבוא בוצע בהצלחה.</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>ייבוא קובץ %1 התבצע בהצלחה</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>מייבא קובץ %1</translation>
     </message>
 </context>
 <context>
@@ -1212,7 +1213,7 @@
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>עמוד כותרת</translation>
     </message>
 </context>
 <context>
@@ -1279,30 +1280,31 @@
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>I don&apos;t understand this sentence</translatorcomment>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>UBExportCFF</name>
     <message>
         <source>Export to IWB</source>
-        <translation type="unfinished"></translation>
+        <translation>ייצא ל-IWB</translation>
     </message>
     <message>
         <source>Export as IWB File</source>
-        <translation type="unfinished"></translation>
+        <translation>ייצא כקובץ IWB</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished">מייצא מסמך...</translation>
+        <translation>מייצא מסמך...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished">הייצוא בוצע בהצלחה.</translation>
+        <translation>הייצוא בוצע בהצלחה.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>פעולת הייצוא נכשלה</translation>
     </message>
 </context>
 <context>
@@ -1405,134 +1407,134 @@
     <name>UBFeatureProperties</name>
     <message>
         <source>Add to page</source>
-        <translation type="unfinished">הוסף לדף</translation>
+        <translation>הוסף לדף</translation>
     </message>
     <message>
         <source>Set as background</source>
-        <translation type="unfinished">קבע כרקע</translation>
+        <translation>קבע כרקע</translation>
     </message>
     <message>
         <source>Add to library</source>
-        <translation type="unfinished">הוסף לספרייה</translation>
+        <translation>הוסף לספרייה</translation>
     </message>
     <message>
         <source>Object informations</source>
-        <translation type="unfinished">מידע על האובייקט</translation>
+        <translation>מידע על האובייקט</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
     <message>
         <source>Add to favorites</source>
-        <translation type="unfinished">הוסף למועדפים</translation>
+        <translation>הוסף למועדפים</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished">שתף</translation>
+        <translation>שתף</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">חיפוש</translation>
+        <translation>חיפוש</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">מחק</translation>
+        <translation>מחק</translation>
     </message>
     <message>
         <source>Back to folder</source>
-        <translation type="unfinished">חזרה לקובץ</translation>
+        <translation>חזרה לקובץ</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation type="unfinished">הסר מהמועדפים</translation>
+        <translation>הסר מהמועדפים</translation>
     </message>
     <message>
         <source>Create new folder</source>
-        <translation type="unfinished">צור תיקייה חדשה</translation>
+        <translation>צור תיקייה חדשה</translation>
     </message>
     <message>
         <source>Rescan file system</source>
-        <translation type="unfinished"></translation>
+        <translation>סרוק מחדש את מערכת הקבצים</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesController</name>
     <message>
         <source>ImportedImage</source>
-        <translation type="unfinished">תמונה מיובאת</translation>
+        <translation>תמונה מיובאת</translation>
     </message>
     <message>
         <source>Audios</source>
-        <translation type="unfinished">קבצי שמע</translation>
+        <translation>קבצי שמע</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation type="unfinished">סרטים</translation>
+        <translation>סרטים</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished">תמונות</translation>
+        <translation>תמונות</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation type="unfinished">אנימציות</translation>
+        <translation>אנימציות</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation type="unfinished">אינטראקטיביות</translation>
+        <translation>אינטראקטיביות</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation type="unfinished">יישומים</translation>
+        <translation>יישומים</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation type="unfinished">צורות</translation>
+        <translation>צורות</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>מועדפים</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation type="unfinished"></translation>
+        <translation>חיפוש באינטרנט</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">סל</translation>
+        <translation>סל</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>קבל</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">בטל</translation>
+        <translation>בטל</translation>
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>הזן שם תיקיה חדש</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation type="unfinished"></translation>
+        <translation>טוען</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation type="unfinished">נעול</translation>
+        <translation>נעול</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation type="unfinished">ניתן לראותו במסך רחב</translation>
+        <translation>ניתן לראותו במסך רחב</translation>
     </message>
 </context>
 <context>
@@ -1572,14 +1574,14 @@
     <name>UBGraphicsW3CWidgetItem</name>
     <message>
         <source>Web</source>
-        <translation type="unfinished">אינטרנט</translation>
+        <translation>אינטרנט</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation type="unfinished">טוען...</translation>
+        <translation>טוען...</translation>
     </message>
 </context>
 <context>
@@ -1702,7 +1704,7 @@
     <name>UBMessagesDialog</name>
     <message>
         <source>Close</source>
-        <translation type="unfinished">סגור</translation>
+        <translation>סגור</translation>
     </message>
 </context>
 <context>
@@ -1753,23 +1755,23 @@ Do you want to ignore these errors for this host?</source>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>אנגלית</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>רוסית</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>גרמנית</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>צרפתית</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished"></translation>
+        <translation>צרפתית של שוויץ</translation>
     </message>
 </context>
 <context>
@@ -1891,33 +1893,33 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>מורה</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation type="unfinished"></translation>
+        <translation>סטודנט</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש מטלה כאן</translation>
     </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>
     <message>
         <source>drop media here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>עזוב את המדיה כאן</translation>
     </message>
     <message>
         <source>Type title here...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש כותרת כאן</translation>
     </message>
 </context>
 <context>
     <name>UBTGUrlWidget</name>
     <message>
         <source>Insert link title here...</source>
-        <translation type="unfinished"></translation>
+        <translation>הכנס את כותרת הקישור כאן</translation>
     </message>
 </context>
 <context>
@@ -1931,82 +1933,82 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש כותרת כאן</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש הערה כאן</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף פעולה</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף מדיה</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף קישור</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation>עמוד: %0</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש את כותרת הפעולה כאן...</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>מחבר(ים)</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש שם מחבר כאן...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד(ים)</translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש יעדים כאן...</translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translation type="unfinished"></translation>
+        <translation>מיפתוח משאבים</translation>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation type="unfinished"></translation>
+        <translation>מילות מפתח:</translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש מילות מפתח כאן...</translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>דרגה:</translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation type="unfinished"></translation>
+        <translation>נושאים:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>הקש:</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>רישיון</translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
-        <translation type="unfinished"></translation>
+        <translation>טקסט מקור</translation>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
@@ -2030,32 +2032,32 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Public domain</source>
-        <translation type="unfinished"></translation>
+        <translation>נחלת הכלל</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>זכויות יוצרים</translation>
     </message>
     <message>
         <source>Created the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>נוצר ב:</translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>עדכן את:</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>דף כותרת</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation>עמוד: %0</translation>
     </message>
 </context>
 <context>
@@ -2101,7 +2103,7 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Aristo</source>
-        <translation type="unfinished"></translation>
+        <translation>אריסטו</translation>
     </message>
 </context>
 <context>
@@ -3240,7 +3242,7 @@ DAMAGES.
     </message>
     <message>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>אשראי</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
