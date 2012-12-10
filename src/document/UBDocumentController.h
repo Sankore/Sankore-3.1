@@ -40,6 +40,8 @@ class UBDocumentToolsPalette;
 class UBDocumentTreeNode
 {
 public:
+    friend class UBDocumentTreeModel;
+
     enum Type {
         Catalog
         , Document
@@ -88,8 +90,8 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value, int role);
     Qt::ItemFlags flags ( const QModelIndex & index ) const;
     Qt::DropActions supportedDropActions() const {return Qt::MoveAction | Qt::CopyAction;}
-//    QMimeData *mimeData( const QModelIndexList &indexes ) const;
     QStringList mimeTypes() const;
+    QMimeData *mimeData (const QModelIndexList &indexes) const;
     bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
     bool removeRow(int row, const QModelIndex &parent);
     bool removeRows(int row, int count, const QModelIndex &parent);
@@ -117,6 +119,18 @@ private:
     bool removeChildFromModel(UBDocumentTreeNode *child, UBDocumentTreeModel *parent);
 };
 
+class UBDocumentTreeMimeData : public QMimeData
+{
+    Q_OBJECT
+
+    public:
+        QList<UBDocumentTreeNode*> nodes() const {return mDocumentTreeNodes;}
+        void setNodes(const QList<UBDocumentTreeNode*> &fList) {mDocumentTreeNodes = fList;}
+
+    private:
+        QList<UBDocumentTreeNode*> mDocumentTreeNodes;
+};
+
 class UBDocumentTreeView : public QTreeView
 {
     Q_OBJECT
@@ -125,7 +139,6 @@ public:
     UBDocumentTreeView (QWidget *parent = 0);
 
 protected:
-    void mousePressEvent(QMouseEvent *event);
     void dragEnterEvent(QDragEnterEvent *event);
     void dragMoveEvent(QDragMoveEvent *event);
     void dropEvent(QDropEvent *event);

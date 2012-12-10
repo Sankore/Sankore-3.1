@@ -254,7 +254,6 @@ Qt::ItemFlags UBDocumentTreeModel::flags (const QModelIndex &index) const
 
         if (indexNode->nodeType() == UBDocumentTreeNode::Catalog) {
             resultFlags |= Qt::ItemIsDropEnabled;
-            qDebug() << "item is drop enabled";
         }
     }
 
@@ -268,18 +267,61 @@ QStringList UBDocumentTreeModel::mimeTypes() const
     return types;
 }
 
+QMimeData *UBDocumentTreeModel::mimeData (const QModelIndexList &indexes) const
+{
+    UBDocumentTreeMimeData *mimeData = new UBDocumentTreeMimeData();
+    QList <UBDocumentTreeNode*> nodeList;
+    QList<QUrl> urlList;
+
+    foreach (QModelIndex index, indexes) {
+        if (index.isValid()) {
+            UBDocumentTreeNode *selectedNode = nodeFromIndex(index);
+            nodeList.append(selectedNode);
+            urlList.append(QUrl());
+        }
+    }
+
+    mimeData->setUrls(urlList);
+    mimeData->setNodes(nodeList);
+
+    return mimeData;
+}
+
 bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
 {
 //    qDebug() << "drop mime data catched";
 //    return QAbstractItemModel::dropMimeData(data, action, row, column, parent);
+    const UBDocumentTreeMimeData *mimeData = qobject_cast<const UBDocumentTreeMimeData*>(data);
+    if (!mimeData) {
+        qDebug() << "Incorrect mimeData, only internal one supported";
+        return false;
+    }
+    if (!parent.isValid() && action != Qt::MoveAction) {
+        return false;
+    }
+    UBDocumentTreeNode *newParentNode = nodeFromIndex(parent);
 
-    Q_UNUSED(data)
+    if (!newParentNode) {
+        qDebug() << "incorrect incoming parent node;";
+        return false;
+    }
+
+    QList<UBDocumentTreeNode*> incomingNodes = mimeData->nodes();
+
+    foreach (UBDocumentTreeNode *curNode, incomingNodes) {
+        removeRows(curNode->parentNode()->children().indexOf(curNode), 1, indexForNode(curNode->parentNode()));
+        addNode(curNode, parent);
+    }
+
+    qDebug() << "custom mime data row " << row << "column" << column;
+
+
     Q_UNUSED(action)
     Q_UNUSED(row)
     Q_UNUSED(column)
     Q_UNUSED(parent)
 
-    return true;
+    return false;
 }
 
 bool UBDocumentTreeModel::removeRow(int row, const QModelIndex &parent)
@@ -381,6 +423,10 @@ void UBDocumentTreeModel::addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeN
     beginInsertRows(tstParent, pParent->children().size(), pParent->children().size());
     pParent->addChild(pFreeNode);
     endInsertRows();
+
+//    foreach (UBDocumentTreeNode *curNode, pFreeNode->children()) {
+//        addNode(curNode, pFreeNode);
+//    }
 }
 
 void UBDocumentTreeModel::addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent)
@@ -509,11 +555,6 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     qDebug() << "drop event catchded";
     event->setDropAction(Qt::MoveAction);
     QTreeView::dropEvent(event);
-}
-
-void UBDocumentTreeView::mousePressEvent(QMouseEvent *event)
-{
-    QTreeView::mousePressEvent(event);
 }
 
 UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
