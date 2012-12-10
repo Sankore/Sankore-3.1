@@ -990,37 +990,38 @@ void UBFeaturesController::addItemAsBackground(const UBFeature &item)
     UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true );
 }
 
-UBFeature UBFeaturesController::getDestinationFeatureForUrl( const QUrl &url )
+CategoryData UBFeaturesController::getDestinationCategoryForUrl( const QUrl &url )
 {
     QString mimetype = UBFileSystemUtils::mimeTypeFromFileName( url.toString() );
-    return getDestinationFeatureForMimeType(mimetype);
+    return getDestinationCategoryForMimeType(mimetype);
 }
 
-UBFeature UBFeaturesController::getDestinationFeatureForMimeType(const QString &pMmimeType,const QUrl& sourceUrl)
+CategoryData UBFeaturesController::getDestinationCategoryForMimeType(const QString &pMmimeType,const QUrl& sourceUrl)
 {
     if ( pMmimeType.contains("audio") )
-        return audiosData.categoryFeature();
+        return audiosData;
     if ( pMmimeType.contains("video") )
-        return moviesData.categoryFeature();
+        return moviesData;
     else if ( pMmimeType.contains("image") || pMmimeType.isEmpty())
-        return picturesData.categoryFeature();
+        return picturesData;
     else if ( pMmimeType.contains("application") )
     {
         if ( pMmimeType.contains( "x-shockwave-flash") )
-            return flashData.categoryFeature();
+            return flashData;
         else{
             QString source = sourceUrl.toString();
             if(source.length()){
                 if(source.contains("?type=application"))
-                    return appData.categoryFeature();
+                    return appData;
                 else
-                    return interactivityData.categoryFeature();
+                    return interactivityData;
             }
             else
-                return webFolderData.categoryFeature();
+                return webFolderData;
         }
     }
-    return UBFeature();
+
+    return CategoryData();
 }
 
 QString UBFeaturesController::getFeaturePathByName(const QString &featureName) const
@@ -1037,12 +1038,16 @@ QString UBFeaturesController::getFeaturePathByName(const QString &featureName) c
 
 void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteArray &pData, const QString pContentSource, const QString pTitle)
 {
-    UBFeature dest = getDestinationFeatureForMimeType(pContentSource,sourceUrl);
+    CategoryData destData = getDestinationCategoryForMimeType(pContentSource,sourceUrl);
+
+    if (destData.isNull()) {
+        return;
+    }
+
+    UBFeature dest = destData.categoryFeature();
 
     if (dest == UBFeature())
         return;
-
-
 
     QString fileName;
     QString filePath;
@@ -1099,7 +1104,13 @@ UBFeature UBFeaturesController::moveItemToFolder( const QUrl &url, const UBFeatu
 
     Q_ASSERT( QFileInfo( sourcePath ).exists() );
 
-    UBFeature possibleDest = getDestinationFeatureForUrl(url);
+    CategoryData destData = getDestinationCategoryForUrl(url);
+
+    if (destData.isNull()) {
+        return UBFeature();
+    }
+
+    UBFeature possibleDest = destData.categoryFeature();
 
     UBFeature dest = destination;
 
@@ -1200,8 +1211,13 @@ UBFeature UBFeaturesController::copyItemToFolder( const QUrl &url, const UBFeatu
 
     Q_ASSERT( QFileInfo( sourcePath ).exists() );
 
-    UBFeature possibleDest = getDestinationFeatureForUrl( url );
+    CategoryData destData = getDestinationCategoryForUrl(url);
 
+    if (destData.isNull()) {
+        return UBFeature();
+    }
+
+    UBFeature possibleDest = destData.categoryFeature();
     UBFeature dest = destination;
 
     if ( destination != trashData.categoryFeature() &&
@@ -1232,8 +1248,13 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
 
     Q_ASSERT( QFileInfo(sourcePath ).exists());
 
-    UBFeature possibleDest = getDestinationFeatureForUrl(url);
+    CategoryData destData = getDestinationCategoryForUrl(url);
 
+    if (destData.isNull()) {
+        return QString();
+    }
+
+    UBFeature possibleDest = destData.categoryFeature();
     UBFeature dest = destination;
 
     if ( destination != trashData.categoryFeature() && destination != UBFeature()
