@@ -49,6 +49,11 @@ UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 
 void UBAsyncLocalFileDownloader::run()
 {
+    if(mDesc.srcUrl.startsWith("file://") || mDesc.srcUrl.startsWith("/"))
+        mDesc.srcUrl = QUrl(mDesc.srcUrl).toLocalFile();
+    else
+        mDesc.srcUrl = QUrl::fromLocalFile(mDesc.srcUrl).toLocalFile();
+
     if(mDesc.dstUrl.startsWith("file://") || mDesc.dstUrl.startsWith("/"))
         mDesc.dstUrl = QUrl(mDesc.dstUrl).toLocalFile();
     else
