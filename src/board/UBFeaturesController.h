@@ -66,6 +66,7 @@ enum UBFeatureElementType
     FEATURE_FAVORITE,
     FEATURE_SEARCH,
     FEATURE_BOOKMARK,
+    FEATURE_LINK,
     FEATURE_INVALID
 };
 
@@ -286,6 +287,7 @@ public:
     void importImage(const QImage &image, const QString &fileName = QString());
     void importImage( const QImage &image, const UBFeature &destination, const QString &fileName = QString() );
     void createBookmark(const QString& fileName, const QString &urlString);
+    void createLink(const QString& fileName, const QString& urlString, QSize &size);
     bool newFolderAllowed() const {return currentElement.isFolder() && currentElement.testPermissions(UBFeature::WRITE_P);}
     QStringList getFileNamesInFolders();
 

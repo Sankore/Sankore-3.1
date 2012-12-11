@@ -1142,6 +1142,8 @@ void UBGraphicsW3CWidgetItem::loadNPAPIWrappersTemplates()
 
         QDir etcDir(etcPath);
 
+        qDebug() << etcDir.entryList().count();
+
         foreach(QString fileName, etcDir.entryList()) {
             if (fileName.startsWith("npapi-wrapper") && (fileName.endsWith(".htm") || fileName.endsWith(".html"))) {
 

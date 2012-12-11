@@ -615,7 +615,7 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
     UBBoardPaletteManager* paletteManager = UBApplication::boardController->paletteManager();
     bool teacherGuideModified = false;
     if(UBApplication::app()->boardController->currentPage() == pSceneIndex &&  paletteManager->teacherGuideDockWidget())
-    	teacherGuideModified = paletteManager->teacherGuideDockWidget()->teacherGuideWidget()->isModified();
+        teacherGuideModified = paletteManager->teacherGuideDockWidget()->teacherGuideWidget()->isModified();
 
     if (pDocumentProxy->isModified() || teacherGuideModified)
         UBMetadataDcSubsetAdaptor::persist(pDocumentProxy);
@@ -761,7 +761,7 @@ bool UBPersistenceManager::addDirectoryContentToDocument(const QString& document
     foreach(QString dir, mDocumentSubDirectories)
     {
         qDebug() << "copying " << documentRootFolder << "/" << dir << " to " << pDocument->persistencePath() << "/" + dir;
-        
+
         QDir srcDir(documentRootFolder + "/" + dir);
         if (srcDir.exists())
             if (!UBFileSystemUtils::copyDir(documentRootFolder + "/" + dir, pDocument->persistencePath() + "/" + dir))
@@ -873,7 +873,7 @@ QString UBPersistenceManager::teacherGuideAbsoluteObjectPath(UBDocumentProxy* pD
 QString UBPersistenceManager::addObjectToTeacherGuideDirectory(UBDocumentProxy* pDocumentProxy, QString pPath)
 {
     QString path = UBFileSystemUtils::removeLocalFilePrefix(pPath);
-	QFileInfo fi(path);
+    QFileInfo fi(path);
     QString uuid = QUuid::createUuid();
 
     if (!fi.exists() || !pDocumentProxy)
@@ -923,8 +923,8 @@ QString UBPersistenceManager::addWidgetToTeacherGuideDirectory(UBDocumentProxy* 
     return destPath;
 }
 
-bool UBPersistenceManager::addFileToDocument(UBDocumentProxy* pDocumentProxy, 
-                                                     QString path, 
+bool UBPersistenceManager::addFileToDocument(UBDocumentProxy* pDocumentProxy,
+                                                     QString path,
                                                      const QString& subdir,
                                                      QUuid objectUuid,
                                                      QString& destinationPath,
@@ -975,12 +975,12 @@ bool UBPersistenceManager::addFileToDocument(UBDocumentProxy* pDocumentProxy,
     }
     else
     {
-        return false;    
+        return false;
     }
 }
 
-bool UBPersistenceManager::addGraphicsWidgteToDocument(UBDocumentProxy *pDocumentProxy, 
-                                                       QString path, 
+bool UBPersistenceManager::addGraphicsWidgetToDocument(UBDocumentProxy *pDocumentProxy,
+                                                       QString path,
                                                        QUuid objectUuid,
                                                        QString& destinationPath)
 {

@@ -68,6 +68,7 @@ class UBBoardController : public UBDocumentContainer
         QSize controlViewport();
         QRectF controlGeometry();
         void closing();
+        void addLinkToPage(QString sourceUrl, QSize size = QSize(340,200), QPointF pos = QPointF(0,0));
 
         int currentPage();
 

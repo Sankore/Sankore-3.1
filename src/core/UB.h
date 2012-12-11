@@ -42,6 +42,8 @@ struct UBMimeType
         PDF,
         UniboardTool,
         Group,
+        Bookmark,
+        Link,
         UNKNOWN
     };
 };
@@ -50,18 +52,18 @@ struct UBStylusTool
 {
     enum Enum
     {
-        Pen = 0, 
-		Eraser, 
- 		Marker, 
-		Selector, 
+        Pen = 0,
+        Eraser,
+        Marker,
+        Selector,
         Play,
-		Hand, 
-		ZoomIn, 
-		ZoomOut, 
-		Pointer, 
-		Line, 
-		Text, 
-		Capture
+        Hand,
+        ZoomIn,
+        ZoomOut,
+        Pointer,
+        Line,
+        Text,
+        Capture
     };
 };
 
@@ -138,19 +140,19 @@ struct UBGraphicsItemType
 {
     enum Enum
     {
-        PolygonItemType = QGraphicsItem::UserType + 1, 
-		PixmapItemType,
-        SvgItemType, 
+        PolygonItemType = QGraphicsItem::UserType + 1,
+        PixmapItemType,
+        SvgItemType,
         DelegateButtonType,
-		MediaItemType, 
-		PDFItemType, 
-		TextItemType,
-		CurtainItemType,
-        RulerItemType, 
-		CompassItemType, 
-		ProtractorItemType, 
-		StrokeItemType,
-		TriangleItemType,
+        MediaItemType,
+        PDFItemType,
+        TextItemType,
+        CurtainItemType,
+        RulerItemType,
+        CompassItemType,
+        ProtractorItemType,
+        StrokeItemType,
+        TriangleItemType,
         MagnifierItemType,
         cacheItemType,
         AristoItemType,

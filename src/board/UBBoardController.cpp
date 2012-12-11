@@ -38,6 +38,7 @@
 #include "core/UBDocumentManager.h"
 #include "core/UBMimeData.h"
 #include "core/UBDownloadManager.h"
+#include "core/UBDisplayManager.h"
 
 #include "network/UBHttpGet.h"
 
@@ -1021,7 +1022,8 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
         bool shouldLoadFileData =
                 contentType.startsWith("image")
                 || contentType.startsWith("application/widget")
-                || contentType.startsWith("application/vnd.apple-widget");
+                || contentType.startsWith("application/vnd.apple-widget")
+                || contentType.startsWith("internal/link");
 
         if (isBackground)
             mActiveScene->setURStackEnable(false);
@@ -1080,10 +1082,41 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
             UBApplication::undoStack->push(uc);
         }
     }
-
-
 }
 
+void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos)
+{
+    QString widgetUrl;
+    QString lSourceUrl = sourceUrl.replace("\n","");
+    UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromUrl(lSourceUrl);
+
+    if(UBMimeType::Flash == itemMimeType){
+        QString tmpDirPath = UBFileSystemUtils::createTempDir();
+        widgetUrl = UBGraphicsW3CWidgetItem::createNPAPIWrapperInDir(sourceUrl, QDir(tmpDirPath),UBFileSystemUtils::mimeTypeFromFileName(lSourceUrl),QSize(300,150),QUuid::createUuid().toString());
+
+    }
+    else{
+        QString html;
+        if(UBMimeType::Video == itemMimeType)
+            html = "     <video src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
+        else if(UBMimeType::Audio == itemMimeType)
+            html = "     <audio src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
+        else if(UBMimeType::RasterImage == itemMimeType || UBMimeType::VectorImage == itemMimeType)
+            html = "     <img src=\"" + lSourceUrl + "\">\n";
+        QString tmpDirPath = UBFileSystemUtils::createTempDir();
+        widgetUrl = UBGraphicsW3CWidgetItem::createHtmlWrapperInDir(html, QDir(tmpDirPath), size, QUuid::createUuid().toString());
+    }
+
+    if (widgetUrl.length() > 0)
+    {
+        UBGraphicsWidgetItem *widgetItem = mActiveScene->addW3CWidget(QUrl::fromLocalFile(widgetUrl), pos);
+        widgetItem->setUuid(QUuid::createUuid());
+        widgetItem->setSourceUrl(QUrl::fromLocalFile(widgetUrl));
+
+        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+    }
+
+}
 
 
 
@@ -1091,12 +1124,15 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
                                             QByteArray pData, QPointF pPos, QSize pSize,
                                             bool isBackground, bool internalData)
 {
+    //Q_ASSERT(pSuccess);
+
     QString mimeType = pContentTypeHeader;
 
     // In some cases "image/jpeg;charset=" is retourned by the drag-n-drop. That is
     // why we will check if an ; exists and take the first part (the standard allows this kind of mimetype)
     if(mimeType.isEmpty())
       mimeType = UBFileSystemUtils::mimeTypeFromFileName(sourceUrl.toString());
+
 
     int position=mimeType.indexOf(";");
     if(position != -1)
@@ -1479,6 +1515,12 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
                 }
             }
         }
+    }
+    else if(UBMimeType::Link == itemMimeType){
+        QString url = QString::fromAscii(pData);
+        QStringList stringList = url.split("\n");
+        QStringList sizeList = stringList.at(1).split("x");
+        addLinkToPage(stringList.at(0),QSize(sizeList.at(0).toInt(),sizeList.at(1).toInt()),pPos);
     }
     else
     {
@@ -2170,7 +2212,7 @@ UBGraphicsWidgetItem *UBBoardController::addW3cWidget(const QUrl &pUrl, const QP
     QUuid uuid = QUuid::createUuid();
 
     QString destPath;
-    if (!UBPersistenceManager::persistenceManager()->addGraphicsWidgteToDocument(selectedDocument(), pUrl.toLocalFile(), uuid, destPath))
+    if (!UBPersistenceManager::persistenceManager()->addGraphicsWidgetToDocument(selectedDocument(), pUrl.toLocalFile(), uuid, destPath))
         return NULL;
     QUrl newUrl = QUrl::fromLocalFile(destPath);
 

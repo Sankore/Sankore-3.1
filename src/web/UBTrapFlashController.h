@@ -66,18 +66,19 @@ class UBTrapWebPageContentController : public QObject
     private slots:
         void selectHtmlObject(int pObjectIndex);
         void selectedItemReady(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QUrl destinationUrl, QString pContentTypeHeader, QByteArray pData, QSize pSize);
-        
+
         void importItemInLibrary(QString pSourceDir);
 
     private:
 
+        void addLink(bool isOnLibrary);
         void prepareCurrentItemForImport(bool bUseAsLink);
         void updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects);
 
         QString widgetNameForUrl(QString pObjectUrl);
 
         QString generateFullPageHtml(const QUrl &srcUrl, const QString& pDirPath, bool pGenerateFile);
-        QString generateHtml(const UBWebKitUtils::HtmlObject& pObject, const QString& pDirPath, bool pGenerateFile);
+        void generatePreview(const UBWebKitUtils::HtmlObject& pObject, const QString& pDirPath, bool pGenerateFile);
 
         QString generateIcon(const QString& pDirPath);
 

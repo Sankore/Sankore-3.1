@@ -45,7 +45,7 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
         for (int i = 0; i < elements.count(); i++)
         {
             QWebElement element = elements.at(i);
-        
+
             bool ok;
 
             int width = element.attribute("width").toInt(&ok);
@@ -65,13 +65,16 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
             QUrl baseUrl = frame->url();
             QUrl relativeUrl = QUrl(element.attribute("src"));
 
+            if(relativeUrl.toString().isEmpty())
+                relativeUrl =  QUrl(element.attribute("href"));
+
             QString source = baseUrl.resolved(relativeUrl).toString();
 
             if (source.trimmed().length() == 0)
                 continue;
 
             UBWebKitUtils::HtmlObject obj(source, tagName, width, heigth);
-            if (!htmlObjects.contains(obj))
+            if (!htmlObjects.contains(obj) && !source.contains(".php"))
                 htmlObjects << obj;
         }
     }

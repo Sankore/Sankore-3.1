@@ -589,7 +589,7 @@ void UBFeaturesController::initHardcodedData()
                                  //UBFeature represented Trash element
                                  , UBFeature(rootData.categoryFeature().getFullVirtualPath()
                                              + "/Bookmarks"                //Virtual Path
-                                           , QImage(":images/BookmarkCategory.svg")         //Icon
+                                           , QImage(":images/libpalette/BookmarkCategory.svg")         //Icon
                                            , tr("Bookmarks")                                             //Translation name
                                            , QUrl::fromLocalFile(UBSettings::settings()->userBookmarkDirectory())                 //Main path in file system
                                            , FEATURE_CATEGORY                                      //UBFeature's type
@@ -823,6 +823,8 @@ QImage UBFeaturesController::getIcon(const QString &path, UBFeatureElementType p
         return QImage(":images/libpalette/movieIcon.svg");
     } else if (pFType == FEATURE_BOOKMARK) {
         return QImage(":images/libpalette/bookmarkIcon.svg");
+    } else if (pFType == FEATURE_LINK) {
+        return QImage(":images/libpalette/notFound.png");
     }
     else if (pFType == FEATURE_IMAGE) {
         QImage pix(path);
@@ -861,6 +863,9 @@ QImage UBFeaturesController::createThumbnail(const QString &path)
     else if(mimetype.contains("bookmark")){
         thumbnailPath = ":images/libpalette/bookmarkIcon.svg";
     }
+    else if(mimetype.contains("link")){
+        thumbnailPath = ":images/libpalette/notFound.png";
+    }
     else {
         QImage pix(path);
         if (!pix.isNull()) {
@@ -887,7 +892,10 @@ void UBFeaturesController::createBookmark(const QString& fileName, const QString
     QString mFileName = bookmarkDirectory + fileName + ".bkm";
     int counter = 1;
     while(QFileInfo(mFileName).exists()){
-        mFileName=mFileName.replace(QString("-%1.bkm").arg(counter++),"");
+        if(counter == 1)
+            mFileName=mFileName.replace(QString(".bkm"),"");
+        else
+            mFileName=mFileName.replace(QString("-%1.bkm").arg(counter++),"");
         mFileName=mFileName.append(QString("-%1.bkm").arg(counter));
     }
 
@@ -901,6 +909,37 @@ void UBFeaturesController::createBookmark(const QString& fileName, const QString
 
     featuresModel->addItem(resultItem);
 
+}
+
+void UBFeaturesController::createLink(const QString& fileName, const QString& urlString, QSize& size)
+{
+    QString name = fileName;
+    if(name.indexOf(".") != -1)
+        name = name.left(name.indexOf("."));
+
+    CategoryData categoryData = getDestinationCategoryForMimeType(UBFileSystemUtils::mimeTypeFromFileName(urlString));
+    QString lFileName = categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name + ".lnk";
+
+    int counter = 1;
+    while(QFileInfo(lFileName).exists()){
+        if(counter == 1)
+            lFileName=lFileName.replace(QString(".lnk"),"");
+        else
+            lFileName=lFileName.replace(QString("-%1.lnk").arg(counter++),"");
+        lFileName=lFileName.append(QString("-%1.lnk").arg(counter));
+    }
+
+    QFile file(lFileName);
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    //TODO claudio
+    // Why +10 because of an error on the board displaying
+    file.write(urlString.toAscii() + QString("\n%1x%2").arg(size.width() + 10).arg(size.height()+10).toAscii());
+    file.close();
+
+    QImage thumb = createThumbnail(lFileName);
+    UBFeature resultItem =  UBFeature(categoryData.categoryFeature().getFullVirtualPath() + "/" + lFileName.replace(categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/",""), thumb , lFileName, QUrl::fromLocalFile(lFileName), FEATURE_LINK );
+
+    featuresModel->addItem(resultItem);
 }
 
 void UBFeaturesController::importImage( const QImage &image, const UBFeature &destination, const QString &fileName )
@@ -1052,7 +1091,6 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
     QString fileName;
     QString filePath;
 
-    //Audio item
     if(dest == picturesData.categoryFeature()) {
 
         QString UniqName = uniqNameForFeature(dest, adjustName(pTitle), ".jpg");
@@ -1068,14 +1106,14 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
     }
     else {
         QString url = sourceUrl.toString();
-        if(url.indexOf("?")){
+        if(url.indexOf("?") != -1){
             url = url.left(url.indexOf("?"));
             fileName = QFileInfo( url ).fileName();
             filePath = QDir::tempPath() + "/" + QUuid::createUuid();
         }
         else{
             fileName = QFileInfo( url ).fileName();
-            filePath = dest.getFullPath().toLocalFile() + "/" + fileName;
+            filePath = destData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + fileName;
         }
 
         QFile file( filePath );
@@ -1084,7 +1122,7 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
             file.write(pData);
             file.close();
 
-            if(url.indexOf("?")){
+            if(url.indexOf("?") != -1){
                 // this is a zipped widget extract it
                 filePath = QDir::tempPath() + "/" + fileName;
                 UBFileSystemUtils::expandZipToDir(file, QDir(filePath));
