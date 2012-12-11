@@ -70,11 +70,11 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
 
             QString source = baseUrl.resolved(relativeUrl).toString();
 
-            if (source.trimmed().length() == 0)
+            if (source.trimmed().length() == 0 || source.indexOf(".") == -1 || source.contains(".php"))
                 continue;
 
             UBWebKitUtils::HtmlObject obj(source, tagName, width, heigth);
-            if (!htmlObjects.contains(obj) && !source.contains(".php"))
+            if (!htmlObjects.contains(obj))
                 htmlObjects << obj;
         }
     }

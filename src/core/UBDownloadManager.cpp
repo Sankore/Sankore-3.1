@@ -49,52 +49,33 @@ UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 
 void UBAsyncLocalFileDownloader::run()
 {
-    if(mDesc.dstUrl.startsWith("file://") || mDesc.dstUrl.startsWith("/"))
-        mDesc.dstUrl = QUrl(mDesc.dstUrl).toLocalFile();
-    else
-        mDesc.dstUrl = QUrl::fromLocalFile(mDesc.dstUrl).toLocalFile();
-
     QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mDesc.srcUrl);
 
-    if (sDownloadFileDesc::customPath == mDesc.dest)
-    {
-        mTo = mDesc.dstUrl;
-        QDir().mkpath(mTo);
-        QFile::copy(mDesc.srcUrl, mTo);
-    }
-    else if (sDownloadFileDesc::customPath == mDesc.dest && !mDesc.srcUrl.isEmpty() && mData.isNull())
-    {
-        mTo = mDesc.dstUrl;
-        QDir().mkpath(mTo);
-        QFile::copy(mDesc.srcUrl, mTo);
-    }
+    int position=mimeType.indexOf(";");
+    if(position != -1)
+        mimeType=mimeType.left(position);
+
+    UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
+
+
+    QString destDirectory;
+    if (UBMimeType::Video == itemMimeType)
+        destDirectory = UBPersistenceManager::videoDirectory;
     else
-    {
-        int position=mimeType.indexOf(";");
-        if(position != -1)
-            mimeType=mimeType.left(position);
+        if (UBMimeType::Audio == itemMimeType)
+            destDirectory = UBPersistenceManager::audioDirectory;
 
-        UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromString(mimeType);
+    if (mDesc.originalSrcUrl.isEmpty())
+        mDesc.originalSrcUrl = mDesc.srcUrl;
 
+    QString uuid = QUuid::createUuid();
+    UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
+                                                                  mDesc.srcUrl,
+                                                                  destDirectory,
+                                                                  uuid,
+                                                                  mTo,
+                                                                  NULL);
 
-        QString destDirectory;
-        if (UBMimeType::Video == itemMimeType)
-            destDirectory = UBPersistenceManager::videoDirectory;
-        else
-            if (UBMimeType::Audio == itemMimeType)
-                destDirectory = UBPersistenceManager::audioDirectory;
-
-        if (mDesc.originalSrcUrl.isEmpty())
-            mDesc.originalSrcUrl = mDesc.srcUrl;
-
-        QString uuid = QUuid::createUuid();
-        UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
-            mDesc.srcUrl,
-            destDirectory,
-            uuid,
-            mTo,
-            NULL);
-    }
     if (m_bAborting)
     {
         if (QFile::exists(mTo))
@@ -307,10 +288,6 @@ void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl
             else if(desc.dest == sDownloadFileDesc::library)
             {
                 emit addDownloadedFileToLibrary(pSuccess, sourceUrl, pContentTypeHeader, pData, desc.name);
-            }
-            else if(desc.dest == sDownloadFileDesc::customPath)
-            {
-                emit customDownloadFinished(pSuccess, sourceUrl, contentUrl, QUrl(desc.dstUrl), pContentTypeHeader, pData, pSize);
             }
 
             break;
