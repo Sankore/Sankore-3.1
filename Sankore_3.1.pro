@@ -96,7 +96,7 @@ BUILD_DIR = build
 
 macx:BUILD_DIR = $$BUILD_DIR/macx
 win32:BUILD_DIR = $$BUILD_DIR/win32
-linux-g++*:BUILD_DIR = $$BUILD_DIR/linux
+linux-*:BUILD_DIR = $$BUILD_DIR/linux
 
 CONFIG(debug, debug|release):BUILD_DIR = $$BUILD_DIR/debug
 CONFIG(release, debug|release) {
@@ -372,7 +372,7 @@ macx {
    system(printf "%02x%02x%02x%02x" `printf $$VERSION_RC | cut -d ',' -f 1` `printf $$VERSION_RC | cut -d ',' -f 2` `printf $$VERSION_RC | cut -d ',' -f 3` `printf $$VERSION_RC | cut -d ',' -f 4` | xxd -r -p > "$$VERSION_RC_PATH")
 }
 
-linux-g++* {
+linux-* {
     CONFIG += link_prl
     LIBS += -lcrypto
     LIBS += -lX11
@@ -387,6 +387,11 @@ linux-g++* {
     system(echo "$$VERSION" > $$BUILD_DIR/version)
     system(echo "$$LONG_VERSION" > $$BUILD_DIR/longversion)
     system(echo "$$SVN_VERSION" > $$BUILD_DIR/svnversion)
+
+    linux-clang {
+        QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
+        QMAKE_CXXFLAGS_WARN_ON += -Wno-overloaded-virtual
+    }
 }
 
 RESOURCES += resources/sankore.qrc

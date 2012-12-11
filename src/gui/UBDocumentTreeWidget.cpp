@@ -361,36 +361,35 @@ void UBDocumentTreeWidget::dropEvent(QDropEvent *event)
 
 void UBDocumentTreeWidget::documentUpdated(UBDocumentProxy *pDocument)
 {
-    UBDocumentProxyTreeItem *treeItem = UBApplication::documentController->findDocument(pDocument);
-    if (treeItem)
-    {
-        QTreeWidgetItem * parent = treeItem->parent();
+//    UBDocumentProxyTreeItem *treeItem = UBApplication::documentController->findDocument(pDocument);
+//    if (treeItem)
+//    {
+//        QTreeWidgetItem * parent = treeItem->parent();
 
-        if (parent)
-        {
-            for (int i = 0; i < parent->indexOfChild(treeItem); i++)
-            {
-                QTreeWidgetItem *ti = parent->child(i);
-                UBDocumentProxyTreeItem* pi = dynamic_cast<UBDocumentProxyTreeItem*>(ti);
-                if (pi)
-                {
-                    if (pDocument->metaData(UBSettings::documentUpdatedAt).toString() >= pi->proxy()->metaData(UBSettings::documentUpdatedAt).toString())
-                    {
-                        bool selected = treeItem->isSelected();
-                        parent->removeChild(treeItem);
-                        parent->insertChild(i, treeItem);
-                        for (int j = 0; j < selectedItems().count(); j++)
-                            selectedItems().at(j)->setSelected(false);
-                        if (selected)
-                            treeItem->setSelected(true);
-                        break;
-                    }
-                }
-            }
-        }
-    }
+//        if (parent)
+//        {
+//            for (int i = 0; i < parent->indexOfChild(treeItem); i++)
+//            {
+//                QTreeWidgetItem *ti = parent->child(i);
+//                UBDocumentProxyTreeItem* pi = dynamic_cast<UBDocumentProxyTreeItem*>(ti);
+//                if (pi)
+//                {
+//                    if (pDocument->metaData(UBSettings::documentUpdatedAt).toString() >= pi->proxy()->metaData(UBSettings::documentUpdatedAt).toString())
+//                    {
+//                        bool selected = treeItem->isSelected();
+//                        parent->removeChild(treeItem);
+//                        parent->insertChild(i, treeItem);
+//                        for (int j = 0; j < selectedItems().count(); j++)
+//                            selectedItems().at(j)->setSelected(false);
+//                        if (selected)
+//                            treeItem->setSelected(true);
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
-
 
 UBDocumentProxyTreeItem::UBDocumentProxyTreeItem(QTreeWidgetItem * parent, UBDocumentProxy* proxy, bool isEditable)
     : QTreeWidgetItem()

@@ -86,7 +86,6 @@ UBDocumentNavigator::~UBDocumentNavigator()
  */
 void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
 {
-
 	mThumbsWithLabels.clear();
 	foreach(QGraphicsItem* it, mScene->items())
     {

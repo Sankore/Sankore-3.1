@@ -528,10 +528,7 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
     htmlContentString += "        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n";
     htmlContentString += "    </head>\n";
 
-    if (!pGenerateFile)
-        htmlContentString += "  <body bgcolor=\"rgb(180,180,180)\">\n";
-    else
-        htmlContentString += "  <body>\n";
+    htmlContentString += "  <body bgcolor=\"rgb(180,180,180)\">\n";
 
     htmlContentString += "      <div align='center'>\n";
 
@@ -562,39 +559,7 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
     htmlContentString += "</body>\n";
     htmlContentString += "</html>\n";
 
-    if (!pGenerateFile)
-        mTrapWebContentDialog->webView()->setHtml(htmlContentString);
-    else
-    {
-        qWarning() << "Error on generation";
-        //        QString fileName = mTrapWebContentDialog->applicationNameLineEdit()->text();
-        //        const QString fullHtmlFileName = pDirPath + "/" + fileName + ".html";
-        //        QDir dir(pDirPath);
-
-        //        if (!dir.exists())
-        //        {
-        //            dir.mkpath(dir.path());
-        //        }
-
-        //        QFile widgetHtmlFile(fullHtmlFileName);
-
-        //        if (widgetHtmlFile.exists())
-        //        {
-        //            widgetHtmlFile.remove(widgetHtmlFile.fileName());
-        //        }
-
-        //        if (!widgetHtmlFile.open(QIODevice::WriteOnly))
-        //        {
-        //            qWarning() << "cannot open file " << widgetHtmlFile.fileName();
-        //            return;
-        //        }
-
-        //        QTextStream out(&widgetHtmlFile);
-        //        out << htmlContentString;
-
-        //        widgetHtmlFile.close();
-        //        mTrapWebContentDialog->webView()->setHtml(widgetHtmlFile.fileName());
-    }
+    mTrapWebContentDialog->webView()->setHtml(htmlContentString);
 }
 
 QString UBTrapWebPageContentController::widgetNameForUrl(QString pObjectUrl)

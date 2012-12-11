@@ -27,6 +27,7 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
     : QDialog(parent)
     , mController(controller)
 {
+    setModal(true);
     mTrapApplicationHLayout = new QHBoxLayout(this);
     setLayout(mTrapApplicationHLayout);
 

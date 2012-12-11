@@ -25,6 +25,7 @@
 #include "gui/UBMainWindow.h"
 
 #include <QtXml>
+#include <QVariant>
 
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
@@ -48,6 +49,8 @@
 
 #include "interfaces/IDataStorage.h"
 
+#include "document/UBDocumentController.h"
+
 #include "core/memcheck.h"
 
 const QString UBPersistenceManager::imageDirectory = "images"; // added to UBPersistenceManager::mAllDirectories
@@ -56,6 +59,10 @@ const QString UBPersistenceManager::widgetDirectory = "widgets"; // added to UBP
 const QString UBPersistenceManager::videoDirectory = "videos"; // added to UBPersistenceManager::mAllDirectories
 const QString UBPersistenceManager::audioDirectory = "audios"; // added to
 const QString UBPersistenceManager::teacherGuideDirectory = "teacherGuideObjects";
+
+const QString UBPersistenceManager::myDocumentsName = "My documents";
+const QString UBPersistenceManager::modelsName = "Models";
+const QString UBPersistenceManager::untitledDocumentsName = "Untitled documents";
 
 UBPersistenceManager * UBPersistenceManager::sSingleton = 0;
 
@@ -72,6 +79,10 @@ UBPersistenceManager::UBPersistenceManager(QObject *pParent)
     mDocumentSubDirectories << teacherGuideDirectory;
 
     documentProxies = allDocumentProxies();
+    mDocumentTreeStructure = createDocumentProxiesStructure();
+    mDocumentTreeStructureModel = new UBDocumentTreeModel(this);
+    mDocumentTreeStructureModel->setRootNode(mDocumentTreeStructure);
+
     emit proxyListChanged();
 }
 
@@ -101,13 +112,82 @@ UBPersistenceManager::~UBPersistenceManager()
     }
 }
 
-QList<QPointer<UBDocumentProxy> > UBPersistenceManager::allDocumentProxies()
+UBDocumentTreeNode *UBPersistenceManager::createDocumentProxiesStructure()
 {
     mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
 
     QDir rootDir(mDocumentRepositoryPath);
     rootDir.mkpath(rootDir.path());
 
+//    QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
+//    watcher->addPath(mDocumentRepositoryPath);
+
+//    connect(watcher, SIGNAL(directoryChanged(const QString&)), this, SLOT(documentRepositoryChanged(const QString&)));
+
+    UBDocumentTreeNode *rootNode = new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, "root");
+
+    QString trashName = UBSettings::trashedDocumentGroupNamePrefix;
+
+    rootNode->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, myDocumentsName, tr("My documents")));
+    rootNode->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, modelsName, tr("Models")));
+    rootNode->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, trashName, tr("Trash")));
+
+    foreach(QString path, rootDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot,
+            QDir::Time | QDir::Reversed))
+    {
+        QString fullPath = rootDir.path() + "/" + path;
+
+        QDir dir(fullPath);
+
+        if (dir.entryList(QDir::Files | QDir::NoDotAndDotDot).size() > 0)
+        {
+            QMap<QString, QVariant> metadatas = UBMetadataDcSubsetAdaptor::load(fullPath);
+            QString docGroupName = metadatas.value(UBSettings::documentGroupName, QString()).toString();
+            QString docName = metadatas.value(UBSettings::documentName, QString()).toString();
+
+            if (docName.isEmpty()) {
+                qDebug() << "Group name and document name are empty in UBPersistenceManager::createDocumentProxiesStructure()";
+                continue;
+            }
+
+            UBDocumentTreeNode *docParent = rootNode->moveTo(adjustDocumentVirtualPath(docGroupName));
+
+            UBDocumentProxy* docProxy = new UBDocumentProxy(fullPath); // managed in UBDocumentTreeNode
+            foreach(QString key, metadatas.keys()) {
+                docProxy->setMetaData(key, metadatas.value(key));
+            }
+            docProxy->setPageCount(sceneCount(docProxy));
+            docParent->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Document, docName, QString(), docProxy));
+        }
+    }
+
+    return rootNode;
+}
+
+QString UBPersistenceManager::adjustDocumentVirtualPath(const QString &str)
+{
+    QStringList pathList = str.split("/", QString::SkipEmptyParts);
+
+    if (pathList.isEmpty()) {
+        pathList.append(myDocumentsName);
+        pathList.append(untitledDocumentsName);
+    }
+
+    if (pathList.first() != myDocumentsName
+            && pathList.first() != UBSettings::trashedDocumentGroupNamePrefix
+            && pathList.first() != modelsName) {
+        pathList.prepend(myDocumentsName);
+    }
+
+    return pathList.join("/");
+}
+
+QList<QPointer<UBDocumentProxy> > UBPersistenceManager::allDocumentProxies()
+{
+    mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
+
+    QDir rootDir(mDocumentRepositoryPath);
+    rootDir.mkpath(rootDir.path());
 
     QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
     watcher->addPath(mDocumentRepositoryPath);
@@ -127,15 +207,16 @@ QList<QPointer<UBDocumentProxy> > UBPersistenceManager::allDocumentProxies()
         {
             UBDocumentProxy* proxy = new UBDocumentProxy(fullPath); // deleted in UBPersistenceManager::destructor
 
+            qDebug() << "loading path";
             QMap<QString, QVariant> metadatas = UBMetadataDcSubsetAdaptor::load(fullPath);
 
             foreach(QString key, metadatas.keys())
             {
+                qDebug() << key << metadatas.value(key);
                 proxy->setMetaData(key, metadatas.value(key));
             }
 
             proxy->setPageCount(sceneCount(proxy));
-
             proxies << QPointer<UBDocumentProxy>(proxy);
 
         }
@@ -263,6 +344,9 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName,
     if (withEmptyPage) createDocumentSceneAt(doc, 0);
 
     documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
+    UBDocumentTreeNode *freeNode = new UBDocumentTreeNode(UBDocumentTreeNode::Document, doc->metaData(UBSettings::documentName).toString(), QString(), doc);
+    UBDocumentTreeNode *curNode = mDocumentTreeStructure->moveTo(adjustDocumentVirtualPath(pGroupName));
+    mDocumentTreeStructureModel->addNode(freeNode, curNode);
 
     emit proxyListChanged();
 

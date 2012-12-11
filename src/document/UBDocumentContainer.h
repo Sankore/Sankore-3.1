@@ -35,7 +35,7 @@ class UBDocumentContainer : public QObject
         UBDocumentContainer(QObject * parent = 0);
         virtual ~UBDocumentContainer();
 
-        void setDocument(UBDocumentProxy* document, bool forceReload = false);
+        virtual void setDocument(UBDocumentProxy* document, bool forceReload = false);
 
         UBDocumentProxy* selectedDocument(){return mCurrentDocument;}
         int pageCount(){return mDocumentThumbs.size();}
