@@ -647,6 +647,7 @@ void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurr
     }
 
     mSelectionType = Document;
+	setDocument(proxy);
 }
 
 void UBDocumentController::setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand)
