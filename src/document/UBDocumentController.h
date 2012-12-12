@@ -70,6 +70,7 @@ public:
     UBDocumentProxy *proxyData() const {return mProxy;}
     bool isRoot() {return !mParent;}
     bool isTopLevel() {return mParent && !mParent->mParent;}
+    UBDocumentTreeNode *clone();
 
 
 private:
@@ -109,6 +110,7 @@ public:
 //    bool insertRow(int row, const QModelIndex &parent);
     void addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParent);
     void addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent);
+    void addElementByIndex(const QModelIndex &NewChild, const QModelIndex &parent);
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
     QModelIndex indexForProxy(UBDocumentProxy *pSearch) const;
     void setCurrentDocument(UBDocumentProxy *pDocument);
@@ -132,11 +134,14 @@ class UBDocumentTreeMimeData : public QMimeData
     Q_OBJECT
 
     public:
-        QList<UBDocumentTreeNode*> nodes() const {return mDocumentTreeNodes;}
-        void setNodes(const QList<UBDocumentTreeNode*> &fList) {mDocumentTreeNodes = fList;}
+//        QList<UBDocumentTreeNode*> nodes() const {return mDocumentTreeNodes;}
+        QList<QModelIndex> indexes() const {return mIndexes;}
+//        void setNodes(const QList<UBDocumentTreeNode*> &fList) {mDocumentTreeNodes = fList;}
+        void setIndexes (const QList<QModelIndex> &pIndexes) {mIndexes = pIndexes;}
 
     private:
-        QList<UBDocumentTreeNode*> mDocumentTreeNodes;
+//        QList<UBDocumentTreeNode*> mDocumentTreeNodes;
+        QList<QModelIndex> mIndexes;
 };
 
 class UBDocumentTreeView : public QTreeView
@@ -150,6 +155,8 @@ protected:
     void dragEnterEvent(QDragEnterEvent *event);
     void dragMoveEvent(QDragMoveEvent *event);
     void dropEvent(QDropEvent *event);
+
+    void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end);
 };
 
 class UBDocumentController : public UBDocumentContainer

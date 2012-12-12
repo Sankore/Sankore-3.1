@@ -129,6 +129,11 @@ UBDocumentTreeNode *UBDocumentTreeNode::moveTo(const QString &pPath)
     return parentNode;
 }
 
+UBDocumentTreeNode *UBDocumentTreeNode::clone()
+{
+    return new UBDocumentTreeNode(this->mType, this->mName, this->mDisplayName, this->mProxy);
+}
+
 UBDocumentTreeNode::~UBDocumentTreeNode()
 {
     foreach (UBDocumentTreeNode *curChildren, mChildren) {
@@ -278,19 +283,18 @@ QStringList UBDocumentTreeModel::mimeTypes() const
 QMimeData *UBDocumentTreeModel::mimeData (const QModelIndexList &indexes) const
 {
     UBDocumentTreeMimeData *mimeData = new UBDocumentTreeMimeData();
-    QList <UBDocumentTreeNode*> nodeList;
+    QList <QModelIndex> indexList;
     QList<QUrl> urlList;
 
     foreach (QModelIndex index, indexes) {
         if (index.isValid()) {
-            UBDocumentTreeNode *selectedNode = nodeFromIndex(index);
-            nodeList.append(selectedNode);
+            indexList.append(index);
             urlList.append(QUrl());
         }
     }
 
     mimeData->setUrls(urlList);
-    mimeData->setNodes(nodeList);
+    mimeData->setIndexes(indexList);
 
     return mimeData;
 }
@@ -314,11 +318,12 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
         return false;
     }
 
-    QList<UBDocumentTreeNode*> incomingNodes = mimeData->nodes();
+    QList<QModelIndex> incomingIndexes = mimeData->indexes();
 
-    foreach (UBDocumentTreeNode *curNode, incomingNodes) {
-        removeRows(curNode->parentNode()->children().indexOf(curNode), 1, indexForNode(curNode->parentNode()));
-        addNode(curNode, parent);
+    foreach (QModelIndex curIndex, incomingIndexes) {
+//        removeRows(curNode->parentNode()->children().indexOf(curNode), 1, indexForNode(curNode->parentNode()));
+//        addNode(curNode, parent);
+        addElementByIndex(curIndex, parent);
     }
 
     qDebug() << "custom mime data row " << row << "column" << column;
@@ -344,15 +349,22 @@ bool UBDocumentTreeModel::removeRows(int row, int count, const QModelIndex &pare
         return false;
 
     beginRemoveRows( parent, row, row + count - 1);
-    //featuresList->remove( row, count );
+
     UBDocumentTreeNode *parentNode = nodeFromIndex(parent);
     for (int i = row; i < row + count; i++) {
-        if (parentNode->children().at(i)) {
-//            parentNode->children().removeAt(i);
-            parentNode->removeChild(i);
+        UBDocumentTreeNode *curChildNode = parentNode->children().at(i);
+        QModelIndex curChildIndex = parent.child(i, 0);
+        if (curChildNode) {
+            if (rowCount(curChildIndex)) {
+                while (rowCount(curChildIndex)) {
+                    removeRows(0, 1, curChildIndex);
+                }
+            }
+
         }
+        parentNode->removeChild(i);
     }
-//    featuresList->erase( featuresList->begin() + row, featuresList->begin() + row + count );
+
     endRemoveRows();
     return true;
 }
@@ -362,6 +374,8 @@ QModelIndex UBDocumentTreeModel::indexForNode(UBDocumentTreeNode *pNode) const
     if (pNode == 0) {
         return QModelIndex();
     }
+
+    qDebug() << "searching for node" << pNode;
 
     return pIndexForNode(QModelIndex(), pNode);
 }
@@ -388,6 +402,7 @@ QModelIndex UBDocumentTreeModel::pIndexForNode(const QModelIndex &parent, UBDocu
 {
     for (int i = 0; i < rowCount(parent); i++) {
         QModelIndex curIndex = index(i, 0, parent);
+        qDebug() << "current index" << curIndex.internalPointer();
         if (curIndex.internalPointer() == pNode) {
             return curIndex;
         } else if (rowCount(curIndex) > 0) {
@@ -447,6 +462,34 @@ void UBDocumentTreeModel::addNode(UBDocumentTreeNode *pFreeNode, const QModelInd
     beginInsertRows(pParent, tstParent->children().size(), tstParent->children().size());
     tstParent->addChild(pFreeNode);
     endInsertRows();
+}
+
+void UBDocumentTreeModel::addElementByIndex(const QModelIndex &NewChild, const QModelIndex &parent)
+{
+    UBDocumentTreeNode *tstParent = nodeFromIndex(parent);
+    UBDocumentTreeNode *tstChild = nodeFromIndex(NewChild);
+
+    if (!tstParent || !tstChild) {
+        return;
+    }
+    beginInsertRows(parent, rowCount(parent), rowCount(parent));
+    UBDocumentTreeNode *clonedtstChild = tstChild->clone();
+    tstParent->addChild(clonedtstChild);
+    endInsertRows();
+
+    if (rowCount(NewChild)) {
+        QModelIndex newChildParent = createIndex(rowCount(parent), 0, clonedtstChild);
+        for (int i = 0; i < rowCount(NewChild); i++) {
+            QModelIndex newLittleChild = NewChild.child(i, 0);
+            addElementByIndex(newLittleChild, newChildParent);
+        }
+    }
+
+//    for (int i = 0; i < rowCount(NewChild); i++) {
+//        beginInsertRows();
+//    }
+
+    qDebug();
 }
 
 void UBDocumentTreeModel::setCurrentDocument(UBDocumentProxy *pDocument)
@@ -563,6 +606,17 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     qDebug() << "drop event catchded";
     event->setDropAction(Qt::MoveAction);
     QTreeView::dropEvent(event);
+}
+
+void UBDocumentTreeView::rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end)
+{
+    Q_UNUSED(parent)
+    Q_UNUSED(start)
+    Q_UNUSED(end)
+
+    qDebug();
+
+    QAbstractItemView::rowsAboutToBeRemoved(parent, start, end);
 }
 
 UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
