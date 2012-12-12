@@ -269,6 +269,7 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "video");
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "a");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "iframe");
         }
 
         mCurrentWebFrame = pCurrentWebFrame;
