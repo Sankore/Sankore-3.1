@@ -56,6 +56,7 @@ private:
     QToolButton *mShowDisclaimerToolButton;
 
     QWebHitTestResult mLastHitTestResult;
+
 };
 
 #endif //WB_TRAP_WEB_PAGE_CONTENT_H

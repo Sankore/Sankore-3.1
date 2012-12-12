@@ -109,3 +109,4 @@ void WBTrapWebPageContentWindow::setReadyForTrap(bool bReady)
         barAction->setEnabled(bReady);
     }
 }
+

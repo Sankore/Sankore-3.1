@@ -32,6 +32,8 @@
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
 
+#include "gui/UBMainWindow.h"
+
 #include "network/UBNetworkAccessManager.h"
 
 #include "domain/UBGraphicsScene.h"
@@ -174,7 +176,8 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
         mTrapWebContentDialog->webView()->setHtml(generateFullPageHtml(mCurrentWebFrame->url()));
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.title");
         mTrapWebContentDialog->applicationNameLineEdit()->setText(res.toString().trimmed());
-
+        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(true);
+        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(true);
     }
     else if (pObjectIndex > 0 && pObjectIndex <= mAvaliableObjects.size())
     {
@@ -182,6 +185,8 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
 
         generatePreview(currentObject);
         mTrapWebContentDialog->applicationNameLineEdit()->setText(widgetNameForUrl(currentObject.source));
+        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(false);
+        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(false);
     }
 }
 
@@ -277,6 +282,8 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
         mTrapWebContentDialog->applicationNameLineEdit()->setText(mCurrentWebFrame->title());
 
         mTrapWebContentDialog->setReadyForTrap(!list.isEmpty());
+        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(true);
+        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(true);
     }
 }
 
