@@ -1103,6 +1103,9 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
             html = "     <audio src=\"" + lSourceUrl + "\" controls=\"controls\">\n";
         else if(UBMimeType::RasterImage == itemMimeType || UBMimeType::VectorImage == itemMimeType)
             html = "     <img src=\"" + lSourceUrl + "\">\n";
+        else if(QUrl(lSourceUrl).isValid())
+            html = "     <iframe width=\"800\" height=\"600\" src=\"" + lSourceUrl + "\" frameborder=\"0\"></iframe>";
+
         QString tmpDirPath = UBFileSystemUtils::createTempDir();
         widgetUrl = UBGraphicsW3CWidgetItem::createHtmlWrapperInDir(html, QDir(tmpDirPath), size, QUuid::createUuid().toString());
     }
@@ -1120,11 +1123,9 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
 
 
 
-UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader,
-                                            QByteArray pData, QPointF pPos, QSize pSize,
-                                            bool isBackground, bool internalData)
+UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize,bool isBackground, bool internalData)
 {
-    //Q_ASSERT(pSuccess);
+    Q_ASSERT(pSuccess);
 
     QString mimeType = pContentTypeHeader;
 
@@ -1332,7 +1333,6 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
 
         return audioMediaItem;
     }
-
     else if (UBMimeType::Flash == itemMimeType)
     {
 
@@ -1516,11 +1516,14 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             }
         }
     }
-    else if(UBMimeType::Link == itemMimeType){
+    else if (UBMimeType::Link == itemMimeType){
         QString url = QString::fromAscii(pData);
         QStringList stringList = url.split("\n");
         QStringList sizeList = stringList.at(1).split("x");
         addLinkToPage(stringList.at(0),QSize(sizeList.at(0).toInt(),sizeList.at(1).toInt()),pPos);
+    }
+    else if (UBMimeType::Web == itemMimeType){
+        addLinkToPage(sourceUrl.toString(),pSize,pPos);
     }
     else
     {

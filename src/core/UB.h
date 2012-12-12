@@ -44,6 +44,7 @@ struct UBMimeType
         Group,
         Bookmark,
         Link,
+        Web,
         UNKNOWN
     };
 };

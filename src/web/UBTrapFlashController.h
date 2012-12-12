@@ -77,8 +77,8 @@ class UBTrapWebPageContentController : public QObject
 
         QString widgetNameForUrl(QString pObjectUrl);
 
-        QString generateFullPageHtml(const QUrl &srcUrl, const QString& pDirPath, bool pGenerateFile);
-        void generatePreview(const UBWebKitUtils::HtmlObject& pObject, const QString& pDirPath, bool pGenerateFile);
+        QString generateFullPageHtml(const QUrl &srcUrl);
+        void generatePreview(const UBWebKitUtils::HtmlObject& pObject);
 
         QString generateIcon(const QString& pDirPath);
 

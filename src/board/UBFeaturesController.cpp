@@ -340,6 +340,7 @@ bool UBFeature::isDeletable() const
             || elementType == FEATURE_FLASH
             || elementType == FEATURE_FOLDER
             || elementType == FEATURE_BOOKMARK
+            || elementType == FEATURE_LINK
     //Ilia. Just a hotfix. Permission mechanism for UBFeatures should be reworked
             || getVirtualPath().startsWith("/root/Applications/Web");
 }
@@ -798,7 +799,9 @@ UBFeatureElementType UBFeaturesController::fileTypeFromUrl(const QString &path)
         fileType = FEATURE_IMAGE;
     } else if (mimeString.contains("bookmark")) {
         fileType = FEATURE_BOOKMARK;
-    }else if (fileInfo.isDir()) {
+    } else if (mimeString.contains("link")){
+        fileType = FEATURE_LINK;
+    } else if (fileInfo.isDir()) {
         fileType = FEATURE_FOLDER;
     } else {
         fileType = FEATURE_INVALID;
@@ -824,7 +827,7 @@ QImage UBFeaturesController::getIcon(const QString &path, UBFeatureElementType p
     } else if (pFType == FEATURE_BOOKMARK) {
         return QImage(":images/libpalette/bookmarkIcon.svg");
     } else if (pFType == FEATURE_LINK) {
-        return QImage(":images/libpalette/notFound.png");
+        return QImage(":images/trapFlashPalette/trappedIcon.svg");
     }
     else if (pFType == FEATURE_IMAGE) {
         QImage pix(path);
@@ -864,7 +867,7 @@ QImage UBFeaturesController::createThumbnail(const QString &path)
         thumbnailPath = ":images/libpalette/bookmarkIcon.svg";
     }
     else if(mimetype.contains("link")){
-        thumbnailPath = ":images/libpalette/notFound.png";
+        thumbnailPath = ":images/trapFlashPalette/trappedIcon.svg";
     }
     else {
         QImage pix(path);

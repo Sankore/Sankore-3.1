@@ -1445,6 +1445,7 @@ Qt::ItemFlags UBFeaturesModel::flags( const QModelIndex &index ) const
              || item.getType() == FEATURE_IMAGE
              || item.getType() == FEATURE_FLASH
              || item.getType() == FEATURE_INTERNAL
+             || item.getType() == FEATURE_LINK
              || item.getType() == FEATURE_FOLDER)
 
             resultFlags |= Qt::ItemIsDragEnabled;

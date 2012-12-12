@@ -608,6 +608,10 @@ UBMimeType::Enum UBFileSystemUtils::mimeTypeFromString(const QString& typeString
     {
         type = UBMimeType::Link;
     }
+    else if (typeString.startsWith("text/html"))
+    {
+        type = UBMimeType::Web;
+    }
     return type;
 }
 
