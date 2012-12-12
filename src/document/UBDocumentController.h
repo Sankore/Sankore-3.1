@@ -247,6 +247,7 @@ class UBDocumentController : public UBDocumentContainer
         void documentZoomSliderValueChanged (int value);
         void loadDocumentProxies();
         void TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
+        void TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
         void itemSelectionChanged();
         void exportDocument();
         void itemChanged(QTreeWidgetItem * item, int column);

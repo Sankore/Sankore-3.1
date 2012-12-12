@@ -825,6 +825,16 @@ void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, 
 
 }
 
+void UBDocumentController::TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
+{
+    Q_UNUSED(deselected)
+
+    if (selected.indexes().count()) {
+        QModelIndex NewSelectedRow = selected.indexes().first();
+        TreeViewSelectionChanged(NewSelectedRow, QModelIndex());
+    }
+}
+
 void UBDocumentController::itemSelectionChanged()
 {
     reloadThumbnails();
@@ -949,6 +959,7 @@ void UBDocumentController::setupViews()
         mDocumentUI->documentTreeView->setDropIndicatorShown(true);
 
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(TreeViewSelectionChanged(QModelIndex,QModelIndex)));
+        connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(TreeViewSelectionChanged(QItemSelection,QItemSelection)));
 
         connect(mDocumentUI->thumbnailWidget, SIGNAL(sceneDropped(UBDocumentProxy*, int, int)), this, SLOT(moveSceneToIndex ( UBDocumentProxy*, int, int)));
         connect(mDocumentUI->thumbnailWidget, SIGNAL(resized()), this, SLOT(thumbnailViewResized()));
