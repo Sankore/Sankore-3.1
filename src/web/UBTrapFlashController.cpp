@@ -136,7 +136,7 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
 {
     if (mTrapWebContentDialog)
     {
-        mAvaliableObjects = QList<UBWebKitUtils::HtmlObject>() << UBWebKitUtils::HtmlObject(mCurrentWebFrame->baseUrl().toString(), "Whole Page", 800, 600) << objects;
+        mAvaliableObjects = QList<UBWebKitUtils::HtmlObject>() << UBWebKitUtils::HtmlObject(mCurrentWebFrame->baseUrl().toString(), QString(), QString(),"Whole Page", 800, 600) << objects;
 
         if (mTrapWebContentDialog)
         {
@@ -190,18 +190,16 @@ void UBTrapWebPageContentController::prepareCurrentItemForImport(bool sendToBoar
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
 
-    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(selectedObject.source);
-
     QSize currentItemSize(selectedObject.width, selectedObject.height);
 
     sDownloadFileDesc desc;
     desc.isBackground = false;
     desc.modal = false;
     desc.dest = sendToBoard ? sDownloadFileDesc::board : sDownloadFileDesc::library;
-    desc.name = widgetNameForUrl(selectedObject.source);
+    desc.name = selectedObject.objectName;
     desc.srcUrl = selectedObject.source;
     desc.size = currentItemSize;
-    desc.contentTypeHeader = mimeType;
+    desc.contentTypeHeader = selectedObject.objectMimeType;
     UBDownloadManager::downloadManager()->addFileToDownload(desc);
 }
 
@@ -262,14 +260,15 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
         QList<UBWebKitUtils::HtmlObject> list;
         if (mTrapWebContentDialog)
         {
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "embed");
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "img");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "image");
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "audio");
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "video");
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "a");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "source");
              list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "iframe");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "frame");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "a");
+             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "embed");
         }
 
         mCurrentWebFrame = pCurrentWebFrame;

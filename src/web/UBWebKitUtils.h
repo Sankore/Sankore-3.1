@@ -43,9 +43,11 @@ class UBWebKitUtils
                     // NOOP
                 }
 
-                HtmlObject(const QString& pSource, const QString &pTagName, int pWidth, int pHeight)
+                HtmlObject(const QString& pSource, const QString& pObjectName, const QString& pObjectMimeType, const QString &pTagName, int pWidth, int pHeight)
                     : source(pSource)
                     , tagName(pTagName)
+                    , objectName(pObjectName)
+                    , objectMimeType(pObjectMimeType)
                     , width(pWidth)
                     , height(pHeight)
                 {
@@ -54,20 +56,29 @@ class UBWebKitUtils
 
                 bool operator == (const HtmlObject &obj)
                 {
-                    return source == obj.source 
+                    return source == obj.source
                         && width == obj.width
                         && height == obj.height
-                        && tagName == obj.tagName;
+                        && tagName == obj.tagName
+                        && objectName == obj.objectName
+                        && objectMimeType == obj.objectMimeType;
                 }
 
                 QString source;
                 QString tagName;
+                QString objectName;
+                QString objectMimeType;
                 int width;
                 int height;
 
-        };
 
+
+        };
+        static QString widgetNameFromUrl(QString pObjectUrl);
         static QList<UBWebKitUtils::HtmlObject> objectsInFrameByTag(QWebFrame* frame, QString tagName);
+        static QStringList validUrl(QUrl& baseUrl,QStringList& list);
+        static QStringList getUrls(QUrl& baseUrl,QWebElement& element);
+        static QStringList getArgumentsValues(QString& string);
 
 };
 
