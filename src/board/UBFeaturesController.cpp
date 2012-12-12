@@ -1125,7 +1125,7 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
             file.write(pData);
             file.close();
 
-            if(url.indexOf("?") != -1){
+			if(sourceUrl.toString().indexOf("?") != -1){
                 // this is a zipped widget extract it
                 filePath = QDir::tempPath() + "/" + fileName;
                 UBFileSystemUtils::expandZipToDir(file, QDir(filePath));
