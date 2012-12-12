@@ -138,7 +138,7 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
 {
     if (mTrapWebContentDialog)
     {
-        mAvaliableObjects = QList<UBWebKitUtils::HtmlObject>() << UBWebKitUtils::HtmlObject(mCurrentWebFrame->baseUrl().toString(), QString(), QString(),"Whole Page", 800, 600) << objects;
+        mAvaliableObjects = QList<UBWebKitUtils::HtmlObject>() << UBWebKitUtils::HtmlObject(mCurrentWebFrame->baseUrl().toString(), widgetNameForUrl(mCurrentWebFrame->title()), QString(),"Whole Page", 800, 600) << objects;
 
         if (mTrapWebContentDialog)
         {
@@ -213,8 +213,12 @@ void UBTrapWebPageContentController::addLink(bool isOnLibrary)
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
     QSize size(selectedObject.width + 10,selectedObject.height + 10);
-    if(isOnLibrary)
-        UBApplication::boardController->paletteManager()->featuresWidget()->createLink(widgetNameForUrl(selectedObject.source),selectedObject.source,size);
+    if(isOnLibrary){
+        if(selectedIndex == 0)
+            UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(selectedObject.objectName,selectedObject.source);
+        else
+            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(selectedObject.objectName,selectedObject.source,size);
+    }
     else
         UBApplication::boardController->addLinkToPage(selectedObject.source,size);
 }

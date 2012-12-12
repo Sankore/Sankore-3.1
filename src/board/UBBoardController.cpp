@@ -1525,6 +1525,12 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     else if (UBMimeType::Web == itemMimeType){
         addLinkToPage(sourceUrl.toString(),pSize,pPos);
     }
+    else if(UBMimeType::Bookmark){
+        QFile file(sourceUrl.toLocalFile());
+        file.open(QIODevice::ReadOnly);
+        addLinkToPage(QString::fromAscii(file.readAll()),QSize(640,480),pPos);
+        file.close();
+    }
     else
     {
         showMessage(tr("Unknown content type %1").arg(pContentTypeHeader));
