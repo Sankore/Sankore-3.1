@@ -921,15 +921,15 @@ void UBFeaturesController::createLink(const QString& fileName, const QString& ur
         name = name.left(name.indexOf("."));
 
     CategoryData categoryData = getDestinationCategoryForMimeType(UBFileSystemUtils::mimeTypeFromFileName(urlString));
-    QString lFileName = categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name + ".olnk";
+    QString lFileName = categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name + ".lnk";
 
     int counter = 1;
     while(QFileInfo(lFileName).exists()){
         if(counter == 1)
-            lFileName=lFileName.replace(QString(".olnk"),"");
+            lFileName=lFileName.replace(QString(".lnk"),"");
         else
-            lFileName=lFileName.replace(QString("-%1.olnk").arg(counter++),"");
-        lFileName=lFileName.append(QString("-%1.olnk").arg(counter));
+            lFileName=lFileName.replace(QString("-%1.lnk").arg(counter++),"");
+        lFileName=lFileName.append(QString("-%1.lnk").arg(counter));
     }
 
     QFile file(lFileName);

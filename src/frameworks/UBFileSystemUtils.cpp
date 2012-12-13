@@ -474,7 +474,7 @@ QString UBFileSystemUtils::mimeTypeFromFileName(const QString& fileName)
     if (ext == "wdgt") return "application/vnd.apple-widget"; //mime type invented by us :-(
     if (ext == "swf") return "application/x-shockwave-flash";
     if (ext == "bkm") return "internal/bookmark";
-    if (ext == "olnk") return "internal/link";
+    if (ext == "lnk") return "internal/link";
 
     return "";
 
@@ -549,7 +549,7 @@ QString UBFileSystemUtils::fileExtensionFromMimeType(const QString& pMimeType)
     if (pMimeType == "application/vnd.apple-widget") return "wdgt"; //mime type invented by us :-(
     if (pMimeType == "application/x-shockwave-flash") return "swf";
     if (pMimeType == "internal/bookmark") return "bkm";
-    if (pMimeType == "internal/link") return "olnk";
+    if (pMimeType == "internal/link") return "lnk";
 
     return "";
 
