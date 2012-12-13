@@ -1674,15 +1674,18 @@ void UBDocumentController::importFile()
     UBDocumentGroupTreeItem* group = selectedDocumentGroupTreeItem();
     UBDocumentManager *docManager = UBDocumentManager::documentManager();
 
-    if (group)
-    {
-        QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
-        QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"),
-                defaultPath, docManager->importFileFilter());
+    QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
+    QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"),
+                                                    defaultPath, docManager->importFileFilter());
 
-        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-        QApplication::processEvents();
-        QFileInfo fileInfo(filePath);
+    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+    QApplication::processEvents();
+    QFileInfo fileInfo(filePath);
+
+    if (fileInfo.suffix().toLower() == "ubx") {
+        qDebug() << "catched";
+
+    } else {
         UBSettings::settings()->lastImportFilePath->set(QVariant(fileInfo.absolutePath()));
 
         if (filePath.length() > 0)
@@ -1709,9 +1712,10 @@ void UBDocumentController::importFile()
                 showMessage(tr("Failed to import file ... "));
             }
         }
-
-        QApplication::restoreOverrideCursor();
     }
+
+    QApplication::restoreOverrideCursor();
+
 }
 
 void UBDocumentController::addFolderOfImages()

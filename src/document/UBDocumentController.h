@@ -148,13 +148,10 @@ class UBDocumentTreeMimeData : public QMimeData
     Q_OBJECT
 
     public:
-//        QList<UBDocumentTreeNode*> nodes() const {return mDocumentTreeNodes;}
         QList<QModelIndex> indexes() const {return mIndexes;}
-//        void setNodes(const QList<UBDocumentTreeNode*> &fList) {mDocumentTreeNodes = fList;}
         void setIndexes (const QList<QModelIndex> &pIndexes) {mIndexes = pIndexes;}
 
     private:
-//        QList<UBDocumentTreeNode*> mDocumentTreeNodes;
         QList<QModelIndex> mIndexes;
 };
 
