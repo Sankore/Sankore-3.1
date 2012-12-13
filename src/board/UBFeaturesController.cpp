@@ -921,15 +921,15 @@ void UBFeaturesController::createLink(const QString& fileName, const QString& ur
         name = name.left(name.indexOf("."));
 
     CategoryData categoryData = getDestinationCategoryForMimeType(UBFileSystemUtils::mimeTypeFromFileName(urlString));
-    QString lFileName = categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name + ".lnk";
+    QString lFileName = categoryData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name + ".olnk";
 
     int counter = 1;
     while(QFileInfo(lFileName).exists()){
         if(counter == 1)
-            lFileName=lFileName.replace(QString(".lnk"),"");
+            lFileName=lFileName.replace(QString(".olnk"),"");
         else
-            lFileName=lFileName.replace(QString("-%1.lnk").arg(counter++),"");
-        lFileName=lFileName.append(QString("-%1.lnk").arg(counter));
+            lFileName=lFileName.replace(QString("-%1.olnk").arg(counter++),"");
+        lFileName=lFileName.append(QString("-%1.olnk").arg(counter));
     }
 
     QFile file(lFileName);
@@ -1125,7 +1125,7 @@ void UBFeaturesController::addDownloadedFile(const QUrl &sourceUrl, const QByteA
             file.write(pData);
             file.close();
 
-			if(sourceUrl.toString().indexOf("?") != -1){
+            if(sourceUrl.toString().indexOf("?") != -1){
                 // this is a zipped widget extract it
                 filePath = QDir::tempPath() + "/" + fileName;
                 UBFileSystemUtils::expandZipToDir(file, QDir(filePath));
