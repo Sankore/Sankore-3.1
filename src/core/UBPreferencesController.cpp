@@ -119,6 +119,8 @@ void UBPreferencesController::wire()
     connect(mPreferencesUI->closeButton, SIGNAL(released()), this, SLOT(close()));
     connect(mPreferencesUI->defaultSettingsButton, SIGNAL(released()), this, SLOT(defaultSettings()));
 
+    connect(mPreferencesUI->startupTipsCheckBox,SIGNAL(clicked(bool)),this,SLOT(onStartupTipsClicked(bool)));
+
 
     // OSK preferences
 
@@ -199,6 +201,8 @@ void UBPreferencesController::init()
             mPreferencesUI->keyboardPaletteKeyButtonSize->setCurrentIndex(i);
             break;
         }
+
+    mPreferencesUI->startupTipsCheckBox->setChecked(settings->appStartupHintsEnabled->get().toBool());
 
     mPreferencesUI->startModeComboBox->setCurrentIndex(settings->appStartMode->get().toInt());
 
@@ -287,6 +291,11 @@ void UBPreferencesController::init()
     connect(mPreferencesUI->quitOpenSankorePushButton,SIGNAL(clicked()),UBApplication::app(),SLOT(closing()));
     mPreferencesUI->quitOpenSankorePushButton->setDisabled(true);
 
+}
+
+void UBPreferencesController::onStartupTipsClicked(bool clicked)
+{
+    UBSettings::settings()->appStartupHintsEnabled->setBool(clicked);
 }
 
 void UBPreferencesController::onLanguageChanged(QString currentItem)
