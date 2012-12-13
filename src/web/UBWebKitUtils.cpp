@@ -153,7 +153,7 @@ QStringList UBWebKitUtils::validUrl(QUrl& baseUrl,QStringList& list)
     QStringList result;
     foreach(QString eachString, list){
         QUrl url(eachString);
-        if(url.isValid())
+        if(url.isValid() && !url.isRelative())
             result << eachString;
         if(baseUrl.resolved(url).isValid())
             result << baseUrl.resolved(url).toString();

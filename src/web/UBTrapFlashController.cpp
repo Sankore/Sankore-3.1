@@ -378,6 +378,7 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
 {
     QUrl objectUrl(pObject.source);
     QString objectFullUrl = pObject.source;
+    qDebug() << objectFullUrl;
     if (!objectUrl.isValid())
     {
         qWarning() << "invalid URL " << pObject.source;
@@ -394,27 +395,27 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
 
     QString htmlContentString;
 
-    htmlContentString = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n";
-    htmlContentString += "<html>\n";
-    htmlContentString += "    <head>\n";
-    htmlContentString += "        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n";
-    htmlContentString += "    </head>\n";
+    htmlContentString = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">";
+    htmlContentString += "<html>";
+    htmlContentString += "    <head>";
+    htmlContentString += "        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">";
+    htmlContentString += "    </head>";
 
-    htmlContentString += "  <body bgcolor=\"rgb(180,180,180)\">\n";
+    htmlContentString += "  <body bgcolor=\"rgb(180,180,180)\">";
 
-    htmlContentString += "      <div align='center'>\n";
+    htmlContentString += "      <div align='center'>";
 
     if(mimeType.contains("image")){
-        htmlContentString += "    <img src=\"" + objectFullUrl + "\">\n";
+        htmlContentString += "    <img src=\"" + objectFullUrl + "\">";
     }
     else if (mimeType.contains("video")){
-        htmlContentString += "    <video src=\"" + objectFullUrl + "\" controls=\"controls\">\n";
+        htmlContentString += "    <video src=\"" + objectFullUrl + "\" controls=\"controls\">";
     }
     else if (mimeType.contains("audio")){
-        htmlContentString += "    <audio src=\"" + objectFullUrl + "\" controls=\"controls\">\n";
+        htmlContentString += "    <audio src=\"" + objectFullUrl + "\" controls=\"controls\">";
     }
     else if (mimeType.contains("html")){
-            htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
+        htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
     }
     else if (mCurrentWebFrame->url().toString().contains("youtube")){
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.getElementById('embed_code').value");
@@ -427,10 +428,11 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
     else
         qWarning() << "not supported";
 
-    htmlContentString += "        </div>\n";
-    htmlContentString += "</body>\n";
-    htmlContentString += "</html>\n";
+    htmlContentString += "        </div>";
+    htmlContentString += "</body>";
+    htmlContentString += "</html>";
 
+    qDebug() << htmlContentString;
     mTrapWebContentDialog->webView()->setHtml(htmlContentString);
 }
 
