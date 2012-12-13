@@ -77,8 +77,8 @@ void UBGraphicsItemPlayAudioAction::play()
 {
     if(mMediaObject->state() == Phonon::PlayingState){
         mMediaObject->stop();
-        mMediaObject->seek(0);
     }
+    mMediaObject->seek(0);
     mMediaObject->play();
 }
 
