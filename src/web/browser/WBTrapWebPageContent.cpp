@@ -79,6 +79,8 @@ WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWid
 
     mTrapApplicationVLayout->addLayout(mApplicationNameLayout);
 
+    mTrapApplicationVLayout->addWidget(new QLabel(tr("Open-Sankoré promotes the use of CCbySA work, please consult this page for more informations")));
+
     connect(mTrapContentPreview, SIGNAL(pixmapCaptured(const QPixmap&, bool)), UBApplication::applicationController, SLOT(addCapturedPixmap(const QPixmap &, bool)));
     connect(mTrapContentPreview, SIGNAL(embedCodeCaptured(const QString&)), UBApplication::applicationController, SLOT(addCapturedEmbedCode(const QString&)));
 
