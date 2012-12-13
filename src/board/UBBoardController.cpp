@@ -1087,7 +1087,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
 void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos)
 {
     QString widgetUrl;
-    QString lSourceUrl = sourceUrl.replace("\n","");
+	QString lSourceUrl = sourceUrl.replace("\n","").replace("\r","");
     UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromUrl(lSourceUrl);
 
     if(UBMimeType::Flash == itemMimeType){
