@@ -109,6 +109,8 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
             if (!htmlObjects.contains(obj))
                 htmlObjects << obj;
         }
+        if(htmlObjects.count() != 0)
+            htmlObjects << UBWebKitUtils::HtmlObject(QString(),QString(),QString(),"separator",0,0);
     }
 
     return htmlObjects;
