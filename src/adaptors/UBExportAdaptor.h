@@ -30,7 +30,7 @@ class UBDocumentProxy;
 
 class UBExportAdaptor : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportAdaptor(QObject *parent = 0);

@@ -71,6 +71,7 @@ public:
     bool isRoot() {return !mParent;}
     bool isTopLevel() {return mParent && !mParent->mParent;}
     UBDocumentTreeNode *clone();
+    QString dirPathInHierarchy();
 
 
 private:
@@ -109,7 +110,7 @@ public:
     QPersistentModelIndex persistentIndexForNode(UBDocumentTreeNode *pNode);
 //    bool insertRow(int row, const QModelIndex &parent);
     void addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParent);
-    void addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent);
+    QModelIndex addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent);
     void addElementByIndex(const QModelIndex &NewChild, const QModelIndex &parent);
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
     QModelIndex indexForProxy(UBDocumentProxy *pSearch) const;
@@ -119,6 +120,13 @@ public:
     QString virtualDirForIndex(const QModelIndex &pIndex) const;
     QStringList nodeNameList(const QModelIndex &pIndex) const;
     bool newFolderAllowed(const QModelIndex &pIndex)  const;
+    QModelIndex goTo(const QString &dir);
+
+    QPersistentModelIndex myDocumentsIndex() {return mMyDocuments;}
+    QPersistentModelIndex modelsIndex() {return mModels;}
+    QPersistentModelIndex trashIndex() {return mTrash;}
+    QPersistentModelIndex untitledDocumentsIndex() {return mUntitledDocuments;}
+
 
 private:
     UBDocumentTreeNode *mRootNode;
@@ -127,6 +135,12 @@ private:
     UBDocumentTreeNode *findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const;
     QModelIndex pIndexForNode(const QModelIndex &parent, UBDocumentTreeNode *pNode) const;
     bool removeChildFromModel(UBDocumentTreeNode *child, UBDocumentTreeModel *parent);
+    QPersistentModelIndex mRoot;
+    QPersistentModelIndex mMyDocuments;
+    QPersistentModelIndex mModels;
+    QPersistentModelIndex mTrash;
+    QPersistentModelIndex mUntitledDocuments;
+
 };
 
 class UBDocumentTreeMimeData : public QMimeData
@@ -182,6 +196,7 @@ class UBDocumentController : public UBDocumentContainer
         QString defaultDocumentGroupName(){ return mDefaultDocumentGroupName;}
 
         void setDocument(UBDocumentProxy *document, bool forceReload = false);
+        QModelIndex firstSelectedTreeIndex() {return selectedTreeIndexes().first();}
 
     signals:
         void exportDone();
@@ -216,7 +231,6 @@ class UBDocumentController : public UBDocumentContainer
         UBDocumentProxy *firstSelectedTreeProxy();
         QList<UBDocumentProxy*> selectedProxies();
         QModelIndexList selectedTreeIndexes();
-        QModelIndex firstSelectedTreeIndex() {return selectedTreeIndexes().first();}
         UBDocumentProxyTreeItem* selectedDocumentProxyTreeItem();
         UBDocumentGroupTreeItem* selectedDocumentGroupTreeItem();
         QStringList allGroupNames();
@@ -257,6 +271,7 @@ class UBDocumentController : public UBDocumentContainer
         void TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
         void itemSelectionChanged();
         void exportDocument();
+        void exportDocumentSet();
         void itemChanged(QTreeWidgetItem * item, int column);
         void thumbnailViewResized();
         void pageSelectionChanged();

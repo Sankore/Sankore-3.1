@@ -60,9 +60,9 @@ const QString UBPersistenceManager::videoDirectory = "videos"; // added to UBPer
 const QString UBPersistenceManager::audioDirectory = "audios"; // added to
 const QString UBPersistenceManager::teacherGuideDirectory = "teacherGuideObjects";
 
-const QString UBPersistenceManager::myDocumentsName = "My documents";
+const QString UBPersistenceManager::myDocumentsName = "MyDocuments";
 const QString UBPersistenceManager::modelsName = "Models";
-const QString UBPersistenceManager::untitledDocumentsName = "Untitled documents";
+const QString UBPersistenceManager::untitledDocumentsName = "UntitledDocuments";
 
 UBPersistenceManager * UBPersistenceManager::sSingleton = 0;
 
@@ -79,9 +79,9 @@ UBPersistenceManager::UBPersistenceManager(QObject *pParent)
     mDocumentSubDirectories << teacherGuideDirectory;
 
     documentProxies = allDocumentProxies();
-    mDocumentTreeStructure = createDocumentProxiesStructure();
     mDocumentTreeStructureModel = new UBDocumentTreeModel(this);
-    mDocumentTreeStructureModel->setRootNode(mDocumentTreeStructure);
+    createDocumentProxiesStructure();
+
 
     emit proxyListChanged();
 }
@@ -124,14 +124,6 @@ UBDocumentTreeNode *UBPersistenceManager::createDocumentProxiesStructure()
 
 //    connect(watcher, SIGNAL(directoryChanged(const QString&)), this, SLOT(documentRepositoryChanged(const QString&)));
 
-    UBDocumentTreeNode *rootNode = new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, "root");
-
-    QString trashName = UBSettings::trashedDocumentGroupNamePrefix;
-
-    rootNode->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, myDocumentsName, tr("My documents")));
-    rootNode->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, modelsName, tr("Models")));
-    rootNode->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, trashName, tr("Trash")));
-
     foreach(QString path, rootDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot,
             QDir::Time | QDir::Reversed))
     {
@@ -150,18 +142,24 @@ UBDocumentTreeNode *UBPersistenceManager::createDocumentProxiesStructure()
                 continue;
             }
 
-            UBDocumentTreeNode *docParent = rootNode->moveTo(adjustDocumentVirtualPath(docGroupName));
+//            UBDocumentTreeNode *docParent = rootNode->moveTo(adjustDocumentVirtualPath(docGroupName));
+            QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(docGroupName);
+            if (!parentIndex.isValid()) {
+                return 0;
+            }
 
             UBDocumentProxy* docProxy = new UBDocumentProxy(fullPath); // managed in UBDocumentTreeNode
             foreach(QString key, metadatas.keys()) {
                 docProxy->setMetaData(key, metadatas.value(key));
             }
+
             docProxy->setPageCount(sceneCount(docProxy));
-            docParent->addChild(new UBDocumentTreeNode(UBDocumentTreeNode::Document, docName, QString(), docProxy));
+            mDocumentTreeStructureModel->addNode(new UBDocumentTreeNode(UBDocumentTreeNode::Document, docName, QString(), docProxy), parentIndex);
+//            docParent->addChild();
         }
     }
 
-    return rootNode;
+    return 0;
 }
 
 QString UBPersistenceManager::adjustDocumentVirtualPath(const QString &str)
@@ -345,11 +343,10 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName,
 
     documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
     UBDocumentTreeNode *freeNode = new UBDocumentTreeNode(UBDocumentTreeNode::Document, doc->metaData(UBSettings::documentName).toString(), QString(), doc);
-    UBDocumentTreeNode *curNode = mDocumentTreeStructure->moveTo(adjustDocumentVirtualPath(pGroupName));
-    mDocumentTreeStructureModel->addNode(freeNode, curNode);
+    QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(pGroupName);
+    mDocumentTreeStructureModel->addNode(freeNode, parentIndex);
 
     emit proxyListChanged();
-
     emit documentCreated(doc);
 
     mDocumentCreatedDuringSession << doc;

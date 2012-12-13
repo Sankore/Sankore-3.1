@@ -34,7 +34,7 @@ class UBDocumentProxy;
 
 class UBExportCFF : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
 public:
     UBExportCFF(QObject *parent = 0);

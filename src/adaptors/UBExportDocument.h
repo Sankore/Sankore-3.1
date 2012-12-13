@@ -35,7 +35,7 @@ class UBDocumentProxy;
 
 class UBExportDocument : public UBExportAdaptor, public UBProcessingProgressListener
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportDocument(QObject *parent = 0);

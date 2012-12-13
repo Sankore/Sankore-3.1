@@ -29,6 +29,7 @@
 #include "adaptors/UBExportDocument.h"
 #include "adaptors/UBExportWeb.h"
 #include "adaptors/UBExportCFF.h"
+#include "adaptors/UBExportDocumentSetAdaptor.h"
 #include "adaptors/UBWebPublisher.h"
 #include "adaptors/UBImportDocument.h"
 #include "adaptors/UBImportPDF.h"
@@ -76,10 +77,13 @@ UBDocumentManager::UBDocumentManager(QObject *parent)
     UBExportFullPDF* exportFullPdf = new UBExportFullPDF(this);
     UBExportDocument* exportDocument = new UBExportDocument(this);
     UBWebPublisher* webPublished = new UBWebPublisher(this);
+    UBExportDocumentSetAdaptor *exportDocumentSet = new UBExportDocumentSetAdaptor(this);
     mExportAdaptors.append(exportDocument);
+    mExportAdaptors.append(exportDocumentSet);
     mExportAdaptors.append(webPublished);
     mExportAdaptors.append(exportFullPdf);
     mExportAdaptors.append(cffExporter);
+
 //     UBExportWeb* exportWeb = new UBExportWeb(this);
 //     mExportAdaptors.append(exportWeb);
 
