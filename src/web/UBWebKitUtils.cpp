@@ -93,8 +93,12 @@ QList<UBWebKitUtils::HtmlObject> UBWebKitUtils::objectsInFrameByTag(QWebFrame* f
                 tmp = (tmp.indexOf("?") != -1) ? tmp.left(tmp.indexOf("?")) : tmp;
                 mimeType = UBFileSystemUtils::mimeTypeFromFileName(tmp);
             }
-            if(mimeType.isEmpty())
-                continue;
+            if(mimeType.isEmpty()){
+                 if(element.attribute("rel") != "shortlink")
+                     mimeType = "html";
+                 else
+                    continue;
+            }
 
             name = element.attribute("alt");
             if(name.isEmpty())

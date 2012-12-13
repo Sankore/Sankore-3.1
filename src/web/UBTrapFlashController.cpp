@@ -210,10 +210,12 @@ void UBTrapWebPageContentController::addLink(bool isOnLibrary)
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
     QSize size(selectedObject.width + 10,selectedObject.height + 10);
     if(isOnLibrary){
-        if(selectedIndex == 0)
-            UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(selectedObject.objectName,selectedObject.source);
+        if(selectedIndex == 0){
+            QString tmp = mTrapWebContentDialog->applicationNameLineEdit()->text();
+            UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(tmp,selectedObject.source);
+        }
         else
-            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(selectedObject.objectName,selectedObject.source,size);
+            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(mTrapWebContentDialog->applicationNameLineEdit()->text(),selectedObject.source,size);
     }
     else
         UBApplication::boardController->addLinkToPage(selectedObject.source,size);
@@ -276,6 +278,7 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "frame");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "a");
             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "embed");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "link");
         }
 
         mCurrentWebFrame = pCurrentWebFrame;
