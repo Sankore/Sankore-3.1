@@ -126,12 +126,13 @@ public:
     QPersistentModelIndex modelsIndex() {return mModels;}
     QPersistentModelIndex trashIndex() {return mTrash;}
     QPersistentModelIndex untitledDocumentsIndex() {return mUntitledDocuments;}
+    UBDocumentTreeNode *nodeFromIndex(const QModelIndex &pIndex) const;
 
 
 private:
     UBDocumentTreeNode *mRootNode;
     UBDocumentTreeNode *mCurrentNode;
-    UBDocumentTreeNode *nodeFromIndex(const QModelIndex &pIndex) const;
+
     UBDocumentTreeNode *findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const;
     QModelIndex pIndexForNode(const QModelIndex &parent, UBDocumentTreeNode *pNode) const;
     bool removeChildFromModel(UBDocumentTreeNode *child, UBDocumentTreeModel *parent);
