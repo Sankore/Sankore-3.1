@@ -1545,6 +1545,9 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
 
     bool documentChange = selectedDocument() != pDocumentProxy;
 
+    qDebug() << pDocumentProxy->groupName();
+    mControlView->setPresentationMode(pDocumentProxy->groupName() == "Models");
+
     int index = pSceneIndex;
     int sceneCount = pDocumentProxy->pageCount();
     if (index >= sceneCount && sceneCount > 0)
