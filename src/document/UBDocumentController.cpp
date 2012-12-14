@@ -677,8 +677,9 @@ UBDocumentTreeModel::~UBDocumentTreeModel()
     delete mRootNode;
 }
 
-UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent) {
-
+UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent)
+{
+    setRootIsDecorated(true);
 }
 
 void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
@@ -1133,6 +1134,7 @@ void UBDocumentController::setupViews()
         #endif
 
         mMessageWindow->hide();
+        mDocumentUI->documentTreeWidget->hide();
 
     }
 }
