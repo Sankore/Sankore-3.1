@@ -952,7 +952,7 @@ void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, 
     mDocumentUI->thumbnailWidget->setGraphicsItems(items, itemsPath, labels, UBApplication::mimeTypeUniboardPage);
 
     UBDocumentProxyTreeItem* proxyTi = selectedDocumentProxyTreeItem();
-    if ((proxyTi && (proxyTi->parent() == mTrashTi)) || currentDocumentProxy->groupName() == "Models")
+    if ((proxyTi && (proxyTi->parent() == mTrashTi)) || (currentDocumentProxy && currentDocumentProxy->groupName() == "Models"))
         mDocumentUI->thumbnailWidget->setDragEnabled(false);
     else
         mDocumentUI->thumbnailWidget->setDragEnabled(true);
