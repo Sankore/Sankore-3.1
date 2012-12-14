@@ -140,7 +140,7 @@ UBGraphicsItemLinkToWebPageAction::UBGraphicsItemLinkToWebPageAction(QString url
     UBGraphicsItemAction(eLinkToWebUrl,parent)
 {
     Q_ASSERT(url.length());
-    if(QUrl(url).isValid())
+    if(!url.startsWith("http://"))
         url = "http://" + url;
     mUrl = url;
 }
