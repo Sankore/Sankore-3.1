@@ -45,6 +45,8 @@ class UBBoardView : public QGraphicsView
 
         UBGraphicsScene* scene();
 
+        void setPresentationMode(bool isPresentation) { bIsPresentation = isPresentation; setAcceptDrops(!isPresentation);}
+
         void forcedTabletRelease();
 
         void setToolCursor(int tool);
@@ -143,7 +145,7 @@ class UBBoardView : public QGraphicsView
 
         bool isAbsurdPoint(QPoint point);
 
-		bool mVirtualKeyboardActive;
+        bool mVirtualKeyboardActive;
         bool mOkOnWidget;
 
         bool mWidgetMoved;
@@ -153,7 +155,7 @@ class UBBoardView : public QGraphicsView
 
         bool moveRubberBand;
         UBRubberBand *mUBRubberBand;
-        
+
         QList<QGraphicsItem *> mRubberedItems;
         QSet<QGraphicsItem*> mJustSelectedItems;
 
@@ -165,6 +167,7 @@ class UBBoardView : public QGraphicsView
         bool bIsControl;
         bool bIsDesktop;
         bool mRubberBandInPlayMode;
+        bool bIsPresentation;
 
         static bool hasSelectedParents(QGraphicsItem * item);
 
@@ -172,9 +175,9 @@ class UBBoardView : public QGraphicsView
 
         void settingChanged(QVariant newValue);
 
-	public slots:
+    public slots:
 
-		void virtualKeyboardActivated(bool b);
+        void virtualKeyboardActivated(bool b);
         void longPressEvent();
 
 };

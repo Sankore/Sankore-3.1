@@ -360,8 +360,18 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
     QList<QModelIndex> incomingIndexes = mimeData->indexes();
 
     foreach (QModelIndex curIndex, incomingIndexes) {
-        addElementByIndex(curIndex, parent);
-        removeRows(curIndex.row(), 1, curIndex.parent());
+        UBDocumentTreeNode* sourceParentNode = nodeFromIndex(curIndex);
+        if(sourceParentNode->parentNode()->nodeName() == "Models"){
+            QString newDocumentPath = UBPersistenceManager::persistenceManager()->generateUniqueDocumentPath();
+            UBFileSystemUtils::copyDir(sourceParentNode->proxyData()->persistencePath(),newDocumentPath);
+            UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createDocument(QString(),QString(),false,newDocumentPath,sourceParentNode->proxyData()->pageCount());
+            doc->setMetaData(UBSettings::documentGroupName,nodeFromIndex(parent)->dirPathInHierarchy());
+            UBPersistenceManager::persistenceManager()->persistDocumentMetadata(doc);
+        }
+        else{
+            addElementByIndex(curIndex, parent);
+            removeRows(curIndex.row(), 1, curIndex.parent());
+        }
     }
 
     qDebug() << "custom mime data row " << row << "column" << column;
@@ -484,6 +494,7 @@ void UBDocumentTreeModel::addNode(UBDocumentTreeNode *pFreeNode, UBDocumentTreeN
     beginInsertRows(tstParent, pParent->children().size(), pParent->children().size());
     pParent->addChild(pFreeNode);
     endInsertRows();
+
 
 //    foreach (UBDocumentTreeNode *curNode, pFreeNode->children()) {
 //        addNode(curNode, pFreeNode);
@@ -941,7 +952,7 @@ void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, 
     mDocumentUI->thumbnailWidget->setGraphicsItems(items, itemsPath, labels, UBApplication::mimeTypeUniboardPage);
 
     UBDocumentProxyTreeItem* proxyTi = selectedDocumentProxyTreeItem();
-    if (proxyTi && (proxyTi->parent() == mTrashTi))
+    if ((proxyTi && (proxyTi->parent() == mTrashTi)) || (currentDocumentProxy && currentDocumentProxy->groupName() == "Models"))
         mDocumentUI->thumbnailWidget->setDragEnabled(false);
     else
         mDocumentUI->thumbnailWidget->setDragEnabled(true);
