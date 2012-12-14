@@ -1685,7 +1685,7 @@ void UBDocumentController::itemChanged(QTreeWidgetItem * item, int column)
 
 void UBDocumentController::importFile()
 {
-    UBDocumentGroupTreeItem* group = selectedDocumentGroupTreeItem();
+//    UBDocumentGroupTreeItem* group = selectedDocumentGroupTreeItem();
     UBDocumentManager *docManager = UBDocumentManager::documentManager();
 
     QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
@@ -1708,7 +1708,7 @@ void UBDocumentController::importFile()
             QApplication::processEvents();
             QFile selectedFile(filePath);
 
-            QString groupName = group->groupName();
+            QString groupName = UBPersistenceManager::myDocumentsName;
 
             if (groupName == mDefaultDocumentGroupName || fileInfo.suffix() != "ubz")
                 groupName = "";
@@ -1716,6 +1716,7 @@ void UBDocumentController::importFile()
             showMessage(tr("Importing file %1...").arg(fileInfo.baseName()), true);
 
             createdDocument = docManager->importFile(selectedFile, groupName);
+
 
             if (createdDocument)
             {

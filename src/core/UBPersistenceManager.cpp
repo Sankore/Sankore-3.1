@@ -349,7 +349,7 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName,
 
     documentProxies.insert(0, QPointer<UBDocumentProxy>(doc));
     UBDocumentTreeNode *freeNode = new UBDocumentTreeNode(UBDocumentTreeNode::Document, doc->metaData(UBSettings::documentName).toString(), QString(), doc);
-    QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(pGroupName);
+    QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(doc->metaData(UBSettings::documentGroupName).toString());
     mDocumentTreeStructureModel->addNode(freeNode, parentIndex);
 
     emit proxyListChanged();
@@ -396,6 +396,10 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
     }
 
     documentProxies << QPointer<UBDocumentProxy>(doc);
+    UBDocumentTreeNode *freeNode = new UBDocumentTreeNode(UBDocumentTreeNode::Document, doc->metaData(UBSettings::documentName).toString(), QString(), doc);
+    QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(doc->metaData(UBSettings::documentGroupName).toString());
+    mDocumentTreeStructureModel->addNode(freeNode, parentIndex);
+
 
     emit proxyListChanged();
 
