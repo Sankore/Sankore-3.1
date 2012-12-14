@@ -2,14 +2,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Planete Sankore Image Search</title>
+        <title>Planete Sankore Interactivity Search</title>
         <link rel="stylesheet" type="text/css" href="css/basic.css"/>
         <script type="text/javascript" src="scripts/jquery-1.6.2.min.js"></script>
         <script type="text/javascript">
             var category = "widget";
             var ict = "AssetMetadata.Interactivite";
             var type = "interactivite";
-            var thumbnails = false;
+            var thumbnails = true;
             var minHeight = 177;
             var minWidth = 150;
             
@@ -79,7 +79,11 @@
 
                         	// There is also a result.file property which has the escaped version
                             if (thumbnails) {
-        	                   	newImg.src = result.file;
+                                var filename = result.file.substring(result.file.lastIndexOf("/")+1);
+        	                newImg.src = result.file + "/" + filename + "/icon.svg";
+                                newImg.onerror = function() { 
+					newImg.src = result.file + "/" + filename + "/icon.png";
+                                };
                             } else {
         	                   	newImg.src = "./images/thumbnail_icon.png";
             				}
@@ -131,7 +135,7 @@
     
                 //basic containers and elements       
                 var disc_nav_cont = $("<div id='disc_nav_cont' class='disc_nav_cont'>").appendTo("body");    
-                var disclaimer = $("<div id='disclaimer' class='disclaimer'>Recherche de documents audio sur Planète Sankoré<div>").appendTo(disc_nav_cont);
+                var disclaimer = $("<div id='disclaimer' class='disclaimer'>Recherche d'interactivités (.wgt) sur Sankoré<div>").appendTo(disc_nav_cont);
                 var search = $("<div id='search' class='search'>").appendTo("body");
 				    
                 var togglePages = $("<div id='togglePages' class='togglePages'>").appendTo(search);

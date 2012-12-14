@@ -77,8 +77,8 @@ void UBGraphicsItemPlayAudioAction::play()
 {
     if(mMediaObject->state() == Phonon::PlayingState){
         mMediaObject->stop();
-        mMediaObject->seek(0);
     }
+    mMediaObject->seek(0);
     mMediaObject->play();
 }
 
@@ -140,6 +140,8 @@ UBGraphicsItemLinkToWebPageAction::UBGraphicsItemLinkToWebPageAction(QString url
     UBGraphicsItemAction(eLinkToWebUrl,parent)
 {
     Q_ASSERT(url.length());
+    if(QUrl(url).isValid())
+        url = "http://" + url;
     mUrl = url;
 }
 

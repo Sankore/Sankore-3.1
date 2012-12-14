@@ -186,7 +186,7 @@ void UBCreateLinkPalette::init()
     pageLinkWidgetLayout->addLayout(pageLinkBackButtonLayout);
 
     int activeIndex = UBApplication::boardController->activeSceneIndex();
-    int lastSceneIndex = UBApplication::documentController->pageCount() - 1;
+    int lastSceneIndex = UBApplication::boardController->selectedDocument()->pageCount() - 1;
     mButtonGroup = new QButtonGroup();
     mButtonGroup->setExclusive(true);
     QCheckBox* nextPageCheckBox = new QCheckBox(tr("Next Page"),this);
@@ -280,19 +280,16 @@ void UBCreateLinkPalette::onBackButtonClicked()
 void UBCreateLinkPalette::onPlayAudioClicked()
 {
     mStackedWidget->setCurrentIndex(1);
-//    adjustGeometry();
 }
 
 void UBCreateLinkPalette::onAddLinkToPageClicked()
 {
     mStackedWidget->setCurrentIndex(2);
-//    adjustGeometry();
 }
 
 void UBCreateLinkPalette::onAddLinkToWebClicked()
 {
     mStackedWidget->setCurrentIndex(3);
-//    adjustGeometry();
 }
 
 void UBCreateLinkPalette::onOkAudioClicked()

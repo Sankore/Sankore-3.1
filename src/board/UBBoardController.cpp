@@ -1112,7 +1112,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
 void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos)
 {
     QString widgetUrl;
-    QString lSourceUrl = sourceUrl.replace("\n","");
+	QString lSourceUrl = sourceUrl.replace("\n","").replace("\r","");
     UBMimeType::Enum itemMimeType = UBFileSystemUtils::mimeTypeFromUrl(lSourceUrl);
 
     if(UBMimeType::Flash == itemMimeType){
@@ -1549,6 +1549,12 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     }
     else if (UBMimeType::Web == itemMimeType){
         addLinkToPage(sourceUrl.toString(),pSize,pPos);
+    }
+    else if(UBMimeType::Bookmark){
+        QFile file(sourceUrl.toLocalFile());
+        file.open(QIODevice::ReadOnly);
+        addLinkToPage(QString::fromAscii(file.readAll()),QSize(640,480),pPos);
+        file.close();
     }
     else
     {

@@ -95,6 +95,7 @@ class UBPreferencesController : public QObject
         void onCommunityPasswordChanged();
         void onCommunityPersistenceChanged();
         void onLanguageChanged(QString currentItem);
+        void onStartupTipsClicked(bool clicked);
 
     private slots:
         void adjustScreens(int screen);

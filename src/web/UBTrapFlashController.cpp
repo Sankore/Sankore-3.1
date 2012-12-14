@@ -32,6 +32,8 @@
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
 
+#include "gui/UBMainWindow.h"
+
 #include "network/UBNetworkAccessManager.h"
 
 #include "domain/UBGraphicsScene.h"
@@ -136,34 +138,30 @@ void UBTrapWebPageContentController::updateListOfContents(const QList<UBWebKitUt
 {
     if (mTrapWebContentDialog)
     {
-        mAvaliableObjects = QList<UBWebKitUtils::HtmlObject>() << UBWebKitUtils::HtmlObject(mCurrentWebFrame->baseUrl().toString(), "Whole Page", 800, 600) << objects;
+        mAvaliableObjects = QList<UBWebKitUtils::HtmlObject>() << objects;
+        QComboBox *combobox = mTrapWebContentDialog->itemsComboBox();
 
-        if (mTrapWebContentDialog)
+        disconnect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
+
+        mObjectNoByTrapWebComboboxIndex.clear();
+        combobox->clear();
+        combobox->addItem(tr("Whole page"));
+        mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), 0);
+
+        for(int i = 1; i < objects.count(); i++)
         {
-            QComboBox *combobox = mTrapWebContentDialog->itemsComboBox();
+            UBWebKitUtils::HtmlObject wrapper = objects.at(i);
 
-            disconnect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
-
-            mObjectNoByTrapWebComboboxIndex.clear();
-            combobox->clear();
-            combobox->addItem(tr("Whole page"));
-            mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), 0);
-
-            QString lastTagName;
-            for(int i = 1; i < mAvaliableObjects.count(); i++)
-            {
-                UBWebKitUtils::HtmlObject wrapper = mAvaliableObjects.at(i);
-
-                if (lastTagName != wrapper.tagName)
-                {
-                    lastTagName = wrapper.tagName;
-                    combobox->insertSeparator(combobox->count());
-                }
+            if ("separator"== wrapper.tagName)
+                combobox->insertSeparator(combobox->count());
+            else{
                 mObjectNoByTrapWebComboboxIndex.insert(combobox->count(), i);
-                combobox->addItem(widgetNameForUrl(wrapper.source));
+                combobox->addItem(wrapper.objectName);
             }
-            connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
         }
+        if(combobox->count()>=1)
+            combobox->removeItem(combobox->count()-1);
+        connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectHtmlObject(int)));
     }
 }
 
@@ -174,14 +172,17 @@ void UBTrapWebPageContentController::selectHtmlObject(int pObjectIndex)
         mTrapWebContentDialog->webView()->setHtml(generateFullPageHtml(mCurrentWebFrame->url()));
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.title");
         mTrapWebContentDialog->applicationNameLineEdit()->setText(res.toString().trimmed());
-
+        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(true);
+        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(true);
     }
     else if (pObjectIndex > 0 && pObjectIndex <= mAvaliableObjects.size())
     {
         UBWebKitUtils::HtmlObject currentObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(pObjectIndex));
 
         generatePreview(currentObject);
-        mTrapWebContentDialog->applicationNameLineEdit()->setText(widgetNameForUrl(currentObject.source));
+        mTrapWebContentDialog->applicationNameLineEdit()->setText(currentObject.objectName);
+        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(false);
+        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(false);
     }
 }
 
@@ -190,18 +191,16 @@ void UBTrapWebPageContentController::prepareCurrentItemForImport(bool sendToBoar
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
 
-    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(selectedObject.source);
-
     QSize currentItemSize(selectedObject.width, selectedObject.height);
 
     sDownloadFileDesc desc;
     desc.isBackground = false;
     desc.modal = false;
     desc.dest = sendToBoard ? sDownloadFileDesc::board : sDownloadFileDesc::library;
-    desc.name = widgetNameForUrl(selectedObject.source);
+    desc.name = selectedObject.objectName;
     desc.srcUrl = selectedObject.source;
     desc.size = currentItemSize;
-    desc.contentTypeHeader = mimeType;
+    desc.contentTypeHeader = selectedObject.objectMimeType;
     UBDownloadManager::downloadManager()->addFileToDownload(desc);
 }
 
@@ -210,8 +209,14 @@ void UBTrapWebPageContentController::addLink(bool isOnLibrary)
     int selectedIndex = mTrapWebContentDialog->itemsComboBox()->currentIndex();
     UBWebKitUtils::HtmlObject selectedObject = mAvaliableObjects.at(mObjectNoByTrapWebComboboxIndex.value(selectedIndex));
     QSize size(selectedObject.width + 10,selectedObject.height + 10);
-    if(isOnLibrary)
-        UBApplication::boardController->paletteManager()->featuresWidget()->createLink(widgetNameForUrl(selectedObject.source),selectedObject.source,size);
+    if(isOnLibrary){
+        if(selectedIndex == 0){
+            QString tmp = mTrapWebContentDialog->applicationNameLineEdit()->text();
+            UBApplication::boardController->paletteManager()->featuresWidget()->createBookmark(tmp,selectedObject.source);
+        }
+        else
+            UBApplication::boardController->paletteManager()->featuresWidget()->createLink(mTrapWebContentDialog->applicationNameLineEdit()->text(),selectedObject.source,size);
+    }
     else
         UBApplication::boardController->addLinkToPage(selectedObject.source,size);
 }
@@ -262,14 +267,18 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
         QList<UBWebKitUtils::HtmlObject> list;
         if (mTrapWebContentDialog)
         {
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "embed");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "img");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "image");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "audio");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "video");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "a");
-             list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "iframe");
+            list << UBWebKitUtils::HtmlObject(pCurrentWebFrame->baseUrl().toString(), widgetNameForUrl(pCurrentWebFrame->title()), QString(),"Whole Page", 800, 600);
+            list << UBWebKitUtils::HtmlObject(QString(),QString(),QString(),"separator",0,0);
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "img");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "audio");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "video");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "object");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "source");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "iframe");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "frame");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "a");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "embed");
+            list << UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, "link");
         }
 
         mCurrentWebFrame = pCurrentWebFrame;
@@ -278,6 +287,8 @@ void UBTrapWebPageContentController::updateTrapContentFromPage(QWebFrame* pCurre
         mTrapWebContentDialog->applicationNameLineEdit()->setText(mCurrentWebFrame->title());
 
         mTrapWebContentDialog->setReadyForTrap(!list.isEmpty());
+        UBApplication::mainWindow->actionWebTrapToLibrary->setDisabled(true);
+        UBApplication::mainWindow->actionWebTrapToCurrentPage->setDisabled(true);
     }
 }
 
@@ -367,19 +378,14 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
 {
     QUrl objectUrl(pObject.source);
     QString objectFullUrl = pObject.source;
+    qDebug() << objectFullUrl;
     if (!objectUrl.isValid())
     {
         qWarning() << "invalid URL " << pObject.source;
         return;
     }
-    if (objectUrl.isRelative())
-    {
-        int lastSlashIndex = mCurrentWebFrame->url().toString().lastIndexOf("/");
-        QString objectPath = mCurrentWebFrame->url().toString().left(lastSlashIndex);
-        objectFullUrl =   objectPath+ "/" + pObject.source;
-    }
 
-    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(objectFullUrl);
+    QString mimeType = (UBFileSystemUtils::mimeTypeFromFileName(objectFullUrl).length() == 0) ? pObject.objectMimeType : UBFileSystemUtils::mimeTypeFromFileName(objectFullUrl);
 
     if(mimeType.contains("x-shockwave-flash")){
         QUrl url = QUrl::fromLocalFile(UBGraphicsW3CWidgetItem::createNPAPIWrapperInDir(objectFullUrl, QDir::tempPath(), mimeType, QSize(800,600), QUuid::createUuid().toString()) + "/index.htm");
@@ -389,27 +395,27 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
 
     QString htmlContentString;
 
-    htmlContentString = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n";
-    htmlContentString += "<html>\n";
-    htmlContentString += "    <head>\n";
-    htmlContentString += "        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n";
-    htmlContentString += "    </head>\n";
+    htmlContentString = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">";
+    htmlContentString += "<html>";
+    htmlContentString += "    <head>";
+    htmlContentString += "        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">";
+    htmlContentString += "    </head>";
 
-    htmlContentString += "  <body bgcolor=\"rgb(180,180,180)\">\n";
+    htmlContentString += "  <body bgcolor=\"rgb(180,180,180)\">";
 
-    htmlContentString += "      <div align='center'>\n";
+    htmlContentString += "      <div align='center'>";
 
     if(mimeType.contains("image")){
-        htmlContentString += "    <img src=\"" + objectFullUrl + "\">\n";
+        htmlContentString += "    <img src=\"" + objectFullUrl + "\">";
     }
     else if (mimeType.contains("video")){
-        htmlContentString += "    <video src=\"" + objectFullUrl + "\" controls=\"controls\">\n";
+        htmlContentString += "    <video src=\"" + objectFullUrl + "\" controls=\"controls\">";
     }
     else if (mimeType.contains("audio")){
-        htmlContentString += "    <audio src=\"" + objectFullUrl + "\" controls=\"controls\">\n";
+        htmlContentString += "    <audio src=\"" + objectFullUrl + "\" controls=\"controls\">";
     }
     else if (mimeType.contains("html")){
-            htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
+        htmlContentString +="        <iframe width=\"" + QString("%1").arg(mCurrentWebFrame->geometry().width()) + "\" height=\"" + QString("%1").arg(mCurrentWebFrame->geometry().height()) + "\" frameborder=0 src=\""+objectFullUrl+"\">";
     }
     else if (mCurrentWebFrame->url().toString().contains("youtube")){
         QVariant res = mCurrentWebFrame->evaluateJavaScript("window.document.getElementById('embed_code').value");
@@ -422,10 +428,11 @@ void UBTrapWebPageContentController::generatePreview(const UBWebKitUtils::HtmlOb
     else
         qWarning() << "not supported";
 
-    htmlContentString += "        </div>\n";
-    htmlContentString += "</body>\n";
-    htmlContentString += "</html>\n";
+    htmlContentString += "        </div>";
+    htmlContentString += "</body>";
+    htmlContentString += "</html>";
 
+    qDebug() << htmlContentString;
     mTrapWebContentDialog->webView()->setHtml(htmlContentString);
 }
 

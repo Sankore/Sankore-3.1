@@ -65,9 +65,6 @@ class UBTrapWebPageContentController : public QObject
 
     private slots:
         void selectHtmlObject(int pObjectIndex);
-        //void selectedItemReady(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QUrl destinationUrl, QString pContentTypeHeader, QByteArray pData, QSize pSize);
-
-       // void importItemInLibrary(QString pSourceDir);
 
     private:
 
