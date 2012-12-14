@@ -318,11 +318,19 @@ QStringList UBPersistenceManager::allWidgets(const QDir& dir)
 }
 
 
-UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName, const QString& pName, bool withEmptyPage)
+UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName, const QString& pName, bool withEmptyPage, QString directory, int pageCount)
 {
-    checkIfDocumentRepositoryExists();
 
-    UBDocumentProxy *doc = new UBDocumentProxy(); // deleted in UBPersistenceManager::destructor
+
+    UBDocumentProxy *doc;
+    if(directory.length() != 0 ){
+        doc = new UBDocumentProxy(directory); // deleted in UBPersistenceManager::destructor
+        doc->setPageCount(pageCount);
+    }
+    else{
+         checkIfDocumentRepositoryExists();
+        doc = new UBDocumentProxy();
+    }
 
     if (pGroupName.length() > 0)
     {
