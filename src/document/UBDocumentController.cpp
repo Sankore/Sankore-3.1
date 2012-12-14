@@ -347,9 +347,9 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
         qDebug() << "Incorrect mimeData, only internal one supported";
         return false;
     }
-    if (!parent.isValid() && action != Qt::MoveAction) {
-        return false;
-    }
+//    if (!parent.isValid() && action != Qt::MoveAction) {
+//        return false;
+//    }
     UBDocumentTreeNode *newParentNode = nodeFromIndex(parent);
 
     if (!newParentNode) {
@@ -696,7 +696,14 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
 {
     qDebug() << "drop event catchded";
-    event->setDropAction(Qt::MoveAction);
+    UBDocumentTreeModel* treeModel = static_cast<UBDocumentTreeModel*>(model());
+    UBDocumentTreeNode* selectedNode = treeModel->nodeFromIndex(selectedIndexes().at(0));
+
+    if(selectedNode->parentNode()->nodeName() == "Models")
+        event->setDropAction(Qt::CopyAction);
+    else
+        event->setDropAction(Qt::MoveAction);
+
     QTreeView::dropEvent(event);
 }
 
