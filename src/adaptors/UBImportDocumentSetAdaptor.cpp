@@ -41,10 +41,46 @@ QString UBImportDocumentSetAdaptor::importFileFilter()
     return tr("Open-Sankore (set of documents) (*.ubx)");
 }
 
-
-bool UBImportDocumentSetAdaptor::extractFileToDir(const QFile& pZipFile, const QString& pDir, QString& documentRoot)
+QFileInfoList UBImportDocumentSetAdaptor::importData(const QString &zipFile, const QString &destination)
 {
+    //Create tmp directory to extract data, will be deleted after
+    QString tmpDir;
+    int i = 0;
+    QFileInfoList result;
+    do {
+      tmpDir = QDir::tempPath() + "/Sankore_tmpImportUBX_" + QString::number(i++);
+    } while (QFileInfo(tmpDir).exists());
 
+    QDir(QDir::tempPath()).mkdir(tmpDir);
+
+    QFile fZipFile(zipFile);
+
+    if (!extractFileToDir(fZipFile, tmpDir)) {
+        UBFileSystemUtils::deleteDir(tmpDir);
+        return QFileInfoList();
+    }
+
+    QDir tDir(tmpDir);
+
+    foreach(QFileInfo readDir, tDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::Hidden , QDir::Name)) {
+        QString newFileName = readDir.fileName();
+        if (QFileInfo(destination + "/" + readDir.fileName()).exists()) {
+            newFileName = QFileInfo(UBPersistenceManager::persistenceManager()->generateUniqueDocumentPath(tmpDir)).fileName();
+        }
+        QString newFilePath = destination + "/" + newFileName;
+        if (UBFileSystemUtils::copy(readDir.absoluteFilePath(), newFilePath)) {
+            result.append(newFilePath);
+        }
+    }
+
+    UBFileSystemUtils::deleteDir(tmpDir);
+
+    return result;
+}
+
+
+bool UBImportDocumentSetAdaptor::extractFileToDir(const QFile& pZipFile, const QString& pDir)
+{
     QDir rootDir(pDir);
     QuaZip zip(pZipFile.fileName());
 
@@ -60,7 +96,8 @@ bool UBImportDocumentSetAdaptor::extractFileToDir(const QFile& pZipFile, const Q
 
     QFile out;
     char c;
-    documentRoot = UBPersistenceManager::persistenceManager()->generateUniqueDocumentPath(pDir);
+
+    QString documentRoot = QFileInfo(pDir).absoluteFilePath();
     for(bool more=zip.goToFirstFile(); more; more=zip.goToNextFile())
     {
         if(!zip.getCurrentFileInfo(&info))
@@ -82,7 +119,12 @@ bool UBImportDocumentSetAdaptor::extractFileToDir(const QFile& pZipFile, const Q
             return false;
         }
 
-        QString newFileName = documentRoot + "/" + file.getActualFileName();
+        QString actFileName = file.getActualFileName();
+//        int ind = actFileName.indexOf("/");
+//        if ( ind!= -1) {
+//            actFileName.remove(0, ind + 1);
+//        }
+        QString newFileName = documentRoot + "/" + actFileName;
         QFileInfo newFileInfo(newFileName);
         if (!rootDir.mkpath(newFileInfo.absolutePath()))
             return false;

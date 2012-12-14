@@ -110,7 +110,8 @@ class UBPersistenceManager : public QObject
 
         virtual UBDocumentProxy* documentByUuid(const QUuid& pUuid);
 
-        UBDocumentTreeNode *createDocumentProxiesStructure();
+        void createDocumentProxiesStructure();
+        void createDocumentProxiesStructure(const QFileInfoList &contentInfo);
 
         QStringList documentSubDirectories()
         {

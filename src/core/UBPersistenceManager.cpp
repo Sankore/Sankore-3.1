@@ -112,22 +112,22 @@ UBPersistenceManager::~UBPersistenceManager()
     }
 }
 
-UBDocumentTreeNode *UBPersistenceManager::createDocumentProxiesStructure()
+void UBPersistenceManager::createDocumentProxiesStructure()
 {
     mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
 
     QDir rootDir(mDocumentRepositoryPath);
     rootDir.mkpath(rootDir.path());
 
-//    QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
-//    watcher->addPath(mDocumentRepositoryPath);
+    QFileInfoList contentList = rootDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Time | QDir::Reversed);
+    createDocumentProxiesStructure(contentList);
+}
 
-//    connect(watcher, SIGNAL(directoryChanged(const QString&)), this, SLOT(documentRepositoryChanged(const QString&)));
-
-    foreach(QString path, rootDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot,
-            QDir::Time | QDir::Reversed))
+void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &contentInfo)
+{
+    foreach(QFileInfo path, contentInfo)
     {
-        QString fullPath = rootDir.path() + "/" + path;
+        QString fullPath = path.absoluteFilePath();
 
         QDir dir(fullPath);
 
@@ -145,7 +145,7 @@ UBDocumentTreeNode *UBPersistenceManager::createDocumentProxiesStructure()
 //            UBDocumentTreeNode *docParent = rootNode->moveTo(adjustDocumentVirtualPath(docGroupName));
             QModelIndex parentIndex = mDocumentTreeStructureModel->goTo(docGroupName);
             if (!parentIndex.isValid()) {
-                return 0;
+                return;
             }
 
             UBDocumentProxy* docProxy = new UBDocumentProxy(fullPath); // managed in UBDocumentTreeNode
@@ -158,8 +158,6 @@ UBDocumentTreeNode *UBPersistenceManager::createDocumentProxiesStructure()
 //            docParent->addChild();
         }
     }
-
-    return 0;
 }
 
 QString UBPersistenceManager::adjustDocumentVirtualPath(const QString &str)

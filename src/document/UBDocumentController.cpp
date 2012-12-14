@@ -1695,7 +1695,7 @@ void UBDocumentController::importFile()
     QFileInfo fileInfo(filePath);
 
     if (fileInfo.suffix().toLower() == "ubx") {
-        qDebug() << "catched";
+        UBPersistenceManager::persistenceManager()->createDocumentProxiesStructure(docManager->importUbx(filePath, UBSettings::userDocumentDirectory()));
 
     } else {
         UBSettings::settings()->lastImportFilePath->set(QVariant(fileInfo.absolutePath()));

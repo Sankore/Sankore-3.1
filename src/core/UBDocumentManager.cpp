@@ -139,6 +139,21 @@ QString UBDocumentManager::importFileFilter()
     return result;
 }
 
+QFileInfoList UBDocumentManager::importUbx(const QString &Incomingfile, const QString &destination)
+{
+    UBImportDocumentSetAdaptor *docSetAdaptor;
+    foreach (UBImportAdaptor *curAdaptor, mImportAdaptors) {
+        docSetAdaptor = qobject_cast<UBImportDocumentSetAdaptor*>(curAdaptor);
+        if (docSetAdaptor) {
+            break;
+        }
+    }
+    if (!docSetAdaptor) {
+        return QFileInfoList();
+    }
+
+    return docSetAdaptor->importData(Incomingfile, destination);
+}
 
 UBDocumentProxy* UBDocumentManager::importFile(const QFile& pFile, const QString& pGroup)
 {
