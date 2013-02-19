@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="fi_FI">
+<!DOCTYPE TS><TS>
 <context>
     <name>BlackoutWidget</name>
     <message>
@@ -20,7 +18,7 @@
     </message>
     <message>
         <source>0 Items</source>
-        <translation type="unfinished"></translation>
+        <translation>0 Objektia</translation>
     </message>
 </context>
 <context>
@@ -31,38 +29,38 @@
     </message>
     <message>
         <source>Filename</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostonimi</translation>
     </message>
     <message>
         <source>Try Again</source>
-        <translation type="unfinished"></translation>
+        <translation>Yritä uudelleen</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa</translation>
     </message>
 </context>
 <context>
     <name>IntranetPodcastPublishingDialog</name>
     <message>
         <source>Publish Podcast to YouTube</source>
-        <translation type="unfinished"></translation>
+        <translation>Julkaise Podcast YouTubessa</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikko</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvaus</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekijä</translation>
     </message>
 </context>
 <context>
@@ -77,11 +75,11 @@
     </message>
     <message>
         <source>Documents</source>
-        <translation>Dokumentit</translation>
+        <translation>Asiakirjat</translation>
     </message>
     <message>
         <source>Stylus</source>
-        <translation>Piirtotyökalu</translation>
+        <translation>Työkalut</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -113,7 +111,7 @@
     </message>
     <message>
         <source>Pages</source>
-        <translation>Sivut</translation>
+        <translation>Sivu</translation>
     </message>
     <message>
         <source>New Page</source>
@@ -173,7 +171,7 @@
     </message>
     <message>
         <source>Web Browsing</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkkoselaus</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
@@ -249,15 +247,15 @@
     </message>
     <message>
         <source>Create a New Document</source>
-        <translation>Luo uusi dokumentti</translation>
+        <translation>Luo uusi asiakirja</translation>
     </message>
     <message>
         <source>Import a Document</source>
-        <translation>Tuo dokumentti</translation>
+        <translation>Tuo asiakirja</translation>
     </message>
     <message>
         <source>Export a Document</source>
-        <translation>Vie dokumentti</translation>
+        <translation>Vie asiakirja</translation>
     </message>
     <message>
         <source>Open Page in Board</source>
@@ -273,7 +271,7 @@
     </message>
     <message>
         <source>Add Content to Document</source>
-        <translation>Lisää sisältö dokumenttiin</translation>
+        <translation>Lisää sisältö asiakirjaan</translation>
     </message>
     <message>
         <source>Rename Content</source>
@@ -285,15 +283,15 @@
     </message>
     <message>
         <source>Use Document Wide Size (16/9)</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä laajakuvaa (16/9)</translation>
     </message>
     <message>
         <source>Use Document Regular Size (4/3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä perinteistä dokumentinkokoa (4/3)</translation>
     </message>
     <message>
         <source>Use Custom Document Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä mukautettua dokumentin kokoa</translation>
     </message>
     <message>
         <source>Stop Loading Web Page</source>
@@ -301,7 +299,7 @@
     </message>
     <message>
         <source>Put Presentation to Sleep</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta esitys nukkumaan</translation>
     </message>
     <message>
         <source>Display Virtual Keyboard</source>
@@ -313,23 +311,23 @@
     </message>
     <message>
         <source>Erase Items</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista objekteja</translation>
     </message>
     <message>
         <source>Erase All Items</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kaikki objektit </translation>
     </message>
     <message>
         <source>Erase Annotations</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista piirrettyjä huomautuksia</translation>
     </message>
     <message>
         <source>Erase All Annotations</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kaikki huomautukset</translation>
     </message>
     <message>
         <source>Clear All Elements</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kaikki elementit</translation>
     </message>
     <message>
         <source>Pen</source>
@@ -337,7 +335,7 @@
     </message>
     <message>
         <source>Annotate Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Piirrä huomautuksia</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -345,7 +343,7 @@
     </message>
     <message>
         <source>Erase Annotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Pyyhekumi</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -357,7 +355,7 @@
     </message>
     <message>
         <source>Highlight </source>
-        <translation>Korosta</translation>
+        <translation>Läpinäkyvä korostekynä</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -365,7 +363,7 @@
     </message>
     <message>
         <source>Selector</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitsija</translation>
     </message>
     <message>
         <source>Select And Modify Objects</source>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>Custom Capture</source>
-        <translation type="unfinished"></translation>
+        <translation>Mukautettu kaappaus</translation>
     </message>
     <message>
         <source>Capture a Window</source>
@@ -393,19 +391,19 @@
     </message>
     <message>
         <source>Embed Web Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisällytä websisältöä</translation>
     </message>
     <message>
         <source>Capture Embeddable Web Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaappaa sisällytettävää verkkosisältöä</translation>
     </message>
     <message>
         <source>Show Main Screen on Display Screen</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Erase all Annotations</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kaikki piirretyt huomautukset</translation>
     </message>
     <message>
         <source>eduMedia</source>
@@ -421,7 +419,7 @@
     </message>
     <message>
         <source>Check Update</source>
-        <translation>Tarkista päivitys</translation>
+        <translation>Tarkista päivitykset</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -437,7 +435,7 @@
     </message>
     <message>
         <source>Line</source>
-        <translation>Viiva</translation>
+        <translation>Viivan paksuus</translation>
     </message>
     <message>
         <source>Quit</source>
@@ -489,7 +487,7 @@
     </message>
     <message>
         <source>Clear Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennä koko sivu</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -537,7 +535,7 @@
     </message>
     <message>
         <source>New Document</source>
-        <translation>Uusi dokumentti</translation>
+        <translation>Uusi asiakirja</translation>
     </message>
     <message>
         <source>Import</source>
@@ -569,11 +567,11 @@
     </message>
     <message>
         <source>Add to Working Document</source>
-        <translation>Lisää työskentelydokumenttiin</translation>
+        <translation>Lisää työasiakirjaan</translation>
     </message>
     <message>
         <source>Add Selected Content to Open Document</source>
-        <translation>Lisää valittu sisältö dokumenttiin</translation>
+        <translation>Lisää valittu sisältö asiakirjaan</translation>
     </message>
     <message>
         <source>Add</source>
@@ -609,7 +607,7 @@
     </message>
     <message>
         <source>Scroll Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Vieritä koko sivua</translation>
     </message>
     <message>
         <source>Laser Pointer</source>
@@ -641,15 +639,15 @@
     </message>
     <message>
         <source>Add Item To Current Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää objekti nykyiselle sivulle</translation>
     </message>
     <message>
         <source>Add Item To New Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää objekti uudelle sivulle</translation>
     </message>
     <message>
         <source>Add Item To Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää objekti kirjastoon</translation>
     </message>
     <message>
         <source>Create a New Page</source>
@@ -669,7 +667,7 @@
     </message>
     <message>
         <source>Import an External Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuo ulkoinen sivu</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -677,7 +675,7 @@
     </message>
     <message>
         <source>Pause Podcast Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta Podcast-tallennus tauolle</translation>
     </message>
     <message>
         <source>Podcast Config</source>
@@ -685,7 +683,7 @@
     </message>
     <message>
         <source>Configure Podcast Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Podcast-nauhoituksen asetukset</translation>
     </message>
     <message>
         <source>Flash Trap</source>
@@ -713,7 +711,7 @@
     </message>
     <message>
         <source>Sleep</source>
-        <translation>Nuku</translation>
+        <translation>Mene nukkumaan</translation>
     </message>
     <message>
         <source>Virtual Keyboard</source>
@@ -721,7 +719,7 @@
     </message>
     <message>
         <source>Plain Light Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Yksivärinen vaalea tausta</translation>
     </message>
     <message>
         <source>Light</source>
@@ -729,7 +727,7 @@
     </message>
     <message>
         <source>Plain Dark Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Yksivärinen tumma tausta</translation>
     </message>
     <message>
         <source>Dark</source>
@@ -737,7 +735,7 @@
     </message>
     <message>
         <source>Podcast</source>
-        <translation type="unfinished"></translation>
+        <translation>Podcast</translation>
     </message>
     <message>
         <source>Record</source>
@@ -745,43 +743,43 @@
     </message>
     <message>
         <source>Tools</source>
-        <translation>Työkaluja</translation>
+        <translation>Työkalut</translation>
     </message>
     <message>
         <source>Multi Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Useita näyttöjä</translation>
     </message>
     <message>
         <source>Wide Size (16/9)</source>
-        <translation type="unfinished"></translation>
+        <translation>Laajakuva (16/9)</translation>
     </message>
     <message>
         <source>Regular Size (4/3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Perinteinen kuvakoko (4/3)</translation>
     </message>
     <message>
         <source>Custom Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Mukautettu koko</translation>
     </message>
     <message>
         <source>Stop Loading</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskeytä lataaminen</translation>
     </message>
     <message encoding="UTF-8">
         <source>Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankoré</translation>
     </message>
     <message encoding="UTF-8">
         <source>Quit Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistu Open-Sankorésta</translation>
     </message>
     <message encoding="UTF-8">
         <source>Open-Sankoré Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankorén muokkain</translation>
     </message>
     <message encoding="UTF-8">
         <source>Show Open-Sankoré Widgets Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Open-Sankorén widgetti-muokkain</translation>
     </message>
     <message encoding="UTF-8">
         <source>Hide Open-Sankoré</source>
@@ -789,7 +787,7 @@
     </message>
     <message encoding="UTF-8">
         <source>Hide Open-Sankoré Application</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota Open-Sankoré-sovellus</translation>
     </message>
     <message>
         <source>Import Uniboard Documents</source>
@@ -797,11 +795,11 @@
     </message>
     <message>
         <source>Import old Sankore or Uniboard documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuo vanhoja Sankore tai Uniboard dokumentteja</translation>
     </message>
     <message>
         <source>Group items</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmitä objekteja</translation>
     </message>
     <message>
         <source>Play</source>
@@ -809,11 +807,11 @@
     </message>
     <message>
         <source>Interact with items</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuorovaikuta objektien kanssa</translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Pyyhi taustakuva</translation>
     </message>
     <message>
         <source>Remove the backgound</source>
@@ -851,15 +849,15 @@
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjätunnus:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasana:</translation>
     </message>
     <message>
         <source>Save username and password for future use</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna käyttäjätunnus ja salasana myöhempää käyttöä varten</translation>
     </message>
 </context>
 <context>
@@ -896,23 +894,23 @@
     <name>UBApplicationController</name>
     <message>
         <source>Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkko</translation>
     </message>
     <message>
         <source>New update available, would you go to the web page ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi päivitys saatavilla. Haluatko siirtyä ohjelman verkkosivuille?</translation>
     </message>
     <message>
         <source>No update available</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei päivitystä saatavilla</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitys saatavilla</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitys</translation>
     </message>
 </context>
 <context>
@@ -955,11 +953,11 @@
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmitä</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Pura ryhmitys</translation>
     </message>
 </context>
 <context>
@@ -977,165 +975,165 @@
     <name>UBCachePropertiesWidget</name>
     <message>
         <source>Cache Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Välimuistiasetukset</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Väri:</translation>
     </message>
     <message>
         <source>Shape:</source>
-        <translation type="unfinished"></translation>
+        <translation>Muoto:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koko:</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje</translation>
     </message>
 </context>
 <context>
     <name>UBDesktopPalette</name>
     <message>
         <source>Capture Part of the Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaappaa ruudun osa</translation>
     </message>
     <message>
         <source>Capture the Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaappaa koko näyttö</translation>
     </message>
     <message>
         <source>Show the stylus palette</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä piirtotyökalut</translation>
     </message>
     <message>
         <source>Show Board on Secondary Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä piirtoalusta toissijaisessa näytössä</translation>
     </message>
     <message>
         <source>Show Desktop on Secondary Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä työpöytä toissijaisessa näytössä</translation>
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Open-Sankore</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentController</name>
     <message>
         <source>New Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi kansio</translation>
     </message>
     <message>
         <source>Page %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivu %1</translation>
     </message>
     <message>
         <source>Add Folder of Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kuvakansio</translation>
     </message>
     <message>
         <source>Add Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kuvia</translation>
     </message>
     <message>
         <source>Add Pages from File</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää sivuja tiedostosta</translation>
     </message>
     <message>
         <source>Duplicating Document %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Monistetaan asiakirjaa %1</translation>
     </message>
     <message>
         <source>Document %1 copied</source>
-        <translation type="unfinished"></translation>
+        <translation>Asiakirja %1 kopioitu</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista sivu</translation>
     </message>
     <message>
         <source>Remove Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista asiakirja</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko varmasti poistaa asiakirjan &apos;%1&apos;?</translation>
     </message>
     <message>
         <source>Empty Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennä roskakori</translation>
     </message>
     <message>
         <source>Are you sure you want to empty trash?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko varmasti tyhjentää roskakorin?</translation>
     </message>
     <message>
         <source>Emptying trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennetään roskakoria</translation>
     </message>
     <message>
         <source>Emptied trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Roskakori tyhjennetty</translation>
     </message>
     <message>
         <source>Remove Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kansio</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko poistaa sisältöineen kansion &apos;%1&apos;?</translation>
     </message>
     <message>
         <source>No document selected!</source>
-        <translation type="unfinished"></translation>
+        <translation>Asiakirjaa ei ole valittu!</translation>
     </message>
     <message>
         <source>Open Supported File</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa tuettu tiedosto</translation>
     </message>
     <message>
         <source>Importing file %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuodaan tiedostoa %1...</translation>
     </message>
     <message>
         <source>Failed to import file ... </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston tuonti epäonnistui...</translation>
     </message>
     <message>
         <source>Import all Images from Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuo kaikki kuvat kansiosta</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjä</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Roskakori</translation>
     </message>
     <message>
         <source>Open Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa asiakirja</translation>
     </message>
     <message>
         <source>Add all Images to Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kaikki kuvat asiakirjaan</translation>
     </message>
     <message>
         <source>All Images (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki kuvat (%1)</translation>
     </message>
     <message>
         <source>Selection does not contain any image files!</source>
-        <translation type="unfinished"></translation>
+        <translation>Valinta ei sisällä yhtään kuvatiedostoa!</translation>
     </message>
     <message>
         <source>The document &apos;%1&apos; has been generated with a newer version of Sankore (%2). By opening it, you may lose some information. Do you want to proceed?</source>
@@ -1148,42 +1146,42 @@
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikkosivu</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation type="unfinished"></translation>
+        <translation>Kansio ei sisällä yhtään kuvatiedostoa</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimetön asiakirja</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
     <message>
         <source>images</source>
-        <translation type="unfinished"></translation>
+        <translation>kuvaa</translation>
     </message>
     <message>
         <source>videos</source>
-        <translation type="unfinished"></translation>
+        <translation>videota</translation>
     </message>
     <message>
         <source>objects</source>
-        <translation type="unfinished"></translation>
+        <translation>objektia</translation>
     </message>
     <message>
         <source>widgets</source>
-        <translation type="unfinished"></translation>
+        <translation>widgettiä</translation>
     </message>
     <message>
         <source>All supported files (*.%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaiikki tuetut tiedostot (*.%1)</translation>
     </message>
     <message>
         <source>File %1 saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedosto %1 tallennettu</translation>
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
@@ -1191,41 +1189,41 @@
     </message>
     <message>
         <source>Import successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuonti onnistui.</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston %1 tuonti onnistui.</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuodaan tiedostoa %1</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
         <source>Page %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivu %0</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikkosivu</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentPublisher</name>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienti epäonnistui.</translation>
     </message>
     <message>
         <source>Export canceled ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienti keskeytetty...</translation>
     </message>
     <message>
         <source>Converting page %1/%2 ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muunnetaan sivua %1/%2...</translation>
     </message>
     <message>
         <source>Credentials has to not been filled out yet.</source>
@@ -1233,15 +1231,15 @@
     </message>
     <message>
         <source>Uploading Sankore File on Web.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan Sankore-tiedostoa verkkoon.</translation>
     </message>
     <message>
         <source>Document uploaded correctly on the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asiakirja ladattiin onnistuneesti verkkoon.</translation>
     </message>
     <message>
         <source>Failed to upload document on the web.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokumentin lataaminen verkkoon epäonnistui.</translation>
     </message>
 </context>
 <context>
@@ -1264,11 +1262,11 @@
     <name>UBDownloadWidget</name>
     <message>
         <source>Downloading files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan tiedostoja</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Peru</translation>
     </message>
 </context>
 <context>
@@ -1305,197 +1303,197 @@
     <name>UBExportDocument</name>
     <message>
         <source>Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivu</translation>
     </message>
     <message>
         <source>Export as UBZ File</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie UBZ-tiedostoon</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished"></translation>
+        <translation>Viedään asiakirjaa...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienti onnistui.</translation>
     </message>
     <message>
         <source>Exporting %1 %2 of %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Viedään %1 %2 / %3</translation>
     </message>
     <message>
         <source>Export to Sankore Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie Sankore-muodossa</translation>
     </message>
 </context>
 <context>
     <name>UBExportFullPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie PDF-tiedostoksi</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished"></translation>
+        <translation>Viedään asiakirjaa...</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie PDF-tiedostoksi</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienti onnistui.</translation>
     </message>
 </context>
 <context>
     <name>UBExportPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie PDF-tiedostoksi</translation>
     </message>
     <message>
         <source>Exporting page %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Viedään sivua %1 / %2</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienti onnistui.</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished"></translation>
+        <translation>Viedään asiakirjaa...</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie PDF-muodossa</translation>
     </message>
 </context>
 <context>
     <name>UBExportWeb</name>
     <message>
         <source>Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivu</translation>
     </message>
     <message>
         <source>Export as Web data</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie verkkomuodossa</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished"></translation>
+        <translation>Viedään asiakirjaa...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienti onnistui.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienti epäonnistui.</translation>
     </message>
     <message>
         <source>Export to Web Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie verkkoselaimeen</translation>
     </message>
 </context>
 <context>
     <name>UBFeatureProperties</name>
     <message>
         <source>Add to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää sivulle</translation>
     </message>
     <message>
         <source>Set as background</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta taustakuvaksi</translation>
     </message>
     <message>
         <source>Add to library</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kirjastoon</translation>
     </message>
     <message>
         <source>Object informations</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektin tiedot</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
     <message>
         <source>Add to favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää suosikkeihin</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaa</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>HAe</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Back to folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Takaisin kansioon</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista suosikeista</translation>
     </message>
     <message>
         <source>Create new folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Luo uusi kansio</translation>
     </message>
     <message>
         <source>Rescan file system</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartoita tiedostojärjestelmä</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesController</name>
     <message>
         <source>ImportedImage</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuodut kuvat</translation>
     </message>
     <message>
         <source>Audios</source>
-        <translation type="unfinished"></translation>
+        <translation>Äänet</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation type="unfinished"></translation>
+        <translation>Videot</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvat</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation type="unfinished"></translation>
+        <translation>Animaatiot</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation type="unfinished"></translation>
+        <translation>Interaktiot</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovellukset</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation type="unfinished"></translation>
+        <translation>Muodot</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>Suosikit</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkkohaku</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Roskakori</translation>
     </message>
 </context>
 <context>
@@ -1517,7 +1515,7 @@
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avataan </translation>
     </message>
 </context>
 <context>
@@ -1575,7 +1573,7 @@
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avataan...</translation>
     </message>
 </context>
 <context>
@@ -1722,11 +1720,11 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kyllä</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei</translation>
     </message>
 </context>
 <context>
@@ -1748,23 +1746,23 @@ Do you want to ignore these errors for this host?</source>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Engalnti</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>Venäjä</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Saksa</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Ranska</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished"></translation>
+        <translation>Sveitsin ranska</translation>
     </message>
 </context>
 <context>
@@ -1860,19 +1858,19 @@ Do you want to ignore these errors for this host?</source>
     <name>UBPublicationDlg</name>
     <message>
         <source>Publish document on the web</source>
-        <translation type="unfinished"></translation>
+        <translation>Julkaise asiakirja verkossa</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikko:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvaus:</translation>
     </message>
     <message>
         <source>Publish</source>
-        <translation type="unfinished"></translation>
+        <translation>Julkaise</translation>
     </message>
 </context>
 <context>
@@ -1886,15 +1884,15 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Opettaja</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation type="unfinished"></translation>
+        <translation>Opiskelija</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Syötä tehtävä tähän...</translation>
     </message>
 </context>
 <context>
@@ -1926,50 +1924,50 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjoita otsikko tähän...</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjoita kommentti tähän ...</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää toiminto</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää media</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää linkki</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivu: %0</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Syötä otsikko tähän...</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekijä(t)</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Syötä tekijät tähän...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tavoite</translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Syötä tavoitteet tähän...</translation>
     </message>
     <message>
         <source>Resource indexing</source>
@@ -1977,27 +1975,27 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation type="unfinished"></translation>
+        <translation>Avainsanat:</translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Syötä avainsanat tähän...</translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taso:</translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aiheet:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyyppi:</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisenssi</translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
@@ -2034,76 +2032,76 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Created the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Luotu:</translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetty:</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikkosivu</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivu: %0</translation>
     </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
     <message>
         <source>Generating preview thumbnails ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Luodaan pienoiskuvat...</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 pienoiskuvat luotu...</translation>
     </message>
 </context>
 <context>
     <name>UBToolsManager</name>
     <message>
         <source>Compass</source>
-        <translation type="unfinished"></translation>
+        <translation>Harppi</translation>
     </message>
     <message>
         <source>Ruler</source>
-        <translation type="unfinished"></translation>
+        <translation>Viivoitin</translation>
     </message>
     <message>
         <source>Protractor</source>
-        <translation type="unfinished"></translation>
+        <translation>Astelevy</translation>
     </message>
     <message>
         <source>Mask</source>
-        <translation type="unfinished"></translation>
+        <translation>Verho</translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulmaviivain</translation>
     </message>
     <message>
         <source>Magnifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurennuslasi</translation>
     </message>
     <message>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota</translation>
     </message>
 </context>
 <context>
     <name>UBTrapFlashController</name>
     <message>
         <source>Whole page</source>
-        <translation type="unfinished"></translation>
+        <translation>Koko sivu</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkko</translation>
     </message>
 </context>
 <context>
@@ -2162,7 +2160,7 @@ Please reboot the application to access the updated documents.</source>
     <name>UBWebPluginWidget</name>
     <message>
         <source>Loading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Avataan...</translation>
     </message>
 </context>
 <context>
@@ -2183,23 +2181,23 @@ Please reboot the application to access the updated documents.</source>
     <name>UBYouTubePublisher</name>
     <message>
         <source>YouTube authentication failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>YouTube-tunnistautuminen epäonnistui.</translation>
     </message>
     <message>
         <source>Error while uploading video to YouTube (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe ladattaessa videota YouTubeen (%1)</translation>
     </message>
     <message>
         <source>Upload to YouTube in progress %1 %</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataus YouTubeen käynnissä %1 %</translation>
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankore</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenSankore</translation>
     </message>
 </context>
 <context>
@@ -2395,27 +2393,27 @@ Please reboot the application to access the updated documents.</source>
     <name>WBTabBar</name>
     <message>
         <source>New &amp;Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi &amp;välilehti</translation>
     </message>
     <message>
         <source>Clone Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Kloonaa välilehti</translation>
     </message>
     <message>
         <source>&amp;Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sulje välilehti</translation>
     </message>
     <message>
         <source>Close &amp;Other Tabs</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje &amp;muut välilehdet</translation>
     </message>
     <message>
         <source>Reload Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa välilehti uudelleen</translation>
     </message>
     <message>
         <source>Reload All Tabs</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa kaikki välilehdet uudelleen</translation>
     </message>
 </context>
 <context>
@@ -2452,19 +2450,19 @@ Please reboot the application to access the updated documents.</source>
     <name>WBWebPage</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa</translation>
     </message>
     <message>
         <source>Add to Current Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää nykyiseen asiakirjaan</translation>
     </message>
     <message>
         <source>PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Pdf</translation>
     </message>
     <message>
         <source>Error loading page: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe ladattaessa sivua: %1</translation>
     </message>
     <message>
         <source>Download PDF Document: would you prefer to download the PDF file or add it to the current Sankore document?</source>
@@ -2564,58 +2562,58 @@ p, li { white-space: pre-wrap; }
     <name>capturePublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogi</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikko</translation>
     </message>
     <message>
         <source>E-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>Sähköposti</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekijä</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvaus</translation>
     </message>
 </context>
 <context>
     <name>documentPublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogi</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikko</translation>
     </message>
     <message>
         <source>E-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>Sähköposti</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekijä</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvaus</translation>
     </message>
     <message>
         <source>Attach Downloadable PDF Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Liitä ladattava pdf-versio</translation>
     </message>
     <message>
         <source>Attach Downloadable Uniboard File (UBZ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Liitä ladattava Uniboard-tiedosto (UBZ)</translation>
     </message>
     <message>
         <source>Warning: This documents contains video, which will not be displayed properly on the Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus: Tämä asiakirja sisältää videota, jota ei voida näyttää kunnolla verkossa</translation>
     </message>
 </context>
 <context>
@@ -2669,7 +2667,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Stylus Palette</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Piirtotyökalut</translation>
     </message>
     <message>
         <source>Horizontal</source>
@@ -2741,27 +2739,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message encoding="UTF-8">
         <source>Open-Sankoré</source>
-        <translation type="unfinished"></translation>
+        <translation>Open-Sankoré</translation>
     </message>
     <message>
         <source>Show internal web page content on secondary screen or projector</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä sisäinen verkkosivusisältö toissijaisella näytöllä tai projektorilla</translation>
     </message>
     <message>
         <source>Multi display</source>
-        <translation type="unfinished"></translation>
+        <translation>Useita näyttöjä</translation>
     </message>
     <message>
         <source>Swap control display and view display</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihda ohjausnäytön ja sisältönäytön välillä</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Tila</translation>
+        <translation>Oletustila</translation>
     </message>
     <message>
         <source>Mode to start in:</source>
-        <translation>Tila jossa ohjelma käynnistetään:</translation>
+        <translation>Käynnistä ohjelma tilassa:</translation>
     </message>
     <message>
         <source>Board</source>
@@ -2773,7 +2771,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Proxy User:</source>
-        <translation type="unfinished"></translation>
+        <translation>Välityspalvelimen käyttäjä:</translation>
     </message>
     <message>
         <source>Pass:</source>
@@ -3230,7 +3228,7 @@ DAMAGES.
     </message>
     <message>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekijät</translation>
     </message>
     <message encoding="UTF-8">
         <source>Planète Sankoré ID for exporting file</source>
