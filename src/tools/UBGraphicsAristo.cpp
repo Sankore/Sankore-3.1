@@ -18,6 +18,13 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#include "UBGraphicsAristo.h"
+#include "board/UBBoardController.h"
+#include "board/UBDrawingController.h"
+#include "core/UBApplication.h"
+#include "domain/UBGraphicsScene.h"
+
 #include <QColor>
 #include <QFont>
 #include <QFontMetricsF>

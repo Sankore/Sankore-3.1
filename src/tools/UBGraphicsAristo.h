@@ -18,6 +18,13 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#ifndef UBGRAPHICSARISTO_H_
+#define UBGRAPHICSARISTO_H_
+
+#include "core/UB.h"
+#include "domain/UBItem.h"
+#include "domain/UBGraphicsScene.h"
 #include "tools/UBAbstractDrawRuler.h"
 
 #include <QtGlobal>

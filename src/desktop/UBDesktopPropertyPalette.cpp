@@ -18,6 +18,14 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#include "UBDesktopPropertyPalette.h"
+
+#include "core/UBApplication.h"
+#include "board/UBBoardController.h"
+#include "board/UBDrawingController.h"
+#include "gui/UBMainWindow.h"
+#include "gui/UBToolbarButtonGroup.h"
 #include "gui/UBRightPalette.h"
 
 #include "core/memcheck.h"
