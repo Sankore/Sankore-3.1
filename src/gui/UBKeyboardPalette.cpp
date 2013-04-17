@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QtGui>
@@ -75,10 +76,10 @@ UBKeyboardPalette::UBKeyboardPalette(QWidget *parent)
     createCtrlButtons();
 
     nCurrentLocale = UBSettings::settings()->KeyboardLocale->get().toInt();
-	if (nCurrentLocale < 0 || nCurrentLocale >= nLocalesCount)
-		nCurrentLocale = 0;
-	if (locales!=NULL)
-	    setInput(locales[nCurrentLocale]);
+    if (nCurrentLocale < 0 || nCurrentLocale >= nLocalesCount)
+        nCurrentLocale = 0;
+    if (locales!=NULL)
+        setInput(locales[nCurrentLocale]);
 
     setContentsMargins( 22, 22, 22, 22 );
 
@@ -192,7 +193,7 @@ void UBKeyboardPalette::setLocale(int nLocale)
         onLocaleChanged(locales[nCurrentLocale]);
         update();
 
-		UBSettings::settings()->KeyboardLocale->set(nCurrentLocale);
+        UBSettings::settings()->KeyboardLocale->set(nCurrentLocale);
     }
     emit localeChanged(nLocale);
 }
@@ -222,7 +223,7 @@ void UBKeyboardPalette::enterEvent ( QEvent * )
 
     keyboardActive = true;
 
-    adjustSizeAndPosition();
+    //adjustSizeAndPosition();
 
     emit keyboardActivated(true);
 }
@@ -234,7 +235,7 @@ void UBKeyboardPalette::leaveEvent ( QEvent * )
 
     keyboardActive = false;
 
-    adjustSizeAndPosition();
+    //adjustSizeAndPosition();
 
     emit keyboardActivated(false);
 }
@@ -510,7 +511,7 @@ void  UBKeyboardButton::leaveEvent ( QEvent*)
 
 void  UBKeyboardButton::mousePressEvent ( QMouseEvent * event)
 {
-    event->accept(); 
+    event->accept();
     bPressed = true;
     update();
     this->onPress();
@@ -533,18 +534,30 @@ UBKeyButton::~UBKeyButton()
 
 bool UBKeyButton::shifted()
 {
+#if defined(Q_WS_MACX)
+    return keyboard->shift;
+#else
     bool b = keyboard->shift;
     if (keybt->capsLockSwitch && keyboard->capsLock)
         b = !b;
     return b;
+#endif
+}
+
+bool UBKeyButton::capsed()
+{
+    return keyboard->capsLock;
 }
 
 void UBKeyButton::onPress()
 {
     if (keybt!=NULL)
     {
+#if defined(Q_WS_MACX)
+        int codeIndex = keyboard->nSpecialModifierIndex + (shifted())?1:(capsed() ? 2 : 0); 
+#else
         int codeIndex = keyboard->nSpecialModifierIndex * 2 + shifted();
-
+#endif
         if (keyboard->nSpecialModifierIndex)
         {
             if (keybt->codes[codeIndex].empty())
@@ -561,7 +574,20 @@ void UBKeyButton::onPress()
         }
         else
         {
-            int nSpecialModifierIndex = shifted()? keybt->modifier2 : keybt->modifier1;
+
+#if defined(Q_WS_MACX)
+            int nSpecialModifierIndex;
+
+            if (shifted())
+                nSpecialModifierIndex = keybt->modifierShift;
+            else if(capsed())
+                nSpecialModifierIndex = keybt->modifierCaps;
+            else
+                nSpecialModifierIndex = keybt->modifierNo;
+#else
+            int nSpecialModifierIndex = shifted()? keybt->modifierShift : keybt->modifierNo;
+#endif
+
 
             if (nSpecialModifierIndex)
             {
@@ -570,7 +596,7 @@ void UBKeyButton::onPress()
             }
             else
             {
-                sendUnicodeSymbol(keybt->codes[codeIndex]);            
+                sendUnicodeSymbol(keybt->codes[codeIndex]);
             }
         }
     }
@@ -589,7 +615,11 @@ void UBKeyButton::paintContent(QPainter& painter)
 {
     if (keybt)
     {
-        QString text(QChar(shifted() ? keybt->symbol2 : keybt->symbol1));
+#if defined(Q_WS_MACX)
+        QString text(QChar(shifted() ? keybt->shiftedSymbol : (capsed() ? keybt->capsedSymbol : keybt->simpleSymbol)));
+#else
+        QString text(QChar(shifted() ? keybt->shiftedSymbol : keybt->simpleSymbol));
+#endif
         QRect textRect(rect().x()+2, rect().y()+2, rect().width()-4, rect().height()-4);
         painter.drawText(textRect, Qt::AlignCenter, text);
     }

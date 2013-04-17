@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #include "UBGraphicsGroupContainerItem.h"
 
 #include <QtGui>
@@ -30,6 +31,15 @@
 #include "domain/UBGraphicsGroupContainerItemDelegate.h"
 #include "domain/UBGraphicsScene.h"
 
+#include "document/UBDocumentProxy.h"
+#include "core/UBApplication.h"
+#include "document/UBDocumentController.h"
+#include "board/UBBoardController.h"
+#include "document/UBDocumentProxy.h"
+#include "customWidgets/UBGraphicsItemAction.h"
+#include "frameworks/UBFileSystemUtils.h"
+#include "core/UBPersistenceManager.h"
+
 #include "core/memcheck.h"
 
 UBGraphicsGroupContainerItem::UBGraphicsGroupContainerItem(QGraphicsItem *parent)
@@ -38,12 +48,13 @@ UBGraphicsGroupContainerItem::UBGraphicsGroupContainerItem(QGraphicsItem *parent
 {
     setData(UBGraphicsItemData::ItemLayerType, UBItemLayerType::Object);
 
-   	setDelegate(new UBGraphicsGroupContainerItemDelegate(this, 0));
+    setDelegate(new UBGraphicsGroupContainerItemDelegate(this, 0));
     Delegate()->init();
 
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
+    Delegate()->setCanTrigAnAction(true);
 
     UBGraphicsGroupContainerItem::setAcceptHoverEvents(true);
 
@@ -56,7 +67,7 @@ UBGraphicsGroupContainerItem::~UBGraphicsGroupContainerItem()
 {
 }
 
-void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item)
+void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item,bool removeAction)
 {
     if (!item) {
         qWarning("UBGraphicsGroupContainerItem::addToGroup: cannot add null item");
@@ -66,6 +77,12 @@ void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item)
         qWarning("UBGraphicsGroupContainerItem::addToGroup: cannot add a group to itself");
         return;
     }
+
+    //TODO claudio
+    UBGraphicsItem* ubGraphics = dynamic_cast<UBGraphicsItem*>(item);
+    if(ubGraphics && ubGraphics->Delegate() && removeAction)
+        ubGraphics->Delegate()->setAction(0);
+
 
     //Check if group is allready rotatable or flippable
     if (childItems().count()) {
@@ -139,7 +156,7 @@ void UBGraphicsGroupContainerItem::removeFromGroup(QGraphicsItem *item)
 
     UBCoreGraphicsScene *groupScene = corescene();
     if (groupScene)
-    {    
+    {
         groupScene->addItemToDeletion(item);
     }
 
@@ -164,7 +181,7 @@ void UBGraphicsGroupContainerItem::deselectCurrentItem()
               {
                   dynamic_cast<UBGraphicsMediaItem*>(mCurrentItem)->Delegate()->getToolBarItem()->hide();
               }
-              break;                   
+              break;
 
         }
         mCurrentItem->setSelected(false);
@@ -226,6 +243,14 @@ void UBGraphicsGroupContainerItem::copyItemParameters(UBItem *copy) const
         cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
+        if(Delegate()->action()){
+            if(Delegate()->action()->linkType() == eLinkToAudio){
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(Delegate()->action()->path());
+                cp->Delegate()->setAction(action);
+            }
+            else
+                cp->Delegate()->setAction(Delegate()->action());
+        }
     }
 }
 
@@ -352,7 +377,7 @@ void UBGraphicsGroupContainerItem::pRemoveFromGroup(QGraphicsItem *item)
 
     UBGraphicsScene *Scene = dynamic_cast<UBGraphicsScene *>(item->scene());
     if (Scene)
-    {    
+    {
         Scene->addItem(item);
     }
 

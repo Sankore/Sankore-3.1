@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #include <QtGui>
 #include "UBGraphicsGroupContainerItem.h"
 #include "UBGraphicsTextItem.h"
@@ -32,6 +33,15 @@
 #include "board/UBBoardView.h"
 #include "board/UBDrawingController.h"
 #include "core/UBSettings.h"
+
+#include "document/UBDocumentProxy.h"
+#include "core/UBApplication.h"
+#include "document/UBDocumentController.h"
+#include "board/UBBoardController.h"
+#include "document/UBDocumentProxy.h"
+#include "customWidgets/UBGraphicsItemAction.h"
+#include "frameworks/UBFileSystemUtils.h"
+#include "core/UBPersistenceManager.h"
 
 #include "core/memcheck.h"
 
@@ -49,17 +59,16 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Resizing);
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
+    Delegate()->setCanTrigAnAction(true);
 
     mTypeTextHereLabel = tr("<Type Text Here>");
 
 
     setData(UBGraphicsItemData::ItemLayerType, UBItemLayerType::Object);
-//    setData(UBGraphicsItemData::ItemEditable, QVariant(true));
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
 
 
     setFlag(QGraphicsItem::ItemIsSelectable, true);
-//    setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 
     setTextInteractionFlags(Qt::TextEditorInteraction);
@@ -90,10 +99,10 @@ QVariant UBGraphicsTextItem::itemChange(GraphicsItemChange change, const QVarian
 
 void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    // scene()->itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes. 
-    // It is a cludge... 
+    // It is a cludge...
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
+        QGraphicsTextItem::mousePressEvent(event);
         event->accept();
         clearFocus();
         return;
@@ -109,13 +118,13 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             {
                 QGraphicsItem *curItem = group->getCurrentItem();
                 if (curItem && this != curItem)
-                {   
-                    group->deselectCurrentItem();    
-                }   
+                {
+                    group->deselectCurrentItem();
+                }
                 group->setCurrentItem(this);
                 this->setSelected(true);
                 Delegate()->positionHandles();
-            }       
+            }
 
         }
         else
@@ -177,10 +186,16 @@ void UBGraphicsTextItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-    // scene()->itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes. 
-    // It is a cludge... 
+    // scene()->itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes.
+    // It is a cludge...
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
+        QPointF distance = event->pos() - event->lastPos();
+        if( fabs(distance.x()) < 1 && fabs(distance.y()) < 1 )
+            Delegate()->mouseReleaseEvent(event);
+        else
+            QGraphicsTextItem::mouseReleaseEvent(event);
+
         event->accept();
         clearFocus();
         return;
@@ -245,16 +260,20 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
         cp->setData(UBGraphicsItemData::ItemEditable, data(UBGraphicsItemData::ItemEditable).toBool());
-        //    cp->setDefaultTextColor(this->defaultTextColor());
-        //    cp->setFont(this->font());
-        //    cp->setColorOnDarkBackground(this->colorOnDarkBackground());
-        //    cp->setColorOnLightBackground(this->colorOnLightBackground());
         cp->setTextWidth(this->textWidth());
         cp->setTextHeight(this->textHeight());
 
-        cp->setSourceUrl(this->sourceUrl());
+        if(Delegate()->action()){
+            if(Delegate()->action()->linkType() == eLinkToAudio){
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(Delegate()->action()->path());
+                cp->Delegate()->setAction(action);
+            }
+            else
+                cp->Delegate()->setAction(Delegate()->action());
+        }
     }
 }
+
 
 QRectF UBGraphicsTextItem::boundingRect() const
 {

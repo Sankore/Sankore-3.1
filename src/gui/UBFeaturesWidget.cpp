@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #include <QDomDocument>
 #include <QWebView>
 
@@ -30,6 +31,7 @@
 #include "core/UBDownloadManager.h"
 #include "globals/UBGlobals.h"
 #include "board/UBBoardController.h"
+#include "web/UBWebController.h"
 
 const char *UBFeaturesWidget::objNamePathList = "PathList";
 const char *UBFeaturesWidget::objNameFeatureList = "FeatureList";
@@ -49,8 +51,6 @@ UBFeaturesWidget::UBFeaturesWidget(QWidget *parent, const char *name)
 
     SET_STYLE_SHEET();
 
-    mIconToLeft = QPixmap(":images/library_open.png");
-    mIconToRight = QPixmap(":images/library_close.png");
     setAcceptDrops(true);
 
     //Main UBFeature functionality
@@ -75,8 +75,12 @@ UBFeaturesWidget::UBFeaturesWidget(QWidget *parent, const char *name)
     layout->addWidget(centralWidget);
     layout->addWidget(mActionBar);
 
-    connect(centralWidget->listView(), SIGNAL(clicked(const QModelIndex &)), this, SLOT(currentSelected(const QModelIndex &)));
+    connect(centralWidget->listView(), SIGNAL(clicked(QModelIndex)), this, SLOT(currentSelected(QModelIndex)));
+    connect(centralWidget->listView()->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection))
+            , this, SLOT(processViewSelectionChanged(QItemSelection,QItemSelection)));
     connect(this, SIGNAL(sendFileNameList(QStringList)), centralWidget, SIGNAL(sendFileNameList(QStringList)));
+    connect(this, SIGNAL(allowNewFolderButton(bool)), mActionBar, SLOT(allowNewFolderBtn(bool)));
+    connect(this, SIGNAL(allowDeleteButton(bool)), mActionBar, SLOT(allowDeleteButton(bool)));
     connect(mActionBar, SIGNAL(searchElement(const QString &)), this, SLOT( searchStarted(const QString &)));
     connect(mActionBar, SIGNAL(newFolderToCreate()), this, SLOT(createNewFolder()));
     connect(mActionBar, SIGNAL(deleteElements(const UBFeaturesMimeData *)), this, SLOT(deleteElements(const UBFeaturesMimeData *)));
@@ -162,20 +166,35 @@ void UBFeaturesWidget::currentSelected(const QModelIndex &current)
             mActionBar->setCurrentState(IN_FOLDER);
         }
 
-//    } else if (feature.getType() == FEATURE_SEARCH) {
-//        centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturesWebView);
-
     } else {
-        centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturePropertiesList);
-        mActionBar->setCurrentState( IN_PROPERTIES );
+        if(feature.getType() == FEATURE_BOOKMARK){
+            QString url;
+            QFile bookmarkFile(feature.getFullPath().toLocalFile());
+            if(bookmarkFile.open(QIODevice::ReadOnly|QIODevice::Text)){
+            url = QString::fromUtf8(bookmarkFile.readAll());
+            bookmarkFile.close();
+            UBApplication::webController->loadUrl(QUrl(url));
+            }
+            else
+                qWarning() << "failed to read file named " << feature.getFullPath().toLocalFile();
+        }
+        else{
+            centralWidget->showElement(feature, UBFeaturesCentralWidget::FeaturePropertiesList);
+            mActionBar->setCurrentState( IN_PROPERTIES );
+        }
     }
+
     mActionBar->cleanText();
+    emit allowNewFolderButton(controller->newFolderAllowed());
+
 }
 
 void UBFeaturesWidget::createNewFolder()
 {
-    centralWidget->showAdditionalData(UBFeaturesCentralWidget::NewFolderDialog, UBFeaturesCentralWidget::Modal);
-    emit sendFileNameList(controller->getFileNamesInFolders());
+    if (controller->newFolderAllowed()) {
+        centralWidget->showAdditionalData(UBFeaturesCentralWidget::NewFolderDialog, UBFeaturesCentralWidget::Modal);
+        emit sendFileNameList(controller->getFileNamesInFolders());
+    }
 }
 
 void UBFeaturesWidget::deleteElements( const UBFeaturesMimeData * mimeData )
@@ -231,6 +250,27 @@ void UBFeaturesWidget::lockIt(bool pLock)
     mActionBar->setEnabled(!pLock);
     pathListView->setEnabled(!pLock);
     centralWidget->setLockedExcludingAdditional(pLock);
+}
+
+void UBFeaturesWidget::processViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
+{
+    Q_UNUSED(deselected)
+
+    bool selectedDeletable = true;
+
+    if (!selected.indexes().count()) {
+        selectedDeletable = false;
+    } else {
+        foreach (QModelIndex curIndex, selected.indexes()) {
+            UBFeature curFeature = curIndex.data(Qt::UserRole + 1).value<UBFeature>();
+            if (!curFeature.isDeletable()) {
+                selectedDeletable = false;
+                break;
+            }
+        }
+    }
+
+    emit allowDeleteButton(selectedDeletable);
 }
 
 void UBFeaturesWidget::addToFavorite( const UBFeaturesMimeData * mimeData )
@@ -327,7 +367,6 @@ void UBFeaturesWidget::onPreviewLoaded(int id, bool pSuccess, QUrl sourceUrl, QU
 void UBFeaturesWidget::onAddDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl, QString pContentHeader, QByteArray pData, QString pTitle)
 {
     if (pSuccess) {
-		qDebug() << pData.length();
         controller->addDownloadedFile(sourceUrl, pData, pContentHeader, pTitle);
         controller->refreshModels();
     }
@@ -345,7 +384,9 @@ void UBFeaturesWidget::addElementsToFavorite()
         QModelIndexList selected = centralWidget->listView()->selectionModel()->selectedIndexes();
         for ( int i = 0; i < selected.size(); ++i ) {
             UBFeature feature = selected.at(i).data( Qt::UserRole + 1 ).value<UBFeature>();
-            controller->addToFavorite(feature.getFullPath());
+            if (feature.getType() != FEATURE_FOLDER) {
+                controller->addToFavorite(feature.getFullPath());
+            }
        }
     }
 
@@ -396,6 +437,40 @@ void UBFeaturesWidget::importImage(const QImage &image, const QString &fileName)
     controller->importImage(image, fileName);
 }
 
+void UBFeaturesWidget::createBookmark(const QString& title, const QString& urlString)
+{
+    controller->createBookmark(title,urlString);
+}
+
+void UBFeaturesWidget::createLink(QString title, QString& urlString,QSize& size, QString mimeType, QString embedCode)
+{
+    controller->createLink(title,urlString,size,mimeType,embedCode);
+}
+
+QString UBFeaturesWidget::importFromUrl(const QUrl &url) const
+{
+    return controller->moveExternalData(url,UBFeature());
+}
+
+void UBFeaturesWidget::switchToElement(const UBFeature &feature)
+{
+    QString newPath = feature.getFullVirtualPath();
+    controller->setCurrentElement(feature);
+    controller->siftElements(newPath);
+
+    centralWidget->switchTo(UBFeaturesCentralWidget::MainList);
+}
+
+void UBFeaturesWidget::switchToRoot()
+{
+    switchToElement(controller->getRootElement());
+}
+
+void UBFeaturesWidget::switchToBookmarks()
+{
+    switchToElement(controller->getBookmarkElement());
+}
+
 UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
     : QListView(parent)
 {
@@ -414,7 +489,9 @@ void UBFeaturesListView::dragMoveEvent( QDragMoveEvent *event )
     QModelIndex index = indexAt(event->pos());
     UBFeature onFeature = model()->data(index, Qt::UserRole + 1).value<UBFeature>();
     if (fMimeData) {
-        if (!index.isValid() || !onFeature.isFolder()) {
+        if (!index.isValid()
+                || !onFeature.isFolder()
+                || !onFeature.testPermissions(UBFeature::WRITE_P)) {
             event->ignore();
             return;
         }
@@ -470,6 +547,7 @@ UBFeaturesNavigatorWidget::UBFeaturesNavigatorWidget(QWidget *parent, const char
     mListSlider->setMinimumHeight(20);
 
     mListView->setParent(this);
+
     QVBoxLayout *mainLayer = new QVBoxLayout(this);
 
     mainLayer->addWidget(mListView, 1);
@@ -660,13 +738,13 @@ void UBFeaturesNewFolderDialog::setRegexp(const QRegExp pRegExp)
 }
 bool UBFeaturesNewFolderDialog::validString(const QString &pStr)
 {
-    return mLineEdit->hasAcceptableInput() && !mFileNameList.contains(pStr, Qt::CaseSensitive);
+    return mLineEdit->hasAcceptableInput() && !mFileNameList.contains(pStr.trimmed(), Qt::CaseSensitive);
 }
 
 void UBFeaturesNewFolderDialog::accept()
 {
 //     Setting all the constraints we need
-    emit createNewFolder(mLineEdit->text());
+    emit createNewFolder(mLineEdit->text().trimmed());
     mLineEdit->clear();
 }
 void UBFeaturesNewFolderDialog::reject()
@@ -876,6 +954,8 @@ UBFeatureProperties::UBFeatureProperties( QWidget *parent, const char *name ) : 
     mpThumbnail->setAlignment(Qt::AlignHCenter);
     mpLayout->addWidget(mpThumbnail, 0);
 
+    mpLayout->addWidget(new QLabel(tr("Add"),this));
+
     mpButtonLayout = new QHBoxLayout();
     mpLayout->addLayout(mpButtonLayout, 0);
 
@@ -1083,7 +1163,7 @@ void UBFeatureProperties::onAddToPage()
 
 void UBFeatureProperties::onAddToLib()
 {
-    if ( UBApplication::isFromWeb(  mpElement->getFullPath().toString() ) )
+    if ( UBApplication::isFromWeb(mpElement->getFullPath().toString() ) )
     {
         sDownloadFileDesc desc;
         desc.isBackground = false;
@@ -1092,15 +1172,6 @@ void UBFeatureProperties::onAddToLib()
         desc.name = mpElement->getMetadata().value("Title", QString());
         qDebug() << desc.name;
         desc.srcUrl = mpElement->getFullPath().toString();
-        QString str1 = mpElement->getFullPath().toString().normalized(QString::NormalizationForm_C);
-        QString str2 = mpElement->getFullPath().toString().normalized(QString::NormalizationForm_D);
-        QString str3 = mpElement->getFullPath().toString().normalized(QString::NormalizationForm_KC);
-        QString str4 = mpElement->getFullPath().toString().normalized(QString::NormalizationForm_KD);
-        qDebug() << desc.srcUrl << endl
-                    << "str1" << str1 << endl
-                    << "str2" << str2 << endl
-                    << "str3" << str3 << endl
-                    << "str4" << str4 << endl;
         UBDownloadManager::downloadManager()->addFileToDownload(desc);
     }
 }
@@ -1347,6 +1418,12 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
                     } else {
                         curFeature.setFullPath(newPath);
                     }
+                } else {
+                    if (action == Qt::CopyAction) {
+                        copyFeature.setPermissions(curFeature.getPermissions());
+                    } else {
+                        curFeature.setPermissions(UBFeature::WRITE_P | UBFeature::DELETE_P);
+                    }
                 }
                 // processing copy or move action for virtual FS
                 if (action == Qt::CopyAction) {
@@ -1369,9 +1446,9 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
         deleteItem(source);
     }
 
-// Commented because of crashes on mac. But works fine. It is not predictable behavior. 
+// Commented because of crashes on mac. But works fine. It is not predictable behavior.
 // Please uncomment it if model will not refreshes
-//   emit dataRestructured();. 
+//   emit dataRestructured();.
 }
 
 Qt::ItemFlags UBFeaturesModel::flags( const QModelIndex &index ) const
@@ -1387,6 +1464,8 @@ Qt::ItemFlags UBFeaturesModel::flags( const QModelIndex &index ) const
              || item.getType() == FEATURE_IMAGE
              || item.getType() == FEATURE_FLASH
              || item.getType() == FEATURE_INTERNAL
+             || item.getType() == FEATURE_LINK
+             || item.getType() == FEATURE_BOOKMARK
              || item.getType() == FEATURE_FOLDER)
 
             resultFlags |= Qt::ItemIsDragEnabled;
@@ -1422,6 +1501,28 @@ bool UBFeaturesProxyModel::filterAcceptsRow( int sourceRow, const QModelIndex & 
     return filterRegExp().exactMatch(path);
 }
 
+bool UBFeaturesProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    UBFeature leftFeature = left.data(Qt::UserRole + 1).value<UBFeature>();
+    UBFeature rightFeature = right.data(Qt::UserRole + 1).value<UBFeature>();
+
+    if (leftFeature.getType() == FEATURE_FOLDER) {
+        if (rightFeature.getType() == FEATURE_FOLDER) {
+            return leftFeature.getSortKey() < rightFeature.getSortKey();
+        } else {
+            return true;
+        }
+    } else {
+        if (rightFeature.getType() == FEATURE_FOLDER) {
+            return false;
+        } else {
+            return leftFeature.getSortKey() < rightFeature.getSortKey();
+        }
+    }
+
+    return QSortFilterProxyModel::lessThan(left, right);
+}
+
 bool UBFeaturesSearchProxyModel::filterAcceptsRow( int sourceRow, const QModelIndex & sourceParent )const
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
@@ -1445,9 +1546,8 @@ bool UBFeaturesPathProxyModel::filterAcceptsRow( int sourceRow, const QModelInde
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
     UBFeature feature = sourceModel()->data(index, Qt::UserRole + 1).value<UBFeature>();
-	
-    return feature.isFolder() && path.startsWith( feature.getFullVirtualPath()) ;
 
+    return feature.isFolder() && path.startsWith( feature.getFullVirtualPath()) ;
 }
 
 QString	UBFeaturesItemDelegate::displayText ( const QVariant & value, const QLocale & locale ) const

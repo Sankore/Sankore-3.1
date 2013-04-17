@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBMAGNIFIER_H
@@ -39,14 +40,24 @@ class UBMagnifier : public QWidget
     Q_OBJECT
 
 public:
+    enum DrawingMode
+    {
+        circular = 0,
+        rectangular,
+        modesCount // should me last.
+    };
+
+public:
     UBMagnifier(QWidget *parent = 0, bool isInteractive = false);
     ~UBMagnifier();
 
     void setSize(qreal percentFromScene);
+    void createMask();
     void setZoom(qreal zoom);
 
     void setGrabView(QWidget *view);
     void setMoveView(QWidget *view) {mView = view;}
+    void setDrawingMode(int mode);
 
     void grabPoint();
     void grabPoint(const QPoint &point);
@@ -60,9 +71,13 @@ signals:
     void magnifierZoomIn_Signal();
     void magnifierZoomOut_Signal();
     void magnifierResized_Signal(qreal newPercentSize);
-    
+    void magnifierDrawingModeChange_Signal(int mode);
+
 public slots:
     void slot_refresh();
+
+private:
+    void calculateButtonsPositions();
 
 protected:
     void paintEvent(QPaintEvent *);
@@ -76,17 +91,25 @@ protected:
     bool mShouldMoveWidget;
     bool mShouldResizeWidget;
 
-
+    int m_iButtonInterval;
     QPixmap *sClosePixmap;
+    QRect sClosePixmapButtonRect;
     QPixmap *sIncreasePixmap;
+    QRect sIncreasePixmapButtonRect;
     QPixmap *sDecreasePixmap;
+    QRect sDecreasePixmapButtonRect;
+    QPixmap *sChangeModePixmap;
+    QRect sChangeModePixmapButtonRect;
     QPixmap *mResizeItem;
+    QRect mResizeItemButtonRect;
 
     bool isCusrsorAlreadyStored;
     QCursor mOldCursor;
     QCursor mResizeCursor;
 
 private:
+    DrawingMode mDrawingMode;
+
     QTimer mRefreshTimer;
     bool m_isInteractive;
 

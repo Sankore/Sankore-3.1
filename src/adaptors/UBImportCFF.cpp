@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QDir>
@@ -270,7 +271,13 @@ UBDocumentProxy* UBImportCFF::importFile(const QFile& pFile, const QString& pGro
         //try to import cff to document
         if (UBCFFSubsetAdaptor::ConvertCFFFileToUbz(contentFile, destDocument))
         {
-            newDocument = UBPersistenceManager::persistenceManager()->createDocumentFromDir(destDocument->persistencePath());
+            newDocument = UBPersistenceManager::persistenceManager()->createDocumentFromDir(destDocument->persistencePath()
+                                                                                            ,""
+                                                                                            ,""
+                                                                                            ,false
+                                                                                            ,false
+                                                                                            ,true);
+
             UBApplication::showMessage(tr("Import successful."));
         }
         else

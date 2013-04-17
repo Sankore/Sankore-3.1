@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBGraphicsGroupContainerItem.h"
@@ -34,7 +35,6 @@
 UBAudioPresentationWidget::UBAudioPresentationWidget(QWidget *parent)
     : QWidget(parent)
     , mBorderSize(10)
-    , mTitleSize(10)
 {
 
 }
@@ -43,7 +43,7 @@ void UBAudioPresentationWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     painter.fillRect(rect(), QBrush(Qt::white));
-    
+
     QPen borderPen;
     borderPen.setWidth(2);
     borderPen.setColor(QColor(Qt::black));
@@ -84,7 +84,7 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
     if ("" == mediaPath)
         mediaPath = pMediaFileUrl.toLocalFile();
 
-    if (mediaPath.toLower().contains("videos")) 
+    if (mediaPath.toLower().contains("videos"))
     {
         mMediaType = mediaType_Video;
 
@@ -101,7 +101,7 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
 
         haveLinkedImage = true;
     }
-    else    
+    else
     if (mediaPath.toLower().contains("audios"))
     {
         mMediaType = mediaType_Audio;
@@ -116,20 +116,20 @@ UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsIte
             borderSize = pAudioWidget->borderSize();
         }
 
-        mAudioWidget->resize(320,26+3*borderSize);
+        mAudioWidget->resize(320,26+2*borderSize); //3*border size with enabled title
         mAudioWidget->setMinimumSize(150,26+borderSize);
 
         haveLinkedImage = false;
     }
 
     Phonon::createPath(mMediaObject, mAudioOutput);
-    
+
     mSource = Phonon::MediaSource(pMediaFileUrl);
     mMediaObject->setCurrentSource(mSource);
 
     // we should create delegate after media objects because delegate uses his properties at creation.
     setDelegate(new UBGraphicsMediaItemDelegate(this, mMediaObject));
-    
+
     // delegate should be created earler because we setWidget calls resize event for graphics proxy widgt.
     // resize uses delegate.
     if (mediaType_Video == mMediaType)
@@ -202,7 +202,7 @@ void UBGraphicsMediaItem::setSourceUrl(const QUrl &pSourceUrl)
     UBAudioPresentationWidget* pAudioWidget = dynamic_cast<UBAudioPresentationWidget*>(mAudioWidget);
     if (pAudioWidget)
     {
-        pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toString()));
+       // pAudioWidget->setTitle(UBFileSystemUtils::lastPathComponent(pSourceUrl.toString()));
     }
 
     UBItem::setSourceUrl(pSourceUrl);
@@ -319,13 +319,13 @@ void UBGraphicsMediaItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             {
                 QGraphicsItem *curItem = group->getCurrentItem();
                 if (curItem && this != curItem)
-                {   
-                    group->deselectCurrentItem();    
-                }   
+                {
+                    group->deselectCurrentItem();
+                }
                 group->setCurrentItem(this);
                 this->setSelected(true);
                 Delegate()->positionHandles();
-            }       
+            }
 
         }
     }
@@ -338,7 +338,7 @@ void UBGraphicsMediaItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             event->accept();
         }
     }
-    else 
+    else
     {
         mShouldMove = (event->buttons() & Qt::LeftButton);
         mMousePressPos = event->scenePos();

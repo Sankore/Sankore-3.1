@@ -700,14 +700,6 @@
         <translation>팟캐스트 레코딩 설정</translation>
     </message>
     <message>
-        <source>Flash Trap</source>
-        <translation>플래시 트랩</translation>
-    </message>
-    <message>
-        <source>Trap Flash Content</source>
-        <translation>플래시 콘텐츠 트랩</translation>
-    </message>
-    <message>
         <source>Web Trap</source>
         <translation>웹 트랩</translation>
     </message>
@@ -726,14 +718,6 @@
     <message>
         <source>Capture a Window</source>
         <translation>창 캡처하기</translation>
-    </message>
-    <message>
-        <source>Embed Web Content</source>
-        <translation>웹 콘텐츠 포함</translation>
-    </message>
-    <message>
-        <source>Capture Embeddable Web Content</source>
-        <translation>포함 가능한 웹 콘텐츠 캡처</translation>
     </message>
     <message>
         <source>Show on Display</source>
@@ -769,59 +753,96 @@
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
-        <translation type="unfinished">Open-Sankoré</translation>
+        <translation>Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Quit Open-Sankoré</source>
-        <translation type="unfinished">Open-Sankoré 종료</translation>
+        <translation>Open-Sankoré 종료</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré Editor</source>
-        <translation type="unfinished">Open-Sankoré 편집기</translation>
+        <translation>Open-Sankoré 편집기</translation>
     </message>
     <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
-        <translation type="unfinished">Open-Sankoré 위젯 편집기 표시</translation>
+        <translation>Open-Sankoré 위젯 편집기 표시</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré</source>
-        <translation type="unfinished">Open-Sankoré 숨기기</translation>
+        <translation>Open-Sankoré 숨기기</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré Application</source>
-        <translation type="unfinished">Open-Sankoré 응용 프로그램 숨기기</translation>
+        <translation>Open-Sankoré 응용 프로그램 숨기기</translation>
     </message>
     <message>
         <source>Import Uniboard Documents</source>
-        <translation type="unfinished">유니보드 문서 가져오기</translation>
+        <translation>유니보드 문서 가져오기</translation>
     </message>
     <message>
         <source>Import old Sankore or Uniboard documents</source>
-        <translation type="unfinished">기존 Sankore 또는 유니보드 문서 가져오기</translation>
+        <translation>기존 Sankore 또는 유니보드 문서 가져오기</translation>
     </message>
     <message>
         <source>Group items</source>
-        <translation type="unfinished">항목 그룹화</translation>
+        <translation>그룹 항목</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished">재생</translation>
+        <translation>재생</translation>
     </message>
     <message>
         <source>Interact with items</source>
-        <translation type="unfinished">항목과 상호 작용</translation>
+        <translation>항목과 상호 작용</translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation type="unfinished">배경 지우기</translation>
+        <translation>배경 지우기</translation>
     </message>
     <message>
         <source>Remove the backgound</source>
-        <translation type="unfinished">배경 제거</translation>
+        <translation>배경 제거</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished">그룹화</translation>
+        <translation>그룹</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;다운로드 위치:&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;라이브러리&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Download to library</source>
+        <translation>라이브러리에 다운로드</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;다운로드 위치:&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;현재 페이지&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Download to current page</source>
+        <translation>현재 페이지에 다운로드</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;링크 추가 위치:&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;라이브러리&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Add link to library</source>
+        <translation>라이브러리에 링크 추가</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;링크 추가 위치:&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;현재 페이지&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Add link to current page</source>
+        <translation>현재 페이지에 링크 추가</translation>
+    </message>
+    <message>
+        <source>Bookmark</source>
+        <comment>tooltip</comment>
+        <translation type="unfinished">북마크</translation>
     </message>
 </context>
 <context>
@@ -866,19 +887,19 @@
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation type="unfinished">요소 ID = </translation>
+        <translation>요소 ID = </translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation type="unfinished">대상 형식으로 지원되지 않는 콘텐츠입니다.</translation>
+        <translation>대상 형식으로 지원되지 않는 콘텐츠입니다.</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation type="unfinished">페이지 제거</translation>
+        <translation>페이지 제거</translation>
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation type="unfinished">선택한 문서 &apos;%0&apos;에서 1페이지를 제거하시겠습니까?</translation>
+        <translation>선택한 문서 &apos;%0&apos;에서 1페이지를 제거하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -943,23 +964,23 @@
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation type="unfinished">문서에서 %1페이지 삭제</translation>
+        <translation>문서에서 %1페이지 삭제</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation type="unfinished">%1페이지 삭제됨</translation>
+        <translation>%1페이지 삭제됨</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation type="unfinished">파일 추가 작업 실패: 파일을 복사하는 도중 오류 발생</translation>
+        <translation>파일 추가 작업 실패: 파일을 복사하는 도중 오류 발생</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished">그룹화</translation>
+        <translation>그룹</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation type="unfinished">그룹 해제</translation>
+        <translation>그룹 해제</translation>
     </message>
 </context>
 <context>
@@ -970,7 +991,7 @@
     </message>
     <message>
         <source>CapturedImage</source>
-        <translation type="unfinished">캡처한 이미지</translation>
+        <translation>캡처이미지</translation>
     </message>
 </context>
 <context>
@@ -988,12 +1009,110 @@
         <translation>모양:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation>크기:</translation>
+        <source>Alpha:</source>
+        <translation>알파:</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>닫기</translation>
+        <source>Geometry:</source>
+        <translation>도형:</translation>
+    </message>
+    <message>
+        <source>Width: </source>
+        <translation>너비:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>높이:</translation>
+    </message>
+    <message>
+        <source>Keep proportions</source>
+        <translation>비율 유지</translation>
+    </message>
+    <message>
+        <source>Mode:</source>
+        <translation>모드:</translation>
+    </message>
+    <message>
+        <source>Preview:</source>
+        <translation>미리보기:</translation>
+    </message>
+    <message>
+        <source>Close cache</source>
+        <translation>캐시 닫기</translation>
+    </message>
+    <message>
+        <source>On Click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateLinkLabel</name>
+    <message>
+        <source>&lt;drop content&gt;</source>
+        <translation>&lt;drop content&gt;</translation>
+    </message>
+    <message>
+        <source>Images are not accepted</source>
+        <translation>이미지가 허락되지 않았습니다</translation>
+    </message>
+    <message>
+        <source>Cannot display data</source>
+        <translation>데이터 표시 불가</translation>
+    </message>
+    <message>
+        <source>Dropped file isn&apos;t reconized to be an audio file</source>
+        <translation>드롭한 파일은 오디오 파일이 아닙니다</translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateLinkPalette</name>
+    <message>
+        <source>Play an audio file</source>
+        <translation>오디오 파일 재생</translation>
+    </message>
+    <message>
+        <source>Add Link to Page</source>
+        <translation>페이지에 링크 추가</translation>
+    </message>
+    <message>
+        <source>Add Link to a Web page</source>
+        <translation>웹 페이지에 링크 추가</translation>
+    </message>
+    <message>
+        <source>Drag and drop the audio file from the library in this box</source>
+        <translation>라이브러리에서 이 상자로 오디오 파일 끌어다 놓기</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation>확인</translation>
+    </message>
+    <message>
+        <source>Next Page</source>
+        <translation>다음 페이지</translation>
+    </message>
+    <message>
+        <source>Previous Page</source>
+        <translation>이전 페이지</translation>
+    </message>
+    <message>
+        <source>Title Page</source>
+        <translation>제목 페이지</translation>
+    </message>
+    <message>
+        <source>Last Page</source>
+        <translation>마지막 페이지</translation>
+    </message>
+    <message>
+        <source>Page Number</source>
+        <translation>페이지 번호</translation>
+    </message>
+    <message>
+        <source>Insert url text here</source>
+        <translation>여기에 url 텍스트 삽입</translation>
     </message>
 </context>
 <context>
@@ -1020,7 +1139,7 @@
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation type="unfinished">Open-Sankore 표시</translation>
+        <translation>Open-Sankore 표시</translation>
     </message>
 </context>
 <context>
@@ -1056,42 +1175,6 @@
     <message>
         <source>Remove Page</source>
         <translation>페이지 제거</translation>
-    </message>
-    <message>
-        <source>Remove Document</source>
-        <translation>문서 제거</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the document &apos;%1&apos;?</source>
-        <translation>정말로 &apos;%1&apos; 문서를 제거하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Empty Trash</source>
-        <translation>휴지통 비우기</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to empty trash?</source>
-        <translation>정말로 휴지통을 비우시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Emptying trash</source>
-        <translation>휴지통 비우는 중</translation>
-    </message>
-    <message>
-        <source>Emptied trash</source>
-        <translation>휴지통 비우기 완료</translation>
-    </message>
-    <message>
-        <source>Remove Folder</source>
-        <translation>폴더 제거</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove the folder &apos;%1&apos; and all its content?</source>
-        <translation>정말로 &apos;%1&apos; 폴더와 해당 내용을 모두 제거하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>No document selected!</source>
-        <translation>선택된 문서가 없습니다!</translation>
     </message>
     <message>
         <source>Open Supported File</source>
@@ -1143,21 +1226,29 @@
     </message>
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>선택한 문서 &apos;%1&apos;에서 %n페이지를 제거하시겠습니까?</numerusform>
         </translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished">제목 페이지</translation>
+        <translation>제목 페이지</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation type="unfinished">폴더에 이미지 파일이 없습니다</translation>
+        <translation>폴더에 이미지 파일이 없습니다</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation type="unfinished">무제 문서</translation>
+        <translation>제목없는 문서</translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation>돌이킬 수 없는 행동입니다!</translation>
+    </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1188,19 +1279,19 @@
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation type="unfinished">%1/%2페이지 삽입 중</translation>
+        <translation>%1/%2페이지 삽입 중</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation type="unfinished">가져오기 완료.</translation>
+        <translation>가져오기 완료.</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation type="unfinished">%1 파일 가져오기 완료.</translation>
+        <translation>%1 파일 가져오기 완료.</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation type="unfinished">%1 파일 가져오는 중</translation>
+        <translation>%1 파일 가져오는 중</translation>
     </message>
 </context>
 <context>
@@ -1211,7 +1302,7 @@
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished">제목 페이지</translation>
+        <translation>제목 페이지</translation>
     </message>
 </context>
 <context>
@@ -1246,6 +1337,58 @@
     </message>
 </context>
 <context>
+    <name>UBDocumentReplaceDialog</name>
+    <message>
+        <source>Accept</source>
+        <translation>허용</translation>
+    </message>
+    <message>
+        <source>Replace</source>
+        <translation>대체</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>The name %1 is allready used.
+Keeping this name will replace the document.
+Providing a new name will create a new document.</source>
+        <translation>제목 이름 %1(은)는 이미 사용중입니다.
+이 이름을 계속 사용하면 문서가 대체됩니다.
+새 이름을 제공하면 새로운 문서가 생성됩니다.</translation>
+    </message>
+</context>
+<context>
+    <name>UBDocumentTreeModel</name>
+    <message>
+        <source>My documents</source>
+        <translation>내 문서</translation>
+    </message>
+    <message>
+        <source>Models</source>
+        <translation>모델</translation>
+    </message>
+    <message>
+        <source>Trash</source>
+        <translation>휴지통</translation>
+    </message>
+    <message>
+        <source>Untitled documents</source>
+        <translation>제목없는 문서</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">%1/%2 페이지 복사 중</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1페이지 복사됨</numerusform>
+        </translation>
+    </message>
+</context>
+<context>
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
@@ -1257,53 +1400,149 @@
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
-            <numerusform variants="yes">
-                <lengthvariant>%1 페이지 복사됨</lengthvariant>
-                <lengthvariant></lengthvariant>
-            </numerusform>
+        <translation>
+            <numerusform>%1페이지 복사됨</numerusform>
         </translation>
+    </message>
+</context>
+<context>
+    <name>UBDownloadManager</name>
+    <message>
+        <source>Download failed.</source>
+        <translation>다운로드 실패.</translation>
+    </message>
+    <message>
+        <source>the remote server refused the connection (the server is not accepting requests)</source>
+        <translation>원격 서버가 연결을 거절했습니다 (서버가 요청을 허락하지 않습니다)</translation>
+    </message>
+    <message>
+        <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
+        <translation>전체 답변이 수령되고 처리되기 전에, 원격 서버가 연결을 영구적으로 종료했습니다</translation>
+    </message>
+    <message>
+        <source>the remote host name was not found (invalid hostname)</source>
+        <translation>원격 호스트 이름을 찾을 수 없습니다(잘못된 호스트 이름)</translation>
+    </message>
+    <message>
+        <source>the connection to the remote server timed out</source>
+        <translation>원격 서버 연결 시간이 마감되었습니다</translation>
+    </message>
+    <message>
+        <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
+        <translation>완료되기 전에 중단t() 또는 닫기() 명령을 통해 작동이 취소되었습니다.</translation>
+    </message>
+    <message>
+        <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
+        <translation> SSL/TLS 악수가 실패하였고 암호화된 채널이 구성되지 않았습니다. sslErrors() 신호가 발송되었을 것입니다.</translation>
+    </message>
+    <message>
+        <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
+        <translation>연결이 네트워크에서 분리되어 끊겼습니다, 그러나 시스템이 다른 액세스 포인트로 로밍을 시작했습니다. 요청을 다시 제출해야하며 다시 연결이 되자마자 처리될 것입니다.</translation>
+    </message>
+    <message>
+        <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
+        <translation>프록시 서버가 연결을 거절했습니다 (프록시 서버가 요청을 허락하지 않습니다)</translation>
+    </message>
+    <message>
+        <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
+        <translation>전체 답변이 수령되고 처리되기 전에, 프록시 서버가 연결을 영구적으로 종료했습니다</translation>
+    </message>
+    <message>
+        <source>the proxy host name was not found (invalid proxy hostname)</source>
+        <translation>프록시 호스트 이름을 찾을 수 없습니다(잘못된 프록시 호스트 이름)</translation>
+    </message>
+    <message>
+        <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
+        <translation>프록시 서버 연결시간이 만료되었거나 프록시가 발송된 요청을 시간 내에 답변하지 않았습니다</translation>
+    </message>
+    <message>
+        <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
+        <translation>프록시는 요청을 받기 위해 인증이 필요하지만 제공한 어떤 자격 증명도 허락하지 않았습니다(해당되는 경우)</translation>
+    </message>
+    <message>
+        <source>the access to the remote content was denied (similar to HTTP error 401)</source>
+        <translation>원격 컨텐츠에 대한 액세스가 거절되었습니다 ( HTTP 오류 401과 유사)</translation>
+    </message>
+    <message>
+        <source>the operation requested on the remote content is not permitted</source>
+        <translation>원격 컨텐츠에 대한 요청한 작동은 허락되지 않습니다</translation>
+    </message>
+    <message>
+        <source>the remote content was not found at the server (similar to HTTP error 404)</source>
+        <translation>서버에서 원격 컨텐츠를 찾을 수 없습니다 ( HTTP 오류 404와 유사)</translation>
+    </message>
+    <message>
+        <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
+        <translation>원격 서버는 컨텐츠를 제공하기 위해 인증이 필요하지만 제공한 자격 증명을 허락하지 않았습니다 (해당되는 경우)</translation>
+    </message>
+    <message>
+        <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
+        <translation>요청을 재발송해야 합니다, 이는 예를 들어 업로드 데이터를 두 번째 읽을 수 없어서 실패했습니다.</translation>
+    </message>
+    <message>
+        <source>the Network Access API cannot honor the request because the protocol is not known</source>
+        <translation>알수 없는 프로토콜이어서 네트워크 액세스 API가 요청을 받을 수 없습니다</translation>
+    </message>
+    <message>
+        <source>the requested operation is invalid for this protocol</source>
+        <translation>요청한 작업은 이 프로토콜에 유효하지 않습니다</translation>
+    </message>
+    <message>
+        <source>an unknown network-related error was detected</source>
+        <translation>알 수 없는 네트워크 관련 오류가 감지되었습니다</translation>
+    </message>
+    <message>
+        <source>an unknown proxy-related error was detected</source>
+        <translation>알 수 없는 프록시 관련 오류가 감지되었습니다</translation>
+    </message>
+    <message>
+        <source>an unknown error related to the remote content was detected</source>
+        <translation>원격 컨텐츠 관련된 알 수 없는 오류가 감지되었습니다</translation>
+    </message>
+    <message>
+        <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
+        <translation>프로토콜에 고장이 감지되었습니다 (파싱 오류, 잘못된 또는 예상치 못한 반응 등)</translation>
     </message>
 </context>
 <context>
     <name>UBDownloadWidget</name>
     <message>
         <source>Downloading files</source>
-        <translation type="unfinished">파일 다운로드 중</translation>
+        <translation>파일 다운로드 중</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">취소</translation>
+        <translation>취소</translation>
     </message>
 </context>
 <context>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation type="unfinished">내보내는 도중 경고가 나타났습니다</translation>
+        <translation>내보내기 중 경고가 나타났습니다</translation>
     </message>
 </context>
 <context>
     <name>UBExportCFF</name>
     <message>
         <source>Export to IWB</source>
-        <translation type="unfinished">IWB로 내보내기</translation>
+        <translation>IWB로 내보내기</translation>
     </message>
     <message>
         <source>Export as IWB File</source>
-        <translation type="unfinished">IWB 파일로 내보내기</translation>
+        <translation>IWB 파일로 내보내기</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation type="unfinished">문서를 내보내는 중...</translation>
+        <translation>문서를 내보내는 중...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation type="unfinished">내보내기 완료.</translation>
+        <translation>내보내기 완료.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation type="unfinished">내보내기 실패.</translation>
+        <translation>내보내기 실패.</translation>
     </message>
 </context>
 <context>
@@ -1331,6 +1570,33 @@
     <message>
         <source>Export to Sankore Format</source>
         <translation>Sankore 형식으로 내보내기</translation>
+    </message>
+</context>
+<context>
+    <name>UBExportDocumentSetAdaptor</name>
+    <message>
+        <source>Failed to export...</source>
+        <translation>내보내기 실패...</translation>
+    </message>
+    <message>
+        <source>Export as UBX File</source>
+        <translation>UBX 파일로 내보내기</translation>
+    </message>
+    <message>
+        <source>Exporting document...</source>
+        <translation>문서를 내보내는 중...</translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation>내보내기 완료.</translation>
+    </message>
+    <message>
+        <source>Export failed.</source>
+        <translation>내보내기 실패.</translation>
+    </message>
+    <message>
+        <source>Export to Sankore UBX Format</source>
+        <translation> Sankore UBX형식으로 내보내기</translation>
     </message>
 </context>
 <context>
@@ -1406,134 +1672,162 @@
     <name>UBFeatureProperties</name>
     <message>
         <source>Add to page</source>
-        <translation type="unfinished">페이지에 추가</translation>
+        <translation>페이지에 추가</translation>
     </message>
     <message>
         <source>Set as background</source>
-        <translation type="unfinished">배경으로 지정</translation>
+        <translation>배경으로 지정</translation>
     </message>
     <message>
         <source>Add to library</source>
-        <translation type="unfinished">라이브러리에 추가</translation>
+        <translation>라이브러리에 추가</translation>
     </message>
     <message>
         <source>Object informations</source>
-        <translation type="unfinished">객체 정보</translation>
+        <translation>객체 정보</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>추가</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
     <message>
         <source>Add to favorites</source>
-        <translation type="unfinished">즐겨찾기에 추가</translation>
+        <translation>즐겨찾기에 추가</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished">공유</translation>
+        <translation>공유</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">검색</translation>
+        <translation>검색</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">삭제</translation>
+        <translation>삭제</translation>
     </message>
     <message>
         <source>Back to folder</source>
-        <translation type="unfinished">폴더로 돌아가기</translation>
+        <translation>폴더로 돌아가기</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation type="unfinished">즐겨찾기에서 제거</translation>
+        <translation>즐겨찾기에서 제거</translation>
     </message>
     <message>
         <source>Create new folder</source>
-        <translation type="unfinished">새 폴더 만들기</translation>
+        <translation>새 폴더 만들기</translation>
     </message>
     <message>
         <source>Rescan file system</source>
-        <translation type="unfinished">파일 시스템 다시 스캔</translation>
+        <translation>파일 시스템 다시 스캔</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesController</name>
     <message>
         <source>ImportedImage</source>
-        <translation type="unfinished">가져온 이미지</translation>
+        <translation>가져온이미지</translation>
     </message>
     <message>
         <source>Audios</source>
-        <translation type="unfinished">오디오</translation>
+        <translation>오디오</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation type="unfinished">동영상</translation>
+        <translation>동영상</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished">사진</translation>
+        <translation>사진</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation type="unfinished">애니메이션</translation>
+        <translation>애니메이션</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation type="unfinished">대화형 작업</translation>
+        <translation>대화형 작업</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation type="unfinished">응용 프로그램</translation>
+        <translation>응용 프로그램</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation type="unfinished">도형</translation>
+        <translation>도형</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation type="unfinished">즐겨찾기</translation>
+        <translation>즐겨찾기</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation type="unfinished">웹 검색</translation>
+        <translation>웹 검색</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation type="unfinished">휴지통</translation>
+        <translation>휴지통</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation>북마크</translation>
+    </message>
+    <message>
+        <source>Web</source>
+        <translation>웹</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished">적용</translation>
+        <translation>허용</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">취소</translation>
+        <translation>취소</translation>
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation type="unfinished">새 폴더 이름 입력</translation>
+        <translation>새 폴더 이름 입력</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation type="unfinished">불러오는 중</translation>
+        <translation>불러오는 중</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation type="unfinished">잠김</translation>
+        <translation>잠김</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation type="unfinished">확장 화면에 보이기</translation>
+        <translation>확장 화면에 보이기</translation>
+    </message>
+    <message>
+        <source>Add an action</source>
+        <translation>작업 추가</translation>
+    </message>
+    <message>
+        <source>Remove link to audio</source>
+        <translation>오디오에 링크 제거</translation>
+    </message>
+    <message>
+        <source>Remove link to page</source>
+        <translation>페이지에 링크 제거</translation>
+    </message>
+    <message>
+        <source>Remove link to web url</source>
+        <translation>웹 url 링크 제거</translation>
     </message>
 </context>
 <context>
@@ -1549,6 +1843,22 @@
     <message>
         <source>Go to Content Source</source>
         <translation>콘텐츠 소스로 이동</translation>
+    </message>
+    <message>
+        <source>Add an action</source>
+        <translation>작업 추가</translation>
+    </message>
+    <message>
+        <source>Remove link to audio</source>
+        <translation>오디오에 링크 제거</translation>
+    </message>
+    <message>
+        <source>Remove link to page</source>
+        <translation>페이지에 링크 제거</translation>
+    </message>
+    <message>
+        <source>Remove link to web url</source>
+        <translation>웹 url 링크 제거</translation>
     </message>
 </context>
 <context>
@@ -1566,21 +1876,14 @@
     </message>
     <message>
         <source>Editable</source>
-        <translation type="unfinished">편집 가능</translation>
-    </message>
-</context>
-<context>
-    <name>UBGraphicsW3CWidgetItem</name>
-    <message>
-        <source>Web</source>
-        <translation type="unfinished">웹</translation>
+        <translation>편집 가능</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation type="unfinished">불러오는 중 ...</translation>
+        <translation>불러오는 중 ...</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1936,14 @@
     </message>
     <message>
         <source>Open-Sankore (*.ubz)</source>
-        <translation type="unfinished">Open-Sankore(*.ubz)</translation>
+        <translation>Open-Sankore(*.ubz)</translation>
+    </message>
+</context>
+<context>
+    <name>UBImportDocumentSetAdaptor</name>
+    <message>
+        <source>Open-Sankore (set of documents) (*.ubx)</source>
+        <translation>Open-Sankore (문서 세트) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -1680,7 +1990,7 @@
     <name>UBKeyboardPalette</name>
     <message>
         <source>Enter</source>
-        <translation type="unfinished">입력</translation>
+        <translation>입력</translation>
     </message>
 </context>
 <context>
@@ -1702,7 +2012,7 @@
     <name>UBMessagesDialog</name>
     <message>
         <source>Close</source>
-        <translation type="unfinished">닫기</translation>
+        <translation>닫기</translation>
     </message>
 </context>
 <context>
@@ -1759,23 +2069,23 @@ Do you want to ignore these errors for this host?</source>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation type="unfinished">영어</translation>
+        <translation>영어</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished">러시아어</translation>
+        <translation>러시아어</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished">독일어</translation>
+        <translation>독일어</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished">프랑스어</translation>
+        <translation>프랑스어</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation type="unfinished">스위스 프랑스어</translation>
+        <translation>스위스 프랑스어</translation>
     </message>
 </context>
 <context>
@@ -1794,7 +2104,7 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>on your desktop ...</source>
-        <translation type="unfinished">바탕 화면에 ...</translation>
+        <translation>바탕 화면에 ...</translation>
     </message>
     <message>
         <source>in folder %1</source>
@@ -1845,11 +2155,143 @@ Do you want to ignore these errors for this host?</source>
     <name>UBPreferencesController</name>
     <message>
         <source>version: </source>
-        <translation type="unfinished">버전: </translation>
+        <translation>버전: </translation>
     </message>
     <message>
         <source>Marker is pressure sensitive</source>
         <translation>마커는 압력 감지식입니다</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>기본</translation>
+    </message>
+    <message>
+        <source>Arabic</source>
+        <translation>아랍어</translation>
+    </message>
+    <message>
+        <source>Bulgarian</source>
+        <translation>불가리아어</translation>
+    </message>
+    <message>
+        <source>Catalan</source>
+        <translation>카탈란어</translation>
+    </message>
+    <message>
+        <source>Czech</source>
+        <translation>체코어</translation>
+    </message>
+    <message>
+        <source>Danish</source>
+        <translation>덴마크어</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>독일어</translation>
+    </message>
+    <message>
+        <source>Greek</source>
+        <translation>그리스어</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>영어</translation>
+    </message>
+    <message>
+        <source>English UK</source>
+        <translation>영어 영국</translation>
+    </message>
+    <message>
+        <source>Spanish</source>
+        <translation>스페인어</translation>
+    </message>
+    <message>
+        <source>French</source>
+        <translation>프랑스어</translation>
+    </message>
+    <message>
+        <source>Swiss French</source>
+        <translation>스위스 프랑스어</translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <translation>이탈리아어</translation>
+    </message>
+    <message>
+        <source>Hebrew</source>
+        <translation>히브루어</translation>
+    </message>
+    <message>
+        <source>Japanese</source>
+        <translation>일본어</translation>
+    </message>
+    <message>
+        <source>Korean</source>
+        <translation>한국어</translation>
+    </message>
+    <message>
+        <source>Malagasy</source>
+        <translation>마다가스카르 어</translation>
+    </message>
+    <message>
+        <source>Norwegian</source>
+        <translation>노르웨이어</translation>
+    </message>
+    <message>
+        <source>Dutch</source>
+        <translation>네덜란드어</translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <translation>폴란드어</translation>
+    </message>
+    <message>
+        <source>Romansh</source>
+        <translation>로만 시어</translation>
+    </message>
+    <message>
+        <source>Romanian</source>
+        <translation>루마니아어</translation>
+    </message>
+    <message>
+        <source>Russian</source>
+        <translation>러시아어</translation>
+    </message>
+    <message>
+        <source>Slovak</source>
+        <translation>슬로바키아어</translation>
+    </message>
+    <message>
+        <source>Swedish</source>
+        <translation>스웨덴어</translation>
+    </message>
+    <message>
+        <source>Turkish</source>
+        <translation>터키어</translation>
+    </message>
+    <message>
+        <source>Chinese</source>
+        <translation>중국어</translation>
+    </message>
+    <message>
+        <source>Chinese Simplified</source>
+        <translation>중국어 간체</translation>
+    </message>
+    <message>
+        <source>Chinese Traditional</source>
+        <translation>중국어 번체</translation>
+    </message>
+    <message>
+        <source>Corsican</source>
+        <translation>코르시카어</translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation>힌디어</translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1892,38 +2334,49 @@ Do you want to ignore these errors for this host?</source>
         <source>My Movies</source>
         <translation>내 동영상</translation>
     </message>
+    <message>
+        <source>/Web</source>
+        <translation>/웹</translation>
+    </message>
+</context>
+<context>
+    <name>UBStartupHintsPalette</name>
+    <message>
+        <source>Visible next time</source>
+        <translation>다음에 보이기</translation>
+    </message>
 </context>
 <context>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation type="unfinished">교사</translation>
+        <translation>교사</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation type="unfinished">학생</translation>
+        <translation>학생</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation type="unfinished">여기에 작업 입력 ...</translation>
+        <translation>여기에 작업 입력 ...</translation>
     </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>
     <message>
         <source>drop media here ...</source>
-        <translation type="unfinished">여기에 미디어 놓기 ...</translation>
+        <translation>여기에 미디어 놓기 ...</translation>
     </message>
     <message>
         <source>Type title here...</source>
-        <translation type="unfinished">여기에 제목 입력...</translation>
+        <translation>여기에 제목 입력...</translation>
     </message>
 </context>
 <context>
     <name>UBTGUrlWidget</name>
     <message>
         <source>Insert link title here...</source>
-        <translation type="unfinished">여기에 링크 제목 삽입...</translation>
+        <translation>여기에 링크 제목 삽입...</translation>
     </message>
 </context>
 <context>
@@ -1937,140 +2390,140 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation type="unfinished">여기에 제목 입력 ...</translation>
+        <translation>여기에 제목 입력 ...</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation type="unfinished">여기에 주석 입력 ...</translation>
+        <translation>여기에 댓글 입력 ...</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation type="unfinished">작업 추가</translation>
+        <translation>작업 추가</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translation type="unfinished">미디어 추가</translation>
+        <translation>미디어 추가</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation type="unfinished">링크 추가</translation>
+        <translation>링크 추가</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished">페이지: %0</translation>
+        <translation>페이지: %0</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation type="unfinished">여기에 세션 제목 입력 ...</translation>
+        <translation>여기에 세션 제목 입력 ...</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation type="unfinished">저자</translation>
+        <translation>저자</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation type="unfinished">여기에 저자 입력 ...</translation>
+        <translation>여기에 저자 입력 ...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation type="unfinished">목표</translation>
+        <translation>목표</translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation type="unfinished">여기에 목표 입력...</translation>
+        <translation>여기에 목표 입력...</translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translation type="unfinished">리소스 인덱싱</translation>
+        <translation>리소스 인덱싱</translation>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation type="unfinished">키워드:</translation>
+        <translation>키워드:</translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation type="unfinished">여기에 키워드 입력 ...</translation>
+        <translation>여기에 키워드 입력 ...</translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation type="unfinished">레벨:</translation>
+        <translation>레벨:</translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation type="unfinished">주제:</translation>
+        <translation>주제:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">유형:</translation>
+        <translation>유형:</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation type="unfinished">라이선스</translation>
+        <translation>라이선스</translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
-        <translation type="unfinished">저작자 표시 CC BY</translation>
+        <translation>저작자 표시 CC BY</translation>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
-        <translation type="unfinished">저작자 표시-NoDerivs CC BY-ND</translation>
+        <translation>저작자 표시-NoDerivs CC BY-ND</translation>
     </message>
     <message>
         <source>Attribution-ShareAlike CC BY-SA</source>
-        <translation type="unfinished">저작자 표시-ShareAlike CC BY-SA</translation>
+        <translation>저작자 표시-ShareAlike CC BY-SA</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial CC BY-NC</source>
-        <translation type="unfinished">저작자 표시-NonCommercial CC BY-NC</translation>
+        <translation>저작자 표시-NonCommercial CC BY-NC</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</source>
-        <translation type="unfinished">저작자 표시-NonCommercial-NoDerivs CC BY-NC-ND</translation>
+        <translation>저작자 표시-NonCommercial-NoDerivs CC BY-NC-ND</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</source>
-        <translation type="unfinished">저작자 표시-NonCommercial-ShareAlike CC BY-NC-SA</translation>
+        <translation>저작자 표시-NonCommercial-ShareAlike CC BY-NC-SA</translation>
     </message>
     <message>
         <source>Public domain</source>
-        <translation type="unfinished">공용 도메인</translation>
+        <translation>공용 도메인</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished">저작권</translation>
+        <translation>저작권</translation>
     </message>
     <message>
         <source>Created the:
 </source>
-        <translation type="unfinished">만든 날짜:
+        <translation>만든 날짜:
 </translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation type="unfinished">업데이트한 날짜:
+        <translation>업데이트한 날짜:
 </translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation type="unfinished">제목 페이지</translation>
+        <translation>제목 페이지</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished">페이지: %0</translation>
+        <translation>페이지: %0</translation>
     </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
     <message>
         <source>Generating preview thumbnails ...</source>
-        <translation type="unfinished">미리보기 썸네일 생성 중 ...</translation>
+        <translation>미리보기 썸네일 생성 중 ...</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
@@ -2107,20 +2560,16 @@ Do you want to ignore these errors for this host?</source>
         <source>Cache</source>
         <translation>캐시</translation>
     </message>
-    <message>
-        <source>Aristo</source>
-        <translation type="unfinished">Aristo</translation>
-    </message>
 </context>
 <context>
-    <name>UBTrapFlashController</name>
+    <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
         <translation>전체 페이지</translation>
     </message>
     <message>
-        <source>Web</source>
-        <translation>웹</translation>
+        <source>Embed </source>
+        <translation>삽입</translation>
     </message>
 </context>
 <context>
@@ -2135,7 +2584,7 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Backup path: </source>
-        <translation type="unfinished">백업 경로: </translation>
+        <translation>백업 경로: </translation>
     </message>
     <message>
         <source>Browse</source>
@@ -2173,7 +2622,7 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Remind me later</source>
-        <translation type="unfinished">나중에 알림</translation>
+        <translation>나중에 알림</translation>
     </message>
 </context>
 <context>
@@ -2213,11 +2662,11 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation type="unfinished">Open-Sankore</translation>
+        <translation>Open-Sankore</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation type="unfinished">OpenSankore</translation>
+        <translation>OpenSankore</translation>
     </message>
 </context>
 <context>
@@ -2294,11 +2743,11 @@ Please reboot the application to access the updated documents.</source>
     <name>UniboardSankoreTransition</name>
     <message>
         <source>Import old Uniboard/Sankore documents</source>
-        <translation type="unfinished">기존 유니보드/Sankore 문서 가져오기</translation>
+        <translation>기존 유니보드/Sankore 문서 가져오기</translation>
     </message>
     <message>
         <source>There are no documents that should be imported</source>
-        <translation type="unfinished">가져와야 할 문서가 없습니다.</translation>
+        <translation>가져와야 할 문서가 없습니다</translation>
     </message>
 </context>
 <context>
@@ -2467,6 +2916,53 @@ Please reboot the application to access the updated documents.</source>
     </message>
 </context>
 <context>
+    <name>WBTrapWebPageContentWindow</name>
+    <message>
+        <source>Select content to trap:</source>
+        <translation>컨텐츠를 트랩으로 선택:</translation>
+    </message>
+    <message>
+        <source>Application name</source>
+        <translation>응용 프로그램 이름</translation>
+    </message>
+    <message>
+        <source>Restriction and disclaimer. </source>
+        <translation>제한 및 면책 조항.</translation>
+    </message>
+    <message>
+        <source>This feature is developed to work on the most common web pages.</source>
+        <translation>이 기능은 가장 일반적인 웹 페이지에서 작동하도록 개발되었습니다.</translation>
+    </message>
+    <message>
+        <source>Please respect copyrights for creating links or trapping content from the web.</source>
+        <translation>링크를 만들거나 웹에서 컨텐츠를 수집 시 저작권을 존중하시기 바랍니다.</translation>
+    </message>
+    <message>
+        <source>Download to
+library</source>
+        <translation>다운로드 위치:
+라이브러리</translation>
+    </message>
+    <message>
+        <source>Download to
+current page</source>
+        <translation>다운로드 위치
+현재 페이지</translation>
+    </message>
+    <message>
+        <source>Add link to
+library</source>
+        <translation>링크 추가 위치:
+라이브러리</translation>
+    </message>
+    <message>
+        <source>Add link to
+current page</source>
+        <translation>링크 추가 위치
+현재 페이지</translation>
+    </message>
+</context>
+<context>
     <name>WBWebPage</name>
     <message>
         <source>Download</source>
@@ -2541,6 +3037,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;귀하는 &apos;Upload&apos;를 클릭함으로써 귀하가 해당 콘텐츠에 대한 모든 권한을 소유하거나 소유자로부터 해당 콘텐츠를 YouTube에 공개할 수 있도록 허락받았으며, 해당 콘텐츠가 YouTube 이용약관 (&lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;)을 준수함을 보증합니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Restore credentials on reboot</source>
+        <translatorcomment>재부팅 시 자격 증명 복원</translatorcomment>
+        <translation>Restore credentials on reboot</translation>
     </message>
 </context>
 <context>
@@ -2738,20 +3239,8 @@ p, li { white-space: pre-wrap; }
         <translation>라이선스</translation>
     </message>
     <message>
-        <source>OpenSSl</source>
-        <translation>OpenSSl</translation>
-    </message>
-    <message>
         <source>zlib</source>
         <translation>zlib</translation>
-    </message>
-    <message>
-        <source>xpdf</source>
-        <translation>xpdf</translation>
-    </message>
-    <message>
-        <source>Quazip</source>
-        <translation>Quazip</translation>
     </message>
     <message>
         <source>Network</source>
@@ -2759,587 +3248,117 @@ p, li { white-space: pre-wrap; }
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
-        <translation type="unfinished">Open-Sankoré</translation>
+        <translation>Open-Sankoré</translation>
     </message>
     <message>
         <source>Show internal web page content on secondary screen or projector</source>
-        <translation type="unfinished">보조 화면 또는 프로젝터에 내부 웹 페이지 콘텐츠 표시</translation>
+        <translation>보조 화면 또는 프로젝터에 내부 웹 페이지 콘텐츠 표시</translation>
     </message>
     <message>
         <source>Multi display</source>
-        <translation type="unfinished">다중 디스플레이</translation>
+        <translation>다중 디스플레이</translation>
     </message>
     <message>
         <source>Swap control display and view display</source>
-        <translation type="unfinished">컨트롤 디스플레이 스왑 및 디스플레이 보기</translation>
+        <translation>컨트롤 디스플레이 스왑 및 디스플레이 보기</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished">모드</translation>
+        <translation>모드</translation>
     </message>
     <message>
         <source>Mode to start in:</source>
-        <translation type="unfinished">시작할 모드:</translation>
+        <translation>시작할 모드:</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation type="unfinished">보드</translation>
+        <translation>보드</translation>
     </message>
     <message>
         <source>Desktop</source>
-        <translation type="unfinished">바탕 화면</translation>
+        <translation>바탕 화면</translation>
     </message>
     <message>
         <source>Proxy User:</source>
-        <translation type="unfinished">프록시 사용자:</translation>
+        <translation>프록시 사용자:</translation>
     </message>
     <message>
         <source>Pass:</source>
-        <translation type="unfinished">패스:</translation>
-    </message>
-    <message utf8="true">
-        <source>Planète Sankoré ID</source>
-        <translation type="unfinished">Planète Sankoré ID</translation>
+        <translation>패스:</translation>
     </message>
     <message>
         <source>User:</source>
-        <translation type="unfinished">사용자:</translation>
+        <translation>사용자:</translation>
     </message>
     <message>
         <source>Pass: </source>
-        <translation type="unfinished">패스:</translation>
-    </message>
-    <message>
-        <source>                  GNU LIBRARY GENERAL PUBLIC LICENSE
-                       Version 2, June 1991
-
- Copyright (C) 1991 Free Software Foundation, Inc.
- 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
-
-[This is the first released version of the library GPL.  It is
- numbered 2 because it goes with version 2 of the ordinary GPL.]
-
-                            Preamble
-
-  The licenses for most software are designed to take away your
-freedom to share and change it.  By contrast, the GNU General Public
-Licenses are intended to guarantee your freedom to share and change
-free software--to make sure the software is free for all its users.
-
-  This license, the Library General Public License, applies to some
-specially designated Free Software Foundation software, and to any
-other libraries whose authors decide to use it.  You can use it for
-your libraries, too.
-
-  When we speak of free software, we are referring to freedom, not
-price.  Our General Public Licenses are designed to make sure that you
-have the freedom to distribute copies of free software (and charge for
-this service if you wish), that you receive source code or can get it
-if you want it, that you can change the software or use pieces of it
-in new free programs; and that you know you can do these things.
-
-  To protect your rights, we need to make restrictions that forbid
-anyone to deny you these rights or to ask you to surrender the rights.
-These restrictions translate to certain responsibilities for you if
-you distribute copies of the library, or if you modify it.
-
-  For example, if you distribute copies of the library, whether gratis
-or for a fee, you must give the recipients all the rights that we gave
-you.  You must make sure that they, too, receive or can get the source
-code.  If you link a program with the library, you must provide
-complete object files to the recipients so that they can relink them
-with the library, after making changes to the library and recompiling
-it.  And you must show them these terms so they know their rights.
-
-  Our method of protecting your rights has two steps: (1) copyright
-the library, and (2) offer you this license which gives you legal
-permission to copy, distribute and/or modify the library.
-
-  Also, for each distributor&apos;s protection, we want to make certain
-that everyone understands that there is no warranty for this free
-library.  If the library is modified by someone else and passed on, we
-want its recipients to know that what they have is not the original
-version, so that any problems introduced by others will not reflect on
-the original authors&apos; reputations.
-
-  Finally, any free program is threatened constantly by software
-patents.  We wish to avoid the danger that companies distributing free
-software will individually obtain patent licenses, thus in effect
-transforming the program into proprietary software.  To prevent this,
-we have made it clear that any patent must be licensed for everyone&apos;s
-free use or not licensed at all.
-
-  Most GNU software, including some libraries, is covered by the ordinary
-GNU General Public License, which was designed for utility programs.  This
-license, the GNU Library General Public License, applies to certain
-designated libraries.  This license is quite different from the ordinary
-one; be sure to read it in full, and don&apos;t assume that anything in it is
-the same as in the ordinary license.
-
-  The reason we have a separate public license for some libraries is that
-they blur the distinction we usually make between modifying or adding to a
-program and simply using it.  Linking a program with a library, without
-changing the library, is in some sense simply using the library, and is
-analogous to running a utility program or application program.  However, in
-a textual and legal sense, the linked executable is a combined work, a
-derivative of the original library, and the ordinary General Public License
-treats it as such.
-
-  Because of this blurred distinction, using the ordinary General
-Public License for libraries did not effectively promote software
-sharing, because most developers did not use the libraries.  We
-concluded that weaker conditions might promote sharing better.
-
-  However, unrestricted linking of non-free programs would deprive the
-users of those programs of all benefit from the free status of the
-libraries themselves.  This Library General Public License is intended to
-permit developers of non-free programs to use free libraries, while
-preserving your freedom as a user of such programs to change the free
-libraries that are incorporated in them.  (We have not seen how to achieve
-this as regards changes in header files, but we have achieved it as regards
-changes in the actual functions of the Library.)  The hope is that this
-will lead to faster development of free libraries.
-
-  The precise terms and conditions for copying, distribution and
-modification follow.  Pay close attention to the difference between a
-&quot;work based on the library&quot; and a &quot;work that uses the library&quot;.  The
-former contains code derived from the library, while the latter only
-works together with the library.
-
-  Note that it is possible for a library to be covered by the ordinary
-General Public License rather than by this special one.
-
-                  GNU LIBRARY GENERAL PUBLIC LICENSE
-   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
-  0. This License Agreement applies to any software library which
-contains a notice placed by the copyright holder or other authorized
-party saying it may be distributed under the terms of this Library
-General Public License (also called &quot;this License&quot;).  Each licensee is
-addressed as &quot;you&quot;.
-
-  A &quot;library&quot; means a collection of software functions and/or data
-prepared so as to be conveniently linked with application programs
-(which use some of those functions and data) to form executables.
-
-  The &quot;Library&quot;, below, refers to any such software library or work
-which has been distributed under these terms.  A &quot;work based on the
-Library&quot; means either the Library or any derivative work under
-copyright law: that is to say, a work containing the Library or a
-portion of it, either verbatim or with modifications and/or translated
-straightforwardly into another language.  (Hereinafter, translation is
-included without limitation in the term &quot;modification&quot;.)
-
-  &quot;Source code&quot; for a work means the preferred form of the work for
-making modifications to it.  For a library, complete source code means
-all the source code for all modules it contains, plus any associated
-interface definition files, plus the scripts used to control compilation
-and installation of the library.
-
-  Activities other than copying, distribution and modification are not
-covered by this License; they are outside its scope.  The act of
-running a program using the Library is not restricted, and output from
-such a program is covered only if its contents constitute a work based
-on the Library (independent of the use of the Library in a tool for
-writing it).  Whether that is true depends on what the Library does
-and what the program that uses the Library does.
-  
-  1. You may copy and distribute verbatim copies of the Library&apos;s
-complete source code as you receive it, in any medium, provided that
-you conspicuously and appropriately publish on each copy an
-appropriate copyright notice and disclaimer of warranty; keep intact
-all the notices that refer to this License and to the absence of any
-warranty; and distribute a copy of this License along with the
-Library.
-
-  You may charge a fee for the physical act of transferring a copy,
-and you may at your option offer warranty protection in exchange for a
-fee.
-
-  2. You may modify your copy or copies of the Library or any portion
-of it, thus forming a work based on the Library, and copy and
-distribute such modifications or work under the terms of Section 1
-above, provided that you also meet all of these conditions:
-
-    a) The modified work must itself be a software library.
-
-    b) You must cause the files modified to carry prominent notices
-    stating that you changed the files and the date of any change.
-
-    c) You must cause the whole of the work to be licensed at no
-    charge to all third parties under the terms of this License.
-
-    d) If a facility in the modified Library refers to a function or a
-    table of data to be supplied by an application program that uses
-    the facility, other than as an argument passed when the facility
-    is invoked, then you must make a good faith effort to ensure that,
-    in the event an application does not supply such function or
-    table, the facility still operates, and performs whatever part of
-    its purpose remains meaningful.
-
-    (For example, a function in a library to compute square roots has
-    a purpose that is entirely well-defined independent of the
-    application.  Therefore, Subsection 2d requires that any
-    application-supplied function or table used by this function must
-    be optional: if the application does not supply it, the square
-    root function must still compute square roots.)
-
-These requirements apply to the modified work as a whole.  If
-identifiable sections of that work are not derived from the Library,
-and can be reasonably considered independent and separate works in
-themselves, then this License, and its terms, do not apply to those
-sections when you distribute them as separate works.  But when you
-distribute the same sections as part of a whole which is a work based
-on the Library, the distribution of the whole must be on the terms of
-this License, whose permissions for other licensees extend to the
-entire whole, and thus to each and every part regardless of who wrote
-it.
-
-Thus, it is not the intent of this section to claim rights or contest
-your rights to work written entirely by you; rather, the intent is to
-exercise the right to control the distribution of derivative or
-collective works based on the Library.
-
-In addition, mere aggregation of another work not based on the Library
-with the Library (or with a work based on the Library) on a volume of
-a storage or distribution medium does not bring the other work under
-the scope of this License.
-
-  3. You may opt to apply the terms of the ordinary GNU General Public
-License instead of this License to a given copy of the Library.  To do
-this, you must alter all the notices that refer to this License, so
-that they refer to the ordinary GNU General Public License, version 2,
-instead of to this License.  (If a newer version than version 2 of the
-ordinary GNU General Public License has appeared, then you can specify
-that version instead if you wish.)  Do not make any other change in
-these notices.
-
-  Once this change is made in a given copy, it is irreversible for
-that copy, so the ordinary GNU General Public License applies to all
-subsequent copies and derivative works made from that copy.
-
-  This option is useful when you wish to copy part of the code of
-the Library into a program that is not a library.
-
-  4. You may copy and distribute the Library (or a portion or
-derivative of it, under Section 2) in object code or executable form
-under the terms of Sections 1 and 2 above provided that you accompany
-it with the complete corresponding machine-readable source code, which
-must be distributed under the terms of Sections 1 and 2 above on a
-medium customarily used for software interchange.
-
-  If distribution of object code is made by offering access to copy
-from a designated place, then offering equivalent access to copy the
-source code from the same place satisfies the requirement to
-distribute the source code, even though third parties are not
-compelled to copy the source along with the object code.
-
-  5. A program that contains no derivative of any portion of the
-Library, but is designed to work with the Library by being compiled or
-linked with it, is called a &quot;work that uses the Library&quot;.  Such a
-work, in isolation, is not a derivative work of the Library, and
-therefore falls outside the scope of this License.
-
-  However, linking a &quot;work that uses the Library&quot; with the Library
-creates an executable that is a derivative of the Library (because it
-contains portions of the Library), rather than a &quot;work that uses the
-library&quot;.  The executable is therefore covered by this License.
-Section 6 states terms for distribution of such executables.
-
-  When a &quot;work that uses the Library&quot; uses material from a header file
-that is part of the Library, the object code for the work may be a
-derivative work of the Library even though the source code is not.
-Whether this is true is especially significant if the work can be
-linked without the Library, or if the work is itself a library.  The
-threshold for this to be true is not precisely defined by law.
-
-  If such an object file uses only numerical parameters, data
-structure layouts and accessors, and small macros and small inline
-functions (ten lines or less in length), then the use of the object
-file is unrestricted, regardless of whether it is legally a derivative
-work.  (Executables containing this object code plus portions of the
-Library will still fall under Section 6.)
-
-  Otherwise, if the work is a derivative of the Library, you may
-distribute the object code for the work under the terms of Section 6.
-Any executables containing that work also fall under Section 6,
-whether or not they are linked directly with the Library itself.
-
-  6. As an exception to the Sections above, you may also compile or
-link a &quot;work that uses the Library&quot; with the Library to produce a
-work containing portions of the Library, and distribute that work
-under terms of your choice, provided that the terms permit
-modification of the work for the customer&apos;s own use and reverse
-engineering for debugging such modifications.
-
-  You must give prominent notice with each copy of the work that the
-Library is used in it and that the Library and its use are covered by
-this License.  You must supply a copy of this License.  If the work
-during execution displays copyright notices, you must include the
-copyright notice for the Library among them, as well as a reference
-directing the user to the copy of this License.  Also, you must do one
-of these things:
-
-    a) Accompany the work with the complete corresponding
-    machine-readable source code for the Library including whatever
-    changes were used in the work (which must be distributed under
-    Sections 1 and 2 above); and, if the work is an executable linked
-    with the Library, with the complete machine-readable &quot;work that
-    uses the Library&quot;, as object code and/or source code, so that the
-    user can modify the Library and then relink to produce a modified
-    executable containing the modified Library.  (It is understood
-    that the user who changes the contents of definitions files in the
-    Library will not necessarily be able to recompile the application
-    to use the modified definitions.)
-
-    b) Accompany the work with a written offer, valid for at
-    least three years, to give the same user the materials
-    specified in Subsection 6a, above, for a charge no more
-    than the cost of performing this distribution.
-
-    c) If distribution of the work is made by offering access to copy
-    from a designated place, offer equivalent access to copy the above
-    specified materials from the same place.
-
-    d) Verify that the user has already received a copy of these
-    materials or that you have already sent this user a copy.
-
-  For an executable, the required form of the &quot;work that uses the
-Library&quot; must include any data and utility programs needed for
-reproducing the executable from it.  However, as a special exception,
-the source code distributed need not include anything that is normally
-distributed (in either source or binary form) with the major
-components (compiler, kernel, and so on) of the operating system on
-which the executable runs, unless that component itself accompanies
-the executable.
-
-  It may happen that this requirement contradicts the license
-restrictions of other proprietary libraries that do not normally
-accompany the operating system.  Such a contradiction means you cannot
-use both them and the Library together in an executable that you
-distribute.
-
-  7. You may place library facilities that are a work based on the
-Library side-by-side in a single library together with other library
-facilities not covered by this License, and distribute such a combined
-library, provided that the separate distribution of the work based on
-the Library and of the other library facilities is otherwise
-permitted, and provided that you do these two things:
-
-    a) Accompany the combined library with a copy of the same work
-    based on the Library, uncombined with any other library
-    facilities.  This must be distributed under the terms of the
-    Sections above.
-
-    b) Give prominent notice with the combined library of the fact
-    that part of it is a work based on the Library, and explaining
-    where to find the accompanying uncombined form of the same work.
-
-  8. You may not copy, modify, sublicense, link with, or distribute
-the Library except as expressly provided under this License.  Any
-attempt otherwise to copy, modify, sublicense, link with, or
-distribute the Library is void, and will automatically terminate your
-rights under this License.  However, parties who have received copies,
-or rights, from you under this License will not have their licenses
-terminated so long as such parties remain in full compliance.
-
-  9. You are not required to accept this License, since you have not
-signed it.  However, nothing else grants you permission to modify or
-distribute the Library or its derivative works.  These actions are
-prohibited by law if you do not accept this License.  Therefore, by
-modifying or distributing the Library (or any work based on the
-Library), you indicate your acceptance of this License to do so, and
-all its terms and conditions for copying, distributing or modifying
-the Library or works based on it.
-
-  10. Each time you redistribute the Library (or any work based on the
-Library), the recipient automatically receives a license from the
-original licensor to copy, distribute, link with or modify the Library
-subject to these terms and conditions.  You may not impose any further
-restrictions on the recipients&apos; exercise of the rights granted herein.
-You are not responsible for enforcing compliance by third parties to
-this License.
-
-  11. If, as a consequence of a court judgment or allegation of patent
-infringement or for any other reason (not limited to patent issues),
-conditions are imposed on you (whether by court order, agreement or
-otherwise) that contradict the conditions of this License, they do not
-excuse you from the conditions of this License.  If you cannot
-distribute so as to satisfy simultaneously your obligations under this
-License and any other pertinent obligations, then as a consequence you
-may not distribute the Library at all.  For example, if a patent
-license would not permit royalty-free redistribution of the Library by
-all those who receive copies directly or indirectly through you, then
-the only way you could satisfy both it and this License would be to
-refrain entirely from distribution of the Library.
-
-If any portion of this section is held invalid or unenforceable under any
-particular circumstance, the balance of the section is intended to apply,
-and the section as a whole is intended to apply in other circumstances.
-
-It is not the purpose of this section to induce you to infringe any
-patents or other property right claims or to contest validity of any
-such claims; this section has the sole purpose of protecting the
-integrity of the free software distribution system which is
-implemented by public license practices.  Many people have made
-generous contributions to the wide range of software distributed
-through that system in reliance on consistent application of that
-system; it is up to the author/donor to decide if he or she is willing
-to distribute software through any other system and a licensee cannot
-impose that choice.
-
-This section is intended to make thoroughly clear what is believed to
-be a consequence of the rest of this License.
-
-  12. If the distribution and/or use of the Library is restricted in
-certain countries either by patents or by copyrighted interfaces, the
-original copyright holder who places the Library under this License may add
-an explicit geographical distribution limitation excluding those countries,
-so that distribution is permitted only in or among countries not thus
-excluded.  In such case, this License incorporates the limitation as if
-written in the body of this License.
-
-  13. The Free Software Foundation may publish revised and/or new
-versions of the Library General Public License from time to time.
-Such new versions will be similar in spirit to the present version,
-but may differ in detail to address new problems or concerns.
-
-Each version is given a distinguishing version number.  If the Library
-specifies a version number of this License which applies to it and
-&quot;any later version&quot;, you have the option of following the terms and
-conditions either of that version or of any later version published by
-the Free Software Foundation.  If the Library does not specify a
-license version number, you may choose any version ever published by
-the Free Software Foundation.
-
-  14. If you wish to incorporate parts of the Library into other free
-programs whose distribution conditions are incompatible with these,
-write to the author to ask for permission.  For software which is
-copyrighted by the Free Software Foundation, write to the Free
-Software Foundation; we sometimes make exceptions for this.  Our
-decision will be guided by the two goals of preserving the free status
-of all derivatives of our free software and of promoting the sharing
-and reuse of software generally.
-
-                            NO WARRANTY
-
-  15. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO
-WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW.
-EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR
-OTHER PARTIES PROVIDE THE LIBRARY &quot;AS IS&quot; WITHOUT WARRANTY OF ANY
-KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
-LIBRARY IS WITH YOU.  SHOULD THE LIBRARY PROVE DEFECTIVE, YOU ASSUME
-THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN
-WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
-AND/OR REDISTRIBUTE THE LIBRARY AS PERMITTED ABOVE, BE LIABLE TO YOU
-FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR
-CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE
-LIBRARY (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
-RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
-FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
-SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
-DAMAGES.
-
-                     END OF TERMS AND CONDITIONS
-</source>
-        <translatorcomment>Translation needed</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation>패스:</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation type="unfinished">Credits</translation>
+        <translation>Credits</translation>
+    </message>
+    <message>
+        <source>Start up tips</source>
+        <translation>시작 조언</translation>
+    </message>
+    <message>
+        <source>Show start up tips</source>
+        <translation>시작 조언 표시</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>언어</translation>
+    </message>
+    <message>
+        <source>Select a language</source>
+        <translation>언어 선택</translation>
+    </message>
+    <message>
+        <source>The new language will be loaded on next restart</source>
+        <translation>재시작 시 새 언어가 로딩됩니다</translation>
+    </message>
+    <message utf8="true">
+        <source>Close Open-Sankoré</source>
+        <translation>Open-Sankoré 닫기</translation>
+    </message>
+    <message utf8="true">
+        <source>Planète Sankoré ID for exporting file</source>
+        <translation>Planète Sankoré ID for exporting file</translation>
+    </message>
+    <message>
+        <source>Restore credentials on reboot  </source>
+        <translation>재부팅 시 자격증명 복원</translation>
+    </message>
+    <message>
+        <source>OpenSSL</source>
+        <translation>SSL열기</translation>
+    </message>
+    <message>
+        <source>Xpdf</source>
+        <translation>Xpdf</translation>
+    </message>
+    <message>
+        <source>QuaZIP</source>
+        <translation>QuaZIP</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt; color:#1a1a1a;&quot;&gt;Copyright (C) 1995-1998 Jean-loup Gailly and Mark Adler&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt; color:#1a1a1a;&quot;&gt;  This software is provided &apos;as-is&apos;, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt; color:#1a1a1a;&quot;&gt;  Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt; color:#1a1a1a;&quot;&gt;  1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt; color:#1a1a1a;&quot;&gt;  2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt; color:#1a1a1a;&quot;&gt;  3. This notice may not be removed or altered from any source distribution.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
-&lt;tr&gt;
-&lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Open-Sankoré version 1.4 , Copyright (C) 2010-2012 Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;&lt;br /&gt;Open-Sankoré est un logiciel libre : vous pouvez le redistribuer et/ou le modifier en respectant les termes de la Lesser GNU general Public Licence (GNU LGPL) telle que publiée par la Free Software Foundation en version 2 ou une version plus récente.&lt;br /&gt;Vous pouvez consulter et charger le code source du logiciel sur &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré est distribué dans l&apos;espoir qu&apos;il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D&apos;ADAPTATION A UN OBJET PARTICULIER.&lt;br /&gt;Veuillez consulter la licence Lesser GNU General Public Licence située dans l&apos;onglet Licences ou consulter le site &lt;/span&gt;&lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;http://www.gnu.org/licenses/&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;.&lt;br /&gt;&lt;br /&gt;Open-Sankoré is free software: you can redistribute it and/or modify it under the terms of the Lesser GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version. You can find the source code of this software at &lt;/span&gt;&lt;a href=&quot;https://github.com/Sankore&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;&amp;lt;https://github.com/Sankore&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;Open-Sankoré is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Lesser GNU General Public License below for more details.&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;Contact : &lt;br /&gt;Groupement d&apos;Intérêt Public pour l&apos;Education Numérique en Afrique (GIP ENA)&lt;br /&gt;Délégation Interministérielle à l&apos;Education Numérique en Afrique&lt;br /&gt;20 Avenue Ségur Paris 75007&lt;br /&gt;Téléphone : 01 43 17 68 08&lt;br /&gt;email: &lt;/span&gt;&lt;a href=&quot;mailto:contact@sankore.org&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;contact@sankore.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Crédits police scolaire Open-Sankoré : &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;La police Andika Basic dispose d&apos;une licence Open Font License &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt; © Sil international&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;amp;id=andika&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Licence OFL (traduction française non officielle) http://fontforge.sourceforge.net/OFL-Unofficial-fr.html&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Les polices Ecolier suivantes sont l&apos;oeuvre de Jean-Marie Douteau et disposent d&apos;une licence OFL : &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;- Ecolier Court &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;- Ecolier Ligne Court&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt; © Jean-Marie Douteau (douteau.ecolier@sfr.fr)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://douteau.ecolier.perso.sfr.fr/page_ecolier.htm&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Les polices Ecolier suivantes sont l&apos;oeuvre de Jean-Marie Douteau et disposent d&apos;une licence Creative Commons BY NC ND :&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;- Ecolier lignes pointillés&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;- Écolier pointillés&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;- Écolier CP&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;- Écolier CP pointillés&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt; © Jean-Marie Douteau (douteau.ecolier@sfr.fr)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://douteau.ecolier.perso.sfr.fr/page_ecolier.htm&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Les polices Cursive sont l&apos;oeuvre d&apos;Antoine Fetet (antoine.fetet@laposte.net) à partir d&apos;une police proposée par Jean-Claude Gineau&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://lps13.free.fr/contenu/construire/Cursive_standard.zip et http://fr.fontriver.com/font/gino_school_script/&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;L&apos;auteur en autorise l&apos;utilisation dans le cadre du logiciel open-Sankoré pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Les polices Script (Ecole et CaseEcole) sont l&apos;oeuvre d&apos;Henri Rogelet&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://pointecole.free.fr/polices/SCRIPTCO.zip&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://pointecole.free.fr/polices/SCRIPTCA.zip&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;La police phonétique, Alphonet est l&apos;oeuvre d&apos;Henri Rogelet&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://pointecole.free.fr/polices/ALPHONET.zip&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt; © Henri Rogelet &amp;lt;h.rogelet@free.fr&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Autorisation pour un usage non commercial&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt;&quot;&gt;Source : http://pointecole.free.fr/polices.html&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;라이선스는 공식 및 법적 승인 번역에 영어로되어 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

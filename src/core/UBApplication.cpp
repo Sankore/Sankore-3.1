@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBApplication.h"
@@ -227,14 +228,11 @@ void UBApplication::setupTranslators(QStringList args)
     QString forcedLanguage("");
     if(args.contains("-lang"))
         forcedLanguage=args.at(args.indexOf("-lang") + 1);
-// TODO claudio: this has been commented because some of the translation seem to be loaded at this time
-//               especially tools name. This is a workaround and we have to be able to load settings without
-//               impacting the translations
-//    else{
-//        QString setLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
-//        if(!setLanguage.isEmpty())
-//            forcedLanguage = setLanguage;
-//    }
+    else{
+        QString setLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
+        if(!setLanguage.isEmpty())
+            forcedLanguage = setLanguage;
+    }
 
     QString language("");
 
@@ -275,6 +273,8 @@ void UBApplication::setupTranslators(QStringList args)
 
     QLocale::setDefault(QLocale(language));
     qDebug() << "Running application in:" << language;
+    //Claudio: hack to avoid the lost of translations.
+    UBSettings::settings()->init();
 }
 
 int UBApplication::exec(const QString& pFileToImport)
@@ -308,9 +308,7 @@ int UBApplication::exec(const QString& pFileToImport)
 
     connect(mainWindow->actionBoard, SIGNAL(triggered()), this, SLOT(showBoard()));
     connect(mainWindow->actionWeb, SIGNAL(triggered()), this, SLOT(showInternet()));
-    connect(mainWindow->actionWeb, SIGNAL(triggered()), this, SLOT(stopScript()));
     connect(mainWindow->actionDocument, SIGNAL(triggered()), this, SLOT(showDocument()));
-    connect(mainWindow->actionDocument, SIGNAL(triggered()), this, SLOT(stopScript()));
     connect(mainWindow->actionQuit, SIGNAL(triggered()), this, SLOT(closing()));
     connect(mainWindow, SIGNAL(closeEvent_Signal(QCloseEvent*)), this, SLOT(closeEvent(QCloseEvent*)));
 
@@ -351,7 +349,6 @@ int UBApplication::exec(const QString& pFileToImport)
 
     connect(mainWindow->actionPreferences, SIGNAL(triggered()), mPreferencesController, SLOT(show()));
     connect(mainWindow->actionTutorial, SIGNAL(triggered()), applicationController, SLOT(showTutorial()));
-    connect(mainWindow->actionTutorial, SIGNAL(triggered()), this, SLOT(stopScript()));
     connect(mainWindow->actionSankoreEditor, SIGNAL(triggered()), applicationController, SLOT(showSankoreEditor()));
     connect(mainWindow->actionCheckUpdate, SIGNAL(triggered()), applicationController, SLOT(checkUpdateRequest()));
 
@@ -426,17 +423,21 @@ void UBApplication::stopScript()
 void UBApplication::showBoard()
 {
     applicationController->showBoard();
+    boardController->paletteManager()->featuresWidget()->switchToRoot();
 }
 
 void UBApplication::showInternet()
 {
     applicationController->showInternet();
     webController->showTabAtTop(true);
+    boardController->paletteManager()->featuresWidget()->switchToBookmarks();
+    stopScript();
 }
 
 void UBApplication::showDocument()
 {
     applicationController->showDocument();
+    startScript();
 }
 
 int UBApplication::toolBarHeight()

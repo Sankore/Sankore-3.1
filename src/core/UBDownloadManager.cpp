@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #include "UBDownloadManager.h"
 #include "core/UBApplication.h"
 #include "core/UBPersistenceManager.h"
@@ -31,9 +32,10 @@
 #include "core/memcheck.h"
 
 
-UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QObject *parent)
+UBAsyncLocalFileDownloader::UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QByteArray data, QObject *parent)
 : QThread(parent)
 , mDesc(desc)
+, mData(data)
 , m_bAborting(false)
 {
 
@@ -47,13 +49,13 @@ UBAsyncLocalFileDownloader *UBAsyncLocalFileDownloader::download()
 
 void UBAsyncLocalFileDownloader::run()
 {
+    mMutex.lock();
+    sDownloadFileDesc descriptor = mDesc;
+    mMutex.unlock();
 
-    if(mDesc.srcUrl.startsWith("file://"))
-        mDesc.srcUrl = QUrl(mDesc.srcUrl).toLocalFile();
-    else
-        mDesc.srcUrl = QUrl::fromLocalFile(mDesc.srcUrl).toLocalFile();
+    descriptor.srcUrl = QUrl::fromUserInput(descriptor.srcUrl).toLocalFile();
 
-    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(mDesc.srcUrl);
+    QString mimeType = UBFileSystemUtils::mimeTypeFromFileName(descriptor.srcUrl);
 
     int position=mimeType.indexOf(";");
     if(position != -1)
@@ -65,20 +67,20 @@ void UBAsyncLocalFileDownloader::run()
     QString destDirectory;
     if (UBMimeType::Video == itemMimeType)
         destDirectory = UBPersistenceManager::videoDirectory;
-    else 
+    else
         if (UBMimeType::Audio == itemMimeType)
             destDirectory = UBPersistenceManager::audioDirectory;
 
-    if (mDesc.originalSrcUrl.isEmpty())
-        mDesc.originalSrcUrl = mDesc.srcUrl;
+    if (descriptor.originalSrcUrl.isEmpty())
+        descriptor.originalSrcUrl = descriptor.srcUrl;
 
     QString uuid = QUuid::createUuid();
-    UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(), 
-        mDesc.srcUrl,
-        destDirectory,
-        uuid,
-        mTo,
-        NULL);
+    UBPersistenceManager::persistenceManager()->addFileToDocument(UBApplication::boardController->selectedDocument(),
+                                                                  descriptor.srcUrl,
+                                                                  destDirectory,
+                                                                  uuid,
+                                                                  mTo,
+                                                                  NULL);
 
     if (m_bAborting)
     {
@@ -86,7 +88,7 @@ void UBAsyncLocalFileDownloader::run()
             QFile::remove(mTo);
     }
     else
-        emit signal_asyncCopyFinished(mDesc.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(mDesc.originalSrcUrl), "", NULL, mDesc.pos, mDesc.size, mDesc.isBackground);
+        emit signal_asyncCopyFinished(descriptor.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(descriptor.originalSrcUrl), "", NULL, descriptor.pos, descriptor.size, descriptor.isBackground);
 }
 
 void UBAsyncLocalFileDownloader::abort()
@@ -284,11 +286,12 @@ void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl
                 desc.contentTypeHeader = pContentTypeHeader;
                 emit downloadFinished(pSuccess, desc, pData);
 
-            } else if(desc.dest == sDownloadFileDesc::board) {
-                // The downloaded file is modal so we must put it on the board
-                emit addDownloadedFileToBoard(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, isBackground);
             }
-            else
+            else if(desc.dest == sDownloadFileDesc::board) {
+                // The downloaded file is modal so we must put it on the board
+                emit addDownloadedFileToBoard(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, false, isBackground);
+            }
+            else if(desc.dest == sDownloadFileDesc::library)
             {
                 emit addDownloadedFileToLibrary(pSuccess, sourceUrl, pContentTypeHeader, pData, desc.name);
             }
@@ -379,7 +382,7 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
 {
     if (desc.srcUrl.startsWith("file://") || desc.srcUrl.startsWith("/"))
     {
-        UBAsyncLocalFileDownloader * cpHelper = new UBAsyncLocalFileDownloader(desc, this);
+        UBAsyncLocalFileDownloader * cpHelper = new UBAsyncLocalFileDownloader(desc, QByteArray(), this);
         connect(cpHelper, SIGNAL(signal_asyncCopyFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl,QString, QByteArray, QPointF, QSize, bool)));
         QObject *res = dynamic_cast<QObject *>(cpHelper->download());
         if (!res)
@@ -388,17 +391,18 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
             mDownloads[desc.id] = res;
     }
     else
-    {    
+    {
         UBDownloadHttpFile* http = new UBDownloadHttpFile(desc.id, this);
         connect(http, SIGNAL(downloadProgress(int, qint64,qint64)), this, SLOT(onDownloadProgress(int,qint64,qint64)));
         connect(http, SIGNAL(downloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)));
-    
+        connect(http, SIGNAL(downloadError(int)), this, SLOT(onDownloadError(int)));
+
         //the desc.srcUrl is encoded. So we have to decode it before.
         QUrl url;
         url.setEncodedUrl(desc.srcUrl.toUtf8());
         // We send here the request and store its reply in order to be able to cancel it if needed
         mDownloads[desc.id] = dynamic_cast<QObject *>(http->get(url, desc.pos, desc.size, desc.isBackground));
-    } 
+    }
 }
 
 /**
@@ -451,7 +455,7 @@ void UBDownloadManager::cancelDownloads()
         if (netReply)
             netReply->abort();
         else
-        {        
+        {
             UBAsyncLocalFileDownloader *localDownload = dynamic_cast<UBAsyncLocalFileDownloader *>(it.value());
             if (localDownload)
                 localDownload->abort();
@@ -469,20 +473,88 @@ void UBDownloadManager::cancelDownloads()
 void UBDownloadManager::onDownloadError(int id)
 {
     QNetworkReply *pReply = dynamic_cast<QNetworkReply *>(mDownloads.value(id));
-    
+
     if(NULL != pReply)
     {
+        QString errorString = tr("Download failed.");
         // Check which error occured:
         switch(pReply->error())
         {
+            case QNetworkReply::ConnectionRefusedError:
+                errorString += " " + (tr("the remote server refused the connection (the server is not accepting requests)"));
+                break;
+            case QNetworkReply::RemoteHostClosedError:
+                errorString += " " + (tr("the remote server closed the connection prematurely, before the entire reply was received and processed"));
+                break;
+            case QNetworkReply::HostNotFoundError:
+                errorString += " " + (tr("the remote host name was not found (invalid hostname)"));
+                break;
+            case QNetworkReply::TimeoutError:
+                errorString += " " + (tr("the connection to the remote server timed out"));
+                break;
             case QNetworkReply::OperationCanceledError:
-                // For futur developments: do something in case of download aborting (message? remove the download?)
-            break;
-
+                errorString += " " + (tr("the operation was canceled via calls to abort() or close() before it was finished."));
+                break;
+            case QNetworkReply::SslHandshakeFailedError:
+                errorString += " " + (tr("the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted."));
+                break;
+            case QNetworkReply::TemporaryNetworkFailureError:
+                errorString += " " + (tr("the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established."));
+                break;
+            case QNetworkReply::ProxyConnectionRefusedError:
+                errorString += " " + (tr("the connection to the proxy server was refused (the proxy server is not accepting requests)"));
+                break;
+            case QNetworkReply::ProxyConnectionClosedError:
+                errorString += " " + (tr("the proxy server closed the connection prematurely, before the entire reply was received and processed"));
+                break;
+            case QNetworkReply::ProxyNotFoundError:
+                errorString += " " + (tr("the proxy host name was not found (invalid proxy hostname)"));
+                break;
+            case QNetworkReply::ProxyTimeoutError:
+                errorString += " " + (tr("the connection to the proxy timed out or the proxy did not reply in time to the request sent"));
+                break;
+            case QNetworkReply::ProxyAuthenticationRequiredError:
+                errorString += " " + (tr("the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)"));
+                break;
+            case QNetworkReply::ContentAccessDenied:
+                errorString += " " + (tr("the access to the remote content was denied (similar to HTTP error 401)"));
+                break;
+            case QNetworkReply::ContentOperationNotPermittedError:
+                errorString += " " + (tr("the operation requested on the remote content is not permitted"));
+                break;
+            case QNetworkReply::ContentNotFoundError:
+                errorString += " " + (tr("the remote content was not found at the server (similar to HTTP error 404)"));
+                break;
+            case QNetworkReply::AuthenticationRequiredError:
+                errorString += " " + (tr("the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)"));
+                break;
+            case QNetworkReply::ContentReSendError:
+                errorString += " " + (tr("the request needed to be sent again, but this failed for example because the upload data could not be read a second time."));
+                break;
+            case QNetworkReply::ProtocolUnknownError:
+                errorString += " " + (tr("the Network Access API cannot honor the request because the protocol is not known"));
+                break;
+            case QNetworkReply::ProtocolInvalidOperationError:
+                errorString += " " + (tr("the requested operation is invalid for this protocol"));
+                break;
+            case QNetworkReply::UnknownNetworkError:
+                errorString += " " + (tr("an unknown network-related error was detected"));
+                break;
+            case QNetworkReply::UnknownProxyError:
+                errorString += " " + (tr("an unknown proxy-related error was detected"));
+                break;
+            case QNetworkReply::UnknownContentError:
+                errorString += " " + (tr("an unknown error related to the remote content was detected"));
+                break;
+            case QNetworkReply::ProtocolFailure:
+                errorString += " " + (tr("a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)"));
+                break;
             default:
                 // Check the documentation of QNetworkReply in Qt Assistant for the different error cases
             break;
         }
+        UBApplication::showMessage(errorString);
+        cancelDownload(id);
     }
 }
 
@@ -501,7 +573,7 @@ void UBDownloadManager::cancelDownload(int id)
 {
     if (!mDownloads.size())
         return;
-   
+
     // Stop the download
 
     QNetworkReply *pNetworkDownload = dynamic_cast<QNetworkReply *>(mDownloads[id]);
@@ -513,7 +585,7 @@ void UBDownloadManager::cancelDownload(int id)
         if (pLocalDownload)
         {
             if (pLocalDownload->isRunning())
-                pLocalDownload->abort();                          
+                pLocalDownload->abort();
         }
     }
 

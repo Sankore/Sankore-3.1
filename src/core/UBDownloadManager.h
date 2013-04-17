@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBDOWNLOADMANAGER_H
@@ -99,9 +100,9 @@ class UBAsyncLocalFileDownloader : public QThread
 {
     Q_OBJECT
 public:
-    UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QObject *parent = 0);
+    UBAsyncLocalFileDownloader(sDownloadFileDesc desc, QByteArray data = QByteArray(), QObject *parent = 0);
 
-    UBAsyncLocalFileDownloader *download();    
+    UBAsyncLocalFileDownloader *download();
     void run();
     void abort();
 
@@ -111,7 +112,9 @@ signals:
 
 
 private:
+    QMutex mMutex;
     sDownloadFileDesc mDesc;
+    QByteArray mData;
     bool m_bAborting;
     QString mFrom;
     QString mTo;
@@ -139,7 +142,7 @@ signals:
     void downloadFinished(bool pSuccess, int id, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData);
     void downloadFinished(bool pSuccess, sDownloadFileDesc desc, QByteArray pData);
     void downloadModalFinished();
-    void addDownloadedFileToBoard(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
+    void addDownloadedFileToBoard(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground);
     void addDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QString pTitle);
     void cancelAllDownloads();
     void allDownloadsFinished();

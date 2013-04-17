@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBFEATURESACTIONBAR_H
@@ -59,6 +60,7 @@ enum UBFeaturesActionBarState
 class UBFeaturesActionBar : public QWidget
 {
 	Q_OBJECT
+
 public:
 	UBFeaturesActionBar(UBFeaturesController *controller, QWidget* parent=0, const char* name="UBFeaturesActionBar");
     ~UBFeaturesActionBar();
@@ -86,10 +88,12 @@ private slots:
     void onActionRescanModel();
     void lockIt();
     void unlockIt();
+    void allowNewFolderBtn(bool pAllow) {mpNewFolderBtn->setEnabled(pAllow);}
+    void allowDeleteButton(bool pAllow);
 
 protected:
-    void dragEnterEvent( QDragEnterEvent *event );
 	void dropEvent( QDropEvent *event );
+    bool eventFilter(QObject *, QEvent *);
 
 private:
 	void setButtons();

@@ -9,7 +9,7 @@ CONFIG += debug_and_release \
 
 
 VERSION_MAJ = 2
-VERSION_MIN = 00 
+VERSION_MIN = 10 
 VERSION_TYPE = r # a = alpha, b = beta, r = release, other => error
 VERSION_PATCH = 00 
 
@@ -96,7 +96,7 @@ BUILD_DIR = build
 
 macx:BUILD_DIR = $$BUILD_DIR/macx
 win32:BUILD_DIR = $$BUILD_DIR/win32
-linux-g++*:BUILD_DIR = $$BUILD_DIR/linux
+linux-*:BUILD_DIR = $$BUILD_DIR/linux
 
 CONFIG(debug, debug|release):BUILD_DIR = $$BUILD_DIR/debug
 CONFIG(release, debug|release) {
@@ -352,7 +352,19 @@ macx {
        TRANSLATION_mg.path = "$$RESOURCES_DIR/mg.lproj"
        QMAKE_BUNDLE_DATA += TRANSLATION_mg
    }
-   
+   exists(resources/i18n/sankore_hi.qm) {
+       TRANSLATION_hi.files = resources/i18n/sankore_hi.qm \
+           resources/i18n/localizable.strings
+       TRANSLATION_hi.path = "$$RESOURCES_DIR/hi.lproj"
+       QMAKE_BUNDLE_DATA += TRANSLATION_hi
+   }
+   exists(resources/i18n/sankore_co.qm) {
+       TRANSLATION_co.files = resources/i18n/sankore_co.qm \
+           resources/i18n/localizable.strings
+       TRANSLATION_co.path = "$$RESOURCES_DIR/co.lproj"
+       QMAKE_BUNDLE_DATA += TRANSLATION_co
+   }
+
    QMAKE_BUNDLE_DATA += UB_ETC \
        UB_LIBRARY \
        UB_FONTS \
@@ -372,7 +384,7 @@ macx {
    system(printf "%02x%02x%02x%02x" `printf $$VERSION_RC | cut -d ',' -f 1` `printf $$VERSION_RC | cut -d ',' -f 2` `printf $$VERSION_RC | cut -d ',' -f 3` `printf $$VERSION_RC | cut -d ',' -f 4` | xxd -r -p > "$$VERSION_RC_PATH")
 }
 
-linux-g++* {
+linux-* {
     CONFIG += link_prl
     LIBS += -lcrypto
     LIBS += -lX11
@@ -387,6 +399,11 @@ linux-g++* {
     system(echo "$$VERSION" > $$BUILD_DIR/version)
     system(echo "$$LONG_VERSION" > $$BUILD_DIR/longversion)
     system(echo "$$SVN_VERSION" > $$BUILD_DIR/svnversion)
+
+    linux-clang {
+        QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
+        QMAKE_CXXFLAGS_WARN_ON += -Wno-overloaded-virtual
+    }
 }
 
 RESOURCES += resources/sankore.qrc
@@ -421,7 +438,9 @@ TRANSLATIONS = resources/i18n/sankore_en.ts \
    resources/i18n/sankore_el.ts \
    resources/i18n/sankore_tr.ts \
    resources/i18n/sankore_cs.ts \
-   resources/i18n/sankore_mg.ts
+   resources/i18n/sankore_mg.ts \
+   resources/i18n/sankore_hi.ts \
+   resources/i18n/sankore_co.ts
 
 INSTALLS = UB_ETC \
    UB_I18N \

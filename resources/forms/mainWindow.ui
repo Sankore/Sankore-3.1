@@ -111,6 +111,7 @@
    <addaction name="actionWebReload"/>
    <addaction name="actionStopLoading"/>
    <addaction name="actionHome"/>
+   <addaction name="actionBookmark"/>
    <addaction name="separator"/>
    <addaction name="actionWebBigger"/>
    <addaction name="actionWebSmaller"/>
@@ -558,7 +559,7 @@
    <property name="text">
     <string>Bookmark</string>
    </property>
-   <property name="toolTip">
+   <property name="iconText">
     <string>Add Bookmark</string>
    </property>
   </action>
@@ -1462,18 +1463,6 @@
     <string>Configure Podcast Recording</string>
    </property>
   </action>
-  <action name="actionWebTrapFlash">
-   <property name="icon">
-    <iconset resource="../sankore.qrc">
-     <normaloff>:/images/toolbar/addToolToLibrary.png</normaloff>:/images/toolbar/addToolToLibrary.png</iconset>
-   </property>
-   <property name="text">
-    <string>Flash Trap</string>
-   </property>
-   <property name="toolTip">
-    <string>Trap Flash Content</string>
-   </property>
-  </action>
   <action name="actionWebTrap">
    <property name="checkable">
     <bool>true</bool>
@@ -1512,21 +1501,6 @@
    </property>
    <property name="toolTip">
     <string>Capture a Window</string>
-   </property>
-  </action>
-  <action name="actionWebOEmbed">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../sankore.qrc">
-     <normaloff>:/images/extraPalette/oEmbed.png</normaloff>:/images/extraPalette/oEmbed.png</iconset>
-   </property>
-   <property name="text">
-    <string>Embed Web Content</string>
-   </property>
-   <property name="toolTip">
-    <string>Capture Embeddable Web Content</string>
    </property>
   </action>
   <action name="actionWebShowHideOnDisplay">
@@ -1676,6 +1650,90 @@
    </property>
    <property name="toolTip">
     <string>Remove the backgound</string>
+   </property>
+  </action>
+  <action name="actionBookmark">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/toolbar/bookmark.png</normaloff>:/images/toolbar/bookmark.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bookmark</string>
+   </property>
+   <property name="iconText">
+    <string comment="tooltip">Bookmark</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">Bookmark</string>
+   </property>
+  </action>
+  <action name="actionWebTrapContent">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/toolbar/addToolToLibrary.png</normaloff>:/images/toolbar/addToolToLibrary.png</iconset>
+   </property>
+   <property name="text">
+    <string>Web Trap</string>
+   </property>
+   <property name="toolTip">
+    <string>Trap Web Content</string>
+   </property>
+  </action>
+  <action name="actionWebTrapToLibrary">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/trapFlashPalette/downloadToLibrary.svg</normaloff>:/images/trapFlashPalette/downloadToLibrary.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="toolTip">
+    <string>Download to library</string>
+   </property>
+  </action>
+  <action name="actionWebTrapToCurrentPage">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/trapFlashPalette/downloadToBoard.svg</normaloff>:/images/trapFlashPalette/downloadToBoard.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="toolTip">
+    <string>Download to current page</string>
+   </property>
+  </action>
+  <action name="actionWebTrapLinkToLibrary">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/trapFlashPalette/linkToLibrary.svg</normaloff>:/images/trapFlashPalette/linkToLibrary.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="toolTip">
+    <string>Add link to library</string>
+   </property>
+  </action>
+  <action name="actionWebTrapLinkToPage">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/trapFlashPalette/linkToBoard.svg</normaloff>:/images/trapFlashPalette/linkToBoard.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="toolTip">
+    <string>Add link to current page</string>
    </property>
   </action>
  </widget>

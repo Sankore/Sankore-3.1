@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBFileSystemUtils.h"
@@ -472,6 +473,8 @@ QString UBFileSystemUtils::mimeTypeFromFileName(const QString& fileName)
     // Apple widget
     if (ext == "wdgt") return "application/vnd.apple-widget"; //mime type invented by us :-(
     if (ext == "swf") return "application/x-shockwave-flash";
+    if (ext == "bkm") return "internal/bookmark";
+    if (ext == "lnk") return "internal/link";
 
     return "";
 
@@ -545,6 +548,8 @@ QString UBFileSystemUtils::fileExtensionFromMimeType(const QString& pMimeType)
     if (pMimeType == "application/widget") return "wgt";
     if (pMimeType == "application/vnd.apple-widget") return "wdgt"; //mime type invented by us :-(
     if (pMimeType == "application/x-shockwave-flash") return "swf";
+    if (pMimeType == "internal/bookmark") return "bkm";
+    if (pMimeType == "internal/link") return "lnk";
 
     return "";
 
@@ -595,7 +600,18 @@ UBMimeType::Enum UBFileSystemUtils::mimeTypeFromString(const QString& typeString
     {
         type = UBMimeType::UniboardTool;
     }
-
+    else if (typeString.startsWith("internal/bookmark"))
+    {
+        type = UBMimeType::Bookmark;
+    }
+    else if (typeString.startsWith("internal/link"))
+    {
+        type = UBMimeType::Link;
+    }
+    else if (typeString.startsWith("text/html"))
+    {
+        type = UBMimeType::Web;
+    }
     return type;
 }
 

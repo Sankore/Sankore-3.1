@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBGRAPHICSITEMDELEGATE_H_
@@ -37,6 +38,7 @@ class UBGraphicsProxyWidget;
 class UBGraphicsDelegateFrame;
 class UBGraphicsWidgetItem;
 class UBGraphicsMediaItem;
+class UBGraphicsItemAction;
 
 class DelegateButton: public QGraphicsSvgItem
 {
@@ -103,10 +105,11 @@ public:
     MediaTimer(QGraphicsItem * parent = 0);
     ~MediaTimer();
 
+    void positionHandles();
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                 QWidget *widget);
-
     void display(const QString &str);
+    void setNumDigits(int nDigits);
 
 private:
 
@@ -116,7 +119,6 @@ private:
     void drawSegment(const QPoint &, char, QPainter &, int, bool = false);
     void addPoint(QPolygon&, const QPoint&);
     void internalSetString(const QString& s);
-    void setNumDigits(int nDigits);
 
     static char segments [][8];
 
@@ -127,6 +129,14 @@ private:
 
     uint shadow : 1;
     uint smallPoint : 1;
+
+    int digitSpace;
+    int xSegLen;
+    int ySegLen;
+    int segLen;
+    int xAdvance;
+    int xOffset;
+    int yOffset;
 };
 
 class DelegateMediaControl: public QObject, public QGraphicsRectItem
@@ -177,6 +187,8 @@ class DelegateMediaControl: public QObject, public QGraphicsRectItem
         QRectF mLCDTimerArea;
 
         MediaTimer *lcdTimer;
+
+        QString mDisplayFormat;
 };
 
 class UBGraphicsToolBarItem : public QGraphicsRectItem, public QObject
@@ -188,7 +200,7 @@ class UBGraphicsToolBarItem : public QGraphicsRectItem, public QObject
         bool isVisibleOnBoard() const { return mVisible; }
         void setVisibleOnBoard(bool visible) { mVisible = visible; }
         bool isShifting() const { return mShifting; }
-        void setShifting(bool shifting) { mShifting = shifting; } 
+        void setShifting(bool shifting) { mShifting = shifting; }
         QList<QGraphicsItem*> itemsOnToolBar() const { return mItemsOnToolBar; }
         void setItemsOnToolBar(QList<QGraphicsItem*> itemsOnToolBar) { mItemsOnToolBar = itemsOnToolBar;}
         int minWidth() { return mMinWidth; }
@@ -258,12 +270,18 @@ class UBGraphicsItemDelegate : public QObject
         void setRotatable(bool pCanRotate);
         bool isFlippable();
 
+        void setCanTrigAnAction(bool canTrig);
+
         void setButtonsVisible(bool visible);
 
         UBGraphicsToolBarItem* getToolBarItem() const { return mToolBarItem; }
 
         qreal antiScaleRatio() const { return mAntiScaleRatio; }
         virtual void update() {positionHandles();}
+
+        UBGraphicsItemAction* action() { return mAction; }
+        void setAction(UBGraphicsItemAction* action);
+
 
     signals:
         void showOnDisplayChanged(bool shown);
@@ -305,6 +323,8 @@ class UBGraphicsItemDelegate : public QObject
         QAction* mLockAction;
         QAction* mShowOnDisplayAction;
         QAction* mGotoContentSourceAction;
+        QAction* mShowPanelToAddAnAction;
+        QAction* mRemoveAnAction;
 
         UBGraphicsDelegateFrame* mFrame;
         qreal mFrameWidth;
@@ -313,6 +333,8 @@ class UBGraphicsItemDelegate : public QObject
         QList<DelegateButton*> mButtons;
         QList<DelegateButton*> mToolBarButtons;
         UBGraphicsToolBarItem* mToolBarItem;
+
+        UBGraphicsItemAction* mAction;
 
 protected slots:
         virtual void gotoContentSource();
@@ -331,6 +353,7 @@ private:
         bool mCanRotate;
         bool mCanDuplicate;
         bool mRespectRatio;
+        bool mCanTrigAnAction;
         QMimeData* mMimeData;
         QPixmap mDragPixmap;
 
@@ -339,6 +362,13 @@ private:
         bool mToolBarUsed;
 
         bool mShowGoContentButton;
+
+        bool mMoved;
+
+private slots:
+        void onAddActionClicked();
+        void onRemoveActionClicked();
+        void saveAction(UBGraphicsItemAction *action);
 };
 
 

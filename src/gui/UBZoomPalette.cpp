@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBZoomPalette.h"
@@ -70,13 +71,13 @@ void UBZoomPalette::showHideExtraButton()
     {
         mHundredButton->setVisible(false);
         mIsExpanded = false;
-        adjustSizeAndPosition(false);
+        adjustSizeAndPosition(false,false);
     }
     else
     {
         mHundredButton->setVisible(true);
         mIsExpanded = true;
-        adjustSizeAndPosition(true);
+        adjustSizeAndPosition(true,false);
     }
 
 }
@@ -108,7 +109,7 @@ void UBZoomPalette::refreshPalette()
     QString stringFactor = tr("%1 x").arg(currentZoomFactor, 0, 'f', 1);
 
     mCurrentZoomButton->setText(stringFactor);
-    adjustSizeAndPosition();
+    adjustSizeAndPosition(true,false);
     if (showAsNoZoom)
     {
         QTimer::singleShot(500, this, SLOT(hide()));

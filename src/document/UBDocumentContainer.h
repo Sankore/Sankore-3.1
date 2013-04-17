@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBDOCUMENTCONTAINER_H_
@@ -34,11 +35,12 @@ class UBDocumentContainer : public QObject
         UBDocumentContainer(QObject * parent = 0);
         virtual ~UBDocumentContainer();
 
-        void setDocument(UBDocumentProxy* document, bool forceReload = false);
+        virtual void setDocument(UBDocumentProxy* document, bool forceReload = false);
+        void pureSetDocument(UBDocumentProxy *document) {mCurrentDocument = document;}
 
-        UBDocumentProxy* selectedDocument(){return mCurrentDocument;}
-        int pageCount(){return mDocumentThumbs.size();}
-        const QPixmap* pageAt(int index){return mDocumentThumbs[index];}
+        UBDocumentProxy* selectedDocument() {return mCurrentDocument;}
+        int pageCount() {return mDocumentThumbs.size();}
+        const QPixmap* pageAt(int index) {return mDocumentThumbs[index];}
 
         static int pageFromSceneIndex(int sceneIndex);    
         static int sceneIndexFromPage(int sceneIndex); 
@@ -49,6 +51,7 @@ class UBDocumentContainer : public QObject
         void addPage(int index);
         void updatePage(int index);
         void addEmptyThumbPage();
+        void reloadThumbnails();
 
     private:
         UBDocumentProxy* mCurrentDocument;
@@ -59,7 +62,6 @@ class UBDocumentContainer : public QObject
         void deleteThumbPage(int index);
         void updateThumbPage(int index);
         void insertThumbPage(int index);
-        void reloadThumbnails();
 
     signals:
         void documentSet(UBDocumentProxy* document);

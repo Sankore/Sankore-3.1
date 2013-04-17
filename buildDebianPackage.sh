@@ -179,7 +179,7 @@ else
     LAST_COMMITED_VERSION="`git describe $(git rev-list --tags --max-count=1)`"
     if [ "v$VERSION" != "$LAST_COMMITED_VERSION" ]; then
         if [ $MAKE_TAG == true ]; then
-            git tag -a "v$VERSION" -m "Generating setup for v$VERSION"
+            git tag -a "v${VERSION}rc" -m "Generating setup for v$VERSION"
             git push origin --tags
         fi 
     fi
@@ -195,6 +195,9 @@ cp -R $PLUGINS_PATH $PRODUCT_PATH/
 
 # copying customization
 cp -R resources/customizations $PRODUCT_PATH/
+
+# copying startup hints
+cp -R resources/startupHints $PRODUCT_PATH/
 
 if [ $STANDARD_QT_USED == false ]; then 
 #copying custom qt library

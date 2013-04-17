@@ -63,6 +63,46 @@
           <number>0</number>
          </property>
          <item>
+          <widget class="UBDocumentTreeView" name="documentTreeView">
+           <property name="minimumSize">
+            <size>
+             <width>400</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <property name="autoScroll">
+            <bool>true</bool>
+           </property>
+           <property name="autoScrollMargin">
+            <number>65</number>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="verticalScrollMode">
+            <enum>QAbstractItemView::ScrollPerItem</enum>
+           </property>
+           <property name="animated">
+            <bool>true</bool>
+           </property>
+           <property name="headerHidden">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="UBDocumentTreeWidget" name="documentTreeWidget">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
@@ -242,9 +282,12 @@
    <extends>QTreeWidget</extends>
    <header>gui/UBDocumentTreeWidget.h</header>
   </customwidget>
+  <customwidget>
+   <class>UBDocumentTreeView</class>
+   <extends>QTreeView</extends>
+   <header>document/UBDocumentController.h</header>
+  </customwidget>
  </customwidgets>
- <resources>
-  <include location="../sankore.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

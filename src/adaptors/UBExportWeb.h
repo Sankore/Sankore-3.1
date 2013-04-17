@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #ifndef UBEXPORTWEB_H_
 #define UBEXPORTWEB_H_
 
@@ -31,7 +32,7 @@ class UBDocumentProxy;
 
 class UBExportWeb : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportWeb(QObject *parent = 0);
@@ -40,6 +41,8 @@ class UBExportWeb : public UBExportAdaptor
         virtual QString exportName();
 
         virtual void persist(UBDocumentProxy* pDocument);
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
+
 
 };
 

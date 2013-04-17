@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBTHUMBNAILWIDGET_H_
@@ -42,7 +43,7 @@ class UBThumbnail;
 
 class UBThumbnailWidget : public QGraphicsView
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBThumbnailWidget(QWidget* parent);
@@ -145,41 +146,10 @@ class UBThumbnail
             return styleOption;
         }
 
-         virtual void itemChange(QGraphicsItem *item, QGraphicsItem::GraphicsItemChange change, const QVariant &value)
-        {
-            Q_UNUSED(value);
+         virtual void itemChange(QGraphicsItem *item, QGraphicsItem::GraphicsItemChange change, const QVariant &value);
 
-            if ((change == QGraphicsItem::ItemSelectedHasChanged
-                    || change == QGraphicsItem::ItemTransformHasChanged
-                    || change == QGraphicsItem::ItemPositionHasChanged)
-                    &&  item->scene())
-            {
-                if (item->isSelected())
-                {
-                    if (!mSelectionItem->scene())
-                    {
-                        item->scene()->addItem(mSelectionItem);
-                        mSelectionItem->setZValue(item->zValue() - 1);
-//                        UBGraphicsItem::assignZValue(mSelectionItem, item->zValue() - 1);
-                        mAddedToScene = true;
-                    }
-
-                    mSelectionItem->setRect(
-                        item->sceneBoundingRect().x() - 5,
-                        item->sceneBoundingRect().y() - 5,
-                        item->sceneBoundingRect().width() + 10,
-                        item->sceneBoundingRect().height() + 10);
-
-                    mSelectionItem->show();
-
-                }
-                else
-                {
-                    mSelectionItem->hide();
-                }
-            }
-        }
-
+        UBThumbnailTextItem *label(){return mLabel;}
+        void setLabel(UBThumbnailTextItem *label){mLabel = label;}
         int column() { return mColumn; }
         void setColumn(int column) { mColumn = column; }
         int row() { return mRow; }
@@ -192,6 +162,8 @@ class UBThumbnail
 
         int mColumn;
         int mRow;
+
+        UBThumbnailTextItem *mLabel;
 };
 
 
@@ -273,10 +245,7 @@ class UBSceneThumbnailPixmap : public UBThumbnailPixmap
             // NOOP
         }
 
-        virtual ~UBSceneThumbnailPixmap()
-        {
-            // NOOP
-        }
+        virtual ~UBSceneThumbnailPixmap();
 
         UBDocumentProxy* proxy()
         {
@@ -286,11 +255,6 @@ class UBSceneThumbnailPixmap : public UBThumbnailPixmap
         int sceneIndex()
         {
             return mSceneIndex;
-        }
-
-        void highlight()
-        {
-            //NOOP
         }
 
     private:
@@ -355,7 +319,7 @@ class UBThumbnailTextItem : public QGraphicsTextItem
         UBThumbnailTextItem(const QString& text)
             : QGraphicsTextItem(text)
             , mUnelidedText(text)
-            , mIsHighlighted(false)
+            , mIsHighlighted(true)
         {
             setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
         }
@@ -374,13 +338,10 @@ class UBThumbnailTextItem : public QGraphicsTextItem
 
         qreal width() {return mWidth;}
 
-        void highlight()
+        void highlight(bool enable = true)
         {
-                if (!mIsHighlighted)
-                {
-                        mIsHighlighted = true;
-                        computeText();
-                }
+            mIsHighlighted = enable;
+            computeText();
         }
 
         void computeText()

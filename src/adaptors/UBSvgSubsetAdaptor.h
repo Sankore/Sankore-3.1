@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBSVGSUBSETADAPTOR_H_
@@ -49,6 +50,8 @@ class UBGraphicsTriangle;
 class UBGraphicsCache;
 class IDataStorage;
 class UBGraphicsGroupContainerItem;
+class UBGraphicsItemAction;
+class UBGraphicsStrokesGroup;
 
 class UBSvgSubsetAdaptor
 {
@@ -152,7 +155,7 @@ class UBSvgSubsetAdaptor
 
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
-                UBGraphicsGroupContainerItem* readGroup();
+                UBGraphicsGroupContainerItem* readGroup(UBGraphicsItemAction *action = 0, QString uuid = "");
 
                 void graphicsItemFromSvg(QGraphicsItem* gItem);
 
@@ -171,6 +174,9 @@ class UBSvgSubsetAdaptor
 
                 QString mNamespaceUri;
                 UBGraphicsScene *mScene;
+                UBGraphicsItemAction* readAction();
+                QMap<QString,UBGraphicsStrokesGroup*> mStrokesGroupList;
+                QMap<QString,UBGraphicsStroke*> mStrokeList;
         };
 
         class UBSvgSubsetWriter
@@ -185,12 +191,13 @@ class UBSvgSubsetAdaptor
 
             private:
 
-                void persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *curDomDocument);
+                void persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *curDomDocument, UBGraphicsItemAction *action = 0);
                 void persistStrokeToDom(QGraphicsItem *strokeItem, QDomElement *curParent, QDomDocument *curDomDocument);
-                void polygonItemToSvgPolygon(UBGraphicsPolygonItem* polygonItem, bool groupHoldsInfo);
+                void polygonItemToSvgPolygon(UBGraphicsPolygonItem* polygonItem, bool groupHoldsInfo, UBGraphicsItemAction* action = 0);
                 void polygonItemToSvgLine(UBGraphicsPolygonItem* polygonItem, bool groupHoldsInfo);
                 void strokeToSvgPolyline(UBGraphicsStroke* stroke, bool groupHoldsInfo);
                 void strokeToSvgPolygon(UBGraphicsStroke* stroke, bool groupHoldsInfo);
+                void writeAction(UBGraphicsItemAction* action);
 
                 inline QString pointsToSvgPointsAttribute(QVector<QPointF> points)
                 {

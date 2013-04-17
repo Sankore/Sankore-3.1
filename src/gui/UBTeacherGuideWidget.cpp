@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QDebug>
@@ -272,8 +273,8 @@ void UBTeacherGuideEditionWidget::onActiveSceneChanged()
 
 void UBTeacherGuideEditionWidget::cleanData()
 {
-    mpPageTitle->setText("");
-    mpComment->setText("");
+    mpPageTitle->resetText();
+    mpComment->resetText();
     QList<QTreeWidgetItem*> children = mpAddAnActionItem->takeChildren();
     children << mpAddAMediaItem->takeChildren();
     children << mpAddALinkItem->takeChildren();
@@ -931,7 +932,7 @@ void UBTeacherGuidePageZeroWidget::fillComboBoxes()
     QStringList licences;
     licences << tr("Attribution-ShareAlike CC BY-SA")
              << tr("Attribution CC BY")
-    		 << tr("Attribution-NoDerivs CC BY-ND")
+             << tr("Attribution-NoDerivs CC BY-ND")
              << tr("Attribution-NonCommercial CC BY-NC")
              << tr("Attribution-NonCommercial-NoDerivs CC BY-NC-ND")
              << tr("Attribution-NonCommercial-ShareAlike CC BY-NC-SA")
@@ -1167,8 +1168,8 @@ bool UBTeacherGuidePageZeroWidget::isModified()
 
 void UBTeacherGuidePageZeroWidget::resizeEvent(QResizeEvent* ev)
 {
-	emit resized();
-	QWidget::resizeEvent(ev);
+    emit resized();
+    QWidget::resizeEvent(ev);
 }
 
 /***************************************************************************
@@ -1208,54 +1209,54 @@ UBTeacherGuideWidget::~UBTeacherGuideWidget()
 void UBTeacherGuideWidget::onActiveSceneChanged()
 {
     if (UBApplication::boardController->currentPage() == 0) {
-    	if(mpPageZeroWidget->isModified())
-    		mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_PRESENTATION);
-    	else
-    		mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_EDITION);
+        if(mpPageZeroWidget->isModified())
+            mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_PRESENTATION);
+        else
+            mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_EDITION);
 
         setCurrentWidget(mpPageZeroWidget);
     }
     else{
-    	if(mpEditionWidget->isModified()){
+        if(mpEditionWidget->isModified()){
             mCurrentData = mpEditionWidget->getData();
             mpPresentationWidget->showData(mCurrentData);
-    		setCurrentWidget(mpPresentationWidget);
-    	}
-    	else
-    		setCurrentWidget(mpEditionWidget);
+            setCurrentWidget(mpPresentationWidget);
+        }
+        else
+            setCurrentWidget(mpEditionWidget);
     }
 
 }
 
 void UBTeacherGuideWidget::onTriggeredAction(bool checked)
 {
-	Q_UNUSED(checked);
-	if(!mKeyboardActionFired)
-		showPresentationMode();
-	mKeyboardActionFired=false;
+    Q_UNUSED(checked);
+    if(!mKeyboardActionFired)
+        showPresentationMode();
+    mKeyboardActionFired=false;
 }
 
 void UBTeacherGuideWidget::onTriggeredKeyboardAction(bool checked)
 {
-	Q_UNUSED(checked);
-	mKeyboardActionFired = true;
+    Q_UNUSED(checked);
+    mKeyboardActionFired = true;
 }
 
 void UBTeacherGuideWidget::connectToStylusPalette()
 {
-	connect(UBApplication::mainWindow->actionPen, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionEraser, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionMarker, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionPlay, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionZoomIn, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionZoomOut, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionPen, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionEraser, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionMarker, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionPlay, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionZoomIn, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionZoomOut, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
     connect(UBApplication::mainWindow->actionCapture, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionHand, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionLine, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionText, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionSelector, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
-	connect(UBApplication::mainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(onTriggeredKeyboardAction(bool)));
+    connect(UBApplication::mainWindow->actionHand, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionLine, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionText, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionSelector, SIGNAL(triggered(bool)), this, SLOT(onTriggeredAction(bool)));
+    connect(UBApplication::mainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(onTriggeredKeyboardAction(bool)));
 }
 
 void UBTeacherGuideWidget::showPresentationMode()
@@ -1287,4 +1288,3 @@ bool UBTeacherGuideWidget::isModified()
     else
         return mpEditionWidget->isModified();
 }
-

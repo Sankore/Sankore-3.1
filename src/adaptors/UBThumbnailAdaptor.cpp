@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBThumbnailAdaptor.h"
@@ -122,8 +123,15 @@ void UBThumbnailAdaptor::load(UBDocumentProxy* proxy, QList<const QPixmap*>& lis
     foreach(const QPixmap* pm, list)
         delete pm;
     list.clear();
-    for(int i=0; i<proxy->pageCount(); i++)
+    for(int i=0; proxy && i<proxy->pageCount(); i++)
         list.append(get(proxy, i));
+}
+
+void UBThumbnailAdaptor::clearThumbs(QList<const QPixmap *> &list)
+{
+    foreach(const QPixmap* pm, list)
+        delete pm;
+    list.clear();
 }
 
 void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* pScene, int pageIndex, bool overrideModified)
@@ -159,7 +167,6 @@ void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* p
             painter.fillRect(imageRect, Qt::white);
         }
 
-        pScene->setRenderingContext(UBGraphicsScene::NonScreen);
         pScene->setRenderingQuality(UBItem::RenderingQualityHigh);
 
         pScene->render(&painter, imageRect, sceneRect, Qt::KeepAspectRatio);
@@ -170,7 +177,6 @@ void UBThumbnailAdaptor::persistScene(UBDocumentProxy* proxy, UBGraphicsScene* p
             painter.drawPixmap(QPoint(width - toque.width(),0),toque);
         }
 
-        pScene->setRenderingContext(UBGraphicsScene::Screen);
         pScene->setRenderingQuality(UBItem::RenderingQualityNormal);
 
         thumb.scaled(width, height, Qt::KeepAspectRatio, Qt::SmoothTransformation).save(fileName, "JPG");

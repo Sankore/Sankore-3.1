@@ -124,6 +124,7 @@ $LRELEASE $BASE_QT_TRANSLATIONS_DIRECTORY/translations.pro
 addQtTranslations
 
 cp -R resources/customizations $PRODUCT_DIR/Open-Sankore.app/Contents/Resources
+cp -R resources/startupHints $PRODUCT_DIR/Open-Sankore.app/Contents/Resources
 
 notify "Tagging ..."
 VERSION=`cat "$BUILD_DIR/version"`
@@ -134,8 +135,8 @@ else
     LAST_COMMITED_VERSION="`git describe $(git rev-list --tags --max-count=1)`"
     if [ "v$VERSION" != "$LAST_COMMITED_VERSION" ]; then
 	echo creating a tag with the version $VERSION
-	#git tag -a "v$VERSION" -m "Generated setup for v$VERSION"
-	#git push origin --tags
+	git tag -a "v$VERSION" -m "Generated setup for v$VERSION"
+	git push origin --tags
     fi
 fi
   

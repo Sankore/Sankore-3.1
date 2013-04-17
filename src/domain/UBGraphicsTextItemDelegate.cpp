@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QtGui>
@@ -86,14 +87,8 @@ QFont UBGraphicsTextItemDelegate::createDefaultFont()
         textFormat.setFontItalic(true);
 
     QFont font(fFamily, -1, bold ? QFont::Bold : -1, italic);
-//    int pixSize = UBSettings::settings()->fontPixelSize();
-//    if (pixSize > 0) {
-//        mLastFontPixelSize = pixSize;
-//        font.setPixelSize(pixSize);
-//    }
     int pointSize = UBSettings::settings()->fontPointSize();
     if (pointSize > 0) {
-//        mLastFontPixelSize = pointSize;
         font.setPointSize(pointSize);
     }
 
@@ -205,7 +200,9 @@ void UBGraphicsTextItemDelegate::pickFont()
             delegated()->setTextCursor(curCursor);
             delegated()->setFont(selectedFont);
             delegated()->setSelected(true);
-            delegated()->document()->adjustSize();
+//          disabled and replaced by the next line because of not optimum result (text splits to two lines when that is not necessary)
+//          delegated()->adjustSize();
+            delegated()->resize(delegated()->document()->idealWidth(), delegated()->size().height());
             delegated()->contentsChanged();
         }
     }
@@ -226,8 +223,6 @@ void UBGraphicsTextItemDelegate::pickColor()
         {
             QColor selectedColor = colorDialog.selectedColor();
             delegated()->setDefaultTextColor(selectedColor);
-//            delegated()->setColorOnDarkBackground(selectedColor);
-//            delegated()->setColorOnLightBackground(selectedColor);
             QTextCursor curCursor = delegated()->textCursor();
             QTextCharFormat format;
             format.setForeground(QBrush(selectedColor));
@@ -292,19 +287,20 @@ void UBGraphicsTextItemDelegate::updateMenuActionState()
 {
     UBGraphicsItemDelegate::updateMenuActionState();
 }
+
 void UBGraphicsTextItemDelegate::positionHandles()
 {
     UBGraphicsItemDelegate::positionHandles();
 
-    if (mDelegated->isSelected() || (mDelegated->parentItem() && UBGraphicsGroupContainerItem::Type == mDelegated->parentItem()->type())) 
+    if (mDelegated->isSelected() || (mDelegated->parentItem() && UBGraphicsGroupContainerItem::Type == mDelegated->parentItem()->type()))
     {
         if (mToolBarItem->isVisibleOnBoard())
         {
-            qreal AntiScaleRatio = 1 / (UBApplication::boardController->systemScaleFactor() * UBApplication::boardController->currentZoom());    
+            qreal AntiScaleRatio = 1 / (UBApplication::boardController->systemScaleFactor() * UBApplication::boardController->currentZoom());
             mToolBarItem->setScale(AntiScaleRatio);
             QRectF toolBarRect = mToolBarItem->rect();
             toolBarRect.setWidth(delegated()->boundingRect().width()/AntiScaleRatio);
-            mToolBarItem->setRect(toolBarRect);           
+            mToolBarItem->setRect(toolBarRect);
             mToolBarItem->positionHandles();
             mToolBarItem->update();
             if (mToolBarItem->isShifting())
@@ -373,16 +369,15 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
    // we search continuous blocks of the text with the same PointSize and allpy new settings for them.
     cursor.setPosition (startPos, QTextCursor::MoveAnchor);
     while(iCursorPos < endPos)
-    {   
+    {
         bEndofTheSameBlock = false;
-        iBlockLen = 0; 
+        iBlockLen = 0;
 
         cursor.setPosition (iCursorPos+1, QTextCursor::KeepAnchor);
         iPointSize = cursor.charFormat().font().pointSize();
-
+        curFont = cursor.charFormat().font();
         cursor.setPosition (iCursorPos, QTextCursor::KeepAnchor);
 
-        curFont = cursor.charFormat().font();
 
         do
         {
@@ -408,7 +403,6 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
         cursor.setPosition (iCursorPos, QTextCursor::MoveAnchor);
     }
 
-    delegated()->setFont(curFont);
     UBSettings::settings()->setFontPointSize(iPointSize);
     //returning initial selection
     cursor.setPosition (anchorPos, QTextCursor::MoveAnchor);

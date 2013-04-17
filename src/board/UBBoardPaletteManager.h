@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,12 +20,13 @@
  */
 
 
+
 #ifndef UBBOARDPALETTEMANAGER_H_
 #define UBBOARDPALETTEMANAGER_H_
 
 #include <QtGui>
 #include <QtWebKit>
- 
+
 #include "gui/UBLeftPalette.h"
 #include "gui/UBRightPalette.h"
 #include "gui/UBPageNavigationWidget.h"
@@ -47,10 +48,8 @@ class UBKeyboardPalette;
 class UBMainWindow;
 class UBApplicationController;
 class UBDockTeacherGuideWidget;
-
-// Uncomment this to use old-styles lib paletter
-// #define USE_WEB_WIDGET
-
+class UBStartupHintsPalette;
+class UBCreateLinkPalette;
 
 class UBBoardPaletteManager : public QObject
 {
@@ -63,6 +62,7 @@ class UBBoardPaletteManager : public QObject
         void setupLayout();
         UBLeftPalette* leftPalette(){return mLeftPalette;}
         UBRightPalette* rightPalette(){return mRightPalette;}
+        UBFeaturesWidget *featuresWidget(){return mpFeaturesWidget;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
         UBActionPalette *addItemPalette() {return mAddItemPalette;}
         void showVirtualKeyboard(bool show = true);
@@ -71,6 +71,8 @@ class UBBoardPaletteManager : public QObject
         void refreshPalettes();
 
         UBKeyboardPalette *mKeyboardPalette;
+
+        UBCreateLinkPalette* linkPalette();
 
         void setCurrentWebToolsPalette(UBWebToolsPalette *palette) {mWebToolsCurrentPalette = palette;}
         UBWebToolsPalette* mWebToolsCurrentPalette;
@@ -84,7 +86,6 @@ class UBBoardPaletteManager : public QObject
 
     signals:
         void connectToDocController();
-        void signal_changeMode(eUBDockPaletteWidgetMode newMode);
 
     public slots:
 
@@ -111,6 +112,8 @@ class UBBoardPaletteManager : public QObject
         UBStylusPalette *mStylusPalette;
 
         UBZoomPalette *mZoomPalette;
+        UBStartupHintsPalette* mTipPalette;
+        UBCreateLinkPalette* mLinkPalette;
 
         /** The left dock palette */
         UBLeftPalette* mLeftPalette;
@@ -142,11 +145,11 @@ class UBBoardPaletteManager : public QObject
 
         /** The page navigator widget */
         UBPageNavigationWidget* mpPageNavigWidget;
-        
+
         /** The cache properties widget */
         UBCachePropertiesWidget* mpCachePropWidget;
 
-		UBFeaturesWidget *mpFeaturesWidget;
+        UBFeaturesWidget *mpFeaturesWidget;
 
         /** The download widget */
         UBDockDownloadWidget* mpDownloadWidget;

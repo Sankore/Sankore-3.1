@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBGraphicsItemUndoCommand.h"
@@ -93,7 +94,28 @@ void UBGraphicsItemUndoCommand::undo()
 
         UBApplication::boardController->freezeW3CWidget(item, true);
         item->setSelected(false);
+
+        QTransform t;
+        bool bApplyTransform = false;
+        UBGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<UBGraphicsPolygonItem*>(item);
+        if (polygonItem){
+            if (polygonItem->strokesGroup()
+                    && polygonItem->strokesGroup()->parentItem()
+                    && UBGraphicsGroupContainerItem::Type == polygonItem->strokesGroup()->parentItem()->type())
+            {
+                bApplyTransform = true;
+                t = polygonItem->sceneTransform();
+            }
+            else if (polygonItem->strokesGroup())
+                polygonItem->resetTransform();
+
+            polygonItem->strokesGroup()->removeFromGroup(polygonItem);
+        }
         mScene->removeItem(item);
+
+        if (bApplyTransform)
+            polygonItem->setTransform(t);
+
     }
 
     QSetIterator<QGraphicsItem*> itRemoved(mRemovedItems);
@@ -102,10 +124,13 @@ void UBGraphicsItemUndoCommand::undo()
         QGraphicsItem* item = itRemoved.next();
         if (item)
         {
-            if (UBItemLayerType::FixedBackground == item->data(UBGraphicsItemData::ItemLayerType))
+            if (UBItemLayerType::FixedBackground == item->data(UBGraphicsItemData::ItemLayerType)) {
                 mScene->setAsBackgroundObject(item);
-            else
+            } else {
+                qreal ownZ = UBGraphicsItem::getOwnZValue(item);
                 mScene->addItem(item);
+                UBGraphicsItem::assignZValue(item, ownZ); //restoring the previous z index
+            }
 
             if (UBGraphicsPolygonItem::Type == item->type())
             {
@@ -201,7 +226,29 @@ void UBGraphicsItemUndoCommand::redo()
         {
             QGraphicsItem* item = itRemoved.next();
             item->setSelected(false);
+
+            QTransform t;
+            bool bApplyTransform = false;
+            UBGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<UBGraphicsPolygonItem*>(item);
+
+            if (polygonItem){
+                if(polygonItem->strokesGroup()
+                        && polygonItem->strokesGroup()->parentItem()
+                        && UBGraphicsGroupContainerItem::Type == polygonItem->strokesGroup()->parentItem()->type())
+                {
+                    bApplyTransform = true;
+                    t = polygonItem->sceneTransform();
+                }
+                else if (polygonItem->strokesGroup())
+                    polygonItem->resetTransform();
+
+                polygonItem->strokesGroup()->removeFromGroup(polygonItem);
+            }
             mScene->removeItem(item);
+
+            if (bApplyTransform)
+                item->setTransform(t);
+
             UBApplication::boardController->freezeW3CWidget(item, true);
         }
 
@@ -220,7 +267,7 @@ void UBGraphicsItemUndoCommand::redo()
 
                 UBGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<UBGraphicsPolygonItem*>(item);
                 if (polygonItem)
-                {   
+                {
                     mScene->removeItem(polygonItem);
                     mScene->removeItemFromDeletion(polygonItem);
                     polygonItem->strokesGroup()->addToGroup(polygonItem);

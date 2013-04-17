@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBCACHEPROPERTIESWIDGET_H
@@ -34,7 +35,25 @@
 #include "UBDockPaletteWidget.h"
 #include "tools/UBGraphicsCache.h"
 
-#define MAX_SHAPE_WIDTH     200
+class UBCachePreviewWidget : public QWidget
+{
+public:
+    UBCachePreviewWidget(QWidget *parent = NULL);
+    
+    void setHoleSize(QSize size);
+    void setShape(eMaskShape shape);
+    void setMaskColor(QColor color);
+
+private:
+    QSize sizeHint() const;
+    void paintEvent(QPaintEvent *event);
+    void resizeEvent(QResizeEvent *event);
+
+private:
+    QSize mHoleSize;
+    eMaskShape mShape;
+    QColor mMaskColor;
+};
 
 class UBCachePropertiesWidget : public UBDockPaletteWidget
 {
@@ -48,6 +67,9 @@ public:
         return mode == eUBDockPaletteWidget_BOARD;
     }
 
+    QPixmap iconToLeft() const {return QPixmap(":images/cache_open.png");}
+    QPixmap iconToRight() const {return QPixmap(":images/cache_open.png");}
+
 public slots:
     void updateCurrentCache();
 
@@ -56,33 +78,55 @@ signals:
 
 private slots:
     void onCloseClicked();
-    void updateCacheColor(QColor color);
+    void syncCacheColor(QColor color);
     void onColorClicked();
     void updateShapeButtons();
-    void onSizeChanged(int newSize);
+    void onWidthChanged(int newSize);
+    void onHeightChanged(int newSize);
+    void onKeepAspectRatioChanged(int state);
     void onCacheEnabled();
+    void onModeChanged(int mode);
+    void onAlphaChanged(int alpha);
+    void onControlViewResized(QResizeEvent *event);
+    void onZoomChanged(qreal newZoom);
 
 private:
     QVBoxLayout* mpLayout;
     QLabel* mpCachePropertiesLabel;
     QLabel* mpColorLabel;
+    QLabel* mpAlphaLabel;
     QLabel* mpShapeLabel;
-    QLabel* mpSizeLabel;
-    QPushButton* mpColor;
+    QLabel *mpGeometryLabel;
+    QLabel *mpWidthLabel;
+    QLabel *mpHeightLabel;
+    QLabel *mpModeLabel;
+    QLabel *mpPreviewLabel;
+    QCheckBox *mpKeepAspectRatioCheckbox;
+    QPushButton* mpSelectColorButton;
     QPushButton* mpSquareButton;
     QPushButton* mpCircleButton;
     QPushButton* mpCloseButton;
-    QSlider* mpSizeSlider;
+    QSlider *mpAplhaSlider;
+    QSlider* mpWidthSlider;
+    QSlider* mpHeightSlider;
     QHBoxLayout* mpColorLayout;
     QHBoxLayout* mpShapeLayout;
-    QHBoxLayout* mpSizeLayout;
     QHBoxLayout* mpCloseLayout;
     QWidget* mpProperties;
+    UBCachePreviewWidget *mpPreviewWidget;
+    QVBoxLayout* mpSizeLayout;
     QVBoxLayout* mpPropertiesLayout;
+    QVBoxLayout *mpModeLayout;
+    QVBoxLayout *mpPreviewLayout;
+    QComboBox *mpModeComboBox;
     QColor mActualColor;
     eMaskShape mActualShape;
     UBGraphicsCache* mpCurrentCache;
-
+    bool mKeepAspectRatio;
+    bool mOtherSliderUsed;
+    QSize mOldHoleSize;
+    QSize minimumShapeSize;
+    QSize maximumShapeSize;
 };
 
 #endif // UBCACHEPROPERTIESWIDGET_H

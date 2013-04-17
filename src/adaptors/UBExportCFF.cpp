@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,12 +20,17 @@
  */
 
 
+
 #include "UBExportCFF.h"
 #include "UBCFFAdaptor.h"
 #include "document/UBDocumentProxy.h"
 #include "core/UBDocumentManager.h"
 #include "core/UBApplication.h"
 #include "core/memcheck.h"
+#include "document/UBDocumentController.h"
+
+#include <QModelIndex>
+#include <QObject>
 
 
 UBExportCFF::UBExportCFF(QObject *parent)
@@ -81,4 +86,14 @@ void UBExportCFF::persist(UBDocumentProxy* pDocument)
     }
 
     
+}
+
+bool UBExportCFF::associatedActionactionAvailableFor(const QModelIndex &selectedIndex)
+{
+    const UBDocumentTreeModel *docModel = qobject_cast<const UBDocumentTreeModel*>(selectedIndex.model());
+    if (!selectedIndex.isValid() || docModel->isCatalog(selectedIndex)) {
+        return false;
+    }
+
+    return true;
 }

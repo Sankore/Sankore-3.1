@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBCoreGraphicsScene.h"
@@ -39,15 +40,9 @@ UBCoreGraphicsScene::~UBCoreGraphicsScene()
 {
     //we must delete removed items that are no more in any scene
     //at groups deleting some items can be added to mItemsToDelete, so we need to use iterators.
-    foreach(QGraphicsItem* item, mItemsToDelete)
-    {
-        if (item)
-        {
-            if (item->scene() == NULL || item->scene() == this)
-            {
-                delete item;
-            }
-        }
+    foreach(QGraphicsItem* item, mItemsToDelete){
+        if (item && item->type() != UBGraphicsItemType::PolygonItemType && item->type() != QGraphicsItem::UserType && item->type() != UBGraphicsItemType::groupContainerType && (item->scene() == NULL || item->scene() == this))
+            delete item;
     }
     mItemsToDelete.clear();
 }
@@ -61,7 +56,7 @@ void UBCoreGraphicsScene::addItem(QGraphicsItem* item)
             removeItemFromDeletion(curItem);
         }
     }
- 
+
     if (item->scene() != this)
         QGraphicsScene::addItem(item);
 
@@ -74,7 +69,7 @@ void UBCoreGraphicsScene::removeItem(QGraphicsItem* item, bool forceDelete)
     QGraphicsScene::removeItem(item);
     if (forceDelete)
     {
-        qDebug() << "force delete is " << forceDelete;
+//        qDebug() << "force delete is " << forceDelete;
         deleteItem(item);
     }
     setModified(true);

@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBWEBPUBLISHER_H_
@@ -35,7 +36,7 @@ class UBServerXMLHttpRequest;
 
 class UBWebPublisher : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBWebPublisher(QObject *parent = 0);
@@ -44,6 +45,8 @@ class UBWebPublisher : public UBExportAdaptor
         virtual QString exportName();
 
         virtual void persist(UBDocumentProxy* pDocument);
+
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 };
 
 

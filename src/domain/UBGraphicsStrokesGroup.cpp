@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,9 +20,19 @@
  */
 
 
+
 #include "UBGraphicsStrokesGroup.h"
 
 #include "domain/UBGraphicsPolygonItem.h"
+
+#include "document/UBDocumentProxy.h"
+#include "core/UBApplication.h"
+#include "document/UBDocumentController.h"
+#include "board/UBBoardController.h"
+#include "document/UBDocumentProxy.h"
+#include "customWidgets/UBGraphicsItemAction.h"
+#include "frameworks/UBFileSystemUtils.h"
+#include "core/UBPersistenceManager.h"
 
 #include "core/memcheck.h"
 
@@ -33,7 +43,7 @@ UBGraphicsStrokesGroup::UBGraphicsStrokesGroup(QGraphicsItem *parent)
     Delegate()->init();
     Delegate()->setFlippable(true);
     Delegate()->setRotatable(true);
-
+    Delegate()->setCanTrigAnAction(true);
 
     setData(UBGraphicsItemData::ItemLayerType, UBItemLayerType::Object);
 
@@ -42,6 +52,7 @@ UBGraphicsStrokesGroup::UBGraphicsStrokesGroup(QGraphicsItem *parent)
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
+
 }
 
 UBGraphicsStrokesGroup::~UBGraphicsStrokesGroup()
@@ -104,14 +115,7 @@ QColor UBGraphicsStrokesGroup::color(colorType pColorType) const
 
 void UBGraphicsStrokesGroup::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (Delegate()->mousePressEvent(event))
-    {
-        //NOOP
-    }
-    else
-    {
-//        QGraphicsItemGroup::mousePressEvent(event);
-    }
+    Delegate()->mousePressEvent(event);
 }
 
 void UBGraphicsStrokesGroup::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
@@ -134,18 +138,18 @@ void UBGraphicsStrokesGroup::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 UBItem* UBGraphicsStrokesGroup::deepCopy() const
 {
-	UBGraphicsStrokesGroup* copy = new UBGraphicsStrokesGroup();
+    UBGraphicsStrokesGroup* copy = new UBGraphicsStrokesGroup();
 
-	QTransform groupTransform = transform();
-	const_cast<UBGraphicsStrokesGroup*>(this)->resetTransform();
+    QTransform groupTransform = transform();
+    const_cast<UBGraphicsStrokesGroup*>(this)->resetTransform();
 
-	QList<QGraphicsItem*> chl = childItems();
+    QList<QGraphicsItem*> chl = childItems();
 
-	foreach(QGraphicsItem *child, chl)
-	{
-		UBGraphicsPolygonItem *polygon = dynamic_cast<UBGraphicsPolygonItem*>(child);
+    foreach(QGraphicsItem *child, chl)
+    {
+        UBGraphicsPolygonItem *polygon = dynamic_cast<UBGraphicsPolygonItem*>(child);
 
-		if (polygon){
+        if (polygon){
             UBGraphicsPolygonItem *polygonCopy = dynamic_cast<UBGraphicsPolygonItem*>(polygon->deepCopy());
             if (polygonCopy)
             {
@@ -153,18 +157,18 @@ UBItem* UBGraphicsStrokesGroup::deepCopy() const
                 copy->addToGroup(pItem);
                 polygonCopy->setStrokesGroup(copy);
             }
-		}
+        }
 
-	}
-	const_cast<UBGraphicsStrokesGroup*>(this)->setTransform(groupTransform);
-	copyItemParameters(copy);
+    }
+    const_cast<UBGraphicsStrokesGroup*>(this)->setTransform(groupTransform);
+    copyItemParameters(copy);
 
-	return copy;
+    return copy;
 }
 
 void UBGraphicsStrokesGroup::copyItemParameters(UBItem *copy) const
 {
-	QGraphicsItem *cp = dynamic_cast<QGraphicsItem*>(copy);
+    QGraphicsItem *cp = dynamic_cast<QGraphicsItem*>(copy);
     if(NULL != cp)
     {
         cp->setTransform(transform());
@@ -205,7 +209,7 @@ QPainterPath UBGraphicsStrokesGroup::shape () const
         foreach(QGraphicsItem* item, childItems())
         {
             path.addPath(item->shape());
-        } 
+        }
     }
 
     return path;

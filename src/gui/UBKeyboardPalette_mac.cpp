@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #include "UBKeyboardPalette.h"
 
 #include <stdio.h>
@@ -32,12 +33,22 @@
 
 void UBKeyboardButton::sendUnicodeSymbol(KEYCODE keycode)
 {
-    if (keycode.modifier)
-		CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 56, true));
+    // if shift pressrd
+    if (1 == keycode.modifier)
+        CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 56, true));
+    //if caps pressed
+    if (2 == keycode.modifier)
+        CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 57, true));
+
     CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, keycode.code, true));
     CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, keycode.code, false));
+
+    //release shift
     if (keycode.modifier)
 		CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 56, false));
+    //release caps
+    if (2 == keycode.modifier)
+        CGEventPost(kCGSessionEventTap, CGEventCreateKeyboardEvent(NULL, 57, false));
 	
 }
 

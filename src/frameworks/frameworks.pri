@@ -31,15 +31,6 @@ macx {
 }       
 
 
-linux-g++ {
-
-    SOURCES  += src/frameworks/UBPlatformUtils_linux.cpp
-}         
-linux-g++-32 {
-
-    SOURCES  += src/frameworks/UBPlatformUtils_linux.cpp
-}
-linux-g++-64 {
-
-    SOURCES  += src/frameworks/UBPlatformUtils_linux.cpp
+linux-* {
+   SOURCES  += src/frameworks/UBPlatformUtils_linux.cpp
 }

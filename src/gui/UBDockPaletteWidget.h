@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBDOCKPALETTEWIDGET_H
@@ -36,7 +37,7 @@ typedef enum
     eUBDockPaletteWidget_BOARD,
     eUBDockPaletteWidget_WEB,
     eUBDockPaletteWidget_DOCUMENT,
-    eUBDockPaletteWidget_DESKTOP,
+    eUBDockPaletteWidget_DESKTOP
 } eUBDockPaletteWidgetMode;
 
 class UBDockPaletteWidget : public QWidget
@@ -47,8 +48,8 @@ public:
     UBDockPaletteWidget(QWidget* parent=0, const char* name="UBDockPaletteWidget");
     ~UBDockPaletteWidget();
 
-    QPixmap iconToRight();
-    QPixmap iconToLeft();
+    virtual QPixmap iconToRight() const;
+    virtual QPixmap iconToLeft() const;
     QString name();
 
     virtual bool visibleInMode(eUBDockPaletteWidgetMode mode) = 0;
@@ -67,8 +68,8 @@ public slots:
 
 
 protected:
-    QPixmap mIconToRight;   // arrow like this: >
-    QPixmap mIconToLeft;    // arrow like this: <
+//    QPixmap mIconToRight;   // arrow like this: >
+//    QPixmap mIconToLeft;    // arrow like this: <
     QString mName;
 
     /* The current widget available mode list */

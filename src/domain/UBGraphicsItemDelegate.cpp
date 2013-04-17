@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QtGui>
@@ -33,6 +34,7 @@
 
 #include "board/UBBoardController.h" // TODO UB 4.x clean that dependency
 #include "board/UBBoardView.h" // TODO UB 4.x clean that dependency
+#include "board/UBBoardPaletteManager.h"
 
 #include "core/UBApplication.h"
 #include "core/UBApplicationController.h"
@@ -52,6 +54,10 @@
 
 #include "frameworks/UBFileSystemUtils.h"
 #include "board/UBDrawingController.h"
+
+#include "gui/UBCreateLinkPalette.h"
+
+#include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
 
@@ -165,9 +171,11 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mFrameWidth(UBSettings::settings()->objectFrameWidth)
     , mAntiScaleRatio(1.0)
     , mToolBarItem(NULL)
+    , mAction(0)
     , mCanRotate(canRotate)
     , mCanDuplicate(true)
     , mRespectRatio(respectRatio)
+    , mCanTrigAnAction(false)
     , mMimeData(NULL)
     , mFlippable(false)
     , mToolBarUsed(useToolBar)
@@ -236,9 +244,7 @@ UBGraphicsItemDelegate::~UBGraphicsItemDelegate()
 
 QVariant UBGraphicsItemDelegate::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value)
 {
-    if(change == QGraphicsItem::ItemChildAddedChange){
-
-    }else if (change == QGraphicsItem::ItemSelectedHasChanged) {
+    if (change == QGraphicsItem::ItemSelectedHasChanged) {
         bool ok;
         bool selected = value.toUInt(&ok);
         if (ok) {
@@ -286,6 +292,8 @@ bool UBGraphicsItemDelegate::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     mDragStartPosition = event->pos();
 
+    mMoved = false;
+
     startUndoStep();
 
     if (!delegated()->isSelected())
@@ -315,6 +323,7 @@ bool UBGraphicsItemDelegate::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         }
         mDrag->exec();
         mDragPixmap = QPixmap();
+        mMoved = true;
         return true;
     }
     return false;
@@ -324,20 +333,22 @@ bool UBGraphicsItemDelegate::weelEvent(QGraphicsSceneWheelEvent *event)
 {
     Q_UNUSED(event);
     if( delegated()->isSelected() )
-    {
-//        event->accept();
         return true;
-    }
     else
-    {
-//        event->ignore();
         return false;
-    }
 }
 
 bool UBGraphicsItemDelegate::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     Q_UNUSED(event);
+
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+    if(!mMoved && currentTool == UBStylusTool::Play)
+    {
+        if(mAction)
+            mAction->play();
+        return true;
+    }
 
     //Deselect all the rest selected items if no ctrl key modifier
     if (delegated()->scene()
@@ -358,17 +369,11 @@ bool UBGraphicsItemDelegate::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 void UBGraphicsItemDelegate::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     Q_UNUSED(event)
-//    if (!mDelegated->isSelected()) {
-//        setZOrderButtonsVisible(true);
-//    }
 }
 
 void UBGraphicsItemDelegate::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     Q_UNUSED(event)
-//    if (!mDelegated->isSelected()) {
-//        setZOrderButtonsVisible(false);
-//    }
 }
 
 QGraphicsItem *UBGraphicsItemDelegate::delegated()
@@ -439,22 +444,9 @@ void UBGraphicsItemDelegate::setZOrderButtonsVisible(bool visible)
 
 void UBGraphicsItemDelegate::remove(bool canUndo)
 {
-    /*UBGraphicsScene* scene = dynamic_cast<UBGraphicsScene*>(mDelegated->scene());
-    if (scene && canUndo)
-    {
-        UBGraphicsItemUndoCommand *uc = new UBGraphicsItemUndoCommand(scene, mDelegated, 0);
-        UBApplication::undoStack->push(uc);
-    }
-    mDelegated->hide();  */
-
     UBGraphicsScene* scene = dynamic_cast<UBGraphicsScene*>(mDelegated->scene());
     if (scene)
     {
-//        bool shownOnDisplay = mDelegated->data(UBGraphicsItemData::ItemLayerType).toInt() != UBItemLayerType::Control;
-//        showHide(shownOnDisplay);
-//        updateFrame();
-//        updateButtons();
-
         if (mFrame && !mFrame->scene() && mDelegated->scene())
         {
             mDelegated->scene()->addItem(mFrame);
@@ -639,6 +631,51 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
         sourceIcon.addPixmap(QPixmap(":/images/toolbar/internet.png"), QIcon::Normal, QIcon::On);
         mGotoContentSourceAction->setIcon(sourceIcon);
     }
+
+    if(mCanTrigAnAction)
+        mShowPanelToAddAnAction = menu->addAction(tr("Add an action"),this,SLOT(onAddActionClicked()));
+}
+
+void UBGraphicsItemDelegate::onAddActionClicked()
+{
+    UBCreateLinkPalette* linkPalette = UBApplication::boardController->paletteManager()->linkPalette();
+    linkPalette->show();
+    connect(linkPalette,SIGNAL(definedAction(UBGraphicsItemAction*)),this,SLOT(saveAction(UBGraphicsItemAction*)));
+}
+
+void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
+{
+    mAction = action;
+    mMenu->removeAction(mShowPanelToAddAnAction);
+    QString actionLabel;
+    switch (mAction->linkType()) {
+    case eLinkToAudio:
+        actionLabel= tr("Remove link to audio");
+        break;
+    case eLinkToPage:
+        actionLabel = tr("Remove link to page");
+        break;
+    case eLinkToWebUrl:
+        actionLabel = tr("Remove link to web url");
+    default:
+        break;
+    }
+
+    mRemoveAnAction = mMenu->addAction(actionLabel,this,SLOT(onRemoveActionClicked()));
+    mMenu->addAction(mRemoveAnAction);
+}
+
+void UBGraphicsItemDelegate::onRemoveActionClicked()
+{
+    if(mAction){
+        mAction->actionRemoved();
+        delete mAction;
+        mAction = NULL;
+    }
+    if(mRemoveAnAction && mMenu){
+        mMenu->removeAction(mRemoveAnAction);
+        mMenu->addAction(mShowPanelToAddAnAction);
+    }
 }
 
 void UBGraphicsItemDelegate::updateMenuActionState()
@@ -683,6 +720,11 @@ void UBGraphicsItemDelegate::setFlippable(bool flippable)
     if (mDelegated) {
         mDelegated->setData(UBGraphicsItemData::ItemFlippable, QVariant(flippable));
     }
+}
+
+void UBGraphicsItemDelegate::setCanTrigAnAction(bool canTrig)
+{
+    mCanTrigAnAction = canTrig;
 }
 
 void UBGraphicsItemDelegate::setRotatable(bool pCanRotate)
@@ -734,7 +776,7 @@ void UBGraphicsItemDelegate::updateButtons(bool showUpdated)
             mDelegated->scene()->addItem(mDeleteButton);
     }
 
-    if (showUpdated /*&& mFrame->isResizing()*/)
+    if (showUpdated)
         mDeleteButton->show();
 
     int i = 1, j = 0, k = 0;
@@ -771,8 +813,24 @@ void UBGraphicsItemDelegate::setButtonsVisible(bool visible)
     }
 }
 
+void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
+{
+    if(!action)
+        onRemoveActionClicked();
+    else{
+        setCanTrigAnAction(true);
+        if(!mMenu){
+            //TODO claudio
+            // Remove this very bad chunk of code
+            mMenu = new QMenu(UBApplication::boardController->controlView());
+            decorateMenu(mMenu);
+        }
+        saveAction(action);
+    }
+}
 
-UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) : 
+
+UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) :
     QGraphicsRectItem(parent),
     mShifting(true),
     mVisible(false),
@@ -785,7 +843,6 @@ UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) :
     rect.setWidth(parent->boundingRect().width());
     this->setRect(rect);
 
-  //  setBrush(QColor(UBSettings::paletteColor));             
     setPen(Qt::NoPen);
     hide();
 
@@ -815,36 +872,40 @@ void UBGraphicsToolBarItem::paint(QPainter *painter, const QStyleOptionGraphicsI
     Q_UNUSED(widget);
 
     QPainterPath path;
-    path.addRoundedRect(rect(), 10, 10);  
+    path.addRoundedRect(rect(), 10, 10);
 
     setBrush(QBrush(UBSettings::paletteColor));
 
     painter->fillPath(path, brush());
 }
 
-MediaTimer::MediaTimer(QGraphicsItem * parent): QGraphicsRectItem(parent) 
+MediaTimer::MediaTimer(QGraphicsItem * parent): QGraphicsRectItem(parent)
 {
     val        = 0;
     smallPoint = false;
-    setNumDigits(4);
+    setNumDigits(6);
 }
 
 MediaTimer::~MediaTimer()
 {}
 
+void MediaTimer::positionHandles()
+{
+    digitSpace = smallPoint ? 2 : 1;
+    ySegLen    = rect().height()*5/12;
+    xSegLen    = ySegLen*2/3;
+    segLen     = xSegLen;
+    xAdvance   = segLen*(5 + digitSpace)/5;
+    xOffset    = (rect().width() - ndigits*xAdvance + segLen/5)/2;
+    yOffset    = rect().height() - ySegLen*2;
+
+    setRect(rect().x(), rect().y(), xOffset + xAdvance*ndigits, rect().height());
+}
+
 void MediaTimer::drawString(const QString &s, QPainter &p,
                                    QBitArray *newPoints, bool newString)
 {
     QPoint  pos;
-
-    int digitSpace = smallPoint ? 2 : 1;
-    int xSegLen    = (rect().width()/1)*5/(ndigits*(5 + digitSpace) + digitSpace);
-    int ySegLen    = rect().height()*5/12;
-    int segLen     = ySegLen > xSegLen ? xSegLen : ySegLen;
-    int xAdvance   = segLen*(5 + digitSpace)/5;
-    int xOffset    = rect().x() + (rect().width()/1 - ndigits*xAdvance + segLen/5)/2;
-    int yOffset    = (rect().height() - segLen*2)/2;
-
     for (int i=0;  i<ndigits; i++) {
         pos = QPoint(xOffset + xAdvance*i, yOffset);
         if (newString)
@@ -878,11 +939,11 @@ void MediaTimer::drawDigit(const QPoint &pos, QPainter &p, int segLen,
      int  nUpdates;
      const char *segs;
      int  i,j;
- 
+
      const char erase      = 0;
      const char draw       = 1;
      const char leaveAlone = 2;
- 
+
      segs = getSegments(oldCh);
      for (nErases=0; segs[nErases] != 99; nErases++) {
          updates[nErases][0] = erase;            // get segments to erase to
@@ -910,8 +971,8 @@ void MediaTimer::drawDigit(const QPoint &pos, QPainter &p, int segLen,
      }
 }
 
-char MediaTimer::segments [][8] = 
-        { 
+char MediaTimer::segments [][8] =
+        {
               { 0, 1, 2, 4, 5, 6,99, 0},             // 0    0
               { 2, 5,99, 0, 0, 0, 0, 0},             // 1    1
               { 0, 2, 3, 4, 6,99, 0, 0},             // 2    2
@@ -934,7 +995,7 @@ const char* MediaTimer::getSegments(char ch)               // gets list of segme
         return segments[10];
      if (ch == ' ')
         return segments[11];
-     
+
      return NULL;
 }
 
@@ -946,7 +1007,7 @@ void MediaTimer::drawSegment(const QPoint &pos, char segmentNo, QPainter &p,
     QPoint ppt;
     QPoint pt = pos;
     int width = segLen/5;
- 
+
 #define LINETO(X,Y) addPoint(a, QPoint(pt.x() + (X),pt.y() + (Y)))
 #define LIGHT
 #define DARK
@@ -1090,10 +1151,6 @@ void MediaTimer::paint(QPainter *p,
     Q_UNUSED(option);
     Q_UNUSED(widget);
 
-    QFont f = p->font();
-    f.setPointSizeF(f.pointSizeF());
-    p->setFont(f);
-
     if (smallPoint)
         drawString(digitStr, *p, &points, false);
     else
@@ -1178,7 +1235,7 @@ void MediaTimer::setNumDigits(int numDigits)
         numDigits = 0;
     }
     if (digitStr.isNull()) {                  // from constructor
-        ndigits = numDigits;
+        ndigits = numDigits + numDigits/2 - 1;
         digitStr.fill(QLatin1Char(' '), ndigits);
         points.fill(0, ndigits);
         digitStr[ndigits - 1] = QLatin1Char('0');            // "0" is the default number
@@ -1208,6 +1265,7 @@ void MediaTimer::setNumDigits(int numDigits)
         ndigits = numDigits;
         update();
     }
+    positionHandles();
 }
 
 DelegateMediaControl::DelegateMediaControl(UBGraphicsMediaItem* pDelegated, QGraphicsItem * parent)
@@ -1235,15 +1293,8 @@ void DelegateMediaControl::paint(QPainter *painter,
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    
+
     QPainterPath path;
-
-    mLCDTimerArea.setHeight(rect().height());
-    mLCDTimerArea.setWidth(rect().height());
-
-    mSeecArea.setWidth(rect().width()-mLCDTimerArea.width()-2);
-    mSeecArea.setHeight(rect().height()-2*mSeecAreaBorderHeight);
-    mSeecArea.setY(mSeecAreaBorderHeight);
 
     path.addRoundedRect(mSeecArea, mSeecArea.height()/2, mSeecArea.height()/2);
     painter->fillPath(path, brush());
@@ -1274,28 +1325,59 @@ QPainterPath DelegateMediaControl::shape() const
 
 void DelegateMediaControl::positionHandles()
 {
-    mLCDTimerArea.setWidth(parentItem()->boundingRect().height());
+    QRectF selfRect = rect();
+    selfRect.setHeight(parentItem()->boundingRect().height());
+    setRect(selfRect);
+
+    QTime tTotal;
+    tTotal = tTotal.addMSecs(mTotalTimeInMs);
+
     mLCDTimerArea.setHeight(parentItem()->boundingRect().height());
+
+    int digitsCount = 2;
+    int timerWidth = mLCDTimerArea.height();
+
+    mDisplayFormat = "ss";
+
+    if (tTotal.minute() > 0)
+    {
+        mDisplayFormat = "mm:" + mDisplayFormat;
+        digitsCount += 3;
+        timerWidth += mLCDTimerArea.height()*0.5;
+    }
+
+    if (tTotal.hour() > 0)
+    {
+        mDisplayFormat = "hh:" + mDisplayFormat;
+        digitsCount += 3;
+        timerWidth += mLCDTimerArea.height();
+    }
+
+    lcdTimer->setNumDigits(digitsCount);
+
+    mLCDTimerArea.setWidth(timerWidth);
+
     lcdTimer->setRect(mLCDTimerArea);
-    lcdTimer->setPos(mSeecArea.width()-mLCDTimerArea.width(),0);
+
+    // not the best solution, but it works.
+    lcdTimer->positionHandles();
+    mLCDTimerArea = lcdTimer->rect();
+    // -------------------------------------
+
+    lcdTimer->setPos(rect().width() - mLCDTimerArea.width(), 0);
 
     mSeecAreaBorderHeight = rect().height()/20;
     mSeecArea.setWidth(rect().width()-mLCDTimerArea.width()-2);
     mSeecArea.setHeight(rect().height()-2*mSeecAreaBorderHeight);
     mSeecArea.setY(mSeecAreaBorderHeight);
-
-    QRectF selfRect = rect();
-    selfRect.setHeight(parentItem()->boundingRect().height());
-    setRect(selfRect);
-
-    lcdTimer->setPos(rect().width() - mLCDTimerArea.width(), 0); 
 }
 
 void DelegateMediaControl::update()
 {
-    QTime t;
-    t = t.addMSecs(mCurrentTimeInMs < 0 ? 0 : mCurrentTimeInMs);
-    lcdTimer->display(t.toString("m:ss"));
+    QTime tCurrent;
+    tCurrent = tCurrent.addMSecs(mCurrentTimeInMs < 0 ? 0 : mCurrentTimeInMs);
+
+    lcdTimer->display(tCurrent.toString(mDisplayFormat));
 
     QGraphicsRectItem::update();
 }
@@ -1309,17 +1391,21 @@ void DelegateMediaControl::updateTicker(qint64 time )
 
 void DelegateMediaControl::totalTimeChanged(qint64 newTotalTime)
 {
-    mTotalTimeInMs = newTotalTime;
-    update();
+    if (mTotalTimeInMs != newTotalTime)
+    {
+        mTotalTimeInMs = newTotalTime;
+        positionHandles();
+        update();
+    }
 }
 
 
 void DelegateMediaControl::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
    qreal frameWidth =  mSeecArea.height()/2;
-    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0)) 
+    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0))
         && boundingRect().contains(event->pos() + QPointF(frameWidth,0)))
-    {  
+    {
         mDisplayCurrentTime = true;
         seekToMousePos(event->pos());
         this->update();
@@ -1331,9 +1417,9 @@ void DelegateMediaControl::mousePressEvent(QGraphicsSceneMouseEvent *event)
 void DelegateMediaControl::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     qreal frameWidth = mSeecArea.height() / 2;
-    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0)) 
+    if (boundingRect().contains(event->pos() - QPointF(frameWidth,0))
         && boundingRect().contains(event->pos() + QPointF(frameWidth,0)))
-    {   
+    {
         seekToMousePos(event->pos());
         this->update();
         event->accept();
@@ -1347,7 +1433,7 @@ void DelegateMediaControl::seekToMousePos(QPointF mousePos)
     qreal frameWidth = rect().height() / 2;
 
     minX = frameWidth;
-    length = mSeecArea.width() - lcdTimer->rect().width();
+    length = mSeecArea.width() - mSeecArea.height();
 
     qreal mouseX = mousePos.x();
     if (mouseX >= (mSeecArea.width() - mSeecArea.height()/2))

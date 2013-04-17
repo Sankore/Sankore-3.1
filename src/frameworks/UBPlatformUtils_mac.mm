@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2012 Webdoc SA
+ *
+ * This file is part of Open-Sankoré.
+ *
+ * Open-Sankoré is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License,
+ * with a specific linking exception for the OpenSSL project's
+ * "OpenSSL" library (or with modified versions of it that use the
+ * same license as the "OpenSSL" library).
+ *
+ * Open-Sankoré is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 
 #include "MacUtils.h"
 #include "UBPlatformUtils.h"
@@ -419,13 +440,25 @@ KEYBT* createKeyBt(const UCKeyboardLayout* keyLayout, int vkk)
     UInt32 kbdType = kKeyboardISO;
 
     UniCharCount cnt1, cnt2;
-    UniChar unicodeString1[100], unicodeString2[100], unicodeString3[100];
+    UniChar unicodeSimple[100], unicodeShifted[100], unicodeCapsed[100];
 
-    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, 0, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt1, unicodeString1);
-    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (shiftKey >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeString2);
-    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (alphaLock >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeString3);
+    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, 0, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt1, unicodeSimple);
+    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (shiftKey >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeShifted);
+    UCKeyTranslate(keyLayout, vkk, kUCKeyActionDisplay, (alphaLock >> 8) & 0xff, kbdType,  kUCKeyTranslateNoDeadKeysBit, &deadKeyState, 100, &cnt2, unicodeCapsed);
 
-    return new KEYBT(unicodeString1[0], unicodeString2[0], unicodeString1[0] != unicodeString3[0], 0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1));
+    // workaround for wrong character returned from UCKeyTranslate for swiss-french keyboard.
+    if (unicodeSimple[0] == 94 && unicodeShifted[0] == 80)
+    {
+        unicodeShifted[0] = 168;
+        unicodeCapsed[0] = unicodeSimple[0];
+    }
+
+    if (unicodeSimple[0] == 94 && unicodeShifted[0] == 63)
+    {
+        unicodeShifted[0] = 96;
+        unicodeCapsed[0] = unicodeSimple[0];
+    }
+    return new KEYBT(unicodeSimple[0], unicodeShifted[0], unicodeCapsed[0], 0,0,0, KEYCODE(0, vkk, 0), KEYCODE(0, vkk, 1), KEYCODE(0, vkk, 2));
 }
 
 

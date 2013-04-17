@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #ifndef UBWEBCONTROLLER_H_
 #define UBWEBCONTROLLER_H_
 
@@ -30,7 +31,7 @@
 
 class WBBrowserWindow;
 class UBApplication;
-class UBTrapFlashController;
+class UBTrapWebPageContentController;
 class UBMainWindow;
 class UBWebToolsPalette;
 class WBWebView;
@@ -64,9 +65,9 @@ class UBWebController : public QObject
 
         void show(WebInstance type = UBWebController::WebBrowser);
 
-        WBBrowserWindow* GetCurrentWebBrowser() 
-        { 
-            if( mCurrentWebBrowser != NULL ) return *mCurrentWebBrowser; 
+        WBBrowserWindow* GetCurrentWebBrowser()
+        {
+            if( mCurrentWebBrowser != NULL ) return *mCurrentWebBrowser;
             else return NULL;
         };
 
@@ -90,6 +91,7 @@ class UBWebController : public QObject
             return mBrowserWidget;
         }
 
+        void captureoEmbed(QUrl currentUrl);
         void captureoEmbed();
         void captureEduMedia();
 
@@ -119,11 +121,9 @@ class UBWebController : public QObject
         WBBrowserWindow** mCurrentWebBrowser;
 
         QWidget* mBrowserWidget;
-        UBTrapFlashController* mTrapFlashController;
+        UBTrapWebPageContentController* mTrapContentController;
         UBWebToolsPalette** mToolsCurrentPalette;
         UBWebToolsPalette* mToolsPaletteList[TotalNumberOfWebInstances];
-// 		UBKeyboardPalette** mKeyboardCurrentPalette;
-// 		UBKeyboardPalette* mKeyboardPaletteList[TotalNumberOfWebInstances];
 
         bool mToolsPalettePositionned;
         bool mToolsPalettePositionnedList[TotalNumberOfWebInstances];
@@ -138,12 +138,14 @@ class UBWebController : public QObject
     private slots:
 
         void activePageChanged();
-        void trapFlash();
 
         void toggleWebTrap(bool checked);
 
+        void webTrapContent();
+
         void onOEmbedParsed(QVector<sOEmbedContent> contents);
-//		void showKeyboard(bool checked);
+
+        void onActionBookmark();
 
     signals:
         /**

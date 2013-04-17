@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QtGui>
@@ -207,7 +208,7 @@ QSize UBFloatingPalette::preferredSize()
     return palettePreferredSize;
 }
 
-void UBFloatingPalette::adjustSizeAndPosition(bool pUp)
+void UBFloatingPalette::adjustSizeAndPosition(bool pUp, bool resetPosition)
 {
     QSize newPreferredSize = preferredSize();
 
@@ -234,6 +235,9 @@ void UBFloatingPalette::adjustSizeAndPosition(bool pUp)
             palette->resize(newPreferredSize.width(), palette->size().height());
         }
     }
+
+    if (parentWidget() && resetPosition)
+        move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
 }
 
 void UBFloatingPalette::removeAllAssociatedPalette()
@@ -283,50 +287,60 @@ void UBFloatingPalette::minimizePalette(const QPoint& pos)
     if(!mCanBeMinimized)
     {
         //  If this floating palette cannot be minimized, we exit this method.
-	return;
+    return;
     }
 
     if(mMinimizedLocation == eMinimizedLocation_None)
     {
-	//  Verify if we have to minimize this palette
-	if(pos.x() == 5)
-	{
-	    mMinimizedLocation = eMinimizedLocation_Left;
-	}
+    //  Verify if we have to minimize this palette
+    if(pos.x() == 5)
+    {
+        mMinimizedLocation = eMinimizedLocation_Left;
+    }
 //	else if(pos.y() == 5)
 //	{
 //	    mMinimizedLocation = eMinimizedLocation_Top;
 //	}
     else if(pos.x() == parentWidget()->width() - getParentRightOffset() - width() - 5)
-	{
-	    mMinimizedLocation = eMinimizedLocation_Right;
-	}
+    {
+        mMinimizedLocation = eMinimizedLocation_Right;
+    }
 //	else if(pos.y() == parentSize.height() - height() - 5)
 //	{
 //	    mMinimizedLocation = eMinimizedLocation_Bottom;
 //	}
 
-	//  Minimize the Palette
-	if(mMinimizedLocation != eMinimizedLocation_None)
-	{
-	    emit minimizeStart(mMinimizedLocation);
-	}
+    //  Minimize the Palette
+    if(mMinimizedLocation != eMinimizedLocation_None)
+    {
+        emit minimizeStart(mMinimizedLocation);
+    }
     }
     else
     {
-	//  Restore the palette
-	if(pos.x() > 5 &&
-	   pos.y() > 5 &&
+    //  Restore the palette
+    if(pos.x() > 5 &&
+       pos.y() > 5 &&
        pos.x() < parentWidget()->width() - getParentRightOffset()  - width() - 5 &&
        pos.y() < parentWidget()->size().height() - height() - 5)
-	{
-	    mMinimizedLocation = eMinimizedLocation_None;
-	    emit maximizeStart();
-	}
+    {
+        mMinimizedLocation = eMinimizedLocation_None;
+        emit maximizeStart();
+    }
     }
 }
 
 void UBFloatingPalette::setMinimizePermission(bool permission)
 {
     mCanBeMinimized = permission;
+}
+
+void UBFloatingPalette::savePos()
+{
+    mOldPos = pos();
+}
+
+void UBFloatingPalette::restorePos()
+{
+    move(mOldPos);
 }

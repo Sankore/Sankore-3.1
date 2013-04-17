@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -24,7 +24,6 @@
 #include "adaptors/UBThumbnailAdaptor.h"
 #include "core/UBPersistenceManager.h"
 #include "core/memcheck.h"
-
 
 UBDocumentContainer::UBDocumentContainer(QObject * parent)
     :QObject(parent)
@@ -52,8 +51,7 @@ void UBDocumentContainer::setDocument(UBDocumentProxy* document, bool forceReloa
 void UBDocumentContainer::duplicatePages(QList<int>& pageIndexes)
 {
     int offset = 0;
-    foreach(int sceneIndex, pageIndexes)
-    {
+    foreach(int sceneIndex, pageIndexes) {
         UBPersistenceManager::persistenceManager()->duplicateDocumentScene(mCurrentDocument, sceneIndex + offset);
         offset++;
     }
@@ -116,12 +114,13 @@ void UBDocumentContainer::insertThumbPage(int index)
 
 void UBDocumentContainer::reloadThumbnails()
 {
-    if (mCurrentDocument)
-    {
+    if (mCurrentDocument) {
         UBThumbnailAdaptor::load(mCurrentDocument, mDocumentThumbs);
         qDebug() << "Reloading Thumbnails. new mDocumentThumbs size: " << mDocumentThumbs.size();
-        emit documentThumbnailsUpdated(this);
+    } else {
+        UBThumbnailAdaptor::clearThumbs(mDocumentThumbs);
     }
+    emit documentThumbnailsUpdated(this);
 }
 
 int UBDocumentContainer::pageFromSceneIndex(int sceneIndex)

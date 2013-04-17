@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBSceneCache.h"
@@ -142,10 +143,9 @@ void UBSceneCache::removeAllScenes(UBDocumentProxy* proxy)
 {
     for(int i = 0 ; i < proxy->pageCount(); i++)
     {
-        removeScene(proxy, i);
+         removeScene(proxy, i);
     }
 }
-
 
 void UBSceneCache::moveScene(UBDocumentProxy* proxy, int sourceIndex, int targetIndex)
 {
@@ -189,7 +189,6 @@ void UBSceneCache::moveScene(UBDocumentProxy* proxy, int sourceIndex, int target
 
 }
 
-
 void UBSceneCache::shiftUpScenes(UBDocumentProxy* proxy, int startIncIndex, int endIncIndex)
 {
     for(int i = endIncIndex; i >= startIncIndex; i--)
@@ -198,6 +197,32 @@ void UBSceneCache::shiftUpScenes(UBDocumentProxy* proxy, int startIncIndex, int 
     }
 }
 
+void UBSceneCache::reassignDocProxy(UBDocumentProxy *newDocument, UBDocumentProxy *oldDocument)
+{
+    if (!newDocument || !oldDocument) {
+        return;
+    }
+    if (newDocument->pageCount() != oldDocument->pageCount()) {
+        return;
+    }
+    if (!QFileInfo(oldDocument->persistencePath()).exists()) {
+        return;
+    }
+    for (int i = 0; i < oldDocument->pageCount(); i++) {
+
+        UBSceneCacheID sourceKey(oldDocument, i);
+        UBGraphicsScene *currentScene = value(sourceKey);
+        if (currentScene) {
+            currentScene->setDocument(newDocument);
+        }
+        mCachedKeyFIFO.removeAll(sourceKey);
+        int count = QHash<UBSceneCacheID, UBGraphicsScene*>::remove(sourceKey);
+        mCachedSceneCount -= count;
+
+        insert(newDocument, i, currentScene);
+    }
+
+}
 
 void UBSceneCache::internalMoveScene(UBDocumentProxy* proxy, int sourceIndex, int targetIndex)
 {

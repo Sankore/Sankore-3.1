@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 /****************************************************************************
@@ -259,6 +260,26 @@ WBTabWidget::WBTabWidget(QWidget *parent)
     mLineEdits->setMinimumWidth(200);
     QSizePolicy spolicy = mLineEdits->sizePolicy();
     mLineEdits->setSizePolicy(QSizePolicy::Maximum, spolicy.verticalPolicy());
+
+    QPushButton *plusButton = new QPushButton(this);
+    plusButton->setObjectName("addTabButton");
+    plusButton->setIcon(mAddTabIcon);
+    plusButton->setStyleSheet(" QPushButton{ background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d3d3d3, stop: 1  #c4c4c4); \
+    border: 1px solid #888888; \
+    border-bottom: none; \
+    border-top-left-radius: 3px; \
+    border-top-right-radius: 3px; \
+    min-width: 15px; \
+    max-width: 15px; \
+    margin: 2px; \
+    margin-top: 6px; \
+    margin-bottom: 0px; \
+    padding: 4px; \
+    height: 14px;}");
+
+    setCornerWidget(plusButton, Qt::TopLeftCorner);
+
+    connect(plusButton, SIGNAL(released()), this, SLOT(newTab()));
 }
 
 void WBTabWidget::clear()
@@ -651,13 +672,7 @@ void WBTabWidget::contextMenuEvent(QContextMenuEvent *event)
 
 void WBTabWidget::mouseReleaseEvent(QMouseEvent *event)
 {
-    QRect addTabRect = addTabButtonRect();
-
-    if (addTabRect.contains(event->pos()))
-    {
-        newTab();
-    }
-    else if (event->button() == Qt::MidButton && !childAt(event->pos())
+    if (event->button() == Qt::MidButton && !childAt(event->pos())
             // Remove the line below when QTabWidget does not have a one pixel frame
             && event->pos().y() < (tabBar()->y() + tabBar()->height()))
     {
@@ -853,44 +868,3 @@ QRect WBTabWidget::addTabButtonRect()
 
     return r;
 }
-
-
-void WBTabWidget::paintEvent ( QPaintEvent * event )
-{
-    QPainter painter(this);
-
-    // all this is in synch with CSS QTabBar ...
-    QLinearGradient linearGrad(QPointF(0, 0), QPointF(0, 1));
-    linearGrad.setColorAt(0, QColor("#d3d3d3"));
-    linearGrad.setColorAt(1, QColor("#dddddd"));
-    painter.setBrush(linearGrad);
-
-    QRect r = addTabButtonRect();
-
-    painter.setPen(QColor("#888888"));
-    painter.drawRoundedRect(r, 3, 3);
-
-    painter.setPen(Qt::NoPen);
-    painter.drawRect(QRect(r.x(), r.y() + r.height() / 2, r.width() + 1, r.height() / 2 + 1));
-
-    painter.setPen(QColor("#888888"));
-    painter.drawLine(r.x(), r.y() + r.height() / 2, r.x(), r.bottom());
-    painter.drawLine(r.right() + 1, r.y() + r.height() / 2, r.right() + 1, r.bottom());
-
-    if (tabPosition() == QTabWidget::South)
-    {
-        QPen pen = painter.pen();
-        pen.setColor(QColor("#b3b3b3"));
-        pen.setWidth(2);
-        painter.setPen(pen);
-        painter.drawLine(0, r.bottom() + 2, width(), r.bottom() + 2);
-    }
-
-    QPointF topLeft = r.center() - QPointF(mAddTabIcon.width() / 2, mAddTabIcon.height() / 2);
-    painter.drawPixmap(topLeft, mAddTabIcon);
-
-    painter.end();
-
-    QTabWidget::paintEvent(event);
-}
-

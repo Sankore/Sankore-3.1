@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -41,6 +41,7 @@
 #include "board/UBBoardPaletteManager.h"
 
 #include "domain/UBGraphicsScene.h"
+#include "domain/UBGraphicsPolygonItem.h"
 
 #include "UBCustomCaptureWindow.h"
 #include "UBWindowCapture.h"
@@ -176,6 +177,25 @@ UBDesktopAnnotationController::~UBDesktopAnnotationController()
 UBDesktopPalette* UBDesktopAnnotationController::desktopPalette()
 {
     return mDesktopPalette;
+}
+
+QPainterPath UBDesktopAnnotationController::desktopPalettePath() const
+{
+    QPainterPath result;
+    if (mDesktopPalette && mDesktopPalette->isVisible()) {
+        result.addRect(mDesktopPalette->geometry());
+    }
+    if (mDesktopPenPalette && mDesktopPenPalette->isVisible()) {
+        result.addRect(mDesktopPenPalette->geometry());
+    }
+    if (mDesktopMarkerPalette && mDesktopMarkerPalette->isVisible()) {
+        result.addRect(mDesktopMarkerPalette->geometry());
+    }
+    if (mDesktopEraserPalette && mDesktopEraserPalette->isVisible()) {
+        result.addRect(mDesktopEraserPalette->geometry());
+    }
+
+    return result;
 }
 
 /**
@@ -820,6 +840,7 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
         // Here we have to generate a new mask This method is certainly resource
         // consuming but for the moment this is the only solution that I found.
         mMask = QPixmap(mTransparentDrawingView->width(), mTransparentDrawingView->height());
+        mMask.fill(Qt::transparent);
 
         QPainter p;
 
@@ -836,7 +857,7 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
         if(UBApplication::boardController->paletteManager()->mKeyboardPalette->isVisible())
         {
             p.drawRect(UBApplication::boardController->paletteManager()->mKeyboardPalette->geometry().x(), UBApplication::boardController->paletteManager()->mKeyboardPalette->geometry().y(), 
-                UBApplication::boardController->paletteManager()->mKeyboardPalette->width(), UBApplication::boardController->paletteManager()->mKeyboardPalette->height());
+                       UBApplication::boardController->paletteManager()->mKeyboardPalette->width(), UBApplication::boardController->paletteManager()->mKeyboardPalette->height());
         }
 
         if(UBApplication::boardController->paletteManager()->leftPalette()->isVisible())
@@ -896,7 +917,7 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
         {
             QGraphicsItem* pCrntItem = allItems.at(i);
 
-            if(pCrntItem->isVisible())
+            if(pCrntItem->isVisible() && pCrntItem->type() == UBGraphicsPolygonItem::Type)
             {
                 QPainterPath crntPath = pCrntItem->shape();
                 QRectF rect = crntPath.boundingRect();
@@ -907,7 +928,7 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
 
         annotationPainter.end();
 
-        mTransparentDrawingView->setMask(mMask.createMaskFromColor(Qt::black));
+        mTransparentDrawingView->setMask(mMask.mask());
     }
     else
     {

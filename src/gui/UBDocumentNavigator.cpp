@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QList>
@@ -60,6 +61,7 @@ UBDocumentNavigator::UBDocumentNavigator(QWidget *parent, const char *name):QGra
 
     setFrameShadow(QFrame::Plain);
 
+    UBApplication::boardController->setDocumentNavigator(this);
     connect(UBApplication::boardController, SIGNAL(documentThumbnailsUpdated(UBDocumentContainer*)), this, SLOT(generateThumbnails(UBDocumentContainer*)));
     connect(UBApplication::boardController, SIGNAL(documentPageUpdated(int)), this, SLOT(updateSpecificThumbnail(int)));
     connect(UBApplication::boardController, SIGNAL(pageSelectionChanged(int)), this, SLOT(onScrollToSelectedPage(int)));
@@ -85,7 +87,6 @@ UBDocumentNavigator::~UBDocumentNavigator()
  */
 void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
 {
-
 	mThumbsWithLabels.clear();
 	foreach(QGraphicsItem* it, mScene->items())
     {
@@ -104,6 +105,8 @@ void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
 
         QString label = pageIndex == 0 ? tr("Title page") : tr("Page %0").arg(pageIndex);
         UBThumbnailTextItem *labelItem = new UBThumbnailTextItem(label);
+
+        pixmapItem->setLabel(labelItem);
 
 		UBImgTextThumbnailElement thumbWithText(pixmapItem, labelItem);
 		thumbWithText.setBorder(border());
@@ -173,8 +176,15 @@ void UBDocumentNavigator::refreshScene()
         int columnIndex = i % mNbColumns;
         int rowIndex = i / mNbColumns;
 		item.Place(rowIndex, columnIndex, mThumbnailWidth, thumbnailHeight);
+        item.getCaption()->highlight(false);
     }
     scene()->setSceneRect(scene()->itemsBoundingRect());
+
+    if (mThumbsWithLabels.count() > UBApplication::boardController->activeSceneIndex())
+    {
+        mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getThumbnail()->setSelected(true);
+        mThumbsWithLabels.at(UBApplication::boardController->activeSceneIndex()).getCaption()->highlight(true);
+    }
 }
 
 /**

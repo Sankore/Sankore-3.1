@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBBOARDVIEW_H_
@@ -53,7 +54,11 @@ class UBBoardView : public QGraphicsView
 
         void setMultiselection(bool enable);
         bool isMultipleSelectionEnabled() { return mMultipleSelectionIsEnabled; }
-
+// work around for handling tablet events on MAC OS with Qt 4.8.0 and above
+#if defined(Q_WS_MACX)
+        bool directTabletEvent(QEvent *event);
+        QWidget *widgetForTabletEvent(QWidget *w, const QPoint &pos);
+#endif
     signals:
 
         void resized(QResizeEvent* event);
@@ -142,7 +147,7 @@ class UBBoardView : public QGraphicsView
 
         bool isAbsurdPoint(QPoint point);
 
-		bool mVirtualKeyboardActive;
+        bool mVirtualKeyboardActive;
         bool mOkOnWidget;
 
         bool mWidgetMoved;
@@ -152,7 +157,7 @@ class UBBoardView : public QGraphicsView
 
         bool moveRubberBand;
         UBRubberBand *mUBRubberBand;
-        
+
         QList<QGraphicsItem *> mRubberedItems;
         QSet<QGraphicsItem*> mJustSelectedItems;
 
@@ -171,9 +176,9 @@ class UBBoardView : public QGraphicsView
 
         void settingChanged(QVariant newValue);
 
-	public slots:
+    public slots:
 
-		void virtualKeyboardActivated(bool b);
+        void virtualKeyboardActivated(bool b);
         void longPressEvent();
 
 };

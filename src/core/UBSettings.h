@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UBSETTINGS_H_
@@ -39,6 +40,7 @@ class UBSettings : public QObject
 
         static UBSettings* settings();
         static void destroy();
+        void init();
 
     private:
 
@@ -117,11 +119,10 @@ class UBSettings : public QObject
         int libraryIconSize();
         void setLibraryIconsize(const int& size);
 
-        void init();
-
         //user directories
         static QString userDataDirectory();
         static QString userDocumentDirectory();
+        static QString userBookmarkDirectory();
         static QString userFavoriteListFilePath();
         static QString userTrashDirPath();
         static QString userImageDirectory();
@@ -130,6 +131,9 @@ class UBSettings : public QObject
         static QString userSearchDirectory();
         static QString userAnimationDirectory();
         static QString userInteractiveDirectory();
+        static QString userApplicationDirectory();
+        static QString userWidgetPath();
+        static QString userRelativeWidgetPath();
         static QString userInteractiveFavoritesDirectory();
         static QString userPodcastRecordingDirectory();
 
@@ -145,6 +149,7 @@ class UBSettings : public QObject
         QString applicationAudiosLibraryDirectory();
         QString applicationVideosLibraryDirectory();
         QString applicationAnimationsLibraryDirectory();
+        QString applicationStartupHintsDirectory();
 
         QNetworkProxy* httpProxy();
 
@@ -242,6 +247,8 @@ class UBSettings : public QObject
 
         UBSetting* appUseMultiscreen;
 
+        UBSetting* appStartupHintsEnabled;
+
         UBSetting* boardPenFineWidth;
         UBSetting* boardPenMediumWidth;
         UBSetting* boardPenStrongWidth;
@@ -266,6 +273,9 @@ class UBSettings : public QObject
 
         UBColorListSetting* boardPenDarkBackgroundColors;
         UBColorListSetting* boardPenDarkBackgroundSelectedColors;
+
+        UBSetting* userCrossDarkBackground;
+        UBSetting* userCrossLightBackground;
 
         UBSetting* boardMarkerAlpha;
 
@@ -349,6 +359,8 @@ class UBSettings : public QObject
         UBSetting* rightLibPaletteBoardModeIsCollapsed;
         UBSetting* rightLibPaletteDesktopModeWidth;
         UBSetting* rightLibPaletteDesktopModeIsCollapsed;
+        UBSetting* rightLibPaletteWebModeWidth;
+        UBSetting* rightLibPaletteWebModeIsCollapsed;
         UBSetting* leftLibPaletteBoardModeWidth;
         UBSetting* leftLibPaletteBoardModeIsCollapsed;
         UBSetting* leftLibPaletteDesktopModeWidth;
@@ -370,6 +382,13 @@ class UBSettings : public QObject
         UBSetting* teacherGuideLessonPagesActivated;
 
         UBSetting* libIconSize;
+
+        UBSetting* magnifierDrawingMode;
+
+        UBSetting *cacheKeepAspectRatio;
+        UBSetting *cacheMode;
+        UBSetting *casheLastHoleSize;
+        UBSetting *cacheColor;
 
     public slots:
 

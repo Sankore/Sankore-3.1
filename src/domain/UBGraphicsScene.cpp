@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBGraphicsScene.h"
@@ -66,6 +67,8 @@
 #include "UBGraphicsPDFItem.h"
 #include "UBGraphicsTextItem.h"
 #include "UBGraphicsStrokesGroup.h"
+
+#include "customWidgets/UBGraphicsItemAction.h"
 
 #include "domain/UBGraphicsGroupContainerItem.h"
 
@@ -335,8 +338,8 @@ void UBGraphicsScene::updateGroupButtonState()
 {
 
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
-    if (UBStylusTool::Selector != currentTool)
-        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+    if (UBStylusTool::Selector != currentTool && UBStylusTool::Play != currentTool)
+        return;
 
     QAction *groupAction = UBApplication::mainWindow->actionGroupItems;
     QList<QGraphicsItem*> selItems = selectedItems();
@@ -578,9 +581,14 @@ bool UBGraphicsScene::inputDeviceRelease()
 
                 // Add the center cross
                 foreach(QGraphicsItem* item, mAddedItems){
+                    mAddedItems.remove(item);
                     removeItem(item);
                     UBCoreGraphicsScene::removeItemFromDeletion(item);
-                    mArcPolygonItem->setStrokesGroup(pStrokes);
+
+                    UBGraphicsPolygonItem *crossLine = qgraphicsitem_cast<UBGraphicsPolygonItem *>(item);
+                    if (crossLine)
+                        crossLine->setStrokesGroup(pStrokes);
+
                     pStrokes->addToGroup(item);
                 }
 
@@ -825,14 +833,14 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
 
         if (!intersectedPolygons[i].empty())
         {
-            // intersected polygons generated as QList<QPolygon> QPainterPath::toFillPolygons(), 
-            // so each intersectedPolygonItem has one or couple of QPolygons who should be removed from it. 
+            // intersected polygons generated as QList<QPolygon> QPainterPath::toFillPolygons(),
+            // so each intersectedPolygonItem has one or couple of QPolygons who should be removed from it.
             for(int j = 0; j < intersectedPolygons[i].size(); j++)
             {
                 // create small polygon from couple of polygons to replace particular erased polygon
                 UBGraphicsPolygonItem* polygonItem = new UBGraphicsPolygonItem(intersectedPolygons[i][j], intersectedPolygonItem->parentItem());
 
-                intersectedPolygonItem->copyItemParameters(polygonItem);  
+                intersectedPolygonItem->copyItemParameters(polygonItem);
                 polygonItem->setStroke(intersectedPolygonItem->stroke());
                 polygonItem->setStrokesGroup(intersectedPolygonItem->strokesGroup());
                 intersectedPolygonItem->strokesGroup()->addToGroup(polygonItem);
@@ -840,10 +848,30 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
             }
         }
 
-        //remove full polygon item for replace it by couple of polygons who creates the same stroke without a part which intersects with eraser
-        mRemovedItems << intersectedPolygonItem;
-        intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
+        //remove full polygon item for replace it by couple of polygons which creates the same stroke without a part intersects with eraser
+         mRemovedItems << intersectedPolygonItem;
+
+        QTransform t;
+        bool bApplyTransform = false;
+        if (intersectedPolygonItem->strokesGroup())
+        {
+            if (intersectedPolygonItem->strokesGroup()->parentItem())
+            {
+                bApplyTransform = true;
+                t = intersectedPolygonItem->sceneTransform();
+            }
+            intersectedPolygonItem->strokesGroup()->removeFromGroup(intersectedPolygonItem);
+        }
+
         removeItem(intersectedPolygonItem);
+        if (bApplyTransform)
+            intersectedPolygonItem->setTransform(t);
+
+
+        removeItem(intersectedPolygonItem);
+
+        if (bApplyTransform)
+            intersectedPolygonItem->setTransform(t);
     }
 
     if (!intersectedItems.empty())
@@ -1484,18 +1512,40 @@ UBGraphicsTextItem* UBGraphicsScene::textForObjectName(const QString& pString, c
                 textItem->setObjectName(objectName);
         }
     }
+
     if(!textItem){
         textItem = addTextWithFont(pString,QPointF(0,0) ,72,UBSettings::settings()->fontFamily(),true,false);
         textItem->setObjectName(objectName);
-        QSizeF size = textItem->size();
-        textItem->setPos(QPointF(-size.width()/2.0,-size.height()/2.0));
         textItem->setData(UBGraphicsItemData::ItemEditable,QVariant(false));
+        textItem->adjustSize();
+        textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
+        textItem->setPlainText(pString);
+    }
+    else{
+        textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
+        if (pString == textItem->toPlainText())
+            return textItem;
+
+        QTextCursor curCursor = textItem->textCursor();
+        QFont font = textItem->font();
+        QColor color = curCursor.charFormat().foreground().color();
+
+        textItem->setPlainText(pString);
+        textItem->clearFocus();
+        textItem->setFont(font);
+
+
+        QTextCharFormat format;
+        format.setForeground(QBrush(color));
+        curCursor.mergeCharFormat(format);
+        textItem->setTextCursor(curCursor);
+//        textItem->setSelected(true);
+        textItem->contentsChanged();
+
     }
 
-    textItem->setPlainText(pString);
-    textItem->adjustSize();
     textItem->clearFocus();
-    textItem->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
+
     return textItem;
 }
 
@@ -1862,6 +1912,7 @@ void UBGraphicsScene::addMagnifier(UBMagnifierParams params)
     connect(magniferControlViewWidget, SIGNAL(magnifierClose_Signal()), this, SLOT(closeMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomIn_Signal()), this, SLOT(zoomInMagnifier()));
     connect(magniferControlViewWidget, SIGNAL(magnifierZoomOut_Signal()), this, SLOT(zoomOutMagnifier()));
+    connect(magniferControlViewWidget, SIGNAL(magnifierDrawingModeChange_Signal(int)), this, SLOT(changeMagnifierMode(int)));
     connect(magniferControlViewWidget, SIGNAL(magnifierResized_Signal(qreal)), this, SLOT(resizedMagnifier(qreal)));
 
     setModified(true);
@@ -1926,6 +1977,14 @@ void UBGraphicsScene::zoomOutMagnifier()
         magniferDisplayViewWidget->setZoom(magniferDisplayViewWidget->params.zoom - 0.5);
         setModified(true);
     }
+}
+
+void UBGraphicsScene::changeMagnifierMode(int mode)
+{
+    if(magniferControlViewWidget)
+        magniferControlViewWidget->setDrawingMode(mode);
+    if(magniferDisplayViewWidget)
+        magniferDisplayViewWidget->setDrawingMode(mode);
 }
 
 void UBGraphicsScene::resizedMagnifier(qreal newPercent)
@@ -2024,13 +2083,21 @@ QList<QUrl> UBGraphicsScene::relativeDependencies() const
 
     while (itItems.hasNext())
     {
-        UBGraphicsMediaItem *videoItem = qgraphicsitem_cast<UBGraphicsMediaItem*> (itItems.next());
+        QGraphicsItem* item = itItems.next();
+        UBGraphicsMediaItem *videoItem = qgraphicsitem_cast<UBGraphicsMediaItem*> (item);
 
         if (videoItem && videoItem->mediaFileUrl().isRelative())
         {
             relativePathes << videoItem->mediaFileUrl();
         }
+
+        UBGraphicsItem* ubItem = dynamic_cast<UBGraphicsItem*>(item);
+        if(ubItem && ubItem->Delegate()->action() && ubItem->Delegate()->action()->linkType() == eLinkToAudio)
+            relativePathes << QUrl(ubItem->Delegate()->action()->path().replace(document()->persistencePath(),""));
+
     }
+
+    qDebug() << relativePathes;
 
     return relativePathes;
 }

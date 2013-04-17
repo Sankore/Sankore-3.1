@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBDocumentTreeWidget.h"
@@ -115,10 +116,10 @@ void UBDocumentTreeWidget::dragLeaveEvent(QDragLeaveEvent *event)
     Q_UNUSED(event);
 
     if (mScrollTimer->isActive())
-	{
-		mScrollMagnitude = 0;
-		mScrollTimer->stop();
-	}
+    {
+        mScrollMagnitude = 0;
+        mScrollTimer->stop();
+    }
 
     if (mDropTargetProxyTi)
     {
@@ -130,25 +131,25 @@ void UBDocumentTreeWidget::dragLeaveEvent(QDragLeaveEvent *event)
 
 void UBDocumentTreeWidget::dragMoveEvent(QDragMoveEvent *event)
 {
-	QRect boundingFrame = frameRect();
-	//setting up automatic scrolling
-	const int SCROLL_DISTANCE = 4;
-	int bottomDist = boundingFrame.bottom() - event->pos().y(), topDist = boundingFrame.top() - event->pos().y();
-	if(qAbs(bottomDist) <= SCROLL_DISTANCE)
-	{
-		mScrollMagnitude = (SCROLL_DISTANCE - bottomDist)*4;
-		if(verticalScrollBar()->isVisible() && !mScrollTimer->isActive()) mScrollTimer->start(100);
-	}
-	else if(qAbs(topDist) <= SCROLL_DISTANCE)
-	{
-		mScrollMagnitude = (- SCROLL_DISTANCE - topDist)*4;
-		if(verticalScrollBar()->isVisible() && !mScrollTimer->isActive()) mScrollTimer->start(100);
-	}
-	else
-	{
-		mScrollMagnitude = 0;
-		mScrollTimer->stop();
-	}
+    QRect boundingFrame = frameRect();
+    //setting up automatic scrolling
+    const int SCROLL_DISTANCE = 4;
+    int bottomDist = boundingFrame.bottom() - event->pos().y(), topDist = boundingFrame.top() - event->pos().y();
+    if(qAbs(bottomDist) <= SCROLL_DISTANCE)
+    {
+        mScrollMagnitude = (SCROLL_DISTANCE - bottomDist)*4;
+        if(verticalScrollBar()->isVisible() && !mScrollTimer->isActive()) mScrollTimer->start(100);
+    }
+    else if(qAbs(topDist) <= SCROLL_DISTANCE)
+    {
+        mScrollMagnitude = (- SCROLL_DISTANCE - topDist)*4;
+        if(verticalScrollBar()->isVisible() && !mScrollTimer->isActive()) mScrollTimer->start(100);
+    }
+    else
+    {
+        mScrollMagnitude = 0;
+        mScrollTimer->stop();
+    }
 
 
     QTreeWidgetItem* underlyingItem = this->itemAt(event->pos());
@@ -358,38 +359,37 @@ void UBDocumentTreeWidget::dropEvent(QDropEvent *event)
 }
 
 
-void UBDocumentTreeWidget::documentUpdated(UBDocumentProxy *pDocument)
+void UBDocumentTreeWidget::documentUpdated(UBDocumentProxy */*pDocument*/)
 {
-    UBDocumentProxyTreeItem *treeItem = UBApplication::documentController->findDocument(pDocument);
-    if (treeItem)
-    {
-        QTreeWidgetItem * parent = treeItem->parent();
+//    UBDocumentProxyTreeItem *treeItem = UBApplication::documentController->findDocument(pDocument);
+//    if (treeItem)
+//    {
+//        QTreeWidgetItem * parent = treeItem->parent();
 
-        if (parent)
-        {
-            for (int i = 0; i < parent->indexOfChild(treeItem); i++)
-            {
-                QTreeWidgetItem *ti = parent->child(i);
-                UBDocumentProxyTreeItem* pi = dynamic_cast<UBDocumentProxyTreeItem*>(ti);
-                if (pi)
-                {
-                    if (pDocument->metaData(UBSettings::documentUpdatedAt).toString() >= pi->proxy()->metaData(UBSettings::documentUpdatedAt).toString())
-                    {
-                        bool selected = treeItem->isSelected();
-                        parent->removeChild(treeItem);
-                        parent->insertChild(i, treeItem);
-                        for (int j = 0; j < selectedItems().count(); j++)
-                            selectedItems().at(j)->setSelected(false);
-                        if (selected)
-                            treeItem->setSelected(true);
-                        break;
-                    }
-                }
-            }
-        }
-    }
+//        if (parent)
+//        {
+//            for (int i = 0; i < parent->indexOfChild(treeItem); i++)
+//            {
+//                QTreeWidgetItem *ti = parent->child(i);
+//                UBDocumentProxyTreeItem* pi = dynamic_cast<UBDocumentProxyTreeItem*>(ti);
+//                if (pi)
+//                {
+//                    if (pDocument->metaData(UBSettings::documentUpdatedAt).toString() >= pi->proxy()->metaData(UBSettings::documentUpdatedAt).toString())
+//                    {
+//                        bool selected = treeItem->isSelected();
+//                        parent->removeChild(treeItem);
+//                        parent->insertChild(i, treeItem);
+//                        for (int j = 0; j < selectedItems().count(); j++)
+//                            selectedItems().at(j)->setSelected(false);
+//                        if (selected)
+//                            treeItem->setSelected(true);
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
-
 
 UBDocumentProxyTreeItem::UBDocumentProxyTreeItem(QTreeWidgetItem * parent, UBDocumentProxy* proxy, bool isEditable)
     : QTreeWidgetItem()
@@ -460,5 +460,5 @@ bool UBDocumentGroupTreeItem::isDefaultFolder() const
 
 void UBDocumentTreeWidget::autoScroll()
 {
-	this->verticalScrollBar()->setValue(this->verticalScrollBar()->value() + mScrollMagnitude);
+    this->verticalScrollBar()->setValue(this->verticalScrollBar()->value() + mScrollMagnitude);
 }

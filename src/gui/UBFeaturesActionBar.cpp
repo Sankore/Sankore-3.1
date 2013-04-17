@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBFeaturesActionBar.h"
@@ -124,7 +125,13 @@ UBFeaturesActionBar::UBFeaturesActionBar( UBFeaturesController *controller, QWid
     mLayout->addWidget(mpRemoveFavoriteBtn);
 	setCurrentState( IN_ROOT );
 	mpDeleteBtn->setAcceptDrops(true);
-	setAcceptDrops( true );
+    mpFavoriteBtn->setAcceptDrops(true);
+    mpRemoveFavoriteBtn->setAcceptDrops(true);
+    setAcceptDrops( false );
+
+    mpDeleteBtn->installEventFilter(this);
+    mpFavoriteBtn->installEventFilter(this);
+    mpRemoveFavoriteBtn->installEventFilter(this);
 }
 
 void UBFeaturesActionBar::setCurrentState( UBFeaturesActionBarState state )
@@ -145,9 +152,6 @@ void UBFeaturesActionBar::setButtons()
         mpCloseBtn->hide();
         mpRemoveFavoriteBtn->hide();
         mpNewFolderBtn->show();
-		mpNewFolderBtn->setEnabled(true);
-		mpDeleteBtn->setEnabled(true);
-//        mpRescanModelBtn->show();
 		break;
     case IN_ROOT:
         mpFavoriteBtn->show();
@@ -241,14 +245,9 @@ void UBFeaturesActionBar::unlockIt()
     setEnabled(true);
 }
 
-void UBFeaturesActionBar::dragEnterEvent( QDragEnterEvent *event )
+void UBFeaturesActionBar::allowDeleteButton(bool pAllow)
 {
-    const UBFeaturesMimeData *fMimeData = qobject_cast<const UBFeaturesMimeData*>(event->mimeData());
-    if (fMimeData) {
-        event->acceptProposedAction();
-    } else {
-        event->ignore();
-    }
+    mpDeleteBtn->setEnabled(pAllow);
 }
 
 void UBFeaturesActionBar::dropEvent(QDropEvent *event)
@@ -271,10 +270,6 @@ void UBFeaturesActionBar::dropEvent(QDropEvent *event)
                 return;
             }
         }
-        event->setDropAction(Qt::MoveAction);
-		event->accept();
-
-        emit deleteElements(fMimeData);
 
     } else if (dest == mpFavoriteBtn) {
         event->setDropAction( Qt::CopyAction);
@@ -283,11 +278,67 @@ void UBFeaturesActionBar::dropEvent(QDropEvent *event)
         emit addToFavorite(fMimeData);
 
     } else if (dest == mpRemoveFavoriteBtn) {
-		event->setDropAction( Qt::MoveAction );
+        event->setDropAction(Qt::MoveAction);
 		event->accept();
 
         emit removeFromFavorite(fMimeData);
 	}
+}
+
+bool UBFeaturesActionBar::eventFilter(QObject *obj, QEvent *event)
+{
+    if (event->type() == QEvent::DragEnter) {
+        QDragEnterEvent *enterEvent = static_cast<QDragEnterEvent*>(event);
+        const UBFeaturesMimeData *fMimeData = qobject_cast<const UBFeaturesMimeData*>(enterEvent->mimeData());
+        if (fMimeData) {
+
+            if (obj == mpDeleteBtn) {
+                foreach (UBFeature curFeature, fMimeData->features()) {
+                    if (!curFeature.isDeletable()) {
+                        event->ignore();
+                        return true;
+                    }
+                }
+                event->accept();
+
+            } else if (obj == mpFavoriteBtn) {
+                foreach (UBFeature curFeature, fMimeData->features()) {
+                    if (curFeature.getType() == FEATURE_FOLDER) {
+                        event->ignore();
+                        return true;
+                    }
+                }
+                event->accept();
+
+            } else if (obj == mpRemoveFavoriteBtn) {
+                event->accept();
+                return true;
+            }
+        }
+    } else if (event->type() == QEvent::Drop) {
+        QDropEvent *dropEvent = static_cast<QDropEvent*>(event);
+        const UBFeaturesMimeData *fMimeData = qobject_cast<const UBFeaturesMimeData*>(dropEvent->mimeData());
+        if (fMimeData) {
+
+            if (obj == mpDeleteBtn) {
+                dropEvent->setDropAction(Qt::MoveAction);
+                event->accept();
+                emit deleteElements(fMimeData);
+
+            } else if (obj == mpFavoriteBtn) {
+                dropEvent->setDropAction(Qt::CopyAction);
+                event->accept();
+                emit addToFavorite(fMimeData);
+
+            } else if (obj == mpRemoveFavoriteBtn) {
+                dropEvent->setDropAction(Qt::MoveAction);
+                event->accept();
+
+                emit removeFromFavorite(fMimeData);
+            }
+        }
+    }
+    return QWidget::eventFilter(obj, event);
 }
 
 UBFeaturesActionBar::~UBFeaturesActionBar()

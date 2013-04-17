@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,11 +20,13 @@
  */
 
 
+
 #ifndef UBTRAPFLASHCONTROLLER_H_
 #define UBTRAPFLASHCONTROLLER_H_
 
 #include <QtGui>
 #include "UBWebKitUtils.h"
+#include "web/browser/WBTrapWebPageContent.h"
 
 namespace Ui
 {
@@ -32,46 +34,65 @@ namespace Ui
 }
 
 
-class UBTrapFlashController : public QObject
+class UBTrapWebPageContentController : public QObject
 {
-    Q_OBJECT;
-    public:
-        UBTrapFlashController(QWidget* parent = 0);
-        virtual ~UBTrapFlashController();
+    Q_OBJECT
 
-        void showTrapFlash();
-        void hideTrapFlash();
+    enum importDestination
+    {
+        library = 0,
+        board
+    };
+
+
+    public:
+        UBTrapWebPageContentController(QWidget* parent = 0);
+        virtual ~UBTrapWebPageContentController();
+
+        void showTrapContent();
+        void hideTrapContent();
+
+        void setLastWebHitTestResult(const QWebHitTestResult &result);
 
     public slots:
-        void updateTrapFlashFromPage(QWebFrame* pCurrentWebFrame);
+        void updateTrapContentFromPage(QWebFrame* pCurrentWebFrame);
         void text_Changed(const QString &);
         void text_Edited(const QString &);
-
+        void addItemToLibrary();
+        void addItemToBoard();
+        void addLinkToLibrary();
+        void addLinkToBoard();
 
     private slots:
-        void selectFlash(int pFlashIndex);
-        void createWidget();
+        void selectHtmlObject(int pObjectIndex);
+        void oEmbedRequestFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
 
     private:
 
-        void updateListOfFlashes(const QList<UBWebKitUtils::HtmlObject>& pAllFlashes);
+        void addLink(bool isOnLibrary);
+        void prepareCurrentItemForImport(bool sendToBoard);
+        void updateListOfContents(const QList<UBWebKitUtils::HtmlObject>& objects);
 
-        QString widgetNameForObject(UBWebKitUtils::HtmlObject pObject);
+        QString widgetNameForUrl(QString pObjectUrl);
 
-        QString generateFullPageHtml(const QString& pDirPath, bool pGenerateFile);
-        QString generateHtml(const UBWebKitUtils::HtmlObject& pObject, const QString& pDirPath, bool pGenerateFile);
+        QString generateFullPageHtml(const QUrl &srcUrl);
+        void generatePreview(const UBWebKitUtils::HtmlObject& pObject, bool bTryToEmbed = false);
 
         QString generateIcon(const QString& pDirPath);
 
         void generateConfig(int pWidth, int pHeight, const QString& pDestinationPath);
 
-        void importWidgetInLibrary(QDir pSourceDir);
 
-        Ui::trapFlashDialog* mTrapFlashUi;
-        QDialog* mTrapFlashDialog;
         QWidget* mParentWidget;
         QWebFrame* mCurrentWebFrame;
-        QList<UBWebKitUtils::HtmlObject> mAvailableFlashes;
+        QList<UBWebKitUtils::HtmlObject> mAvaliableObjects;
+        QMap<int, int> mObjectNoToTrapByTrapWebComboboxIndex;
+
+        WBTrapWebPageContentWindow *mTrapWebContentDialog;
+        QWebHitTestResult mLastWebHitTestResult;
+
+        QUrl mCurrentItemUrl;
+        importDestination mCurrentItemImportDestination;
 };
 
 

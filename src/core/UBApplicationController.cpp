@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include "UBApplicationController.h"
@@ -67,9 +68,9 @@
 
 #include "core/memcheck.h"
 
-UBApplicationController::UBApplicationController(UBBoardView *pControlView, 
+UBApplicationController::UBApplicationController(UBBoardView *pControlView,
                                                  UBBoardView *pDisplayView,
-                                                 UBMainWindow* pMainWindow, 
+                                                 UBMainWindow* pMainWindow,
                                                  QObject* parent,
                                                  UBRightPalette* rightPalette)
     : QObject(parent)
@@ -119,6 +120,16 @@ UBApplicationController::UBApplicationController(UBBoardView *pControlView,
 #ifdef Q_WS_X11
     mMainWindow->setStyleSheet("QToolButton { font-size: 11px}");
 #endif
+
+    if(QDate::currentDate() > QDate(2013,4,19)){
+        QMessageBox messageBox;
+        messageBox.setWindowFlags(Qt::Dialog);
+        messageBox.setWindowTitle("Open-Sankore");
+        messageBox.setText("This version of Open-Sankore has expired. Please download the last version from the Open-Sankore web site.");
+        messageBox.addButton("Ok",QMessageBox::YesRole);
+        messageBox.exec();
+        exit(0);
+    }
 
 }
 
@@ -232,10 +243,10 @@ void UBApplicationController::adjustDisplayView()
         QRect rect = mControlView->rect();
         QPoint center(rect.x() + rect.width() / 2, rect.y() + rect.height() / 2);
 
-		QTransform recentTransform = mDisplayView->transform();
+        QTransform recentTransform = mDisplayView->transform();
 
-		if (recentTransform != tr)
-			mDisplayView->setTransform(tr);
+        if (recentTransform != tr)
+            mDisplayView->setTransform(tr);
 
         mDisplayView->centerOn(mControlView->mapToScene(center));
     }
@@ -346,14 +357,14 @@ void UBApplicationController::showBoard()
     mMainWindow->tutorialToolBar->hide();
     mMainWindow->boardToolBar->show();
 
-    if (mMainMode == Document)
-    {
-        int selectedSceneIndex = UBApplication::documentController->getSelectedItemIndex();
-        if (selectedSceneIndex != -1)
-        {
-            UBApplication::boardController->setActiveDocumentScene(UBApplication::documentController->selectedDocument(), selectedSceneIndex, true);
-        }
-    }
+//    if (mMainMode == Document)
+//    {
+//        int selectedSceneIndex = UBApplication::documentController->getSelectedItemIndex();
+//        if (selectedSceneIndex != -1)
+//        {
+//            UBApplication::boardController->setActiveDocumentScene(UBApplication::documentController->selectedDocument(), selectedSceneIndex, true);
+//        }
+//    }
 
     mMainMode = Board;
 
@@ -364,16 +375,23 @@ void UBApplicationController::showBoard()
     mMainWindow->switchToBoardWidget();
 
     if (UBApplication::boardController)
+    {
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::Screen);
         UBApplication::boardController->show();
+    }
 
     mIsShowingDesktop = false;
     UBPlatformUtils::setDesktopMode(false);
 
     mUninoteController->hideWindow();
-    
+
     mMainWindow->show();
 
     emit mainModeChanged(Board);
+
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+    if (UBStylusTool::Selector != currentTool)
+        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
     UBApplication::boardController->freezeW3CWidgets(false);
     UBApplication::boardController->activeScene()->updateGroupButtonState();
@@ -385,6 +403,7 @@ void UBApplicationController::showInternet()
 
     if (UBApplication::boardController)
     {
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
         UBApplication::boardController->persistCurrentScene();
         UBApplication::boardController->hide();
     }
@@ -434,12 +453,20 @@ void UBApplicationController::showDocument()
     if (UBApplication::boardController)
     {
         if (UBApplication::boardController->activeScene()->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()))
+        {
+            UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
             UBApplication::boardController->persistCurrentScene();
+        }
         UBApplication::boardController->hide();
     }
 
-    if (UBApplication::documentController)
-        UBApplication::documentController->show();
+    UBDocumentController *docCtrl = UBApplication::documentController;
+    if (docCtrl) {
+        docCtrl->show();
+        if (docCtrl->firstSelectedTreeProxy()) {
+            docCtrl->setDocument(docCtrl->firstSelectedTreeProxy(), true);
+        }
+    }
 
     mMainWindow->show();
 
@@ -489,25 +516,25 @@ void UBApplicationController::showTutorial()
     {
         showDesktop(true);
         UBApplication::webController->show(UBWebController::Tutorial);
-
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
     }
     else{
-    	mMainWindow->webToolBar->hide();
-    	mMainWindow->boardToolBar->hide();
-    	mMainWindow->documentToolBar->hide();
-    	mMainWindow->tutorialToolBar->show();
+        mMainWindow->webToolBar->hide();
+        mMainWindow->boardToolBar->hide();
+        mMainWindow->documentToolBar->hide();
+        mMainWindow->tutorialToolBar->show();
 
 
-    	mMainMode = Tutorial;
+        mMainMode = Tutorial;
 
-    	adaptToolBar();
+        adaptToolBar();
 
-    	mUninoteController->hideWindow();
+        mUninoteController->hideWindow();
 
-    	UBApplication::webController->show(UBWebController::Tutorial);
+        UBApplication::webController->show(UBWebController::Tutorial);
 
-    	mirroringEnabled(false);
-    	emit mainModeChanged(mMainMode);
+        mirroringEnabled(false);
+        emit mainModeChanged(mMainMode);
     }
 }
 
@@ -517,6 +544,7 @@ void UBApplicationController::showSankoreEditor()
 
     if (UBApplication::boardController)
     {
+        UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
         UBApplication::boardController->persistCurrentScene();
         UBApplication::boardController->hide();
     }
@@ -542,7 +570,7 @@ void UBApplicationController::showSankoreEditor()
 
 void UBApplicationController::checkUpdate()
 {
-	if(mHttp)
+    if(mHttp)
         delete mHttp;
     QUrl url("http://ftp.open-sankore.org/update.json");
     mHttp = new QHttp(url.host());

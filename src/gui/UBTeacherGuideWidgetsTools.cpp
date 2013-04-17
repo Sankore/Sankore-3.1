@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QTreeWidget>
@@ -172,11 +173,11 @@ void UBTGAdaptableText::showEvent(QShowEvent* e)
 {
     Q_UNUSED(e);
     if(!mIsUpdatingSize && !hasFocus() && mHasPlaceHolder && toPlainText().isEmpty() && !isReadOnly()){
-    	setTextColor(QColor(Qt::lightGray));
-    	setPlainText(mPlaceHolderText);
+        setTextColor(QColor(Qt::lightGray));
+        setPlainText(mPlaceHolderText);
     }
     else
-    	// If the teacherguide is collapsed, don't updated the size. Or set the size as the expanded size
+        // If the teacherguide is collapsed, don't updated the size. Or set the size as the expanded size
         onTextChanged();
 }
 
@@ -193,16 +194,16 @@ void UBTGAdaptableText::onTextChanged()
 {
     qreal documentSize = document()->size().height();
     if(height() == documentSize + mBottomMargin){
-    	return;
+        return;
     }
     mIsUpdatingSize = true;
 
 
     if(documentSize < mMinimumHeight){
-    	setFixedHeight(mMinimumHeight);
+        setFixedHeight(mMinimumHeight);
     }
     else{
-    	setFixedHeight(documentSize+mBottomMargin);
+        setFixedHeight(documentSize+mBottomMargin);
     }
 
     updateGeometry();
@@ -223,6 +224,19 @@ void UBTGAdaptableText::setInitialText(const QString& text)
     onTextChanged();
 }
 
+void UBTGAdaptableText::resetText()
+{
+    if(mHasPlaceHolder && !mPlaceHolderText.isEmpty()){
+        setTextColor(QColor(Qt::lightGray));
+        setText(mPlaceHolderText);
+    }
+    else{
+        setText("");
+        setTextColor(QColor(Qt::black));
+    }
+    onTextChanged();
+}
+
 void UBTGAdaptableText::showText(const QString & text)
 {
     setText(text);
@@ -238,45 +252,71 @@ void UBTGAdaptableText::bottomMargin(int newValue)
 
 void UBTGAdaptableText::focusInEvent(QFocusEvent* e)
 {
-	if(isReadOnly()){
-		e->ignore();
-	}
-	managePlaceholder(true);
-	QTextEdit::focusInEvent(e);
+    if(isReadOnly()){
+        e->ignore();
+    }
+    managePlaceholder(true);
+    QTextEdit::focusInEvent(e);
 }
 
 void UBTGAdaptableText::focusOutEvent(QFocusEvent* e)
 {
-	managePlaceholder(false);
-	QTextEdit::focusOutEvent(e);
+    managePlaceholder(false);
+    QTextEdit::focusOutEvent(e);
+}
+
+void UBTGAdaptableText::insertFromMimeData(const QMimeData *source)
+{
+    QMimeData editedMimeData;
+    QTextDocument textDoc;
+    QString plainText;
+
+    if (source->hasHtml())
+    {
+        textDoc.setHtml(source->html());
+        plainText += textDoc.toPlainText();
+    }
+    if (source->hasText())
+        if (textDoc.toPlainText() != source->text())
+            plainText += source->text();
+    if (source->hasUrls())
+    {
+        foreach(QUrl url, source->urls())
+        {
+            plainText += url.toString();
+        }
+    }
+
+    editedMimeData.setText(plainText);
+    QTextEdit::insertFromMimeData(&editedMimeData);
 }
 
 void UBTGAdaptableText::managePlaceholder(bool focus)
 {
-	if(focus){
-		if(toPlainText() == mPlaceHolderText){
-			setTextColor(QColor(Qt::black));
-			setPlainText("");
-		}
-		setCursorToTheEnd();
-	}
-	else{
-		if(toPlainText().isEmpty()){
-			setTextColor(QColor(Qt::lightGray));
-			setPlainText(mPlaceHolderText);
-		}
-	}
+    if(focus){
+        if(toPlainText() == mPlaceHolderText){
+            setTextColor(QColor(Qt::black));
+            setPlainText("");
+            setCursorToTheEnd();
+        }
+    }
+    else{
+        if(toPlainText().isEmpty()){
+            setTextColor(QColor(Qt::lightGray));
+            setPlainText(mPlaceHolderText);
+        }
+    }
 }
 
 void UBTGAdaptableText::setCursorToTheEnd()
 {
-	QTextDocument* doc = document();
-	if(NULL != doc){
-		QTextBlock block = doc->lastBlock();
-		QTextCursor cursor(doc);
-		cursor.setPosition(block.position() + block.length() - 1);
-		setTextCursor(cursor);
-	}
+    QTextDocument* doc = document();
+    if(NULL != doc){
+        QTextBlock block = doc->lastBlock();
+        QTextCursor cursor(doc);
+        cursor.setPosition(block.position() + block.length() - 1);
+        setTextCursor(cursor);
+    }
 }
 
 /***************************************************************************
@@ -287,10 +327,10 @@ UBDraggableWeb::UBDraggableWeb(QString& relativePath, QWidget* parent): QWebView
   , mDragStarted(false)
 
 {
-	if(!relativePath.startsWith("file://"))
-		mRelativePath = QUrl::fromLocalFile(relativePath).toString();
-	else
-		mRelativePath = relativePath;
+    if(!relativePath.startsWith("file://"))
+        mRelativePath = QUrl::fromLocalFile(relativePath).toString();
+    else
+        mRelativePath = relativePath;
     //NOOP
 }
 
@@ -437,7 +477,7 @@ tUBGEElementNode* UBTGMediaWidget::saveData()
     tUBGEElementNode* result = new tUBGEElementNode();
     QString relativePath = mMediaPath;
     relativePath = relativePath.replace(UBApplication::boardController->selectedDocument()->persistencePath()+"/","");
-	result->name = "media";
+    result->name = "media";
     result->attributes.insert("title",mpTitle->text());
     result->attributes.insert("relativePath",relativePath);
     result->attributes.insert("mediaType",mMediaType);
@@ -536,9 +576,9 @@ void UBTGMediaWidget::createWorkWidget(bool forceFlashMediaType)
             mpMediaLayout = new QHBoxLayout(mpWorkWidget);
             mpWorkWidget->setLayout(mpMediaLayout);
         }
-        
+
         mpMediaLayout->addStretch(1);
-        
+
         if(mpMediaLabelWidget){
             mpMediaLabelWidget->setFixedHeight(mMediaWidgetHeight);
             mpMediaLabelWidget->setParent(mpWorkWidget);
@@ -597,7 +637,7 @@ void UBTGMediaWidget::mousePressEvent(QMouseEvent *event)
         QMimeData *mimeData = new QMimeData();
         QList<QUrl> urlList;
 #ifdef Q_WS_WIN
-		urlList << QUrl::fromLocalFile(mMediaPath);
+        urlList << QUrl::fromLocalFile(mMediaPath);
 #else
         urlList << QUrl(mMediaPath);
 #endif
@@ -643,11 +683,11 @@ UBTGUrlWidget::~UBTGUrlWidget()
 
 void UBTGUrlWidget::onUrlEditionFinished()
 {
-	QString url = mpUrl->text();
-	if(url.length() && !url.startsWith("http://") && !url.startsWith("https://") && !url.startsWith("ftp://") && !url.startsWith("sftp://") && !url.startsWith("http://")){
-		mpUrl->setText("http://" + mpUrl->text());
-		setFocus();
-	}
+    QString url = mpUrl->text();
+    if(url.length() && !url.startsWith("http://") && !url.startsWith("https://") && !url.startsWith("ftp://") && !url.startsWith("sftp://") && !url.startsWith("http://")){
+        mpUrl->setText("http://" + mpUrl->text());
+        setFocus();
+    }
 }
 
 void UBTGUrlWidget::initializeWithDom(QDomElement element)

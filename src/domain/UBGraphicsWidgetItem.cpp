@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #include <QtNetwork>
@@ -608,7 +609,9 @@ void UBGraphicsWidgetItem::mainFrameLoadFinished (bool ok)
 {
     mLoadIsErronous = !ok;
     update(boundingRect());
-    takeSnapshot();
+
+    if (mInitialLoadDone && scene() && scene()->renderingContext() == UBGraphicsScene::Screen)
+        takeSnapshot();
 }
 
 void UBGraphicsWidgetItem::wheelEvent(QGraphicsSceneWheelEvent *event)
@@ -643,8 +646,11 @@ void UBGraphicsWidgetItem::resize(qreal w, qreal h)
 void UBGraphicsWidgetItem::resize(const QSizeF & pSize)
 {
     if (pSize != size()) {
-        QGraphicsWebView::setMaximumSize(pSize.width(), pSize.height());
-        QGraphicsWebView::resize(pSize.width(), pSize.height());
+        qreal w = qMax((qreal)mMinimumSize.width(), pSize.width());
+        qreal h = qMax((qreal)mMinimumSize.height(), pSize.height());
+        QGraphicsWebView::setMaximumSize(w, h);
+        QGraphicsWebView::page()->setViewportSize(QSize(w, h));
+        QGraphicsWebView::resize(QSizeF(w, h));
         if (Delegate())
             Delegate()->positionHandles();
         if (scene())
@@ -764,6 +770,8 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
     int width = 300;
     int height = 150;
+    int minWidth = 10;
+    int minHeight = 10;
 
     QFile configFile(path + "config.xml");
     configFile.open(QFile::ReadOnly);
@@ -777,6 +785,9 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
         width = widgetElement.attribute("width", "300").toInt();
         height = widgetElement.attribute("height", "150").toInt();
+
+        minWidth = widgetElement.attribute("minimum_width", "10").toInt();
+        minHeight = widgetElement.attribute("minimum_height", "10").toInt();
 
         mMetadatas.id = widgetElement.attribute("id", "");
 
@@ -885,6 +896,7 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
     setMaximumSize(QSize(width, height));
 
+    mMinimumSize = QSize(minWidth, minHeight);
     mNominalSize = QSize(width, height);
 
     initialize();
@@ -923,7 +935,7 @@ UBGraphicsW3CWidgetItem::Metadata UBGraphicsW3CWidgetItem::metadatas() const
 
 QString UBGraphicsW3CWidgetItem::createNPAPIWrapper(const QString& url, const QString& pMimeType, const QSize& sizeHint, const QString& pName)
 {
-    const QString userWidgetPath = UBSettings::settings()->userInteractiveDirectory() + "/" + tr("Web");
+    const QString userWidgetPath = UBSettings::settings()->userWidgetPath();
     QDir userWidgetDir(userWidgetPath);
 
     return createNPAPIWrapperInDir(url, userWidgetDir, pMimeType, sizeHint, pName);
@@ -1140,6 +1152,8 @@ void UBGraphicsW3CWidgetItem::loadNPAPIWrappersTemplates()
         QString etcPath = UBPlatformUtils::applicationResourcesDirectory() + "/etc/";
 
         QDir etcDir(etcPath);
+
+        qDebug() << etcDir.entryList().count();
 
         foreach(QString fileName, etcDir.entryList()) {
             if (fileName.startsWith("npapi-wrapper") && (fileName.endsWith(".htm") || fileName.endsWith(".html"))) {

@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,8 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+
 #include <QString>
 #include <QCursor>
 
@@ -85,6 +87,7 @@ void UBThumbnailWidget::setGraphicsItems(const QList<QGraphicsItem*>& pGraphicsI
         , const QStringList pLabels
         , const QString& pMimeType)
 {
+    Q_ASSERT(pItemsPaths.count() == pLabels.count());
     mGraphicItems = pGraphicsItems;
     mItemsPaths = pItemsPaths;
     mMimeType = pMimeType;
@@ -98,13 +101,6 @@ void UBThumbnailWidget::setGraphicsItems(const QList<QGraphicsItem*>& pGraphicsI
     // set lasso to 0 as it has been cleared as well
     mLassoRectItem = 0;
 
-    foreach (QGraphicsItem* item, pGraphicsItems)
-    {
-        if (item->scene() != &mThumbnailsScene)
-        {
-            mThumbnailsScene.addItem(item);
-        }
-    }
 
     mLabelsItems.clear();
 
@@ -116,6 +112,22 @@ void UBThumbnailWidget::setGraphicsItems(const QList<QGraphicsItem*>& pGraphicsI
 
         mThumbnailsScene.addItem(labelItem);
         mLabelsItems << labelItem;
+    }
+
+    for (int i = 0; i < pGraphicsItems.count(); i++)
+    {
+        QGraphicsItem *item = pGraphicsItems.at(i);
+
+        UBSceneThumbnailPixmap *navigPixmap = dynamic_cast<UBSceneThumbnailPixmap *>(item);
+        if (navigPixmap)
+        {
+            navigPixmap->setLabel(mLabelsItems.at(i));
+            if (navigPixmap->isSelected())
+                mLabelsItems.at(i)->highlight(true);
+        }
+
+        if (item->scene() != &mThumbnailsScene)
+            mThumbnailsScene.addItem(item);
     }
 
     refreshScene();
@@ -189,6 +201,7 @@ void UBThumbnailWidget::refreshScene()
             qreal labelWidth = fm.width(elidedText);
             pos.setX(mSpacing + (mThumbnailWidth - labelWidth) / 2 + columnIndex * (mThumbnailWidth + mSpacing));
             mLabelsItems.at(i)->setPos(pos);
+            mLabelsItems.at(i)->highlight(false);
         }
     }
 
@@ -200,6 +213,14 @@ void UBThumbnailWidget::refreshScene()
     setSceneRect(0, 0,
             geometry().width() - scrollBarThickness,
             mSpacing + ((((mGraphicItems.size() - 1) / nbColumns) + 1) * (thumbnailHeight + mSpacing + labelSpacing)));
+
+    
+    if (UBApplication::boardController)
+    {   
+        int page = UBApplication::boardController->currentPage();
+        if (mLabelsItems.count() > page && mGraphicItems.count() > page)
+            mLabelsItems.at(page)->highlight(mGraphicItems.at(page)->isSelected());
+    }
 }
 
 
@@ -655,20 +676,20 @@ void UBThumbnailWidget::selectItemAt(int pIndex, bool extend)
     if (pIndex >= 0 && pIndex < mGraphicItems.size())
         itemToSelect = mGraphicItems.at(pIndex);
 
+    if (!extend)
     foreach (QGraphicsItem* item, items())
     {
-        if (item == itemToSelect)
-        {
-            mLastSelectedThumbnail = dynamic_cast<UBThumbnail*>(item);
-            item->setSelected(true);
-            ensureVisible(item);
-        }
-        else if (!extend)
-        {
-            item->setSelected(false);
-        }
+        UBThumbnail *thumb = dynamic_cast<UBThumbnail*>(item);
+        if (thumb && thumb->label())
+            thumb->label()->highlight(false);
+            
+        item->setSelected(false);
     }
-}
+ 
+    mLastSelectedThumbnail = dynamic_cast<UBThumbnail*>(itemToSelect);
+    itemToSelect->setSelected(true);
+    ensureVisible(itemToSelect);
+ }
 
 void UBThumbnailWidget::unselectItemAt(int pIndex)
 {
@@ -752,6 +773,7 @@ void UBThumbnailWidget::deleteLasso()
 
 UBThumbnail::UBThumbnail()
     : mAddedToScene(false)
+    , mLabel(NULL)
 {
     mSelectionItem = new QGraphicsRectItem(0, 0, 0, 0);
     mSelectionItem->setPen(QPen(UBSettings::treeViewBackgroundColor, 8));
@@ -762,6 +784,47 @@ UBThumbnail::~UBThumbnail()
 {
     if (mSelectionItem && !mAddedToScene)
         delete mSelectionItem;
+}
+
+void UBThumbnail::itemChange(QGraphicsItem *item, QGraphicsItem::GraphicsItemChange change, const QVariant &value)
+{
+    Q_UNUSED(value);
+
+    if ((change == QGraphicsItem::ItemSelectedHasChanged
+        || change == QGraphicsItem::ItemTransformHasChanged
+        || change == QGraphicsItem::ItemPositionHasChanged)
+        &&  item->scene())
+    {
+        if (item->isSelected())
+        {
+            if (!mSelectionItem->scene())
+            {
+                item->scene()->addItem(mSelectionItem);
+                mSelectionItem->setZValue(item->zValue() - 1);
+                //                        UBGraphicsItem::assignZValue(mSelectionItem, item->zValue() - 1);
+                mAddedToScene = true;
+            }
+
+            mSelectionItem->setRect(
+                item->sceneBoundingRect().x() - 5,
+                item->sceneBoundingRect().y() - 5,
+                item->sceneBoundingRect().width() + 10,
+                item->sceneBoundingRect().height() + 10);
+
+            mSelectionItem->show();
+        }
+        else
+        {
+            mSelectionItem->hide();
+        }
+        if (mLabel)
+            mLabel->highlight(item->isSelected());
+    }
+}
+
+UBSceneThumbnailPixmap::~UBSceneThumbnailPixmap()
+{
+    //NOOP
 }
 
 
@@ -852,7 +915,10 @@ void UBSceneThumbnailNavigPixmap::updateButtonsState()
 
     if(proxy()){
     	int pageIndex = UBDocumentContainer::pageFromSceneIndex(sceneIndex());
-    	UBDocumentController* documentController = UBApplication::documentController;
+        UBDocumentController* documentController = UBApplication::documentController;
+        if (!documentController->selectedDocument()) {
+            documentController->setDocument(UBApplication::boardController->selectedDocument());
+        }
     	bCanDelete = documentController->pageCanBeDeleted(pageIndex);
         bCanMoveUp = documentController->pageCanBeMovedUp(pageIndex);
         bCanMoveDown = documentController->pageCanBeMovedDown(pageIndex);

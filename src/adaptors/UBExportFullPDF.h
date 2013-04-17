@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #ifndef UBExportFullPDF_H_
 #define UBExportFullPDF_H_
 
@@ -30,7 +31,7 @@ class UBDocumentProxy;
 
 class UBExportFullPDF : public UBExportAdaptor
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBExportFullPDF(QObject *parent = 0);
@@ -41,6 +42,7 @@ class UBExportFullPDF : public UBExportAdaptor
         virtual void persist(UBDocumentProxy* pDocument);
 
         virtual void persistsDocument(UBDocumentProxy* pDocument, const QString& filename);
+        virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 
     protected:
         void saveOverlayPdf(UBDocumentProxy* pDocumentProxy, const QString& filename);

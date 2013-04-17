@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 
 #ifndef UB_H_
@@ -41,6 +42,9 @@ struct UBMimeType
         PDF,
         UniboardTool,
         Group,
+        Bookmark,
+        Link,
+        Web,
         UNKNOWN
     };
 };
@@ -49,18 +53,18 @@ struct UBStylusTool
 {
     enum Enum
     {
-        Pen = 0, 
-		Eraser, 
- 		Marker, 
-		Selector, 
+        Pen = 0,
+        Eraser,
+        Marker,
+        Selector,
         Play,
-		Hand, 
-		ZoomIn, 
-		ZoomOut, 
-		Pointer, 
-		Line, 
-		Text, 
-		Capture
+        Hand,
+        ZoomIn,
+        ZoomOut,
+        Pointer,
+        Line,
+        Text,
+        Capture
     };
 };
 
@@ -137,19 +141,19 @@ struct UBGraphicsItemType
 {
     enum Enum
     {
-        PolygonItemType = QGraphicsItem::UserType + 1, 
-		PixmapItemType,
-        SvgItemType, 
+        PolygonItemType = QGraphicsItem::UserType + 1,
+        PixmapItemType,
+        SvgItemType,
         DelegateButtonType,
-		MediaItemType, 
-		PDFItemType, 
-		TextItemType,
-		CurtainItemType,
-        RulerItemType, 
-		CompassItemType, 
-		ProtractorItemType, 
-		StrokeItemType,
-		TriangleItemType,
+        MediaItemType,
+        PDFItemType,
+        TextItemType,
+        CurtainItemType,
+        RulerItemType,
+        CompassItemType,
+        ProtractorItemType,
+        StrokeItemType,
+        TriangleItemType,
         MagnifierItemType,
         cacheItemType,
         AristoItemType,

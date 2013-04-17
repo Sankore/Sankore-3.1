@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,6 +20,7 @@
  */
 
 
+
 #ifndef UBDOCUMENTMANAGER_H_
 #define UBDOCUMENTMANAGER_H_
 
@@ -29,10 +30,9 @@ class UBExportAdaptor;
 class UBImportAdaptor;
 class UBDocumentProxy;
 
-
 class UBDocumentManager : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         static UBDocumentManager* documentManager();
@@ -41,6 +41,7 @@ class UBDocumentManager : public QObject
         QString importFileFilter();
         QStringList importFileExtensions();
 
+        QFileInfoList importUbx(const QString &Incomingfile, const QString &destination);
         UBDocumentProxy* importFile(const QFile& pFile, const QString& pGroup);
 
         int addFilesToDocument(UBDocumentProxy* pDocument, QStringList fileNames);

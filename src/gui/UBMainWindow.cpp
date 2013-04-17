@@ -5,7 +5,7 @@
  *
  * Open-Sankoré is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License,
+ * the Free Software Foundation, version 3 of the License,
  * with a specific linking exception for the OpenSSL project's
  * "OpenSSL" library (or with modified versions of it that use the
  * same license as the "OpenSSL" library).
@@ -20,12 +20,17 @@
  */
 
 
+
 #include <QtGui>
 
 #include "UBMainWindow.h"
 #include "core/UBApplication.h"
 #include "core/UBApplicationController.h"
 #include "board/UBBoardController.h"
+// work around for handling tablet events on MAC OS with Qt 4.8.0 and above
+#if defined(Q_WS_MACX)
+#include "board/UBBoardView.h"
+#endif
 
 #include "core/memcheck.h"
 
@@ -143,6 +148,34 @@ void UBMainWindow::closeEvent(QCloseEvent *event)
     event->ignore();
     emit closeEvent_Signal(event);
 }
+
+// work around for handling tablet events on MAC OS with Qt 4.8.0 and above
+#if defined(Q_WS_MACX)
+bool UBMainWindow::event(QEvent *event)
+{
+    bool bRes = QMainWindow::event(event);
+
+    if (NULL != UBApplication::boardController)
+    {
+        UBBoardView *controlV = UBApplication::boardController->controlView();
+        if (controlV && controlV->isVisible())
+        {
+            switch (event->type())
+            {
+            case QEvent::TabletEnterProximity:
+            case QEvent::TabletLeaveProximity:
+            case QEvent::TabletMove:
+            case QEvent::TabletPress:
+            case QEvent::TabletRelease:
+                {
+                    return controlV->directTabletEvent(event);
+                }
+            }
+        }
+    }
+    return bRes;
+}
+#endif
 
 void UBMainWindow::onExportDone()
 {
