@@ -2293,6 +2293,10 @@ Vuoi ignorare gli errori per questo host?</translation>
         <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Basque</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

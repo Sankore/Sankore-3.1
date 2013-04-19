@@ -2301,6 +2301,10 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
         <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Basque</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

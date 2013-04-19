@@ -2294,6 +2294,10 @@ Möchten Sie diese Fehler auf diesem Computer ignorieren?</translation>
         <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Basque</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

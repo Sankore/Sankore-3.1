@@ -2312,6 +2312,10 @@ Vulete lascià corre sti sbaglii per stu servore ?</translation>
         <source>Portuguese</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Basque</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

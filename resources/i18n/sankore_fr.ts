@@ -842,8 +842,9 @@
         <translation>Ajouter le lien à la page courante</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add Bookmark&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajouter aux signets&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>Bookmark</source>
+        <comment>tooltip</comment>
+        <translation type="unfinished">Signet</translation>
     </message>
 </context>
 <context>
@@ -1248,6 +1249,10 @@
         <source>This is an irreversible action!</source>
         <translation>Cette opération est irréversible !</translation>
     </message>
+    <message>
+        <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1377,6 +1382,17 @@ Un nouveau nom vous permettra un nouveau document.
     <message>
         <source>Untitled documents</source>
         <translation>Documents sans titre</translation>
+    </message>
+    <message>
+        <source>Copying page %1/%2</source>
+        <translation type="unfinished">Copie de la page %1/%2 en cours</translation>
+    </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1 page copiée</numerusform>
+            <numerusform>%1 pages copiées</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -2283,6 +2299,14 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Hindi</source>
         <translation>Hindi</translation>
+    </message>
+    <message>
+        <source>Basque</source>
+        <translation>Basque</translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
+        <translation>Portugais</translation>
     </message>
 </context>
 <context>
