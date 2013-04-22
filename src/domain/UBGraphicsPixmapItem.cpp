@@ -93,7 +93,7 @@ void UBGraphicsPixmapItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
     else
     {
-//        QGraphicsPixmapItem::mousePressEvent(event);
+        QGraphicsPixmapItem::mousePressEvent(event);
     }
 }
 

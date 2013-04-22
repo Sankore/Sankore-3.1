@@ -567,8 +567,11 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsPixmapItem::Type:
     case QGraphicsSvgItem::Type:
         if (currentTool == UBStylusTool::Play)
-            return false;		
-        return true;
+            return false;
+        if (item->isSelected())
+            return true;
+        else
+            return false;
 
     case DelegateButton::Type:
         return true;
@@ -576,9 +579,6 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsMediaItem::Type:
         return false;
 
-    case UBGraphicsSvgItem::Type:
-        if (currentTool == UBStylusTool::Play)
-            return false;
     case UBGraphicsTextItem::Type:
         if (currentTool == UBStylusTool::Play)
             return true;
@@ -589,6 +589,7 @@ Here we determines cases when items should to get mouse press event at pressing 
         if (currentTool != UBStylusTool::Selector)
             return false;
         break;
+
     case UBGraphicsItemType::StrokeItemType:
         if (currentTool == UBStylusTool::Play)
             return true;
@@ -712,7 +713,7 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
         if (UBStylusTool::Selector == currentTool
             && item->parentItem()
             && UBGraphicsGroupContainerItem::Type == item->parentItem()->type()
-            && !item->parentItem()->isSelected())
+                && !item->parentItem()->isSelected())
             return item->parentItem();
 
         // items like polygons placed in two groups nested, so we need to recursive call.
