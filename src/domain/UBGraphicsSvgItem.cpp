@@ -108,6 +108,16 @@ QVariant UBGraphicsSvgItem::itemChange(GraphicsItemChange change, const QVariant
 
 void UBGraphicsSvgItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    QMimeData* pMime = new QMimeData();
+    QPixmap pixmap = toPixmapItem()->pixmap();
+    pMime->setImageData(pixmap.toImage());
+    Delegate()->setMimeData(pMime);
+    qreal k = (qreal)pixmap.width() / 100.0;
+
+    QSize newSize((int)(pixmap.width() / k), (int)(pixmap.height() / k));
+
+    Delegate()->setDragPixmap(pixmap.scaled(newSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+
     if (Delegate()->mousePressEvent(event))
     {
         //NOOP

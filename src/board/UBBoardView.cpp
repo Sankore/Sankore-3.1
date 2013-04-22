@@ -553,6 +553,8 @@ Here we determines cases when items should to get mouse press event at pressing 
     // some behavior depends on current tool.
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
+    qDebug() << item->type();
+
     switch(item->type())
     {
     case UBGraphicsProtractor::Type:
@@ -564,10 +566,13 @@ Here we determines cases when items should to get mouse press event at pressing 
         return true;
 
     case UBGraphicsDelegateFrame::Type:
-    case UBGraphicsPixmapItem::Type:
-    case QGraphicsSvgItem::Type:
         if (currentTool == UBStylusTool::Play)
             return false;
+        return true;
+    case UBGraphicsPixmapItem::Type:
+    case UBGraphicsSvgItem::Type:
+        if (currentTool == UBStylusTool::Play)
+            return true;
         if (item->isSelected())
             return true;
         else
@@ -604,8 +609,6 @@ Here we determines cases when items should to get mouse press event at pressing 
         return false;
         break;
 
-    //case UBToolWidget::Type:
-      //  return true;
 
     case QGraphicsWebView::Type:
         return true;
@@ -640,6 +643,7 @@ bool UBBoardView::itemShouldReceiveSuspendedMousePressEvent(QGraphicsItem *item)
     case QGraphicsWebView::Type:
         return false;
     case UBGraphicsPixmapItem::Type:
+    case UBGraphicsSvgItem::Type:
     case UBGraphicsTextItem::Type:
     case UBGraphicsWidgetItem::Type:
         if (currentTool == UBStylusTool::Selector && !item->isSelected() && item->parentItem())
@@ -690,6 +694,8 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
 
     case UBGraphicsSvgItem::Type:
     case UBGraphicsPixmapItem::Type:
+        if (currentTool == UBStylusTool::Play || !item->isSelected())
+            return true;
         if (item->isSelected())
             return false;
     case UBGraphicsMediaItem::Type:
@@ -1282,7 +1288,6 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
           {
              if (isUBItem(movingItem) &&
                 DelegateButton::Type != movingItem->type() &&
-                QGraphicsSvgItem::Type !=  movingItem->type() &&
                 UBGraphicsDelegateFrame::Type !=  movingItem->type() &&
                 UBGraphicsCache::Type != movingItem->type() &&
                 QGraphicsWebView::Type != movingItem->type() && // for W3C widgets as Tools.
