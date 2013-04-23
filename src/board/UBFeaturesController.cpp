@@ -1049,6 +1049,19 @@ QStringList UBFeaturesController::getFileNamesInFolders()
 void UBFeaturesController::addNewFolder(QString name)
 {
     QString path = currentElement.getFullPath().toLocalFile() + "/" + name;
+	
+	if(currentElement.getFullVirtualPath() == audiosData.categoryFeature().getFullVirtualPath())
+		path = audiosData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+	else if(currentElement.getFullVirtualPath() == moviesData.categoryFeature().getFullVirtualPath())
+		path = moviesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+	else if(currentElement.getFullVirtualPath() == picturesData.categoryFeature().getFullVirtualPath())
+		path = picturesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+	else if(currentElement.getFullVirtualPath() == flashData.categoryFeature().getFullVirtualPath())
+		path = flashData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+	else if(currentElement.getFullVirtualPath() == interactivityData.categoryFeature().getFullVirtualPath())
+		path = interactivityData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+	else if(currentElement.getFullVirtualPath() == appData.categoryFeature().getFullVirtualPath())
+		path = appData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
 
     if ("/root" == currentElement.getFullVirtualPath())
     {
