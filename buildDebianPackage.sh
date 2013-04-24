@@ -179,7 +179,7 @@ else
     LAST_COMMITED_VERSION="`git describe $(git rev-list --tags --max-count=1)`"
     if [ "v$VERSION" != "$LAST_COMMITED_VERSION" ]; then
         if [ $MAKE_TAG == true ]; then
-            git tag -a "v${VERSION}rc" -m "Generating setup for v$VERSION"
+            git tag -a "v${VERSION}" -m "Generating setup for v$VERSION"
             git push origin --tags
         fi 
     fi
