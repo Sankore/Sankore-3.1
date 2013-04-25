@@ -1378,10 +1378,15 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
 
     QString name = QFileInfo(sourcePath).fileName();
     QString destPath = dest.getFullPath().toLocalFile();
-    if(dest == picturesData.categoryFeature()){
+    
+	if(dest == picturesData.categoryFeature())
         destPath =  picturesData.pathData().value(CategoryData::UserDefined).toLocalFile();
-    }
-    QString destVirtualPath = dest.getFullVirtualPath();
+    if(dest == audiosData.categoryFeature())
+        destPath =  audiosData.pathData().value(CategoryData::UserDefined).toLocalFile();
+	if(dest == moviesData.categoryFeature())
+        destPath =  moviesData.pathData().value(CategoryData::UserDefined).toLocalFile();
+    
+	QString destVirtualPath = dest.getFullVirtualPath();
     QString newFullPath = destPath + "/" + name;
 
     if (!sourcePath.compare(newFullPath, Qt::CaseInsensitive) || !UBFileSystemUtils::copy(sourcePath, newFullPath)) {
