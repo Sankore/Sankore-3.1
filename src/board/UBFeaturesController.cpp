@@ -925,8 +925,9 @@ void UBFeaturesController::importImage(const QImage &image, const QString &fileN
 
 void UBFeaturesController::createBookmark(const QString& fileName, const QString &urlString)
 {
-    QString bookmarkDirectory = bookmarkData.categoryFeature().getFullPath().toLocalFile() + "/";
-    QString mFileName = bookmarkDirectory + fileName + ".bkm";
+	QString lFileName = UBFileSystemUtils::cleanName(fileName);
+	QString bookmarkDirectory = bookmarkData.categoryFeature().getFullPath().toLocalFile() + "/";
+    QString mFileName = bookmarkDirectory + lFileName + ".bkm";
     int counter = 1;
     while(QFileInfo(mFileName).exists()){
         if(counter == 1)
