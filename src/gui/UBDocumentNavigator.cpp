@@ -95,7 +95,7 @@ void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
         it = NULL;
     }
 
-    for(int i = 0; i < source->selectedDocument()->pageCount(); i++)
+    for(int i = 0; i < source->pageCount(); i++)
     {
         const QPixmap* pix = source->pageAt(i);
         Q_ASSERT(!pix->isNull());
