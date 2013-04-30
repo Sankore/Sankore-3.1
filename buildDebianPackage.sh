@@ -390,7 +390,7 @@ if [ $CREATE_DIENA_DISTRIBUTION_ZIP == true ]; then
 
     ZIP_NAME="Open-Sankoré_`lsb_release -is`_`lsb_release -rs`_${VERSION}_${ARCHITECTURE}.zip"
     cd install/linux
-    $ZIP_PATH -1 --junk-paths ${ZIP_NAME} ${DEBIAN_PACKAGE_NAME} ../../ReleaseNotes.pdf ../../JournalDesModifications.pdf
+    $ZIP_PATH -1 --junk-paths ${ZIP_NAME} ${DEBIAN_PACKAGE_NAME} ../../ReleaseNotes.pdf ../../JournalDesModifications.pdf ../../LICENSE.txt
     cd -
     notifyProgress "Open-Sankore" "Build Diena zip file for distribution"
 fi

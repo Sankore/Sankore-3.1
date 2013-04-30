@@ -205,6 +205,7 @@ umount "$VOLUME" 2> /dev/null
 $DMGUTIL --open --volume="$NAME" "$DMG"
 
 cp *.pdf "$VOLUME"
+cp LICENSE.txt "$VOLUME"
 cp -R "$APP" "$VOLUME"
 ln -s /Applications "$VOLUME"
 

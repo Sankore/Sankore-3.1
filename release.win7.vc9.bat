@@ -89,8 +89,9 @@ call "%INNO_EXE%" "Sankore 3.1.iss" /F"%INSTALLER_NAME%"
 
 set INSTALL_DIRECTORY=install\win32\
 xcopy *.pdf %INSTALL_DIRECTORY%
+xcopy LICENSE.txt %INSTALL_DIRECTORY%
 cd %INSTALL_DIRECTORY%
-call %SEVEN_ZIP_EXE% a Open-Sankor‚_Windows_%VERSION%.zip *.exe *.pdf
+call %SEVEN_ZIP_EXE% a Open-Sankor‚_Windows_%VERSION%.zip *.exe *.pdf *.txt
 cd ..\..\
 GOTO END
 
