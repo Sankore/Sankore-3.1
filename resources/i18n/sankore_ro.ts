@@ -237,6 +237,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>Semn de carte</translation>
     </message>
     <message>

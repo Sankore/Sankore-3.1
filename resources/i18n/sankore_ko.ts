@@ -237,6 +237,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>북마크</translation>
     </message>
     <message>

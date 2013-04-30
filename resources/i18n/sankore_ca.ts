@@ -265,6 +265,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>Adreça d&apos;interès</translation>
     </message>
     <message>

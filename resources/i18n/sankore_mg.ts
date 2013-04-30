@@ -473,6 +473,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>Tobin-drohy</translation>
     </message>
     <message>

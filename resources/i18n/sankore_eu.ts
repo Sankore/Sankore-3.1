@@ -912,6 +912,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translatorcomment>Signet</translatorcomment>
         <translation type="unfinished">Lastermarka</translation>
     </message>

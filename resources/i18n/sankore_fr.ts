@@ -733,7 +733,8 @@
     </message>
     <message>
         <source>Bookmark</source>
-        <translation>Signet</translation>
+        <extracomment>tooltip</extracomment>
+        <translation>Ajouter un signet</translation>
     </message>
     <message>
         <source>Preferences</source>

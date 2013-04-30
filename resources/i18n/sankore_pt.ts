@@ -237,6 +237,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>Favorito</translation>
     </message>
     <message>

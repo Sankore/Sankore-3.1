@@ -738,6 +738,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>Prasceltu/Preferitu</translation>
     </message>
     <message>

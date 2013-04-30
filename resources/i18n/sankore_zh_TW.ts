@@ -473,6 +473,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>書籤</translation>
     </message>
     <message>

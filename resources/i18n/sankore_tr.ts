@@ -189,6 +189,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>Sık Kullanılan</translation>
     </message>
     <message>

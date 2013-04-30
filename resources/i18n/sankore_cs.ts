@@ -458,6 +458,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation>Záložka</translation>
     </message>
     <message>

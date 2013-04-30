@@ -191,6 +191,7 @@
     </message>
     <message>
         <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
         <translation type="unfinished">बुकमार्क </translation>
     </message>
     <message>
