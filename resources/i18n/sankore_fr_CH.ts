@@ -3336,7 +3336,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation>Cette nouvelle langue sera utilisée lors du rédémarrage du logiciel</translation>
+        <translation>Cette nouvelle langue sera utilisée lors du redémarrage du logiciel</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
