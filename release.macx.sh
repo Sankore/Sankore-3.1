@@ -210,12 +210,12 @@ cp -R "$APP" "$VOLUME"
 ln -s /Applications "$VOLUME"
 
 $DMGUTIL --set --iconsize=96 --toolbar=false --icon=resources/macx/UniboardDmg.icns "$VOLUME"
-$DMGUTIL --set --x=20 --y=60 --width=580 --height=500 "$VOLUME"
-$DMGUTIL --set --x=180 --y=120 "$VOLUME/`basename \"$APP\"`"
-$DMGUTIL --set --x=400 --y=120 "$VOLUME/Applications"
-$DMGUTIL --set --x=180 --y=280 "$VOLUME/ReleaseNotes.pdf"
-$DMGUTIL --set --x=400 --y=280 "$VOLUME/JournalDesModifications.pdf"
-$DMGUTIL --set --x=180 --y=440 "$VOLUME/LICENSE.txt"
+$DMGUTIL --set --x=20 --y=60 --width=580 --height=520 "$VOLUME"
+$DMGUTIL --set --x=180 --y=80 "$VOLUME/`basename \"$APP\"`"
+$DMGUTIL --set --x=400 --y=80 "$VOLUME/Applications"
+$DMGUTIL --set --x=180 --y=240 "$VOLUME/ReleaseNotes.pdf"
+$DMGUTIL --set --x=400 --y=240 "$VOLUME/JournalDesModifications.pdf"
+$DMGUTIL --set --x=180 --y=400 "$VOLUME/LICENSE.txt"
 
 $DMGUTIL --close --volume="$NAME" "$DMG"
 
