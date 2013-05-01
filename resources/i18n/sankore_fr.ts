@@ -2957,22 +2957,26 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <message>
         <source>Download to
 library</source>
-        <translation>Télécharger dans la bibliothèque</translation>
+        <translation>Télécharger dans
+la bibliothèque</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation>Télécharger sur la page courante</translation>
+        <translation>Télécharger sur 
+la page courante</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation>Ajouter un lien dans la bibliothèque</translation>
+        <translation>Ajouter un lien
+dans la bibliothèque</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation>Ajouter un lien sur la page courante</translation>
+        <translation>Ajouter un lien 
+sur la page courante</translation>
     </message>
 </context>
 <context>
