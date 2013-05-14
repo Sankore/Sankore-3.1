@@ -2302,6 +2302,10 @@ Vill du ignorera felen för den här värden?</translation>
         <source>Basque</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

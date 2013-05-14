@@ -2299,6 +2299,10 @@ Möchten Sie diese Fehler auf diesem Computer ignorieren?</translation>
         <source>Basque</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

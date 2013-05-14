@@ -2301,6 +2301,10 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
         <source>Basque</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

@@ -1,91 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pt_PT" sourcelanguage="en_GB">
+<TS version="2.0" language="fr_FR">
 <context>
     <name>BlackoutWidget</name>
     <message>
         <source>Click to Return to Application</source>
-        <translation>Clicar para voltar para a Aplicação</translation>
+        <translation>Kiliké ka segin application kan</translation>
     </message>
 </context>
 <context>
     <name>DownloadDialog</name>
     <message>
         <source>Downloads</source>
-        <translation>Transferências</translation>
+        <translation>a bɔ ka yira</translation>
     </message>
     <message>
         <source>Clean Up</source>
-        <translation>Limpar</translation>
+        <translation>jɔsi</translation>
     </message>
     <message>
         <source>0 Items</source>
-        <translation>0 Itens</translation>
+        <translation>0 fen</translation>
     </message>
 </context>
 <context>
     <name>DownloadItem</name>
     <message>
         <source>Form</source>
-        <translation>Formulário</translation>
+        <translation>sɛbɛn</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>sɛbɛn tɔgɔ</translation>
     </message>
     <message>
         <source>Try Again</source>
-        <translation>Tentar novamente</translation>
+        <translation>segin a kan</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Parar</translation>
+        <translation>lajɔ </translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation>yɛ̀lɛ</translation>
     </message>
 </context>
 <context>
     <name>IntranetPodcastPublishingDialog</name>
     <message>
         <source>Publish Podcast to YouTube</source>
-        <translation>Publicar o Podcast no YouTube</translation>
+        <translation>Podcast ta ka bila youtube kan</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Título</translation>
+        <translation>dantigɛlan</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Descrição</translation>
+        <translation>ɲɛfɔli</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Autor</translation>
+        <translation>kotigi</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Board</source>
-        <translation>Quadro</translation>
+        <translation>walanba</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation>Web</translation>
+        <translation>ntalonmana</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation>Documentos</translation>
-    </message>
-    <message>
-        <source>Tutorial</source>
-        <translation>Tutorial</translation>
+        <translation>sɛbɛn</translation>
     </message>
     <message>
         <source>Stylus</source>
-        <translation>Paleta</translation>
+        <translation>sɛbɛnnikɛlan</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -93,15 +89,44 @@
     </message>
     <message>
         <source>Backgrounds</source>
-        <translation>Fundo</translation>
+        <translation>jabɔwalaha nɛkɔnɔna</translation>
     </message>
     <message>
-        <source>Change Background</source>
-        <translation>Mudar Fundo</translation>
+        <source>Text</source>
+        <translation>sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Capture</source>
+        <translation>minɛ 
+</translation>
+    </message>
+    <message>
+        <source>Add To Current Page</source>
+        <translation>ka faran gaféfura kan</translation>
+    </message>
+    <message>
+        <source>Add To New Page</source>
+        <translation>ka fara gaféfura kura kan</translation>
+    </message>
+    <message>
+        <source>Add To Library</source>
+        <translation>ka fara sɛbɛnlamarayɔrɔ kan </translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>gaféfura</translation>
+    </message>
+    <message>
+        <source>New Page</source>
+        <translation>gaféfura kura</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation>Desfazer</translation>
+        <translation>Undo</translation>
+    </message>
+    <message>
+        <source>Change Background</source>
+        <translation>jabɔwalaha nɛkɔnɔna falen</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
@@ -109,7 +134,7 @@
     </message>
     <message>
         <source>Redo</source>
-        <translation>Refazer</translation>
+        <translation>Redo</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
@@ -117,31 +142,31 @@
     </message>
     <message>
         <source>Previous</source>
-        <translation>Anterior</translation>
+        <translation>gale</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation>Página anterior</translation>
+        <translation>gaféfura mi téména gale</translation>
     </message>
     <message>
         <source>PgUp</source>
-        <translation>Subir na página</translation>
+        <translation>PgUp</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Próximo</translation>
+        <translation>nata</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation>Próxima Página</translation>
+        <translation>gaféfura nata</translation>
     </message>
     <message>
         <source>PgDown</source>
-        <translation>Descer na página</translation>
+        <translation>pgduguma</translation>
     </message>
     <message>
         <source>Manage Documents</source>
-        <translation>Gerir Documentos</translation>
+        <translation>Manage sɛbɛn</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
@@ -149,405 +174,173 @@
     </message>
     <message>
         <source>Web Browsing</source>
-        <translation>Navegar na Web</translation>
+        <translation>ntalonmana browsing</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <source>Line</source>
-        <translation>Linha</translation>
-    </message>
-    <message>
         <source>Small Line</source>
-        <translation>Traço Fino</translation>
+        <translation>ci misɛnman</translation>
     </message>
     <message>
         <source>Medium Line</source>
-        <translation>Traço Médio</translation>
+        <translation>ci mankannin</translation>
     </message>
     <message>
         <source>Large Line</source>
-        <translation>Traço Grosso</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation>Sair</translation>
-    </message>
-    <message>
-        <source>Eraser</source>
-        <translation>Borracha</translation>
+        <translation>ci ba</translation>
     </message>
     <message>
         <source>Smalle Eraser</source>
-        <translation>Borracha Pequena</translation>
+        <translation>jɔɔsi lan  misɛnman</translation>
     </message>
     <message>
         <source>Medium Eraser</source>
-        <translation>Borracha Média</translation>
+        <translation>jɔɔsi lan  mankannin</translation>
     </message>
     <message>
         <source>Large Eraser</source>
-        <translation>Borracha Grande</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Cores</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Recuar</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation>Esquerda</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Avançar</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation>Direita</translation>
-    </message>
-    <message>
-        <source>Reload</source>
-        <translation>Recarregar</translation>
+        <translation>jɔɔsi lan ba</translation>
     </message>
     <message>
         <source>Reload Current Page</source>
-        <translation>Recarregar a página atual</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Página Inicial</translation>
+        <translation> gaféfura  bolé yira </translation>
     </message>
     <message>
         <source>Load Home Page</source>
-        <translation>Carregar a Página Inicial</translation>
-    </message>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Favoritos</translation>
+        <translation> gaféfura dantigɛlan yira </translation>
     </message>
     <message>
         <source>Show Bookmarks</source>
-        <translation>Mostrar os Favoritos</translation>
-    </message>
-    <message>
-        <source>Bookmark</source>
-        <extracomment>tooltip</extracomment>
-        <translation>Favorito</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Adicionar aos Favoritos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Board</source>
-        <translation>Mostrar o Quadro</translation>
-    </message>
-    <message>
-        <source>Ctrl+B</source>
-        <translation>Ctrl+B</translation>
-    </message>
-    <message>
-        <source>Erase</source>
-        <translation>Apagar</translation>
+        <translation>Walanba yira</translation>
     </message>
     <message>
         <source>Erase Content</source>
-        <translation>Apagar Conteúdo</translation>
-    </message>
-    <message>
-        <source>Preferences</source>
-        <translation>Preferências</translation>
+        <translation>a kono jɔɔsi </translation>
     </message>
     <message>
         <source>Display Preferences</source>
-        <translation>Mostrar Preferências</translation>
-    </message>
-    <message>
-        <source>Library</source>
-        <translation>Biblioteca</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Library</source>
-        <translation>Mostrar Biblioteca</translation>
-    </message>
-    <message>
-        <source>Ctrl+L</source>
-        <translation>Ctrl+L</translation>
-    </message>
-    <message>
-        <source>Show Desktop</source>
-        <translatorcomment>&quot;Mostrar Ambiente de Trabalho&quot; (muito longo) - Mostrar a mesa</translatorcomment>
-        <translation>Ver mesa</translation>
+        <translation> sɛbɛnlamarayɔrɔ yira</translation>
     </message>
     <message>
         <source>Show Computer Desktop</source>
-        <translation>Mostrar o ambiente de trabalho do Computador</translation>
+        <translation>ɔridinatɛri cakɛda yira</translation>
     </message>
     <message>
         <source>Ctrl+Shift+H</source>
         <translation>Ctrl+Shift+H</translation>
     </message>
     <message>
-        <source>Bigger</source>
-        <translation>Ampliar</translation>
-    </message>
-    <message>
-        <source>Zoom In</source>
-        <translation>Aproximar</translation>
-    </message>
-    <message>
-        <source>Ctrl++</source>
-        <translation>Ctrl++</translation>
-    </message>
-    <message>
-        <source>Smaller</source>
-        <translation>Reduzir</translation>
-    </message>
-    <message>
-        <source>Zoom Out</source>
-        <translation>Afastar</translation>
-    </message>
-    <message>
-        <source>Ctrl+-</source>
-        <translation>Ctrl+-</translation>
-    </message>
-    <message>
-        <source>New Folder</source>
-        <translation>Nova Pasta</translation>
-    </message>
-    <message>
         <source>Create a New Folder</source>
-        <translation>Criar uma Nova Pasta</translation>
-    </message>
-    <message>
-        <source>New Document</source>
-        <translation>Novo Documento</translation>
+        <translation>sɛbɛn ba kura da</translation>
     </message>
     <message>
         <source>Create a New Document</source>
-        <translation>Criar um Novo Documento</translation>
-    </message>
-    <message>
-        <source>Import</source>
-        <translation>Importar</translation>
+        <translation>sɛbɛn kura da</translation>
     </message>
     <message>
         <source>Import a Document</source>
-        <translation>Importar um Documento</translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation>Exportar</translation>
+        <translation>sɛbɛn ladon</translation>
     </message>
     <message>
         <source>Export a Document</source>
-        <translation>Exportar um Documento</translation>
-    </message>
-    <message>
-        <source>Open in Board</source>
-        <translation>Abrir no Quadro</translation>
+        <translation>sɛbɛn labo</translation>
     </message>
     <message>
         <source>Open Page in Board</source>
-        <translation>Abrir Página no Quadro</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Duplicate</source>
-        <translation>Duplicar</translation>
+        <translation>gaféfura yɛlɛ walanba la</translation>
     </message>
     <message>
         <source>Duplicate Selected Content</source>
-        <translation>Duplicar o Conteúdo Selecionado</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Apagar</translation>
+        <translation>do fara fen kono tale kan</translation>
     </message>
     <message>
         <source>Delete Selected Content</source>
-        <translation>Apagar o Conteúdo Selecionado</translation>
-    </message>
-    <message>
-        <source>Del</source>
-        <translation>Del</translation>
-    </message>
-    <message>
-        <source>Add to Working Document</source>
-        <translation>Adicionar ao Documento de Trabalho</translation>
-    </message>
-    <message>
-        <source>Add Selected Content to Open Document</source>
-        <translation>Adicionar o Conteúdo Selecionado ao Documento Aberto</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation>Adicionar</translation>
+        <translation>a fen talé kono latounou </translation>
     </message>
     <message>
         <source>Add Content to Document</source>
-        <translation>Adicionar Conteúdo ao Documento</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Mudar o Nome</translation>
+        <translation>a kono fara sɛbɛn kan</translation>
     </message>
     <message>
         <source>Rename Content</source>
-        <translation>Mudar o Nome do Conteúdo</translation>
-    </message>
-    <message>
-        <source>Tools</source>
-        <translation>Ferramentas</translation>
+        <translation>
+togo kura da konona fen la
+</translation>
     </message>
     <message>
         <source>Display Tools</source>
-        <translation>Mostrar Ferramentas</translation>
-    </message>
-    <message>
-        <source>Multi Screen</source>
-        <translation>Écrans Múltiplos</translation>
-    </message>
-    <message>
-        <source>Wide Size (16/9)</source>
-        <translation>Formato Panorâmico (16/9)</translation>
+        <translation>baarakɛminɛn yira</translation>
     </message>
     <message>
         <source>Use Document Wide Size (16/9)</source>
-        <translation>Usar documento no Formato Panorâmico (16/9)</translation>
-    </message>
-    <message>
-        <source>Regular Size (4/3)</source>
-        <translation>Formato Tradicional (4/3)</translation>
+        <translation> sɛbɛn ba ta ka kɛ (16/9)</translation>
     </message>
     <message>
         <source>Use Document Regular Size (4/3)</source>
-        <translation>Usar documento no Formato Tradicional (4/3)</translation>
-    </message>
-    <message>
-        <source>Custom Size</source>
-        <translation>Tamanho Personalizado</translation>
+        <translation> sɛbɛn mankannin ta ka kɛ (16/9)</translation>
     </message>
     <message>
         <source>Use Custom Document Size</source>
-        <translation>Usar documento no Tamanho Personalizado</translation>
-    </message>
-    <message>
-        <source>Stop Loading</source>
-        <translation>Parar de Carregar</translation>
+        <translation> yéré sɛbɛn ta ka kɛ (16/9)</translation>
     </message>
     <message>
         <source>Stop Loading Web Page</source>
-        <translation>Parar de Carregar a Página Web</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Cortar</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Copiar</translation>
-    </message>
-    <message>
-        <source>Paste</source>
-        <translation>Colar</translation>
-    </message>
-    <message>
-        <source>Sleep</source>
-        <translation>Modo &quot;Espera&quot;</translation>
+        <translation> web  gaféfura  yirali lajɔ </translation>
     </message>
     <message>
         <source>Put Presentation to Sleep</source>
-        <translation>Colocar a Apresentaçãao em modo &quot;Espera&quot;</translation>
-    </message>
-    <message>
-        <source>Virtual Keyboard</source>
-        <translation>Teclado Virtual</translation>
+        <translation>presentation bila sounogo la</translation>
     </message>
     <message>
         <source>Display Virtual Keyboard</source>
-        <translation>Mostrar o Teclado Virtual</translation>
-    </message>
-    <message>
-        <source>Plain Light Background</source>
-        <translation>Fundo Branco e Liso</translation>
-    </message>
-    <message>
-        <source>Light</source>
-        <translation>Claro</translation>
-    </message>
-    <message>
-        <source>Grid Light Background</source>
-        <translation>Fundo Branco e Quadriculado</translation>
-    </message>
-    <message>
-        <source>Plain Dark Background</source>
-        <translation>Fundo Preto e Liso</translation>
-    </message>
-    <message>
-        <source>Dark</source>
-        <translation>Escuro</translation>
-    </message>
-    <message>
-        <source>Grid Dark Background</source>
-        <translation>Fundo Preto e Quadriculado</translation>
-    </message>
-    <message>
-        <source>Podcast</source>
-        <translation>Podcast</translation>
+        <translation>Walanba  sɛbɛna yira</translation>
     </message>
     <message>
         <source>Record Presentation to Video</source>
-        <translation>Gravar a Apresentação em Vídeo</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Gravar</translation>
-    </message>
-    <message>
-        <source>Start Screen Recording</source>
-        <translation>Iniciar a Gravação do Ecrã</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Erase Items</source>
-        <translation>Apagar Itens</translation>
+        <translation>fen jɔɔsi </translation>
     </message>
     <message>
         <source>Erase All Items</source>
-        <translation>Apagar Todos os Itens</translation>
+        <translation>fen be jɔɔsi </translation>
     </message>
     <message>
         <source>Erase Annotations</source>
-        <translation>Apagar Anotações</translation>
+        <translation>annotations jɔɔsi </translation>
     </message>
     <message>
         <source>Erase All Annotations</source>
-        <translation>Apagar Todas as Anotações</translation>
-    </message>
-    <message>
-        <source>Clear Page</source>
-        <translation>Limpar a Página</translation>
+        <translation>annotations be jɔɔsi </translation>
     </message>
     <message>
         <source>Clear All Elements</source>
-        <translation>Limpar Todos os Elementos</translation>
+        <translation>fen be jɔɔsi </translation>
     </message>
     <message>
         <source>Pen</source>
-        <translation>Caneta</translation>
+        <translation>sɛbɛni kelan</translation>
     </message>
     <message>
         <source>Annotate Document</source>
-        <translation>Escrever</translation>
+        <translation>sɛbɛn annotélén</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -555,7 +348,7 @@
     </message>
     <message>
         <source>Erase Annotation</source>
-        <translation>Apagar</translation>
+        <translation>annotations jɔɔsi </translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -563,11 +356,11 @@
     </message>
     <message>
         <source>Marker</source>
-        <translation>Marcador</translation>
+        <translation>ci</translation>
     </message>
     <message>
         <source>Highlight </source>
-        <translation>Marcador</translation>
+        <translation>ci ba</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -575,11 +368,11 @@
     </message>
     <message>
         <source>Selector</source>
-        <translation>﻿Seletor</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select And Modify Objects</source>
-        <translation>Selecionar e Modificar Objetos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -587,151 +380,27 @@
     </message>
     <message>
         <source>Hand</source>
-        <translation>Mão</translation>
-    </message>
-    <message>
-        <source>Scroll Page</source>
-        <translation>Desloca-se na página</translation>
-    </message>
-    <message>
-        <source>Laser Pointer</source>
-        <translation>Apontador Laser</translation>
-    </message>
-    <message>
-        <source>Virtual Laser Pointer</source>
-        <translation>Apontador Laser Virtual</translation>
-    </message>
-    <message>
-        <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
-    </message>
-    <message>
-        <source>Draw Lines</source>
-        <translation>Desenhar Linhas</translation>
-    </message>
-    <message>
-        <source>Ctrl+J</source>
-        <translation>Ctrl+J</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Texto</translation>
-    </message>
-    <message>
-        <source>Write Text</source>
-        <translation>Escrever Texto</translation>
-    </message>
-    <message>
-        <source>Ctrl+K</source>
-        <translation>Ctrl+K</translation>
-    </message>
-    <message>
-        <source>Capture</source>
-        <translation>Capturar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Capture Part of the Screen</source>
-        <translation>Capturar uma Parte do Ecrã</translation>
-    </message>
-    <message>
-        <source>Add To Current Page</source>
-        <translation>Adicionar à Página Atual</translation>
-    </message>
-    <message>
-        <source>Add Item To Current Page</source>
-        <translation>Adicionar Item à Página Atual</translation>
-    </message>
-    <message>
-        <source>Add To New Page</source>
-        <translation>Adicionar a uma Página Nova</translation>
-    </message>
-    <message>
-        <source>Add Item To New Page</source>
-        <translation>Adicionar Item a uma Página Nova</translation>
-    </message>
-    <message>
-        <source>Add To Library</source>
-        <translation>Adicionar à Biblioteca</translation>
-    </message>
-    <message>
-        <source>Add Item To Library</source>
-        <translation>Adicionar Item à Biblioteca</translation>
-    </message>
-    <message>
-        <source>Pages</source>
-        <translation>Páginas</translation>
-    </message>
-    <message>
-        <source>Create a New Page</source>
-        <translation>Criar uma Nova Página</translation>
-    </message>
-    <message>
-        <source>New Page</source>
-        <translation>Nova Página</translation>
-    </message>
-    <message>
-        <source>Duplicate Page</source>
-        <translation>Duplicar Página</translation>
-    </message>
-    <message>
-        <source>Duplicate the Current Page</source>
-        <translation>Duplicar a Página Atual</translation>
-    </message>
-    <message>
-        <source>Import Page</source>
-        <translation>Importar Página</translation>
-    </message>
-    <message>
-        <source>Import an External Page</source>
-        <translation>Importar uma Página Externa</translation>
-    </message>
-    <message>
-        <source>Pause</source>
-        <translation>Pausa</translation>
-    </message>
-    <message>
-        <source>Pause Podcast Recording</source>
-        <translation>Pausar a Gravação do Podcast</translation>
-    </message>
-    <message>
-        <source>Podcast Config</source>
-        <translation>Configuração do Podcast</translation>
-    </message>
-    <message>
-        <source>Configure Podcast Recording</source>
-        <translation>Configuração da Gravação de Podcast</translation>
-    </message>
-    <message>
-        <source>Web Trap</source>
-        <translation>Captura de Web</translation>
-    </message>
-    <message>
-        <source>Trap Web Content</source>
-        <translation>Captura de Conteúdo Web</translation>
+        <translation type="unfinished">fen yoro do ta jabara la</translation>
     </message>
     <message>
         <source>Custom Capture</source>
-        <translation>Captura Personalizada</translation>
-    </message>
-    <message>
-        <source>Window Capture</source>
-        <translation>Captura da Janela</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Capture a Window</source>
-        <translation>Capturar uma Janela</translation>
-    </message>
-    <message>
-        <source>Show on Display</source>
-        <translation>Mostrar no Ecrã</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Main Screen on Display Screen</source>
-        <translation>Mostrar a Tela Principal no Ecrã</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Erase all Annotations</source>
-        <translation>Apagar todas as notas</translation>
+        <translation>annotations be jɔɔsi </translation>
     </message>
     <message>
         <source>eduMedia</source>
@@ -739,177 +408,515 @@
     </message>
     <message>
         <source>Import eduMedia simulation</source>
-        <translation>Importar uma simulação eduMedia</translation>
+        <translation>eduMadia ladégué ladon</translation>
     </message>
     <message>
         <source>Open the tutorial</source>
-        <translation>Abrir o Tutorial</translation>
+        <translation>tutorial déyele</translation>
     </message>
     <message>
         <source>Check Update</source>
-        <translation>Verificar Atualização</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
     </message>
+    <message>
+        <source>Zoom In</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ci</translation>
+    </message>
+    <message>
+        <source>Quit</source>
+        <translation>bɔ</translation>
+    </message>
+    <message>
+        <source>Eraser</source>
+        <translation> jɔɔsilan </translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>ɲɛ</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>kɔ</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>numa</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>nata</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>kini</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished">bookmarks</translation>
+    </message>
+    <message>
+        <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+B</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Clear Page</source>
+        <translation>gaféfura jɛ</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tutorial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Erase</source>
+        <translation> jɔɔsi</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation> sɛbɛnlamarayɔrɔ</translation>
+    </message>
+    <message>
+        <source>Ctrl+L</source>
+        <translation>Ctrl+L</translation>
+    </message>
+    <message>
+        <source>Show Desktop</source>
+        <translation> cakɛda yira</translation>
+    </message>
+    <message>
+        <source>Bigger</source>
+        <translation>aké bélébélé yé</translation>
+    </message>
+    <message>
+        <source>Ctrl++</source>
+        <translation>Ctrl++</translation>
+    </message>
+    <message>
+        <source>Smaller</source>
+        <translation>a ké dogomani yé</translation>
+    </message>
+    <message>
+        <source>Ctrl+-</source>
+        <translation>Ctrl+-</translation>
+    </message>
+    <message>
+        <source>New Folder</source>
+        <translation>sɛbɛn ba kura </translation>
+    </message>
+    <message>
+        <source>New Document</source>
+        <translation>sɛbɛn kura</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ladon</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>labɔ</translation>
+    </message>
+    <message>
+        <source>Open in Board</source>
+        <translation>a déyele walanba la</translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation>Ctrl+O</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>bɔ</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Add to Working Document</source>
+        <translation>a fara baraké gaféfura kan</translation>
+    </message>
+    <message>
+        <source>Add Selected Content to Open Document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>a fara a kan</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>
+togo kura da 
+</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation>tigɛ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ladège</translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation>tara</translation>
+    </message>
+    <message>
+        <source>Grid Light Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Dark Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start Screen Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scroll Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Laser Pointer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Virtual Laser Pointer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+J</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+K</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Item To Current Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Item To New Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Item To Library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a New Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate the Current Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import an External Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause Podcast Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Podcast Config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure Podcast Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web Trap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trap Web Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Window Capture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show on Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sleep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Virtual Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plain Light Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plain Dark Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Podcast</source>
+        <translation type="unfinished">Podcast</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multi Screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wide Size (16/9)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Size (4/3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
-        <translation>Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Quit Open-Sankoré</source>
-        <translation>Sair do Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré Editor</source>
-        <translation>Editor Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
-        <translation>Mostrar o Editor de Widgets do Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré</source>
-        <translation>Ocultar o Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré Application</source>
-        <translation>Ocultar a Aplicação Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Import Uniboard Documents</source>
-        <translation>Importar Documentos Uniboard</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Import old Sankore or Uniboard documents</source>
-        <translation>Importar Antigas Versões de Documentos Uniboard ou Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Group items</source>
-        <translation>Agrupar itens</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Play</source>
-        <translatorcomment>Começar(?)</translatorcomment>
-        <translation>Iniciar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Interact with items</source>
-        <translation>Interagir com itens</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation>Apagar o fundo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove the backgound</source>
-        <translation>Remover o fundo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Grupo</translation>
+        <translation type="unfinished">kulu</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Descarregar para&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;biblioteca&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation>Descarregar para a Biblioteca</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Descarregar para&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;página corrente&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation>Descarregar para a página corrente</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Adicionar link à&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;biblioteca&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation>Adicionar link à biblioteca</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Adicionar link à&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;página corrente&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation>Adicionar link à página corrente</translation>
+        <translation>ka  fen fara gaféfura kan</translation>
     </message>
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Favorito</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PasswordDialog</name>
     <message>
         <source>Authentication Required</source>
-        <translation>Autenticação Necessária</translation>
+        <translation>togodi waajibiyalen</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Nome de Utilizador:</translation>
+        <translation>
+togo koro
+</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Senha:</translation>
+        <translation>todo témé sira</translation>
     </message>
 </context>
 <context>
     <name>ProxyDialog</name>
     <message>
         <source>Proxy Authentication</source>
-        <translation>Autenticação do Proxy</translation>
+        <translation>proxyi waajibiyalen</translation>
     </message>
     <message>
         <source>Connect to Proxy</source>
-        <translation>Conetar ao Proxy</translation>
+        <translation>a conekité proxy la</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Nome de Utilizador:</translation>
+        <translation>
+togo koro
+</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Senha:</translation>
+        <translation>todo témé sira</translation>
     </message>
     <message>
         <source>Save username and password for future use</source>
-        <translation>Gravar &quot;Nome de Utilizador&quot; e &quot;Senha&quot; para futuras utilizações</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation>ID do Elemento</translation>
+        <translation>fen ID=</translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation>O conteúdo não é suportado no formato de destino.</translation>
+        <translation>fen te se ka bila cogoya doni na</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation>Remover Página</translation>
+        <translation>gaféfura takabo</translation>
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation>Tem a certeza que quer remover 1 página do documento selecionado &apos;%0&apos;?</translation>
+        <translation>i da lé ba la ka fo i bé gaféfura kélé ta ka bo </translation>
     </message>
 </context>
 <context>
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>Tamanho da Página</translation>
+        <translation>gaféfura kunkɔrɔdama</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -920,128 +927,128 @@
     <name>UBApplicationController</name>
     <message>
         <source>Web</source>
-        <translation>Web</translation>
-    </message>
-    <message>
-        <source>Update available</source>
-        <translation>Atualização disponível</translation>
+        <translation>ntalonmana</translation>
     </message>
     <message>
         <source>New update available, would you go to the web page ?</source>
-        <translation>Nova atualização disponível. Ir para a página web?</translation>
+        <translation>fen kura bolé do, i da lé ba la ka fo i bé ta ntalonmana gaféfura la ten</translation>
     </message>
     <message>
         <source>No update available</source>
-        <translation>Nenhuma atualização disponível</translation>
+        <translation>fen kura bolé té</translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation>fen kura bolé do</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Atualizar</translation>
+        <translation>fen kura</translation>
     </message>
 </context>
 <context>
     <name>UBBoardController</name>
     <message>
         <source>Downloading content %1 failed</source>
-        <translation>A transferência de conteúdos falhou %1</translation>
+        <translation> sɛbɛn kono fen masé ka yira%1</translation>
     </message>
     <message>
         <source>Download finished</source>
-        <translation>Transferência Completa</translation>
+        <translation>fena yirala</translation>
     </message>
     <message>
         <source>Unknown tool type %1</source>
-        <translation>Tipo de ferramenta desconhecido %1</translation>
-    </message>
-    <message>
-        <source>Unknown content type %1</source>
-        <translation>Tipo de conteúdo desconhecido %1</translation>
+        <translation>baarakɛminɛn siɔone té </translation>
     </message>
     <message>
         <source>Add Item</source>
-        <translation>Adicionar Item</translation>
+        <translation>a fara fen kan</translation>
     </message>
     <message>
         <source>All Supported (%1)</source>
-        <translation>Tudo Suportado (%1)</translation>
+        <translation>a bé a bé ku</translation>
+    </message>
+    <message>
+        <source>Unknown content type %1</source>
+        <translation>fen kono shidonbali %1</translation>
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation>Apagar a página %1 do documento</translation>
+        <translation>gaféfura latounou%1 ka bo sɛbɛn la</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation>Página %1 apagada</translation>
+        <translation>gaféfura %1 tounoula</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation>Falha na operação de adição de ficheiro: erro na cópia do ficheiro</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Agrupar</translation>
+        <translation>kulu</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation>Desagrupar</translation>
+        <translation>kéléna</translation>
     </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
         <source>Error Adding Image to Library</source>
-        <translation>Erro ao Adicionar Imagem à Biblioteca</translation>
+        <translation>fili kera ja fara to  sɛbɛnlamarayɔrɔ kan </translation>
     </message>
     <message>
         <source>CapturedImage</source>
-        <translation>Imagem capturada</translation>
+        <translation>ja ta</translation>
     </message>
 </context>
 <context>
     <name>UBCachePropertiesWidget</name>
     <message>
         <source>Cache Properties</source>
-        <translation>Propriedades da Cache</translation>
+        <translation>cache propoerties</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor:</translation>
+        <translation>ɲɛ</translation>
     </message>
     <message>
         <source>Shape:</source>
-        <translation>Forma:</translation>
+        <translation>dacogo</translation>
     </message>
     <message>
         <source>Alpha:</source>
-        <translation>Alfa:</translation>
+        <translation>Alpha</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation>Geometria:</translation>
+        <translation>geometry</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation>Largura:</translation>
+        <translation>width</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Altura:</translation>
+        <translation>kundama</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation>Manter as proporções</translation>
+        <translation>cogoya do mara</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation>Modo:</translation>
+        <translation>kɛcogo</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation>Pré-visualizar:</translation>
+        <translation> mi téména gale</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation>Fechar cache:</translation>
+        <translation>cache datougou</translation>
     </message>
     <message>
         <source>On Click</source>
@@ -1056,199 +1063,203 @@
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation>&lt;largar conteúdo&gt;</translation>
+        <translation>fen bila</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation>As imagens não são aceites</translation>
+        <translation>ja te ka son</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation>Não pode mostrar a informação</translation>
+        <translation>fen ba te se ka yira</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation>O ficheiro largado não é reconhecido como audio</translation>
+        <translation type="unfinished">seben bila len té sé ka 
+</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation>Iniciar ficheiro audio</translation>
+        <translation>bara ka la</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation>Adicionar link à página</translation>
+        <translation>ka fara gaféfura kan</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation>Adicionar link a uma página Web</translation>
+        <translation>
+
+
+fen fara ntalonmana  gaféfura kan</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation>Arrastar o ficheiro audio da biblioteca para esta caixa</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ok</translation>
+        <translation>ayo</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation>Próxima Página</translation>
+        <translation>gaféfura nata</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation>Página anterior</translation>
+        <translation>gaféfura mi téména gale</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation>Página Principal</translation>
+        <translation>gaféfura dantigɛlan</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation>Última Página</translation>
+        <translation>gaféfura laba</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation>Página Número</translation>
+        <translation>gaféfura numero</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation>Inserir o texto url aqui</translation>
+        <translation>url seben bla yan</translation>
     </message>
 </context>
 <context>
     <name>UBDesktopPalette</name>
     <message>
         <source>Capture Part of the Screen</source>
-        <translation>Capturar Parte do Ecrã</translation>
+        <translation>fen yoro do ta jabara la</translation>
     </message>
     <message>
         <source>Capture the Screen</source>
-        <translation>Capturar Ecrã</translation>
+        <translation>jabara ta</translation>
     </message>
     <message>
         <source>Show the stylus palette</source>
-        <translation>Mostrar Paleta</translation>
+        <translation>sebenikelan fen yira</translation>
     </message>
     <message>
         <source>Show Board on Secondary Screen</source>
-        <translation>Mostrar o Quadro num Ecrã Secundário</translation>
+        <translation>walanba yira ja lilana la</translation>
     </message>
     <message>
         <source>Show Desktop on Secondary Screen</source>
-        <translation>Mostrar Ambiente de Trabalho num Ecrã Secundário</translation>
+        <translation> cakɛda yira jabarani filana la</translation>
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation>Mostrar Open-Sankore</translation>
+        <translation>Open Sankoré yira</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentController</name>
     <message>
         <source>New Folder</source>
-        <translation>Nova Pasta</translation>
+        <translation>sɛbɛn ba kura </translation>
     </message>
     <message>
         <source>Page %1</source>
-        <translation>Página %1</translation>
+        <translation>gaféfura%1</translation>
     </message>
     <message>
         <source>Add Folder of Images</source>
-        <translation>Adicionar Pasta de Imagens</translation>
+        <translation>ja sɛbɛn ba kura fara kan</translation>
     </message>
     <message>
         <source>Add Images</source>
-        <translation>Adicionar Imagens</translation>
+        <translation>ja fara kan</translation>
     </message>
     <message>
         <source>Add Pages from File</source>
-        <translation>Adicionar Páginas de um Ficheiro</translation>
+        <translation>ka gaféfura fara faran kan</translation>
     </message>
     <message>
         <source>Duplicating Document %1</source>
-        <translation>A Duplicar Documento %1</translation>
+        <translation>do fara fen sɛbɛn kan %1</translation>
     </message>
     <message>
         <source>Document %1 copied</source>
-        <translation>Documento %1 Copiado</translation>
+        <translation> sɛbɛn %1 ladège</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation>Remover Página</translation>
+        <translation>gaféfura takabo</translation>
     </message>
     <message>
         <source>Open Supported File</source>
-        <translation>Abrir Ficheiro Suportado</translation>
+        <translation>gafféfura dayelelé</translation>
     </message>
     <message>
         <source>Importing file %1...</source>
-        <translation>A importar ficheiro %1...</translation>
+        <translation>sɛbɛn ladon %1</translation>
     </message>
     <message>
         <source>Failed to import file ... </source>
-        <translation>Falha ao importar ficheiro ...</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Import all Images from Folder</source>
-        <translation>Importar todas as Imagens de uma Pasta</translation>
+        <translation>ja bé ta ka bo  sɛbɛn kan</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Apagar</translation>
+        <translation>bɔ</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation>Vazio</translation>
+        <translation> jɔɔsi</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Lixo</translation>
+        <translation>yama</translation>
     </message>
     <message>
         <source>Open Document</source>
-        <translation>Abrir Documento</translation>
-    </message>
-    <message>
-        <source>The document &apos;%1&apos; has been generated with a newer version of Sankore (%2). By opening it, you may lose some information. Do you want to proceed?</source>
-        <translation>O documento &apos;%1&apos; foi criado com uma versão mais recente do Sankoré (%2). Ao abri-lo, poderá perder alguma da informação contida nele. Deseja continuar?</translation>
+        <translation>sɛbɛn kura da yeléné</translation>
     </message>
     <message>
         <source>Add all Images to Document</source>
-        <translation>Adicionar todas as imagens ao Documento</translation>
+        <translation>ja be fara gaféfura kan</translation>
     </message>
     <message>
         <source>All Images (%1)</source>
-        <translation>Todas as Imagens (%1)</translation>
+        <translation>ja bé</translation>
     </message>
     <message>
         <source>Selection does not contain any image files!</source>
-        <translation>A seleção não contém ficheiros de Imagem!</translation>
+        <translation></translation>
+    </message>
+    <message>
+        <source>The document &apos;%1&apos; has been generated with a newer version of Sankore (%2). By opening it, you may lose some information. Do you want to proceed?</source>
+        <translation>gaféfura %1 bilala sankore fen kura la (%2). ni yé  da yele, kibaru do be tounou. i be a da yeye?</translation>
     </message>
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
         <translation>
-            <numerusform>Tem a certeza que quer apagar %n página(s) do documento selecionado &apos;%1&apos;?</numerusform>
+            <numerusform>i dalé be a la ka fo i bé ga féfura % bo gaféfura dni% na?</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Página de Título</translation>
+        <translation>gaféfura dantigɛlan</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation>O diretório não contém imagens</translation>
+        <translation>ja té sɛbɛn ba  kono</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation>Documentos sem nome</translation>
+        <translation> sɛbɛn togotan</translation>
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
@@ -1259,15 +1270,15 @@
     <name>UBDocumentManager</name>
     <message>
         <source>images</source>
-        <translation>imagens</translation>
+        <translation>ja</translation>
     </message>
     <message>
         <source>videos</source>
-        <translation>vídeos</translation>
+        <translation>ja</translation>
     </message>
     <message>
         <source>objects</source>
-        <translation>objetos</translation>
+        <translation>fen</translation>
     </message>
     <message>
         <source>widgets</source>
@@ -1275,120 +1286,118 @@
     </message>
     <message>
         <source>All supported files (*.%1)</source>
-        <translation>Todos os ficheiros suportados (*.%1)</translation>
+        <translation>gaféfura bé ta ( .%1)</translation>
     </message>
     <message>
         <source>File %1 saved</source>
-        <translation>Ficheiro %1 gravado</translation>
+        <translation>gaféfura %1marala</translation>
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation>A inserir página %1 de %2</translation>
+        <translation>gaféfura don %1 ka ta %2</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Importação bem sucedida.</translation>
+        <translation>ladon niennan</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation>Importação do ficheiro %1 bem sucedida.</translation>
+        <translation>gaféfura%1 ladon nienan</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation>A importar o ficheiro %1</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
         <source>Page %0</source>
-        <translation>Página %0</translation>
+        <translation>gaféfura%0</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Página de Título</translation>
+        <translation>gaféfura dantigɛlan</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentPublisher</name>
     <message>
-        <source>Credentials has to not been filled out yet.</source>
-        <translation>Os créditos ainda não foram preenchidos.</translation>
-    </message>
-    <message>
-        <source>Uploading Sankore File on Web.</source>
-        <translation>A enviar o ficheiro Sankoré para a Web.</translation>
-    </message>
-    <message>
         <source>Export failed.</source>
-        <translation>A exportação falhou.</translation>
+        <translation>labɔ mason</translation>
     </message>
     <message>
         <source>Export canceled ...</source>
-        <translation>Exportação cancelada ...</translation>
+        <translation>labɔ magnien</translation>
     </message>
     <message>
         <source>Converting page %1/%2 ...</source>
-        <translation>A converter página %1/%2 ...</translation>
+        <translation>gafefura yelema %1/%2</translation>
+    </message>
+    <message>
+        <source>Credentials has to not been filled out yet.</source>
+        <translation>fen nininen ma ban di la folo</translation>
+    </message>
+    <message>
+        <source>Uploading Sankore File on Web.</source>
+        <translation>sankore gaféfura bo ntalonmana kan</translation>
     </message>
     <message>
         <source>Document uploaded correctly on the web.</source>
-        <translation>O documento foi correctamente enviado para a web.</translation>
+        <translation>gaefura yéra kan nien ntalonmana kan</translation>
     </message>
     <message>
         <source>Failed to upload document on the web.</source>
-        <translation>Falha no envio do documento para a web.</translation>
+        <translation>gaféfura masé ka bo ntalonmana kan</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation>Aceitar</translation>
+        <translation>son</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation>Substituir</translation>
+        <translation>a falen</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>a bo a ma</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation>O nome %1 jáa existe.
-Manter este nomevai substituir o documento.
-Um novo nome vai criar um novo documento.</translation>
+        <translation>togo%1tara ka ban ni yé ni togo ta i ka sɛbɛn  bé falen togokura dali bé sɛbɛn kura bo</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation>Os meus documentos</translation>
+        <translation>ne ka sɛbɛn </translation>
     </message>
     <message>
         <source>Models</source>
-        <translation>Modelos</translation>
+        <translation>kɛcogo</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Lixo</translation>
+        <translation>yama</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation>Documentos sem nome</translation>
+        <translation> sɛbɛn togotan</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">A copiar página %1/%2</translation>
+        <translation type="unfinished">gaféfura ladège li to %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation type="unfinished">
-            <numerusform>%1 de páginas copiadas</numerusform>
+            <numerusform>%1 gaféfura ladège la</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -1397,16 +1406,16 @@ Um novo nome vai criar um novo documento.</translation>
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
-        <translation>%1 (cópia)</translation>
+        <translation>l%1 (adège)</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation>A copiar página %1/%2</translation>
+        <translation>gaféfura ladège li to %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation>
-            <numerusform>%1 de páginas copiadas</numerusform>
+            <numerusform>%1 gaféfura ladège la</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -1415,623 +1424,623 @@ Um novo nome vai criar um novo documento.</translation>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation>Download falhado.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation>o servidor remoto recusou a conexão (o servidor não está a aceitar pedidos)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>o servidor remoto fechou a conexão prematuramente, antes da resposta ser completamente recebida e processada</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translatorcomment>anfitrião</translatorcomment>
-        <translation>o servidor anfitrião com esse nome não foi encontrado (nome de servidor inválido)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation>a conexão com o servidor remoto expirou</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation>a operação foi cancelada por pedido para abortar() ou fechada() antes de ter terminado.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation>A negociação SSL/TLS falhou e a ligação encriptada não foi estabelecida. O sinal de sslErrors() deverá ter sido emitido.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation>a conexão foi quebrada por desconexão da rede, no entanto o sistema iniciou a ligação para outro ponto de acesso. O pedido deve ser novamente submetido e será processado logo que a ligação seja restabelecida.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation>A ligação ao servidor proxy foi recusada (o servidor proxy não está a aceitar pedidos)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>o servidor de proxy fechou a conexão prematuramente, antes da resposta ser completamente recebida e processada</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation>o proxy anfitrião com esse nome não foi encontrado (nome de servidor inválido)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation>a conexão com o proxy expirou ou o proxy não respondeu a tempo ao pedido enviado</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation>o proxy requer autenticação para cumprir o pedido mas não aceitou nenhuma credencial fornecida (se houve alguma)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation>o acesso ao conteúdo remoto foi negado (semelhante ao erro HTTP 401)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation>a operação pedida ao conteúdo remoto não é permitida</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation>o conteúdo remoto não foi encontrado no servidor (semelhante ao erro HTTP 404)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation>o servidor remoto requer autenticação para mostrar o conteúdo mas não aceitou nenhuma credencial fornecida (se houve alguma)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation>o pedido precisa de ser novamente enviado. O erro poderá ter acontecido pelos dados não poderem ser lidos uma segunda vez.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation>o Acesso à Rede API não cumpriu o pedido porque o protocolo não é conhecido</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation>a operação pedida é inválida para este protocolo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation>um erro desconhecido relacionado com a rede foi detetado</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation>um erro desconhecido relacionado com o proxy foi detetado</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation>um erro desconhecido relacionado com o conteúdo remoto foi detetado</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation>uma quebra no protocolo foi detetada (erro de análise, resposta inválida ou inesperada, etc.)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBDownloadWidget</name>
     <message>
         <source>Downloading files</source>
-        <translation>A descarregar ficheiro</translation>
+        <translation> sɛbɛn yirala</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>a bo a ma</translation>
     </message>
 </context>
 <context>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation>Surgiram alertas durante a exportação</translation>
+        <translation>koloshi bora labɔ sefen</translation>
     </message>
 </context>
 <context>
     <name>UBExportCFF</name>
     <message>
         <source>Export to IWB</source>
-        <translation>Exportar para IWB</translation>
+        <translation>labɔ ka bila IWB kan</translation>
     </message>
     <message>
         <source>Export as IWB File</source>
-        <translation>Exportar como ficheiro IWB</translation>
+        <translation>labɔ com IWB sɛbɛn</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>A exportar documento...</translation>
+        <translation>sɛbɛn labo to</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Exportação bem sucedida.</translation>
+        <translation>labɔ nienan</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Falha na Exportação.</translation>
+        <translation>labɔ mason</translation>
     </message>
 </context>
 <context>
     <name>UBExportDocument</name>
     <message>
         <source>Page</source>
-        <translation>Página</translation>
+        <translation>gaféfura</translation>
     </message>
     <message>
         <source>Export as UBZ File</source>
-        <translation>Exportar como Ficheiro UBZ</translation>
+        <translation>labɔ com UBZ sɛbɛn</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>A exportar documento...</translation>
+        <translation>sɛbɛn labo to</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Exportação bem sucedida.</translation>
+        <translation>labɔ nienan</translation>
     </message>
     <message>
         <source>Exporting %1 %2 of %3</source>
-        <translation>A exportar %1 %2 de %3</translation>
+        <translation>labo %1 %2 fo %3</translation>
     </message>
     <message>
         <source>Export to Sankore Format</source>
-        <translation>Exportar para o Formato Sankoré</translation>
+        <translation>labɔ sankore yecogo la</translation>
     </message>
 </context>
 <context>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation>Falha ao exportar...</translation>
+        <translation>labɔ ta  mason</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation>Exportar como ficheiro UBX</translation>
+        <translation>labɔ com UBX sɛbɛn</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>A exportar documento...</translation>
+        <translation>sɛbɛn labo to</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Exportação bem sucedida.</translation>
+        <translation>labɔ nienan</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Falha na Exportação</translation>
+        <translation>labɔ mason</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation>Exportar para o Formato Sankore UBX</translation>
+        <translation>labɔ sankore UBX yecogo la</translation>
     </message>
 </context>
 <context>
     <name>UBExportFullPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation>Exportar como Ficheiro PDF</translation>
+        <translation>labɔ com PDF sɛbɛn</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>A exportar documento...</translation>
-    </message>
-    <message>
-        <source>Export successful.</source>
-        <translation>Exportação bem sucedida.</translation>
+        <translation>sɛbɛn labo to</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation>Exportar para PDF</translation>
+        <translation>labɔ ka bila PDF kan</translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation>labɔ nienan</translation>
     </message>
 </context>
 <context>
     <name>UBExportPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation>Exportar como Ficheiro PDF</translation>
-    </message>
-    <message>
-        <source>Exporting document...</source>
-        <translation>A exportar documento...</translation>
-    </message>
-    <message>
-        <source>Export successful.</source>
-        <translation>Exportação bem sucedida.</translation>
+        <translation>labɔ com PDF sɛbɛn</translation>
     </message>
     <message>
         <source>Exporting page %1 of %2</source>
-        <translation>A exportar página %1 de %2</translation>
+        <translation>sɛbɛn labo to %1 ka bo %2 la</translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation>labɔ nienan</translation>
+    </message>
+    <message>
+        <source>Exporting document...</source>
+        <translation>sɛbɛn labo to</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation>Exportar para PDF</translation>
+        <translation>labɔ ka bila PDF kan</translation>
     </message>
 </context>
 <context>
     <name>UBExportWeb</name>
     <message>
         <source>Page</source>
-        <translation>Página</translation>
+        <translation>gaféfura</translation>
     </message>
     <message>
         <source>Export as Web data</source>
-        <translation>Exportar para formato de Web</translation>
+        <translation>labɔ com ntalonmana sɛbɛn</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>A exportar documento...</translation>
+        <translation>sɛbɛn labo to</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Exportação bem sucedida.</translation>
+        <translation>labɔ nienan</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Falha na exportação.</translation>
+        <translation>labɔ mason</translation>
     </message>
     <message>
         <source>Export to Web Browser</source>
-        <translation>Exportar para Explorador Web</translation>
+        <translation>labɔ ka bila  ntalonmana la</translation>
     </message>
 </context>
 <context>
     <name>UBFeatureProperties</name>
     <message>
         <source>Add to page</source>
-        <translation>Adicionar à página</translation>
+        <translation>ka fara gaféfura kan</translation>
     </message>
     <message>
         <source>Set as background</source>
-        <translation>Definir como fundo</translation>
+        <translation>jabɔwalaha ka a la</translation>
     </message>
     <message>
         <source>Add to library</source>
-        <translation>Adicionar à biblioteca</translation>
+        <translation>ka fara sɛbɛnlamarayɔrɔ kan </translation>
     </message>
     <message>
         <source>Object informations</source>
-        <translation>Informações do Objecto</translation>
+        <translation>fen kibaru</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Adicionar</translation>
+        <translation>a fara a kan</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
     <message>
         <source>Add to favorites</source>
-        <translation>Adicionar aos favoritos</translation>
+        <translation>a fara fen kan</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation>Partilhar</translation>
+        <translation>tila</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Procurar</translation>
+        <translation>nini</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Apagar</translation>
+        <translation>bɔ</translation>
     </message>
     <message>
         <source>Back to folder</source>
-        <translation>Voltar à pasta</translation>
+        <translation>segin ka ta sɛbɛn ba kura kan</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation>Remover dos favoritos</translation>
+        <translation>a bo fen na</translation>
     </message>
     <message>
         <source>Create new folder</source>
-        <translation>Criar uma nova pasta</translation>
+        <translation>sɛbɛn ba kura da</translation>
     </message>
     <message>
         <source>Rescan file system</source>
-        <translatorcomment>&quot;Procurar ficheiro de Sistema&quot;(?)</translatorcomment>
-        <translation>Voltar a procurar ficheiro de Sistema</translation>
+        <translation>segin sɛbɛn fen kan</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesController</name>
     <message>
         <source>ImportedImage</source>
-        <translation>Imagem Importada</translation>
+        <translation>ja ladon
+</translation>
     </message>
     <message>
         <source>Audios</source>
-        <translation>Áudios</translation>
+        <translation>foli kan</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation>Vídeos</translation>
+        <translation>ja </translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Imagens</translation>
+        <translation>ja</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation>Animações</translation>
+        <translation>animations</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation>Atividades Interativas</translation>
+        <translation>interactivités</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation>Aplicações</translation>
+        <translation>applications</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation>Formas</translation>
+        <translation>dacogo</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation>Favoritos</translation>
+        <translation>fen</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation>Busca na web</translation>
+        <translation>ntalonmana nieni la</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Lixo</translation>
+        <translation>yama</translation>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation>Favoritos</translation>
+        <translation>bookmarks</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation>Web</translation>
+        <translation>ntalonmana</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation>Aceitar</translation>
+        <translation>son</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>a bo a ma</translation>
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation>Escrever um novo nome para o diretório</translation>
+        <translation>sɛbɛn ba kura togo don</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation>A carregar </translation>
+        <translation>a yira</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation>Bloqueado</translation>
+        <translation>datougou</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation>Visível em Ecrã Expandido</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Adicionar uma ação</translation>
+        <translation>ka fendo fara a kan</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation>Remover link para audio</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation>Remover link para página</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation>Remover link para endereço web</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation>Bloqueado</translation>
+        <translation type="unfinished">datougou</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation>Visível em Ecrã Expandido</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Go to Content Source</source>
-        <translation>Ir para a Fonte do Conteúdo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Adicionar uma ação</translation>
+        <translation type="unfinished">ka fendo fara a kan</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation>Remover link para audio</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation>Remover link para página</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation>Remover link para endereço web</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
         <source>&lt;Type Text Here&gt;</source>
-        <translation>&lt;Introduzir o Texto Aqui&gt;</translation>
+        <translation>&lt;dantigelan bla nkan</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
         <source>Text Color</source>
-        <translation>Cor do Texto</translation>
+        <translation>gaféfura ɲɛ</translation>
     </message>
     <message>
         <source>Editable</source>
-        <translation>Editável</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation>A carregar ...</translation>
+        <translation>a yira</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItemDelegate</name>
     <message>
         <source>Frozen</source>
-        <translation>Congelado</translation>
+        <translation>a glacé</translation>
     </message>
     <message>
         <source>Transform as Tool </source>
-        <translation>Transformar em Ferramenta</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBImportCFF</name>
     <message>
         <source>Common File Format (</source>
-        <translation>Formato de Ficheiro Frequente (</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Importing file %1...</source>
-        <translation>A importar ficheiro %1...</translation>
+        <translation type="unfinished">sɛbɛn ladon %1</translation>
     </message>
     <message>
         <source>Import of file %1 failed.</source>
-        <translation>Falha a importar ficheiro %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Importação bem sucedida.</translation>
+        <translation>ladon nienan</translation>
     </message>
     <message>
         <source>Import failed.</source>
-        <translation>Falha na importação.</translation>
+        <translation>ladon mason</translation>
     </message>
 </context>
 <context>
     <name>UBImportDocument</name>
     <message>
         <source>Importing file %1...</source>
-        <translation>A importar ficheiro %1...</translation>
-    </message>
-    <message>
-        <source>Import of file %1 failed.</source>
-        <translation>Falha a importar ficheiro %1.</translation>
+        <translation>sɛbɛn ladon %1</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Importação bem sucedida.</translation>
+        <translation>labɔ nienan</translation>
+    </message>
+    <message>
+        <source>Import of file %1 failed.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open-Sankore (*.ubz)</source>
-        <translation>Open-Sankore (*.ubz)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation type="unfinished">Open-Sankoré (conjunto de documentos) (*.ubx)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBImportImage</name>
     <message>
         <source>Image Format (</source>
-        <translation>Formato da Imagem (</translation>
+        <translatorcomment>ja yecogo</translatorcomment>
+        <translation> </translation>
     </message>
 </context>
 <context>
     <name>UBImportPDF</name>
     <message>
         <source>Portable Document Format (*.pdf)</source>
-        <translation>Portable Document Format (*.pdf)</translation>
+        <translation>gaféfura talan yecogo(.pdf)</translation>
     </message>
     <message>
         <source>PDF import failed.</source>
-        <translation>Falha na importação de PDF.</translation>
+        <translation>PDF ladon mason</translation>
     </message>
     <message>
         <source>Importing page %1 of %2</source>
-        <translation>A importar a página %1 de %2</translation>
+        <translation>ladon gaféfura %1to %2</translation>
     </message>
 </context>
 <context>
     <name>UBIntranetPodcastPublisher</name>
     <message>
         <source>Error while publishing video to intranet (%1)</source>
-        <translation>Erro durante a publicação do vídeo na intranet (%1)</translation>
+        <translation>fili kera ja fara to intranet kan (%1)</translation>
     </message>
     <message>
         <source>Publishing to Intranet in progress %1 %</source>
-        <translation>Publicação na Intranet em progresso %1 %</translation>
+        <translation>a fara intranet bara to kan</translation>
     </message>
 </context>
 <context>
     <name>UBIntranetPodcastPublishingDialog</name>
     <message>
         <source>Publish</source>
-        <translation>Publicar</translation>
+        <translation type="unfinished">ta ka bila a kan</translation>
     </message>
 </context>
 <context>
     <name>UBKeyboardPalette</name>
     <message>
         <source>Enter</source>
-        <translation>Enter</translation>
+        <translation>don</translation>
     </message>
 </context>
 <context>
     <name>UBMainWindow</name>
     <message>
         <source>Yes</source>
-        <translation>Sim</translation>
+        <translation>ayo</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Não</translation>
+        <translation>ayi</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ok</translation>
+        <translation>ayo</translation>
     </message>
 </context>
 <context>
     <name>UBMessagesDialog</name>
     <message>
         <source>Close</source>
-        <translation>Fechar</translation>
+        <translation>a datougou</translation>
     </message>
 </context>
 <context>
     <name>UBNetworkAccessManager</name>
     <message>
         <source>&lt;qt&gt;Enter username and password for &quot;%1&quot; at %2&lt;/qt&gt;</source>
-        <translation>&lt;qt&gt;Introduzir o Nome de Utilizador e Senha &quot;%1&quot; em %2&lt;/qt&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Failed to log to Proxy</source>
-        <translation>Falha ao entrar no Proxy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>SSL Errors:
@@ -2041,253 +2050,253 @@ Um novo nome vai criar um novo documento.</translation>
 %2
 
 Do you want to ignore these errors for this host?</source>
-        <translation>Erros SSL:
-
-%1
-
-%2
-
-Quer ignorar estes erros, deste servidor?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Sim</translation>
+        <translation></translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Não</translation>
+        <translation type="unfinished">ayi</translation>
     </message>
 </context>
 <context>
     <name>UBPersistenceManager</name>
     <message>
         <source>(copy)</source>
-        <translation>(cópia)</translation>
+        <translation> (ladège)</translation>
     </message>
     <message>
         <source>Document Repository Loss</source>
-        <translation>Repositório de Documentos perdido</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Sankore has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
-        <translation>O Sanskoré perdeu o acesso ao repositório do documento &apos;%1&apos;. Infelizmente, o aplicativo vai ser encerrado para evitar a corrupção de dados. Também poderá perder as últimas alterações.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation>Inglês</translation>
+        <translation>angilɛ-kan
+</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Russo</translation>
+        <translation>irisi</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Alemão</translation>
+        <translatorcomment>
+</translatorcomment>
+        <translation>alleman kan</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Francês</translation>
+        <translation>faransɛkan</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>Francês (Suiço)</translation>
+        <translation>Swiss faransɛkan</translation>
     </message>
 </context>
 <context>
     <name>UBPodcastController</name>
     <message>
-        <source>Sankore Cast</source>
-        <translation>Sankore Cast</translation>
-    </message>
-    <message>
         <source>Failed to start encoder ...</source>
-        <translation>Falha ao iniciar o codificador ...</translation>
+        <translation></translation>
     </message>
     <message>
         <source>No Podcast encoder available ...</source>
-        <translation>Nenhum codificador de Podcast disponível ...</translation>
+        <translation>Podcast té</translation>
     </message>
     <message>
         <source>Part %1</source>
-        <translation>Parte %1</translation>
+        <translation>Part %1</translation>
     </message>
     <message>
         <source>on your desktop ...</source>
-        <translation>no seu ambiente de trabalho ...</translation>
+        <translation> i ka  cakɛda kan</translation>
     </message>
     <message>
         <source>in folder %1</source>
-        <translation>na pasta %1</translation>
+        <translation> i ka  sɛbɛn ba kan %1</translation>
     </message>
     <message>
         <source>Podcast created %1</source>
-        <translation>Podcast criado %1</translation>
+        <translation>Podcast da %1</translation>
     </message>
     <message>
         <source>Podcast recording error (%1)</source>
-        <translation>Erro de gravação do Podcast (%1)</translation>
+        <translation>Podcast ta cogo magnien</translation>
     </message>
     <message>
         <source>Default Audio Input</source>
-        <translation>Entrada de áudio padrão</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No Audio Recording</source>
-        <translation>Sem gravação de áudio</translation>
+        <translation>kuma kan té sé ka ta</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation>Pequeno</translation>
+        <translation> misɛnman</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation>Médio</translation>
+        <translation> mankannin</translation>
     </message>
     <message>
         <source>Full</source>
-        <translation>Completo</translation>
+        <translation>fara</translation>
     </message>
     <message>
         <source>Publish to Intranet</source>
-        <translation>Publicar na Intranet</translation>
+        <translation>a fara intranet kan</translation>
     </message>
     <message>
         <source>Publish to Youtube</source>
-        <translation>Publicar no Youtube</translation>
+        <translation>a fara youtube kan</translation>
+    </message>
+    <message>
+        <source>Sankore Cast</source>
+        <translation>Sankoré Cast</translation>
     </message>
 </context>
 <context>
     <name>UBPreferencesController</name>
     <message>
         <source>version: </source>
-        <translation>versão: </translation>
+        <translation type="unfinished">
+</translation>
     </message>
     <message>
         <source>Marker is pressure sensitive</source>
-        <translation>O marcador é sensível à pressão</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Omissão</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation>Árabe</translation>
+        <translation>larabu-kan</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation>Búlgaro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation>Catalão</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Checo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation>Dinamarquês</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Alemão</translation>
+        <translation>alleman kan</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Grego</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>English</source>
-        <translation>Inglês</translation>
+        <translation>angilɛ-kan
+</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation>Inglês UK</translation>
+        <translation>angilɛ-kan UK
+</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Castelhano</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Francês</translation>
+        <translation>faransɛkan</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>Francês (Suiço)</translation>
+        <translation>Swiss faransɛkan</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italiano</translation>
+        <translation>Italien</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation>Hebraico</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation>Japonês</translation>
+        <translation>japanese</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation>Coreano</translation>
+        <translation>Korean kan</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation>Malgaxe</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation>Norueguês</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Holandês</translation>
+        <translation>alleman kan</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation>Polaco</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation>Romanche</translation>
+        <translation type="unfinished">Romain</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation>Romeno</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Russo</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation>Eslovaco</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation>Sueco</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation>Turco</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation>Chinês</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation>Chinês Simplificado</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation>Chinês Tradicional</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Corsican</source>
@@ -2298,10 +2307,6 @@ Quer ignorar estes erros, deste servidor?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Portuguese</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Basque</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2309,516 +2314,523 @@ Quer ignorar estes erros, deste servidor?</translation>
         <source>Bambara</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Portuguese</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
     <message>
         <source>Proxy Login</source>
-        <translation>Iniciar sessão no Proxy</translation>
+        <translation>Proxy login</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Nome de Utilizador:</translation>
+        <translation>
+togo koro
+</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Senha:</translation>
+        <translation>todo témé sira</translation>
     </message>
 </context>
 <context>
     <name>UBPublicationDlg</name>
     <message>
         <source>Publish document on the web</source>
-        <translation>Publicar documentos na web</translation>
+        <translation>sɛbɛn ta ka bila ntalonmana kan</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Título:</translation>
+        <translation>dantigɛlan</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Descrição:</translation>
+        <translation>ɲɛfɔli</translation>
     </message>
     <message>
         <source>Publish</source>
-        <translation>Publicar</translation>
+        <translation>ta ka bila a kan</translation>
     </message>
 </context>
 <context>
     <name>UBSettings</name>
     <message>
         <source>My Movies</source>
-        <translation>Os meus filmes</translation>
+        <translation>né ka toulogé</translation>
     </message>
     <message>
         <source>/Web</source>
-        <translation>/Web</translation>
+        <translation>/ntalonmana</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation>Visivel na próxima vez</translation>
+        <translation>a bé touyé weré</translation>
     </message>
 </context>
 <context>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation>Professor</translation>
+        <translation> lakɔli-karamɔgɔ</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation>Aluno</translation>
+        <translation>kalanden</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation>Colocar aqui a tarefa ...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>
     <message>
         <source>drop media here ...</source>
-        <translation>Largar o ficheiro media aqui ...</translation>
+        <translation>toulogé ta ka bila </translation>
     </message>
     <message>
         <source>Type title here...</source>
-        <translation>Colocar aqui o tíitulo...</translation>
+        <translation> dantigɛlan ta ka bila </translation>
     </message>
 </context>
 <context>
     <name>UBTGUrlWidget</name>
     <message>
         <source>Insert link title here...</source>
-        <translation>Colocar aqui o título do link...</translation>
+        <translation> dantigɛlan ta ka bila </translation>
+    </message>
+</context>
+<context>
+    <name>UBTeacherBarWidget</name>
+    <message>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation>Colocar o título aqui...</translation>
+        <translation> dantigɛlan ta ka bila </translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation>Colocar aqui o comentário ...</translation>
+        <translation>fen do fo ka ta ka bila </translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Adicionar uma ação</translation>
+        <translation>ka fendo fara a kan</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translatorcomment>&quot;Adicionar ficheiro multimédia&quot;</translatorcomment>
-        <translation>Adicionar multimédia</translation>
+        <translation>toulogé fa a kan</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation>Adicionar um link</translation>
+        <translation>ka fara kan</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation>Página: %0</translation>
+        <translation>gaféfura%0</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation>Colocar aqui tipo de sessão ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation>Autor(es)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation>Colocar aqui os autores ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation>Objetivo(s)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation>Colocar aqui o tipo de objetivo...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translatorcomment>&quot;Índice de recursos&quot;?</translatorcomment>
-        <translation>Indexar recursos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation>Palavra(s) Chave:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation>Colocar a(s) palavra(s) chave aqui ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation>Nível:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation>Assunto:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tipo:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation>Licença</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
-        <translation>Atribuição CC BY</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
-        <translation>Atribuição-SemDerivados CC BY-ND</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Attribution-ShareAlike CC BY-SA</source>
-        <translation>Atribuição-CompartilhaIgual CC BY-SA</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Attribution-NonCommercial CC BY-NC</source>
-        <translation>Atribuição - NãoComercial CC BY-NC</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</source>
-        <translation>Atribuição-NãoComercial-SemDerivados CC BY-NC-ND</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</source>
-        <translation>Atribuição-NãoComercial-CompartilhaIgual CC BY-NC-SA</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Public domain</source>
-        <translation>Domínio Público</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation>Copyright</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Created the:
 </source>
-        <translation>Criou:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation>Actualizou:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Title page</source>
-        <translatorcomment>Página Inicial</translatorcomment>
-        <translation>Página de Título</translation>
+        <translation type="unfinished">gaféfura dantigɛlan</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation>Página: %0</translation>
+        <translation>gaféfur:a%0</translation>
     </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
     <message>
         <source>Generating preview thumbnails ...</source>
-        <translation>A gerar pré-visualização de miniaturas ...</translation>
+        <translation type="unfinished"> </translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
-        <translation>%1 de miniaturas geradas ...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBToolsManager</name>
     <message>
-        <source>Mask</source>
-        <translation>Cortina</translation>
+        <source>Compass</source>
+        <translation>compa</translation>
     </message>
     <message>
         <source>Ruler</source>
-        <translation>Régua</translation>
-    </message>
-    <message>
-        <source>Compass</source>
-        <translation>Compasso</translation>
+        <translation>téret shila</translation>
     </message>
     <message>
         <source>Protractor</source>
-        <translation>Transferidor</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation>Esquadro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Magnifier</source>
-        <translation>Lupa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cache</source>
-        <translation>Cache</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation>Página completa</translation>
+        <translation>gaféfura bé</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation>Embutido </translation>
+        <translation>Embed</translation>
     </message>
 </context>
 <context>
     <name>UBUpdateDlg</name>
     <message>
         <source>Document updater</source>
-        <translation>Atualizador de documento</translation>
+        <translation>sɛbɛn update</translation>
     </message>
     <message>
         <source> files require an update.</source>
-        <translation> arquivos requerem uma atualização.</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Backup path: </source>
-        <translation>Localização da Cópia de Segurança:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Procurar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Atualizar</translation>
+        <translation type="unfinished">fen kura</translation>
     </message>
     <message>
         <source>Select a backup folder</source>
-        <translation>Selecione uma pasta para a Cópia de Segurança</translation>
-    </message>
-    <message>
-        <source>Please wait the import process will start soon...</source>
-        <translation>Aguarde. O processo de importação vai começar em breve...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Files update successful!
 Please reboot the application to access the updated documents.</source>
-        <translation>Atualização de ficheiros bem sucedida!
-Por favor, reinicie o aplicativo para aceder aos documentos atualizados.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>An error occured during the update. The files have not been affected.</source>
-        <translation>Ocorreu um erro durante a atualização. Os ficheiros não foram afetados.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Files update results</source>
-        <translation>Resultados da actualização de ficheiros</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Updating file </source>
-        <translation>A actualizar o ficheiro </translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait the import process will start soon...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remind me later</source>
-        <translation>Lembrar-me depois</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBWebPluginWidget</name>
     <message>
         <source>Loading...</source>
-        <translation>Carregando...</translation>
+        <translation>a yira</translation>
     </message>
 </context>
 <context>
     <name>UBWebPublisher</name>
     <message>
         <source>Publish Document on Sankore Web</source>
-        <translation>Publicar o documento no Sankoré Web</translation>
+        <translation>sɛbɛn ta ka bila sankore ntalonmana kan</translation>
     </message>
 </context>
 <context>
     <name>UBWidgetUniboardAPI</name>
     <message>
         <source>%0 called (method=%1, status=%2)</source>
-        <translation>%0 pedido (método=%1, estado=%2)</translation>
+        <translation>%0 wele (method=%1, status=%2)</translation>
     </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>
     <message>
         <source>YouTube authentication failed.</source>
-        <translation>Erro de autenticação no YouTube.</translation>
+        <translation>you tube togodi mason</translation>
     </message>
     <message>
         <source>Error while uploading video to YouTube (%1)</source>
-        <translation>Erro no envio do vídeo para o YouTube (%1)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Upload to YouTube in progress %1 %</source>
-        <translation>Envio para o YouTube em curso %1 %</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation>Open-Sankore</translation>
+        <translation>sankore- dayele</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation>OpenSankore</translation>
+        <translation>sankore dayélé</translation>
     </message>
 </context>
 <context>
     <name>UBYouTubePublishingDialog</name>
     <message>
         <source>Upload</source>
-        <translation>Enviar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Autos &amp; Vehicles</source>
-        <translation>Automóveis</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Música</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pets &amp; Animals</source>
-        <translation>Animais</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Sports</source>
-        <translation>Desporto</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Travel &amp; Events</source>
-        <translation>Viagens e Eventos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Gaming</source>
-        <translation>Jogos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation>Humor</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>People &amp; Blogs</source>
-        <translation>Pessoas e Blogues</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>News &amp; Politics</source>
-        <translation>Notícias e Política</translation>
+        <translation>kibaru &amp; politigui</translation>
     </message>
     <message>
         <source>Entertainment</source>
-        <translation>Entretenimento</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Education</source>
-        <translation>Educação</translation>
+        <translation>kalanko</translation>
     </message>
     <message>
         <source>Howto &amp; Style</source>
-        <translation>Guias e Estilo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Nonprofits &amp; Activism</source>
-        <translation>Sem fins lucrativos e Ativismo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Science &amp; Technology</source>
-        <translation>Ciência e Tecnologia</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBZoomPalette</name>
     <message>
         <source>%1 x</source>
-        <translation>%1 x</translation>
+        <translation>%1x</translation>
     </message>
 </context>
 <context>
     <name>UniboardSankoreTransition</name>
     <message>
         <source>Import old Uniboard/Sankore documents</source>
-        <translation>Importar versões antigas de documentos Uniboard/Sankoré</translation>
+        <translation>uniboard koro ladon /sankore sɛbɛn</translation>
     </message>
     <message>
         <source>There are no documents that should be imported</source>
-        <translatorcomment>&quot;There are no documents that should be imported&quot;</translatorcomment>
-        <translation>Não há documentos para importar</translation>
+        <translation>sɛbɛn ci te yen ka ladon</translation>
     </message>
 </context>
 <context>
     <name>WBClearButton</name>
     <message>
         <source>Clear</source>
-        <translation>Limpar</translation>
+        <translation> jɛ</translation>
     </message>
 </context>
 <context>
     <name>WBDownloadItem</name>
     <message>
         <source>Save File</source>
-        <translation>Gravar ficheiro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Download canceled: %1</source>
-        <translation>Download cancelado: %1</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Error opening saved file: %1</source>
-        <translation>Erro a abrir o ficheiro gravado: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error saving: %1</source>
-        <translation>Erro ao gravar: %1</translation>
+        <translation>fili kera mara la:%1</translation>
     </message>
     <message>
         <source>Network Error: %1</source>
-        <translation>Erro na Ligação: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>Segundos</translation>
+        <translation>secondi</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>Minutos</translation>
+        <translation>miniti</translation>
     </message>
     <message>
         <source>- %4 %5 remaining</source>
-        <translation>- %4 %5 de tempo restante</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 of %2 (%3/sec) %4</source>
-        <translation>%1 de %2 (%3/seg) %4</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>?</source>
         <comment>unknown file size</comment>
-        <translatorcomment>Tamanho do ficheiro desconhecido</translatorcomment>
         <translation>?</translation>
     </message>
     <message>
         <source>%1 of %2 - Stopped</source>
-        <translation>%1 de %2 - Parado</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>bytes</source>
-        <translation>bytes</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>KB</source>
@@ -2832,128 +2844,127 @@ Por favor, reinicie o aplicativo para aceder aos documentos atualizados.</transl
 <context>
     <name>WBDownloadManager</name>
     <message>
-        <source>1 Download</source>
-        <translation>1 ficheiro descarregado</translation>
-    </message>
-    <message>
         <source>%1 Downloads</source>
         <comment>always &gt;= 2</comment>
-        <translatorcomment>Sempre &gt;= 2</translatorcomment>
-        <translation>%1 ficheiros descarregados</translation>
+        <translation>%1 yira</translation>
+    </message>
+    <message>
+        <source>1 Download</source>
+        <translation>1 yira</translation>
     </message>
 </context>
 <context>
     <name>WBHistoryModel</name>
     <message>
         <source>Title</source>
-        <translation>Título</translation>
+        <translation>dantigɛlan</translation>
     </message>
     <message>
         <source>Address</source>
-        <translation>Endereço</translation>
+        <translation>dou tamasiré</translation>
     </message>
 </context>
 <context>
     <name>WBHistoryTreeModel</name>
     <message>
         <source>Earlier Today</source>
-        <translation>Hoje</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 items</source>
-        <translation>%1 item(s)</translation>
+        <translation>%1 fen</translation>
     </message>
 </context>
 <context>
     <name>WBSearchLineEdit</name>
     <message>
         <source>Search</source>
-        <translation>Pesquisar</translation>
+        <translation>nini</translation>
     </message>
 </context>
 <context>
     <name>WBTabBar</name>
     <message>
         <source>New &amp;Tab</source>
-        <translation>Novo &amp;Separador</translation>
+        <translation>kura &amp; wala</translation>
     </message>
     <message>
         <source>Clone Tab</source>
-        <translation>Duplicar Separador</translation>
+        <translation>wala ladège</translation>
     </message>
     <message>
         <source>&amp;Close Tab</source>
-        <translation>&amp;Fechar Separador</translation>
+        <translation>&amp; wala da togou</translation>
     </message>
     <message>
         <source>Close &amp;Other Tabs</source>
-        <translation>Fechar os &amp;Outros Separadores</translation>
+        <translation>tougou &amp; wala wéré</translation>
     </message>
     <message>
         <source>Reload Tab</source>
-        <translation>Atualizar Separador</translation>
+        <translation>wala ta</translation>
     </message>
     <message>
         <source>Reload All Tabs</source>
-        <translation>Atualizar todos os Separadores</translation>
+        <translation>wala be ta</translation>
     </message>
 </context>
 <context>
     <name>WBTabWidget</name>
     <message>
         <source>Recently Closed Tabs</source>
-        <translation>Separadores recentemente fechados</translation>
+        <translation>wala datougoulé kura</translation>
     </message>
     <message>
         <source>(Untitled)</source>
-        <translation>(Sem Título)</translation>
+        <translation>dantigɛlan tan</translation>
     </message>
 </context>
 <context>
     <name>WBToolbarSearch</name>
     <message>
         <source>Search</source>
-        <translation>Pesquisar</translation>
+        <translation>nini</translation>
     </message>
     <message>
         <source>No Recent Searches</source>
-        <translation>Sem pesquisas recentes</translation>
+        <translation>sinsa nini té</translation>
     </message>
     <message>
         <source>Recent Searches</source>
-        <translation>Pesquisas recentes</translation>
+        <translation>sinsa ninni</translation>
     </message>
     <message>
         <source>Clear Recent Searches</source>
-        <translation>Limpar as pesquisas recentes</translation>
+        <translation>sinsa nini  jɔɔsi </translation>
     </message>
 </context>
 <context>
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation>Selecionar o conteúdo a capturar:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation>Nome da Aplicação</translation>
+        <translation>application togo</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation>Restrição e aviso. </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation>Esta função foi desenvolvida para funcionar nas páginas web mais comuns.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation>Por favor respeite os direitos de autor para a criação de links ou a captura de conteúdos da web.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Download to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>ka fara sɛbɛnlamarayɔrɔ kan </translation>
     </message>
     <message>
         <source>Download to
@@ -2963,27 +2974,25 @@ current page</source>
     <message>
         <source>Add link to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>ka  fen fara sɛbɛnlamarayɔrɔ kan </translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>ka fen 
+
+fen faran gaféfura kan</translation>
     </message>
 </context>
 <context>
     <name>WBWebPage</name>
     <message>
-        <source>Download PDF Document: would you prefer to download the PDF file or add it to the current Sankore document?</source>
-        <translation>Descarregar o documento PDF: Prefere descarregar o ficheiro PDF ou adicioná-lo ao ficheiro Sankoré atual?</translation>
-    </message>
-    <message>
         <source>Download</source>
-        <translation>Descarregar</translation>
+        <translation>a bɔ ka yira</translation>
     </message>
     <message>
         <source>Add to Current Document</source>
-        <translation>Adicionar ao documento atual</translation>
+        <translation>ka faran gaféfura kan</translation>
     </message>
     <message>
         <source>PDF</source>
@@ -2991,49 +3000,55 @@ current page</source>
     </message>
     <message>
         <source>Error loading page: %1</source>
-        <translation>Erro ao carregar a página: %1</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download PDF Document: would you prefer to download the PDF file or add it to the current Sankore document?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WBWebView</name>
     <message>
         <source>Open in New Tab</source>
-        <translation>Abrir num Novo Separador</translation>
+        <translation>walan kura déyele</translation>
     </message>
 </context>
 <context>
     <name>YouTubePublishingDialog</name>
     <message>
         <source>Publish Podcast to YouTube</source>
-        <translation>Publicar Podcast no Youtube</translation>
+        <translation>podcast fara youtube kan</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Título</translation>
+        <translation>dantigɛlan</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Descrição</translation>
+        <translation>ɲɛfɔli</translation>
     </message>
     <message>
         <source>Keywords</source>
-        <translation>Palavras chave</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Uniboard</source>
-        <translation>Uniboard</translation>
+        <translation>uniboard</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation>Categoria</translation>
+        <translation>cogoya</translation>
     </message>
     <message>
         <source>YouTube Username</source>
-        <translation>Nome de utilizador do Youtube</translation>
+        <translation>
+you tube togo koro
+</translation>
     </message>
     <message>
         <source>YouTube Password</source>
-        <translation>Senha do Youtube</translation>
+        <translation>you tubetodo témé sira</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3041,61 +3056,57 @@ current page</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;By clicking &apos;Upload,&apos; you certify that you own all rights to the content or that you are authorized by the owner to make the content publicly available on YouTube, and that it otherwise complies with the YouTube Terms of Service located at &lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;Clicando em &apos;Enviar&apos;, você certifica que possui todos os direitos sobre o conteúdo ou que está autorizado pelo proprietário a tornar o conteúdo disponível publicamente no YouTube, e que esta de acordo com os Termos de Serviço do YouTube localizado em&lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation>Restaurar as credenciais ao reiniciar</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>brushProperties</name>
     <message>
+        <source>Opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>On Light Background</source>
-        <translation>Num fundo branco</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>On Dark Background</source>
-        <translation>Num fundo preto</translation>
-    </message>
-    <message>
-        <source>Opacity</source>
-        <translation>Opacidade</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Largura da linha</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation>Médio</translation>
+        <translation> mankannin</translation>
     </message>
     <message>
         <source>Strong</source>
-        <translation>Largo</translation>
+        <translation>gueleman</translation>
     </message>
     <message>
         <source>Fine</source>
-        <translation>Fino</translation>
+        <translation>ci</translation>
     </message>
     <message>
         <source>Pen is Pressure Sensitive</source>
-        <translation>Caneta sensível à pressão</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>capturePublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Caixa de Diálogo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Título</translation>
+        <translation>dantigɛlan</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -3103,22 +3114,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Author</source>
-        <translation>Autor</translation>
+        <translation>kotigi</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Descrição</translation>
+        <translation>ɲɛfɔli</translation>
     </message>
 </context>
 <context>
     <name>documentPublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Caixa de Diálogo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Título</translation>
+        <translation>dantigɛlan</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -3126,231 +3137,229 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Author</source>
-        <translation>Autor</translation>
+        <translation>kotigi</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Descrição</translation>
+        <translation>ɲɛfɔli</translation>
     </message>
     <message>
         <source>Attach Downloadable PDF Version</source>
-        <translation>Anexar um ficheiro PDF descarregável</translation>
+        <translation>PDF fen fara a kan</translation>
     </message>
     <message>
         <source>Attach Downloadable Uniboard File (UBZ)</source>
-        <translation>Anexar um ficheiro Uniboard (UBZ) descarregável</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Warning: This documents contains video, which will not be displayed properly on the Web</source>
-        <translation>Aviso: Este documento contém um vídeo, que não vai ser corretamente apresentado na Web</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>documents</name>
     <message>
         <source>Uniboard Documents</source>
-        <translation>Documentos Uniboard</translation>
+        <translation>Uniboard  sɛbɛn</translation>
     </message>
 </context>
 <context>
     <name>preferencesDialog</name>
     <message>
         <source>Preferences</source>
-        <translation>Preferências</translation>
-    </message>
-    <message utf8="true">
-        <source>version : …</source>
-        <translation>versão : ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Default Settings</source>
-        <translation>Configuração por defeito</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Fechar</translation>
+        <translation>a datougou</translation>
     </message>
     <message>
         <source>Display</source>
-        <translation>Exibir</translation>
-    </message>
-    <message>
-        <source>Internet</source>
-        <translation>Internet</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Page with External Browser</source>
-        <translation>Mostrar a página num Browser externo</translation>
-    </message>
-    <message>
-        <source>Home Page:</source>
-        <translation>Página de entrada:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Virtual Keyboard</source>
-        <translation>Teclado virtual</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Keyboard button size:</source>
-        <translation>Tamanho dos botões do teclado:</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation>Barra de ferramentas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Positioned at the Top (recommended for tablets)</source>
-        <translation>Posicionado no topo (recomendado para tablets)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Positioned at the Bottom (recommended for white boards)</source>
-        <translation>Posicionado em baixo (recomendado para quadros brancos)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Text Under Button</source>
-        <translation>Mostrar o texto por debaixo dos botões</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Stylus Palette</source>
-        <translation>Paleta</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
-    </message>
-    <message>
-        <source>Pen</source>
-        <translation>Caneta</translation>
-    </message>
-    <message>
-        <source>Marker</source>
-        <translation>Marcador</translation>
-    </message>
-    <message>
-        <source>Licences</source>
-        <translation>Licenças</translation>
-    </message>
-    <message>
-        <source>zlib</source>
-        <translation>zlib</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Sobre</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Software Update</source>
-        <translation>Atualização de Software</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Check software update at launch</source>
-        <translation>Verificar atualizações de software no arranque</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Internet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home Page:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pen</source>
+        <translation type="unfinished">sɛbɛni kelan</translation>
+    </message>
+    <message>
+        <source>Marker</source>
+        <translation type="unfinished">ci</translation>
+    </message>
+    <message utf8="true">
+        <source>version : …</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>zlib</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Rede</translation>
-    </message>
-    <message>
-        <source>Multi display</source>
-        <translation>Écrans Múltiplos</translation>
-    </message>
-    <message>
-        <source>Show internal web page content on secondary screen or projector</source>
-        <translation>Mostrar o conteúdo interno da página web num ecrã ou projetor secundário</translation>
-    </message>
-    <message>
-        <source>Swap control display and view display</source>
-        <translatorcomment>Trocar entre o ecrã de controlo e apresentação?</translatorcomment>
-        <translation>Trocar entre o ecrã de controlo e visualização</translation>
-    </message>
-    <message>
-        <source>Mode</source>
-        <translation>Modo</translation>
-    </message>
-    <message>
-        <source>Mode to start in:</source>
-        <translatorcomment>&quot;Mode to start in:&quot;</translatorcomment>
-        <translation>Modo iniciar:</translation>
-    </message>
-    <message>
-        <source>Board</source>
-        <translation>Quadro</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Área de Trabalho</translation>
-    </message>
-    <message>
-        <source>Proxy User:</source>
-        <translation>Proxy User:</translation>
-    </message>
-    <message>
-        <source>Pass:</source>
-        <translation>Senha:</translation>
-    </message>
-    <message>
-        <source>User:</source>
-        <translation>Utilizador:</translation>
-    </message>
-    <message>
-        <source>Pass: </source>
-        <translation>Senha:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
-        <translation>Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show internal web page content on secondary screen or projector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multi display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Swap control display and view display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode to start in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Board</source>
+        <translation type="unfinished">walanba</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy User:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pass:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pass: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>Créditos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation>Planète Sankoré ID para exportar ficheiro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation>Restaurar credenciais ao reiniciar  </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Start up tips</source>
-        <translation>Dicas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation>Mostrar dicas ao iniciar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Língua</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation>Selecione a Língua</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation>A nova Líingua irá ser carregada ao reiniciar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation>Fechar Open-Sankoré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>OpenSSL</source>
-        <translation>OpenSSL</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Xpdf</source>
-        <translation>xpdf</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>QuaZIP</source>
-        <translation>Quazip</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3368,23 +3377,23 @@ p, li { white-space: pre-wrap; }
     <name>trapFlashDialog</name>
     <message>
         <source>Trap flash</source>
-        <translation>Capturar flash</translation>
+        <translation type="unfinished">application togo</translation>
     </message>
     <message>
         <source>Select a flash to trap</source>
-        <translation>Selecionar o flash a capturar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>about:blank</source>
-        <translation>Acerca:em branco</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation>Nome da Aplicação</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Create Application</source>
-        <translation>Criar Aplicação</translation>
+        <translation>application togo</translation>
     </message>
 </context>
 </TS>

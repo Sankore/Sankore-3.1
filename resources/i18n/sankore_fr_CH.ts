@@ -2309,6 +2309,10 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
         <source>Portuguese</source>
         <translation>Portugais</translation>
     </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

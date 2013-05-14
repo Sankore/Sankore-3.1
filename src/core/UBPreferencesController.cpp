@@ -244,6 +244,7 @@ void UBPreferencesController::init()
     mIsoCodeAndLanguage.insert(tr("Default"),"NO_VALUE");
     mIsoCodeAndLanguage.insert(tr("Arabic"),"ar");
     mIsoCodeAndLanguage.insert(tr("Basque"),"eu");
+    mIsoCodeAndLanguage.insert(tr("Bambara"),"bm");
     mIsoCodeAndLanguage.insert(tr("Bulgarian"),"bg");
     mIsoCodeAndLanguage.insert(tr("Catalan"),"ca");
     mIsoCodeAndLanguage.insert(tr("Corsican"),"co");

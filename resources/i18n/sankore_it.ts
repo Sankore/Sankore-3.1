@@ -2298,6 +2298,10 @@ Vuoi ignorare gli errori per questo host?</translation>
         <source>Basque</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

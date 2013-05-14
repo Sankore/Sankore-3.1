@@ -2296,6 +2296,10 @@ Bu host için yukarıdaki hatalar yok sayılsın mı?</translation>
         <source>Basque</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
