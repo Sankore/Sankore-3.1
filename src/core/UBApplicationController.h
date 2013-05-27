@@ -142,6 +142,8 @@ class UBApplicationController : public QObject
         void checkUpdateRequest();
         void checkUpdateAtLaunch();
 
+        void setUserSceneIndex(int index);
+
     private slots:
         void updateRequestFinished(int id, bool error);
 
@@ -154,6 +156,7 @@ class UBApplicationController : public QObject
         UBBoardView *mControlView;
         UBBoardView *mDisplayView;
         QList<UBBoardView*> mPreviousViews;
+        int mUserSceneIndex;
 
         UBGraphicsScene *mBlackScene;
 
