@@ -938,7 +938,9 @@ void UBSceneThumbnailNavigPixmap::deletePage()
 
 void UBSceneThumbnailNavigPixmap::duplicatePage()
 {
-	UBApplication::boardController->duplicateScene(sceneIndex());
+	//UBApplication::boardController->duplicateScene(sceneIndex());
+    UBApplication::applicationController->setUserSceneIndex(sceneIndex());
+    UBApplication::boardController->setActiveDocumentScene(UBApplication::boardController->activeSceneIndex());
 }
 
 void UBSceneThumbnailNavigPixmap::moveUpPage()
