@@ -280,12 +280,14 @@ class UBSceneThumbnailNavigPixmap : public UBSceneThumbnailPixmap
         void duplicatePage();
         void moveUpPage();
         void moveDownPage();
+        void stickPageOnPreviousViews();
 
         bool bButtonsVisible;
         bool bCanDelete;
         bool bCanMoveUp;
         bool bCanMoveDown;
         bool bCanDuplicate;
+        bool bCanStickOnPreviousViews;
 };
 
 class UBThumbnailVideo : public UBThumbnailPixmap
