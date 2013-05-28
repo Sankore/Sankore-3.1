@@ -143,6 +143,7 @@ class UBApplicationController : public QObject
         void checkUpdateAtLaunch();
 
         void setUserSceneIndex(int index);
+        int userSceneIndex() const { return mUserSceneIndex; }
 
     private slots:
         void updateRequestFinished(int id, bool error);
