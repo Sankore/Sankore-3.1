@@ -156,13 +156,14 @@ class UBApplicationController : public QObject
         UBBoardView *mControlView;
         UBBoardView *mDisplayView;
         QList<UBBoardView*> mPreviousViews;
-        int mUserSceneIndex;
 
         UBGraphicsScene *mBlackScene;
 
         UBScreenMirror* mMirror;
 
         int mInitialHScroll, mInitialVScroll;
+
+        int mUserSceneIndex;
 
     private:
 
