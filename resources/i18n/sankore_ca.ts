@@ -844,7 +844,7 @@
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Adreça d&apos;interès</translation>
+        <translation>Adreça d&apos;interès</translation>
     </message>
 </context>
 <context>
@@ -1044,11 +1044,11 @@
     </message>
     <message>
         <source>On Click</source>
-        <translation type="unfinished"></translation>
+        <translation>En fer clic</translation>
     </message>
     <message>
         <source>Persistent</source>
-        <translation type="unfinished"></translation>
+        <translation>Persistent</translation>
     </message>
 </context>
 <context>
@@ -1248,11 +1248,11 @@
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation type="unfinished"></translation>
+        <translation>Aquesta acció és irreversible!</translation>
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation type="unfinished"></translation>
+        <translation>Els documents de mostra no són editables. Si voleu treballar amb ells, copieu-los a &quot;Els meus documents&quot;</translation>
     </message>
 </context>
 <context>
@@ -1383,11 +1383,11 @@ Si indiqueu un nom diferent es crearà un document nou.</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">S&apos;està copiant la pàgina %1/%2</translation>
+        <translation>S&apos;està copiant la pàgina %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 pàgina copiada</numerusform>
             <numerusform>%1 pàgines copiades</numerusform>
             <numerusform>%1 pàgines copiades</numerusform>
@@ -1696,7 +1696,7 @@ Si indiqueu un nom diferent es crearà un document nou.</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Afegeix</translation>
+        <translation>Afegeix</translation>
     </message>
 </context>
 <context>
@@ -2291,23 +2291,19 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
     </message>
     <message>
         <source>Corsican</source>
-        <translation type="unfinished"></translation>
+        <translation>Cors</translation>
     </message>
     <message>
         <source>Hindi</source>
-        <translation type="unfinished"></translation>
+        <translation>Hindi</translation>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Portuguès</translation>
     </message>
     <message>
         <source>Basque</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bambara</source>
-        <translation type="unfinished"></translation>
+        <translation>Basc</translation>
     </message>
 </context>
 <context>
@@ -2949,22 +2945,26 @@ Reinicieu l&apos;aplicació per accedir als documents actualitzats.</translation
     <message>
         <source>Download to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Descarrega-ho
+a la biblioteca</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Descarrega-ho a
+la pàgina actual</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix l&apos;enllaç
+a la biblioteca</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix l&apos;enllaç
+a la pàgina actual</translation>
     </message>
 </context>
 <context>
@@ -3355,7 +3355,14 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les llicències es mostren en anglès per respectar les traduccions oficialment aprovades.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
