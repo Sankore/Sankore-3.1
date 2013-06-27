@@ -26,9 +26,9 @@
 #include "core/UBApplicationController.h"
 #include "gui/UBMainWindow.h"
 
-    WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWidget *parent)
+WBTrapWebPageContentWindow::WBTrapWebPageContentWindow(QObject *controller, QWidget *parent)
     : QDialog(parent)
-      , mController(controller)
+    , mController(controller)
 {
     setModal(true);
     resize(800, 600);
@@ -128,7 +128,7 @@
     mSelectContentCombobox->setMaxVisibleItems(15);
     mSelectContentCombobox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-    mTrapContentPreview = new WBWebView();
+    mTrapContentPreview = new WBWebView(this);
     trapContentVLayout->addWidget(mTrapContentPreview);
 
     mTrapContentPreview->setMinimumSize(QSize(320, 240));
@@ -180,6 +180,7 @@ WBTrapWebPageContentWindow::~WBTrapWebPageContentWindow()
 
 void WBTrapWebPageContentWindow::setUrl(const QUrl &url)
 {
+    qDebug() << url.toString();
     mTrapContentPreview->setUrl(url);
 }
 
