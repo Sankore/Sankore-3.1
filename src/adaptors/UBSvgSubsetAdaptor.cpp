@@ -327,49 +327,23 @@ UBGraphicsScene* UBSvgSubsetAdaptor::loadScene(UBDocumentProxy* proxy, const QBy
 }
 
 
-QString UBSvgSubsetAdaptor::readTeacherGuideNode(int sceneIndex)
+QDomDocument UBSvgSubsetAdaptor::readTeacherGuideNode(int sceneIndex)
 {
-    QString result;
-
     QString fileName = UBApplication::boardController->selectedDocument()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.svg", sceneIndex);
     QFile file(fileName);
     file.open(QIODevice::ReadOnly);
     QByteArray fileByteArray=file.readAll();
+    QDomDocument domDocument;
+    domDocument.setContent(fileByteArray);
     file.close();
-    QXmlStreamReader mXmlReader(fileByteArray);
 
-    while (!mXmlReader.atEnd())
-    {
-        mXmlReader.readNext();
-        if (mXmlReader.isStartElement())
-        {
-             if (mXmlReader.name() == "teacherBar" || mXmlReader.name() == "teacherGuide"){
-                result.clear();
-                result += "<teacherGuide version=\"" + mXmlReader.attributes().value("version").toString() + "\">";
-                result += "\n";
-            }
-            else if (mXmlReader.name() == "media" || mXmlReader.name() == "link" || mXmlReader.name() == "title" || mXmlReader.name() == "comment" || mXmlReader.name() == "action")
-            {
-                result += "<" + mXmlReader.name().toString() + " ";
-                foreach(QXmlStreamAttribute attribute, mXmlReader.attributes())
-                    result += attribute.name().toString() + "=\"" + attribute.value().toString() + "\" ";
-                result += " />\n";
-            }
-            else
-            {
-                // NOOP
-            }
-        }
-        else if (mXmlReader.isEndElement() && (mXmlReader.name() == "teacherBar" || mXmlReader.name() == "teacherGuide")){
-            result += "</teacherGuide>";
+    QDomDocument result("teacherGuide");
+    QDomNodeList list = domDocument.childNodes().at(1).childNodes();
+    for(int i = 0 ; i < list.size(); i++){
+        if(list.at(i).nodeName() == "teacherGuide"){
+            result.appendChild(list.at(i).cloneNode());
         }
     }
-
-    if (mXmlReader.hasError())
-    {
-        qWarning() << "error parsing Sankore file " << mXmlReader.errorString();
-    }
-
     return result;
 }
 

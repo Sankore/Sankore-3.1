@@ -32,6 +32,7 @@ class QPushButton;
 class UBDocumentProxy;
 class UBGraphicsTextItem;
 class QScrollArea;
+class QDomDocument;
 
 #include "UBTeacherGuideWidgetsTools.h"
 
@@ -57,7 +58,7 @@ public:
     void cleanData();
     QVector<tUBGEElementNode*> getData();
 
-    void load(QString element);
+    void load(QDomDocument element);
     QVector<tIDataStorage*> save(int pageIndex);
 
     bool isModified();
@@ -147,7 +148,7 @@ public:
     bool isModified();
 
 signals:
-	void resized();
+    void resized();
 
 public slots:
     void onActiveSceneChanged();
@@ -245,8 +246,8 @@ private:
     bool mKeyboardActionFired;
 
 private slots:
-	void onTriggeredAction(bool checked);
-	void onTriggeredKeyboardAction(bool checked);
+    void onTriggeredAction(bool checked);
+    void onTriggeredKeyboardAction(bool checked);
 };
 
 #endif // UBTEACHERGUIDEWIDGET_H

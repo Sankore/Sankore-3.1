@@ -188,12 +188,9 @@ void UBTeacherGuideEditionWidget::onActiveDocumentChanged()
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
 }
 
-void UBTeacherGuideEditionWidget::load(QString element)
+void UBTeacherGuideEditionWidget::load(QDomDocument doc)
 {
     cleanData();
-    QDomDocument doc("TeacherGuide");
-    doc.setContent(element);
-
     for (QDomElement element = doc.documentElement().firstChildElement();
          !element.isNull(); element = element.nextSiblingElement()) {
         QString tagName = element.tagName();
