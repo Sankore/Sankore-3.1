@@ -843,7 +843,7 @@
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Favoriet</translation>
+        <translation>Favoriet</translation>
     </message>
 </context>
 <context>
@@ -892,7 +892,7 @@
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation>Inhoud wordt niet ondersteund in doelopmaak</translation>
+        <translation>Inhoud wordt niet ondersteund in doelopmaak.</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -1015,7 +1015,7 @@
     </message>
     <message>
         <source>Geometry:</source>
-        <translation>Geometrie</translation>
+        <translation>Geometrie:</translation>
     </message>
     <message>
         <source>Width: </source>
@@ -1043,11 +1043,11 @@
     </message>
     <message>
         <source>On Click</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Persistent</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1250,7 +1250,7 @@
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1384,13 +1384,13 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Kopie van pagina %1/%2</translation>
+        <translation>Kopie van pagina %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
-            <numerusform>%1 pagina gekopieerd</numerusform>
-            <numerusform>%1 pagina&apos;s gekopieerd</numerusform>
+        <translation>
+            <numerusform>%1 alle beelden</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1398,7 +1398,7 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
-        <translation>%1 (kopie)</translation>
+        <translation>%1 (Kopieren)</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
@@ -1407,8 +1407,8 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation>
-            <numerusform>%1 pagina gekopieerd</numerusform>
-            <numerusform>%1 pagina&apos;s gekopieerd</numerusform>
+            <numerusform>%1 paginas gekopieerd</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1416,7 +1416,7 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation>Downloaden mislukt</translation>
+        <translation>Downloaden mislukt.</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
@@ -1436,7 +1436,7 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation>de bewerking is geannuleerd via oproepen afbreken() of sluiten() voordat deze was beëindigd</translation>
+        <translation>de bewerking is geannuleerd via oproepen afbreken() of sluiten() voordat deze was beëindigd.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
@@ -1583,7 +1583,7 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation>Exporteren mislukt..</translation>
+        <translation>Exporteren mislukt...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
@@ -1599,7 +1599,7 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Exporteren mislukt</translation>
+        <translation>Exporteren mislukt.</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
@@ -1807,7 +1807,7 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation>Laden:</translation>
+        <translation>Laden </translation>
     </message>
 </context>
 <context>
@@ -2292,15 +2292,11 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Basque</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bambara</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2933,15 +2929,15 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation>Beperking en disclaimer</translation>
+        <translation>Restrictie en disclaimer. </translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation>De functie is ontwikkeld om te werken op de meest voorkomende webpagina&apos;s</translation>
+        <translation>De functie is ontwikkeld om te werken op de meest voorkomende webpagina&apos;s.</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation>Houd u aan copyrights voor het aanmaken van links of inhoud onderscheppen van internet</translation>
+        <translation>Houd u aan copyrights voor het aanmaken van links of inhoud onderscheppen van internet.</translation>
     </message>
     <message>
         <source>Download to

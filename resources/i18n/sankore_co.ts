@@ -844,12 +844,12 @@
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation>Aghjunghje à a pagina aperta</translation>
+        <translation>Aghjunghje a leia à a pagina aperta</translation>
     </message>
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Prasceltu/Preferitu</translation>
+        <translation>Preferitu</translation>
     </message>
 </context>
 <context>
@@ -1050,11 +1050,11 @@
     </message>
     <message>
         <source>On Click</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Persistent</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1253,11 +1253,11 @@
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation type="unfinished"></translation>
+        <translation>I ducumenti mudeddi ùn si ponu edità. Cupiate li in &quot;My documents/I mo ducumenti&quot; da pudè li sfruttà</translation>
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation type="unfinished"></translation>
+        <translation>St&apos;azzione hè irreversibile</translation>
     </message>
 </context>
 <context>
@@ -1390,11 +1390,11 @@ Un nuvellu nome ferà un ducumentu novu.</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Pagina in via di cupiera%1/%2</translation>
+        <translation>Pagina in via di cupiera%1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 pagine cupiate</numerusform>
             <numerusform>%1 pages copiées</numerusform>
         </translation>
@@ -1705,7 +1705,7 @@ Un nuvellu nome ferà un ducumentu novu.</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Aghjunghje
+        <translation>Aghjunghje
 </translation>
     </message>
 </context>
@@ -2311,15 +2311,11 @@ Vulete lascià corre sti sbaglii per stu servore ?</translation>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Portughese</translation>
     </message>
     <message>
         <source>Basque</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bambara</source>
-        <translation type="unfinished"></translation>
+        <translation>Bascu</translation>
     </message>
 </context>
 <context>
@@ -2971,22 +2967,22 @@ Please reboot the application to access the updated documents.</source>
     <message>
         <source>Download to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Caricà versu a bibbiuteca</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Caricà versu a pagina in via</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Aghjunghje a leia à a bibbiuteca</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Aghjunghje a leia à a pagina in via</translation>
     </message>
 </context>
 <context>
@@ -3381,7 +3377,7 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
