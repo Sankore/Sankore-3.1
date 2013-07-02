@@ -697,7 +697,7 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync)
         return retItem;
     }
 
-    UBItem *createdItem = downloadFinished(true, sourceUrl, srcFile, contentTypeHeader, pData, itemPos, QSize(itemSize.width(), itemSize.height()));
+    UBItem *createdItem = downloadFinished(true, sourceUrl, srcFile, contentTypeHeader, pData, itemPos, QSize(itemSize.width(), itemSize.height()), true, false, false, eItemActionType_Duplicate);
     if (createdItem)
     {
         createdItem->setSourceUrl(item->sourceUrl());
@@ -1134,7 +1134,7 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
     }
 }
 
-UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData)
+UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData, eItemActionType actionType)
 {
     Q_ASSERT(pSuccess);
 
@@ -1157,15 +1157,36 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
 
     if (!pSuccess)
     {
-        showMessage(tr("Downloading content %1 failed").arg(sourceUrl.toString()));
+        QString msg = "";
+        switch(actionType){
+            case eItemActionType_Duplicate:
+                msg = tr("Failed to duplicate %1").arg(sourceUrl.toString());
+            break;
+            default:
+                msg = tr("Downloading content %1 failed").arg(sourceUrl.toString());
+            break;
+        }
+
+        showMessage(msg);
         return NULL;
     }
 
 
     mActiveScene->deselectAllItems();
 
-    if (!sourceUrl.toString().startsWith("file://") && !sourceUrl.toString().startsWith("uniboardTool://"))
-        showMessage(tr("Download finished"));
+    if (!sourceUrl.toString().startsWith("file://") && !sourceUrl.toString().startsWith("uniboardTool://")){
+        QString msg = "";
+        switch(actionType){
+            case eItemActionType_Duplicate:
+                msg = tr("Duplication successful");
+            break;
+            default:
+                msg = tr("Download finished");
+            break;
+        }
+
+        showMessage(msg);
+    }
 
 
     if (UBMimeType::RasterImage == itemMimeType)
@@ -1198,7 +1219,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     }
     else if (UBMimeType::VectorImage == itemMimeType)
     {
-        qDebug() << "accepting mime type" << mimeType << "as vecto image";
+        qDebug() << "accepting mime type" << mimeType << "as vector image";
 
         UBGraphicsSvgItem* svgItem = mActiveScene->addSvg(sourceUrl, pPos, pData);
         svgItem->setSourceUrl(sourceUrl);
