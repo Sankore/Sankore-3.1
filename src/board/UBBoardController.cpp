@@ -552,7 +552,7 @@ void UBBoardController::duplicateScene()
     duplicateScene(mActiveSceneIndex);
 }
 
-UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync)
+UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync, eItemActionType actionType)
 {
     if (!item)
         return NULL;
@@ -697,7 +697,7 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync)
         return retItem;
     }
 
-    UBItem *createdItem = downloadFinished(true, sourceUrl, srcFile, contentTypeHeader, pData, itemPos, QSize(itemSize.width(), itemSize.height()), true, false, false, eItemActionType_Duplicate);
+    UBItem *createdItem = downloadFinished(true, sourceUrl, srcFile, contentTypeHeader, pData, itemPos, QSize(itemSize.width(), itemSize.height()), true, false, false, actionType);
     if (createdItem)
     {
         createdItem->setSourceUrl(item->sourceUrl());
@@ -1161,13 +1161,17 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         switch(actionType){
             case eItemActionType_Duplicate:
                 msg = tr("Failed to duplicate %1").arg(sourceUrl.toString());
+                // Note: It has been decided to not show this message for this mode
+            break;
+            case eItemActionType_Paste:
+                msg = tr("Failed to paste %1").arg(sourceUrl.toString());
+                // Note: It has been decided to not show this message for this mode
             break;
             default:
                 msg = tr("Downloading content %1 failed").arg(sourceUrl.toString());
+                 showMessage(msg);
             break;
         }
-
-        showMessage(msg);
         return NULL;
     }
 
@@ -1179,13 +1183,17 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         switch(actionType){
             case eItemActionType_Duplicate:
                 msg = tr("Duplication successful");
-            break;
+                // Note: It has been decided to not show this message for this mode
+                break;
+            case eItemActionType_Paste:
+                msg = tr("Paste successful");
+                // Note: It has been decided to not show this message for this mode
+                break;
             default:
                 msg = tr("Download finished");
-            break;
+                showMessage(msg);
+                break;
         }
-
-        showMessage(msg);
     }
 
 
@@ -2381,13 +2389,13 @@ void UBBoardController::paste()
 {
     QClipboard *clipboard = QApplication::clipboard();
     QPointF pos(0, 0);
-    processMimeData(clipboard->mimeData(), pos);
+    processMimeData(clipboard->mimeData(), pos, eItemActionType_Paste);
 
     selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
 }
 
 
-void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPointF& pPos)
+void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPointF& pPos, eItemActionType actionType)
 {
     if (pMimeData->hasFormat(UBApplication::mimeTypeUniboardPage))
     {
@@ -2420,7 +2428,7 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
             {
                 QGraphicsItem* pItem = dynamic_cast<QGraphicsItem*>(item);
                 if(NULL != pItem){
-                    duplicateItem(item);
+                    duplicateItem(item, true, actionType);
                 }
             }
 

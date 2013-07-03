@@ -55,7 +55,7 @@ class UBDocumentNavigator;
 typedef enum{
     eItemActionType_Default,
     eItemActionType_Duplicate,
-    eItemActionType_CopyPaste
+    eItemActionType_Paste
 }eItemActionType;
 
 class UBBoardController : public UBDocumentContainer
@@ -175,7 +175,7 @@ class UBBoardController : public UBDocumentContainer
 
         void moveSceneToIndex(int source, int target);
         void duplicateScene(int index);
-        UBGraphicsItem *duplicateItem(UBItem *item, bool bAsync = true);
+        UBGraphicsItem *duplicateItem(UBItem *item, bool bAsync = true, eItemActionType actionType = eItemActionType_Default);
         void deleteScene(int index);
         void regenerateThumbnails();
 
@@ -237,7 +237,7 @@ class UBBoardController : public UBDocumentContainer
         void cut();
         void copy();
         void paste();
-        void processMimeData(const QMimeData* pMimeData, const QPointF& pPos);
+        void processMimeData(const QMimeData* pMimeData, const QPointF& pPos, eItemActionType actionType = eItemActionType_Default);
         void moveGraphicsWidgetToControlView(UBGraphicsWidgetItem* graphicWidget);
         void moveToolWidgetToScene(UBToolWidget* toolWidget);
         void addItem();
