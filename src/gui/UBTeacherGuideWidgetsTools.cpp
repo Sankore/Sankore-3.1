@@ -621,10 +621,13 @@ void UBTGMediaWidget::parseMimeData(const QMimeData* pMimeData)
     else
         qDebug() << "No mime data present";
 
-    if(!mMediaPath.contains("smb:/"))
-        createWorkWidget();
-    else
+    qDebug() << mMediaPath;
+
+	if(mMediaPath.startsWith("file:smb://") || //linux
+		!mMediaPath.startsWith("file:///") ) //windows local file -> file:///%A_DRIVER%:/ vs windows smb share file -> file://%SAMBA_SHARE_NAME%
         UBApplication::mainWindow->information(tr("Drag and drop"),tr("The currect action is not supported. The teacher bar is design to work only with media stored locally."));
+    else
+        createWorkWidget();
 }
 
 void UBTGMediaWidget::dropEvent(QDropEvent* event)
