@@ -611,7 +611,7 @@ void UBTGMediaWidget::parseMimeData(const QMimeData* pMimeData)
         if(pMimeData->hasText()){
             mMediaPath = QUrl::fromLocalFile(pMimeData->text()).toString();
         }
-        else if(pMimeData->hasUrls()){
+        else if(pMimeData->hasUrls() && pMimeData->urls().count()){ // on windows found hasUrls = true and count = 0
             mMediaPath = pMimeData->urls().at(0).toString();
         }
         else if(pMimeData->hasImage()){
@@ -621,8 +621,8 @@ void UBTGMediaWidget::parseMimeData(const QMimeData* pMimeData)
     else
         qDebug() << "No mime data present";
 
-	if(mMediaPath.startsWith("file:smb://") || //linux
-		!mMediaPath.startsWith("file:///") ) //windows local file -> file:///%A_DRIVER%:/ vs windows smb share file -> file://%SAMBA_SHARE_NAME%
+    if(mMediaPath.startsWith("file:smb://") || //linux
+        !mMediaPath.startsWith("file:///") ) //windows local file -> file:///%A_DRIVER%:/ vs windows smb share file -> file://%SAMBA_SHARE_NAME%
         UBApplication::mainWindow->information(tr("Drag and drop"),tr("The currect action is not supported. The teacher bar is design to work only with media stored locally."));
     else
         createWorkWidget();
