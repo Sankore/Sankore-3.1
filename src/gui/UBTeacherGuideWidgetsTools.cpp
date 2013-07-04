@@ -38,6 +38,8 @@
 
 #include "UBTeacherGuideWidgetsTools.h"
 
+#include "gui/UBMainWindow.h"
+
 #include "core/UBPersistenceManager.h"
 #include "core/UBApplication.h"
 
@@ -619,7 +621,10 @@ void UBTGMediaWidget::parseMimeData(const QMimeData* pMimeData)
     else
         qDebug() << "No mime data present";
 
-    createWorkWidget();
+    if(!mMediaPath.contains("smb:/"))
+        createWorkWidget();
+    else
+        UBApplication::mainWindow->information(tr("Drag and drop"),tr("The currect action is not supported. The teacher bar is design to work only with media stored locally."));
 }
 
 void UBTGMediaWidget::dropEvent(QDropEvent* event)
