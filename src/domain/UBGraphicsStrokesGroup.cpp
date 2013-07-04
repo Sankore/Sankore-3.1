@@ -177,6 +177,15 @@ void UBGraphicsStrokesGroup::copyItemParameters(UBItem *copy) const
         cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
+        UBGraphicsStrokesGroup* cpGroup = dynamic_cast<UBGraphicsStrokesGroup*>(copy);
+        if(Delegate()->action()){
+            if(Delegate()->action()->linkType() == eLinkToAudio){
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(Delegate()->action()->path());
+                cpGroup->Delegate()->setAction(action);
+            }
+            else
+                cpGroup->Delegate()->setAction(Delegate()->action());
+        }
     }
 }
 
