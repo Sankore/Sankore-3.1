@@ -67,6 +67,8 @@
 #include "board/UBFeaturesController.h"
 #include "domain/UBGraphicsStrokesGroup.h"
 
+#include "customWidgets/UBGraphicsItemAction.h"
+
 #include "gui/UBFeaturesWidget.h"
 
 #include "tools/UBToolsManager.h"
@@ -2003,7 +2005,7 @@ void UBBoardController::persistCurrentScene(UBDocumentProxy *pProxy)
             && selectedDocument() && mActiveScene && mActiveSceneIndex != mDeletingSceneIndex
             && (mActiveSceneIndex >= 0) && mActiveSceneIndex != mMovingSceneIndex
             && (mActiveScene->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified())))
-    {        
+    {
         UBPersistenceManager::persistenceManager()->persistDocumentScene(pProxy ? pProxy : selectedDocument(), mActiveScene, mActiveSceneIndex);
         updatePage(mActiveSceneIndex);
     }
@@ -2359,7 +2361,6 @@ void UBBoardController::cut()
     //---------------------------------------------------------//
 }
 
-
 void UBBoardController::copy()
 {
     QList<UBItem*> selected;
@@ -2367,7 +2368,6 @@ void UBBoardController::copy()
     foreach(QGraphicsItem* gi, mActiveScene->selectedItems())
     {
         UBItem* ubItem = dynamic_cast<UBItem*>(gi);
-
         if (ubItem && !mActiveScene->tools().contains(gi))
             selected << ubItem;
     }

@@ -180,7 +180,8 @@ void UBGraphicsStrokesGroup::copyItemParameters(UBItem *copy) const
         UBGraphicsStrokesGroup* cpGroup = dynamic_cast<UBGraphicsStrokesGroup*>(copy);
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(Delegate()->action()->path());
+                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
                 cpGroup->Delegate()->setAction(action);
             }
             else

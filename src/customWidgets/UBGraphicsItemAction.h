@@ -76,12 +76,14 @@ public:
     void actionRemoved();
     QString path() {return mAudioPath;}
     void setPath(QString audioPath);
+    QString fullPath();
 
 private:
     QString mAudioPath;
     Phonon::MediaObject *mMediaObject;
     Phonon::AudioOutput *mAudioOutput;
     bool mIsLoading;
+    QString mFullPath;
 };
 
 

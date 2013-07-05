@@ -57,14 +57,21 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
         QString destFile = destDir + "/" + QUuid::createUuid().toString() + "." + extension;
         if(!QDir(destDir).exists())
             QDir(UBApplication::boardController->selectedDocument()->persistencePath()).mkdir(destDir);
-        QFile(audioFile).copy(destFile);
+        //explanation : the audioFile could be relative. The method copy will return false so a second try is done adding
+        // the document file path
+        if(!QFile(audioFile).copy(destFile))
+            QFile(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + audioFile).copy(destFile);
         mAudioPath = destFile;
+        mFullPath = destFile;
     }
     else{
         //another hack
-        if(UBApplication::documentController && UBApplication::documentController->selectedDocument())
+        if(UBApplication::documentController && UBApplication::documentController->selectedDocument()){
             mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
-        else return;
+            mFullPath = mAudioPath;
+        }
+        else
+            return;
     }
     mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
     mMediaObject = new Phonon::MediaObject(this);
@@ -85,10 +92,16 @@ void UBGraphicsItemPlayAudioAction::setPath(QString audioPath)
 {
     Q_ASSERT(audioPath.length() > 0);
     mAudioPath = audioPath;
+    mFullPath = mAudioPath;
     mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
     mMediaObject = new Phonon::MediaObject(this);
     Phonon::createPath(mMediaObject, mAudioOutput);
     mMediaObject->setCurrentSource(Phonon::MediaSource(mAudioPath));
+}
+
+QString UBGraphicsItemPlayAudioAction::fullPath()
+{
+    return mFullPath;
 }
 
 UBGraphicsItemPlayAudioAction::~UBGraphicsItemPlayAudioAction()
