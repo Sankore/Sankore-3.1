@@ -372,6 +372,7 @@ public slots:
         void setDocumentUpdated();
         void createEraiser();
         void createPointer();
+        QString cleanHtml(const QString& _html);
 
         QGraphicsEllipseItem* mEraser;
         QGraphicsEllipseItem* mPointer;

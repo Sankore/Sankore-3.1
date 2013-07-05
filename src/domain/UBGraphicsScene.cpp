@@ -36,6 +36,7 @@
 #include "core/UBApplicationController.h"
 #include "core/UBDisplayManager.h"
 #include "core/UBPersistenceManager.h"
+#include "core/UBTextTools.h"
 
 #include "gui/UBMagnifer.h"
 #include "gui/UBMainWindow.h"
@@ -1609,8 +1610,9 @@ UBGraphicsTextItem* UBGraphicsScene::addTextWithFont(const QString& pString, con
 UBGraphicsTextItem *UBGraphicsScene::addTextHtml(const QString &pString, const QPointF& pTopLeft)
 {
     UBGraphicsTextItem *textItem = new UBGraphicsTextItem();
+
     textItem->setPlainText("");
-    textItem->setHtml(pString);
+    textItem->setHtml(UBTextTools::cleanHtml(pString));
 
     addItem(textItem);
     textItem->show();
