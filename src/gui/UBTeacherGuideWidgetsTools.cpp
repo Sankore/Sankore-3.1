@@ -40,6 +40,7 @@
 
 #include "core/UBPersistenceManager.h"
 #include "core/UBApplication.h"
+#include "core/UBTextTools.h"
 
 #include "board/UBBoardController.h"
 
@@ -273,7 +274,7 @@ void UBTGAdaptableText::insertFromMimeData(const QMimeData *source)
 
     if (source->hasHtml())
     {
-        textDoc.setHtml(source->html());
+        textDoc.setHtml(UBTextTools::cleanHtml(source->html()));
         plainText += textDoc.toPlainText();
     }
     if (source->hasText())
