@@ -281,16 +281,12 @@ UBDocumentTreeModel::UBDocumentTreeModel(QObject *parent) :
 
     UBDocumentTreeNode *myDocsNode = new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, UBPersistenceManager::myDocumentsName, tr("My documents"));
     rootNode->addChild(myDocsNode);
-//    mMyDocuments = createIndex(0, 0, myDocsNode);
     UBDocumentTreeNode *modelsNode = new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, UBPersistenceManager::modelsName, tr("Models"));
     rootNode->addChild(modelsNode);
-//    mModels = createIndex(1, 0, modelsNode);
     UBDocumentTreeNode *trashNode = new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, trashName, tr("Trash"));
     rootNode->addChild(trashNode);
-//    mTrash = createIndex(2, 0, trashNode);
     UBDocumentTreeNode *untitledDocumentsNode = new UBDocumentTreeNode(UBDocumentTreeNode::Catalog, UBPersistenceManager::untitledDocumentsName, tr("Untitled documents"));
     myDocsNode->addChild(untitledDocumentsNode);
-//    mUntitledDocuments = createIndex(0, 0, untitledDocumentsNode);
 
     setRootNode(rootNode);
 
@@ -711,7 +707,6 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
     }
 
     addNode(clonedNodeSource, newParent);
-//    nodeParent->addChild(clonedNodeSource);
     endInsertRows();
 
     QPersistentModelIndex newParentIndex = createIndex(rowCount(newParent), 0, clonedNodeSource);
@@ -765,7 +760,6 @@ void UBDocumentTreeModel::setCurrentDocument(UBDocumentProxy *pDocument)
 
 QModelIndex UBDocumentTreeModel::indexForProxy(UBDocumentProxy *pSearch) const
 {
-//    qDebug() << "looking for proxy" << pSearch;
     UBDocumentTreeNode *proxy = findProxy(pSearch, mRootNode);
     if (!proxy) {
         return QModelIndex();
@@ -1051,7 +1045,6 @@ void UBDocumentTreeModel::sort(int column, Qt::SortOrder order)
     Q_UNUSED(order)
     Q_UNUSED(column)
 
-//  QModelIndex parentIndex = index(0, column, QModelIndex());
     sortChilds(mRoot);
 }
 
@@ -1115,12 +1108,6 @@ UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent)
 {
     setObjectName("UBDocumentTreeView");
     setRootIsDecorated(true);
-
-//    QScrollBar *hScroller = horizontalScrollBar();
-//    if (hScroller)
-//    {
-//        connect(hScroller, SIGNAL(rangeChanged(int, int)), this, SLOT(hSliderRangeChanged(int, int)));
-//    }
 
     connect(verticalScrollBar(), SIGNAL(rangeChanged(int,int)), this, SLOT(adjustSize()));
     connect(this, SIGNAL(collapsed(const QModelIndex&)), this, SLOT(adjustSize()));
@@ -1225,20 +1212,6 @@ void UBDocumentTreeView::paintEvent(QPaintEvent *event)
 
 void UBDocumentTreeView::rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end)
 {
-//    //managing current index inside the application. There is no common solution for that
-//    Q_UNUSED(parent)
-//    Q_UNUSED(start)
-//    Q_UNUSED(end)
-
-//    for (int i = start; i <= end; i++) {
-//        if (currentIndex() == model()->index(i, 0, parent)) {
-//            qDebug() << "catched";
-//        }
-//    }
-
-////    setState(CollapsingState);
-//    updateGeometries();
-
     QTreeView::rowsAboutToBeRemoved(parent, start, end);
 }
 
@@ -1384,7 +1357,6 @@ UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
 
     setupViews();
     setupToolbar();
-//    this->selectDocument(UBApplication::boardController->selectedDocument());
     connect(this, SIGNAL(exportDone()), mMainWindow, SLOT(onExportDone()));
     connect(this, SIGNAL(documentThumbnailsUpdated(UBDocumentContainer*)), this, SLOT(refreshDocumentThumbnailsView(UBDocumentContainer*)));
 }
@@ -1691,13 +1663,8 @@ void UBDocumentController::setupViews()
         mDocumentUI->documentTreeWidget->setIndentation(18); // 1.5 * /resources/style/treeview-branch-closed.png width
         mDocumentUI->documentTreeWidget->setDragDropMode(QAbstractItemView::InternalMove);
 
-//        connect(mDocumentUI->documentTreeWidget, SIGNAL(itemSelectionChanged()), this, SLOT(itemSelectionChanged()));
-//        connect(mDocumentUI->documentTreeWidget, SIGNAL(itemChanged(QTreeWidgetItem *, int)), this, SLOT(itemChanged(QTreeWidgetItem *, int)));
-//        connect(mDocumentUI->documentTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(itemClicked(QTreeWidgetItem *, int)));
-
         mDocumentUI->documentTreeView->setModel(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel);
         mDocumentUI->documentTreeView->setItemDelegate(new UBDocumentTreeItemDelegate(this));
-//        mDocumentUI->documentTreeView->setDragDropMode(QAbstractItemView::InternalMove);
         mDocumentUI->documentTreeView->setDragEnabled(true);
         mDocumentUI->documentTreeView->setAcceptDrops(true);
         mDocumentUI->documentTreeView->viewport()->setAcceptDrops(true);
@@ -1716,7 +1683,6 @@ void UBDocumentController::setupViews()
             mDocumentUI->documentTreeView->setColumnWidth(0, headerSizeHint);
 
         connect(mDocumentUI->documentTreeView->itemDelegate(), SIGNAL(closeEditor(QWidget*,QAbstractItemDelegate::EndEditHint) ), mDocumentUI->documentTreeView, SLOT(adjustSize()));
-//        connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this, SLOT(TreeViewSelectionChanged(QModelIndex,QModelIndex)));
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(TreeViewSelectionChanged(QItemSelection,QItemSelection)));
         connect(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel, SIGNAL(indexChanged(QModelIndex,QModelIndex))
                 ,mDocumentUI->documentTreeView, SLOT(onModelIndexChanged(QModelIndex,QModelIndex)));
@@ -1725,14 +1691,10 @@ void UBDocumentController::setupViews()
 
         connect(mDocumentUI->thumbnailWidget, SIGNAL(sceneDropped(UBDocumentProxy*, int, int)), this, SLOT(moveSceneToIndex ( UBDocumentProxy*, int, int)));
         connect(mDocumentUI->thumbnailWidget, SIGNAL(resized()), this, SLOT(thumbnailViewResized()));
-//        connect(mDocumentUI->thumbnailWidget, SIGNAL(mouseDoubleClick(QGraphicsItem*, int)), this, SLOT(pageDoubleClicked(QGraphicsItem*, int)));
         connect(mDocumentUI->thumbnailWidget, SIGNAL(mouseDoubleClick(QGraphicsItem*,int)), this, SLOT(thumbnailPageDoubleClicked(QGraphicsItem*,int)));
         connect(mDocumentUI->thumbnailWidget, SIGNAL(mouseClick(QGraphicsItem*, int)), this, SLOT(pageClicked(QGraphicsItem*, int)));
 
         connect(mDocumentUI->thumbnailWidget->scene(), SIGNAL(selectionChanged()), this, SLOT(pageSelectionChanged()));
-
-//        connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentCreated(UBDocumentProxy*)), this, SLOT(addDocumentInTree(UBDocumentProxy*)));
-//        connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentMetadataChanged(UBDocumentProxy*)), this, SLOT(updateDocumentInTree(UBDocumentProxy*)));
 
         connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentSceneCreated(UBDocumentProxy*, int)), this, SLOT(documentSceneChanged(UBDocumentProxy*, int)));
         connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentSceneWillBeDeleted(UBDocumentProxy*, int)), this, SLOT(documentSceneChanged(UBDocumentProxy*, int)));
@@ -1787,7 +1749,6 @@ void UBDocumentController::show()
 {
     selectDocument(mBoardController->selectedDocument());
 
-//    selectionChanged();
     updateActions();
 
     if(!mToolsPalette)
@@ -1875,20 +1836,9 @@ void UBDocumentController::duplicateSelectedItem()
 
         Q_ASSERT(!docModel->isConstant(selectedIndex) && !docModel->inTrash(selectedIndex));
 
-        //        UBDocumentProxy* source = selectedDocumentProxy();
-        //        UBDocumentGroupTreeItem* group = selectedDocumentGroupTreeItem();
-
-//        QString docName = docModel->proxyData(selectedIndex)->metaData(UBSettings::documentName).toString();
-
         showMessage(tr("Duplicating Document %1").arg(""), true);
 
         docModel->copyIndexToNewParent(selectedIndex, selectedIndex.parent(), UBDocumentTreeModel::aContentCopy);
-
-        //            UBDocumentProxy* duplicatedDoc = UBPersistenceManager::persistenceManager()->duplicateDocument(source);
-        //            duplicatedDoc->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-        //            UBMetadataDcSubsetAdaptor::persist(duplicatedDoc);
-
-        //            selectDocument(duplicatedDoc, false);
 
         showMessage(tr("Document %1 copied").arg(""), false);
     }
@@ -2085,117 +2035,6 @@ void UBDocumentController::deleteSelectedItem()
          emptyFolder(currentIndex, CompleteDelete); // Empty trahs folder
         break;
     }
-
-
-
-//    if (mSelectionType == Page)
-//    {
-//        QList<QGraphicsItem*> selectedItems = mDocumentUI->thumbnailWidget->selectedItems();
-//        deletePages(selectedItems);
-
-//    } else {
-
-//        UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
-//        QModelIndex currentIndex = firstSelectedTreeIndex();
-
-//        if (docModel->isConstant(currentIndex)) { //Constant folder
-//            if (currentIndex == docModel->myDocumentsIndex()) { //Emptying "My documents". Keeping Untitled Documents
-//                int startInd = 0;
-//                while (docModel->rowCount(currentIndex)) {
-//                    QModelIndex testSubINdecurrentIndex = docModel->index(startInd, 0, currentIndex);
-//                    if (testSubINdecurrentIndex == docModel->untitledDocumentsIndex()) {
-//                        emptyFolder(testSubINdecurrentIndex, MoveToTrash);
-//                        startInd++;
-//                        continue;
-//                    }
-//                    if (!testSubINdecurrentIndex.isValid()) {
-//                        break;
-//                    }
-//                    docModel->copyIndexToNewParent(testSubINdecurrentIndex, docModel->trashIndex());
-//                    docModel->removeRow(startInd, testSubINdecurrentIndex.parent());
-//                }
-//            } else {
-//                emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
-//            }
-
-//        } else if (currentIndex == docModel->trashIndex()) { //Trash folder
-//            emptyFolder(currentIndex, CompleteDelete); // Empty trahs folder
-
-//        } else if (!docModel->inTrash(currentIndex)) { //Within trash
-//            docModel->copyIndexToNewParent(currentIndex, docModel->trashIndex());
-//            docModel->removeRow(currentIndex.row(), currentIndex.parent());
-
-//        } else {
-//            deleteIndexAndAssociatedData(currentIndex);
-//        }
-
-
-//        if (docModel->isDocument(currentIndex))
-//        {
-//            UBDocumentProxy *docProxy = docModel->proxyData(currentIndex);
-//            if (!docProxy) {
-//                return;
-//            }
-
-//            if( UBApplication::mainWindow->yesNoQuestion(tr("Remove Document")
-//                                                         , tr("Are you sure you want to remove the document '%1'?")
-//                                                         .arg(docProxy->metaData(UBSettings::documentName).toString()))) {
-//                if (!docModel->inTrash(currentIndex)) {
-
-////                    moveDocumentToTrash(groupTi, proxyTi);
-
-//                } else {
-//                    // We have to physically delete document
-//                    proxyTi->parent()->removeChild(proxyTi);
-//                    UBPersistenceManager::persistenceManager()->deleteDocument(proxyTi->proxy());
-
-//                    if (mTrashTi->childCount()==0)
-//                        selectDocument(NULL);
-//                    else
-//                        selectDocument(((UBDocumentProxyTreeItem*)mTrashTi->child(0))->proxy());
-//                    reloadThumbnails();
-//                }
-//            }
-
-//        } else if (groupTi) {
-
-//            if (groupTi == mTrashTi) {
-//                if(UBApplication::mainWindow->yesNoQuestion(tr("Empty Trash"), tr("Are you sure you want to empty trash?"))) {
-//                    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-//                    QList<UBDocumentProxyTreeItem*> toBeDeleted;
-
-//                    for (int i = 0; i < groupTi->childCount(); i++) {
-//                        UBDocumentProxyTreeItem* proxyTi = dynamic_cast<UBDocumentProxyTreeItem*>(groupTi->child(i));
-//                        if (proxyTi && proxyTi->proxy())
-//                            toBeDeleted << proxyTi;
-//                    }
-
-//                    showMessage(tr("Emptying trash"));
-
-//                    for (int i = 0; i < toBeDeleted.count(); i++) {
-//                        UBDocumentProxyTreeItem* proxyTi = toBeDeleted.at(i);
-
-//                        proxyTi->parent()->removeChild(proxyTi);
-//                        UBPersistenceManager::persistenceManager()->deleteDocument(proxyTi->proxy());
-//                    }
-
-//                    showMessage(tr("Emptied trash"));
-
-//                    QApplication::restoreOverrideCursor();
-//                    mMainWindow->actionDelete->setEnabled(false);
-//                }
-
-//            } else {
-//                if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Folder")
-//                                                            , tr("Are you sure you want to remove the folder '%1' and all its content?")
-//                                                            .arg(groupTi->groupName()))) {
-//                    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-//                    moveFolderToTrash(groupTi);
-//                    QApplication::restoreOverrideCursor();
-//                }
-//            }
-//        }
-//    }
 }
 
 void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pDeletionType)
@@ -2242,18 +2081,11 @@ void UBDocumentController::exportDocument()
     QVariant actionData = currentExportAction->data();
     UBExportAdaptor* selectedExportAdaptor = UBDocumentManager::documentManager()->supportedExportAdaptors()[actionData.toInt()];
 
-//    UBDocumentProxy* proxy = selectedDocumentProxy();
     UBDocumentProxy* proxy = firstSelectedTreeProxy();
 
-//    if (proxy)
-//    {
-        selectedExportAdaptor->persist(proxy);
-        emit exportDone();
-//    }
-//    else
-//    {
-//       showMessage(tr("No document selected!"));
-//    }
+    selectedExportAdaptor->persist(proxy);
+    emit exportDone();
+
 }
 
 void UBDocumentController::exportDocumentSet()
@@ -2313,7 +2145,6 @@ void UBDocumentController::itemChanged(QTreeWidgetItem * item, int column)
 
 void UBDocumentController::importFile()
 {
-//    UBDocumentGroupTreeItem* group = selectedDocumentGroupTreeItem();
     UBDocumentManager *docManager = UBDocumentManager::documentManager();
 
     QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
@@ -2338,8 +2169,7 @@ void UBDocumentController::importFile()
 
             QString groupName = UBPersistenceManager::myDocumentsName;
 
-//            if (groupName == mDefaultDocumentGroupName || fileInfo.suffix() != "ubz")
-                groupName = "";
+            groupName = "";
 
             showMessage(tr("Importing file %1...").arg(fileInfo.baseName()), true);
 
@@ -2659,8 +2489,6 @@ void UBDocumentController::pageClicked(QGraphicsItem* item, int index)
 {
     Q_UNUSED(item);
     Q_UNUSED(index);
-
-//    selectionChanged();
 
     pageSelectionChanged();
 }
@@ -2991,9 +2819,6 @@ void UBDocumentController::focusChanged(QWidget *old, QWidget *current)
             mSelectionType = None;
         }
     }
-
-//    selectionChanged();
-//    updateActions();
 }
 
 void UBDocumentController::updateActions()
@@ -3145,29 +2970,8 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
 
         if(UBApplication::mainWindow->yesNoQuestion(tr("Remove Page"),tr("This is an irreversible action!") +"\n\n" + tr("Are you sure you want to remove %n page(s) from the selected document '%1'?", "", sceneIndexes.count()).arg(proxy->metaData(UBSettings::documentName).toString())))
         {
-//            UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
-//            if (docModel->proxyData(docModel->currentIndex()) == proxy) {
-
-//                int offset = 0;
-//                foreach(int index, sceneIndexes)
-//                {
-////                    if (UBPersistenceManager::persistenceManager()->isSceneInCached(proxy, index)) {
-//                        mBoardController->regenerateThumbnails();
-////                    }
-////                    mBoardController->deletePages(sceneIndexes);
-
-//                    deleteThumbPage(index - offset);
-//                    offset++;
-//                }
-
-//                emit UBDocumentContainer::documentThumbnailsUpdated(this);
-
-//            } else {
-                UBDocumentContainer::deletePages(sceneIndexes);
-                mBoardController->regenerateThumbnails();
-
-//            }
-
+            UBDocumentContainer::deletePages(sceneIndexes);
+            mBoardController->regenerateThumbnails();
 
             proxy->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
             UBMetadataDcSubsetAdaptor::persist(proxy);
@@ -3222,7 +3026,6 @@ bool UBDocumentController::pageCanBeDeleted(int page)
 void UBDocumentController::setDocument(UBDocumentProxy *document, bool forceReload)
 {
     UBDocumentContainer::setDocument(document, forceReload);
-//    UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->setCurrentDocument(document);
 }
 
 QModelIndex UBDocumentController::firstSelectedTreeIndex()
