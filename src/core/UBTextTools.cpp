@@ -3,13 +3,20 @@
 
 QString UBTextTools::cleanHtmlCData(const QString &_html){
 
+    qDebug() << _html;
+
     QString clean = "";
-    QByteArray content = _html.toAscii();
+    QByteArray content = _html.toUtf8();
     const char* rawDatas = content.constData();
 
     for(int i=0; i<content.size(); i++){
         if(0x0 != (void*)rawDatas[i]){
             clean += rawDatas[i];
+        }
+        else{
+            qDebug() << "found strange char " << i;
+            qDebug() << QString(rawDatas[i] + rawDatas[i+1]);
+            qDebug() << QString(rawDatas[i-1] + rawDatas[i]);
         }
     }
 
