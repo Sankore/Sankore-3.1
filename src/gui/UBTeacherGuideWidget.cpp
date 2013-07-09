@@ -505,6 +505,7 @@ void UBTeacherGuidePresentationWidget::onSliderMoved(int size)
 bool UBTeacherGuidePresentationWidget::eventFilter(QObject* object, QEvent* event)
 {
     Q_UNUSED(object);
+
     if (event->type() == QEvent::HoverEnter || event->type() == QEvent::HoverMove || event->type() == QEvent::HoverLeave)
         return true;
     return false;
@@ -605,6 +606,19 @@ void UBTeacherGuidePresentationWidget::showData( QVector<tUBGEElementNode*> data
             mpRootWidgetItem->addChild(newWidgetItem);
         }
     }
+
+#ifdef Q_WS_MAC
+    //HACK: on mac only this hack allows to correctly diplay a teacher bar containing only actions if those
+    // actions need more that the vertical available space.
+    // In this particular case if mpMediaSwitchItem isn't added to the widget tree then the vertical scrollbar
+    // doesn't send any signal when moved.
+
+    if(!mpMediaSwitchItem){
+        mpMediaSwitchItem = new QTreeWidgetItem(mpRootWidgetItem);
+        mpMediaSwitchItem->setDisabled(true);
+        mpRootWidgetItem->addChild(mpMediaSwitchItem);
+    }
+#endif
 }
 
 void UBTeacherGuidePresentationWidget::onAddItemClicked(QTreeWidgetItem* widget, int column)
