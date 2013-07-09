@@ -167,6 +167,7 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mLockAction(0)
     , mShowOnDisplayAction(0)
     , mGotoContentSourceAction(0)
+    , mRemoveAnAction(0)
     , mFrame(0)
     , mFrameWidth(UBSettings::settings()->objectFrameWidth)
     , mAntiScaleRatio(1.0)
