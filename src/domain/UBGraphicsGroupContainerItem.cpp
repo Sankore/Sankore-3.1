@@ -245,7 +245,8 @@ void UBGraphicsGroupContainerItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(Delegate()->action()->path());
+                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
                 cp->Delegate()->setAction(action);
             }
             else

@@ -103,8 +103,12 @@ void UBDocumentContainer::deleteThumbPage(int index)
 
 void UBDocumentContainer::updateThumbPage(int index)
 {
-    mDocumentThumbs[index] = UBThumbnailAdaptor::get(mCurrentDocument, index);
-    emit documentPageUpdated(index);
+
+    //bad hack for last page duplicated + action that lead to a crash
+    if(index < mDocumentThumbs.count()){
+        mDocumentThumbs[index] = UBThumbnailAdaptor::get(mCurrentDocument, index);
+        emit documentPageUpdated(index);
+    }
 }
 
 void UBDocumentContainer::insertThumbPage(int index)
@@ -139,6 +143,6 @@ int UBDocumentContainer::sceneIndexFromPage(int page)
 
 void UBDocumentContainer::addEmptyThumbPage()
 {
-	const QPixmap* pThumb = new QPixmap();
-	mDocumentThumbs.append(pThumb);
+    const QPixmap* pThumb = new QPixmap();
+    mDocumentThumbs.append(pThumb);
 }
