@@ -550,6 +550,12 @@ void UBTeacherGuidePresentationWidget::createMediaButtonItem()
 void UBTeacherGuidePresentationWidget::showData( QVector<tUBGEElementNode*> data)
 {
     cleanData();
+ #ifdef Q_WS_MAC
+    if(mpMediaSwitchItem && mpMediaSwitchItem->isDisabled()){
+        mpRootWidgetItem->removeChild(mpMediaSwitchItem);
+        DELETEPTR(mpMediaSwitchItem);
+    }
+#endif
 
     foreach(tUBGEElementNode* element, data) {
         if (element->name == "pageTitle")
@@ -591,7 +597,7 @@ void UBTeacherGuidePresentationWidget::showData( QVector<tUBGEElementNode*> data
             mediaItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_NONE);
             qDebug() << element->attributes.value("mediaType");
             UBTGMediaWidget* mediaWidget = new UBTGMediaWidget(element->attributes.value("relativePath"), newWidgetItem,0,element->attributes.value("mediaType").contains("flash"));
-            newWidgetItem->setExpanded(false);
+            newWidgetItem->setExpanded(mpMediaSwitchItem->isExpanded());
             mpTreeWidget->setItemWidget(mediaItem, 0, mediaWidget);
         }
         else if (element->name == "link") {
@@ -618,6 +624,10 @@ void UBTeacherGuidePresentationWidget::showData( QVector<tUBGEElementNode*> data
         mpMediaSwitchItem->setDisabled(true);
         mpRootWidgetItem->addChild(mpMediaSwitchItem);
     }
+    else{
+        onAddItemClicked(mpMediaSwitchItem,0);
+        onAddItemClicked(mpMediaSwitchItem,0);
+    }
 #endif
 }
 
@@ -628,10 +638,24 @@ void UBTeacherGuidePresentationWidget::onAddItemClicked(QTreeWidgetItem* widget,
         switch (associateAction) {
         case tUBTGActionAssociateOnClickItem_EXPAND:
             widget->setExpanded(!widget->isExpanded());
-            if (widget->isExpanded())
+            if (widget->isExpanded()){
+#ifdef Q_WS_MAC
+                for(int i = 0 ; i < mpMediaSwitchItem->childCount(); i+=1 ){
+                    QTreeWidgetItem* eachItem = mpMediaSwitchItem->child(i);
+                    eachItem->setHidden(false);
+                }
+#endif
                 mpMediaSwitchItem->setText(0, "-");
-            else
+            }
+            else{
+#ifdef Q_WS_MAC
+                for(int i = 0 ; i < mpMediaSwitchItem->childCount(); i+=1 ){
+                    QTreeWidgetItem* eachItem = mpMediaSwitchItem->child(i);
+                    eachItem->setHidden(true);
+                }
+#endif
                 mpMediaSwitchItem->setText(0, "+");
+            }
             break;
         case tUBTGActionAssociateOnClickItem_URL:
             widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
