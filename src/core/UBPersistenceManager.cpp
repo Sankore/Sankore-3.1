@@ -714,7 +714,7 @@ UBGraphicsScene* UBPersistenceManager::createDocumentSceneAt(UBDocumentProxy* pr
 }
 
 
-void UBPersistenceManager::insertDocumentSceneAt(UBDocumentProxy* proxy, UBGraphicsScene* scene, int index)
+void UBPersistenceManager::insertDocumentSceneAt(UBDocumentProxy* proxy, UBGraphicsScene* scene, int index, bool persist)
 {
     scene->setDocument(proxy);
 
@@ -729,7 +729,9 @@ void UBPersistenceManager::insertDocumentSceneAt(UBDocumentProxy* proxy, UBGraph
 
     mSceneCache.insert(proxy, index, scene);
 
-    persistDocumentScene(proxy, scene, index);
+    if (persist) {
+        persistDocumentScene(proxy, scene, index);
+    }
 
     proxy->incPageCount();
 

@@ -513,6 +513,30 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
             // TODO UB 4.x Move following code to some controller class
             UBGraphicsScene *scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(sourceItem.documentProxy(), sourceItem.sceneIndex());
             if (scene) {
+
+                //Generage appropriate destination scene index
+                //and copy content including teachers guide
+                UBDocumentProxy *sourceProxy = sourceItem.documentProxy();
+                QString sourcePath = sourceProxy->persistencePath();
+                int sourceIndex = sourceItem.sceneIndex();
+                Q_ASSERT(QFileInfo(sourcePath + "/" + UBPersistenceManager::teacherGuideDirectory).exists());
+                UBFileSystemUtils::copyDir(sourcePath + "/"  + UBPersistenceManager::teacherGuideDirectory
+                                           , targetDocProxy->persistencePath() + "/" + UBPersistenceManager::teacherGuideDirectory);
+                QString sourceSvg = sourcePath + "/" + UBFileSystemUtils::digitFileFormat("/page%1.svg", sourceIndex);
+                QString destinationSvg = targetDocProxy->persistencePath() + "/" + UBFileSystemUtils::digitFileFormat("/page%1.svg", targetDocProxy->pageCount());
+
+                //due to incorrect generation of thumbnails of invisible scene I've used direct copying of thumbnail files
+                //it's not universal and good way but it's faster
+                QString from = sourceItem.documentProxy()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", sourceItem.sceneIndex());
+                QString to  = targetDocProxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", targetDocProxy->pageCount());
+                QFile::remove(to);
+                if (!UBFileSystemUtils::copy(from, to)) {
+                    qDebug() << "can't copy from " << from << "to" << to;
+                }
+
+                Q_ASSERT(QFileInfo(sourceSvg).exists());
+                Q_ASSERT(!QFileInfo(destinationSvg).exists());
+
                 foreach (QUrl relativeFile, scene->relativeDependencies()) {
                     QString source = scene->document()->persistencePath() + "/" + relativeFile.toString();
                     QString target = targetDocProxy->persistencePath() + "/" + relativeFile.toString();
@@ -524,16 +548,8 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
                     QFile::copy(source, target);
                 }
 
-                UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(targetDocProxy, scene, targetDocProxy->pageCount());
-
-                //due to incorrect generation of thumbnails of invisible scene I've used direct copying of thumbnail files
-                //it's not universal and good way but it's faster
-                QString from = sourceItem.documentProxy()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", sourceItem.sceneIndex());
-                QString to  = targetDocProxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", targetDocProxy->pageCount());
-                QFile::remove(to);
-                if (!UBFileSystemUtils::copy(from, to)) {
-                    qDebug() << "can't copy from " << from << "to" << to;
-                }
+                UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(targetDocProxy, scene, targetDocProxy->pageCount(), false);
+                UBFileSystemUtils::copy(sourceSvg, destinationSvg);
             }
         }
 
