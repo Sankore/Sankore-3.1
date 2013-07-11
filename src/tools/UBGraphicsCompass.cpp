@@ -307,6 +307,7 @@ void UBGraphicsCompass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     {
         QGraphicsRectItem::mouseReleaseEvent(event);
     }
+    mRotating = false;
     mResizing = false;
     mDrawing = false;
 
