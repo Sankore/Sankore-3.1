@@ -26,6 +26,7 @@
 
 #include "core/UBDocumentManager.h"
 #include "core/UBApplication.h"
+#include "core/UBForeignObjectsHandler.h"
 
 #include "document/UBDocumentProxy.h"
 #include "document/UBDocumentController.h"
@@ -62,6 +63,10 @@ void UBExportDocument::persist(UBDocumentProxy* pDocumentProxy)
     if (filename.length() > 0)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+        //Processing cleanUp for unused data
+        UBForeighnObjectsHandler cleaner;
+        cleaner.cure(QUrl::fromLocalFile(pDocumentProxy->persistencePath()));
 
         if (mIsVerbose)
             UBApplication::showMessage(tr("Exporting document..."));

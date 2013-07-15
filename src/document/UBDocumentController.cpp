@@ -519,7 +519,7 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
                 UBDocumentProxy *sourceProxy = sourceItem.documentProxy();
                 QString sourcePath = sourceProxy->persistencePath();
                 int sourceIndex = sourceItem.sceneIndex();
-                Q_ASSERT(QFileInfo(sourcePath + "/" + UBPersistenceManager::teacherGuideDirectory).exists());
+//                Q_ASSERT(QFileInfo(sourcePath + "/" + UBPersistenceManager::teacherGuideDirectory).exists());
                 UBFileSystemUtils::copyDir(sourcePath + "/"  + UBPersistenceManager::teacherGuideDirectory
                                            , targetDocProxy->persistencePath() + "/" + UBPersistenceManager::teacherGuideDirectory);
                 QString sourceSvg = sourcePath + "/" + UBFileSystemUtils::digitFileFormat("/page%1.svg", sourceIndex);
