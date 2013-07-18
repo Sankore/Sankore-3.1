@@ -1,3 +1,24 @@
+/*
+* Copyright (C) 2010-2013 Groupement d'Intérêt Public pour l'Education Numérique en Afrique (GIP ENA)
+*
+* This file is part of Open-Sankoré.
+*
+* Open-Sankoré is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, version 3 of the License,
+* with a specific linking exception for the OpenSSL project's
+* "OpenSSL" library (or with modified versions of it that use the
+* same license as the "OpenSSL" library).
+*
+* Open-Sankoré is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "UBForeignObjectsHandler.h"
 
 #include <QtGui>
@@ -18,6 +39,9 @@ const QString aMediaType = "mediaType";
 const QString aRelativePath = "relativePath";
 
 const QString vText = "text";
+
+const QString wgtSuff = ".wgt";
+const QString thumbSuff = ".png";
 
 const QString scanDirs = "audios,images,videos,teacherGuideObjects,widgets";
 
@@ -169,6 +193,12 @@ private:
             QString delPath = mPresentIdsMap.value(key);
             if (delPath.isNull()) {
                 continue;
+            } else if (delPath.endsWith(wgtSuff)) { //remove corresponding thumb
+                QString thumbPath = thumbFileNameFrom(delPath);
+                if (!QFile::exists(thumbPath)) {
+                    continue;
+                }
+                rm_r(thumbPath);
             }
             rm_r(delPath);
             // Clear parent dir if empty
@@ -247,6 +277,18 @@ private:
         }
 
         return rx.cap();
+    }
+
+    QString thumbFileNameFrom(const QString &filePath)
+    {
+        if (filePath.isEmpty()) {
+            return QString();
+        }
+
+        QString thumbPath = filePath;
+        thumbPath.replace(QRegExp("[\\{\\}]"), "").replace(wgtSuff, thumbSuff);
+
+        return thumbPath;
     }
 
 private:
