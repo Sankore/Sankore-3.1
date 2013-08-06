@@ -553,9 +553,11 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
                 Q_ASSERT(QFileInfo(sourceSvg).exists());
                 Q_ASSERT(!QFileInfo(destinationSvg).exists());
 
-                foreach (QUrl relativeFile, scene->relativeDependencies()) {
-                    QString source = scene->document()->persistencePath() + "/" + relativeFile.toString();
-                    QString target = targetDocProxy->persistencePath() + "/" + relativeFile.toString();
+                foreach (QUrl url, scene->relativeDependencies()) {
+                    QString relativePath = QString(url.toLocalFile()).remove(scene->document()->persistencePath() + "/");
+
+                    QString source = scene->document()->persistencePath() + "/" + relativePath;
+                    QString target = targetDocProxy->persistencePath() + "/" + relativePath;
 
                     QFileInfo fi(target);
                     QDir d = fi.dir();

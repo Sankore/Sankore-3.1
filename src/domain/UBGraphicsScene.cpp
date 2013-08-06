@@ -2081,14 +2081,15 @@ QList<QUrl> UBGraphicsScene::relativeDependencies() const
 {
     QList<QUrl> relativePathes;
 
-    QListIterator<QGraphicsItem*> itItems(mFastAccessItems);
+    QListIterator<QGraphicsItem*> itItems(items());
 
+    int i = 0;
     while (itItems.hasNext())
     {
         QGraphicsItem* item = itItems.next();
         UBGraphicsMediaItem *videoItem = qgraphicsitem_cast<UBGraphicsMediaItem*> (item);
 
-        if (videoItem && videoItem->mediaFileUrl().isRelative())
+        if (videoItem)
         {
             relativePathes << videoItem->mediaFileUrl();
         }
@@ -2099,7 +2100,7 @@ QList<QUrl> UBGraphicsScene::relativeDependencies() const
 
     }
 
-    qDebug() << relativePathes;
+    qDebug() << "relative pathes"<< relativePathes;
 
     return relativePathes;
 }
