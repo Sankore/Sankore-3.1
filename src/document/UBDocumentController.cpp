@@ -526,7 +526,8 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
             UBApplication::applicationController->showMessage(tr("Copying page %1/%2").arg(count).arg(total), true);
 
             // TODO UB 4.x Move following code to some controller class
-            UBGraphicsScene *scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(sourceItem.documentProxy(), sourceItem.sceneIndex());
+            UBGraphicsScene *orScene = UBPersistenceManager::persistenceManager()->loadDocumentScene(sourceItem.documentProxy(), sourceItem.sceneIndex());
+            UBGraphicsScene *scene = orScene->sceneDeepCopy();
             if (scene) {
 
                 //Generage appropriate destination scene index
@@ -1167,7 +1168,7 @@ void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
 
 void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
 {
-    QModelIndex dragIndex = selectedIndexes().first();
+    bool acceptIt = isAcceptable(selectedIndexes().first(), indexAt(event->pos()));
     if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
         UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
         QModelIndex targetIndex = indexAt(event->pos());
@@ -1175,14 +1176,15 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
             event->ignore();
             event->setDropAction(Qt::IgnoreAction);
             docModel->setHighLighted(QModelIndex());
+            acceptIt = false;
         } else {
             docModel->setHighLighted(targetIndex);
+            acceptIt = true;
         }
         updateIndexEnvirons(targetIndex);
-        dragIndex = QModelIndex();
     }
     QTreeView::dragMoveEvent(event);
-    event->setAccepted(isAcceptable(dragIndex, indexAt(event->pos())));
+    event->setAccepted(acceptIt);
 }
 
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
