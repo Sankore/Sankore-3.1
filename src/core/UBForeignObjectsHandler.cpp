@@ -44,6 +44,7 @@ const QString wgtSuff = ".wgt";
 const QString thumbSuff = ".png";
 
 const QString scanDirs = "audios,images,videos,teacherGuideObjects,widgets";
+const QStringList trashFilter = QStringList() << "*.swf";
 
 class UBForeighnObjectsHandlerPrivate {
     UBForeighnObjectsHandlerPrivate(UBForeighnObjectsHandler *pq)
@@ -178,6 +179,7 @@ private:
     void cure(const QUrl &dir)
     {
         mCurrentDir = dir.toLocalFile();
+        cleanTrash();
 
         // Gathering information from svg files
         QFileInfoList svgInfos = QDir(mCurrentDir).entryInfoList(QStringList() << "*.svg", QDir::NoDotAndDotDot | QDir::Files);
@@ -289,6 +291,14 @@ private:
         thumbPath.replace(QRegExp("[\\{\\}]"), "").replace(wgtSuff, thumbSuff);
 
         return thumbPath;
+    }
+
+    void cleanTrash()
+    {
+        QFileInfoList ifs = QDir(mCurrentDir).entryInfoList(trashFilter, QDir::NoDotAndDotDot | QDir::Files);
+        foreach (QFileInfo ifo, ifs) {
+            rm_r(ifo.absoluteFilePath());
+        }
     }
 
 private:
