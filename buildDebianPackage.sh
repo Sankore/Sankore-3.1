@@ -378,12 +378,12 @@ chmod 755 "$BASE_WORKING_DIR/DEBIAN/postint"
 mkdir -p "install/linux"
 DEBIAN_PACKAGE_NAME="Open-Sankore_${VERSION}_$ARCHITECTURE.deb"
 
-fakeroot  chown -R root:root $BASE_WORKING_DIR 
+chown -R root:root $BASE_WORKING_DIR 
 dpkg -b "$BASE_WORKING_DIR" "install/linux/$DEBIAN_PACKAGE_NAME"
 notifyProgress "Open-Sankore" "Package built"
 
 #clean up mess
-fakeroot rm -rf $BASE_WORKING_DIR
+rm -rf $BASE_WORKING_DIR
 
 
 if [ $CREATE_DIENA_DISTRIBUTION_ZIP == true ]; then

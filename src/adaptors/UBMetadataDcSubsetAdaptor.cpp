@@ -81,6 +81,7 @@ void UBMetadataDcSubsetAdaptor::persist(UBDocumentProxy* proxy)
         return;
     }
     QString fileName = proxy->persistencePath() + "/" + metadataFilename;
+
     qDebug() << "persisting metadata to" << fileName;
 
     QFile file(fileName);
@@ -144,6 +145,9 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
     QMap<QString, QVariant> metadata;
 
     QString fileName = pPath + "/" + metadataFilename;
+
+    qDebug() << "loading metadata from file : " << fileName;
+
 
     QFile file(fileName);
 

@@ -214,6 +214,8 @@ private:
     QMap<QString,QString> mGradeLevelsMap;
     QMap<QString,QStringList> mSubjects;
 
+    UBDocumentProxy* mCurrentDocument;
+
 private slots:
     void onSchoolLevelChanged(QString schoolLevel);
     void persistData();

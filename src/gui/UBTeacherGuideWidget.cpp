@@ -190,6 +190,7 @@ void UBTeacherGuideEditionWidget::onActiveDocumentChanged()
 
 void UBTeacherGuideEditionWidget::load(QDomDocument doc)
 {
+    qDebug() << "LOAD UBApplication::boardController->currentPage() " << UBApplication::boardController->currentPage();
     cleanData();
     for (QDomElement element = doc.documentElement().firstChildElement();
          !element.isNull(); element = element.nextSiblingElement()) {
@@ -209,6 +210,9 @@ void UBTeacherGuideEditionWidget::load(QDomDocument doc)
 
 QVector<tIDataStorage*> UBTeacherGuideEditionWidget::save(int pageIndex)
 {
+    qDebug() << "SAVE page index : " << pageIndex;
+    qDebug() << "SAVE UBApplication::boardController->currentPage() " << UBApplication::boardController->currentPage();
+
     QVector<tIDataStorage*> result;
     if (pageIndex != UBApplication::boardController->currentPage())
         return result;
@@ -710,6 +714,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
   , mpLicenceIcon(NULL)
   , mpLicenceLayout(NULL)
   , mpSceneItemSessionTitle(NULL)
+  , mCurrentDocument(NULL)
 {
     setObjectName(name);
     QString chapterStyle("QLabel {font-size:16px; font-weight:bold;}");
@@ -1021,7 +1026,9 @@ void UBTeacherGuidePageZeroWidget::hideEvent(QHideEvent * event)
 
 void UBTeacherGuidePageZeroWidget::loadData()
 {
-    UBDocumentProxy* documentProxy = UBApplication::boardController->selectedDocument();
+    //UBDocumentProxy* documentProxy = UBApplication::boardController->selectedDocument();
+    mCurrentDocument = UBApplication::boardController->selectedDocument();
+    UBDocumentProxy* documentProxy = mCurrentDocument;
     mpSessionTitle->setText( documentProxy->metaData(UBSettings::sessionTitle).toString());
     mpAuthors->setText( documentProxy->metaData(UBSettings::sessionAuthors).toString());
     mpObjectives->setText( documentProxy->metaData(UBSettings::sessionObjectives).toString());
@@ -1046,6 +1053,12 @@ void UBTeacherGuidePageZeroWidget::persistData()
     // to NULL
     if (UBApplication::boardController) {
         UBDocumentProxy* documentProxy = UBApplication::boardController->selectedDocument();
+
+        if(mCurrentDocument != documentProxy){
+            qDebug() << "this should never happens";
+            return;
+        }
+
         documentProxy->setMetaData(UBSettings::sessionTitle, mpSessionTitle->text());
         documentProxy->setMetaData(UBSettings::sessionAuthors, mpAuthors->text());
         documentProxy->setMetaData(UBSettings::sessionObjectives, mpObjectives->text());
@@ -1190,14 +1203,20 @@ QVector<tUBGEElementNode*> UBTeacherGuidePageZeroWidget::getData()
 bool UBTeacherGuidePageZeroWidget::isModified()
 {
     bool result = false;
-    result |= mpSessionTitle->text().length() > 0;
-    result |= mpAuthors->text().length() > 0;
-    result |= mpObjectives->text().length() > 0;
-    result |= mpKeywords->text().length() > 0;
-    result |= mpSchoolLevelBox->currentIndex() > 0;
-    result |= mpSchoolSubjectsBox->currentIndex() > 0;
-    result |= mpSchoolTypeBox->currentIndex() > 0;
-    result |= mpLicenceBox->currentIndex() > 0;
+    UBDocumentProxy* documentProxy = UBApplication::boardController->selectedDocument();
+    if(mCurrentDocument == documentProxy){
+        result |= mpSessionTitle->text().length() > 0;
+        result |= mpAuthors->text().length() > 0;
+        result |= mpObjectives->text().length() > 0;
+        result |= mpKeywords->text().length() > 0;
+        result |= mpSchoolLevelBox->currentIndex() > 0;
+        result |= mpSchoolSubjectsBox->currentIndex() > 0;
+        result |= mpSchoolTypeBox->currentIndex() > 0;
+        result |= mpLicenceBox->currentIndex() > 0;
+    }
+    else
+        qDebug() << "this should not happen";
+
     return result;
 }
 

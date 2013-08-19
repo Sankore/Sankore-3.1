@@ -114,7 +114,7 @@ void UBPreferencesController::wire()
 
     // main tab
     mPreferencesUI->mainTabWidget->setCurrentWidget(mPreferencesUI->displayTab);
-    mPreferencesUI->versionLabel->setText(tr("version: ") + UBApplication::applicationVersion());
+    mPreferencesUI->versionLabel->setText(tr("version: ") +/* UBApplication::applicationVersion()*/"2.1.1b3");
 
     connect(mPreferencesUI->closeButton, SIGNAL(released()), this, SLOT(close()));
     connect(mPreferencesUI->defaultSettingsButton, SIGNAL(released()), this, SLOT(defaultSettings()));
@@ -276,6 +276,7 @@ void UBPreferencesController::init()
     mIsoCodeAndLanguage.insert(tr("Chinese"),"zh");
     mIsoCodeAndLanguage.insert(tr("Chinese Simplified"),"zh_CN");
     mIsoCodeAndLanguage.insert(tr("Chinese Traditional"),"zh_TW");
+    mIsoCodeAndLanguage.insert(tr("Galician"),"gl");
 
     QStringList list;
     list << mIsoCodeAndLanguage.keys();
