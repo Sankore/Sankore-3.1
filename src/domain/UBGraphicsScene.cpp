@@ -2083,7 +2083,6 @@ QList<QUrl> UBGraphicsScene::relativeDependencies() const
 
     QListIterator<QGraphicsItem*> itItems(items());
 
-    int i = 0;
     while (itItems.hasNext())
     {
         QGraphicsItem* item = itItems.next();
@@ -2091,7 +2090,8 @@ QList<QUrl> UBGraphicsScene::relativeDependencies() const
 
         if (videoItem)
         {
-            relativePathes << videoItem->mediaFileUrl();
+            QString mediaUrl = videoItem->mediaFileUrl().toLocalFile();
+            relativePathes << mediaUrl.replace(QRegExp("\\{.*\\}"), UBGraphicsItem::getOwnUuid(videoItem).toString());
         }
 
         UBGraphicsItem* ubItem = dynamic_cast<UBGraphicsItem*>(item);

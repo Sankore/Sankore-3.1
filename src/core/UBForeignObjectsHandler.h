@@ -36,6 +36,9 @@ public:
     void cure(const QList<QUrl> &dirs);
     void cure(const QUrl &dir);
 
+    void copyPage(const QUrl &fromDir, int fromIndex,
+                  const QUrl &toDir, int toIndex);
+
 private:
     UBForeighnObjectsHandlerPrivate *d;
 

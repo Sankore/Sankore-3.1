@@ -96,6 +96,8 @@ class UBPersistenceManager : public QObject
 
         virtual void duplicateDocumentScene(UBDocumentProxy* pDocumentProxy, int index);
 
+        virtual void copyDocumentScene(UBDocumentProxy *from, int fromIndex, UBDocumentProxy *to, int toIndex);
+
         virtual void persistDocumentScene(UBDocumentProxy* pDocumentProxy,
                 UBGraphicsScene* pScene, const int pSceneIndex);
 

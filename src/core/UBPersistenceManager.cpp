@@ -36,6 +36,7 @@
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
 #include "core/UBSetting.h"
+#include "core/UBForeignObjectsHandler.h"
 
 #include "gui/UBDockTeacherGuideWidget.h"
 #include "gui/UBTeacherGuideWidget.h"
@@ -687,6 +688,29 @@ void UBPersistenceManager::duplicateDocumentScene(UBDocumentProxy* proxy, int in
     proxy->incPageCount();
 
     emit documentSceneCreated(proxy, index + 1);
+}
+
+void UBPersistenceManager::copyDocumentScene(UBDocumentProxy *from, int fromIndex, UBDocumentProxy *to, int toIndex)
+{
+    if (from == to && toIndex <= fromIndex) {
+        qDebug() << "operation is not supported" << Q_FUNC_INFO;
+        return;
+    }
+
+    checkIfDocumentRepositoryExists();
+
+    for (int i = to->pageCount(); i > toIndex; i--) {
+        renamePage(to, i - 1, i);
+        mSceneCache.moveScene(to, i - 1, i);
+    }
+
+    UBForeighnObjectsHandler hl;
+    hl.copyPage(QUrl::fromLocalFile(from->persistencePath()), fromIndex,
+                QUrl::fromLocalFile(to->persistencePath()), toIndex);
+
+    to->incPageCount();
+
+    emit documentSceneCreated(to, toIndex + 1);
 }
 
 
