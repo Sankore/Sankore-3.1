@@ -281,7 +281,7 @@ UBItem* UBGraphicsMediaItem::deepCopy() const
     QUrl url = this->mediaFileUrl();
     UBGraphicsMediaItem *copy = new UBGraphicsMediaItem(url, parentItem());
 
-    copy->setUuid(this->uuid()); // this is OK for now as long as Widgets are imutable
+    copy->setUuid(QUuid::createUuid()); // this is OK for now as long as Widgets are imutable
 
     copyItemParameters(copy);
 

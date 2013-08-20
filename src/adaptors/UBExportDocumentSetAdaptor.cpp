@@ -33,6 +33,7 @@
 
 #include "globals/UBGlobals.h"
 #include "core/UBPersistenceManager.h"
+#include "core/UBForeignObjectsHandler.h"
 
 THIRD_PARTY_WARNINGS_DISABLE
 #include "quazip.h"
@@ -155,6 +156,11 @@ bool UBExportDocumentSetAdaptor::addDocumentToZip(const QModelIndex &pIndex, UBD
 
     UBDocumentProxy *pDocumentProxy = model->proxyForIndex(parentIndex);
     if (pDocumentProxy) {
+
+//        Q_ASSERT(QFileInfo(pDocumentProxy->persistencePath()).exists());
+//        UBForeighnObjectsHandler cleaner;
+//        cleaner.cure(pDocumentProxy->persistencePath());
+
         UniboardSankoreTransition document;
         QString documentPath(pDocumentProxy->persistencePath());
         document.checkDocumentDirectory(documentPath);

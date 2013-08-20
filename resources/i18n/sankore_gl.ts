@@ -1,504 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr_FR">
+<TS version="2.0" language="es_ES">
 <context>
     <name>BlackoutWidget</name>
     <message>
         <source>Click to Return to Application</source>
-        <translation>Tsindrio raha hiverina amin&apos;ny rindran&apos;asa</translation>
+        <translation>Faga clic para regresar á aplicación</translation>
     </message>
 </context>
 <context>
     <name>DownloadDialog</name>
     <message>
         <source>Downloads</source>
-        <translation>Nalaina</translation>
+        <translation>Descargas-</translation>
     </message>
     <message>
         <source>Clean Up</source>
-        <translation>Diovina</translation>
+        <translation>Limpar</translation>
     </message>
     <message>
         <source>0 Items</source>
-        <translation>0 Zavatra</translation>
+        <translation>0 Elementos</translation>
     </message>
 </context>
 <context>
     <name>DownloadItem</name>
     <message>
         <source>Form</source>
-        <translation>Antonta-taratasy fenoina</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation>Anaran&apos;ny rakitra</translation>
+        <translation>Nome de arquivo</translation>
     </message>
     <message>
         <source>Try Again</source>
-        <translation>Avereno indray</translation>
+        <translation>Volva intentalo</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Ajanony</translation>
+        <translation>Deter</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Sokafy</translation>
+        <translation>Abrir</translation>
     </message>
 </context>
 <context>
     <name>IntranetPodcastPublishingDialog</name>
     <message>
         <source>Publish Podcast to YouTube</source>
-        <translation>Ametraka Podcat amin&apos;ny Youtube</translation>
+        <translation>Publicar Podcast en YouTube</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Lohateny</translation>
+        <translation>Título</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Fanazavana</translation>
+        <translation>Descrición</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Mpamorona</translation>
+        <translation>Autor</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Board</source>
-        <translation>Solaitra</translation>
+        <translation>Encerado</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation>Tranon-kala</translation>
+        <translation>Web</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation>Rakitra</translation>
+        <translation>Documentos</translation>
+    </message>
+    <message>
+        <source>Tutorial</source>
+        <translation>Titorial</translation>
     </message>
     <message>
         <source>Stylus</source>
-        <translation>Haingo</translation>
+        <translation>Lapis</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
-        <translation>Ctrl + T</translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <source>Backgrounds</source>
-        <translation>Sary ambadika</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Lahabolana</translation>
-    </message>
-    <message>
-        <source>Capture</source>
-        <translation>Fakana</translation>
-    </message>
-    <message>
-        <source>Add To Current Page</source>
-        <translation>Ampiana amin&apos;ny io pejy io</translation>
-    </message>
-    <message>
-        <source>Add To New Page</source>
-        <translation>Ampiana amin&apos;ny pejy vaovao</translation>
-    </message>
-    <message>
-        <source>Add To Library</source>
-        <translation>Ampiana amin&apos;ny tahirim-boky</translation>
-    </message>
-    <message>
-        <source>Pages</source>
-        <translation>Pejy</translation>
-    </message>
-    <message>
-        <source>New Page</source>
-        <translation>Pejy vaovao</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Tsy atao indray</translation>
+        <translation>Fondos</translation>
     </message>
     <message>
         <source>Change Background</source>
-        <translation>Ovaina ny sary ambadika</translation>
+        <translation>Cambiar Fondo</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Desfacer</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation>Ctrl + Z</translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation>Atao indray</translation>
+        <translation>Repetir</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation>Ctrl + Y</translation>
+        <translation>Ctrl+Y</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation>Teo aloha</translation>
+        <translation>Anterior</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation>Pejy teo aloha</translation>
+        <translation>Páxina anterior</translation>
     </message>
     <message>
         <source>PgUp</source>
-        <translation>PgUp</translation>
+        <translation>Páxina Arriba</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Ao aorina</translation>
+        <translation>Seguinte</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation>Pejy ao aorina</translation>
+        <translation>Páxina seguinte</translation>
     </message>
     <message>
         <source>PgDown</source>
-        <translation>PgDpwn</translation>
+        <translation>Páxina abaixo</translation>
     </message>
     <message>
         <source>Manage Documents</source>
-        <translation>Fikarakarana ny rakitra</translation>
+        <translation>Xestionar documentos</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation>Ctrl + D</translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <source>Web Browsing</source>
-        <translation>Mpizaha tranon-kala</translation>
+        <translation>Exploración web</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
-        <translation>Ctrl + W</translation>
-    </message>
-    <message>
-        <source>Small Line</source>
-        <translation>Tsipika kely</translation>
-    </message>
-    <message>
-        <source>Medium Line</source>
-        <translation>Tsipika salasala</translation>
-    </message>
-    <message>
-        <source>Large Line</source>
-        <translation>Tsipika lehibe</translation>
-    </message>
-    <message>
-        <source>Smalle Eraser</source>
-        <translation>Fafotse kely</translation>
-    </message>
-    <message>
-        <source>Medium Eraser</source>
-        <translation>Fafotse salasala</translation>
-    </message>
-    <message>
-        <source>Large Eraser</source>
-        <translation>Fafotse lehibe</translation>
-    </message>
-    <message>
-        <source>Reload Current Page</source>
-        <translation>Avereno aseho io pejy io</translation>
-    </message>
-    <message>
-        <source>Load Home Page</source>
-        <translation>Aseho ny pejin&apos;ny fandraisana</translation>
-    </message>
-    <message>
-        <source>Show Bookmarks</source>
-        <translation>Aseho ny tobin-drohy</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Ampiana ny tobin-drohy</translation>
-    </message>
-    <message>
-        <source>Display Board</source>
-        <translation>Aseho ny solaitra</translation>
-    </message>
-    <message>
-        <source>Erase Content</source>
-        <translation>Fafana ny mpiatiny</translation>
-    </message>
-    <message>
-        <source>Display Preferences</source>
-        <translation>Aseho ny safidy nofaritana</translation>
-    </message>
-    <message>
-        <source>Show Library</source>
-        <translation>Aseho ny tahirim-boky</translation>
-    </message>
-    <message>
-        <source>Show Computer Desktop</source>
-        <translation>Aseho ny sehatr&apos;asan&apos;ny solosaina</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+H</source>
-        <translation>Ctrl+Shift+H</translation>
-    </message>
-    <message>
-        <source>Create a New Folder</source>
-        <translation>Mamorona fitoeran-drakitra vaovao</translation>
-    </message>
-    <message>
-        <source>Create a New Document</source>
-        <translation>Mamorona rakitra vaovao</translation>
-    </message>
-    <message>
-        <source>Import a Document</source>
-        <translation>Manafatra rakitra</translation>
-    </message>
-    <message>
-        <source>Export a Document</source>
-        <translation>Mandefa rakitra</translation>
-    </message>
-    <message>
-        <source>Open Page in Board</source>
-        <translation>Manokatra pejy amin&apos;ny solaitra</translation>
-    </message>
-    <message>
-        <source>Duplicate Selected Content</source>
-        <translation>Asina dikamitovy ny mpiatiny voafidy</translation>
-    </message>
-    <message>
-        <source>Delete Selected Content</source>
-        <translation>Fafana ny dikamitovy ny mpiatiny voafidy</translation>
-    </message>
-    <message>
-        <source>Add Content to Document</source>
-        <translation>Ampiana amin&apos;ny rakitra ity mpiatiny ity</translation>
-    </message>
-    <message>
-        <source>Rename Content</source>
-        <translation>Soloina anarana ny mpiatiny</translation>
-    </message>
-    <message>
-        <source>Display Tools</source>
-        <translation>Aseho ny fitaovana</translation>
-    </message>
-    <message>
-        <source>Use Document Wide Size (16/9)</source>
-        <translation>Ampiasana ny haben&apos;ny antonta-tarasy malalaka (16/9)</translation>
-    </message>
-    <message>
-        <source>Use Document Regular Size (4/3)</source>
-        <translation>Ampiasana ny haben&apos;ny antonta-tarasy mahazatra (4/3)</translation>
-    </message>
-    <message>
-        <source>Use Custom Document Size</source>
-        <translation>Ampiasana ny haben&apos;ny antonta-tarasy voasafidy manokana</translation>
-    </message>
-    <message>
-        <source>Stop Loading Web Page</source>
-        <translation>Ajanony ny fakana ny pejin&apos;ny tranon-kala</translation>
-    </message>
-    <message>
-        <source>Put Presentation to Sleep</source>
-        <translation>Ahato ny fampisehoana</translation>
-    </message>
-    <message>
-        <source>Display Virtual Keyboard</source>
-        <translation>Asehoy ny fafan-teny virtoaly</translation>
-    </message>
-    <message>
-        <source>Record Presentation to Video</source>
-        <translation>Raiketo ho horonan-tsary ny fampisehoana</translation>
-    </message>
-    <message>
-        <source>Erase Items</source>
-        <translation>Fafana ilay zavatra</translation>
-    </message>
-    <message>
-        <source>Erase All Items</source>
-        <translation>Fafana ny zavatra rehetra</translation>
-    </message>
-    <message>
-        <source>Erase Annotations</source>
-        <translation>Fafana ny fanamarihana</translation>
-    </message>
-    <message>
-        <source>Erase All Annotations</source>
-        <translation>Fafana ny fanamarihana rehetra</translation>
-    </message>
-    <message>
-        <source>Clear All Elements</source>
-        <translation>Fafana ny zavatra rehetra</translation>
-    </message>
-    <message>
-        <source>Pen</source>
-        <translation>penina</translation>
-    </message>
-    <message>
-        <source>Annotate Document</source>
-        <translation>Manamarika rakitra</translation>
-    </message>
-    <message>
-        <source>Ctrl+I</source>
-        <translation>Ctrl+I</translation>
-    </message>
-    <message>
-        <source>Erase Annotation</source>
-        <translation>Fafany ilay fanamarihana</translation>
-    </message>
-    <message>
-        <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
-    </message>
-    <message>
-        <source>Marker</source>
-        <translation>Penina lehibe</translation>
-    </message>
-    <message>
-        <source>Highlight </source>
-        <translation>Asongadina</translation>
-    </message>
-    <message>
-        <source>Ctrl+M</source>
-        <translation>Ctrl+M</translation>
-    </message>
-    <message>
-        <source>Selector</source>
-        <translation>Mpifantinana</translation>
-    </message>
-    <message>
-        <source>Select And Modify Objects</source>
-        <translation>Mifantina sy manova zavatra</translation>
-    </message>
-    <message>
-        <source>Ctrl+F</source>
-        <translation>Ctrl+F</translation>
-    </message>
-    <message>
-        <source>Hand</source>
-        <translation>Tanana</translation>
-    </message>
-    <message>
-        <source>Capture Part of the Screen</source>
-        <translation>Maka ampahan&apos;ny efijery</translation>
-    </message>
-    <message>
-        <source>Custom Capture</source>
-        <translation>Fakana manokana</translation>
-    </message>
-    <message>
-        <source>Capture a Window</source>
-        <translation>Maka ny fikandrana iray</translation>
-    </message>
-    <message>
-        <source>Show Main Screen on Display Screen</source>
-        <translation>Aseho amin&apos;ny efijery hita ny efijery ampiasana matetika</translation>
-    </message>
-    <message>
-        <source>Erase all Annotations</source>
-        <translation>Fafana ny fanamarihana rehetra</translation>
-    </message>
-    <message>
-        <source>eduMedia</source>
-        <translation>eduMedia</translation>
-    </message>
-    <message>
-        <source>Import eduMedia simulation</source>
-        <translation>Hafarana ny fiasan&apos;i eduMedia</translation>
-    </message>
-    <message>
-        <source>Open the tutorial</source>
-        <translation>Sokafana ny fampianarana</translation>
-    </message>
-    <message>
-        <source>Check Update</source>
-        <translation>Jereo raha misy fanavaozana</translation>
-    </message>
-    <message>
-        <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
-    </message>
-    <message>
-        <source>Zoom In</source>
-        <translation>Zòma mahalehibe</translation>
-    </message>
-    <message>
-        <source>Zoom Out</source>
-        <translation>Zòma mahakely</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Tsipika</translation>
+        <translation>Liña</translation>
+    </message>
+    <message>
+        <source>Small Line</source>
+        <translation>Liña pequena</translation>
+    </message>
+    <message>
+        <source>Medium Line</source>
+        <translation>Liña media</translation>
+    </message>
+    <message>
+        <source>Large Line</source>
+        <translation>Liña grande</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation>Hidio</translation>
+        <translation>Saír</translation>
     </message>
     <message>
         <source>Eraser</source>
-        <translation>Fafotse</translation>
+        <translation>Borrador</translation>
+    </message>
+    <message>
+        <source>Smalle Eraser</source>
+        <translation>Borrador pequeno</translation>
+    </message>
+    <message>
+        <source>Medium Eraser</source>
+        <translation>Borrador mediano</translation>
+    </message>
+    <message>
+        <source>Large Eraser</source>
+        <translation>Borrador grande</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Loko</translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Miverina</translation>
+        <translation>Atrás</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Havia</translation>
+        <translation>Esquerda</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation>Manaraka</translation>
+        <translation>Cara a diante</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Havanana</translation>
+        <translation>Dereita</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>Averina alefa indray</translation>
+        <translation>Volver cargar</translation>
+    </message>
+    <message>
+        <source>Reload Current Page</source>
+        <translation>Volver cargar páxina actual</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Fandraisana</translation>
+        <translation>Inicio</translation>
+    </message>
+    <message>
+        <source>Load Home Page</source>
+        <translation>Cargar páxina de inicio</translation>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation>Tobin-drohy</translation>
+        <translation>Favoritos</translation>
+    </message>
+    <message>
+        <source>Show Bookmarks</source>
+        <translation>Mostrar favoritos</translation>
     </message>
     <message>
         <source>Bookmark</source>
         <extracomment>tooltip</extracomment>
-        <translation>Tobin-drohy</translation>
+        <translation>Favorito</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Engadir favoritos</translation>
+    </message>
+    <message>
+        <source>Display Board</source>
+        <translation>Mostrar encerado</translation>
     </message>
     <message>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <source>Clear Page</source>
-        <translation>Fafana ny pejy</translation>
+        <source>Erase</source>
+        <translation>Borrar</translation>
+    </message>
+    <message>
+        <source>Erase Content</source>
+        <translation>Borrar contidos</translation>
     </message>
     <message>
         <source>Preferences</source>
-        <translation>Safidy nofaritana</translation>
+        <translation>Preferencias</translation>
     </message>
     <message>
-        <source>Tutorial</source>
-        <translation>Fampianarana</translation>
-    </message>
-    <message>
-        <source>Erase</source>
-        <translation>Fafana</translation>
+        <source>Display Preferences</source>
+        <translation>Mostrar preferencias</translation>
     </message>
     <message>
         <source>Library</source>
-        <translation>Tahirim-boky</translation>
+        <translation>Biblioteca</translation>
+    </message>
+    <message>
+        <source>Show Library</source>
+        <translation>Mostrar biblioteca</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
@@ -506,11 +282,23 @@
     </message>
     <message>
         <source>Show Desktop</source>
-        <translation>Asehoy ny sehatr&apos;asa</translation>
+        <translation>Mostrar escritorio</translation>
+    </message>
+    <message>
+        <source>Show Computer Desktop</source>
+        <translation>Mostrar escritorio do ordenador</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+H</source>
+        <translation>Ctrl+Shift+H</translation>
     </message>
     <message>
         <source>Bigger</source>
-        <translation>Lehibe kokoa</translation>
+        <translation>Máis grande</translation>
+    </message>
+    <message>
+        <source>Zoom In</source>
+        <translation>Achegar</translation>
     </message>
     <message>
         <source>Ctrl++</source>
@@ -518,7 +306,11 @@
     </message>
     <message>
         <source>Smaller</source>
-        <translation>Kelikely kokoa</translation>
+        <translation>Máis pequeno</translation>
+    </message>
+    <message>
+        <source>Zoom Out</source>
+        <translation>Afastar</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
@@ -526,23 +318,43 @@
     </message>
     <message>
         <source>New Folder</source>
-        <translation>Fitoeran-drakitra vaovao</translation>
+        <translation>Nova carpeta</translation>
+    </message>
+    <message>
+        <source>Create a New Folder</source>
+        <translation>Crear unha nova carpeta</translation>
     </message>
     <message>
         <source>New Document</source>
-        <translation>Rakitra vaovao</translation>
+        <translation>Novo documento</translation>
+    </message>
+    <message>
+        <source>Create a New Document</source>
+        <translation>Crear un novo documento</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation>Manafatra</translation>
+        <translation>Importar</translation>
+    </message>
+    <message>
+        <source>Import a Document</source>
+        <translation>Importar un documento</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Mandefa</translation>
+        <translation>Exportar</translation>
+    </message>
+    <message>
+        <source>Export a Document</source>
+        <translation>Exportar un Documento</translation>
     </message>
     <message>
         <source>Open in Board</source>
-        <translation>Sokafana amin&apos;ny solaitra</translation>
+        <translation>Abrir no encerado</translation>
+    </message>
+    <message>
+        <source>Open Page in Board</source>
+        <translation>Abrir a páxina no encerado</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -550,67 +362,243 @@
     </message>
     <message>
         <source>Duplicate</source>
-        <translation>Asina dikamitovy</translation>
+        <translation>Duplicar</translation>
+    </message>
+    <message>
+        <source>Duplicate Selected Content</source>
+        <translation>Duplicar o contido seleccionado</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Fafana</translation>
+        <translation>Eliminar</translation>
+    </message>
+    <message>
+        <source>Delete Selected Content</source>
+        <translation>Eliminar o contido seleccionado</translation>
     </message>
     <message>
         <source>Del</source>
-        <translation>Del</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <source>Add to Working Document</source>
-        <translation>Ampiana amn&apos;ny rakitra iasana</translation>
+        <translation>Engadir o documento de traballo</translation>
     </message>
     <message>
         <source>Add Selected Content to Open Document</source>
-        <translation>Ampiana amin&apos;ny rakitra misokatra ny mpiatiny voasafidy</translation>
+        <translation>Engadir o contido seleccionado ao documento aberto</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Ampiana</translation>
+        <translation>Engadir</translation>
+    </message>
+    <message>
+        <source>Add Content to Document</source>
+        <translation>Engadir o contido ao documento</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Soloina ny anarana</translation>
+        <translation>Cambiar nome</translation>
+    </message>
+    <message>
+        <source>Rename Content</source>
+        <translation>Cambiar nome ao documento</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Ferramentas</translation>
+    </message>
+    <message>
+        <source>Display Tools</source>
+        <translation>Mostrar Ferramentas</translation>
+    </message>
+    <message>
+        <source>Multi Screen</source>
+        <translation>Multipantalla</translation>
+    </message>
+    <message>
+        <source>Wide Size (16/9)</source>
+        <translation>Tamaño ancho (16/9)</translation>
+    </message>
+    <message>
+        <source>Use Document Wide Size (16/9)</source>
+        <translation>Usar o tamaño ancho do documento (16/9)</translation>
+    </message>
+    <message>
+        <source>Regular Size (4/3)</source>
+        <translation>Tamaño regular (4/3)</translation>
+    </message>
+    <message>
+        <source>Use Document Regular Size (4/3)</source>
+        <translation>Usar o tamaño regular do documento (4/3)</translation>
+    </message>
+    <message>
+        <source>Custom Size</source>
+        <translation>Tamaño personalizado</translation>
+    </message>
+    <message>
+        <source>Use Custom Document Size</source>
+        <translation>Usar o tamaño personalizado do documento</translation>
+    </message>
+    <message>
+        <source>Stop Loading</source>
+        <translation>Deter carga</translation>
+    </message>
+    <message>
+        <source>Stop Loading Web Page</source>
+        <translation>Deter carga da páxina web</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Tapahana</translation>
+        <translation>Cortar</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Adika</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation>Apetaka</translation>
+        <translation>Pegar</translation>
+    </message>
+    <message>
+        <source>Sleep</source>
+        <translation>Durmir</translation>
+    </message>
+    <message>
+        <source>Put Presentation to Sleep</source>
+        <translation>Poñer a presentación en modo durmir</translation>
+    </message>
+    <message>
+        <source>Virtual Keyboard</source>
+        <translation>Teclado virtual</translation>
+    </message>
+    <message>
+        <source>Display Virtual Keyboard</source>
+        <translation>Mostrar teclado virtual</translation>
+    </message>
+    <message>
+        <source>Plain Light Background</source>
+        <translation>Fondo claro liso</translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation>Claro</translation>
     </message>
     <message>
         <source>Grid Light Background</source>
-        <translation>Efamira-tsoramiafina ambadika mazava</translation>
+        <translation>Fondo claro cuadriculado</translation>
+    </message>
+    <message>
+        <source>Plain Dark Background</source>
+        <translation>Fondo escuro liso</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation>Escuro</translation>
     </message>
     <message>
         <source>Grid Dark Background</source>
-        <translation>Efamira-tsoramiafina ambadika maizina</translation>
+        <translation>Fondo escuro cuadriculado</translation>
+    </message>
+    <message>
+        <source>Podcast</source>
+        <translation>Podcast</translation>
+    </message>
+    <message>
+        <source>Record Presentation to Video</source>
+        <translation>Gravar presentación en vídeo</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Gravar</translation>
     </message>
     <message>
         <source>Start Screen Recording</source>
-        <translation>Atomboka ny fandraiketana ny efijery</translation>
+        <translation>Iniciar gravación de pantalla</translation>
+    </message>
+    <message>
+        <source>Erase Items</source>
+        <translation>Borrar elementos</translation>
+    </message>
+    <message>
+        <source>Erase All Items</source>
+        <translation>Borrar todos os elementos</translation>
+    </message>
+    <message>
+        <source>Erase Annotations</source>
+        <translation>Borrar anotacións</translation>
+    </message>
+    <message>
+        <source>Erase All Annotations</source>
+        <translation>Borrar todas as anotacións</translation>
+    </message>
+    <message>
+        <source>Clear Page</source>
+        <translation>Borrar páxina</translation>
+    </message>
+    <message>
+        <source>Clear All Elements</source>
+        <translation>Borrar todos os elementos</translation>
+    </message>
+    <message>
+        <source>Pen</source>
+        <translation>Bolígrafo</translation>
+    </message>
+    <message>
+        <source>Annotate Document</source>
+        <translation>Anotar documento</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation>Ctrl+I</translation>
+    </message>
+    <message>
+        <source>Erase Annotation</source>
+        <translation>Borrar anotación</translation>
+    </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation>Ctrl+E</translation>
+    </message>
+    <message>
+        <source>Marker</source>
+        <translation>Marcador</translation>
+    </message>
+    <message>
+        <source>Highlight </source>
+        <translation>Destacar</translation>
+    </message>
+    <message>
+        <source>Ctrl+M</source>
+        <translation>Ctrl+M</translation>
+    </message>
+    <message>
+        <source>Selector</source>
+        <translation>Selector</translation>
+    </message>
+    <message>
+        <source>Select And Modify Objects</source>
+        <translation>Seleccionar e modificar obxetos</translation>
+    </message>
+    <message>
+        <source>Ctrl+F</source>
+        <translation>Ctrl+F</translation>
+    </message>
+    <message>
+        <source>Hand</source>
+        <translation>Man</translation>
     </message>
     <message>
         <source>Scroll Page</source>
-        <translation>Fampidinana sy fampiakarana ny pejy</translation>
+        <translation>Desprazar páxina</translation>
     </message>
     <message>
         <source>Laser Pointer</source>
-        <translation>Tondro laser</translation>
+        <translation>Punteiro láser</translation>
     </message>
     <message>
         <source>Virtual Laser Pointer</source>
-        <translation>Tondro laser virtoaly</translation>
+        <translation>Punteiro láser virtual</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -618,139 +606,151 @@
     </message>
     <message>
         <source>Draw Lines</source>
-        <translation>Manoratra tsipika</translation>
+        <translation>Debuxar liñas</translation>
     </message>
     <message>
         <source>Ctrl+J</source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
+        <source>Text</source>
+        <translation>Texto</translation>
+    </message>
+    <message>
         <source>Write Text</source>
-        <translation>Manoratra lahabolana</translation>
+        <translation>Escribir texto</translation>
     </message>
     <message>
         <source>Ctrl+K</source>
         <translation>Ctrl+K</translation>
     </message>
     <message>
+        <source>Capture</source>
+        <translation>Captura</translation>
+    </message>
+    <message>
+        <source>Capture Part of the Screen</source>
+        <translation>Capturar parte da pantalla</translation>
+    </message>
+    <message>
+        <source>Add To Current Page</source>
+        <translation>Engadir a páxina actual</translation>
+    </message>
+    <message>
         <source>Add Item To Current Page</source>
-        <translation>Ampiana amn&apos;ny pejy ampiaisana ilay zavatra</translation>
+        <translation>Engadir elemento a páxina actual</translation>
+    </message>
+    <message>
+        <source>Add To New Page</source>
+        <translation>Engadir a nova páxina</translation>
     </message>
     <message>
         <source>Add Item To New Page</source>
-        <translation>Ampiana amn&apos;ny pejy vaovao ilay zavatra</translation>
+        <translation>Engadir elemento a nova páxina</translation>
+    </message>
+    <message>
+        <source>Add To Library</source>
+        <translation>Engadir a biblioteca</translation>
     </message>
     <message>
         <source>Add Item To Library</source>
-        <translation>Ampiana amn&apos;ny tahirim-boky ilay zavatra</translation>
+        <translation>Engadir elemento á biblioteca</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Páxinas</translation>
     </message>
     <message>
         <source>Create a New Page</source>
-        <translation>Mamorona pejy vaovao</translation>
+        <translation>Crear unha nova páxina</translation>
+    </message>
+    <message>
+        <source>New Page</source>
+        <translation>Nova páxina</translation>
     </message>
     <message>
         <source>Duplicate Page</source>
-        <translation>Manao dikamitovy ny pejy</translation>
+        <translation>Duplicar páxina</translation>
     </message>
     <message>
         <source>Duplicate the Current Page</source>
-        <translation>Manao dikamitovy an&apos;ilay pejy ampiasana</translation>
+        <translation>Duplicar la páxina actual</translation>
     </message>
     <message>
         <source>Import Page</source>
-        <translation>Manafatra pejy</translation>
+        <translation>Importar páxina</translation>
     </message>
     <message>
         <source>Import an External Page</source>
-        <translation>Manafatra pejy ivelany</translation>
+        <translation>Importar unha páxina externa</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Ahato</translation>
+        <translation>Pausa</translation>
     </message>
     <message>
         <source>Pause Podcast Recording</source>
-        <translation>Ahato ny fandraiketana ny Podcast</translation>
+        <translation>Pausar a gravación de Podcast</translation>
     </message>
     <message>
         <source>Podcast Config</source>
-        <translation>Fanefena ny Podcast</translation>
+        <translation>Configuración de podcast</translation>
     </message>
     <message>
         <source>Configure Podcast Recording</source>
-        <translation>Fanefena ny fandraiketana ny Podcast</translation>
+        <translation>Configurar gravación de podcast</translation>
     </message>
     <message>
         <source>Web Trap</source>
-        <translation>Alaina ny tranon-kala</translation>
+        <translation>Captura de contido web</translation>
     </message>
     <message>
         <source>Trap Web Content</source>
-        <translation>Alaina ny mpiatin&apos;ny tranon-kala</translation>
+        <translation>Capturar contido web</translation>
+    </message>
+    <message>
+        <source>Custom Capture</source>
+        <translation>Captura personalizada</translation>
     </message>
     <message>
         <source>Window Capture</source>
-        <translation>Alaina ny fikandrana</translation>
+        <translation>Captura de ventá</translation>
+    </message>
+    <message>
+        <source>Capture a Window</source>
+        <translation>Capturar unha ventá</translation>
     </message>
     <message>
         <source>Show on Display</source>
-        <translation>Asehoy amin&apos;ny zavatra hita</translation>
+        <translation>Mostrar en pantalla</translation>
     </message>
     <message>
-        <source>Sleep</source>
-        <translation>Ampatorina</translation>
+        <source>Show Main Screen on Display Screen</source>
+        <translation>Mostrar pantalla principal na pantalla do monitor</translation>
     </message>
     <message>
-        <source>Virtual Keyboard</source>
-        <translation>Fafan-teny virtoaly</translation>
+        <source>Erase all Annotations</source>
+        <translation>Borrar todas as anotacións</translation>
     </message>
     <message>
-        <source>Plain Light Background</source>
-        <translation>Faritra ambadika mazava</translation>
+        <source>eduMedia</source>
+        <translation>eduMedia</translation>
     </message>
     <message>
-        <source>Light</source>
-        <translation>Mazava</translation>
+        <source>Import eduMedia simulation</source>
+        <translation>Importar simulación eduMedia</translation>
     </message>
     <message>
-        <source>Plain Dark Background</source>
-        <translation>Faritra ambadika maizina</translation>
+        <source>Open the tutorial</source>
+        <translation>Abrir o titorial</translation>
     </message>
     <message>
-        <source>Dark</source>
-        <translation>Maizina</translation>
+        <source>Check Update</source>
+        <translation>Comprobar actualizacións</translation>
     </message>
     <message>
-        <source>Podcast</source>
-        <translation>Podcast</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Raiketo</translation>
-    </message>
-    <message>
-        <source>Tools</source>
-        <translation>Fitaovana</translation>
-    </message>
-    <message>
-        <source>Multi Screen</source>
-        <translation>Efijery maromaro</translation>
-    </message>
-    <message>
-        <source>Wide Size (16/9)</source>
-        <translation>Habe lehibe (16/9)</translation>
-    </message>
-    <message>
-        <source>Regular Size (4/3)</source>
-        <translation>Habe antonony (4/3)</translation>
-    </message>
-    <message>
-        <source>Custom Size</source>
-        <translation>Habe safidina manokana</translation>
-    </message>
-    <message>
-        <source>Stop Loading</source>
-        <translation>Ajanony ny fakana</translation>
+        <source>Ctrl+H</source>
+        <translation>Ctrl+H</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
@@ -758,156 +758,156 @@
     </message>
     <message utf8="true">
         <source>Quit Open-Sankoré</source>
-        <translation>Sokafy Open-Sankoré</translation>
+        <translation>Saír do Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré Editor</source>
-        <translation>Fanovanan&apos;i Open-Sankoré</translation>
+        <translation>Editor Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
-        <translation>Asehoy ny fanovanan&apos;ny widget-n&apos;i Open-Sankoré</translation>
+        <translation>Editor do widget Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré</source>
-        <translation>Afeno Open-Sankoré</translation>
+        <translation>Ocultar Open-Sankoré</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré Application</source>
-        <translation>Afeno ny rindran&apos;asan&apos;i Open-Sankoré</translation>
+        <translation>Ocultar aplicación Open-Sankoré</translation>
     </message>
     <message>
         <source>Import Uniboard Documents</source>
-        <translation>Hafaro ny rakitra Uniboard</translation>
+        <translation>Importar documentos Uniboard</translation>
     </message>
     <message>
         <source>Import old Sankore or Uniboard documents</source>
-        <translation>Hafaro ny rakitra Uniboard na ny rakitra Sankore taloha</translation>
+        <translation>Importar documentos antigos do Sankore ou Uniboard</translation>
     </message>
     <message>
         <source>Group items</source>
-        <translation>Atokony ny zavatra</translation>
+        <translation>Agrupar elementos</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Alefaso</translation>
+        <translation>Reproducir</translation>
     </message>
     <message>
         <source>Interact with items</source>
-        <translation>Ampiasana ny zavatra</translation>
+        <translation>Interactuar cos elementos</translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation>Fafana ny ao ambadika</translation>
+        <translation>Borrar o Fondo</translation>
     </message>
     <message>
         <source>Remove the backgound</source>
-        <translation>Esorina ny ao ambadika</translation>
+        <translation>Eliminar o fondo</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Atokony</translation>
+        <translation>Agrupar</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Alaina ho an&apos;ny&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tahirim-boky&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation>Alaina ho an&apos;ny tahirim-boky</translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Alaina ho an&apos;io&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;pejy io&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation>Alaina ho an&apos;io pejy io</translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ampiana rohy&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ao anatin&apos;ny tahirim-boky&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation>Ampiana rohy ao anatin&apos;ny tahirim-boky</translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ampiana rohy&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;eto amin&apos;ity pejy ity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation>Ampiana rohy eto amin&apos;ity pejy ity</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation>Tobin-drohy</translation>
+        <translation>Favorito</translation>
     </message>
 </context>
 <context>
     <name>PasswordDialog</name>
     <message>
         <source>Authentication Required</source>
-        <translation>Famantarana ilaina</translation>
+        <translation>Requírese autenticación</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Anaran&apos;ny mpampiasa:</translation>
+        <translation>Nome de usuario:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Teny fanalahidy:</translation>
+        <translation>Contrasinal:</translation>
     </message>
 </context>
 <context>
     <name>ProxyDialog</name>
     <message>
         <source>Proxy Authentication</source>
-        <translation>Famantaranan&apos;ny Proxy</translation>
+        <translation>Autenticación de proxy</translation>
     </message>
     <message>
         <source>Connect to Proxy</source>
-        <translation>Mifandray amin&apos;ny Proxy</translation>
+        <translation>Conectar o Proxy</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Anaran&apos;ny mpampiasa:</translation>
+        <translation>Nome de usuario:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Teny fanalahidy:</translation>
+        <translation>Contrasinal:</translation>
     </message>
     <message>
         <source>Save username and password for future use</source>
-        <translation>Raiketo ny anaran&apos;ny mpampiasa sy ny teny fanalahidy ho an&apos;ny fampiasana manaraka</translation>
+        <translation>Gardar nome de usuario e contrasinal para uso futuro</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation>Isa famantaranaan&apos;ilay zavatra =</translation>
+        <translation>Elemento ID = </translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation>Tsy zakan&apos;ny andrefy tanjona ilay mpiatiny.</translation>
+        <translation>O formato de destino non permite este contido.</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation>Fafao ny pejy</translation>
+        <translation>Eliminar páxina</translation>
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation>Tena te hamafa pejy iray avy amin&apos;ilay rakitra &apos;%0&apos; voafidy ve ianao ?</translation>
+        <translation>¿Está seguro que desexa eliminar 1 páxina do documento seleccionado &apos;%0&apos;?</translation>
     </message>
 </context>
 <context>
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>Haben&apos;ny pejy</translation>
+        <translation>Tamaño de páxina</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -918,476 +918,474 @@
     <name>UBApplicationController</name>
     <message>
         <source>Web</source>
-        <translation>Tranon-kala</translation>
+        <translation>Web</translation>
     </message>
     <message>
         <source>New update available, would you go to the web page ?</source>
-        <translation>Misy fanavaozana azo alaina, te hande amin&apos;ny pejin&apos;ilay tranonkala ve ianao ?</translation>
+        <translation>Nova actualización dispoñible, ¿desexa visitar a páxina web?</translation>
     </message>
     <message>
         <source>No update available</source>
-        <translation>Tsisy fanavaozana azo alaina</translation>
+        <translation>Ningunha actualización dispoñible</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation>Fanavaozana azo alaina</translation>
+        <translation>Actualización dispoñible</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Avaozy</translation>
+        <translation>Actualizar</translation>
     </message>
 </context>
 <context>
     <name>UBBoardController</name>
     <message>
         <source>Downloading content %1 failed</source>
-        <translation>Fakana mpiatiny %1 tsy nety</translation>
+        <translation>Fallo ao descargar contido %1</translation>
     </message>
     <message>
         <source>Download finished</source>
-        <translation>Fakana mpiatiny vita</translation>
+        <translation>Descarga rematada</translation>
     </message>
     <message>
         <source>Unknown tool type %1</source>
-        <translation>Fitaovana tsy fantatra karazana %1</translation>
-    </message>
-    <message>
-        <source>Add Item</source>
-        <translation>Ampiana zavatra</translation>
-    </message>
-    <message>
-        <source>All Supported (%1)</source>
-        <translation>Zaka daholo (%1)</translation>
+        <translation>Tipo de ferramenta descoñecida %1</translation>
     </message>
     <message>
         <source>Unknown content type %1</source>
-        <translation>Mpiatiny tsy fantatra karazana %1</translation>
+        <translation>Tipo de contido descoñecido %1</translation>
+    </message>
+    <message>
+        <source>Add Item</source>
+        <translation>Engadir elemento</translation>
+    </message>
+    <message>
+        <source>All Supported (%1)</source>
+        <translation>Todos compatibles (%1)</translation>
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation>Fafao ny pejy %1 amin&apos;ilay rakitra</translation>
+        <translation>Borrar a páxina %1 do documento</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation>Pejy %1 voafafa</translation>
+        <translation>Páxina %1 eliminada</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation>Fanampiana rakitra tsy nety: nisy tsy fetezana tamin&apos;ny fandikana ny rakitra</translation>
+        <translation>Todas as operacións con ficheiros fallaron. Erro ao copiar os ficheiros</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Atokony</translation>
+        <translation>Agrupar</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation>Avaho</translation>
+        <translation>Desagrupar</translation>
     </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
         <source>Error Adding Image to Library</source>
-        <translation>Fanampiana ny sary amin&apos;ny tahirim-boky tsy nety</translation>
+        <translation>Erro ao engadir a imaxe á biblioteca</translation>
     </message>
     <message>
         <source>CapturedImage</source>
-        <translation>Sary nalaina</translation>
+        <translation>Imaxe capturada</translation>
     </message>
 </context>
 <context>
     <name>UBCachePropertiesWidget</name>
     <message>
         <source>Cache Properties</source>
-        <translation>Toetoetran&apos;ny tahiry</translation>
+        <translation>Almacenar propiedades en caché</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Loko:</translation>
+        <translation>Cor:</translation>
     </message>
     <message>
         <source>Shape:</source>
-        <translation>Bika:</translation>
+        <translation>Forma:</translation>
     </message>
     <message>
         <source>Alpha:</source>
-        <translation>Alpha:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation>Jeometria:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation>Saka:</translation>
+        <translation>Ancho:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Halavana:</translation>
+        <translation>Altura:</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation>Tehirizina nyfifandraisan&apos;ny saka sy ny halavana</translation>
+        <translation>Manter proporcións</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation>Fiasany:</translation>
+        <translation>Modalidade:</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation>Fijerevana mialoha:</translation>
+        <translation>Vista previa:</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation>Hidina ny tahiry</translation>
+        <translation>Pechar cache</translation>
     </message>
     <message>
         <source>On Click</source>
-        <translation>Eo amin&apos;ny fanindrina</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Persistent</source>
-        <translation>Voatahiry</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation>&lt;fafana ny mpiatiny&gt;</translation>
+        <translation>&lt;soltar contido&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation>Tsy ekena ny sary</translation>
+        <translation>Non se aceptan imaxes</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation>Tsy afaka mampiseho ny data</translation>
+        <translation>Non se pode mostrar a información</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation>Ny rakitra nofafana dia tsy fantatra ho raki-peo</translation>
+        <translation>O arquivo non se recoñece como arquivo de audio</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation>Andefa raki-peo</translation>
+        <translation>Reproducir un arquivo de audio</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation>Ampiana rohy ny pejy</translation>
+        <translation>Engadir enlace á páxina</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation>Ampiana rohy ny pejin&apos;ny tranon-kala</translation>
+        <translation>Engadir enlace a unha páxina Web</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation>Alaina avy ao anatin&apos;ny tahirim-boky sy atao ao anatin&apos;ity faritra ity ilay raki-peo </translation>
+        <translation>Arrastre e solte o arquivo de audio dende a biblioteca neste cadro</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ekena</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation>Pejy ao aorina</translation>
+        <translation>Páxina seguinte</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation>Pejy teo aloha</translation>
+        <translation>Páxina anterior</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation>Lohatenin&apos;ilay pejy</translation>
+        <translation>Título de páxina</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation>Pejy farany</translation>
+        <translation>Última páxina</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation>Laharan&apos;ny pejy</translation>
+        <translation>Número de páxina</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation>Ampidiro eto ny rohin&apos;ny lahabolana</translation>
+        <translation>Insira texto url aquí</translation>
     </message>
 </context>
 <context>
     <name>UBDesktopPalette</name>
     <message>
         <source>Capture Part of the Screen</source>
-        <translation>Maka ampahan&apos;ny efijery</translation>
+        <translation>Capturar parte da pantalla</translation>
     </message>
     <message>
         <source>Capture the Screen</source>
-        <translation>Maka ny efijery</translation>
+        <translation>Capturar a pantalla</translation>
     </message>
     <message>
         <source>Show the stylus palette</source>
-        <translation>Aseho ny fanovana haingony</translation>
+        <translation>Mostrar a paleta do lapis</translation>
     </message>
     <message>
         <source>Show Board on Secondary Screen</source>
-        <translation>Aseho ny solaitra amin&apos;ny efijery faharoa</translation>
+        <translation>Mostrar o encerado na pantalla secundaria</translation>
     </message>
     <message>
         <source>Show Desktop on Secondary Screen</source>
-        <translation>Aseho ny sehatr&apos;asa amin&apos;ny efijery faharoa</translation>
+        <translation>Mostrar o escritorio na pantalla secundaria</translation>
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation>Aseho Open-Sankoré</translation>
+        <translation>Mostrar Open-Sankore</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentController</name>
     <message>
         <source>New Folder</source>
-        <translation>Fiteoran-drakitra vaovao</translation>
+        <translation>Nova carpeta</translation>
     </message>
     <message>
         <source>Page %1</source>
-        <translation>Pejy %1</translation>
+        <translation>Páxina %1</translation>
     </message>
     <message>
         <source>Add Folder of Images</source>
-        <translation>Manampy fitoeran-drakitra misy sary</translation>
+        <translation>Engadir carpeta de imaxes</translation>
     </message>
     <message>
         <source>Add Images</source>
-        <translation>Manampy sary </translation>
+        <translation>Engadir imaxes</translation>
     </message>
     <message>
         <source>Add Pages from File</source>
-        <translation>Manampy pejy an&apos;ilay rakitra</translation>
+        <translation>Engadir páxina dende arquivo</translation>
     </message>
     <message>
         <source>Duplicating Document %1</source>
-        <translation>Dikamitovy-na rakitra %1</translation>
+        <translation>Duplicando documento %1</translation>
     </message>
     <message>
         <source>Document %1 copied</source>
-        <translation>Rakitra %1 nadika</translation>
+        <translation>Documento %1 copiado</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation>Fafao ny pejy</translation>
+        <translation>Eliminar páxina</translation>
     </message>
     <message>
         <source>Open Supported File</source>
-        <translation>Manokatra rakitra zaka</translation>
+        <translation>Abrir arquivo compatible</translation>
     </message>
     <message>
         <source>Importing file %1...</source>
-        <translation>Manafatra rakitra %1 ...</translation>
+        <translation>Importando arquivo %1...</translation>
     </message>
     <message>
         <source>Failed to import file ... </source>
-        <translation>Nisy tsy fetezana ny fanafarana rakitra ...</translation>
+        <translation>Fallo ao importar arquivo ...</translation>
     </message>
     <message>
         <source>Import all Images from Folder</source>
-        <translation>Alaina daholo ny sary amin&apos;ilay fitoeran-drakitra</translation>
+        <translation>Importar todas as imaxes dende a carpeta</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Fafao</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation>Foana</translation>
+        <translation>Baleirar</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Daba</translation>
+        <translation>Papeleira</translation>
     </message>
     <message>
         <source>Open Document</source>
-        <translation>Manokatra rakitra</translation>
+        <translation>Abrir documento</translation>
     </message>
     <message>
         <source>Add all Images to Document</source>
-        <translation>Ampiana amin&apos;ilay rakitra ny sary rehetra</translation>
+        <translation>Engadir todas as imaxes ao documento</translation>
     </message>
     <message>
         <source>All Images (%1)</source>
-        <translation>Ny sary rehetra(%1)</translation>
+        <translation>Todas as imaxes (%1)</translation>
     </message>
     <message>
         <source>Selection does not contain any image files!</source>
-        <translation>Tsy misy sary ilay fantina!</translation>
+        <translation>¡A selección non contén ningún arquivo de imaxes!</translation>
     </message>
     <message>
         <source>The document &apos;%1&apos; has been generated with a newer version of Sankore (%2). By opening it, you may lose some information. Do you want to proceed?</source>
-        <translation>Ny rakitra &apos;%1&apos; dia namboarina tamin&apos;i Sankore vaovaozana (%2). Raha sokafanao dia mety ahavery mombamomban&apos;ilay rakitra ianao. Tianao tohizana ve ?</translation>
+        <translation>O documento &apos;%1&apos; foi xerado cunha nova versión de Sankore (%2). Ao abrilo pode perder información.¿Desexa continuar?</translation>
     </message>
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
         <translation>
-            <numerusform>Tena te hamafa pejy %n avy amin&apos;ilay rakitra &apos;%1&apos; voafidy ve ianao ?</numerusform>
-            <numerusform></numerusform>
+            <numerusform>¿Está seguro que desexa eliminar %n páxina do documento seleccionado &apos;%1&apos;?</numerusform>
+            <numerusform>¿Está seguro que desea eliminar %n página(s) del documento seleccionado &apos;%1&apos;?</numerusform>
         </translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Lohatenin&apos;ilay pejy</translation>
+        <translation>Título de páxina</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation>Tsy misy sary ilay fitoeran-drakitra</translation>
+        <translation>A carpeta non contén ningún ficheiro con imaxes</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation>Rakitra tsy misy lohateny</translation>
-    </message>
-    <message>
-        <source>This is an irreversible action!</source>
-        <translation>Raha vao atao io hetsika io dia tsy azo averina amin&apos;ny taloha intsony !</translation>
+        <translation>Documentos sin título</translation>
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation>Tsy azo ovaina eto io modelin-drakitra io. Mila adika any amin&apos;ny &quot;Rakitrako&quot; ilay izy mba anovana an&apos;azy</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is an irreversible action!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
     <message>
         <source>images</source>
-        <translation>sary</translation>
+        <translation>Imaxes</translation>
     </message>
     <message>
         <source>videos</source>
-        <translation>horonan-tsary</translation>
+        <translation>Vídeos</translation>
     </message>
     <message>
         <source>objects</source>
-        <translation>Zavatra</translation>
+        <translation>Obxectos</translation>
     </message>
     <message>
         <source>widgets</source>
-        <translation>widgets</translation>
+        <translation>Widgets</translation>
     </message>
     <message>
         <source>All supported files (*.%1)</source>
-        <translation>Ny rakitra rehetra zaka (*.%1)</translation>
+        <translation>Todos os arquivos compatibles (*.%1)</translation>
     </message>
     <message>
         <source>File %1 saved</source>
-        <translation>Rakitra %1 voaraikitra</translation>
+        <translation>Arquivo %1 gardado</translation>
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation>Mampiditra pejy %1 amin&apos;ny %2</translation>
+        <translation>Inserindo páxina %1 de %2</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Fanafarana nety.</translation>
+        <translation>Importación satisfactoria.</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation>Fanafarana ny rakitra %1 nety.</translation>
+        <translation>O arquivo %1 importouse correctamente.</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation>Manafatra rakitra %1 </translation>
+        <translation>Importando o ficheiro %1</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
         <source>Page %0</source>
-        <translation>Pejy %0</translation>
+        <translation>Páxina %0</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Lohatenin&apos;ilay pejy</translation>
+        <translation>Título de páxina</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentPublisher</name>
     <message>
         <source>Export failed.</source>
-        <translation>Fandefasana tsy nety.</translation>
+        <translation>Fallo na exportación.</translation>
     </message>
     <message>
         <source>Export canceled ...</source>
-        <translation>Fandefasana najanona ...</translation>
+        <translation>Exportación cancelada...</translation>
     </message>
     <message>
         <source>Converting page %1/%2 ...</source>
-        <translation>Famadihana pejy %1/%2 ...</translation>
+        <translation>Convertendo páxina %1/%2...</translation>
     </message>
     <message>
         <source>Credentials has to not been filled out yet.</source>
-        <translation>Mbola tsy ilaina fenoina ny famantarana aloha.</translation>
+        <translation>Aínda non se completaron as credenciais</translation>
     </message>
     <message>
         <source>Uploading Sankore File on Web.</source>
-        <translation>Mandefa an&apos;ilay rakitra Sankore amin&apos;ny tranon-kala.</translation>
+        <translation>Cargando arquivo Sankore na web.</translation>
     </message>
     <message>
         <source>Document uploaded correctly on the web.</source>
-        <translation>Lasa soa aman-tsara amin&apos;ny tranon-kala ilay rakitra.</translation>
+        <translation>Documento cargado correctamente na web.</translation>
     </message>
     <message>
         <source>Failed to upload document on the web.</source>
-        <translation>Nisy tsy fetezana ny fandefasana an&apos;ilay rakitra amin&apos;ny tranon-kala .</translation>
+        <translation>Fallo da carga do documento na web.</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation>Ekena</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation>Soloina</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Ajanony</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation>Ny anarana %1 dia efa nampiasana.
-Raha tazomina io anarana io dia voasolo ilay rakitra efa nisy.
-Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation>Ny rakitrako</translation>
+        <translation>Os meus documentos</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation>Modely</translation>
+        <translation>Modelos</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Daba</translation>
+        <translation>Papeleira</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation></translation>
+        <translation>Documentos sen título</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation>Mandika pejy %1/%2</translation>
+        <translation>Copiando páxina %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation>
-            <numerusform>%1 pejy voadika</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%1 páxina copiada</numerusform>
+            <numerusform>%1 páginas copiadas</numerusform>
         </translation>
     </message>
 </context>
@@ -1395,17 +1393,17 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
-        <translation>%1 (fandikana)</translation>
+        <translation>%1 (copia)</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation>Mandika pejy %1/%2</translation>
+        <translation>Copiando páxina %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation>
-            <numerusform>%1 pejy voadika</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%1 páxina copiada</numerusform>
+            <numerusform>%1 páginas copiadas</numerusform>
         </translation>
     </message>
 </context>
@@ -1413,530 +1411,530 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation>Fakana tsy nety.</translation>
+        <translation>Descarga falida.</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation>Ny mpizara alavitra dia tsy manaiky ny fifandraisana (ny mpizara dia tsy manaiky fangatahana)</translation>
+        <translation>O servidor remoto rexeitou a conexión (o servidor non está a aceptar solicitudes)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>ny mpizara alavitra dia nanapaka ny fifandraisana alohan&apos;ny nandraisana sy nikarakarana ny valiny feno</translation>
+        <translation>O servidor remoto pechou a conexión inesperadamente, antes da cal a resposta fose recibida e procesada</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation>ny anaran&apos;ilay mpizara alavitra dia tsy hita ( anarana tsy mety)</translation>
+        <translation>O nome do host remoto non foi atopado (nome de host inválido)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation>Tapaka ny fifandraisana amin&apos;ny mpizara alavitra fa ela loatra</translation>
+        <translation>A conexión co servidor remoto expirou</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation>Ny asa dia najanona tamin&apos;ny didy abort() na close() nefa tsy vita akory.</translation>
+        <translation>A operación foi cancelada ao abortar() ou pechar() antes de que finalizase.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation>ny fifandraisana SSL/TLS dia tsy nety ary ny lalana voantoka dia tsy mety ampiasana. Nalefa ny kaika sslErrors().</translation>
+        <translation>EL SSL/TLS handshake fallou e a canle encriptar non puido establecerse. O sinal sslErrors() debeu ser emitida.</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation>Tapaka ny fifandraisana noho ny fanapahan&apos;ny rezo, na izany aza dia nalefa amin&apos;ny fidirana hafa ny rafitra. Ho averina alefa ny fangatahana ary ho valiana vao miverina ny fifandraisana.</translation>
+        <translation>A conexión detívose debido á desconexión da rede, non obstante, o sistema iniciou a busca doutro punto de acceso. A solicitude debe reenviarse e será procesada apenas restablézcase a conexión.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation>Ny fifandraisana amin&apos;ny mpizara proxy dia tsy nekena ( tsy manaiky fangatahana ny mpizara proxy)</translation>
+        <translation>A conexión ao servidor proxy foi rexeitada (o servidor proxy non está a aceptar solicitudes)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>ny mpizara proxy dia nanapaka ny fifandraisana alohan&apos;ny nandraisana sy nikarakarana ny valiny feno</translation>
+        <translation>O servidor proxy pechou a conexión inesperadamente, antes de que a resposta fose recibida e procesada</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation>ny anaran&apos;ilay mpizara proxy dia tsy hita ( anarana tsy mety)</translation>
+        <translation>O nome do host proxy non foi atopado (nome de host proxy inválido)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation>Ny fifandraisana amin&apos;ny mpizara proxy dia ela loatra na tsy namaly ara-potoana an&apos;ilay fangatahana nalefa ny proxy</translation>
+        <translation>A conexión do proxy expirou ou o proxy non respondeu a tempo á solicitude enviada</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation>Ny proxy dia mila famantarana mba hamalian&apos;ny fangatahana, kanefa tsy manaiky ny anarana sy ny teni-miafina nampiaisana (raha toa ka nisy)</translation>
+        <translation>O proxy require autorización para aceptar a solicitude pero non aceptou ningunha credencial ofrecida (se existen)</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation>Tsy nekena ny fidirana amin&apos;ny mpiatiny alavitra ( ohatran&apos;ny diso HTTP 401 )</translation>
+        <translation>O acceso ao contido remoto foi denegado (similar ao erro HTTP 401)</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation>Tsy azo ato izany amin&apos;ny mpiatiny alavitra</translation>
+        <translation>A operación solicitada no contido remoto non é permitida</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation>Tsy hita amin&apos;ny mpizara ny mpiatiny alavitra ( ohatran&apos;ny diso HTTP 404 )</translation>
+        <translation>O contido remoto non foi atopado no servidor (similar ao erro HTTP 404)</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation>Ny mpizara alavitra dia mila famantarana mba hizarana ny mpiatiny, kanefa tsy manaiky ny anarana sy ny teni-miafina nampiaisana (raha toa ka nisy)</translation>
+        <translation>O servidor remoto require autenticación para entregar o contido pero as credenciales dadas non foron aceptadas (se existen)</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation>Tokony nalefa indray mandeha ilay fangatahana, kanefa tsy nety satria tsy nety novakiana fanindroany ilay data nalefa ohatra .</translation>
+        <translation>A solicitude necesitou enviarse de novo, pero fallou, por exemplo, porque a información de carga non puido lerse unha segunda vez.</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation>Ny API fidirana amin&apos;ny rezo dia tsy nety namaly ny fangatahana satria tsy fantatra ny fomba firesaka</translation>
+        <translation>O acceso á rede API non pode manter a solicitude porque o protocolo é descoñecido</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation>Ny asa nangatahana dia tsy mety amin&apos;ity fomba firesaka ity</translation>
+        <translation>A operación solicitada é inválida para este protocolo</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation>Nisy tsy fetezana mifandray amin&apos;ny rezo nitranga</translation>
+        <translation>Detectouse un erro descoñecido relacionado coa rede</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation>Nisy tsy fetezana mifandray amin&apos;ny proxy nitranga</translation>
+        <translation>Detectouse un erro descoñecido relacionado co proxy</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation>Nisy tsy fetezana mifandray amin&apos;ny mpiatiny alavitra nitranga</translation>
+        <translation>Detectouse un erro descoñecido relacionado co contido remoto</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation>Nisy fahasimbana ao anatin&apos;ny fomba firesaka nitranga (valiny tsy nety na tsy nampoizina ohatra, sns.)</translation>
+        <translation>Detectouse unha ruptura no protocolo (erro de sintáxis, respostas inválidas ou inesperada, etc.)</translation>
     </message>
 </context>
 <context>
     <name>UBDownloadWidget</name>
     <message>
         <source>Downloading files</source>
-        <translation>Maka rakitra</translation>
+        <translation>Descargando arquivos</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Ajanony</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation>Nisy fitandremana niseho tamin&apos;ny fandefasana ny rakitra</translation>
+        <translation>Apareceron advertencias durante a exportación</translation>
     </message>
 </context>
 <context>
     <name>UBExportCFF</name>
     <message>
         <source>Export to IWB</source>
-        <translation>Alefa ho IWB</translation>
+        <translation>Exportar a IWB</translation>
     </message>
     <message>
         <source>Export as IWB File</source>
-        <translation>Alefa ho rakitra IWB</translation>
+        <translation>Exportar como ficheiro IWB</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Mandefa ny rakitra ...</translation>
+        <translation>Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Fandefasana nety.</translation>
+        <translation>Exportación satisfactoria.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Fandefasana tsy nety.</translation>
+        <translation>Fallo na exportación.</translation>
     </message>
 </context>
 <context>
     <name>UBExportDocument</name>
     <message>
         <source>Page</source>
-        <translation>Pejy</translation>
+        <translation>Páxina</translation>
     </message>
     <message>
         <source>Export as UBZ File</source>
-        <translation>Alefa ho rakitra UBZ</translation>
+        <translation>Exportar como arquivo UBZ</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Mandefa rakitra ...</translation>
+        <translation>Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Fandefasana nety.</translation>
+        <translation>Exportación satisfactoria.</translation>
     </message>
     <message>
         <source>Exporting %1 %2 of %3</source>
-        <translation>Fandefasana %1 %2 amin&apos;ny %3</translation>
+        <translation>Exportando %1 %2 de %3</translation>
     </message>
     <message>
         <source>Export to Sankore Format</source>
-        <translation>Alefa ho tahaka ny rakoitra Sankore</translation>
+        <translation>Exportar ao formato Sankore</translation>
     </message>
 </context>
 <context>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation>Fandefasana tsy nety...</translation>
+        <translation>Fallo ao exportar...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation>Alefa ho rakitra UBX</translation>
+        <translation>Exportar como arquivo UBX</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Mandefa ny rakitra ...</translation>
+        <translation>Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Fandefasana nety.</translation>
+        <translation>Exportación satisfactoria.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Fandefasana tsy nety.</translation>
+        <translation>Exportación falida.</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation>Alefa ho tahaka ny rakitra Sankore UBX</translation>
+        <translation>Exportar ao formato Sankore UBX</translation>
     </message>
 </context>
 <context>
     <name>UBExportFullPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation>Alefa ho rakitra PDF </translation>
+        <translation>Exportar como arquivo PDF</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Mandefa ny rakitra ...</translation>
-    </message>
-    <message>
-        <source>Export to PDF</source>
-        <translation>Alefa ho PDF</translation>
+        <translation>Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Fandefasana nety.</translation>
+        <translation>Exportación satisfactoria.</translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation>Exportar a PDF</translation>
     </message>
 </context>
 <context>
     <name>UBExportPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation>Alefa ho rakitra PDF </translation>
-    </message>
-    <message>
-        <source>Exporting page %1 of %2</source>
-        <translation>Mandefa ny pejy %1 amin&apos;ny %2</translation>
-    </message>
-    <message>
-        <source>Export successful.</source>
-        <translation>Fandefasana nety.</translation>
+        <translation>Exportar como arquivo PDF</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Mandefa rakitra ...</translation>
+        <translation>Exportando documento...</translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation>Exportación satisfactoria.</translation>
+    </message>
+    <message>
+        <source>Exporting page %1 of %2</source>
+        <translation>Exportando páxina %1 de %2</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation>Alefa ho PDF</translation>
+        <translation>Exportación a PDF</translation>
     </message>
 </context>
 <context>
     <name>UBExportWeb</name>
     <message>
         <source>Page</source>
-        <translation>Pejy</translation>
+        <translation>Páxina</translation>
     </message>
     <message>
         <source>Export as Web data</source>
-        <translation>Alefa ho data an&apos;ny tranon-kala</translation>
+        <translation>Exportar como datos web</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Fandefasana rakitra ...</translation>
+        <translation>Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Fandefasana nety.</translation>
+        <translation>Exportación satisfactoria.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Fandefasana tsy nety.</translation>
+        <translation>Fallo na exportación.</translation>
     </message>
     <message>
         <source>Export to Web Browser</source>
-        <translation>Alefa any amin&apos;ny mpitety ny tranon-kala</translation>
+        <translation>Exportar o explorador web</translation>
     </message>
 </context>
 <context>
     <name>UBFeatureProperties</name>
     <message>
         <source>Add to page</source>
-        <translation>Ampiana amin&apos;ilay pejy</translation>
+        <translation>Engadir a páxina</translation>
     </message>
     <message>
         <source>Set as background</source>
-        <translation>Apetraka ambadika</translation>
+        <translation>Definir como fondo</translation>
     </message>
     <message>
         <source>Add to library</source>
-        <translation>Ampiana amin&apos;ny tahirim-boky</translation>
+        <translation>Engadir a biblioteca</translation>
     </message>
     <message>
         <source>Object informations</source>
-        <translation>Mombamomban&apos;ny zavatra</translation>
+        <translation>Información do obxecto</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Ampiana</translation>
+        <translation>Engadir</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesActionBar</name>
     <message>
         <source>Add to favorites</source>
-        <translation>Ampiana amin&apos;ny  zavatra tena tiana</translation>
+        <translation>Engadir favoritos</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation>Zaraina</translation>
+        <translation>Compartir</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Hikaroka</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Fafana</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <source>Back to folder</source>
-        <translation>Miverina any amn&apos;ilay fitoeran-drakitra</translation>
+        <translation>Regresar á carpeta</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation>Fafana amin&apos;ny  zavatra tena tiana</translation>
+        <translation>Eliminar de favoritos</translation>
     </message>
     <message>
         <source>Create new folder</source>
-        <translation>Mamorona fitoeran-drakitra vaovao</translation>
+        <translation>Crear nova carpeta</translation>
     </message>
     <message>
         <source>Rescan file system</source>
-        <translation>Avereno jerena ny rakitrin&apos;ny rafitra</translation>
+        <translation>Comprobar os ficheiros do sistema</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesController</name>
     <message>
         <source>ImportedImage</source>
-        <translation>Sary Nafarana</translation>
+        <translation>Imaxe importada</translation>
     </message>
     <message>
         <source>Audios</source>
-        <translation>Feo</translation>
+        <translation>Ficheiros de Audio</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation>Sarimietsika</translation>
+        <translation>Películas</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Sary</translation>
+        <translation>Imaxes</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation>Sary ahetsika</translation>
+        <translation>Animacións</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation>Fifandraisana</translation>
+        <translation>Interactividades</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation>Rindran&apos;asa</translation>
+        <translation>Aplicacións</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation>Bika</translation>
+        <translation>Formas</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation>Tena tiana</translation>
+        <translation>Favoritos</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation>Fikarohana ny tranon-kala</translation>
+        <translation>Busca Web</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Daba</translation>
+        <translation>Papeleira</translation>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation>Tobin-drohy</translation>
+        <translation>Favoritos</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation>Tranon-kala</translation>
+        <translation>Web</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation>Ekena</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Ajanony</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation>Ampidiro ny anaran&apos;ilay fitoeran-drakitra vaovao</translation>
+        <translation>Introduza un novo nome para a carpeta</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation>Maka</translation>
+        <translation>Cargando </translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation>Voahidy</translation>
+        <translation>Bloqueado</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation>Hita amin&apos;ny efijery voavelatra</translation>
+        <translation>Visible en pantalla estendida</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Manampy fihetsika iray</translation>
+        <translation>Engadir unha acción</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation>Esorina amin&apos;ilay raki-peo ny rohy</translation>
+        <translation>Eliminar enlace a audio</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation>Esorina amin&apos;ilay pejy ny rohy</translation>
+        <translation>Eliminar enlace a páxina</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation>Esorina amin&apos;ilay rohin&apos;ny tranon-kala ny rohy</translation>
+        <translation>Eliminar enlace a web url</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation>Voahidy</translation>
+        <translation>Bloqueado</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation>Hita amin&apos;ny efijery voavelatra</translation>
+        <translation>Visible en pantalla estendida</translation>
     </message>
     <message>
         <source>Go to Content Source</source>
-        <translation>Hande any amin&apos;ny fototr&apos;ilay mpiatiny</translation>
+        <translation>Ir a fonte de contido</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Manampy fihetsika iray</translation>
+        <translation>Engadir unha acción</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation>Esorina amin&apos;ilay raki-peo ny rohy</translation>
+        <translation>Eliminar enlace a audio</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation>Esorina amin&apos;ilay pejy ny rohy</translation>
+        <translation>Eliminar enlace a páxina</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation>Esorina amin&apos;ilay rohin&apos;ny tranon-kala ny rohy</translation>
+        <translation>Eliminar enlace a web url</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
         <source>&lt;Type Text Here&gt;</source>
-        <translation>&lt;Type lahabolana eto&gt;</translation>
+        <translation>&lt;Teclear Texto aquí&gt;</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
         <source>Text Color</source>
-        <translation>Lokon&apos;ilay lahabolana</translation>
+        <translation>Cor de texto</translation>
     </message>
     <message>
         <source>Editable</source>
-        <translation>Azo ovaina</translation>
+        <translation>Editable</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation>Maka ...</translation>
+        <translation>Cargando...</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItemDelegate</name>
     <message>
         <source>Frozen</source>
-        <translation>Nampagatsiahana</translation>
+        <translation>Conxelado</translation>
     </message>
     <message>
         <source>Transform as Tool </source>
-        <translation>Ovaina ho fitaovana</translation>
+        <translation>Transformar como ferramenta</translation>
     </message>
 </context>
 <context>
     <name>UBImportCFF</name>
     <message>
         <source>Common File Format (</source>
-        <translation>Andrefin&apos;ny rakitra mahazatra (</translation>
+        <translation>Formato de arquivo común (</translation>
     </message>
     <message>
         <source>Importing file %1...</source>
-        <translation>Manafatra rakitra %1 ...</translation>
+        <translation>Importando arquivo %1...</translation>
     </message>
     <message>
         <source>Import of file %1 failed.</source>
-        <translation>Fanafarana ny rakitra %1 tsy nety.</translation>
+        <translation>Fallo na importanción do arquivo %1.</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Fanafarana nety.</translation>
+        <translation>Importación satisfactoria.</translation>
     </message>
     <message>
         <source>Import failed.</source>
-        <translation>Fanafarana tsy nety.</translation>
+        <translation>Fallo da importación.</translation>
     </message>
 </context>
 <context>
     <name>UBImportDocument</name>
     <message>
         <source>Importing file %1...</source>
-        <translation>Manafatra rakitra %1 ...</translation>
+        <translation>Importando arquivo %1...</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Fanafarana nety.</translation>
+        <translation>Importación satisfactoria.</translation>
     </message>
     <message>
         <source>Import of file %1 failed.</source>
-        <translation>Fanafarana ny rakitra %1 tsy nety.</translation>
+        <translation>Fallo da importación do arquivo %1.</translation>
     </message>
     <message>
         <source>Open-Sankore (*.ubz)</source>
@@ -1947,87 +1945,87 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation>Open-Sankore (valan-drakitra) (*.ubx)</translation>
+        <translation>Open-Sankore (set de documentos) (*.ubx)</translation>
     </message>
 </context>
 <context>
     <name>UBImportImage</name>
     <message>
         <source>Image Format (</source>
-        <translation>Andrefin&apos;ilay sary (</translation>
+        <translation>Formato de imaxe (</translation>
     </message>
 </context>
 <context>
     <name>UBImportPDF</name>
     <message>
         <source>Portable Document Format (*.pdf)</source>
-        <translation>Portable Document Format (*.pdf)</translation>
+        <translation>Formato de documento portátil (*.pdf)</translation>
     </message>
     <message>
         <source>PDF import failed.</source>
-        <translation>Fanafarana PDF tsy nety.</translation>
+        <translation>Fallo da importación de PDF.</translation>
     </message>
     <message>
         <source>Importing page %1 of %2</source>
-        <translation>Manafatra pejy %1 amin&apos;ny %2</translation>
+        <translation type="unfinished">Importando páxina %1 de %2</translation>
     </message>
 </context>
 <context>
     <name>UBIntranetPodcastPublisher</name>
     <message>
         <source>Error while publishing video to intranet (%1)</source>
-        <translation>Nisy tsy fetezana tamin&apos;ny fandefasana ny horonan-tsary amin&apos;ny tranon-kala anatiny (%1)</translation>
+        <translation>Erro ao publicar o vídeo en intranet (%1)</translation>
     </message>
     <message>
         <source>Publishing to Intranet in progress %1 %</source>
-        <translation>Fandefasana amin&apos;ny tranon-kala anatiny mandeha %1 %</translation>
+        <translation>Publicación en Intranet en progreso %1 %</translation>
     </message>
 </context>
 <context>
     <name>UBIntranetPodcastPublishingDialog</name>
     <message>
         <source>Publish</source>
-        <translation>Alefa</translation>
+        <translation>Publicar</translation>
     </message>
 </context>
 <context>
     <name>UBKeyboardPalette</name>
     <message>
         <source>Enter</source>
-        <translation>Hiditra</translation>
+        <translation>Entrar</translation>
     </message>
 </context>
 <context>
     <name>UBMainWindow</name>
     <message>
         <source>Yes</source>
-        <translation>Eny</translation>
+        <translation>Sí</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Tsia</translation>
+        <translation>Non</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ekena</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
     <name>UBMessagesDialog</name>
     <message>
         <source>Close</source>
-        <translation>Hidio</translation>
+        <translation>Cerrar</translation>
     </message>
 </context>
 <context>
     <name>UBNetworkAccessManager</name>
     <message>
         <source>&lt;qt&gt;Enter username and password for &quot;%1&quot; at %2&lt;/qt&gt;</source>
-        <translation>&lt;qt&gt; Ampidiro ny anaran&apos;ny mpampiasa sy ny teny fanalahidy ho an&apos;ny &quot;%1&quot; amin&apos;ny %2 &lt;/qt&gt;</translation>
+        <translation>&lt;qt&gt;Introduza o nome de usuario e a contrasinal para &quot;%1&quot; en %2&lt;/qt&gt;</translation>
     </message>
     <message>
         <source>Failed to log to Proxy</source>
-        <translation>Tsy nety ny fidirana ami&apos;ny Proxy</translation>
+        <translation>Fallo ao iniciar sesión en proxy</translation>
     </message>
     <message>
         <source>SSL Errors:
@@ -2037,354 +2035,352 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
 %2
 
 Do you want to ignore these errors for this host?</source>
-        <translation>Tsy fetezana SSL
-
-%1
-
-%2
-
-Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</translation>
+        <translation>Erros SSL: %1 %2 ¿Desexa ignorar estes erros para este servidor?</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Eny</translation>
+        <translation>Sí</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Tsia</translation>
+        <translation>Non</translation>
     </message>
 </context>
 <context>
     <name>UBPersistenceManager</name>
     <message>
         <source>(copy)</source>
-        <translation>(adika)</translation>
+        <translation>(copiar)</translation>
     </message>
     <message>
         <source>Document Repository Loss</source>
-        <translation>Haverezana ny fitehirizana ny rakitra </translation>
+        <translation>Perda de depósito de documentos</translation>
     </message>
     <message>
         <source>Sankore has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
-        <translation>Verin&apos;i Sankore ny fandraisana amin&apos;ny fitehirizana ny rakitra &apos;%1&apos;. Tsy naintsy nikatona ny rindran&apos;asa mba tsy ahasimba ny data. Mety tsy hihatra ny fanavaozana farany.</translation>
+        <translation>Sankore perdeu acceso ao depósito de documentos &apos;%1&apos;. Desafortunadamente a aplicación debe pecharse para evitar danos nos datos. Tamén se poderían perder os últimos cambios.</translation>
     </message>
 </context>
 <context>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation>Anglisy</translation>
+        <translation>Inglés</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Rosiana</translation>
+        <translation>Ruso</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Alemanina</translation>
+        <translation>Alemán</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Frantsay</translation>
+        <translation>Francés</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>Frantsay avy amin&apos;ny Suisse</translation>
+        <translation>Francés-Suizo</translation>
     </message>
 </context>
 <context>
     <name>UBPodcastController</name>
     <message>
         <source>Failed to start encoder ...</source>
-        <translation>Nisy tsy nety ny fandefasana ny encoder ...</translation>
+        <translation>Fallo ao iniciar o codificador...</translation>
     </message>
     <message>
         <source>No Podcast encoder available ...</source>
-        <translation>Tsy misy Podcast encoder azo alaina ...</translation>
+        <translation>Ningún codificador de Podcast dispoñible...</translation>
     </message>
     <message>
         <source>Part %1</source>
-        <translation>Ampahany %1</translation>
+        <translation>Parte %1</translation>
     </message>
     <message>
         <source>on your desktop ...</source>
-        <translation>eo amin&apos;ny sehatr&apos;asanao ...</translation>
+        <translation>no seu escritorio...</translation>
     </message>
     <message>
         <source>in folder %1</source>
-        <translation>ao anatin&apos;ny fitoeran-drakitra %1</translation>
+        <translation>na carpeta %1</translation>
     </message>
     <message>
         <source>Podcast created %1</source>
-        <translation>Podcast voaforona %1</translation>
+        <translation>Podcast creado %1</translation>
     </message>
     <message>
         <source>Podcast recording error (%1)</source>
-        <translation>Nisy tsy nety ny fandraiketana ny Podcast (%1)</translation>
+        <translation>Erro na gravación de podcast (%1)</translation>
     </message>
     <message>
         <source>Default Audio Input</source>
-        <translation>Fidirana feo tsotra</translation>
+        <translation>Entrada de audio predeterminada</translation>
     </message>
     <message>
         <source>No Audio Recording</source>
-        <translation>Tsy misy ny fandraiketana ny feo</translation>
+        <translation>Ningunha gravación de audio</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation>Kely</translation>
+        <translation>Pequeno</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation>Salasala</translation>
+        <translation>Medio</translation>
     </message>
     <message>
         <source>Full</source>
-        <translation>Feno</translation>
+        <translation>Completo</translation>
     </message>
     <message>
         <source>Publish to Intranet</source>
-        <translation>Alefa amin&apos;ny tranon-kala anatiny</translation>
+        <translation>Publicar en Intranet</translation>
     </message>
     <message>
         <source>Publish to Youtube</source>
-        <translation>Alefa amin&apos;ny Youtube</translation>
+        <translation>Publicar en Youtube</translation>
     </message>
     <message>
         <source>Sankore Cast</source>
-        <translation>Sankore Cast</translation>
+        <translation>Presentación Sankore</translation>
     </message>
 </context>
 <context>
     <name>UBPreferencesController</name>
     <message>
         <source>version: </source>
-        <translation>kinova:</translation>
+        <translation>versión:</translation>
     </message>
     <message>
         <source>Marker is pressure sensitive</source>
-        <translation>Ny penina lehibe dia sarotiny amin&apos;ny fitsindrina</translation>
+        <translation>O marcador é sensible á presión</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Tsotra</translation>
+        <translation>Por defecto</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation>Arabic</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation>Bulgarian</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation>Catalan</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Czech</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation>Danish</translation>
+        <translation></translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Alemanina</translation>
+        <translation>Alemán</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Greek</translation>
+        <translation></translation>
     </message>
     <message>
         <source>English</source>
-        <translation>Anglisy</translation>
+        <translation>Inglés</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation>Anglisy UK</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Espaniola</translation>
+        <translation>Castelán</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Frantsay</translation>
+        <translation>Francés</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>Frantsay avy amin&apos;ny Suisse</translation>
+        <translation>Francés-Suizo</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italianina</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation>Hebrio</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation>Japanese</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation>Koreanina</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation>Malagasy</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation>Norvejianina</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Dutch</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation>Polish</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation>Romansh</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation>Romanianina</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Rosiana</translation>
+        <translation>Ruso</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation>Slovak</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation>Swedish</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation>Turkish</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation>Sinoa</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation>Sinoa tsotra</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation>Sinoa nentim-paharazana</translation>
-    </message>
-    <message>
-        <source>Corsican</source>
-        <translation>Corsican</translation>
-    </message>
-    <message>
-        <source>Hindi</source>
-        <translation>Hindi</translation>
-    </message>
-    <message>
-        <source>Portuguese</source>
-        <translation>Portuguese</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Basque</source>
-        <translation>Basque</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Corsican</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hindi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
     <message>
         <source>Proxy Login</source>
-        <translation>Fidirana Proxy</translation>
+        <translation>Inicio de sesión en proxy</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Anaran&apos;ny mpampiasa:</translation>
+        <translation>Nome de usuario:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Teny fanalahidy:</translation>
+        <translation>Contrasinal:</translation>
     </message>
 </context>
 <context>
     <name>UBPublicationDlg</name>
     <message>
         <source>Publish document on the web</source>
-        <translation>Apetraka amin&apos;ny tranon-kala ny rakitra</translation>
+        <translation>Publicar documento na web</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Lohateny:</translation>
+        <translation>Título:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Fanazavana:</translation>
+        <translation>Descrición:</translation>
     </message>
     <message>
         <source>Publish</source>
-        <translation>Alefa</translation>
+        <translation>Publicar</translation>
     </message>
 </context>
 <context>
     <name>UBSettings</name>
     <message>
         <source>My Movies</source>
-        <translation>Ny sarimietsiko</translation>
+        <translation>As miñas películas</translation>
     </message>
     <message>
         <source>/Web</source>
-        <translation>/Tranon-kala</translation>
+        <translation>/Web</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation>Hita amin&apos;ny manaraka</translation>
+        <translation>Visible a próxima vez</translation>
     </message>
 </context>
 <context>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation>Mpampianatra</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation>Mpianatra</translation>
+        <translation>Estudante</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation>Sorato eto ny tokony atao ...</translation>
+        <translation>Escribir a tarefa aquí ...</translation>
     </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>
     <message>
         <source>drop media here ...</source>
-        <translation>Esory eto ny haino aman-jery ...</translation>
+        <translation>Solte o elemento multimedia aquí ...</translation>
     </message>
     <message>
         <source>Type title here...</source>
-        <translation>Sorato eto ny lohateny ...</translation>
+        <translation>Escriba aquí o título ...</translation>
     </message>
 </context>
 <context>
     <name>UBTGUrlWidget</name>
     <message>
         <source>Insert link title here...</source>
-        <translation>Ampidiro eto ny rohin&apos;ny lohateny ...</translation>
+        <translation>Insira aquí o título do enlace ...</translation>
     </message>
 </context>
 <context>
@@ -2398,344 +2394,344 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation>Sorato eto ny lohateny ...</translation>
+        <translation>Escriba o título aquí ...</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation>Sorato eto ny fanamarihana ...</translation>
+        <translation>Escriba o comentario aquí ...</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Manampy fihetsika iray</translation>
+        <translation>Engadir unha acción</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translation>Manampy haino aman-jery iray</translation>
+        <translation>Engadir un ficheiro multimedia</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation>Manampy rohy iray</translation>
+        <translation>Engadir un enlace</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation>Pejy: %0</translation>
+        <translation>Páxina: %0</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation>Sorato eto ny lohatenin&apos;ny fifandraisana manokana ...</translation>
+        <translation>Escriba aquí o título da sesión ...</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation>Mpamorona</translation>
+        <translation>Autor(es)</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation>Sorato eto ny mpamorona ...</translation>
+        <translation>Escriba aquí os autores ...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation>Tanjona</translation>
+        <translation>Objetivo(s)</translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation>Sorato eto ny tanjona ...</translation>
+        <translation>Escriba aquí os objetivos ...</translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translation>Fanaovana indexation an&apos;ny loharanon-drakitra</translation>
+        <translation>Ordenando os recursos</translation>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation>Teny mahasarika:</translation>
+        <translation>Palabras Clave:</translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation>Sorato eto ny teny mahasarika ...</translation>
+        <translation>Escriba aquí as palabras clave ...</translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation>Lenta:</translation>
+        <translation>Nivel:</translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation>Lohakevitra:</translation>
+        <translation>Materias:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Karazana:</translation>
+        <translation>Tipo:</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation>Licence</translation>
+        <translation>Licenza</translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
-        <translation>Fanankinana CC BY</translation>
+        <translation>Atribución CC BY</translation>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
-        <translation>Fanankinana NoDerivs CC BY-ND</translation>
+        <translation>Atribución-NoDerivs CC BY-ND</translation>
     </message>
     <message>
         <source>Attribution-ShareAlike CC BY-SA</source>
-        <translation>Fanankinana ShareAlike CC BY-SA</translation>
+        <translation>Atribución-ShareAlike CC BY-SA</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial CC BY-NC</source>
-        <translation>Fanankinana NonCommercial CC BY-NC</translation>
+        <translation>Atribución-NonCommercial CC BY-NC</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</source>
-        <translation>Fanankinana NonCommercial NoDerivs CC BY-NC-ND</translation>
+        <translation>Atribución-NonCommercial-Noderivs CC BY-NC-ND</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</source>
-        <translation>Fanankinana NonCommercial ShareAlike  CC BY-NC-SA</translation>
+        <translation>Atribución-NonCommercial-ShareAlike CC BY-NC-SA</translation>
     </message>
     <message>
         <source>Public domain</source>
-        <translation>Domena abaribary</translation>
+        <translation>Dominio Público</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation>Zon&apos;ny mpamorona</translation>
+        <translation>Copyright</translation>
     </message>
     <message>
         <source>Created the:
 </source>
-        <translation>Voaforona ny:</translation>
+        <translation>Creado o:</translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation>Noavoazana ny:</translation>
+        <translation>Actualizado o:</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Lohatenin&apos;ilay pejy</translation>
+        <translation>Portada</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation>Pejy: %0</translation>
+        <translation>Páxina: %0</translation>
     </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
     <message>
         <source>Generating preview thumbnails ...</source>
-        <translation>Mamorona kisarisary ho hita aloha ...</translation>
+        <translation>Xerando miniaturas de previsualización...</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
-        <translation>%1 ny  kisarisary no voaforona ...</translation>
+        <translation>%1 miniaturas xeradas...</translation>
     </message>
 </context>
 <context>
     <name>UBToolsManager</name>
     <message>
-        <source>Compass</source>
-        <translation>Famantaranavaratra</translation>
+        <source>Mask</source>
+        <translation>Máscara</translation>
     </message>
     <message>
         <source>Ruler</source>
-        <translation>Fanipihana</translation>
+        <translation>Regra</translation>
+    </message>
+    <message>
+        <source>Compass</source>
+        <translation>Compás</translation>
     </message>
     <message>
         <source>Protractor</source>
-        <translation>Rapporteur</translation>
-    </message>
-    <message>
-        <source>Mask</source>
-        <translation>Tasova</translation>
+        <translation>Transportador</translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation>Telolafy</translation>
+        <translation>Triángulo</translation>
     </message>
     <message>
         <source>Magnifier</source>
-        <translation>Fanita-jery</translation>
+        <translation>Lupa</translation>
     </message>
     <message>
         <source>Cache</source>
-        <translation>Tahiry</translation>
+        <translation>Caché</translation>
     </message>
 </context>
 <context>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation>Pejy iray manontolo</translation>
+        <translation>Páxina completa</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation>Natao tao anatiny</translation>
+        <translation>Engadir</translation>
     </message>
 </context>
 <context>
     <name>UBUpdateDlg</name>
     <message>
         <source>Document updater</source>
-        <translation>Mpanavaozana ny rakitra</translation>
+        <translation>Actualizador de documento</translation>
     </message>
     <message>
         <source> files require an update.</source>
-        <translation>Mila fanavaozana ny rakitra.</translation>
+        <translation> os arquivos requiren unha actualización.</translation>
     </message>
     <message>
         <source>Backup path: </source>
-        <translation>Lalana ny dikamitovy:</translation>
+        <translation>Ruta da copia de seguridade:</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Hizaha</translation>
+        <translation>Explorar</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Avaozy</translation>
+        <translation>Actualizar</translation>
     </message>
     <message>
         <source>Select a backup folder</source>
-        <translation>Safidio ny fitoeran-drakitra asiana dikamitovy</translation>
+        <translation>Seleccione unha carpeta para a copia de seguridade</translation>
     </message>
     <message>
         <source>Files update successful!
 Please reboot the application to access the updated documents.</source>
-        <translation>Nety ny fanavaozana ny rakitra!
-Avereno alefa ny rindr&apos;asa ahafahana mampiasa ny rakitra novoazana azafady.</translation>
+        <translation>Actualización de arquivos satisfactoria!
+Por favor, reinicie a aplicación para acceder aos documentos actualizados.</translation>
     </message>
     <message>
         <source>An error occured during the update. The files have not been affected.</source>
-        <translation>Nisy tsy nety tamin&apos;ny fanavaozana. Tsy niova ny rakitra.</translation>
+        <translation>Aconteceu un erro durante a actualización. Os arquivos non foron afectados.</translation>
     </message>
     <message>
         <source>Files update results</source>
-        <translation>Valin&apos;ny fanavaozana ny rakitra</translation>
+        <translation>Resultados da actualización de arquivos</translation>
     </message>
     <message>
         <source>Updating file </source>
-        <translation>Manavao an&apos;ilay rakitra</translation>
+        <translation>Actualizando arquivo</translation>
     </message>
     <message>
         <source>Please wait the import process will start soon...</source>
-        <translation>Mba endraso kely azafady, anomboka tsy ho ela ny fanafarana ...</translation>
+        <translation>Por favor espere, o proceso de importación comenzará pronto...</translation>
     </message>
     <message>
         <source>Remind me later</source>
-        <translation>Ampatsiahivo ana amin&apos;ny manaraka</translation>
+        <translation>Recórdamo máis tarde</translation>
     </message>
 </context>
 <context>
     <name>UBWebPluginWidget</name>
     <message>
         <source>Loading...</source>
-        <translation>Maka ...</translation>
+        <translation>Cargando...</translation>
     </message>
 </context>
 <context>
     <name>UBWebPublisher</name>
     <message>
         <source>Publish Document on Sankore Web</source>
-        <translation>Apetraka amin&apos;ny tranon-kala Sankore ny rakitra</translation>
+        <translation>Publicar Documento na web Sankore</translation>
     </message>
 </context>
 <context>
     <name>UBWidgetUniboardAPI</name>
     <message>
         <source>%0 called (method=%1, status=%2)</source>
-        <translation>%0 voaantso ( paika = %1, fandehany=%2)</translation>
+        <translation>%0 chamando (método=%1, estado=%2)</translation>
     </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>
     <message>
         <source>YouTube authentication failed.</source>
-        <translation>Famantarana YouTube tsy nety.</translation>
+        <translation>Fallo na autenticación de YouTube.</translation>
     </message>
     <message>
         <source>Error while uploading video to YouTube (%1)</source>
-        <translation>Nisy tsy fetezana tamin&apos;ny fandefasana ny horonan-tsary amin&apos;ny YouTube (%1)</translation>
+        <translation>Erro ao cargar o vídeo a YouTube (%1)</translation>
     </message>
     <message>
         <source>Upload to YouTube in progress %1 %</source>
-        <translation>Fandefasana ho an&apos;ny YouTube am-pandehanana %1 %</translation>
+        <translation>Carga a YoutTube en progreso %1 %</translation>
     </message>
     <message>
         <source>Open-Sankore</source>
-        <translation>Open-Sankoré</translation>
+        <translation>Open-Sankore</translation>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation>OpenSankore</translation>
+        <translation>Open-Sankore</translation>
     </message>
 </context>
 <context>
     <name>UBYouTubePublishingDialog</name>
     <message>
         <source>Upload</source>
-        <translation>Fandefasana</translation>
+        <translation>Cargar</translation>
     </message>
     <message>
         <source>Autos &amp; Vehicles</source>
-        <translation>Fiarakodia &amp; fiara</translation>
+        <translation>Autos e Vehículos</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Mozika</translation>
+        <translation>Música</translation>
     </message>
     <message>
         <source>Pets &amp; Animals</source>
-        <translation>Biby</translation>
+        <translation>Mascotas e Animais</translation>
     </message>
     <message>
         <source>Sports</source>
-        <translation>Fanatajahan-tena</translation>
+        <translation>Deportes</translation>
     </message>
     <message>
         <source>Travel &amp; Events</source>
-        <translation>Dia &amp; zava-miseho</translation>
+        <translation>Viaxes e Eventos</translation>
     </message>
     <message>
         <source>Gaming</source>
-        <translation>Filalaovana</translation>
+        <translation>Xogo</translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation>Mampiomehy</translation>
+        <translation>Comedia</translation>
     </message>
     <message>
         <source>People &amp; Blogs</source>
-        <translation>Olona &amp; Blogs</translation>
+        <translation>Persoas e Blogs</translation>
     </message>
     <message>
         <source>News &amp; Politics</source>
-        <translation>Vaovao &amp; politika</translation>
+        <translation>Noticias e Política</translation>
     </message>
     <message>
         <source>Entertainment</source>
-        <translation>Kilalao</translation>
+        <translation>Entretemento</translation>
     </message>
     <message>
         <source>Education</source>
-        <translation>Fianarana</translation>
+        <translation>Educación</translation>
     </message>
     <message>
         <source>Howto &amp; Style</source>
-        <translation>Ahoana no manao azy &amp; Haingo</translation>
+        <translation>Moda e estilo</translation>
     </message>
     <message>
         <source>Nonprofits &amp; Activism</source>
-        <translation>Tsy misy tombony &amp; Fandraisana andraikitra</translation>
+        <translation>Sen fins de lucro e Activismo</translation>
     </message>
     <message>
         <source>Science &amp; Technology</source>
-        <translation>Siansa &amp; Teknolojia</translation>
+        <translation>Ciencia e Tecnoloxía</translation>
     </message>
 </context>
 <context>
@@ -2749,66 +2745,66 @@ Avereno alefa ny rindr&apos;asa ahafahana mampiasa ny rakitra novoazana azafady.
     <name>UniboardSankoreTransition</name>
     <message>
         <source>Import old Uniboard/Sankore documents</source>
-        <translation>Hafaro ny rakitra Uniboard na ny rakitra Sankore taloha</translation>
+        <translation>Importar documentos antigos de Uniboard/Sankore</translation>
     </message>
     <message>
         <source>There are no documents that should be imported</source>
-        <translation>Tsy misy rakitra tokony hafarana</translation>
+        <translation>Non hai documentos a importar</translation>
     </message>
 </context>
 <context>
     <name>WBClearButton</name>
     <message>
         <source>Clear</source>
-        <translation>Diovy</translation>
+        <translation>Eliminar</translation>
     </message>
 </context>
 <context>
     <name>WBDownloadItem</name>
     <message>
         <source>Save File</source>
-        <translation>Raiketo ny rakitra</translation>
+        <translation>Gardar arquivo</translation>
     </message>
     <message>
         <source>Download canceled: %1</source>
-        <translation>Fakana najanona: %1</translation>
+        <translation>Descarga cancelada: %1</translation>
     </message>
     <message>
         <source>Error opening saved file: %1</source>
-        <translation>Nisy tsy nety tamin&apos;ny fanokafana ny rakitra voatahiry: %1</translation>
+        <translation>Erro ao abrir o arquivo gardado: %1</translation>
     </message>
     <message>
         <source>Error saving: %1</source>
-        <translation>Nisy tsy nety tamin&apos;ny fandraiketana: %1</translation>
+        <translation>Erro ao gardar: %1</translation>
     </message>
     <message>
         <source>Network Error: %1</source>
-        <translation>Nisy tsy nety tamin&apos;ny rezo: %1</translation>
+        <translation>Erro de rede: %1</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>segondra</translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minitra</translation>
+        <translation>minutos</translation>
     </message>
     <message>
         <source>- %4 %5 remaining</source>
-        <translation>- %4 %5 sisa</translation>
+        <translation>- %4 %5 restante</translation>
     </message>
     <message>
         <source>%1 of %2 (%3/sec) %4</source>
-        <translation>%1 amin&apos;ny %2 (%3 isakin&apos;ny segondra) %4</translation>
+        <translation>%1 de %2 (%3/seg) %4</translation>
     </message>
     <message>
         <source>?</source>
         <comment>unknown file size</comment>
-        <translation>?</translation>
+        <translation>¿?</translation>
     </message>
     <message>
         <source>%1 of %2 - Stopped</source>
-        <translation>%1 amin&apos;ny %2 - Najanona</translation>
+        <translation>%1 de %2 - Detido</translation>
     </message>
     <message>
         <source>bytes</source>
@@ -2826,153 +2822,153 @@ Avereno alefa ny rindr&apos;asa ahafahana mampiasa ny rakitra novoazana azafady.
 <context>
     <name>WBDownloadManager</name>
     <message>
-        <source>%1 Downloads</source>
-        <comment>always &gt;= 2</comment>
-        <translation>%1 Nalaina</translation>
+        <source>1 Download</source>
+        <translation>1 Descarga</translation>
     </message>
     <message>
-        <source>1 Download</source>
-        <translation>Nalaina 1</translation>
+        <source>%1 Downloads</source>
+        <comment>always &gt;= 2</comment>
+        <translation>%1 Descargas</translation>
     </message>
 </context>
 <context>
     <name>WBHistoryModel</name>
     <message>
         <source>Title</source>
-        <translation>Lohateny</translation>
+        <translation>Título</translation>
     </message>
     <message>
         <source>Address</source>
-        <translation>Adiresy</translation>
+        <translation>Enderezo</translation>
     </message>
 </context>
 <context>
     <name>WBHistoryTreeModel</name>
     <message>
         <source>Earlier Today</source>
-        <translation>Talohaloha androany</translation>
+        <translation>Anteriormente hoxe</translation>
     </message>
     <message>
         <source>%1 items</source>
-        <translation>%1 Zavatra</translation>
+        <translation>%1 elementos</translation>
     </message>
 </context>
 <context>
     <name>WBSearchLineEdit</name>
     <message>
         <source>Search</source>
-        <translation>Hikaroka</translation>
+        <translation>Busca</translation>
     </message>
 </context>
 <context>
     <name>WBTabBar</name>
     <message>
         <source>New &amp;Tab</source>
-        <translation>Vaovao &amp; Tab</translation>
+        <translation>Nova &amp;Pestana</translation>
     </message>
     <message>
         <source>Clone Tab</source>
-        <translation>Asina dikamitovy ny Tab</translation>
+        <translation>Duplicar pestana</translation>
     </message>
     <message>
         <source>&amp;Close Tab</source>
-        <translation>&amp;Idina ny Tab</translation>
+        <translation>&amp;Pechar pestana</translation>
     </message>
     <message>
         <source>Close &amp;Other Tabs</source>
-        <translation>Idina &amp; ny Tab sasany</translation>
+        <translation>Pechar &amp; Outras pestanas</translation>
     </message>
     <message>
         <source>Reload Tab</source>
-        <translation>Averina aseho ny Tab</translation>
+        <translation>Recargar pestana</translation>
     </message>
     <message>
         <source>Reload All Tabs</source>
-        <translation>Averina aseho ny Tab rehetra</translation>
+        <translation>Volver cargar todas as pestanas</translation>
     </message>
 </context>
 <context>
     <name>WBTabWidget</name>
     <message>
         <source>Recently Closed Tabs</source>
-        <translation>Ny Tab nidina vao vetivety</translation>
+        <translation>Pestanas pechadas recentemente</translation>
     </message>
     <message>
         <source>(Untitled)</source>
-        <translation>( Tsy misy lohateny)</translation>
+        <translation>(Sen título)</translation>
     </message>
 </context>
 <context>
     <name>WBToolbarSearch</name>
     <message>
         <source>Search</source>
-        <translation>Hikaroka</translation>
+        <translation>Busca</translation>
     </message>
     <message>
         <source>No Recent Searches</source>
-        <translation>Tsy misy karoka vao natao vetivety</translation>
+        <translation>Ningunha busca recente</translation>
     </message>
     <message>
         <source>Recent Searches</source>
-        <translation>Karoka vao natao vetivety</translation>
+        <translation>Buscas recentes</translation>
     </message>
     <message>
         <source>Clear Recent Searches</source>
-        <translation>Fafao ny karoka vao natao vetivety</translation>
+        <translation>Borrar buscas recentes</translation>
     </message>
 </context>
 <context>
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation>Safidio ny mpiatiny ho alaina:</translation>
+        <translation>Seleccionar o contido que desexa capturar:</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation>Anaran&apos;ny rindran&apos;asa</translation>
+        <translation>Nome da aplicación</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation>Fifehezana sy dina.</translation>
+        <translation>Restrición y responsabilidade. </translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation>Ity fiasana ity dia namboarina ho andeha amin&apos;ny akamaroan&apos;ny pejin&apos;ny tranon-kala.</translation>
+        <translation>Esta característica foi desenvolvida para funcionar na maioria das páxinas web máis comúns.</translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation>Mba hajao azafady ny lalana amin&apos;ny fanamboarana rohy sy fangalana mpiatiny amin&apos;ny tranon-kala.</translation>
+        <translation>Por favor, respecte os dereitos de autor ao crear enlaces ou ao capturar contido da web.</translation>
     </message>
     <message>
         <source>Download to
 library</source>
-        <translation>Alaina ho an&apos;ny tahirim-boky</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation>Alaina ho an&apos;io pejy io</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation>Ampiana rohy ao anatin&apos;ny tahirim-boky</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation>Ampiana rohy eto amin&apos;ity pejy ity</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WBWebPage</name>
     <message>
         <source>Download</source>
-        <translation>Nalaina</translation>
+        <translation>Descargar</translation>
     </message>
     <message>
         <source>Add to Current Document</source>
-        <translation>Ampiana amn&apos;ny rakitra iasana</translation>
+        <translation>Engadir ao documento actual</translation>
     </message>
     <message>
         <source>PDF</source>
@@ -2980,37 +2976,37 @@ current page</source>
     </message>
     <message>
         <source>Error loading page: %1</source>
-        <translation>Nisy tsy nety tamin&apos;ny fanafarana ny pejy: %1</translation>
+        <translation>Erro ao cargar a páxina: %1</translation>
     </message>
     <message>
         <source>Download PDF Document: would you prefer to download the PDF file or add it to the current Sankore document?</source>
-        <translation>Maka rakitra PDF: Inona no tianao : maka ny rakitra PDF sa manampy an&apos;azy amin&apos;ny rakitra Sankore iasanao izao ?</translation>
+        <translation>Descargar documento PDF: Prefire descargar o arquivo PDF ou engadilo ao documento Sankore actual?</translation>
     </message>
 </context>
 <context>
     <name>WBWebView</name>
     <message>
         <source>Open in New Tab</source>
-        <translation>Sokafy amin&apos;ny Tab vaovao</translation>
+        <translation>Abrir en nova pestana</translation>
     </message>
 </context>
 <context>
     <name>YouTubePublishingDialog</name>
     <message>
         <source>Publish Podcast to YouTube</source>
-        <translation>Ametraka Podcast amin&apos;ny Youtube</translation>
+        <translation>Publicar Podcast en YouTube</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Lohateny</translation>
+        <translation>Título</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Fanazavana</translation>
+        <translation>Descrición</translation>
     </message>
     <message>
         <source>Keywords</source>
-        <translation>Teny mahasarika</translation>
+        <translation>Palabras clave</translation>
     </message>
     <message>
         <source>Uniboard</source>
@@ -3018,15 +3014,15 @@ current page</source>
     </message>
     <message>
         <source>Category</source>
-        <translation>Antoko</translation>
+        <translation>Categoría</translation>
     </message>
     <message>
         <source>YouTube Username</source>
-        <translation>Anaran&apos;ny mpampiasa Youtube</translation>
+        <translation>Nome de usuario de YouTube</translation>
     </message>
     <message>
         <source>YouTube Password</source>
-        <translation>Teny fanalahidy Youtube</translation>
+        <translation>Contrasinal de Youtube</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3038,206 +3034,206 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;Rehefa tsindrinao ny &quot;Alefa&quot; dia manamarina ianao fa manana ny alalana rehetra ami&apos;ny mpiatiny na nomen&apos;ny mpamorona alalana ianao andefa an&apos;ilay rakitra amin&apos;ny YouTube.&lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;Ao facer click en &apos;Descargar&apos; vostede certifica que posúe todos os dereitos sobre o contido ou que está autorizado polo propietario a publicar o contido en YouTube, e que este cumpre cos termos de servizo de YouTube que aparece en&lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation>Averina ampiaisana ny anarana sy ny teni-miafina nidirana rehefa averina alefa</translation>
+        <translation>Restaurar as credenciais ao reiniciar</translation>
     </message>
 </context>
 <context>
     <name>brushProperties</name>
     <message>
-        <source>Opacity</source>
-        <translation>Hateviny</translation>
-    </message>
-    <message>
         <source>On Light Background</source>
-        <translation>Amin&apos;ny ambadika mazava</translation>
+        <translation>Sobre fondo claro</translation>
     </message>
     <message>
         <source>On Dark Background</source>
-        <translation>Amin&apos;ny ambadika maizina</translation>
+        <translation>Sobre fondo escuro</translation>
+    </message>
+    <message>
+        <source>Opacity</source>
+        <translation>Opacidade</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Sakan&apos;ny tsipika</translation>
+        <translation>Ancho de liña</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation>Salasala</translation>
+        <translation>Medio</translation>
     </message>
     <message>
         <source>Strong</source>
-        <translation>Matevina</translation>
+        <translation>Forte</translation>
     </message>
     <message>
         <source>Fine</source>
-        <translation>Tsara</translation>
+        <translation>Fino</translation>
     </message>
     <message>
         <source>Pen is Pressure Sensitive</source>
-        <translation>Ny penina dia sarotiny amin&apos;ny fitsindrina</translation>
+        <translation>O bolígrafo é sensible á presión</translation>
     </message>
 </context>
 <context>
     <name>capturePublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Fifakalozan-kevitra</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Lohateny</translation>
+        <translation>Título</translation>
     </message>
     <message>
         <source>E-mail</source>
-        <translation>Mailaka</translation>
+        <translation>Correo electrónico</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Mpamorona</translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Fanazavana</translation>
+        <translation>Descrición</translation>
     </message>
 </context>
 <context>
     <name>documentPublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Fifakalozan-kevitra</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Lohateny</translation>
+        <translation>Título</translation>
     </message>
     <message>
         <source>E-mail</source>
-        <translation>Mailaka</translation>
+        <translation>Correo electrónico</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Mpamorona</translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Fanazavana</translation>
+        <translation>Descrición</translation>
     </message>
     <message>
         <source>Attach Downloadable PDF Version</source>
-        <translation>Asina rakitra PDF azo alaina</translation>
+        <translation>Achegar a versión do PDF descargable</translation>
     </message>
     <message>
         <source>Attach Downloadable Uniboard File (UBZ)</source>
-        <translation>Asina rakitra Uniboard (UBZ) azo alaina</translation>
+        <translation>Achegar arquivo uniboard descargable (UBZ)</translation>
     </message>
     <message>
         <source>Warning: This documents contains video, which will not be displayed properly on the Web</source>
-        <translation>Tandremo: Misy horonan-tsary ao anatin&apos;ireto rakitra ireto izay mety tsy hiseho araka ny tokony ho izy amin&apos;ny tranon-kala</translation>
+        <translation>Advertencia: Este documento contén vídeo, o cal non se mostrará axeitadamente na web</translation>
     </message>
 </context>
 <context>
     <name>documents</name>
     <message>
         <source>Uniboard Documents</source>
-        <translation>Rakitra Uniboard</translation>
+        <translation>Documentos Uniboard</translation>
     </message>
 </context>
 <context>
     <name>preferencesDialog</name>
     <message>
         <source>Preferences</source>
-        <translation>Safidy nofaritana</translation>
-    </message>
-    <message>
-        <source>Default Settings</source>
-        <translation>Famaritana tsotra</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>Hidio</translation>
-    </message>
-    <message>
-        <source>Display</source>
-        <translation>Asehoy</translation>
-    </message>
-    <message>
-        <source>Show Page with External Browser</source>
-        <translation>Asehoy ny pejy miaraka ami&apos;ny mpizaha ivelany</translation>
-    </message>
-    <message>
-        <source>Virtual Keyboard</source>
-        <translation>Fafan-teny virtoaly</translation>
-    </message>
-    <message>
-        <source>Keyboard button size:</source>
-        <translation>Haben&apos;ny kitendrin&apos;ny fafan-teny:</translation>
-    </message>
-    <message>
-        <source>Positioned at the Top (recommended for tablets)</source>
-        <translation>Natao teo ambony (atoro ho an&apos;ny tablets)</translation>
-    </message>
-    <message>
-        <source>Positioned at the Bottom (recommended for white boards)</source>
-        <translation>Natao teo ambany (atoro ho an&apos;ny solaitra fotsy)</translation>
-    </message>
-    <message>
-        <source>Display Text Under Button</source>
-        <translation>Asehoy ny lahateny eo ambanin&apos;ny bokotra</translation>
-    </message>
-    <message>
-        <source>Stylus Palette</source>
-        <translation>Fanovana haingony</translation>
-    </message>
-    <message>
-        <source>Horizontal</source>
-        <translation>Matory</translation>
-    </message>
-    <message>
-        <source>Vertical</source>
-        <translation>Mijidina</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation>Mombamomba</translation>
-    </message>
-    <message>
-        <source>Software Update</source>
-        <translation>Fanavaozana kirakira</translation>
-    </message>
-    <message>
-        <source>Check software update at launch</source>
-        <translation>Jereo raha misy fanavaozana ny kirakira ami&apos;ny fandefasana</translation>
-    </message>
-    <message>
-        <source>Internet</source>
-        <translation>Aterineto</translation>
-    </message>
-    <message>
-        <source>Home Page:</source>
-        <translation>Pejin&apos;ny fandraisana:</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation>Anjan&apos;ny fitaovana</translation>
-    </message>
-    <message>
-        <source>Pen</source>
-        <translation>Penina</translation>
-    </message>
-    <message>
-        <source>Marker</source>
-        <translation>Penina lehibe</translation>
+        <translation>Preferencias</translation>
     </message>
     <message utf8="true">
         <source>version : …</source>
-        <translation>kinova: ...</translation>
+        <translation>versión : …</translation>
+    </message>
+    <message>
+        <source>Default Settings</source>
+        <translation>Configuración predeterminada</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Pechar</translation>
+    </message>
+    <message>
+        <source>Display</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>Internet</source>
+        <translation>Internet</translation>
+    </message>
+    <message>
+        <source>Show Page with External Browser</source>
+        <translation>Mostrar páxina con explorador externo</translation>
+    </message>
+    <message>
+        <source>Home Page:</source>
+        <translation>Páxina de inicio:</translation>
+    </message>
+    <message>
+        <source>Virtual Keyboard</source>
+        <translation>Teclado virtual</translation>
+    </message>
+    <message>
+        <source>Keyboard button size:</source>
+        <translation>Tamaño dos botóns do teclado:</translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation>Barra de ferramentas</translation>
+    </message>
+    <message>
+        <source>Positioned at the Top (recommended for tablets)</source>
+        <translation>Colocar na parte superior (recomendado para computadores tipo tablet)</translation>
+    </message>
+    <message>
+        <source>Positioned at the Bottom (recommended for white boards)</source>
+        <translation>Colocar na parte inferior (recomendado para encerados brancos)</translation>
+    </message>
+    <message>
+        <source>Display Text Under Button</source>
+        <translation>Mostrar texto debaixo do botón</translation>
+    </message>
+    <message>
+        <source>Stylus Palette</source>
+        <translation>Paleta del lapis</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Pen</source>
+        <translation>Bolígrafo</translation>
+    </message>
+    <message>
+        <source>Marker</source>
+        <translation>Marcador</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Acerca de</translation>
+    </message>
+    <message>
+        <source>Software Update</source>
+        <translation>Actualización do software</translation>
+    </message>
+    <message>
+        <source>Check software update at launch</source>
+        <translation>Comprobar se hai actualizacións do software ao iniciarse</translation>
     </message>
     <message>
         <source>Licences</source>
-        <translation>Licences</translation>
+        <translation>Licenzas</translation>
     </message>
     <message>
         <source>zlib</source>
@@ -3245,7 +3241,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Network</source>
-        <translation>Rezo</translation>
+        <translation>Rede</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
@@ -3253,83 +3249,83 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show internal web page content on secondary screen or projector</source>
-        <translation>Asehoy nympiatin&apos;ny pejin&apos;ny tranon-kala anaty amin&apos;ny efijery faharoa na amin&apos;ny projecteur</translation>
+        <translation>Mostrar o contido da páxina web nun monitor secundario ou proxector</translation>
     </message>
     <message>
         <source>Multi display</source>
-        <translation>Fisehoana maromaro</translation>
+        <translation>Pantalla múltiple</translation>
     </message>
     <message>
         <source>Swap control display and view display</source>
-        <translation>Ampifanakaloza ny fisehoana ny mpibaiko sy ny fisehoana ny hita</translation>
+        <translation>Intercambiar control de pantalla e vista de pantalla</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Fiasany</translation>
+        <translation>Modalidade</translation>
     </message>
     <message>
         <source>Mode to start in:</source>
-        <translation>Fiasany amin&apos;ny fandefasana an&apos;azy:</translation>
+        <translation>Comezar en modalidade :</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation>Solaitra</translation>
+        <translation>Encerado</translation>
     </message>
     <message>
         <source>Desktop</source>
-        <translation>Sehatr&apos;asa</translation>
+        <translation>Escritorio</translation>
     </message>
     <message>
         <source>Proxy User:</source>
-        <translation> Mpampiasa ny Proxy:</translation>
+        <translation>Nome de usuario Proxy:</translation>
     </message>
     <message>
         <source>Pass:</source>
-        <translation>Teny fanalahidy:</translation>
+        <translation>Contrasinal:</translation>
     </message>
     <message>
         <source>User:</source>
-        <translation>Mpampiasa:</translation>
+        <translation>Nome de usuario:</translation>
     </message>
     <message>
         <source>Pass: </source>
-        <translation>Teny fanalahidy:</translation>
+        <translation>Contrasinal:</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>Voaka</translation>
+        <translation>Créditos</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation>Planète Sankoré ID ho fakana rakitra</translation>
+        <translation>ID de Planète Sankoré para exportar arquivo</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation>Averina ampiaisana ny anarana sy ny teni-miafina nidirana rehefa averina alefa  </translation>
+        <translation>Restaurar as credenciais ao reiniciar</translation>
     </message>
     <message>
         <source>Start up tips</source>
-        <translation>Toro-hevitra amin&apos;ny voalohany</translation>
+        <translation>Consellos ao inicio</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation>Aseho ny toro-hevitra amin&apos;ny voalohany</translation>
+        <translation>Mostrar consellos ao inicio</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Teny</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation>Safidio ny teny</translation>
+        <translation>Seleccione un idioma</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation>Ny teny nosafidiny dia ho ampiasana rehefa averina alefa amin&apos;ny manaraka</translation>
+        <translation>O novo idioma cargarase a próxima vez que inicie o programa</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation>Hidio Open-Sankoré</translation>
+        <translation>Saír de Open-Sankoré</translation>
     </message>
     <message>
         <source>OpenSSL</source>
@@ -3352,37 +3348,31 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
-&lt;tr&gt;
-&lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Ny lisensy dia amin&apos;ny teny anglisy mba hanajana ny fandikan-teny ofisialy sy manara-dalàna.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>trapFlashDialog</name>
     <message>
         <source>Trap flash</source>
-        <translation>Alaina ny Flash</translation>
+        <translation>Capturar elemento flash</translation>
     </message>
     <message>
         <source>Select a flash to trap</source>
-        <translation>Safidio ny Flash ho alaina</translation>
+        <translation>Seleccionar un flash para capturar</translation>
     </message>
     <message>
         <source>about:blank</source>
-        <translation>Mombamomba: foana</translation>
+        <translation>about:blank</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation>Anaran&apos;ny rindran&apos;asa</translation>
+        <translation>Nome da aplicación</translation>
     </message>
     <message>
         <source>Create Application</source>
-        <translation>Mamorona rindran&apos;asa</translation>
+        <translation>Crear aplicación</translation>
     </message>
 </context>
 </TS>
+

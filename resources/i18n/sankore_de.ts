@@ -478,7 +478,7 @@
     </message>
     <message>
         <source>Plain Light Background</source>
-        <translation>Heller Hintergrund, einfach</translation>
+        <translation>Heller Hintergrund, einfarbig</translation>
     </message>
     <message>
         <source>Light</source>
@@ -766,7 +766,7 @@
     </message>
     <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
-        <translation>Open-Sankoré Widgets Editor öffnen</translation>
+        <translation>Open-Sankoré Widgets Editor anzeigen</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré</source>
@@ -843,7 +843,7 @@
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Lesezeichen</translation>
+        <translation>Lesezeichen</translation>
     </message>
 </context>
 <context>
@@ -1043,11 +1043,11 @@
     </message>
     <message>
         <source>On Click</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Click</translation>
     </message>
     <message>
         <source>Persistent</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Permanent</translation>
     </message>
 </context>
 <context>
@@ -1228,8 +1228,8 @@
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
         <translation>
-            <numerusform>Wollen Sie wirklich %n Seite vom ausgewählten Dokument &apos;%1&apos; entfernen?</numerusform>
-            <numerusform>Wollen Sie wirklich %n Seiten vom ausgewählten Dokument &apos;%1&apos; entfernen?</numerusform>
+            <numerusform>Wollen Sie wirklich %n Seiten des ausgewählten Dokuments &apos;%1&apos; entfernen?</numerusform>
+            <numerusform>Wollen Sie wirklich %n Seiten des ausgewählten Dokuments &apos;%1&apos; entfernen?</numerusform>
         </translation>
     </message>
     <message>
@@ -1250,7 +1250,7 @@
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktion kann nicht rückgängig gemacht werden!</translation>
     </message>
 </context>
 <context>
@@ -1379,11 +1379,11 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Seite %1/%2 wird kopiert</translation>
+        <translation>Seite %1/%2 wird kopiert</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 Seite kopiert</numerusform>
             <numerusform>%1 Seiten kopiert</numerusform>
         </translation>
@@ -1690,7 +1690,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -2285,23 +2285,19 @@ Möchten Sie diese Fehler auf diesem Computer ignorieren?</translation>
     </message>
     <message>
         <source>Corsican</source>
-        <translation type="unfinished"></translation>
+        <translation>korsisch</translation>
     </message>
     <message>
         <source>Hindi</source>
-        <translation type="unfinished"></translation>
+        <translation>hindi</translation>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>portugiesisch</translation>
     </message>
     <message>
         <source>Basque</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bambara</source>
-        <translation type="unfinished"></translation>
+        <translation>baskisch</translation>
     </message>
 </context>
 <context>
@@ -2956,22 +2952,22 @@ Bitte starten Sie die Anwendung erneut, um auf die aktualisierten Dokumente zugr
     <message>
         <source>Download to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Download in die Bibliothek</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Download zur aktuellen Seite</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Link zur Bibliothek hinzufügen</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation type="unfinished"></translation>
+        <translation>Link der aktuellen Seite hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -3363,7 +3359,14 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot;border: none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

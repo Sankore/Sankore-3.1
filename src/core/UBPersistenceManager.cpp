@@ -36,6 +36,7 @@
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
 #include "core/UBSetting.h"
+#include "core/UBForeignObjectsHandler.h"
 
 #include "gui/UBDockTeacherGuideWidget.h"
 #include "gui/UBTeacherGuideWidget.h"
@@ -600,7 +601,6 @@ void UBPersistenceManager::deleteDocumentScenes(UBDocumentProxy* proxy, const QL
         emit documentSceneWillBeDeleted(proxy, index);
     }
 
-    QString sourceGroupName = proxy->metaData(UBSettings::documentGroupName).toString();
     QString sourceName = proxy->metaData(UBSettings::documentName).toString();
     UBDocumentProxy *trashDocProxy = createDocument(UBSettings::trashedDocumentGroupNamePrefix/* + sourceGroupName*/, sourceName, false);
 
@@ -689,6 +689,29 @@ void UBPersistenceManager::duplicateDocumentScene(UBDocumentProxy* proxy, int in
     emit documentSceneCreated(proxy, index + 1);
 }
 
+void UBPersistenceManager::copyDocumentScene(UBDocumentProxy *from, int fromIndex, UBDocumentProxy *to, int toIndex)
+{
+    if (from == to && toIndex <= fromIndex) {
+        qDebug() << "operation is not supported" << Q_FUNC_INFO;
+        return;
+    }
+
+    checkIfDocumentRepositoryExists();
+
+    for (int i = to->pageCount(); i > toIndex; i--) {
+        renamePage(to, i - 1, i);
+        mSceneCache.moveScene(to, i - 1, i);
+    }
+
+    UBForeighnObjectsHandler hl;
+    hl.copyPage(QUrl::fromLocalFile(from->persistencePath()), fromIndex,
+                QUrl::fromLocalFile(to->persistencePath()), toIndex);
+
+    to->incPageCount();
+
+    emit documentSceneCreated(to, toIndex + 1);
+}
+
 
 UBGraphicsScene* UBPersistenceManager::createDocumentSceneAt(UBDocumentProxy* proxy, int index, bool useUndoRedoStack)
 {
@@ -714,7 +737,7 @@ UBGraphicsScene* UBPersistenceManager::createDocumentSceneAt(UBDocumentProxy* pr
 }
 
 
-void UBPersistenceManager::insertDocumentSceneAt(UBDocumentProxy* proxy, UBGraphicsScene* scene, int index)
+void UBPersistenceManager::insertDocumentSceneAt(UBDocumentProxy* proxy, UBGraphicsScene* scene, int index, bool persist)
 {
     scene->setDocument(proxy);
 
@@ -729,7 +752,9 @@ void UBPersistenceManager::insertDocumentSceneAt(UBDocumentProxy* proxy, UBGraph
 
     mSceneCache.insert(proxy, index, scene);
 
-    persistDocumentScene(proxy, scene, index);
+    if (persist) {
+        persistDocumentScene(proxy, scene, index);
+    }
 
     proxy->incPageCount();
 

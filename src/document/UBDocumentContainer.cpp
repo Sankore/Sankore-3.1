@@ -22,8 +22,13 @@
 
 #include "UBDocumentContainer.h"
 #include "adaptors/UBThumbnailAdaptor.h"
+
 #include "core/UBPersistenceManager.h"
 #include "core/memcheck.h"
+#include "core/UBApplication.h"
+#include "core/UBApplicationController.h"
+
+#include "frameworks/UBFileSystemUtils.h"
 
 UBDocumentContainer::UBDocumentContainer(QObject * parent)
     :QObject(parent)
@@ -52,7 +57,9 @@ void UBDocumentContainer::duplicatePages(QList<int>& pageIndexes)
 {
     int offset = 0;
     foreach(int sceneIndex, pageIndexes) {
-        UBPersistenceManager::persistenceManager()->duplicateDocumentScene(mCurrentDocument, sceneIndex + offset);
+//        UBPersistenceManager::persistenceManager()->duplicateDocumentScene(mCurrentDocument, sceneIndex + offset);
+        UBPersistenceManager::persistenceManager()->copyDocumentScene(mCurrentDocument, sceneIndex + offset,
+                                                                      mCurrentDocument, sceneIndex + offset + 1);
         offset++;
     }
 }

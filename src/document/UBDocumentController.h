@@ -104,6 +104,7 @@ public:
     void setNodeName(const QString &str) {mName = str; mDisplayName = str;}
     void addChild(UBDocumentTreeNode *pChild);
     void insertChild(int pIndex, UBDocumentTreeNode *pChild);
+    void moveChild(UBDocumentTreeNode *child, int index, UBDocumentTreeNode *newParent);
     void removeChild(int index);
     UBDocumentProxy *proxyData() const {return mProxy;}
     bool isRoot() {return !mParent;}
@@ -164,8 +165,7 @@ public:
 //    bool insertRow(int row, const QModelIndex &parent);
 
     QPersistentModelIndex copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode = aReference);
-    void moveIndex(const QModelIndex &source, const QModelIndex &newParent);
-    void moveNode(const QModelIndex &source, const QModelIndex &newParent);
+    void moveIndex(const QModelIndex &what, const QModelIndex &destination);
     UBDocumentTreeNode *currentNode() const {return mCurrentNode;} //work around for sorting model.
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
     QModelIndex currentIndex() {return indexForNode(mCurrentNode);} //index representing a current document
@@ -201,9 +201,6 @@ public:
     QPersistentModelIndex trashIndex() const {return mTrash;}
     QPersistentModelIndex untitledDocumentsIndex() const {return mUntitledDocuments;}
     UBDocumentTreeNode *nodeFromIndex(const QModelIndex &pIndex) const;
-    virtual void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
-    void sortChilds(const QModelIndex &parentIndex);
-    void sortIndexes(QList<UBDocumentTreeNode *> &unsortedIndexList);
     static bool nodeLessThan(const UBDocumentTreeNode *firstIndex, const UBDocumentTreeNode *secondIndex);
     void setHighLighted(const QModelIndex &newHighLighted) {mHighLighted = newHighLighted;}
     QModelIndex highLighted() {return mHighLighted;}
@@ -223,6 +220,8 @@ private:
     bool isDescendantOf(const QModelIndex &pPossibleDescendant, const QModelIndex &pPossibleAncestor) const;
     QModelIndex addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent, eAddItemMode pMode = aDetectPosition);
     int positionForParent(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParentNode);
+    void fixNodeName(const QModelIndex &source, const QModelIndex &dest);
+    void updateIndexNameBindings(UBDocumentTreeNode *nd);
     QPersistentModelIndex mRoot;
     QPersistentModelIndex mMyDocuments;
     QPersistentModelIndex mModels;

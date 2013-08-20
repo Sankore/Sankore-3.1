@@ -11,7 +11,7 @@ CONFIG += debug_and_release \
 VERSION_MAJ = 2
 VERSION_MIN = 1 
 VERSION_TYPE = b # a = alpha, b = beta, r = release, other => error
-VERSION_PATCH = 1 
+VERSION_PATCH = 3 
 
 VERSION = "$${VERSION_MAJ}.$${VERSION_MIN}.$${VERSION_TYPE}.$${VERSION_PATCH}"
 VERSION = $$replace(VERSION, "\\.r", "")
@@ -376,6 +376,12 @@ macx {
        TRANSLATION_bm.path = "$$RESOURCES_DIR/bm.lproj"
        QMAKE_BUNDLE_DATA += TRANSLATION_bm
    }
+   exists(resources/i18n/sankore_gl.qm) {
+       TRANSLATION_gl.files = resources/i18n/sankore_gl.qm \
+           resources/i18n/localizable.strings
+       TRANSLATION_gl.path = "$$RESOURCES_DIR/gl.lproj"
+       QMAKE_BUNDLE_DATA += TRANSLATION_gl
+   }
 
    QMAKE_BUNDLE_DATA += UB_ETC \
        UB_LIBRARY \
@@ -454,7 +460,8 @@ TRANSLATIONS = resources/i18n/sankore_en.ts \
    resources/i18n/sankore_hi.ts \
    resources/i18n/sankore_co.ts \
    resources/i18n/sankore_eu.ts \
-   resources/i18n/sankore_bm.ts
+   resources/i18n/sankore_bm.ts \
+   resources/i18n/sankore_gl.ts
 
 INSTALLS = UB_ETC \
    UB_I18N \

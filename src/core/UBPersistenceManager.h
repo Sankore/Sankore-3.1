@@ -96,12 +96,14 @@ class UBPersistenceManager : public QObject
 
         virtual void duplicateDocumentScene(UBDocumentProxy* pDocumentProxy, int index);
 
+        virtual void copyDocumentScene(UBDocumentProxy *from, int fromIndex, UBDocumentProxy *to, int toIndex);
+
         virtual void persistDocumentScene(UBDocumentProxy* pDocumentProxy,
                 UBGraphicsScene* pScene, const int pSceneIndex);
 
         virtual UBGraphicsScene* createDocumentSceneAt(UBDocumentProxy* pDocumentProxy, int index, bool useUndoRedoStack = true);
 
-        virtual void insertDocumentSceneAt(UBDocumentProxy* pDocumentProxy, UBGraphicsScene* scene, int index);
+        virtual void insertDocumentSceneAt(UBDocumentProxy* pDocumentProxy, UBGraphicsScene* scene, int index, bool persist = true);
 
         virtual void moveSceneToIndex(UBDocumentProxy* pDocumentProxy, int source, int target);
 
