@@ -112,7 +112,7 @@ UBDocumentReplaceDialog::UBDocumentReplaceDialog(const QString &pIncommingName, 
     mLineEdit->selectedText();
 
     mValidator = new QRegExpValidator(QRegExp("[^\\/\\:\\?\\*\\|\\<\\>\\\"]{1,}"), this);
-    mLineEdit->setValidator(mValidator);
+//    mLineEdit->setValidator(mValidator);
     labelLayout->addWidget(mLabelText);
     labelLayout->addWidget(mLineEdit);
 
@@ -151,6 +151,7 @@ void UBDocumentReplaceDialog::setFileNameAndList(const QString &fileName, const 
     mIncommingName = fileName;
     mLabelText->setText(labelTextWithName(fileName));
     mLineEdit->setText(fileName);
+    mLineEdit->selectAll();
     mLineEdit->selectedText();
 }
 
