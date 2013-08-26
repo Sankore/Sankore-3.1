@@ -864,7 +864,7 @@ QImage UBFeaturesController::getIcon(const QString &path, UBFeatureElementType p
         return QImage(":images/trapFlashPalette/trappedIcon.svg");
     }
     else if (pFType == FEATURE_IMAGE) {
-        QImage pix(path);
+            QImage pix(path);
         if (pix.isNull()) {
             pix = QImage(":images/libpalette/notFound.png");
         } else {
@@ -925,8 +925,8 @@ void UBFeaturesController::importImage(const QImage &image, const QString &fileN
 
 void UBFeaturesController::createBookmark(const QString& fileName, const QString &urlString)
 {
-	QString lFileName = UBFileSystemUtils::cleanName(fileName);
-	QString bookmarkDirectory = bookmarkData.categoryFeature().getFullPath().toLocalFile() + "/";
+    QString lFileName = UBFileSystemUtils::cleanName(fileName);
+    QString bookmarkDirectory = bookmarkData.categoryFeature().getFullPath().toLocalFile() + "/";
     QString mFileName = bookmarkDirectory + lFileName + ".bkm";
     int counter = 1;
     while(QFileInfo(mFileName).exists()){
@@ -1050,19 +1050,19 @@ QStringList UBFeaturesController::getFileNamesInFolders()
 void UBFeaturesController::addNewFolder(QString name)
 {
     QString path = currentElement.getFullPath().toLocalFile() + "/" + name;
-	
-	if(currentElement.getFullVirtualPath() == audiosData.categoryFeature().getFullVirtualPath())
-		path = audiosData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
-	else if(currentElement.getFullVirtualPath() == moviesData.categoryFeature().getFullVirtualPath())
-		path = moviesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
-	else if(currentElement.getFullVirtualPath() == picturesData.categoryFeature().getFullVirtualPath())
-		path = picturesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
-	else if(currentElement.getFullVirtualPath() == flashData.categoryFeature().getFullVirtualPath())
-		path = flashData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
-	else if(currentElement.getFullVirtualPath() == interactivityData.categoryFeature().getFullVirtualPath())
-		path = interactivityData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
-	else if(currentElement.getFullVirtualPath() == appData.categoryFeature().getFullVirtualPath())
-		path = appData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+
+    if(currentElement.getFullVirtualPath() == audiosData.categoryFeature().getFullVirtualPath())
+        path = audiosData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+    else if(currentElement.getFullVirtualPath() == moviesData.categoryFeature().getFullVirtualPath())
+        path = moviesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+    else if(currentElement.getFullVirtualPath() == picturesData.categoryFeature().getFullVirtualPath())
+        path = picturesData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+    else if(currentElement.getFullVirtualPath() == flashData.categoryFeature().getFullVirtualPath())
+        path = flashData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+    else if(currentElement.getFullVirtualPath() == interactivityData.categoryFeature().getFullVirtualPath())
+        path = interactivityData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
+    else if(currentElement.getFullVirtualPath() == appData.categoryFeature().getFullVirtualPath())
+        path = appData.pathData().value(CategoryData::UserDefined).toLocalFile() + "/" + name;
 
     if ("/root" == currentElement.getFullVirtualPath())
     {
@@ -1379,15 +1379,15 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
 
     QString name = QFileInfo(sourcePath).fileName();
     QString destPath = dest.getFullPath().toLocalFile();
-    
-	if(dest == picturesData.categoryFeature())
+
+    if(dest == picturesData.categoryFeature())
         destPath =  picturesData.pathData().value(CategoryData::UserDefined).toLocalFile();
     if(dest == audiosData.categoryFeature())
         destPath =  audiosData.pathData().value(CategoryData::UserDefined).toLocalFile();
-	if(dest == moviesData.categoryFeature())
+    if(dest == moviesData.categoryFeature())
         destPath =  moviesData.pathData().value(CategoryData::UserDefined).toLocalFile();
-    
-	QString destVirtualPath = dest.getFullVirtualPath();
+
+    QString destVirtualPath = dest.getFullVirtualPath();
     QString newFullPath = destPath + "/" + name;
 
     if (!sourcePath.compare(newFullPath, Qt::CaseInsensitive) || !UBFileSystemUtils::copy(sourcePath, newFullPath)) {

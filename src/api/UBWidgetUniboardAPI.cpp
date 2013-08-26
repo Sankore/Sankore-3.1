@@ -474,6 +474,7 @@ void UBWidgetUniboardAPI::sendFileMetadata(QString metaData)
         QDomElement valueElem = dataNode.firstChildElement("value");
         qmMetaDatas[keyElem.text()] = valueElem.text();
     }
+
     UBApplication::boardController->displayMetaData(qmMetaDatas);
 }
 

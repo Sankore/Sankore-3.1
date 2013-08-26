@@ -302,8 +302,11 @@ void UBFeaturesWidget::onDisplayMetadata( QMap<QString,QString> metadata )
 {
     QString previewImageUrl = ":images/libpalette/notFound.png";
 
-    QString widgetsUrl = QUrl::fromEncoded(metadata["Url"].toAscii()).toString()/*metadata.value("Url", QString())*/;
+    QString widgetsUrl = QUrl::fromEncoded(metadata["Url"].toAscii()).toString();
     QString widgetsThumbsUrl = QUrl::fromEncoded(metadata["thumbnailUrl"].toAscii()).toString();
+
+    if(!QFileInfo(metadata["Title"]).suffix().length() && QFileInfo(widgetsUrl).suffix().length())
+        metadata.insert("Title",metadata["Title"] + "." + QFileInfo(widgetsUrl).suffix());
 
     QString strType = UBFileSystemUtils::mimeTypeFromFileName(widgetsUrl);
     UBMimeType::Enum thumbType = UBFileSystemUtils::mimeTypeFromString(strType);
