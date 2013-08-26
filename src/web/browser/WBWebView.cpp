@@ -328,6 +328,11 @@ void WBWebView::setProgress(int progress)
 {
     //qDebug() << "loading progress" << progress << "% in" << mLoadStartTime.elapsed() << "ms";
 
+    qDebug() << "loading in progress: " << url().toString();
+    if(url().toString() != mInitialUrl.toString()){
+        qDebug() << "Url changed!";
+    }
+
     mProgress = progress;
 }
 
