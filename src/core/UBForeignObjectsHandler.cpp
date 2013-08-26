@@ -37,6 +37,7 @@ const QString aType = "ub:type";
 const QString aSrc = "ub:src";
 const QString aMediaType = "mediaType";
 const QString aRelativePath = "relativePath";
+const QString aActionMedia = "ub:actionFirstParameter";
 
 const QString vText = "text";
 
@@ -401,9 +402,17 @@ private:
                 || tagName == tImage) {
             QString newRelative = cureNCopy(element.attribute(aHref));
             element.setAttribute(aHref, newRelative);
+            if (element.hasAttribute(aActionMedia)) {
+                QString newActionPath = cureNCopy(element.attribute(aActionMedia));
+                element.setAttribute(aActionMedia, newActionPath);
+            }
         } else if (tagName == tForeignObject) {
             QString type = element.attribute(aType);
             if (type == vText) { // We don't have to care of the text object
+                if (element.hasAttribute(aActionMedia)) {
+                    QString newRelative = cureNCopy(element.attribute(aActionMedia));
+                    element.setAttribute(aActionMedia, newRelative);
+                }
                 return;
             }
             QString newRelative = cureNCopy(element.attribute(aSrc));
