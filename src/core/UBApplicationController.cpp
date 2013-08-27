@@ -444,7 +444,7 @@ void UBApplicationController::showDocument()
     {
         if (UBApplication::boardController->activeScene()->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()))
         {
-            UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
+//            UBApplication::boardController->activeScene()->setRenderingContext(UBGraphicsScene::NonScreen);
             UBApplication::boardController->persistCurrentScene();
         }
         UBApplication::boardController->hide();
