@@ -30,9 +30,10 @@
 
 #include "core/memcheck.h"
 
-UBMimeDataItem::UBMimeDataItem(UBDocumentProxy* proxy, int sceneIndex)
+UBMimeDataItem::UBMimeDataItem(UBDocumentProxy* proxy, int sceneIndex, UBDocumentProxy *targetProxy)
     : mProxy(proxy)
     , mSceneIndex(sceneIndex)
+    , mTargetProxy(targetProxy)
 {
     // NOOP
 }

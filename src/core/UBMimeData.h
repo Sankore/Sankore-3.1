@@ -32,15 +32,17 @@ class UBItem;
 struct UBMimeDataItem
 {
     public:
-        UBMimeDataItem(UBDocumentProxy* proxy, int sceneIndex);
+        UBMimeDataItem(UBDocumentProxy* proxy, int sceneIndex, UBDocumentProxy *targetProxy = 0);
         virtual ~UBMimeDataItem();
 
         UBDocumentProxy* documentProxy() const { return mProxy; }
         int sceneIndex() const { return mSceneIndex; }
 
+
     private:
         UBDocumentProxy* mProxy;
         int mSceneIndex;
+        UBDocumentProxy *mTargetProxy;
 };
 
 

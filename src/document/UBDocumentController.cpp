@@ -529,59 +529,6 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
 
             UBPersistenceManager::persistenceManager()->copyDocumentScene(fromProxy, fromIndex,
                                                                           targetDocProxy, toIndex);
-
-//            count++;
-
-//            UBApplication::applicationController->showMessage(tr("Copying page %1/%2").arg(count).arg(total), true);
-
-//            // TODO UB 4.x Move following code to some controller class
-//            UBGraphicsScene *scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(sourceItem.documentProxy(), sourceItem.sceneIndex());
-////            UBGraphicsScene *scene = orScene->sceneDeepCopy();
-//            if (scene) {
-
-//                //Generage appropriate destination scene index
-//                //and copy content including teachers guide
-//                UBDocumentProxy *sourceProxy = sourceItem.documentProxy();
-//                QString sourcePath = sourceProxy->persistencePath();
-//                int sourceIndex = sourceItem.sceneIndex();
-
-//                UBForeighnObjectsHandler hl;
-//                hl.copyPage(QUrl::fromLocalFile(sourceProxy->persistencePath()), sourceIndex, QUrl::fromLocalFile("/home/ilia/Documents/testSvg"), 0);
-////                Q_ASSERT(QFileInfo(sourcePath + "/" + UBPersistenceManager::teacherGuideDirectory).exists());
-//                UBFileSystemUtils::copyDir(sourcePath + "/"  + UBPersistenceManager::teacherGuideDirectory
-//                                           , targetDocProxy->persistencePath() + "/" + UBPersistenceManager::teacherGuideDirectory);
-//                QString sourceSvg = sourcePath + "/" + UBFileSystemUtils::digitFileFormat("/page%1.svg", sourceIndex);
-//                QString destinationSvg = targetDocProxy->persistencePath() + "/" + UBFileSystemUtils::digitFileFormat("/page%1.svg", targetDocProxy->pageCount());
-
-//                //due to incorrect generation of thumbnails of invisible scene I've used direct copying of thumbnail files
-//                //it's not universal and good way but it's faster
-//                QString from = sourceItem.documentProxy()->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", sourceItem.sceneIndex());
-//                QString to  = targetDocProxy->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", targetDocProxy->pageCount());
-//                QFile::remove(to);
-//                if (!UBFileSystemUtils::copy(from, to)) {
-//                    qDebug() << "can't copy from " << from << "to" << to;
-//                }
-
-//                Q_ASSERT(QFileInfo(sourceSvg).exists());
-//                Q_ASSERT(!QFileInfo(destinationSvg).exists());
-
-//                foreach (QUrl url, scene->relativeDependencies()) {
-//                    QString relativePath = QString(url.toLocalFile()).remove(scene->document()->persistencePath() + "/");
-
-//                    QString source = scene->document()->persistencePath() + "/" + relativePath;
-//                    Q_ASSERT(QFile::exists(source));
-//                    QString target = targetDocProxy->persistencePath() + "/" + relativePath;
-
-//                    QFileInfo fi(target);
-//                    QDir d = fi.dir();
-
-//                    d.mkpath(d.absolutePath());
-//                    QFile::copy(source, target);
-//                }
-
-//                UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(targetDocProxy, scene, targetDocProxy->pageCount(), false);
-//                UBFileSystemUtils::copy(sourceSvg, destinationSvg);
-//            }
         }
 
         QApplication::restoreOverrideCursor();
@@ -1214,6 +1161,33 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 
     Qt::DropAction drA = Qt::CopyAction;
     if (isUBPage) {
+        UBDocumentProxy *targetDocProxy = docModel->proxyData(targetIndex);
+        const UBMimeData *ubMime = qobject_cast <const UBMimeData*>(event->mimeData());
+        if (!targetDocProxy || !ubMime || !ubMime->items().count()) {
+            qDebug() << "an error ocured while parsing " << UBApplication::mimeTypeUniboardPage;
+            event->setDropAction(Qt::IgnoreAction);
+            QTreeView::dropEvent(event);
+            return;
+        }
+
+        //        int count = 0;
+        int total = ubMime->items().size();
+        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+        foreach (UBMimeDataItem sourceItem, ubMime->items())
+        {
+            UBDocumentProxy *fromProxy = sourceItem.documentProxy();
+            int fromIndex = sourceItem.sceneIndex();
+            int toIndex = targetDocProxy->pageCount();
+
+            UBPersistenceManager::persistenceManager()->copyDocumentScene(fromProxy, fromIndex,
+                                                                          targetDocProxy, toIndex);
+        }
+
+        QApplication::restoreOverrideCursor();
+        UBApplication::applicationController->showMessage(tr("%1 pages copied", "", total).arg(total), false);
+
+        drA = Qt::IgnoreAction;
         docModel->setHighLighted(QModelIndex());
     } else if (!inModel) {
         drA = Qt::IgnoreAction;
