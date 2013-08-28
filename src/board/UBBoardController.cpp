@@ -661,6 +661,33 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync, eIte
             }
         }
         duplicatedGroup = mActiveScene->createGroup(duplicatedItems);
+        UBGraphicsItemAction * pAction = groupItem->Delegate()->action();
+        if(NULL != pAction){
+            UBGraphicsItemAction* pNewAction = NULL;
+            switch(pAction->linkType()){
+                case eLinkToAudio:
+                {
+                    pNewAction = new UBGraphicsItemPlayAudioAction(pAction->path(), true);
+                }
+                    break;
+                case eLinkToPage:
+                {
+                    UBGraphicsItemMoveToPageAction* pLinkAct = dynamic_cast<UBGraphicsItemMoveToPageAction*>(pAction);
+                    if(NULL != pLinkAct)
+                        pNewAction = new UBGraphicsItemMoveToPageAction(pLinkAct->actionType(), pLinkAct->page());
+                }
+                    break;
+                case eLinkToWebUrl:
+                {
+                    UBGraphicsItemLinkToWebPageAction* pWebAction = dynamic_cast<UBGraphicsItemLinkToWebPageAction*>(pAction);
+                    if(NULL != pWebAction)
+                        pNewAction = new UBGraphicsItemLinkToWebPageAction(pWebAction->url());
+                }
+                    break;
+            }
+            duplicatedGroup->Delegate()->setAction(pNewAction);
+        }
+
         duplicatedGroup->setTransform(groupItem->transform());
         groupItem->setSelected(false);
 
