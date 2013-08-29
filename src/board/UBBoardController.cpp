@@ -1661,9 +1661,11 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
     if (targetScene)
     {
         if (mActiveScene) {
-            persistCurrentScene();
-            freezeW3CWidgets(true);
-            ClearUndoStack();
+            if(mActiveScene->document()){
+                persistCurrentScene();
+                freezeW3CWidgets(true);
+                ClearUndoStack();
+            }
         }
 
         mActiveScene = targetScene;
