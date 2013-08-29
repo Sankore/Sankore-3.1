@@ -43,6 +43,8 @@ function initAfterI18nMessagesLoaded(reload, templates, callbacks) {
 	});
 
 	app.init();
+    createWeight(app, 20);
+    app.reload();
 	app.onEdit = false;
 	
 	if(templates.toolbar) {
