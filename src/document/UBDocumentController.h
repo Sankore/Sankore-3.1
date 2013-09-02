@@ -407,10 +407,12 @@ protected:
         UBDocumentProxy *mCurrentTreeDocument;
         bool mCurrentIndexMoved;
 
-    private slots:
-        void documentZoomSliderValueChanged (int value);
+    public slots:
         void TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
         void TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
+
+   private slots:
+        void documentZoomSliderValueChanged (int value);
         void itemSelectionChanged(LastSelectedElementType newSelection);
         void exportDocument();
         void exportDocumentSet();

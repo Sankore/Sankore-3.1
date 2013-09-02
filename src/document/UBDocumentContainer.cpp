@@ -134,6 +134,12 @@ void UBDocumentContainer::reloadThumbnails()
     emit documentThumbnailsUpdated(this);
 }
 
+void UBDocumentContainer::addPixmapAt(const QPixmap *pix, int index)
+{
+    mDocumentThumbs.insert(index, pix);
+    emit documentThumbnailsUpdated(this);
+}
+
 int UBDocumentContainer::pageFromSceneIndex(int sceneIndex)
 {
     if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool())

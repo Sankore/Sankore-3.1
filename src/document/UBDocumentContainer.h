@@ -52,6 +52,7 @@ class UBDocumentContainer : public QObject
         void updatePage(int index);
         void addEmptyThumbPage();
         void reloadThumbnails();
+        void addPixmapAt(const QPixmap *pix, int index);
 
     private:
         UBDocumentProxy* mCurrentDocument;

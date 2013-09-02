@@ -709,7 +709,20 @@ void UBPersistenceManager::copyDocumentScene(UBDocumentProxy *from, int fromInde
 
     to->incPageCount();
 
-    emit documentSceneCreated(to, toIndex + 1);
+    QString thumbTmp(from->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", fromIndex));
+    QString thumbTo(to->persistencePath() + UBFileSystemUtils::digitFileFormat("/page%1.thumbnail.jpg", toIndex));
+
+    QFile::remove(thumbTo);
+    QFile::copy(thumbTmp, thumbTo);
+
+    Q_ASSERT(QFileInfo(thumbTmp).exists());
+    Q_ASSERT(QFileInfo(thumbTo).exists());
+    const QPixmap *pix = new QPixmap(thumbTmp);
+    UBDocumentController *ctrl = UBApplication::documentController;
+    ctrl->addPixmapAt(pix, toIndex);
+    ctrl->TreeViewSelectionChanged(ctrl->firstSelectedTreeIndex(), QModelIndex());
+
+//    emit documentSceneCreated(to, toIndex + 1);
 }
 
 

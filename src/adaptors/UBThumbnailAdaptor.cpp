@@ -19,8 +19,6 @@
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-
 #include "UBThumbnailAdaptor.h"
 
 #include <QtCore>
@@ -31,7 +29,6 @@
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
 
-
 #include "gui/UBDockTeacherGuideWidget.h"
 #include "gui/UBTeacherGuideWidget.h"
 
@@ -39,11 +36,8 @@
 #include "board/UBBoardPaletteManager.h"
 
 #include "document/UBDocumentProxy.h"
-
 #include "domain/UBGraphicsScene.h"
-
 #include "UBSvgSubsetAdaptor.h"
-
 #include "core/memcheck.h"
 
 void UBThumbnailAdaptor::generateMissingThumbnails(UBDocumentProxy* proxy)
@@ -118,7 +112,7 @@ void UBThumbnailAdaptor::updateDocumentToHandleZeroPage(UBDocumentProxy* proxy)
 void UBThumbnailAdaptor::load(UBDocumentProxy* proxy, QList<const QPixmap*>& list)
 {
     updateDocumentToHandleZeroPage(proxy);
-	generateMissingThumbnails(proxy);
+    generateMissingThumbnails(proxy);
 
     foreach(const QPixmap* pm, list)
         delete pm;
