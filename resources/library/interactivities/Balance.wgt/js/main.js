@@ -247,7 +247,7 @@ function reloadApp(app) {
 	
 	var weights = app.parameters.value("Weights");
 	if(weights === undefined) {
-		createWeight(app, 20);
+		//createWeight(app, 20);
 		weights = app.parameters.value("Weights");
 	}
 	if(weights !== undefined) {
