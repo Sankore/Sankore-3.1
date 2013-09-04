@@ -968,7 +968,7 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 
                 if (annotationGroup)
                 {
-                    if (!annotationGroup->polygons().empty())
+                    //if (!annotationGroup->polygons().empty())
                         annotationGroup = 0;
                 }
                 mGroupHasInfo = false;
@@ -992,7 +992,7 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
     if (mScene)
         mScene->setModified(false);
 
-    if (annotationGroup && annotationGroup->polygons().empty()){
+    if (annotationGroup /*&& annotationGroup->polygons().empty()*/){
             delete annotationGroup;
             annotationGroup = 0;
     }

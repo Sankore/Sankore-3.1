@@ -583,7 +583,7 @@ void UBDocumentPublisher::onFinished(QNetworkReply *reply)
 
     for(int j = 0; j < qslCookieVals.size(); j++)
     {
-        qDebug() << j;
+        qDebug() << j << qslCookieVals.at(j);
         if(qslCookieVals.at(j).startsWith("assetStatus"))
         {
             QStringList qslAsset = qslCookieVals.at(j).split("=");
