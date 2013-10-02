@@ -105,6 +105,7 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         QGraphicsTextItem::mousePressEvent(event);
         event->accept();
         clearFocus();
+        Delegate()->startUndoStep(); //Issue 1541 - AOU - 20131002
         return;
     }
 

@@ -1329,6 +1329,12 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
           return;
       }
 
+      //Issue 1541 - AOU - 20131002
+      UBGraphicsItem *graphicsItem = dynamic_cast<UBGraphicsItem*>(movingItem);
+      if (graphicsItem)
+          graphicsItem->Delegate()->commitUndoStep();
+      //Issue 1541 - AOU - 20131002 : Fin
+
       if (mWidgetMoved)
       {
           movingItem = NULL;
