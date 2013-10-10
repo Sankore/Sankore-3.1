@@ -1689,8 +1689,34 @@ void UBGraphicsScene::deselectAllItems()
     foreach(QGraphicsItem *gi, selectedItems ())
     {
         gi->setSelected(false);
+
+        //issue 1554 - NNE - 20131010
+        UBGraphicsTextItem* gti = dynamic_cast<UBGraphicsTextItem*>(gi);
+        if(gti){
+            gti->activateTextEditor(false);
+        }
+        //issue 1554 - NNE - 20131010 : END
     }
 }
+
+//issue 1554 - NNE - 20131010
+void UBGraphicsScene::deselectAllItemsExcept(QGraphicsItem* gti)
+{
+    foreach(QGraphicsItem *gi, selectedItems ())
+    {
+        if(gi != gti){
+            gi->setSelected(false);
+
+            UBGraphicsTextItem* g = dynamic_cast<UBGraphicsTextItem*>(gi);
+            if(g){
+                g->activateTextEditor(false);
+            }
+
+        }
+
+    }
+}
+//issue 1554 - NNE - 20131010 : END
 
 bool UBGraphicsScene::isEmpty() const
 {

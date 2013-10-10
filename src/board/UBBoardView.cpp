@@ -521,15 +521,14 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
             if ((UBGraphicsItemType::UserTypesCount > item->type()) && (item->type() > QGraphicsItem::UserType))
             {
                 // if Item can be selected at mouse press - then we need to deselect all other items.
-                foreach(QGraphicsItem *iter_item, scene()->selectedItems())
-                {
-                    if (iter_item != item)
-                    {
-                        iter_item->setSelected(false);
-                    }
-                }
+                //issue 1554 - NNE - 20131009
+                scene()->deselectAllItemsExcept(item);
             }
         }
+    }else{
+        //If item is null, it's the background, so we have to deselect all elements in the scene
+        //issue 1554 - NNE - 20131009
+        scene()->deselectAllItems();
     }
 }
 
