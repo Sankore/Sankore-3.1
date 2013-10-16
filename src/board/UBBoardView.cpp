@@ -532,6 +532,7 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
     }
 }
 
+#include <iostream>
 bool UBBoardView::itemShouldReceiveMousePressEvent(QGraphicsItem *item)
 {
 /*
@@ -550,9 +551,7 @@ Here we determines cases when items should to get mouse press event at pressing 
         return false;
 
     // some behavior depends on current tool.
-    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
-
-    qDebug() << item->type();
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();    
 
     switch(item->type())
     {
@@ -611,6 +610,8 @@ Here we determines cases when items should to get mouse press event at pressing 
 
     case QGraphicsWebView::Type:
         return true;
+    case QGraphicsProxyWidget::Type: // ISSUE 1313 - CFA - 20131016 : If Qt sends this unexpected type, the event should not be triggered
+        return false;
 
     case UBGraphicsWidgetItem::Type:
         if (currentTool == UBStylusTool::Selector && item->parentItem() && item->parentItem()->isSelected())
