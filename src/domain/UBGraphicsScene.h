@@ -192,6 +192,9 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
 
         bool isEmpty() const;
 
+        //issue 1554 - NNE - 20131010
+        void deselectAllItemsExcept(QGraphicsItem* gti);
+
         void setDocument(UBDocumentProxy* pDocument);
 
         UBDocumentProxy* document() const

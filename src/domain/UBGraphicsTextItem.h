@@ -91,6 +91,9 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         virtual void clearSource(){;}
         virtual void setUuid(const QUuid &pUuid);
 
+        //issue 1554 - NNE - 20131008
+        void activateTextEditor(bool activateTextEditor);
+
     signals:
         void textUndoCommandAdded(UBGraphicsTextItem *textItem);
 
@@ -116,6 +119,9 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         QColor mColorOnDarkBackground;
         QColor mColorOnLightBackground;
+
+        //issue 1554
+        bool isActivatedTextEditor;
 };
 
 #endif /* UBGRAPHICSTEXTITEM_H_ */

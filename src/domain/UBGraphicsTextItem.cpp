@@ -73,6 +73,9 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
 
     setTextInteractionFlags(Qt::TextEditorInteraction);
 
+    //issue 1554 - NNE - 20131008
+    isActivatedTextEditor = true;
+
     setUuid(QUuid::createUuid());
 
     connect(document(), SIGNAL(contentsChanged()), Delegate(), SLOT(contentsChanged()));
@@ -155,7 +158,9 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
     if (mMultiClickState == 1)
     {
-//        setTextInteractionFlags(Qt::TextEditorInteraction);
+        //issue 1554 - NNE - 20131008
+        activateTextEditor(true);
+
         QGraphicsTextItem::mousePressEvent(event);
         setFocus();
     }
@@ -376,3 +381,17 @@ void UBGraphicsTextItem::documentSizeChanged(const QSizeF & newSize)
 {
     resize(newSize.width(), newSize.height());
 }
+
+//issue 1554 - NNE - 20131009
+void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
+{
+    this->isActivatedTextEditor = activateTextEditor;
+
+    Qt::TextInteractionFlag flag = Qt::NoTextInteraction;
+    if(activateTextEditor){
+        flag = Qt::TextEditorInteraction;
+    }
+
+    setTextInteractionFlags(flag);
+}
+//issue 1554 - NNE - 20131009 : END
