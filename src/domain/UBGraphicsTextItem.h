@@ -28,6 +28,7 @@
 #include "UBItem.h"
 #include "core/UB.h"
 #include "UBResizableGraphicsItem.h"
+#include "core/UBTextTools.h"
 
 class UBGraphicsItemDelegate;
 class UBGraphicsScene;
@@ -93,6 +94,10 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         //issue 1554 - NNE - 20131008
         void activateTextEditor(bool activateTextEditor);
+
+    protected:
+        //issue 1539 - NNE - 20131018
+        void keyPressEvent(QKeyEvent *event);
 
     signals:
         void textUndoCommandAdded(UBGraphicsTextItem *textItem);

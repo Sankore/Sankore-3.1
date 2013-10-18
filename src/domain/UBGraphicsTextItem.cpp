@@ -395,3 +395,21 @@ void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
     setTextInteractionFlags(flag);
 }
 //issue 1554 - NNE - 20131009 : END
+
+//issue 1539 - NNE - 20131018
+void UBGraphicsTextItem::keyPressEvent(QKeyEvent *event)
+{
+    QClipboard *clipboard = QApplication::clipboard();
+    const QMimeData *mimeData = clipboard->mimeData();
+
+    if(event->matches(QKeySequence::Paste) && mimeData->hasHtml()){
+        QMimeData *myMime = new QMimeData();
+        QString cleanHtml = UBTextTools::cleanFontFormatHtml(mimeData->html());
+
+        myMime->setHtml(cleanHtml);
+        clipboard->setMimeData(myMime);
+    }
+
+    QGraphicsTextItem::keyPressEvent(event);
+}
+//issue 1539 - NNE - 20131018 : END

@@ -1,10 +1,10 @@
 #include <QDebug>
 #include "UBTextTools.h"
 
-QString UBTextTools::cleanHtmlCData(const QString &_html){
+QString UBTextTools::cleanHtmlCData(const QString &_html)
+{
 
     QString clean = "";
-
 
     for(int i = 0; i < _html.length(); i+=1){
         if(_html.at(i) != '\0')
@@ -14,7 +14,8 @@ QString UBTextTools::cleanHtmlCData(const QString &_html){
 }
 
 
-QString UBTextTools::cleanHtml(const QString& _html){
+QString UBTextTools::cleanHtml(const QString& _html)
+{
     const QString START_TAG = "<!doctype";
     const QString END_TAG = "</html";
 
@@ -27,4 +28,13 @@ QString UBTextTools::cleanHtml(const QString& _html){
     cleanSource = simplifiedHtml.mid(start, end);
 
     return cleanSource;
+}
+
+QString UBTextTools::cleanFontFormatHtml(QString html)
+{
+    qDebug() << html << "\n\n\n";
+    QString s = html.remove(QRegExp("style="));
+    qDebug() << s;
+
+    return s;
 }
