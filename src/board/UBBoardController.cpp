@@ -1720,6 +1720,7 @@ void UBBoardController::moveSceneToIndex(int source, int target)
         setActiveDocumentScene(target);
         mMovingSceneIndex = -1;
 
+        emit activeSceneChanged(); // Issue 1026 - AOU - 20131018 : generate Thumbnails
     }
 }
 
