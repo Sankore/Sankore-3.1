@@ -404,7 +404,7 @@ void UBGraphicsTextItem::keyPressEvent(QKeyEvent *event)
 
     if(event->matches(QKeySequence::Paste) && mimeData->hasHtml()){
         QMimeData *myMime = new QMimeData();
-        QString cleanHtml = UBTextTools::cleanFontFormatHtml(mimeData->html());
+        QString cleanHtml = UBTextTools::cleanFormatHtml(mimeData->html());
 
         myMime->setHtml(cleanHtml);
         clipboard->setMimeData(myMime);
