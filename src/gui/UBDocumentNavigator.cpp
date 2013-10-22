@@ -68,6 +68,7 @@ UBDocumentNavigator::UBDocumentNavigator(QWidget *parent, const char *name):QGra
     connect(UBApplication::boardController, SIGNAL(documentThumbnailsUpdated(UBDocumentContainer*)), this, SLOT(generateThumbnails(UBDocumentContainer*)));
     connect(UBApplication::boardController, SIGNAL(documentPageUpdated(int)), this, SLOT(updateSpecificThumbnail(int)));
     connect(UBApplication::boardController, SIGNAL(pageSelectionChanged(int)), this, SLOT(onScrollToSelectedPage(int)));
+    connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(activeSceneChanged())); // Issue 1026 - AOU - 20131018
 }
 
 /**
@@ -101,19 +102,55 @@ void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
         Q_ASSERT(!pix->isNull());
         int pageIndex = UBDocumentContainer::pageFromSceneIndex(i);
 
-        UBSceneThumbnailNavigPixmap* pixmapItem = new UBSceneThumbnailNavigPixmap(*pix, source->selectedDocument(), i);
+        UBSceneThumbnailNavigPixmap* pixmapItem = 0;
 
         QString label = pageIndex == 0 ? tr("Title page") : tr("Page %0").arg(pageIndex);
         UBThumbnailTextItem *labelItem = new UBThumbnailTextItem(label);
 
-        pixmapItem->setLabel(labelItem);
 
-        UBImgTextThumbnailElement thumbWithText(pixmapItem, labelItem);
-        thumbWithText.setBorder(border());
-        mThumbsWithLabels.append(thumbWithText);
+        if (i == UBApplication::boardController->activeSceneIndex()) // Issue 1026 - AOU - 20131018 : current thumbnail is a view of the board Scene
+        {
+            UBGraphicsScene * pBoardActiveScene = UBApplication::boardController->activeScene();
+            QGraphicsView * viewBoardScene = new QGraphicsView(pBoardActiveScene);
+            viewBoardScene->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing | QPainter::HighQualityAntialiasing);
 
-        mScene->addItem(pixmapItem);
-        mScene->addItem(labelItem);
+            // Create view, with same size as others pixmap Thumbnails :
+            qreal nominalWidth = pBoardActiveScene->nominalSize().width();
+            qreal nominalHeight = pBoardActiveScene->nominalSize().height();
+            qreal ratio = nominalWidth / nominalHeight;
+            qreal width = UBSettings::maxThumbnailWidth;
+            qreal height = width / ratio;
+            viewBoardScene->setGeometry(0, 0, width, height);
+
+            // Delete border of view :
+            viewBoardScene->setStyleSheet( "QGraphicsView { border-style: none; }" );
+
+            // Widget will be inserted in the Scene, as an Item, embedded in a QGraphicsProxyWidget
+            UBSceneThumbnailProxyWidget * proxy = new UBSceneThumbnailProxyWidget(source->selectedDocument(), i);
+            proxy->setWidget(viewBoardScene);
+            proxy->setLabel(labelItem);
+
+            // Put the proxy and the label in a object, and we stock this object in a list :
+            UBProxyWidgetTextThumbnailElement thumbWithText(proxy, labelItem);
+            thumbWithText.setBorder(border());
+            mThumbsWithLabels.append(thumbWithText);
+
+            // Add them to the Scene :
+            mScene->addItem(proxy);
+            mScene->addItem(labelItem);
+        }
+        else // Pixmap Thumbnail
+        {
+            pixmapItem = new UBSceneThumbnailNavigPixmap(*pix, source->selectedDocument(), i);
+            pixmapItem->setLabel(labelItem);
+
+            UBImgTextThumbnailElement thumbWithText(pixmapItem, labelItem);
+            thumbWithText.setBorder(border());
+            mThumbsWithLabels.append(thumbWithText);
+
+            mScene->addItem(pixmapItem);
+            mScene->addItem(labelItem);
+        }
     }
 
     // Draw the items
@@ -123,7 +160,7 @@ void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
 void UBDocumentNavigator::onScrollToSelectedPage(int index)
 {
     int c  = 0;
-    foreach(UBImgTextThumbnailElement el, mThumbsWithLabels)
+    foreach(UBWidgetTextThumbnailElement el, mThumbsWithLabels)
     {
         if (c==index)
         {
@@ -144,13 +181,11 @@ void UBDocumentNavigator::onScrollToSelectedPage(int index)
 void UBDocumentNavigator::updateSpecificThumbnail(int iPage)
 {
     // Generate the new thumbnail
-    //UBGraphicsScene* pScene = UBApplication::boardController->activeScene();
-
     const QPixmap* pix = UBApplication::boardController->pageAt(iPage);
-    UBSceneThumbnailNavigPixmap* newItem = new UBSceneThumbnailNavigPixmap(*pix, UBApplication::boardController->selectedDocument(), iPage);
+    QGraphicsItem* newItem = new UBSceneThumbnailNavigPixmap(*pix, UBApplication::boardController->selectedDocument(), iPage);
 
     // Get the old thumbnail
-    UBSceneThumbnailNavigPixmap* oldItem = mThumbsWithLabels.at(iPage).getThumbnail();
+    QGraphicsItem* oldItem = mThumbsWithLabels.at(iPage).getThumbnail();
     if(NULL != oldItem)
     {
         mScene->removeItem(oldItem);
@@ -159,7 +194,11 @@ void UBDocumentNavigator::updateSpecificThumbnail(int iPage)
         delete oldItem;
         oldItem = NULL;
     }
+}
 
+void UBDocumentNavigator::activeSceneChanged() // Issue 1026 - AOU - 20131018
+{
+    generateThumbnails(UBApplication::boardController);
 }
 
 /**
@@ -172,7 +211,7 @@ void UBDocumentNavigator::refreshScene()
     for(int i = 0; i < mThumbsWithLabels.size(); i++)
     {
         // Get the item
-        UBImgTextThumbnailElement& item = mThumbsWithLabels[i];
+        UBWidgetTextThumbnailElement& item = mThumbsWithLabels[i];
         int columnIndex = i % mNbColumns;
         int rowIndex = i / mNbColumns;
         item.Place(rowIndex, columnIndex, mThumbnailWidth, thumbnailHeight);
@@ -256,9 +295,11 @@ void UBDocumentNavigator::mousePressEvent(QMouseEvent *event)
     QGraphicsItem* pClickedItem = itemAt(event->pos());
     if(NULL != pClickedItem)
     {
-
-        // First, select the clicked item
-        UBSceneThumbnailNavigPixmap* pCrntItem = dynamic_cast<UBSceneThumbnailNavigPixmap*>(pClickedItem);
+        // First, select the clicked item. 
+        QGraphicsItem* pCrntItem = dynamic_cast<UBSceneThumbnailNavigPixmap*>(pClickedItem);
+        if (pCrntItem == NULL){ // Issue 1026 - AOU - 20131021 : It can be either a UBSceneThumbnailNavigPixmap or a UBSceneThumbnailProxyWidget.
+            pCrntItem = dynamic_cast<UBSceneThumbnailProxyWidget*>(pClickedItem);
+        }
 
         if(NULL == pCrntItem)
         {
@@ -268,10 +309,10 @@ void UBDocumentNavigator::mousePressEvent(QMouseEvent *event)
             {
                 for(int i = 0; i < mThumbsWithLabels.size(); i++)
                 {
-                    const UBImgTextThumbnailElement& el = mThumbsWithLabels.at(i);
+                    const UBWidgetTextThumbnailElement& el = mThumbsWithLabels.at(i);
                     if(el.getCaption() == pTextItem)
                     {
-                        pCrntItem = el.getThumbnail();
+                        pCrntItem = el.getThumbnail(); // Find the thumbnail corresponding to the label.
                         break;
                     }
                 }
