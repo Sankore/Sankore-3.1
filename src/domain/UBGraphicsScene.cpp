@@ -1141,7 +1141,7 @@ void UBGraphicsScene::clearContent(clearCase pCase)
     case clearItemsAndAnnotations :
     case clearItems :
     case clearAnnotations :
-        // Issue 1313 - CFA - 20131023 : undo "erase multi-selection"
+        // Issue 1569 - CFA - 20131023 : undo "erase multi-selection"
         UBApplication::undoStack->beginMacro("remove items");
         foreach(QGraphicsItem* item, items()) {
 
@@ -1189,7 +1189,7 @@ void UBGraphicsScene::clearContent(clearCase pCase)
                 removedItems << item;
             }
         }
-        UBApplication::undoStack->endMacro();// Fin Issue 1313 - CFA - 20131023
+        UBApplication::undoStack->endMacro();// Fin Issue 1569 - CFA - 20131023
         break;
     }
 
@@ -2323,6 +2323,8 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
         if (keyEvent->matches(QKeySequence::Delete))
 #endif
         {
+            // Issue 1569 - CFA - 20131023 : undo erase multi-selection
+            UBApplication::undoStack->beginMacro("remove items");
             foreach(QGraphicsItem* item, si)
             {
                 switch (item->type())
@@ -2354,6 +2356,8 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                     }
                 }
             }
+            UBApplication::undoStack->endMacro();
+            // Fin Issue 1569 - CFA - 20131023
         }
 
         keyEvent->accept();
