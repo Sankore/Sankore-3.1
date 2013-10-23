@@ -320,7 +320,7 @@ echo "Open-Sankore ($VERSION) $ARCHITECTURE; urgency=low" > "$CHANGE_LOG_FILE"
 echo >> "$CHANGE_LOG_FILE"
 cat $CHANGE_LOG_TEXT >> "$CHANGE_LOG_FILE"
 echo >> "$CHANGE_LOG_FILE"
-echo "-- Claudio Valerio <claudio@open-sankore.org>  `date`" >> "$CHANGE_LOG_FILE"
+echo "-- Alexandre Ouvrard <tma-opensankor@alti.fr>  `date`" >> "$CHANGE_LOG_FILE"
 
 echo "Package: open-sankore" > "$CONTROL_FILE"
 echo "Version: $VERSION" >> "$CONTROL_FILE"
@@ -328,8 +328,8 @@ echo "Section: education" >> "$CONTROL_FILE"
 echo "Priority: optional" >> "$CONTROL_FILE"
 echo "Architecture: $ARCHITECTURE" >> "$CONTROL_FILE"
 echo "Essential: no" >> "$CONTROL_FILE"
+echo "Maintainer: ALTI" >> "$CONTROL_FILE"
 echo "Installed-Size: `du -s $SANKORE_PACKAGE_DIRECTORY | awk '{ print $1 }'`" >> "$CONTROL_FILE"
-echo "Maintainer: Open-Sankoré Developers team <dev@open-sankore.org>" >> "$CONTROL_FILE"
 echo "Homepage: http://dev.open-sankore.org" >> "$CONTROL_FILE"
 echo -n "Depends: " >> "$CONTROL_FILE"
 unset tab
@@ -377,8 +377,7 @@ chmod 755 "$BASE_WORKING_DIR/DEBIAN/postint"
 
 mkdir -p "install/linux"
 DEBIAN_PACKAGE_NAME="Open-Sankore_${VERSION}_$ARCHITECTURE.deb"
-
-chown -R root:root $BASE_WORKING_DIR 
+	
 dpkg -b "$BASE_WORKING_DIR" "install/linux/$DEBIAN_PACKAGE_NAME"
 notifyProgress "Open-Sankore" "Package built"
 
