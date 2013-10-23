@@ -532,6 +532,7 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
     }
 }
 
+#include <iostream>
 bool UBBoardView::itemShouldReceiveMousePressEvent(QGraphicsItem *item)
 {
 /*
@@ -550,9 +551,7 @@ Here we determines cases when items should to get mouse press event at pressing 
         return false;
 
     // some behavior depends on current tool.
-    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
-
-    qDebug() << item->type();
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();    
 
     switch(item->type())
     {
@@ -611,6 +610,8 @@ Here we determines cases when items should to get mouse press event at pressing 
 
     case QGraphicsWebView::Type:
         return true;
+    case QGraphicsProxyWidget::Type: // Issue 1313 - CFA - 20131016 : If Qt sends this unexpected type, the event should not be triggered
+        return false;
 
     case UBGraphicsWidgetItem::Type:
         if (currentTool == UBStylusTool::Selector && item->parentItem() && item->parentItem()->isSelected())
@@ -794,6 +795,21 @@ void UBBoardView::handleItemMousePress(QMouseEvent *event)
     if (itemShouldReceiveMousePressEvent(movingItem))
     {
         QGraphicsView::mousePressEvent (event);
+
+        // Issue 1313 - CFA - 20131022 : In some cases, mousePressEvent alters graphics items position
+        QGraphicsItem* item = determineItemToPress(scene()->itemAt(this->mapToScene(event->posF().toPoint()), transform()));
+        //use QGraphicsView::transorm() to use not deprecated QGraphicsScene::itemAt() method
+
+        if (item && (item->type() == QGraphicsProxyWidget::Type) && item->parentObject() && item->parentObject()->type() != QGraphicsProxyWidget::Type)
+        {
+            //Clean up children
+            QList<QGraphicsItem*> children = item->children();
+
+            for( QList<QGraphicsItem*>::iterator it = children.begin(); it != children.end(); ++it )
+                if ((*it)->pos().x() < 0 || (*it)->pos().y() < 0)
+                    (*it)->setPos(0,item->boundingRect().size().height());
+        }
+        // FIN Issue 1313 - CFA - 20131022
     }
     else
     {

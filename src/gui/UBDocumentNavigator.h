@@ -52,6 +52,7 @@ public slots:
     void onScrollToSelectedPage(int index);// { if (mCrntItem) centerOn(mCrntItem); }
     void generateThumbnails(UBDocumentContainer* source);
     void updateSpecificThumbnail(int iPage);
+    void activeSceneChanged();
 
 protected:
     virtual void resizeEvent(QResizeEvent *event);
@@ -69,7 +70,7 @@ private:
     /** The current selected item */
     //UBSceneThumbnailNavigPixmap* mCrntItem;
 	/** The list of current thumbnails with labels*/
-	QList<UBImgTextThumbnailElement> mThumbsWithLabels;
+    QList<UBWidgetTextThumbnailElement> mThumbsWithLabels;
     /** The current number of columns */
     int mNbColumns;
     /** The current thumbnails width */

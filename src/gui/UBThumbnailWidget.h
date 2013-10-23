@@ -365,22 +365,23 @@ class UBThumbnailTextItem : public QGraphicsTextItem
         bool mIsHighlighted;
 };
 
-class UBImgTextThumbnailElement
+
+
+class UBWidgetTextThumbnailElement
 {
-private:
-	UBSceneThumbnailNavigPixmap* thumbnail;
-	UBThumbnailTextItem* caption;
-	int border;
+protected:
+    QGraphicsItem* thumbnail;
+    UBThumbnailTextItem* caption;
+    int border;
 
 public:
-	UBImgTextThumbnailElement(UBSceneThumbnailNavigPixmap* thumb, UBThumbnailTextItem* text): border(0)
-	{
-		this->thumbnail = thumb;
-		this->caption = text;
-	}
 
-	UBSceneThumbnailNavigPixmap* getThumbnail() const { return this->thumbnail; }
-	void setThumbnail(UBSceneThumbnailNavigPixmap* newGItem) { this->thumbnail = newGItem; }
+    UBWidgetTextThumbnailElement() : border(0), thumbnail(NULL), caption(NULL)
+    {
+    }
+
+    QGraphicsItem* getThumbnail() const { return this->thumbnail; }
+    void setThumbnail(QGraphicsItem* newGItem) { this->thumbnail = newGItem; }
 
 	UBThumbnailTextItem* getCaption() const { return this->caption; }
 	void setCaption(UBThumbnailTextItem* newcaption) { this->caption = newcaption; }
@@ -389,6 +390,69 @@ public:
 
 	int getBorder() const { return this->border; }
 	void setBorder(int newBorder) { this->border = newBorder; }
+};
+
+class UBImgTextThumbnailElement : public UBWidgetTextThumbnailElement
+{
+public:
+   UBImgTextThumbnailElement(UBSceneThumbnailNavigPixmap* thumb, UBThumbnailTextItem* text): UBWidgetTextThumbnailElement()
+   {
+       this->thumbnail = thumb;
+       this->caption = text;
+   }
+};
+
+class UBProxyWidgetTextThumbnailElement : public UBWidgetTextThumbnailElement
+{
+public:
+    UBProxyWidgetTextThumbnailElement(QGraphicsProxyWidget* proxyWidget, UBThumbnailTextItem* text): UBWidgetTextThumbnailElement()
+    {
+        this->thumbnail = proxyWidget;
+        this->caption = text;
+    }
+};
+
+class UBSceneThumbnailProxyWidget : public QGraphicsProxyWidget, public UBThumbnail
+{
+private:
+    UBDocumentProxy * mDocumentProxy;
+    int mSceneIndex;
+    bool bButtonsVisible;
+    bool bCanDelete;
+    bool bCanMoveUp;
+    bool bCanMoveDown;
+    bool bCanDuplicate;
+
+    QGraphicsView* view() const
+    {
+        return dynamic_cast<QGraphicsView*>(widget());
+    }
+
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void updateButtonsState();
+
+public:
+    UBSceneThumbnailProxyWidget(UBDocumentProxy * docProxy, int sceneIndex)
+        : mDocumentProxy(docProxy)
+        , mSceneIndex(sceneIndex)
+        , bButtonsVisible(false)
+        , bCanDelete(false)
+        , bCanMoveUp(false)
+        , bCanMoveDown(false)
+        , bCanDuplicate(false)
+    {
+        setFlag(QGraphicsItem::ItemIsSelectable, true);
+        setFlag(QGraphicsItem::ItemSendsGeometryChanges, true); // This flag must be set, in order to enable calls to itemChange().
+    }
+
+    UBDocumentProxy * documentProxy(){return mDocumentProxy;}
+    int sceneIndex(){return mSceneIndex;}
+
+protected:
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 };
 
 

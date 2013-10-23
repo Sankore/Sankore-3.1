@@ -34,6 +34,15 @@ call "%VS_BIN%\vcvars32.bat"
 
 echo %PATH%
 
+REM check if the mimimal setup
+IF NOT EXIST %QT_DIR% GOTO EXIT_WITH_ERROR
+IF NOT EXIST %QT_BIN% GOTO EXIT_WITH_ERROR
+IF NOT EXIST %SEVEN_ZIP_EXE% GOTO EXIT_WITH_ERROR
+IF NOT EXIST %INNO_EXE% GOTO EXIT_WITH_ERROR
+IF NOT EXIST %LRELEASE% GOTO EXIT_WITH_ERROR
+IF NOT EXIST %BASE_QT_TRANSLATIONS_DIRECTORY% GOTO EXIT_WITH_ERROR
+
+
 REM this checks if the custom qt directory path
 REM is correct. This is important because installer
 REM pick up dll from this directory
