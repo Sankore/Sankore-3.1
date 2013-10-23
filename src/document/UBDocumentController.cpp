@@ -2001,15 +2001,51 @@ void UBDocumentController::deleteSelectedItem()
         deletePages(mDocumentUI->thumbnailWidget->selectedItems());
         break;
 
-    case MoveToTrash :
-        docModel->moveIndex(currentIndex, docModel->trashIndex());
-        break;
+    case MoveToTrash : {
+        //issue 1629 - NNE - 20131023
+        //If we delete the acive document, we have to select the next sibling if it exists
+        //otherwise select the previous sibling. If sibling doesn't exist, so we create a new document
+        if(currentIndex == docModel->currentIndex()){
+            QModelIndex sibling = docModel->sibling(currentIndex.row()+1, 0, currentIndex);
+            if(!sibling.isValid()){
+                sibling = docModel->sibling(currentIndex.row()-1, 0, currentIndex);
 
+                //Only previous sibling can be a folder, so find the "previous" document
+                while(docModel->isCatalog(sibling)){
+                    UBDocumentTreeNode* node = docModel->nodeFromIndex(sibling);
+                    QList<UBDocumentTreeNode*> children = node->children();
+
+                    if(children.size() > 0){
+                        UBDocumentTreeNode* lastChild = children.last();
+                        sibling = docModel->indexForNode(lastChild);
+                    }else{
+                        //If the folder is empty, set the sibling invalid
+                        sibling = QModelIndex();
+                        break;
+                    }
+                }
+            }
+
+            if(sibling.isValid()){
+                UBDocumentProxy* document = docModel->proxyData(sibling);
+                selectDocument(document);
+                mBoardController->setActiveDocumentScene(document, 0);
+            }else{
+                createNewDocument();
+            }
+
+        }
+        //issue 1629 - NNE - 20131023 : END
+
+        docModel->moveIndex(currentIndex, docModel->trashIndex());
+
+        break;
+    }
     case CompleteDelete :
         deleteIndexAndAssociatedData(currentIndex);
         break;
 
-    case EmptyFolder :
+    case EmptyFolder :{
         if (currentIndex == docModel->myDocumentsIndex()) { //Emptying "My documents". Keeping Untitled Documents
             int startInd = 0;
             while (docModel->rowCount(currentIndex)) {
@@ -2027,8 +2063,14 @@ void UBDocumentController::deleteSelectedItem()
         } else {
             emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
         }
-        break;
 
+        //issue 1629 - NNE - 20131016
+        if (docModel->children().isEmpty())
+            createNewDocument();
+        //issue 1629 - NNE - 20131016 : END
+
+        break;
+    }
     case EmptyTrash :
          emptyFolder(currentIndex, CompleteDelete); // Empty trahs folder
         break;
@@ -2065,6 +2107,7 @@ void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pInde
 
     if (docModel->isDocument(pIndex)) {
         UBDocumentProxy *proxyData = docModel->proxyData(pIndex);
+
         if (proxyData) {
             UBPersistenceManager::persistenceManager()->deleteDocument(proxyData);
         }
