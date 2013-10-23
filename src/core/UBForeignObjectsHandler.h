@@ -24,6 +24,7 @@
 
 #include <QList>
 #include <QUrl>
+#include <algorithm>
 
 class UBForeighnObjectsHandlerPrivate;
 
