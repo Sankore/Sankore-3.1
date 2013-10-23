@@ -1141,6 +1141,8 @@ void UBGraphicsScene::clearContent(clearCase pCase)
     case clearItemsAndAnnotations :
     case clearItems :
     case clearAnnotations :
+        // Issue 1313 - CFA - 20131023 : undo "erase multi-selection"
+        UBApplication::undoStack->beginMacro("remove items");
         foreach(QGraphicsItem* item, items()) {
 
             bool isGroup = item->type() == UBGraphicsGroupContainerItem::Type;
@@ -1155,6 +1157,7 @@ void UBGraphicsScene::clearContent(clearCase pCase)
             }
 
             bool shouldDelete = false;
+
             switch (static_cast<int>(pCase)) {
             case clearAnnotations :
                 shouldDelete = isStrokesGroup;
@@ -1186,6 +1189,7 @@ void UBGraphicsScene::clearContent(clearCase pCase)
                 removedItems << item;
             }
         }
+        UBApplication::undoStack->endMacro();// Fin Issue 1313 - CFA - 20131023
         break;
     }
 
