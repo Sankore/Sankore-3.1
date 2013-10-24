@@ -347,7 +347,7 @@ bool UBFeature::isDeletable() const
             || elementType == FEATURE_BOOKMARK
             || elementType == FEATURE_LINK
     //Ilia. Just a hotfix. Permission mechanism for UBFeatures should be reworked
-            || getVirtualPath().startsWith("/root/Applications/Web");
+            || getVirtualPath().startsWith("/root/Interactivities/Web");// Issue 1627 - CFA - 20131024 : Interactivities, not Applications
 }
 
 bool UBFeature::inTrash() const
