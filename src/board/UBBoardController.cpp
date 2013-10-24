@@ -2349,16 +2349,11 @@ UBGraphicsWidgetItem *UBBoardController::addW3cWidget(const QUrl &pUrl, const QP
 
 void UBBoardController::cut()
 {
-    //---------------------------------------------------------//
-
-    QList<QGraphicsItem*> selectedItems;
-    foreach(QGraphicsItem* gi, mActiveScene->selectedItems())
-        selectedItems << gi;
-
-    //---------------------------------------------------------//
+    // Issue 1595 - CFA - 20131024 : correction du fonctionnement de l'action couper
+    copy();
 
     QList<UBItem*> selected;
-    foreach(QGraphicsItem* gi, selectedItems)
+    foreach(QGraphicsItem* gi, mActiveScene->selectedItems())
     {
         gi->setSelected(false);
 
@@ -2371,21 +2366,7 @@ void UBBoardController::cut()
             ubGi->remove();
         }
     }
-
-    //---------------------------------------------------------//
-
-    if (selected.size() > 0)
-    {
-        QClipboard *clipboard = QApplication::clipboard();
-
-        UBMimeDataGraphicsItem*  mimeGi = new UBMimeDataGraphicsItem(selected);
-
-        mimeGi->setData(UBApplication::mimeTypeUniboardPageItem, QByteArray());
-        clipboard->setMimeData(mimeGi);
-
-        selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-    }
-
+    // Fin Issue 1595 - CFA - 20131024
     //---------------------------------------------------------//
 }
 
