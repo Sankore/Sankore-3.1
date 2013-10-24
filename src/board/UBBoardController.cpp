@@ -949,6 +949,7 @@ void UBBoardController::previousScene()
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
         persistCurrentScene();
         setActiveDocumentScene(mActiveSceneIndex - 1);
+        mControlView->centerOn(0,0);// Issue 1598/1605 - CFA - 20131024 : besoin de recentrer la vue courante pour éviter des effets de bords Qt sur les déplacements de vue
         QApplication::restoreOverrideCursor();
     }
 
@@ -964,6 +965,7 @@ void UBBoardController::nextScene()
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
         persistCurrentScene();
         setActiveDocumentScene(mActiveSceneIndex + 1);
+        mControlView->centerOn(0,0);// Issue 1598/1605 - CFA - 20131024 : besoin de recentrer la vue courante pour éviter des effets de bords Qt sur les déplacements de vue
         QApplication::restoreOverrideCursor();
     }
 
