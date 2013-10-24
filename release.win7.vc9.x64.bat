@@ -1,4 +1,4 @@
-echo off
+﻿echo off
 REM --------------------------------------------------------------------
 REM This program is free software: you can redistribute it and/or modify
 REM it under the terms of the GNU General Public License as published by
@@ -17,15 +17,16 @@ REM ---------------------------------------------------------------------
 set QT_DIR=..\Qt-4.8
 set QT_BIN=%QT_DIR%\bin
 
+set PROGRAMS_FILE_PATH_x86=C:\Program Files (x86)
 set PROGRAMS_FILE_PATH=C:\Program Files
 
 set SEVEN_ZIP_EXE="%PROGRAMS_FILE_PATH%\7-Zip\7z.exe"
-set GIT_BIN=%PROGRAMS_FILE_PATH%\Git\bin
-set VS_BIN=%PROGRAMS_FILE_PATH%\Microsoft Visual Studio 9.0\VC\bin
-set WIN_SDK_BIN=%PROGRAMS_FILE_PATH%\Microsoft SDKs\Windows\v6.0A\Bin
-set INNO_EXE=%PROGRAMS_FILE_PATH%\Inno Setup 5\iscc.exe 
+set GIT_BIN=%PROGRAMS_FILE_PATH_x86%\Git\bin
+set VS_BIN=%PROGRAMS_FILE_PATH_x86%\Microsoft Visual Studio 9.0\VC\bin
+set WIN_SDK_BIN=%PROGRAMS_FILE_PATH_x86%\Microsoft SDKs\Windows\v6.0A\Bin
+set INNO_EXE=%PROGRAMS_FILE_PATH_x86%\Inno Setup 5\iscc.exe
 set BUILD_DIR=build\win32\release
-set LRELEASE=%QT_DIR%\bin\lrelease
+set LRELEASE=%QT_BIN%\lrelease.exe
 set BASE_QT_TRANSLATIONS_DIRECTORY=%QT_DIR%\translations
 
 set PATH=%QT_BIN%;%PATH%;%WIN_SDK_BIN%;%GIT_BIN%

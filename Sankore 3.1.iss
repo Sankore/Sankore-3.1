@@ -83,13 +83,13 @@ Source: "..\Qt-4.8\plugins\phonon_backend\phonon_ds94.dll"; DestDir: "{app}\phon
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 ;qt multimedia plugins
-Source: "c:\OpenSankore\plugins\mediaservice\dsengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\mediaservice\dsengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\dsengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\dsengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
 
-Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3u.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3ud.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3u.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3ud.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
 
 ;fonts for xpdf
 Source: "resources\windows\xpdfrc"; DestDir: "{app}"; Flags: ignoreversion
