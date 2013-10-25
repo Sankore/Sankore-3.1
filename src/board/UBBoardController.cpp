@@ -513,7 +513,7 @@ void UBBoardController::addScene(UBGraphicsScene* scene, bool replaceActiveIfEmp
             UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(selectedDocument(), scene, mActiveSceneIndex + 1);
             setActiveDocumentScene(mActiveSceneIndex + 1);
         }
-
+        mControlView->centerOn(0,0);// Issue 1598/1605 - CFA - 20131024 : Recentrage de la vue pour chaque ajout de scene
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
     }
 }
