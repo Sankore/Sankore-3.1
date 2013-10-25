@@ -1428,6 +1428,8 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
   movingItem = NULL;
 
   mLongPressTimer.stop();
+
+  UBApplication::boardController->controlView()->viewport()->update(); // Issue 1026 - ALTI - 20131024 : depuis que le thumbnail courant est une view "live" de la boardScene, il peut y avoir des "trainées" quand on déplace rapidement les objets. Il faut rafraichir en fin de déplacement.
 }
 
 void
