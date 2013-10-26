@@ -2642,7 +2642,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Display</source>
-        <translation>Näytä</translation>
+        <translation>Käyttöliittymä</translation>
     </message>
     <message>
         <source>Show Page with External Browser</source>
@@ -2746,15 +2746,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show internal web page content on secondary screen or projector</source>
-        <translation>Näytä sisäinen verkkosivusisältö toissijaisella näytöllä tai projektorilla</translation>
+        <translation>Näytä verkkosivun sisältö toissijaisella näytöllä tai projektorilla</translation>
     </message>
     <message>
         <source>Multi display</source>
-        <translation>Useita näyttöjä</translation>
+        <translation>Näyttöjen asetukset</translation>
     </message>
     <message>
         <source>Swap control display and view display</source>
-        <translation>Vaihda ohjausnäytön ja sisältönäytön välillä</translation>
+        <translation>Vaihda ohjausnäytön ja esitysnäytön välillä</translation>
     </message>
     <message>
         <source>Mode</source>
