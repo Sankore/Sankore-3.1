@@ -1609,10 +1609,15 @@ UBGraphicsTextItem* UBGraphicsScene::addTextWithFont(const QString& pString, con
 
 UBGraphicsTextItem *UBGraphicsScene::addTextHtml(const QString &pString, const QPointF& pTopLeft)
 {
+    QString cleanString = UBTextTools::cleanHtml(pString);
+    if(!cleanString.length()){
+        qDebug() << "Cleaning the string leads to an empty string";
+        cleanString = pString;
+    }
     UBGraphicsTextItem *textItem = new UBGraphicsTextItem();
 
     textItem->setPlainText("");
-    textItem->setHtml(UBTextTools::cleanHtml(pString));
+    textItem->setHtml(cleanString);
 
     addItem(textItem);
     textItem->show();

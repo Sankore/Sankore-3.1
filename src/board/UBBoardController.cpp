@@ -2512,14 +2512,14 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
 
     if (pMimeData->hasText())
     {
-        if("" != pMimeData->text()){
+        if(pMimeData->text().length()){
             // Sometimes, it is possible to have an URL as text. we check here if it is the case
             QString qsTmp = pMimeData->text().remove(QRegExp("[\\0]"));
             if(qsTmp.startsWith("http")){
                 downloadURL(QUrl(qsTmp), QString(), pPos);
             }
             else{
-                mActiveScene->addTextHtml(pMimeData->html(), pPos);
+                mActiveScene->addTextHtml(pMimeData->text(), pPos);
             }
         }
         else{
