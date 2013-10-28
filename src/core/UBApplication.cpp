@@ -317,6 +317,7 @@ int UBApplication::exec(const QString& pFileToImport)
 
     webController = new UBWebController(mainWindow);
     documentController = new UBDocumentController(mainWindow);
+    documentController->setDocumentThumbs(boardController->documentThumbs()); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 
     boardController->paletteManager()->connectToDocumentController();
 
