@@ -1789,8 +1789,10 @@ void UBBoardController::adjustDisplayViews()
 {
     if (UBApplication::applicationController)
     {
-        UBApplication::applicationController->adjustDisplayView();
-        UBApplication::applicationController->adjustPreviousViews(mActiveSceneIndex, selectedDocument());
+        mControlView->centerOn(0,0);
+
+//        UBApplication::applicationController->adjustDisplayView();
+//        UBApplication::applicationController->adjustPreviousViews(mActiveSceneIndex, selectedDocument());
     }
 }
 
