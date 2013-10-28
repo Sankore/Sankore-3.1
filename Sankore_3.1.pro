@@ -9,7 +9,7 @@ CONFIG += debug_and_release \
 
 
 VERSION_MAJ = 2
-VERSION_MIN = 1.1RC
+VERSION_MIN = 2
 VERSION_TYPE = r # a = alpha, b = beta, r = release, other => error
 VERSION_PATCH = 0
 
@@ -129,10 +129,10 @@ win32 {
 }
 
 macx {
-   LIBS += -framework Foundation 
+   LIBS += -framework Foundation
    LIBS += -lcrypto
    #commented because Sankore crashes on Java Script. It seems to backends dependencies.
-   #LIBS += -framework AppKit 
+   #LIBS += -framework AppKit
    #LIBS += -framework WebKit
 
    CONFIG(release, debug|release):CONFIG += x86
