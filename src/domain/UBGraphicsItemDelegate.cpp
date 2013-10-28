@@ -739,6 +739,15 @@ void UBGraphicsItemDelegate::setRotatable(bool pCanRotate)
     }
 }
 
+void UBGraphicsItemDelegate::setLocked(bool pLocked)
+{
+    Q_ASSERT(mDelegated);
+
+    if (mDelegated) {
+        mDelegated->setData(UBGraphicsItemData::ItemLocked, QVariant(pLocked));
+    }
+}
+
 bool UBGraphicsItemDelegate::isFlippable()
 {
     return mFlippable;

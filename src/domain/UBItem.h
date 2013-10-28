@@ -115,6 +115,8 @@ public:
     static void assignZValue(QGraphicsItem*, qreal value);
     static bool isRotatable(QGraphicsItem *item);
     static bool isFlippable(QGraphicsItem *item);
+    static bool isLocked(QGraphicsItem *item);
+
     static QUuid getOwnUuid(QGraphicsItem *item);
     static qreal getOwnZValue(QGraphicsItem *item);
 
