@@ -1171,6 +1171,11 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
           return;
       }
 
+      if(currentTool == UBStylusTool::Play && movingItem->data(UBGraphicsItemData::ItemLocked).toBool()){
+          event->accept();
+          return;
+      }
+
       if (currentTool != UBStylusTool::Play || mRubberBandInPlayMode) {
 
           if (!movingItem && (mMouseButtonIsPressed || mTabletStylusIsPressed) && mUBRubberBand && mUBRubberBand->isVisible()) {
