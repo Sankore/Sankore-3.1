@@ -81,15 +81,11 @@ function searchComplete(json) {
         // There is also a result.file property which has the escaped version
         if (thumbnails) {
             var filename = result.file.substring(result.file.lastIndexOf("/")+1);
-            newImg.src = result.file + "/" + filename + "/icon.svg";
-            newImg.onerror = function() { 
-                newImg.src = result.file + "/" + filename + "/icon.png";
-                iThumbnailUrl.attr("value",newImg.src);
-            };
+            newImg.src = result.file + "/icon.png";
         } else {
             newImg.src = "./images/thumbnail_icon.png";
         }
-        var imgWidth = (result.tbWidth > minWidth)?result.tbWidth:minWidth;
+        newImg.width = 96;        var imgWidth = (result.tbWidth > minWidth)?result.tbWidth:minWidth;
         var imgHeight = (result.tbHeight > minHeight)?result.tbHeight:minHeight;
         imgContainer.width(imgWidth).height(imgHeight);
         imgContainer.append($(newImg));
