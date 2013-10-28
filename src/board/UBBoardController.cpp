@@ -128,6 +128,8 @@ UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     int dpiCommon = (desktop->physicalDpiX() + desktop->physicalDpiY()) / 2;
     int sPixelsPerMillimeter = qRound(dpiCommon / UBGeometryUtils::inchSize);
     UBSettings::settings()->crossSize = 10*sPixelsPerMillimeter;
+
+    mDocumentThumbs = new QList<const QPixmap*>(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 }
 
 
@@ -167,6 +169,16 @@ void UBBoardController::init()
 UBBoardController::~UBBoardController()
 {
     delete mDisplayView;
+
+    // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
+    foreach(const QPixmap* pm, *mDocumentThumbs){
+        delete pm;
+        pm = NULL;
+    }
+    mDocumentThumbs->clear();
+    delete mDocumentThumbs;
+    mDocumentThumbs = NULL;
+    // Issue 1026 - AOU - 20131028 : End
 }
 
 
@@ -480,6 +492,8 @@ void UBBoardController::addScene()
 
     selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
 
+    reloadThumbnails(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
+
     setActiveDocumentScene(mActiveSceneIndex + 1);
     QApplication::restoreOverrideCursor();
 }
@@ -761,6 +775,7 @@ void UBBoardController::deleteScene(int nIndex)
             nIndex = pageCount()-1;
         setActiveDocumentScene(nIndex-1);
         deletePages(scIndexes);
+        reloadThumbnails(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
         showMessage(tr("Page %1 deleted").arg(nIndex));
         QApplication::restoreOverrideCursor();
         mDeletingSceneIndex = -1;
