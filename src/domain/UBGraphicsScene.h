@@ -149,7 +149,10 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
         UBGraphicsW3CWidgetItem* addW3CWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0));
         void addGraphicsWidget(UBGraphicsWidgetItem* graphicsWidget, const QPointF& pPos = QPointF(0, 0));
 
-        
+        // Issue 1598/1605 - CFA - 20131028
+        QPointF lastCenter();
+        void setLastCenter(QPointF center);
+        // Fin Issue 1598/1605 - CFA - 20131028
 
         UBGraphicsMediaItem* addMedia(const QUrl& pMediaFileUrl, bool shouldPlayAsap, const QPointF& pPos = QPointF(0, 0));
         UBGraphicsMediaItem* addVideo(const QUrl& pVideoFileUrl, bool shouldPlayAsap, const QPointF& pPos = QPointF(0, 0));
@@ -239,24 +242,41 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
 
         class SceneViewState
         {
+            QPointF mLastSceneCenter;// Issue 1598/1605 - CFA - 20131028
+
             public:
                 SceneViewState()
                 {
                     zoomFactor = 1;
                     horizontalPosition = 0;
                     verticalPostition = 0;
+                    mLastSceneCenter = QPointF();// Issue 1598/1605 - CFA - 20131028
                 }
 
-                SceneViewState(qreal pZoomFactor, int pHorizontalPosition, int pVerticalPostition)
+                SceneViewState(qreal pZoomFactor, int pHorizontalPosition, int pVerticalPostition, QPointF sceneCenter)// Issue 1598/1605 - CFA - 20131028
                 {
                     zoomFactor = pZoomFactor;
                     horizontalPosition = pHorizontalPosition;
                     verticalPostition = pVerticalPostition;
+                    mLastSceneCenter = sceneCenter;// Issue 1598/1605 - CFA - 20131028
+                }                                
+
+                // Issue 1598/1605 - CFA - 20131028
+                QPointF lastSceneCenter() // Save Scene Center to replace the view when the scene becomes active
+                {
+                    return mLastSceneCenter;
                 }
+
+                void setLastSceneCenter(QPointF center)
+                {
+                    mLastSceneCenter = center;
+                }
+                // Fin issue 1598/1605 - CFA - 20131028
 
                 qreal zoomFactor;
                 int horizontalPosition;
                 int verticalPostition;
+
         };
 
         SceneViewState viewState() const
@@ -349,7 +369,6 @@ public slots:
        void pageSizeChanged();
 
     protected:
-
         UBGraphicsPolygonItem* lineToPolygonItem(const QLineF& pLine, const qreal& pWidth);
         UBGraphicsPolygonItem* arcToPolygonItem(const QLineF& pStartRadius, qreal pSpanAngle, qreal pWidth);
 

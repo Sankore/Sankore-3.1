@@ -468,12 +468,14 @@ void UBBoardController::stylusToolDoubleClicked(int tool)
     else if (tool == UBStylusTool::Hand)
     {
         centerRestore();
+        mActiveScene->setLastCenter(QPointF(0,0));// Issue 1598/1605 - CFA - 20131028
     }
 }
 
 void UBBoardController::addScene()
 {
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+    persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
     persistCurrentScene();
 
     UBDocumentContainer::addPage(mActiveSceneIndex + 1);
@@ -512,8 +514,7 @@ void UBBoardController::addScene(UBGraphicsScene* scene, bool replaceActiveIfEmp
             persistCurrentScene();
             UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(selectedDocument(), scene, mActiveSceneIndex + 1);
             setActiveDocumentScene(mActiveSceneIndex + 1);
-        }
-        mControlView->centerOn(0,0);// Issue 1598/1605 - CFA - 20131024 : Recentrage de la vue pour chaque ajout de scene
+        }        
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
     }
 }
@@ -778,6 +779,10 @@ void UBBoardController::clearScene()
     {
         freezeW3CWidgets(true);
         mActiveScene->clearContent(UBGraphicsScene::clearItemsAndAnnotations);
+        // Issue 1598/1605 - CFA - 20131028 : quand on clear complètement le tableau, on reset aussi la vue
+        mActiveScene->setLastCenter(QPointF(0,0));
+        mControlView->centerOn(mActiveScene->lastCenter());
+        // Fin issue 1598/1605 - CFA - 20131028
         updateActionStates();
     }
 }
@@ -941,15 +946,25 @@ void UBBoardController::handScroll(qreal dx, qreal dy)
     emit controlViewportChanged();
 }
 
+// Issue 1598/1605 - CFA - 20131028
+void UBBoardController::persistViewPositionOnCurrentScene()
+{
+    QRect rect = mControlView->rect();
+    QPoint center(rect.x() + rect.width() / 2, rect.y() + rect.height() / 2);
+    QPointF viewRelativeCenter= mControlView->mapToScene(center);
+    mActiveScene->setLastCenter(viewRelativeCenter);
+}
+// Fin issue 1598/1605 - CFA - 20131028
 
 void UBBoardController::previousScene()
 {
     if (mActiveSceneIndex > 0)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(mActiveSceneIndex - 1);
-        mControlView->centerOn(0,0);// Issue 1598/1605 - CFA - 20131024 : besoin de recentrer la vue courante pour éviter des effets de bords Qt sur les déplacements de vue
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
 
@@ -963,9 +978,10 @@ void UBBoardController::nextScene()
     if (mActiveSceneIndex < selectedDocument()->pageCount() - 1)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(mActiveSceneIndex + 1);
-        mControlView->centerOn(0,0);// Issue 1598/1605 - CFA - 20131024 : besoin de recentrer la vue courante pour éviter des effets de bords Qt sur les déplacements de vue
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
 
@@ -976,13 +992,17 @@ void UBBoardController::nextScene()
 
 void UBBoardController::firstScene()
 {
+
     if (mActiveSceneIndex > 0)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(0);
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
+
 
     updateActionStates();
     emit pageChanged();
@@ -991,11 +1011,14 @@ void UBBoardController::firstScene()
 
 void UBBoardController::lastScene()
 {
+
     if (mActiveSceneIndex < selectedDocument()->pageCount() - 1)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(selectedDocument()->pageCount() - 1);
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
 
@@ -2163,7 +2186,8 @@ void UBBoardController::saveViewState()
     {
         mActiveScene->setViewState(UBGraphicsScene::SceneViewState(currentZoom(),
                                                                    mControlView->horizontalScrollBar()->value(),
-                                                                   mControlView->verticalScrollBar()->value()));
+                                                                   mControlView->verticalScrollBar()->value(),
+                                                                   mActiveScene->lastCenter()));// Issue 1598/1605 - CFA - 20131028
     }
 }
 

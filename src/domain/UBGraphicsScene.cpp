@@ -307,7 +307,8 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     {
         setViewState(SceneViewState(1,
             UBApplication::applicationController->initialHScroll(),
-            UBApplication::applicationController->initialVScroll()));
+            UBApplication::applicationController->initialVScroll(),
+                                    QPointF()));//Issue 1598/1605 - CFA - 20131028
     }
 
 //    Just for debug. Do not delete please
@@ -334,6 +335,18 @@ void UBGraphicsScene::selectionChangedProcessing()
 
     }
 }
+
+// Issue 1598/1605 - CFA - 20131028
+void UBGraphicsScene::setLastCenter(QPointF center)
+{
+    mViewState.setLastSceneCenter(center);
+}
+
+QPointF UBGraphicsScene::lastCenter()
+{
+    return mViewState.lastSceneCenter();
+}
+// Fin issue 1598/1605 - CFA - 20131028
 
 void UBGraphicsScene::updateGroupButtonState()
 {
