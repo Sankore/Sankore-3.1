@@ -2081,13 +2081,19 @@ void UBDocumentController::deleteSelectedItem()
 
 void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pDeletionType)
 {
+    // Issue NC - CFA - 20131029 : ajout d'une popup de confirmation pour la suppression definitive
+    if(pDeletionType == DeletionType::CompleteDelete && !UBApplication::mainWindow->yesNoQuestion(tr("Empty the trash"),tr("You're about to empty the trash.") +"\n\n" + tr("Are you sure ?")))
+        return;
+
+    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
     if (!docModel->isCatalog(index)) {
         return;
     }
     while (docModel->rowCount(index)) {
         QModelIndex subIndex = docModel->index(0, 0, index);
-        switch (static_cast<int>(pDeletionType)) {
+        switch (pDeletionType) {
         case MoveToTrash :
             docModel->moveIndex(subIndex, docModel->trashIndex());
             break;
@@ -2097,6 +2103,9 @@ void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pD
             break;
         }
     }
+
+    QApplication::restoreOverrideCursor();
+    // Fin issue NC - CFA - 20131029
 }
 
 void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pIndex)
