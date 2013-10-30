@@ -55,11 +55,6 @@ QString UBExportAdaptor::askForFileName(UBDocumentProxy* pDocument, const QStrin
 {
     QString defaultName;
 
-    if (pDocument->metaData(UBSettings::documentGroupName).toString().length() > 0)
-    {
-        defaultName += pDocument->metaData(UBSettings::documentGroupName).toString() + QString(" ");
-    }
-
     defaultName += pDocument->metaData(UBSettings::documentName).toString() + exportExtention();
 
     defaultName = UBFileSystemUtils::cleanName(defaultName);
