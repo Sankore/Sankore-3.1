@@ -1158,6 +1158,8 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     QModelIndex dropIndex = selectedIndexes().first();
     bool isUBPage = event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage);
     bool inModel = docModel->inModel(targetIndex) || targetIndex == docModel->modelsIndex();
+    bool isSourceAModel = docModel->inModel(dropIndex);
+
 
     Qt::DropAction drA = Qt::CopyAction;
     if (isUBPage) {
@@ -1189,7 +1191,22 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 
         drA = Qt::IgnoreAction;
         docModel->setHighLighted(QModelIndex());
-    } else if (!inModel) {
+    }
+    else if(isSourceAModel){
+        drA = Qt::IgnoreAction;
+        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        UBDocumentTreeNode* node = docModel->nodeFromIndex(targetIndex);
+        QModelIndex targetParentIndex;
+        if(node->nodeType() == UBDocumentTreeNode::Catalog)
+            targetParentIndex = docModel->indexForNode(node);
+        else
+            targetParentIndex = docModel->indexForNode(node->parentNode());
+
+        docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
+        QApplication::restoreOverrideCursor();
+        docModel->setHighLighted(QModelIndex());
+    }
+    else if (!inModel) {
         drA = Qt::IgnoreAction;
         docModel->moveIndex(dropIndex, targetIndex);
     }
