@@ -42,6 +42,10 @@
 
 #include "gui/UBFeaturesWidget.h"
 
+#include <sstream>
+#include <vector>
+
+
 void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
                                        , const QString & currVirtualPath
                                        , const QPair<CategoryData, QSet<QUrl> > &pfavoriteInfo
@@ -734,18 +738,37 @@ QString UBFeaturesController::uniqNameForFeature(const UBFeature &feature, const
         }
     }
 
-    if (!resultList.contains(pName + pExtention, Qt::CaseInsensitive)) {
-        resultName = pName + pExtention;
+    // Issue 513 - CFA - 20131030 : changement de comportement dans le nom des fichiers images (maintenant l'ext est fournie par Planete Sankoré...).
+    std::vector<std::string> elems;
+    std::stringstream ss(pName.toStdString());
+    std::string item;
+    while (std::getline(ss, item, '.'))
+       elems.push_back(item);
+
+    elems.pop_back();//on supprime l'extension du nom
+    std::string s;
+
+    while (!elems.empty())
+    {
+        s += elems.back();
+        elems.pop_back();
+    }
+
+    QString pNameWithoutExt = QString::fromStdString(s);
+
+    if (!resultList.contains(pNameWithoutExt + pExtention, Qt::CaseInsensitive)) {
+        resultName = pNameWithoutExt + pExtention;
 
     } else {
         for (int i = 0; i < 16777215; i++) {
-            QString probeName = pName + "_" + QString::number(i) + pExtention;
+            QString probeName = pNameWithoutExt + "_" + QString::number(i) + pExtention;
             if (!resultList.contains(probeName, Qt::CaseInsensitive)) {
                 resultName = probeName;
                 break;
             }
         }
     }
+    // Fin Issue 513 - CFA - 20131030
     qDebug() << "result name is " << resultName;
 
     return resultName;
