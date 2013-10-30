@@ -25,6 +25,7 @@
 #define UBTOOLWIDGET_H_
 
 #include <QtGui>
+#include <core/UBApplicationController.h>
 
 class UBGraphicsWidgetItem;
 class QWidget;
@@ -59,6 +60,7 @@ class UBToolWidget : public QWidget
 
     private slots:
         void javaScriptWindowObjectCleared();
+        void reactOnBoardChanged();
 
     protected:
         QWebView *mWebView;
@@ -71,6 +73,7 @@ class UBToolWidget : public QWidget
         bool mShouldMoveWidget;
         int mContentMargin;
         int mFrameWidth;
+        QPointer<UBGraphicsScene> mScene;
 };
 
 #endif /* UBTOOLWIDGET_H_ */
