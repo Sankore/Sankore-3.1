@@ -2564,43 +2564,43 @@ void UBDocumentController::addToDocument()
 }
 
 
-void UBDocumentController::addDocumentInTree(UBDocumentProxy* pDocument)
-{
-    QString documentName = pDocument->name();
-    QString documentGroup = pDocument->groupName();
-    if (documentGroup.isEmpty())
-    {
-        documentGroup = mDefaultDocumentGroupName;
-    }
-    UBDocumentGroupTreeItem* group = 0;
-    if (documentGroup.startsWith(UBSettings::trashedDocumentGroupNamePrefix))
-    {
-        group = mTrashTi;
-    }
-    else
-    {
-        for (int i = 0; i < mDocumentUI->documentTreeWidget->topLevelItemCount(); i++)
-        {
-            QTreeWidgetItem* item = mDocumentUI->documentTreeWidget->topLevelItem(i);
-            UBDocumentGroupTreeItem* groupItem = dynamic_cast<UBDocumentGroupTreeItem*>(item);
-            if (groupItem->groupName() == documentGroup)
-            {
-                group = groupItem;
-                break;
-            }
-        }
-    }
+//void UBDocumentController::addDocumentInTree(UBDocumentProxy* pDocument)
+//{
+//    QString documentName = pDocument->name();
+//    QString documentGroup = pDocument->groupName();
+//    if (documentGroup.isEmpty())
+//    {
+//        documentGroup = mDefaultDocumentGroupName;
+//    }
+//    UBDocumentGroupTreeItem* group = 0;
+//    if (documentGroup.startsWith(UBSettings::trashedDocumentGroupNamePrefix))
+//    {
+//        group = mTrashTi;
+//    }
+//    else
+//    {
+//        for (int i = 0; i < mDocumentUI->documentTreeWidget->topLevelItemCount(); i++)
+//        {
+//            QTreeWidgetItem* item = mDocumentUI->documentTreeWidget->topLevelItem(i);
+//            UBDocumentGroupTreeItem* groupItem = dynamic_cast<UBDocumentGroupTreeItem*>(item);
+//            if (groupItem->groupName() == documentGroup)
+//            {
+//                group = groupItem;
+//                break;
+//            }
+//        }
+//    }
 
-    if (group == 0)
-    {
-        group = new UBDocumentGroupTreeItem(0); // deleted by the tree widget
-        group->setGroupName(documentGroup);
-        mDocumentUI->documentTreeWidget->addTopLevelItem(group);
-    }
+//    if (group == 0)
+//    {
+//        group = new UBDocumentGroupTreeItem(0); // deleted by the tree widget
+//        group->setGroupName(documentGroup);
+//        mDocumentUI->documentTreeWidget->addTopLevelItem(group);
+//    }
 
-    UBDocumentProxyTreeItem *ti = new UBDocumentProxyTreeItem(group, pDocument, !group->isTrashFolder());
-    ti->setText(0, documentName);
-}
+//    UBDocumentProxyTreeItem *ti = new UBDocumentProxyTreeItem(group, pDocument, !group->isTrashFolder());
+//    ti->setText(0, documentName);
+//}
 
 
 void UBDocumentController::updateDocumentInTree(UBDocumentProxy* pDocument)
