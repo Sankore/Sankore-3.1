@@ -650,9 +650,12 @@ void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
     mMenu->removeAction(mShowPanelToAddAnAction);
     QString actionLabel;
     switch (mAction->linkType()) {
-    case eLinkToAudio:
+    case eLinkToAudio:{
         actionLabel= tr("Remove link to audio");
+        UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(action);
+        connect(mDeleteButton,SIGNAL(clicked()),audioAction,SLOT(onSourceHide()));
         break;
+    }
     case eLinkToPage:
         actionLabel = tr("Remove link to page");
         break;
