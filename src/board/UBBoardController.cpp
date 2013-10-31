@@ -740,6 +740,11 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync, eIte
              UBGraphicsItemUndoCommand* uc = new UBGraphicsItemUndoCommand(mActiveScene, 0, graphicsRetItem);
              UBApplication::undoStack->push(uc);
         }
+
+        //Issue NC - CFA 20131029 : dévérouiller les blocs vérouillés lors d'une duplication
+        if (retItem && retItem->Delegate()->isLocked())
+            retItem->Delegate()->lock(false);
+
         return retItem;
     }
 
@@ -757,6 +762,10 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync, eIte
 
         retItem = dynamic_cast<UBGraphicsItem *>(createdItem);
     }
+
+    //Issue NC - CFA 20131029 : dévérouiller les blocs vérouillés lors d'une duplication
+    if (retItem && retItem->Delegate()->isLocked())
+        retItem->Delegate()->lock(false);
 
     return retItem;
 }

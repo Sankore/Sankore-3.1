@@ -983,6 +983,22 @@
         <source>Ungroup</source>
         <translation>Αποομαδοποίηση</translation>
     </message>
+    <message>
+        <source>Failed to duplicate %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to paste %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplication successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paste successful</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
@@ -1252,6 +1268,18 @@
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Empty the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You&apos;re about to empty the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure ?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
@@ -1381,8 +1409,18 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Αντιγραφή σελίδας %1/%2</translation>
+        <translation type="obsolete">Αντιγραφή σελίδας %1/%2</translation>
     </message>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation type="unfinished">
+            <numerusform>%1 σελίδα αντιγράφηκε</numerusform>
+            <numerusform>%1 σελίδες αντιγράφηκαν</numerusform>
+        </translation>
+    </message>
+</context>
+<context>
+    <name>UBDocumentTreeView</name>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation type="unfinished">
@@ -2305,6 +2343,10 @@ Do you want to ignore these errors for this host?</source>
         <source>Bambara</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2382,6 +2424,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Type title here...</source>
         <translation>Πληκτρολογήστε τον τίτλο εδώ...</translation>
+    </message>
+    <message>
+        <source>Drag and drop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The currect action is not supported. The teacher bar is design to work only with media stored locally.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3351,11 +3401,11 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
