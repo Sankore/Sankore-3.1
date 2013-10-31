@@ -559,11 +559,8 @@ void UBGraphicsWidgetItem::injectInlineJavaScript()
 
 void UBGraphicsWidgetItem::paint( QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-
-    //issue 1586 - NNE - 20131024
-    QGraphicsWebView::paint(painter, option, widget);
-
-    if (!mInitialLoadDone) {
+    //issue 1483 - NNE - 20131029 : Adding the test on the renderinContext
+    if (!mInitialLoadDone && this->scene()->renderingContext() == UBGraphicsScene::Screen) {
         QString message;
 
         message = tr("Loading ...");
@@ -582,6 +579,9 @@ void UBGraphicsWidgetItem::paint( QPainter *painter, const QStyleOptionGraphicsI
 
         painter->setPen(Qt::white);
         painter->drawText(rect(), Qt::AlignCenter, message);
+    }else{
+        //issue 1586 - NNE - 20131024
+        QGraphicsWebView::paint(painter, option, widget);
     }
 }
 
@@ -605,6 +605,8 @@ void UBGraphicsWidgetItem::mainFrameLoadFinished (bool ok)
 {
     mLoadIsErronous = !ok;
     update(boundingRect());
+
+    qDebug() << __FUNCTION__;
 
     if (mInitialLoadDone && scene() && scene()->renderingContext() == UBGraphicsScene::Screen)
         takeSnapshot();
