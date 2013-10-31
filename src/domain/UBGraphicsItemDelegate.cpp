@@ -242,7 +242,7 @@ UBGraphicsItemDelegate::~UBGraphicsItemDelegate()
         // do not release mMimeData.
         // the mMimeData is owned by QDrag since the setMimeData call as specified in the documentation
 
-    if(mAction->linkType() == eLinkToAudio){
+    if(mAction && mAction->linkType() == eLinkToAudio){
         UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(mAction);
         audioAction->onSourceHide();
     }
