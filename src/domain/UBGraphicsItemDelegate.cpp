@@ -239,8 +239,13 @@ UBGraphicsItemDelegate::~UBGraphicsItemDelegate()
 {
     if (UBApplication::boardController)
         disconnect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
-    // do not release mMimeData.
-    // the mMimeData is owned by QDrag since the setMimeData call as specified in the documentation
+        // do not release mMimeData.
+        // the mMimeData is owned by QDrag since the setMimeData call as specified in the documentation
+
+    if(mAction->linkType() == eLinkToAudio){
+        UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(mAction);
+        audioAction->onSourceHide();
+    }
 }
 
 QVariant UBGraphicsItemDelegate::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value)
