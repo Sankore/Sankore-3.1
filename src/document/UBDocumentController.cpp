@@ -2082,7 +2082,7 @@ void UBDocumentController::deleteSelectedItem()
 void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pDeletionType)
 {
     // Issue NC - CFA - 20131029 : ajout d'une popup de confirmation pour la suppression definitive
-    if(pDeletionType == DeletionType::CompleteDelete && !UBApplication::mainWindow->yesNoQuestion(tr("Empty the trash"),tr("You're about to empty the trash.") +"\n\n" + tr("Are you sure ?")))
+    if(pDeletionType == CompleteDelete && !UBApplication::mainWindow->yesNoQuestion(tr("Empty the trash"),tr("You're about to empty the trash.") +"\n\n" + tr("Are you sure ?")))
         return;
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
@@ -2101,7 +2101,10 @@ void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pD
         case CompleteDelete :
             deleteIndexAndAssociatedData(subIndex);
             break;
+        default:
+            break;
         }
+
     }
 
     QApplication::restoreOverrideCursor();
