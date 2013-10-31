@@ -468,3 +468,10 @@ INSTALLS = UB_ETC \
    UB_LIBRARY \
    UB_THIRDPARTY_INTERACTIVE
 
+OTHER_FILES += \
+    resources/library/shape/fleche blanche.svg \
+    resources/library/shape/fleche bleue.svg \
+    resources/library/shape/fleche grise.svg \
+    resources/library/shape/fleche rouge.svg \
+    resources/library/shape/fleche vide.svg
+
