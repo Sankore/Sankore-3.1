@@ -2546,7 +2546,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
-        <translation>%1 vignettes créées ...</translation>
+        <translation>%1 vignette(s) créée(s) ...</translation>
     </message>
 </context>
 <context>

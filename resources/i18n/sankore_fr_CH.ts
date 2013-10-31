@@ -577,10 +577,12 @@
     </message>
     <message>
         <source>eduMedia</source>
+        <translatorcomment>y a t&apos;il une fonction cachée ?</translatorcomment>
         <translation>eduMedia</translation>
     </message>
     <message>
         <source>Import eduMedia simulation</source>
+        <translatorcomment>y a t&apos;il une fonction cachée ?</translatorcomment>
         <translation>Importer une simulation eduMedia</translation>
     </message>
     <message>
@@ -621,6 +623,7 @@
     </message>
     <message>
         <source>Podcast</source>
+        <translatorcomment>le terme de ScreenCast serait plus approprié et plus juste</translatorcomment>
         <translation>Podcast</translation>
     </message>
     <message>
@@ -845,7 +848,7 @@
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Signet</translation>
+        <translation>Signet</translation>
     </message>
 </context>
 <context>
@@ -1013,11 +1016,11 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation>Alpha :</translation>
+        <translation>Transparence :</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation>Géométrie :</translation>
+        <translation>Forme :</translation>
     </message>
     <message>
         <source>Width: </source>
@@ -1252,7 +1255,7 @@
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation type="unfinished"></translation>
+        <translation>Le document &quot;modèle&quot; n&apos;est pas éditable. Copiez le dans le dossier &quot;Mes documents&quot; pour pouvoir l&apos;utiliser ou l&apos;éditer.</translation>
     </message>
 </context>
 <context>
@@ -1318,7 +1321,7 @@
     </message>
     <message>
         <source>Export canceled ...</source>
-        <translation>Exportation annulée ...</translation>
+        <translation>Export annulé ...</translation>
     </message>
     <message>
         <source>Converting page %1/%2 ...</source>
@@ -1330,7 +1333,7 @@
     </message>
     <message>
         <source>Uploading Sankore File on Web.</source>
-        <translation>Fichier Open-Sankoré en cours de transfert vers Planète-Sankoré.</translation>
+        <translation>Document Open-Sankoré en cours de transfert vers Planète-Sankoré.</translation>
     </message>
     <message>
         <source>Document uploaded correctly on the web.</source>
@@ -1362,7 +1365,7 @@ Providing a new name will create a new document.</source>
         <translatorcomment>j&apos;ai ajouté le terme &quot;Attention&quot; car cette opération est dangereuse (et pas trop conforme aux habitudes ou l&apos;on place en général un n° de version à la fin du fichier pour les différencier et eviter l&apos;effacement)</translatorcomment>
         <translation>Le nom %1 est déjà utilisé.
 ATTENTION : En gardant ce nom, l&apos;ancien document sera écrasé par le nouveau.
-Un nouveau nom vous permettra un nouveau document.
+Un nouveau nom vous permettra de conserver l&apos;ancier document.
 </translation>
     </message>
 </context>
@@ -1386,11 +1389,11 @@ Un nouveau nom vous permettra un nouveau document.
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Copie de la page %1/%2 en cours</translation>
+        <translation>Copie de la page %1/%2 en cours</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 page copiée</numerusform>
             <numerusform>%1 pages copiées</numerusform>
         </translation>
@@ -1984,11 +1987,11 @@ Un nouveau nom vous permettra un nouveau document.
     <name>UBIntranetPodcastPublisher</name>
     <message>
         <source>Error while publishing video to intranet (%1)</source>
-        <translation>Erreur durant la publication de la vidéo sur l&apos;intranet (%1)</translation>
+        <translation>Erreur durant la publication de la vidéo sur l&apos;ENT (%1)</translation>
     </message>
     <message>
         <source>Publishing to Intranet in progress %1 %</source>
-        <translation>Publication sur l&apos;intranet en cours %1 %</translation>
+        <translation>Publication sur l&apos;ENT en cours %1 %</translation>
     </message>
 </context>
 <context>
@@ -2152,7 +2155,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Publish to Intranet</source>
-        <translation>Publier sur l&apos;intranet</translation>
+        <translation>Publier sur l&apos;ENT</translation>
     </message>
     <message>
         <source>Publish to Youtube</source>
@@ -2308,10 +2311,6 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Portuguese</source>
         <translation>Portugais</translation>
-    </message>
-    <message>
-        <source>Bambara</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2547,7 +2546,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
-        <translation>%1 vignettes créées ...</translation>
+        <translation>%1 vignette(s) créée(s) ...</translation>
     </message>
 </context>
 <context>
@@ -2585,7 +2584,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation>Page complète</translation>
+        <translation>Page entière</translation>
     </message>
     <message>
         <source>Embed </source>
@@ -2767,7 +2766,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     </message>
     <message>
         <source>There are no documents that should be imported</source>
-        <translation>Aucun document au format Uniboard n&apos;a été trouvé</translation>
+        <translation>Aucun document à importer n&apos;a été trouvé</translation>
     </message>
 </context>
 <context>
@@ -2865,7 +2864,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <name>WBHistoryTreeModel</name>
     <message>
         <source>Earlier Today</source>
-        <translation>Précédemment dans la journée</translation>
+        <translation>Consulté précédemment</translation>
     </message>
     <message>
         <source>%1 items</source>
@@ -3061,7 +3060,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation>Sauvegarder les paramètres de connexion. </translation>
+        <translation>Enregistrer les paramètres de connexion. </translation>
     </message>
 </context>
 <context>
@@ -3371,14 +3370,14 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les licences proposées ci-dessous sont en langue anglaise afin de respecter le cadre légal et officiel de ces textes qui ne disposent pas d&apos;une traduction officialisée en français.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les licences proposées ci-dessous sont en langue anglaise afin de respecter le cadre juridique de ces textes qui ne disposent pas d&apos;une traduction officielle en français.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
