@@ -1,0 +1,1506 @@
+\hypertarget{class_u_b_features_controller}{\section{U\-B\-Features\-Controller Class Reference}
+\label{d8/d33/class_u_b_features_controller}\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Features\-Controller.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Features\-Controller\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/db5/class_u_b_features_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_features_controller_aecef1f7aa275d49a8c29b65b931c9b3f}{max\-Files\-Count\-Evaluated} (int p\-Limit)
+\item 
+void \hyperlink{class_u_b_features_controller_a3a4888ce760ec446d39758f08a55f408}{scan\-Started} ()
+\item 
+void \hyperlink{class_u_b_features_controller_ad9dc411ac8ff3afaf4cbfddbc10a507c}{scan\-Finished} ()
+\item 
+void \hyperlink{class_u_b_features_controller_a6d1921b5aab49c5c2f354eb55eeda3f1}{feature\-Added\-From\-Thread} ()
+\item 
+void \hyperlink{class_u_b_features_controller_a1144dedb4b331da981b249c8178dd925}{scan\-Category} (const Q\-String \&)
+\item 
+void \hyperlink{class_u_b_features_controller_ac58f7f5d1126b923f35832bfa958c55d}{scan\-Path} (const Q\-String \&)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_features_controller_ad7cbd54520c41aad81eec981e4a3132e}{U\-B\-Features\-Controller} (Q\-Widget $\ast$parent\-Widget)
+\item 
+virtual \hyperlink{class_u_b_features_controller_a32d8a7f4ab318ee141639a2e54d198e3}{$\sim$\-U\-B\-Features\-Controller} ()
+\item 
+Q\-List$<$ \hyperlink{class_u_b_feature}{U\-B\-Feature} $>$ $\ast$ \hyperlink{class_u_b_features_controller_a5fc8ba7d2cf4c8e18bf99dff9b6d0dd6}{get\-Features} () const 
+\item 
+void \hyperlink{class_u_b_features_controller_a2b4de09d84eb26fdd0cceee62f412865}{init\-Hardcoded\-Data} ()
+\item 
+void \hyperlink{class_u_b_features_controller_a20e01d353932b4077c5c57deea2e7a64}{load\-Hardcoded\-Items\-To\-Model} ()
+\item 
+void \hyperlink{class_u_b_features_controller_a38042ae37804ee19bfacf4aafd096ea9}{add\-Item\-To\-Page} (const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&item)
+\item 
+void \hyperlink{class_u_b_features_controller_a0ecd4b84e703063db5c0fdf498f2cdb0}{add\-Item\-As\-Background} (const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&item)
+\item 
+const \hyperlink{class_u_b_feature}{U\-B\-Feature} \& \hyperlink{class_u_b_features_controller_a15d83c0c4e01b2b0fd063bc550adf1ff}{get\-Current\-Element} () const 
+\item 
+void \hyperlink{class_u_b_features_controller_a88dfa57014eceb1712c1137947ebe71d}{set\-Current\-Element} (const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&elem)
+\item 
+\hyperlink{class_u_b_feature}{U\-B\-Feature} \hyperlink{class_u_b_features_controller_a6aaa4c08bbbc9065ba3f76e8e1053cee}{get\-Trash\-Element} () const 
+\item 
+\hyperlink{class_u_b_feature}{U\-B\-Feature} \hyperlink{class_u_b_features_controller_abb0390432dc2882dbed454e9ee748561}{get\-Bookmark\-Element} () const 
+\item 
+\hyperlink{class_u_b_feature}{U\-B\-Feature} \hyperlink{class_u_b_features_controller_a0a9c0304c92a91b82776b1df2c7965f8}{get\-Root\-Element} () const 
+\item 
+void \hyperlink{class_u_b_features_controller_a36791ecaf11ce57e9844374ddf18c030}{add\-Downloaded\-File} (const Q\-Url \&source\-Url, const Q\-Byte\-Array \&p\-Data, const Q\-String p\-Content\-Source, const Q\-String p\-Title)
+\item 
+\hyperlink{class_u_b_feature}{U\-B\-Feature} \hyperlink{class_u_b_features_controller_ae655071d7b00474e3d194a9b0dc3da3e}{move\-Item\-To\-Folder} (const Q\-Url \&url, const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&destination)
+\item 
+\hyperlink{class_u_b_feature}{U\-B\-Feature} \hyperlink{class_u_b_features_controller_a2553bf0f1523b4ce354205204acd9516}{copy\-Item\-To\-Folder} (const Q\-Url \&url, const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&destination)
+\item 
+Q\-String \hyperlink{class_u_b_features_controller_af852c30775bb491b411d2886a6fd52eb}{move\-External\-Data} (const Q\-Url \&url, const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&destination)
+\item 
+void \hyperlink{class_u_b_features_controller_aaab4bde109e0dd4186f668f1ff3a0a93}{rescan\-Model} ()
+\item 
+void \hyperlink{class_u_b_features_controller_a1ae7daa901929765eb70c6afdbad6063}{sift\-Elements} (const Q\-String \&p\-Sift\-Value)
+\item 
+\hyperlink{class_u_b_feature}{U\-B\-Feature} \hyperlink{class_u_b_features_controller_af0bdf0b0938b31e208e21fa24a0f6858}{get\-Feature} (const Q\-Model\-Index \&index, const Q\-String \&list\-Name)
+\item 
+void \hyperlink{class_u_b_features_controller_a40a6171b1075631cf17fe95ee3636d40}{search\-Started} (const Q\-String \&pattern, Q\-List\-View $\ast$p\-On\-View)
+\item 
+void \hyperlink{class_u_b_features_controller_af3e3b7af4e748b07feb1d3a58de82f8c}{refresh\-Models} ()
+\item 
+void \hyperlink{class_u_b_features_controller_a5b6f8bf56a0ddac3270956cd51a132cf}{delete\-Item} (const Q\-Url \&url)
+\item 
+void \hyperlink{class_u_b_features_controller_ac372e53b4e31eccd99520f4e28f4b7f9}{delete\-Item} (const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&p\-Feature)
+\item 
+bool \hyperlink{class_u_b_features_controller_a9ad4f644682f545c2c8d9e41cd5dc9c5}{is\-Trash} (const Q\-Url \&url)
+\item 
+void \hyperlink{class_u_b_features_controller_abf82ec95b8742869c7463f968c584164}{move\-To\-Trash} (\hyperlink{class_u_b_feature}{U\-B\-Feature} feature, bool delete\-Manualy=false)
+\item 
+void \hyperlink{class_u_b_features_controller_a72a3740e5a647048d439b6b75f7c2832}{add\-To\-Favorite} (const Q\-Url \&path)
+\item 
+void \hyperlink{class_u_b_features_controller_ac441a13d4bfca4a13e712cce6857bffc}{remove\-From\-Favorite} (const Q\-Url \&path, bool delete\-Manualy=false)
+\item 
+void \hyperlink{class_u_b_features_controller_aac768032f25aac61193518cfc41b73c7}{import\-Image} (const Q\-Image \&image, const Q\-String \&file\-Name=Q\-String())
+\item 
+void \hyperlink{class_u_b_features_controller_a7d71c50db359949131a49e2a1f46524f}{import\-Image} (const Q\-Image \&image, const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&destination, const Q\-String \&file\-Name=Q\-String())
+\item 
+void \hyperlink{class_u_b_features_controller_acd936b126d7479f4e62b9f3e5ee218b3}{create\-Bookmark} (const Q\-String \&file\-Name, const Q\-String \&url\-String)
+\item 
+void \hyperlink{class_u_b_features_controller_abb30e018775b9f1b24af1417a95591f0}{create\-Link} (const Q\-String \&file\-Name, const Q\-String \&url\-String, Q\-Size \&size, Q\-String mime\-Type, Q\-String b\-Embed\-Code)
+\item 
+bool \hyperlink{class_u_b_features_controller_a2f82879667be84a5347dc31a00ea4f1e}{new\-Folder\-Allowed} () const 
+\item 
+Q\-String\-List \hyperlink{class_u_b_features_controller_a2138108a0bc480221b0344b015b53a28}{get\-File\-Names\-In\-Folders} ()
+\item 
+void \hyperlink{class_u_b_features_controller_a1c40c0f4a000cb60ac833b3e94dfa72a}{assign\-Features\-List\-View} (\hyperlink{class_u_b_features_list_view}{U\-B\-Features\-List\-View} $\ast$p\-List)
+\item 
+void \hyperlink{class_u_b_features_controller_ab8a74b048b8eedf66356e4f8cb2c8e3c}{assign\-Path\-List\-View} (\hyperlink{class_u_b_features_list_view}{U\-B\-Features\-List\-View} $\ast$p\-List)
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_ab872d9b6dbe6385003304a720aaa2d44}{get\-Destination\-Category\-For\-Url} (const Q\-Url \&url)
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_ae98f808560a2988579f61f6202debbbb}{get\-Destination\-Category\-For\-Mime\-Type} (const Q\-String \&p\-Mmime\-Type, const Q\-Url \&source\-Url=Q\-Url())
+\item 
+Q\-String \hyperlink{class_u_b_features_controller_a5169adfc9ae680be3e3218a6797f5d0a}{get\-Feature\-Path\-By\-Name} (const Q\-String \&feature\-Name) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{_u_b_features_controller_8h_a1ae525bf6101c0de35195259d4a6674f}{U\-B\-Feature\-Element\-Type} \hyperlink{class_u_b_features_controller_a37995e9bde0b05ca141651d80b0e9be2}{file\-Type\-From\-Url} (const Q\-String \&path)
+\item 
+static Q\-String \hyperlink{class_u_b_features_controller_a8592ae0251869b74f510efa3a8a9b457}{file\-Name\-From\-Url} (const Q\-Url \&url)
+\item 
+static Q\-Image \hyperlink{class_u_b_features_controller_a321bfa51fce6d90a82e1eba0c37ac205}{get\-Icon} (const Q\-String \&path, \hyperlink{_u_b_features_controller_8h_a1ae525bf6101c0de35195259d4a6674f}{U\-B\-Feature\-Element\-Type} p\-F\-Type)
+\item 
+static char \hyperlink{class_u_b_features_controller_aac526ad1696be6d863c074c057bbe371}{feature\-Type\-Splitter} ()
+\item 
+static Q\-String \hyperlink{class_u_b_features_controller_a1e422d46b7fbfda1ccc53dd371205b72}{category\-Name\-For\-Virtual\-Path} (const Q\-String \&str)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a600c5ec46102f01204da3af436b51cc3}{root\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a96885273da6eef4ead9cdd4134581e15}{audios\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_adefa77cdfc7ce7724827260d27276a6b}{movies\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a81f11d3b273515a82f278a85818229f3}{pictures\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_ad275980ee495eceb548f281113b6eb54}{app\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a93ba08c8e20249435c29fcf20a1e8a6e}{flash\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a9618c1741e96d986554d89c89448f709}{shapes\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a937e5247cebfecd14f7add2f56f35598}{interactivity\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a252e15cb9fd4a8957f690451517f19d8}{favorite\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a9f8defc86c89aed213113200a3dc37a6}{web\-Search\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_a2a5e91b0b4a93ba5b1b293c3e7b4f170}{trash\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_aa1716f370611e4e5de267ed6d0d6f0fd}{web\-Folder\-Data}
+\item 
+\hyperlink{struct_category_data}{Category\-Data} \hyperlink{class_u_b_features_controller_aade4e1f1ad502444c2ebb3619bed1d17}{bookmark\-Data}
+\item 
+Q\-List$<$ \hyperlink{struct_category_data}{Category\-Data} $>$ \hyperlink{class_u_b_features_controller_aa371ff5d43f0238241efb764da577a66}{top\-Level\-Category\-Data}
+\item 
+Q\-List$<$ \hyperlink{struct_category_data}{Category\-Data} $>$ \hyperlink{class_u_b_features_controller_a71500c59720c4ce5778bc8cf3bf04510}{extention\-Permissions\-Category\-Data}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Q\-String \hyperlink{class_u_b_features_controller_a825c2a585ff035f542f38d3eec0b6cbe}{virtual\-Root\-Name}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_u_b_features_controller_a0919cf48cd624319081a39cddeb338b5}{U\-B\-Features\-Widget}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 261 of file U\-B\-Features\-Controller.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_features_controller_ad7cbd54520c41aad81eec981e4a3132e}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!U\-B\-Features\-Controller@{U\-B\-Features\-Controller}}
+\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{U\-B\-Features\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Features\-Controller\-::\-U\-B\-Features\-Controller (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent\-Widget}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_ad7cbd54520c41aad81eec981e4a3132e}
+
+
+Definition at line 358 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ad7cbd54520c41aad81eec981e4a3132e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a32d8a7f4ab318ee141639a2e54d198e3}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!$\sim$\-U\-B\-Features\-Controller@{$\sim$\-U\-B\-Features\-Controller}}
+\index{$\sim$\-U\-B\-Features\-Controller@{$\sim$\-U\-B\-Features\-Controller}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{$\sim$\-U\-B\-Features\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Features\-Controller\-::$\sim$\-U\-B\-Features\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d8/d33/class_u_b_features_controller_a32d8a7f4ab318ee141639a2e54d198e3}
+
+
+Definition at line 1448 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_features_controller_a36791ecaf11ce57e9844374ddf18c030}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!add\-Downloaded\-File@{add\-Downloaded\-File}}
+\index{add\-Downloaded\-File@{add\-Downloaded\-File}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{add\-Downloaded\-File}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::add\-Downloaded\-File (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{source\-Url, }
+\item[{const Q\-Byte\-Array \&}]{p\-Data, }
+\item[{const Q\-String}]{p\-Content\-Source, }
+\item[{const Q\-String}]{p\-Title}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a36791ecaf11ce57e9844374ddf18c030}
+
+
+Definition at line 1138 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a36791ecaf11ce57e9844374ddf18c030_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a0ecd4b84e703063db5c0fdf498f2cdb0}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!add\-Item\-As\-Background@{add\-Item\-As\-Background}}
+\index{add\-Item\-As\-Background@{add\-Item\-As\-Background}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{add\-Item\-As\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::add\-Item\-As\-Background (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-B\-Feature} \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a0ecd4b84e703063db5c0fdf498f2cdb0}
+
+
+Definition at line 1087 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/d33/class_u_b_features_controller_a0ecd4b84e703063db5c0fdf498f2cdb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a38042ae37804ee19bfacf4aafd096ea9}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!add\-Item\-To\-Page@{add\-Item\-To\-Page}}
+\index{add\-Item\-To\-Page@{add\-Item\-To\-Page}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{add\-Item\-To\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::add\-Item\-To\-Page (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-B\-Feature} \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a38042ae37804ee19bfacf4aafd096ea9}
+
+
+Definition at line 1082 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/d33/class_u_b_features_controller_a38042ae37804ee19bfacf4aafd096ea9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a72a3740e5a647048d439b6b75f7c2832}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!add\-To\-Favorite@{add\-To\-Favorite}}
+\index{add\-To\-Favorite@{add\-To\-Favorite}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{add\-To\-Favorite}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::add\-To\-Favorite (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{path}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a72a3740e5a647048d439b6b75f7c2832}
+
+
+Definition at line 766 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a72a3740e5a647048d439b6b75f7c2832_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a1c40c0f4a000cb60ac833b3e94dfa72a}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!assign\-Features\-List\-View@{assign\-Features\-List\-View}}
+\index{assign\-Features\-List\-View@{assign\-Features\-List\-View}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{assign\-Features\-List\-View}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::assign\-Features\-List\-View (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Features\-List\-View} $\ast$}]{p\-List}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a1c40c0f4a000cb60ac833b3e94dfa72a}
+
+
+Definition at line 1455 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a1c40c0f4a000cb60ac833b3e94dfa72a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_ab8a74b048b8eedf66356e4f8cb2c8e3c}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!assign\-Path\-List\-View@{assign\-Path\-List\-View}}
+\index{assign\-Path\-List\-View@{assign\-Path\-List\-View}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{assign\-Path\-List\-View}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::assign\-Path\-List\-View (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Features\-List\-View} $\ast$}]{p\-List}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_ab8a74b048b8eedf66356e4f8cb2c8e3c}
+
+
+Definition at line 1473 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ab8a74b048b8eedf66356e4f8cb2c8e3c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a1e422d46b7fbfda1ccc53dd371205b72}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!category\-Name\-For\-Virtual\-Path@{category\-Name\-For\-Virtual\-Path}}
+\index{category\-Name\-For\-Virtual\-Path@{category\-Name\-For\-Virtual\-Path}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{category\-Name\-For\-Virtual\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Features\-Controller\-::category\-Name\-For\-Virtual\-Path (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d8/d33/class_u_b_features_controller_a1e422d46b7fbfda1ccc53dd371205b72}
+
+
+Definition at line 879 of file U\-B\-Features\-Controller.\-cpp.
+
+\hypertarget{class_u_b_features_controller_a2553bf0f1523b4ce354205204acd9516}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!copy\-Item\-To\-Folder@{copy\-Item\-To\-Folder}}
+\index{copy\-Item\-To\-Folder@{copy\-Item\-To\-Folder}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{copy\-Item\-To\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature} U\-B\-Features\-Controller\-::copy\-Item\-To\-Folder (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url, }
+\item[{const {\bf U\-B\-Feature} \&}]{destination}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a2553bf0f1523b4ce354205204acd9516}
+
+
+Definition at line 1316 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a2553bf0f1523b4ce354205204acd9516_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_acd936b126d7479f4e62b9f3e5ee218b3}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!create\-Bookmark@{create\-Bookmark}}
+\index{create\-Bookmark@{create\-Bookmark}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{create\-Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::create\-Bookmark (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{file\-Name, }
+\item[{const Q\-String \&}]{url\-String}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_acd936b126d7479f4e62b9f3e5ee218b3}
+
+
+Definition at line 926 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_acd936b126d7479f4e62b9f3e5ee218b3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_acd936b126d7479f4e62b9f3e5ee218b3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_abb30e018775b9f1b24af1417a95591f0}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!create\-Link@{create\-Link}}
+\index{create\-Link@{create\-Link}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{create\-Link}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::create\-Link (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{file\-Name, }
+\item[{const Q\-String \&}]{url\-String, }
+\item[{Q\-Size \&}]{size, }
+\item[{Q\-String}]{mime\-Type, }
+\item[{Q\-String}]{b\-Embed\-Code}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_abb30e018775b9f1b24af1417a95591f0}
+
+
+Definition at line 952 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_abb30e018775b9f1b24af1417a95591f0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_abb30e018775b9f1b24af1417a95591f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a5b6f8bf56a0ddac3270956cd51a132cf}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!delete\-Item@{delete\-Item}}
+\index{delete\-Item@{delete\-Item}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{delete\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::delete\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a5b6f8bf56a0ddac3270956cd51a132cf}
+
+
+Definition at line 1407 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d8/d33/class_u_b_features_controller_a5b6f8bf56a0ddac3270956cd51a132cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a5b6f8bf56a0ddac3270956cd51a132cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_ac372e53b4e31eccd99520f4e28f4b7f9}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!delete\-Item@{delete\-Item}}
+\index{delete\-Item@{delete\-Item}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{delete\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::delete\-Item (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-B\-Feature} \&}]{p\-Feature}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_ac372e53b4e31eccd99520f4e28f4b7f9}
+
+
+Definition at line 1430 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ac372e53b4e31eccd99520f4e28f4b7f9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a6d1921b5aab49c5c2f354eb55eeda3f1}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!feature\-Added\-From\-Thread@{feature\-Added\-From\-Thread}}
+\index{feature\-Added\-From\-Thread@{feature\-Added\-From\-Thread}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{feature\-Added\-From\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::feature\-Added\-From\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d8/d33/class_u_b_features_controller_a6d1921b5aab49c5c2f354eb55eeda3f1}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a6d1921b5aab49c5c2f354eb55eeda3f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_aac526ad1696be6d863c074c057bbe371}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!feature\-Type\-Splitter@{feature\-Type\-Splitter}}
+\index{feature\-Type\-Splitter@{feature\-Type\-Splitter}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{feature\-Type\-Splitter}]{\setlength{\rightskip}{0pt plus 5cm}static char U\-B\-Features\-Controller\-::feature\-Type\-Splitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{d8/d33/class_u_b_features_controller_aac526ad1696be6d863c074c057bbe371}
+
+
+Definition at line 314 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a8592ae0251869b74f510efa3a8a9b457}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!file\-Name\-From\-Url@{file\-Name\-From\-Url}}
+\index{file\-Name\-From\-Url@{file\-Name\-From\-Url}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{file\-Name\-From\-Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Features\-Controller\-::file\-Name\-From\-Url (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d8/d33/class_u_b_features_controller_a8592ae0251869b74f510efa3a8a9b457}
+
+
+Definition at line 796 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d8/d33/class_u_b_features_controller_a8592ae0251869b74f510efa3a8a9b457_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a37995e9bde0b05ca141651d80b0e9be2}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!file\-Type\-From\-Url@{file\-Type\-From\-Url}}
+\index{file\-Type\-From\-Url@{file\-Type\-From\-Url}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{file\-Type\-From\-Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature\-Element\-Type} U\-B\-Features\-Controller\-::file\-Type\-From\-Url (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d8/d33/class_u_b_features_controller_a37995e9bde0b05ca141651d80b0e9be2}
+
+
+Definition at line 805 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a37995e9bde0b05ca141651d80b0e9be2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a37995e9bde0b05ca141651d80b0e9be2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_abb0390432dc2882dbed454e9ee748561}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Bookmark\-Element@{get\-Bookmark\-Element}}
+\index{get\-Bookmark\-Element@{get\-Bookmark\-Element}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Bookmark\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature} U\-B\-Features\-Controller\-::get\-Bookmark\-Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d33/class_u_b_features_controller_abb0390432dc2882dbed454e9ee748561}
+
+
+Definition at line 281 of file U\-B\-Features\-Controller.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_abb0390432dc2882dbed454e9ee748561_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_abb0390432dc2882dbed454e9ee748561_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a15d83c0c4e01b2b0fd063bc550adf1ff}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Current\-Element@{get\-Current\-Element}}
+\index{get\-Current\-Element@{get\-Current\-Element}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Current\-Element}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf U\-B\-Feature}\& U\-B\-Features\-Controller\-::get\-Current\-Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d33/class_u_b_features_controller_a15d83c0c4e01b2b0fd063bc550adf1ff}
+
+
+Definition at line 278 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_ae98f808560a2988579f61f6202debbbb}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Destination\-Category\-For\-Mime\-Type@{get\-Destination\-Category\-For\-Mime\-Type}}
+\index{get\-Destination\-Category\-For\-Mime\-Type@{get\-Destination\-Category\-For\-Mime\-Type}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Destination\-Category\-For\-Mime\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::get\-Destination\-Category\-For\-Mime\-Type (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Mmime\-Type, }
+\item[{const Q\-Url \&}]{source\-Url = {\ttfamily QUrl()}}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_ae98f808560a2988579f61f6202debbbb}
+
+
+Definition at line 1098 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ae98f808560a2988579f61f6202debbbb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_ab872d9b6dbe6385003304a720aaa2d44}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Destination\-Category\-For\-Url@{get\-Destination\-Category\-For\-Url}}
+\index{get\-Destination\-Category\-For\-Url@{get\-Destination\-Category\-For\-Url}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Destination\-Category\-For\-Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::get\-Destination\-Category\-For\-Url (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_ab872d9b6dbe6385003304a720aaa2d44}
+
+
+Definition at line 1092 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ab872d9b6dbe6385003304a720aaa2d44_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ab872d9b6dbe6385003304a720aaa2d44_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_af0bdf0b0938b31e208e21fa24a0f6858}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Feature@{get\-Feature}}
+\index{get\-Feature@{get\-Feature}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Feature}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature} U\-B\-Features\-Controller\-::get\-Feature (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{index, }
+\item[{const Q\-String \&}]{list\-Name}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_af0bdf0b0938b31e208e21fa24a0f6858}
+
+
+Definition at line 1272 of file U\-B\-Features\-Controller.\-cpp.
+
+\hypertarget{class_u_b_features_controller_a5169adfc9ae680be3e3218a6797f5d0a}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Feature\-Path\-By\-Name@{get\-Feature\-Path\-By\-Name}}
+\index{get\-Feature\-Path\-By\-Name@{get\-Feature\-Path\-By\-Name}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Feature\-Path\-By\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Features\-Controller\-::get\-Feature\-Path\-By\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{feature\-Name}
+\end{DoxyParamCaption}
+) const}}\label{d8/d33/class_u_b_features_controller_a5169adfc9ae680be3e3218a6797f5d0a}
+
+
+Definition at line 1126 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a5169adfc9ae680be3e3218a6797f5d0a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a5fc8ba7d2cf4c8e18bf99dff9b6d0dd6}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Features@{get\-Features}}
+\index{get\-Features@{get\-Features}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Features}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<${\bf U\-B\-Feature}$>$$\ast$ U\-B\-Features\-Controller\-::get\-Features (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d33/class_u_b_features_controller_a5fc8ba7d2cf4c8e18bf99dff9b6d0dd6}
+
+
+Definition at line 271 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a2138108a0bc480221b0344b015b53a28}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-File\-Names\-In\-Folders@{get\-File\-Names\-In\-Folders}}
+\index{get\-File\-Names\-In\-Folders@{get\-File\-Names\-In\-Folders}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-File\-Names\-In\-Folders}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Features\-Controller\-::get\-File\-Names\-In\-Folders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a2138108a0bc480221b0344b015b53a28}
+
+
+Definition at line 1029 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a2138108a0bc480221b0344b015b53a28_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a321bfa51fce6d90a82e1eba0c37ac205}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Image U\-B\-Features\-Controller\-::get\-Icon (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{path, }
+\item[{{\bf U\-B\-Feature\-Element\-Type}}]{p\-F\-Type = {\ttfamily {\bf F\-E\-A\-T\-U\-R\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d8/d33/class_u_b_features_controller_a321bfa51fce6d90a82e1eba0c37ac205}
+
+
+Definition at line 847 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a321bfa51fce6d90a82e1eba0c37ac205_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a321bfa51fce6d90a82e1eba0c37ac205_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a0a9c0304c92a91b82776b1df2c7965f8}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Root\-Element@{get\-Root\-Element}}
+\index{get\-Root\-Element@{get\-Root\-Element}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Root\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature} U\-B\-Features\-Controller\-::get\-Root\-Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d33/class_u_b_features_controller_a0a9c0304c92a91b82776b1df2c7965f8}
+
+
+Definition at line 282 of file U\-B\-Features\-Controller.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a0a9c0304c92a91b82776b1df2c7965f8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a0a9c0304c92a91b82776b1df2c7965f8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a6aaa4c08bbbc9065ba3f76e8e1053cee}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!get\-Trash\-Element@{get\-Trash\-Element}}
+\index{get\-Trash\-Element@{get\-Trash\-Element}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{get\-Trash\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature} U\-B\-Features\-Controller\-::get\-Trash\-Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d33/class_u_b_features_controller_a6aaa4c08bbbc9065ba3f76e8e1053cee}
+
+
+Definition at line 280 of file U\-B\-Features\-Controller.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a6aaa4c08bbbc9065ba3f76e8e1053cee_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_aac768032f25aac61193518cfc41b73c7}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!import\-Image@{import\-Image}}
+\index{import\-Image@{import\-Image}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{import\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::import\-Image (
+\begin{DoxyParamCaption}
+\item[{const Q\-Image \&}]{image, }
+\item[{const Q\-String \&}]{file\-Name = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_aac768032f25aac61193518cfc41b73c7}
+
+
+Definition at line 921 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_aac768032f25aac61193518cfc41b73c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a7d71c50db359949131a49e2a1f46524f}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!import\-Image@{import\-Image}}
+\index{import\-Image@{import\-Image}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{import\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::import\-Image (
+\begin{DoxyParamCaption}
+\item[{const Q\-Image \&}]{image, }
+\item[{const {\bf U\-B\-Feature} \&}]{destination, }
+\item[{const Q\-String \&}]{file\-Name = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a7d71c50db359949131a49e2a1f46524f}
+
+
+Definition at line 997 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a7d71c50db359949131a49e2a1f46524f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a2b4de09d84eb26fdd0cceee62f412865}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!init\-Hardcoded\-Data@{init\-Hardcoded\-Data}}
+\index{init\-Hardcoded\-Data@{init\-Hardcoded\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{init\-Hardcoded\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::init\-Hardcoded\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a2b4de09d84eb26fdd0cceee62f412865}
+
+
+Definition at line 431 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a2b4de09d84eb26fdd0cceee62f412865_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d8/d33/class_u_b_features_controller_a2b4de09d84eb26fdd0cceee62f412865_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a9ad4f644682f545c2c8d9e41cd5dc9c5}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!is\-Trash@{is\-Trash}}
+\index{is\-Trash@{is\-Trash}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{is\-Trash}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Features\-Controller\-::is\-Trash (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a9ad4f644682f545c2c8d9e41cd5dc9c5}
+
+
+Definition at line 1437 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a9ad4f644682f545c2c8d9e41cd5dc9c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a20e01d353932b4077c5c57deea2e7a64}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!load\-Hardcoded\-Items\-To\-Model@{load\-Hardcoded\-Items\-To\-Model}}
+\index{load\-Hardcoded\-Items\-To\-Model@{load\-Hardcoded\-Items\-To\-Model}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{load\-Hardcoded\-Items\-To\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::load\-Hardcoded\-Items\-To\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a20e01d353932b4077c5c57deea2e7a64}
+
+
+Definition at line 638 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a20e01d353932b4077c5c57deea2e7a64_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a20e01d353932b4077c5c57deea2e7a64_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_aecef1f7aa275d49a8c29b65b931c9b3f}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!max\-Files\-Count\-Evaluated@{max\-Files\-Count\-Evaluated}}
+\index{max\-Files\-Count\-Evaluated@{max\-Files\-Count\-Evaluated}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{max\-Files\-Count\-Evaluated}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::max\-Files\-Count\-Evaluated (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Limit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d8/d33/class_u_b_features_controller_aecef1f7aa275d49a8c29b65b931c9b3f}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_aecef1f7aa275d49a8c29b65b931c9b3f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_af852c30775bb491b411d2886a6fd52eb}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!move\-External\-Data@{move\-External\-Data}}
+\index{move\-External\-Data@{move\-External\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{move\-External\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Features\-Controller\-::move\-External\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url, }
+\item[{const {\bf U\-B\-Feature} \&}]{destination}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_af852c30775bb491b411d2886a6fd52eb}
+
+
+Definition at line 1353 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_af852c30775bb491b411d2886a6fd52eb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_af852c30775bb491b411d2886a6fd52eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_ae655071d7b00474e3d194a9b0dc3da3e}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!move\-Item\-To\-Folder@{move\-Item\-To\-Folder}}
+\index{move\-Item\-To\-Folder@{move\-Item\-To\-Folder}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{move\-Item\-To\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature} U\-B\-Features\-Controller\-::move\-Item\-To\-Folder (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url, }
+\item[{const {\bf U\-B\-Feature} \&}]{destination}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_ae655071d7b00474e3d194a9b0dc3da3e}
+
+
+Definition at line 1209 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ae655071d7b00474e3d194a9b0dc3da3e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_abf82ec95b8742869c7463f968c584164}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!move\-To\-Trash@{move\-To\-Trash}}
+\index{move\-To\-Trash@{move\-To\-Trash}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{move\-To\-Trash}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::move\-To\-Trash (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Feature}}]{feature, }
+\item[{bool}]{delete\-Manualy = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_abf82ec95b8742869c7463f968c584164}
+
+
+Definition at line 1441 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_abf82ec95b8742869c7463f968c584164_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a2f82879667be84a5347dc31a00ea4f1e}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!new\-Folder\-Allowed@{new\-Folder\-Allowed}}
+\index{new\-Folder\-Allowed@{new\-Folder\-Allowed}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{new\-Folder\-Allowed}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Features\-Controller\-::new\-Folder\-Allowed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d33/class_u_b_features_controller_a2f82879667be84a5347dc31a00ea4f1e}
+
+
+Definition at line 307 of file U\-B\-Features\-Controller.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a2f82879667be84a5347dc31a00ea4f1e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_af3e3b7af4e748b07feb1d3a58de82f8c}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!refresh\-Models@{refresh\-Models}}
+\index{refresh\-Models@{refresh\-Models}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{refresh\-Models}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::refresh\-Models (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_af3e3b7af4e748b07feb1d3a58de82f8c}
+
+
+Definition at line 1309 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d8/d33/class_u_b_features_controller_af3e3b7af4e748b07feb1d3a58de82f8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_ac441a13d4bfca4a13e712cce6857bffc}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!remove\-From\-Favorite@{remove\-From\-Favorite}}
+\index{remove\-From\-Favorite@{remove\-From\-Favorite}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{remove\-From\-Favorite}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::remove\-From\-Favorite (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{path, }
+\item[{bool}]{delete\-Manualy = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_ac441a13d4bfca4a13e712cce6857bffc}
+
+
+Definition at line 783 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_ac441a13d4bfca4a13e712cce6857bffc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d8/d33/class_u_b_features_controller_ac441a13d4bfca4a13e712cce6857bffc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_aaab4bde109e0dd4186f668f1ff3a0a93}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!rescan\-Model@{rescan\-Model}}
+\index{rescan\-Model@{rescan\-Model}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{rescan\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::rescan\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_aaab4bde109e0dd4186f668f1ff3a0a93}
+
+
+Definition at line 1250 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_aaab4bde109e0dd4186f668f1ff3a0a93_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a1144dedb4b331da981b249c8178dd925}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!scan\-Category@{scan\-Category}}
+\index{scan\-Category@{scan\-Category}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{scan\-Category}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::scan\-Category (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d8/d33/class_u_b_features_controller_a1144dedb4b331da981b249c8178dd925}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d8/d33/class_u_b_features_controller_a1144dedb4b331da981b249c8178dd925_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_ad9dc411ac8ff3afaf4cbfddbc10a507c}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!scan\-Finished@{scan\-Finished}}
+\index{scan\-Finished@{scan\-Finished}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{scan\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::scan\-Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d8/d33/class_u_b_features_controller_ad9dc411ac8ff3afaf4cbfddbc10a507c}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d8/d33/class_u_b_features_controller_ad9dc411ac8ff3afaf4cbfddbc10a507c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_ac58f7f5d1126b923f35832bfa958c55d}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!scan\-Path@{scan\-Path}}
+\index{scan\-Path@{scan\-Path}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{scan\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::scan\-Path (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d8/d33/class_u_b_features_controller_ac58f7f5d1126b923f35832bfa958c55d}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d8/d33/class_u_b_features_controller_ac58f7f5d1126b923f35832bfa958c55d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a3a4888ce760ec446d39758f08a55f408}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!scan\-Started@{scan\-Started}}
+\index{scan\-Started@{scan\-Started}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{scan\-Started}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::scan\-Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d8/d33/class_u_b_features_controller_a3a4888ce760ec446d39758f08a55f408}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d8/d33/class_u_b_features_controller_a3a4888ce760ec446d39758f08a55f408_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a40a6171b1075631cf17fe95ee3636d40}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!search\-Started@{search\-Started}}
+\index{search\-Started@{search\-Started}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{search\-Started}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::search\-Started (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{pattern, }
+\item[{Q\-List\-View $\ast$}]{p\-On\-View}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a40a6171b1075631cf17fe95ee3636d40}
+
+
+Definition at line 1292 of file U\-B\-Features\-Controller.\-cpp.
+
+\hypertarget{class_u_b_features_controller_a88dfa57014eceb1712c1137947ebe71d}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!set\-Current\-Element@{set\-Current\-Element}}
+\index{set\-Current\-Element@{set\-Current\-Element}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{set\-Current\-Element}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::set\-Current\-Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-B\-Feature} \&}]{elem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/d33/class_u_b_features_controller_a88dfa57014eceb1712c1137947ebe71d}
+
+
+Definition at line 279 of file U\-B\-Features\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a88dfa57014eceb1712c1137947ebe71d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_controller_a1ae7daa901929765eb70c6afdbad6063}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!sift\-Elements@{sift\-Elements}}
+\index{sift\-Elements@{sift\-Elements}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{sift\-Elements}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Controller\-::sift\-Elements (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Sift\-Value}
+\end{DoxyParamCaption}
+)}}\label{d8/d33/class_u_b_features_controller_a1ae7daa901929765eb70c6afdbad6063}
+
+
+Definition at line 1259 of file U\-B\-Features\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a1ae7daa901929765eb70c6afdbad6063_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d33/class_u_b_features_controller_a1ae7daa901929765eb70c6afdbad6063_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_u_b_features_controller_a0919cf48cd624319081a39cddeb338b5}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!U\-B\-Features\-Widget@{U\-B\-Features\-Widget}}
+\index{U\-B\-Features\-Widget@{U\-B\-Features\-Widget}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{U\-B\-Features\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf U\-B\-Features\-Widget}\hspace{0.3cm}{\ttfamily [friend]}}}\label{d8/d33/class_u_b_features_controller_a0919cf48cd624319081a39cddeb338b5}
+
+
+Definition at line 263 of file U\-B\-Features\-Controller.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_features_controller_ad275980ee495eceb548f281113b6eb54}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!app\-Data@{app\-Data}}
+\index{app\-Data@{app\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{app\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::app\-Data}}\label{d8/d33/class_u_b_features_controller_ad275980ee495eceb548f281113b6eb54}
+
+
+Definition at line 328 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a96885273da6eef4ead9cdd4134581e15}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!audios\-Data@{audios\-Data}}
+\index{audios\-Data@{audios\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{audios\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::audios\-Data}}\label{d8/d33/class_u_b_features_controller_a96885273da6eef4ead9cdd4134581e15}
+
+
+Definition at line 325 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_aade4e1f1ad502444c2ebb3619bed1d17}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!bookmark\-Data@{bookmark\-Data}}
+\index{bookmark\-Data@{bookmark\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{bookmark\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::bookmark\-Data}}\label{d8/d33/class_u_b_features_controller_aade4e1f1ad502444c2ebb3619bed1d17}
+
+
+Definition at line 336 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a71500c59720c4ce5778bc8cf3bf04510}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!extention\-Permissions\-Category\-Data@{extention\-Permissions\-Category\-Data}}
+\index{extention\-Permissions\-Category\-Data@{extention\-Permissions\-Category\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{extention\-Permissions\-Category\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<${\bf Category\-Data}$>$ U\-B\-Features\-Controller\-::extention\-Permissions\-Category\-Data}}\label{d8/d33/class_u_b_features_controller_a71500c59720c4ce5778bc8cf3bf04510}
+
+
+Definition at line 339 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a252e15cb9fd4a8957f690451517f19d8}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!favorite\-Data@{favorite\-Data}}
+\index{favorite\-Data@{favorite\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{favorite\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::favorite\-Data}}\label{d8/d33/class_u_b_features_controller_a252e15cb9fd4a8957f690451517f19d8}
+
+
+Definition at line 332 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a93ba08c8e20249435c29fcf20a1e8a6e}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!flash\-Data@{flash\-Data}}
+\index{flash\-Data@{flash\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{flash\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::flash\-Data}}\label{d8/d33/class_u_b_features_controller_a93ba08c8e20249435c29fcf20a1e8a6e}
+
+
+Definition at line 329 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a937e5247cebfecd14f7add2f56f35598}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!interactivity\-Data@{interactivity\-Data}}
+\index{interactivity\-Data@{interactivity\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{interactivity\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::interactivity\-Data}}\label{d8/d33/class_u_b_features_controller_a937e5247cebfecd14f7add2f56f35598}
+
+
+Definition at line 331 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_adefa77cdfc7ce7724827260d27276a6b}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!movies\-Data@{movies\-Data}}
+\index{movies\-Data@{movies\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{movies\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::movies\-Data}}\label{d8/d33/class_u_b_features_controller_adefa77cdfc7ce7724827260d27276a6b}
+
+
+Definition at line 326 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a81f11d3b273515a82f278a85818229f3}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!pictures\-Data@{pictures\-Data}}
+\index{pictures\-Data@{pictures\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{pictures\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::pictures\-Data}}\label{d8/d33/class_u_b_features_controller_a81f11d3b273515a82f278a85818229f3}
+
+
+Definition at line 327 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a600c5ec46102f01204da3af436b51cc3}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!root\-Data@{root\-Data}}
+\index{root\-Data@{root\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{root\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::root\-Data}}\label{d8/d33/class_u_b_features_controller_a600c5ec46102f01204da3af436b51cc3}
+
+
+Definition at line 324 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a9618c1741e96d986554d89c89448f709}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!shapes\-Data@{shapes\-Data}}
+\index{shapes\-Data@{shapes\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{shapes\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::shapes\-Data}}\label{d8/d33/class_u_b_features_controller_a9618c1741e96d986554d89c89448f709}
+
+
+Definition at line 330 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_aa371ff5d43f0238241efb764da577a66}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!top\-Level\-Category\-Data@{top\-Level\-Category\-Data}}
+\index{top\-Level\-Category\-Data@{top\-Level\-Category\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{top\-Level\-Category\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<${\bf Category\-Data}$>$ U\-B\-Features\-Controller\-::top\-Level\-Category\-Data}}\label{d8/d33/class_u_b_features_controller_aa371ff5d43f0238241efb764da577a66}
+
+
+Definition at line 338 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a2a5e91b0b4a93ba5b1b293c3e7b4f170}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!trash\-Data@{trash\-Data}}
+\index{trash\-Data@{trash\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{trash\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::trash\-Data}}\label{d8/d33/class_u_b_features_controller_a2a5e91b0b4a93ba5b1b293c3e7b4f170}
+
+
+Definition at line 334 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a825c2a585ff035f542f38d3eec0b6cbe}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!virtual\-Root\-Name@{virtual\-Root\-Name}}
+\index{virtual\-Root\-Name@{virtual\-Root\-Name}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{virtual\-Root\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Features\-Controller\-::virtual\-Root\-Name\hspace{0.3cm}{\ttfamily [static]}}}\label{d8/d33/class_u_b_features_controller_a825c2a585ff035f542f38d3eec0b6cbe}
+
+
+Definition at line 317 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_aa1716f370611e4e5de267ed6d0d6f0fd}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!web\-Folder\-Data@{web\-Folder\-Data}}
+\index{web\-Folder\-Data@{web\-Folder\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{web\-Folder\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::web\-Folder\-Data}}\label{d8/d33/class_u_b_features_controller_aa1716f370611e4e5de267ed6d0d6f0fd}
+
+
+Definition at line 335 of file U\-B\-Features\-Controller.\-h.
+
+\hypertarget{class_u_b_features_controller_a9f8defc86c89aed213113200a3dc37a6}{\index{U\-B\-Features\-Controller@{U\-B\-Features\-Controller}!web\-Search\-Data@{web\-Search\-Data}}
+\index{web\-Search\-Data@{web\-Search\-Data}!UBFeaturesController@{U\-B\-Features\-Controller}}
+\subsubsection[{web\-Search\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Category\-Data} U\-B\-Features\-Controller\-::web\-Search\-Data}}\label{d8/d33/class_u_b_features_controller_a9f8defc86c89aed213113200a3dc37a6}
+
+
+Definition at line 333 of file U\-B\-Features\-Controller.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_features_controller_8h}{U\-B\-Features\-Controller.\-h}\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_features_controller_8cpp}{U\-B\-Features\-Controller.\-cpp}\end{DoxyCompactItemize}

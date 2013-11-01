@@ -1,0 +1,422 @@
+\hypertarget{class_u_b_svg_subset_adaptor}{\section{U\-B\-Svg\-Subset\-Adaptor Class Reference}
+\label{d3/df9/class_u_b_svg_subset_adaptor}\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Svg\-Subset\-Adaptor.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Svg\-Subset\-Adaptor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{d2/ddc/class_u_b_svg_subset_adaptor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries U\-B\-Svg\-Subset\-Reader}
+\item 
+class {\bfseries U\-B\-Svg\-Subset\-Writer}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_svg_subset_adaptor_a5abb38920769f1acbb2cfa21b0c8eb0a}{load\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, const int page\-Index)
+\item 
+static void \hyperlink{class_u_b_svg_subset_adaptor_ae0246b7ed5045d7515cad861681d7db0}{persist\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$p\-Scene, const int page\-Index)
+\item 
+static void \hyperlink{class_u_b_svg_subset_adaptor_a1b3ee698579691325ecae28700a02798}{upgrade\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, const int page\-Index)
+\item 
+static Q\-Uuid \hyperlink{class_u_b_svg_subset_adaptor_ab2a5b5aaae973b7b4217fcca0bc297fa}{scene\-Uuid} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, const int page\-Index)
+\item 
+static void \hyperlink{class_u_b_svg_subset_adaptor_a665ab38f71e9d7cfd8ceb868693fb9ca}{set\-Scene\-Uuid} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, const int page\-Index, Q\-Uuid p\-Uuid)
+\item 
+static bool \hyperlink{class_u_b_svg_subset_adaptor_abc0a992e8fee16f940e496dcd5b7e3e6}{add\-Element\-To\-Be\-Stored} (Q\-String dom\-Name, \hyperlink{class_i_data_storage}{I\-Data\-Storage} $\ast$data\-Storage\-Class)
+\item 
+static void \hyperlink{class_u_b_svg_subset_adaptor_a07f94632e63e37cbbbb6c7436cfcac52}{convert\-P\-D\-F\-Objects\-To\-Images} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy)
+\item 
+static void \hyperlink{class_u_b_svg_subset_adaptor_a394ed7be5d0e0bad50fbde7901e27df6}{convert\-Svg\-Images\-To\-Images} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy)
+\item 
+static Q\-Map$<$ Q\-String, \\*
+\hyperlink{class_i_data_storage}{I\-Data\-Storage} $\ast$ $>$ \hyperlink{class_u_b_svg_subset_adaptor_aaa783efc35f05dd4db4fb82754c21c87}{get\-Additional\-Element\-To\-Store} ()
+\item 
+static Q\-Dom\-Document \hyperlink{class_u_b_svg_subset_adaptor_acb8a67489951c14cc400d0f96702e576}{read\-Teacher\-Guide\-Node} (int scene\-Index)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_a407409ee2324e304a9c2404eb8965b05}{ns\-Svg} = \char`\"{}http\-://www.\-w3.\-org/2000/svg\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_a9a1c2bd95b31f64b43fda8acc13e2a21}{ns\-X\-Link} = \char`\"{}http\-://www.\-w3.\-org/1999/xlink\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_a3448a034e9c845f9c0ce1c3c87f8cc77}{ns\-X\-Html} = \char`\"{}http\-://www.\-w3.\-org/1999/xhtml\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_abaaf7694f1e36b620703f0adc2385967}{ns\-Ub}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_ad5460226f2e1c56cd3b7db062fe7c0da}{xml\-True} = \char`\"{}true\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_a1adfffd7e1374c84381c932b0e15e218}{xml\-False} = \char`\"{}false\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_ade20b66dff8586c2a270fc0ec0e37140}{s\-Font\-Size\-Prefix} = \char`\"{}font-\/size\-:\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_a3d5cad8803cfd188f7849d59d6bd6d9c}{s\-Pixel\-Unit} = \char`\"{}px\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_ac9df97e19b9bfd3de1064adae0b371f8}{s\-Font\-Weight\-Prefix} = \char`\"{}font-\/weight\-:\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_svg_subset_adaptor_a67a360fb9d747e9f3dc05022be5a6f29}{s\-Font\-Style\-Prefix} = \char`\"{}font-\/style\-:\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 56 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_svg_subset_adaptor_abc0a992e8fee16f940e496dcd5b7e3e6}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!add\-Element\-To\-Be\-Stored@{add\-Element\-To\-Be\-Stored}}
+\index{add\-Element\-To\-Be\-Stored@{add\-Element\-To\-Be\-Stored}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{add\-Element\-To\-Be\-Stored}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Svg\-Subset\-Adaptor\-::add\-Element\-To\-Be\-Stored (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{dom\-Name, }
+\item[{{\bf I\-Data\-Storage} $\ast$}]{data\-Storage\-Class}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_abc0a992e8fee16f940e496dcd5b7e3e6}
+
+
+Definition at line 235 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_abc0a992e8fee16f940e496dcd5b7e3e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_a07f94632e63e37cbbbb6c7436cfcac52}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!convert\-P\-D\-F\-Objects\-To\-Images@{convert\-P\-D\-F\-Objects\-To\-Images}}
+\index{convert\-P\-D\-F\-Objects\-To\-Images@{convert\-P\-D\-F\-Objects\-To\-Images}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{convert\-P\-D\-F\-Objects\-To\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Svg\-Subset\-Adaptor\-::convert\-P\-D\-F\-Objects\-To\-Images (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a07f94632e63e37cbbbb6c7436cfcac52}
+
+
+Definition at line 3331 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_a07f94632e63e37cbbbb6c7436cfcac52_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_a394ed7be5d0e0bad50fbde7901e27df6}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!convert\-Svg\-Images\-To\-Images@{convert\-Svg\-Images\-To\-Images}}
+\index{convert\-Svg\-Images\-To\-Images@{convert\-Svg\-Images\-To\-Images}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{convert\-Svg\-Images\-To\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Svg\-Subset\-Adaptor\-::convert\-Svg\-Images\-To\-Images (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a394ed7be5d0e0bad50fbde7901e27df6}
+
+
+Definition at line 3367 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_a394ed7be5d0e0bad50fbde7901e27df6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_aaa783efc35f05dd4db4fb82754c21c87}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!get\-Additional\-Element\-To\-Store@{get\-Additional\-Element\-To\-Store}}
+\index{get\-Additional\-Element\-To\-Store@{get\-Additional\-Element\-To\-Store}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{get\-Additional\-Element\-To\-Store}]{\setlength{\rightskip}{0pt plus 5cm}static Q\-Map$<$Q\-String,{\bf I\-Data\-Storage}$\ast$$>$ U\-B\-Svg\-Subset\-Adaptor\-::get\-Additional\-Element\-To\-Store (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_aaa783efc35f05dd4db4fb82754c21c87}
+
+
+Definition at line 77 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_a5abb38920769f1acbb2cfa21b0c8eb0a}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!load\-Scene@{load\-Scene}}
+\index{load\-Scene@{load\-Scene}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{load\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Svg\-Subset\-Adaptor\-::load\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{const int}]{page\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a5abb38920769f1acbb2cfa21b0c8eb0a}
+
+
+Definition at line 252 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_a5abb38920769f1acbb2cfa21b0c8eb0a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_a5abb38920769f1acbb2cfa21b0c8eb0a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_ae0246b7ed5045d7515cad861681d7db0}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!persist\-Scene@{persist\-Scene}}
+\index{persist\-Scene@{persist\-Scene}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{persist\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Svg\-Subset\-Adaptor\-::persist\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{{\bf U\-B\-Graphics\-Scene} $\ast$}]{p\-Scene, }
+\item[{const int}]{page\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_ae0246b7ed5045d7515cad861681d7db0}
+
+
+Definition at line 1160 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_ae0246b7ed5045d7515cad861681d7db0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_acb8a67489951c14cc400d0f96702e576}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!read\-Teacher\-Guide\-Node@{read\-Teacher\-Guide\-Node}}
+\index{read\-Teacher\-Guide\-Node@{read\-Teacher\-Guide\-Node}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{read\-Teacher\-Guide\-Node}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Dom\-Document U\-B\-Svg\-Subset\-Adaptor\-::read\-Teacher\-Guide\-Node (
+\begin{DoxyParamCaption}
+\item[{int}]{scene\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_acb8a67489951c14cc400d0f96702e576}
+
+
+Definition at line 331 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_acb8a67489951c14cc400d0f96702e576_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_acb8a67489951c14cc400d0f96702e576_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_ab2a5b5aaae973b7b4217fcca0bc297fa}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!scene\-Uuid@{scene\-Uuid}}
+\index{scene\-Uuid@{scene\-Uuid}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{scene\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Uuid U\-B\-Svg\-Subset\-Adaptor\-::scene\-Uuid (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{const int}]{page\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_ab2a5b5aaae973b7b4217fcca0bc297fa}
+
+
+Definition at line 277 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_ab2a5b5aaae973b7b4217fcca0bc297fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_a665ab38f71e9d7cfd8ceb868693fb9ca}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!set\-Scene\-Uuid@{set\-Scene\-Uuid}}
+\index{set\-Scene\-Uuid@{set\-Scene\-Uuid}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{set\-Scene\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Svg\-Subset\-Adaptor\-::set\-Scene\-Uuid (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{const int}]{page\-Index, }
+\item[{Q\-Uuid}]{p\-Uuid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a665ab38f71e9d7cfd8ceb868693fb9ca}
+
+
+Definition at line 184 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_a665ab38f71e9d7cfd8ceb868693fb9ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_a665ab38f71e9d7cfd8ceb868693fb9ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_svg_subset_adaptor_a1b3ee698579691325ecae28700a02798}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!upgrade\-Scene@{upgrade\-Scene}}
+\index{upgrade\-Scene@{upgrade\-Scene}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{upgrade\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Svg\-Subset\-Adaptor\-::upgrade\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{const int}]{page\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a1b3ee698579691325ecae28700a02798}
+
+
+Definition at line 144 of file U\-B\-Svg\-Subset\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df9/class_u_b_svg_subset_adaptor_a1b3ee698579691325ecae28700a02798_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_svg_subset_adaptor_a407409ee2324e304a9c2404eb8965b05}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!ns\-Svg@{ns\-Svg}}
+\index{ns\-Svg@{ns\-Svg}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{ns\-Svg}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::ns\-Svg = \char`\"{}http\-://www.\-w3.\-org/2000/svg\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a407409ee2324e304a9c2404eb8965b05}
+
+
+Definition at line 79 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_abaaf7694f1e36b620703f0adc2385967}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!ns\-Ub@{ns\-Ub}}
+\index{ns\-Ub@{ns\-Ub}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{ns\-Ub}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::ns\-Ub\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_abaaf7694f1e36b620703f0adc2385967}
+
+
+Definition at line 82 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_a3448a034e9c845f9c0ce1c3c87f8cc77}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!ns\-X\-Html@{ns\-X\-Html}}
+\index{ns\-X\-Html@{ns\-X\-Html}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{ns\-X\-Html}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::ns\-X\-Html = \char`\"{}http\-://www.\-w3.\-org/1999/xhtml\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a3448a034e9c845f9c0ce1c3c87f8cc77}
+
+
+Definition at line 81 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_a9a1c2bd95b31f64b43fda8acc13e2a21}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!ns\-X\-Link@{ns\-X\-Link}}
+\index{ns\-X\-Link@{ns\-X\-Link}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{ns\-X\-Link}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::ns\-X\-Link = \char`\"{}http\-://www.\-w3.\-org/1999/xlink\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a9a1c2bd95b31f64b43fda8acc13e2a21}
+
+
+Definition at line 80 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_ade20b66dff8586c2a270fc0ec0e37140}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!s\-Font\-Size\-Prefix@{s\-Font\-Size\-Prefix}}
+\index{s\-Font\-Size\-Prefix@{s\-Font\-Size\-Prefix}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{s\-Font\-Size\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::s\-Font\-Size\-Prefix = \char`\"{}font-\/size\-:\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_ade20b66dff8586c2a270fc0ec0e37140}
+
+
+Definition at line 86 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_a67a360fb9d747e9f3dc05022be5a6f29}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!s\-Font\-Style\-Prefix@{s\-Font\-Style\-Prefix}}
+\index{s\-Font\-Style\-Prefix@{s\-Font\-Style\-Prefix}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{s\-Font\-Style\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::s\-Font\-Style\-Prefix = \char`\"{}font-\/style\-:\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a67a360fb9d747e9f3dc05022be5a6f29}
+
+
+Definition at line 89 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_ac9df97e19b9bfd3de1064adae0b371f8}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!s\-Font\-Weight\-Prefix@{s\-Font\-Weight\-Prefix}}
+\index{s\-Font\-Weight\-Prefix@{s\-Font\-Weight\-Prefix}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{s\-Font\-Weight\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::s\-Font\-Weight\-Prefix = \char`\"{}font-\/weight\-:\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_ac9df97e19b9bfd3de1064adae0b371f8}
+
+
+Definition at line 88 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_a3d5cad8803cfd188f7849d59d6bd6d9c}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!s\-Pixel\-Unit@{s\-Pixel\-Unit}}
+\index{s\-Pixel\-Unit@{s\-Pixel\-Unit}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{s\-Pixel\-Unit}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::s\-Pixel\-Unit = \char`\"{}px\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a3d5cad8803cfd188f7849d59d6bd6d9c}
+
+
+Definition at line 87 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_a1adfffd7e1374c84381c932b0e15e218}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!xml\-False@{xml\-False}}
+\index{xml\-False@{xml\-False}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{xml\-False}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::xml\-False = \char`\"{}false\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_a1adfffd7e1374c84381c932b0e15e218}
+
+
+Definition at line 84 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+\hypertarget{class_u_b_svg_subset_adaptor_ad5460226f2e1c56cd3b7db062fe7c0da}{\index{U\-B\-Svg\-Subset\-Adaptor@{U\-B\-Svg\-Subset\-Adaptor}!xml\-True@{xml\-True}}
+\index{xml\-True@{xml\-True}!UBSvgSubsetAdaptor@{U\-B\-Svg\-Subset\-Adaptor}}
+\subsubsection[{xml\-True}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Svg\-Subset\-Adaptor\-::xml\-True = \char`\"{}true\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/df9/class_u_b_svg_subset_adaptor_ad5460226f2e1c56cd3b7db062fe7c0da}
+
+
+Definition at line 83 of file U\-B\-Svg\-Subset\-Adaptor.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/adaptors/\hyperlink{_u_b_svg_subset_adaptor_8h}{U\-B\-Svg\-Subset\-Adaptor.\-h}\item 
+Sankore-\/3.\-1/src/adaptors/\hyperlink{_u_b_svg_subset_adaptor_8cpp}{U\-B\-Svg\-Subset\-Adaptor.\-cpp}\end{DoxyCompactItemize}

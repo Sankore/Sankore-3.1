@@ -1,0 +1,399 @@
+\hypertarget{class_u_b_export_adaptor}{\section{U\-B\-Export\-Adaptor Class Reference}
+\label{d8/dd5/class_u_b_export_adaptor}\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Export\-Adaptor.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Export\-Adaptor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dde/class_u_b_export_adaptor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Export\-Adaptor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d8/db6/class_u_b_export_adaptor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_export_adaptor_aaca09f974c79a54ea09cdc6867de4021}{U\-B\-Export\-Adaptor} (Q\-Object $\ast$parent=0)
+\item 
+virtual \hyperlink{class_u_b_export_adaptor_a3f639b90ece4d9f84b9d5856651fd709}{$\sim$\-U\-B\-Export\-Adaptor} ()
+\item 
+virtual Q\-String \hyperlink{class_u_b_export_adaptor_a899c4b6a2431b5bc9da7a053a475ef80}{export\-Name} ()=0
+\item 
+virtual Q\-String \hyperlink{class_u_b_export_adaptor_a4627b5f14336f1a52dae470a45bf4a97}{export\-Extention} ()
+\item 
+virtual void \hyperlink{class_u_b_export_adaptor_a9333b1d118d0bf445acbda90ae35135d}{persist} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document)=0
+\item 
+virtual bool \hyperlink{class_u_b_export_adaptor_a0ab1b01c053f3e342276a3fe526652b4}{associated\-Actionaction\-Available\-For} (const Q\-Model\-Index \&selected\-Index)
+\item 
+Q\-Action $\ast$ \hyperlink{class_u_b_export_adaptor_af7bfa611557d5888fa57146cbc26eb27}{associated\-Action} ()
+\item 
+void \hyperlink{class_u_b_export_adaptor_a3e998cf72ad5ac921d588714bcaff783}{set\-Associated\-Action} (Q\-Action $\ast$p\-Associated\-Action)
+\item 
+virtual void \hyperlink{class_u_b_export_adaptor_ad1c81c7aca05513cb4ea5611c55e3075}{set\-Verbode} (bool verbose)
+\item 
+virtual bool \hyperlink{class_u_b_export_adaptor_abccdf6766ee57761a9d0e896f64e212e}{is\-Verbose} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\-String \hyperlink{class_u_b_export_adaptor_aad55193e5c640cbf06bb5ab486d2b253}{ask\-For\-File\-Name} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document, const Q\-String \&p\-Dialog\-Title)
+\item 
+Q\-String \hyperlink{class_u_b_export_adaptor_a73efa8baa12dbd72b1b3e3e9a04ca1d7}{ask\-For\-Dir\-Name} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document, const Q\-String \&p\-Dialog\-Title)
+\item 
+void \hyperlink{class_u_b_export_adaptor_a6d6f072b3dfdc144409527ca7be57951}{show\-Errors\-List} (Q\-List$<$ Q\-String $>$ errors\-List)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_u_b_export_adaptor_ae07fa34ac60fbd228314181ff53c3a62}{m\-Is\-Verbose}
+\item 
+Q\-Pointer$<$ Q\-Action $>$ \hyperlink{class_u_b_export_adaptor_a8345c9797470e5b5af71b98fe936cded}{m\-Associated\-Action}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file U\-B\-Export\-Adaptor.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_export_adaptor_aaca09f974c79a54ea09cdc6867de4021}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}}
+\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{U\-B\-Export\-Adaptor}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Export\-Adaptor\-::\-U\-B\-Export\-Adaptor (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d8/dd5/class_u_b_export_adaptor_aaca09f974c79a54ea09cdc6867de4021}
+
+
+Definition at line 39 of file U\-B\-Export\-Adaptor.\-cpp.
+
+\hypertarget{class_u_b_export_adaptor_a3f639b90ece4d9f84b9d5856651fd709}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!$\sim$\-U\-B\-Export\-Adaptor@{$\sim$\-U\-B\-Export\-Adaptor}}
+\index{$\sim$\-U\-B\-Export\-Adaptor@{$\sim$\-U\-B\-Export\-Adaptor}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{$\sim$\-U\-B\-Export\-Adaptor}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Export\-Adaptor\-::$\sim$\-U\-B\-Export\-Adaptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d8/dd5/class_u_b_export_adaptor_a3f639b90ece4d9f84b9d5856651fd709}
+
+
+Definition at line 48 of file U\-B\-Export\-Adaptor.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_export_adaptor_a73efa8baa12dbd72b1b3e3e9a04ca1d7}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!ask\-For\-Dir\-Name@{ask\-For\-Dir\-Name}}
+\index{ask\-For\-Dir\-Name@{ask\-For\-Dir\-Name}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{ask\-For\-Dir\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Export\-Adaptor\-::ask\-For\-Dir\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document, }
+\item[{const Q\-String \&}]{p\-Dialog\-Title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/dd5/class_u_b_export_adaptor_a73efa8baa12dbd72b1b3e3e9a04ca1d7}
+
+
+Definition at line 82 of file U\-B\-Export\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a73efa8baa12dbd72b1b3e3e9a04ca1d7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a73efa8baa12dbd72b1b3e3e9a04ca1d7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_aad55193e5c640cbf06bb5ab486d2b253}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!ask\-For\-File\-Name@{ask\-For\-File\-Name}}
+\index{ask\-For\-File\-Name@{ask\-For\-File\-Name}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{ask\-For\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Export\-Adaptor\-::ask\-For\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document, }
+\item[{const Q\-String \&}]{p\-Dialog\-Title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/dd5/class_u_b_export_adaptor_aad55193e5c640cbf06bb5ab486d2b253}
+
+
+Definition at line 54 of file U\-B\-Export\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_aad55193e5c640cbf06bb5ab486d2b253_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_aad55193e5c640cbf06bb5ab486d2b253_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_af7bfa611557d5888fa57146cbc26eb27}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!associated\-Action@{associated\-Action}}
+\index{associated\-Action@{associated\-Action}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{associated\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Action$\ast$ U\-B\-Export\-Adaptor\-::associated\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/dd5/class_u_b_export_adaptor_af7bfa611557d5888fa57146cbc26eb27}
+
+
+Definition at line 43 of file U\-B\-Export\-Adaptor.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_af7bfa611557d5888fa57146cbc26eb27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_a0ab1b01c053f3e342276a3fe526652b4}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!associated\-Actionaction\-Available\-For@{associated\-Actionaction\-Available\-For}}
+\index{associated\-Actionaction\-Available\-For@{associated\-Actionaction\-Available\-For}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{associated\-Actionaction\-Available\-For}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool U\-B\-Export\-Adaptor\-::associated\-Actionaction\-Available\-For (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{selected\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/dd5/class_u_b_export_adaptor_a0ab1b01c053f3e342276a3fe526652b4}
+
+
+Reimplemented in \hyperlink{class_u_b_export_document_set_adaptor_aa126d3d7d8045a6bb9aa64b634872494}{U\-B\-Export\-Document\-Set\-Adaptor}, \hyperlink{class_u_b_export_document_a3549c62db381a65c75beac3d89e6622d}{U\-B\-Export\-Document}, \hyperlink{class_u_b_web_publisher_aadf6fda2572e6bc4aeb54f5bf8c248f5}{U\-B\-Web\-Publisher}, \hyperlink{class_u_b_export_c_f_f_a8d731bb3ddbb49ae5f7fb348acb30e81}{U\-B\-Export\-C\-F\-F}, \hyperlink{class_u_b_export_full_p_d_f_afa76e3b13993bd3c7a2fd10751596189}{U\-B\-Export\-Full\-P\-D\-F}, \hyperlink{class_u_b_export_web_a82645ed3a13ef9d6c6864c221960fe52}{U\-B\-Export\-Web}, and \hyperlink{class_u_b_export_p_d_f_a6454f64338c25957060d8da94e845918}{U\-B\-Export\-P\-D\-F}.
+
+
+
+Definition at line 42 of file U\-B\-Export\-Adaptor.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a0ab1b01c053f3e342276a3fe526652b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_a4627b5f14336f1a52dae470a45bf4a97}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!export\-Extention@{export\-Extention}}
+\index{export\-Extention@{export\-Extention}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{export\-Extention}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Export\-Adaptor\-::export\-Extention (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/dd5/class_u_b_export_adaptor_a4627b5f14336f1a52dae470a45bf4a97}
+
+
+Reimplemented in \hyperlink{class_u_b_export_document_set_adaptor_a039f9e8bce043f66f4dc0c787b305271}{U\-B\-Export\-Document\-Set\-Adaptor}, \hyperlink{class_u_b_export_document_abcb04f3def55bbd22fe0931359c2536d}{U\-B\-Export\-Document}, \hyperlink{class_u_b_export_c_f_f_aea3668eb65d00460e495d56c42b436da}{U\-B\-Export\-C\-F\-F}, \hyperlink{class_u_b_export_full_p_d_f_af1ad55af22c95727340acfd1ed1a8819}{U\-B\-Export\-Full\-P\-D\-F}, and \hyperlink{class_u_b_export_p_d_f_a6880ba7958a7978be5dbc8e88dd65e74}{U\-B\-Export\-P\-D\-F}.
+
+
+
+Definition at line 40 of file U\-B\-Export\-Adaptor.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a4627b5f14336f1a52dae470a45bf4a97_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_a899c4b6a2431b5bc9da7a053a475ef80}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!export\-Name@{export\-Name}}
+\index{export\-Name@{export\-Name}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{export\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Export\-Adaptor\-::export\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d8/dd5/class_u_b_export_adaptor_a899c4b6a2431b5bc9da7a053a475ef80}
+
+
+Implemented in \hyperlink{class_u_b_export_document_set_adaptor_aeb5914aa1cd1350ccab1057394e20745}{U\-B\-Export\-Document\-Set\-Adaptor}, \hyperlink{class_u_b_web_publisher_aa9690c4b0871eedf5ec835b56b381913}{U\-B\-Web\-Publisher}, \hyperlink{class_u_b_export_document_a490257a78d799ace28deb2d24a608852}{U\-B\-Export\-Document}, \hyperlink{class_u_b_export_c_f_f_a2d9281d58c63807d7c2dfde364388757}{U\-B\-Export\-C\-F\-F}, \hyperlink{class_u_b_export_web_a937545710e262d96806de46af36adf1b}{U\-B\-Export\-Web}, \hyperlink{class_u_b_export_full_p_d_f_a250b765fd6333b4d80580562562ed8b7}{U\-B\-Export\-Full\-P\-D\-F}, and \hyperlink{class_u_b_export_p_d_f_aa54c7be687928926781c632b800e070b}{U\-B\-Export\-P\-D\-F}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a899c4b6a2431b5bc9da7a053a475ef80_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_abccdf6766ee57761a9d0e896f64e212e}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!is\-Verbose@{is\-Verbose}}
+\index{is\-Verbose@{is\-Verbose}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{is\-Verbose}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool U\-B\-Export\-Adaptor\-::is\-Verbose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/dd5/class_u_b_export_adaptor_abccdf6766ee57761a9d0e896f64e212e}
+
+
+Definition at line 51 of file U\-B\-Export\-Adaptor.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_abccdf6766ee57761a9d0e896f64e212e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_a9333b1d118d0bf445acbda90ae35135d}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!persist@{persist}}
+\index{persist@{persist}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{persist}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Export\-Adaptor\-::persist (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d8/dd5/class_u_b_export_adaptor_a9333b1d118d0bf445acbda90ae35135d}
+
+
+Implemented in \hyperlink{class_u_b_export_document_set_adaptor_af3a78eb86e3071bd91924e8d056a0823}{U\-B\-Export\-Document\-Set\-Adaptor}, \hyperlink{class_u_b_web_publisher_acf1964056e5008ca164f974cc55e8b24}{U\-B\-Web\-Publisher}, \hyperlink{class_u_b_export_document_ae0688e605976d7cd3fbae96c826e3638}{U\-B\-Export\-Document}, \hyperlink{class_u_b_export_c_f_f_aa7f031dc0cbe1f50f93bcb5e12c7151c}{U\-B\-Export\-C\-F\-F}, \hyperlink{class_u_b_export_web_aefd31533540499d2023dc071262ebdd4}{U\-B\-Export\-Web}, \hyperlink{class_u_b_export_full_p_d_f_a8c0bd950f21f469ce17daa1add9a75bf}{U\-B\-Export\-Full\-P\-D\-F}, and \hyperlink{class_u_b_export_p_d_f_a3bf65a44796339804e3beab23adfdc6f}{U\-B\-Export\-P\-D\-F}.
+
+\hypertarget{class_u_b_export_adaptor_a3e998cf72ad5ac921d588714bcaff783}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!set\-Associated\-Action@{set\-Associated\-Action}}
+\index{set\-Associated\-Action@{set\-Associated\-Action}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{set\-Associated\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Export\-Adaptor\-::set\-Associated\-Action (
+\begin{DoxyParamCaption}
+\item[{Q\-Action $\ast$}]{p\-Associated\-Action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d8/dd5/class_u_b_export_adaptor_a3e998cf72ad5ac921d588714bcaff783}
+
+
+Definition at line 44 of file U\-B\-Export\-Adaptor.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a3e998cf72ad5ac921d588714bcaff783_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_export_adaptor_ad1c81c7aca05513cb4ea5611c55e3075}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!set\-Verbode@{set\-Verbode}}
+\index{set\-Verbode@{set\-Verbode}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{set\-Verbode}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Export\-Adaptor\-::set\-Verbode (
+\begin{DoxyParamCaption}
+\item[{bool}]{verbose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/dd5/class_u_b_export_adaptor_ad1c81c7aca05513cb4ea5611c55e3075}
+
+
+Definition at line 46 of file U\-B\-Export\-Adaptor.\-h.
+
+\hypertarget{class_u_b_export_adaptor_a6d6f072b3dfdc144409527ca7be57951}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!show\-Errors\-List@{show\-Errors\-List}}
+\index{show\-Errors\-List@{show\-Errors\-List}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{show\-Errors\-List}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Export\-Adaptor\-::show\-Errors\-List (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ Q\-String $>$}]{errors\-List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/dd5/class_u_b_export_adaptor_a6d6f072b3dfdc144409527ca7be57951}
+
+
+Definition at line 112 of file U\-B\-Export\-Adaptor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a6d6f072b3dfdc144409527ca7be57951_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dd5/class_u_b_export_adaptor_a6d6f072b3dfdc144409527ca7be57951_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_export_adaptor_a8345c9797470e5b5af71b98fe936cded}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!m\-Associated\-Action@{m\-Associated\-Action}}
+\index{m\-Associated\-Action@{m\-Associated\-Action}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{m\-Associated\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pointer$<$Q\-Action$>$ U\-B\-Export\-Adaptor\-::m\-Associated\-Action\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/dd5/class_u_b_export_adaptor_a8345c9797470e5b5af71b98fe936cded}
+
+
+Definition at line 63 of file U\-B\-Export\-Adaptor.\-h.
+
+\hypertarget{class_u_b_export_adaptor_ae07fa34ac60fbd228314181ff53c3a62}{\index{U\-B\-Export\-Adaptor@{U\-B\-Export\-Adaptor}!m\-Is\-Verbose@{m\-Is\-Verbose}}
+\index{m\-Is\-Verbose@{m\-Is\-Verbose}!UBExportAdaptor@{U\-B\-Export\-Adaptor}}
+\subsubsection[{m\-Is\-Verbose}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Export\-Adaptor\-::m\-Is\-Verbose\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/dd5/class_u_b_export_adaptor_ae07fa34ac60fbd228314181ff53c3a62}
+
+
+Definition at line 62 of file U\-B\-Export\-Adaptor.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/adaptors/\hyperlink{_u_b_export_adaptor_8h}{U\-B\-Export\-Adaptor.\-h}\item 
+Sankore-\/3.\-1/src/adaptors/\hyperlink{_u_b_export_adaptor_8cpp}{U\-B\-Export\-Adaptor.\-cpp}\end{DoxyCompactItemize}

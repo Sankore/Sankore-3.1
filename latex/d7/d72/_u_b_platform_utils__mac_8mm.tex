@@ -1,0 +1,109 @@
+\hypertarget{_u_b_platform_utils__mac_8mm}{\section{Sankore-\/3.1/src/frameworks/\-U\-B\-Platform\-Utils\-\_\-mac.mm File Reference}
+\label{d7/d72/_u_b_platform_utils__mac_8mm}\index{Sankore-\/3.\-1/src/frameworks/\-U\-B\-Platform\-Utils\-\_\-mac.\-mm@{Sankore-\/3.\-1/src/frameworks/\-U\-B\-Platform\-Utils\-\_\-mac.\-mm}}
+}
+{\ttfamily \#include \char`\"{}Mac\-Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}U\-B\-Platform\-Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Application.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Settings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frameworks/\-U\-B\-File\-System\-Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Q\-Widget$>$}\\*
+{\ttfamily \#import $<$Foundation/\-N\-S\-Autorelease\-Pool.\-h$>$}\\*
+{\ttfamily \#import $<$Carbon/\-Carbon.\-h$>$}\\*
+{\ttfamily \#import $<$A\-P\-E\-Lite.\-h$>$}\\*
+Include dependency graph for U\-B\-Platform\-Utils\-\_\-mac.\-mm\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d43/_u_b_platform_utils__mac_8mm__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{_u_b_platform_utils__mac_8mm_a6014ce5a0f5540fb314fb481c88f97cd}{bundle\-Short\-Version} (N\-S\-Bundle $\ast$bundle)
+\item 
+O\-S\-Status \hyperlink{_u_b_platform_utils__mac_8mm_a1f1ad264155bc80088ee23bf03e957ca}{empty\-Set\-System\-U\-I\-Mode} (System\-U\-I\-Mode in\-Mode, System\-U\-I\-Options in\-Options)
+\item 
+Q\-Pixmap \hyperlink{_u_b_platform_utils__mac_8mm_a89b964ac454eb1a0dde3e44b5aa57acb}{qpixmap\-From\-Icon\-Ref} (Icon\-Ref icon\-Ref, int size)
+\item 
+Q\-String \hyperlink{_u_b_platform_utils__mac_8mm_ad850d8752d5a1fb6fa1c029da301ea7e}{Q\-String\-From\-String\-Ref} (C\-F\-String\-Ref string\-Ref)
+\item 
+\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T} $\ast$ \hyperlink{_u_b_platform_utils__mac_8mm_aad6782176c8e03dfbd118d49398bbf40}{create\-Key\-Bt} (const U\-C\-Keyboard\-Layout $\ast$key\-Layout, int vkk)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{_u_b_platform_utils__mac_8mm_a9b48b47aafec0eaa17d1b073e6d85040}{original\-Set\-System\-U\-I\-Mode} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_u_b_platform_utils__mac_8mm_a6014ce5a0f5540fb314fb481c88f97cd}{\index{U\-B\-Platform\-Utils\-\_\-mac.\-mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}!bundle\-Short\-Version@{bundle\-Short\-Version}}
+\index{bundle\-Short\-Version@{bundle\-Short\-Version}!UBPlatformUtils_mac.mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}}
+\subsubsection[{bundle\-Short\-Version}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ bundle\-Short\-Version (
+\begin{DoxyParamCaption}
+\item[{N\-S\-Bundle $\ast$}]{bundle}
+\end{DoxyParamCaption}
+)}}\label{d7/d72/_u_b_platform_utils__mac_8mm_a6014ce5a0f5540fb314fb481c88f97cd}
+
+
+Definition at line 42 of file U\-B\-Platform\-Utils\-\_\-mac.\-mm.
+
+\hypertarget{_u_b_platform_utils__mac_8mm_aad6782176c8e03dfbd118d49398bbf40}{\index{U\-B\-Platform\-Utils\-\_\-mac.\-mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}!create\-Key\-Bt@{create\-Key\-Bt}}
+\index{create\-Key\-Bt@{create\-Key\-Bt}!UBPlatformUtils_mac.mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}}
+\subsubsection[{create\-Key\-Bt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\-E\-Y\-B\-T}$\ast$ create\-Key\-Bt (
+\begin{DoxyParamCaption}
+\item[{const U\-C\-Keyboard\-Layout $\ast$}]{key\-Layout, }
+\item[{int}]{vkk}
+\end{DoxyParamCaption}
+)}}\label{d7/d72/_u_b_platform_utils__mac_8mm_aad6782176c8e03dfbd118d49398bbf40}
+
+
+Definition at line 437 of file U\-B\-Platform\-Utils\-\_\-mac.\-mm.
+
+\hypertarget{_u_b_platform_utils__mac_8mm_a1f1ad264155bc80088ee23bf03e957ca}{\index{U\-B\-Platform\-Utils\-\_\-mac.\-mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}!empty\-Set\-System\-U\-I\-Mode@{empty\-Set\-System\-U\-I\-Mode}}
+\index{empty\-Set\-System\-U\-I\-Mode@{empty\-Set\-System\-U\-I\-Mode}!UBPlatformUtils_mac.mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}}
+\subsubsection[{empty\-Set\-System\-U\-I\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}O\-S\-Status empty\-Set\-System\-U\-I\-Mode (
+\begin{DoxyParamCaption}
+\item[{System\-U\-I\-Mode}]{in\-Mode, }
+\item[{System\-U\-I\-Options}]{in\-Options}
+\end{DoxyParamCaption}
+)}}\label{d7/d72/_u_b_platform_utils__mac_8mm_a1f1ad264155bc80088ee23bf03e957ca}
+
+
+Definition at line 47 of file U\-B\-Platform\-Utils\-\_\-mac.\-mm.
+
+\hypertarget{_u_b_platform_utils__mac_8mm_a89b964ac454eb1a0dde3e44b5aa57acb}{\index{U\-B\-Platform\-Utils\-\_\-mac.\-mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}!qpixmap\-From\-Icon\-Ref@{qpixmap\-From\-Icon\-Ref}}
+\index{qpixmap\-From\-Icon\-Ref@{qpixmap\-From\-Icon\-Ref}!UBPlatformUtils_mac.mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}}
+\subsubsection[{qpixmap\-From\-Icon\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap qpixmap\-From\-Icon\-Ref (
+\begin{DoxyParamCaption}
+\item[{Icon\-Ref}]{icon\-Ref, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{d7/d72/_u_b_platform_utils__mac_8mm_a89b964ac454eb1a0dde3e44b5aa57acb}
+
+
+Definition at line 368 of file U\-B\-Platform\-Utils\-\_\-mac.\-mm.
+
+\hypertarget{_u_b_platform_utils__mac_8mm_ad850d8752d5a1fb6fa1c029da301ea7e}{\index{U\-B\-Platform\-Utils\-\_\-mac.\-mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}!Q\-String\-From\-String\-Ref@{Q\-String\-From\-String\-Ref}}
+\index{Q\-String\-From\-String\-Ref@{Q\-String\-From\-String\-Ref}!UBPlatformUtils_mac.mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}}
+\subsubsection[{Q\-String\-From\-String\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Q\-String\-From\-String\-Ref (
+\begin{DoxyParamCaption}
+\item[{C\-F\-String\-Ref}]{string\-Ref}
+\end{DoxyParamCaption}
+)}}\label{d7/d72/_u_b_platform_utils__mac_8mm_ad850d8752d5a1fb6fa1c029da301ea7e}
+
+
+Definition at line 424 of file U\-B\-Platform\-Utils\-\_\-mac.\-mm.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_u_b_platform_utils__mac_8mm_a9b48b47aafec0eaa17d1b073e6d85040}{\index{U\-B\-Platform\-Utils\-\_\-mac.\-mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}!original\-Set\-System\-U\-I\-Mode@{original\-Set\-System\-U\-I\-Mode}}
+\index{original\-Set\-System\-U\-I\-Mode@{original\-Set\-System\-U\-I\-Mode}!UBPlatformUtils_mac.mm@{U\-B\-Platform\-Utils\-\_\-mac.\-mm}}
+\subsubsection[{original\-Set\-System\-U\-I\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ original\-Set\-System\-U\-I\-Mode = 0}}\label{d7/d72/_u_b_platform_utils__mac_8mm_a9b48b47aafec0eaa17d1b073e6d85040}
+
+
+Definition at line 57 of file U\-B\-Platform\-Utils\-\_\-mac.\-mm.
+

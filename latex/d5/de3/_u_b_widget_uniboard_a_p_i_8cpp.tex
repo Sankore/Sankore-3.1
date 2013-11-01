@@ -1,0 +1,188 @@
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp}{\section{Sankore-\/3.1/src/api/\-U\-B\-Widget\-Uniboard\-A\-P\-I.cpp File Reference}
+\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp}\index{Sankore-\/3.\-1/src/api/\-U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{Sankore-\/3.\-1/src/api/\-U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}U\-B\-Widget\-Uniboard\-A\-P\-I.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Q\-Web\-View$>$}\\*
+{\ttfamily \#include $<$Q\-Dom\-Document$>$}\\*
+{\ttfamily \#include $<$Qt\-Gui$>$}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Application.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Settings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}document/\-U\-B\-Document\-Proxy.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board/\-U\-B\-Board\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board/\-U\-B\-Drawing\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board/\-U\-B\-Board\-Palette\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}domain/\-U\-B\-Graphics\-Scene.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}domain/\-U\-B\-Graphics\-Widget\-Item.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}adaptors/\-U\-B\-Thumbnail\-Adaptor.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}U\-B\-Widget\-Message\-A\-P\-I.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frameworks/\-U\-B\-File\-System\-Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Download\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/memcheck.\-h\char`\"{}}\\*
+Include dependency graph for U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/dfd/_u_b_widget_uniboard_a_p_i_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a3a4ddbcf476e2d4d8312179a4e611bfb}{audio\-Extentions} = \char`\"{}.mp3.\-wma.\-ogg\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a81c9d24d30055438a930a07e2b35ac6e}{video\-Extentions} = \char`\"{}.avi.\-flv\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_ab2bec949e1c5f3788f79708a7b18a04a}{image\-Extentions} = \char`\"{}.png.\-jpg.\-tif.\-bmp.\-tga\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a81c486cc824a1f84f3c99716f3c9db02}{html\-Extentions} = \char`\"{}.htm.\-html.\-xhtml\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a57660732bda113a1a5c182d8d77200d3}{image\-Alias} = \char`\"{}image\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a3bf5d58e8404ee513fab8703701eee2e}{image\-Alias\-Cap} = \char`\"{}Image\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a99ad12b4611372fefeed862472f2efd4}{video\-Alias} = \char`\"{}video\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a2ef1ba69afd375c8dc5712afe1336736}{video\-Alias\-Cap} = \char`\"{}Video\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a581b29fbf31fa2798578ab858fd20cfb}{audio\-Alias} = \char`\"{}audio\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a8a85f46cc394aacb84fab194a96d6334}{audio\-Alias\-Cap} = \char`\"{}Audio\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_ad85337dbeb5aacf63b20a8b547aae113}{t\-Main\-Section} = \char`\"{}mimedata\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a1e064996f7220ac730b5a6e6dc3be2f4}{t\-Type} = \char`\"{}type\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_aa16b97735977a9cc13c95c505b1a277e}{t\-Path} = \char`\"{}path\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a6b8c3866171601cfa4f92f2f8ee57e15}{t\-Message} = \char`\"{}message\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_ac3aa49f2f4b3102d589798f595e99cda}{t\-Ready} = \char`\"{}ready\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a5b92658623e3fd3910f54e3011236732}{t\-Mime\-Text} = \char`\"{}text/plain\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_widget_uniboard_a_p_i_8cpp_a9ee22f25f3a2727b5f64ba9620b7b9d0}{objects\-Path} = \char`\"{}objects\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a581b29fbf31fa2798578ab858fd20cfb}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!audio\-Alias@{audio\-Alias}}
+\index{audio\-Alias@{audio\-Alias}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{audio\-Alias}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String audio\-Alias = \char`\"{}audio\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a581b29fbf31fa2798578ab858fd20cfb}
+
+
+Definition at line 62 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a8a85f46cc394aacb84fab194a96d6334}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!audio\-Alias\-Cap@{audio\-Alias\-Cap}}
+\index{audio\-Alias\-Cap@{audio\-Alias\-Cap}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{audio\-Alias\-Cap}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String audio\-Alias\-Cap = \char`\"{}Audio\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a8a85f46cc394aacb84fab194a96d6334}
+
+
+Definition at line 63 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a3a4ddbcf476e2d4d8312179a4e611bfb}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!audio\-Extentions@{audio\-Extentions}}
+\index{audio\-Extentions@{audio\-Extentions}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{audio\-Extentions}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String audio\-Extentions = \char`\"{}.mp3.\-wma.\-ogg\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a3a4ddbcf476e2d4d8312179a4e611bfb}
+
+
+Definition at line 52 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a81c486cc824a1f84f3c99716f3c9db02}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!html\-Extentions@{html\-Extentions}}
+\index{html\-Extentions@{html\-Extentions}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{html\-Extentions}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String html\-Extentions = \char`\"{}.htm.\-html.\-xhtml\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a81c486cc824a1f84f3c99716f3c9db02}
+
+
+Definition at line 55 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a57660732bda113a1a5c182d8d77200d3}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!image\-Alias@{image\-Alias}}
+\index{image\-Alias@{image\-Alias}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{image\-Alias}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String image\-Alias = \char`\"{}image\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a57660732bda113a1a5c182d8d77200d3}
+
+
+Definition at line 58 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a3bf5d58e8404ee513fab8703701eee2e}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!image\-Alias\-Cap@{image\-Alias\-Cap}}
+\index{image\-Alias\-Cap@{image\-Alias\-Cap}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{image\-Alias\-Cap}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String image\-Alias\-Cap = \char`\"{}Image\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a3bf5d58e8404ee513fab8703701eee2e}
+
+
+Definition at line 59 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_ab2bec949e1c5f3788f79708a7b18a04a}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!image\-Extentions@{image\-Extentions}}
+\index{image\-Extentions@{image\-Extentions}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{image\-Extentions}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String image\-Extentions = \char`\"{}.png.\-jpg.\-tif.\-bmp.\-tga\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_ab2bec949e1c5f3788f79708a7b18a04a}
+
+
+Definition at line 54 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a9ee22f25f3a2727b5f64ba9620b7b9d0}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!objects\-Path@{objects\-Path}}
+\index{objects\-Path@{objects\-Path}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{objects\-Path}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String objects\-Path = \char`\"{}objects\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a9ee22f25f3a2727b5f64ba9620b7b9d0}
+
+
+Definition at line 76 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_ad85337dbeb5aacf63b20a8b547aae113}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!t\-Main\-Section@{t\-Main\-Section}}
+\index{t\-Main\-Section@{t\-Main\-Section}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{t\-Main\-Section}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Main\-Section = \char`\"{}mimedata\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_ad85337dbeb5aacf63b20a8b547aae113}
+
+
+Definition at line 66 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a6b8c3866171601cfa4f92f2f8ee57e15}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!t\-Message@{t\-Message}}
+\index{t\-Message@{t\-Message}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{t\-Message}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Message = \char`\"{}message\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a6b8c3866171601cfa4f92f2f8ee57e15}
+
+
+Definition at line 69 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a5b92658623e3fd3910f54e3011236732}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!t\-Mime\-Text@{t\-Mime\-Text}}
+\index{t\-Mime\-Text@{t\-Mime\-Text}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{t\-Mime\-Text}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Mime\-Text = \char`\"{}text/plain\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a5b92658623e3fd3910f54e3011236732}
+
+
+Definition at line 72 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_aa16b97735977a9cc13c95c505b1a277e}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!t\-Path@{t\-Path}}
+\index{t\-Path@{t\-Path}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{t\-Path}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Path = \char`\"{}path\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_aa16b97735977a9cc13c95c505b1a277e}
+
+
+Definition at line 68 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_ac3aa49f2f4b3102d589798f595e99cda}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!t\-Ready@{t\-Ready}}
+\index{t\-Ready@{t\-Ready}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{t\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Ready = \char`\"{}ready\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_ac3aa49f2f4b3102d589798f595e99cda}
+
+
+Definition at line 70 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a1e064996f7220ac730b5a6e6dc3be2f4}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!t\-Type@{t\-Type}}
+\index{t\-Type@{t\-Type}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{t\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Type = \char`\"{}type\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a1e064996f7220ac730b5a6e6dc3be2f4}
+
+
+Definition at line 67 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a99ad12b4611372fefeed862472f2efd4}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!video\-Alias@{video\-Alias}}
+\index{video\-Alias@{video\-Alias}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{video\-Alias}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String video\-Alias = \char`\"{}video\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a99ad12b4611372fefeed862472f2efd4}
+
+
+Definition at line 60 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a2ef1ba69afd375c8dc5712afe1336736}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!video\-Alias\-Cap@{video\-Alias\-Cap}}
+\index{video\-Alias\-Cap@{video\-Alias\-Cap}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{video\-Alias\-Cap}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String video\-Alias\-Cap = \char`\"{}Video\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a2ef1ba69afd375c8dc5712afe1336736}
+
+
+Definition at line 61 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+
+\hypertarget{_u_b_widget_uniboard_a_p_i_8cpp_a81c9d24d30055438a930a07e2b35ac6e}{\index{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}!video\-Extentions@{video\-Extentions}}
+\index{video\-Extentions@{video\-Extentions}!UBWidgetUniboardAPI.cpp@{U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp}}
+\subsubsection[{video\-Extentions}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String video\-Extentions = \char`\"{}.avi.\-flv\char`\"{}}}\label{d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_a81c9d24d30055438a930a07e2b35ac6e}
+
+
+Definition at line 53 of file U\-B\-Widget\-Uniboard\-A\-P\-I.\-cpp.
+

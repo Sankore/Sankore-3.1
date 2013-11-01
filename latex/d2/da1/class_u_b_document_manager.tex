@@ -1,0 +1,418 @@
+\hypertarget{class_u_b_document_manager}{\section{U\-B\-Document\-Manager Class Reference}
+\label{d2/da1/class_u_b_document_manager}\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Document\-Manager.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Document\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{dd/d7a/class_u_b_document_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_document_manager_a0e26ccb4bc2fafa07f56ad5985154fbe}{document\-Updated} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_u_b_document_manager_a11e474c8d207ed9b623dc547219472d5}{$\sim$\-U\-B\-Document\-Manager} ()
+\item 
+Q\-String \hyperlink{class_u_b_document_manager_a9dc5642a7235cf9a9222d38a6b496c74}{import\-File\-Filter} ()
+\item 
+Q\-String\-List \hyperlink{class_u_b_document_manager_a1be6b4a8b1a80c9baa4931ff68e50373}{import\-File\-Extensions} ()
+\item 
+Q\-File\-Info\-List \hyperlink{class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616}{import\-Ubx} (const Q\-String \&Incomingfile, const Q\-String \&destination)
+\item 
+\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_document_manager_aaa0b883c0aa4ae465e63df9af25fed1e}{import\-File} (const Q\-File \&p\-File, const Q\-String \&p\-Group)
+\item 
+int \hyperlink{class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7}{add\-Files\-To\-Document} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document, Q\-String\-List file\-Names)
+\item 
+\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_document_manager_a591b5c0ee721873fbcca06d26ce4e2fb}{import\-Dir} (const Q\-Dir \&p\-Dir, const Q\-String \&p\-Group)
+\item 
+int \hyperlink{class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e}{add\-Image\-Dir\-To\-Document} (const Q\-Dir \&p\-Dir, \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document)
+\item 
+Q\-List$<$ \hyperlink{class_u_b_export_adaptor}{U\-B\-Export\-Adaptor} $\ast$ $>$ \hyperlink{class_u_b_document_manager_aa3dcc18dae4cb2b64c7af2c7c3122ee5}{supported\-Export\-Adaptors} ()
+\item 
+void \hyperlink{class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1}{emit\-Document\-Updated} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_u_b_document_manager}{U\-B\-Document\-Manager} $\ast$ \hyperlink{class_u_b_document_manager_a76098e4be543e87a5fc05c6d471a2670}{document\-Manager} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file U\-B\-Document\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_document_manager_a11e474c8d207ed9b623dc547219472d5}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!$\sim$\-U\-B\-Document\-Manager@{$\sim$\-U\-B\-Document\-Manager}}
+\index{$\sim$\-U\-B\-Document\-Manager@{$\sim$\-U\-B\-Document\-Manager}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{$\sim$\-U\-B\-Document\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Document\-Manager\-::$\sim$\-U\-B\-Document\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d2/da1/class_u_b_document_manager_a11e474c8d207ed9b623dc547219472d5}
+
+
+Definition at line 104 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!add\-Files\-To\-Document@{add\-Files\-To\-Document}}
+\index{add\-Files\-To\-Document@{add\-Files\-To\-Document}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{add\-Files\-To\-Document}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Document\-Manager\-::add\-Files\-To\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document, }
+\item[{Q\-String\-List}]{file\-Names}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7}
+
+
+Definition at line 229 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!add\-Image\-Dir\-To\-Document@{add\-Image\-Dir\-To\-Document}}
+\index{add\-Image\-Dir\-To\-Document@{add\-Image\-Dir\-To\-Document}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{add\-Image\-Dir\-To\-Document}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Document\-Manager\-::add\-Image\-Dir\-To\-Document (
+\begin{DoxyParamCaption}
+\item[{const Q\-Dir \&}]{p\-Dir, }
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e}
+
+
+Definition at line 292 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_a76098e4be543e87a5fc05c6d471a2670}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!document\-Manager@{document\-Manager}}
+\index{document\-Manager@{document\-Manager}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{document\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Manager} $\ast$ U\-B\-Document\-Manager\-::document\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/da1/class_u_b_document_manager_a76098e4be543e87a5fc05c6d471a2670}
+
+
+Definition at line 58 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a76098e4be543e87a5fc05c6d471a2670_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_a0e26ccb4bc2fafa07f56ad5985154fbe}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!document\-Updated@{document\-Updated}}
+\index{document\-Updated@{document\-Updated}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{document\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Manager\-::document\-Updated (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/da1/class_u_b_document_manager_a0e26ccb4bc2fafa07f56ad5985154fbe}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a0e26ccb4bc2fafa07f56ad5985154fbe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!emit\-Document\-Updated@{emit\-Document\-Updated}}
+\index{emit\-Document\-Updated@{emit\-Document\-Updated}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{emit\-Document\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Manager\-::emit\-Document\-Updated (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1}
+
+
+Definition at line 340 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_a591b5c0ee721873fbcca06d26ce4e2fb}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!import\-Dir@{import\-Dir}}
+\index{import\-Dir@{import\-Dir}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{import\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy} $\ast$ U\-B\-Document\-Manager\-::import\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-Dir \&}]{p\-Dir, }
+\item[{const Q\-String \&}]{p\-Group}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_a591b5c0ee721873fbcca06d26ce4e2fb}
+
+
+Definition at line 310 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a591b5c0ee721873fbcca06d26ce4e2fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_aaa0b883c0aa4ae465e63df9af25fed1e}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!import\-File@{import\-File}}
+\index{import\-File@{import\-File}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{import\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy} $\ast$ U\-B\-Document\-Manager\-::import\-File (
+\begin{DoxyParamCaption}
+\item[{const Q\-File \&}]{p\-File, }
+\item[{const Q\-String \&}]{p\-Group}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_aaa0b883c0aa4ae465e63df9af25fed1e}
+
+
+Definition at line 158 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_aaa0b883c0aa4ae465e63df9af25fed1e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_aaa0b883c0aa4ae465e63df9af25fed1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_a1be6b4a8b1a80c9baa4931ff68e50373}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!import\-File\-Extensions@{import\-File\-Extensions}}
+\index{import\-File\-Extensions@{import\-File\-Extensions}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{import\-File\-Extensions}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Document\-Manager\-::import\-File\-Extensions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_a1be6b4a8b1a80c9baa4931ff68e50373}
+
+
+Definition at line 110 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a1be6b4a8b1a80c9baa4931ff68e50373_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a1be6b4a8b1a80c9baa4931ff68e50373_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_a9dc5642a7235cf9a9222d38a6b496c74}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!import\-File\-Filter@{import\-File\-Filter}}
+\index{import\-File\-Filter@{import\-File\-Filter}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{import\-File\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Document\-Manager\-::import\-File\-Filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_a9dc5642a7235cf9a9222d38a6b496c74}
+
+
+Definition at line 122 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a9dc5642a7235cf9a9222d38a6b496c74_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a9dc5642a7235cf9a9222d38a6b496c74_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!import\-Ubx@{import\-Ubx}}
+\index{import\-Ubx@{import\-Ubx}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{import\-Ubx}]{\setlength{\rightskip}{0pt plus 5cm}Q\-File\-Info\-List U\-B\-Document\-Manager\-::import\-Ubx (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{Incomingfile, }
+\item[{const Q\-String \&}]{destination}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616}
+
+
+Definition at line 142 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_manager_aa3dcc18dae4cb2b64c7af2c7c3122ee5}{\index{U\-B\-Document\-Manager@{U\-B\-Document\-Manager}!supported\-Export\-Adaptors@{supported\-Export\-Adaptors}}
+\index{supported\-Export\-Adaptors@{supported\-Export\-Adaptors}!UBDocumentManager@{U\-B\-Document\-Manager}}
+\subsubsection[{supported\-Export\-Adaptors}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf U\-B\-Export\-Adaptor} $\ast$ $>$ U\-B\-Document\-Manager\-::supported\-Export\-Adaptors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_document_manager_aa3dcc18dae4cb2b64c7af2c7c3122ee5}
+
+
+Definition at line 335 of file U\-B\-Document\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_document_manager_aa3dcc18dae4cb2b64c7af2c7c3122ee5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_document_manager_8h}{U\-B\-Document\-Manager.\-h}\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_document_manager_8cpp}{U\-B\-Document\-Manager.\-cpp}\end{DoxyCompactItemize}

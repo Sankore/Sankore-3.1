@@ -1,0 +1,221 @@
+\hypertarget{class_u_b_color_picker}{\section{U\-B\-Color\-Picker Class Reference}
+\label{db/d45/class_u_b_color_picker}\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Color\-Picker.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Color\-Picker\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d7/dbc/class_u_b_color_picker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_color_picker_afea88024868ef4f0208dc318284170ee}{color\-Selected} (const Q\-Color \&color)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_color_picker_a2dbc9471827225551cb646c1e3b6766f}{U\-B\-Color\-Picker} (Q\-Widget $\ast$parent)
+\item 
+\hyperlink{class_u_b_color_picker_ad55b2adab4059a843b252d0e7b42c5fc}{U\-B\-Color\-Picker} (Q\-Widget $\ast$parent, const Q\-List$<$ Q\-Color $>$ \&colors, int p\-Selected\-Color\-Index=0)
+\item 
+virtual \hyperlink{class_u_b_color_picker_a8cd49b5b5c69ccf267d7d26b284b2578}{$\sim$\-U\-B\-Color\-Picker} ()
+\item 
+Q\-List$<$ Q\-Color $>$ \hyperlink{class_u_b_color_picker_ae88342f0bb98503c9ad938b88a319055}{get\-Colors} () const 
+\item 
+void \hyperlink{class_u_b_color_picker_a112608c405a7655254d93b9c3b7abb5f}{set\-Colors} (const Q\-List$<$ Q\-Color $>$ \&p\-Colors)
+\item 
+int \hyperlink{class_u_b_color_picker_a5560d59068afd319dea43329a6bf4f0c}{selected\-Color\-Index} () const 
+\item 
+void \hyperlink{class_u_b_color_picker_a3bad5c8fed65dd4811a0034a0cd36956}{set\-Selected\-Color\-Index} (int p\-Selected\-Color\-Index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_color_picker_ae6d1f461011861c1f9ce2d35040026aa}{paint\-Event} (Q\-Paint\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_color_picker_afcafdc6bdca8156205047a8531fc14c7}{mouse\-Press\-Event} (Q\-Mouse\-Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file U\-B\-Color\-Picker.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_color_picker_a2dbc9471827225551cb646c1e3b6766f}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!U\-B\-Color\-Picker@{U\-B\-Color\-Picker}}
+\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{U\-B\-Color\-Picker}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Color\-Picker\-::\-U\-B\-Color\-Picker (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{db/d45/class_u_b_color_picker_a2dbc9471827225551cb646c1e3b6766f}
+
+
+Definition at line 30 of file U\-B\-Color\-Picker.\-cpp.
+
+\hypertarget{class_u_b_color_picker_ad55b2adab4059a843b252d0e7b42c5fc}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!U\-B\-Color\-Picker@{U\-B\-Color\-Picker}}
+\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{U\-B\-Color\-Picker}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Color\-Picker\-::\-U\-B\-Color\-Picker (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent, }
+\item[{const Q\-List$<$ Q\-Color $>$ \&}]{colors, }
+\item[{int}]{p\-Selected\-Color\-Index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{db/d45/class_u_b_color_picker_ad55b2adab4059a843b252d0e7b42c5fc}
+
+
+Definition at line 37 of file U\-B\-Color\-Picker.\-cpp.
+
+\hypertarget{class_u_b_color_picker_a8cd49b5b5c69ccf267d7d26b284b2578}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!$\sim$\-U\-B\-Color\-Picker@{$\sim$\-U\-B\-Color\-Picker}}
+\index{$\sim$\-U\-B\-Color\-Picker@{$\sim$\-U\-B\-Color\-Picker}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{$\sim$\-U\-B\-Color\-Picker}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Color\-Picker\-::$\sim$\-U\-B\-Color\-Picker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{db/d45/class_u_b_color_picker_a8cd49b5b5c69ccf267d7d26b284b2578}
+
+
+Definition at line 46 of file U\-B\-Color\-Picker.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_color_picker_afea88024868ef4f0208dc318284170ee}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!color\-Selected@{color\-Selected}}
+\index{color\-Selected@{color\-Selected}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{color\-Selected}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Color\-Picker\-::color\-Selected (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{db/d45/class_u_b_color_picker_afea88024868ef4f0208dc318284170ee}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d45/class_u_b_color_picker_afea88024868ef4f0208dc318284170ee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_color_picker_ae88342f0bb98503c9ad938b88a319055}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!get\-Colors@{get\-Colors}}
+\index{get\-Colors@{get\-Colors}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{get\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$Q\-Color$>$ U\-B\-Color\-Picker\-::get\-Colors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{db/d45/class_u_b_color_picker_ae88342f0bb98503c9ad938b88a319055}
+
+
+Definition at line 38 of file U\-B\-Color\-Picker.\-h.
+
+\hypertarget{class_u_b_color_picker_afcafdc6bdca8156205047a8531fc14c7}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Color\-Picker\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/d45/class_u_b_color_picker_afcafdc6bdca8156205047a8531fc14c7}
+
+
+Definition at line 69 of file U\-B\-Color\-Picker.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d45/class_u_b_color_picker_afcafdc6bdca8156205047a8531fc14c7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_color_picker_ae6d1f461011861c1f9ce2d35040026aa}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Color\-Picker\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/d45/class_u_b_color_picker_ae6d1f461011861c1f9ce2d35040026aa}
+
+
+Definition at line 52 of file U\-B\-Color\-Picker.\-cpp.
+
+\hypertarget{class_u_b_color_picker_a5560d59068afd319dea43329a6bf4f0c}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!selected\-Color\-Index@{selected\-Color\-Index}}
+\index{selected\-Color\-Index@{selected\-Color\-Index}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{selected\-Color\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Color\-Picker\-::selected\-Color\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{db/d45/class_u_b_color_picker_a5560d59068afd319dea43329a6bf4f0c}
+
+
+Definition at line 49 of file U\-B\-Color\-Picker.\-h.
+
+\hypertarget{class_u_b_color_picker_a112608c405a7655254d93b9c3b7abb5f}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!set\-Colors@{set\-Colors}}
+\index{set\-Colors@{set\-Colors}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{set\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Color\-Picker\-::set\-Colors (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ Q\-Color $>$ \&}]{p\-Colors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{db/d45/class_u_b_color_picker_a112608c405a7655254d93b9c3b7abb5f}
+
+
+Definition at line 43 of file U\-B\-Color\-Picker.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d45/class_u_b_color_picker_a112608c405a7655254d93b9c3b7abb5f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_color_picker_a3bad5c8fed65dd4811a0034a0cd36956}{\index{U\-B\-Color\-Picker@{U\-B\-Color\-Picker}!set\-Selected\-Color\-Index@{set\-Selected\-Color\-Index}}
+\index{set\-Selected\-Color\-Index@{set\-Selected\-Color\-Index}!UBColorPicker@{U\-B\-Color\-Picker}}
+\subsubsection[{set\-Selected\-Color\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Color\-Picker\-::set\-Selected\-Color\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Selected\-Color\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{db/d45/class_u_b_color_picker_a3bad5c8fed65dd4811a0034a0cd36956}
+
+
+Definition at line 54 of file U\-B\-Color\-Picker.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d45/class_u_b_color_picker_a3bad5c8fed65dd4811a0034a0cd36956_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_color_picker_8h}{U\-B\-Color\-Picker.\-h}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_color_picker_8cpp}{U\-B\-Color\-Picker.\-cpp}\end{DoxyCompactItemize}

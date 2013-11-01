@@ -1,0 +1,442 @@
+\hypertarget{class_u_b_download_manager}{\section{U\-B\-Download\-Manager Class Reference}
+\label{d7/d38/class_u_b_download_manager}\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Download\-Manager.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Download\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{d2/dbf/class_u_b_download_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_download_manager_ab6721a82bf700a33b3801f9b61356123}{file\-Added\-To\-Download} ()
+\item 
+void \hyperlink{class_u_b_download_manager_acf269f1cf2f15126043b4b113489c0a7}{download\-Updated} (int id, qint64 crnt, qint64 total)
+\item 
+void \hyperlink{class_u_b_download_manager_a12c47cd2fab70aef25ee7896ac8d5fe8}{download\-Finished} (int id)
+\item 
+void \hyperlink{class_u_b_download_manager_a7fa2045fc623ba3f13cf46dfb95a691f}{download\-Finished} (bool p\-Success, int id, Q\-Url source\-Url, Q\-String p\-Content\-Type\-Header, Q\-Byte\-Array p\-Data)
+\item 
+void \hyperlink{class_u_b_download_manager_acb9eb652ad1fa90ec3acdacf38236769}{download\-Finished} (bool p\-Success, \hyperlink{structs_download_file_desc}{s\-Download\-File\-Desc} \hyperlink{_u_b_http_get_8cpp_afde83e8a66b1328a06c071b0cc7e6f36}{desc}, Q\-Byte\-Array p\-Data)
+\item 
+void \hyperlink{class_u_b_download_manager_a31e9979260c22b0cf1968eea94fd5af7}{download\-Modal\-Finished} ()
+\item 
+void \hyperlink{class_u_b_download_manager_a7211a4b322171a3d7e714a29ca527432}{add\-Downloaded\-File\-To\-Board} (bool p\-Success, Q\-Url source\-Url, Q\-Url content\-Url, Q\-String p\-Content\-Type\-Header, Q\-Byte\-Array p\-Data, Q\-Point\-F p\-Pos, Q\-Size p\-Size, bool is\-Sync\-Operation, bool is\-Background)
+\item 
+void \hyperlink{class_u_b_download_manager_a516812f4416db050a3123d91c367bee4}{add\-Downloaded\-File\-To\-Library} (bool p\-Success, Q\-Url source\-Url, Q\-String p\-Content\-Type\-Header, Q\-Byte\-Array p\-Data, Q\-String p\-Title)
+\item 
+void \hyperlink{class_u_b_download_manager_a8502451de115dfa70d3ca1fad017e4cc}{cancel\-All\-Downloads} ()
+\item 
+void \hyperlink{class_u_b_download_manager_ad035f13a1abac13e2f9aa847036bac5f}{all\-Downloads\-Finished} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_download_manager_a692880b623fa16bda278a35de605db8c}{U\-B\-Download\-Manager} (Q\-Object $\ast$parent=0, const char $\ast$name=\char`\"{}U\-B\-Download\-Manager\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_u_b_download_manager_a9950f99fdb58538f60e3d7a629fb6354}{$\sim$\-U\-B\-Download\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \hyperlink{class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6}{add\-File\-To\-Download} (\hyperlink{structs_download_file_desc}{s\-Download\-File\-Desc} \hyperlink{_u_b_http_get_8cpp_afde83e8a66b1328a06c071b0cc7e6f36}{desc})
+\begin{DoxyCompactList}\small\item\em Add a file to the download list. \end{DoxyCompactList}\item 
+Q\-Vector$<$ \hyperlink{structs_download_file_desc}{s\-Download\-File\-Desc} $>$ \hyperlink{class_u_b_download_manager_acefaa070ff6fcbabb908d16e4a807b59}{current\-Downloads} ()
+\begin{DoxyCompactList}\small\item\em Get the list of the current downloads. \end{DoxyCompactList}\item 
+Q\-Vector$<$ \hyperlink{structs_download_file_desc}{s\-Download\-File\-Desc} $>$ \hyperlink{class_u_b_download_manager_a4beef0fa708d68bcf92f73b029ed9f60}{pending\-Downloads} ()
+\begin{DoxyCompactList}\small\item\em Get the list of the pending downloads. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_b_download_manager_a9ec94b78d3b4eb2d003657590f3a2839}{cancel\-Downloads} ()
+\begin{DoxyCompactList}\small\item\em Cancel all downloads. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_b_download_manager_a5425576229c8b6918a72ca6476e2be23}{cancel\-Download} (int id)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_u_b_download_manager}{U\-B\-Download\-Manager} $\ast$ \hyperlink{class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8}{download\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Get the download manager. \end{DoxyCompactList}\item 
+static void \hyperlink{class_u_b_download_manager_a6ee82a598099579a2e8b903541c788a6}{destroy} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 123 of file U\-B\-Download\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_download_manager_a692880b623fa16bda278a35de605db8c}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!U\-B\-Download\-Manager@{U\-B\-Download\-Manager}}
+\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{U\-B\-Download\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Download\-Manager\-::\-U\-B\-Download\-Manager (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{name = {\ttfamily \char`\"{}UBDownloadManager\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{d7/d38/class_u_b_download_manager_a692880b623fa16bda278a35de605db8c}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & as the parent widget \\
+\hline
+{\em name} & as the object name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d7/d38/class_u_b_download_manager_a692880b623fa16bda278a35de605db8c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a692880b623fa16bda278a35de605db8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_manager_a9950f99fdb58538f60e3d7a629fb6354}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!$\sim$\-U\-B\-Download\-Manager@{$\sim$\-U\-B\-Download\-Manager}}
+\index{$\sim$\-U\-B\-Download\-Manager@{$\sim$\-U\-B\-Download\-Manager}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{$\sim$\-U\-B\-Download\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Download\-Manager\-::$\sim$\-U\-B\-Download\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d38/class_u_b_download_manager_a9950f99fdb58538f60e3d7a629fb6354}
+
+
+Destructor. 
+
+
+
+Definition at line 118 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_download_manager_a7211a4b322171a3d7e714a29ca527432}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!add\-Downloaded\-File\-To\-Board@{add\-Downloaded\-File\-To\-Board}}
+\index{add\-Downloaded\-File\-To\-Board@{add\-Downloaded\-File\-To\-Board}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{add\-Downloaded\-File\-To\-Board}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::add\-Downloaded\-File\-To\-Board (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Success, }
+\item[{Q\-Url}]{source\-Url, }
+\item[{Q\-Url}]{content\-Url, }
+\item[{Q\-String}]{p\-Content\-Type\-Header, }
+\item[{Q\-Byte\-Array}]{p\-Data, }
+\item[{Q\-Point\-F}]{p\-Pos, }
+\item[{Q\-Size}]{p\-Size, }
+\item[{bool}]{is\-Sync\-Operation, }
+\item[{bool}]{is\-Background}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_a7211a4b322171a3d7e714a29ca527432}
+\hypertarget{class_u_b_download_manager_a516812f4416db050a3123d91c367bee4}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!add\-Downloaded\-File\-To\-Library@{add\-Downloaded\-File\-To\-Library}}
+\index{add\-Downloaded\-File\-To\-Library@{add\-Downloaded\-File\-To\-Library}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{add\-Downloaded\-File\-To\-Library}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::add\-Downloaded\-File\-To\-Library (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Success, }
+\item[{Q\-Url}]{source\-Url, }
+\item[{Q\-String}]{p\-Content\-Type\-Header, }
+\item[{Q\-Byte\-Array}]{p\-Data, }
+\item[{Q\-String}]{p\-Title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_a516812f4416db050a3123d91c367bee4}
+\hypertarget{class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!add\-File\-To\-Download@{add\-File\-To\-Download}}
+\index{add\-File\-To\-Download@{add\-File\-To\-Download}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{add\-File\-To\-Download}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Download\-Manager\-::add\-File\-To\-Download (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Download\-File\-Desc}}]{desc}
+\end{DoxyParamCaption}
+)}}\label{d7/d38/class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6}
+
+
+Add a file to the download list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & as the given file description \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_manager_ad035f13a1abac13e2f9aa847036bac5f}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!all\-Downloads\-Finished@{all\-Downloads\-Finished}}
+\index{all\-Downloads\-Finished@{all\-Downloads\-Finished}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{all\-Downloads\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::all\-Downloads\-Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_ad035f13a1abac13e2f9aa847036bac5f}
+\hypertarget{class_u_b_download_manager_a8502451de115dfa70d3ca1fad017e4cc}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!cancel\-All\-Downloads@{cancel\-All\-Downloads}}
+\index{cancel\-All\-Downloads@{cancel\-All\-Downloads}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{cancel\-All\-Downloads}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::cancel\-All\-Downloads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_a8502451de115dfa70d3ca1fad017e4cc}
+\hypertarget{class_u_b_download_manager_a5425576229c8b6918a72ca6476e2be23}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!cancel\-Download@{cancel\-Download}}
+\index{cancel\-Download@{cancel\-Download}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{cancel\-Download}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::cancel\-Download (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{d7/d38/class_u_b_download_manager_a5425576229c8b6918a72ca6476e2be23}
+
+
+Definition at line 572 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a5425576229c8b6918a72ca6476e2be23_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_manager_a9ec94b78d3b4eb2d003657590f3a2839}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!cancel\-Downloads@{cancel\-Downloads}}
+\index{cancel\-Downloads@{cancel\-Downloads}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{cancel\-Downloads}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::cancel\-Downloads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d38/class_u_b_download_manager_a9ec94b78d3b4eb2d003657590f3a2839}
+
+
+Cancel all downloads. 
+
+
+
+Definition at line 448 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a9ec94b78d3b4eb2d003657590f3a2839_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_manager_acefaa070ff6fcbabb908d16e4a807b59}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!current\-Downloads@{current\-Downloads}}
+\index{current\-Downloads@{current\-Downloads}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{current\-Downloads}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<$ {\bf s\-Download\-File\-Desc} $>$ U\-B\-Download\-Manager\-::current\-Downloads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d38/class_u_b_download_manager_acefaa070ff6fcbabb908d16e4a807b59}
+
+
+Get the list of the current downloads. 
+
+\begin{DoxyReturn}{Returns}
+a Q\-Vector of current downloads 
+\end{DoxyReturn}
+
+
+Definition at line 245 of file U\-B\-Download\-Manager.\-cpp.
+
+\hypertarget{class_u_b_download_manager_a6ee82a598099579a2e8b903541c788a6}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!destroy@{destroy}}
+\index{destroy@{destroy}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d7/d38/class_u_b_download_manager_a6ee82a598099579a2e8b903541c788a6}
+
+
+Definition at line 136 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a6ee82a598099579a2e8b903541c788a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_manager_a12c47cd2fab70aef25ee7896ac8d5fe8}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!download\-Finished@{download\-Finished}}
+\index{download\-Finished@{download\-Finished}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{download\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::download\-Finished (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_a12c47cd2fab70aef25ee7896ac8d5fe8}
+\hypertarget{class_u_b_download_manager_a7fa2045fc623ba3f13cf46dfb95a691f}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!download\-Finished@{download\-Finished}}
+\index{download\-Finished@{download\-Finished}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{download\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::download\-Finished (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Success, }
+\item[{int}]{id, }
+\item[{Q\-Url}]{source\-Url, }
+\item[{Q\-String}]{p\-Content\-Type\-Header, }
+\item[{Q\-Byte\-Array}]{p\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_a7fa2045fc623ba3f13cf46dfb95a691f}
+\hypertarget{class_u_b_download_manager_acb9eb652ad1fa90ec3acdacf38236769}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!download\-Finished@{download\-Finished}}
+\index{download\-Finished@{download\-Finished}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{download\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::download\-Finished (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Success, }
+\item[{{\bf s\-Download\-File\-Desc}}]{desc, }
+\item[{Q\-Byte\-Array}]{p\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_acb9eb652ad1fa90ec3acdacf38236769}
+\hypertarget{class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!download\-Manager@{download\-Manager}}
+\index{download\-Manager@{download\-Manager}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{download\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Download\-Manager} $\ast$ U\-B\-Download\-Manager\-::download\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d7/d38/class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8}
+
+
+Get the download manager. 
+
+\begin{DoxyReturn}{Returns}
+a pointer on the download manager 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_manager_a31e9979260c22b0cf1968eea94fd5af7}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!download\-Modal\-Finished@{download\-Modal\-Finished}}
+\index{download\-Modal\-Finished@{download\-Modal\-Finished}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{download\-Modal\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::download\-Modal\-Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_a31e9979260c22b0cf1968eea94fd5af7}
+\hypertarget{class_u_b_download_manager_acf269f1cf2f15126043b4b113489c0a7}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!download\-Updated@{download\-Updated}}
+\index{download\-Updated@{download\-Updated}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{download\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::download\-Updated (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{qint64}]{crnt, }
+\item[{qint64}]{total}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_acf269f1cf2f15126043b4b113489c0a7}
+\hypertarget{class_u_b_download_manager_ab6721a82bf700a33b3801f9b61356123}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!file\-Added\-To\-Download@{file\-Added\-To\-Download}}
+\index{file\-Added\-To\-Download@{file\-Added\-To\-Download}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{file\-Added\-To\-Download}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Manager\-::file\-Added\-To\-Download (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d38/class_u_b_download_manager_ab6721a82bf700a33b3801f9b61356123}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d38/class_u_b_download_manager_ab6721a82bf700a33b3801f9b61356123_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_manager_a4beef0fa708d68bcf92f73b029ed9f60}{\index{U\-B\-Download\-Manager@{U\-B\-Download\-Manager}!pending\-Downloads@{pending\-Downloads}}
+\index{pending\-Downloads@{pending\-Downloads}!UBDownloadManager@{U\-B\-Download\-Manager}}
+\subsubsection[{pending\-Downloads}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<$ {\bf s\-Download\-File\-Desc} $>$ U\-B\-Download\-Manager\-::pending\-Downloads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d38/class_u_b_download_manager_a4beef0fa708d68bcf92f73b029ed9f60}
+
+
+Get the list of the pending downloads. 
+
+\begin{DoxyReturn}{Returns}
+a Q\-Vector of pending downloads 
+\end{DoxyReturn}
+
+
+Definition at line 254 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_download_manager_8h}{U\-B\-Download\-Manager.\-h}\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_download_manager_8cpp}{U\-B\-Download\-Manager.\-cpp}\end{DoxyCompactItemize}

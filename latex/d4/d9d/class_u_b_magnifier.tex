@@ -1,0 +1,812 @@
+\hypertarget{class_u_b_magnifier}{\section{U\-B\-Magnifier Class Reference}
+\label{d4/d9d/class_u_b_magnifier}\index{U\-B\-Magnifier@{U\-B\-Magnifier}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Magnifer.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Magnifier\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d0d/class_u_b_magnifier__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91}{Drawing\-Mode} \{ \hyperlink{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91a6a8030c25128ae93617471dc82f09230}{circular} =  0, 
+\hyperlink{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91a463b5e7a719ea427222b6ffa53b38415}{rectangular}, 
+\hyperlink{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91aef4e5ffbaf32c3799473864e0e4235cc}{modes\-Count}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_magnifier_a7497d3351ddbded1b3904d2700517f9a}{slot\-\_\-refresh} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_magnifier_ab42d374d1f9d60121a60400e454cc4b8}{magnifier\-Moved\-\_\-\-Signal} (Q\-Point new\-Pos)
+\item 
+void \hyperlink{class_u_b_magnifier_a7abd5e3372abef73daccbadf05978a61}{magnifier\-Close\-\_\-\-Signal} ()
+\item 
+void \hyperlink{class_u_b_magnifier_abc083dbf3fd42d44d755a806e453430e}{magnifier\-Zoom\-In\-\_\-\-Signal} ()
+\item 
+void \hyperlink{class_u_b_magnifier_a4a4800176cdcc5ffafcc18cc9fe2c2da}{magnifier\-Zoom\-Out\-\_\-\-Signal} ()
+\item 
+void \hyperlink{class_u_b_magnifier_ac1130b201672dbead4d784ebee3c1a78}{magnifier\-Resized\-\_\-\-Signal} (qreal new\-Percent\-Size)
+\item 
+void \hyperlink{class_u_b_magnifier_a50476e36be6931a2ae3786daaa2273a5}{magnifier\-Drawing\-Mode\-Change\-\_\-\-Signal} (int mode)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_magnifier_ae59609ee73c99d0246a9543d5fac4dfe}{U\-B\-Magnifier} (Q\-Widget $\ast$parent=0, bool is\-Interactive=false)
+\item 
+\hyperlink{class_u_b_magnifier_ac5d485a5a6d625b6043a082623ce92ac}{$\sim$\-U\-B\-Magnifier} ()
+\item 
+void \hyperlink{class_u_b_magnifier_a71d0210735effe31a9adeb1fd96e159b}{set\-Size} (qreal percent\-From\-Scene)
+\item 
+void \hyperlink{class_u_b_magnifier_a37cec734cbca86307ba301aff679faab}{create\-Mask} ()
+\item 
+void \hyperlink{class_u_b_magnifier_ab743216a271eb539ee225270c49207ce}{set\-Zoom} (qreal zoom)
+\item 
+void \hyperlink{class_u_b_magnifier_a1fe23f2b7bffb592b7e5946137761c2c}{set\-Grab\-View} (Q\-Widget $\ast$view)
+\item 
+void \hyperlink{class_u_b_magnifier_ac64314a8ead26579a13f89dc195e0549}{set\-Move\-View} (Q\-Widget $\ast$view)
+\item 
+void \hyperlink{class_u_b_magnifier_a00499d30e969d31228200bcfc1a68927}{set\-Drawing\-Mode} (int mode)
+\item 
+void \hyperlink{class_u_b_magnifier_a473a5f6edebf14a67f0d71fba84738c8}{grab\-Point} ()
+\item 
+void \hyperlink{class_u_b_magnifier_a28078a458cf1473db6add22f085f49da}{grab\-Point} (const Q\-Point \&point)
+\item 
+void \hyperlink{class_u_b_magnifier_a7c812efaba0f2f45dce91f7984f30dc3}{grab\-N\-Move} (const Q\-Point \&p\-Grab, const Q\-Point \&p\-Move, bool need\-Grab=true, bool need\-Move=true)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_magnifier_params}{U\-B\-Magnifier\-Params} \hyperlink{class_u_b_magnifier_a6f32761f0d49639be70522952a36b671}{params}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_magnifier_a35fff03d6240e01b251e565c9c9b9580}{paint\-Event} (Q\-Paint\-Event $\ast$)
+\item 
+virtual void \hyperlink{class_u_b_magnifier_af3c9c7f0e06bf952c078cbb057222054}{mouse\-Press\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_magnifier_ab2ff884e4c336b812ad0d95c3420a335}{mouse\-Move\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_magnifier_abd134ba742de847c34f55d263e9809d6}{mouse\-Release\-Event} (Q\-Mouse\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Point \hyperlink{class_u_b_magnifier_a01af5513e2d3fbc5eaad21dfc58ae4ba}{m\-Mouse\-Press\-Pos}
+\item 
+qreal \hyperlink{class_u_b_magnifier_a19c3c1f51c99c0b2cfd9e77b9591af9c}{m\-Mouse\-Press\-Delta}
+\item 
+bool \hyperlink{class_u_b_magnifier_ade983c56155f2ab08934e39a8add9e65}{m\-Should\-Move\-Widget}
+\item 
+bool \hyperlink{class_u_b_magnifier_a074638234ed5ecf0c5f4005dcf9263d7}{m\-Should\-Resize\-Widget}
+\item 
+int \hyperlink{class_u_b_magnifier_a2652a040bd98fe55bf49d2ca705b0659}{m\-\_\-i\-Button\-Interval}
+\item 
+Q\-Pixmap $\ast$ \hyperlink{class_u_b_magnifier_a204f74b39d6e747041e511723c68dcfe}{s\-Close\-Pixmap}
+\item 
+Q\-Rect \hyperlink{class_u_b_magnifier_ac399c3c6a70e36926484c154b2ed9aec}{s\-Close\-Pixmap\-Button\-Rect}
+\item 
+Q\-Pixmap $\ast$ \hyperlink{class_u_b_magnifier_a73e5c26959cfa81a511c804333e227b6}{s\-Increase\-Pixmap}
+\item 
+Q\-Rect \hyperlink{class_u_b_magnifier_a6bdcd5e3d40af5c2ee1c2009ada214dd}{s\-Increase\-Pixmap\-Button\-Rect}
+\item 
+Q\-Pixmap $\ast$ \hyperlink{class_u_b_magnifier_a4f359c0b0f611b1baad359ba65a9d37e}{s\-Decrease\-Pixmap}
+\item 
+Q\-Rect \hyperlink{class_u_b_magnifier_a057d572621c65843b5fb29c0a07d3da4}{s\-Decrease\-Pixmap\-Button\-Rect}
+\item 
+Q\-Pixmap $\ast$ \hyperlink{class_u_b_magnifier_aaef564708a8f9091c4c1e3eb6f7acb2a}{s\-Change\-Mode\-Pixmap}
+\item 
+Q\-Rect \hyperlink{class_u_b_magnifier_ac3924431e6d2a21f1fad8762730606bc}{s\-Change\-Mode\-Pixmap\-Button\-Rect}
+\item 
+Q\-Pixmap $\ast$ \hyperlink{class_u_b_magnifier_a61f9315c9b25c6c55a7bd49035dd9609}{m\-Resize\-Item}
+\item 
+Q\-Rect \hyperlink{class_u_b_magnifier_a846a06af56b76d504b01c425ccadfeca}{m\-Resize\-Item\-Button\-Rect}
+\item 
+bool \hyperlink{class_u_b_magnifier_a26a82499d8b3bae09816e2f516226d43}{is\-Cusrsor\-Already\-Stored}
+\item 
+Q\-Cursor \hyperlink{class_u_b_magnifier_a60c46f6fa233df7c20933b68855781d8}{m\-Old\-Cursor}
+\item 
+Q\-Cursor \hyperlink{class_u_b_magnifier_aa9896755efd6a80ade87f0581bdfe629}{m\-Resize\-Cursor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file U\-B\-Magnifer.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!Drawing\-Mode@{Drawing\-Mode}}
+\index{Drawing\-Mode@{Drawing\-Mode}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{Drawing\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Magnifier\-::\-Drawing\-Mode}}}\label{d4/d9d/class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{circular@{circular}!U\-B\-Magnifier@{U\-B\-Magnifier}}\index{U\-B\-Magnifier@{U\-B\-Magnifier}!circular@{circular}}\item[{\em 
+\hypertarget{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91a6a8030c25128ae93617471dc82f09230}{circular}\label{d4/d9d/class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91a6a8030c25128ae93617471dc82f09230}
+}]\index{rectangular@{rectangular}!U\-B\-Magnifier@{U\-B\-Magnifier}}\index{U\-B\-Magnifier@{U\-B\-Magnifier}!rectangular@{rectangular}}\item[{\em 
+\hypertarget{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91a463b5e7a719ea427222b6ffa53b38415}{rectangular}\label{d4/d9d/class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91a463b5e7a719ea427222b6ffa53b38415}
+}]\index{modes\-Count@{modes\-Count}!U\-B\-Magnifier@{U\-B\-Magnifier}}\index{U\-B\-Magnifier@{U\-B\-Magnifier}!modes\-Count@{modes\-Count}}\item[{\em 
+\hypertarget{class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91aef4e5ffbaf32c3799473864e0e4235cc}{modes\-Count}\label{d4/d9d/class_u_b_magnifier_a6c6c18c690a2b5951c96834210a48d91aef4e5ffbaf32c3799473864e0e4235cc}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 43 of file U\-B\-Magnifer.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_magnifier_ae59609ee73c99d0246a9543d5fac4dfe}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!U\-B\-Magnifier@{U\-B\-Magnifier}}
+\index{U\-B\-Magnifier@{U\-B\-Magnifier}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{U\-B\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Magnifier\-::\-U\-B\-Magnifier (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{bool}]{is\-Interactive = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_ae59609ee73c99d0246a9543d5fac4dfe}
+
+
+Definition at line 35 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_ae59609ee73c99d0246a9543d5fac4dfe_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_ac5d485a5a6d625b6043a082623ce92ac}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!$\sim$\-U\-B\-Magnifier@{$\sim$\-U\-B\-Magnifier}}
+\index{$\sim$\-U\-B\-Magnifier@{$\sim$\-U\-B\-Magnifier}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{$\sim$\-U\-B\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Magnifier\-::$\sim$\-U\-B\-Magnifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_ac5d485a5a6d625b6043a082623ce92ac}
+
+
+Definition at line 87 of file U\-B\-Magnifer.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_magnifier_a37cec734cbca86307ba301aff679faab}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!create\-Mask@{create\-Mask}}
+\index{create\-Mask@{create\-Mask}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{create\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::create\-Mask (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_a37cec734cbca86307ba301aff679faab}
+
+
+Definition at line 145 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a37cec734cbca86307ba301aff679faab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a7c812efaba0f2f45dce91f7984f30dc3}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!grab\-N\-Move@{grab\-N\-Move}}
+\index{grab\-N\-Move@{grab\-N\-Move}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{grab\-N\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::grab\-N\-Move (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point \&}]{p\-Grab, }
+\item[{const Q\-Point \&}]{p\-Move, }
+\item[{bool}]{need\-Grab = {\ttfamily true}, }
+\item[{bool}]{need\-Move = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_a7c812efaba0f2f45dce91f7984f30dc3}
+
+
+Definition at line 427 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a7c812efaba0f2f45dce91f7984f30dc3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a7c812efaba0f2f45dce91f7984f30dc3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a473a5f6edebf14a67f0d71fba84738c8}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!grab\-Point@{grab\-Point}}
+\index{grab\-Point@{grab\-Point}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{grab\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::grab\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_a473a5f6edebf14a67f0d71fba84738c8}
+
+
+Definition at line 357 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d4/d9d/class_u_b_magnifier_a473a5f6edebf14a67f0d71fba84738c8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a473a5f6edebf14a67f0d71fba84738c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a28078a458cf1473db6add22f085f49da}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!grab\-Point@{grab\-Point}}
+\index{grab\-Point@{grab\-Point}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{grab\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::grab\-Point (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point \&}]{point}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_a28078a458cf1473db6add22f085f49da}
+
+
+Definition at line 390 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d4/d9d/class_u_b_magnifier_a28078a458cf1473db6add22f085f49da_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a7abd5e3372abef73daccbadf05978a61}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!magnifier\-Close\-\_\-\-Signal@{magnifier\-Close\-\_\-\-Signal}}
+\index{magnifier\-Close\-\_\-\-Signal@{magnifier\-Close\-\_\-\-Signal}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{magnifier\-Close\-\_\-\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::magnifier\-Close\-\_\-\-Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d9d/class_u_b_magnifier_a7abd5e3372abef73daccbadf05978a61}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a7abd5e3372abef73daccbadf05978a61_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a50476e36be6931a2ae3786daaa2273a5}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!magnifier\-Drawing\-Mode\-Change\-\_\-\-Signal@{magnifier\-Drawing\-Mode\-Change\-\_\-\-Signal}}
+\index{magnifier\-Drawing\-Mode\-Change\-\_\-\-Signal@{magnifier\-Drawing\-Mode\-Change\-\_\-\-Signal}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{magnifier\-Drawing\-Mode\-Change\-\_\-\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::magnifier\-Drawing\-Mode\-Change\-\_\-\-Signal (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d9d/class_u_b_magnifier_a50476e36be6931a2ae3786daaa2273a5}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a50476e36be6931a2ae3786daaa2273a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_ab42d374d1f9d60121a60400e454cc4b8}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!magnifier\-Moved\-\_\-\-Signal@{magnifier\-Moved\-\_\-\-Signal}}
+\index{magnifier\-Moved\-\_\-\-Signal@{magnifier\-Moved\-\_\-\-Signal}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{magnifier\-Moved\-\_\-\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::magnifier\-Moved\-\_\-\-Signal (
+\begin{DoxyParamCaption}
+\item[{Q\-Point}]{new\-Pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d9d/class_u_b_magnifier_ab42d374d1f9d60121a60400e454cc4b8}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_ab42d374d1f9d60121a60400e454cc4b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_ac1130b201672dbead4d784ebee3c1a78}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!magnifier\-Resized\-\_\-\-Signal@{magnifier\-Resized\-\_\-\-Signal}}
+\index{magnifier\-Resized\-\_\-\-Signal@{magnifier\-Resized\-\_\-\-Signal}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{magnifier\-Resized\-\_\-\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::magnifier\-Resized\-\_\-\-Signal (
+\begin{DoxyParamCaption}
+\item[{qreal}]{new\-Percent\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d9d/class_u_b_magnifier_ac1130b201672dbead4d784ebee3c1a78}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_ac1130b201672dbead4d784ebee3c1a78_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_abc083dbf3fd42d44d755a806e453430e}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!magnifier\-Zoom\-In\-\_\-\-Signal@{magnifier\-Zoom\-In\-\_\-\-Signal}}
+\index{magnifier\-Zoom\-In\-\_\-\-Signal@{magnifier\-Zoom\-In\-\_\-\-Signal}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{magnifier\-Zoom\-In\-\_\-\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::magnifier\-Zoom\-In\-\_\-\-Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d9d/class_u_b_magnifier_abc083dbf3fd42d44d755a806e453430e}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_abc083dbf3fd42d44d755a806e453430e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a4a4800176cdcc5ffafcc18cc9fe2c2da}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!magnifier\-Zoom\-Out\-\_\-\-Signal@{magnifier\-Zoom\-Out\-\_\-\-Signal}}
+\index{magnifier\-Zoom\-Out\-\_\-\-Signal@{magnifier\-Zoom\-Out\-\_\-\-Signal}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{magnifier\-Zoom\-Out\-\_\-\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::magnifier\-Zoom\-Out\-\_\-\-Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d9d/class_u_b_magnifier_a4a4800176cdcc5ffafcc18cc9fe2c2da}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a4a4800176cdcc5ffafcc18cc9fe2c2da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_ab2ff884e4c336b812ad0d95c3420a335}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d4/d9d/class_u_b_magnifier_ab2ff884e4c336b812ad0d95c3420a335}
+
+
+Definition at line 254 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_ab2ff884e4c336b812ad0d95c3420a335_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_af3c9c7f0e06bf952c078cbb057222054}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d4/d9d/class_u_b_magnifier_af3c9c7f0e06bf952c078cbb057222054}
+
+
+Definition at line 224 of file U\-B\-Magnifer.\-cpp.
+
+\hypertarget{class_u_b_magnifier_abd134ba742de847c34f55d263e9809d6}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d4/d9d/class_u_b_magnifier_abd134ba742de847c34f55d263e9809d6}
+
+
+Definition at line 298 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_abd134ba742de847c34f55d263e9809d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a35fff03d6240e01b251e565c9c9b9580}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a35fff03d6240e01b251e565c9c9b9580}
+
+
+Definition at line 186 of file U\-B\-Magnifer.\-cpp.
+
+\hypertarget{class_u_b_magnifier_a00499d30e969d31228200bcfc1a68927}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!set\-Drawing\-Mode@{set\-Drawing\-Mode}}
+\index{set\-Drawing\-Mode@{set\-Drawing\-Mode}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{set\-Drawing\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::set\-Drawing\-Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_a00499d30e969d31228200bcfc1a68927}
+
+
+Definition at line 451 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a00499d30e969d31228200bcfc1a68927_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a00499d30e969d31228200bcfc1a68927_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a1fe23f2b7bffb592b7e5946137761c2c}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!set\-Grab\-View@{set\-Grab\-View}}
+\index{set\-Grab\-View@{set\-Grab\-View}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{set\-Grab\-View}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::set\-Grab\-View (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{view}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_a1fe23f2b7bffb592b7e5946137761c2c}
+
+
+Definition at line 444 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a1fe23f2b7bffb592b7e5946137761c2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_ac64314a8ead26579a13f89dc195e0549}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!set\-Move\-View@{set\-Move\-View}}
+\index{set\-Move\-View@{set\-Move\-View}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{set\-Move\-View}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::set\-Move\-View (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{view}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d4/d9d/class_u_b_magnifier_ac64314a8ead26579a13f89dc195e0549}
+
+
+Definition at line 59 of file U\-B\-Magnifer.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_ac64314a8ead26579a13f89dc195e0549_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a71d0210735effe31a9adeb1fd96e159b}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{qreal}]{percent\-From\-Scene}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_a71d0210735effe31a9adeb1fd96e159b}
+
+
+Definition at line 114 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a71d0210735effe31a9adeb1fd96e159b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a71d0210735effe31a9adeb1fd96e159b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_ab743216a271eb539ee225270c49207ce}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!set\-Zoom@{set\-Zoom}}
+\index{set\-Zoom@{set\-Zoom}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{set\-Zoom}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::set\-Zoom (
+\begin{DoxyParamCaption}
+\item[{qreal}]{zoom}
+\end{DoxyParamCaption}
+)}}\label{d4/d9d/class_u_b_magnifier_ab743216a271eb539ee225270c49207ce}
+
+
+Definition at line 170 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_ab743216a271eb539ee225270c49207ce_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_magnifier_a7497d3351ddbded1b3904d2700517f9a}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!slot\-\_\-refresh@{slot\-\_\-refresh}}
+\index{slot\-\_\-refresh@{slot\-\_\-refresh}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{slot\-\_\-refresh}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Magnifier\-::slot\-\_\-refresh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d9d/class_u_b_magnifier_a7497d3351ddbded1b3904d2700517f9a}
+
+
+Definition at line 336 of file U\-B\-Magnifer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a7497d3351ddbded1b3904d2700517f9a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d9d/class_u_b_magnifier_a7497d3351ddbded1b3904d2700517f9a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_magnifier_a26a82499d8b3bae09816e2f516226d43}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!is\-Cusrsor\-Already\-Stored@{is\-Cusrsor\-Already\-Stored}}
+\index{is\-Cusrsor\-Already\-Stored@{is\-Cusrsor\-Already\-Stored}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{is\-Cusrsor\-Already\-Stored}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Magnifier\-::is\-Cusrsor\-Already\-Stored\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a26a82499d8b3bae09816e2f516226d43}
+
+
+Definition at line 106 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a2652a040bd98fe55bf49d2ca705b0659}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-\_\-i\-Button\-Interval@{m\-\_\-i\-Button\-Interval}}
+\index{m\-\_\-i\-Button\-Interval@{m\-\_\-i\-Button\-Interval}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-\_\-i\-Button\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Magnifier\-::m\-\_\-i\-Button\-Interval\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a2652a040bd98fe55bf49d2ca705b0659}
+
+
+Definition at line 94 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a19c3c1f51c99c0b2cfd9e77b9591af9c}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Mouse\-Press\-Delta@{m\-Mouse\-Press\-Delta}}
+\index{m\-Mouse\-Press\-Delta@{m\-Mouse\-Press\-Delta}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Mouse\-Press\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Magnifier\-::m\-Mouse\-Press\-Delta\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a19c3c1f51c99c0b2cfd9e77b9591af9c}
+
+
+Definition at line 90 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a01af5513e2d3fbc5eaad21dfc58ae4ba}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Mouse\-Press\-Pos@{m\-Mouse\-Press\-Pos}}
+\index{m\-Mouse\-Press\-Pos@{m\-Mouse\-Press\-Pos}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Mouse\-Press\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point U\-B\-Magnifier\-::m\-Mouse\-Press\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a01af5513e2d3fbc5eaad21dfc58ae4ba}
+
+
+Definition at line 89 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a60c46f6fa233df7c20933b68855781d8}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Old\-Cursor@{m\-Old\-Cursor}}
+\index{m\-Old\-Cursor@{m\-Old\-Cursor}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Old\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Cursor U\-B\-Magnifier\-::m\-Old\-Cursor\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a60c46f6fa233df7c20933b68855781d8}
+
+
+Definition at line 107 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_aa9896755efd6a80ade87f0581bdfe629}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Resize\-Cursor@{m\-Resize\-Cursor}}
+\index{m\-Resize\-Cursor@{m\-Resize\-Cursor}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Resize\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Cursor U\-B\-Magnifier\-::m\-Resize\-Cursor\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_aa9896755efd6a80ade87f0581bdfe629}
+
+
+Definition at line 108 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a61f9315c9b25c6c55a7bd49035dd9609}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Resize\-Item@{m\-Resize\-Item}}
+\index{m\-Resize\-Item@{m\-Resize\-Item}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Resize\-Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap$\ast$ U\-B\-Magnifier\-::m\-Resize\-Item\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a61f9315c9b25c6c55a7bd49035dd9609}
+
+
+Definition at line 103 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a846a06af56b76d504b01c425ccadfeca}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Resize\-Item\-Button\-Rect@{m\-Resize\-Item\-Button\-Rect}}
+\index{m\-Resize\-Item\-Button\-Rect@{m\-Resize\-Item\-Button\-Rect}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Resize\-Item\-Button\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect U\-B\-Magnifier\-::m\-Resize\-Item\-Button\-Rect\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a846a06af56b76d504b01c425ccadfeca}
+
+
+Definition at line 104 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_ade983c56155f2ab08934e39a8add9e65}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Should\-Move\-Widget@{m\-Should\-Move\-Widget}}
+\index{m\-Should\-Move\-Widget@{m\-Should\-Move\-Widget}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Should\-Move\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Magnifier\-::m\-Should\-Move\-Widget\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_ade983c56155f2ab08934e39a8add9e65}
+
+
+Definition at line 91 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a074638234ed5ecf0c5f4005dcf9263d7}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!m\-Should\-Resize\-Widget@{m\-Should\-Resize\-Widget}}
+\index{m\-Should\-Resize\-Widget@{m\-Should\-Resize\-Widget}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{m\-Should\-Resize\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Magnifier\-::m\-Should\-Resize\-Widget\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a074638234ed5ecf0c5f4005dcf9263d7}
+
+
+Definition at line 92 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a6f32761f0d49639be70522952a36b671}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!params@{params}}
+\index{params@{params}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Magnifier\-Params} U\-B\-Magnifier\-::params}}\label{d4/d9d/class_u_b_magnifier_a6f32761f0d49639be70522952a36b671}
+
+
+Definition at line 66 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_aaef564708a8f9091c4c1e3eb6f7acb2a}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Change\-Mode\-Pixmap@{s\-Change\-Mode\-Pixmap}}
+\index{s\-Change\-Mode\-Pixmap@{s\-Change\-Mode\-Pixmap}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Change\-Mode\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap$\ast$ U\-B\-Magnifier\-::s\-Change\-Mode\-Pixmap\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_aaef564708a8f9091c4c1e3eb6f7acb2a}
+
+
+Definition at line 101 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_ac3924431e6d2a21f1fad8762730606bc}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Change\-Mode\-Pixmap\-Button\-Rect@{s\-Change\-Mode\-Pixmap\-Button\-Rect}}
+\index{s\-Change\-Mode\-Pixmap\-Button\-Rect@{s\-Change\-Mode\-Pixmap\-Button\-Rect}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Change\-Mode\-Pixmap\-Button\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect U\-B\-Magnifier\-::s\-Change\-Mode\-Pixmap\-Button\-Rect\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_ac3924431e6d2a21f1fad8762730606bc}
+
+
+Definition at line 102 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a204f74b39d6e747041e511723c68dcfe}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Close\-Pixmap@{s\-Close\-Pixmap}}
+\index{s\-Close\-Pixmap@{s\-Close\-Pixmap}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Close\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap$\ast$ U\-B\-Magnifier\-::s\-Close\-Pixmap\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a204f74b39d6e747041e511723c68dcfe}
+
+
+Definition at line 95 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_ac399c3c6a70e36926484c154b2ed9aec}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Close\-Pixmap\-Button\-Rect@{s\-Close\-Pixmap\-Button\-Rect}}
+\index{s\-Close\-Pixmap\-Button\-Rect@{s\-Close\-Pixmap\-Button\-Rect}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Close\-Pixmap\-Button\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect U\-B\-Magnifier\-::s\-Close\-Pixmap\-Button\-Rect\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_ac399c3c6a70e36926484c154b2ed9aec}
+
+
+Definition at line 96 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a4f359c0b0f611b1baad359ba65a9d37e}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Decrease\-Pixmap@{s\-Decrease\-Pixmap}}
+\index{s\-Decrease\-Pixmap@{s\-Decrease\-Pixmap}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Decrease\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap$\ast$ U\-B\-Magnifier\-::s\-Decrease\-Pixmap\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a4f359c0b0f611b1baad359ba65a9d37e}
+
+
+Definition at line 99 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a057d572621c65843b5fb29c0a07d3da4}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Decrease\-Pixmap\-Button\-Rect@{s\-Decrease\-Pixmap\-Button\-Rect}}
+\index{s\-Decrease\-Pixmap\-Button\-Rect@{s\-Decrease\-Pixmap\-Button\-Rect}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Decrease\-Pixmap\-Button\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect U\-B\-Magnifier\-::s\-Decrease\-Pixmap\-Button\-Rect\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a057d572621c65843b5fb29c0a07d3da4}
+
+
+Definition at line 100 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a73e5c26959cfa81a511c804333e227b6}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Increase\-Pixmap@{s\-Increase\-Pixmap}}
+\index{s\-Increase\-Pixmap@{s\-Increase\-Pixmap}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Increase\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap$\ast$ U\-B\-Magnifier\-::s\-Increase\-Pixmap\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a73e5c26959cfa81a511c804333e227b6}
+
+
+Definition at line 97 of file U\-B\-Magnifer.\-h.
+
+\hypertarget{class_u_b_magnifier_a6bdcd5e3d40af5c2ee1c2009ada214dd}{\index{U\-B\-Magnifier@{U\-B\-Magnifier}!s\-Increase\-Pixmap\-Button\-Rect@{s\-Increase\-Pixmap\-Button\-Rect}}
+\index{s\-Increase\-Pixmap\-Button\-Rect@{s\-Increase\-Pixmap\-Button\-Rect}!UBMagnifier@{U\-B\-Magnifier}}
+\subsubsection[{s\-Increase\-Pixmap\-Button\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect U\-B\-Magnifier\-::s\-Increase\-Pixmap\-Button\-Rect\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d9d/class_u_b_magnifier_a6bdcd5e3d40af5c2ee1c2009ada214dd}
+
+
+Definition at line 98 of file U\-B\-Magnifer.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_magnifer_8h}{U\-B\-Magnifer.\-h}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_magnifer_8cpp}{U\-B\-Magnifer.\-cpp}\end{DoxyCompactItemize}

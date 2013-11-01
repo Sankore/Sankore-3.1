@@ -1,0 +1,132 @@
+\hypertarget{_u_b_teacher_guide_widget_8cpp}{\section{Sankore-\/3.1/src/gui/\-U\-B\-Teacher\-Guide\-Widget.cpp File Reference}
+\label{d3/d96/_u_b_teacher_guide_widget_8cpp}\index{Sankore-\/3.\-1/src/gui/\-U\-B\-Teacher\-Guide\-Widget.\-cpp@{Sankore-\/3.\-1/src/gui/\-U\-B\-Teacher\-Guide\-Widget.\-cpp}}
+}
+{\ttfamily \#include $<$Q\-Debug$>$}\\*
+{\ttfamily \#include $<$Q\-Label$>$}\\*
+{\ttfamily \#include $<$Q\-V\-Box\-Layout$>$}\\*
+{\ttfamily \#include $<$Q\-Header\-View$>$}\\*
+{\ttfamily \#include $<$Q\-Tree\-Widget$>$}\\*
+{\ttfamily \#include $<$Q\-Push\-Button$>$}\\*
+{\ttfamily \#include $<$Q\-Dom\-Document$>$}\\*
+{\ttfamily \#include $<$Q\-Scroll\-Area$>$}\\*
+{\ttfamily \#include \char`\"{}U\-B\-Teacher\-Guide\-Widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}adaptors/\-U\-B\-Svg\-Subset\-Adaptor.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Application.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Persistence\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Settings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}globals/\-U\-B\-Globals.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board/\-U\-B\-Board\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board/\-U\-B\-Board\-View.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board/\-U\-B\-Board\-Palette\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Stylus\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Action\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Main\-Window.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}web/\-U\-B\-Web\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}document/\-U\-B\-Document\-Proxy.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}document/\-U\-B\-Document\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}domain/\-U\-B\-Graphics\-Text\-Item.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/memcheck.\-h\char`\"{}}\\*
+Include dependency graph for U\-B\-Teacher\-Guide\-Widget.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d84/_u_b_teacher_guide_widget_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_u_b_teacher_guide_widget_8cpp_a15a2f6fab48cfc1a941bb7de6a67f217}{U\-B\-T\-G\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-\_\-\-F\-I\-X\-E\-D\-\_\-\-H\-E\-I\-G\-H\-T}~3
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type} \{ \hyperlink{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392acdf27f0711dd80e69f38ef363b6a378b}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-None}, 
+\hyperlink{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a647c2973f539d985971761650959ea73}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Action}, 
+\hyperlink{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a241d1fca6710ef7633a97228f9fe488a}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Media}, 
+\hyperlink{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a6879dcbdf314c1727cb7a25e044dce83}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Url}
+ \}
+\item 
+enum \hyperlink{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item} \{ \hyperlink{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98ad83d21596eba53fc44475b0e949c2bc0}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-N\-O\-N\-E}, 
+\hyperlink{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98a810c6547d157d26a19bc72ccaf1fce74}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-U\-R\-L}, 
+\hyperlink{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98aac97cc2c8cac9809d233b66c40b2dae0}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-M\-E\-D\-I\-A}, 
+\hyperlink{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98aabc3a6bc48f7e681104c23885e7cd1b7}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-E\-X\-P\-A\-N\-D}
+ \}
+\item 
+enum \hyperlink{_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082}{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role} \{ \hyperlink{_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082a6c192c1f33562437592d2d10665fccc3}{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Action} =  Qt\-:\-:User\-Role, 
+\hyperlink{_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082a9dd32d2b3e6c178593122bcc73f13b68}{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Url}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a15a2f6fab48cfc1a941bb7de6a67f217}{\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!U\-B\-T\-G\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-\_\-\-F\-I\-X\-E\-D\-\_\-\-H\-E\-I\-G\-H\-T@{U\-B\-T\-G\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-\_\-\-F\-I\-X\-E\-D\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{U\-B\-T\-G\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-\_\-\-F\-I\-X\-E\-D\-\_\-\-H\-E\-I\-G\-H\-T@{U\-B\-T\-G\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-\_\-\-F\-I\-X\-E\-D\-\_\-\-H\-E\-I\-G\-H\-T}!UBTeacherGuideWidget.cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}
+\subsubsection[{U\-B\-T\-G\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-\_\-\-F\-I\-X\-E\-D\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-B\-T\-G\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R\-\_\-\-F\-I\-X\-E\-D\-\_\-\-H\-E\-I\-G\-H\-T~3}}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a15a2f6fab48cfc1a941bb7de6a67f217}
+
+
+Definition at line 60 of file U\-B\-Teacher\-Guide\-Widget.\-cpp.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392}{\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type}}
+\index{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type}!UBTeacherGuideWidget.cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}
+\subsubsection[{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type}}}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-None@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-None}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-None@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-None}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392acdf27f0711dd80e69f38ef363b6a378b}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-None}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392acdf27f0711dd80e69f38ef363b6a378b}
+}]\index{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Action@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Action}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Action@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Action}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a647c2973f539d985971761650959ea73}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Action}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a647c2973f539d985971761650959ea73}
+}]\index{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Media@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Media}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Media@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Media}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a241d1fca6710ef7633a97228f9fe488a}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Media}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a241d1fca6710ef7633a97228f9fe488a}
+}]\index{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Url@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Url}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Url@{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Url}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a6879dcbdf314c1727cb7a25e044dce83}{e\-U\-B\-T\-G\-Add\-Sub\-Item\-Widget\-Type\-\_\-\-Url}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_aa657940faa00d493d9b2a487166ef392a6879dcbdf314c1727cb7a25e044dce83}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 62 of file U\-B\-Teacher\-Guide\-Widget.\-cpp.
+
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98}{\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item}}
+\index{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item}!UBTeacherGuideWidget.cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}
+\subsubsection[{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item}}}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-N\-O\-N\-E@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-N\-O\-N\-E}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-N\-O\-N\-E@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98ad83d21596eba53fc44475b0e949c2bc0}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-N\-O\-N\-E}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98ad83d21596eba53fc44475b0e949c2bc0}
+}]\index{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-U\-R\-L@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-U\-R\-L}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-U\-R\-L@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-U\-R\-L}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98a810c6547d157d26a19bc72ccaf1fce74}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-U\-R\-L}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98a810c6547d157d26a19bc72ccaf1fce74}
+}]\index{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-M\-E\-D\-I\-A@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-M\-E\-D\-I\-A}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-M\-E\-D\-I\-A@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-M\-E\-D\-I\-A}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98aac97cc2c8cac9809d233b66c40b2dae0}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-M\-E\-D\-I\-A}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98aac97cc2c8cac9809d233b66c40b2dae0}
+}]\index{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-E\-X\-P\-A\-N\-D@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-E\-X\-P\-A\-N\-D}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-E\-X\-P\-A\-N\-D@{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-E\-X\-P\-A\-N\-D}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98aabc3a6bc48f7e681104c23885e7cd1b7}{t\-U\-B\-T\-G\-Action\-Associate\-On\-Click\-Item\-\_\-\-E\-X\-P\-A\-N\-D}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3daa2c3636d5bc666c494145415f1f98aabc3a6bc48f7e681104c23885e7cd1b7}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 395 of file U\-B\-Teacher\-Guide\-Widget.\-cpp.
+
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082}{\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role@{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role}}
+\index{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role@{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role}!UBTeacherGuideWidget.cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}
+\subsubsection[{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role}}}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Action@{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Action}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Action@{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Action}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082a6c192c1f33562437592d2d10665fccc3}{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Action}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082a6c192c1f33562437592d2d10665fccc3}
+}]\index{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Url@{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Url}!U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}}\index{U\-B\-Teacher\-Guide\-Widget.\-cpp@{U\-B\-Teacher\-Guide\-Widget.\-cpp}!t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Url@{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Url}}\item[{\em 
+\hypertarget{_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082a9dd32d2b3e6c178593122bcc73f13b68}{t\-U\-B\-T\-G\-Tree\-Widget\-Item\-Role\-\_\-\-Has\-An\-Url}\label{d3/d96/_u_b_teacher_guide_widget_8cpp_a3f96cf31635ff727112ea0b7785a4082a9dd32d2b3e6c178593122bcc73f13b68}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 402 of file U\-B\-Teacher\-Guide\-Widget.\-cpp.
+

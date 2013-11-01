@@ -1,0 +1,440 @@
+\hypertarget{class_u_b_graphics_pixmap_item}{\section{U\-B\-Graphics\-Pixmap\-Item Class Reference}
+\label{d1/d78/class_u_b_graphics_pixmap_item}\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Pixmap\-Item.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Pixmap\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/d81/class_u_b_graphics_pixmap_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Pixmap\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d9/d75/class_u_b_graphics_pixmap_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{class_u_b_graphics_pixmap_item_a612805b803119f668ea68c9e88b707e2a870750b87c139662862166e210a46810}{Type} =  U\-B\-Graphics\-Item\-Type\-:\-:Pixmap\-Item\-Type
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_pixmap_item_ad154326709d1935d96248228d21b20ae}{U\-B\-Graphics\-Pixmap\-Item} (Q\-Graphics\-Item $\ast$parent=0)
+\item 
+virtual \hyperlink{class_u_b_graphics_pixmap_item_a4f926ebe9491c29ff899d4467f69b087}{$\sim$\-U\-B\-Graphics\-Pixmap\-Item} ()
+\item 
+virtual int \hyperlink{class_u_b_graphics_pixmap_item_a0d3077ae69919c91d867f34e22f47c88}{type} () const 
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_pixmap_item_a1b0fbc4ae6ba2796e5cccb0ea16b8c70}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_pixmap_item_a800d04419404cec2d43f4feccb1673e6}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_graphics_pixmap_item_a972dad2ba6b44804cfff411fb54c15ee}{scene} ()
+\item 
+void \hyperlink{class_u_b_graphics_pixmap_item_a93680a1e04ba6a40840217d9e380761f}{set\-Opacity} (qreal op)
+\item 
+qreal \hyperlink{class_u_b_graphics_pixmap_item_a6cc4d90efc679f54b89295f4cf3f94aa}{opacity} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_pixmap_item_abbc63eb91023c55073299fb74b822f9b}{clear\-Source} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_pixmap_item_a822a466ea3b7a87e5c109e1af96c3d14}{set\-Uuid} (const Q\-Uuid \&p\-Uuid)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_graphics_pixmap_item_abc02c570ead1a49248766c09e27fb6aa}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_pixmap_item_a6efcb9a45ca5d0c58e52ba5d52afe3c7}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_pixmap_item_aebf8be8d5a240e5a3b45fd56437ee172}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_pixmap_item_a181a5e9658c1edfe0f0088dadf1a329e}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\item 
+virtual Q\-Variant \hyperlink{class_u_b_graphics_pixmap_item_a18a321417a7b593ef9a9d3966ada34d6}{item\-Change} (Graphics\-Item\-Change change, const Q\-Variant \&value)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+qreal \hyperlink{class_u_b_graphics_pixmap_item_a965ce3a929fe1681dc146b7f79322ced}{opacity}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file U\-B\-Graphics\-Pixmap\-Item.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_pixmap_item_a612805b803119f668ea68c9e88b707e2}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{d1/d78/class_u_b_graphics_pixmap_item_a612805b803119f668ea68c9e88b707e2}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Type@{Type}!U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}}\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!Type@{Type}}\item[{\em 
+\hypertarget{class_u_b_graphics_pixmap_item_a612805b803119f668ea68c9e88b707e2a870750b87c139662862166e210a46810}{Type}\label{d1/d78/class_u_b_graphics_pixmap_item_a612805b803119f668ea68c9e88b707e2a870750b87c139662862166e210a46810}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 43 of file U\-B\-Graphics\-Pixmap\-Item.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_pixmap_item_ad154326709d1935d96248228d21b20ae}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}}
+\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{U\-B\-Graphics\-Pixmap\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Pixmap\-Item\-::\-U\-B\-Graphics\-Pixmap\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_graphics_pixmap_item_ad154326709d1935d96248228d21b20ae}
+
+
+Definition at line 45 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_ad154326709d1935d96248228d21b20ae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_ad154326709d1935d96248228d21b20ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_a4f926ebe9491c29ff899d4467f69b087}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!$\sim$\-U\-B\-Graphics\-Pixmap\-Item@{$\sim$\-U\-B\-Graphics\-Pixmap\-Item}}
+\index{$\sim$\-U\-B\-Graphics\-Pixmap\-Item@{$\sim$\-U\-B\-Graphics\-Pixmap\-Item}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Pixmap\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Pixmap\-Item\-::$\sim$\-U\-B\-Graphics\-Pixmap\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a4f926ebe9491c29ff899d4467f69b087}
+
+
+Definition at line 63 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_pixmap_item_abbc63eb91023c55073299fb74b822f9b}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!clear\-Source@{clear\-Source}}
+\index{clear\-Source@{clear\-Source}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{clear\-Source}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Graphics\-Pixmap\-Item\-::clear\-Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_abbc63eb91023c55073299fb74b822f9b}
+
+
+Reimplemented from \hyperlink{class_u_b_graphics_item_a83e8d1b8f4bbbc024a15f645a39d6e49}{U\-B\-Graphics\-Item}.
+
+
+
+Definition at line 60 of file U\-B\-Graphics\-Pixmap\-Item.\-h.
+
+\hypertarget{class_u_b_graphics_pixmap_item_a800d04419404cec2d43f4feccb1673e6}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Pixmap\-Item\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a800d04419404cec2d43f4feccb1673e6}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 142 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_a800d04419404cec2d43f4feccb1673e6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_a800d04419404cec2d43f4feccb1673e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_a1b0fbc4ae6ba2796e5cccb0ea16b8c70}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Pixmap\-Item\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a1b0fbc4ae6ba2796e5cccb0ea16b8c70}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 129 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_a1b0fbc4ae6ba2796e5cccb0ea16b8c70_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_a18a321417a7b593ef9a9d3966ada34d6}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!item\-Change@{item\-Change}}
+\index{item\-Change@{item\-Change}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{item\-Change}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Graphics\-Pixmap\-Item\-::item\-Change (
+\begin{DoxyParamCaption}
+\item[{Graphics\-Item\-Change}]{change, }
+\item[{const Q\-Variant \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a18a321417a7b593ef9a9d3966ada34d6}
+
+
+Definition at line 67 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_a18a321417a7b593ef9a9d3966ada34d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_a6efcb9a45ca5d0c58e52ba5d52afe3c7}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Pixmap\-Item\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a6efcb9a45ca5d0c58e52ba5d52afe3c7}
+
+
+Definition at line 100 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_a6efcb9a45ca5d0c58e52ba5d52afe3c7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_abc02c570ead1a49248766c09e27fb6aa}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Pixmap\-Item\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_abc02c570ead1a49248766c09e27fb6aa}
+
+
+Definition at line 79 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_abc02c570ead1a49248766c09e27fb6aa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_aebf8be8d5a240e5a3b45fd56437ee172}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Pixmap\-Item\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_aebf8be8d5a240e5a3b45fd56437ee172}
+
+
+Definition at line 112 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_aebf8be8d5a240e5a3b45fd56437ee172_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_a6cc4d90efc679f54b89295f4cf3f94aa}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!opacity@{opacity}}
+\index{opacity@{opacity}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{opacity}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Pixmap\-Item\-::opacity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d1/d78/class_u_b_graphics_pixmap_item_a6cc4d90efc679f54b89295f4cf3f94aa}
+\hypertarget{class_u_b_graphics_pixmap_item_a181a5e9658c1edfe0f0088dadf1a329e}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!paint@{paint}}
+\index{paint@{paint}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Pixmap\-Item\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a181a5e9658c1edfe0f0088dadf1a329e}
+
+
+Definition at line 119 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+\hypertarget{class_u_b_graphics_pixmap_item_a972dad2ba6b44804cfff411fb54c15ee}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!scene@{scene}}
+\index{scene@{scene}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Graphics\-Pixmap\-Item\-::scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a972dad2ba6b44804cfff411fb54c15ee}
+
+
+Reimplemented from \hyperlink{class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431}{U\-B\-Item}.
+
+
+
+Definition at line 169 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+\hypertarget{class_u_b_graphics_pixmap_item_a93680a1e04ba6a40840217d9e380761f}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!set\-Opacity@{set\-Opacity}}
+\index{set\-Opacity@{set\-Opacity}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{set\-Opacity}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Pixmap\-Item\-::set\-Opacity (
+\begin{DoxyParamCaption}
+\item[{qreal}]{op}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_graphics_pixmap_item_a93680a1e04ba6a40840217d9e380761f}
+
+
+Definition at line 175 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_a93680a1e04ba6a40840217d9e380761f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_a822a466ea3b7a87e5c109e1af96c3d14}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!set\-Uuid@{set\-Uuid}}
+\index{set\-Uuid@{set\-Uuid}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{set\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Pixmap\-Item\-::set\-Uuid (
+\begin{DoxyParamCaption}
+\item[{const Q\-Uuid \&}]{p\-Uuid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a822a466ea3b7a87e5c109e1af96c3d14}
+
+
+Reimplemented from \hyperlink{class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8}{U\-B\-Item}.
+
+
+
+Definition at line 73 of file U\-B\-Graphics\-Pixmap\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_graphics_pixmap_item_a822a466ea3b7a87e5c109e1af96c3d14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_pixmap_item_a0d3077ae69919c91d867f34e22f47c88}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!type@{type}}
+\index{type@{type}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int U\-B\-Graphics\-Pixmap\-Item\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a0d3077ae69919c91d867f34e22f47c88}
+
+
+Implements \hyperlink{class_u_b_graphics_item_acab0781401cac08c9ad99b0cd0fa8480}{U\-B\-Graphics\-Item}.
+
+
+
+Definition at line 45 of file U\-B\-Graphics\-Pixmap\-Item.\-h.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_u_b_graphics_pixmap_item_a965ce3a929fe1681dc146b7f79322ced}{\index{U\-B\-Graphics\-Pixmap\-Item@{U\-B\-Graphics\-Pixmap\-Item}!opacity@{opacity}}
+\index{opacity@{opacity}!UBGraphicsPixmapItem@{U\-B\-Graphics\-Pixmap\-Item}}
+\subsubsection[{opacity}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Pixmap\-Item\-::opacity\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{d1/d78/class_u_b_graphics_pixmap_item_a965ce3a929fe1681dc146b7f79322ced}
+
+
+Definition at line 55 of file U\-B\-Graphics\-Pixmap\-Item.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_pixmap_item_8h}{U\-B\-Graphics\-Pixmap\-Item.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_pixmap_item_8cpp}{U\-B\-Graphics\-Pixmap\-Item.\-cpp}\end{DoxyCompactItemize}

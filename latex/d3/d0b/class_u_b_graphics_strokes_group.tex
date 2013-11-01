@@ -1,0 +1,481 @@
+\hypertarget{class_u_b_graphics_strokes_group}{\section{U\-B\-Graphics\-Strokes\-Group Class Reference}
+\label{d3/d0b/class_u_b_graphics_strokes_group}\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Strokes\-Group.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Strokes\-Group\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/d36/class_u_b_graphics_strokes_group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Strokes\-Group\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d6/d59/class_u_b_graphics_strokes_group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237}{color\-Type} \{ \hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237aa1578878d1515dff5db323ca8403fc32}{current\-Color} =  0, 
+\hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237a34e78e4969fa8b31473b7cf4cc01a682}{color\-On\-Light\-Background}, 
+\hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237a8239dfc657024d6a94ed55070207ee18}{color\-On\-Dark\-Background}
+ \}
+\item 
+enum \{ \hyperlink{class_u_b_graphics_strokes_group_a9881a46b6d4aa934b82ece9ff755ecb8acab072a353265ba95c2ddec1598a7802}{Type} =  U\-B\-Graphics\-Item\-Type\-:\-:Stroke\-Item\-Type
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_strokes_group_ab3978d4c4d489c27f90baf64a506f1d8}{U\-B\-Graphics\-Strokes\-Group} (Q\-Graphics\-Item $\ast$parent=0)
+\item 
+\hyperlink{class_u_b_graphics_strokes_group_ae108f31c42cba50528331562b634a132}{$\sim$\-U\-B\-Graphics\-Strokes\-Group} ()
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_strokes_group_a4932a359f046811fc1d555d5d6b49b38}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_strokes_group_ab34ce07e062a2f2bd454dc2309b88396}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+virtual int \hyperlink{class_u_b_graphics_strokes_group_a6ae2ff9eb80bae962b6befc61278fcb7}{type} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_strokes_group_ad0e51596bc0652b4889c3f215332ad72}{set\-Uuid} (const Q\-Uuid \&p\-Uuid)
+\item 
+void \hyperlink{class_u_b_graphics_strokes_group_a62a695811541e9e0598f1e5047daab9c}{set\-Color} (const Q\-Color \&\hyperlink{class_u_b_graphics_strokes_group_a658c2ce6d14f05667601f76c5252a733}{color}, \hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237}{color\-Type} p\-Color\-Type=\hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237aa1578878d1515dff5db323ca8403fc32}{current\-Color})
+\item 
+Q\-Color \hyperlink{class_u_b_graphics_strokes_group_a658c2ce6d14f05667601f76c5252a733}{color} (\hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237}{color\-Type} p\-Color\-Type=\hyperlink{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237aa1578878d1515dff5db323ca8403fc32}{current\-Color}) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Q\-Painter\-Path \hyperlink{class_u_b_graphics_strokes_group_ab2b680659211b61f6bc8c81eed6e926c}{shape} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_strokes_group_a778212e0bcd5eb698a017ded6ce0af71}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_strokes_group_a613e50940bd75b11179559003d862994}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_strokes_group_a4107eca52f5225011e5ce140a6156d9c}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_strokes_group_a2936951ba4b216d514edc6d6ec7934c1}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\item 
+virtual Q\-Variant \hyperlink{class_u_b_graphics_strokes_group_a5350676c6c3b5ea6c4cbfe0dc1f13d10}{item\-Change} (Graphics\-Item\-Change change, const Q\-Variant \&value)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file U\-B\-Graphics\-Strokes\-Group.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_strokes_group_a9881a46b6d4aa934b82ece9ff755ecb8}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{d3/d0b/class_u_b_graphics_strokes_group_a9881a46b6d4aa934b82ece9ff755ecb8}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Type@{Type}!U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}}\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!Type@{Type}}\item[{\em 
+\hypertarget{class_u_b_graphics_strokes_group_a9881a46b6d4aa934b82ece9ff755ecb8acab072a353265ba95c2ddec1598a7802}{Type}\label{d3/d0b/class_u_b_graphics_strokes_group_a9881a46b6d4aa934b82ece9ff755ecb8acab072a353265ba95c2ddec1598a7802}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 47 of file U\-B\-Graphics\-Strokes\-Group.\-h.
+
+\hypertarget{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!color\-Type@{color\-Type}}
+\index{color\-Type@{color\-Type}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{color\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Graphics\-Strokes\-Group\-::color\-Type}}}\label{d3/d0b/class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{current\-Color@{current\-Color}!U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}}\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!current\-Color@{current\-Color}}\item[{\em 
+\hypertarget{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237aa1578878d1515dff5db323ca8403fc32}{current\-Color}\label{d3/d0b/class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237aa1578878d1515dff5db323ca8403fc32}
+}]\index{color\-On\-Light\-Background@{color\-On\-Light\-Background}!U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}}\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!color\-On\-Light\-Background@{color\-On\-Light\-Background}}\item[{\em 
+\hypertarget{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237a34e78e4969fa8b31473b7cf4cc01a682}{color\-On\-Light\-Background}\label{d3/d0b/class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237a34e78e4969fa8b31473b7cf4cc01a682}
+}]\index{color\-On\-Dark\-Background@{color\-On\-Dark\-Background}!U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}}\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!color\-On\-Dark\-Background@{color\-On\-Dark\-Background}}\item[{\em 
+\hypertarget{class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237a8239dfc657024d6a94ed55070207ee18}{color\-On\-Dark\-Background}\label{d3/d0b/class_u_b_graphics_strokes_group_aafc5defeb806eb61efedfa57d2a35237a8239dfc657024d6a94ed55070207ee18}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 37 of file U\-B\-Graphics\-Strokes\-Group.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_strokes_group_ab3978d4c4d489c27f90baf64a506f1d8}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}}
+\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{U\-B\-Graphics\-Strokes\-Group}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Strokes\-Group\-::\-U\-B\-Graphics\-Strokes\-Group (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d3/d0b/class_u_b_graphics_strokes_group_ab3978d4c4d489c27f90baf64a506f1d8}
+
+
+Definition at line 39 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_ab3978d4c4d489c27f90baf64a506f1d8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_ab3978d4c4d489c27f90baf64a506f1d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_ae108f31c42cba50528331562b634a132}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!$\sim$\-U\-B\-Graphics\-Strokes\-Group@{$\sim$\-U\-B\-Graphics\-Strokes\-Group}}
+\index{$\sim$\-U\-B\-Graphics\-Strokes\-Group@{$\sim$\-U\-B\-Graphics\-Strokes\-Group}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Strokes\-Group}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Strokes\-Group\-::$\sim$\-U\-B\-Graphics\-Strokes\-Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d3/d0b/class_u_b_graphics_strokes_group_ae108f31c42cba50528331562b634a132}
+
+
+Definition at line 58 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_strokes_group_a658c2ce6d14f05667601f76c5252a733}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!color@{color}}
+\index{color@{color}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Strokes\-Group\-::color (
+\begin{DoxyParamCaption}
+\item[{{\bf color\-Type}}]{p\-Color\-Type = {\ttfamily {\bf current\-Color}}}
+\end{DoxyParamCaption}
+) const}}\label{d3/d0b/class_u_b_graphics_strokes_group_a658c2ce6d14f05667601f76c5252a733}
+
+
+Definition at line 90 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a658c2ce6d14f05667601f76c5252a733_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a658c2ce6d14f05667601f76c5252a733_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_ab34ce07e062a2f2bd454dc2309b88396}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Strokes\-Group\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_ab34ce07e062a2f2bd454dc2309b88396}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 169 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_ab34ce07e062a2f2bd454dc2309b88396_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_ab34ce07e062a2f2bd454dc2309b88396_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_a4932a359f046811fc1d555d5d6b49b38}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Strokes\-Group\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_a4932a359f046811fc1d555d5d6b49b38}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 139 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a4932a359f046811fc1d555d5d6b49b38_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_a5350676c6c3b5ea6c4cbfe0dc1f13d10}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!item\-Change@{item\-Change}}
+\index{item\-Change@{item\-Change}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{item\-Change}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Graphics\-Strokes\-Group\-::item\-Change (
+\begin{DoxyParamCaption}
+\item[{Graphics\-Item\-Change}]{change, }
+\item[{const Q\-Variant \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_a5350676c6c3b5ea6c4cbfe0dc1f13d10}
+
+
+Definition at line 202 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a5350676c6c3b5ea6c4cbfe0dc1f13d10_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_a613e50940bd75b11179559003d862994}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Strokes\-Group\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_a613e50940bd75b11179559003d862994}
+
+
+Definition at line 121 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a613e50940bd75b11179559003d862994_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_a778212e0bcd5eb698a017ded6ce0af71}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Strokes\-Group\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_a778212e0bcd5eb698a017ded6ce0af71}
+
+
+Definition at line 116 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a778212e0bcd5eb698a017ded6ce0af71_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_a4107eca52f5225011e5ce140a6156d9c}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Strokes\-Group\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_a4107eca52f5225011e5ce140a6156d9c}
+
+
+Definition at line 133 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a4107eca52f5225011e5ce140a6156d9c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_a2936951ba4b216d514edc6d6ec7934c1}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!paint@{paint}}
+\index{paint@{paint}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Strokes\-Group\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_a2936951ba4b216d514edc6d6ec7934c1}
+
+
+Definition at line 193 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+\hypertarget{class_u_b_graphics_strokes_group_a62a695811541e9e0598f1e5047daab9c}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!set\-Color@{set\-Color}}
+\index{set\-Color@{set\-Color}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{set\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Strokes\-Group\-::set\-Color (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{color, }
+\item[{{\bf color\-Type}}]{p\-Color\-Type = {\ttfamily {\bf current\-Color}}}
+\end{DoxyParamCaption}
+)}}\label{d3/d0b/class_u_b_graphics_strokes_group_a62a695811541e9e0598f1e5047daab9c}
+
+
+Definition at line 67 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a62a695811541e9e0598f1e5047daab9c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a62a695811541e9e0598f1e5047daab9c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_ad0e51596bc0652b4889c3f215332ad72}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!set\-Uuid@{set\-Uuid}}
+\index{set\-Uuid@{set\-Uuid}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{set\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Strokes\-Group\-::set\-Uuid (
+\begin{DoxyParamCaption}
+\item[{const Q\-Uuid \&}]{p\-Uuid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_ad0e51596bc0652b4889c3f215332ad72}
+
+
+Reimplemented from \hyperlink{class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8}{U\-B\-Item}.
+
+
+
+Definition at line 62 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_ad0e51596bc0652b4889c3f215332ad72_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_strokes_group_ab2b680659211b61f6bc8c81eed6e926c}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!shape@{shape}}
+\index{shape@{shape}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Painter\-Path U\-B\-Graphics\-Strokes\-Group\-::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_ab2b680659211b61f6bc8c81eed6e926c}
+
+
+Definition at line 209 of file U\-B\-Graphics\-Strokes\-Group.\-cpp.
+
+\hypertarget{class_u_b_graphics_strokes_group_a6ae2ff9eb80bae962b6befc61278fcb7}{\index{U\-B\-Graphics\-Strokes\-Group@{U\-B\-Graphics\-Strokes\-Group}!type@{type}}
+\index{type@{type}!UBGraphicsStrokesGroup@{U\-B\-Graphics\-Strokes\-Group}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int U\-B\-Graphics\-Strokes\-Group\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d3/d0b/class_u_b_graphics_strokes_group_a6ae2ff9eb80bae962b6befc61278fcb7}
+
+
+Implements \hyperlink{class_u_b_graphics_item_acab0781401cac08c9ad99b0cd0fa8480}{U\-B\-Graphics\-Item}.
+
+
+
+Definition at line 48 of file U\-B\-Graphics\-Strokes\-Group.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d0b/class_u_b_graphics_strokes_group_a6ae2ff9eb80bae962b6befc61278fcb7_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_strokes_group_8h}{U\-B\-Graphics\-Strokes\-Group.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_strokes_group_8cpp}{U\-B\-Graphics\-Strokes\-Group.\-cpp}\end{DoxyCompactItemize}

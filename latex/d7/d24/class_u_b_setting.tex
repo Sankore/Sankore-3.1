@@ -1,0 +1,386 @@
+\hypertarget{class_u_b_setting}{\section{U\-B\-Setting Class Reference}
+\label{d7/d24/class_u_b_setting}\index{U\-B\-Setting@{U\-B\-Setting}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Setting.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Setting\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{d9/d8d/class_u_b_setting__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Setting\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{da/d1a/class_u_b_setting__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_setting_ace7b75378f8faad31ab6ce6ea1c7589b}{set\-Bool} (bool p\-Value)
+\item 
+void \hyperlink{class_u_b_setting_a452bf3be5cee45828397a0b141c9763f}{set\-String} (const Q\-String \&p\-Value)
+\item 
+void \hyperlink{class_u_b_setting_acac195b0a49f5f5e557495b6c7999c98}{set\-Int} (int p\-Value)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_setting_a0f7d1e100a9d7d35a58c818a356702c7}{changed} (Q\-Variant new\-Value)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_setting_a4d219c5915a26e3575fc30c48d0f7bd1}{U\-B\-Setting} (\hyperlink{class_u_b_settings}{U\-B\-Settings} $\ast$parent=0)
+\item 
+\hyperlink{class_u_b_setting_a2c9ee4f1decfd6d14d4d3839ad9d58b3}{U\-B\-Setting} (\hyperlink{class_u_b_settings}{U\-B\-Settings} $\ast$owner, const Q\-String \&p\-Domain, const Q\-String \&p\-Key, const Q\-Variant \&p\-Default\-Value)
+\item 
+virtual \hyperlink{class_u_b_setting_af42b0a45a5dbe3b1bbf82a8176094fba}{$\sim$\-U\-B\-Setting} ()
+\item 
+virtual void \hyperlink{class_u_b_setting_a5dc12b91ffabb031a3a7a8322f5d30ed}{set} (const Q\-Variant \&p\-Value)
+\item 
+virtual Q\-Variant \hyperlink{class_u_b_setting_afe671b284dd9f1e313e6f27df3ecd2a8}{get} ()
+\item 
+virtual Q\-Variant \hyperlink{class_u_b_setting_a63ccc6724ba8befce05a946c3c5d3da9}{reset} ()
+\item 
+virtual Q\-String \hyperlink{class_u_b_setting_a03f4735df16c7ef73eb27447e5de50b7}{domain} () const 
+\item 
+virtual Q\-String \hyperlink{class_u_b_setting_a9e7d9c5c26a4a11dc8c34bbd21fb8955}{key} () const 
+\item 
+virtual Q\-String \hyperlink{class_u_b_setting_a7e6c2ccb08dd00f7b59e78f67112d086}{path} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_settings}{U\-B\-Settings} $\ast$ \hyperlink{class_u_b_setting_a2b0c7c506e9fb69725a68e54781eff08}{m\-Owner}
+\item 
+Q\-String \hyperlink{class_u_b_setting_ab30419ac5f9361f4d65c6c998fdc33bd}{m\-Domain}
+\item 
+Q\-String \hyperlink{class_u_b_setting_a4e0199b4b8d6a065b899396b16f89ddd}{m\-Key}
+\item 
+Q\-String \hyperlink{class_u_b_setting_a0b6267dac1334d5478320fbff8eacd9f}{m\-Path}
+\item 
+Q\-Variant \hyperlink{class_u_b_setting_a932900881cb5c54769356ed68955e721}{m\-Default\-Value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file U\-B\-Setting.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_setting_a4d219c5915a26e3575fc30c48d0f7bd1}{\index{U\-B\-Setting@{U\-B\-Setting}!U\-B\-Setting@{U\-B\-Setting}}
+\index{U\-B\-Setting@{U\-B\-Setting}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{U\-B\-Setting}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Setting\-::\-U\-B\-Setting (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Settings} $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d7/d24/class_u_b_setting_a4d219c5915a26e3575fc30c48d0f7bd1}
+
+
+Definition at line 32 of file U\-B\-Setting.\-cpp.
+
+\hypertarget{class_u_b_setting_a2c9ee4f1decfd6d14d4d3839ad9d58b3}{\index{U\-B\-Setting@{U\-B\-Setting}!U\-B\-Setting@{U\-B\-Setting}}
+\index{U\-B\-Setting@{U\-B\-Setting}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{U\-B\-Setting}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Setting\-::\-U\-B\-Setting (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Settings} $\ast$}]{owner, }
+\item[{const Q\-String \&}]{p\-Domain, }
+\item[{const Q\-String \&}]{p\-Key, }
+\item[{const Q\-Variant \&}]{p\-Default\-Value}
+\end{DoxyParamCaption}
+)}}\label{d7/d24/class_u_b_setting_a2c9ee4f1decfd6d14d4d3839ad9d58b3}
+
+
+Definition at line 38 of file U\-B\-Setting.\-cpp.
+
+\hypertarget{class_u_b_setting_af42b0a45a5dbe3b1bbf82a8176094fba}{\index{U\-B\-Setting@{U\-B\-Setting}!$\sim$\-U\-B\-Setting@{$\sim$\-U\-B\-Setting}}
+\index{$\sim$\-U\-B\-Setting@{$\sim$\-U\-B\-Setting}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{$\sim$\-U\-B\-Setting}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Setting\-::$\sim$\-U\-B\-Setting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d7/d24/class_u_b_setting_af42b0a45a5dbe3b1bbf82a8176094fba}
+
+
+Definition at line 50 of file U\-B\-Setting.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_setting_a0f7d1e100a9d7d35a58c818a356702c7}{\index{U\-B\-Setting@{U\-B\-Setting}!changed@{changed}}
+\index{changed@{changed}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Setting\-::changed (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant}]{new\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d24/class_u_b_setting_a0f7d1e100a9d7d35a58c818a356702c7}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d24/class_u_b_setting_a0f7d1e100a9d7d35a58c818a356702c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_setting_a03f4735df16c7ef73eb27447e5de50b7}{\index{U\-B\-Setting@{U\-B\-Setting}!domain@{domain}}
+\index{domain@{domain}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{domain}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Setting\-::domain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d7/d24/class_u_b_setting_a03f4735df16c7ef73eb27447e5de50b7}
+
+
+Definition at line 46 of file U\-B\-Setting.\-h.
+
+\hypertarget{class_u_b_setting_afe671b284dd9f1e313e6f27df3ecd2a8}{\index{U\-B\-Setting@{U\-B\-Setting}!get@{get}}
+\index{get@{get}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Setting\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d7/d24/class_u_b_setting_afe671b284dd9f1e313e6f27df3ecd2a8}
+
+
+Definition at line 64 of file U\-B\-Setting.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{d7/d24/class_u_b_setting_afe671b284dd9f1e313e6f27df3ecd2a8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d24/class_u_b_setting_afe671b284dd9f1e313e6f27df3ecd2a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_setting_a9e7d9c5c26a4a11dc8c34bbd21fb8955}{\index{U\-B\-Setting@{U\-B\-Setting}!key@{key}}
+\index{key@{key}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Setting\-::key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d7/d24/class_u_b_setting_a9e7d9c5c26a4a11dc8c34bbd21fb8955}
+
+
+Definition at line 51 of file U\-B\-Setting.\-h.
+
+\hypertarget{class_u_b_setting_a7e6c2ccb08dd00f7b59e78f67112d086}{\index{U\-B\-Setting@{U\-B\-Setting}!path@{path}}
+\index{path@{path}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Setting\-::path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d7/d24/class_u_b_setting_a7e6c2ccb08dd00f7b59e78f67112d086}
+
+
+Definition at line 56 of file U\-B\-Setting.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d24/class_u_b_setting_a7e6c2ccb08dd00f7b59e78f67112d086_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_setting_a63ccc6724ba8befce05a946c3c5d3da9}{\index{U\-B\-Setting@{U\-B\-Setting}!reset@{reset}}
+\index{reset@{reset}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Setting\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d7/d24/class_u_b_setting_a63ccc6724ba8befce05a946c3c5d3da9}
+
+
+Reimplemented in \hyperlink{class_u_b_color_list_setting_ab64b8dc9b990c58d1776e419944715f9}{U\-B\-Color\-List\-Setting}.
+
+
+
+Definition at line 69 of file U\-B\-Setting.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d24/class_u_b_setting_a63ccc6724ba8befce05a946c3c5d3da9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_setting_a5dc12b91ffabb031a3a7a8322f5d30ed}{\index{U\-B\-Setting@{U\-B\-Setting}!set@{set}}
+\index{set@{set}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Setting\-::set (
+\begin{DoxyParamCaption}
+\item[{const Q\-Variant \&}]{p\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d7/d24/class_u_b_setting_a5dc12b91ffabb031a3a7a8322f5d30ed}
+
+
+Definition at line 55 of file U\-B\-Setting.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{d7/d24/class_u_b_setting_a5dc12b91ffabb031a3a7a8322f5d30ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d24/class_u_b_setting_a5dc12b91ffabb031a3a7a8322f5d30ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_setting_ace7b75378f8faad31ab6ce6ea1c7589b}{\index{U\-B\-Setting@{U\-B\-Setting}!set\-Bool@{set\-Bool}}
+\index{set\-Bool@{set\-Bool}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{set\-Bool}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Setting\-::set\-Bool (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d24/class_u_b_setting_ace7b75378f8faad31ab6ce6ea1c7589b}
+
+
+Definition at line 76 of file U\-B\-Setting.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d24/class_u_b_setting_ace7b75378f8faad31ab6ce6ea1c7589b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_setting_acac195b0a49f5f5e557495b6c7999c98}{\index{U\-B\-Setting@{U\-B\-Setting}!set\-Int@{set\-Int}}
+\index{set\-Int@{set\-Int}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{set\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Setting\-::set\-Int (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d24/class_u_b_setting_acac195b0a49f5f5e557495b6c7999c98}
+
+
+Definition at line 85 of file U\-B\-Setting.\-cpp.
+
+\hypertarget{class_u_b_setting_a452bf3be5cee45828397a0b141c9763f}{\index{U\-B\-Setting@{U\-B\-Setting}!set\-String@{set\-String}}
+\index{set\-String@{set\-String}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{set\-String}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Setting\-::set\-String (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d24/class_u_b_setting_a452bf3be5cee45828397a0b141c9763f}
+
+
+Definition at line 81 of file U\-B\-Setting.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d24/class_u_b_setting_a452bf3be5cee45828397a0b141c9763f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_setting_a932900881cb5c54769356ed68955e721}{\index{U\-B\-Setting@{U\-B\-Setting}!m\-Default\-Value@{m\-Default\-Value}}
+\index{m\-Default\-Value@{m\-Default\-Value}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{m\-Default\-Value}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Setting\-::m\-Default\-Value\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d24/class_u_b_setting_a932900881cb5c54769356ed68955e721}
+
+
+Definition at line 77 of file U\-B\-Setting.\-h.
+
+\hypertarget{class_u_b_setting_ab30419ac5f9361f4d65c6c998fdc33bd}{\index{U\-B\-Setting@{U\-B\-Setting}!m\-Domain@{m\-Domain}}
+\index{m\-Domain@{m\-Domain}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{m\-Domain}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Setting\-::m\-Domain\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d24/class_u_b_setting_ab30419ac5f9361f4d65c6c998fdc33bd}
+
+
+Definition at line 74 of file U\-B\-Setting.\-h.
+
+\hypertarget{class_u_b_setting_a4e0199b4b8d6a065b899396b16f89ddd}{\index{U\-B\-Setting@{U\-B\-Setting}!m\-Key@{m\-Key}}
+\index{m\-Key@{m\-Key}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{m\-Key}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Setting\-::m\-Key\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d24/class_u_b_setting_a4e0199b4b8d6a065b899396b16f89ddd}
+
+
+Definition at line 75 of file U\-B\-Setting.\-h.
+
+\hypertarget{class_u_b_setting_a2b0c7c506e9fb69725a68e54781eff08}{\index{U\-B\-Setting@{U\-B\-Setting}!m\-Owner@{m\-Owner}}
+\index{m\-Owner@{m\-Owner}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{m\-Owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Settings}$\ast$ U\-B\-Setting\-::m\-Owner\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d24/class_u_b_setting_a2b0c7c506e9fb69725a68e54781eff08}
+
+
+Definition at line 73 of file U\-B\-Setting.\-h.
+
+\hypertarget{class_u_b_setting_a0b6267dac1334d5478320fbff8eacd9f}{\index{U\-B\-Setting@{U\-B\-Setting}!m\-Path@{m\-Path}}
+\index{m\-Path@{m\-Path}!UBSetting@{U\-B\-Setting}}
+\subsubsection[{m\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Setting\-::m\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d24/class_u_b_setting_a0b6267dac1334d5478320fbff8eacd9f}
+
+
+Definition at line 76 of file U\-B\-Setting.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_setting_8h}{U\-B\-Setting.\-h}\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_setting_8cpp}{U\-B\-Setting.\-cpp}\end{DoxyCompactItemize}

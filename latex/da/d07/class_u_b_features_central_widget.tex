@@ -1,0 +1,580 @@
+\hypertarget{class_u_b_features_central_widget}{\section{U\-B\-Features\-Central\-Widget Class Reference}
+\label{da/d07/class_u_b_features_central_widget}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Features\-Widget.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Features\-Central\-Widget\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/de5/class_u_b_features_central_widget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437}{Stack\-Element} \{ \hyperlink{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437a7f0761779415ca79f7cf963c1e67dbbf}{Main\-List} =  0, 
+\hyperlink{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437aa245babedd2f5cbda9c10da8e25bb087}{Feature\-Properties\-List}, 
+\hyperlink{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437a3f6ab563704242bffdcb60bf001e6fa9}{Features\-Web\-View}
+ \}
+\item 
+enum \hyperlink{class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eb}{Add\-Widget} \{ \hyperlink{class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eba8e24ccf7c240770cd63d571d9d29c9c3}{New\-Folder\-Dialog} =  0, 
+\hyperlink{class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eba5c157ba7aa8fc67491a6626272042ba8}{Progress\-Bar\-Widget}
+ \}
+\item 
+enum \hyperlink{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561}{Add\-Widget\-State} \{ \hyperlink{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561a03c69e49665723b4e3eaf9a8f3dcd48d}{Non\-Modal} =  0, 
+\hyperlink{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561a8eb4cdb4b017e0003e494f2512452148}{Modal}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_features_central_widget_ab0e4b0dd2473676a380989113adac7c6}{show\-Additional\-Data} (\hyperlink{class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eb}{Add\-Widget} p\-Widget\-Type, \hyperlink{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561}{Add\-Widget\-State} p\-State=\hyperlink{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561a03c69e49665723b4e3eaf9a8f3dcd48d}{Non\-Modal})
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_features_central_widget_aa61720e91d2184e1c2914c740f35ccaa}{lock\-Main\-Widget} (bool p\-Lock)
+\item 
+void \hyperlink{class_u_b_features_central_widget_ae46c098eb5527213e9652e2756ee7d96}{create\-New\-Folder\-Signal} (Q\-String p\-Str)
+\item 
+void \hyperlink{class_u_b_features_central_widget_aaa2325599335ead8e94bfa1c7c3b9bb0}{send\-File\-Name\-List} (const Q\-String\-List lst)
+\item 
+void \hyperlink{class_u_b_features_central_widget_a97d2360e499a84e7d9becea5a2cc464c}{max\-Files\-Count\-Evaluated} (int p\-Value)
+\item 
+void \hyperlink{class_u_b_features_central_widget_afdbbd5f3d482c718f2745aa09aec03d7}{increase\-Status\-Bar\-Value} ()
+\item 
+void \hyperlink{class_u_b_features_central_widget_a9b95c22434b5b29fec0fc4f71600a235}{scan\-Category} (const Q\-String \&)
+\item 
+void \hyperlink{class_u_b_features_central_widget_a628444fc22d2bbac92fcaada3b87e9ee}{scan\-Path} (const Q\-String \&)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_features_central_widget_a0cd96fc53efb744812bf023b916264c1}{U\-B\-Features\-Central\-Widget} (Q\-Widget $\ast$parent=0)
+\item 
+void \hyperlink{class_u_b_features_central_widget_aeba1ba3f3e2568883ef04085ce599dc8}{set\-Slider\-Position} (int p\-Value)
+\item 
+\hyperlink{class_u_b_features_list_view}{U\-B\-Features\-List\-View} $\ast$ \hyperlink{class_u_b_features_central_widget_a4440885b4878fe1a1006af8dd757fe26}{list\-View} ()
+\item 
+void \hyperlink{class_u_b_features_central_widget_ae356e28bf5c15d16ee2f29b7ee7eac9f}{show\-Element} (const \hyperlink{class_u_b_feature}{U\-B\-Feature} \&feature, \hyperlink{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437}{Stack\-Element} p\-View)
+\item 
+void \hyperlink{class_u_b_features_central_widget_a5fa1fde0a8cbeb5be2354b94cfe84bb5}{switch\-To} (\hyperlink{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437}{Stack\-Element} p\-View)
+\item 
+void \hyperlink{class_u_b_features_central_widget_a0c4acf3318f579a2d0a37e3414c031ba}{set\-Properties\-Pixmap} (const Q\-Pixmap \&pix)
+\item 
+void \hyperlink{class_u_b_features_central_widget_af915403890dc5f08ea53dcfde152f4b3}{set\-Properties\-Thumbnail} (const Q\-Pixmap \&pix)
+\item 
+\hyperlink{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437}{Stack\-Element} \hyperlink{class_u_b_features_central_widget_a98441d9e9ea2004d11dd01fbc613cdd3}{current\-View} () const 
+\item 
+\hyperlink{class_u_b_feature}{U\-B\-Feature} \hyperlink{class_u_b_features_central_widget_a41c0bee6840023b41885c9982ae280db}{get\-Cur\-Element\-From\-Properties} ()
+\item 
+void \hyperlink{class_u_b_features_central_widget_a865450a5edb13efde5a38ad10d66287a}{set\-Locked\-Excluding\-Additional} (bool p\-Lock)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Stacked\-Widget $\ast$ \hyperlink{class_u_b_features_central_widget_ada7c605148002a7663c245e465480f80}{m\-Stacked\-Widget}
+\item 
+\hyperlink{class_u_b_features_navigator_widget}{U\-B\-Features\-Navigator\-Widget} $\ast$ \hyperlink{class_u_b_features_central_widget_a2acf43463b3d0d270fa72edc73f59d0f}{m\-Navigator}
+\item 
+\hyperlink{class_u_b_feature_properties}{U\-B\-Feature\-Properties} $\ast$ \hyperlink{class_u_b_features_central_widget_ac30b1892592bc9c4094d94cb45788412}{m\-Feature\-Properties}
+\item 
+\hyperlink{class_u_b_features_web_view}{U\-B\-Features\-Web\-View} $\ast$ \hyperlink{class_u_b_features_central_widget_a68e5fbe9c8c6fa56f1b0978ab88df5df}{web\-View}
+\item 
+Q\-Stacked\-Widget $\ast$ \hyperlink{class_u_b_features_central_widget_acf9e5e0db5d8f596115dc05aa9bd6179}{m\-Additional\-Data\-Container}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 199 of file U\-B\-Features\-Widget.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eb}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Add\-Widget@{Add\-Widget}}
+\index{Add\-Widget@{Add\-Widget}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{Add\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Features\-Central\-Widget\-::\-Add\-Widget}}}\label{da/d07/class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eb}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{New\-Folder\-Dialog@{New\-Folder\-Dialog}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!New\-Folder\-Dialog@{New\-Folder\-Dialog}}\item[{\em 
+\hypertarget{class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eba8e24ccf7c240770cd63d571d9d29c9c3}{New\-Folder\-Dialog}\label{da/d07/class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eba8e24ccf7c240770cd63d571d9d29c9c3}
+}]\index{Progress\-Bar\-Widget@{Progress\-Bar\-Widget}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Progress\-Bar\-Widget@{Progress\-Bar\-Widget}}\item[{\em 
+\hypertarget{class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eba5c157ba7aa8fc67491a6626272042ba8}{Progress\-Bar\-Widget}\label{da/d07/class_u_b_features_central_widget_af62bd6ce4889a318b274d11860faa5eba5c157ba7aa8fc67491a6626272042ba8}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 210 of file U\-B\-Features\-Widget.\-h.
+
+\hypertarget{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Add\-Widget\-State@{Add\-Widget\-State}}
+\index{Add\-Widget\-State@{Add\-Widget\-State}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{Add\-Widget\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Features\-Central\-Widget\-::\-Add\-Widget\-State}}}\label{da/d07/class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Non\-Modal@{Non\-Modal}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Non\-Modal@{Non\-Modal}}\item[{\em 
+\hypertarget{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561a03c69e49665723b4e3eaf9a8f3dcd48d}{Non\-Modal}\label{da/d07/class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561a03c69e49665723b4e3eaf9a8f3dcd48d}
+}]\index{Modal@{Modal}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Modal@{Modal}}\item[{\em 
+\hypertarget{class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561a8eb4cdb4b017e0003e494f2512452148}{Modal}\label{da/d07/class_u_b_features_central_widget_a2e55790bc26451af3e564d268f320561a8eb4cdb4b017e0003e494f2512452148}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 215 of file U\-B\-Features\-Widget.\-h.
+
+\hypertarget{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Stack\-Element@{Stack\-Element}}
+\index{Stack\-Element@{Stack\-Element}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{Stack\-Element}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Features\-Central\-Widget\-::\-Stack\-Element}}}\label{da/d07/class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Main\-List@{Main\-List}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Main\-List@{Main\-List}}\item[{\em 
+\hypertarget{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437a7f0761779415ca79f7cf963c1e67dbbf}{Main\-List}\label{da/d07/class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437a7f0761779415ca79f7cf963c1e67dbbf}
+}]\index{Feature\-Properties\-List@{Feature\-Properties\-List}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Feature\-Properties\-List@{Feature\-Properties\-List}}\item[{\em 
+\hypertarget{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437aa245babedd2f5cbda9c10da8e25bb087}{Feature\-Properties\-List}\label{da/d07/class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437aa245babedd2f5cbda9c10da8e25bb087}
+}]\index{Features\-Web\-View@{Features\-Web\-View}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!Features\-Web\-View@{Features\-Web\-View}}\item[{\em 
+\hypertarget{class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437a3f6ab563704242bffdcb60bf001e6fa9}{Features\-Web\-View}\label{da/d07/class_u_b_features_central_widget_a1657c232f5793258dcab8a3fd4bc9437a3f6ab563704242bffdcb60bf001e6fa9}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 204 of file U\-B\-Features\-Widget.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_features_central_widget_a0cd96fc53efb744812bf023b916264c1}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}}
+\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{U\-B\-Features\-Central\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Features\-Central\-Widget\-::\-U\-B\-Features\-Central\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_features_central_widget_a0cd96fc53efb744812bf023b916264c1}
+
+
+Definition at line 568 of file U\-B\-Features\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a0cd96fc53efb744812bf023b916264c1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_features_central_widget_ae46c098eb5527213e9652e2756ee7d96}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!create\-New\-Folder\-Signal@{create\-New\-Folder\-Signal}}
+\index{create\-New\-Folder\-Signal@{create\-New\-Folder\-Signal}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{create\-New\-Folder\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::create\-New\-Folder\-Signal (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{p\-Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_features_central_widget_ae46c098eb5527213e9652e2756ee7d96}
+\hypertarget{class_u_b_features_central_widget_a98441d9e9ea2004d11dd01fbc613cdd3}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!current\-View@{current\-View}}
+\index{current\-View@{current\-View}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{current\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stack\-Element} U\-B\-Features\-Central\-Widget\-::current\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d07/class_u_b_features_central_widget_a98441d9e9ea2004d11dd01fbc613cdd3}
+
+
+Definition at line 228 of file U\-B\-Features\-Widget.\-h.
+
+\hypertarget{class_u_b_features_central_widget_a41c0bee6840023b41885c9982ae280db}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!get\-Cur\-Element\-From\-Properties@{get\-Cur\-Element\-From\-Properties}}
+\index{get\-Cur\-Element\-From\-Properties@{get\-Cur\-Element\-From\-Properties}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{get\-Cur\-Element\-From\-Properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature} U\-B\-Features\-Central\-Widget\-::get\-Cur\-Element\-From\-Properties (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_features_central_widget_a41c0bee6840023b41885c9982ae280db}
+
+
+Definition at line 653 of file U\-B\-Features\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a41c0bee6840023b41885c9982ae280db_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_afdbbd5f3d482c718f2745aa09aec03d7}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!increase\-Status\-Bar\-Value@{increase\-Status\-Bar\-Value}}
+\index{increase\-Status\-Bar\-Value@{increase\-Status\-Bar\-Value}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{increase\-Status\-Bar\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::increase\-Status\-Bar\-Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_features_central_widget_afdbbd5f3d482c718f2745aa09aec03d7}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_afdbbd5f3d482c718f2745aa09aec03d7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_a4440885b4878fe1a1006af8dd757fe26}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!list\-View@{list\-View}}
+\index{list\-View@{list\-View}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{list\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Features\-List\-View}$\ast$ U\-B\-Features\-Central\-Widget\-::list\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d07/class_u_b_features_central_widget_a4440885b4878fe1a1006af8dd757fe26}
+
+
+Definition at line 223 of file U\-B\-Features\-Widget.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a4440885b4878fe1a1006af8dd757fe26_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a4440885b4878fe1a1006af8dd757fe26_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_aa61720e91d2184e1c2914c740f35ccaa}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!lock\-Main\-Widget@{lock\-Main\-Widget}}
+\index{lock\-Main\-Widget@{lock\-Main\-Widget}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{lock\-Main\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::lock\-Main\-Widget (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Lock}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_features_central_widget_aa61720e91d2184e1c2914c740f35ccaa}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_aa61720e91d2184e1c2914c740f35ccaa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_a97d2360e499a84e7d9becea5a2cc464c}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!max\-Files\-Count\-Evaluated@{max\-Files\-Count\-Evaluated}}
+\index{max\-Files\-Count\-Evaluated@{max\-Files\-Count\-Evaluated}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{max\-Files\-Count\-Evaluated}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::max\-Files\-Count\-Evaluated (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_features_central_widget_a97d2360e499a84e7d9becea5a2cc464c}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a97d2360e499a84e7d9becea5a2cc464c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_a9b95c22434b5b29fec0fc4f71600a235}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!scan\-Category@{scan\-Category}}
+\index{scan\-Category@{scan\-Category}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{scan\-Category}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::scan\-Category (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_features_central_widget_a9b95c22434b5b29fec0fc4f71600a235}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a9b95c22434b5b29fec0fc4f71600a235_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_a628444fc22d2bbac92fcaada3b87e9ee}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!scan\-Path@{scan\-Path}}
+\index{scan\-Path@{scan\-Path}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{scan\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::scan\-Path (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_features_central_widget_a628444fc22d2bbac92fcaada3b87e9ee}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a628444fc22d2bbac92fcaada3b87e9ee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_aaa2325599335ead8e94bfa1c7c3b9bb0}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!send\-File\-Name\-List@{send\-File\-Name\-List}}
+\index{send\-File\-Name\-List@{send\-File\-Name\-List}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{send\-File\-Name\-List}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::send\-File\-Name\-List (
+\begin{DoxyParamCaption}
+\item[{const Q\-String\-List}]{lst}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_features_central_widget_aaa2325599335ead8e94bfa1c7c3b9bb0}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_aaa2325599335ead8e94bfa1c7c3b9bb0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_a865450a5edb13efde5a38ad10d66287a}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!set\-Locked\-Excluding\-Additional@{set\-Locked\-Excluding\-Additional}}
+\index{set\-Locked\-Excluding\-Additional@{set\-Locked\-Excluding\-Additional}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{set\-Locked\-Excluding\-Additional}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::set\-Locked\-Excluding\-Additional (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Lock}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_features_central_widget_a865450a5edb13efde5a38ad10d66287a}
+
+
+Definition at line 672 of file U\-B\-Features\-Widget.\-cpp.
+
+\hypertarget{class_u_b_features_central_widget_a0c4acf3318f579a2d0a37e3414c031ba}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!set\-Properties\-Pixmap@{set\-Properties\-Pixmap}}
+\index{set\-Properties\-Pixmap@{set\-Properties\-Pixmap}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{set\-Properties\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::set\-Properties\-Pixmap (
+\begin{DoxyParamCaption}
+\item[{const Q\-Pixmap \&}]{pix}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_features_central_widget_a0c4acf3318f579a2d0a37e3414c031ba}
+
+
+Definition at line 643 of file U\-B\-Features\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a0c4acf3318f579a2d0a37e3414c031ba_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_af915403890dc5f08ea53dcfde152f4b3}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!set\-Properties\-Thumbnail@{set\-Properties\-Thumbnail}}
+\index{set\-Properties\-Thumbnail@{set\-Properties\-Thumbnail}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{set\-Properties\-Thumbnail}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::set\-Properties\-Thumbnail (
+\begin{DoxyParamCaption}
+\item[{const Q\-Pixmap \&}]{pix}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_features_central_widget_af915403890dc5f08ea53dcfde152f4b3}
+
+
+Definition at line 648 of file U\-B\-Features\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_af915403890dc5f08ea53dcfde152f4b3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_aeba1ba3f3e2568883ef04085ce599dc8}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!set\-Slider\-Position@{set\-Slider\-Position}}
+\index{set\-Slider\-Position@{set\-Slider\-Position}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{set\-Slider\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::set\-Slider\-Position (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d07/class_u_b_features_central_widget_aeba1ba3f3e2568883ef04085ce599dc8}
+
+
+Definition at line 221 of file U\-B\-Features\-Widget.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_aeba1ba3f3e2568883ef04085ce599dc8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_aeba1ba3f3e2568883ef04085ce599dc8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_ab0e4b0dd2473676a380989113adac7c6}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!show\-Additional\-Data@{show\-Additional\-Data}}
+\index{show\-Additional\-Data@{show\-Additional\-Data}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{show\-Additional\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::show\-Additional\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Add\-Widget}}]{p\-Widget\-Type, }
+\item[{{\bf Add\-Widget\-State}}]{p\-State = {\ttfamily {\bf Non\-Modal}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{da/d07/class_u_b_features_central_widget_ab0e4b0dd2473676a380989113adac7c6}
+
+
+Definition at line 658 of file U\-B\-Features\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_ab0e4b0dd2473676a380989113adac7c6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_ae356e28bf5c15d16ee2f29b7ee7eac9f}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!show\-Element@{show\-Element}}
+\index{show\-Element@{show\-Element}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{show\-Element}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::show\-Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-B\-Feature} \&}]{feature, }
+\item[{{\bf Stack\-Element}}]{p\-View}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_features_central_widget_ae356e28bf5c15d16ee2f29b7ee7eac9f}
+
+
+Definition at line 627 of file U\-B\-Features\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_ae356e28bf5c15d16ee2f29b7ee7eac9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_features_central_widget_a5fa1fde0a8cbeb5be2354b94cfe84bb5}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!switch\-To@{switch\-To}}
+\index{switch\-To@{switch\-To}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{switch\-To}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Features\-Central\-Widget\-::switch\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf Stack\-Element}}]{p\-View}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_features_central_widget_a5fa1fde0a8cbeb5be2354b94cfe84bb5}
+
+
+Definition at line 638 of file U\-B\-Features\-Widget.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_features_central_widget_a5fa1fde0a8cbeb5be2354b94cfe84bb5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_features_central_widget_acf9e5e0db5d8f596115dc05aa9bd6179}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!m\-Additional\-Data\-Container@{m\-Additional\-Data\-Container}}
+\index{m\-Additional\-Data\-Container@{m\-Additional\-Data\-Container}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{m\-Additional\-Data\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Stacked\-Widget$\ast$ U\-B\-Features\-Central\-Widget\-::m\-Additional\-Data\-Container}}\label{da/d07/class_u_b_features_central_widget_acf9e5e0db5d8f596115dc05aa9bd6179}
+
+
+Definition at line 238 of file U\-B\-Features\-Widget.\-h.
+
+\hypertarget{class_u_b_features_central_widget_ac30b1892592bc9c4094d94cb45788412}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!m\-Feature\-Properties@{m\-Feature\-Properties}}
+\index{m\-Feature\-Properties@{m\-Feature\-Properties}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{m\-Feature\-Properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Feature\-Properties}$\ast$ U\-B\-Features\-Central\-Widget\-::m\-Feature\-Properties}}\label{da/d07/class_u_b_features_central_widget_ac30b1892592bc9c4094d94cb45788412}
+
+
+Definition at line 235 of file U\-B\-Features\-Widget.\-h.
+
+\hypertarget{class_u_b_features_central_widget_a2acf43463b3d0d270fa72edc73f59d0f}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!m\-Navigator@{m\-Navigator}}
+\index{m\-Navigator@{m\-Navigator}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{m\-Navigator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Features\-Navigator\-Widget}$\ast$ U\-B\-Features\-Central\-Widget\-::m\-Navigator}}\label{da/d07/class_u_b_features_central_widget_a2acf43463b3d0d270fa72edc73f59d0f}
+
+
+Definition at line 234 of file U\-B\-Features\-Widget.\-h.
+
+\hypertarget{class_u_b_features_central_widget_ada7c605148002a7663c245e465480f80}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!m\-Stacked\-Widget@{m\-Stacked\-Widget}}
+\index{m\-Stacked\-Widget@{m\-Stacked\-Widget}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{m\-Stacked\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Stacked\-Widget$\ast$ U\-B\-Features\-Central\-Widget\-::m\-Stacked\-Widget}}\label{da/d07/class_u_b_features_central_widget_ada7c605148002a7663c245e465480f80}
+
+
+Definition at line 233 of file U\-B\-Features\-Widget.\-h.
+
+\hypertarget{class_u_b_features_central_widget_a68e5fbe9c8c6fa56f1b0978ab88df5df}{\index{U\-B\-Features\-Central\-Widget@{U\-B\-Features\-Central\-Widget}!web\-View@{web\-View}}
+\index{web\-View@{web\-View}!UBFeaturesCentralWidget@{U\-B\-Features\-Central\-Widget}}
+\subsubsection[{web\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Features\-Web\-View}$\ast$ U\-B\-Features\-Central\-Widget\-::web\-View}}\label{da/d07/class_u_b_features_central_widget_a68e5fbe9c8c6fa56f1b0978ab88df5df}
+
+
+Definition at line 236 of file U\-B\-Features\-Widget.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_features_widget_8h}{U\-B\-Features\-Widget.\-h}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_features_widget_8cpp}{U\-B\-Features\-Widget.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,718 @@
+\hypertarget{class_u_b_board_palette_manager}{\section{U\-B\-Board\-Palette\-Manager Class Reference}
+\label{dc/d38/class_u_b_board_palette_manager}\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Board\-Palette\-Manager.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Board\-Palette\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d3/d39/class_u_b_board_palette_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_palette_manager_abd4b0d70c42a21f9cad5e87f5de85b82}{active\-Scene\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_ae6c1074d6b9fffe113dde7a543f7a460}{container\-Resized} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_af6c40f066242ce9ef1927b5684dc1fa5}{add\-Item} (const Q\-Url \&p\-Url)
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a38750a722517f9e75799bd434739d9e0}{add\-Item} (const Q\-Pixmap \&p\-Pixmap, const Q\-Point\-F \&p=Q\-Point\-F(0.\-0, 0.\-0), qreal scale=1.\-0, const Q\-Url \&source\-Url=Q\-Url())
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a36b62f79ec7e8ecb4da952faf8e0ba56}{slot\-\_\-change\-Main\-Mode} (\hyperlink{class_u_b_application_controller_a72ac04dd6883ac94b53e8e1dcdf2af39}{U\-B\-Application\-Controller\-::\-Main\-Mode})
+\item 
+void \hyperlink{class_u_b_board_palette_manager_ac34e34de42e7826f10b024d97aeccd3b}{slot\-\_\-change\-Desktop\-Mode} (bool)
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a118cccd08976f403b2bf6a10a07f01d7}{toggle\-Erase\-Palette} (bool ckecked)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a420304b3f9b0f0172e3eb844f8d2fd8b}{connect\-To\-Doc\-Controller} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_board_palette_manager_ab2ca22bf5af16f59e273a72731a138ae}{U\-B\-Board\-Palette\-Manager} (Q\-Widget $\ast$container, \hyperlink{class_u_b_board_controller}{U\-B\-Board\-Controller} $\ast$controller)
+\item 
+virtual \hyperlink{class_u_b_board_palette_manager_ab51f4aedd5e620d5ca112c408565efdb}{$\sim$\-U\-B\-Board\-Palette\-Manager} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a04b4a969c6ee900494c45adb18ed3880}{setup\-Layout} ()
+\item 
+\hyperlink{class_u_b_left_palette}{U\-B\-Left\-Palette} $\ast$ \hyperlink{class_u_b_board_palette_manager_a76b2e12caaf9376bd39885acd5f797b2}{left\-Palette} ()
+\item 
+\hyperlink{class_u_b_right_palette}{U\-B\-Right\-Palette} $\ast$ \hyperlink{class_u_b_board_palette_manager_a6d89a033f9869ffd5c66b54f7492c938}{right\-Palette} ()
+\item 
+\hyperlink{class_u_b_features_widget}{U\-B\-Features\-Widget} $\ast$ \hyperlink{class_u_b_board_palette_manager_aa4f173738cc75b31d7cee042b238e69b}{features\-Widget} ()
+\item 
+\hyperlink{class_u_b_stylus_palette}{U\-B\-Stylus\-Palette} $\ast$ \hyperlink{class_u_b_board_palette_manager_a58a06d7c12b7f84d42fb6fa72018532a}{stylus\-Palette} ()
+\item 
+\hyperlink{class_u_b_action_palette}{U\-B\-Action\-Palette} $\ast$ \hyperlink{class_u_b_board_palette_manager_ab9f251e00e0fd53f7b23ef0ac02c864e}{add\-Item\-Palette} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_ae8dba03662fcca8a9d3db38ddade8b95}{show\-Virtual\-Keyboard} (bool show=true)
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a9b80a4d08af2acd43818cbf343a4d8d7}{init\-Palettes\-Pos\-At\-Startup} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_aa4ad780181b5a1259303f1ea54497613}{connect\-To\-Document\-Controller} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_ad3496e7ff0dd51fb7b1342a20d9dd798}{refresh\-Palettes} ()
+\item 
+\hyperlink{class_u_b_create_link_palette}{U\-B\-Create\-Link\-Palette} $\ast$ \hyperlink{class_u_b_board_palette_manager_ad11cb96ff392a1f70ec87784dcd80039}{link\-Palette} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_ade0277d7ebc8864c40b6dfde9f2091cf}{set\-Current\-Web\-Tools\-Palette} (\hyperlink{class_u_b_web_tools_palette}{U\-B\-Web\-Tools\-Palette} $\ast$palette)
+\item 
+\hyperlink{class_u_b_dock_teacher_guide_widget}{U\-B\-Dock\-Teacher\-Guide\-Widget} $\ast$ \hyperlink{class_u_b_board_palette_manager_acb290823de3668d04b0f653e5a8f01e8}{teacher\-Guide\-Dock\-Widget} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a10c1088a83192ce41c4cfa660886ae97}{process\-Paletters\-Widget} (\hyperlink{class_u_b_dock_palette}{U\-B\-Dock\-Palette} $\ast$paletter, \hyperlink{_u_b_dock_palette_widget_8h_af3b2828ed1bf91ad13c73e4e1b3b529e}{e\-U\-B\-Dock\-Palette\-Widget\-Mode} mode)
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a0fb81635b0f7c6afdcd982d61b9acc66}{change\-Mode} (\hyperlink{_u_b_dock_palette_widget_8h_af3b2828ed1bf91ad13c73e4e1b3b529e}{e\-U\-B\-Dock\-Palette\-Widget\-Mode} new\-Mode, bool is\-Init=false)
+\item 
+void \hyperlink{class_u_b_board_palette_manager_ac22e898462f43afb35fd929ef6523bfd}{start\-Downloads} ()
+\item 
+void \hyperlink{class_u_b_board_palette_manager_a9b076bd5e9b0066353797f86bcfe09f8}{stop\-Downloads} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_keyboard_palette}{U\-B\-Keyboard\-Palette} $\ast$ \hyperlink{class_u_b_board_palette_manager_a01a14c9ae374265868a703f63770b5df}{m\-Keyboard\-Palette}
+\item 
+\hyperlink{class_u_b_web_tools_palette}{U\-B\-Web\-Tools\-Palette} $\ast$ \hyperlink{class_u_b_board_palette_manager_a2e6478b9eff52e3d2681705a6db41a77}{m\-Web\-Tools\-Current\-Palette}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 54 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_board_palette_manager_ab2ca22bf5af16f59e273a72731a138ae}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}}
+\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{U\-B\-Board\-Palette\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Board\-Palette\-Manager\-::\-U\-B\-Board\-Palette\-Manager (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{container, }
+\item[{{\bf U\-B\-Board\-Controller} $\ast$}]{controller}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_ab2ca22bf5af16f59e273a72731a138ae}
+
+
+Definition at line 75 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+\hypertarget{class_u_b_board_palette_manager_ab51f4aedd5e620d5ca112c408565efdb}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!$\sim$\-U\-B\-Board\-Palette\-Manager@{$\sim$\-U\-B\-Board\-Palette\-Manager}}
+\index{$\sim$\-U\-B\-Board\-Palette\-Manager@{$\sim$\-U\-B\-Board\-Palette\-Manager}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{$\sim$\-U\-B\-Board\-Palette\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Board\-Palette\-Manager\-::$\sim$\-U\-B\-Board\-Palette\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dc/d38/class_u_b_board_palette_manager_ab51f4aedd5e620d5ca112c408565efdb}
+
+
+Definition at line 107 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_board_palette_manager_abd4b0d70c42a21f9cad5e87f5de85b82}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!active\-Scene\-Changed@{active\-Scene\-Changed}}
+\index{active\-Scene\-Changed@{active\-Scene\-Changed}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{active\-Scene\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::active\-Scene\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/d38/class_u_b_board_palette_manager_abd4b0d70c42a21f9cad5e87f5de85b82}
+
+
+Definition at line 553 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_abd4b0d70c42a21f9cad5e87f5de85b82_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_af6c40f066242ce9ef1927b5684dc1fa5}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!add\-Item@{add\-Item}}
+\index{add\-Item@{add\-Item}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{add\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::add\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/d38/class_u_b_board_palette_manager_af6c40f066242ce9ef1927b5684dc1fa5}
+
+
+Definition at line 644 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_af6c40f066242ce9ef1927b5684dc1fa5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_af6c40f066242ce9ef1927b5684dc1fa5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a38750a722517f9e75799bd434739d9e0}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!add\-Item@{add\-Item}}
+\index{add\-Item@{add\-Item}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{add\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::add\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Pixmap \&}]{p\-Pixmap, }
+\item[{const Q\-Point\-F \&}]{p = {\ttfamily QPointF(0.0,~0.0)}, }
+\item[{qreal}]{scale = {\ttfamily 1.0}, }
+\item[{const Q\-Url \&}]{source\-Url = {\ttfamily QUrl()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/d38/class_u_b_board_palette_manager_a38750a722517f9e75799bd434739d9e0}
+
+
+Definition at line 862 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a38750a722517f9e75799bd434739d9e0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_ab9f251e00e0fd53f7b23ef0ac02c864e}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!add\-Item\-Palette@{add\-Item\-Palette}}
+\index{add\-Item\-Palette@{add\-Item\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{add\-Item\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Action\-Palette}$\ast$ U\-B\-Board\-Palette\-Manager\-::add\-Item\-Palette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d38/class_u_b_board_palette_manager_ab9f251e00e0fd53f7b23ef0ac02c864e}
+
+
+Definition at line 67 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+\hypertarget{class_u_b_board_palette_manager_a0fb81635b0f7c6afdcd982d61b9acc66}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!change\-Mode@{change\-Mode}}
+\index{change\-Mode@{change\-Mode}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{change\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::change\-Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf e\-U\-B\-Dock\-Palette\-Widget\-Mode}}]{new\-Mode, }
+\item[{bool}]{is\-Init = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_a0fb81635b0f7c6afdcd982d61b9acc66}
+
+
+Definition at line 655 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a0fb81635b0f7c6afdcd982d61b9acc66_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a0fb81635b0f7c6afdcd982d61b9acc66_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a420304b3f9b0f0172e3eb844f8d2fd8b}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!connect\-To\-Doc\-Controller@{connect\-To\-Doc\-Controller}}
+\index{connect\-To\-Doc\-Controller@{connect\-To\-Doc\-Controller}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{connect\-To\-Doc\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::connect\-To\-Doc\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dc/d38/class_u_b_board_palette_manager_a420304b3f9b0f0172e3eb844f8d2fd8b}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a420304b3f9b0f0172e3eb844f8d2fd8b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_aa4ad780181b5a1259303f1ea54497613}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!connect\-To\-Document\-Controller@{connect\-To\-Document\-Controller}}
+\index{connect\-To\-Document\-Controller@{connect\-To\-Document\-Controller}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{connect\-To\-Document\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::connect\-To\-Document\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_aa4ad780181b5a1259303f1ea54497613}
+
+
+Definition at line 1004 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_aa4ad780181b5a1259303f1ea54497613_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_aa4ad780181b5a1259303f1ea54497613_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_ae6c1074d6b9fffe113dde7a543f7a460}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!container\-Resized@{container\-Resized}}
+\index{container\-Resized@{container\-Resized}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{container\-Resized}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::container\-Resized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/d38/class_u_b_board_palette_manager_ae6c1074d6b9fffe113dde7a543f7a460}
+
+
+Definition at line 493 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_ae6c1074d6b9fffe113dde7a543f7a460_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_ae6c1074d6b9fffe113dde7a543f7a460_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_aa4f173738cc75b31d7cee042b238e69b}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!features\-Widget@{features\-Widget}}
+\index{features\-Widget@{features\-Widget}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{features\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Features\-Widget}$\ast$ U\-B\-Board\-Palette\-Manager\-::features\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d38/class_u_b_board_palette_manager_aa4f173738cc75b31d7cee042b238e69b}
+
+
+Definition at line 65 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_aa4f173738cc75b31d7cee042b238e69b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a9b80a4d08af2acd43818cbf343a4d8d7}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!init\-Palettes\-Pos\-At\-Startup@{init\-Palettes\-Pos\-At\-Startup}}
+\index{init\-Palettes\-Pos\-At\-Startup@{init\-Palettes\-Pos\-At\-Startup}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{init\-Palettes\-Pos\-At\-Startup}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::init\-Palettes\-Pos\-At\-Startup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_a9b80a4d08af2acd43818cbf343a4d8d7}
+
+
+Definition at line 117 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a9b80a4d08af2acd43818cbf343a4d8d7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a76b2e12caaf9376bd39885acd5f797b2}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!left\-Palette@{left\-Palette}}
+\index{left\-Palette@{left\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{left\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Left\-Palette}$\ast$ U\-B\-Board\-Palette\-Manager\-::left\-Palette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d38/class_u_b_board_palette_manager_a76b2e12caaf9376bd39885acd5f797b2}
+
+
+Definition at line 63 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+\hypertarget{class_u_b_board_palette_manager_ad11cb96ff392a1f70ec87784dcd80039}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!link\-Palette@{link\-Palette}}
+\index{link\-Palette@{link\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{link\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Create\-Link\-Palette} $\ast$ U\-B\-Board\-Palette\-Manager\-::link\-Palette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_ad11cb96ff392a1f70ec87784dcd80039}
+
+
+Definition at line 1036 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+\hypertarget{class_u_b_board_palette_manager_a10c1088a83192ce41c4cfa660886ae97}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!process\-Paletters\-Widget@{process\-Paletters\-Widget}}
+\index{process\-Paletters\-Widget@{process\-Paletters\-Widget}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{process\-Paletters\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::process\-Paletters\-Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Dock\-Palette} $\ast$}]{paletter, }
+\item[{{\bf e\-U\-B\-Dock\-Palette\-Widget\-Mode}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_a10c1088a83192ce41c4cfa660886ae97}
+\hypertarget{class_u_b_board_palette_manager_ad3496e7ff0dd51fb7b1342a20d9dd798}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!refresh\-Palettes@{refresh\-Palettes}}
+\index{refresh\-Palettes@{refresh\-Palettes}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{refresh\-Palettes}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::refresh\-Palettes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_ad3496e7ff0dd51fb7b1342a20d9dd798}
+
+
+Definition at line 1009 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+\hypertarget{class_u_b_board_palette_manager_a6d89a033f9869ffd5c66b54f7492c938}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!right\-Palette@{right\-Palette}}
+\index{right\-Palette@{right\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{right\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Right\-Palette}$\ast$ U\-B\-Board\-Palette\-Manager\-::right\-Palette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d38/class_u_b_board_palette_manager_a6d89a033f9869ffd5c66b54f7492c938}
+
+
+Definition at line 64 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a6d89a033f9869ffd5c66b54f7492c938_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_ade0277d7ebc8864c40b6dfde9f2091cf}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!set\-Current\-Web\-Tools\-Palette@{set\-Current\-Web\-Tools\-Palette}}
+\index{set\-Current\-Web\-Tools\-Palette@{set\-Current\-Web\-Tools\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{set\-Current\-Web\-Tools\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::set\-Current\-Web\-Tools\-Palette (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Web\-Tools\-Palette} $\ast$}]{palette}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d38/class_u_b_board_palette_manager_ade0277d7ebc8864c40b6dfde9f2091cf}
+
+
+Definition at line 77 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_ade0277d7ebc8864c40b6dfde9f2091cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a04b4a969c6ee900494c45adb18ed3880}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!setup\-Layout@{setup\-Layout}}
+\index{setup\-Layout@{setup\-Layout}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{setup\-Layout}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::setup\-Layout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_a04b4a969c6ee900494c45adb18ed3880}
+
+
+Definition at line 122 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a04b4a969c6ee900494c45adb18ed3880_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_ae8dba03662fcca8a9d3db38ddade8b95}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!show\-Virtual\-Keyboard@{show\-Virtual\-Keyboard}}
+\index{show\-Virtual\-Keyboard@{show\-Virtual\-Keyboard}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{show\-Virtual\-Keyboard}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::show\-Virtual\-Keyboard (
+\begin{DoxyParamCaption}
+\item[{bool}]{show = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_ae8dba03662fcca8a9d3db38ddade8b95}
+
+
+Definition at line 971 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_ae8dba03662fcca8a9d3db38ddade8b95_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_ac34e34de42e7826f10b024d97aeccd3b}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!slot\-\_\-change\-Desktop\-Mode@{slot\-\_\-change\-Desktop\-Mode}}
+\index{slot\-\_\-change\-Desktop\-Mode@{slot\-\_\-change\-Desktop\-Mode}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{slot\-\_\-change\-Desktop\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::slot\-\_\-change\-Desktop\-Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-Desktop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/d38/class_u_b_board_palette_manager_ac34e34de42e7826f10b024d97aeccd3b}
+
+
+Definition at line 216 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_ac34e34de42e7826f10b024d97aeccd3b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a36b62f79ec7e8ecb4da952faf8e0ba56}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!slot\-\_\-change\-Main\-Mode@{slot\-\_\-change\-Main\-Mode}}
+\index{slot\-\_\-change\-Main\-Mode@{slot\-\_\-change\-Main\-Mode}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{slot\-\_\-change\-Main\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::slot\-\_\-change\-Main\-Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Application\-Controller\-::\-Main\-Mode}}]{main\-Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/d38/class_u_b_board_palette_manager_a36b62f79ec7e8ecb4da952faf8e0ba56}
+
+
+Definition at line 178 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a36b62f79ec7e8ecb4da952faf8e0ba56_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_ac22e898462f43afb35fd929ef6523bfd}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!start\-Downloads@{start\-Downloads}}
+\index{start\-Downloads@{start\-Downloads}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{start\-Downloads}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::start\-Downloads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_ac22e898462f43afb35fd929ef6523bfd}
+
+
+Definition at line 1015 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_ac22e898462f43afb35fd929ef6523bfd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_ac22e898462f43afb35fd929ef6523bfd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a9b076bd5e9b0066353797f86bcfe09f8}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!stop\-Downloads@{stop\-Downloads}}
+\index{stop\-Downloads@{stop\-Downloads}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{stop\-Downloads}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::stop\-Downloads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d38/class_u_b_board_palette_manager_a9b076bd5e9b0066353797f86bcfe09f8}
+
+
+Definition at line 1025 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a9b076bd5e9b0066353797f86bcfe09f8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a58a06d7c12b7f84d42fb6fa72018532a}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!stylus\-Palette@{stylus\-Palette}}
+\index{stylus\-Palette@{stylus\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{stylus\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Stylus\-Palette}$\ast$ U\-B\-Board\-Palette\-Manager\-::stylus\-Palette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d38/class_u_b_board_palette_manager_a58a06d7c12b7f84d42fb6fa72018532a}
+
+
+Definition at line 66 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+\hypertarget{class_u_b_board_palette_manager_acb290823de3668d04b0f653e5a8f01e8}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!teacher\-Guide\-Dock\-Widget@{teacher\-Guide\-Dock\-Widget}}
+\index{teacher\-Guide\-Dock\-Widget@{teacher\-Guide\-Dock\-Widget}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{teacher\-Guide\-Dock\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Dock\-Teacher\-Guide\-Widget}$\ast$ U\-B\-Board\-Palette\-Manager\-::teacher\-Guide\-Dock\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d38/class_u_b_board_palette_manager_acb290823de3668d04b0f653e5a8f01e8}
+
+
+Definition at line 80 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_acb290823de3668d04b0f653e5a8f01e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_palette_manager_a118cccd08976f403b2bf6a10a07f01d7}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!toggle\-Erase\-Palette@{toggle\-Erase\-Palette}}
+\index{toggle\-Erase\-Palette@{toggle\-Erase\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{toggle\-Erase\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Palette\-Manager\-::toggle\-Erase\-Palette (
+\begin{DoxyParamCaption}
+\item[{bool}]{ckecked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/d38/class_u_b_board_palette_manager_a118cccd08976f403b2bf6a10a07f01d7}
+
+
+Definition at line 600 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a118cccd08976f403b2bf6a10a07f01d7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d38/class_u_b_board_palette_manager_a118cccd08976f403b2bf6a10a07f01d7_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_board_palette_manager_a01a14c9ae374265868a703f63770b5df}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!m\-Keyboard\-Palette@{m\-Keyboard\-Palette}}
+\index{m\-Keyboard\-Palette@{m\-Keyboard\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{m\-Keyboard\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Keyboard\-Palette}$\ast$ U\-B\-Board\-Palette\-Manager\-::m\-Keyboard\-Palette}}\label{dc/d38/class_u_b_board_palette_manager_a01a14c9ae374265868a703f63770b5df}
+
+
+Definition at line 73 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+\hypertarget{class_u_b_board_palette_manager_a2e6478b9eff52e3d2681705a6db41a77}{\index{U\-B\-Board\-Palette\-Manager@{U\-B\-Board\-Palette\-Manager}!m\-Web\-Tools\-Current\-Palette@{m\-Web\-Tools\-Current\-Palette}}
+\index{m\-Web\-Tools\-Current\-Palette@{m\-Web\-Tools\-Current\-Palette}!UBBoardPaletteManager@{U\-B\-Board\-Palette\-Manager}}
+\subsubsection[{m\-Web\-Tools\-Current\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Web\-Tools\-Palette}$\ast$ U\-B\-Board\-Palette\-Manager\-::m\-Web\-Tools\-Current\-Palette}}\label{dc/d38/class_u_b_board_palette_manager_a2e6478b9eff52e3d2681705a6db41a77}
+
+
+Definition at line 78 of file U\-B\-Board\-Palette\-Manager.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_board_palette_manager_8h}{U\-B\-Board\-Palette\-Manager.\-h}\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_board_palette_manager_8cpp}{U\-B\-Board\-Palette\-Manager.\-cpp}\end{DoxyCompactItemize}

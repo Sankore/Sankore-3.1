@@ -1,0 +1,282 @@
+\hypertarget{classmerge__lib_1_1_page_element_handler}{\section{merge\-\_\-lib\-:\-:Page\-Element\-Handler Class Reference}
+\label{da/d91/classmerge__lib_1_1_page_element_handler}\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+}
+
+
+{\ttfamily \#include $<$Page\-Element\-Handler.\-h$>$}
+
+
+
+Inheritance diagram for merge\-\_\-lib\-:\-:Page\-Element\-Handler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d8f/classmerge__lib_1_1_page_element_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for merge\-\_\-lib\-:\-:Page\-Element\-Handler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{de/d2c/classmerge__lib_1_1_page_element_handler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmerge__lib_1_1_page_element_handler_ada309a9bc3d0047d0038680cee9ac5be}{Page\-Element\-Handler} (\hyperlink{classmerge__lib_1_1_object}{Object} $\ast$page)
+\item 
+virtual \hyperlink{classmerge__lib_1_1_page_element_handler_abe2c1e2d98d7d383b4cd98f1873b1c58}{$\sim$\-Page\-Element\-Handler} ()
+\item 
+void \hyperlink{classmerge__lib_1_1_page_element_handler_a2f70456aa95c0e2a30c749b5eb7b15a0}{add\-Next\-Handler} (\hyperlink{classmerge__lib_1_1_page_element_handler}{Page\-Element\-Handler} $\ast$next\-Handler)
+\item 
+void \hyperlink{classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771}{process\-Object\-Content} ()
+\item 
+void \hyperlink{classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3}{change\-Object\-Content} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmerge__lib_1_1_page_element_handler_a814dec7a28f99916d36d0ad3ca41336c}{\-\_\-set\-Handler\-Name} (const std\-::string \&handler\-Name)
+\item 
+unsigned int \hyperlink{classmerge__lib_1_1_page_element_handler_a2164e57a4264777fa75b091967c2cb23}{\-\_\-find\-End\-Of\-Element\-Content} (unsigned int start\-Of\-Page\-Element)
+\item 
+void \hyperlink{classmerge__lib_1_1_page_element_handler_ad1ea53e426b1cbba56d7c1b1ec475461}{\-\_\-create\-All\-Page\-Fields\-Set} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmerge__lib_1_1_object}{Object} $\ast$ \hyperlink{classmerge__lib_1_1_page_element_handler_a52d5dd4a33423e5da12fb0317303e6ab}{\-\_\-page}
+\item 
+std\-::string \& \hyperlink{classmerge__lib_1_1_page_element_handler_a489f2d42f7bcdae272b81caa93badf14}{\-\_\-page\-Content}
+\item 
+std\-::string \hyperlink{classmerge__lib_1_1_page_element_handler_a794f4d90a0b09b60d60b00c0ebde68c6}{\-\_\-handler\-Name}
+\item 
+\hyperlink{classmerge__lib_1_1_page_element_handler}{Page\-Element\-Handler} $\ast$ \hyperlink{classmerge__lib_1_1_page_element_handler_a3f2f76c9182628763aafd37a2020b6e0}{\-\_\-next\-Handler}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file Page\-Element\-Handler.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmerge__lib_1_1_page_element_handler_ada309a9bc3d0047d0038680cee9ac5be}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!Page\-Element\-Handler@{Page\-Element\-Handler}}
+\index{Page\-Element\-Handler@{Page\-Element\-Handler}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{Page\-Element\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}merge\-\_\-lib\-::\-Page\-Element\-Handler\-::\-Page\-Element\-Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Object} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_ada309a9bc3d0047d0038680cee9ac5be}
+
+
+Definition at line 42 of file Page\-Element\-Handler.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d91/classmerge__lib_1_1_page_element_handler_ada309a9bc3d0047d0038680cee9ac5be_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_abe2c1e2d98d7d383b4cd98f1873b1c58}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!$\sim$\-Page\-Element\-Handler@{$\sim$\-Page\-Element\-Handler}}
+\index{$\sim$\-Page\-Element\-Handler@{$\sim$\-Page\-Element\-Handler}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{$\sim$\-Page\-Element\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}virtual merge\-\_\-lib\-::\-Page\-Element\-Handler\-::$\sim$\-Page\-Element\-Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_abe2c1e2d98d7d383b4cd98f1873b1c58}
+
+
+Definition at line 46 of file Page\-Element\-Handler.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmerge__lib_1_1_page_element_handler_ad1ea53e426b1cbba56d7c1b1ec475461}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!\-\_\-create\-All\-Page\-Fields\-Set@{\-\_\-create\-All\-Page\-Fields\-Set}}
+\index{\-\_\-create\-All\-Page\-Fields\-Set@{\-\_\-create\-All\-Page\-Fields\-Set}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{\-\_\-create\-All\-Page\-Fields\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void Page\-Element\-Handler\-::\-\_\-create\-All\-Page\-Fields\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_ad1ea53e426b1cbba56d7c1b1ec475461}
+
+
+Definition at line 32 of file Page\-Element\-Handler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d91/classmerge__lib_1_1_page_element_handler_ad1ea53e426b1cbba56d7c1b1ec475461_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a2164e57a4264777fa75b091967c2cb23}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!\-\_\-find\-End\-Of\-Element\-Content@{\-\_\-find\-End\-Of\-Element\-Content}}
+\index{\-\_\-find\-End\-Of\-Element\-Content@{\-\_\-find\-End\-Of\-Element\-Content}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{\-\_\-find\-End\-Of\-Element\-Content}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Page\-Element\-Handler\-::\-\_\-find\-End\-Of\-Element\-Content (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{start\-Of\-Page\-Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a2164e57a4264777fa75b091967c2cb23}
+
+
+Definition at line 79 of file Page\-Element\-Handler.\-cpp.
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a814dec7a28f99916d36d0ad3ca41336c}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!\-\_\-set\-Handler\-Name@{\-\_\-set\-Handler\-Name}}
+\index{\-\_\-set\-Handler\-Name@{\-\_\-set\-Handler\-Name}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{\-\_\-set\-Handler\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void merge\-\_\-lib\-::\-Page\-Element\-Handler\-::\-\_\-set\-Handler\-Name (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{handler\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a814dec7a28f99916d36d0ad3ca41336c}
+
+
+Definition at line 77 of file Page\-Element\-Handler.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d91/classmerge__lib_1_1_page_element_handler_a814dec7a28f99916d36d0ad3ca41336c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a2f70456aa95c0e2a30c749b5eb7b15a0}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!add\-Next\-Handler@{add\-Next\-Handler}}
+\index{add\-Next\-Handler@{add\-Next\-Handler}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{add\-Next\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void merge\-\_\-lib\-::\-Page\-Element\-Handler\-::add\-Next\-Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Page\-Element\-Handler} $\ast$}]{next\-Handler}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a2f70456aa95c0e2a30c749b5eb7b15a0}
+
+
+Definition at line 50 of file Page\-Element\-Handler.\-h.
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!change\-Object\-Content@{change\-Object\-Content}}
+\index{change\-Object\-Content@{change\-Object\-Content}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{change\-Object\-Content}]{\setlength{\rightskip}{0pt plus 5cm}void merge\-\_\-lib\-::\-Page\-Element\-Handler\-::change\-Object\-Content (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3}
+
+
+Definition at line 64 of file Page\-Element\-Handler.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{da/d91/classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{da/d91/classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!process\-Object\-Content@{process\-Object\-Content}}
+\index{process\-Object\-Content@{process\-Object\-Content}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{process\-Object\-Content}]{\setlength{\rightskip}{0pt plus 5cm}void merge\-\_\-lib\-::\-Page\-Element\-Handler\-::process\-Object\-Content (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771}
+
+
+Definition at line 55 of file Page\-Element\-Handler.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{da/d91/classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d91/classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmerge__lib_1_1_page_element_handler_a794f4d90a0b09b60d60b00c0ebde68c6}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!\-\_\-handler\-Name@{\-\_\-handler\-Name}}
+\index{\-\_\-handler\-Name@{\-\_\-handler\-Name}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{\-\_\-handler\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string merge\-\_\-lib\-::\-Page\-Element\-Handler\-::\-\_\-handler\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a794f4d90a0b09b60d60b00c0ebde68c6}
+
+
+Definition at line 87 of file Page\-Element\-Handler.\-h.
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a3f2f76c9182628763aafd37a2020b6e0}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!\-\_\-next\-Handler@{\-\_\-next\-Handler}}
+\index{\-\_\-next\-Handler@{\-\_\-next\-Handler}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{\-\_\-next\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\-Element\-Handler}$\ast$ merge\-\_\-lib\-::\-Page\-Element\-Handler\-::\-\_\-next\-Handler\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a3f2f76c9182628763aafd37a2020b6e0}
+
+
+Definition at line 88 of file Page\-Element\-Handler.\-h.
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a52d5dd4a33423e5da12fb0317303e6ab}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!\-\_\-page@{\-\_\-page}}
+\index{\-\_\-page@{\-\_\-page}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object}$\ast$ merge\-\_\-lib\-::\-Page\-Element\-Handler\-::\-\_\-page\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a52d5dd4a33423e5da12fb0317303e6ab}
+
+
+Definition at line 85 of file Page\-Element\-Handler.\-h.
+
+\hypertarget{classmerge__lib_1_1_page_element_handler_a489f2d42f7bcdae272b81caa93badf14}{\index{merge\-\_\-lib\-::\-Page\-Element\-Handler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}!\-\_\-page\-Content@{\-\_\-page\-Content}}
+\index{\-\_\-page\-Content@{\-\_\-page\-Content}!merge_lib::PageElementHandler@{merge\-\_\-lib\-::\-Page\-Element\-Handler}}
+\subsubsection[{\-\_\-page\-Content}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string\& merge\-\_\-lib\-::\-Page\-Element\-Handler\-::\-\_\-page\-Content\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d91/classmerge__lib_1_1_page_element_handler_a489f2d42f7bcdae272b81caa93badf14}
+
+
+Definition at line 86 of file Page\-Element\-Handler.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/pdf-\/merger/\hyperlink{_page_element_handler_8h}{Page\-Element\-Handler.\-h}\item 
+Sankore-\/3.\-1/src/pdf-\/merger/\hyperlink{_page_element_handler_8cpp}{Page\-Element\-Handler.\-cpp}\end{DoxyCompactItemize}

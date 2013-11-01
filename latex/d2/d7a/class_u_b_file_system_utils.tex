@@ -1,0 +1,925 @@
+\hypertarget{class_u_b_file_system_utils}{\section{U\-B\-File\-System\-Utils Class Reference}
+\label{d2/d7a/class_u_b_file_system_utils}\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-File\-System\-Utils.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-File\-System\-Utils\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{da/d8a/class_u_b_file_system_utils__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_file_system_utils_a9a71530a67f2171738be6ef6b155f19c}{U\-B\-File\-System\-Utils} ()
+\item 
+virtual \hyperlink{class_u_b_file_system_utils_aedc2f5f3de89c1f06be1dde7bd2b50dd}{$\sim$\-U\-B\-File\-System\-Utils} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a91642f5fb7ac65e5528ecb75724ee7d3}{remove\-Local\-File\-Prefix} (Q\-String input)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a6610153e0b047c180af280a834dd084d}{default\-Temp\-Dir\-Name} ()
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a077517980ac1053b24899243e3bc44f6}{default\-Temp\-Dir\-Path} ()
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_aa3c7075cc43aa4b8dcefd7d06fab2d6a}{create\-Temp\-Dir} (const Q\-String \&template\-String=\hyperlink{class_u_b_file_system_utils_a6610153e0b047c180af280a834dd084d}{default\-Temp\-Dir\-Name}(), bool auto\-Delete\-On\-Exit=true)
+\item 
+static void \hyperlink{class_u_b_file_system_utils_a03cdf9e2730f398f84c8da53d723d024}{cleanup\-Ghost\-Temp\-Folders} (const Q\-String \&template\-String=\hyperlink{class_u_b_file_system_utils_a6610153e0b047c180af280a834dd084d}{default\-Temp\-Dir\-Name}())
+\item 
+static void \hyperlink{class_u_b_file_system_utils_a4b0389e1d6df341057d6d1db1ab590e2}{delete\-All\-Temp\-Dir\-Created\-During\-Session} ()
+\item 
+static Q\-File\-Info\-List \hyperlink{class_u_b_file_system_utils_a3292b192159361f21da665022c20ee32}{all\-Elements\-In\-Directory} (const Q\-String \&p\-Dir\-Path)
+\item 
+static Q\-String\-List \hyperlink{class_u_b_file_system_utils_a0116cc080d1cb3ef854125e0088c8cf6}{all\-Files} (const Q\-String \&p\-Dir\-Path, const bool is\-Recurive=true)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_aff7b8489683cdec07a5ad696571138f4}{delete\-Dir} (const Q\-String \&p\-Dir\-Path)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_a8289391e8ff8c366727435455aa8a733}{copy\-Dir} (const Q\-String \&p\-Source\-Dir\-Path, const Q\-String \&p\-Target\-Dir\-Path)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_ac51caad73e9faf9a9828a6034fa139da}{move\-Dir} (const Q\-String \&p\-Source\-Dir\-Path, const Q\-String \&p\-Target\-Dir\-Path)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_a21fb5e77a59d910b4aa94a0e71f04578}{copy\-File} (const Q\-String \&source, const Q\-String \&destination, bool overwrite=false)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_a6fbd2eaf3729eead6e9a8a85e230af96}{copy} (const Q\-String \&source, const Q\-String \&Destination, bool overwrite=false)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a19522888b07624d5f7e562be99dd8a80}{clean\-Name} (const Q\-String \&name)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a9ac90c91a836a34b5ccec620d8e4273a}{digit\-File\-Format} (const Q\-String \&s, int digit)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_aad4d371b5e6400a42c44bec5f26ec5fd}{thumbnail\-Path} (const Q\-String \&path)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a272b08b8f8907091333982fb53a7aa2a}{mime\-Type\-From\-File\-Name} (const Q\-String \&filename)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a91f25baf989fa9da017a954239b4c0a2}{file\-Extension\-From\-Mime\-Type} (const Q\-String \&p\-Mime\-Type)
+\item 
+static \hyperlink{struct_u_b_mime_type_af592aa3f37be1b755c0d5dfd7dd76acb}{U\-B\-Mime\-Type\-::\-Enum} \hyperlink{class_u_b_file_system_utils_a793ff3d89661ee4663b8a2f055b87b60}{mime\-Type\-From\-String} (const Q\-String \&type\-String)
+\item 
+static \hyperlink{struct_u_b_mime_type_af592aa3f37be1b755c0d5dfd7dd76acb}{U\-B\-Mime\-Type\-::\-Enum} \hyperlink{class_u_b_file_system_utils_a9267f8eb18511dbb78f57726576d1fcc}{mime\-Type\-From\-Url} (const Q\-Url \&url)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_af850f64fdd630fc78510c856f00ffa4f}{normalize\-File\-Path} (const Q\-String \&p\-File\-Path)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a8dcbcd889a2c79495470ff11f955c0b6}{extension} (const Q\-String \&filaname)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a058e2a16e0ff622693dc39732aa9f10b}{last\-Path\-Component} (const Q\-String \&path)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_aeb559ce0c1f2d4b139560e170f657faa}{get\-First\-Existing\-File\-From\-List} (const Q\-String \&path, const Q\-String\-List \&files)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_a049d58dceb4a7577f547cf3d577f253a}{is\-A\-Zip\-File} (Q\-String \&file\-Path)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_af4f559f6c95a1203817da275b57e7057}{delete\-File} (const Q\-String \&path)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_a2249a0e78e47e7b80ad832e70f6bbc2c}{compress\-Dir\-In\-Zip} (const Q\-Dir \&p\-Dir, const Q\-String \&p\-Dest\-Dir, Qua\-Zip\-File $\ast$p\-Out\-Zip\-File, bool p\-Root\-Document\-Folder, \hyperlink{class_u_b_processing_progress_listener}{U\-B\-Processing\-Progress\-Listener} $\ast$progress\-Listener=0)
+\item 
+static bool \hyperlink{class_u_b_file_system_utils_a6442ee44c32b953a061c8a1c8eedae21}{expand\-Zip\-To\-Dir} (const Q\-File \&p\-Zip\-File, const Q\-Dir \&p\-Target\-Dir)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_ac3a45445247b14038983563c51bac44e}{md5\-In\-Hex} (const Q\-Byte\-Array \&p\-Byte\-Array)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a5eaed296475147649ad47df58beaeee2}{md5} (const Q\-Byte\-Array \&p\-Byte\-Array)
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a522e9e79b25670b953544584b368ce60}{next\-Available\-File\-Name} (const Q\-String \&filename, const Q\-String \&inter=Q\-String(\char`\"{}\char`\"{}))
+\item 
+static Q\-String \hyperlink{class_u_b_file_system_utils_a2ac72615beed06db3a4b5bb847a77822}{read\-Text\-File} (Q\-String path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file U\-B\-File\-System\-Utils.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_file_system_utils_a9a71530a67f2171738be6ef6b155f19c}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}}
+\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{U\-B\-File\-System\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-File\-System\-Utils\-::\-U\-B\-File\-System\-Utils (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/d7a/class_u_b_file_system_utils_a9a71530a67f2171738be6ef6b155f19c}
+
+
+Definition at line 44 of file U\-B\-File\-System\-Utils.\-cpp.
+
+\hypertarget{class_u_b_file_system_utils_aedc2f5f3de89c1f06be1dde7bd2b50dd}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!$\sim$\-U\-B\-File\-System\-Utils@{$\sim$\-U\-B\-File\-System\-Utils}}
+\index{$\sim$\-U\-B\-File\-System\-Utils@{$\sim$\-U\-B\-File\-System\-Utils}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{$\sim$\-U\-B\-File\-System\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-File\-System\-Utils\-::$\sim$\-U\-B\-File\-System\-Utils (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d2/d7a/class_u_b_file_system_utils_aedc2f5f3de89c1f06be1dde7bd2b50dd}
+
+
+Definition at line 50 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_file_system_utils_a3292b192159361f21da665022c20ee32}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!all\-Elements\-In\-Directory@{all\-Elements\-In\-Directory}}
+\index{all\-Elements\-In\-Directory@{all\-Elements\-In\-Directory}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{all\-Elements\-In\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}Q\-File\-Info\-List U\-B\-File\-System\-Utils\-::all\-Elements\-In\-Directory (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Dir\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a3292b192159361f21da665022c20ee32}
+
+
+Definition at line 235 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a3292b192159361f21da665022c20ee32_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a0116cc080d1cb3ef854125e0088c8cf6}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!all\-Files@{all\-Files}}
+\index{all\-Files@{all\-Files}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{all\-Files}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-File\-System\-Utils\-::all\-Files (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Dir\-Path, }
+\item[{const bool}]{is\-Recurive = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a0116cc080d1cb3ef854125e0088c8cf6}
+
+
+Definition at line 213 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a0116cc080d1cb3ef854125e0088c8cf6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a19522888b07624d5f7e562be99dd8a80}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!clean\-Name@{clean\-Name}}
+\index{clean\-Name@{clean\-Name}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{clean\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::clean\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a19522888b07624d5f7e562be99dd8a80}
+
+
+Definition at line 329 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a19522888b07624d5f7e562be99dd8a80_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a03cdf9e2730f398f84c8da53d723d024}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!cleanup\-Ghost\-Temp\-Folders@{cleanup\-Ghost\-Temp\-Folders}}
+\index{cleanup\-Ghost\-Temp\-Folders@{cleanup\-Ghost\-Temp\-Folders}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{cleanup\-Ghost\-Temp\-Folders}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-File\-System\-Utils\-::cleanup\-Ghost\-Temp\-Folders (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{template\-String = {\ttfamily {\bf default\-Temp\-Dir\-Name}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a03cdf9e2730f398f84c8da53d723d024}
+
+
+Definition at line 199 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a03cdf9e2730f398f84c8da53d723d024_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a2249a0e78e47e7b80ad832e70f6bbc2c}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!compress\-Dir\-In\-Zip@{compress\-Dir\-In\-Zip}}
+\index{compress\-Dir\-In\-Zip@{compress\-Dir\-In\-Zip}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{compress\-Dir\-In\-Zip}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::compress\-Dir\-In\-Zip (
+\begin{DoxyParamCaption}
+\item[{const Q\-Dir \&}]{p\-Dir, }
+\item[{const Q\-String \&}]{p\-Dest\-Dir, }
+\item[{Qua\-Zip\-File $\ast$}]{p\-Out\-Zip\-File, }
+\item[{bool}]{p\-Root\-Document\-Folder, }
+\item[{{\bf U\-B\-Processing\-Progress\-Listener} $\ast$}]{progress\-Listener = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a2249a0e78e47e7b80ad832e70f6bbc2c}
+Compress a source directory in a zip file. \begin{DoxyItemize}
+\item p\-Dir the directory to add in zip \item p\-Dest\-Path the path inside the zip. Attention, if path is not empty it must end by a /. \item p\-Out\-Zip\-File the zip file we want to populate with the directory \item \hyperlink{class_u_b_processing_progress_listener}{U\-B\-Processing\-Progress\-Listener} an object listening to the compression progress \begin{DoxyReturn}{Returns}
+bool. true if compression is successful. 
+\end{DoxyReturn}
+\end{DoxyItemize}
+
+
+Definition at line 650 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a2249a0e78e47e7b80ad832e70f6bbc2c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a2249a0e78e47e7b80ad832e70f6bbc2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a6fbd2eaf3729eead6e9a8a85e230af96}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!copy@{copy}}
+\index{copy@{copy}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::copy (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{source, }
+\item[{const Q\-String \&}]{Destination, }
+\item[{bool}]{overwrite = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a6fbd2eaf3729eead6e9a8a85e230af96}
+
+
+Definition at line 113 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d2/d7a/class_u_b_file_system_utils_a6fbd2eaf3729eead6e9a8a85e230af96_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a6fbd2eaf3729eead6e9a8a85e230af96_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a8289391e8ff8c366727435455aa8a733}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!copy\-Dir@{copy\-Dir}}
+\index{copy\-Dir@{copy\-Dir}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{copy\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::copy\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Source\-Dir\-Path, }
+\item[{const Q\-String \&}]{p\-Target\-Dir\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a8289391e8ff8c366727435455aa8a733}
+
+
+Definition at line 275 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a8289391e8ff8c366727435455aa8a733_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a21fb5e77a59d910b4aa94a0e71f04578}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!copy\-File@{copy\-File}}
+\index{copy\-File@{copy\-File}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{copy\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::copy\-File (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{source, }
+\item[{const Q\-String \&}]{destination, }
+\item[{bool}]{overwrite = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a21fb5e77a59d910b4aa94a0e71f04578}
+
+
+Definition at line 88 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a21fb5e77a59d910b4aa94a0e71f04578_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a21fb5e77a59d910b4aa94a0e71f04578_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_aa3c7075cc43aa4b8dcefd7d06fab2d6a}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!create\-Temp\-Dir@{create\-Temp\-Dir}}
+\index{create\-Temp\-Dir@{create\-Temp\-Dir}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{create\-Temp\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::create\-Temp\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{template\-String = {\ttfamily {\bf default\-Temp\-Dir\-Name}()}, }
+\item[{bool}]{auto\-Delete\-On\-Exit = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_aa3c7075cc43aa4b8dcefd7d06fab2d6a}
+
+
+Definition at line 134 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_aa3c7075cc43aa4b8dcefd7d06fab2d6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a6610153e0b047c180af280a834dd084d}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!default\-Temp\-Dir\-Name@{default\-Temp\-Dir\-Name}}
+\index{default\-Temp\-Dir\-Name@{default\-Temp\-Dir\-Name}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{default\-Temp\-Dir\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static Q\-String U\-B\-File\-System\-Utils\-::default\-Temp\-Dir\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a6610153e0b047c180af280a834dd084d}
+
+
+Definition at line 46 of file U\-B\-File\-System\-Utils.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d2/d7a/class_u_b_file_system_utils_a6610153e0b047c180af280a834dd084d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a077517980ac1053b24899243e3bc44f6}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!default\-Temp\-Dir\-Path@{default\-Temp\-Dir\-Path}}
+\index{default\-Temp\-Dir\-Path@{default\-Temp\-Dir\-Path}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{default\-Temp\-Dir\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::default\-Temp\-Dir\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a077517980ac1053b24899243e3bc44f6}
+
+
+Definition at line 129 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d2/d7a/class_u_b_file_system_utils_a077517980ac1053b24899243e3bc44f6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a4b0389e1d6df341057d6d1db1ab590e2}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!delete\-All\-Temp\-Dir\-Created\-During\-Session@{delete\-All\-Temp\-Dir\-Created\-During\-Session}}
+\index{delete\-All\-Temp\-Dir\-Created\-During\-Session@{delete\-All\-Temp\-Dir\-Created\-During\-Session}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{delete\-All\-Temp\-Dir\-Created\-During\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-File\-System\-Utils\-::delete\-All\-Temp\-Dir\-Created\-During\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a4b0389e1d6df341057d6d1db1ab590e2}
+
+
+Definition at line 187 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a4b0389e1d6df341057d6d1db1ab590e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a4b0389e1d6df341057d6d1db1ab590e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_aff7b8489683cdec07a5ad696571138f4}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!delete\-Dir@{delete\-Dir}}
+\index{delete\-Dir@{delete\-Dir}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{delete\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::delete\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Dir\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_aff7b8489683cdec07a5ad696571138f4}
+
+
+Definition at line 245 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_aff7b8489683cdec07a5ad696571138f4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_af4f559f6c95a1203817da275b57e7057}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!delete\-File@{delete\-File}}
+\index{delete\-File@{delete\-File}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{delete\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::delete\-File (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_af4f559f6c95a1203817da275b57e7057}
+
+
+Definition at line 122 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d2/d7a/class_u_b_file_system_utils_af4f559f6c95a1203817da275b57e7057_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a9ac90c91a836a34b5ccec620d8e4273a}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!digit\-File\-Format@{digit\-File\-Format}}
+\index{digit\-File\-Format@{digit\-File\-Format}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{digit\-File\-Format}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::digit\-File\-Format (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{s, }
+\item[{int}]{digit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a9ac90c91a836a34b5ccec620d8e4273a}
+
+
+Definition at line 353 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a9ac90c91a836a34b5ccec620d8e4273a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a9ac90c91a836a34b5ccec620d8e4273a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a6442ee44c32b953a061c8a1c8eedae21}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!expand\-Zip\-To\-Dir@{expand\-Zip\-To\-Dir}}
+\index{expand\-Zip\-To\-Dir@{expand\-Zip\-To\-Dir}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{expand\-Zip\-To\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::expand\-Zip\-To\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-File \&}]{p\-Zip\-File, }
+\item[{const Q\-Dir \&}]{p\-Target\-Dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a6442ee44c32b953a061c8a1c8eedae21}
+
+
+Definition at line 739 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a6442ee44c32b953a061c8a1c8eedae21_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a8dcbcd889a2c79495470ff11f955c0b6}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!extension@{extension}}
+\index{extension@{extension}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{extension}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::extension (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filaname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a8dcbcd889a2c79495470ff11f955c0b6}
+
+
+Definition at line 368 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a8dcbcd889a2c79495470ff11f955c0b6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a91f25baf989fa9da017a954239b4c0a2}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!file\-Extension\-From\-Mime\-Type@{file\-Extension\-From\-Mime\-Type}}
+\index{file\-Extension\-From\-Mime\-Type@{file\-Extension\-From\-Mime\-Type}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{file\-Extension\-From\-Mime\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::file\-Extension\-From\-Mime\-Type (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Mime\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a91f25baf989fa9da017a954239b4c0a2}
+
+
+Definition at line 484 of file U\-B\-File\-System\-Utils.\-cpp.
+
+\hypertarget{class_u_b_file_system_utils_aeb559ce0c1f2d4b139560e170f657faa}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!get\-First\-Existing\-File\-From\-List@{get\-First\-Existing\-File\-From\-List}}
+\index{get\-First\-Existing\-File\-From\-List@{get\-First\-Existing\-File\-From\-List}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{get\-First\-Existing\-File\-From\-List}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::get\-First\-Existing\-File\-From\-List (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{path, }
+\item[{const Q\-String\-List \&}]{files}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_aeb559ce0c1f2d4b139560e170f657faa}
+
+
+Definition at line 623 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_aeb559ce0c1f2d4b139560e170f657faa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a049d58dceb4a7577f547cf3d577f253a}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!is\-A\-Zip\-File@{is\-A\-Zip\-File}}
+\index{is\-A\-Zip\-File@{is\-A\-Zip\-File}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{is\-A\-Zip\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::is\-A\-Zip\-File (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{file\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a049d58dceb4a7577f547cf3d577f253a}
+
+
+Definition at line 71 of file U\-B\-File\-System\-Utils.\-cpp.
+
+\hypertarget{class_u_b_file_system_utils_a058e2a16e0ff622693dc39732aa9f10b}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!last\-Path\-Component@{last\-Path\-Component}}
+\index{last\-Path\-Component@{last\-Path\-Component}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{last\-Path\-Component}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::last\-Path\-Component (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a058e2a16e0ff622693dc39732aa9f10b}
+
+
+Definition at line 385 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d2/d7a/class_u_b_file_system_utils_a058e2a16e0ff622693dc39732aa9f10b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a5eaed296475147649ad47df58beaeee2}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!md5@{md5}}
+\index{md5@{md5}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{md5}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::md5 (
+\begin{DoxyParamCaption}
+\item[{const Q\-Byte\-Array \&}]{p\-Byte\-Array}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a5eaed296475147649ad47df58beaeee2}
+
+
+Definition at line 850 of file U\-B\-File\-System\-Utils.\-cpp.
+
+\hypertarget{class_u_b_file_system_utils_ac3a45445247b14038983563c51bac44e}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!md5\-In\-Hex@{md5\-In\-Hex}}
+\index{md5\-In\-Hex@{md5\-In\-Hex}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{md5\-In\-Hex}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::md5\-In\-Hex (
+\begin{DoxyParamCaption}
+\item[{const Q\-Byte\-Array \&}]{p\-Byte\-Array}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_ac3a45445247b14038983563c51bac44e}
+
+
+Definition at line 838 of file U\-B\-File\-System\-Utils.\-cpp.
+
+\hypertarget{class_u_b_file_system_utils_a272b08b8f8907091333982fb53a7aa2a}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!mime\-Type\-From\-File\-Name@{mime\-Type\-From\-File\-Name}}
+\index{mime\-Type\-From\-File\-Name@{mime\-Type\-From\-File\-Name}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{mime\-Type\-From\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::mime\-Type\-From\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a272b08b8f8907091333982fb53a7aa2a}
+
+
+Definition at line 406 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a272b08b8f8907091333982fb53a7aa2a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a272b08b8f8907091333982fb53a7aa2a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a793ff3d89661ee4663b8a2f055b87b60}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!mime\-Type\-From\-String@{mime\-Type\-From\-String}}
+\index{mime\-Type\-From\-String@{mime\-Type\-From\-String}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{mime\-Type\-From\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Mime\-Type\-::\-Enum} U\-B\-File\-System\-Utils\-::mime\-Type\-From\-String (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{type\-String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a793ff3d89661ee4663b8a2f055b87b60}
+
+
+Definition at line 559 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a793ff3d89661ee4663b8a2f055b87b60_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a9267f8eb18511dbb78f57726576d1fcc}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!mime\-Type\-From\-Url@{mime\-Type\-From\-Url}}
+\index{mime\-Type\-From\-Url@{mime\-Type\-From\-Url}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{mime\-Type\-From\-Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Mime\-Type\-::\-Enum} U\-B\-File\-System\-Utils\-::mime\-Type\-From\-Url (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a9267f8eb18511dbb78f57726576d1fcc}
+
+
+Definition at line 618 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a9267f8eb18511dbb78f57726576d1fcc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a9267f8eb18511dbb78f57726576d1fcc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_ac51caad73e9faf9a9828a6034fa139da}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!move\-Dir@{move\-Dir}}
+\index{move\-Dir@{move\-Dir}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{move\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-File\-System\-Utils\-::move\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Source\-Dir\-Path, }
+\item[{const Q\-String \&}]{p\-Target\-Dir\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_ac51caad73e9faf9a9828a6034fa139da}
+
+
+Definition at line 313 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d2/d7a/class_u_b_file_system_utils_ac51caad73e9faf9a9828a6034fa139da_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a522e9e79b25670b953544584b368ce60}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!next\-Available\-File\-Name@{next\-Available\-File\-Name}}
+\index{next\-Available\-File\-Name@{next\-Available\-File\-Name}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{next\-Available\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::next\-Available\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename, }
+\item[{const Q\-String \&}]{inter = {\ttfamily QString(\char`\"{}\char`\"{})}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a522e9e79b25670b953544584b368ce60}
+
+
+Definition at line 159 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a522e9e79b25670b953544584b368ce60_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_af850f64fdd630fc78510c856f00ffa4f}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!normalize\-File\-Path@{normalize\-File\-Path}}
+\index{normalize\-File\-Path@{normalize\-File\-Path}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{normalize\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::normalize\-File\-Path (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-File\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_af850f64fdd630fc78510c856f00ffa4f}
+
+
+Definition at line 347 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_af850f64fdd630fc78510c856f00ffa4f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a2ac72615beed06db3a4b5bb847a77822}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!read\-Text\-File@{read\-Text\-File}}
+\index{read\-Text\-File@{read\-Text\-File}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{read\-Text\-File}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::read\-Text\-File (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a2ac72615beed06db3a4b5bb847a77822}
+
+
+Definition at line 868 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a2ac72615beed06db3a4b5bb847a77822_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_a91642f5fb7ac65e5528ecb75724ee7d3}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!remove\-Local\-File\-Prefix@{remove\-Local\-File\-Prefix}}
+\index{remove\-Local\-File\-Prefix@{remove\-Local\-File\-Prefix}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{remove\-Local\-File\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::remove\-Local\-File\-Prefix (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_a91642f5fb7ac65e5528ecb75724ee7d3}
+
+
+Definition at line 56 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_a91642f5fb7ac65e5528ecb75724ee7d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_file_system_utils_aad4d371b5e6400a42c44bec5f26ec5fd}{\index{U\-B\-File\-System\-Utils@{U\-B\-File\-System\-Utils}!thumbnail\-Path@{thumbnail\-Path}}
+\index{thumbnail\-Path@{thumbnail\-Path}!UBFileSystemUtils@{U\-B\-File\-System\-Utils}}
+\subsubsection[{thumbnail\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-File\-System\-Utils\-::thumbnail\-Path (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d2/d7a/class_u_b_file_system_utils_aad4d371b5e6400a42c44bec5f26ec5fd}
+
+
+Definition at line 360 of file U\-B\-File\-System\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7a/class_u_b_file_system_utils_aad4d371b5e6400a42c44bec5f26ec5fd_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/frameworks/\hyperlink{_u_b_file_system_utils_8h}{U\-B\-File\-System\-Utils.\-h}\item 
+Sankore-\/3.\-1/src/frameworks/\hyperlink{_u_b_file_system_utils_8cpp}{U\-B\-File\-System\-Utils.\-cpp}\end{DoxyCompactItemize}

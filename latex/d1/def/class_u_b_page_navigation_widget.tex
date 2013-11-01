@@ -1,0 +1,261 @@
+\hypertarget{class_u_b_page_navigation_widget}{\section{U\-B\-Page\-Navigation\-Widget Class Reference}
+\label{d1/def/class_u_b_page_navigation_widget}\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Page\-Navigation\-Widget.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Page\-Navigation\-Widget\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d3/d5b/class_u_b_page_navigation_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Page\-Navigation\-Widget\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d4/d50/class_u_b_page_navigation_widget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_page_navigation_widget_abb36254c65368f6f40b2d9dc84948574}{set\-Page\-Number} (int current, int total)
+\begin{DoxyCompactList}\small\item\em Set the page number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_page_navigation_widget_adef784f6e27a1a2ed08e54fab89300d6}{resize\-Request} (Q\-Resize\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_page_navigation_widget_a26f09b6db659eef3ab1fa3b857459b94}{U\-B\-Page\-Navigation\-Widget} (Q\-Widget $\ast$parent=0, const char $\ast$\hyperlink{class_u_b_dock_palette_widget_a1c7779c0584c0d2541b4c05acc1ffbbb}{name}=\char`\"{}U\-B\-Page\-Navigation\-Widget\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_u_b_page_navigation_widget_a5e5839945df49e97fc8097601d98e31d}{$\sim$\-U\-B\-Page\-Navigation\-Widget} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_b_page_navigation_widget_a5e198d18c1d90d7e0ef1f9425c4c3ab8}{refresh} ()
+\begin{DoxyCompactList}\small\item\em Refresh the thumbnails widget. \end{DoxyCompactList}\item 
+bool \hyperlink{class_u_b_page_navigation_widget_a55ecb91d1b812e633fd48c6a62038a96}{visible\-In\-Mode} (\hyperlink{_u_b_dock_palette_widget_8h_af3b2828ed1bf91ad13c73e4e1b3b529e}{e\-U\-B\-Dock\-Palette\-Widget\-Mode} mode)
+\item 
+Q\-Pixmap \hyperlink{class_u_b_page_navigation_widget_ab7aa80f9d977b641ffe4a1c8edd456b3}{icon\-To\-Left} () const 
+\item 
+Q\-Pixmap \hyperlink{class_u_b_page_navigation_widget_a165996a524aa6a8416b82f1575212ac4}{icon\-To\-Right} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_page_navigation_widget_ac1bc151ba98ff3623a67fc23c08f8125}{timer\-Event} (Q\-Timer\-Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Notify a timer event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file U\-B\-Page\-Navigation\-Widget.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_page_navigation_widget_a26f09b6db659eef3ab1fa3b857459b94}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}}
+\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{U\-B\-Page\-Navigation\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Page\-Navigation\-Widget\-::\-U\-B\-Page\-Navigation\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{name = {\ttfamily \char`\"{}UBPageNavigationWidget\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{d1/def/class_u_b_page_navigation_widget_a26f09b6db659eef3ab1fa3b857459b94}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & as the parent widget \\
+\hline
+{\em name} & as the object name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file U\-B\-Page\-Navigation\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/class_u_b_page_navigation_widget_a26f09b6db659eef3ab1fa3b857459b94_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_page_navigation_widget_a5e5839945df49e97fc8097601d98e31d}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!$\sim$\-U\-B\-Page\-Navigation\-Widget@{$\sim$\-U\-B\-Page\-Navigation\-Widget}}
+\index{$\sim$\-U\-B\-Page\-Navigation\-Widget@{$\sim$\-U\-B\-Page\-Navigation\-Widget}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{$\sim$\-U\-B\-Page\-Navigation\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Page\-Navigation\-Widget\-::$\sim$\-U\-B\-Page\-Navigation\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/def/class_u_b_page_navigation_widget_a5e5839945df49e97fc8097601d98e31d}
+
+
+Destructor. 
+
+
+
+Definition at line 88 of file U\-B\-Page\-Navigation\-Widget.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_page_navigation_widget_ab7aa80f9d977b641ffe4a1c8edd456b3}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!icon\-To\-Left@{icon\-To\-Left}}
+\index{icon\-To\-Left@{icon\-To\-Left}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{icon\-To\-Left}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap U\-B\-Page\-Navigation\-Widget\-::icon\-To\-Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d1/def/class_u_b_page_navigation_widget_ab7aa80f9d977b641ffe4a1c8edd456b3}
+
+
+Reimplemented from \hyperlink{class_u_b_dock_palette_widget_a722c531dded95f4c728e92628fcef619}{U\-B\-Dock\-Palette\-Widget}.
+
+
+
+Definition at line 52 of file U\-B\-Page\-Navigation\-Widget.\-h.
+
+\hypertarget{class_u_b_page_navigation_widget_a165996a524aa6a8416b82f1575212ac4}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!icon\-To\-Right@{icon\-To\-Right}}
+\index{icon\-To\-Right@{icon\-To\-Right}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{icon\-To\-Right}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap U\-B\-Page\-Navigation\-Widget\-::icon\-To\-Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d1/def/class_u_b_page_navigation_widget_a165996a524aa6a8416b82f1575212ac4}
+
+
+Reimplemented from \hyperlink{class_u_b_dock_palette_widget_ac0e6c3f6468d43b112e5fc81bf2127dd}{U\-B\-Dock\-Palette\-Widget}.
+
+
+
+Definition at line 53 of file U\-B\-Page\-Navigation\-Widget.\-h.
+
+\hypertarget{class_u_b_page_navigation_widget_a5e198d18c1d90d7e0ef1f9425c4c3ab8}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!refresh@{refresh}}
+\index{refresh@{refresh}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{refresh}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Page\-Navigation\-Widget\-::refresh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/def/class_u_b_page_navigation_widget_a5e198d18c1d90d7e0ef1f9425c4c3ab8}
+
+
+Refresh the thumbnails widget. 
+
+
+
+Definition at line 123 of file U\-B\-Page\-Navigation\-Widget.\-cpp.
+
+\hypertarget{class_u_b_page_navigation_widget_adef784f6e27a1a2ed08e54fab89300d6}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!resize\-Request@{resize\-Request}}
+\index{resize\-Request@{resize\-Request}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{resize\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Page\-Navigation\-Widget\-::resize\-Request (
+\begin{DoxyParamCaption}
+\item[{Q\-Resize\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/def/class_u_b_page_navigation_widget_adef784f6e27a1a2ed08e54fab89300d6}
+\hypertarget{class_u_b_page_navigation_widget_abb36254c65368f6f40b2d9dc84948574}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!set\-Page\-Number@{set\-Page\-Number}}
+\index{set\-Page\-Number@{set\-Page\-Number}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{set\-Page\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Page\-Navigation\-Widget\-::set\-Page\-Number (
+\begin{DoxyParamCaption}
+\item[{int}]{current, }
+\item[{int}]{total}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/def/class_u_b_page_navigation_widget_abb36254c65368f6f40b2d9dc84948574}
+
+
+Set the page number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & as the current page \\
+\hline
+{\em total} & as the total number of pages \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file U\-B\-Page\-Navigation\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/class_u_b_page_navigation_widget_abb36254c65368f6f40b2d9dc84948574_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/def/class_u_b_page_navigation_widget_abb36254c65368f6f40b2d9dc84948574_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_page_navigation_widget_ac1bc151ba98ff3623a67fc23c08f8125}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!timer\-Event@{timer\-Event}}
+\index{timer\-Event@{timer\-Event}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{timer\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Page\-Navigation\-Widget\-::timer\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Timer\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/def/class_u_b_page_navigation_widget_ac1bc151ba98ff3623a67fc23c08f8125}
+
+
+Notify a timer event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & as the timer event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file U\-B\-Page\-Navigation\-Widget.\-cpp.
+
+\hypertarget{class_u_b_page_navigation_widget_a55ecb91d1b812e633fd48c6a62038a96}{\index{U\-B\-Page\-Navigation\-Widget@{U\-B\-Page\-Navigation\-Widget}!visible\-In\-Mode@{visible\-In\-Mode}}
+\index{visible\-In\-Mode@{visible\-In\-Mode}!UBPageNavigationWidget@{U\-B\-Page\-Navigation\-Widget}}
+\subsubsection[{visible\-In\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Page\-Navigation\-Widget\-::visible\-In\-Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf e\-U\-B\-Dock\-Palette\-Widget\-Mode}}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d1/def/class_u_b_page_navigation_widget_a55ecb91d1b812e633fd48c6a62038a96}
+
+
+Implements \hyperlink{class_u_b_dock_palette_widget_ad009164555cbcfdf26f52e5939a1d843}{U\-B\-Dock\-Palette\-Widget}.
+
+
+
+Definition at line 48 of file U\-B\-Page\-Navigation\-Widget.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_page_navigation_widget_8h}{U\-B\-Page\-Navigation\-Widget.\-h}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_page_navigation_widget_8cpp}{U\-B\-Page\-Navigation\-Widget.\-cpp}\end{DoxyCompactItemize}

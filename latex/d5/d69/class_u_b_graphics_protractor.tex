@@ -1,0 +1,543 @@
+\hypertarget{class_u_b_graphics_protractor}{\section{U\-B\-Graphics\-Protractor Class Reference}
+\label{d5/d69/class_u_b_graphics_protractor}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Protractor.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Protractor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d41/class_u_b_graphics_protractor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Protractor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/d36/class_u_b_graphics_protractor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2a}{Tool} \{ \\*
+\hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aadda68ffda666ca217d7a9c29f92d7ef1}{None}, 
+\hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa6c896df40c1fc0e0309dde214b0b9b15}{Move}, 
+\hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa9f0842051fbdbdf5d4d9a54690550403}{Resize}, 
+\hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aae3f83a8e658da5357b90c5fa7f6fa37f}{Rotate}, 
+\\*
+\hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa05ff8f533d9dc59066e62371e33f5c83}{Reset}, 
+\hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa2ac7409f7fc8e38ab40d25a2b8f56098}{Close}, 
+\hyperlink{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aab03fdac6bbd8d36345adc928c1762875}{Move\-Marker}
+ \}
+\item 
+enum \{ \hyperlink{class_u_b_graphics_protractor_a120aea43b8b800ccd9a5e9ac37337d27a2a20daaf55182ebaa2c14a314859ee08}{Type} =  U\-B\-Graphics\-Item\-Type\-:\-:Protractor\-Item\-Type
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_protractor_aa6b25a89c234aa8a672b2c3c4dfbc198}{U\-B\-Graphics\-Protractor} ()
+\item 
+qreal \hyperlink{class_u_b_graphics_protractor_a15353b85e594aa185d56f748409b88a4}{angle} ()
+\item 
+qreal \hyperlink{class_u_b_graphics_protractor_afccf0ab5e313136401f06c59929c9a75}{marker\-Angle} ()
+\item 
+void \hyperlink{class_u_b_graphics_protractor_ab9c6822def18b4c6c4e34656499e7460}{set\-Angle} (qreal \hyperlink{class_u_b_graphics_protractor_a15353b85e594aa185d56f748409b88a4}{angle})
+\item 
+void \hyperlink{class_u_b_graphics_protractor_a227204f8d0322912d717e7d4c425da34}{set\-Marker\-Angle} (qreal \hyperlink{class_u_b_graphics_protractor_a15353b85e594aa185d56f748409b88a4}{angle})
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_protractor_a36c6ab509cee1d80a9e717b07bf2eda1}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_a4ac849a2b7e1dd840b694082e20fd6ed}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+virtual int \hyperlink{class_u_b_graphics_protractor_a800a03d895d6d3961b46c7a1a8774670}{type} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_a76a1e119106684d95877a04e297ccf2f}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$style\-Option, Q\-Widget $\ast$widget)
+\item 
+virtual Q\-Variant \hyperlink{class_u_b_graphics_protractor_a292bd7b720d1b588454f4a1c3af11b42}{item\-Change} (Graphics\-Item\-Change change, const Q\-Variant \&value)
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_a4ef2805010e225a9cfd3be51928cc08f}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_ae34c1777e0d101e2743dd9a8b85c981e}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_aa2da2187e8a0353e7afdf8655878cbdc}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_a186c7a7e2e4d3bfe7da892c5b531c0aa}{hover\-Enter\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_a3761b010a7f13673507f482253b34da1}{hover\-Leave\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_protractor_aba6cc819f99a86311386c00755125cc3}{hover\-Move\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+virtual Q\-Painter\-Path \hyperlink{class_u_b_graphics_protractor_a3ca82d4c0b21e40ae5e197347bccdc3a}{shape} () const 
+\item 
+Q\-Rect\-F \hyperlink{class_u_b_graphics_protractor_a88d81ac6c1399d2507ae16bc86a11e36}{bounding\-Rect} () const 
+\item 
+void \hyperlink{class_u_b_graphics_protractor_a8d379cb46950fbe841fd0092e8f25681}{paint\-Graduations} (Q\-Painter $\ast$painter)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file U\-B\-Graphics\-Protractor.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_protractor_a120aea43b8b800ccd9a5e9ac37337d27}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{d5/d69/class_u_b_graphics_protractor_a120aea43b8b800ccd9a5e9ac37337d27}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Type@{Type}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Type@{Type}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a120aea43b8b800ccd9a5e9ac37337d27a2a20daaf55182ebaa2c14a314859ee08}{Type}\label{d5/d69/class_u_b_graphics_protractor_a120aea43b8b800ccd9a5e9ac37337d27a2a20daaf55182ebaa2c14a314859ee08}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 53 of file U\-B\-Graphics\-Protractor.\-h.
+
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2a}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Tool@{Tool}}
+\index{Tool@{Tool}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{Tool}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Graphics\-Protractor\-::\-Tool}}}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2a}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{None@{None}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!None@{None}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aadda68ffda666ca217d7a9c29f92d7ef1}{None}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aadda68ffda666ca217d7a9c29f92d7ef1}
+}]\index{Move@{Move}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Move@{Move}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa6c896df40c1fc0e0309dde214b0b9b15}{Move}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa6c896df40c1fc0e0309dde214b0b9b15}
+}]\index{Resize@{Resize}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Resize@{Resize}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa9f0842051fbdbdf5d4d9a54690550403}{Resize}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa9f0842051fbdbdf5d4d9a54690550403}
+}]\index{Rotate@{Rotate}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Rotate@{Rotate}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aae3f83a8e658da5357b90c5fa7f6fa37f}{Rotate}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aae3f83a8e658da5357b90c5fa7f6fa37f}
+}]\index{Reset@{Reset}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Reset@{Reset}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa05ff8f533d9dc59066e62371e33f5c83}{Reset}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa05ff8f533d9dc59066e62371e33f5c83}
+}]\index{Close@{Close}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Close@{Close}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa2ac7409f7fc8e38ab40d25a2b8f56098}{Close}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aa2ac7409f7fc8e38ab40d25a2b8f56098}
+}]\index{Move\-Marker@{Move\-Marker}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!Move\-Marker@{Move\-Marker}}\item[{\em 
+\hypertarget{class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aab03fdac6bbd8d36345adc928c1762875}{Move\-Marker}\label{d5/d69/class_u_b_graphics_protractor_a69b12b14ced3d244ca3fa13b56061a2aab03fdac6bbd8d36345adc928c1762875}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 43 of file U\-B\-Graphics\-Protractor.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_protractor_aa6b25a89c234aa8a672b2c3c4dfbc198}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}}
+\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{U\-B\-Graphics\-Protractor}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Protractor\-::\-U\-B\-Graphics\-Protractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/d69/class_u_b_graphics_protractor_aa6b25a89c234aa8a672b2c3c4dfbc198}
+
+
+Definition at line 37 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d69/class_u_b_graphics_protractor_aa6b25a89c234aa8a672b2c3c4dfbc198_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d69/class_u_b_graphics_protractor_aa6b25a89c234aa8a672b2c3c4dfbc198_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_protractor_a15353b85e594aa185d56f748409b88a4}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!angle@{angle}}
+\index{angle@{angle}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Protractor\-::angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d69/class_u_b_graphics_protractor_a15353b85e594aa185d56f748409b88a4}
+
+
+Definition at line 45 of file U\-B\-Graphics\-Protractor.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d69/class_u_b_graphics_protractor_a15353b85e594aa185d56f748409b88a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a88d81ac6c1399d2507ae16bc86a11e36}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!bounding\-Rect@{bounding\-Rect}}
+\index{bounding\-Rect@{bounding\-Rect}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{bounding\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F U\-B\-Graphics\-Protractor\-::bounding\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d5/d69/class_u_b_graphics_protractor_a88d81ac6c1399d2507ae16bc86a11e36}
+
+
+Definition at line 115 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+\hypertarget{class_u_b_graphics_protractor_a4ac849a2b7e1dd840b694082e20fd6ed}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a4ac849a2b7e1dd840b694082e20fd6ed}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 596 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d5/d69/class_u_b_graphics_protractor_a4ac849a2b7e1dd840b694082e20fd6ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a36c6ab509cee1d80a9e717b07bf2eda1}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Protractor\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a36c6ab509cee1d80a9e717b07bf2eda1}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 586 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d69/class_u_b_graphics_protractor_a36c6ab509cee1d80a9e717b07bf2eda1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a186c7a7e2e4d3bfe7da892c5b531c0aa}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!hover\-Enter\-Event@{hover\-Enter\-Event}}
+\index{hover\-Enter\-Event@{hover\-Enter\-Event}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{hover\-Enter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::hover\-Enter\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a186c7a7e2e4d3bfe7da892c5b531c0aa}
+
+
+Definition at line 271 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d5/d69/class_u_b_graphics_protractor_a186c7a7e2e4d3bfe7da892c5b531c0aa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a3761b010a7f13673507f482253b34da1}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!hover\-Leave\-Event@{hover\-Leave\-Event}}
+\index{hover\-Leave\-Event@{hover\-Leave\-Event}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{hover\-Leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::hover\-Leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a3761b010a7f13673507f482253b34da1}
+
+
+Definition at line 293 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+\hypertarget{class_u_b_graphics_protractor_aba6cc819f99a86311386c00755125cc3}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!hover\-Move\-Event@{hover\-Move\-Event}}
+\index{hover\-Move\-Event@{hover\-Move\-Event}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{hover\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::hover\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_aba6cc819f99a86311386c00755125cc3}
+
+
+Definition at line 302 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d5/d69/class_u_b_graphics_protractor_aba6cc819f99a86311386c00755125cc3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a292bd7b720d1b588454f4a1c3af11b42}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!item\-Change@{item\-Change}}
+\index{item\-Change@{item\-Change}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{item\-Change}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Graphics\-Protractor\-::item\-Change (
+\begin{DoxyParamCaption}
+\item[{Graphics\-Item\-Change}]{change, }
+\item[{const Q\-Variant \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a292bd7b720d1b588454f4a1c3af11b42}
+
+
+Definition at line 100 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+\hypertarget{class_u_b_graphics_protractor_afccf0ab5e313136401f06c59929c9a75}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!marker\-Angle@{marker\-Angle}}
+\index{marker\-Angle@{marker\-Angle}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{marker\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Protractor\-::marker\-Angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d69/class_u_b_graphics_protractor_afccf0ab5e313136401f06c59929c9a75}
+
+
+Definition at line 46 of file U\-B\-Graphics\-Protractor.\-h.
+
+\hypertarget{class_u_b_graphics_protractor_ae34c1777e0d101e2743dd9a8b85c981e}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_ae34c1777e0d101e2743dd9a8b85c981e}
+
+
+Definition at line 181 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d5/d69/class_u_b_graphics_protractor_ae34c1777e0d101e2743dd9a8b85c981e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a4ef2805010e225a9cfd3be51928cc08f}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a4ef2805010e225a9cfd3be51928cc08f}
+
+
+Definition at line 168 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+\hypertarget{class_u_b_graphics_protractor_aa2da2187e8a0353e7afdf8655878cbdc}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_aa2da2187e8a0353e7afdf8655878cbdc}
+
+
+Definition at line 232 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d69/class_u_b_graphics_protractor_aa2da2187e8a0353e7afdf8655878cbdc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a76a1e119106684d95877a04e297ccf2f}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!paint@{paint}}
+\index{paint@{paint}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{style\-Option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a76a1e119106684d95877a04e297ccf2f}
+
+
+Definition at line 81 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d69/class_u_b_graphics_protractor_a76a1e119106684d95877a04e297ccf2f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a8d379cb46950fbe841fd0092e8f25681}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!paint\-Graduations@{paint\-Graduations}}
+\index{paint\-Graduations@{paint\-Graduations}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{paint\-Graduations}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::paint\-Graduations (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a8d379cb46950fbe841fd0092e8f25681}
+
+
+Implements \hyperlink{class_u_b_abstract_draw_ruler_a7d5c1375ce4433c8abbe4b0e7781d065}{U\-B\-Abstract\-Draw\-Ruler}.
+
+
+
+Definition at line 369 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d5/d69/class_u_b_graphics_protractor_a8d379cb46950fbe841fd0092e8f25681_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d5/d69/class_u_b_graphics_protractor_a8d379cb46950fbe841fd0092e8f25681_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_ab9c6822def18b4c6c4e34656499e7460}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!set\-Angle@{set\-Angle}}
+\index{set\-Angle@{set\-Angle}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{set\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::set\-Angle (
+\begin{DoxyParamCaption}
+\item[{qreal}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d69/class_u_b_graphics_protractor_ab9c6822def18b4c6c4e34656499e7460}
+
+
+Definition at line 47 of file U\-B\-Graphics\-Protractor.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d5/d69/class_u_b_graphics_protractor_ab9c6822def18b4c6c4e34656499e7460_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a227204f8d0322912d717e7d4c425da34}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!set\-Marker\-Angle@{set\-Marker\-Angle}}
+\index{set\-Marker\-Angle@{set\-Marker\-Angle}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{set\-Marker\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Protractor\-::set\-Marker\-Angle (
+\begin{DoxyParamCaption}
+\item[{qreal}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d69/class_u_b_graphics_protractor_a227204f8d0322912d717e7d4c425da34}
+
+
+Definition at line 48 of file U\-B\-Graphics\-Protractor.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d5/d69/class_u_b_graphics_protractor_a227204f8d0322912d717e7d4c425da34_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_protractor_a3ca82d4c0b21e40ae5e197347bccdc3a}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!shape@{shape}}
+\index{shape@{shape}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Painter\-Path U\-B\-Graphics\-Protractor\-::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a3ca82d4c0b21e40ae5e197347bccdc3a}
+
+
+Definition at line 137 of file U\-B\-Graphics\-Protractor.\-cpp.
+
+\hypertarget{class_u_b_graphics_protractor_a800a03d895d6d3961b46c7a1a8774670}{\index{U\-B\-Graphics\-Protractor@{U\-B\-Graphics\-Protractor}!type@{type}}
+\index{type@{type}!UBGraphicsProtractor@{U\-B\-Graphics\-Protractor}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int U\-B\-Graphics\-Protractor\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d5/d69/class_u_b_graphics_protractor_a800a03d895d6d3961b46c7a1a8774670}
+
+
+Definition at line 55 of file U\-B\-Graphics\-Protractor.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_graphics_protractor_8h}{U\-B\-Graphics\-Protractor.\-h}\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_graphics_protractor_8cpp}{U\-B\-Graphics\-Protractor.\-cpp}\end{DoxyCompactItemize}

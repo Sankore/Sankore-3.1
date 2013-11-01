@@ -1,0 +1,155 @@
+\hypertarget{class_u_b_http_get}{\section{U\-B\-Http\-Get Class Reference}
+\label{de/d40/class_u_b_http_get}\index{U\-B\-Http\-Get@{U\-B\-Http\-Get}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Http\-Get.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Http\-Get\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d3/dcf/class_u_b_http_get__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Http\-Get\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{db/d4c/class_u_b_http_get__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_http_get_a57e3023ed944a2eb3047dd32af7a79df}{download\-Progress} (qint64 bytes\-Received, qint64 bytes\-Total)
+\item 
+void \hyperlink{class_u_b_http_get_a3d8f398fcc863e20756a0d4060097d32}{download\-Finished} (bool p\-Success, Q\-Url source\-Url, Q\-String p\-Content\-Type\-Header, Q\-Byte\-Array p\-Data, Q\-Point\-F p\-Pos, Q\-Size p\-Size, bool is\-Background)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_http_get_a1480752793907f9968b047419f96d275}{U\-B\-Http\-Get} (Q\-Object $\ast$parent=0)
+\item 
+virtual \hyperlink{class_u_b_http_get_af9596c4fd2fe27bf7b4af1f069c9fd02}{$\sim$\-U\-B\-Http\-Get} ()
+\item 
+Q\-Network\-Reply $\ast$ \hyperlink{class_u_b_http_get_a5c25272ca90dfb2d1d42784907d39c41}{get} (Q\-Url p\-Url, Q\-Point\-F p\-Point=Q\-Point\-F(0, 0), Q\-Size p\-Size=Q\-Size(0, 0), bool is\-Background=false)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file U\-B\-Http\-Get.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_http_get_a1480752793907f9968b047419f96d275}{\index{U\-B\-Http\-Get@{U\-B\-Http\-Get}!U\-B\-Http\-Get@{U\-B\-Http\-Get}}
+\index{U\-B\-Http\-Get@{U\-B\-Http\-Get}!UBHttpGet@{U\-B\-Http\-Get}}
+\subsubsection[{U\-B\-Http\-Get}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Http\-Get\-::\-U\-B\-Http\-Get (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{de/d40/class_u_b_http_get_a1480752793907f9968b047419f96d275}
+
+
+Definition at line 35 of file U\-B\-Http\-Get.\-cpp.
+
+\hypertarget{class_u_b_http_get_af9596c4fd2fe27bf7b4af1f069c9fd02}{\index{U\-B\-Http\-Get@{U\-B\-Http\-Get}!$\sim$\-U\-B\-Http\-Get@{$\sim$\-U\-B\-Http\-Get}}
+\index{$\sim$\-U\-B\-Http\-Get@{$\sim$\-U\-B\-Http\-Get}!UBHttpGet@{U\-B\-Http\-Get}}
+\subsubsection[{$\sim$\-U\-B\-Http\-Get}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Http\-Get\-::$\sim$\-U\-B\-Http\-Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{de/d40/class_u_b_http_get_af9596c4fd2fe27bf7b4af1f069c9fd02}
+
+
+Definition at line 46 of file U\-B\-Http\-Get.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_http_get_a3d8f398fcc863e20756a0d4060097d32}{\index{U\-B\-Http\-Get@{U\-B\-Http\-Get}!download\-Finished@{download\-Finished}}
+\index{download\-Finished@{download\-Finished}!UBHttpGet@{U\-B\-Http\-Get}}
+\subsubsection[{download\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Http\-Get\-::download\-Finished (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Success, }
+\item[{Q\-Url}]{source\-Url, }
+\item[{Q\-String}]{p\-Content\-Type\-Header, }
+\item[{Q\-Byte\-Array}]{p\-Data, }
+\item[{Q\-Point\-F}]{p\-Pos, }
+\item[{Q\-Size}]{p\-Size, }
+\item[{bool}]{is\-Background}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{de/d40/class_u_b_http_get_a3d8f398fcc863e20756a0d4060097d32}
+\hypertarget{class_u_b_http_get_a57e3023ed944a2eb3047dd32af7a79df}{\index{U\-B\-Http\-Get@{U\-B\-Http\-Get}!download\-Progress@{download\-Progress}}
+\index{download\-Progress@{download\-Progress}!UBHttpGet@{U\-B\-Http\-Get}}
+\subsubsection[{download\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Http\-Get\-::download\-Progress (
+\begin{DoxyParamCaption}
+\item[{qint64}]{bytes\-Received, }
+\item[{qint64}]{bytes\-Total}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{de/d40/class_u_b_http_get_a57e3023ed944a2eb3047dd32af7a79df}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d40/class_u_b_http_get_a57e3023ed944a2eb3047dd32af7a79df_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_http_get_a5c25272ca90dfb2d1d42784907d39c41}{\index{U\-B\-Http\-Get@{U\-B\-Http\-Get}!get@{get}}
+\index{get@{get}!UBHttpGet@{U\-B\-Http\-Get}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Network\-Reply $\ast$ U\-B\-Http\-Get\-::get (
+\begin{DoxyParamCaption}
+\item[{Q\-Url}]{p\-Url, }
+\item[{Q\-Point\-F}]{p\-Point = {\ttfamily QPointF(0,~0)}, }
+\item[{Q\-Size}]{p\-Size = {\ttfamily QSize(0,~0)}, }
+\item[{bool}]{is\-Background = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{de/d40/class_u_b_http_get_a5c25272ca90dfb2d1d42784907d39c41}
+
+
+Definition at line 56 of file U\-B\-Http\-Get.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d40/class_u_b_http_get_a5c25272ca90dfb2d1d42784907d39c41_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{de/d40/class_u_b_http_get_a5c25272ca90dfb2d1d42784907d39c41_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/network/\hyperlink{_u_b_http_get_8h}{U\-B\-Http\-Get.\-h}\item 
+Sankore-\/3.\-1/src/network/\hyperlink{_u_b_http_get_8cpp}{U\-B\-Http\-Get.\-cpp}\end{DoxyCompactItemize}

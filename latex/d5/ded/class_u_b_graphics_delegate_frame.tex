@@ -1,0 +1,576 @@
+\hypertarget{class_u_b_graphics_delegate_frame}{\section{U\-B\-Graphics\-Delegate\-Frame Class Reference}
+\label{d5/ded/class_u_b_graphics_delegate_frame}\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Delegate\-Frame.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Graphics\-Delegate\-Frame\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{d3/d5c/class_u_b_graphics_delegate_frame__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94}{Operation\-Mode} \{ \hyperlink{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94aa2b91fa8ff5510f3dd719d0a4f3b2e3f}{Scaling}, 
+\hyperlink{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94a7843dd7157918b91e2499ed85cd013d5}{Resizing}, 
+\hyperlink{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94aaa8eb433501e3e0ab2637ad2453ddbbc}{Resizing\-Horizontally}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_delegate_frame_a1fe045788e162a9a91ff51296caa307b}{U\-B\-Graphics\-Delegate\-Frame} (\hyperlink{class_u_b_graphics_item_delegate}{U\-B\-Graphics\-Item\-Delegate} $\ast$p\-Delegate, Q\-Rect\-F p\-Rect, qreal p\-Frame\-Width, bool respect\-Ratio=true)
+\item 
+virtual \hyperlink{class_u_b_graphics_delegate_frame_a093fc84b2b05ef50abf1558f45c43bd5}{$\sim$\-U\-B\-Graphics\-Delegate\-Frame} ()
+\item 
+void \hyperlink{class_u_b_graphics_delegate_frame_a3c7463fa5f0cbfe7d690ac5baba6cd2d}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\item 
+Q\-Painter\-Path \hyperlink{class_u_b_graphics_delegate_frame_a8dd31cb4d54fadb0b0f5a569301b5771}{shape} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_delegate_frame_aadfb632f3727cd11b51d25dfb40bb93b}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+Q\-Point\-F \hyperlink{class_u_b_graphics_delegate_frame_aa4e3ee0bd5cab2b34bca60f6d52bbdd7}{get\-Fixed\-Point\-From\-Pos} ()
+\item 
+Q\-Size\-F \hyperlink{class_u_b_graphics_delegate_frame_a04bcf36a2524e3c7d8edd30aa937ec55}{get\-Resize\-Vector} (qreal move\-X, qreal move\-Y)
+\item 
+Q\-Size\-F \hyperlink{class_u_b_graphics_delegate_frame_a3a40fb15b09582d5b354fa4c7811f13e}{resize\-Delegate} (qreal move\-X, qreal move\-Y)
+\item 
+virtual void \hyperlink{class_u_b_graphics_delegate_frame_a344fb33c44bb0e803771f0b676553cb7}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_delegate_frame_ad5d5179c91d4e58ca81861749c9df527}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_delegate_frame_abfe38268d0d095ab895a27c0a8b5a833}{position\-Handles} ()
+\item 
+void \hyperlink{class_u_b_graphics_delegate_frame_a3ec6ba01142a1b7ed2249d65efac82d2}{set\-Visible} (bool visible)
+\item 
+virtual void \hyperlink{class_u_b_graphics_delegate_frame_aacd9c3fb5b977bd0251bdbab346578e7}{set\-Anti\-Scale} (qreal p\-Anti\-Scale)
+\item 
+void \hyperlink{class_u_b_graphics_delegate_frame_abc8c1975ac9f282d12afc7d19bbb43aa}{set\-Operation\-Mode} (\hyperlink{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94}{Operation\-Mode} p\-Mode)
+\item 
+bool \hyperlink{class_u_b_graphics_delegate_frame_a057ceedb6d40b763735d1a3fe5490e39}{is\-Resizing} ()
+\item 
+void \hyperlink{class_u_b_graphics_delegate_frame_ac1bcd11a24c51e5702bbfc9ab648ddfa}{move\-Linked\-Items} (Q\-Line\-F moving\-Vector, bool b\-Linked=false)
+\item 
+void \hyperlink{class_u_b_graphics_delegate_frame_a45186f8e85cce27069b9d906448041c1}{prepare\-Frames\-To\-Move} (Q\-List$<$ \hyperlink{class_u_b_graphics_delegate_frame}{U\-B\-Graphics\-Delegate\-Frame} $\ast$ $>$ frames\-To\-Move)
+\item 
+void \hyperlink{class_u_b_graphics_delegate_frame_ada4ba3478789779bdc21e2499878ea4c}{prepare\-Linked\-Frame\-To\-Move} ()
+\item 
+Q\-List$<$ \hyperlink{class_u_b_graphics_delegate_frame}{U\-B\-Graphics\-Delegate\-Frame} $\ast$ $>$ \hyperlink{class_u_b_graphics_delegate_frame_a6a26360ddcd4e3c40fab06489ad0704a}{get\-Linked\-Frames} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file U\-B\-Graphics\-Delegate\-Frame.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!Operation\-Mode@{Operation\-Mode}}
+\index{Operation\-Mode@{Operation\-Mode}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{Operation\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Graphics\-Delegate\-Frame\-::\-Operation\-Mode}}}\label{d5/ded/class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Scaling@{Scaling}!U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}}\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!Scaling@{Scaling}}\item[{\em 
+\hypertarget{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94aa2b91fa8ff5510f3dd719d0a4f3b2e3f}{Scaling}\label{d5/ded/class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94aa2b91fa8ff5510f3dd719d0a4f3b2e3f}
+}]\index{Resizing@{Resizing}!U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}}\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!Resizing@{Resizing}}\item[{\em 
+\hypertarget{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94a7843dd7157918b91e2499ed85cd013d5}{Resizing}\label{d5/ded/class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94a7843dd7157918b91e2499ed85cd013d5}
+}]\index{Resizing\-Horizontally@{Resizing\-Horizontally}!U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}}\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!Resizing\-Horizontally@{Resizing\-Horizontally}}\item[{\em 
+\hypertarget{class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94aaa8eb433501e3e0ab2637ad2453ddbbc}{Resizing\-Horizontally}\label{d5/ded/class_u_b_graphics_delegate_frame_aa3195d439757dd154944daea507f5b94aaa8eb433501e3e0ab2637ad2453ddbbc}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 59 of file U\-B\-Graphics\-Delegate\-Frame.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_delegate_frame_a1fe045788e162a9a91ff51296caa307b}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}}
+\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{U\-B\-Graphics\-Delegate\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Delegate\-Frame\-::\-U\-B\-Graphics\-Delegate\-Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Item\-Delegate} $\ast$}]{p\-Delegate, }
+\item[{Q\-Rect\-F}]{p\-Rect, }
+\item[{qreal}]{p\-Frame\-Width, }
+\item[{bool}]{respect\-Ratio = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_a1fe045788e162a9a91ff51296caa307b}
+
+
+Definition at line 43 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a1fe045788e162a9a91ff51296caa307b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a093fc84b2b05ef50abf1558f45c43bd5}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!$\sim$\-U\-B\-Graphics\-Delegate\-Frame@{$\sim$\-U\-B\-Graphics\-Delegate\-Frame}}
+\index{$\sim$\-U\-B\-Graphics\-Delegate\-Frame@{$\sim$\-U\-B\-Graphics\-Delegate\-Frame}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Delegate\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Delegate\-Frame\-::$\sim$\-U\-B\-Graphics\-Delegate\-Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/ded/class_u_b_graphics_delegate_frame_a093fc84b2b05ef50abf1558f45c43bd5}
+
+
+Definition at line 107 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_delegate_frame_aa4e3ee0bd5cab2b34bca60f6d52bbdd7}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!get\-Fixed\-Point\-From\-Pos@{get\-Fixed\-Point\-From\-Pos}}
+\index{get\-Fixed\-Point\-From\-Pos@{get\-Fixed\-Point\-From\-Pos}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{get\-Fixed\-Point\-From\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point\-F U\-B\-Graphics\-Delegate\-Frame\-::get\-Fixed\-Point\-From\-Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_aa4e3ee0bd5cab2b34bca60f6d52bbdd7}
+
+
+Definition at line 299 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_aa4e3ee0bd5cab2b34bca60f6d52bbdd7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a6a26360ddcd4e3c40fab06489ad0704a}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!get\-Linked\-Frames@{get\-Linked\-Frames}}
+\index{get\-Linked\-Frames@{get\-Linked\-Frames}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{get\-Linked\-Frames}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf U\-B\-Graphics\-Delegate\-Frame} $\ast$ $>$ U\-B\-Graphics\-Delegate\-Frame\-::get\-Linked\-Frames (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_a6a26360ddcd4e3c40fab06489ad0704a}
+
+
+Definition at line 641 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a6a26360ddcd4e3c40fab06489ad0704a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a6a26360ddcd4e3c40fab06489ad0704a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a04bcf36a2524e3c7d8edd30aa937ec55}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!get\-Resize\-Vector@{get\-Resize\-Vector}}
+\index{get\-Resize\-Vector@{get\-Resize\-Vector}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{get\-Resize\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size\-F U\-B\-Graphics\-Delegate\-Frame\-::get\-Resize\-Vector (
+\begin{DoxyParamCaption}
+\item[{qreal}]{move\-X, }
+\item[{qreal}]{move\-Y}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_a04bcf36a2524e3c7d8edd30aa937ec55}
+
+
+Definition at line 343 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a04bcf36a2524e3c7d8edd30aa937ec55_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a057ceedb6d40b763735d1a3fe5490e39}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!is\-Resizing@{is\-Resizing}}
+\index{is\-Resizing@{is\-Resizing}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{is\-Resizing}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Delegate\-Frame\-::is\-Resizing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/ded/class_u_b_graphics_delegate_frame_a057ceedb6d40b763735d1a3fe5490e39}
+
+
+Definition at line 61 of file U\-B\-Graphics\-Delegate\-Frame.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a057ceedb6d40b763735d1a3fe5490e39_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a344fb33c44bb0e803771f0b676553cb7}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/ded/class_u_b_graphics_delegate_frame_a344fb33c44bb0e803771f0b676553cb7}
+
+
+Definition at line 392 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a344fb33c44bb0e803771f0b676553cb7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_aadfb632f3727cd11b51d25dfb40bb93b}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/ded/class_u_b_graphics_delegate_frame_aadfb632f3727cd11b51d25dfb40bb93b}
+
+
+Definition at line 220 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_aadfb632f3727cd11b51d25dfb40bb93b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_ad5d5179c91d4e58ca81861749c9df527}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/ded/class_u_b_graphics_delegate_frame_ad5d5179c91d4e58ca81861749c9df527}
+
+
+Definition at line 726 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_ad5d5179c91d4e58ca81861749c9df527_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_ac1bcd11a24c51e5702bbfc9ab648ddfa}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!move\-Linked\-Items@{move\-Linked\-Items}}
+\index{move\-Linked\-Items@{move\-Linked\-Items}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{move\-Linked\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::move\-Linked\-Items (
+\begin{DoxyParamCaption}
+\item[{Q\-Line\-F}]{moving\-Vector, }
+\item[{bool}]{b\-Linked = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_ac1bcd11a24c51e5702bbfc9ab648ddfa}
+
+
+Definition at line 687 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{d5/ded/class_u_b_graphics_delegate_frame_ac1bcd11a24c51e5702bbfc9ab648ddfa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_ac1bcd11a24c51e5702bbfc9ab648ddfa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a3c7463fa5f0cbfe7d690ac5baba6cd2d}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!paint@{paint}}
+\index{paint@{paint}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_a3c7463fa5f0cbfe7d690ac5baba6cd2d}
+
+
+Definition at line 128 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+\hypertarget{class_u_b_graphics_delegate_frame_abfe38268d0d095ab895a27c0a8b5a833}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!position\-Handles@{position\-Handles}}
+\index{position\-Handles@{position\-Handles}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{position\-Handles}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::position\-Handles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_abfe38268d0d095ab895a27c0a8b5a833}
+
+
+Definition at line 779 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_abfe38268d0d095ab895a27c0a8b5a833_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_abfe38268d0d095ab895a27c0a8b5a833_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a45186f8e85cce27069b9d906448041c1}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!prepare\-Frames\-To\-Move@{prepare\-Frames\-To\-Move}}
+\index{prepare\-Frames\-To\-Move@{prepare\-Frames\-To\-Move}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{prepare\-Frames\-To\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::prepare\-Frames\-To\-Move (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ {\bf U\-B\-Graphics\-Delegate\-Frame} $\ast$ $>$}]{frames\-To\-Move}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_a45186f8e85cce27069b9d906448041c1}
+
+
+Definition at line 659 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a45186f8e85cce27069b9d906448041c1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a45186f8e85cce27069b9d906448041c1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_ada4ba3478789779bdc21e2499878ea4c}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!prepare\-Linked\-Frame\-To\-Move@{prepare\-Linked\-Frame\-To\-Move}}
+\index{prepare\-Linked\-Frame\-To\-Move@{prepare\-Linked\-Frame\-To\-Move}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{prepare\-Linked\-Frame\-To\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::prepare\-Linked\-Frame\-To\-Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_ada4ba3478789779bdc21e2499878ea4c}
+
+
+Definition at line 668 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_ada4ba3478789779bdc21e2499878ea4c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_ada4ba3478789779bdc21e2499878ea4c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a3a40fb15b09582d5b354fa4c7811f13e}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!resize\-Delegate@{resize\-Delegate}}
+\index{resize\-Delegate@{resize\-Delegate}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{resize\-Delegate}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size\-F U\-B\-Graphics\-Delegate\-Frame\-::resize\-Delegate (
+\begin{DoxyParamCaption}
+\item[{qreal}]{move\-X, }
+\item[{qreal}]{move\-Y}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_a3a40fb15b09582d5b354fa4c7811f13e}
+
+
+Definition at line 371 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a3a40fb15b09582d5b354fa4c7811f13e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_a3a40fb15b09582d5b354fa4c7811f13e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_aacd9c3fb5b977bd0251bdbab346578e7}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!set\-Anti\-Scale@{set\-Anti\-Scale}}
+\index{set\-Anti\-Scale@{set\-Anti\-Scale}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{set\-Anti\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::set\-Anti\-Scale (
+\begin{DoxyParamCaption}
+\item[{qreal}]{p\-Anti\-Scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/ded/class_u_b_graphics_delegate_frame_aacd9c3fb5b977bd0251bdbab346578e7}
+
+
+Definition at line 112 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_aacd9c3fb5b977bd0251bdbab346578e7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_abc8c1975ac9f282d12afc7d19bbb43aa}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!set\-Operation\-Mode@{set\-Operation\-Mode}}
+\index{set\-Operation\-Mode@{set\-Operation\-Mode}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{set\-Operation\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::set\-Operation\-Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Operation\-Mode}}]{p\-Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/ded/class_u_b_graphics_delegate_frame_abc8c1975ac9f282d12afc7d19bbb43aa}
+
+
+Definition at line 60 of file U\-B\-Graphics\-Delegate\-Frame.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/ded/class_u_b_graphics_delegate_frame_abc8c1975ac9f282d12afc7d19bbb43aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_delegate_frame_a3ec6ba01142a1b7ed2249d65efac82d2}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!set\-Visible@{set\-Visible}}
+\index{set\-Visible@{set\-Visible}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{set\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Delegate\-Frame\-::set\-Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{d5/ded/class_u_b_graphics_delegate_frame_a3ec6ba01142a1b7ed2249d65efac82d2}
+
+
+Definition at line 769 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+\hypertarget{class_u_b_graphics_delegate_frame_a8dd31cb4d54fadb0b0f5a569301b5771}{\index{U\-B\-Graphics\-Delegate\-Frame@{U\-B\-Graphics\-Delegate\-Frame}!shape@{shape}}
+\index{shape@{shape}!UBGraphicsDelegateFrame@{U\-B\-Graphics\-Delegate\-Frame}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Painter\-Path U\-B\-Graphics\-Delegate\-Frame\-::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d5/ded/class_u_b_graphics_delegate_frame_a8dd31cb4d54fadb0b0f5a569301b5771}
+
+
+Definition at line 147 of file U\-B\-Graphics\-Delegate\-Frame.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_delegate_frame_8h}{U\-B\-Graphics\-Delegate\-Frame.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_delegate_frame_8cpp}{U\-B\-Graphics\-Delegate\-Frame.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,684 @@
+\hypertarget{class_u_b_keyboard_palette}{\section{U\-B\-Keyboard\-Palette Class Reference}
+\label{d6/d6e/class_u_b_keyboard_palette}\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Keyboard\-Palette.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Keyboard\-Palette\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/d75/class_u_b_keyboard_palette__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Keyboard\-Palette\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d6/d1e/class_u_b_keyboard_palette__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_keyboard_palette_abc5328ca16e99915385f5164e89ec954}{moved} (const Q\-Point \&)
+\item 
+void \hyperlink{class_u_b_keyboard_palette_a7000e039c9e39812a9eb87aac2c561bb}{locale\-Changed} (int)
+\item 
+void \hyperlink{class_u_b_keyboard_palette_affd87073e137b50f661e97d74ba7f1a5}{keyboard\-Activated} (bool)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_keyboard_palette_aa37fa74f921fa125b304707b858c4d24}{U\-B\-Keyboard\-Palette} (Q\-Widget $\ast$parent)
+\item 
+\hyperlink{class_u_b_keyboard_palette_a8080bfaa362d0bd82d34da529393d9c9}{$\sim$\-U\-B\-Keyboard\-Palette} ()
+\item 
+bool \hyperlink{class_u_b_keyboard_palette_a019b23bc185e014451a2b020b9c286c7}{is\-Enabled} ()
+\item 
+virtual Q\-Size \hyperlink{class_u_b_keyboard_palette_a0753b0ec9b10e348b8a531a72ad10149}{size\-Hint} () const 
+\item 
+virtual void \hyperlink{class_u_b_keyboard_palette_a9ca20112f36af4cfa66a792c23eb6a64}{adjust\-Size\-And\-Position} (bool p\-Up=true)
+\item 
+Q\-String \hyperlink{class_u_b_keyboard_palette_a5957b5bdbf26446d146347c35c60207a}{get\-Key\-Button\-Size} () const 
+\item 
+void \hyperlink{class_u_b_keyboard_palette_a289f55c2084f9c084006b5db4b463c6f}{set\-Key\-Button\-Size} (const Q\-String \&\hyperlink{class_u_b_keyboard_palette_a74a528e1583463f1c68553ae1b4d4ccc}{str\-Size})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_t_n_images}{B\-T\-N\-Images} $\ast$ \hyperlink{class_u_b_keyboard_palette_a9d0abd15cff143a07e6af72ef606e3bd}{curr\-Btn\-Images}
+\item 
+bool \hyperlink{class_u_b_keyboard_palette_af8d731f629b8476184064ca887a6f5fb}{m\-\_\-is\-Visible}
+\item 
+Q\-Point \hyperlink{class_u_b_keyboard_palette_acaac045d872cd85602623a0c7c65d4c7}{m\-\_\-pos}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_keyboard_palette_aae4678e17eafebc83dfb4b1abaf72d04}{enter\-Event} (Q\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_keyboard_palette_a73a6cbd3a4e6d1318bd8ee30636249df}{leave\-Event} (Q\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_keyboard_palette_ae1f571abb2fd626d7263fdfce9d52261}{paint\-Event} (Q\-Paint\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_keyboard_palette_a54509a0865871f992c417e36b3f4a5c2}{move\-Event} (Q\-Move\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_keyboard_palette_a7082d7c1cdb375d64cc7abb1bf685888}{send\-Key\-Event} (\hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E} key\-Code)
+\item 
+void \hyperlink{class_u_b_keyboard_palette_a1ba61c64765f152c7a9c443b91a8b169}{set\-Locale} (int n\-Locale)
+\item 
+const Q\-String $\ast$ \hyperlink{class_u_b_keyboard_palette_aaafc7f05ad6c2b4f63eaf553174e0ab6}{get\-Locale\-Name} ()
+\item 
+void \hyperlink{class_u_b_keyboard_palette_a17a1566aada47c89954068f3bcbd4e2d}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_u_b_keyboard_palette_a8cce464c5b9974a0b7f83975310fc4af}{caps\-Lock}
+\item 
+bool \hyperlink{class_u_b_keyboard_palette_ad95b375ea44ad34e3ea756372a4edbf5}{shift}
+\item 
+int \hyperlink{class_u_b_keyboard_palette_a5cc143fd2f778206618afad6f0dcb2b6}{n\-Current\-Locale}
+\item 
+int \hyperlink{class_u_b_keyboard_palette_a8607ac73d82334965befc3e8580fcb4b}{n\-Locales\-Count}
+\item 
+\hyperlink{class_u_b_keyboard_locale}{U\-B\-Keyboard\-Locale} $\ast$$\ast$ \hyperlink{class_u_b_keyboard_palette_a21f5effb3b82fc431de3e5f7f35d612d}{locales}
+\item 
+int \hyperlink{class_u_b_keyboard_palette_ae4cd6698472f172cffa56aa9104f4bdc}{n\-Special\-Modifier\-Index}
+\item 
+\hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E} \hyperlink{class_u_b_keyboard_palette_ab5ba725c0853d7e402e94195368e7ef3}{special\-Modifier}
+\item 
+Q\-String \hyperlink{class_u_b_keyboard_palette_a74a528e1583463f1c68553ae1b4d4ccc}{str\-Size}
+\item 
+int \hyperlink{class_u_b_keyboard_palette_a2703020b8e54ecb7dbd47b5a59e70389}{btn\-Width}
+\item 
+int \hyperlink{class_u_b_keyboard_palette_a8962dc6970979b1e417b39ba7ad05975}{btn\-Height}
+\item 
+bool \hyperlink{class_u_b_keyboard_palette_a81336a2103daeb7dc6cdfccbd16d3c28}{language\-Popup\-Active}
+\item 
+bool \hyperlink{class_u_b_keyboard_palette_aef54c43da0af803602863f013f643aaa}{keyboard\-Active}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_u_b_keyboard_palette_a2fee37f0ee7ccf18ed88d1b5b948df46}{U\-B\-Keyboard\-Button}
+\item 
+class \hyperlink{class_u_b_keyboard_palette_a581dfcd5d1c8859bf8b05143bcc82245}{U\-B\-Caps\-Lock\-Button}
+\item 
+class \hyperlink{class_u_b_keyboard_palette_a1b5e1692d61dd3978962a4590ba37a49}{U\-B\-Shift\-Button}
+\item 
+class \hyperlink{class_u_b_keyboard_palette_ad529f92a5b8f216b0a349c6ef547780f}{U\-B\-Locale\-Button}
+\item 
+class \hyperlink{class_u_b_keyboard_palette_af8def2211b5ddbef04883b9e2b3f00d1}{U\-B\-Key\-Button}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 84 of file U\-B\-Keyboard\-Palette.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_keyboard_palette_aa37fa74f921fa125b304707b858c4d24}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}}
+\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{U\-B\-Keyboard\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Keyboard\-Palette\-::\-U\-B\-Keyboard\-Palette (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{d6/d6e/class_u_b_keyboard_palette_aa37fa74f921fa125b304707b858c4d24}
+
+
+Definition at line 43 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_aa37fa74f921fa125b304707b858c4d24_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a8080bfaa362d0bd82d34da529393d9c9}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!$\sim$\-U\-B\-Keyboard\-Palette@{$\sim$\-U\-B\-Keyboard\-Palette}}
+\index{$\sim$\-U\-B\-Keyboard\-Palette@{$\sim$\-U\-B\-Keyboard\-Palette}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{$\sim$\-U\-B\-Keyboard\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Keyboard\-Palette\-::$\sim$\-U\-B\-Keyboard\-Palette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d6/d6e/class_u_b_keyboard_palette_a8080bfaa362d0bd82d34da529393d9c9}
+
+
+Definition at line 148 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_keyboard_palette_a9ca20112f36af4cfa66a792c23eb6a64}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!adjust\-Size\-And\-Position@{adjust\-Size\-And\-Position}}
+\index{adjust\-Size\-And\-Position@{adjust\-Size\-And\-Position}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{adjust\-Size\-And\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::adjust\-Size\-And\-Position (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Up = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d6/d6e/class_u_b_keyboard_palette_a9ca20112f36af4cfa66a792c23eb6a64}
+
+
+Definition at line 249 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d6/d6e/class_u_b_keyboard_palette_a9ca20112f36af4cfa66a792c23eb6a64_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a9ca20112f36af4cfa66a792c23eb6a64_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_aae4678e17eafebc83dfb4b1abaf72d04}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!enter\-Event@{enter\-Event}}
+\index{enter\-Event@{enter\-Event}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{enter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::enter\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d6/d6e/class_u_b_keyboard_palette_aae4678e17eafebc83dfb4b1abaf72d04}
+
+
+Reimplemented from \hyperlink{class_u_b_floating_palette_a2d23d85ab504d42ccbd603a8eb5c543c}{U\-B\-Floating\-Palette}.
+
+
+
+Definition at line 219 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d6/d6e/class_u_b_keyboard_palette_aae4678e17eafebc83dfb4b1abaf72d04_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a5957b5bdbf26446d146347c35c60207a}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!get\-Key\-Button\-Size@{get\-Key\-Button\-Size}}
+\index{get\-Key\-Button\-Size@{get\-Key\-Button\-Size}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{get\-Key\-Button\-Size}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Keyboard\-Palette\-::get\-Key\-Button\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d6/d6e/class_u_b_keyboard_palette_a5957b5bdbf26446d146347c35c60207a}
+
+
+Definition at line 103 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_aaafc7f05ad6c2b4f63eaf553174e0ab6}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!get\-Locale\-Name@{get\-Locale\-Name}}
+\index{get\-Locale\-Name@{get\-Locale\-Name}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{get\-Locale\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String $\ast$ U\-B\-Keyboard\-Palette\-::get\-Locale\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_aaafc7f05ad6c2b4f63eaf553174e0ab6}
+
+
+Definition at line 181 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_aaafc7f05ad6c2b4f63eaf553174e0ab6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a17a1566aada47c89954068f3bcbd4e2d}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!init@{init}}
+\index{init@{init}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a17a1566aada47c89954068f3bcbd4e2d}
+
+
+Definition at line 90 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a17a1566aada47c89954068f3bcbd4e2d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d6/d6e/class_u_b_keyboard_palette_a17a1566aada47c89954068f3bcbd4e2d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a019b23bc185e014451a2b020b9c286c7}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!is\-Enabled@{is\-Enabled}}
+\index{is\-Enabled@{is\-Enabled}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{is\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Keyboard\-Palette\-::is\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d6/d6e/class_u_b_keyboard_palette_a019b23bc185e014451a2b020b9c286c7}
+
+
+Definition at line 100 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_affd87073e137b50f661e97d74ba7f1a5}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!keyboard\-Activated@{keyboard\-Activated}}
+\index{keyboard\-Activated@{keyboard\-Activated}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{keyboard\-Activated}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::keyboard\-Activated (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d6/d6e/class_u_b_keyboard_palette_affd87073e137b50f661e97d74ba7f1a5}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_affd87073e137b50f661e97d74ba7f1a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a73a6cbd3a4e6d1318bd8ee30636249df}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!leave\-Event@{leave\-Event}}
+\index{leave\-Event@{leave\-Event}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d6/d6e/class_u_b_keyboard_palette_a73a6cbd3a4e6d1318bd8ee30636249df}
+
+
+Definition at line 231 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d6/d6e/class_u_b_keyboard_palette_a73a6cbd3a4e6d1318bd8ee30636249df_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a7000e039c9e39812a9eb87aac2c561bb}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!locale\-Changed@{locale\-Changed}}
+\index{locale\-Changed@{locale\-Changed}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{locale\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::locale\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d6/d6e/class_u_b_keyboard_palette_a7000e039c9e39812a9eb87aac2c561bb}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a7000e039c9e39812a9eb87aac2c561bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_abc5328ca16e99915385f5164e89ec954}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!moved@{moved}}
+\index{moved@{moved}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{moved}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::moved (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d6/d6e/class_u_b_keyboard_palette_abc5328ca16e99915385f5164e89ec954}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d6/d6e/class_u_b_keyboard_palette_abc5328ca16e99915385f5164e89ec954_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a54509a0865871f992c417e36b3f4a5c2}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!move\-Event@{move\-Event}}
+\index{move\-Event@{move\-Event}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Move\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d6/d6e/class_u_b_keyboard_palette_a54509a0865871f992c417e36b3f4a5c2}
+
+
+Definition at line 243 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d6/d6e/class_u_b_keyboard_palette_a54509a0865871f992c417e36b3f4a5c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_ae1f571abb2fd626d7263fdfce9d52261}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d6/d6e/class_u_b_keyboard_palette_ae1f571abb2fd626d7263fdfce9d52261}
+
+
+Reimplemented from \hyperlink{class_u_b_action_palette_a70b2e19272054aba6cf9ea8ddfd0955b}{U\-B\-Action\-Palette}.
+
+
+
+Definition at line 263 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+\hypertarget{class_u_b_keyboard_palette_a7082d7c1cdb375d64cc7abb1bf685888}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!send\-Key\-Event@{send\-Key\-Event}}
+\index{send\-Key\-Event@{send\-Key\-Event}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{send\-Key\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::send\-Key\-Event (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-E\-Y\-C\-O\-D\-E}}]{key\-Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a7082d7c1cdb375d64cc7abb1bf685888}
+\hypertarget{class_u_b_keyboard_palette_a289f55c2084f9c084006b5db4b463c6f}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!set\-Key\-Button\-Size@{set\-Key\-Button\-Size}}
+\index{set\-Key\-Button\-Size@{set\-Key\-Button\-Size}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{set\-Key\-Button\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::set\-Key\-Button\-Size (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{str\-Size}
+\end{DoxyParamCaption}
+)}}\label{d6/d6e/class_u_b_keyboard_palette_a289f55c2084f9c084006b5db4b463c6f}
+
+
+Definition at line 201 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a289f55c2084f9c084006b5db4b463c6f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a289f55c2084f9c084006b5db4b463c6f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a1ba61c64765f152c7a9c443b91a8b169}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!set\-Locale@{set\-Locale}}
+\index{set\-Locale@{set\-Locale}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{set\-Locale}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Keyboard\-Palette\-::set\-Locale (
+\begin{DoxyParamCaption}
+\item[{int}]{n\-Locale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a1ba61c64765f152c7a9c443b91a8b169}
+
+
+Definition at line 186 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a1ba61c64765f152c7a9c443b91a8b169_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a1ba61c64765f152c7a9c443b91a8b169_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_keyboard_palette_a0753b0ec9b10e348b8a531a72ad10149}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!size\-Hint@{size\-Hint}}
+\index{size\-Hint@{size\-Hint}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{size\-Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size U\-B\-Keyboard\-Palette\-::size\-Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d6/d6e/class_u_b_keyboard_palette_a0753b0ec9b10e348b8a531a72ad10149}
+
+
+Definition at line 174 of file U\-B\-Keyboard\-Palette.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d6e/class_u_b_keyboard_palette_a0753b0ec9b10e348b8a531a72ad10149_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_u_b_keyboard_palette_a581dfcd5d1c8859bf8b05143bcc82245}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!U\-B\-Caps\-Lock\-Button@{U\-B\-Caps\-Lock\-Button}}
+\index{U\-B\-Caps\-Lock\-Button@{U\-B\-Caps\-Lock\-Button}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{U\-B\-Caps\-Lock\-Button}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf U\-B\-Caps\-Lock\-Button}\hspace{0.3cm}{\ttfamily [friend]}}}\label{d6/d6e/class_u_b_keyboard_palette_a581dfcd5d1c8859bf8b05143bcc82245}
+
+
+Definition at line 89 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a2fee37f0ee7ccf18ed88d1b5b948df46}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!U\-B\-Keyboard\-Button@{U\-B\-Keyboard\-Button}}
+\index{U\-B\-Keyboard\-Button@{U\-B\-Keyboard\-Button}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{U\-B\-Keyboard\-Button}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf U\-B\-Keyboard\-Button}\hspace{0.3cm}{\ttfamily [friend]}}}\label{d6/d6e/class_u_b_keyboard_palette_a2fee37f0ee7ccf18ed88d1b5b948df46}
+
+
+Definition at line 88 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_af8def2211b5ddbef04883b9e2b3f00d1}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!U\-B\-Key\-Button@{U\-B\-Key\-Button}}
+\index{U\-B\-Key\-Button@{U\-B\-Key\-Button}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{U\-B\-Key\-Button}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf U\-B\-Key\-Button}\hspace{0.3cm}{\ttfamily [friend]}}}\label{d6/d6e/class_u_b_keyboard_palette_af8def2211b5ddbef04883b9e2b3f00d1}
+
+
+Definition at line 92 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_ad529f92a5b8f216b0a349c6ef547780f}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!U\-B\-Locale\-Button@{U\-B\-Locale\-Button}}
+\index{U\-B\-Locale\-Button@{U\-B\-Locale\-Button}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{U\-B\-Locale\-Button}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf U\-B\-Locale\-Button}\hspace{0.3cm}{\ttfamily [friend]}}}\label{d6/d6e/class_u_b_keyboard_palette_ad529f92a5b8f216b0a349c6ef547780f}
+
+
+Definition at line 91 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a1b5e1692d61dd3978962a4590ba37a49}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!U\-B\-Shift\-Button@{U\-B\-Shift\-Button}}
+\index{U\-B\-Shift\-Button@{U\-B\-Shift\-Button}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{U\-B\-Shift\-Button}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf U\-B\-Shift\-Button}\hspace{0.3cm}{\ttfamily [friend]}}}\label{d6/d6e/class_u_b_keyboard_palette_a1b5e1692d61dd3978962a4590ba37a49}
+
+
+Definition at line 90 of file U\-B\-Keyboard\-Palette.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_keyboard_palette_a8962dc6970979b1e417b39ba7ad05975}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!btn\-Height@{btn\-Height}}
+\index{btn\-Height@{btn\-Height}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{btn\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Keyboard\-Palette\-::btn\-Height\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a8962dc6970979b1e417b39ba7ad05975}
+
+
+Definition at line 135 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a2703020b8e54ecb7dbd47b5a59e70389}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!btn\-Width@{btn\-Width}}
+\index{btn\-Width@{btn\-Width}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{btn\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Keyboard\-Palette\-::btn\-Width\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a2703020b8e54ecb7dbd47b5a59e70389}
+
+
+Definition at line 134 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a8cce464c5b9974a0b7f83975310fc4af}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!caps\-Lock@{caps\-Lock}}
+\index{caps\-Lock@{caps\-Lock}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{caps\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Keyboard\-Palette\-::caps\-Lock\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a8cce464c5b9974a0b7f83975310fc4af}
+
+
+Definition at line 124 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a9d0abd15cff143a07e6af72ef606e3bd}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!curr\-Btn\-Images@{curr\-Btn\-Images}}
+\index{curr\-Btn\-Images@{curr\-Btn\-Images}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{curr\-Btn\-Images}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-T\-N\-Images}$\ast$ U\-B\-Keyboard\-Palette\-::curr\-Btn\-Images}}\label{d6/d6e/class_u_b_keyboard_palette_a9d0abd15cff143a07e6af72ef606e3bd}
+
+
+Definition at line 98 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_aef54c43da0af803602863f013f643aaa}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!keyboard\-Active@{keyboard\-Active}}
+\index{keyboard\-Active@{keyboard\-Active}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{keyboard\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Keyboard\-Palette\-::keyboard\-Active\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_aef54c43da0af803602863f013f643aaa}
+
+
+Definition at line 138 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a81336a2103daeb7dc6cdfccbd16d3c28}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!language\-Popup\-Active@{language\-Popup\-Active}}
+\index{language\-Popup\-Active@{language\-Popup\-Active}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{language\-Popup\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Keyboard\-Palette\-::language\-Popup\-Active\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a81336a2103daeb7dc6cdfccbd16d3c28}
+
+
+Definition at line 137 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a21f5effb3b82fc431de3e5f7f35d612d}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!locales@{locales}}
+\index{locales@{locales}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{locales}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Keyboard\-Locale}$\ast$$\ast$ U\-B\-Keyboard\-Palette\-::locales\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a21f5effb3b82fc431de3e5f7f35d612d}
+
+
+Definition at line 128 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_af8d731f629b8476184064ca887a6f5fb}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!m\-\_\-is\-Visible@{m\-\_\-is\-Visible}}
+\index{m\-\_\-is\-Visible@{m\-\_\-is\-Visible}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{m\-\_\-is\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Keyboard\-Palette\-::m\-\_\-is\-Visible}}\label{d6/d6e/class_u_b_keyboard_palette_af8d731f629b8476184064ca887a6f5fb}
+
+
+Definition at line 106 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_acaac045d872cd85602623a0c7c65d4c7}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!m\-\_\-pos@{m\-\_\-pos}}
+\index{m\-\_\-pos@{m\-\_\-pos}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{m\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point U\-B\-Keyboard\-Palette\-::m\-\_\-pos}}\label{d6/d6e/class_u_b_keyboard_palette_acaac045d872cd85602623a0c7c65d4c7}
+
+
+Definition at line 107 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a5cc143fd2f778206618afad6f0dcb2b6}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!n\-Current\-Locale@{n\-Current\-Locale}}
+\index{n\-Current\-Locale@{n\-Current\-Locale}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{n\-Current\-Locale}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Keyboard\-Palette\-::n\-Current\-Locale\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a5cc143fd2f778206618afad6f0dcb2b6}
+
+
+Definition at line 126 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a8607ac73d82334965befc3e8580fcb4b}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!n\-Locales\-Count@{n\-Locales\-Count}}
+\index{n\-Locales\-Count@{n\-Locales\-Count}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{n\-Locales\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Keyboard\-Palette\-::n\-Locales\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a8607ac73d82334965befc3e8580fcb4b}
+
+
+Definition at line 127 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_ae4cd6698472f172cffa56aa9104f4bdc}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!n\-Special\-Modifier\-Index@{n\-Special\-Modifier\-Index}}
+\index{n\-Special\-Modifier\-Index@{n\-Special\-Modifier\-Index}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{n\-Special\-Modifier\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Keyboard\-Palette\-::n\-Special\-Modifier\-Index\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_ae4cd6698472f172cffa56aa9104f4bdc}
+
+
+Definition at line 130 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_ad95b375ea44ad34e3ea756372a4edbf5}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!shift@{shift}}
+\index{shift@{shift}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{shift}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Keyboard\-Palette\-::shift\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_ad95b375ea44ad34e3ea756372a4edbf5}
+
+
+Definition at line 125 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_ab5ba725c0853d7e402e94195368e7ef3}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!special\-Modifier@{special\-Modifier}}
+\index{special\-Modifier@{special\-Modifier}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{special\-Modifier}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\-E\-Y\-C\-O\-D\-E} U\-B\-Keyboard\-Palette\-::special\-Modifier\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_ab5ba725c0853d7e402e94195368e7ef3}
+
+
+Definition at line 131 of file U\-B\-Keyboard\-Palette.\-h.
+
+\hypertarget{class_u_b_keyboard_palette_a74a528e1583463f1c68553ae1b4d4ccc}{\index{U\-B\-Keyboard\-Palette@{U\-B\-Keyboard\-Palette}!str\-Size@{str\-Size}}
+\index{str\-Size@{str\-Size}!UBKeyboardPalette@{U\-B\-Keyboard\-Palette}}
+\subsubsection[{str\-Size}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Keyboard\-Palette\-::str\-Size\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/d6e/class_u_b_keyboard_palette_a74a528e1583463f1c68553ae1b4d4ccc}
+
+
+Definition at line 133 of file U\-B\-Keyboard\-Palette.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_keyboard_palette_8h}{U\-B\-Keyboard\-Palette.\-h}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_keyboard_palette_8cpp}{U\-B\-Keyboard\-Palette.\-cpp}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_keyboard_palette__linux_8cpp}{U\-B\-Keyboard\-Palette\-\_\-linux.\-cpp}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_keyboard_palette__mac_8cpp}{U\-B\-Keyboard\-Palette\-\_\-mac.\-cpp}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_keyboard_palette__win_8cpp}{U\-B\-Keyboard\-Palette\-\_\-win.\-cpp}\end{DoxyCompactItemize}

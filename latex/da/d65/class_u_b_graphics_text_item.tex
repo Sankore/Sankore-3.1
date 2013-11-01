@@ -1,0 +1,596 @@
+\hypertarget{class_u_b_graphics_text_item}{\section{U\-B\-Graphics\-Text\-Item Class Reference}
+\label{da/d65/class_u_b_graphics_text_item}\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Text\-Item.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Text\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/da9/class_u_b_graphics_text_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Text\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d11/class_u_b_graphics_text_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{class_u_b_graphics_text_item_a8c363fe2aad7d560e8132f7b2f551f64a89d6e26f73d521f2aa319b661c5ff01a}{Type} =  U\-B\-Graphics\-Item\-Type\-:\-:Text\-Item\-Type
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_graphics_text_item_a1b9e41208efe10b9d640ee45c2e2dcec}{text\-Undo\-Command\-Added} (\hyperlink{class_u_b_graphics_text_item}{U\-B\-Graphics\-Text\-Item} $\ast$text\-Item)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_text_item_acbf06a6d840ac7b6c95950e39dcd94b9}{U\-B\-Graphics\-Text\-Item} (Q\-Graphics\-Item $\ast$parent=0)
+\item 
+virtual \hyperlink{class_u_b_graphics_text_item_adfe3930eeff0d9591161ce108c171c28}{$\sim$\-U\-B\-Graphics\-Text\-Item} ()
+\item 
+virtual int \hyperlink{class_u_b_graphics_text_item_a987608d1449cdcb3b46eb6e6db680cf7}{type} () const 
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_text_item_a6be4507f88dccb25e1e063ec36cf6f47}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_text_item_a14c3b9ff16071a306fe0834577aa26fa}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_graphics_text_item_a78498298ea53c6baee150a3a04a27f51}{scene} ()
+\item 
+virtual Q\-Rect\-F \hyperlink{class_u_b_graphics_text_item_a7c2191ecf4c0e619bbe1a80d00a68406}{bounding\-Rect} () const 
+\item 
+virtual Q\-Painter\-Path \hyperlink{class_u_b_graphics_text_item_aa0fc4432739063caa06b5294711935b3}{shape} () const 
+\item 
+void \hyperlink{class_u_b_graphics_text_item_a26591ecd60157acc96740175c5a15e94}{set\-Text\-Width} (qreal width)
+\item 
+void \hyperlink{class_u_b_graphics_text_item_a2da72b75372d127cedbc0123ba12c2f2}{set\-Text\-Height} (qreal height)
+\item 
+qreal \hyperlink{class_u_b_graphics_text_item_a7aa93056029f13ae3cdc9a7771e8748e}{text\-Height} () const 
+\item 
+void \hyperlink{class_u_b_graphics_text_item_a522f83321532b4e289086240a3bc49fc}{contents\-Changed} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_text_item_a9a461e55837ce00341381e2f2bb642e8}{resize} (qreal w, qreal h)
+\item 
+virtual Q\-Size\-F \hyperlink{class_u_b_graphics_text_item_a0c0d7265fa1888bdf1da4a7b793771ed}{size} () const 
+\item 
+Q\-Color \hyperlink{class_u_b_graphics_text_item_a0100a958a115bfd4e7d3bdada9c36a55}{color\-On\-Dark\-Background} () const 
+\item 
+void \hyperlink{class_u_b_graphics_text_item_af5bcc4a16e675e7d16c0f89a0ef4c4c9}{set\-Color\-On\-Dark\-Background} (Q\-Color p\-Color\-On\-Dark\-Background)
+\item 
+Q\-Color \hyperlink{class_u_b_graphics_text_item_a5cb65bca875b7654dcfd13418c294cc1}{color\-On\-Light\-Background} () const 
+\item 
+void \hyperlink{class_u_b_graphics_text_item_a4970260af3b1ef583763441a4cd8b30a}{set\-Color\-On\-Light\-Background} (Q\-Color p\-Color\-On\-Light\-Background)
+\item 
+virtual void \hyperlink{class_u_b_graphics_text_item_af02cdd515452229135ca5ee9e0a944ba}{clear\-Source} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_text_item_a91ebcd957d46156859eeb3e9047194bc}{set\-Uuid} (const Q\-Uuid \&p\-Uuid)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-Color \hyperlink{class_u_b_graphics_text_item_a2ef8e51d1f91fc24d65445826fd8b83e}{last\-Used\-Text\-Color}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_text_item_a8c363fe2aad7d560e8132f7b2f551f64}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{da/d65/class_u_b_graphics_text_item_a8c363fe2aad7d560e8132f7b2f551f64}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Type@{Type}!U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}}\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!Type@{Type}}\item[{\em 
+\hypertarget{class_u_b_graphics_text_item_a8c363fe2aad7d560e8132f7b2f551f64a89d6e26f73d521f2aa319b661c5ff01a}{Type}\label{da/d65/class_u_b_graphics_text_item_a8c363fe2aad7d560e8132f7b2f551f64a89d6e26f73d521f2aa319b661c5ff01a}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 43 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_text_item_acbf06a6d840ac7b6c95950e39dcd94b9}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}}
+\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{U\-B\-Graphics\-Text\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Text\-Item\-::\-U\-B\-Graphics\-Text\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{da/d65/class_u_b_graphics_text_item_acbf06a6d840ac7b6c95950e39dcd94b9}
+
+
+Definition at line 50 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_acbf06a6d840ac7b6c95950e39dcd94b9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{da/d65/class_u_b_graphics_text_item_acbf06a6d840ac7b6c95950e39dcd94b9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_adfe3930eeff0d9591161ce108c171c28}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!$\sim$\-U\-B\-Graphics\-Text\-Item@{$\sim$\-U\-B\-Graphics\-Text\-Item}}
+\index{$\sim$\-U\-B\-Graphics\-Text\-Item@{$\sim$\-U\-B\-Graphics\-Text\-Item}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Text\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Text\-Item\-::$\sim$\-U\-B\-Graphics\-Text\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_adfe3930eeff0d9591161ce108c171c28}
+
+
+Definition at line 86 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_text_item_a7c2191ecf4c0e619bbe1a80d00a68406}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!bounding\-Rect@{bounding\-Rect}}
+\index{bounding\-Rect@{bounding\-Rect}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{bounding\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F U\-B\-Graphics\-Text\-Item\-::bounding\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a7c2191ecf4c0e619bbe1a80d00a68406}
+
+
+Definition at line 279 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{da/d65/class_u_b_graphics_text_item_a7c2191ecf4c0e619bbe1a80d00a68406_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{da/d65/class_u_b_graphics_text_item_a7c2191ecf4c0e619bbe1a80d00a68406_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_af02cdd515452229135ca5ee9e0a944ba}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!clear\-Source@{clear\-Source}}
+\index{clear\-Source@{clear\-Source}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{clear\-Source}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Graphics\-Text\-Item\-::clear\-Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_af02cdd515452229135ca5ee9e0a944ba}
+
+
+Reimplemented from \hyperlink{class_u_b_graphics_item_a83e8d1b8f4bbbc024a15f645a39d6e49}{U\-B\-Graphics\-Item}.
+
+
+
+Definition at line 91 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+\hypertarget{class_u_b_graphics_text_item_a0100a958a115bfd4e7d3bdada9c36a55}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!color\-On\-Dark\-Background@{color\-On\-Dark\-Background}}
+\index{color\-On\-Dark\-Background@{color\-On\-Dark\-Background}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Text\-Item\-::color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d65/class_u_b_graphics_text_item_a0100a958a115bfd4e7d3bdada9c36a55}
+
+
+Definition at line 71 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+\hypertarget{class_u_b_graphics_text_item_a5cb65bca875b7654dcfd13418c294cc1}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!color\-On\-Light\-Background@{color\-On\-Light\-Background}}
+\index{color\-On\-Light\-Background@{color\-On\-Light\-Background}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Text\-Item\-::color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d65/class_u_b_graphics_text_item_a5cb65bca875b7654dcfd13418c294cc1}
+
+
+Definition at line 81 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+\hypertarget{class_u_b_graphics_text_item_a522f83321532b4e289086240a3bc49fc}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!contents\-Changed@{contents\-Changed}}
+\index{contents\-Changed@{contents\-Changed}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{contents\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::contents\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{da/d65/class_u_b_graphics_text_item_a522f83321532b4e289086240a3bc49fc}
+
+
+Definition at line 326 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{da/d65/class_u_b_graphics_text_item_a522f83321532b4e289086240a3bc49fc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a522f83321532b4e289086240a3bc49fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a14c3b9ff16071a306fe0834577aa26fa}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a14c3b9ff16071a306fe0834577aa26fa}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 250 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a14c3b9ff16071a306fe0834577aa26fa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{da/d65/class_u_b_graphics_text_item_a14c3b9ff16071a306fe0834577aa26fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a6be4507f88dccb25e1e063ec36cf6f47}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Text\-Item\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a6be4507f88dccb25e1e063ec36cf6f47}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 239 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a6be4507f88dccb25e1e063ec36cf6f47_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a9a461e55837ce00341381e2f2bb642e8}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!resize@{resize}}
+\index{resize@{resize}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::resize (
+\begin{DoxyParamCaption}
+\item[{qreal}]{w, }
+\item[{qreal}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a9a461e55837ce00341381e2f2bb642e8}
+
+
+Implements \hyperlink{class_u_b_resizable_graphics_item_a24170d361b212d175220e8db501566f5}{U\-B\-Resizable\-Graphics\-Item}.
+
+
+
+Definition at line 346 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a9a461e55837ce00341381e2f2bb642e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a78498298ea53c6baee150a3a04a27f51}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!scene@{scene}}
+\index{scene@{scene}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Graphics\-Text\-Item\-::scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a78498298ea53c6baee150a3a04a27f51}
+
+
+Reimplemented from \hyperlink{class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431}{U\-B\-Item}.
+
+
+
+Definition at line 340 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a78498298ea53c6baee150a3a04a27f51_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_af5bcc4a16e675e7d16c0f89a0ef4c4c9}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!set\-Color\-On\-Dark\-Background@{set\-Color\-On\-Dark\-Background}}
+\index{set\-Color\-On\-Dark\-Background@{set\-Color\-On\-Dark\-Background}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{set\-Color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::set\-Color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+\item[{Q\-Color}]{p\-Color\-On\-Dark\-Background}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d65/class_u_b_graphics_text_item_af5bcc4a16e675e7d16c0f89a0ef4c4c9}
+
+
+Definition at line 76 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+\hypertarget{class_u_b_graphics_text_item_a4970260af3b1ef583763441a4cd8b30a}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!set\-Color\-On\-Light\-Background@{set\-Color\-On\-Light\-Background}}
+\index{set\-Color\-On\-Light\-Background@{set\-Color\-On\-Light\-Background}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{set\-Color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::set\-Color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+\item[{Q\-Color}]{p\-Color\-On\-Light\-Background}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{da/d65/class_u_b_graphics_text_item_a4970260af3b1ef583763441a4cd8b30a}
+
+
+Definition at line 86 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+\hypertarget{class_u_b_graphics_text_item_a2da72b75372d127cedbc0123ba12c2f2}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!set\-Text\-Height@{set\-Text\-Height}}
+\index{set\-Text\-Height@{set\-Text\-Height}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{set\-Text\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::set\-Text\-Height (
+\begin{DoxyParamCaption}
+\item[{qreal}]{height}
+\end{DoxyParamCaption}
+)}}\label{da/d65/class_u_b_graphics_text_item_a2da72b75372d127cedbc0123ba12c2f2}
+
+
+Definition at line 310 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a2da72b75372d127cedbc0123ba12c2f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a26591ecd60157acc96740175c5a15e94}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!set\-Text\-Width@{set\-Text\-Width}}
+\index{set\-Text\-Width@{set\-Text\-Width}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{set\-Text\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::set\-Text\-Width (
+\begin{DoxyParamCaption}
+\item[{qreal}]{width}
+\end{DoxyParamCaption}
+)}}\label{da/d65/class_u_b_graphics_text_item_a26591ecd60157acc96740175c5a15e94}
+
+
+Definition at line 294 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a26591ecd60157acc96740175c5a15e94_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a91ebcd957d46156859eeb3e9047194bc}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!set\-Uuid@{set\-Uuid}}
+\index{set\-Uuid@{set\-Uuid}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{set\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::set\-Uuid (
+\begin{DoxyParamCaption}
+\item[{const Q\-Uuid \&}]{p\-Uuid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a91ebcd957d46156859eeb3e9047194bc}
+
+
+Reimplemented from \hyperlink{class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8}{U\-B\-Item}.
+
+
+
+Definition at line 361 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a91ebcd957d46156859eeb3e9047194bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_aa0fc4432739063caa06b5294711935b3}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!shape@{shape}}
+\index{shape@{shape}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Painter\-Path U\-B\-Graphics\-Text\-Item\-::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_aa0fc4432739063caa06b5294711935b3}
+
+
+Definition at line 287 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_aa0fc4432739063caa06b5294711935b3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a0c0d7265fa1888bdf1da4a7b793771ed}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!size@{size}}
+\index{size@{size}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size\-F U\-B\-Graphics\-Text\-Item\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a0c0d7265fa1888bdf1da4a7b793771ed}
+
+
+Implements \hyperlink{class_u_b_resizable_graphics_item_a97d0d97df113d870f0e463ace0b050c7}{U\-B\-Resizable\-Graphics\-Item}.
+
+
+
+Definition at line 356 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{da/d65/class_u_b_graphics_text_item_a0c0d7265fa1888bdf1da4a7b793771ed_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a7aa93056029f13ae3cdc9a7771e8748e}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!text\-Height@{text\-Height}}
+\index{text\-Height@{text\-Height}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{text\-Height}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Text\-Item\-::text\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{da/d65/class_u_b_graphics_text_item_a7aa93056029f13ae3cdc9a7771e8748e}
+
+
+Definition at line 320 of file U\-B\-Graphics\-Text\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d65/class_u_b_graphics_text_item_a7aa93056029f13ae3cdc9a7771e8748e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_text_item_a1b9e41208efe10b9d640ee45c2e2dcec}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!text\-Undo\-Command\-Added@{text\-Undo\-Command\-Added}}
+\index{text\-Undo\-Command\-Added@{text\-Undo\-Command\-Added}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{text\-Undo\-Command\-Added}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Text\-Item\-::text\-Undo\-Command\-Added (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Text\-Item} $\ast$}]{text\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d65/class_u_b_graphics_text_item_a1b9e41208efe10b9d640ee45c2e2dcec}
+\hypertarget{class_u_b_graphics_text_item_a987608d1449cdcb3b46eb6e6db680cf7}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!type@{type}}
+\index{type@{type}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int U\-B\-Graphics\-Text\-Item\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{da/d65/class_u_b_graphics_text_item_a987608d1449cdcb3b46eb6e6db680cf7}
+
+
+Implements \hyperlink{class_u_b_graphics_item_acab0781401cac08c9ad99b0cd0fa8480}{U\-B\-Graphics\-Item}.
+
+
+
+Definition at line 45 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_graphics_text_item_a2ef8e51d1f91fc24d65445826fd8b83e}{\index{U\-B\-Graphics\-Text\-Item@{U\-B\-Graphics\-Text\-Item}!last\-Used\-Text\-Color@{last\-Used\-Text\-Color}}
+\index{last\-Used\-Text\-Color@{last\-Used\-Text\-Color}!UBGraphicsTextItem@{U\-B\-Graphics\-Text\-Item}}
+\subsubsection[{last\-Used\-Text\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Text\-Item\-::last\-Used\-Text\-Color\hspace{0.3cm}{\ttfamily [static]}}}\label{da/d65/class_u_b_graphics_text_item_a2ef8e51d1f91fc24d65445826fd8b83e}
+
+
+Definition at line 69 of file U\-B\-Graphics\-Text\-Item.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_text_item_8h}{U\-B\-Graphics\-Text\-Item.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_text_item_8cpp}{U\-B\-Graphics\-Text\-Item.\-cpp}\end{DoxyCompactItemize}

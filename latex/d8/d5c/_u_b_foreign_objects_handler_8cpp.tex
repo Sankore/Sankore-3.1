@@ -1,0 +1,214 @@
+\hypertarget{_u_b_foreign_objects_handler_8cpp}{\section{Sankore-\/3.1/src/core/\-U\-B\-Foreign\-Objects\-Handler.cpp File Reference}
+\label{d8/d5c/_u_b_foreign_objects_handler_8cpp}\index{Sankore-\/3.\-1/src/core/\-U\-B\-Foreign\-Objects\-Handler.\-cpp@{Sankore-\/3.\-1/src/core/\-U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}U\-B\-Foreign\-Objects\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Qt\-Gui$>$}\\*
+{\ttfamily \#include $<$Qt\-Xml$>$}\\*
+{\ttfamily \#include \char`\"{}U\-B\-Settings.\-h\char`\"{}}\\*
+Include dependency graph for U\-B\-Foreign\-Objects\-Handler.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d19/_u_b_foreign_objects_handler_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_cleaner}{Cleaner}
+\item 
+class \hyperlink{class_page_copier}{Page\-Copier}
+\item 
+class \hyperlink{class_u_b_foreighn_objects_handler_private}{U\-B\-Foreighn\-Objects\-Handler\-Private}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_af8033c33f09e5dd7ba5600cef960a6cb}{svg\-Page\-Name} (int page\-Index)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a77a22abe3234cb90c4024ea559501c56}{t\-Video} = \char`\"{}video\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a3e328511b456f91d06aec6c9d357eff5}{t\-Audio} = \char`\"{}audio\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a2ec48aaabb40697b3ea3a9e4de1f9dd9}{t\-Image} = \char`\"{}image\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a5a3dc78b2b91e40461c9fedb57a55aec}{t\-Foreign\-Object} = \char`\"{}foreign\-Object\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_ae1da2fbc20030720916d9a2085ecd2d5}{t\-Teacher\-Guide} = \char`\"{}teacher\-Guide\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a940e13d3cb6460ef5bd1edede67fca97}{t\-Media} = \char`\"{}media\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a18afd6f5511f627e7dd96dd2e48f3874}{a\-Href} = \char`\"{}xlink\-:href\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_ae3972be9306049b03517d9117cc685ed}{a\-Type} = \char`\"{}ub\-:type\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a3cc5683054ef26334629283f82075fc7}{a\-Src} = \char`\"{}ub\-:src\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_affd833ea5f5c60f766e59444a5550782}{a\-Media\-Type} = \char`\"{}media\-Type\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a5938f7ffa0b8f6eb02aae651df7ec963}{a\-Relative\-Path} = \char`\"{}relative\-Path\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a43b5a59830817b1ebc2c0b2e43c2e102}{a\-Action\-Media} = \char`\"{}ub\-:action\-First\-Parameter\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a29a1f14af2aa5d834e1a1843d3873154}{v\-Text} = \char`\"{}text\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a5561be34b65a297005ca92484327eb6a}{wgt\-Suff} = \char`\"{}.wgt\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a0bc455fbdd2618090ddc67fe15869ad3}{thumb\-Suff} = \char`\"{}.png\char`\"{}
+\item 
+const Q\-String \hyperlink{_u_b_foreign_objects_handler_8cpp_a0d84a4e878308b260d4f8eb842ec9392}{scan\-Dirs} = \char`\"{}audios,images,videos,teacher\-Guide\-Objects,widgets\char`\"{}
+\item 
+const Q\-String\-List \hyperlink{_u_b_foreign_objects_handler_8cpp_aa5718d8575e37a1df961a749ebc20f62}{trash\-Filter} = \char`\"{}$\ast$.swf\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_u_b_foreign_objects_handler_8cpp_af8033c33f09e5dd7ba5600cef960a6cb}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!svg\-Page\-Name@{svg\-Page\-Name}}
+\index{svg\-Page\-Name@{svg\-Page\-Name}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{svg\-Page\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String svg\-Page\-Name (
+\begin{DoxyParamCaption}
+\item[{int}]{page\-Index}
+\end{DoxyParamCaption}
+)}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_af8033c33f09e5dd7ba5600cef960a6cb}
+
+
+Definition at line 148 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d5c/_u_b_foreign_objects_handler_8cpp_af8033c33f09e5dd7ba5600cef960a6cb_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a43b5a59830817b1ebc2c0b2e43c2e102}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!a\-Action\-Media@{a\-Action\-Media}}
+\index{a\-Action\-Media@{a\-Action\-Media}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{a\-Action\-Media}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String a\-Action\-Media = \char`\"{}ub\-:action\-First\-Parameter\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a43b5a59830817b1ebc2c0b2e43c2e102}
+
+
+Definition at line 40 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a18afd6f5511f627e7dd96dd2e48f3874}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!a\-Href@{a\-Href}}
+\index{a\-Href@{a\-Href}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{a\-Href}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String a\-Href = \char`\"{}xlink\-:href\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a18afd6f5511f627e7dd96dd2e48f3874}
+
+
+Definition at line 35 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_affd833ea5f5c60f766e59444a5550782}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!a\-Media\-Type@{a\-Media\-Type}}
+\index{a\-Media\-Type@{a\-Media\-Type}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{a\-Media\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String a\-Media\-Type = \char`\"{}media\-Type\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_affd833ea5f5c60f766e59444a5550782}
+
+
+Definition at line 38 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a5938f7ffa0b8f6eb02aae651df7ec963}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!a\-Relative\-Path@{a\-Relative\-Path}}
+\index{a\-Relative\-Path@{a\-Relative\-Path}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{a\-Relative\-Path}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String a\-Relative\-Path = \char`\"{}relative\-Path\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a5938f7ffa0b8f6eb02aae651df7ec963}
+
+
+Definition at line 39 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a3cc5683054ef26334629283f82075fc7}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!a\-Src@{a\-Src}}
+\index{a\-Src@{a\-Src}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{a\-Src}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String a\-Src = \char`\"{}ub\-:src\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a3cc5683054ef26334629283f82075fc7}
+
+
+Definition at line 37 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_ae3972be9306049b03517d9117cc685ed}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!a\-Type@{a\-Type}}
+\index{a\-Type@{a\-Type}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{a\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String a\-Type = \char`\"{}ub\-:type\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_ae3972be9306049b03517d9117cc685ed}
+
+
+Definition at line 36 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a0d84a4e878308b260d4f8eb842ec9392}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!scan\-Dirs@{scan\-Dirs}}
+\index{scan\-Dirs@{scan\-Dirs}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{scan\-Dirs}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String scan\-Dirs = \char`\"{}audios,images,videos,teacher\-Guide\-Objects,widgets\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a0d84a4e878308b260d4f8eb842ec9392}
+
+
+Definition at line 47 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a3e328511b456f91d06aec6c9d357eff5}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!t\-Audio@{t\-Audio}}
+\index{t\-Audio@{t\-Audio}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{t\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Audio = \char`\"{}audio\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a3e328511b456f91d06aec6c9d357eff5}
+
+
+Definition at line 29 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a5a3dc78b2b91e40461c9fedb57a55aec}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!t\-Foreign\-Object@{t\-Foreign\-Object}}
+\index{t\-Foreign\-Object@{t\-Foreign\-Object}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{t\-Foreign\-Object}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Foreign\-Object = \char`\"{}foreign\-Object\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a5a3dc78b2b91e40461c9fedb57a55aec}
+
+
+Definition at line 31 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a0bc455fbdd2618090ddc67fe15869ad3}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!thumb\-Suff@{thumb\-Suff}}
+\index{thumb\-Suff@{thumb\-Suff}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{thumb\-Suff}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String thumb\-Suff = \char`\"{}.png\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a0bc455fbdd2618090ddc67fe15869ad3}
+
+
+Definition at line 45 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a2ec48aaabb40697b3ea3a9e4de1f9dd9}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!t\-Image@{t\-Image}}
+\index{t\-Image@{t\-Image}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{t\-Image}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Image = \char`\"{}image\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a2ec48aaabb40697b3ea3a9e4de1f9dd9}
+
+
+Definition at line 30 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a940e13d3cb6460ef5bd1edede67fca97}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!t\-Media@{t\-Media}}
+\index{t\-Media@{t\-Media}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{t\-Media}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Media = \char`\"{}media\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a940e13d3cb6460ef5bd1edede67fca97}
+
+
+Definition at line 33 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_aa5718d8575e37a1df961a749ebc20f62}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!trash\-Filter@{trash\-Filter}}
+\index{trash\-Filter@{trash\-Filter}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{trash\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String\-List trash\-Filter = \char`\"{}$\ast$.swf\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_aa5718d8575e37a1df961a749ebc20f62}
+
+
+Definition at line 48 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_ae1da2fbc20030720916d9a2085ecd2d5}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!t\-Teacher\-Guide@{t\-Teacher\-Guide}}
+\index{t\-Teacher\-Guide@{t\-Teacher\-Guide}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{t\-Teacher\-Guide}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Teacher\-Guide = \char`\"{}teacher\-Guide\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_ae1da2fbc20030720916d9a2085ecd2d5}
+
+
+Definition at line 32 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a77a22abe3234cb90c4024ea559501c56}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!t\-Video@{t\-Video}}
+\index{t\-Video@{t\-Video}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{t\-Video}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String t\-Video = \char`\"{}video\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a77a22abe3234cb90c4024ea559501c56}
+
+
+Definition at line 28 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a29a1f14af2aa5d834e1a1843d3873154}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!v\-Text@{v\-Text}}
+\index{v\-Text@{v\-Text}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{v\-Text}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String v\-Text = \char`\"{}text\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a29a1f14af2aa5d834e1a1843d3873154}
+
+
+Definition at line 42 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+
+\hypertarget{_u_b_foreign_objects_handler_8cpp_a5561be34b65a297005ca92484327eb6a}{\index{U\-B\-Foreign\-Objects\-Handler.\-cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}!wgt\-Suff@{wgt\-Suff}}
+\index{wgt\-Suff@{wgt\-Suff}!UBForeignObjectsHandler.cpp@{U\-B\-Foreign\-Objects\-Handler.\-cpp}}
+\subsubsection[{wgt\-Suff}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String wgt\-Suff = \char`\"{}.wgt\char`\"{}}}\label{d8/d5c/_u_b_foreign_objects_handler_8cpp_a5561be34b65a297005ca92484327eb6a}
+
+
+Definition at line 44 of file U\-B\-Foreign\-Objects\-Handler.\-cpp.
+

@@ -1,0 +1,819 @@
+\hypertarget{class_u_b_graphics_polygon_item}{\section{U\-B\-Graphics\-Polygon\-Item Class Reference}
+\label{d5/d46/class_u_b_graphics_polygon_item}\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Polygon\-Item.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Polygon\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d68/class_u_b_graphics_polygon_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Polygon\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/de2/class_u_b_graphics_polygon_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{class_u_b_graphics_polygon_item_a1acd33a55453d233c333a6d6e8896e5da15789bea86a37e6d6c688472abc48a54}{Type} =  U\-B\-Graphics\-Item\-Type\-:\-:Polygon\-Item\-Type
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_polygon_item_a88a4b88d048d776eafb97cdd2d979909}{U\-B\-Graphics\-Polygon\-Item} (Q\-Graphics\-Item $\ast$parent=0)
+\item 
+\hyperlink{class_u_b_graphics_polygon_item_a6f05fb4bda0b42fb66e96476d13b0f31}{U\-B\-Graphics\-Polygon\-Item} (const Q\-Line\-F \&line, qreal p\-Width)
+\item 
+\hyperlink{class_u_b_graphics_polygon_item_a8db7d5601dcaa0623d7b4810a2038d05}{U\-B\-Graphics\-Polygon\-Item} (const Q\-Polygon\-F \&polygon, Q\-Graphics\-Item $\ast$parent=0)
+\item 
+\hyperlink{class_u_b_graphics_polygon_item_a8f601cc855d1fd78dce23b99225f4e15}{$\sim$\-U\-B\-Graphics\-Polygon\-Item} ()
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_a2f069d5cdee13da2363e1c7c353f6994}{initialize} ()
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_a97f0b29bd07773c31b351da735b82efd}{set\-Uuid} (const Q\-Uuid \&p\-Uuid)
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_a81c74965973558c5c9b1caa82021a08e}{set\-Strokes\-Group} (\hyperlink{class_u_b_graphics_strokes_group}{U\-B\-Graphics\-Strokes\-Group} $\ast$group)
+\item 
+\hyperlink{class_u_b_graphics_strokes_group}{U\-B\-Graphics\-Strokes\-Group} $\ast$ \hyperlink{class_u_b_graphics_polygon_item_a87013167bd29d82e3b5dd7a40edd0546}{strokes\-Group} () const 
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_a7a9f3b6814099ead59d91e37d01e70d5}{set\-Color} (const Q\-Color \&\hyperlink{class_u_b_graphics_polygon_item_a9280bf7621aa90fe3f589d061b5a0af3}{color})
+\item 
+Q\-Color \hyperlink{class_u_b_graphics_polygon_item_a9280bf7621aa90fe3f589d061b5a0af3}{color} () const 
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_graphics_polygon_item_af7ecdc68fa4901afd6720eb8d987e947}{scene} ()
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212}{subtract} (\hyperlink{class_u_b_graphics_polygon_item}{U\-B\-Graphics\-Polygon\-Item} $\ast$pi)
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_ae42d7228ce873fe2d9c81dd5eac1c78b}{subtract\-Intersecting} (\hyperlink{class_u_b_graphics_polygon_item}{U\-B\-Graphics\-Polygon\-Item} $\ast$pi)
+\item 
+virtual int \hyperlink{class_u_b_graphics_polygon_item_a81d6518ecc9021e6f835ef7940ed6729}{type} () const 
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_afa6907c68bf122f751edf474bba9c99c}{set\-Polygon} (const Q\-Polygon\-F p\-Polygon)
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+Q\-Line\-F \hyperlink{class_u_b_graphics_polygon_item_ab349aaecd389a37904ceb2f28ae223da}{original\-Line} ()
+\item 
+qreal \hyperlink{class_u_b_graphics_polygon_item_aacda0659f1614f24634e4f7276ff1618}{original\-Width} ()
+\item 
+bool \hyperlink{class_u_b_graphics_polygon_item_a7132e5315a262757037e72e5fa379d5d}{is\-Nominal\-Line} ()
+\item 
+Q\-Color \hyperlink{class_u_b_graphics_polygon_item_a6526b10cc05fde764a2e11e233fe4318}{color\-On\-Dark\-Background} () const 
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_ac9933cb0cf460025e02b4c01482cd561}{set\-Color\-On\-Dark\-Background} (Q\-Color p\-Color\-On\-Dark\-Background)
+\item 
+Q\-Color \hyperlink{class_u_b_graphics_polygon_item_a8185c658dcb5920a98f14d4d18e8e060}{color\-On\-Light\-Background} () const 
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_aab20d0fba4216687b627ca7cd3eee90f}{set\-Color\-On\-Light\-Background} (Q\-Color p\-Color\-On\-Light\-Background)
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9}{set\-Stroke} (\hyperlink{class_u_b_graphics_stroke}{U\-B\-Graphics\-Stroke} $\ast$\hyperlink{class_u_b_graphics_polygon_item_a41dcbc4ac3e7682d6f8355c9fe6a5121}{stroke})
+\item 
+\hyperlink{class_u_b_graphics_stroke}{U\-B\-Graphics\-Stroke} $\ast$ \hyperlink{class_u_b_graphics_polygon_item_a41dcbc4ac3e7682d6f8355c9fe6a5121}{stroke} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_graphics_polygon_item_ae721fea33eb806623854483bc5c0ffa3}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\item 
+Q\-Painter\-Path \hyperlink{class_u_b_graphics_polygon_item_a8688ceb70c29f83d41aef0f5c407def2}{shape} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_polygon_item_a1acd33a55453d233c333a6d6e8896e5d}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{d5/d46/class_u_b_graphics_polygon_item_a1acd33a55453d233c333a6d6e8896e5d}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Type@{Type}!U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}}\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!Type@{Type}}\item[{\em 
+\hypertarget{class_u_b_graphics_polygon_item_a1acd33a55453d233c333a6d6e8896e5da15789bea86a37e6d6c688472abc48a54}{Type}\label{d5/d46/class_u_b_graphics_polygon_item_a1acd33a55453d233c333a6d6e8896e5da15789bea86a37e6d6c688472abc48a54}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 86 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_polygon_item_a88a4b88d048d776eafb97cdd2d979909}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}}
+\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{U\-B\-Graphics\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Polygon\-Item\-::\-U\-B\-Graphics\-Polygon\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a88a4b88d048d776eafb97cdd2d979909}
+
+
+Definition at line 33 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a88a4b88d048d776eafb97cdd2d979909_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a88a4b88d048d776eafb97cdd2d979909_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a6f05fb4bda0b42fb66e96476d13b0f31}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}}
+\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{U\-B\-Graphics\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Polygon\-Item\-::\-U\-B\-Graphics\-Polygon\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Line\-F \&}]{line, }
+\item[{qreal}]{p\-Width}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a6f05fb4bda0b42fb66e96476d13b0f31}
+
+
+Definition at line 58 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a6f05fb4bda0b42fb66e96476d13b0f31_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a8db7d5601dcaa0623d7b4810a2038d05}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}}
+\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{U\-B\-Graphics\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Polygon\-Item\-::\-U\-B\-Graphics\-Polygon\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Polygon\-F \&}]{polygon, }
+\item[{Q\-Graphics\-Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a8db7d5601dcaa0623d7b4810a2038d05}
+
+
+Definition at line 46 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a8db7d5601dcaa0623d7b4810a2038d05_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a8f601cc855d1fd78dce23b99225f4e15}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!$\sim$\-U\-B\-Graphics\-Polygon\-Item@{$\sim$\-U\-B\-Graphics\-Polygon\-Item}}
+\index{$\sim$\-U\-B\-Graphics\-Polygon\-Item@{$\sim$\-U\-B\-Graphics\-Polygon\-Item}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Polygon\-Item\-::$\sim$\-U\-B\-Graphics\-Polygon\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a8f601cc855d1fd78dce23b99225f4e15}
+
+
+Definition at line 93 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_polygon_item_a9280bf7621aa90fe3f589d061b5a0af3}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!color@{color}}
+\index{color@{color}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Polygon\-Item\-::color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d5/d46/class_u_b_graphics_polygon_item_a9280bf7621aa90fe3f589d061b5a0af3}
+
+
+Definition at line 155 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a9280bf7621aa90fe3f589d061b5a0af3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a6526b10cc05fde764a2e11e233fe4318}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!color\-On\-Dark\-Background@{color\-On\-Dark\-Background}}
+\index{color\-On\-Dark\-Background@{color\-On\-Dark\-Background}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Polygon\-Item\-::color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a6526b10cc05fde764a2e11e233fe4318}
+
+
+Definition at line 107 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a6526b10cc05fde764a2e11e233fe4318_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a8185c658dcb5920a98f14d4d18e8e060}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!color\-On\-Light\-Background@{color\-On\-Light\-Background}}
+\index{color\-On\-Light\-Background@{color\-On\-Light\-Background}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Polygon\-Item\-::color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a8185c658dcb5920a98f14d4d18e8e060}
+
+
+Definition at line 117 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a8185c658dcb5920a98f14d4d18e8e060_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 175 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Polygon\-Item\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 161 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a2f069d5cdee13da2363e1c7c353f6994}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!initialize@{initialize}}
+\index{initialize@{initialize}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a2f069d5cdee13da2363e1c7c353f6994}
+
+
+Definition at line 70 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a2f069d5cdee13da2363e1c7c353f6994_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a2f069d5cdee13da2363e1c7c353f6994_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a7132e5315a262757037e72e5fa379d5d}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!is\-Nominal\-Line@{is\-Nominal\-Line}}
+\index{is\-Nominal\-Line@{is\-Nominal\-Line}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{is\-Nominal\-Line}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Polygon\-Item\-::is\-Nominal\-Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a7132e5315a262757037e72e5fa379d5d}
+
+
+Definition at line 105 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a7132e5315a262757037e72e5fa379d5d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_ab349aaecd389a37904ceb2f28ae223da}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!original\-Line@{original\-Line}}
+\index{original\-Line@{original\-Line}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{original\-Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Line\-F U\-B\-Graphics\-Polygon\-Item\-::original\-Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_ab349aaecd389a37904ceb2f28ae223da}
+
+
+Definition at line 103 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+\hypertarget{class_u_b_graphics_polygon_item_aacda0659f1614f24634e4f7276ff1618}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!original\-Width@{original\-Width}}
+\index{original\-Width@{original\-Width}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{original\-Width}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Polygon\-Item\-::original\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_aacda0659f1614f24634e4f7276ff1618}
+
+
+Definition at line 104 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_aacda0659f1614f24634e4f7276ff1618_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_ae721fea33eb806623854483bc5c0ffa3}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!paint@{paint}}
+\index{paint@{paint}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d5/d46/class_u_b_graphics_polygon_item_ae721fea33eb806623854483bc5c0ffa3}
+
+
+Definition at line 197 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_ae721fea33eb806623854483bc5c0ffa3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_af7ecdc68fa4901afd6720eb8d987e947}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!scene@{scene}}
+\index{scene@{scene}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Graphics\-Polygon\-Item\-::scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/d46/class_u_b_graphics_polygon_item_af7ecdc68fa4901afd6720eb8d987e947}
+
+
+Reimplemented from \hyperlink{class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431}{U\-B\-Item}.
+
+
+
+Definition at line 221 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_af7ecdc68fa4901afd6720eb8d987e947_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a7a9f3b6814099ead59d91e37d01e70d5}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!set\-Color@{set\-Color}}
+\index{set\-Color@{set\-Color}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{set\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::set\-Color (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{color}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a7a9f3b6814099ead59d91e37d01e70d5}
+
+
+Definition at line 117 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a7a9f3b6814099ead59d91e37d01e70d5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_ac9933cb0cf460025e02b4c01482cd561}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!set\-Color\-On\-Dark\-Background@{set\-Color\-On\-Dark\-Background}}
+\index{set\-Color\-On\-Dark\-Background@{set\-Color\-On\-Dark\-Background}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{set\-Color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::set\-Color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+\item[{Q\-Color}]{p\-Color\-On\-Dark\-Background}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_ac9933cb0cf460025e02b4c01482cd561}
+
+
+Definition at line 112 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_ac9933cb0cf460025e02b4c01482cd561_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_aab20d0fba4216687b627ca7cd3eee90f}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!set\-Color\-On\-Light\-Background@{set\-Color\-On\-Light\-Background}}
+\index{set\-Color\-On\-Light\-Background@{set\-Color\-On\-Light\-Background}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{set\-Color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::set\-Color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+\item[{Q\-Color}]{p\-Color\-On\-Light\-Background}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_aab20d0fba4216687b627ca7cd3eee90f}
+
+
+Definition at line 122 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_aab20d0fba4216687b627ca7cd3eee90f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_afa6907c68bf122f751edf474bba9c99c}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!set\-Polygon@{set\-Polygon}}
+\index{set\-Polygon@{set\-Polygon}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{set\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::set\-Polygon (
+\begin{DoxyParamCaption}
+\item[{const Q\-Polygon\-F}]{p\-Polygon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_afa6907c68bf122f751edf474bba9c99c}
+
+
+Definition at line 93 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_afa6907c68bf122f751edf474bba9c99c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!set\-Stroke@{set\-Stroke}}
+\index{set\-Stroke@{set\-Stroke}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{set\-Stroke}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::set\-Stroke (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Stroke} $\ast$}]{stroke}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9}
+
+
+Definition at line 103 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a81c74965973558c5c9b1caa82021a08e}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!set\-Strokes\-Group@{set\-Strokes\-Group}}
+\index{set\-Strokes\-Group@{set\-Strokes\-Group}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{set\-Strokes\-Group}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::set\-Strokes\-Group (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Strokes\-Group} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}\label{d5/d46/class_u_b_graphics_polygon_item_a81c74965973558c5c9b1caa82021a08e}
+
+
+Definition at line 98 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a81c74965973558c5c9b1caa82021a08e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a97f0b29bd07773c31b351da735b82efd}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!set\-Uuid@{set\-Uuid}}
+\index{set\-Uuid@{set\-Uuid}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{set\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::set\-Uuid (
+\begin{DoxyParamCaption}
+\item[{const Q\-Uuid \&}]{p\-Uuid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a97f0b29bd07773c31b351da735b82efd}
+
+
+Reimplemented from \hyperlink{class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8}{U\-B\-Item}.
+
+
+
+Definition at line 76 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a97f0b29bd07773c31b351da735b82efd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a8688ceb70c29f83d41aef0f5c407def2}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!shape@{shape}}
+\index{shape@{shape}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Painter\-Path U\-B\-Graphics\-Polygon\-Item\-::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a8688ceb70c29f83d41aef0f5c407def2}
+
+
+Definition at line 207 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+\hypertarget{class_u_b_graphics_polygon_item_a41dcbc4ac3e7682d6f8355c9fe6a5121}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!stroke@{stroke}}
+\index{stroke@{stroke}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{stroke}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Stroke} $\ast$ U\-B\-Graphics\-Polygon\-Item\-::stroke (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d5/d46/class_u_b_graphics_polygon_item_a41dcbc4ac3e7682d6f8355c9fe6a5121}
+
+
+Definition at line 111 of file U\-B\-Graphics\-Polygon\-Item.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a41dcbc4ac3e7682d6f8355c9fe6a5121_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a87013167bd29d82e3b5dd7a40edd0546}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!strokes\-Group@{strokes\-Group}}
+\index{strokes\-Group@{strokes\-Group}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{strokes\-Group}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Strokes\-Group}$\ast$ U\-B\-Graphics\-Polygon\-Item\-::strokes\-Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a87013167bd29d82e3b5dd7a40edd0546}
+
+
+Definition at line 54 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a87013167bd29d82e3b5dd7a40edd0546_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!subtract@{subtract}}
+\index{subtract@{subtract}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{subtract}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::subtract (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Polygon\-Item} $\ast$}]{pi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212}
+
+
+Definition at line 61 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_ae42d7228ce873fe2d9c81dd5eac1c78b}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!subtract\-Intersecting@{subtract\-Intersecting}}
+\index{subtract\-Intersecting@{subtract\-Intersecting}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{subtract\-Intersecting}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Polygon\-Item\-::subtract\-Intersecting (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Polygon\-Item} $\ast$}]{pi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d46/class_u_b_graphics_polygon_item_ae42d7228ce873fe2d9c81dd5eac1c78b}
+
+
+Definition at line 75 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d46/class_u_b_graphics_polygon_item_ae42d7228ce873fe2d9c81dd5eac1c78b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_polygon_item_a81d6518ecc9021e6f835ef7940ed6729}{\index{U\-B\-Graphics\-Polygon\-Item@{U\-B\-Graphics\-Polygon\-Item}!type@{type}}
+\index{type@{type}!UBGraphicsPolygonItem@{U\-B\-Graphics\-Polygon\-Item}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int U\-B\-Graphics\-Polygon\-Item\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d5/d46/class_u_b_graphics_polygon_item_a81d6518ecc9021e6f835ef7940ed6729}
+
+
+Definition at line 88 of file U\-B\-Graphics\-Polygon\-Item.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_polygon_item_8h}{U\-B\-Graphics\-Polygon\-Item.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_polygon_item_8cpp}{U\-B\-Graphics\-Polygon\-Item.\-cpp}\end{DoxyCompactItemize}

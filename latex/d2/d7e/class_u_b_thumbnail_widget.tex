@@ -1,0 +1,730 @@
+\hypertarget{class_u_b_thumbnail_widget}{\section{U\-B\-Thumbnail\-Widget Class Reference}
+\label{d2/d7e/class_u_b_thumbnail_widget}\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Thumbnail\-Widget.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Thumbnail\-Widget\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/d8d/class_u_b_thumbnail_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Thumbnail\-Widget\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{d5/d71/class_u_b_thumbnail_widget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a3df63299295dda8099b9a08492c51167}{set\-Thumbnail\-Width} (qreal p\-Thumbnail\-Width)
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a190afbca25c5f63b5849ec28edb5113f}{set\-Spacing} (qreal p\-Spacing)
+\item 
+virtual void \hyperlink{class_u_b_thumbnail_widget_a79132d84b323d9d17fa7e9bc4c985404}{set\-Graphics\-Items} (const Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$ \&p\-Graphics\-Items, const Q\-List$<$ Q\-Url $>$ \&p\-Item\-Paths, const Q\-String\-List p\-Labels=Q\-String\-List(), const Q\-String \&p\-Mime\-Type=Q\-String(\char`\"{}\char`\"{}))
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a18b797a72d96bffce0051b5c7d969c83}{refresh\-Scene} ()
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a7b6f8ce62946ce939fd7fa13f69a58a1}{scene\-Selection\-Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a968ec9aea69c013f6c2d06bf5a2cd532}{resized} ()
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_ad87147e17c83d148d7d132cae34f886a}{selection\-Changed} ()
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a54171b2e9bf1ec969229782fbe3a5b3a}{mouse\-Double\-Click} (Q\-Graphics\-Item $\ast$item, int index)
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_ac625ea33a0163e3af34f4f98d9de3291}{mouse\-Click} (Q\-Graphics\-Item $\ast$item, int index)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_thumbnail_widget_ac6aeee1050bfa0a5b6931da8eae826fb}{U\-B\-Thumbnail\-Widget} (Q\-Widget $\ast$parent)
+\item 
+virtual \hyperlink{class_u_b_thumbnail_widget_ae2aa7cbac97738fdb573eef1bd576b69}{$\sim$\-U\-B\-Thumbnail\-Widget} ()
+\item 
+Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$ \hyperlink{class_u_b_thumbnail_widget_a2ab6d6162aac89e9656d63aa358cdd20}{selected\-Items} ()
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_ad8826d4cf4305cbfc37ef4316f80cb04}{select\-Item\-At} (int p\-Index, bool extend=false)
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a5a6f76d39698a4f7f08ee77fd0213a62}{unselect\-Item\-At} (int p\-Index)
+\item 
+qreal \hyperlink{class_u_b_thumbnail_widget_a34c03c4d7392e1f668535ca539e0f98e}{thumbnail\-Width} ()
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_afcc16399008cda7ebbe4cb679356ce36}{set\-Background\-Brush} (const Q\-Brush \&brush)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_thumbnail_widget_a5691f8f210352b7b6b52ef6a3ca4d7a6}{mouse\-Press\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_thumbnail_widget_aef2025372b0c6517c01dbb4516f485f3}{mouse\-Move\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_thumbnail_widget_a5d58b8b0db7e0acf240a15536f958266}{mouse\-Release\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_thumbnail_widget_abe271f4e2df19c063b4570640b05be94}{resize\-Event} (Q\-Resize\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_thumbnail_widget_a21c5f6b24658f9482a113e01e74af7df}{mouse\-Double\-Click\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_thumbnail_widget_a052d61f5fbeb39ae5f312c4c3ddf94a4}{key\-Press\-Event} (Q\-Key\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_thumbnail_widget_a277497abe2368939b696093d96cff9ff}{focus\-In\-Event} (Q\-Focus\-Event $\ast$event)
+\item 
+qreal \hyperlink{class_u_b_thumbnail_widget_af4e84c1474f32521f8b2470db69fb620}{spacing} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$ \hyperlink{class_u_b_thumbnail_widget_a43bfe498d5772daba93bdd852b8d4fa3}{m\-Graphic\-Items}
+\item 
+Q\-List$<$ \hyperlink{class_u_b_thumbnail_text_item}{U\-B\-Thumbnail\-Text\-Item} $\ast$ $>$ \hyperlink{class_u_b_thumbnail_widget_a866fb03682f82cdc495edd71c56ccfdb}{m\-Labels\-Items}
+\item 
+Q\-Point\-F \hyperlink{class_u_b_thumbnail_widget_a672d69b425d9a95f6412716ef85444be}{m\-Mouse\-Press\-Scene\-Pos}
+\item 
+Q\-Point \hyperlink{class_u_b_thumbnail_widget_a5b2e42091aab49f061b55e4104527a37}{m\-Mouse\-Press\-Pos}
+\item 
+Q\-List$<$ Q\-Url $>$ \hyperlink{class_u_b_thumbnail_widget_a3b9f8d357b3c3ea67cb99bc2b8d2083c}{m\-Items\-Paths}
+\item 
+Q\-String\-List \hyperlink{class_u_b_thumbnail_widget_a843453749e9b655e9714e5048810260a}{m\-Labels}
+\item 
+bool \hyperlink{class_u_b_thumbnail_widget_ab67c3d09d08d5aa28a3fcd2776afb240}{b\-Selection\-In\-Progress}
+\item 
+bool \hyperlink{class_u_b_thumbnail_widget_ae00409bc4f70482e57523e94583de713}{b\-Can\-Drag}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 44 of file U\-B\-Thumbnail\-Widget.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_thumbnail_widget_ac6aeee1050bfa0a5b6931da8eae826fb}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}}
+\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{U\-B\-Thumbnail\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Thumbnail\-Widget\-::\-U\-B\-Thumbnail\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{d2/d7e/class_u_b_thumbnail_widget_ac6aeee1050bfa0a5b6931da8eae826fb}
+
+
+Definition at line 40 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_ac6aeee1050bfa0a5b6931da8eae826fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_ae2aa7cbac97738fdb573eef1bd576b69}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!$\sim$\-U\-B\-Thumbnail\-Widget@{$\sim$\-U\-B\-Thumbnail\-Widget}}
+\index{$\sim$\-U\-B\-Thumbnail\-Widget@{$\sim$\-U\-B\-Thumbnail\-Widget}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{$\sim$\-U\-B\-Thumbnail\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Thumbnail\-Widget\-::$\sim$\-U\-B\-Thumbnail\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d2/d7e/class_u_b_thumbnail_widget_ae2aa7cbac97738fdb573eef1bd576b69}
+
+
+Definition at line 63 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d2/d7e/class_u_b_thumbnail_widget_ae2aa7cbac97738fdb573eef1bd576b69_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_thumbnail_widget_a277497abe2368939b696093d96cff9ff}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!focus\-In\-Event@{focus\-In\-Event}}
+\index{focus\-In\-Event@{focus\-In\-Event}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{focus\-In\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::focus\-In\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Focus\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a277497abe2368939b696093d96cff9ff}
+
+
+Definition at line 644 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a277497abe2368939b696093d96cff9ff_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a052d61f5fbeb39ae5f312c4c3ddf94a4}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::key\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a052d61f5fbeb39ae5f312c4c3ddf94a4}
+
+
+Definition at line 501 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a052d61f5fbeb39ae5f312c4c3ddf94a4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_ac625ea33a0163e3af34f4f98d9de3291}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!mouse\-Click@{mouse\-Click}}
+\index{mouse\-Click@{mouse\-Click}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{mouse\-Click}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::mouse\-Click (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/d7e/class_u_b_thumbnail_widget_ac625ea33a0163e3af34f4f98d9de3291}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d2/d7e/class_u_b_thumbnail_widget_ac625ea33a0163e3af34f4f98d9de3291_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a54171b2e9bf1ec969229782fbe3a5b3a}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!mouse\-Double\-Click@{mouse\-Double\-Click}}
+\index{mouse\-Double\-Click@{mouse\-Double\-Click}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{mouse\-Double\-Click}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::mouse\-Double\-Click (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a54171b2e9bf1ec969229782fbe3a5b3a}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a54171b2e9bf1ec969229782fbe3a5b3a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a21c5f6b24658f9482a113e01e74af7df}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!mouse\-Double\-Click\-Event@{mouse\-Double\-Click\-Event}}
+\index{mouse\-Double\-Click\-Event@{mouse\-Double\-Click\-Event}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{mouse\-Double\-Click\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::mouse\-Double\-Click\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a21c5f6b24658f9482a113e01e74af7df}
+
+
+Definition at line 737 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a21c5f6b24658f9482a113e01e74af7df_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_aef2025372b0c6517c01dbb4516f485f3}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/d7e/class_u_b_thumbnail_widget_aef2025372b0c6517c01dbb4516f485f3}
+
+
+Reimplemented in \hyperlink{class_u_b_document_thumbnail_widget_a6d3fecab28e74030ec98a9b24a71b07f}{U\-B\-Document\-Thumbnail\-Widget}.
+
+
+
+Definition at line 342 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d2/d7e/class_u_b_thumbnail_widget_aef2025372b0c6517c01dbb4516f485f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a5691f8f210352b7b6b52ef6a3ca4d7a6}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a5691f8f210352b7b6b52ef6a3ca4d7a6}
+
+
+Definition at line 235 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a5691f8f210352b7b6b52ef6a3ca4d7a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a5d58b8b0db7e0acf240a15536f958266}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a5d58b8b0db7e0acf240a15536f958266}
+
+
+Definition at line 488 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d2/d7e/class_u_b_thumbnail_widget_a5d58b8b0db7e0acf240a15536f958266_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a18b797a72d96bffce0051b5c7d969c83}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!refresh\-Scene@{refresh\-Scene}}
+\index{refresh\-Scene@{refresh\-Scene}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{refresh\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::refresh\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a18b797a72d96bffce0051b5c7d969c83}
+
+
+Definition at line 139 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a18b797a72d96bffce0051b5c7d969c83_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d2/d7e/class_u_b_thumbnail_widget_a18b797a72d96bffce0051b5c7d969c83_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a968ec9aea69c013f6c2d06bf5a2cd532}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!resized@{resized}}
+\index{resized@{resized}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{resized}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::resized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a968ec9aea69c013f6c2d06bf5a2cd532}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d2/d7e/class_u_b_thumbnail_widget_a968ec9aea69c013f6c2d06bf5a2cd532_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_abe271f4e2df19c063b4570640b05be94}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!resize\-Event@{resize\-Event}}
+\index{resize\-Event@{resize\-Event}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{resize\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::resize\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Resize\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/d7e/class_u_b_thumbnail_widget_abe271f4e2df19c063b4570640b05be94}
+
+
+Definition at line 656 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_abe271f4e2df19c063b4570640b05be94_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a7b6f8ce62946ce939fd7fa13f69a58a1}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!scene\-Selection\-Changed@{scene\-Selection\-Changed}}
+\index{scene\-Selection\-Changed@{scene\-Selection\-Changed}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{scene\-Selection\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::scene\-Selection\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a7b6f8ce62946ce939fd7fa13f69a58a1}
+
+
+Definition at line 666 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a7b6f8ce62946ce939fd7fa13f69a58a1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a7b6f8ce62946ce939fd7fa13f69a58a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a2ab6d6162aac89e9656d63aa358cdd20}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!selected\-Items@{selected\-Items}}
+\index{selected\-Items@{selected\-Items}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{selected\-Items}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$ U\-B\-Thumbnail\-Widget\-::selected\-Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/d7e/class_u_b_thumbnail_widget_a2ab6d6162aac89e9656d63aa358cdd20}
+
+
+Definition at line 227 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a2ab6d6162aac89e9656d63aa358cdd20_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_ad87147e17c83d148d7d132cae34f886a}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!selection\-Changed@{selection\-Changed}}
+\index{selection\-Changed@{selection\-Changed}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{selection\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::selection\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/d7e/class_u_b_thumbnail_widget_ad87147e17c83d148d7d132cae34f886a}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_ad87147e17c83d148d7d132cae34f886a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_ad8826d4cf4305cbfc37ef4316f80cb04}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!select\-Item\-At@{select\-Item\-At}}
+\index{select\-Item\-At@{select\-Item\-At}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{select\-Item\-At}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::select\-Item\-At (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Index, }
+\item[{bool}]{extend = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d2/d7e/class_u_b_thumbnail_widget_ad8826d4cf4305cbfc37ef4316f80cb04}
+
+
+Definition at line 672 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_ad8826d4cf4305cbfc37ef4316f80cb04_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_ad8826d4cf4305cbfc37ef4316f80cb04_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_afcc16399008cda7ebbe4cb679356ce36}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!set\-Background\-Brush@{set\-Background\-Brush}}
+\index{set\-Background\-Brush@{set\-Background\-Brush}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{set\-Background\-Brush}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::set\-Background\-Brush (
+\begin{DoxyParamCaption}
+\item[{const Q\-Brush \&}]{brush}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d2/d7e/class_u_b_thumbnail_widget_afcc16399008cda7ebbe4cb679356ce36}
+
+
+Definition at line 61 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a79132d84b323d9d17fa7e9bc4c985404}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!set\-Graphics\-Items@{set\-Graphics\-Items}}
+\index{set\-Graphics\-Items@{set\-Graphics\-Items}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{set\-Graphics\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::set\-Graphics\-Items (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$ \&}]{p\-Graphics\-Items, }
+\item[{const Q\-List$<$ Q\-Url $>$ \&}]{p\-Item\-Paths, }
+\item[{const Q\-String\-List}]{p\-Labels = {\ttfamily QStringList()}, }
+\item[{const Q\-String \&}]{p\-Mime\-Type = {\ttfamily QString(\char`\"{}\char`\"{})}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a79132d84b323d9d17fa7e9bc4c985404}
+
+
+Definition at line 85 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a79132d84b323d9d17fa7e9bc4c985404_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a190afbca25c5f63b5849ec28edb5113f}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!set\-Spacing@{set\-Spacing}}
+\index{set\-Spacing@{set\-Spacing}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{set\-Spacing}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::set\-Spacing (
+\begin{DoxyParamCaption}
+\item[{qreal}]{p\-Spacing}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a190afbca25c5f63b5849ec28edb5113f}
+
+
+Definition at line 77 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a190afbca25c5f63b5849ec28edb5113f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a3df63299295dda8099b9a08492c51167}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!set\-Thumbnail\-Width@{set\-Thumbnail\-Width}}
+\index{set\-Thumbnail\-Width@{set\-Thumbnail\-Width}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{set\-Thumbnail\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::set\-Thumbnail\-Width (
+\begin{DoxyParamCaption}
+\item[{qreal}]{p\-Thumbnail\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a3df63299295dda8099b9a08492c51167}
+
+
+Definition at line 69 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_a3df63299295dda8099b9a08492c51167_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_af4e84c1474f32521f8b2470db69fb620}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!spacing@{spacing}}
+\index{spacing@{spacing}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{spacing}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Thumbnail\-Widget\-::spacing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_af4e84c1474f32521f8b2470db69fb620}
+
+
+Definition at line 96 of file U\-B\-Thumbnail\-Widget.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d7e/class_u_b_thumbnail_widget_af4e84c1474f32521f8b2470db69fb620_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_thumbnail_widget_a34c03c4d7392e1f668535ca539e0f98e}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!thumbnail\-Width@{thumbnail\-Width}}
+\index{thumbnail\-Width@{thumbnail\-Width}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{thumbnail\-Width}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Thumbnail\-Widget\-::thumbnail\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a34c03c4d7392e1f668535ca539e0f98e}
+
+
+Definition at line 56 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a5a6f76d39698a4f7f08ee77fd0213a62}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!unselect\-Item\-At@{unselect\-Item\-At}}
+\index{unselect\-Item\-At@{unselect\-Item\-At}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{unselect\-Item\-At}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Thumbnail\-Widget\-::unselect\-Item\-At (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Index}
+\end{DoxyParamCaption}
+)}}\label{d2/d7e/class_u_b_thumbnail_widget_a5a6f76d39698a4f7f08ee77fd0213a62}
+
+
+Definition at line 694 of file U\-B\-Thumbnail\-Widget.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_thumbnail_widget_ae00409bc4f70482e57523e94583de713}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!b\-Can\-Drag@{b\-Can\-Drag}}
+\index{b\-Can\-Drag@{b\-Can\-Drag}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{b\-Can\-Drag}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Thumbnail\-Widget\-::b\-Can\-Drag\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_ae00409bc4f70482e57523e94583de713}
+
+
+Definition at line 100 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_ab67c3d09d08d5aa28a3fcd2776afb240}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!b\-Selection\-In\-Progress@{b\-Selection\-In\-Progress}}
+\index{b\-Selection\-In\-Progress@{b\-Selection\-In\-Progress}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{b\-Selection\-In\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Thumbnail\-Widget\-::b\-Selection\-In\-Progress\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_ab67c3d09d08d5aa28a3fcd2776afb240}
+
+
+Definition at line 99 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a43bfe498d5772daba93bdd852b8d4fa3}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!m\-Graphic\-Items@{m\-Graphic\-Items}}
+\index{m\-Graphic\-Items@{m\-Graphic\-Items}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{m\-Graphic\-Items}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$Q\-Graphics\-Item$\ast$$>$ U\-B\-Thumbnail\-Widget\-::m\-Graphic\-Items\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a43bfe498d5772daba93bdd852b8d4fa3}
+
+
+Definition at line 90 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a3b9f8d357b3c3ea67cb99bc2b8d2083c}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!m\-Items\-Paths@{m\-Items\-Paths}}
+\index{m\-Items\-Paths@{m\-Items\-Paths}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{m\-Items\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$Q\-Url$>$ U\-B\-Thumbnail\-Widget\-::m\-Items\-Paths\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a3b9f8d357b3c3ea67cb99bc2b8d2083c}
+
+
+Definition at line 97 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a843453749e9b655e9714e5048810260a}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!m\-Labels@{m\-Labels}}
+\index{m\-Labels@{m\-Labels}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{m\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Thumbnail\-Widget\-::m\-Labels\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a843453749e9b655e9714e5048810260a}
+
+
+Definition at line 98 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a866fb03682f82cdc495edd71c56ccfdb}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!m\-Labels\-Items@{m\-Labels\-Items}}
+\index{m\-Labels\-Items@{m\-Labels\-Items}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{m\-Labels\-Items}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<${\bf U\-B\-Thumbnail\-Text\-Item}$\ast$$>$ U\-B\-Thumbnail\-Widget\-::m\-Labels\-Items\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a866fb03682f82cdc495edd71c56ccfdb}
+
+
+Definition at line 91 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a5b2e42091aab49f061b55e4104527a37}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!m\-Mouse\-Press\-Pos@{m\-Mouse\-Press\-Pos}}
+\index{m\-Mouse\-Press\-Pos@{m\-Mouse\-Press\-Pos}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{m\-Mouse\-Press\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point U\-B\-Thumbnail\-Widget\-::m\-Mouse\-Press\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a5b2e42091aab49f061b55e4104527a37}
+
+
+Definition at line 93 of file U\-B\-Thumbnail\-Widget.\-h.
+
+\hypertarget{class_u_b_thumbnail_widget_a672d69b425d9a95f6412716ef85444be}{\index{U\-B\-Thumbnail\-Widget@{U\-B\-Thumbnail\-Widget}!m\-Mouse\-Press\-Scene\-Pos@{m\-Mouse\-Press\-Scene\-Pos}}
+\index{m\-Mouse\-Press\-Scene\-Pos@{m\-Mouse\-Press\-Scene\-Pos}!UBThumbnailWidget@{U\-B\-Thumbnail\-Widget}}
+\subsubsection[{m\-Mouse\-Press\-Scene\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point\-F U\-B\-Thumbnail\-Widget\-::m\-Mouse\-Press\-Scene\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{d2/d7e/class_u_b_thumbnail_widget_a672d69b425d9a95f6412716ef85444be}
+
+
+Definition at line 92 of file U\-B\-Thumbnail\-Widget.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_thumbnail_widget_8h}{U\-B\-Thumbnail\-Widget.\-h}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_thumbnail_widget_8cpp}{U\-B\-Thumbnail\-Widget.\-cpp}\end{DoxyCompactItemize}

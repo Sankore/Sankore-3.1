@@ -1,0 +1,183 @@
+\hypertarget{class_u_b_download_thread}{\section{U\-B\-Download\-Thread Class Reference}
+\label{d4/dd6/class_u_b_download_thread}\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Download\-Thread.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Download\-Thread\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{db/d8f/class_u_b_download_thread__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_download_thread_a4e2f2991dae89e09ff198474752d1707}{download\-Finised} (int id)
+\item 
+void \hyperlink{class_u_b_download_thread_a4e8be31b6a91295c822016310ba06fc6}{download\-Progress} (int id, qint64 current, qint64 total)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_download_thread_a425246490b579d306692543cb8c12d9e}{U\-B\-Download\-Thread} (Q\-Object $\ast$parent=0, const char $\ast$name=\char`\"{}U\-B\-Download\-Thread\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_u_b_download_thread_a3aed7562c30d6c59a51fabe40d33ac91}{$\sim$\-U\-B\-Download\-Thread} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_b_download_thread_a8fcafc9a1f3c62d2b62e93d1985ce905}{stop\-Download} ()
+\begin{DoxyCompactList}\small\item\em Stop the current download. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_b_download_thread_a7b70731f9504cf7cbb9cdf7fc7410577}{start\-Download} (int id, Q\-String url)
+\begin{DoxyCompactList}\small\item\em Start the download. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_download_thread_a271efdb9cf3c72c44f929d70c0cf3181}{run} ()
+\begin{DoxyCompactList}\small\item\em Run the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 32 of file U\-B\-Download\-Thread.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_download_thread_a425246490b579d306692543cb8c12d9e}{\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!U\-B\-Download\-Thread@{U\-B\-Download\-Thread}}
+\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!UBDownloadThread@{U\-B\-Download\-Thread}}
+\subsubsection[{U\-B\-Download\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Download\-Thread\-::\-U\-B\-Download\-Thread (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{name = {\ttfamily \char`\"{}UBDownloadThread\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{d4/dd6/class_u_b_download_thread_a425246490b579d306692543cb8c12d9e}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & as the parent object \\
+\hline
+{\em name} & as the object name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file U\-B\-Download\-Thread.\-cpp.
+
+\hypertarget{class_u_b_download_thread_a3aed7562c30d6c59a51fabe40d33ac91}{\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!$\sim$\-U\-B\-Download\-Thread@{$\sim$\-U\-B\-Download\-Thread}}
+\index{$\sim$\-U\-B\-Download\-Thread@{$\sim$\-U\-B\-Download\-Thread}!UBDownloadThread@{U\-B\-Download\-Thread}}
+\subsubsection[{$\sim$\-U\-B\-Download\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Download\-Thread\-::$\sim$\-U\-B\-Download\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/dd6/class_u_b_download_thread_a3aed7562c30d6c59a51fabe40d33ac91}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file U\-B\-Download\-Thread.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_download_thread_a4e2f2991dae89e09ff198474752d1707}{\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!download\-Finised@{download\-Finised}}
+\index{download\-Finised@{download\-Finised}!UBDownloadThread@{U\-B\-Download\-Thread}}
+\subsubsection[{download\-Finised}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Thread\-::download\-Finised (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/dd6/class_u_b_download_thread_a4e2f2991dae89e09ff198474752d1707}
+\hypertarget{class_u_b_download_thread_a4e8be31b6a91295c822016310ba06fc6}{\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!download\-Progress@{download\-Progress}}
+\index{download\-Progress@{download\-Progress}!UBDownloadThread@{U\-B\-Download\-Thread}}
+\subsubsection[{download\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Thread\-::download\-Progress (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{qint64}]{current, }
+\item[{qint64}]{total}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/dd6/class_u_b_download_thread_a4e8be31b6a91295c822016310ba06fc6}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dd6/class_u_b_download_thread_a4e8be31b6a91295c822016310ba06fc6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_thread_a271efdb9cf3c72c44f929d70c0cf3181}{\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!run@{run}}
+\index{run@{run}!UBDownloadThread@{U\-B\-Download\-Thread}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Thread\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d4/dd6/class_u_b_download_thread_a271efdb9cf3c72c44f929d70c0cf3181}
+
+
+Run the thread. 
+
+
+
+Definition at line 61 of file U\-B\-Download\-Thread.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dd6/class_u_b_download_thread_a271efdb9cf3c72c44f929d70c0cf3181_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_download_thread_a7b70731f9504cf7cbb9cdf7fc7410577}{\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!start\-Download@{start\-Download}}
+\index{start\-Download@{start\-Download}!UBDownloadThread@{U\-B\-Download\-Thread}}
+\subsubsection[{start\-Download}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Thread\-::start\-Download (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{Q\-String}]{url}
+\end{DoxyParamCaption}
+)}}\label{d4/dd6/class_u_b_download_thread_a7b70731f9504cf7cbb9cdf7fc7410577}
+
+
+Start the download. 
+
+
+
+Definition at line 101 of file U\-B\-Download\-Thread.\-cpp.
+
+\hypertarget{class_u_b_download_thread_a8fcafc9a1f3c62d2b62e93d1985ce905}{\index{U\-B\-Download\-Thread@{U\-B\-Download\-Thread}!stop\-Download@{stop\-Download}}
+\index{stop\-Download@{stop\-Download}!UBDownloadThread@{U\-B\-Download\-Thread}}
+\subsubsection[{stop\-Download}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Download\-Thread\-::stop\-Download (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/dd6/class_u_b_download_thread_a8fcafc9a1f3c62d2b62e93d1985ce905}
+
+
+Stop the current download. 
+
+
+
+Definition at line 93 of file U\-B\-Download\-Thread.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_download_thread_8h}{U\-B\-Download\-Thread.\-h}\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_download_thread_8cpp}{U\-B\-Download\-Thread.\-cpp}\end{DoxyCompactItemize}

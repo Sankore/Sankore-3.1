@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['rdfidentifierdomain',['rdfIdentifierDomain',['../dc/d51/class_u_b_metadata_dc_subset_adaptor.html#ad8bf279465b83a882ec8f41421f8f69b',1,'UBMetadataDcSubsetAdaptor']]],
+  ['readonly',['readonly',['../de/ddd/class_u_b_graphics_w3_c_widget_item_1_1_preference_value.html#a98a4b9dd07dc4c7698ac673a2aeb8a3a',1,'UBGraphicsW3CWidgetItem::PreferenceValue']]],
+  ['replyplusaddressingmode',['replyPlusAddressingMode',['../db/d66/class_u_b_settings.html#a2ba584c3e49ef6154fdee73bdc41546a',1,'UBSettings']]],
+  ['replyplusconnectionurl',['replyPlusConnectionURL',['../db/d66/class_u_b_settings.html#ac615d44f786768589ce4169d1a40b221',1,'UBSettings']]],
+  ['replyplusmaxkeypads',['replyPlusMaxKeypads',['../db/d66/class_u_b_settings.html#a5a1f043b21863c24b34640600a9db784',1,'UBSettings']]],
+  ['replywwserialport',['replyWWSerialPort',['../db/d66/class_u_b_settings.html#adaf41115f2bd2098819ae25afb294494',1,'UBSettings']]],
+  ['rightlibpaletteboardmodeiscollapsed',['rightLibPaletteBoardModeIsCollapsed',['../db/d66/class_u_b_settings.html#a839314db2375f5134f5c761232686321',1,'UBSettings']]],
+  ['rightlibpaletteboardmodewidth',['rightLibPaletteBoardModeWidth',['../db/d66/class_u_b_settings.html#a3afa5ce4240c63f9932185937c6410c5',1,'UBSettings']]],
+  ['rightlibpalettedesktopmodeiscollapsed',['rightLibPaletteDesktopModeIsCollapsed',['../db/d66/class_u_b_settings.html#a7c74a74ea61db0b6160e6da97f639d06',1,'UBSettings']]],
+  ['rightlibpalettedesktopmodewidth',['rightLibPaletteDesktopModeWidth',['../db/d66/class_u_b_settings.html#a984d587f2762540e8e766bfe4ba828c5',1,'UBSettings']]],
+  ['rightlibpalettewebmodeiscollapsed',['rightLibPaletteWebModeIsCollapsed',['../db/d66/class_u_b_settings.html#a7f8d2359182defdb0c0b64b92f68f021',1,'UBSettings']]],
+  ['rightlibpalettewebmodewidth',['rightLibPaletteWebModeWidth',['../db/d66/class_u_b_settings.html#a33295d163e4f9af2326a0b969b0fdcc4',1,'UBSettings']]],
+  ['rootdata',['rootData',['../d8/d33/class_u_b_features_controller.html#a600c5ec46102f01204da3af436b51cc3',1,'UBFeaturesController']]],
+  ['rotatecursor',['rotateCursor',['../d8/d23/class_u_b_resources.html#ab236f6e21733987cf38e8d2d3f35b341',1,'UBResources']]],
+  ['ruler',['ruler',['../df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233',1,'UBToolsManager']]],
+  ['russian_5flocale',['RUSSIAN_LOCALE',['../d4/d45/_u_b_platform_utils__linux_8cpp.html#afbc26fbd555e8ff34c48868c720ae825',1,'RUSSIAN_LOCALE():&#160;UBPlatformUtils_linux.cpp'],['../d7/df9/_u_b_platform_utils__win_8cpp.html#afbc26fbd555e8ff34c48868c720ae825',1,'RUSSIAN_LOCALE():&#160;UBPlatformUtils_win.cpp']]]
+];

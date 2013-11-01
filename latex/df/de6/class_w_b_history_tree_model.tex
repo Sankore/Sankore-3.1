@@ -1,0 +1,360 @@
+\hypertarget{class_w_b_history_tree_model}{\section{W\-B\-History\-Tree\-Model Class Reference}
+\label{df/de6/class_w_b_history_tree_model}\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}}
+}
+
+
+{\ttfamily \#include $<$W\-B\-History.\-h$>$}
+
+
+
+Collaboration diagram for W\-B\-History\-Tree\-Model\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{d9/d06/class_w_b_history_tree_model__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_history_tree_model_a8a75583d7989d8a930d683beda3f1a12}{W\-B\-History\-Tree\-Model} (Q\-Abstract\-Item\-Model $\ast$source\-Model, Q\-Object $\ast$\hyperlink{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{parent}=0)
+\item 
+Q\-Variant \hyperlink{class_w_b_history_tree_model_af10a03519546e5217dd49236605a0098}{data} (const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44}{index}, int role=Qt\-::\-Display\-Role) const 
+\item 
+int \hyperlink{class_w_b_history_tree_model_a7fdeda2fc11b465e1c6811d6c6df7eeb}{column\-Count} (const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{parent}) const 
+\item 
+int \hyperlink{class_w_b_history_tree_model_ac5cf4ae4eedb64e2240158fc8f92a7b9}{row\-Count} (const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{parent}=Q\-Model\-Index()) const 
+\item 
+Q\-Model\-Index \hyperlink{class_w_b_history_tree_model_a542b024a863331e31103f9ebfd193d45}{map\-From\-Source} (const Q\-Model\-Index \&source\-Index) const 
+\item 
+Q\-Model\-Index \hyperlink{class_w_b_history_tree_model_ad3cb7e5007ff5f81e5857fb539026aea}{map\-To\-Source} (const Q\-Model\-Index \&proxy\-Index) const 
+\item 
+Q\-Model\-Index \hyperlink{class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44}{index} (int row, int column, const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{parent}=Q\-Model\-Index()) const 
+\item 
+Q\-Model\-Index \hyperlink{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{parent} (const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44}{index}=Q\-Model\-Index()) const 
+\item 
+bool \hyperlink{class_w_b_history_tree_model_a38f8b68b027d704ee57a48ceb9882ea2}{has\-Children} (const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{parent}=Q\-Model\-Index()) const 
+\item 
+Qt\-::\-Item\-Flags \hyperlink{class_w_b_history_tree_model_a719f46e1148e4c8e9261f94d047e3a67}{flags} (const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44}{index}) const 
+\item 
+bool \hyperlink{class_w_b_history_tree_model_a94096a71669af8bb604d4e12ee113b47}{remove\-Rows} (int row, int count, const Q\-Model\-Index \&\hyperlink{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{parent}=Q\-Model\-Index())
+\item 
+Q\-Variant \hyperlink{class_w_b_history_tree_model_ac897d25ba5d7df58f567c7981ef2e7e8}{header\-Data} (int section, Qt\-::\-Orientation orientation, int role=Qt\-::\-Display\-Role) const 
+\item 
+void \hyperlink{class_w_b_history_tree_model_a94f2891195b053381a3587a790509266}{set\-Source\-Model} (Q\-Abstract\-Item\-Model $\ast$source\-Model)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 303 of file W\-B\-History.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_w_b_history_tree_model_a8a75583d7989d8a930d683beda3f1a12}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}}
+\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{W\-B\-History\-Tree\-Model}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-History\-Tree\-Model\-::\-W\-B\-History\-Tree\-Model (
+\begin{DoxyParamCaption}
+\item[{Q\-Abstract\-Item\-Model $\ast$}]{source\-Model, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{df/de6/class_w_b_history_tree_model_a8a75583d7989d8a930d683beda3f1a12}
+
+
+Definition at line 985 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{df/de6/class_w_b_history_tree_model_a8a75583d7989d8a930d683beda3f1a12_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_w_b_history_tree_model_a7fdeda2fc11b465e1c6811d6c6df7eeb}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!column\-Count@{column\-Count}}
+\index{column\-Count@{column\-Count}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{column\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int W\-B\-History\-Tree\-Model\-::column\-Count (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{parent}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_a7fdeda2fc11b465e1c6811d6c6df7eeb}
+
+
+Definition at line 1030 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{df/de6/class_w_b_history_tree_model_a7fdeda2fc11b465e1c6811d6c6df7eeb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de6/class_w_b_history_tree_model_a7fdeda2fc11b465e1c6811d6c6df7eeb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_tree_model_af10a03519546e5217dd49236605a0098}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!data@{data}}
+\index{data@{data}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant W\-B\-History\-Tree\-Model\-::data (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{index, }
+\item[{int}]{role = {\ttfamily Qt\-:\-:DisplayRole}}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_af10a03519546e5217dd49236605a0098}
+
+
+Definition at line 996 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{df/de6/class_w_b_history_tree_model_af10a03519546e5217dd49236605a0098_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_tree_model_a719f46e1148e4c8e9261f94d047e3a67}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!flags@{flags}}
+\index{flags@{flags}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}Qt\-::\-Item\-Flags W\-B\-History\-Tree\-Model\-::flags (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{index}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_a719f46e1148e4c8e9261f94d047e3a67}
+
+
+Definition at line 1126 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_tree_model_a38f8b68b027d704ee57a48ceb9882ea2}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!has\-Children@{has\-Children}}
+\index{has\-Children@{has\-Children}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{has\-Children}]{\setlength{\rightskip}{0pt plus 5cm}bool W\-B\-History\-Tree\-Model\-::has\-Children (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_a38f8b68b027d704ee57a48ceb9882ea2}
+
+
+Definition at line 1118 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_tree_model_ac897d25ba5d7df58f567c7981ef2e7e8}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!header\-Data@{header\-Data}}
+\index{header\-Data@{header\-Data}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{header\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant W\-B\-History\-Tree\-Model\-::header\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{section, }
+\item[{Qt\-::\-Orientation}]{orientation, }
+\item[{int}]{role = {\ttfamily Qt\-:\-:DisplayRole}}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_ac897d25ba5d7df58f567c7981ef2e7e8}
+
+
+Definition at line 991 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!index@{index}}
+\index{index@{index}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Model\-Index W\-B\-History\-Tree\-Model\-::index (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{const Q\-Model\-Index \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44}
+
+
+Definition at line 1098 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de6/class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de6/class_w_b_history_tree_model_abaff08dce3fe3a17296825854001bc44_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_tree_model_a542b024a863331e31103f9ebfd193d45}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!map\-From\-Source@{map\-From\-Source}}
+\index{map\-From\-Source@{map\-From\-Source}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{map\-From\-Source}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Model\-Index W\-B\-History\-Tree\-Model\-::map\-From\-Source (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{source\-Index}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_a542b024a863331e31103f9ebfd193d45}
+
+
+Definition at line 1217 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{df/de6/class_w_b_history_tree_model_a542b024a863331e31103f9ebfd193d45_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de6/class_w_b_history_tree_model_a542b024a863331e31103f9ebfd193d45_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_tree_model_ad3cb7e5007ff5f81e5857fb539026aea}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!map\-To\-Source@{map\-To\-Source}}
+\index{map\-To\-Source@{map\-To\-Source}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{map\-To\-Source}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Model\-Index W\-B\-History\-Tree\-Model\-::map\-To\-Source (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{proxy\-Index}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_ad3cb7e5007ff5f81e5857fb539026aea}
+
+
+Definition at line 1089 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de6/class_w_b_history_tree_model_ad3cb7e5007ff5f81e5857fb539026aea_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!parent@{parent}}
+\index{parent@{parent}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Model\-Index W\-B\-History\-Tree\-Model\-::parent (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{index = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_a89c9b830b439c0c9f93d0d8368705171}
+
+
+Definition at line 1110 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_tree_model_a94096a71669af8bb604d4e12ee113b47}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!remove\-Rows@{remove\-Rows}}
+\index{remove\-Rows@{remove\-Rows}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{remove\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}bool W\-B\-History\-Tree\-Model\-::remove\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{count, }
+\item[{const Q\-Model\-Index \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+)}}\label{df/de6/class_w_b_history_tree_model_a94096a71669af8bb604d4e12ee113b47}
+
+
+Definition at line 1133 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de6/class_w_b_history_tree_model_a94096a71669af8bb604d4e12ee113b47_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_tree_model_ac5cf4ae4eedb64e2240158fc8f92a7b9}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!row\-Count@{row\-Count}}
+\index{row\-Count@{row\-Count}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{row\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int W\-B\-History\-Tree\-Model\-::row\-Count (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}\label{df/de6/class_w_b_history_tree_model_ac5cf4ae4eedb64e2240158fc8f92a7b9}
+
+
+Definition at line 1035 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de6/class_w_b_history_tree_model_ac5cf4ae4eedb64e2240158fc8f92a7b9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_tree_model_a94f2891195b053381a3587a790509266}{\index{W\-B\-History\-Tree\-Model@{W\-B\-History\-Tree\-Model}!set\-Source\-Model@{set\-Source\-Model}}
+\index{set\-Source\-Model@{set\-Source\-Model}!WBHistoryTreeModel@{W\-B\-History\-Tree\-Model}}
+\subsubsection[{set\-Source\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Tree\-Model\-::set\-Source\-Model (
+\begin{DoxyParamCaption}
+\item[{Q\-Abstract\-Item\-Model $\ast$}]{source\-Model}
+\end{DoxyParamCaption}
+)}}\label{df/de6/class_w_b_history_tree_model_a94f2891195b053381a3587a790509266}
+
+
+Definition at line 1158 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{df/de6/class_w_b_history_tree_model_a94f2891195b053381a3587a790509266_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_history_8h}{W\-B\-History.\-h}\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_history_8cpp}{W\-B\-History.\-cpp}\end{DoxyCompactItemize}

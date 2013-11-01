@@ -1,0 +1,133 @@
+\hypertarget{class_u_b_document_undo_command}{\section{U\-B\-Document\-Undo\-Command Class Reference}
+\label{d7/d32/class_u_b_document_undo_command}\index{U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Document\-Undo\-Command.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Document\-Undo\-Command\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{d2/d60/class_u_b_document_undo_command__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Document\-Undo\-Command\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{dc/d0b/class_u_b_document_undo_command__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_document_undo_command_a9403a14b3e3439c8f99790dc990632d8}{U\-B\-Document\-Undo\-Command} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document, const Q\-List$<$ \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ $>$ \&p\-Old\-Scenes, const Q\-List$<$ \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ $>$ \&p\-New\-Scenes, const int \&p\-Active\-Scene\-Index)
+\item 
+virtual \hyperlink{class_u_b_document_undo_command_aac655935dacc89c7d32fa85dcbf74649}{$\sim$\-U\-B\-Document\-Undo\-Command} ()
+\item 
+virtual \hyperlink{class_u_b_abstract_undo_command_a85016029bd4ceb03a8247b3c01e2bd97}{Undo\-Type} \hyperlink{class_u_b_document_undo_command_a556629be3ea48373fb6a212d93f19e91}{get\-Type} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_document_undo_command_af5163f4fed0319dbfd98d266fe780727}{undo} ()
+\item 
+virtual void \hyperlink{class_u_b_document_undo_command_a0713d769ffc9e60b2a1f4552072ba2ca}{redo} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file U\-B\-Document\-Undo\-Command.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_document_undo_command_a9403a14b3e3439c8f99790dc990632d8}{\index{U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}!U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}}
+\index{U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}!UBDocumentUndoCommand@{U\-B\-Document\-Undo\-Command}}
+\subsubsection[{U\-B\-Document\-Undo\-Command}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Document\-Undo\-Command\-::\-U\-B\-Document\-Undo\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document, }
+\item[{const Q\-List$<$ {\bf U\-B\-Graphics\-Scene} $\ast$ $>$ \&}]{p\-Old\-Scenes, }
+\item[{const Q\-List$<$ {\bf U\-B\-Graphics\-Scene} $\ast$ $>$ \&}]{p\-New\-Scenes, }
+\item[{const int \&}]{p\-Active\-Scene\-Index}
+\end{DoxyParamCaption}
+)}}\label{d7/d32/class_u_b_document_undo_command_a9403a14b3e3439c8f99790dc990632d8}
+
+
+Definition at line 31 of file U\-B\-Document\-Undo\-Command.\-cpp.
+
+\hypertarget{class_u_b_document_undo_command_aac655935dacc89c7d32fa85dcbf74649}{\index{U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}!$\sim$\-U\-B\-Document\-Undo\-Command@{$\sim$\-U\-B\-Document\-Undo\-Command}}
+\index{$\sim$\-U\-B\-Document\-Undo\-Command@{$\sim$\-U\-B\-Document\-Undo\-Command}!UBDocumentUndoCommand@{U\-B\-Document\-Undo\-Command}}
+\subsubsection[{$\sim$\-U\-B\-Document\-Undo\-Command}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Document\-Undo\-Command\-::$\sim$\-U\-B\-Document\-Undo\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d7/d32/class_u_b_document_undo_command_aac655935dacc89c7d32fa85dcbf74649}
+
+
+Definition at line 41 of file U\-B\-Document\-Undo\-Command.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_document_undo_command_a556629be3ea48373fb6a212d93f19e91}{\index{U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!UBDocumentUndoCommand@{U\-B\-Document\-Undo\-Command}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Undo\-Type} U\-B\-Document\-Undo\-Command\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d7/d32/class_u_b_document_undo_command_a556629be3ea48373fb6a212d93f19e91}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_undo_command_aea1857e5425cbb2c14b4ae58bf3b4d9c}{U\-B\-Abstract\-Undo\-Command}.
+
+
+
+Definition at line 40 of file U\-B\-Document\-Undo\-Command.\-h.
+
+\hypertarget{class_u_b_document_undo_command_a0713d769ffc9e60b2a1f4552072ba2ca}{\index{U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}!redo@{redo}}
+\index{redo@{redo}!UBDocumentUndoCommand@{U\-B\-Document\-Undo\-Command}}
+\subsubsection[{redo}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Undo\-Command\-::redo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d7/d32/class_u_b_document_undo_command_a0713d769ffc9e60b2a1f4552072ba2ca}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_undo_command_a6de13cf6ae729763431413aa39b78e82}{U\-B\-Abstract\-Undo\-Command}.
+
+
+
+Definition at line 51 of file U\-B\-Document\-Undo\-Command.\-cpp.
+
+\hypertarget{class_u_b_document_undo_command_af5163f4fed0319dbfd98d266fe780727}{\index{U\-B\-Document\-Undo\-Command@{U\-B\-Document\-Undo\-Command}!undo@{undo}}
+\index{undo@{undo}!UBDocumentUndoCommand@{U\-B\-Document\-Undo\-Command}}
+\subsubsection[{undo}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Undo\-Command\-::undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d7/d32/class_u_b_document_undo_command_af5163f4fed0319dbfd98d266fe780727}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_undo_command_a91cd202e68ba7cc83f8490a6eec15dcc}{U\-B\-Abstract\-Undo\-Command}.
+
+
+
+Definition at line 46 of file U\-B\-Document\-Undo\-Command.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_document_undo_command_8h}{U\-B\-Document\-Undo\-Command.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_document_undo_command_8cpp}{U\-B\-Document\-Undo\-Command.\-cpp}\end{DoxyCompactItemize}

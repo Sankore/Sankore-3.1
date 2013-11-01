@@ -1,0 +1,547 @@
+\hypertarget{class_u_b_podcast_controller}{\section{U\-B\-Podcast\-Controller Class Reference}
+\label{d9/def/class_u_b_podcast_controller}\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Podcast\-Controller.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Podcast\-Controller\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{d3/d1d/class_u_b_podcast_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8}{Recording\-State} \{ \hyperlink{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8ac0075b65559901d25e6c3b1d1af1bc49}{Stopped} =  0, 
+\hyperlink{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a7926bf03db770861fb8b65bd812caf6a}{Recording}, 
+\hyperlink{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a57f2bd0099852e082a6ab2b7601dbb11}{Paused}, 
+\hyperlink{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a28452d1733f15a65a388eb763d2fe4d7}{Stopping}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_podcast_controller_a5a64c306dc45b1279641b03b202ed501}{start} ()
+\item 
+void \hyperlink{class_u_b_podcast_controller_afd99dc589c27ad55139852cc6f6dad02}{stop} ()
+\item 
+void \hyperlink{class_u_b_podcast_controller_a0b73b89edfa24177cb95b3337241166c}{pause} ()
+\item 
+void \hyperlink{class_u_b_podcast_controller_af9a1973e7ff4316ed038c8749002c1e2}{unpause} ()
+\item 
+void \hyperlink{class_u_b_podcast_controller_ab9f47a41e489b242fed9396277dfc5af}{toggle\-Recording\-Palette} (bool visible)
+\item 
+void \hyperlink{class_u_b_podcast_controller_a794bf5bf9a47e285475d96d8afa215e4}{record\-Toggled} (bool record)
+\item 
+void \hyperlink{class_u_b_podcast_controller_a9504ce179cf35fb113b21f7c16a1337b}{pause\-Toggled} (bool \hyperlink{class_u_b_podcast_controller_a0b73b89edfa24177cb95b3337241166c}{pause})
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_podcast_controller_aa5190204c51c549955b0c53a5af5bdaf}{recording\-State\-Changed} (\hyperlink{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8}{U\-B\-Podcast\-Controller\-::\-Recording\-State})
+\item 
+void \hyperlink{class_u_b_podcast_controller_a06e78fa4a1b4f4fabd9e03d738ef03cb}{recording\-Progress\-Changed} (qint64 ms)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_u_b_podcast_controller_a5503dee1d9766ec061a202202521e49d}{event\-Filter} (Q\-Object $\ast$obj, Q\-Event $\ast$event)
+\item 
+virtual Q\-String\-List \hyperlink{class_u_b_podcast_controller_aaf68c6c0fa0047b41207f44047e00512}{audio\-Recording\-Devices} ()
+\item 
+Q\-List$<$ Q\-Action $\ast$ $>$ \hyperlink{class_u_b_podcast_controller_a756a5aa351c2891437d8cade28cbc80c}{audio\-Recording\-Devices\-Actions} ()
+\item 
+Q\-List$<$ Q\-Action $\ast$ $>$ \hyperlink{class_u_b_podcast_controller_af5d4a2dd1ce30bb2e0e460abc71d0e87}{video\-Size\-Actions} ()
+\item 
+Q\-List$<$ Q\-Action $\ast$ $>$ \hyperlink{class_u_b_podcast_controller_a8377e5b5d275659767f8189b93947455}{podcast\-Publication\-Actions} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_u_b_podcast_controller}{U\-B\-Podcast\-Controller} $\ast$ \hyperlink{class_u_b_podcast_controller_a8acf4b0bab6aa6ad4846b9044d7fda96}{instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_podcast_controller_a72521bbf54117298bc6977a7c94cdf7b}{set\-Source\-Widget} (Q\-Widget $\ast$p\-Widget)
+\item 
+virtual void \hyperlink{class_u_b_podcast_controller_a6b132ced68f46e2dcad895ff4aad04a9}{timer\-Event} (Q\-Timer\-Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file U\-B\-Podcast\-Controller.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!Recording\-State@{Recording\-State}}
+\index{Recording\-State@{Recording\-State}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{Recording\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Podcast\-Controller\-::\-Recording\-State}}}\label{d9/def/class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Stopped@{Stopped}!U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}}\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!Stopped@{Stopped}}\item[{\em 
+\hypertarget{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8ac0075b65559901d25e6c3b1d1af1bc49}{Stopped}\label{d9/def/class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8ac0075b65559901d25e6c3b1d1af1bc49}
+}]\index{Recording@{Recording}!U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}}\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!Recording@{Recording}}\item[{\em 
+\hypertarget{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a7926bf03db770861fb8b65bd812caf6a}{Recording}\label{d9/def/class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a7926bf03db770861fb8b65bd812caf6a}
+}]\index{Paused@{Paused}!U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}}\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!Paused@{Paused}}\item[{\em 
+\hypertarget{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a57f2bd0099852e082a6ab2b7601dbb11}{Paused}\label{d9/def/class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a57f2bd0099852e082a6ab2b7601dbb11}
+}]\index{Stopping@{Stopping}!U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}}\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!Stopping@{Stopping}}\item[{\em 
+\hypertarget{class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a28452d1733f15a65a388eb763d2fe4d7}{Stopping}\label{d9/def/class_u_b_podcast_controller_a8d0cf82737deae51ef72eaea4797c3a8a28452d1733f15a65a388eb763d2fe4d7}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 58 of file U\-B\-Podcast\-Controller.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_podcast_controller_aaf68c6c0fa0047b41207f44047e00512}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!audio\-Recording\-Devices@{audio\-Recording\-Devices}}
+\index{audio\-Recording\-Devices@{audio\-Recording\-Devices}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{audio\-Recording\-Devices}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Podcast\-Controller\-::audio\-Recording\-Devices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d9/def/class_u_b_podcast_controller_aaf68c6c0fa0047b41207f44047e00512}
+
+
+Definition at line 788 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_aaf68c6c0fa0047b41207f44047e00512_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_aaf68c6c0fa0047b41207f44047e00512_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a756a5aa351c2891437d8cade28cbc80c}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!audio\-Recording\-Devices\-Actions@{audio\-Recording\-Devices\-Actions}}
+\index{audio\-Recording\-Devices\-Actions@{audio\-Recording\-Devices\-Actions}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{audio\-Recording\-Devices\-Actions}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Q\-Action $\ast$ $>$ U\-B\-Podcast\-Controller\-::audio\-Recording\-Devices\-Actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d9/def/class_u_b_podcast_controller_a756a5aa351c2891437d8cade28cbc80c}
+
+
+Definition at line 865 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a756a5aa351c2891437d8cade28cbc80c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a5503dee1d9766ec061a202202521e49d}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!event\-Filter@{event\-Filter}}
+\index{event\-Filter@{event\-Filter}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{event\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Podcast\-Controller\-::event\-Filter (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{obj, }
+\item[{Q\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d9/def/class_u_b_podcast_controller_a5503dee1d9766ec061a202202521e49d}
+
+
+Definition at line 450 of file U\-B\-Podcast\-Controller.\-cpp.
+
+\hypertarget{class_u_b_podcast_controller_a8acf4b0bab6aa6ad4846b9044d7fda96}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!instance@{instance}}
+\index{instance@{instance}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Podcast\-Controller} $\ast$ U\-B\-Podcast\-Controller\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d9/def/class_u_b_podcast_controller_a8acf4b0bab6aa6ad4846b9044d7fda96}
+
+
+Definition at line 249 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a8acf4b0bab6aa6ad4846b9044d7fda96_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a0b73b89edfa24177cb95b3337241166c}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!pause@{pause}}
+\index{pause@{pause}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/def/class_u_b_podcast_controller_a0b73b89edfa24177cb95b3337241166c}
+
+
+Definition at line 397 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a0b73b89edfa24177cb95b3337241166c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a9504ce179cf35fb113b21f7c16a1337b}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!pause\-Toggled@{pause\-Toggled}}
+\index{pause\-Toggled@{pause\-Toggled}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{pause\-Toggled}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::pause\-Toggled (
+\begin{DoxyParamCaption}
+\item[{bool}]{pause}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/def/class_u_b_podcast_controller_a9504ce179cf35fb113b21f7c16a1337b}
+
+
+Definition at line 810 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/def/class_u_b_podcast_controller_a9504ce179cf35fb113b21f7c16a1337b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a9504ce179cf35fb113b21f7c16a1337b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a8377e5b5d275659767f8189b93947455}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!podcast\-Publication\-Actions@{podcast\-Publication\-Actions}}
+\index{podcast\-Publication\-Actions@{podcast\-Publication\-Actions}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{podcast\-Publication\-Actions}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Q\-Action $\ast$ $>$ U\-B\-Podcast\-Controller\-::podcast\-Publication\-Actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d9/def/class_u_b_podcast_controller_a8377e5b5d275659767f8189b93947455}
+
+
+Definition at line 948 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a8377e5b5d275659767f8189b93947455_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a8377e5b5d275659767f8189b93947455_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a06e78fa4a1b4f4fabd9e03d738ef03cb}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!recording\-Progress\-Changed@{recording\-Progress\-Changed}}
+\index{recording\-Progress\-Changed@{recording\-Progress\-Changed}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{recording\-Progress\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::recording\-Progress\-Changed (
+\begin{DoxyParamCaption}
+\item[{qint64}]{ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d9/def/class_u_b_podcast_controller_a06e78fa4a1b4f4fabd9e03d738ef03cb}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a06e78fa4a1b4f4fabd9e03d738ef03cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_aa5190204c51c549955b0c53a5af5bdaf}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!recording\-State\-Changed@{recording\-State\-Changed}}
+\index{recording\-State\-Changed@{recording\-State\-Changed}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{recording\-State\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::recording\-State\-Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Podcast\-Controller\-::\-Recording\-State}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d9/def/class_u_b_podcast_controller_aa5190204c51c549955b0c53a5af5bdaf}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_aa5190204c51c549955b0c53a5af5bdaf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a794bf5bf9a47e285475d96d8afa215e4}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!record\-Toggled@{record\-Toggled}}
+\index{record\-Toggled@{record\-Toggled}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{record\-Toggled}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::record\-Toggled (
+\begin{DoxyParamCaption}
+\item[{bool}]{record}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/def/class_u_b_podcast_controller_a794bf5bf9a47e285475d96d8afa215e4}
+
+
+Definition at line 802 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a794bf5bf9a47e285475d96d8afa215e4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a794bf5bf9a47e285475d96d8afa215e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a72521bbf54117298bc6977a7c94cdf7b}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!set\-Source\-Widget@{set\-Source\-Widget}}
+\index{set\-Source\-Widget@{set\-Source\-Widget}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{set\-Source\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::set\-Source\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{p\-Widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d9/def/class_u_b_podcast_controller_a72521bbf54117298bc6977a7c94cdf7b}
+
+
+Definition at line 173 of file U\-B\-Podcast\-Controller.\-cpp.
+
+\hypertarget{class_u_b_podcast_controller_a5a64c306dc45b1279641b03b202ed501}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!start@{start}}
+\index{start@{start}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/def/class_u_b_podcast_controller_a5a64c306dc45b1279641b03b202ed501}
+
+
+Definition at line 258 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a5a64c306dc45b1279641b03b202ed501_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a5a64c306dc45b1279641b03b202ed501_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_afd99dc589c27ad55139852cc6f6dad02}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!stop@{stop}}
+\index{stop@{stop}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/def/class_u_b_podcast_controller_afd99dc589c27ad55139852cc6f6dad02}
+
+
+Definition at line 428 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_afd99dc589c27ad55139852cc6f6dad02_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_a6b132ced68f46e2dcad895ff4aad04a9}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!timer\-Event@{timer\-Event}}
+\index{timer\-Event@{timer\-Event}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{timer\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::timer\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Timer\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d9/def/class_u_b_podcast_controller_a6b132ced68f46e2dcad895ff4aad04a9}
+
+
+Definition at line 754 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_a6b132ced68f46e2dcad895ff4aad04a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_ab9f47a41e489b242fed9396277dfc5af}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!toggle\-Recording\-Palette@{toggle\-Recording\-Palette}}
+\index{toggle\-Recording\-Palette@{toggle\-Recording\-Palette}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{toggle\-Recording\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::toggle\-Recording\-Palette (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/def/class_u_b_podcast_controller_ab9f47a41e489b242fed9396277dfc5af}
+
+
+Definition at line 819 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_ab9f47a41e489b242fed9396277dfc5af_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d9/def/class_u_b_podcast_controller_ab9f47a41e489b242fed9396277dfc5af_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_af9a1973e7ff4316ed038c8749002c1e2}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!unpause@{unpause}}
+\index{unpause@{unpause}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{unpause}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Podcast\-Controller\-::unpause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/def/class_u_b_podcast_controller_af9a1973e7ff4316ed038c8749002c1e2}
+
+
+Definition at line 413 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_af9a1973e7ff4316ed038c8749002c1e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_podcast_controller_af5d4a2dd1ce30bb2e0e460abc71d0e87}{\index{U\-B\-Podcast\-Controller@{U\-B\-Podcast\-Controller}!video\-Size\-Actions@{video\-Size\-Actions}}
+\index{video\-Size\-Actions@{video\-Size\-Actions}!UBPodcastController@{U\-B\-Podcast\-Controller}}
+\subsubsection[{video\-Size\-Actions}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Q\-Action $\ast$ $>$ U\-B\-Podcast\-Controller\-::video\-Size\-Actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d9/def/class_u_b_podcast_controller_af5d4a2dd1ce30bb2e0e460abc71d0e87}
+
+
+Definition at line 909 of file U\-B\-Podcast\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/def/class_u_b_podcast_controller_af5d4a2dd1ce30bb2e0e460abc71d0e87_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/podcast/\hyperlink{_u_b_podcast_controller_8h}{U\-B\-Podcast\-Controller.\-h}\item 
+Sankore-\/3.\-1/src/podcast/\hyperlink{_u_b_podcast_controller_8cpp}{U\-B\-Podcast\-Controller.\-cpp}\end{DoxyCompactItemize}

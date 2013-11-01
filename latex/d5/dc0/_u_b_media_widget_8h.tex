@@ -1,0 +1,92 @@
+\hypertarget{_u_b_media_widget_8h}{\section{Sankore-\/3.1/src/custom\-Widgets/\-U\-B\-Media\-Widget.h File Reference}
+\label{d5/dc0/_u_b_media_widget_8h}\index{Sankore-\/3.\-1/src/custom\-Widgets/\-U\-B\-Media\-Widget.\-h@{Sankore-\/3.\-1/src/custom\-Widgets/\-U\-B\-Media\-Widget.\-h}}
+}
+{\ttfamily \#include $<$Q\-Widget$>$}\\*
+{\ttfamily \#include $<$Q\-V\-Box\-Layout$>$}\\*
+{\ttfamily \#include $<$Q\-H\-Box\-Layout$>$}\\*
+{\ttfamily \#include $<$Q\-Label$>$}\\*
+{\ttfamily \#include $<$Q\-Slider$>$}\\*
+{\ttfamily \#include $<$Q\-Mouse\-Event$>$}\\*
+{\ttfamily \#include $<$Q\-Stacked\-Widget$>$}\\*
+{\ttfamily \#include $<$phonon/\-Media\-Object$>$}\\*
+{\ttfamily \#include $<$phonon/\-Video\-Widget$>$}\\*
+{\ttfamily \#include $<$phonon/\-Audio\-Output$>$}\\*
+{\ttfamily \#include \char`\"{}U\-B\-Actionable\-Widget.\-h\char`\"{}}\\*
+Include dependency graph for U\-B\-Media\-Widget.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d26/_u_b_media_widget_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d9e/_u_b_media_widget_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_u_b_media_button}{U\-B\-Media\-Button}
+\item 
+class \hyperlink{class_u_b_media_widget}{U\-B\-Media\-Widget}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_u_b_media_widget_8h_acd57ae2228cb81a96eec3d5814002fb1}{U\-B\-M\-E\-D\-I\-A\-B\-U\-T\-T\-O\-N\-\_\-\-S\-I\-Z\-E}~32
+\item 
+\#define \hyperlink{_u_b_media_widget_8h_a75ffb1897670af90b6941ea94114a3b5}{T\-I\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}~1000
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301}{e\-Media\-Type} \{ \hyperlink{_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301a9f2c32894f0302fe064a7c49e115f36d}{e\-Media\-Type\-\_\-\-Video}, 
+\hyperlink{_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301a56b7ca440b5e73b5ed3d5346c2fbee42}{e\-Media\-Type\-\_\-\-Audio}
+ \}
+\begin{DoxyCompactList}\small\item\em The media type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_u_b_media_widget_8h_a75ffb1897670af90b6941ea94114a3b5}{\index{U\-B\-Media\-Widget.\-h@{U\-B\-Media\-Widget.\-h}!T\-I\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{T\-I\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}}
+\index{T\-I\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{T\-I\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}!UBMediaWidget.h@{U\-B\-Media\-Widget.\-h}}
+\subsubsection[{T\-I\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L~1000}}\label{d5/dc0/_u_b_media_widget_8h_a75ffb1897670af90b6941ea94114a3b5}
+
+
+Definition at line 42 of file U\-B\-Media\-Widget.\-h.
+
+\hypertarget{_u_b_media_widget_8h_acd57ae2228cb81a96eec3d5814002fb1}{\index{U\-B\-Media\-Widget.\-h@{U\-B\-Media\-Widget.\-h}!U\-B\-M\-E\-D\-I\-A\-B\-U\-T\-T\-O\-N\-\_\-\-S\-I\-Z\-E@{U\-B\-M\-E\-D\-I\-A\-B\-U\-T\-T\-O\-N\-\_\-\-S\-I\-Z\-E}}
+\index{U\-B\-M\-E\-D\-I\-A\-B\-U\-T\-T\-O\-N\-\_\-\-S\-I\-Z\-E@{U\-B\-M\-E\-D\-I\-A\-B\-U\-T\-T\-O\-N\-\_\-\-S\-I\-Z\-E}!UBMediaWidget.h@{U\-B\-Media\-Widget.\-h}}
+\subsubsection[{U\-B\-M\-E\-D\-I\-A\-B\-U\-T\-T\-O\-N\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-B\-M\-E\-D\-I\-A\-B\-U\-T\-T\-O\-N\-\_\-\-S\-I\-Z\-E~32}}\label{d5/dc0/_u_b_media_widget_8h_acd57ae2228cb81a96eec3d5814002fb1}
+
+
+Definition at line 41 of file U\-B\-Media\-Widget.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301}{\index{U\-B\-Media\-Widget.\-h@{U\-B\-Media\-Widget.\-h}!e\-Media\-Type@{e\-Media\-Type}}
+\index{e\-Media\-Type@{e\-Media\-Type}!UBMediaWidget.h@{U\-B\-Media\-Widget.\-h}}
+\subsubsection[{e\-Media\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-Media\-Type}}}\label{d5/dc0/_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301}
+
+
+The media type. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{e\-Media\-Type\-\_\-\-Video@{e\-Media\-Type\-\_\-\-Video}!U\-B\-Media\-Widget.\-h@{U\-B\-Media\-Widget.\-h}}\index{U\-B\-Media\-Widget.\-h@{U\-B\-Media\-Widget.\-h}!e\-Media\-Type\-\_\-\-Video@{e\-Media\-Type\-\_\-\-Video}}\item[{\em 
+\hypertarget{_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301a9f2c32894f0302fe064a7c49e115f36d}{e\-Media\-Type\-\_\-\-Video}\label{d5/dc0/_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301a9f2c32894f0302fe064a7c49e115f36d}
+}]\index{e\-Media\-Type\-\_\-\-Audio@{e\-Media\-Type\-\_\-\-Audio}!U\-B\-Media\-Widget.\-h@{U\-B\-Media\-Widget.\-h}}\index{U\-B\-Media\-Widget.\-h@{U\-B\-Media\-Widget.\-h}!e\-Media\-Type\-\_\-\-Audio@{e\-Media\-Type\-\_\-\-Audio}}\item[{\em 
+\hypertarget{_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301a56b7ca440b5e73b5ed3d5346c2fbee42}{e\-Media\-Type\-\_\-\-Audio}\label{d5/dc0/_u_b_media_widget_8h_ae77abac744002ced1ee359ba04878301a56b7ca440b5e73b5ed3d5346c2fbee42}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 47 of file U\-B\-Media\-Widget.\-h.
+

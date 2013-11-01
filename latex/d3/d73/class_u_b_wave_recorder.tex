@@ -1,0 +1,184 @@
+\hypertarget{class_u_b_wave_recorder}{\section{U\-B\-Wave\-Recorder Class Reference}
+\label{d3/d73/class_u_b_wave_recorder}\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Wave\-Recorder.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Wave\-Recorder\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{d3/dc9/class_u_b_wave_recorder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_wave_recorder_a4a856b9f77365a638191857455046bf7}{new\-Wave\-Buffer} (W\-A\-V\-E\-H\-D\-R $\ast$buffer, long)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_wave_recorder_a6d2a1330302ac010e93b77d4d62737be}{U\-B\-Wave\-Recorder} (Q\-Object $\ast$p\-Parent=0)
+\item 
+virtual \hyperlink{class_u_b_wave_recorder_a4c444a83dd8d37c0eb1b244d4922f0fe}{$\sim$\-U\-B\-Wave\-Recorder} ()
+\item 
+bool \hyperlink{class_u_b_wave_recorder_acab7cce9f4a69c6bcbf219e9d7fb6e83}{init} (const Q\-String \&wave\-In\-Device\-Name=Q\-String(\char`\"{}\char`\"{}))
+\item 
+bool \hyperlink{class_u_b_wave_recorder_a77eb735ea7e29eca98dcc509afcaa8b7}{start} ()
+\item 
+bool \hyperlink{class_u_b_wave_recorder_a2e126369041b1c024b42a040d0d9e01a}{stop} ()
+\item 
+bool \hyperlink{class_u_b_wave_recorder_a061bf8de2624233eea17b658480b5e05}{close} ()
+\item 
+Q\-String \hyperlink{class_u_b_wave_recorder_ad508b294186513b816def5d194d9a5b3}{last\-Error\-Message} ()
+\item 
+long \hyperlink{class_u_b_wave_recorder_a7e8b48b4717383c8a7e2c50b132f705b}{ms\-Time\-Stamp} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-String\-List \hyperlink{class_u_b_wave_recorder_a01abc2b5f2cc6cec749f7075944f4b1c}{wave\-In\-Devices} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file U\-B\-Wave\-Recorder.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_wave_recorder_a6d2a1330302ac010e93b77d4d62737be}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}}
+\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{U\-B\-Wave\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Wave\-Recorder\-::\-U\-B\-Wave\-Recorder (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{p\-Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d3/d73/class_u_b_wave_recorder_a6d2a1330302ac010e93b77d4d62737be}
+
+
+Definition at line 30 of file U\-B\-Wave\-Recorder.\-cpp.
+
+\hypertarget{class_u_b_wave_recorder_a4c444a83dd8d37c0eb1b244d4922f0fe}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!$\sim$\-U\-B\-Wave\-Recorder@{$\sim$\-U\-B\-Wave\-Recorder}}
+\index{$\sim$\-U\-B\-Wave\-Recorder@{$\sim$\-U\-B\-Wave\-Recorder}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{$\sim$\-U\-B\-Wave\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Wave\-Recorder\-::$\sim$\-U\-B\-Wave\-Recorder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d73/class_u_b_wave_recorder_a4c444a83dd8d37c0eb1b244d4922f0fe}
+
+
+Definition at line 43 of file U\-B\-Wave\-Recorder.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_wave_recorder_a061bf8de2624233eea17b658480b5e05}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!close@{close}}
+\index{close@{close}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Wave\-Recorder\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d3/d73/class_u_b_wave_recorder_a061bf8de2624233eea17b658480b5e05}
+
+
+Definition at line 154 of file U\-B\-Wave\-Recorder.\-cpp.
+
+\hypertarget{class_u_b_wave_recorder_acab7cce9f4a69c6bcbf219e9d7fb6e83}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!init@{init}}
+\index{init@{init}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Wave\-Recorder\-::init (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{wave\-In\-Device\-Name = {\ttfamily QString(\char`\"{}\char`\"{})}}
+\end{DoxyParamCaption}
+)}}\label{d3/d73/class_u_b_wave_recorder_acab7cce9f4a69c6bcbf219e9d7fb6e83}
+
+
+Definition at line 49 of file U\-B\-Wave\-Recorder.\-cpp.
+
+\hypertarget{class_u_b_wave_recorder_ad508b294186513b816def5d194d9a5b3}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!last\-Error\-Message@{last\-Error\-Message}}
+\index{last\-Error\-Message@{last\-Error\-Message}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{last\-Error\-Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Wave\-Recorder\-::last\-Error\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d3/d73/class_u_b_wave_recorder_ad508b294186513b816def5d194d9a5b3}
+
+
+Definition at line 46 of file U\-B\-Wave\-Recorder.\-h.
+
+\hypertarget{class_u_b_wave_recorder_a7e8b48b4717383c8a7e2c50b132f705b}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!ms\-Time\-Stamp@{ms\-Time\-Stamp}}
+\index{ms\-Time\-Stamp@{ms\-Time\-Stamp}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{ms\-Time\-Stamp}]{\setlength{\rightskip}{0pt plus 5cm}long U\-B\-Wave\-Recorder\-::ms\-Time\-Stamp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d3/d73/class_u_b_wave_recorder_a7e8b48b4717383c8a7e2c50b132f705b}
+
+
+Definition at line 51 of file U\-B\-Wave\-Recorder.\-h.
+
+\hypertarget{class_u_b_wave_recorder_a4a856b9f77365a638191857455046bf7}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!new\-Wave\-Buffer@{new\-Wave\-Buffer}}
+\index{new\-Wave\-Buffer@{new\-Wave\-Buffer}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{new\-Wave\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Wave\-Recorder\-::new\-Wave\-Buffer (
+\begin{DoxyParamCaption}
+\item[{W\-A\-V\-E\-H\-D\-R $\ast$}]{buffer, }
+\item[{long}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d73/class_u_b_wave_recorder_a4a856b9f77365a638191857455046bf7}
+\hypertarget{class_u_b_wave_recorder_a77eb735ea7e29eca98dcc509afcaa8b7}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!start@{start}}
+\index{start@{start}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Wave\-Recorder\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d3/d73/class_u_b_wave_recorder_a77eb735ea7e29eca98dcc509afcaa8b7}
+
+
+Definition at line 121 of file U\-B\-Wave\-Recorder.\-cpp.
+
+\hypertarget{class_u_b_wave_recorder_a2e126369041b1c024b42a040d0d9e01a}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!stop@{stop}}
+\index{stop@{stop}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Wave\-Recorder\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d3/d73/class_u_b_wave_recorder_a2e126369041b1c024b42a040d0d9e01a}
+
+
+Definition at line 140 of file U\-B\-Wave\-Recorder.\-cpp.
+
+\hypertarget{class_u_b_wave_recorder_a01abc2b5f2cc6cec749f7075944f4b1c}{\index{U\-B\-Wave\-Recorder@{U\-B\-Wave\-Recorder}!wave\-In\-Devices@{wave\-In\-Devices}}
+\index{wave\-In\-Devices@{wave\-In\-Devices}!UBWaveRecorder@{U\-B\-Wave\-Recorder}}
+\subsubsection[{wave\-In\-Devices}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Wave\-Recorder\-::wave\-In\-Devices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/d73/class_u_b_wave_recorder_a01abc2b5f2cc6cec749f7075944f4b1c}
+
+
+Definition at line 225 of file U\-B\-Wave\-Recorder.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d73/class_u_b_wave_recorder_a01abc2b5f2cc6cec749f7075944f4b1c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/podcast/windowsmedia/\hyperlink{_u_b_wave_recorder_8h}{U\-B\-Wave\-Recorder.\-h}\item 
+Sankore-\/3.\-1/src/podcast/windowsmedia/\hyperlink{_u_b_wave_recorder_8cpp}{U\-B\-Wave\-Recorder.\-cpp}\end{DoxyCompactItemize}

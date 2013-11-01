@@ -1,0 +1,1812 @@
+\hypertarget{class_u_b_graphics_item_delegate}{\section{U\-B\-Graphics\-Item\-Delegate Class Reference}
+\label{dd/dd5/class_u_b_graphics_item_delegate}\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Item\-Delegate.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Item\-Delegate\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d6b/class_u_b_graphics_item_delegate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Item\-Delegate\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d6d/class_u_b_graphics_item_delegate__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_a2ae1e0d0f30bebf2a25d444c509e28b9}{remove} (bool can\-Undo=true)
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a2d0f4c4ab6660fc42dc76d89ca8a7240}{show\-Menu} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_a9d8abde4377bdfda898d6055585c0e8e}{show\-Hide} (bool show)
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_ad3145f046572af4adcc760833c11c599}{lock} (bool lock)
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_a525c69cb3c3c0df6c4db4d406fd80e48}{duplicate} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a31c9a6aef1b98b11b0b5bbd39fcba006}{increase\-Z\-Level\-Up} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a9551d8cb1d8eb9ecd93b8a8ae3a203d7}{increase\-Z\-Level\-Down} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a0e29a108ddbf7b7f8bd4d3319b144f65}{increase\-Zlevel\-Top} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a9aba13a2a47a1a4573cadbef4054ecd6}{increase\-Zlevel\-Bottom} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_ad0cebb7e510d52d24c3a010239bcb5fe}{on\-Zoom\-Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a2e13161a55c9568ef3ebcebbf549d4cb}{show\-On\-Display\-Changed} (bool shown)
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a4afe1bba736659418f3d165ff935ad05}{lock\-Changed} (bool locked)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_item_delegate_a78857ae5335c1a31581a38210d8b2e5e}{U\-B\-Graphics\-Item\-Delegate} (Q\-Graphics\-Item $\ast$p\-Delegated, Q\-Object $\ast$parent=0, bool respect\-Ratio=true, bool \hyperlink{class_u_b_graphics_item_delegate_ad9e31d0b5977088ca59b6ff94c9a9b92}{can\-Rotate}=false, bool use\-Tool\-Bar=true, bool show\-Go\-Content\-Button=false)
+\item 
+virtual \hyperlink{class_u_b_graphics_item_delegate_a32843fec11e67213a456c8d92377e105}{$\sim$\-U\-B\-Graphics\-Item\-Delegate} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a1de77276aba7276defacd0b87c9b87c7}{init} ()
+\item 
+virtual bool \hyperlink{class_u_b_graphics_item_delegate_a1e3cda77c7ecc5f3e8863947b0a8f217}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual bool \hyperlink{class_u_b_graphics_item_delegate_aa87cd62cebcb17e5233ee5a96e2bf748}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual bool \hyperlink{class_u_b_graphics_item_delegate_a76f992490575724a33bc0813f80f7a98}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual bool \hyperlink{class_u_b_graphics_item_delegate_a16e86d30f379c41c4f3e30608a0dab74}{weel\-Event} (Q\-Graphics\-Scene\-Wheel\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_ab0bd076fe5cd5fd9cbe01fdd1a0f0a89}{hover\-Enter\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_abadc2d8061067eca23931d10ed96b50e}{hover\-Leave\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+virtual Q\-Variant \hyperlink{class_u_b_graphics_item_delegate_a5851301422e4533173600b1264b852fb}{item\-Change} (Q\-Graphics\-Item\-::\-Graphics\-Item\-Change change, const Q\-Variant \&value)
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_ab7e25b6f7905ae98161def55e3cabfe1}{cast\-U\-B\-Graphics\-Scene} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_acaf32845d3e0dbe7af6d3dc6c42595cb}{print\-Message} (const Q\-String \&mess)
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_graphics_item_delegate_ad45be6a0cc44a46d51b7fd70eb5a3c79}{delegated} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a2f7ff1eb2e370e007f25527ef42c454e}{set\-Can\-Duplicate} (bool allow)
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_ab5bea580591d38d488f536d80278eade}{position\-Handles} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_acb4eac8e78e9da283c48f7cd1f24d5a7}{set\-Z\-Order\-Buttons\-Visible} (bool visible)
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_ac6e6021ca2e53bb636b22e49d2ff7b97}{start\-Undo\-Step} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a8b36311f147288058a2f5468776dd630}{commit\-Undo\-Step} ()
+\item 
+\hyperlink{class_u_b_graphics_delegate_frame}{U\-B\-Graphics\-Delegate\-Frame} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a20ce0529c071c4a40df4652f34238ee0}{frame} ()
+\item 
+bool \hyperlink{class_u_b_graphics_item_delegate_ad9e31d0b5977088ca59b6ff94c9a9b92}{can\-Rotate} () const 
+\item 
+bool \hyperlink{class_u_b_graphics_item_delegate_a344ec42f448a0989823fb8f85188cdac}{is\-Locked} () const 
+\item 
+bool \hyperlink{class_u_b_graphics_item_delegate_a1909b36a6e31a9ce2f9b461af752a42b}{can\-Duplicate} ()
+\item 
+Q\-Mime\-Data $\ast$ \hyperlink{class_u_b_graphics_item_delegate_aec3617785a8d9a10f1e9ca0044917778}{mime\-Data} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_ad397d41e717526ee8bdf667294efdbe9}{set\-Mime\-Data} (Q\-Mime\-Data $\ast$\hyperlink{class_u_b_graphics_item_delegate_aec3617785a8d9a10f1e9ca0044917778}{mime\-Data})
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a1d17f8df9020c02380d07dadd70bc9e4}{set\-Drag\-Pixmap} (const Q\-Pixmap \&pix)
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a9572bb54e20bfe135d9560885a1e4aa8}{set\-Flippable} (bool flippable)
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_aea85facebaec66edecbdf81280a9c918}{set\-Rotatable} (bool p\-Can\-Rotate)
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_ab2a23e50c385b6eb1069333c8f0eb23b}{set\-Locked} (bool p\-Locked)
+\item 
+bool \hyperlink{class_u_b_graphics_item_delegate_ae25633a784590906e9bcd62a45b7dcf9}{is\-Flippable} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a698c3af60576af37a916a93ee3a82a25}{set\-Can\-Trig\-An\-Action} (bool can\-Trig)
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_af6fb60f1a6f2c37ded1ea5392e7fbb11}{set\-Buttons\-Visible} (bool visible)
+\item 
+\hyperlink{class_u_b_graphics_tool_bar_item}{U\-B\-Graphics\-Tool\-Bar\-Item} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_af64a99fb8ca196adcd2d7c1aacedb562}{get\-Tool\-Bar\-Item} () const 
+\item 
+qreal \hyperlink{class_u_b_graphics_item_delegate_a0cb52bb59aadb21de40ad65dc87fe87a}{anti\-Scale\-Ratio} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_a25ea09abfab2c00bb19c08a995cd819e}{update} ()
+\item 
+\hyperlink{class_u_b_graphics_item_action}{U\-B\-Graphics\-Item\-Action} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_ade01e0b179b501cc1c60451cbba96035}{action} ()
+\item 
+void \hyperlink{class_u_b_graphics_item_delegate_a3b597fdf7d09e24866416826075c4381}{set\-Action} (\hyperlink{class_u_b_graphics_item_action}{U\-B\-Graphics\-Item\-Action} $\ast$\hyperlink{class_u_b_graphics_item_delegate_ade01e0b179b501cc1c60451cbba96035}{action})
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_ae05eb9447f89914dd9a19bab0d8b0ef0}{goto\-Content\-Source} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_afd35164da102e7acbb5d7dd097618a5c}{build\-Buttons} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_a37a264e2942f9d1a2f74fe2dd0d5c9b1}{decorate\-Menu} (Q\-Menu $\ast$menu)
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_delegate_aaac5b391602a6c42ad371a3addf84662}{update\-Menu\-Action\-State} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a126d39dd710594d5f4f1c9956c0aafe3}{m\-Delegated}
+\item 
+\hyperlink{class_delegate_button}{Delegate\-Button} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_aed94a4b82e2b6b34a08036c872a5e277}{m\-Delete\-Button}
+\item 
+\hyperlink{class_delegate_button}{Delegate\-Button} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a554f13c224fba040eea5ae81d9e429df}{m\-Duplicate\-Button}
+\item 
+\hyperlink{class_delegate_button}{Delegate\-Button} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a6f334e39a32eedb572831748b7d07fb7}{m\-Menu\-Button}
+\item 
+\hyperlink{class_delegate_button}{Delegate\-Button} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_ae4a5db7a8e39d892bb606bf251eb653c}{m\-Z\-Order\-Up\-Button}
+\item 
+\hyperlink{class_delegate_button}{Delegate\-Button} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a70d87a6726bcd84a212f61856d895192}{m\-Z\-Order\-Down\-Button}
+\item 
+Q\-Menu $\ast$ \hyperlink{class_u_b_graphics_item_delegate_abdb23ab4b93f3bc0b28a2329543dd88a}{m\-Menu}
+\item 
+Q\-Action $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a8003eac64477c1c5ed3e80ae72f1b3dc}{m\-Lock\-Action}
+\item 
+Q\-Action $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a9b7e283947d4119142569e0cd5d1fcdc}{m\-Show\-On\-Display\-Action}
+\item 
+Q\-Action $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a9a521276a587e652033769498837deec}{m\-Goto\-Content\-Source\-Action}
+\item 
+Q\-Action $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a37842d928eafd9c363967046bc144f3c}{m\-Show\-Panel\-To\-Add\-An\-Action}
+\item 
+Q\-Action $\ast$ \hyperlink{class_u_b_graphics_item_delegate_aa80345f33555d22acbda9227aa5d001b}{m\-Remove\-An\-Action}
+\item 
+\hyperlink{class_u_b_graphics_delegate_frame}{U\-B\-Graphics\-Delegate\-Frame} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_aefc58035670f33d0309f1f572452e8b2}{m\-Frame}
+\item 
+qreal \hyperlink{class_u_b_graphics_item_delegate_ae7c03f2f6e86504ca5ae7a9b2d8a74f0}{m\-Frame\-Width}
+\item 
+qreal \hyperlink{class_u_b_graphics_item_delegate_a02b5c8199e11b87de2303aa4a5ed09ac}{m\-Anti\-Scale\-Ratio}
+\item 
+Q\-List$<$ \hyperlink{class_delegate_button}{Delegate\-Button} $\ast$ $>$ \hyperlink{class_u_b_graphics_item_delegate_abd27d9387610bf45761035ee4ae6ff37}{m\-Buttons}
+\item 
+Q\-List$<$ \hyperlink{class_delegate_button}{Delegate\-Button} $\ast$ $>$ \hyperlink{class_u_b_graphics_item_delegate_a1caf5794856eba7480eae9beeff4e2ad}{m\-Tool\-Bar\-Buttons}
+\item 
+\hyperlink{class_u_b_graphics_tool_bar_item}{U\-B\-Graphics\-Tool\-Bar\-Item} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_adf8972176c6e60c4a78e90eee2f97540}{m\-Tool\-Bar\-Item}
+\item 
+\hyperlink{class_u_b_graphics_item_action}{U\-B\-Graphics\-Item\-Action} $\ast$ \hyperlink{class_u_b_graphics_item_delegate_a87e149520c268ac29f26412129d2cca2}{m\-Action}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 224 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_item_delegate_a78857ae5335c1a31581a38210d8b2e5e}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}}
+\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{U\-B\-Graphics\-Item\-Delegate}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Item\-Delegate\-::\-U\-B\-Graphics\-Item\-Delegate (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{p\-Delegated, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{bool}]{respect\-Ratio = {\ttfamily true}, }
+\item[{bool}]{can\-Rotate = {\ttfamily false}, }
+\item[{bool}]{use\-Tool\-Bar = {\ttfamily true}, }
+\item[{bool}]{show\-Go\-Content\-Button = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_a78857ae5335c1a31581a38210d8b2e5e}
+
+
+Definition at line 160 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a78857ae5335c1a31581a38210d8b2e5e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a32843fec11e67213a456c8d92377e105}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!$\sim$\-U\-B\-Graphics\-Item\-Delegate@{$\sim$\-U\-B\-Graphics\-Item\-Delegate}}
+\index{$\sim$\-U\-B\-Graphics\-Item\-Delegate@{$\sim$\-U\-B\-Graphics\-Item\-Delegate}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Item\-Delegate}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Item\-Delegate\-::$\sim$\-U\-B\-Graphics\-Item\-Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a32843fec11e67213a456c8d92377e105}
+
+
+Definition at line 238 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a32843fec11e67213a456c8d92377e105_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_item_delegate_ade01e0b179b501cc1c60451cbba96035}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!action@{action}}
+\index{action@{action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Item\-Action}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ade01e0b179b501cc1c60451cbba96035}
+
+
+Definition at line 284 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ade01e0b179b501cc1c60451cbba96035_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a0cb52bb59aadb21de40ad65dc87fe87a}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!anti\-Scale\-Ratio@{anti\-Scale\-Ratio}}
+\index{anti\-Scale\-Ratio@{anti\-Scale\-Ratio}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{anti\-Scale\-Ratio}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Item\-Delegate\-::anti\-Scale\-Ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a0cb52bb59aadb21de40ad65dc87fe87a}
+
+
+Definition at line 281 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a0cb52bb59aadb21de40ad65dc87fe87a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_afd35164da102e7acbb5d7dd097618a5c}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!build\-Buttons@{build\-Buttons}}
+\index{build\-Buttons@{build\-Buttons}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{build\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::build\-Buttons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_afd35164da102e7acbb5d7dd097618a5c}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_video_item_delegate_a1ae8bd8bb12ca6c81e82eed663bc041b}{U\-B\-Graphics\-Video\-Item\-Delegate}, \hyperlink{class_u_b_graphics_media_item_delegate_a8e53c735a7bd5267fca9ae39088e8248}{U\-B\-Graphics\-Media\-Item\-Delegate}, \hyperlink{class_u_b_graphics_audio_item_delegate_ad8e9a598081a5ade9092d80784297c3c}{U\-B\-Graphics\-Audio\-Item\-Delegate}, \hyperlink{class_u_b_graphics_text_item_delegate_aed68d84ee8c86411f7b9197a4220e18f}{U\-B\-Graphics\-Text\-Item\-Delegate}, and \hyperlink{class_u_b_graphics_group_container_item_delegate_add356059ee48a2efe7cd66223bebe3cd}{U\-B\-Graphics\-Group\-Container\-Item\-Delegate}.
+
+
+
+Definition at line 611 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_afd35164da102e7acbb5d7dd097618a5c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a1909b36a6e31a9ce2f9b461af752a42b}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!can\-Duplicate@{can\-Duplicate}}
+\index{can\-Duplicate@{can\-Duplicate}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{can\-Duplicate}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::can\-Duplicate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a1909b36a6e31a9ce2f9b461af752a42b}
+
+
+Definition at line 263 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a1909b36a6e31a9ce2f9b461af752a42b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ad9e31d0b5977088ca59b6ff94c9a9b92}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!can\-Rotate@{can\-Rotate}}
+\index{can\-Rotate@{can\-Rotate}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{can\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::can\-Rotate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ad9e31d0b5977088ca59b6ff94c9a9b92}
+
+
+Definition at line 261 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad9e31d0b5977088ca59b6ff94c9a9b92_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ab7e25b6f7905ae98161def55e3cabfe1}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!cast\-U\-B\-Graphics\-Scene@{cast\-U\-B\-Graphics\-Scene}}
+\index{cast\-U\-B\-Graphics\-Scene@{cast\-U\-B\-Graphics\-Scene}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{cast\-U\-B\-Graphics\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Graphics\-Item\-Delegate\-::cast\-U\-B\-Graphics\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ab7e25b6f7905ae98161def55e3cabfe1}
+
+
+Definition at line 290 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ab7e25b6f7905ae98161def55e3cabfe1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ab7e25b6f7905ae98161def55e3cabfe1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a8b36311f147288058a2f5468776dd630}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!commit\-Undo\-Step@{commit\-Undo\-Step}}
+\index{commit\-Undo\-Step@{commit\-Undo\-Step}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{commit\-Undo\-Step}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::commit\-Undo\-Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_a8b36311f147288058a2f5468776dd630}
+
+
+Definition at line 584 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a8b36311f147288058a2f5468776dd630_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a8b36311f147288058a2f5468776dd630_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a37a264e2942f9d1a2f74fe2dd0d5c9b1}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!decorate\-Menu@{decorate\-Menu}}
+\index{decorate\-Menu@{decorate\-Menu}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{decorate\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::decorate\-Menu (
+\begin{DoxyParamCaption}
+\item[{Q\-Menu $\ast$}]{menu}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a37a264e2942f9d1a2f74fe2dd0d5c9b1}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_text_item_delegate_a50aee9dacc7199cbea2b7e1d1fd06a18}{U\-B\-Graphics\-Text\-Item\-Delegate}, \hyperlink{class_u_b_graphics_widget_item_delegate_a79bf31a6cda75de23b70469270de5bd9}{U\-B\-Graphics\-Widget\-Item\-Delegate}, and \hyperlink{class_u_b_graphics_group_container_item_delegate_ad9b48a54f407c9ba9934042d3a4b9958}{U\-B\-Graphics\-Group\-Container\-Item\-Delegate}.
+
+
+
+Definition at line 615 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a37a264e2942f9d1a2f74fe2dd0d5c9b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a37a264e2942f9d1a2f74fe2dd0d5c9b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ad45be6a0cc44a46d51b7fd70eb5a3c79}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!delegated@{delegated}}
+\index{delegated@{delegated}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{delegated}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item $\ast$ U\-B\-Graphics\-Item\-Delegate\-::delegated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_ad45be6a0cc44a46d51b7fd70eb5a3c79}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_media_item_delegate_aa305fb51703f64d95297bea405d405c0}{U\-B\-Graphics\-Media\-Item\-Delegate}, and \hyperlink{class_u_b_graphics_group_container_item_delegate_a991387e40043f6ec5b6ce602d5300b0f}{U\-B\-Graphics\-Group\-Container\-Item\-Delegate}.
+
+
+
+Definition at line 385 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad45be6a0cc44a46d51b7fd70eb5a3c79_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a525c69cb3c3c0df6c4db4d406fd80e48}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!duplicate@{duplicate}}
+\index{duplicate@{duplicate}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{duplicate}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::duplicate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a525c69cb3c3c0df6c4db4d406fd80e48}
+
+
+Definition at line 491 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a525c69cb3c3c0df6c4db4d406fd80e48_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a525c69cb3c3c0df6c4db4d406fd80e48_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a20ce0529c071c4a40df4652f34238ee0}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!frame@{frame}}
+\index{frame@{frame}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Delegate\-Frame}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a20ce0529c071c4a40df4652f34238ee0}
+
+
+Definition at line 259 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a20ce0529c071c4a40df4652f34238ee0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_af64a99fb8ca196adcd2d7c1aacedb562}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!get\-Tool\-Bar\-Item@{get\-Tool\-Bar\-Item}}
+\index{get\-Tool\-Bar\-Item@{get\-Tool\-Bar\-Item}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{get\-Tool\-Bar\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Tool\-Bar\-Item}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::get\-Tool\-Bar\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_af64a99fb8ca196adcd2d7c1aacedb562}
+
+
+Definition at line 279 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_af64a99fb8ca196adcd2d7c1aacedb562_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ae05eb9447f89914dd9a19bab0d8b0ef0}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!goto\-Content\-Source@{goto\-Content\-Source}}
+\index{goto\-Content\-Source@{goto\-Content\-Source}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{goto\-Content\-Source}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::goto\-Content\-Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ae05eb9447f89914dd9a19bab0d8b0ef0}
+
+
+Definition at line 559 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ae05eb9447f89914dd9a19bab0d8b0ef0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ae05eb9447f89914dd9a19bab0d8b0ef0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ab0bd076fe5cd5fd9cbe01fdd1a0f0a89}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!hover\-Enter\-Event@{hover\-Enter\-Event}}
+\index{hover\-Enter\-Event@{hover\-Enter\-Event}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{hover\-Enter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::hover\-Enter\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ab0bd076fe5cd5fd9cbe01fdd1a0f0a89}
+
+
+Definition at line 375 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ab0bd076fe5cd5fd9cbe01fdd1a0f0a89_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_abadc2d8061067eca23931d10ed96b50e}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!hover\-Leave\-Event@{hover\-Leave\-Event}}
+\index{hover\-Leave\-Event@{hover\-Leave\-Event}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{hover\-Leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::hover\-Leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_abadc2d8061067eca23931d10ed96b50e}
+
+
+Definition at line 380 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_abadc2d8061067eca23931d10ed96b50e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a9aba13a2a47a1a4573cadbef4054ecd6}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!increase\-Zlevel\-Bottom@{increase\-Zlevel\-Bottom}}
+\index{increase\-Zlevel\-Bottom@{increase\-Zlevel\-Bottom}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{increase\-Zlevel\-Bottom}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::increase\-Zlevel\-Bottom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a9aba13a2a47a1a4573cadbef4054ecd6}
+
+
+Definition at line 517 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a9aba13a2a47a1a4573cadbef4054ecd6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a9aba13a2a47a1a4573cadbef4054ecd6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a9551d8cb1d8eb9ecd93b8a8ae3a203d7}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!increase\-Z\-Level\-Down@{increase\-Z\-Level\-Down}}
+\index{increase\-Z\-Level\-Down@{increase\-Z\-Level\-Down}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{increase\-Z\-Level\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::increase\-Z\-Level\-Down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a9551d8cb1d8eb9ecd93b8a8ae3a203d7}
+
+
+Definition at line 510 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a9551d8cb1d8eb9ecd93b8a8ae3a203d7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a9551d8cb1d8eb9ecd93b8a8ae3a203d7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a0e29a108ddbf7b7f8bd4d3319b144f65}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!increase\-Zlevel\-Top@{increase\-Zlevel\-Top}}
+\index{increase\-Zlevel\-Top@{increase\-Zlevel\-Top}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{increase\-Zlevel\-Top}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::increase\-Zlevel\-Top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a0e29a108ddbf7b7f8bd4d3319b144f65}
+
+
+Definition at line 503 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a0e29a108ddbf7b7f8bd4d3319b144f65_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a0e29a108ddbf7b7f8bd4d3319b144f65_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a31c9a6aef1b98b11b0b5bbd39fcba006}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!increase\-Z\-Level\-Up@{increase\-Z\-Level\-Up}}
+\index{increase\-Z\-Level\-Up@{increase\-Z\-Level\-Up}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{increase\-Z\-Level\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::increase\-Z\-Level\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a31c9a6aef1b98b11b0b5bbd39fcba006}
+
+
+Definition at line 496 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a31c9a6aef1b98b11b0b5bbd39fcba006_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a31c9a6aef1b98b11b0b5bbd39fcba006_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a1de77276aba7276defacd0b87c9b87c7}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!init@{init}}
+\index{init@{init}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_a1de77276aba7276defacd0b87c9b87c7}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_curtain_item_delegate_a104baa2babd8d7f8142d11257b750e88}{U\-B\-Graphics\-Curtain\-Item\-Delegate}.
+
+
+
+Definition at line 188 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a1de77276aba7276defacd0b87c9b87c7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a1de77276aba7276defacd0b87c9b87c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ae25633a784590906e9bcd62a45b7dcf9}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!is\-Flippable@{is\-Flippable}}
+\index{is\-Flippable@{is\-Flippable}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{is\-Flippable}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::is\-Flippable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_ae25633a784590906e9bcd62a45b7dcf9}
+
+
+Definition at line 759 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ae25633a784590906e9bcd62a45b7dcf9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a344ec42f448a0989823fb8f85188cdac}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!is\-Locked@{is\-Locked}}
+\index{is\-Locked@{is\-Locked}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{is\-Locked}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::is\-Locked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dd/dd5/class_u_b_graphics_item_delegate_a344ec42f448a0989823fb8f85188cdac}
+
+
+Definition at line 485 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a344ec42f448a0989823fb8f85188cdac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a5851301422e4533173600b1264b852fb}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!item\-Change@{item\-Change}}
+\index{item\-Change@{item\-Change}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{item\-Change}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Graphics\-Item\-Delegate\-::item\-Change (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item\-::\-Graphics\-Item\-Change}]{change, }
+\item[{const Q\-Variant \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a5851301422e4533173600b1264b852fb}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_text_item_delegate_ab61402d03cd4a7cc467a21c583aa16fa}{U\-B\-Graphics\-Text\-Item\-Delegate}, and \hyperlink{class_u_b_graphics_curtain_item_delegate_a9480eca07b4d202e63a718b5e8a6263f}{U\-B\-Graphics\-Curtain\-Item\-Delegate}.
+
+
+
+Definition at line 251 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a5851301422e4533173600b1264b852fb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a5851301422e4533173600b1264b852fb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ad3145f046572af4adcc760833c11c599}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!lock@{lock}}
+\index{lock@{lock}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::lock (
+\begin{DoxyParamCaption}
+\item[{bool}]{lock}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ad3145f046572af4adcc760833c11c599}
+
+
+Definition at line 525 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad3145f046572af4adcc760833c11c599_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad3145f046572af4adcc760833c11c599_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a4afe1bba736659418f3d165ff935ad05}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!lock\-Changed@{lock\-Changed}}
+\index{lock\-Changed@{lock\-Changed}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{lock\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::lock\-Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{locked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a4afe1bba736659418f3d165ff935ad05}
+\hypertarget{class_u_b_graphics_item_delegate_aec3617785a8d9a10f1e9ca0044917778}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!mime\-Data@{mime\-Data}}
+\index{mime\-Data@{mime\-Data}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{mime\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Mime\-Data$\ast$ U\-B\-Graphics\-Item\-Delegate\-::mime\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_aec3617785a8d9a10f1e9ca0044917778}
+
+
+Definition at line 265 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_aec3617785a8d9a10f1e9ca0044917778_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_aa87cd62cebcb17e5233ee5a96e2bf748}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_aa87cd62cebcb17e5233ee5a96e2bf748}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_group_container_item_delegate_aece12f59a1266894ed380bf6e4d14cbf}{U\-B\-Graphics\-Group\-Container\-Item\-Delegate}.
+
+
+
+Definition at line 321 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+\hypertarget{class_u_b_graphics_item_delegate_a1e3cda77c7ecc5f3e8863947b0a8f217}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a1e3cda77c7ecc5f3e8863947b0a8f217}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_media_item_delegate_a318cc185f2aca7410e47e3954d6f424a}{U\-B\-Graphics\-Media\-Item\-Delegate}, \hyperlink{class_u_b_graphics_curtain_item_delegate_a249f9c655220d2171acea7a3a656c527}{U\-B\-Graphics\-Curtain\-Item\-Delegate}, and \hyperlink{class_u_b_graphics_group_container_item_delegate_a0eef4acf8124b18a6f495402188dbefc}{U\-B\-Graphics\-Group\-Container\-Item\-Delegate}.
+
+
+
+Definition at line 297 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a1e3cda77c7ecc5f3e8863947b0a8f217_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a1e3cda77c7ecc5f3e8863947b0a8f217_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a76f992490575724a33bc0813f80f7a98}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a76f992490575724a33bc0813f80f7a98}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_group_container_item_delegate_ada28e38639a3ccfadf70bd0628b8d942}{U\-B\-Graphics\-Group\-Container\-Item\-Delegate}.
+
+
+
+Definition at line 347 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a76f992490575724a33bc0813f80f7a98_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a76f992490575724a33bc0813f80f7a98_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ad0cebb7e510d52d24c3a010239bcb5fe}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!on\-Zoom\-Changed@{on\-Zoom\-Changed}}
+\index{on\-Zoom\-Changed@{on\-Zoom\-Changed}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{on\-Zoom\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::on\-Zoom\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ad0cebb7e510d52d24c3a010239bcb5fe}
+
+
+Definition at line 604 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad0cebb7e510d52d24c3a010239bcb5fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad0cebb7e510d52d24c3a010239bcb5fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ab5bea580591d38d488f536d80278eade}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!position\-Handles@{position\-Handles}}
+\index{position\-Handles@{position\-Handles}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{position\-Handles}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::position\-Handles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ab5bea580591d38d488f536d80278eade}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_video_item_delegate_aeb9b858358a46026f500f9da791f7aaf}{U\-B\-Graphics\-Video\-Item\-Delegate}, \hyperlink{class_u_b_graphics_text_item_delegate_a7ecdc3b3ed05e772714e7bb461de779f}{U\-B\-Graphics\-Text\-Item\-Delegate}, \hyperlink{class_u_b_graphics_curtain_item_delegate_a9cad3186c84745ba1aa13f879a263a58}{U\-B\-Graphics\-Curtain\-Item\-Delegate}, and \hyperlink{class_u_b_graphics_media_item_delegate_a0d2d62936d516875a60975d4f66d3dde}{U\-B\-Graphics\-Media\-Item\-Delegate}.
+
+
+
+Definition at line 397 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ab5bea580591d38d488f536d80278eade_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ab5bea580591d38d488f536d80278eade_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_acaf32845d3e0dbe7af6d3dc6c42595cb}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!print\-Message@{print\-Message}}
+\index{print\-Message@{print\-Message}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{print\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::print\-Message (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{mess}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_acaf32845d3e0dbe7af6d3dc6c42595cb}
+
+
+Definition at line 247 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a2ae1e0d0f30bebf2a25d444c509e28b9}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!remove@{remove}}
+\index{remove@{remove}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::remove (
+\begin{DoxyParamCaption}
+\item[{bool}]{can\-Undo = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a2ae1e0d0f30bebf2a25d444c509e28b9}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_widget_item_delegate_a675044c8ed63ace1cd9b37644629b4fc}{U\-B\-Graphics\-Widget\-Item\-Delegate}.
+
+
+
+Definition at line 451 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a2ae1e0d0f30bebf2a25d444c509e28b9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a2ae1e0d0f30bebf2a25d444c509e28b9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a3b597fdf7d09e24866416826075c4381}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Action@{set\-Action}}
+\index{set\-Action@{set\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Action (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Item\-Action} $\ast$}]{action}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_a3b597fdf7d09e24866416826075c4381}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_group_container_item_delegate_a6cd80c1431c47bd41e8f2c935cd43da7}{U\-B\-Graphics\-Group\-Container\-Item\-Delegate}.
+
+
+
+Definition at line 834 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a3b597fdf7d09e24866416826075c4381_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a3b597fdf7d09e24866416826075c4381_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_af6fb60f1a6f2c37ded1ea5392e7fbb11}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Buttons\-Visible@{set\-Buttons\-Visible}}
+\index{set\-Buttons\-Visible@{set\-Buttons\-Visible}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Buttons\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Buttons\-Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_af6fb60f1a6f2c37ded1ea5392e7fbb11}
+
+
+Definition at line 827 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+\hypertarget{class_u_b_graphics_item_delegate_a2f7ff1eb2e370e007f25527ef42c454e}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Can\-Duplicate@{set\-Can\-Duplicate}}
+\index{set\-Can\-Duplicate@{set\-Can\-Duplicate}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Can\-Duplicate}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Can\-Duplicate (
+\begin{DoxyParamCaption}
+\item[{bool}]{allow}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a2f7ff1eb2e370e007f25527ef42c454e}
+
+
+Definition at line 251 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a2f7ff1eb2e370e007f25527ef42c454e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a698c3af60576af37a916a93ee3a82a25}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Can\-Trig\-An\-Action@{set\-Can\-Trig\-An\-Action}}
+\index{set\-Can\-Trig\-An\-Action@{set\-Can\-Trig\-An\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Can\-Trig\-An\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Can\-Trig\-An\-Action (
+\begin{DoxyParamCaption}
+\item[{bool}]{can\-Trig}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_a698c3af60576af37a916a93ee3a82a25}
+
+
+Definition at line 734 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a698c3af60576af37a916a93ee3a82a25_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a1d17f8df9020c02380d07dadd70bc9e4}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Drag\-Pixmap@{set\-Drag\-Pixmap}}
+\index{set\-Drag\-Pixmap@{set\-Drag\-Pixmap}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Drag\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Drag\-Pixmap (
+\begin{DoxyParamCaption}
+\item[{const Q\-Pixmap \&}]{pix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a1d17f8df9020c02380d07dadd70bc9e4}
+
+
+Definition at line 267 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a1d17f8df9020c02380d07dadd70bc9e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a9572bb54e20bfe135d9560885a1e4aa8}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Flippable@{set\-Flippable}}
+\index{set\-Flippable@{set\-Flippable}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Flippable}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Flippable (
+\begin{DoxyParamCaption}
+\item[{bool}]{flippable}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_a9572bb54e20bfe135d9560885a1e4aa8}
+
+
+Definition at line 724 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a9572bb54e20bfe135d9560885a1e4aa8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ab2a23e50c385b6eb1069333c8f0eb23b}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Locked@{set\-Locked}}
+\index{set\-Locked@{set\-Locked}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Locked}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Locked (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Locked}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_ab2a23e50c385b6eb1069333c8f0eb23b}
+
+
+Definition at line 750 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ab2a23e50c385b6eb1069333c8f0eb23b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ad397d41e717526ee8bdf667294efdbe9}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Mime\-Data@{set\-Mime\-Data}}
+\index{set\-Mime\-Data@{set\-Mime\-Data}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Mime\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Mime\-Data (
+\begin{DoxyParamCaption}
+\item[{Q\-Mime\-Data $\ast$}]{mime\-Data}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_ad397d41e717526ee8bdf667294efdbe9}
+
+
+Definition at line 316 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad397d41e717526ee8bdf667294efdbe9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ad397d41e717526ee8bdf667294efdbe9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_aea85facebaec66edecbdf81280a9c918}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Rotatable@{set\-Rotatable}}
+\index{set\-Rotatable@{set\-Rotatable}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Rotatable}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Rotatable (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Can\-Rotate}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_aea85facebaec66edecbdf81280a9c918}
+
+
+Definition at line 739 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_aea85facebaec66edecbdf81280a9c918_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_acb4eac8e78e9da283c48f7cd1f24d5a7}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!set\-Z\-Order\-Buttons\-Visible@{set\-Z\-Order\-Buttons\-Visible}}
+\index{set\-Z\-Order\-Buttons\-Visible@{set\-Z\-Order\-Buttons\-Visible}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{set\-Z\-Order\-Buttons\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::set\-Z\-Order\-Buttons\-Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_acb4eac8e78e9da283c48f7cd1f24d5a7}
+
+
+Definition at line 426 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+\hypertarget{class_u_b_graphics_item_delegate_a9d8abde4377bdfda898d6055585c0e8e}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!show\-Hide@{show\-Hide}}
+\index{show\-Hide@{show\-Hide}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{show\-Hide}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::show\-Hide (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a9d8abde4377bdfda898d6055585c0e8e}
+
+
+Definition at line 549 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a9d8abde4377bdfda898d6055585c0e8e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a9d8abde4377bdfda898d6055585c0e8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a2d0f4c4ab6660fc42dc76d89ca8a7240}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!show\-Menu@{show\-Menu}}
+\index{show\-Menu@{show\-Menu}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{show\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::show\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a2d0f4c4ab6660fc42dc76d89ca8a7240}
+
+
+Definition at line 708 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a2d0f4c4ab6660fc42dc76d89ca8a7240_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a2d0f4c4ab6660fc42dc76d89ca8a7240_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a2e13161a55c9568ef3ebcebbf549d4cb}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!show\-On\-Display\-Changed@{show\-On\-Display\-Changed}}
+\index{show\-On\-Display\-Changed@{show\-On\-Display\-Changed}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{show\-On\-Display\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::show\-On\-Display\-Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{shown}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a2e13161a55c9568ef3ebcebbf549d4cb}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a2e13161a55c9568ef3ebcebbf549d4cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_ac6e6021ca2e53bb636b22e49d2ff7b97}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!start\-Undo\-Step@{start\-Undo\-Step}}
+\index{start\-Undo\-Step@{start\-Undo\-Step}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{start\-Undo\-Step}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::start\-Undo\-Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dd/dd5/class_u_b_graphics_item_delegate_ac6e6021ca2e53bb636b22e49d2ff7b97}
+
+
+Definition at line 570 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ac6e6021ca2e53bb636b22e49d2ff7b97_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_ac6e6021ca2e53bb636b22e49d2ff7b97_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a25ea09abfab2c00bb19c08a995cd819e}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!update@{update}}
+\index{update@{update}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Graphics\-Item\-Delegate\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a25ea09abfab2c00bb19c08a995cd819e}
+
+
+Definition at line 282 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a25ea09abfab2c00bb19c08a995cd819e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a25ea09abfab2c00bb19c08a995cd819e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_aaac5b391602a6c42ad371a3addf84662}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!update\-Menu\-Action\-State@{update\-Menu\-Action\-State}}
+\index{update\-Menu\-Action\-State@{update\-Menu\-Action\-State}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{update\-Menu\-Action\-State}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Delegate\-::update\-Menu\-Action\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_aaac5b391602a6c42ad371a3addf84662}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_text_item_delegate_a63f892bf8e8b39d2f8449b0ee45f6ca4}{U\-B\-Graphics\-Text\-Item\-Delegate}, and \hyperlink{class_u_b_graphics_widget_item_delegate_a9fc042cdc18946127bdcd651740bcd5b}{U\-B\-Graphics\-Widget\-Item\-Delegate}.
+
+
+
+Definition at line 690 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_aaac5b391602a6c42ad371a3addf84662_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_aaac5b391602a6c42ad371a3addf84662_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_delegate_a16e86d30f379c41c4f3e30608a0dab74}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!weel\-Event@{weel\-Event}}
+\index{weel\-Event@{weel\-Event}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{weel\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Item\-Delegate\-::weel\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Wheel\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a16e86d30f379c41c4f3e30608a0dab74}
+
+
+Definition at line 338 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/class_u_b_graphics_item_delegate_a16e86d30f379c41c4f3e30608a0dab74_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_graphics_item_delegate_a87e149520c268ac29f26412129d2cca2}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Action@{m\-Action}}
+\index{m\-Action@{m\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Item\-Action}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Action\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a87e149520c268ac29f26412129d2cca2}
+
+
+Definition at line 339 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a02b5c8199e11b87de2303aa4a5ed09ac}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Anti\-Scale\-Ratio@{m\-Anti\-Scale\-Ratio}}
+\index{m\-Anti\-Scale\-Ratio@{m\-Anti\-Scale\-Ratio}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Anti\-Scale\-Ratio}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Item\-Delegate\-::m\-Anti\-Scale\-Ratio\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a02b5c8199e11b87de2303aa4a5ed09ac}
+
+
+Definition at line 333 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_abd27d9387610bf45761035ee4ae6ff37}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Buttons@{m\-Buttons}}
+\index{m\-Buttons@{m\-Buttons}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<${\bf Delegate\-Button}$\ast$$>$ U\-B\-Graphics\-Item\-Delegate\-::m\-Buttons\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_abd27d9387610bf45761035ee4ae6ff37}
+
+
+Definition at line 335 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a126d39dd710594d5f4f1c9956c0aafe3}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Delegated@{m\-Delegated}}
+\index{m\-Delegated@{m\-Delegated}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Delegated}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Delegated\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a126d39dd710594d5f4f1c9956c0aafe3}
+
+
+Definition at line 312 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_aed94a4b82e2b6b34a08036c872a5e277}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Delete\-Button@{m\-Delete\-Button}}
+\index{m\-Delete\-Button@{m\-Delete\-Button}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Delete\-Button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delegate\-Button}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Delete\-Button\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_aed94a4b82e2b6b34a08036c872a5e277}
+
+
+Definition at line 315 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a554f13c224fba040eea5ae81d9e429df}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Duplicate\-Button@{m\-Duplicate\-Button}}
+\index{m\-Duplicate\-Button@{m\-Duplicate\-Button}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Duplicate\-Button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delegate\-Button}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Duplicate\-Button\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a554f13c224fba040eea5ae81d9e429df}
+
+
+Definition at line 316 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_aefc58035670f33d0309f1f572452e8b2}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Frame@{m\-Frame}}
+\index{m\-Frame@{m\-Frame}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Delegate\-Frame}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Frame\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_aefc58035670f33d0309f1f572452e8b2}
+
+
+Definition at line 331 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_ae7c03f2f6e86504ca5ae7a9b2d8a74f0}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Frame\-Width@{m\-Frame\-Width}}
+\index{m\-Frame\-Width@{m\-Frame\-Width}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Frame\-Width}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Item\-Delegate\-::m\-Frame\-Width\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ae7c03f2f6e86504ca5ae7a9b2d8a74f0}
+
+
+Definition at line 332 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a9a521276a587e652033769498837deec}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Goto\-Content\-Source\-Action@{m\-Goto\-Content\-Source\-Action}}
+\index{m\-Goto\-Content\-Source\-Action@{m\-Goto\-Content\-Source\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Goto\-Content\-Source\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Action$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Goto\-Content\-Source\-Action\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a9a521276a587e652033769498837deec}
+
+
+Definition at line 327 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a8003eac64477c1c5ed3e80ae72f1b3dc}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Lock\-Action@{m\-Lock\-Action}}
+\index{m\-Lock\-Action@{m\-Lock\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Lock\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Action$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Lock\-Action\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a8003eac64477c1c5ed3e80ae72f1b3dc}
+
+
+Definition at line 325 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_abdb23ab4b93f3bc0b28a2329543dd88a}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Menu@{m\-Menu}}
+\index{m\-Menu@{m\-Menu}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Menu$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Menu\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_abdb23ab4b93f3bc0b28a2329543dd88a}
+
+
+Definition at line 323 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a6f334e39a32eedb572831748b7d07fb7}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Menu\-Button@{m\-Menu\-Button}}
+\index{m\-Menu\-Button@{m\-Menu\-Button}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Menu\-Button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delegate\-Button}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Menu\-Button\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a6f334e39a32eedb572831748b7d07fb7}
+
+
+Definition at line 317 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_aa80345f33555d22acbda9227aa5d001b}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Remove\-An\-Action@{m\-Remove\-An\-Action}}
+\index{m\-Remove\-An\-Action@{m\-Remove\-An\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Remove\-An\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Action$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Remove\-An\-Action\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_aa80345f33555d22acbda9227aa5d001b}
+
+
+Definition at line 329 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a9b7e283947d4119142569e0cd5d1fcdc}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Show\-On\-Display\-Action@{m\-Show\-On\-Display\-Action}}
+\index{m\-Show\-On\-Display\-Action@{m\-Show\-On\-Display\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Show\-On\-Display\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Action$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Show\-On\-Display\-Action\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a9b7e283947d4119142569e0cd5d1fcdc}
+
+
+Definition at line 326 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a37842d928eafd9c363967046bc144f3c}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Show\-Panel\-To\-Add\-An\-Action@{m\-Show\-Panel\-To\-Add\-An\-Action}}
+\index{m\-Show\-Panel\-To\-Add\-An\-Action@{m\-Show\-Panel\-To\-Add\-An\-Action}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Show\-Panel\-To\-Add\-An\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Action$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Show\-Panel\-To\-Add\-An\-Action\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a37842d928eafd9c363967046bc144f3c}
+
+
+Definition at line 328 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a1caf5794856eba7480eae9beeff4e2ad}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Tool\-Bar\-Buttons@{m\-Tool\-Bar\-Buttons}}
+\index{m\-Tool\-Bar\-Buttons@{m\-Tool\-Bar\-Buttons}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Tool\-Bar\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<${\bf Delegate\-Button}$\ast$$>$ U\-B\-Graphics\-Item\-Delegate\-::m\-Tool\-Bar\-Buttons\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a1caf5794856eba7480eae9beeff4e2ad}
+
+
+Definition at line 336 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_adf8972176c6e60c4a78e90eee2f97540}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Tool\-Bar\-Item@{m\-Tool\-Bar\-Item}}
+\index{m\-Tool\-Bar\-Item@{m\-Tool\-Bar\-Item}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Tool\-Bar\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Tool\-Bar\-Item}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Tool\-Bar\-Item\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_adf8972176c6e60c4a78e90eee2f97540}
+
+
+Definition at line 337 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_a70d87a6726bcd84a212f61856d895192}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Z\-Order\-Down\-Button@{m\-Z\-Order\-Down\-Button}}
+\index{m\-Z\-Order\-Down\-Button@{m\-Z\-Order\-Down\-Button}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Z\-Order\-Down\-Button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delegate\-Button}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Z\-Order\-Down\-Button\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_a70d87a6726bcd84a212f61856d895192}
+
+
+Definition at line 321 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_u_b_graphics_item_delegate_ae4a5db7a8e39d892bb606bf251eb653c}{\index{U\-B\-Graphics\-Item\-Delegate@{U\-B\-Graphics\-Item\-Delegate}!m\-Z\-Order\-Up\-Button@{m\-Z\-Order\-Up\-Button}}
+\index{m\-Z\-Order\-Up\-Button@{m\-Z\-Order\-Up\-Button}!UBGraphicsItemDelegate@{U\-B\-Graphics\-Item\-Delegate}}
+\subsubsection[{m\-Z\-Order\-Up\-Button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delegate\-Button}$\ast$ U\-B\-Graphics\-Item\-Delegate\-::m\-Z\-Order\-Up\-Button\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/dd5/class_u_b_graphics_item_delegate_ae4a5db7a8e39d892bb606bf251eb653c}
+
+
+Definition at line 320 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_item_delegate_8h}{U\-B\-Graphics\-Item\-Delegate.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_item_delegate_8cpp}{U\-B\-Graphics\-Item\-Delegate.\-cpp}\end{DoxyCompactItemize}

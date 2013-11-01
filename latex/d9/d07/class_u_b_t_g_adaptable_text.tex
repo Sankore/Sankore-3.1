@@ -1,0 +1,458 @@
+\hypertarget{class_u_b_t_g_adaptable_text}{\section{U\-B\-T\-G\-Adaptable\-Text Class Reference}
+\label{d9/d07/class_u_b_t_g_adaptable_text}\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Teacher\-Guide\-Widgets\-Tools.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-T\-G\-Adaptable\-Text\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{d5/d8a/class_u_b_t_g_adaptable_text__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_ad1dc392b4eb83cd13e37b9f0e808a036}{on\-Text\-Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_t_g_adaptable_text_a48618a00fb15801d1e40e1ec98a2c540}{U\-B\-T\-G\-Adaptable\-Text} (Q\-Tree\-Widget\-Item $\ast$widget=0, Q\-Widget $\ast$parent=0, const char $\ast$name=\char`\"{}U\-B\-T\-G\-Adaptable\-Text\char`\"{})
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_ad2039c06e55398d459a78b6493c37496}{show\-Text} (const Q\-String \&\hyperlink{class_u_b_t_g_adaptable_text_abc01215ceb6a24147b846b344b7557ce}{text})
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a8abbbc15740307ea5613445fdcc682a3}{reset\-Text} ()
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a012f2599f535628ea39f482f3fef6db0}{bottom\-Margin} (int new\-Value)
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a25c1b482d596c31210197ef4d48a48e4}{set\-Place\-Holder\-Text} (Q\-String \hyperlink{class_u_b_t_g_adaptable_text_abc01215ceb6a24147b846b344b7557ce}{text})
+\item 
+Q\-String \hyperlink{class_u_b_t_g_adaptable_text_abc01215ceb6a24147b846b344b7557ce}{text} ()
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a11880e0e1a770203ba9a4e189e07226d}{set\-Initial\-Text} (const Q\-String \&\hyperlink{class_u_b_t_g_adaptable_text_abc01215ceb6a24147b846b344b7557ce}{text})
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_afded2840e343a607a0f40b9f57ca35f3}{set\-Maximum\-Length} (int length)
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a196a86ef5f0b83aa9b5376b1551a7a4e}{manage\-Placeholder} (bool focus)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a2a65d95bc5641c89db53fac4bc0cfafb}{key\-Release\-Event} (Q\-Key\-Event $\ast$e)
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_ab0d40973bab7181de299a7d47db694f2}{show\-Event} (Q\-Show\-Event $\ast$e)
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a6a5dc605f9b9d92f339a364aaa7bd4f4}{focus\-In\-Event} (Q\-Focus\-Event $\ast$e)
+\item 
+void \hyperlink{class_u_b_t_g_adaptable_text_a1cd4b4a49e4ae95cc7bd6af01320f5ce}{focus\-Out\-Event} (Q\-Focus\-Event $\ast$e)
+\item 
+virtual void \hyperlink{class_u_b_t_g_adaptable_text_a95042078918d78ece284b16a179ade05}{insert\-From\-Mime\-Data} (const Q\-Mime\-Data $\ast$source)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 100 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_t_g_adaptable_text_a48618a00fb15801d1e40e1ec98a2c540}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}}
+\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{U\-B\-T\-G\-Adaptable\-Text}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-T\-G\-Adaptable\-Text\-::\-U\-B\-T\-G\-Adaptable\-Text (
+\begin{DoxyParamCaption}
+\item[{Q\-Tree\-Widget\-Item $\ast$}]{widget = {\ttfamily 0}, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{name = {\ttfamily \char`\"{}UBTGAdaptableText\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d9/d07/class_u_b_t_g_adaptable_text_a48618a00fb15801d1e40e1ec98a2c540}
+
+
+Definition at line 130 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_a48618a00fb15801d1e40e1ec98a2c540_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_t_g_adaptable_text_a012f2599f535628ea39f482f3fef6db0}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!bottom\-Margin@{bottom\-Margin}}
+\index{bottom\-Margin@{bottom\-Margin}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{bottom\-Margin}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::bottom\-Margin (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Value}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_a012f2599f535628ea39f482f3fef6db0}
+
+
+Definition at line 250 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_a012f2599f535628ea39f482f3fef6db0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_a012f2599f535628ea39f482f3fef6db0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_a6a5dc605f9b9d92f339a364aaa7bd4f4}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!focus\-In\-Event@{focus\-In\-Event}}
+\index{focus\-In\-Event@{focus\-In\-Event}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{focus\-In\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::focus\-In\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Focus\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d9/d07/class_u_b_t_g_adaptable_text_a6a5dc605f9b9d92f339a364aaa7bd4f4}
+
+
+Definition at line 256 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_a6a5dc605f9b9d92f339a364aaa7bd4f4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_a1cd4b4a49e4ae95cc7bd6af01320f5ce}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!focus\-Out\-Event@{focus\-Out\-Event}}
+\index{focus\-Out\-Event@{focus\-Out\-Event}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{focus\-Out\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::focus\-Out\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Focus\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d9/d07/class_u_b_t_g_adaptable_text_a1cd4b4a49e4ae95cc7bd6af01320f5ce}
+
+
+Definition at line 265 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_a1cd4b4a49e4ae95cc7bd6af01320f5ce_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_a95042078918d78ece284b16a179ade05}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!insert\-From\-Mime\-Data@{insert\-From\-Mime\-Data}}
+\index{insert\-From\-Mime\-Data@{insert\-From\-Mime\-Data}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{insert\-From\-Mime\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::insert\-From\-Mime\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-Mime\-Data $\ast$}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d9/d07/class_u_b_t_g_adaptable_text_a95042078918d78ece284b16a179ade05}
+
+
+Definition at line 271 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_a95042078918d78ece284b16a179ade05_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_a2a65d95bc5641c89db53fac4bc0cfafb}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!key\-Release\-Event@{key\-Release\-Event}}
+\index{key\-Release\-Event@{key\-Release\-Event}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{key\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::key\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d9/d07/class_u_b_t_g_adaptable_text_a2a65d95bc5641c89db53fac4bc0cfafb}
+
+
+Definition at line 163 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+\hypertarget{class_u_b_t_g_adaptable_text_a196a86ef5f0b83aa9b5376b1551a7a4e}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!manage\-Placeholder@{manage\-Placeholder}}
+\index{manage\-Placeholder@{manage\-Placeholder}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{manage\-Placeholder}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::manage\-Placeholder (
+\begin{DoxyParamCaption}
+\item[{bool}]{focus}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_a196a86ef5f0b83aa9b5376b1551a7a4e}
+
+
+Definition at line 297 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_a196a86ef5f0b83aa9b5376b1551a7a4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_ad1dc392b4eb83cd13e37b9f0e808a036}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!on\-Text\-Changed@{on\-Text\-Changed}}
+\index{on\-Text\-Changed@{on\-Text\-Changed}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{on\-Text\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::on\-Text\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d9/d07/class_u_b_t_g_adaptable_text_ad1dc392b4eb83cd13e37b9f0e808a036}
+
+
+Definition at line 196 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_ad1dc392b4eb83cd13e37b9f0e808a036_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_a8abbbc15740307ea5613445fdcc682a3}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!reset\-Text@{reset\-Text}}
+\index{reset\-Text@{reset\-Text}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{reset\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::reset\-Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_a8abbbc15740307ea5613445fdcc682a3}
+
+
+Definition at line 230 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_a8abbbc15740307ea5613445fdcc682a3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_a8abbbc15740307ea5613445fdcc682a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_a11880e0e1a770203ba9a4e189e07226d}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!set\-Initial\-Text@{set\-Initial\-Text}}
+\index{set\-Initial\-Text@{set\-Initial\-Text}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{set\-Initial\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::set\-Initial\-Text (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{text}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_a11880e0e1a770203ba9a4e189e07226d}
+
+
+Definition at line 223 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_a11880e0e1a770203ba9a4e189e07226d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_a11880e0e1a770203ba9a4e189e07226d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_afded2840e343a607a0f40b9f57ca35f3}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!set\-Maximum\-Length@{set\-Maximum\-Length}}
+\index{set\-Maximum\-Length@{set\-Maximum\-Length}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{set\-Maximum\-Length}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::set\-Maximum\-Length (
+\begin{DoxyParamCaption}
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_afded2840e343a607a0f40b9f57ca35f3}
+
+
+Definition at line 148 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_afded2840e343a607a0f40b9f57ca35f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_a25c1b482d596c31210197ef4d48a48e4}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!set\-Place\-Holder\-Text@{set\-Place\-Holder\-Text}}
+\index{set\-Place\-Holder\-Text@{set\-Place\-Holder\-Text}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{set\-Place\-Holder\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::set\-Place\-Holder\-Text (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{text}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_a25c1b482d596c31210197ef4d48a48e4}
+
+
+Definition at line 153 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_a25c1b482d596c31210197ef4d48a48e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_ab0d40973bab7181de299a7d47db694f2}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!show\-Event@{show\-Event}}
+\index{show\-Event@{show\-Event}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{show\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::show\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Show\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d9/d07/class_u_b_t_g_adaptable_text_ab0d40973bab7181de299a7d47db694f2}
+
+
+Definition at line 175 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_ab0d40973bab7181de299a7d47db694f2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_ad2039c06e55398d459a78b6493c37496}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!show\-Text@{show\-Text}}
+\index{show\-Text@{show\-Text}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{show\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-T\-G\-Adaptable\-Text\-::show\-Text (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{text}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_ad2039c06e55398d459a78b6493c37496}
+
+
+Definition at line 243 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d9/d07/class_u_b_t_g_adaptable_text_ad2039c06e55398d459a78b6493c37496_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_ad2039c06e55398d459a78b6493c37496_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_t_g_adaptable_text_abc01215ceb6a24147b846b344b7557ce}{\index{U\-B\-T\-G\-Adaptable\-Text@{U\-B\-T\-G\-Adaptable\-Text}!text@{text}}
+\index{text@{text}!UBTGAdaptableText@{U\-B\-T\-G\-Adaptable\-Text}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-T\-G\-Adaptable\-Text\-::text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d9/d07/class_u_b_t_g_adaptable_text_abc01215ceb6a24147b846b344b7557ce}
+
+
+Definition at line 187 of file U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d07/class_u_b_t_g_adaptable_text_abc01215ceb6a24147b846b344b7557ce_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_teacher_guide_widgets_tools_8h}{U\-B\-Teacher\-Guide\-Widgets\-Tools.\-h}\item 
+Sankore-\/3.\-1/src/gui/\hyperlink{_u_b_teacher_guide_widgets_tools_8cpp}{U\-B\-Teacher\-Guide\-Widgets\-Tools.\-cpp}\end{DoxyCompactItemize}

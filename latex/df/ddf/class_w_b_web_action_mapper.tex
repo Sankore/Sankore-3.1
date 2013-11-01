@@ -1,0 +1,124 @@
+\hypertarget{class_w_b_web_action_mapper}{\section{W\-B\-Web\-Action\-Mapper Class Reference}
+\label{df/ddf/class_w_b_web_action_mapper}\index{W\-B\-Web\-Action\-Mapper@{W\-B\-Web\-Action\-Mapper}}
+}
+
+
+A proxy object that connects a single browser action to one child webpage action at a time.  
+
+
+
+
+{\ttfamily \#include $<$W\-B\-Tab\-Widget.\-h$>$}
+
+
+
+Collaboration diagram for W\-B\-Web\-Action\-Mapper\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{dd/dd6/class_w_b_web_action_mapper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_web_action_mapper_ad9b3b037a503226176745c497b26f2cb}{W\-B\-Web\-Action\-Mapper} (Q\-Action $\ast$root, Q\-Web\-Page\-::\-Web\-Action \hyperlink{class_w_b_web_action_mapper_a93022e933f82d86a438d9ccdfe72d93f}{web\-Action}, Q\-Object $\ast$parent)
+\item 
+Q\-Web\-Page\-::\-Web\-Action \hyperlink{class_w_b_web_action_mapper_a93022e933f82d86a438d9ccdfe72d93f}{web\-Action} () const 
+\item 
+void \hyperlink{class_w_b_web_action_mapper_a57629da574d3dde2d40ebb3dad324b24}{add\-Child} (Q\-Action $\ast$action)
+\item 
+void \hyperlink{class_w_b_web_action_mapper_a6ab4f245f921fa06f9d8d419a4bd5b52}{update\-Current} (Q\-Web\-Page $\ast$current\-Parent)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A proxy object that connects a single browser action to one child webpage action at a time. 
+
+Example usage\-: used to keep the main window stop action in sync with the current tabs webview's stop action. 
+
+Definition at line 117 of file W\-B\-Tab\-Widget.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_w_b_web_action_mapper_ad9b3b037a503226176745c497b26f2cb}{\index{W\-B\-Web\-Action\-Mapper@{W\-B\-Web\-Action\-Mapper}!W\-B\-Web\-Action\-Mapper@{W\-B\-Web\-Action\-Mapper}}
+\index{W\-B\-Web\-Action\-Mapper@{W\-B\-Web\-Action\-Mapper}!WBWebActionMapper@{W\-B\-Web\-Action\-Mapper}}
+\subsubsection[{W\-B\-Web\-Action\-Mapper}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-Web\-Action\-Mapper\-::\-W\-B\-Web\-Action\-Mapper (
+\begin{DoxyParamCaption}
+\item[{Q\-Action $\ast$}]{root, }
+\item[{Q\-Web\-Page\-::\-Web\-Action}]{web\-Action, }
+\item[{Q\-Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{df/ddf/class_w_b_web_action_mapper_ad9b3b037a503226176745c497b26f2cb}
+
+
+Definition at line 772 of file W\-B\-Tab\-Widget.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_w_b_web_action_mapper_a57629da574d3dde2d40ebb3dad324b24}{\index{W\-B\-Web\-Action\-Mapper@{W\-B\-Web\-Action\-Mapper}!add\-Child@{add\-Child}}
+\index{add\-Child@{add\-Child}!WBWebActionMapper@{W\-B\-Web\-Action\-Mapper}}
+\subsubsection[{add\-Child}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Web\-Action\-Mapper\-::add\-Child (
+\begin{DoxyParamCaption}
+\item[{Q\-Action $\ast$}]{action}
+\end{DoxyParamCaption}
+)}}\label{df/ddf/class_w_b_web_action_mapper_a57629da574d3dde2d40ebb3dad324b24}
+
+
+Definition at line 795 of file W\-B\-Tab\-Widget.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/ddf/class_w_b_web_action_mapper_a57629da574d3dde2d40ebb3dad324b24_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_web_action_mapper_a6ab4f245f921fa06f9d8d419a4bd5b52}{\index{W\-B\-Web\-Action\-Mapper@{W\-B\-Web\-Action\-Mapper}!update\-Current@{update\-Current}}
+\index{update\-Current@{update\-Current}!WBWebActionMapper@{W\-B\-Web\-Action\-Mapper}}
+\subsubsection[{update\-Current}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Web\-Action\-Mapper\-::update\-Current (
+\begin{DoxyParamCaption}
+\item[{Q\-Web\-Page $\ast$}]{current\-Parent}
+\end{DoxyParamCaption}
+)}}\label{df/ddf/class_w_b_web_action_mapper_a6ab4f245f921fa06f9d8d419a4bd5b52}
+
+
+Definition at line 830 of file W\-B\-Tab\-Widget.\-cpp.
+
+\hypertarget{class_w_b_web_action_mapper_a93022e933f82d86a438d9ccdfe72d93f}{\index{W\-B\-Web\-Action\-Mapper@{W\-B\-Web\-Action\-Mapper}!web\-Action@{web\-Action}}
+\index{web\-Action@{web\-Action}!WBWebActionMapper@{W\-B\-Web\-Action\-Mapper}}
+\subsubsection[{web\-Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Web\-Page\-::\-Web\-Action W\-B\-Web\-Action\-Mapper\-::web\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{df/ddf/class_w_b_web_action_mapper_a93022e933f82d86a438d9ccdfe72d93f}
+
+
+Definition at line 802 of file W\-B\-Tab\-Widget.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/ddf/class_w_b_web_action_mapper_a93022e933f82d86a438d9ccdfe72d93f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_tab_widget_8h}{W\-B\-Tab\-Widget.\-h}\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_tab_widget_8cpp}{W\-B\-Tab\-Widget.\-cpp}\end{DoxyCompactItemize}

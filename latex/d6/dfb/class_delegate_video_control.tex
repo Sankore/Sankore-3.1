@@ -1,0 +1,202 @@
+\hypertarget{class_delegate_video_control}{\section{Delegate\-Video\-Control Class Reference}
+\label{d6/dfb/class_delegate_video_control}\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Video\-Item\-Delegate.\-h$>$}
+
+
+
+Collaboration diagram for Delegate\-Video\-Control\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{d5/db7/class_delegate_video_control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_delegate_video_control_a2cda0de2204cd4e0b7683894dc6e4939}{Delegate\-Video\-Control} (U\-B\-Graphics\-Video\-Item $\ast$p\-Delegated, Q\-Graphics\-Item $\ast$parent=0)
+\item 
+virtual \hyperlink{class_delegate_video_control_a85ea95ed6b0e71326c85fe0ab7cb7a78}{$\sim$\-Delegate\-Video\-Control} ()
+\item 
+void \hyperlink{class_delegate_video_control_a6e3cf52c12b4597abdb3f5b718dd70a8}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\item 
+Q\-Painter\-Path \hyperlink{class_delegate_video_control_a29ca69bde43eb6806715c0c18148a025}{shape} () const 
+\item 
+void \hyperlink{class_delegate_video_control_abe2110657dafe471044fb471bf302bdf}{set\-Anti\-Scale} (qreal anti\-Scale)
+\item 
+virtual void \hyperlink{class_delegate_video_control_aff5276144d7294ca9a1d441adce0b87d}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_delegate_video_control_aa69144ac35cac23db1eeed627963b47e}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_delegate_video_control_ada9a2f17b5a3bdb5d8b04b22682fbb30}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+void \hyperlink{class_delegate_video_control_a4041dc437477a46abedbe2f60b372bb9}{update\-Ticker} (qint64 time)
+\item 
+void \hyperlink{class_delegate_video_control_ac4bd67b8519832ffb357dc95487697d7}{total\-Time\-Changed} (qint64 new\-Total\-Time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_delegate_video_control_a92ed136a0960e6e2f2322390899ac4f9}{seek\-To\-Mouse\-Pos} (Q\-Point\-F mouse\-Pos)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\-B\-Graphics\-Video\-Item $\ast$ \hyperlink{class_delegate_video_control_a93305b12d3555c063827ca7913aaf9a2}{m\-Delegate}
+\item 
+bool \hyperlink{class_delegate_video_control_a203df9a0783f9b13b2dbeb3bd36e17c3}{m\-Display\-Current\-Time}
+\item 
+qreal \hyperlink{class_delegate_video_control_abae4f33c0fbaecbb4d8ac35fb2dfd3a3}{m\-Anti\-Scale}
+\item 
+qint64 \hyperlink{class_delegate_video_control_a7eef884befdaa42a32b7efd4fd350b3d}{m\-Current\-Time\-In\-Ms}
+\item 
+qint64 \hyperlink{class_delegate_video_control_aade232616040470361ef28f72e782f67}{m\-Total\-Time\-In\-Ms}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_delegate_video_control_a2cda0de2204cd4e0b7683894dc6e4939}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!Delegate\-Video\-Control@{Delegate\-Video\-Control}}
+\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{Delegate\-Video\-Control}]{\setlength{\rightskip}{0pt plus 5cm}Delegate\-Video\-Control\-::\-Delegate\-Video\-Control (
+\begin{DoxyParamCaption}
+\item[{U\-B\-Graphics\-Video\-Item $\ast$}]{p\-Delegated, }
+\item[{Q\-Graphics\-Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d6/dfb/class_delegate_video_control_a2cda0de2204cd4e0b7683894dc6e4939}
+\hypertarget{class_delegate_video_control_a85ea95ed6b0e71326c85fe0ab7cb7a78}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!$\sim$\-Delegate\-Video\-Control@{$\sim$\-Delegate\-Video\-Control}}
+\index{$\sim$\-Delegate\-Video\-Control@{$\sim$\-Delegate\-Video\-Control}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{$\sim$\-Delegate\-Video\-Control}]{\setlength{\rightskip}{0pt plus 5cm}virtual Delegate\-Video\-Control\-::$\sim$\-Delegate\-Video\-Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d6/dfb/class_delegate_video_control_a85ea95ed6b0e71326c85fe0ab7cb7a78}
+
+
+Definition at line 43 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_delegate_video_control_aa69144ac35cac23db1eeed627963b47e}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Delegate\-Video\-Control\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d6/dfb/class_delegate_video_control_aa69144ac35cac23db1eeed627963b47e}
+\hypertarget{class_delegate_video_control_aff5276144d7294ca9a1d441adce0b87d}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Delegate\-Video\-Control\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d6/dfb/class_delegate_video_control_aff5276144d7294ca9a1d441adce0b87d}
+\hypertarget{class_delegate_video_control_ada9a2f17b5a3bdb5d8b04b22682fbb30}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Delegate\-Video\-Control\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d6/dfb/class_delegate_video_control_ada9a2f17b5a3bdb5d8b04b22682fbb30}
+\hypertarget{class_delegate_video_control_a6e3cf52c12b4597abdb3f5b718dd70a8}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!paint@{paint}}
+\index{paint@{paint}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Video\-Control\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{d6/dfb/class_delegate_video_control_a6e3cf52c12b4597abdb3f5b718dd70a8}
+\hypertarget{class_delegate_video_control_a92ed136a0960e6e2f2322390899ac4f9}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!seek\-To\-Mouse\-Pos@{seek\-To\-Mouse\-Pos}}
+\index{seek\-To\-Mouse\-Pos@{seek\-To\-Mouse\-Pos}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{seek\-To\-Mouse\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Video\-Control\-::seek\-To\-Mouse\-Pos (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{mouse\-Pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/dfb/class_delegate_video_control_a92ed136a0960e6e2f2322390899ac4f9}
+\hypertarget{class_delegate_video_control_abe2110657dafe471044fb471bf302bdf}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!set\-Anti\-Scale@{set\-Anti\-Scale}}
+\index{set\-Anti\-Scale@{set\-Anti\-Scale}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{set\-Anti\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Video\-Control\-::set\-Anti\-Scale (
+\begin{DoxyParamCaption}
+\item[{qreal}]{anti\-Scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d6/dfb/class_delegate_video_control_abe2110657dafe471044fb471bf302bdf}
+
+
+Definition at line 53 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_video_control_a29ca69bde43eb6806715c0c18148a025}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!shape@{shape}}
+\index{shape@{shape}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Painter\-Path Delegate\-Video\-Control\-::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/dfb/class_delegate_video_control_a29ca69bde43eb6806715c0c18148a025}
+\hypertarget{class_delegate_video_control_ac4bd67b8519832ffb357dc95487697d7}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!total\-Time\-Changed@{total\-Time\-Changed}}
+\index{total\-Time\-Changed@{total\-Time\-Changed}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{total\-Time\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Video\-Control\-::total\-Time\-Changed (
+\begin{DoxyParamCaption}
+\item[{qint64}]{new\-Total\-Time}
+\end{DoxyParamCaption}
+)}}\label{d6/dfb/class_delegate_video_control_ac4bd67b8519832ffb357dc95487697d7}
+\hypertarget{class_delegate_video_control_a4041dc437477a46abedbe2f60b372bb9}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!update\-Ticker@{update\-Ticker}}
+\index{update\-Ticker@{update\-Ticker}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{update\-Ticker}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Video\-Control\-::update\-Ticker (
+\begin{DoxyParamCaption}
+\item[{qint64}]{time}
+\end{DoxyParamCaption}
+)}}\label{d6/dfb/class_delegate_video_control_a4041dc437477a46abedbe2f60b372bb9}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_delegate_video_control_abae4f33c0fbaecbb4d8ac35fb2dfd3a3}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!m\-Anti\-Scale@{m\-Anti\-Scale}}
+\index{m\-Anti\-Scale@{m\-Anti\-Scale}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{m\-Anti\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}qreal Delegate\-Video\-Control\-::m\-Anti\-Scale\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/dfb/class_delegate_video_control_abae4f33c0fbaecbb4d8ac35fb2dfd3a3}
+
+
+Definition at line 70 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_video_control_a7eef884befdaa42a32b7efd4fd350b3d}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!m\-Current\-Time\-In\-Ms@{m\-Current\-Time\-In\-Ms}}
+\index{m\-Current\-Time\-In\-Ms@{m\-Current\-Time\-In\-Ms}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{m\-Current\-Time\-In\-Ms}]{\setlength{\rightskip}{0pt plus 5cm}qint64 Delegate\-Video\-Control\-::m\-Current\-Time\-In\-Ms\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/dfb/class_delegate_video_control_a7eef884befdaa42a32b7efd4fd350b3d}
+
+
+Definition at line 71 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_video_control_a93305b12d3555c063827ca7913aaf9a2}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!m\-Delegate@{m\-Delegate}}
+\index{m\-Delegate@{m\-Delegate}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{m\-Delegate}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Video\-Item$\ast$ Delegate\-Video\-Control\-::m\-Delegate\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/dfb/class_delegate_video_control_a93305b12d3555c063827ca7913aaf9a2}
+
+
+Definition at line 67 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_video_control_a203df9a0783f9b13b2dbeb3bd36e17c3}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!m\-Display\-Current\-Time@{m\-Display\-Current\-Time}}
+\index{m\-Display\-Current\-Time@{m\-Display\-Current\-Time}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{m\-Display\-Current\-Time}]{\setlength{\rightskip}{0pt plus 5cm}bool Delegate\-Video\-Control\-::m\-Display\-Current\-Time\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/dfb/class_delegate_video_control_a203df9a0783f9b13b2dbeb3bd36e17c3}
+
+
+Definition at line 68 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_video_control_aade232616040470361ef28f72e782f67}{\index{Delegate\-Video\-Control@{Delegate\-Video\-Control}!m\-Total\-Time\-In\-Ms@{m\-Total\-Time\-In\-Ms}}
+\index{m\-Total\-Time\-In\-Ms@{m\-Total\-Time\-In\-Ms}!DelegateVideoControl@{Delegate\-Video\-Control}}
+\subsubsection[{m\-Total\-Time\-In\-Ms}]{\setlength{\rightskip}{0pt plus 5cm}qint64 Delegate\-Video\-Control\-::m\-Total\-Time\-In\-Ms\hspace{0.3cm}{\ttfamily [protected]}}}\label{d6/dfb/class_delegate_video_control_aade232616040470361ef28f72e782f67}
+
+
+Definition at line 72 of file U\-B\-Graphics\-Video\-Item\-Delegate.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_video_item_delegate_8h}{U\-B\-Graphics\-Video\-Item\-Delegate.\-h}\end{DoxyCompactItemize}

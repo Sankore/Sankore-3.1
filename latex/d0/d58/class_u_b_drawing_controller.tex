@@ -1,0 +1,695 @@
+\hypertarget{class_u_b_drawing_controller}{\section{U\-B\-Drawing\-Controller Class Reference}
+\label{d0/d58/class_u_b_drawing_controller}\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Drawing\-Controller.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Drawing\-Controller\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/dd0/class_u_b_drawing_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_drawing_controller_ac5790e8e77299a58ba6f2692133b7009}{set\-Stylus\-Tool} (int tool)
+\item 
+void \hyperlink{class_u_b_drawing_controller_ad3264620502b9e66b043e103c39827d9}{set\-Line\-Width\-Index} (int index)
+\item 
+void \hyperlink{class_u_b_drawing_controller_a51849b177dc6bed87fd110056627ae94}{set\-Color\-Index} (int index)
+\item 
+void \hyperlink{class_u_b_drawing_controller_a1766da224301caab1dab69127e28c28c}{set\-Eraser\-Width\-Index} (int index)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_drawing_controller_ae9ae9cf749d8ce65205cf8c50df67502}{stylus\-Tool\-Changed} (int tool)
+\item 
+void \hyperlink{class_u_b_drawing_controller_a6f11f789e8f99d826910541657502b35}{color\-Palette\-Changed} ()
+\item 
+void \hyperlink{class_u_b_drawing_controller_a02acf3adbfc4a9aa14da3efd01b7a530}{line\-Width\-Index\-Changed} (int index)
+\item 
+void \hyperlink{class_u_b_drawing_controller_a42605540fe8451289997d9b61a89e642}{color\-Index\-Changed} (int index)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_u_b_drawing_controller_a244d6a9a4638309428bcf0c29531b872}{stylus\-Tool} ()
+\item 
+int \hyperlink{class_u_b_drawing_controller_a38e9144276adfeee7177dc63f9984970}{latest\-Drawing\-Tool} ()
+\item 
+bool \hyperlink{class_u_b_drawing_controller_a524a00e4ea813998e0e99ecf9e20e193}{is\-Drawing\-Tool} ()
+\item 
+int \hyperlink{class_u_b_drawing_controller_a1e50d02c857b27ea14a59c6d74536376}{current\-Tool\-Width\-Index} ()
+\item 
+qreal \hyperlink{class_u_b_drawing_controller_a0fe4771ef68a84bc65b3adeaba2f407f}{current\-Tool\-Width} ()
+\item 
+int \hyperlink{class_u_b_drawing_controller_a66e70ba97bee8b5135e234b17140064b}{current\-Tool\-Color\-Index} ()
+\item 
+Q\-Color \hyperlink{class_u_b_drawing_controller_abf7c58880089c0cced9c2b91ff98314c}{current\-Tool\-Color} ()
+\item 
+Q\-Color \hyperlink{class_u_b_drawing_controller_afae64ee4b072bcc20b5234eec4dc5f56}{tool\-Color} (bool on\-Dark\-Background)
+\item 
+void \hyperlink{class_u_b_drawing_controller_a38ac047c19769a9de1b7ddd9296e4cf9}{set\-Pen\-Color} (bool on\-Dark\-Background, const Q\-Color \&color, int p\-Index)
+\item 
+void \hyperlink{class_u_b_drawing_controller_a5596efb2d521ca9ca45facf3be65f13f}{set\-Marker\-Color} (bool on\-Dark\-Background, const Q\-Color \&color, int p\-Index)
+\item 
+void \hyperlink{class_u_b_drawing_controller_ab3a253ed3b05d693330fc1cd5f752d20}{set\-Marker\-Alpha} (qreal alpha)
+\item 
+void \hyperlink{class_u_b_drawing_controller_a3e260cf4d46a9fbefadb3fcd5b68f214}{set\-In\-Destop\-Mode} (bool mode)
+\item 
+bool \hyperlink{class_u_b_drawing_controller_ae78d73edf7b585f742229d5766f83efc}{is\-In\-Desktop\-Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_u_b_drawing_controller}{U\-B\-Drawing\-Controller} $\ast$ \hyperlink{class_u_b_drawing_controller_a9d2d10417806a2d7303df24b820f2ab3}{drawing\-Controller} ()
+\item 
+static void \hyperlink{class_u_b_drawing_controller_ac05daba2d9c39c5bacdd7e63b6e1ab39}{destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_abstract_draw_ruler}{U\-B\-Abstract\-Draw\-Ruler} $\ast$ \hyperlink{class_u_b_drawing_controller_a08b17daa8e837ad621058156d633c518}{m\-Active\-Ruler}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file U\-B\-Drawing\-Controller.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_drawing_controller_a42605540fe8451289997d9b61a89e642}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!color\-Index\-Changed@{color\-Index\-Changed}}
+\index{color\-Index\-Changed@{color\-Index\-Changed}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{color\-Index\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::color\-Index\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/d58/class_u_b_drawing_controller_a42605540fe8451289997d9b61a89e642}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a42605540fe8451289997d9b61a89e642_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a6f11f789e8f99d826910541657502b35}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!color\-Palette\-Changed@{color\-Palette\-Changed}}
+\index{color\-Palette\-Changed@{color\-Palette\-Changed}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{color\-Palette\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::color\-Palette\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/d58/class_u_b_drawing_controller_a6f11f789e8f99d826910541657502b35}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a6f11f789e8f99d826910541657502b35_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_abf7c58880089c0cced9c2b91ff98314c}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!current\-Tool\-Color@{current\-Tool\-Color}}
+\index{current\-Tool\-Color@{current\-Tool\-Color}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{current\-Tool\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Drawing\-Controller\-::current\-Tool\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_abf7c58880089c0cced9c2b91ff98314c}
+
+
+Definition at line 232 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_abf7c58880089c0cced9c2b91ff98314c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a66e70ba97bee8b5135e234b17140064b}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!current\-Tool\-Color\-Index@{current\-Tool\-Color\-Index}}
+\index{current\-Tool\-Color\-Index@{current\-Tool\-Color\-Index}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{current\-Tool\-Color\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Drawing\-Controller\-::current\-Tool\-Color\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a66e70ba97bee8b5135e234b17140064b}
+
+
+Definition at line 215 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a66e70ba97bee8b5135e234b17140064b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a0fe4771ef68a84bc65b3adeaba2f407f}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!current\-Tool\-Width@{current\-Tool\-Width}}
+\index{current\-Tool\-Width@{current\-Tool\-Width}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{current\-Tool\-Width}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Drawing\-Controller\-::current\-Tool\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a0fe4771ef68a84bc65b3adeaba2f407f}
+
+
+Definition at line 176 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a0fe4771ef68a84bc65b3adeaba2f407f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a0fe4771ef68a84bc65b3adeaba2f407f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a1e50d02c857b27ea14a59c6d74536376}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!current\-Tool\-Width\-Index@{current\-Tool\-Width\-Index}}
+\index{current\-Tool\-Width\-Index@{current\-Tool\-Width\-Index}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{current\-Tool\-Width\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Drawing\-Controller\-::current\-Tool\-Width\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a1e50d02c857b27ea14a59c6d74536376}
+
+
+Definition at line 159 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a1e50d02c857b27ea14a59c6d74536376_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_ac05daba2d9c39c5bacdd7e63b6e1ab39}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!destroy@{destroy}}
+\index{destroy@{destroy}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/d58/class_u_b_drawing_controller_ac05daba2d9c39c5bacdd7e63b6e1ab39}
+
+
+Definition at line 46 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_ac05daba2d9c39c5bacdd7e63b6e1ab39_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a9d2d10417806a2d7303df24b820f2ab3}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!drawing\-Controller@{drawing\-Controller}}
+\index{drawing\-Controller@{drawing\-Controller}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{drawing\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Drawing\-Controller} $\ast$ U\-B\-Drawing\-Controller\-::drawing\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/d58/class_u_b_drawing_controller_a9d2d10417806a2d7303df24b820f2ab3}
+
+
+Definition at line 38 of file U\-B\-Drawing\-Controller.\-cpp.
+
+\hypertarget{class_u_b_drawing_controller_a524a00e4ea813998e0e99ecf9e20e193}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!is\-Drawing\-Tool@{is\-Drawing\-Tool}}
+\index{is\-Drawing\-Tool@{is\-Drawing\-Tool}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{is\-Drawing\-Tool}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Drawing\-Controller\-::is\-Drawing\-Tool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a524a00e4ea813998e0e99ecf9e20e193}
+
+
+Definition at line 151 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d0/d58/class_u_b_drawing_controller_a524a00e4ea813998e0e99ecf9e20e193_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a524a00e4ea813998e0e99ecf9e20e193_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_ae78d73edf7b585f742229d5766f83efc}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!is\-In\-Desktop\-Mode@{is\-In\-Desktop\-Mode}}
+\index{is\-In\-Desktop\-Mode@{is\-In\-Desktop\-Mode}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{is\-In\-Desktop\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Drawing\-Controller\-::is\-In\-Desktop\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d58/class_u_b_drawing_controller_ae78d73edf7b585f742229d5766f83efc}
+
+
+Definition at line 67 of file U\-B\-Drawing\-Controller.\-h.
+
+\hypertarget{class_u_b_drawing_controller_a38e9144276adfeee7177dc63f9984970}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!latest\-Drawing\-Tool@{latest\-Drawing\-Tool}}
+\index{latest\-Drawing\-Tool@{latest\-Drawing\-Tool}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{latest\-Drawing\-Tool}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Drawing\-Controller\-::latest\-Drawing\-Tool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a38e9144276adfeee7177dc63f9984970}
+
+
+Definition at line 89 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a38e9144276adfeee7177dc63f9984970_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a02acf3adbfc4a9aa14da3efd01b7a530}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!line\-Width\-Index\-Changed@{line\-Width\-Index\-Changed}}
+\index{line\-Width\-Index\-Changed@{line\-Width\-Index\-Changed}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{line\-Width\-Index\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::line\-Width\-Index\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/d58/class_u_b_drawing_controller_a02acf3adbfc4a9aa14da3efd01b7a530}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a02acf3adbfc4a9aa14da3efd01b7a530_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a51849b177dc6bed87fd110056627ae94}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-Color\-Index@{set\-Color\-Index}}
+\index{set\-Color\-Index@{set\-Color\-Index}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-Color\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-Color\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d0/d58/class_u_b_drawing_controller_a51849b177dc6bed87fd110056627ae94}
+
+
+Definition at line 263 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a51849b177dc6bed87fd110056627ae94_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a51849b177dc6bed87fd110056627ae94_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a1766da224301caab1dab69127e28c28c}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-Eraser\-Width\-Index@{set\-Eraser\-Width\-Index}}
+\index{set\-Eraser\-Width\-Index@{set\-Eraser\-Width\-Index}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-Eraser\-Width\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-Eraser\-Width\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d0/d58/class_u_b_drawing_controller_a1766da224301caab1dab69127e28c28c}
+
+
+Definition at line 280 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a1766da224301caab1dab69127e28c28c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a3e260cf4d46a9fbefadb3fcd5b68f214}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-In\-Destop\-Mode@{set\-In\-Destop\-Mode}}
+\index{set\-In\-Destop\-Mode@{set\-In\-Destop\-Mode}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-In\-Destop\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-In\-Destop\-Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/d58/class_u_b_drawing_controller_a3e260cf4d46a9fbefadb3fcd5b68f214}
+
+
+Definition at line 63 of file U\-B\-Drawing\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a3e260cf4d46a9fbefadb3fcd5b68f214_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_ad3264620502b9e66b043e103c39827d9}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-Line\-Width\-Index@{set\-Line\-Width\-Index}}
+\index{set\-Line\-Width\-Index@{set\-Line\-Width\-Index}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-Line\-Width\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-Line\-Width\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d0/d58/class_u_b_drawing_controller_ad3264620502b9e66b043e103c39827d9}
+
+
+Definition at line 194 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_ad3264620502b9e66b043e103c39827d9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_ab3a253ed3b05d693330fc1cd5f752d20}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-Marker\-Alpha@{set\-Marker\-Alpha}}
+\index{set\-Marker\-Alpha@{set\-Marker\-Alpha}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-Marker\-Alpha}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-Marker\-Alpha (
+\begin{DoxyParamCaption}
+\item[{qreal}]{alpha}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_ab3a253ed3b05d693330fc1cd5f752d20}
+
+
+Definition at line 316 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_ab3a253ed3b05d693330fc1cd5f752d20_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_ab3a253ed3b05d693330fc1cd5f752d20_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a5596efb2d521ca9ca45facf3be65f13f}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-Marker\-Color@{set\-Marker\-Color}}
+\index{set\-Marker\-Color@{set\-Marker\-Color}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-Marker\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-Marker\-Color (
+\begin{DoxyParamCaption}
+\item[{bool}]{on\-Dark\-Background, }
+\item[{const Q\-Color \&}]{color, }
+\item[{int}]{p\-Index}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a5596efb2d521ca9ca45facf3be65f13f}
+
+
+Definition at line 301 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d0/d58/class_u_b_drawing_controller_a5596efb2d521ca9ca45facf3be65f13f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a5596efb2d521ca9ca45facf3be65f13f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a38ac047c19769a9de1b7ddd9296e4cf9}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-Pen\-Color@{set\-Pen\-Color}}
+\index{set\-Pen\-Color@{set\-Pen\-Color}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-Pen\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-Pen\-Color (
+\begin{DoxyParamCaption}
+\item[{bool}]{on\-Dark\-Background, }
+\item[{const Q\-Color \&}]{color, }
+\item[{int}]{p\-Index}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a38ac047c19769a9de1b7ddd9296e4cf9}
+
+
+Definition at line 286 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d0/d58/class_u_b_drawing_controller_a38ac047c19769a9de1b7ddd9296e4cf9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a38ac047c19769a9de1b7ddd9296e4cf9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_ac5790e8e77299a58ba6f2692133b7009}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!set\-Stylus\-Tool@{set\-Stylus\-Tool}}
+\index{set\-Stylus\-Tool@{set\-Stylus\-Tool}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{set\-Stylus\-Tool}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::set\-Stylus\-Tool (
+\begin{DoxyParamCaption}
+\item[{int}]{tool}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d0/d58/class_u_b_drawing_controller_ac5790e8e77299a58ba6f2692133b7009}
+
+
+Definition at line 95 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_ac5790e8e77299a58ba6f2692133b7009_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_ac5790e8e77299a58ba6f2692133b7009_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_a244d6a9a4638309428bcf0c29531b872}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!stylus\-Tool@{stylus\-Tool}}
+\index{stylus\-Tool@{stylus\-Tool}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{stylus\-Tool}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Drawing\-Controller\-::stylus\-Tool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_a244d6a9a4638309428bcf0c29531b872}
+
+
+Definition at line 83 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_a244d6a9a4638309428bcf0c29531b872_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_ae9ae9cf749d8ce65205cf8c50df67502}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!stylus\-Tool\-Changed@{stylus\-Tool\-Changed}}
+\index{stylus\-Tool\-Changed@{stylus\-Tool\-Changed}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{stylus\-Tool\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Drawing\-Controller\-::stylus\-Tool\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{tool}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/d58/class_u_b_drawing_controller_ae9ae9cf749d8ce65205cf8c50df67502}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_ae9ae9cf749d8ce65205cf8c50df67502_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_drawing_controller_afae64ee4b072bcc20b5234eec4dc5f56}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!tool\-Color@{tool\-Color}}
+\index{tool\-Color@{tool\-Color}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{tool\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Drawing\-Controller\-::tool\-Color (
+\begin{DoxyParamCaption}
+\item[{bool}]{on\-Dark\-Background}
+\end{DoxyParamCaption}
+)}}\label{d0/d58/class_u_b_drawing_controller_afae64ee4b072bcc20b5234eec4dc5f56}
+
+
+Definition at line 238 of file U\-B\-Drawing\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d58/class_u_b_drawing_controller_afae64ee4b072bcc20b5234eec4dc5f56_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d0/d58/class_u_b_drawing_controller_afae64ee4b072bcc20b5234eec4dc5f56_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_drawing_controller_a08b17daa8e837ad621058156d633c518}{\index{U\-B\-Drawing\-Controller@{U\-B\-Drawing\-Controller}!m\-Active\-Ruler@{m\-Active\-Ruler}}
+\index{m\-Active\-Ruler@{m\-Active\-Ruler}!UBDrawingController@{U\-B\-Drawing\-Controller}}
+\subsubsection[{m\-Active\-Ruler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Abstract\-Draw\-Ruler}$\ast$ U\-B\-Drawing\-Controller\-::m\-Active\-Ruler}}\label{d0/d58/class_u_b_drawing_controller_a08b17daa8e837ad621058156d633c518}
+
+
+Definition at line 61 of file U\-B\-Drawing\-Controller.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_drawing_controller_8h}{U\-B\-Drawing\-Controller.\-h}\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_drawing_controller_8cpp}{U\-B\-Drawing\-Controller.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,730 @@
+\hypertarget{class_u_b_preferences_controller}{\section{U\-B\-Preferences\-Controller Class Reference}
+\label{d3/d33/class_u_b_preferences_controller}\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Preferences\-Controller.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Preferences\-Controller\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d5/da6/class_u_b_preferences_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_preferences_controller_a35e0fd13ea04e0e788649ac12b2dcdf3}{show} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_preferences_controller_a515f90bc539e0c9410c8b2b538b17017}{U\-B\-Preferences\-Controller} (Q\-Widget $\ast$parent)
+\item 
+virtual \hyperlink{class_u_b_preferences_controller_a23fdb0373acdd9e6039198a152c1bd77}{$\sim$\-U\-B\-Preferences\-Controller} ()
+\item 
+bool \hyperlink{class_u_b_preferences_controller_a4d15e8c361bfc3f791143a06ffa0bf6c}{input\-Values\-Consistence} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe}{close} ()
+\item 
+void \hyperlink{class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6}{default\-Settings} ()
+\item 
+void \hyperlink{class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a}{width\-Slider\-Changed} (int value)
+\item 
+void \hyperlink{class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02}{opacity\-Slider\-Changed} (int value)
+\item 
+void \hyperlink{class_u_b_preferences_controller_aac64d5959f631d99a7f4a245b10eeb5a}{color\-Selected} (const Q\-Color \&)
+\item 
+void \hyperlink{class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661}{toolbar\-Position\-Changed} (bool checked)
+\item 
+void \hyperlink{class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981}{toolbar\-Orientation\-Vertical} (bool checked)
+\item 
+void \hyperlink{class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127}{toolbar\-Orientation\-Horizontal} (bool checked)
+\item 
+void \hyperlink{class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608}{on\-Community\-Username\-Changed} ()
+\item 
+void \hyperlink{class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0}{on\-Community\-Password\-Changed} ()
+\item 
+void \hyperlink{class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993}{on\-Community\-Persistence\-Changed} ()
+\item 
+void \hyperlink{class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929}{on\-Language\-Changed} (Q\-String current\-Item)
+\item 
+void \hyperlink{class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8}{on\-Startup\-Tips\-Clicked} (bool clicked)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_preferences_controller_ad58e84c5ae34f18622453060ac927ac1}{wire} ()
+\item 
+void \hyperlink{class_u_b_preferences_controller_a07058e851a855d28494161ffb278d48e}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Map$<$ Q\-String, Q\-String $>$ \hyperlink{class_u_b_preferences_controller_a75b09fdffc0b761d3b18565a8e2f0605}{m\-Iso\-Code\-And\-Language}
+\item 
+\hyperlink{class_u_b_preferences_dialog}{U\-B\-Preferences\-Dialog} $\ast$ \hyperlink{class_u_b_preferences_controller_a0288d0694614a47ff163395fb0888d8b}{m\-Preferences\-Window}
+\item 
+Ui\-::preferences\-Dialog $\ast$ \hyperlink{class_u_b_preferences_controller_a2aabaddbdc323e70eb3f060b7022399c}{m\-Preferences\-U\-I}
+\item 
+\hyperlink{class_u_b_brush_properties_frame}{U\-B\-Brush\-Properties\-Frame} $\ast$ \hyperlink{class_u_b_preferences_controller_ae3c9a2c79f6e10837f5a7391f42aacb6}{m\-Pen\-Properties}
+\item 
+\hyperlink{class_u_b_brush_properties_frame}{U\-B\-Brush\-Properties\-Frame} $\ast$ \hyperlink{class_u_b_preferences_controller_abfffcb36c3b9e5e3305329d0adb0e790}{m\-Marker\-Properties}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 58 of file U\-B\-Preferences\-Controller.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_preferences_controller_a515f90bc539e0c9410c8b2b538b17017}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}}
+\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{U\-B\-Preferences\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Preferences\-Controller\-::\-U\-B\-Preferences\-Controller (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{d3/d33/class_u_b_preferences_controller_a515f90bc539e0c9410c8b2b538b17017}
+
+
+Definition at line 68 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a515f90bc539e0c9410c8b2b538b17017_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a23fdb0373acdd9e6039198a152c1bd77}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!$\sim$\-U\-B\-Preferences\-Controller@{$\sim$\-U\-B\-Preferences\-Controller}}
+\index{$\sim$\-U\-B\-Preferences\-Controller@{$\sim$\-U\-B\-Preferences\-Controller}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{$\sim$\-U\-B\-Preferences\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Preferences\-Controller\-::$\sim$\-U\-B\-Preferences\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d33/class_u_b_preferences_controller_a23fdb0373acdd9e6039198a152c1bd77}
+
+
+Definition at line 86 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!close@{close}}
+\index{close@{close}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe}
+
+
+Definition at line 370 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_aac64d5959f631d99a7f4a245b10eeb5a}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!color\-Selected@{color\-Selected}}
+\index{color\-Selected@{color\-Selected}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{color\-Selected}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::color\-Selected (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_aac64d5959f631d99a7f4a245b10eeb5a}
+
+
+Definition at line 527 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_aac64d5959f631d99a7f4a245b10eeb5a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!default\-Settings@{default\-Settings}}
+\index{default\-Settings@{default\-Settings}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{default\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::default\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6}
+
+
+Definition at line 386 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a07058e851a855d28494161ffb278d48e}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!init@{init}}
+\index{init@{init}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d3/d33/class_u_b_preferences_controller_a07058e851a855d28494161ffb278d48e}
+
+
+Definition at line 191 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a07058e851a855d28494161ffb278d48e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a07058e851a855d28494161ffb278d48e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a4d15e8c361bfc3f791143a06ffa0bf6c}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!input\-Values\-Consistence@{input\-Values\-Consistence}}
+\index{input\-Values\-Consistence@{input\-Values\-Consistence}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{input\-Values\-Consistence}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Preferences\-Controller\-::input\-Values\-Consistence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d3/d33/class_u_b_preferences_controller_a4d15e8c361bfc3f791143a06ffa0bf6c}
+
+
+Definition at line 341 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a4d15e8c361bfc3f791143a06ffa0bf6c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!on\-Community\-Password\-Changed@{on\-Community\-Password\-Changed}}
+\index{on\-Community\-Password\-Changed@{on\-Community\-Password\-Changed}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{on\-Community\-Password\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::on\-Community\-Password\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0}
+
+
+Definition at line 321 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!on\-Community\-Persistence\-Changed@{on\-Community\-Persistence\-Changed}}
+\index{on\-Community\-Persistence\-Changed@{on\-Community\-Persistence\-Changed}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{on\-Community\-Persistence\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::on\-Community\-Persistence\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993}
+
+
+Definition at line 328 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!on\-Community\-Username\-Changed@{on\-Community\-Username\-Changed}}
+\index{on\-Community\-Username\-Changed@{on\-Community\-Username\-Changed}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{on\-Community\-Username\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::on\-Community\-Username\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608}
+
+
+Definition at line 314 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!on\-Language\-Changed@{on\-Language\-Changed}}
+\index{on\-Language\-Changed@{on\-Language\-Changed}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{on\-Language\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::on\-Language\-Changed (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{current\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929}
+
+
+Definition at line 307 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!on\-Startup\-Tips\-Clicked@{on\-Startup\-Tips\-Clicked}}
+\index{on\-Startup\-Tips\-Clicked@{on\-Startup\-Tips\-Clicked}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{on\-Startup\-Tips\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::on\-Startup\-Tips\-Clicked (
+\begin{DoxyParamCaption}
+\item[{bool}]{clicked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8}
+
+
+Definition at line 302 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!opacity\-Slider\-Changed@{opacity\-Slider\-Changed}}
+\index{opacity\-Slider\-Changed@{opacity\-Slider\-Changed}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{opacity\-Slider\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::opacity\-Slider\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02}
+
+
+Definition at line 514 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a35e0fd13ea04e0e788649ac12b2dcdf3}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!show@{show}}
+\index{show@{show}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a35e0fd13ea04e0e788649ac12b2dcdf3}
+
+
+Definition at line 104 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a35e0fd13ea04e0e788649ac12b2dcdf3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!toolbar\-Orientation\-Horizontal@{toolbar\-Orientation\-Horizontal}}
+\index{toolbar\-Orientation\-Horizontal@{toolbar\-Orientation\-Horizontal}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{toolbar\-Orientation\-Horizontal}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::toolbar\-Orientation\-Horizontal (
+\begin{DoxyParamCaption}
+\item[{bool}]{checked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127}
+
+
+Definition at line 579 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!toolbar\-Orientation\-Vertical@{toolbar\-Orientation\-Vertical}}
+\index{toolbar\-Orientation\-Vertical@{toolbar\-Orientation\-Vertical}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{toolbar\-Orientation\-Vertical}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::toolbar\-Orientation\-Vertical (
+\begin{DoxyParamCaption}
+\item[{bool}]{checked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981}
+
+
+Definition at line 573 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!toolbar\-Position\-Changed@{toolbar\-Position\-Changed}}
+\index{toolbar\-Position\-Changed@{toolbar\-Position\-Changed}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{toolbar\-Position\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::toolbar\-Position\-Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{checked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661}
+
+
+Definition at line 563 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!width\-Slider\-Changed@{width\-Slider\-Changed}}
+\index{width\-Slider\-Changed@{width\-Slider\-Changed}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{width\-Slider\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::width\-Slider\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d3/d33/class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a}
+
+
+Definition at line 461 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_preferences_controller_ad58e84c5ae34f18622453060ac927ac1}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!wire@{wire}}
+\index{wire@{wire}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{wire}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Preferences\-Controller\-::wire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d3/d33/class_u_b_preferences_controller_ad58e84c5ae34f18622453060ac927ac1}
+
+
+Definition at line 111 of file U\-B\-Preferences\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ad58e84c5ae34f18622453060ac927ac1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d33/class_u_b_preferences_controller_ad58e84c5ae34f18622453060ac927ac1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_preferences_controller_a75b09fdffc0b761d3b18565a8e2f0605}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!m\-Iso\-Code\-And\-Language@{m\-Iso\-Code\-And\-Language}}
+\index{m\-Iso\-Code\-And\-Language@{m\-Iso\-Code\-And\-Language}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{m\-Iso\-Code\-And\-Language}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Map$<$Q\-String,Q\-String$>$ U\-B\-Preferences\-Controller\-::m\-Iso\-Code\-And\-Language\hspace{0.3cm}{\ttfamily [protected]}}}\label{d3/d33/class_u_b_preferences_controller_a75b09fdffc0b761d3b18565a8e2f0605}
+
+
+Definition at line 77 of file U\-B\-Preferences\-Controller.\-h.
+
+\hypertarget{class_u_b_preferences_controller_abfffcb36c3b9e5e3305329d0adb0e790}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!m\-Marker\-Properties@{m\-Marker\-Properties}}
+\index{m\-Marker\-Properties@{m\-Marker\-Properties}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{m\-Marker\-Properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Brush\-Properties\-Frame}$\ast$ U\-B\-Preferences\-Controller\-::m\-Marker\-Properties\hspace{0.3cm}{\ttfamily [protected]}}}\label{d3/d33/class_u_b_preferences_controller_abfffcb36c3b9e5e3305329d0adb0e790}
+
+
+Definition at line 82 of file U\-B\-Preferences\-Controller.\-h.
+
+\hypertarget{class_u_b_preferences_controller_ae3c9a2c79f6e10837f5a7391f42aacb6}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!m\-Pen\-Properties@{m\-Pen\-Properties}}
+\index{m\-Pen\-Properties@{m\-Pen\-Properties}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{m\-Pen\-Properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Brush\-Properties\-Frame}$\ast$ U\-B\-Preferences\-Controller\-::m\-Pen\-Properties\hspace{0.3cm}{\ttfamily [protected]}}}\label{d3/d33/class_u_b_preferences_controller_ae3c9a2c79f6e10837f5a7391f42aacb6}
+
+
+Definition at line 81 of file U\-B\-Preferences\-Controller.\-h.
+
+\hypertarget{class_u_b_preferences_controller_a2aabaddbdc323e70eb3f060b7022399c}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!m\-Preferences\-U\-I@{m\-Preferences\-U\-I}}
+\index{m\-Preferences\-U\-I@{m\-Preferences\-U\-I}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{m\-Preferences\-U\-I}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::preferences\-Dialog$\ast$ U\-B\-Preferences\-Controller\-::m\-Preferences\-U\-I\hspace{0.3cm}{\ttfamily [protected]}}}\label{d3/d33/class_u_b_preferences_controller_a2aabaddbdc323e70eb3f060b7022399c}
+
+
+Definition at line 80 of file U\-B\-Preferences\-Controller.\-h.
+
+\hypertarget{class_u_b_preferences_controller_a0288d0694614a47ff163395fb0888d8b}{\index{U\-B\-Preferences\-Controller@{U\-B\-Preferences\-Controller}!m\-Preferences\-Window@{m\-Preferences\-Window}}
+\index{m\-Preferences\-Window@{m\-Preferences\-Window}!UBPreferencesController@{U\-B\-Preferences\-Controller}}
+\subsubsection[{m\-Preferences\-Window}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Preferences\-Dialog}$\ast$ U\-B\-Preferences\-Controller\-::m\-Preferences\-Window\hspace{0.3cm}{\ttfamily [protected]}}}\label{d3/d33/class_u_b_preferences_controller_a0288d0694614a47ff163395fb0888d8b}
+
+
+Definition at line 79 of file U\-B\-Preferences\-Controller.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_preferences_controller_8h}{U\-B\-Preferences\-Controller.\-h}\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_preferences_controller_8cpp}{U\-B\-Preferences\-Controller.\-cpp}\end{DoxyCompactItemize}

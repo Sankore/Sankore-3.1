@@ -1,0 +1,159 @@
+\hypertarget{class_u_b_async_local_file_downloader}{\section{U\-B\-Async\-Local\-File\-Downloader Class Reference}
+\label{de/d41/class_u_b_async_local_file_downloader}\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Download\-Manager.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Async\-Local\-File\-Downloader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{d9/d89/class_u_b_async_local_file_downloader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_async_local_file_downloader_a7ea4bc0224f0d53a5d6a4094a98816b2}{finished} (Q\-String src\-Url, Q\-String res\-Url)
+\item 
+void \hyperlink{class_u_b_async_local_file_downloader_ab35449afc5e3fb50f3e0cd22aff89293}{signal\-\_\-async\-Copy\-Finished} (int id, bool p\-Success, Q\-Url source\-Url, Q\-Url content\-Url, Q\-String p\-Content\-Type\-Header, Q\-Byte\-Array p\-Data, Q\-Point\-F p\-Pos, Q\-Size p\-Size, bool is\-Background)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_async_local_file_downloader_aa478d28188280404ab6efd50d1e65215}{U\-B\-Async\-Local\-File\-Downloader} (\hyperlink{structs_download_file_desc}{s\-Download\-File\-Desc} \hyperlink{_u_b_http_get_8cpp_afde83e8a66b1328a06c071b0cc7e6f36}{desc}, Q\-Byte\-Array data=Q\-Byte\-Array(), Q\-Object $\ast$parent=0)
+\item 
+\hyperlink{class_u_b_async_local_file_downloader}{U\-B\-Async\-Local\-File\-Downloader} $\ast$ \hyperlink{class_u_b_async_local_file_downloader_a062ea63c2e94e990281c44e4c9644067}{download} ()
+\item 
+void \hyperlink{class_u_b_async_local_file_downloader_a44ea40c0b8421713cebe98cfacd2e02d}{run} ()
+\item 
+void \hyperlink{class_u_b_async_local_file_downloader_a083f79b69abcbd9a8830a866c390f888}{abort} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 99 of file U\-B\-Download\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_async_local_file_downloader_aa478d28188280404ab6efd50d1e65215}{\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}!U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}}
+\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}!UBAsyncLocalFileDownloader@{U\-B\-Async\-Local\-File\-Downloader}}
+\subsubsection[{U\-B\-Async\-Local\-File\-Downloader}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Async\-Local\-File\-Downloader\-::\-U\-B\-Async\-Local\-File\-Downloader (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Download\-File\-Desc}}]{desc, }
+\item[{Q\-Byte\-Array}]{data = {\ttfamily QByteArray()}, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{de/d41/class_u_b_async_local_file_downloader_aa478d28188280404ab6efd50d1e65215}
+
+
+Definition at line 35 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_async_local_file_downloader_a083f79b69abcbd9a8830a866c390f888}{\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}!abort@{abort}}
+\index{abort@{abort}!UBAsyncLocalFileDownloader@{U\-B\-Async\-Local\-File\-Downloader}}
+\subsubsection[{abort}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Async\-Local\-File\-Downloader\-::abort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d41/class_u_b_async_local_file_downloader_a083f79b69abcbd9a8830a866c390f888}
+
+
+Definition at line 94 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d41/class_u_b_async_local_file_downloader_a083f79b69abcbd9a8830a866c390f888_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_async_local_file_downloader_a062ea63c2e94e990281c44e4c9644067}{\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}!download@{download}}
+\index{download@{download}!UBAsyncLocalFileDownloader@{U\-B\-Async\-Local\-File\-Downloader}}
+\subsubsection[{download}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Async\-Local\-File\-Downloader} $\ast$ U\-B\-Async\-Local\-File\-Downloader\-::download (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d41/class_u_b_async_local_file_downloader_a062ea63c2e94e990281c44e4c9644067}
+
+
+Definition at line 44 of file U\-B\-Download\-Manager.\-cpp.
+
+\hypertarget{class_u_b_async_local_file_downloader_a7ea4bc0224f0d53a5d6a4094a98816b2}{\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}!finished@{finished}}
+\index{finished@{finished}!UBAsyncLocalFileDownloader@{U\-B\-Async\-Local\-File\-Downloader}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Async\-Local\-File\-Downloader\-::finished (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{src\-Url, }
+\item[{Q\-String}]{res\-Url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{de/d41/class_u_b_async_local_file_downloader_a7ea4bc0224f0d53a5d6a4094a98816b2}
+\hypertarget{class_u_b_async_local_file_downloader_a44ea40c0b8421713cebe98cfacd2e02d}{\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}!run@{run}}
+\index{run@{run}!UBAsyncLocalFileDownloader@{U\-B\-Async\-Local\-File\-Downloader}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Async\-Local\-File\-Downloader\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d41/class_u_b_async_local_file_downloader_a44ea40c0b8421713cebe98cfacd2e02d}
+
+
+Definition at line 50 of file U\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d41/class_u_b_async_local_file_downloader_a44ea40c0b8421713cebe98cfacd2e02d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_async_local_file_downloader_ab35449afc5e3fb50f3e0cd22aff89293}{\index{U\-B\-Async\-Local\-File\-Downloader@{U\-B\-Async\-Local\-File\-Downloader}!signal\-\_\-async\-Copy\-Finished@{signal\-\_\-async\-Copy\-Finished}}
+\index{signal\-\_\-async\-Copy\-Finished@{signal\-\_\-async\-Copy\-Finished}!UBAsyncLocalFileDownloader@{U\-B\-Async\-Local\-File\-Downloader}}
+\subsubsection[{signal\-\_\-async\-Copy\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Async\-Local\-File\-Downloader\-::signal\-\_\-async\-Copy\-Finished (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{bool}]{p\-Success, }
+\item[{Q\-Url}]{source\-Url, }
+\item[{Q\-Url}]{content\-Url, }
+\item[{Q\-String}]{p\-Content\-Type\-Header, }
+\item[{Q\-Byte\-Array}]{p\-Data, }
+\item[{Q\-Point\-F}]{p\-Pos, }
+\item[{Q\-Size}]{p\-Size, }
+\item[{bool}]{is\-Background}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{de/d41/class_u_b_async_local_file_downloader_ab35449afc5e3fb50f3e0cd22aff89293}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d41/class_u_b_async_local_file_downloader_ab35449afc5e3fb50f3e0cd22aff89293_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_download_manager_8h}{U\-B\-Download\-Manager.\-h}\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_download_manager_8cpp}{U\-B\-Download\-Manager.\-cpp}\end{DoxyCompactItemize}

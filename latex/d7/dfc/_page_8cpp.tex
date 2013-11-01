@@ -1,0 +1,100 @@
+\hypertarget{_page_8cpp}{\section{Sankore-\/3.1/src/pdf-\/merger/\-Page.cpp File Reference}
+\label{d7/dfc/_page_8cpp}\index{Sankore-\/3.\-1/src/pdf-\/merger/\-Page.\-cpp@{Sankore-\/3.\-1/src/pdf-\/merger/\-Page.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}Page.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Document.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Content\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Exception.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Media\-Box\-Element\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Crop\-Box\-Element\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Type\-Element\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Remove\-Him\-Self\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Annots\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Rotation\-Handler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Flate\-Decode.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Rectangle.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Filter.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Parser.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/memcheck.\-h\char`\"{}}\\*
+Include dependency graph for Page.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d36/_page_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{_page_8cpp_adf6b3a543f990a2dce96e36fd815cb5d}{\-\_\-get\-Content\-Of\-Content\-Object} (\hyperlink{structmerge__lib_1_1_merge_page_description}{Merge\-Page\-Description} \&description)
+\item 
+void \hyperlink{_page_8cpp_ad748c0b63c61b58b3362e53390f7c66d}{\-\_\-recalculate\-Annots\-Coordinates} (\hyperlink{classmerge__lib_1_1_object}{Object} $\ast$annotation, const \hyperlink{classmerge__lib_1_1_rectangle}{Rectangle} \&base\-Pages\-Rectangle, const \hyperlink{classmerge__lib_1_1_rectangle}{Rectangle} \&output\-Pages\-Rectangle, const \hyperlink{structmerge__lib_1_1_merge_page_description}{Merge\-Page\-Description} \&description)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_page_8cpp_adf6b3a543f990a2dce96e36fd815cb5d}{\index{Page.\-cpp@{Page.\-cpp}!\-\_\-get\-Content\-Of\-Content\-Object@{\-\_\-get\-Content\-Of\-Content\-Object}}
+\index{\-\_\-get\-Content\-Of\-Content\-Object@{\-\_\-get\-Content\-Of\-Content\-Object}!Page.cpp@{Page.\-cpp}}
+\subsubsection[{\-\_\-get\-Content\-Of\-Content\-Object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string \-\_\-get\-Content\-Of\-Content\-Object (
+\begin{DoxyParamCaption}
+\item[{{\bf Merge\-Page\-Description} \&}]{description}
+\end{DoxyParamCaption}
+)}}\label{d7/dfc/_page_8cpp_adf6b3a543f990a2dce96e36fd815cb5d}
+
+
+Definition at line 143 of file Page.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dfc/_page_8cpp_adf6b3a543f990a2dce96e36fd815cb5d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dfc/_page_8cpp_adf6b3a543f990a2dce96e36fd815cb5d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_page_8cpp_ad748c0b63c61b58b3362e53390f7c66d}{\index{Page.\-cpp@{Page.\-cpp}!\-\_\-recalculate\-Annots\-Coordinates@{\-\_\-recalculate\-Annots\-Coordinates}}
+\index{\-\_\-recalculate\-Annots\-Coordinates@{\-\_\-recalculate\-Annots\-Coordinates}!Page.cpp@{Page.\-cpp}}
+\subsubsection[{\-\_\-recalculate\-Annots\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-recalculate\-Annots\-Coordinates (
+\begin{DoxyParamCaption}
+\item[{{\bf Object} $\ast$}]{annotation, }
+\item[{const {\bf Rectangle} \&}]{base\-Pages\-Rectangle, }
+\item[{const {\bf Rectangle} \&}]{output\-Pages\-Rectangle, }
+\item[{const {\bf Merge\-Page\-Description} \&}]{description}
+\end{DoxyParamCaption}
+)}}\label{d7/dfc/_page_8cpp_ad748c0b63c61b58b3362e53390f7c66d}
+
+
+Definition at line 173 of file Page.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/dfc/_page_8cpp_ad748c0b63c61b58b3362e53390f7c66d_cgraph}
+\end{center}
+\end{figure}
+
+

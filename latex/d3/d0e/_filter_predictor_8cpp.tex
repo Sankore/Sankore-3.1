@@ -1,0 +1,80 @@
+\hypertarget{_filter_predictor_8cpp}{\section{Sankore-\/3.1/src/pdf-\/merger/\-Filter\-Predictor.cpp File Reference}
+\label{d3/d0e/_filter_predictor_8cpp}\index{Sankore-\/3.\-1/src/pdf-\/merger/\-Filter\-Predictor.\-cpp@{Sankore-\/3.\-1/src/pdf-\/merger/\-Filter\-Predictor.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}Config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$Qt\-Global$>$}\\*
+{\ttfamily \#include \char`\"{}Filter\-Predictor.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Object.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Parser.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/memcheck.\-h\char`\"{}}\\*
+Include dependency graph for Filter\-Predictor.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd5/_filter_predictor_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::string \hyperlink{_filter_predictor_8cpp_ab574df911e070d4f4003d08680412f2a}{C\-O\-L\-U\-M\-N\-S\-\_\-\-T\-O\-K\-E\-N} = \char`\"{}/Columns\char`\"{}
+\item 
+const std\-::string \hyperlink{_filter_predictor_8cpp_afc29a81e80b7d387d6fc382c971a6f28}{C\-O\-L\-O\-R\-S\-\_\-\-T\-O\-K\-E\-N} = \char`\"{}/Colors\char`\"{}
+\item 
+const std\-::string \hyperlink{_filter_predictor_8cpp_ada3dfbfac0c29eb595dbb322b57f0578}{B\-I\-T\-S\-\_\-\-T\-O\-K\-E\-N} = \char`\"{}/Bits\-Per\-Component\char`\"{}
+\item 
+const std\-::string \hyperlink{_filter_predictor_8cpp_ae0acc15fbd9aecb3aa3ce73eb8d67f6c}{E\-A\-R\-L\-Y\-\_\-\-T\-O\-K\-E\-N} = \char`\"{}/Early\-Change\char`\"{}
+\item 
+const std\-::string \hyperlink{_filter_predictor_8cpp_a0681d18e6f1df5f6c6fd114f0c9e0880}{D\-I\-C\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-T\-O\-K\-E\-N} = \char`\"{}$<$$<$\char`\"{}
+\item 
+const std\-::string \hyperlink{_filter_predictor_8cpp_ad8ab2050742bee8f488d532635dcc2ce}{D\-I\-C\-T\-\_\-\-E\-N\-D\-\_\-\-T\-O\-K\-E\-N} = \char`\"{}$>$$>$\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_filter_predictor_8cpp_ada3dfbfac0c29eb595dbb322b57f0578}{\index{Filter\-Predictor.\-cpp@{Filter\-Predictor.\-cpp}!B\-I\-T\-S\-\_\-\-T\-O\-K\-E\-N@{B\-I\-T\-S\-\_\-\-T\-O\-K\-E\-N}}
+\index{B\-I\-T\-S\-\_\-\-T\-O\-K\-E\-N@{B\-I\-T\-S\-\_\-\-T\-O\-K\-E\-N}!FilterPredictor.cpp@{Filter\-Predictor.\-cpp}}
+\subsubsection[{B\-I\-T\-S\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string B\-I\-T\-S\-\_\-\-T\-O\-K\-E\-N = \char`\"{}/Bits\-Per\-Component\char`\"{}}}\label{d3/d0e/_filter_predictor_8cpp_ada3dfbfac0c29eb595dbb322b57f0578}
+
+
+Definition at line 43 of file Filter\-Predictor.\-cpp.
+
+\hypertarget{_filter_predictor_8cpp_afc29a81e80b7d387d6fc382c971a6f28}{\index{Filter\-Predictor.\-cpp@{Filter\-Predictor.\-cpp}!C\-O\-L\-O\-R\-S\-\_\-\-T\-O\-K\-E\-N@{C\-O\-L\-O\-R\-S\-\_\-\-T\-O\-K\-E\-N}}
+\index{C\-O\-L\-O\-R\-S\-\_\-\-T\-O\-K\-E\-N@{C\-O\-L\-O\-R\-S\-\_\-\-T\-O\-K\-E\-N}!FilterPredictor.cpp@{Filter\-Predictor.\-cpp}}
+\subsubsection[{C\-O\-L\-O\-R\-S\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string C\-O\-L\-O\-R\-S\-\_\-\-T\-O\-K\-E\-N = \char`\"{}/Colors\char`\"{}}}\label{d3/d0e/_filter_predictor_8cpp_afc29a81e80b7d387d6fc382c971a6f28}
+
+
+Definition at line 42 of file Filter\-Predictor.\-cpp.
+
+\hypertarget{_filter_predictor_8cpp_ab574df911e070d4f4003d08680412f2a}{\index{Filter\-Predictor.\-cpp@{Filter\-Predictor.\-cpp}!C\-O\-L\-U\-M\-N\-S\-\_\-\-T\-O\-K\-E\-N@{C\-O\-L\-U\-M\-N\-S\-\_\-\-T\-O\-K\-E\-N}}
+\index{C\-O\-L\-U\-M\-N\-S\-\_\-\-T\-O\-K\-E\-N@{C\-O\-L\-U\-M\-N\-S\-\_\-\-T\-O\-K\-E\-N}!FilterPredictor.cpp@{Filter\-Predictor.\-cpp}}
+\subsubsection[{C\-O\-L\-U\-M\-N\-S\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string C\-O\-L\-U\-M\-N\-S\-\_\-\-T\-O\-K\-E\-N = \char`\"{}/Columns\char`\"{}}}\label{d3/d0e/_filter_predictor_8cpp_ab574df911e070d4f4003d08680412f2a}
+
+
+Definition at line 41 of file Filter\-Predictor.\-cpp.
+
+\hypertarget{_filter_predictor_8cpp_ad8ab2050742bee8f488d532635dcc2ce}{\index{Filter\-Predictor.\-cpp@{Filter\-Predictor.\-cpp}!D\-I\-C\-T\-\_\-\-E\-N\-D\-\_\-\-T\-O\-K\-E\-N@{D\-I\-C\-T\-\_\-\-E\-N\-D\-\_\-\-T\-O\-K\-E\-N}}
+\index{D\-I\-C\-T\-\_\-\-E\-N\-D\-\_\-\-T\-O\-K\-E\-N@{D\-I\-C\-T\-\_\-\-E\-N\-D\-\_\-\-T\-O\-K\-E\-N}!FilterPredictor.cpp@{Filter\-Predictor.\-cpp}}
+\subsubsection[{D\-I\-C\-T\-\_\-\-E\-N\-D\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string D\-I\-C\-T\-\_\-\-E\-N\-D\-\_\-\-T\-O\-K\-E\-N = \char`\"{}$>$$>$\char`\"{}}}\label{d3/d0e/_filter_predictor_8cpp_ad8ab2050742bee8f488d532635dcc2ce}
+
+
+Definition at line 46 of file Filter\-Predictor.\-cpp.
+
+\hypertarget{_filter_predictor_8cpp_a0681d18e6f1df5f6c6fd114f0c9e0880}{\index{Filter\-Predictor.\-cpp@{Filter\-Predictor.\-cpp}!D\-I\-C\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-T\-O\-K\-E\-N@{D\-I\-C\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-T\-O\-K\-E\-N}}
+\index{D\-I\-C\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-T\-O\-K\-E\-N@{D\-I\-C\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-T\-O\-K\-E\-N}!FilterPredictor.cpp@{Filter\-Predictor.\-cpp}}
+\subsubsection[{D\-I\-C\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string D\-I\-C\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-T\-O\-K\-E\-N = \char`\"{}$<$$<$\char`\"{}}}\label{d3/d0e/_filter_predictor_8cpp_a0681d18e6f1df5f6c6fd114f0c9e0880}
+
+
+Definition at line 45 of file Filter\-Predictor.\-cpp.
+
+\hypertarget{_filter_predictor_8cpp_ae0acc15fbd9aecb3aa3ce73eb8d67f6c}{\index{Filter\-Predictor.\-cpp@{Filter\-Predictor.\-cpp}!E\-A\-R\-L\-Y\-\_\-\-T\-O\-K\-E\-N@{E\-A\-R\-L\-Y\-\_\-\-T\-O\-K\-E\-N}}
+\index{E\-A\-R\-L\-Y\-\_\-\-T\-O\-K\-E\-N@{E\-A\-R\-L\-Y\-\_\-\-T\-O\-K\-E\-N}!FilterPredictor.cpp@{Filter\-Predictor.\-cpp}}
+\subsubsection[{E\-A\-R\-L\-Y\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string E\-A\-R\-L\-Y\-\_\-\-T\-O\-K\-E\-N = \char`\"{}/Early\-Change\char`\"{}}}\label{d3/d0e/_filter_predictor_8cpp_ae0acc15fbd9aecb3aa3ce73eb8d67f6c}
+
+
+Definition at line 44 of file Filter\-Predictor.\-cpp.
+

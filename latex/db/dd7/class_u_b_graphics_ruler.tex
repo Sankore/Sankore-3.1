@@ -1,0 +1,493 @@
+\hypertarget{class_u_b_graphics_ruler}{\section{U\-B\-Graphics\-Ruler Class Reference}
+\label{db/dd7/class_u_b_graphics_ruler}\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Ruler.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Ruler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d3/d39/class_u_b_graphics_ruler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Ruler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d36/class_u_b_graphics_ruler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{class_u_b_graphics_ruler_a6a93f15a0ae10480f1ee4b27d848fa31a59bb52195bca06de6e5994df2025ae47}{Type} =  U\-B\-Graphics\-Item\-Type\-:\-:Ruler\-Item\-Type
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_ruler_a36363baee439d09417565d2db44eb6bd}{U\-B\-Graphics\-Ruler} ()
+\item 
+virtual \hyperlink{class_u_b_graphics_ruler_a07f25e3bd456a8d3250f1a21c7bbbc29}{$\sim$\-U\-B\-Graphics\-Ruler} ()
+\item 
+virtual int \hyperlink{class_u_b_graphics_ruler_a898d70a2da485dd2d082d9793df78b48}{type} () const 
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_ruler_a3f12aaa2bb10de151191bfa57097aeb4}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_adb8e2e0d97de3099a4c66d21674cab02}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_a8be968219769cc2fa025bbdf50c044d6}{Start\-Line} (const Q\-Point\-F \&position, qreal width)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_abd518dbf4a5fc6b4351ab0441920f27f}{Draw\-Line} (const Q\-Point\-F \&position, qreal width)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_ae42d5fdd24a3e7d98a80b8d2f973b35e}{End\-Line} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_a8af93307b236910d47c28e5f3af04834}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$style\-Option, Q\-Widget $\ast$widget)
+\item 
+virtual Q\-Variant \hyperlink{class_u_b_graphics_ruler_a6370354dd544d18b0d0b8480a48dab14}{item\-Change} (Graphics\-Item\-Change change, const Q\-Variant \&value)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_aa224b5115229d838d45bd2148210a14c}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_a41601c1c543b49cd7d746c56b481e8ad}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_a2aa0a697c6f155c22b5487a440b31700}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_ab92e30dce1a9c167ff52545610fb6edf}{hover\-Enter\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_a6695d8fa85f02aa297b6d710ce0ec3df}{hover\-Leave\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_graphics_ruler_ae820116cd0b0d1582b95159dd778b76c}{hover\-Move\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_ruler_a36aa663c026b7ceac1c2b7c3f643ac76}{paint\-Graduations} (Q\-Painter $\ast$painter)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file U\-B\-Graphics\-Ruler.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_ruler_a6a93f15a0ae10480f1ee4b27d848fa31}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{db/dd7/class_u_b_graphics_ruler_a6a93f15a0ae10480f1ee4b27d848fa31}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Type@{Type}!U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}}\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!Type@{Type}}\item[{\em 
+\hypertarget{class_u_b_graphics_ruler_a6a93f15a0ae10480f1ee4b27d848fa31a59bb52195bca06de6e5994df2025ae47}{Type}\label{db/dd7/class_u_b_graphics_ruler_a6a93f15a0ae10480f1ee4b27d848fa31a59bb52195bca06de6e5994df2025ae47}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 44 of file U\-B\-Graphics\-Ruler.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_ruler_a36363baee439d09417565d2db44eb6bd}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}}
+\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{U\-B\-Graphics\-Ruler}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Ruler\-::\-U\-B\-Graphics\-Ruler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{db/dd7/class_u_b_graphics_ruler_a36363baee439d09417565d2db44eb6bd}
+
+
+Definition at line 38 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a36363baee439d09417565d2db44eb6bd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a36363baee439d09417565d2db44eb6bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a07f25e3bd456a8d3250f1a21c7bbbc29}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!$\sim$\-U\-B\-Graphics\-Ruler@{$\sim$\-U\-B\-Graphics\-Ruler}}
+\index{$\sim$\-U\-B\-Graphics\-Ruler@{$\sim$\-U\-B\-Graphics\-Ruler}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Ruler}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Ruler\-::$\sim$\-U\-B\-Graphics\-Ruler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a07f25e3bd456a8d3250f1a21c7bbbc29}
+
+
+Definition at line 77 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_ruler_adb8e2e0d97de3099a4c66d21674cab02}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_adb8e2e0d97de3099a4c66d21674cab02}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 93 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_adb8e2e0d97de3099a4c66d21674cab02_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a3f12aaa2bb10de151191bfa57097aeb4}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Ruler\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a3f12aaa2bb10de151191bfa57097aeb4}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 82 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a3f12aaa2bb10de151191bfa57097aeb4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_abd518dbf4a5fc6b4351ab0441920f27f}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!Draw\-Line@{Draw\-Line}}
+\index{Draw\-Line@{Draw\-Line}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{Draw\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::\-Draw\-Line (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{position, }
+\item[{qreal}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_abd518dbf4a5fc6b4351ab0441920f27f}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_draw_ruler_a1995cacf2e94402170f4e094f3d752cc}{U\-B\-Abstract\-Draw\-Ruler}.
+
+
+
+Definition at line 473 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_abd518dbf4a5fc6b4351ab0441920f27f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_ae42d5fdd24a3e7d98a80b8d2f973b35e}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!End\-Line@{End\-Line}}
+\index{End\-Line@{End\-Line}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{End\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::\-End\-Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_ae42d5fdd24a3e7d98a80b8d2f973b35e}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_draw_ruler_a8e1a28d6c4c93785ca2cee613ce04435}{U\-B\-Abstract\-Draw\-Ruler}.
+
+
+
+Definition at line 498 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_ae42d5fdd24a3e7d98a80b8d2f973b35e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_ab92e30dce1a9c167ff52545610fb6edf}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!hover\-Enter\-Event@{hover\-Enter\-Event}}
+\index{hover\-Enter\-Event@{hover\-Enter\-Event}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{hover\-Enter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::hover\-Enter\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_ab92e30dce1a9c167ff52545610fb6edf}
+
+
+Definition at line 386 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_ab92e30dce1a9c167ff52545610fb6edf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a6695d8fa85f02aa297b6d710ce0ec3df}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!hover\-Leave\-Event@{hover\-Leave\-Event}}
+\index{hover\-Leave\-Event@{hover\-Leave\-Event}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{hover\-Leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::hover\-Leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a6695d8fa85f02aa297b6d710ce0ec3df}
+
+
+Definition at line 425 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a6695d8fa85f02aa297b6d710ce0ec3df_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_ae820116cd0b0d1582b95159dd778b76c}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!hover\-Move\-Event@{hover\-Move\-Event}}
+\index{hover\-Move\-Event@{hover\-Move\-Event}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{hover\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::hover\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_ae820116cd0b0d1582b95159dd778b76c}
+
+
+Definition at line 278 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_ae820116cd0b0d1582b95159dd778b76c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a6370354dd544d18b0d0b8480a48dab14}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!item\-Change@{item\-Change}}
+\index{item\-Change@{item\-Change}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{item\-Change}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant U\-B\-Graphics\-Ruler\-::item\-Change (
+\begin{DoxyParamCaption}
+\item[{Graphics\-Item\-Change}]{change, }
+\item[{const Q\-Variant \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a6370354dd544d18b0d0b8480a48dab14}
+
+
+Definition at line 133 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+\hypertarget{class_u_b_graphics_ruler_a41601c1c543b49cd7d746c56b481e8ad}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a41601c1c543b49cd7d746c56b481e8ad}
+
+
+Definition at line 327 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+\hypertarget{class_u_b_graphics_ruler_aa224b5115229d838d45bd2148210a14c}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_aa224b5115229d838d45bd2148210a14c}
+
+
+Definition at line 304 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+\hypertarget{class_u_b_graphics_ruler_a2aa0a697c6f155c22b5487a440b31700}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a2aa0a697c6f155c22b5487a440b31700}
+
+
+Definition at line 357 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a2aa0a697c6f155c22b5487a440b31700_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a8af93307b236910d47c28e5f3af04834}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!paint@{paint}}
+\index{paint@{paint}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{style\-Option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a8af93307b236910d47c28e5f3af04834}
+
+
+Definition at line 104 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a8af93307b236910d47c28e5f3af04834_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a36aa663c026b7ceac1c2b7c3f643ac76}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!paint\-Graduations@{paint\-Graduations}}
+\index{paint\-Graduations@{paint\-Graduations}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{paint\-Graduations}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::paint\-Graduations (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a36aa663c026b7ceac1c2b7c3f643ac76}
+
+
+Implements \hyperlink{class_u_b_abstract_draw_ruler_a7d5c1375ce4433c8abbe4b0e7781d065}{U\-B\-Abstract\-Draw\-Ruler}.
+
+
+
+Definition at line 167 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a36aa663c026b7ceac1c2b7c3f643ac76_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a36aa663c026b7ceac1c2b7c3f643ac76_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a8be968219769cc2fa025bbdf50c044d6}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!Start\-Line@{Start\-Line}}
+\index{Start\-Line@{Start\-Line}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{Start\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Ruler\-::\-Start\-Line (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{position, }
+\item[{qreal}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a8be968219769cc2fa025bbdf50c044d6}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_draw_ruler_a62b7651d1eed188e2160343d078a837c}{U\-B\-Abstract\-Draw\-Ruler}.
+
+
+
+Definition at line 444 of file U\-B\-Graphics\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dd7/class_u_b_graphics_ruler_a8be968219769cc2fa025bbdf50c044d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_ruler_a898d70a2da485dd2d082d9793df78b48}{\index{U\-B\-Graphics\-Ruler@{U\-B\-Graphics\-Ruler}!type@{type}}
+\index{type@{type}!UBGraphicsRuler@{U\-B\-Graphics\-Ruler}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int U\-B\-Graphics\-Ruler\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{db/dd7/class_u_b_graphics_ruler_a898d70a2da485dd2d082d9793df78b48}
+
+
+Definition at line 46 of file U\-B\-Graphics\-Ruler.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_graphics_ruler_8h}{U\-B\-Graphics\-Ruler.\-h}\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_graphics_ruler_8cpp}{U\-B\-Graphics\-Ruler.\-cpp}\end{DoxyCompactItemize}

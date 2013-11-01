@@ -1,0 +1,687 @@
+\hypertarget{class_w_b_browser_window}{\section{W\-B\-Browser\-Window Class Reference}
+\label{d4/d1c/class_w_b_browser_window}\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}}
+}
+
+
+The Main\-Window of the Browser view.  
+
+
+
+
+{\ttfamily \#include $<$W\-B\-Browser\-Window.\-h$>$}
+
+
+
+Collaboration diagram for W\-B\-Browser\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{d4/deb/class_w_b_browser_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_browser_window_a78dc4fc8da7fdc428adfc652823fe67a}{load\-Page} (const Q\-String \&url)
+\item 
+void \hyperlink{class_w_b_browser_window_a9ba2fa09219bcac87ce5f71709e1011d}{slot\-Home} ()
+\item 
+void \hyperlink{class_w_b_browser_window_af1feb1efb3072427b2bf17c16d975bd7}{load\-Url} (const Q\-Url \&url)
+\item 
+void \hyperlink{class_w_b_browser_window_af69e6d75a7cab843ebf8fc1bbdce0e89}{load\-Url\-In\-New\-Tab} (const Q\-Url \&url)
+\item 
+\hyperlink{class_w_b_web_view}{W\-B\-Web\-View} $\ast$ \hyperlink{class_w_b_browser_window_a3a8fe2814d702b7f35a096cff714cf54}{create\-New\-Tab} ()
+\item 
+\hyperlink{class_w_b_web_view}{W\-B\-Web\-View} $\ast$ \hyperlink{class_w_b_browser_window_a02de9f2930007bc77f09b20211299c8f}{paint\-Widget} ()
+\item 
+void \hyperlink{class_w_b_browser_window_a4326e260cf46c177f382007fd7c0a86a}{tab\-Current\-Changed} (int)
+\item 
+void \hyperlink{class_w_b_browser_window_aec1e4b601203eb8846fd4591e6d1d0ec}{bookmarks} ()
+\item 
+void \hyperlink{class_w_b_browser_window_a55db99c0327f5077fb0188f77224734a}{add\-Bookmark} ()
+\item 
+void \hyperlink{class_w_b_browser_window_a16432ec6b00aac8ccd169919041cd8ae}{show\-Tab\-At\-Top} (bool attop)
+\item 
+void \hyperlink{class_w_b_browser_window_a432d722600afccfb7ee5e9f1e24ba6d0}{about\-To\-Show\-Back\-Menu} ()
+\item 
+void \hyperlink{class_w_b_browser_window_a9dac1b8eb4ef7e6412d0aedce9ea93de}{about\-To\-Show\-Forward\-Menu} ()
+\item 
+void \hyperlink{class_w_b_browser_window_ad2116267ebf4a96448b816b9e3369471}{open\-Action\-Url} (Q\-Action $\ast$action)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_browser_window_ae814f6836640eeeb8ea7c366472e8dbc}{active\-View\-Page\-Changed} ()
+\item 
+void \hyperlink{class_w_b_browser_window_ae790506abeb82ba80b904e28e76bc3a3}{active\-View\-Change} (Q\-Widget $\ast$)
+\item 
+void \hyperlink{class_w_b_browser_window_a39f92481f4c69b93df8ab8f340286ce6}{mirroring\-Enabled} (bool checked)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_browser_window_a3598ae963d79363f3c23455d1e1ccc08}{W\-B\-Browser\-Window} (Q\-Widget $\ast$parent=0, Ui\-::\-Main\-Window $\ast$uniboard\-Main\-Window=0, bool is\-Viewer\-Web\-Instance=false)
+\item 
+\hyperlink{class_w_b_browser_window_af7926c64998bf3ea9a6247eb7cd6fd4b}{$\sim$\-W\-B\-Browser\-Window} ()
+\item 
+Q\-Size \hyperlink{class_w_b_browser_window_a6b0f014fd7a552863fc2e518a72307ea}{size\-Hint} () const 
+\item 
+\hyperlink{class_w_b_tab_widget}{W\-B\-Tab\-Widget} $\ast$ \hyperlink{class_w_b_browser_window_ab4f8e1054be45e533c69aea40ef4458c}{tab\-Widget} () const 
+\item 
+\hyperlink{class_w_b_web_view}{W\-B\-Web\-View} $\ast$ \hyperlink{class_w_b_browser_window_a43b315ee4ca51f564a80369546af43de}{current\-Tab\-Web\-View} () const 
+\item 
+void \hyperlink{class_w_b_browser_window_a6162c62ac2fb2d54bd1ea40fb5b25def}{adapt\-Tool\-Bar} (bool wide\-Res)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-Url \hyperlink{class_w_b_browser_window_a8a5c6d4ceb45bde18872a41b63e1ba3c}{guess\-Url\-From\-String} (const Q\-String \&url)
+\item 
+static \hyperlink{class_w_b_history_manager}{W\-B\-History\-Manager} $\ast$ \hyperlink{class_w_b_browser_window_a6eba8c313cafdb6477060b52198e58e1}{history\-Manager} ()
+\item 
+static \hyperlink{class_u_b_cookie_jar}{U\-B\-Cookie\-Jar} $\ast$ \hyperlink{class_w_b_browser_window_a501f2fe903b8e88b97350171064a7713}{cookie\-Jar} ()
+\item 
+static \hyperlink{class_w_b_download_manager}{W\-B\-Download\-Manager} $\ast$ \hyperlink{class_w_b_browser_window_a93ae86b454649b8efc8e707503693226}{download\-Manager} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_browser_window_a9af741242f293f27de12ceea7b2c0eb3}{close\-Event} (Q\-Close\-Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Main\-Window of the Browser view. 
+
+Handles the tab widget and all the actions 
+
+Definition at line 86 of file W\-B\-Browser\-Window.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_w_b_browser_window_a3598ae963d79363f3c23455d1e1ccc08}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!W\-B\-Browser\-Window@{W\-B\-Browser\-Window}}
+\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{W\-B\-Browser\-Window}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-Browser\-Window\-::\-W\-B\-Browser\-Window (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{Ui\-::\-Main\-Window $\ast$}]{uniboard\-Main\-Window = {\ttfamily 0}, }
+\item[{bool}]{is\-Viewer\-Web\-Instance = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d4/d1c/class_w_b_browser_window_a3598ae963d79363f3c23455d1e1ccc08}
+
+
+Definition at line 96 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a3598ae963d79363f3c23455d1e1ccc08_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_af7926c64998bf3ea9a6247eb7cd6fd4b}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!$\sim$\-W\-B\-Browser\-Window@{$\sim$\-W\-B\-Browser\-Window}}
+\index{$\sim$\-W\-B\-Browser\-Window@{$\sim$\-W\-B\-Browser\-Window}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{$\sim$\-W\-B\-Browser\-Window}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-Browser\-Window\-::$\sim$\-W\-B\-Browser\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d1c/class_w_b_browser_window_af7926c64998bf3ea9a6247eb7cd6fd4b}
+
+
+Definition at line 146 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_w_b_browser_window_a432d722600afccfb7ee5e9f1e24ba6d0}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!about\-To\-Show\-Back\-Menu@{about\-To\-Show\-Back\-Menu}}
+\index{about\-To\-Show\-Back\-Menu@{about\-To\-Show\-Back\-Menu}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{about\-To\-Show\-Back\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::about\-To\-Show\-Back\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a432d722600afccfb7ee5e9f1e24ba6d0}
+
+
+Definition at line 570 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a432d722600afccfb7ee5e9f1e24ba6d0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a9dac1b8eb4ef7e6412d0aedce9ea93de}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!about\-To\-Show\-Forward\-Menu@{about\-To\-Show\-Forward\-Menu}}
+\index{about\-To\-Show\-Forward\-Menu@{about\-To\-Show\-Forward\-Menu}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{about\-To\-Show\-Forward\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::about\-To\-Show\-Forward\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a9dac1b8eb4ef7e6412d0aedce9ea93de}
+
+
+Definition at line 604 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a9dac1b8eb4ef7e6412d0aedce9ea93de_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_ae790506abeb82ba80b904e28e76bc3a3}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!active\-View\-Change@{active\-View\-Change}}
+\index{active\-View\-Change@{active\-View\-Change}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{active\-View\-Change}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::active\-View\-Change (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d1c/class_w_b_browser_window_ae790506abeb82ba80b904e28e76bc3a3}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_ae790506abeb82ba80b904e28e76bc3a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_ae814f6836640eeeb8ea7c366472e8dbc}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!active\-View\-Page\-Changed@{active\-View\-Page\-Changed}}
+\index{active\-View\-Page\-Changed@{active\-View\-Page\-Changed}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{active\-View\-Page\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::active\-View\-Page\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d1c/class_w_b_browser_window_ae814f6836640eeeb8ea7c366472e8dbc}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_ae814f6836640eeeb8ea7c366472e8dbc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a6162c62ac2fb2d54bd1ea40fb5b25def}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!adapt\-Tool\-Bar@{adapt\-Tool\-Bar}}
+\index{adapt\-Tool\-Bar@{adapt\-Tool\-Bar}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{adapt\-Tool\-Bar}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::adapt\-Tool\-Bar (
+\begin{DoxyParamCaption}
+\item[{bool}]{wide\-Res}
+\end{DoxyParamCaption}
+)}}\label{d4/d1c/class_w_b_browser_window_a6162c62ac2fb2d54bd1ea40fb5b25def}
+
+
+Definition at line 288 of file W\-B\-Browser\-Window.\-cpp.
+
+\hypertarget{class_w_b_browser_window_a55db99c0327f5077fb0188f77224734a}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!add\-Bookmark@{add\-Bookmark}}
+\index{add\-Bookmark@{add\-Bookmark}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{add\-Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::add\-Bookmark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a55db99c0327f5077fb0188f77224734a}
+
+
+Definition at line 550 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a55db99c0327f5077fb0188f77224734a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_aec1e4b601203eb8846fd4591e6d1d0ec}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::bookmarks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_aec1e4b601203eb8846fd4591e6d1d0ec}
+
+
+Definition at line 544 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_aec1e4b601203eb8846fd4591e6d1d0ec_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a9af741242f293f27de12ceea7b2c0eb3}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!close\-Event@{close\-Event}}
+\index{close\-Event@{close\-Event}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{close\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::close\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Close\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d1c/class_w_b_browser_window_a9af741242f293f27de12ceea7b2c0eb3}
+
+
+Definition at line 409 of file W\-B\-Browser\-Window.\-cpp.
+
+\hypertarget{class_w_b_browser_window_a501f2fe903b8e88b97350171064a7713}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!cookie\-Jar@{cookie\-Jar}}
+\index{cookie\-Jar@{cookie\-Jar}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{cookie\-Jar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Cookie\-Jar} $\ast$ W\-B\-Browser\-Window\-::cookie\-Jar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d4/d1c/class_w_b_browser_window_a501f2fe903b8e88b97350171064a7713}
+
+
+Definition at line 160 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a501f2fe903b8e88b97350171064a7713_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a3a8fe2814d702b7f35a096cff714cf54}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!create\-New\-Tab@{create\-New\-Tab}}
+\index{create\-New\-Tab@{create\-New\-Tab}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{create\-New\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-Web\-View} $\ast$ W\-B\-Browser\-Window\-::create\-New\-Tab (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a3a8fe2814d702b7f35a096cff714cf54}
+
+
+Definition at line 378 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a3a8fe2814d702b7f35a096cff714cf54_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a43b315ee4ca51f564a80369546af43de}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!current\-Tab\-Web\-View@{current\-Tab\-Web\-View}}
+\index{current\-Tab\-Web\-View@{current\-Tab\-Web\-View}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{current\-Tab\-Web\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-Web\-View} $\ast$ W\-B\-Browser\-Window\-::current\-Tab\-Web\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d4/d1c/class_w_b_browser_window_a43b315ee4ca51f564a80369546af43de}
+
+
+Definition at line 516 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a43b315ee4ca51f564a80369546af43de_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a43b315ee4ca51f564a80369546af43de_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a93ae86b454649b8efc8e707503693226}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!download\-Manager@{download\-Manager}}
+\index{download\-Manager@{download\-Manager}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{download\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-Download\-Manager} $\ast$ W\-B\-Browser\-Window\-::download\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d4/d1c/class_w_b_browser_window_a93ae86b454649b8efc8e707503693226}
+
+
+Definition at line 166 of file W\-B\-Browser\-Window.\-cpp.
+
+\hypertarget{class_w_b_browser_window_a8a5c6d4ceb45bde18872a41b63e1ba3c}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!guess\-Url\-From\-String@{guess\-Url\-From\-String}}
+\index{guess\-Url\-From\-String@{guess\-Url\-From\-String}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{guess\-Url\-From\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Url W\-B\-Browser\-Window\-::guess\-Url\-From\-String (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d4/d1c/class_w_b_browser_window_a8a5c6d4ceb45bde18872a41b63e1ba3c}
+
+
+Definition at line 297 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a8a5c6d4ceb45bde18872a41b63e1ba3c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a6eba8c313cafdb6477060b52198e58e1}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!history\-Manager@{history\-Manager}}
+\index{history\-Manager@{history\-Manager}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{history\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-History\-Manager} $\ast$ W\-B\-Browser\-Window\-::history\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d4/d1c/class_w_b_browser_window_a6eba8c313cafdb6477060b52198e58e1}
+
+
+Definition at line 175 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a6eba8c313cafdb6477060b52198e58e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a78dc4fc8da7fdc428adfc652823fe67a}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!load\-Page@{load\-Page}}
+\index{load\-Page@{load\-Page}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{load\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::load\-Page (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a78dc4fc8da7fdc428adfc652823fe67a}
+
+
+Definition at line 503 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a78dc4fc8da7fdc428adfc652823fe67a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a78dc4fc8da7fdc428adfc652823fe67a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_af1feb1efb3072427b2bf17c16d975bd7}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!load\-Url@{load\-Url}}
+\index{load\-Url@{load\-Url}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{load\-Url}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::load\-Url (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_af1feb1efb3072427b2bf17c16d975bd7}
+
+
+Definition at line 358 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_af1feb1efb3072427b2bf17c16d975bd7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_af1feb1efb3072427b2bf17c16d975bd7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_af69e6d75a7cab843ebf8fc1bbdce0e89}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!load\-Url\-In\-New\-Tab@{load\-Url\-In\-New\-Tab}}
+\index{load\-Url\-In\-New\-Tab@{load\-Url\-In\-New\-Tab}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{load\-Url\-In\-New\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::load\-Url\-In\-New\-Tab (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_af69e6d75a7cab843ebf8fc1bbdce0e89}
+
+
+Definition at line 368 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_af69e6d75a7cab843ebf8fc1bbdce0e89_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a39f92481f4c69b93df8ab8f340286ce6}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!mirroring\-Enabled@{mirroring\-Enabled}}
+\index{mirroring\-Enabled@{mirroring\-Enabled}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{mirroring\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::mirroring\-Enabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{checked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d4/d1c/class_w_b_browser_window_a39f92481f4c69b93df8ab8f340286ce6}
+\hypertarget{class_w_b_browser_window_ad2116267ebf4a96448b816b9e3369471}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!open\-Action\-Url@{open\-Action\-Url}}
+\index{open\-Action\-Url@{open\-Action\-Url}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{open\-Action\-Url}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::open\-Action\-Url (
+\begin{DoxyParamCaption}
+\item[{Q\-Action $\ast$}]{action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_ad2116267ebf4a96448b816b9e3369471}
+
+
+Definition at line 637 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_ad2116267ebf4a96448b816b9e3369471_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a02de9f2930007bc77f09b20211299c8f}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!paint\-Widget@{paint\-Widget}}
+\index{paint\-Widget@{paint\-Widget}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{paint\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-Web\-View} $\ast$ W\-B\-Browser\-Window\-::paint\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a02de9f2930007bc77f09b20211299c8f}
+
+
+Definition at line 556 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a02de9f2930007bc77f09b20211299c8f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a16432ec6b00aac8ccd169919041cd8ae}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!show\-Tab\-At\-Top@{show\-Tab\-At\-Top}}
+\index{show\-Tab\-At\-Top@{show\-Tab\-At\-Top}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{show\-Tab\-At\-Top}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::show\-Tab\-At\-Top (
+\begin{DoxyParamCaption}
+\item[{bool}]{attop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a16432ec6b00aac8ccd169919041cd8ae}
+
+
+Definition at line 562 of file W\-B\-Browser\-Window.\-cpp.
+
+\hypertarget{class_w_b_browser_window_a6b0f014fd7a552863fc2e518a72307ea}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!size\-Hint@{size\-Hint}}
+\index{size\-Hint@{size\-Hint}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{size\-Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size W\-B\-Browser\-Window\-::size\-Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d4/d1c/class_w_b_browser_window_a6b0f014fd7a552863fc2e518a72307ea}
+
+
+Definition at line 185 of file W\-B\-Browser\-Window.\-cpp.
+
+\hypertarget{class_w_b_browser_window_a9ba2fa09219bcac87ce5f71709e1011d}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!slot\-Home@{slot\-Home}}
+\index{slot\-Home@{slot\-Home}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{slot\-Home}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::slot\-Home (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a9ba2fa09219bcac87ce5f71709e1011d}
+
+
+Definition at line 475 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a9ba2fa09219bcac87ce5f71709e1011d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_a4326e260cf46c177f382007fd7c0a86a}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!tab\-Current\-Changed@{tab\-Current\-Changed}}
+\index{tab\-Current\-Changed@{tab\-Current\-Changed}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{tab\-Current\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Browser\-Window\-::tab\-Current\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d4/d1c/class_w_b_browser_window_a4326e260cf46c177f382007fd7c0a86a}
+
+
+Definition at line 535 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a4326e260cf46c177f382007fd7c0a86a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_a4326e260cf46c177f382007fd7c0a86a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_browser_window_ab4f8e1054be45e533c69aea40ef4458c}{\index{W\-B\-Browser\-Window@{W\-B\-Browser\-Window}!tab\-Widget@{tab\-Widget}}
+\index{tab\-Widget@{tab\-Widget}!WBBrowserWindow@{W\-B\-Browser\-Window}}
+\subsubsection[{tab\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-Tab\-Widget} $\ast$ W\-B\-Browser\-Window\-::tab\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d4/d1c/class_w_b_browser_window_ab4f8e1054be45e533c69aea40ef4458c}
+
+
+Definition at line 510 of file W\-B\-Browser\-Window.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1c/class_w_b_browser_window_ab4f8e1054be45e533c69aea40ef4458c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_browser_window_8h}{W\-B\-Browser\-Window.\-h}\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_browser_window_8cpp}{W\-B\-Browser\-Window.\-cpp}\end{DoxyCompactItemize}

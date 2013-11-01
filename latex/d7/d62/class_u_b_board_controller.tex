@@ -1,0 +1,3884 @@
+\hypertarget{class_u_b_board_controller}{\section{U\-B\-Board\-Controller Class Reference}
+\label{d7/d62/class_u_b_board_controller}\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Board\-Controller.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Board\-Controller\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d3/da8/class_u_b_board_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Board\-Controller\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d56/class_u_b_board_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_controller_afdb0ce0373651a6351e3af1ad35c6cb5}{show\-Documents\-Dialog} ()
+\item 
+void \hyperlink{class_u_b_board_controller_afe5b00725eb8f522892c0730f2ef0e08}{show\-Keyboard} (bool \hyperlink{class_u_b_board_controller_a4d5e22da0b52e04622837b0c1280e67b}{show})
+\item 
+void \hyperlink{class_u_b_board_controller_a6171228fc58d8afaff61bd3ba06103ca}{toggle\-Podcast} (bool checked)
+\item 
+void \hyperlink{class_u_b_board_controller_a78633b7cc8144607a3c0919c4237c26c}{blackout} ()
+\item 
+void \hyperlink{class_u_b_board_controller_aae6e6e83f5207333812d4021dc7f535e}{add\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a93f888fe0605f87d49e93f66805f0ad2}{add\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, int scene\-Index, bool replace\-Active\-If\-Empty=false)
+\item 
+void \hyperlink{class_u_b_board_controller_aa6b980ad198948e01707821585f1ed23}{add\-Scene} (\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$scene, bool replace\-Active\-If\-Empty=false)
+\item 
+void \hyperlink{class_u_b_board_controller_af1a84b94fde6cc9e91d9f60723e70a00}{duplicate\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a3c02908763bd2bb49d7006cbf2f1cff8}{import\-Page} ()
+\item 
+void \hyperlink{class_u_b_board_controller_aa05f3be4a1645d76f034f38269fc6cf0}{clear\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a3fe7c336f24feec07902020905386ca0}{clear\-Scene\-Items} ()
+\item 
+void \hyperlink{class_u_b_board_controller_ab47067d535d9086bd8e9e84176c02036}{clear\-Scene\-Annotation} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a7c98cc515d722b671686bb6a77a89a3b}{clear\-Scene\-Background} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a8ba0b7e674be504d0547c6ce94a92a4b}{zoom\-In} (Q\-Point\-F scene\-Point=Q\-Point\-F(0, 0))
+\item 
+void \hyperlink{class_u_b_board_controller_adb10d5b0dbccf7ccb1b92f8840ad3621}{zoom\-Out} (Q\-Point\-F scene\-Point=Q\-Point\-F(0, 0))
+\item 
+void \hyperlink{class_u_b_board_controller_a0df0eca517bd4e5754f49ce1395ec1b1}{zoom\-Restore} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a05fa2d82c7201cf4d833b4a6366db700}{center\-Restore} ()
+\item 
+void \hyperlink{class_u_b_board_controller_adbaa867e0f26de80826355c25fe41d82}{center\-On} (Q\-Point\-F scene\-Point=Q\-Point\-F(0, 0))
+\item 
+void \hyperlink{class_u_b_board_controller_ade5522bea3f3045a0da1dda6853b3cce}{zoom} (const qreal ratio, Q\-Point\-F scene\-Point)
+\item 
+void \hyperlink{class_u_b_board_controller_a313ec9c04c62913c305ac521ae649467}{hand\-Scroll} (qreal dx, qreal dy)
+\item 
+void \hyperlink{class_u_b_board_controller_aeef919027b89d95c392a7e0fe5a6444d}{previous\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_ab5d4e87dcef6ff72e804f6cb5a26a8f3}{next\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a92730653a91693d5d1e6b626a0e0cf4d}{first\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_aa5a7d737c2dcd83fe9d6ab1c897fd5ee}{last\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a97432044e27c3063f8e46bcb31d75d65}{group\-Button\-Clicked} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a358f3f88d1fa9e41620170d76a806f93}{download\-U\-R\-L} (const Q\-Url \&url, Q\-String content\-Source\-Url=Q\-String(), const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0.\-0, 0.\-0), const Q\-Size \&p\-Size=Q\-Size(), bool is\-Background=false, bool internal\-Data=false)
+\item 
+\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_board_controller_ab6cbc7bda85279e7eee5c5923892dd1a}{download\-Finished} (bool p\-Success, Q\-Url source\-Url, Q\-Url content\-Url, Q\-String p\-Header, Q\-Byte\-Array p\-Data, Q\-Point\-F p\-Pos, Q\-Size p\-Size, bool is\-Sync\-Operation=true, bool is\-Background=false, bool internal\-Data=false, \hyperlink{_u_b_board_controller_8h_a81078322485d3c56644c4f3414ac1c91}{e\-Item\-Action\-Type} action\-Type=\hyperlink{_u_b_board_controller_8h_a81078322485d3c56644c4f3414ac1c91abca7f0295fd0737e3216ce238a870c29}{e\-Item\-Action\-Type\-\_\-\-Default})
+\item 
+void \hyperlink{class_u_b_board_controller_a32c4b12cb671b357e546002060065356}{change\-Background} (bool is\-Dark, bool is\-Crossed)
+\item 
+void \hyperlink{class_u_b_board_controller_ad363554dfb70642a295c4b002f396ec5}{set\-Tool\-Cursor} (int tool)
+\item 
+void \hyperlink{class_u_b_board_controller_a71ff510e4ce1e3a753f074a0e7438a00}{show\-Message} (const Q\-String \&message, bool show\-Spinning\-Wheel=false)
+\item 
+void \hyperlink{class_u_b_board_controller_a71d2fb8834fc701bed0b16bb0f0b5527}{hide\-Message} ()
+\item 
+void \hyperlink{class_u_b_board_controller_af6251367977a32a2b20beac0a63a711f}{set\-Disabled} (bool disable)
+\item 
+void \hyperlink{class_u_b_board_controller_a7d9d265f0f98e913898c06bf897dbf2f}{set\-Color\-Index} (int p\-Color\-Index)
+\item 
+void \hyperlink{class_u_b_board_controller_ad6d191224e83ac7c1d9b1631824a185b}{remove\-Tool} (\hyperlink{class_u_b_tool_widget}{U\-B\-Tool\-Widget} $\ast$tool\-Widget)
+\item 
+void \hyperlink{class_u_b_board_controller_a67d3bac6634fcd9f78e664d9fc67318a}{hide} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a4d5e22da0b52e04622837b0c1280e67b}{show} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a8ba21cf9f9bcd0680e90a67964bc75f2}{set\-Wide\-Page\-Size} (bool checked)
+\item 
+void \hyperlink{class_u_b_board_controller_a47026c255a9a91ca35a0c0f92872c41b}{set\-Regular\-Page\-Size} (bool checked)
+\item 
+void \hyperlink{class_u_b_board_controller_ab46e478b8096354cf99816a1565a3b8e}{stylus\-Tool\-Changed} (int tool)
+\item 
+void \hyperlink{class_u_b_board_controller_a497f046a815b6a08d8c791f574836593}{grab\-Scene} (const Q\-Rect\-F \&p\-Scene\-Rect)
+\item 
+\hyperlink{class_u_b_graphics_media_item}{U\-B\-Graphics\-Media\-Item} $\ast$ \hyperlink{class_u_b_board_controller_a8716b740e0b6759dfc26f0b1f07789eb}{add\-Video} (const Q\-Url \&p\-Url, bool start\-Play, const Q\-Point\-F \&pos, bool b\-Use\-Source=false)
+\item 
+\hyperlink{class_u_b_graphics_media_item}{U\-B\-Graphics\-Media\-Item} $\ast$ \hyperlink{class_u_b_board_controller_a7e127684a3dcbc3f28e232747f78304d}{add\-Audio} (const Q\-Url \&p\-Url, bool start\-Play, const Q\-Point\-F \&pos, bool b\-Use\-Source=false)
+\item 
+\hyperlink{class_u_b_graphics_widget_item}{U\-B\-Graphics\-Widget\-Item} $\ast$ \hyperlink{class_u_b_board_controller_af8867753146efd8498f1a308e0457c9e}{add\-W3c\-Widget} (const Q\-Url \&p\-Url, const Q\-Point\-F \&pos)
+\item 
+void \hyperlink{class_u_b_board_controller_aedaf462295a3ad1a7c7e76bf88078e8f}{cut} ()
+\item 
+void \hyperlink{class_u_b_board_controller_ab051041eb5a593e66b25653086a32834}{copy} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a68518a98107e994551da0a4e3a79fe2c}{paste} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a07e50010567075b570140d6143c516f5}{process\-Mime\-Data} (const Q\-Mime\-Data $\ast$p\-Mime\-Data, const Q\-Point\-F \&p\-Pos, \hyperlink{_u_b_board_controller_8h_a81078322485d3c56644c4f3414ac1c91}{e\-Item\-Action\-Type} action\-Type=\hyperlink{_u_b_board_controller_8h_a81078322485d3c56644c4f3414ac1c91abca7f0295fd0737e3216ce238a870c29}{e\-Item\-Action\-Type\-\_\-\-Default})
+\item 
+void \hyperlink{class_u_b_board_controller_af713d6e325369af244f2af8c90299a35}{move\-Graphics\-Widget\-To\-Control\-View} (\hyperlink{class_u_b_graphics_widget_item}{U\-B\-Graphics\-Widget\-Item} $\ast$graphic\-Widget)
+\item 
+void \hyperlink{class_u_b_board_controller_af122a3bb14b0ef66b169be9fd0e5a2b3}{move\-Tool\-Widget\-To\-Scene} (\hyperlink{class_u_b_tool_widget}{U\-B\-Tool\-Widget} $\ast$tool\-Widget)
+\item 
+void \hyperlink{class_u_b_board_controller_a0a2ba2fe74609d2bb43ad1b6893b59c4}{add\-Item} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a4e526bf1704cc013539413d792c65d6a}{freeze\-W3\-C\-Widgets} (bool freeze)
+\item 
+void \hyperlink{class_u_b_board_controller_a3e83388ec403a3bec62277e1b1a0144f}{freeze\-W3\-C\-Widget} (Q\-Graphics\-Item $\ast$item, bool freeze)
+\item 
+void \hyperlink{class_u_b_board_controller_a19e197f121e0ed3e0204e7d528dc6307}{start\-Script} ()
+\item 
+void \hyperlink{class_u_b_board_controller_ab9ade242e787595dd2dbafdf3b3329a5}{stop\-Script} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_controller_ab3972f04b8dd9459ac45397447dda7f7}{new\-Page\-Added} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a55bd7934f6385adecd1401a8b34fb851}{active\-Scene\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a916c350732ef05c8693d82a6192042da}{zoom\-Changed} (qreal p\-Zoom\-Factor)
+\item 
+void \hyperlink{class_u_b_board_controller_a696505e51a5a2c14cfaaffc2f2be590d}{system\-Scale\-Factor\-Changed} (qreal p\-System\-Scale\-Factor)
+\item 
+void \hyperlink{class_u_b_board_controller_a762afc02398aec4c9136e00984cc3120}{pen\-Color\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a43951f02a518680a34c38a1ac4533fc0}{control\-Viewport\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_controller_ad09c4f1efd56c86ee5987e5ca29bab59}{background\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a7a7062ac8429cb9395797607ac8493bb}{cache\-Enabled} ()
+\item 
+void \hyperlink{class_u_b_board_controller_aa3399312bf446d0c3a0d98dd03746732}{cache\-Disabled} ()
+\item 
+void \hyperlink{class_u_b_board_controller_aa19e0faf07ab9cebd4d4dbf30bc074a3}{page\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a55b3aa45ecaf7662bb7aeb1359b3dcfe}{document\-Reorganized} (int index)
+\item 
+void \hyperlink{class_u_b_board_controller_a134accb6745f0bc3683bcc1fffd48872}{display\-Metadata} (Q\-Map$<$ Q\-String, Q\-String $>$ metadata)
+\item 
+void \hyperlink{class_u_b_board_controller_a5f23d849d22a50ade6d1da830b181def}{page\-Selection\-Changed} (int index)
+\item 
+void \hyperlink{class_u_b_board_controller_a3e3d5b9ac6e4806b2bd843ba1d5919fe}{npapi\-Widget\-Created} (const Q\-String \&Url)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_board_controller_a6d5d5894174958720c91e1e1f19b150f}{U\-B\-Board\-Controller} (\hyperlink{class_u_b_main_window}{U\-B\-Main\-Window} $\ast$main\-Window)
+\item 
+virtual \hyperlink{class_u_b_board_controller_aa769a722df15b23e797b84da38db3d81}{$\sim$\-U\-B\-Board\-Controller} ()
+\item 
+void \hyperlink{class_u_b_board_controller_aa728cb7c1b979b2d4ae45638a7386dde}{init} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a6d2e9c5462d58eaddbe0ee3f70661053}{setup\-Layout} ()
+\item 
+\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_board_controller_a5bf93ad343de7f09150d634ef3a8c459}{active\-Scene} () const 
+\item 
+int \hyperlink{class_u_b_board_controller_a82e3690c789dc021cdb134e3704c7b7a}{active\-Scene\-Index} () const 
+\item 
+Q\-Size \hyperlink{class_u_b_board_controller_a4d1d29ce392c83f191f0e46af3f8827f}{display\-Viewport} ()
+\item 
+Q\-Size \hyperlink{class_u_b_board_controller_ad0b66f7f22704b350af880fc771d0c9a}{control\-Viewport} ()
+\item 
+Q\-Rect\-F \hyperlink{class_u_b_board_controller_ae06dc14d88bdbbe27552a4363c77d368}{control\-Geometry} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a5d7e796ca2cd932cf3827fa79231a4c0}{closing} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a5f701f4cd3173743effca3b3b0bd4615}{add\-Link\-To\-Page} (Q\-String source\-Url, Q\-Size size=Q\-Size(340, 200), Q\-Point\-F pos=Q\-Point\-F(0, 0), const Q\-String \&embed\-Code=Q\-String())
+\item 
+int \hyperlink{class_u_b_board_controller_aa0f5ffcfa77210bbadb4c9650db4e074}{current\-Page} ()
+\item 
+Q\-Widget $\ast$ \hyperlink{class_u_b_board_controller_a5c56052dfab48a72f8ee4d5cd90391d4}{control\-Container} ()
+\item 
+\hyperlink{class_u_b_board_view}{U\-B\-Board\-View} $\ast$ \hyperlink{class_u_b_board_controller_ab71662c63aac8470984b04499e906d3a}{control\-View} ()
+\item 
+\hyperlink{class_u_b_board_view}{U\-B\-Board\-View} $\ast$ \hyperlink{class_u_b_board_controller_a6c6255c94a1f826a5a23a4d5c68819ec}{display\-View} ()
+\item 
+\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_board_controller_ad68061e07f0f3ad1d0299b09457db5fe}{active\-Scene} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a1f23c4091945cbca291422280c7a4ae9}{set\-Pen\-Color\-On\-Dark\-Background} (const Q\-Color \&p\-Color)
+\item 
+void \hyperlink{class_u_b_board_controller_ae67dbddc09fe4103345391fadfc140f2}{set\-Pen\-Color\-On\-Light\-Background} (const Q\-Color \&p\-Color)
+\item 
+void \hyperlink{class_u_b_board_controller_a264406c94811826838a609521566a2f9}{set\-Marker\-Color\-On\-Dark\-Background} (const Q\-Color \&p\-Color)
+\item 
+void \hyperlink{class_u_b_board_controller_a95927bf1026ebbaf8c8c82b5abd252d3}{set\-Marker\-Color\-On\-Light\-Background} (const Q\-Color \&p\-Color)
+\item 
+Q\-Color \hyperlink{class_u_b_board_controller_a0b3be9ba94add4b515d0e65ca113f494}{pen\-Color\-On\-Dark\-Background} ()
+\item 
+Q\-Color \hyperlink{class_u_b_board_controller_a224eaea32f547c4cc802efffe22f1ec1}{pen\-Color\-On\-Light\-Background} ()
+\item 
+Q\-Color \hyperlink{class_u_b_board_controller_ac3931443ad31a01a8a1ef701746bb7cf}{marker\-Color\-On\-Dark\-Background} ()
+\item 
+Q\-Color \hyperlink{class_u_b_board_controller_a047505072685535f82ba22bb0cac4f51}{marker\-Color\-On\-Light\-Background} ()
+\item 
+qreal \hyperlink{class_u_b_board_controller_a6f46e3fe2ffde7ca74f50f175504c229}{system\-Scale\-Factor} ()
+\item 
+qreal \hyperlink{class_u_b_board_controller_acd5ef85a2562dd209581430f5e5231f2}{current\-Zoom} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a12b23dc20db7b2e2014911c5785ba1bc}{persist\-Current\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Proxy=0)
+\item 
+void \hyperlink{class_u_b_board_controller_a0ae6fe2506cad8ba50128db6d1afe117}{show\-New\-Version\-Available} (bool automatic, const \hyperlink{class_u_b_version}{U\-B\-Version} \&installed\-Version, const U\-B\-Software\-Update \&software\-Update)
+\item 
+void \hyperlink{class_u_b_board_controller_a864584d68dba2181af3e9e0ea6d639a2}{set\-Boxing} (Q\-Rect display\-Rect)
+\item 
+void \hyperlink{class_u_b_board_controller_a74de125b601b757c507440e4ef31a982}{set\-Toolbar\-Texts} ()
+\item 
+void \hyperlink{class_u_b_board_controller_ad0826689aa9e177e31aea29fa68eedd9}{set\-Page\-Size} (Q\-Size new\-Size)
+\item 
+\hyperlink{class_u_b_board_palette_manager}{U\-B\-Board\-Palette\-Manager} $\ast$ \hyperlink{class_u_b_board_controller_a536e1388e74f79a2120d0e585b862033}{palette\-Manager} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a7b946d72f2a3e569f7493e0435d9d357}{notify\-Cache} (bool visible)
+\item 
+void \hyperlink{class_u_b_board_controller_aa9e16958970296eccadc60d0dbdf6b7d}{notify\-Page\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a501c3324ee98bd14b10f6b1345a48ccb}{display\-Meta\-Data} (Q\-Map$<$ Q\-String, Q\-String $>$ metadatas)
+\item 
+void \hyperlink{class_u_b_board_controller_a52b5505624b5584673fb2e75cbb269aa}{Clear\-Undo\-Stack} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a6a1f06f9fecbba81ab58d813faae3fb0}{set\-Active\-Document\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int p\-Scene\-Index=0, bool force\-Reload=false)
+\item 
+void \hyperlink{class_u_b_board_controller_afac505a5ca6669f6708427d914fb9b08}{set\-Active\-Document\-Scene} (int p\-Scene\-Index)
+\item 
+void \hyperlink{class_u_b_board_controller_aa7a87412c99f4e2c12b23468d946296e}{move\-Scene\-To\-Index} (int source, int target)
+\item 
+void \hyperlink{class_u_b_board_controller_ae84d5e3160402f05efcf708a8b81ba36}{duplicate\-Scene} (int index)
+\item 
+\hyperlink{class_u_b_graphics_item}{U\-B\-Graphics\-Item} $\ast$ \hyperlink{class_u_b_board_controller_abae2655269e06f72767de71b8513f6be}{duplicate\-Item} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$item, bool b\-Async=true, \hyperlink{_u_b_board_controller_8h_a81078322485d3c56644c4f3414ac1c91}{e\-Item\-Action\-Type} action\-Type=\hyperlink{_u_b_board_controller_8h_a81078322485d3c56644c4f3414ac1c91abca7f0295fd0737e3216ce238a870c29}{e\-Item\-Action\-Type\-\_\-\-Default})
+\item 
+void \hyperlink{class_u_b_board_controller_ad1c70c75fad194f67cd944e203d15e49}{delete\-Scene} (int index)
+\item 
+void \hyperlink{class_u_b_board_controller_a0702e13749c6107a18719f8a23502928}{regenerate\-Thumbnails} ()
+\item 
+bool \hyperlink{class_u_b_board_controller_a2b8761d022140db1a404a5732098f006}{cache\-Is\-Visible} ()
+\item 
+Q\-String \hyperlink{class_u_b_board_controller_a404dd737015b91b4762a749cf1e9fd3d}{action\-Group\-Text} ()
+\item 
+Q\-String \hyperlink{class_u_b_board_controller_a4812c63884b1d93772b8e527f6df8bbf}{action\-Ungroup\-Text} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a0a0b45a4e32d982fe7c66e9fb336852e}{set\-Document\-Navigator} (\hyperlink{class_u_b_document_navigator}{U\-B\-Document\-Navigator} $\ast$navigator)
+\item 
+\hyperlink{class_u_b_document_navigator}{U\-B\-Document\-Navigator} $\ast$ \hyperlink{class_u_b_board_controller_af60596f4c84c7de83aae1473e033205b}{document\-Navigator} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-Url \hyperlink{class_u_b_board_controller_a621157f18b63e9a4c2ac3e815277db4a}{expand\-Widget\-To\-Temp\-Dir} (const Q\-Byte\-Array \&p\-Ziped\-Data, const Q\-String \&p\-Extension=Q\-String(\char`\"{}wgt\char`\"{}))
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_controller_a96fa840e0f2d01ea6d87c5123fba3985}{selection\-Changed} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a0b4c8939c4b301f523681164e8abf803}{undo\-Redo\-State\-Change} (bool can\-Undo)
+\item 
+void \hyperlink{class_u_b_board_controller_adb6ca22449d2f5f0e8fc297c52a51f2c}{document\-Scene\-Changed} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, int p\-Index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_controller_a50a3a56de6549d3c324468d3ede35137}{setup\-Views} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a6761e02604fb3aa8ecbfc5fd4a5d87f3}{setup\-Toolbar} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a0292260502bb0cbe4bc3c83f3a3283bc}{connect\-Toolbar} ()
+\item 
+void \hyperlink{class_u_b_board_controller_aec976e1b66187047b9d96b4887645913}{init\-Toolbar\-Texts} ()
+\item 
+void \hyperlink{class_u_b_board_controller_ae66e1ff40cb166c699ce25bfa893012e}{update\-Action\-States} ()
+\item 
+void \hyperlink{class_u_b_board_controller_a6dd49077c4806bcddb8339961424bfce}{update\-System\-Scale\-Factor} ()
+\item 
+Q\-String \hyperlink{class_u_b_board_controller_a2ba318b0464e00a842624ffde7c6d716}{truncate} (Q\-String text, int max\-Width)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 61 of file U\-B\-Board\-Controller.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_board_controller_a6d5d5894174958720c91e1e1f19b150f}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!U\-B\-Board\-Controller@{U\-B\-Board\-Controller}}
+\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{U\-B\-Board\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Board\-Controller\-::\-U\-B\-Board\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Main\-Window} $\ast$}]{main\-Window}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a6d5d5894174958720c91e1e1f19b150f}
+
+
+Definition at line 95 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6d5d5894174958720c91e1e1f19b150f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa769a722df15b23e797b84da38db3d81}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!$\sim$\-U\-B\-Board\-Controller@{$\sim$\-U\-B\-Board\-Controller}}
+\index{$\sim$\-U\-B\-Board\-Controller@{$\sim$\-U\-B\-Board\-Controller}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{$\sim$\-U\-B\-Board\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Board\-Controller\-::$\sim$\-U\-B\-Board\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d7/d62/class_u_b_board_controller_aa769a722df15b23e797b84da38db3d81}
+
+
+Definition at line 167 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_board_controller_a404dd737015b91b4762a749cf1e9fd3d}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!action\-Group\-Text@{action\-Group\-Text}}
+\index{action\-Group\-Text@{action\-Group\-Text}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{action\-Group\-Text}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Board\-Controller\-::action\-Group\-Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a404dd737015b91b4762a749cf1e9fd3d}
+
+
+Definition at line 184 of file U\-B\-Board\-Controller.\-h.
+
+\hypertarget{class_u_b_board_controller_a4812c63884b1d93772b8e527f6df8bbf}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!action\-Ungroup\-Text@{action\-Ungroup\-Text}}
+\index{action\-Ungroup\-Text@{action\-Ungroup\-Text}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{action\-Ungroup\-Text}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Board\-Controller\-::action\-Ungroup\-Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a4812c63884b1d93772b8e527f6df8bbf}
+
+
+Definition at line 185 of file U\-B\-Board\-Controller.\-h.
+
+\hypertarget{class_u_b_board_controller_a5bf93ad343de7f09150d634ef3a8c459}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!active\-Scene@{active\-Scene}}
+\index{active\-Scene@{active\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{active\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Board\-Controller\-::active\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d62/class_u_b_board_controller_a5bf93ad343de7f09150d634ef3a8c459}
+
+
+Definition at line 1905 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a5bf93ad343de7f09150d634ef3a8c459_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ad68061e07f0f3ad1d0299b09457db5fe}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!active\-Scene@{active\-Scene}}
+\index{active\-Scene@{active\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{active\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene}$\ast$ U\-B\-Board\-Controller\-::active\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_ad68061e07f0f3ad1d0299b09457db5fe}
+
+
+Definition at line 97 of file U\-B\-Board\-Controller.\-h.
+
+\hypertarget{class_u_b_board_controller_a55bd7934f6385adecd1401a8b34fb851}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!active\-Scene\-Changed@{active\-Scene\-Changed}}
+\index{active\-Scene\-Changed@{active\-Scene\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{active\-Scene\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::active\-Scene\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a55bd7934f6385adecd1401a8b34fb851}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a55bd7934f6385adecd1401a8b34fb851_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a82e3690c789dc021cdb134e3704c7b7a}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!active\-Scene\-Index@{active\-Scene\-Index}}
+\index{active\-Scene\-Index@{active\-Scene\-Index}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{active\-Scene\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Board\-Controller\-::active\-Scene\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d62/class_u_b_board_controller_a82e3690c789dc021cdb134e3704c7b7a}
+
+
+Definition at line 1911 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a82e3690c789dc021cdb134e3704c7b7a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a7e127684a3dcbc3f28e232747f78304d}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-Audio@{add\-Audio}}
+\index{add\-Audio@{add\-Audio}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Media\-Item} $\ast$ U\-B\-Board\-Controller\-::add\-Audio (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Url, }
+\item[{bool}]{start\-Play, }
+\item[{const Q\-Point\-F \&}]{pos, }
+\item[{bool}]{b\-Use\-Source = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a7e127684a3dcbc3f28e232747f78304d}
+
+
+Definition at line 2287 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7e127684a3dcbc3f28e232747f78304d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7e127684a3dcbc3f28e232747f78304d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0a2ba2fe74609d2bb43ad1b6893b59c4}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-Item@{add\-Item}}
+\index{add\-Item@{add\-Item}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::add\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a0a2ba2fe74609d2bb43ad1b6893b59c4}
+
+
+Definition at line 2601 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0a2ba2fe74609d2bb43ad1b6893b59c4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0a2ba2fe74609d2bb43ad1b6893b59c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a5f701f4cd3173743effca3b3b0bd4615}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-Link\-To\-Page@{add\-Link\-To\-Page}}
+\index{add\-Link\-To\-Page@{add\-Link\-To\-Page}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-Link\-To\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::add\-Link\-To\-Page (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{source\-Url, }
+\item[{Q\-Size}]{size = {\ttfamily QSize(340,200)}, }
+\item[{Q\-Point\-F}]{pos = {\ttfamily QPointF(0,0)}, }
+\item[{const Q\-String \&}]{embed\-Code = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a5f701f4cd3173743effca3b3b0bd4615}
+
+
+Definition at line 1118 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a5f701f4cd3173743effca3b3b0bd4615_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a5f701f4cd3173743effca3b3b0bd4615_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aae6e6e83f5207333812d4021dc7f535e}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-Scene@{add\-Scene}}
+\index{add\-Scene@{add\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::add\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_aae6e6e83f5207333812d4021dc7f535e}
+
+
+Definition at line 474 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aae6e6e83f5207333812d4021dc7f535e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aae6e6e83f5207333812d4021dc7f535e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a93f888fe0605f87d49e93f66805f0ad2}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-Scene@{add\-Scene}}
+\index{add\-Scene@{add\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::add\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{int}]{scene\-Index, }
+\item[{bool}]{replace\-Active\-If\-Empty = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a93f888fe0605f87d49e93f66805f0ad2}
+
+
+Definition at line 522 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a93f888fe0605f87d49e93f66805f0ad2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa6b980ad198948e01707821585f1ed23}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-Scene@{add\-Scene}}
+\index{add\-Scene@{add\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::add\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Scene} $\ast$}]{scene, }
+\item[{bool}]{replace\-Active\-If\-Empty = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_aa6b980ad198948e01707821585f1ed23}
+
+
+Definition at line 487 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa6b980ad198948e01707821585f1ed23_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a8716b740e0b6759dfc26f0b1f07789eb}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-Video@{add\-Video}}
+\index{add\-Video@{add\-Video}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-Video}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Media\-Item} $\ast$ U\-B\-Board\-Controller\-::add\-Video (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Url, }
+\item[{bool}]{start\-Play, }
+\item[{const Q\-Point\-F \&}]{pos, }
+\item[{bool}]{b\-Use\-Source = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a8716b740e0b6759dfc26f0b1f07789eb}
+
+
+Definition at line 2252 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a8716b740e0b6759dfc26f0b1f07789eb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a8716b740e0b6759dfc26f0b1f07789eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_af8867753146efd8498f1a308e0457c9e}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!add\-W3c\-Widget@{add\-W3c\-Widget}}
+\index{add\-W3c\-Widget@{add\-W3c\-Widget}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{add\-W3c\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Widget\-Item} $\ast$ U\-B\-Board\-Controller\-::add\-W3c\-Widget (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Url, }
+\item[{const Q\-Point\-F \&}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_af8867753146efd8498f1a308e0457c9e}
+
+
+Definition at line 2321 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af8867753146efd8498f1a308e0457c9e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af8867753146efd8498f1a308e0457c9e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ad09c4f1efd56c86ee5987e5ca29bab59}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!background\-Changed@{background\-Changed}}
+\index{background\-Changed@{background\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{background\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::background\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_ad09c4f1efd56c86ee5987e5ca29bab59}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d7/d62/class_u_b_board_controller_ad09c4f1efd56c86ee5987e5ca29bab59_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a78633b7cc8144607a3c0919c4237c26c}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!blackout@{blackout}}
+\index{blackout@{blackout}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{blackout}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::blackout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a78633b7cc8144607a3c0919c4237c26c}
+
+
+Definition at line 832 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a78633b7cc8144607a3c0919c4237c26c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a78633b7cc8144607a3c0919c4237c26c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa3399312bf446d0c3a0d98dd03746732}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!cache\-Disabled@{cache\-Disabled}}
+\index{cache\-Disabled@{cache\-Disabled}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{cache\-Disabled}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::cache\-Disabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_aa3399312bf446d0c3a0d98dd03746732}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa3399312bf446d0c3a0d98dd03746732_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a7a7062ac8429cb9395797607ac8493bb}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!cache\-Enabled@{cache\-Enabled}}
+\index{cache\-Enabled@{cache\-Enabled}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{cache\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::cache\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a7a7062ac8429cb9395797607ac8493bb}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7a7062ac8429cb9395797607ac8493bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a2b8761d022140db1a404a5732098f006}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!cache\-Is\-Visible@{cache\-Is\-Visible}}
+\index{cache\-Is\-Visible@{cache\-Is\-Visible}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{cache\-Is\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-Controller\-::cache\-Is\-Visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a2b8761d022140db1a404a5732098f006}
+
+
+Definition at line 182 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a2b8761d022140db1a404a5732098f006_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_adbaa867e0f26de80826355c25fe41d82}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!center\-On@{center\-On}}
+\index{center\-On@{center\-On}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{center\-On}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::center\-On (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{scene\-Point = {\ttfamily QPointF(0,0)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_adbaa867e0f26de80826355c25fe41d82}
+
+
+Definition at line 898 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_adbaa867e0f26de80826355c25fe41d82_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_adbaa867e0f26de80826355c25fe41d82_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a05fa2d82c7201cf4d833b4a6366db700}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!center\-Restore@{center\-Restore}}
+\index{center\-Restore@{center\-Restore}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{center\-Restore}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::center\-Restore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a05fa2d82c7201cf4d833b4a6366db700}
+
+
+Definition at line 892 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a05fa2d82c7201cf4d833b4a6366db700_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a05fa2d82c7201cf4d833b4a6366db700_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a32c4b12cb671b357e546002060065356}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!change\-Background@{change\-Background}}
+\index{change\-Background@{change\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{change\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::change\-Background (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-Dark, }
+\item[{bool}]{is\-Crossed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a32c4b12cb671b357e546002060065356}
+
+
+Definition at line 1800 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a32c4b12cb671b357e546002060065356_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa05f3be4a1645d76f034f38269fc6cf0}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!clear\-Scene@{clear\-Scene}}
+\index{clear\-Scene@{clear\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{clear\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::clear\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_aa05f3be4a1645d76f034f38269fc6cf0}
+
+
+Definition at line 775 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa05f3be4a1645d76f034f38269fc6cf0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa05f3be4a1645d76f034f38269fc6cf0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ab47067d535d9086bd8e9e84176c02036}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!clear\-Scene\-Annotation@{clear\-Scene\-Annotation}}
+\index{clear\-Scene\-Annotation@{clear\-Scene\-Annotation}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{clear\-Scene\-Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::clear\-Scene\-Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ab47067d535d9086bd8e9e84176c02036}
+
+
+Definition at line 797 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab47067d535d9086bd8e9e84176c02036_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab47067d535d9086bd8e9e84176c02036_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a7c98cc515d722b671686bb6a77a89a3b}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!clear\-Scene\-Background@{clear\-Scene\-Background}}
+\index{clear\-Scene\-Background@{clear\-Scene\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{clear\-Scene\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::clear\-Scene\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a7c98cc515d722b671686bb6a77a89a3b}
+
+
+Definition at line 806 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7c98cc515d722b671686bb6a77a89a3b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7c98cc515d722b671686bb6a77a89a3b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a3fe7c336f24feec07902020905386ca0}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!clear\-Scene\-Items@{clear\-Scene\-Items}}
+\index{clear\-Scene\-Items@{clear\-Scene\-Items}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{clear\-Scene\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::clear\-Scene\-Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a3fe7c336f24feec07902020905386ca0}
+
+
+Definition at line 786 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a3fe7c336f24feec07902020905386ca0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a3fe7c336f24feec07902020905386ca0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a52b5505624b5584673fb2e75cbb269aa}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!Clear\-Undo\-Stack@{Clear\-Undo\-Stack}}
+\index{Clear\-Undo\-Stack@{Clear\-Undo\-Stack}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{Clear\-Undo\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::\-Clear\-Undo\-Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a52b5505624b5584673fb2e75cbb269aa}
+
+
+Definition at line 1726 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a52b5505624b5584673fb2e75cbb269aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a5d7e796ca2cd932cf3827fa79231a4c0}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!closing@{closing}}
+\index{closing@{closing}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{closing}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::closing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a5d7e796ca2cd932cf3827fa79231a4c0}
+
+
+Definition at line 1927 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d7/d62/class_u_b_board_controller_a5d7e796ca2cd932cf3827fa79231a4c0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0292260502bb0cbe4bc3c83f3a3283bc}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!connect\-Toolbar@{connect\-Toolbar}}
+\index{connect\-Toolbar@{connect\-Toolbar}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{connect\-Toolbar}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::connect\-Toolbar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d62/class_u_b_board_controller_a0292260502bb0cbe4bc3c83f3a3283bc}
+
+
+Definition at line 374 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0292260502bb0cbe4bc3c83f3a3283bc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0292260502bb0cbe4bc3c83f3a3283bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a5c56052dfab48a72f8ee4d5cd90391d4}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!control\-Container@{control\-Container}}
+\index{control\-Container@{control\-Container}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{control\-Container}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Widget$\ast$ U\-B\-Board\-Controller\-::control\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a5c56052dfab48a72f8ee4d5cd90391d4}
+
+
+Definition at line 82 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a5c56052dfab48a72f8ee4d5cd90391d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ae06dc14d88bdbbe27552a4363c77d368}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!control\-Geometry@{control\-Geometry}}
+\index{control\-Geometry@{control\-Geometry}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{control\-Geometry}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F U\-B\-Board\-Controller\-::control\-Geometry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_ae06dc14d88bdbbe27552a4363c77d368}
+
+
+Definition at line 272 of file U\-B\-Board\-Controller.\-cpp.
+
+\hypertarget{class_u_b_board_controller_ab71662c63aac8470984b04499e906d3a}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!control\-View@{control\-View}}
+\index{control\-View@{control\-View}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{control\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Board\-View}$\ast$ U\-B\-Board\-Controller\-::control\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_ab71662c63aac8470984b04499e906d3a}
+
+
+Definition at line 87 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab71662c63aac8470984b04499e906d3a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ad0b66f7f22704b350af880fc771d0c9a}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!control\-Viewport@{control\-Viewport}}
+\index{control\-Viewport@{control\-Viewport}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{control\-Viewport}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size U\-B\-Board\-Controller\-::control\-Viewport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_ad0b66f7f22704b350af880fc771d0c9a}
+
+
+Definition at line 266 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ad0b66f7f22704b350af880fc771d0c9a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a43951f02a518680a34c38a1ac4533fc0}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!control\-Viewport\-Changed@{control\-Viewport\-Changed}}
+\index{control\-Viewport\-Changed@{control\-Viewport\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{control\-Viewport\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::control\-Viewport\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a43951f02a518680a34c38a1ac4533fc0}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a43951f02a518680a34c38a1ac4533fc0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ab051041eb5a593e66b25653086a32834}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!copy@{copy}}
+\index{copy@{copy}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ab051041eb5a593e66b25653086a32834}
+
+
+Definition at line 2393 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab051041eb5a593e66b25653086a32834_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab051041eb5a593e66b25653086a32834_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa0f5ffcfa77210bbadb4c9650db4e074}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!current\-Page@{current\-Page}}
+\index{current\-Page@{current\-Page}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{current\-Page}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Board\-Controller\-::current\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_aa0f5ffcfa77210bbadb4c9650db4e074}
+
+
+Definition at line 173 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d7/d62/class_u_b_board_controller_aa0f5ffcfa77210bbadb4c9650db4e074_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa0f5ffcfa77210bbadb4c9650db4e074_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_acd5ef85a2562dd209581430f5e5231f2}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!current\-Zoom@{current\-Zoom}}
+\index{current\-Zoom@{current\-Zoom}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{current\-Zoom}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Board\-Controller\-::current\-Zoom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_acd5ef85a2562dd209581430f5e5231f2}
+
+
+Definition at line 2006 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_acd5ef85a2562dd209581430f5e5231f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aedaf462295a3ad1a7c7e76bf88078e8f}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!cut@{cut}}
+\index{cut@{cut}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{cut}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::cut (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_aedaf462295a3ad1a7c7e76bf88078e8f}
+
+
+Definition at line 2351 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aedaf462295a3ad1a7c7e76bf88078e8f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aedaf462295a3ad1a7c7e76bf88078e8f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ad1c70c75fad194f67cd944e203d15e49}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!delete\-Scene@{delete\-Scene}}
+\index{delete\-Scene@{delete\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{delete\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::delete\-Scene (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_ad1c70c75fad194f67cd944e203d15e49}
+
+
+Definition at line 747 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ad1c70c75fad194f67cd944e203d15e49_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a501c3324ee98bd14b10f6b1345a48ccb}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!display\-Meta\-Data@{display\-Meta\-Data}}
+\index{display\-Meta\-Data@{display\-Meta\-Data}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{display\-Meta\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::display\-Meta\-Data (
+\begin{DoxyParamCaption}
+\item[{Q\-Map$<$ Q\-String, Q\-String $>$}]{metadatas}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a501c3324ee98bd14b10f6b1345a48ccb}
+
+
+Definition at line 2643 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d7/d62/class_u_b_board_controller_a501c3324ee98bd14b10f6b1345a48ccb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d7/d62/class_u_b_board_controller_a501c3324ee98bd14b10f6b1345a48ccb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a134accb6745f0bc3683bcc1fffd48872}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!display\-Metadata@{display\-Metadata}}
+\index{display\-Metadata@{display\-Metadata}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{display\-Metadata}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::display\-Metadata (
+\begin{DoxyParamCaption}
+\item[{Q\-Map$<$ Q\-String, Q\-String $>$}]{metadata}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a134accb6745f0bc3683bcc1fffd48872}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a134accb6745f0bc3683bcc1fffd48872_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a6c6255c94a1f826a5a23a4d5c68819ec}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!display\-View@{display\-View}}
+\index{display\-View@{display\-View}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{display\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Board\-View}$\ast$ U\-B\-Board\-Controller\-::display\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a6c6255c94a1f826a5a23a4d5c68819ec}
+
+
+Definition at line 92 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6c6255c94a1f826a5a23a4d5c68819ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a4d1d29ce392c83f191f0e46af3f8827f}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!display\-Viewport@{display\-Viewport}}
+\index{display\-Viewport@{display\-Viewport}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{display\-Viewport}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size U\-B\-Board\-Controller\-::display\-Viewport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a4d1d29ce392c83f191f0e46af3f8827f}
+
+
+Definition at line 260 of file U\-B\-Board\-Controller.\-cpp.
+
+\hypertarget{class_u_b_board_controller_af60596f4c84c7de83aae1473e033205b}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!document\-Navigator@{document\-Navigator}}
+\index{document\-Navigator@{document\-Navigator}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{document\-Navigator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Navigator}$\ast$ U\-B\-Board\-Controller\-::document\-Navigator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_af60596f4c84c7de83aae1473e033205b}
+
+
+Definition at line 187 of file U\-B\-Board\-Controller.\-h.
+
+\hypertarget{class_u_b_board_controller_a55b3aa45ecaf7662bb7aeb1359b3dcfe}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!document\-Reorganized@{document\-Reorganized}}
+\index{document\-Reorganized@{document\-Reorganized}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{document\-Reorganized}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::document\-Reorganized (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a55b3aa45ecaf7662bb7aeb1359b3dcfe}
+\hypertarget{class_u_b_board_controller_adb6ca22449d2f5f0e8fc297c52a51f2c}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!document\-Scene\-Changed@{document\-Scene\-Changed}}
+\index{document\-Scene\-Changed@{document\-Scene\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{document\-Scene\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::document\-Scene\-Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{int}]{p\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_adb6ca22449d2f5f0e8fc297c52a51f2c}
+
+
+Definition at line 1917 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_adb6ca22449d2f5f0e8fc297c52a51f2c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ab6cbc7bda85279e7eee5c5923892dd1a}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!download\-Finished@{download\-Finished}}
+\index{download\-Finished@{download\-Finished}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{download\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Board\-Controller\-::download\-Finished (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Success, }
+\item[{Q\-Url}]{source\-Url, }
+\item[{Q\-Url}]{content\-Url, }
+\item[{Q\-String}]{p\-Header, }
+\item[{Q\-Byte\-Array}]{p\-Data, }
+\item[{Q\-Point\-F}]{p\-Pos, }
+\item[{Q\-Size}]{p\-Size, }
+\item[{bool}]{is\-Sync\-Operation = {\ttfamily true}, }
+\item[{bool}]{is\-Background = {\ttfamily false}, }
+\item[{bool}]{internal\-Data = {\ttfamily false}, }
+\item[{{\bf e\-Item\-Action\-Type}}]{action\-Type = {\ttfamily {\bf e\-Item\-Action\-Type\-\_\-\-Default}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ab6cbc7bda85279e7eee5c5923892dd1a}
+
+
+Definition at line 1166 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d62/class_u_b_board_controller_ab6cbc7bda85279e7eee5c5923892dd1a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab6cbc7bda85279e7eee5c5923892dd1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a358f3f88d1fa9e41620170d76a806f93}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!download\-U\-R\-L@{download\-U\-R\-L}}
+\index{download\-U\-R\-L@{download\-U\-R\-L}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{download\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::download\-U\-R\-L (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url, }
+\item[{Q\-String}]{content\-Source\-Url = {\ttfamily QString()}, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0.0,~0.0)}, }
+\item[{const Q\-Size \&}]{p\-Size = {\ttfamily QSize()}, }
+\item[{bool}]{is\-Background = {\ttfamily false}, }
+\item[{bool}]{internal\-Data = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a358f3f88d1fa9e41620170d76a806f93}
+
+
+Definition at line 1034 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d62/class_u_b_board_controller_a358f3f88d1fa9e41620170d76a806f93_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a358f3f88d1fa9e41620170d76a806f93_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_abae2655269e06f72767de71b8513f6be}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!duplicate\-Item@{duplicate\-Item}}
+\index{duplicate\-Item@{duplicate\-Item}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{duplicate\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Item} $\ast$ U\-B\-Board\-Controller\-::duplicate\-Item (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{item, }
+\item[{bool}]{b\-Async = {\ttfamily true}, }
+\item[{{\bf e\-Item\-Action\-Type}}]{action\-Type = {\ttfamily {\bf e\-Item\-Action\-Type\-\_\-\-Default}}}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_abae2655269e06f72767de71b8513f6be}
+
+
+Definition at line 557 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_abae2655269e06f72767de71b8513f6be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_abae2655269e06f72767de71b8513f6be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ae84d5e3160402f05efcf708a8b81ba36}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!duplicate\-Scene@{duplicate\-Scene}}
+\index{duplicate\-Scene@{duplicate\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{duplicate\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::duplicate\-Scene (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_ae84d5e3160402f05efcf708a8b81ba36}
+
+
+Definition at line 532 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ae84d5e3160402f05efcf708a8b81ba36_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_af1a84b94fde6cc9e91d9f60723e70a00}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!duplicate\-Scene@{duplicate\-Scene}}
+\index{duplicate\-Scene@{duplicate\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{duplicate\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::duplicate\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_af1a84b94fde6cc9e91d9f60723e70a00}
+
+
+Definition at line 550 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af1a84b94fde6cc9e91d9f60723e70a00_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a621157f18b63e9a4c2ac3e815277db4a}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!expand\-Widget\-To\-Temp\-Dir@{expand\-Widget\-To\-Temp\-Dir}}
+\index{expand\-Widget\-To\-Temp\-Dir@{expand\-Widget\-To\-Temp\-Dir}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{expand\-Widget\-To\-Temp\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Url U\-B\-Board\-Controller\-::expand\-Widget\-To\-Temp\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-Byte\-Array \&}]{p\-Ziped\-Data, }
+\item[{const Q\-String \&}]{p\-Extension = {\ttfamily QString(\char`\"{}wgt\char`\"{})}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d7/d62/class_u_b_board_controller_a621157f18b63e9a4c2ac3e815277db4a}
+
+
+Definition at line 2201 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a621157f18b63e9a4c2ac3e815277db4a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a621157f18b63e9a4c2ac3e815277db4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a92730653a91693d5d1e6b626a0e0cf4d}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!first\-Scene@{first\-Scene}}
+\index{first\-Scene@{first\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{first\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::first\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a92730653a91693d5d1e6b626a0e0cf4d}
+
+
+Definition at line 975 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a92730653a91693d5d1e6b626a0e0cf4d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a92730653a91693d5d1e6b626a0e0cf4d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a3e83388ec403a3bec62277e1b1a0144f}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!freeze\-W3\-C\-Widget@{freeze\-W3\-C\-Widget}}
+\index{freeze\-W3\-C\-Widget@{freeze\-W3\-C\-Widget}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{freeze\-W3\-C\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::freeze\-W3\-C\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item, }
+\item[{bool}]{freeze}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a3e83388ec403a3bec62277e1b1a0144f}
+
+
+Definition at line 2669 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a3e83388ec403a3bec62277e1b1a0144f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d62/class_u_b_board_controller_a3e83388ec403a3bec62277e1b1a0144f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a4e526bf1704cc013539413d792c65d6a}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!freeze\-W3\-C\-Widgets@{freeze\-W3\-C\-Widgets}}
+\index{freeze\-W3\-C\-Widgets@{freeze\-W3\-C\-Widgets}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{freeze\-W3\-C\-Widgets}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::freeze\-W3\-C\-Widgets (
+\begin{DoxyParamCaption}
+\item[{bool}]{freeze}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a4e526bf1704cc013539413d792c65d6a}
+
+
+Definition at line 2648 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a4e526bf1704cc013539413d792c65d6a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a4e526bf1704cc013539413d792c65d6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a497f046a815b6a08d8c791f574836593}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!grab\-Scene@{grab\-Scene}}
+\index{grab\-Scene@{grab\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{grab\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::grab\-Scene (
+\begin{DoxyParamCaption}
+\item[{const Q\-Rect\-F \&}]{p\-Scene\-Rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a497f046a815b6a08d8c791f574836593}
+
+
+Definition at line 2229 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a497f046a815b6a08d8c791f574836593_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a497f046a815b6a08d8c791f574836593_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a97432044e27c3063f8e46bcb31d75d65}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!group\-Button\-Clicked@{group\-Button\-Clicked}}
+\index{group\-Button\-Clicked@{group\-Button\-Clicked}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{group\-Button\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::group\-Button\-Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a97432044e27c3063f8e46bcb31d75d65}
+
+
+Definition at line 1004 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a97432044e27c3063f8e46bcb31d75d65_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a97432044e27c3063f8e46bcb31d75d65_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a313ec9c04c62913c305ac521ae649467}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!hand\-Scroll@{hand\-Scroll}}
+\index{hand\-Scroll@{hand\-Scroll}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{hand\-Scroll}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::hand\-Scroll (
+\begin{DoxyParamCaption}
+\item[{qreal}]{dx, }
+\item[{qreal}]{dy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a313ec9c04c62913c305ac521ae649467}
+
+
+Definition at line 935 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a313ec9c04c62913c305ac521ae649467_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a313ec9c04c62913c305ac521ae649467_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a67d3bac6634fcd9f78e664d9fc67318a}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!hide@{hide}}
+\index{hide@{hide}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{hide}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::hide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a67d3bac6634fcd9f78e664d9fc67318a}
+
+
+Definition at line 2021 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a67d3bac6634fcd9f78e664d9fc67318a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a71d2fb8834fc701bed0b16bb0f0b5527}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!hide\-Message@{hide\-Message}}
+\index{hide\-Message@{hide\-Message}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{hide\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::hide\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a71d2fb8834fc701bed0b16bb0f0b5527}
+
+
+Definition at line 1866 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a71d2fb8834fc701bed0b16bb0f0b5527_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a71d2fb8834fc701bed0b16bb0f0b5527_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a3c02908763bd2bb49d7006cbf2f1cff8}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!import\-Page@{import\-Page}}
+\index{import\-Page@{import\-Page}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{import\-Page}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::import\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a3c02908763bd2bb49d7006cbf2f1cff8}
+
+
+Definition at line 2624 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a3c02908763bd2bb49d7006cbf2f1cff8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a3c02908763bd2bb49d7006cbf2f1cff8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa728cb7c1b979b2d4ae45638a7386dde}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!init@{init}}
+\index{init@{init}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_aa728cb7c1b979b2d4ae45638a7386dde}
+
+
+Definition at line 134 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d62/class_u_b_board_controller_aa728cb7c1b979b2d4ae45638a7386dde_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa728cb7c1b979b2d4ae45638a7386dde_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aec976e1b66187047b9d96b4887645913}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!init\-Toolbar\-Texts@{init\-Toolbar\-Texts}}
+\index{init\-Toolbar\-Texts@{init\-Toolbar\-Texts}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{init\-Toolbar\-Texts}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::init\-Toolbar\-Texts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d62/class_u_b_board_controller_aec976e1b66187047b9d96b4887645913}
+
+
+Definition at line 406 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d7/d62/class_u_b_board_controller_aec976e1b66187047b9d96b4887645913_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aec976e1b66187047b9d96b4887645913_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa5a7d737c2dcd83fe9d6ab1c897fd5ee}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!last\-Scene@{last\-Scene}}
+\index{last\-Scene@{last\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{last\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::last\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_aa5a7d737c2dcd83fe9d6ab1c897fd5ee}
+
+
+Definition at line 990 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa5a7d737c2dcd83fe9d6ab1c897fd5ee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa5a7d737c2dcd83fe9d6ab1c897fd5ee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ac3931443ad31a01a8a1ef701746bb7cf}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!marker\-Color\-On\-Dark\-Background@{marker\-Color\-On\-Dark\-Background}}
+\index{marker\-Color\-On\-Dark\-Background@{marker\-Color\-On\-Dark\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{marker\-Color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Board\-Controller\-::marker\-Color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_ac3931443ad31a01a8a1ef701746bb7cf}
+
+
+Definition at line 140 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ac3931443ad31a01a8a1ef701746bb7cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a047505072685535f82ba22bb0cac4f51}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!marker\-Color\-On\-Light\-Background@{marker\-Color\-On\-Light\-Background}}
+\index{marker\-Color\-On\-Light\-Background@{marker\-Color\-On\-Light\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{marker\-Color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Board\-Controller\-::marker\-Color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a047505072685535f82ba22bb0cac4f51}
+
+
+Definition at line 145 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a047505072685535f82ba22bb0cac4f51_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_af713d6e325369af244f2af8c90299a35}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!move\-Graphics\-Widget\-To\-Control\-View@{move\-Graphics\-Widget\-To\-Control\-View}}
+\index{move\-Graphics\-Widget\-To\-Control\-View@{move\-Graphics\-Widget\-To\-Control\-View}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{move\-Graphics\-Widget\-To\-Control\-View}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::move\-Graphics\-Widget\-To\-Control\-View (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Widget\-Item} $\ast$}]{graphic\-Widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_af713d6e325369af244f2af8c90299a35}
+
+
+Definition at line 2550 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af713d6e325369af244f2af8c90299a35_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af713d6e325369af244f2af8c90299a35_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa7a87412c99f4e2c12b23468d946296e}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!move\-Scene\-To\-Index@{move\-Scene\-To\-Index}}
+\index{move\-Scene\-To\-Index@{move\-Scene\-To\-Index}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{move\-Scene\-To\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::move\-Scene\-To\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{source, }
+\item[{int}]{target}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_aa7a87412c99f4e2c12b23468d946296e}
+
+
+Definition at line 1708 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa7a87412c99f4e2c12b23468d946296e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_af122a3bb14b0ef66b169be9fd0e5a2b3}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!move\-Tool\-Widget\-To\-Scene@{move\-Tool\-Widget\-To\-Scene}}
+\index{move\-Tool\-Widget\-To\-Scene@{move\-Tool\-Widget\-To\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{move\-Tool\-Widget\-To\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::move\-Tool\-Widget\-To\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Tool\-Widget} $\ast$}]{tool\-Widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_af122a3bb14b0ef66b169be9fd0e5a2b3}
+
+
+Definition at line 2572 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af122a3bb14b0ef66b169be9fd0e5a2b3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af122a3bb14b0ef66b169be9fd0e5a2b3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ab3972f04b8dd9459ac45397447dda7f7}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!new\-Page\-Added@{new\-Page\-Added}}
+\index{new\-Page\-Added@{new\-Page\-Added}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{new\-Page\-Added}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::new\-Page\-Added (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_ab3972f04b8dd9459ac45397447dda7f7}
+\hypertarget{class_u_b_board_controller_ab5d4e87dcef6ff72e804f6cb5a26a8f3}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!next\-Scene@{next\-Scene}}
+\index{next\-Scene@{next\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{next\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::next\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ab5d4e87dcef6ff72e804f6cb5a26a8f3}
+
+
+Definition at line 960 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab5d4e87dcef6ff72e804f6cb5a26a8f3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab5d4e87dcef6ff72e804f6cb5a26a8f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a7b946d72f2a3e569f7493e0435d9d357}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!notify\-Cache@{notify\-Cache}}
+\index{notify\-Cache@{notify\-Cache}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{notify\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::notify\-Cache (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a7b946d72f2a3e569f7493e0435d9d357}
+
+
+Definition at line 2129 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d7/d62/class_u_b_board_controller_a7b946d72f2a3e569f7493e0435d9d357_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7b946d72f2a3e569f7493e0435d9d357_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa9e16958970296eccadc60d0dbdf6b7d}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!notify\-Page\-Changed@{notify\-Page\-Changed}}
+\index{notify\-Page\-Changed@{notify\-Page\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{notify\-Page\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::notify\-Page\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_aa9e16958970296eccadc60d0dbdf6b7d}
+
+
+Definition at line 2633 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d7/d62/class_u_b_board_controller_aa9e16958970296eccadc60d0dbdf6b7d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa9e16958970296eccadc60d0dbdf6b7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a3e3d5b9ac6e4806b2bd843ba1d5919fe}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!npapi\-Widget\-Created@{npapi\-Widget\-Created}}
+\index{npapi\-Widget\-Created@{npapi\-Widget\-Created}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{npapi\-Widget\-Created}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::npapi\-Widget\-Created (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{Url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a3e3d5b9ac6e4806b2bd843ba1d5919fe}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a3e3d5b9ac6e4806b2bd843ba1d5919fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aa19e0faf07ab9cebd4d4dbf30bc074a3}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!page\-Changed@{page\-Changed}}
+\index{page\-Changed@{page\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{page\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::page\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_aa19e0faf07ab9cebd4d4dbf30bc074a3}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aa19e0faf07ab9cebd4d4dbf30bc074a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a5f23d849d22a50ade6d1da830b181def}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!page\-Selection\-Changed@{page\-Selection\-Changed}}
+\index{page\-Selection\-Changed@{page\-Selection\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{page\-Selection\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::page\-Selection\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a5f23d849d22a50ade6d1da830b181def}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a5f23d849d22a50ade6d1da830b181def_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a536e1388e74f79a2120d0e585b862033}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!palette\-Manager@{palette\-Manager}}
+\index{palette\-Manager@{palette\-Manager}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{palette\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Board\-Palette\-Manager}$\ast$ U\-B\-Board\-Controller\-::palette\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a536e1388e74f79a2120d0e585b862033}
+
+
+Definition at line 162 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a536e1388e74f79a2120d0e585b862033_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a68518a98107e994551da0a4e3a79fe2c}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!paste@{paste}}
+\index{paste@{paste}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{paste}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::paste (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a68518a98107e994551da0a4e3a79fe2c}
+
+
+Definition at line 2417 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a68518a98107e994551da0a4e3a79fe2c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d7/d62/class_u_b_board_controller_a68518a98107e994551da0a4e3a79fe2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a762afc02398aec4c9136e00984cc3120}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!pen\-Color\-Changed@{pen\-Color\-Changed}}
+\index{pen\-Color\-Changed@{pen\-Color\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{pen\-Color\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::pen\-Color\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a762afc02398aec4c9136e00984cc3120}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a762afc02398aec4c9136e00984cc3120_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0b3be9ba94add4b515d0e65ca113f494}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!pen\-Color\-On\-Dark\-Background@{pen\-Color\-On\-Dark\-Background}}
+\index{pen\-Color\-On\-Dark\-Background@{pen\-Color\-On\-Dark\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{pen\-Color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Board\-Controller\-::pen\-Color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a0b3be9ba94add4b515d0e65ca113f494}
+
+
+Definition at line 130 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0b3be9ba94add4b515d0e65ca113f494_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a224eaea32f547c4cc802efffe22f1ec1}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!pen\-Color\-On\-Light\-Background@{pen\-Color\-On\-Light\-Background}}
+\index{pen\-Color\-On\-Light\-Background@{pen\-Color\-On\-Light\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{pen\-Color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Board\-Controller\-::pen\-Color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a224eaea32f547c4cc802efffe22f1ec1}
+
+
+Definition at line 135 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a224eaea32f547c4cc802efffe22f1ec1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a12b23dc20db7b2e2014911c5785ba1bc}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!persist\-Current\-Scene@{persist\-Current\-Scene}}
+\index{persist\-Current\-Scene@{persist\-Current\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{persist\-Current\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::persist\-Current\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Proxy = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a12b23dc20db7b2e2014911c5785ba1bc}
+
+
+Definition at line 2031 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a12b23dc20db7b2e2014911c5785ba1bc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a12b23dc20db7b2e2014911c5785ba1bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_aeef919027b89d95c392a7e0fe5a6444d}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!previous\-Scene@{previous\-Scene}}
+\index{previous\-Scene@{previous\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{previous\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::previous\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_aeef919027b89d95c392a7e0fe5a6444d}
+
+
+Definition at line 945 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aeef919027b89d95c392a7e0fe5a6444d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_aeef919027b89d95c392a7e0fe5a6444d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a07e50010567075b570140d6143c516f5}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!process\-Mime\-Data@{process\-Mime\-Data}}
+\index{process\-Mime\-Data@{process\-Mime\-Data}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{process\-Mime\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::process\-Mime\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-Mime\-Data $\ast$}]{p\-Mime\-Data, }
+\item[{const Q\-Point\-F \&}]{p\-Pos, }
+\item[{{\bf e\-Item\-Action\-Type}}]{action\-Type = {\ttfamily {\bf e\-Item\-Action\-Type\-\_\-\-Default}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a07e50010567075b570140d6143c516f5}
+
+
+Definition at line 2427 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a07e50010567075b570140d6143c516f5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a07e50010567075b570140d6143c516f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0702e13749c6107a18719f8a23502928}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!regenerate\-Thumbnails@{regenerate\-Thumbnails}}
+\index{regenerate\-Thumbnails@{regenerate\-Thumbnails}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{regenerate\-Thumbnails}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::regenerate\-Thumbnails (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a0702e13749c6107a18719f8a23502928}
+
+
+Definition at line 770 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0702e13749c6107a18719f8a23502928_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0702e13749c6107a18719f8a23502928_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ad6d191224e83ac7c1d9b1631824a185b}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!remove\-Tool@{remove\-Tool}}
+\index{remove\-Tool@{remove\-Tool}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{remove\-Tool}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::remove\-Tool (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Tool\-Widget} $\ast$}]{tool\-Widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ad6d191224e83ac7c1d9b1631824a185b}
+
+
+Definition at line 2014 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ad6d191224e83ac7c1d9b1631824a185b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a96fa840e0f2d01ea6d87c5123fba3985}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!selection\-Changed@{selection\-Changed}}
+\index{selection\-Changed@{selection\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{selection\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::selection\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a96fa840e0f2d01ea6d87c5123fba3985}
+
+
+Definition at line 1879 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a96fa840e0f2d01ea6d87c5123fba3985_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a96fa840e0f2d01ea6d87c5123fba3985_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a6a1f06f9fecbba81ab58d813faae3fb0}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Active\-Document\-Scene@{set\-Active\-Document\-Scene}}
+\index{set\-Active\-Document\-Scene@{set\-Active\-Document\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Active\-Document\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Active\-Document\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{p\-Scene\-Index = {\ttfamily 0}, }
+\item[{bool}]{force\-Reload = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a6a1f06f9fecbba81ab58d813faae3fb0}
+
+
+Definition at line 1646 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6a1f06f9fecbba81ab58d813faae3fb0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6a1f06f9fecbba81ab58d813faae3fb0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_afac505a5ca6669f6708427d914fb9b08}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Active\-Document\-Scene@{set\-Active\-Document\-Scene}}
+\index{set\-Active\-Document\-Scene@{set\-Active\-Document\-Scene}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Active\-Document\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Active\-Document\-Scene (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Scene\-Index}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_afac505a5ca6669f6708427d914fb9b08}
+
+
+Definition at line 1641 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_afac505a5ca6669f6708427d914fb9b08_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a864584d68dba2181af3e9e0ea6d639a2}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Boxing@{set\-Boxing}}
+\index{set\-Boxing@{set\-Boxing}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Boxing}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Boxing (
+\begin{DoxyParamCaption}
+\item[{Q\-Rect}]{display\-Rect}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a864584d68dba2181af3e9e0ea6d639a2}
+
+
+Definition at line 224 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a864584d68dba2181af3e9e0ea6d639a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a7d9d265f0f98e913898c06bf897dbf2f}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Color\-Index@{set\-Color\-Index}}
+\index{set\-Color\-Index@{set\-Color\-Index}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Color\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Color\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Color\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a7d9d265f0f98e913898c06bf897dbf2f}
+
+
+Definition at line 1958 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7d9d265f0f98e913898c06bf897dbf2f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a7d9d265f0f98e913898c06bf897dbf2f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_af6251367977a32a2b20beac0a63a711f}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Disabled@{set\-Disabled}}
+\index{set\-Disabled@{set\-Disabled}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Disabled}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Disabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{disable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_af6251367977a32a2b20beac0a63a711f}
+
+
+Definition at line 1872 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_af6251367977a32a2b20beac0a63a711f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0a0b45a4e32d982fe7c66e9fb336852e}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Document\-Navigator@{set\-Document\-Navigator}}
+\index{set\-Document\-Navigator@{set\-Document\-Navigator}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Document\-Navigator}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Document\-Navigator (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Navigator} $\ast$}]{navigator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a0a0b45a4e32d982fe7c66e9fb336852e}
+
+
+Definition at line 186 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0a0b45a4e32d982fe7c66e9fb336852e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a264406c94811826838a609521566a2f9}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Marker\-Color\-On\-Dark\-Background@{set\-Marker\-Color\-On\-Dark\-Background}}
+\index{set\-Marker\-Color\-On\-Dark\-Background@{set\-Marker\-Color\-On\-Dark\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Marker\-Color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Marker\-Color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{p\-Color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a264406c94811826838a609521566a2f9}
+
+
+Definition at line 120 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a264406c94811826838a609521566a2f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a95927bf1026ebbaf8c8c82b5abd252d3}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Marker\-Color\-On\-Light\-Background@{set\-Marker\-Color\-On\-Light\-Background}}
+\index{set\-Marker\-Color\-On\-Light\-Background@{set\-Marker\-Color\-On\-Light\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Marker\-Color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Marker\-Color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{p\-Color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a95927bf1026ebbaf8c8c82b5abd252d3}
+
+
+Definition at line 125 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a95927bf1026ebbaf8c8c82b5abd252d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ad0826689aa9e177e31aea29fa68eedd9}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Page\-Size@{set\-Page\-Size}}
+\index{set\-Page\-Size@{set\-Page\-Size}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Page\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Page\-Size (
+\begin{DoxyParamCaption}
+\item[{Q\-Size}]{new\-Size}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_ad0826689aa9e177e31aea29fa68eedd9}
+
+
+Definition at line 2112 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ad0826689aa9e177e31aea29fa68eedd9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ad0826689aa9e177e31aea29fa68eedd9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a1f23c4091945cbca291422280c7a4ae9}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Pen\-Color\-On\-Dark\-Background@{set\-Pen\-Color\-On\-Dark\-Background}}
+\index{set\-Pen\-Color\-On\-Dark\-Background@{set\-Pen\-Color\-On\-Dark\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Pen\-Color\-On\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Pen\-Color\-On\-Dark\-Background (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{p\-Color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a1f23c4091945cbca291422280c7a4ae9}
+
+
+Definition at line 102 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a1f23c4091945cbca291422280c7a4ae9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a1f23c4091945cbca291422280c7a4ae9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ae67dbddc09fe4103345391fadfc140f2}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Pen\-Color\-On\-Light\-Background@{set\-Pen\-Color\-On\-Light\-Background}}
+\index{set\-Pen\-Color\-On\-Light\-Background@{set\-Pen\-Color\-On\-Light\-Background}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Pen\-Color\-On\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Pen\-Color\-On\-Light\-Background (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{p\-Color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_ae67dbddc09fe4103345391fadfc140f2}
+
+
+Definition at line 111 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ae67dbddc09fe4103345391fadfc140f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ae67dbddc09fe4103345391fadfc140f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a47026c255a9a91ca35a0c0f92872c41b}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Regular\-Page\-Size@{set\-Regular\-Page\-Size}}
+\index{set\-Regular\-Page\-Size@{set\-Regular\-Page\-Size}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Regular\-Page\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Regular\-Page\-Size (
+\begin{DoxyParamCaption}
+\item[{bool}]{checked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a47026c255a9a91ca35a0c0f92872c41b}
+
+
+Definition at line 2097 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a47026c255a9a91ca35a0c0f92872c41b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a74de125b601b757c507440e4ef31a982}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Toolbar\-Texts@{set\-Toolbar\-Texts}}
+\index{set\-Toolbar\-Texts@{set\-Toolbar\-Texts}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Toolbar\-Texts}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Toolbar\-Texts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a74de125b601b757c507440e4ef31a982}
+
+
+Definition at line 425 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a74de125b601b757c507440e4ef31a982_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ad363554dfb70642a295c4b002f396ec5}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Tool\-Cursor@{set\-Tool\-Cursor}}
+\index{set\-Tool\-Cursor@{set\-Tool\-Cursor}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Tool\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Tool\-Cursor (
+\begin{DoxyParamCaption}
+\item[{int}]{tool}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ad363554dfb70642a295c4b002f396ec5}
+
+
+Definition at line 363 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ad363554dfb70642a295c4b002f396ec5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ad363554dfb70642a295c4b002f396ec5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a6d2e9c5462d58eaddbe0ee3f70661053}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!setup\-Layout@{setup\-Layout}}
+\index{setup\-Layout@{setup\-Layout}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{setup\-Layout}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::setup\-Layout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a6d2e9c5462d58eaddbe0ee3f70661053}
+
+
+Definition at line 217 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d7/d62/class_u_b_board_controller_a6d2e9c5462d58eaddbe0ee3f70661053_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6d2e9c5462d58eaddbe0ee3f70661053_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a6761e02604fb3aa8ecbfc5fd4a5d87f3}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!setup\-Toolbar@{setup\-Toolbar}}
+\index{setup\-Toolbar@{setup\-Toolbar}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{setup\-Toolbar}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::setup\-Toolbar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d62/class_u_b_board_controller_a6761e02604fb3aa8ecbfc5fd4a5d87f3}
+
+
+Definition at line 278 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6761e02604fb3aa8ecbfc5fd4a5d87f3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6761e02604fb3aa8ecbfc5fd4a5d87f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a50a3a56de6549d3c324468d3ede35137}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!setup\-Views@{setup\-Views}}
+\index{setup\-Views@{setup\-Views}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{setup\-Views}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::setup\-Views (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d62/class_u_b_board_controller_a50a3a56de6549d3c324468d3ede35137}
+
+
+Definition at line 180 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a50a3a56de6549d3c324468d3ede35137_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a50a3a56de6549d3c324468d3ede35137_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a8ba21cf9f9bcd0680e90a67964bc75f2}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!set\-Wide\-Page\-Size@{set\-Wide\-Page\-Size}}
+\index{set\-Wide\-Page\-Size@{set\-Wide\-Page\-Size}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{set\-Wide\-Page\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::set\-Wide\-Page\-Size (
+\begin{DoxyParamCaption}
+\item[{bool}]{checked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a8ba21cf9f9bcd0680e90a67964bc75f2}
+
+
+Definition at line 2082 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a8ba21cf9f9bcd0680e90a67964bc75f2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a4d5e22da0b52e04622837b0c1280e67b}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!show@{show}}
+\index{show@{show}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a4d5e22da0b52e04622837b0c1280e67b}
+
+
+Definition at line 2026 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a4d5e22da0b52e04622837b0c1280e67b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_afdb0ce0373651a6351e3af1ad35c6cb5}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!show\-Documents\-Dialog@{show\-Documents\-Dialog}}
+\index{show\-Documents\-Dialog@{show\-Documents\-Dialog}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{show\-Documents\-Dialog}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::show\-Documents\-Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_afdb0ce0373651a6351e3af1ad35c6cb5}
+
+
+Definition at line 815 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_afdb0ce0373651a6351e3af1ad35c6cb5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_afe5b00725eb8f522892c0730f2ef0e08}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!show\-Keyboard@{show\-Keyboard}}
+\index{show\-Keyboard@{show\-Keyboard}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{show\-Keyboard}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::show\-Keyboard (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_afe5b00725eb8f522892c0730f2ef0e08}
+
+
+Definition at line 838 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_afe5b00725eb8f522892c0730f2ef0e08_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_afe5b00725eb8f522892c0730f2ef0e08_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a71ff510e4ce1e3a753f074a0e7438a00}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!show\-Message@{show\-Message}}
+\index{show\-Message@{show\-Message}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{show\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::show\-Message (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{message, }
+\item[{bool}]{show\-Spinning\-Wheel = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a71ff510e4ce1e3a753f074a0e7438a00}
+
+
+Definition at line 1860 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a71ff510e4ce1e3a753f074a0e7438a00_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a71ff510e4ce1e3a753f074a0e7438a00_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0ae6fe2506cad8ba50128db6d1afe117}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!show\-New\-Version\-Available@{show\-New\-Version\-Available}}
+\index{show\-New\-Version\-Available@{show\-New\-Version\-Available}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{show\-New\-Version\-Available}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::show\-New\-Version\-Available (
+\begin{DoxyParamCaption}
+\item[{bool}]{automatic, }
+\item[{const {\bf U\-B\-Version} \&}]{installed\-Version, }
+\item[{const U\-B\-Software\-Update \&}]{software\-Update}
+\end{DoxyParamCaption}
+)}}\label{d7/d62/class_u_b_board_controller_a0ae6fe2506cad8ba50128db6d1afe117}
+\hypertarget{class_u_b_board_controller_a19e197f121e0ed3e0204e7d528dc6307}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!start\-Script@{start\-Script}}
+\index{start\-Script@{start\-Script}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{start\-Script}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::start\-Script (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a19e197f121e0ed3e0204e7d528dc6307}
+
+
+Definition at line 396 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a19e197f121e0ed3e0204e7d528dc6307_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a19e197f121e0ed3e0204e7d528dc6307_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ab9ade242e787595dd2dbafdf3b3329a5}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!stop\-Script@{stop\-Script}}
+\index{stop\-Script@{stop\-Script}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{stop\-Script}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::stop\-Script (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ab9ade242e787595dd2dbafdf3b3329a5}
+
+
+Definition at line 401 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab9ade242e787595dd2dbafdf3b3329a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab9ade242e787595dd2dbafdf3b3329a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ab46e478b8096354cf99816a1565a3b8e}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!stylus\-Tool\-Changed@{stylus\-Tool\-Changed}}
+\index{stylus\-Tool\-Changed@{stylus\-Tool\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{stylus\-Tool\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::stylus\-Tool\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{tool}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ab46e478b8096354cf99816a1565a3b8e}
+
+
+Definition at line 2185 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab46e478b8096354cf99816a1565a3b8e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ab46e478b8096354cf99816a1565a3b8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a6f46e3fe2ffde7ca74f50f175504c229}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!system\-Scale\-Factor@{system\-Scale\-Factor}}
+\index{system\-Scale\-Factor@{system\-Scale\-Factor}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{system\-Scale\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Board\-Controller\-::system\-Scale\-Factor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d7/d62/class_u_b_board_controller_a6f46e3fe2ffde7ca74f50f175504c229}
+
+
+Definition at line 150 of file U\-B\-Board\-Controller.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6f46e3fe2ffde7ca74f50f175504c229_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a696505e51a5a2c14cfaaffc2f2be590d}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!system\-Scale\-Factor\-Changed@{system\-Scale\-Factor\-Changed}}
+\index{system\-Scale\-Factor\-Changed@{system\-Scale\-Factor\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{system\-Scale\-Factor\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::system\-Scale\-Factor\-Changed (
+\begin{DoxyParamCaption}
+\item[{qreal}]{p\-System\-Scale\-Factor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a696505e51a5a2c14cfaaffc2f2be590d}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a696505e51a5a2c14cfaaffc2f2be590d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a6171228fc58d8afaff61bd3ba06103ca}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!toggle\-Podcast@{toggle\-Podcast}}
+\index{toggle\-Podcast@{toggle\-Podcast}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{toggle\-Podcast}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::toggle\-Podcast (
+\begin{DoxyParamCaption}
+\item[{bool}]{checked}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a6171228fc58d8afaff61bd3ba06103ca}
+
+
+Definition at line 2544 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6171228fc58d8afaff61bd3ba06103ca_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a2ba318b0464e00a842624ffde7c6d716}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!truncate@{truncate}}
+\index{truncate@{truncate}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{truncate}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Board\-Controller\-::truncate (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{text, }
+\item[{int}]{max\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d62/class_u_b_board_controller_a2ba318b0464e00a842624ffde7c6d716}
+
+
+Definition at line 455 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a2ba318b0464e00a842624ffde7c6d716_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0b4c8939c4b301f523681164e8abf803}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!undo\-Redo\-State\-Change@{undo\-Redo\-State\-Change}}
+\index{undo\-Redo\-State\-Change@{undo\-Redo\-State\-Change}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{undo\-Redo\-State\-Change}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::undo\-Redo\-State\-Change (
+\begin{DoxyParamCaption}
+\item[{bool}]{can\-Undo}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a0b4c8939c4b301f523681164e8abf803}
+
+
+Definition at line 1886 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0b4c8939c4b301f523681164e8abf803_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0b4c8939c4b301f523681164e8abf803_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ae66e1ff40cb166c699ce25bfa893012e}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!update\-Action\-States@{update\-Action\-States}}
+\index{update\-Action\-States@{update\-Action\-States}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{update\-Action\-States}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::update\-Action\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d62/class_u_b_board_controller_ae66e1ff40cb166c699ce25bfa893012e}
+
+
+Definition at line 1897 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ae66e1ff40cb166c699ce25bfa893012e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ae66e1ff40cb166c699ce25bfa893012e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a6dd49077c4806bcddb8339961424bfce}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!update\-System\-Scale\-Factor@{update\-System\-Scale\-Factor}}
+\index{update\-System\-Scale\-Factor@{update\-System\-Scale\-Factor}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{update\-System\-Scale\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::update\-System\-Scale\-Factor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d7/d62/class_u_b_board_controller_a6dd49077c4806bcddb8339961424bfce}
+
+
+Definition at line 2043 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6dd49077c4806bcddb8339961424bfce_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a6dd49077c4806bcddb8339961424bfce_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_ade5522bea3f3045a0da1dda6853b3cce}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!zoom@{zoom}}
+\index{zoom@{zoom}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{zoom}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::zoom (
+\begin{DoxyParamCaption}
+\item[{const qreal}]{ratio, }
+\item[{Q\-Point\-F}]{scene\-Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_ade5522bea3f3045a0da1dda6853b3cce}
+
+
+Definition at line 905 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ade5522bea3f3045a0da1dda6853b3cce_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_ade5522bea3f3045a0da1dda6853b3cce_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a916c350732ef05c8693d82a6192042da}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!zoom\-Changed@{zoom\-Changed}}
+\index{zoom\-Changed@{zoom\-Changed}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{zoom\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::zoom\-Changed (
+\begin{DoxyParamCaption}
+\item[{qreal}]{p\-Zoom\-Factor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d7/d62/class_u_b_board_controller_a916c350732ef05c8693d82a6192042da}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a916c350732ef05c8693d82a6192042da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a8ba0b7e674be504d0547c6ce94a92a4b}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!zoom\-In@{zoom\-In}}
+\index{zoom\-In@{zoom\-In}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{zoom\-In}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::zoom\-In (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{scene\-Point = {\ttfamily QPointF(0,0)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a8ba0b7e674be504d0547c6ce94a92a4b}
+
+
+Definition at line 846 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a8ba0b7e674be504d0547c6ce94a92a4b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a8ba0b7e674be504d0547c6ce94a92a4b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_adb10d5b0dbccf7ccb1b92f8840ad3621}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!zoom\-Out@{zoom\-Out}}
+\index{zoom\-Out@{zoom\-Out}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{zoom\-Out}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::zoom\-Out (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{scene\-Point = {\ttfamily QPointF(0,0)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_adb10d5b0dbccf7ccb1b92f8840ad3621}
+
+
+Definition at line 857 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_adb10d5b0dbccf7ccb1b92f8840ad3621_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_adb10d5b0dbccf7ccb1b92f8840ad3621_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_controller_a0df0eca517bd4e5754f49ce1395ec1b1}{\index{U\-B\-Board\-Controller@{U\-B\-Board\-Controller}!zoom\-Restore@{zoom\-Restore}}
+\index{zoom\-Restore@{zoom\-Restore}!UBBoardController@{U\-B\-Board\-Controller}}
+\subsubsection[{zoom\-Restore}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-Controller\-::zoom\-Restore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d7/d62/class_u_b_board_controller_a0df0eca517bd4e5754f49ce1395ec1b1}
+
+
+Definition at line 872 of file U\-B\-Board\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0df0eca517bd4e5754f49ce1395ec1b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d62/class_u_b_board_controller_a0df0eca517bd4e5754f49ce1395ec1b1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_board_controller_8h}{U\-B\-Board\-Controller.\-h}\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_board_controller_8cpp}{U\-B\-Board\-Controller.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,752 @@
+\hypertarget{class_u_b_abstract_draw_ruler}{\section{U\-B\-Abstract\-Draw\-Ruler Class Reference}
+\label{d0/de1/class_u_b_abstract_draw_ruler}\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Abstract\-Draw\-Ruler.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Abstract\-Draw\-Ruler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{da/d8d/class_u_b_abstract_draw_ruler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Abstract\-Draw\-Ruler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d62/class_u_b_abstract_draw_ruler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_abstract_draw_ruler_a4115b2260e92b3da0529278ef89a1560}{hidden} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_abstract_draw_ruler_a6f99fdef144a55e29b3778c5c15b58ee}{U\-B\-Abstract\-Draw\-Ruler} ()
+\item 
+\hyperlink{class_u_b_abstract_draw_ruler_abd3dfbb73b6f654fd12dfabbf4efdf02}{$\sim$\-U\-B\-Abstract\-Draw\-Ruler} ()
+\item 
+void \hyperlink{class_u_b_abstract_draw_ruler_a24501e936a1663e81603fad843d9745d}{create} (Q\-Graphics\-Item \&item)
+\item 
+virtual void \hyperlink{class_u_b_abstract_draw_ruler_a62b7651d1eed188e2160343d078a837c}{Start\-Line} (const Q\-Point\-F \&position, qreal width)
+\item 
+virtual void \hyperlink{class_u_b_abstract_draw_ruler_a1995cacf2e94402170f4e094f3d752cc}{Draw\-Line} (const Q\-Point\-F \&position, qreal width)
+\item 
+virtual void \hyperlink{class_u_b_abstract_draw_ruler_a8e1a28d6c4c93785ca2cee613ce04435}{End\-Line} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_abstract_draw_ruler_ad8f49aa56a8dc14fb727f64f718a2ea2}{paint} ()
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_abstract_draw_ruler_a1b2bb6a8be6859a02c890d110d4be888}{scene} () const =0
+\item 
+virtual void \hyperlink{class_u_b_abstract_draw_ruler_a2669a909cd1260a392fef3606daa11be}{rotate\-Around\-Center} (qreal angle)=0
+\item 
+virtual Q\-Point\-F \hyperlink{class_u_b_abstract_draw_ruler_a718ca9bb91acddcb77982ed343eb6703}{rotation\-Center} () const =0
+\item 
+virtual Q\-Rect\-F \hyperlink{class_u_b_abstract_draw_ruler_a5398312ddd84af7dc66e18b4cb37a3fa}{close\-Button\-Rect} () const =0
+\item 
+virtual void \hyperlink{class_u_b_abstract_draw_ruler_a7d5c1375ce4433c8abbe4b0e7781d065}{paint\-Graduations} (Q\-Painter $\ast$painter)=0
+\item 
+Q\-Cursor \hyperlink{class_u_b_abstract_draw_ruler_a939bc34552522d258e2b7fd62bc44b8e}{move\-Cursor} () const 
+\item 
+Q\-Cursor \hyperlink{class_u_b_abstract_draw_ruler_a9ccae35c7d0e3b26f817ed62097ce75f}{rotate\-Cursor} () const 
+\item 
+Q\-Cursor \hyperlink{class_u_b_abstract_draw_ruler_aebc94db267320062fde4a3e2deaa781b}{close\-Cursor} () const 
+\item 
+Q\-Cursor \hyperlink{class_u_b_abstract_draw_ruler_add025983828cc0c47fb21046397a0f7c}{draw\-Ruler\-Line\-Cursor} () const 
+\item 
+Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_af1700f03c5581a7619a96eb90fcc9709}{draw\-Color} () const 
+\item 
+Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_a36041ae344dcd157fb3b96f8ade6bdc5}{middle\-Fill\-Color} () const 
+\item 
+Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_a5e31d81ff314da040fbdb744ebad5473}{edge\-Fill\-Color} () const 
+\item 
+Q\-Font \hyperlink{class_u_b_abstract_draw_ruler_aa2d644906d0527ecd64ef9d8aceed6c4}{font} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_u_b_abstract_draw_ruler_a46299ed6a2cf838fdfc9e5927a0b4d4b}{m\-Show\-Buttons}
+\item 
+Q\-Graphics\-Svg\-Item $\ast$ \hyperlink{class_u_b_abstract_draw_ruler_a72b3fd06a1ed5dd3facd96ba93639398}{m\-Close\-Svg\-Item}
+\item 
+qreal \hyperlink{class_u_b_abstract_draw_ruler_a92f48d4cf11861335075d27f297bdb44}{m\-Anti\-Scale\-Ratio}
+\item 
+Q\-Point\-F \hyperlink{class_u_b_abstract_draw_ruler_a70a96710815722c56698ba48197bf996}{start\-Draw\-Position}
+\item 
+int \hyperlink{class_u_b_abstract_draw_ruler_a55740bf0a8ca5f716c90287e721fbe89}{s\-Pixels\-Per\-Millimeter}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_a23289fe8e275562b9abb4f3264cbfb40}{s\-Light\-Background\-Edge\-Fill\-Color} = Q\-Color(0xc3, 0xc3, 0xc3, s\-Fill\-Transparency)
+\item 
+static const Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_ad4dcc64c13c7d491f73fbe26d3fee521}{s\-Light\-Background\-Middle\-Fill\-Color} = Q\-Color(0x72, 0x72, 0x72, s\-Fill\-Transparency)
+\item 
+static const Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_a9d7a6e8677dc8ea83707b7af2d2879d9}{s\-Light\-Background\-Draw\-Color} = Q\-Color(0x33, 0x33, 0x33, s\-Draw\-Transparency)
+\item 
+static const Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_a9542dab0821f8763d97963476d8e16c5}{s\-Dark\-Background\-Edge\-Fill\-Color} = Q\-Color(0xdd, 0xdd, 0xdd, s\-Fill\-Transparency)
+\item 
+static const Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_ab274e7ca2eeb2e2f2947af8d920c9389}{s\-Dark\-Background\-Middle\-Fill\-Color} = Q\-Color(0xb5, 0xb5, 0xb5, s\-Fill\-Transparency)
+\item 
+static const Q\-Color \hyperlink{class_u_b_abstract_draw_ruler_a45fe34ca6300be3f91ec904a97985f8a}{s\-Dark\-Background\-Draw\-Color} = Q\-Color(0xff, 0xff, 0xff, s\-Draw\-Transparency)
+\item 
+static const int \hyperlink{class_u_b_abstract_draw_ruler_a7462cd58ac10ab7911361ac63dd8cc81}{s\-Left\-Edge\-Margin} = 10
+\item 
+static const int \hyperlink{class_u_b_abstract_draw_ruler_a68d7e7147ed55b3a197d2fa90a30b84c}{s\-Degree\-To\-Qt\-Angle\-Unit} = 16
+\item 
+static const int \hyperlink{class_u_b_abstract_draw_ruler_ac6fa2ca97290e4240571b0986de855cc}{s\-Rotation\-Radius} = 15
+\item 
+static const int \hyperlink{class_u_b_abstract_draw_ruler_ac1c6c55d78cb6754791f657a8de5ef7e}{s\-Fill\-Transparency} = 127
+\item 
+static const int \hyperlink{class_u_b_abstract_draw_ruler_a052023f4bc0064aa6b1cf72f4e8b1b87}{s\-Draw\-Transparency} = 192
+\item 
+static const int \hyperlink{class_u_b_abstract_draw_ruler_af6ab3c413950b0276b304a289116728e}{s\-Rounding\-Radius} = \hyperlink{class_u_b_abstract_draw_ruler_a7462cd58ac10ab7911361ac63dd8cc81}{s\-Left\-Edge\-Margin} / 2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_abstract_draw_ruler_a6f99fdef144a55e29b3778c5c15b58ee}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}}
+\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{U\-B\-Abstract\-Draw\-Ruler}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Abstract\-Draw\-Ruler\-::\-U\-B\-Abstract\-Draw\-Ruler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/de1/class_u_b_abstract_draw_ruler_a6f99fdef144a55e29b3778c5c15b58ee}
+
+
+Definition at line 51 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+\hypertarget{class_u_b_abstract_draw_ruler_abd3dfbb73b6f654fd12dfabbf4efdf02}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!$\sim$\-U\-B\-Abstract\-Draw\-Ruler@{$\sim$\-U\-B\-Abstract\-Draw\-Ruler}}
+\index{$\sim$\-U\-B\-Abstract\-Draw\-Ruler@{$\sim$\-U\-B\-Abstract\-Draw\-Ruler}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{$\sim$\-U\-B\-Abstract\-Draw\-Ruler}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Abstract\-Draw\-Ruler\-::$\sim$\-U\-B\-Abstract\-Draw\-Ruler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/de1/class_u_b_abstract_draw_ruler_abd3dfbb73b6f654fd12dfabbf4efdf02}
+
+
+Definition at line 76 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_abstract_draw_ruler_a5398312ddd84af7dc66e18b4cb37a3fa}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!close\-Button\-Rect@{close\-Button\-Rect}}
+\index{close\-Button\-Rect@{close\-Button\-Rect}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{close\-Button\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-Rect\-F U\-B\-Abstract\-Draw\-Ruler\-::close\-Button\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a5398312ddd84af7dc66e18b4cb37a3fa}
+
+
+Implemented in \hyperlink{class_u_b_graphics_triangle_a77e4143cf4dc0227f54cad19396cf5de}{U\-B\-Graphics\-Triangle}, and \hyperlink{class_u_b_graphics_aristo_a0920748116645fa3f2e7f369c9ca005e}{U\-B\-Graphics\-Aristo}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a5398312ddd84af7dc66e18b4cb37a3fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_aebc94db267320062fde4a3e2deaa781b}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!close\-Cursor@{close\-Cursor}}
+\index{close\-Cursor@{close\-Cursor}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{close\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Cursor U\-B\-Abstract\-Draw\-Ruler\-::close\-Cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_aebc94db267320062fde4a3e2deaa781b}
+
+
+Definition at line 90 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_aebc94db267320062fde4a3e2deaa781b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a24501e936a1663e81603fad843d9745d}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!create@{create}}
+\index{create@{create}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Draw\-Ruler\-::create (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{d0/de1/class_u_b_abstract_draw_ruler_a24501e936a1663e81603fad843d9745d}
+
+
+Definition at line 62 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a24501e936a1663e81603fad843d9745d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_af1700f03c5581a7619a96eb90fcc9709}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!draw\-Color@{draw\-Color}}
+\index{draw\-Color@{draw\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{draw\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::draw\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_af1700f03c5581a7619a96eb90fcc9709}
+
+
+Definition at line 100 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_af1700f03c5581a7619a96eb90fcc9709_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_af1700f03c5581a7619a96eb90fcc9709_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a1995cacf2e94402170f4e094f3d752cc}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!Draw\-Line@{Draw\-Line}}
+\index{Draw\-Line@{Draw\-Line}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{Draw\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Draw\-Ruler\-::\-Draw\-Line (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{position, }
+\item[{qreal}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a1995cacf2e94402170f4e094f3d752cc}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_aristo_a005f6581c02f86e19b1117d2ab9505d8}{U\-B\-Graphics\-Aristo}, \hyperlink{class_u_b_graphics_triangle_a00729819ed21c63155795ad1fdf5a1ba}{U\-B\-Graphics\-Triangle}, and \hyperlink{class_u_b_graphics_ruler_abd518dbf4a5fc6b4351ab0441920f27f}{U\-B\-Graphics\-Ruler}.
+
+
+
+Definition at line 127 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a1995cacf2e94402170f4e094f3d752cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_add025983828cc0c47fb21046397a0f7c}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!draw\-Ruler\-Line\-Cursor@{draw\-Ruler\-Line\-Cursor}}
+\index{draw\-Ruler\-Line\-Cursor@{draw\-Ruler\-Line\-Cursor}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{draw\-Ruler\-Line\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Cursor U\-B\-Abstract\-Draw\-Ruler\-::draw\-Ruler\-Line\-Cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_add025983828cc0c47fb21046397a0f7c}
+
+
+Definition at line 95 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_add025983828cc0c47fb21046397a0f7c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_add025983828cc0c47fb21046397a0f7c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a5e31d81ff314da040fbdb744ebad5473}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!edge\-Fill\-Color@{edge\-Fill\-Color}}
+\index{edge\-Fill\-Color@{edge\-Fill\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{edge\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::edge\-Fill\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a5e31d81ff314da040fbdb744ebad5473}
+
+
+Definition at line 110 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a5e31d81ff314da040fbdb744ebad5473_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d0/de1/class_u_b_abstract_draw_ruler_a5e31d81ff314da040fbdb744ebad5473_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a8e1a28d6c4c93785ca2cee613ce04435}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!End\-Line@{End\-Line}}
+\index{End\-Line@{End\-Line}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{End\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Draw\-Ruler\-::\-End\-Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a8e1a28d6c4c93785ca2cee613ce04435}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_aristo_ab747dfce4445d9a9b060d38d71729527}{U\-B\-Graphics\-Aristo}, \hyperlink{class_u_b_graphics_triangle_a99305717e50b989a64568f07b8aab7bd}{U\-B\-Graphics\-Triangle}, and \hyperlink{class_u_b_graphics_ruler_ae42d5fdd24a3e7d98a80b8d2f973b35e}{U\-B\-Graphics\-Ruler}.
+
+
+
+Definition at line 132 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+\hypertarget{class_u_b_abstract_draw_ruler_aa2d644906d0527ecd64ef9d8aceed6c4}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!font@{font}}
+\index{font@{font}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{font}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Font U\-B\-Abstract\-Draw\-Ruler\-::font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_aa2d644906d0527ecd64ef9d8aceed6c4}
+
+
+Definition at line 115 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_aa2d644906d0527ecd64ef9d8aceed6c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a4115b2260e92b3da0529278ef89a1560}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!hidden@{hidden}}
+\index{hidden@{hidden}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{hidden}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Draw\-Ruler\-::hidden (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a4115b2260e92b3da0529278ef89a1560}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a4115b2260e92b3da0529278ef89a1560_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a36041ae344dcd157fb3b96f8ade6bdc5}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!middle\-Fill\-Color@{middle\-Fill\-Color}}
+\index{middle\-Fill\-Color@{middle\-Fill\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{middle\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::middle\-Fill\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a36041ae344dcd157fb3b96f8ade6bdc5}
+
+
+Definition at line 105 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a36041ae344dcd157fb3b96f8ade6bdc5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d0/de1/class_u_b_abstract_draw_ruler_a36041ae344dcd157fb3b96f8ade6bdc5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a939bc34552522d258e2b7fd62bc44b8e}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!move\-Cursor@{move\-Cursor}}
+\index{move\-Cursor@{move\-Cursor}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{move\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Cursor U\-B\-Abstract\-Draw\-Ruler\-::move\-Cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a939bc34552522d258e2b7fd62bc44b8e}
+
+
+Definition at line 80 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a939bc34552522d258e2b7fd62bc44b8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_ad8f49aa56a8dc14fb727f64f718a2ea2}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!paint@{paint}}
+\index{paint@{paint}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Draw\-Ruler\-::paint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_ad8f49aa56a8dc14fb727f64f718a2ea2}
+
+
+Definition at line 136 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d0/de1/class_u_b_abstract_draw_ruler_ad8f49aa56a8dc14fb727f64f718a2ea2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_ad8f49aa56a8dc14fb727f64f718a2ea2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a7d5c1375ce4433c8abbe4b0e7781d065}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!paint\-Graduations@{paint\-Graduations}}
+\index{paint\-Graduations@{paint\-Graduations}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{paint\-Graduations}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Draw\-Ruler\-::paint\-Graduations (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a7d5c1375ce4433c8abbe4b0e7781d065}
+
+
+Implemented in \hyperlink{class_u_b_graphics_triangle_a69e92a960b5217519da8bdabf15a8ab8}{U\-B\-Graphics\-Triangle}, \hyperlink{class_u_b_graphics_protractor_a8d379cb46950fbe841fd0092e8f25681}{U\-B\-Graphics\-Protractor}, and \hyperlink{class_u_b_graphics_ruler_a36aa663c026b7ceac1c2b7c3f643ac76}{U\-B\-Graphics\-Ruler}.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a2669a909cd1260a392fef3606daa11be}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!rotate\-Around\-Center@{rotate\-Around\-Center}}
+\index{rotate\-Around\-Center@{rotate\-Around\-Center}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{rotate\-Around\-Center}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Draw\-Ruler\-::rotate\-Around\-Center (
+\begin{DoxyParamCaption}
+\item[{qreal}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a2669a909cd1260a392fef3606daa11be}
+
+
+Implemented in \hyperlink{class_u_b_graphics_triangle_a38e19f6246c3c232351336071972a6be}{U\-B\-Graphics\-Triangle}, and \hyperlink{class_u_b_graphics_aristo_a775e8bff5ff03371f9b6b1769277245e}{U\-B\-Graphics\-Aristo}.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a9ccae35c7d0e3b26f817ed62097ce75f}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!rotate\-Cursor@{rotate\-Cursor}}
+\index{rotate\-Cursor@{rotate\-Cursor}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{rotate\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Cursor U\-B\-Abstract\-Draw\-Ruler\-::rotate\-Cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a9ccae35c7d0e3b26f817ed62097ce75f}
+
+
+Definition at line 85 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a9ccae35c7d0e3b26f817ed62097ce75f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a9ccae35c7d0e3b26f817ed62097ce75f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a718ca9bb91acddcb77982ed343eb6703}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!rotation\-Center@{rotation\-Center}}
+\index{rotation\-Center@{rotation\-Center}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{rotation\-Center}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-Point\-F U\-B\-Abstract\-Draw\-Ruler\-::rotation\-Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a718ca9bb91acddcb77982ed343eb6703}
+
+
+Implemented in \hyperlink{class_u_b_graphics_triangle_a5b16d87a6956152ef68dc904b4cdfff2}{U\-B\-Graphics\-Triangle}, and \hyperlink{class_u_b_graphics_aristo_a2d6e4e79ddf6fa78100f0faf9fa04c4f}{U\-B\-Graphics\-Aristo}.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a1b2bb6a8be6859a02c890d110d4be888}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!scene@{scene}}
+\index{scene@{scene}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf U\-B\-Graphics\-Scene}$\ast$ U\-B\-Abstract\-Draw\-Ruler\-::scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a1b2bb6a8be6859a02c890d110d4be888}
+
+
+Implemented in \hyperlink{class_u_b_graphics_triangle_a22bdd0bbf8e372cc2d1a1f83285c1250}{U\-B\-Graphics\-Triangle}, and \hyperlink{class_u_b_graphics_aristo_ae53a96ef8f69832958f5bd8ee1af7def}{U\-B\-Graphics\-Aristo}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a1b2bb6a8be6859a02c890d110d4be888_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_draw_ruler_a62b7651d1eed188e2160343d078a837c}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!Start\-Line@{Start\-Line}}
+\index{Start\-Line@{Start\-Line}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{Start\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Draw\-Ruler\-::\-Start\-Line (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{position, }
+\item[{qreal}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a62b7651d1eed188e2160343d078a837c}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_aristo_a6c1672fb375f65509b15f964ea5b709e}{U\-B\-Graphics\-Aristo}, \hyperlink{class_u_b_graphics_triangle_abe0cc44d86ce8bc6351d18e2d823dfaa}{U\-B\-Graphics\-Triangle}, and \hyperlink{class_u_b_graphics_ruler_a8be968219769cc2fa025bbdf50c044d6}{U\-B\-Graphics\-Ruler}.
+
+
+
+Definition at line 122 of file U\-B\-Abstract\-Draw\-Ruler.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/de1/class_u_b_abstract_draw_ruler_a62b7651d1eed188e2160343d078a837c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_abstract_draw_ruler_a92f48d4cf11861335075d27f297bdb44}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!m\-Anti\-Scale\-Ratio@{m\-Anti\-Scale\-Ratio}}
+\index{m\-Anti\-Scale\-Ratio@{m\-Anti\-Scale\-Ratio}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{m\-Anti\-Scale\-Ratio}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Abstract\-Draw\-Ruler\-::m\-Anti\-Scale\-Ratio\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a92f48d4cf11861335075d27f297bdb44}
+
+
+Definition at line 64 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a72b3fd06a1ed5dd3facd96ba93639398}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!m\-Close\-Svg\-Item@{m\-Close\-Svg\-Item}}
+\index{m\-Close\-Svg\-Item@{m\-Close\-Svg\-Item}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{m\-Close\-Svg\-Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Svg\-Item$\ast$ U\-B\-Abstract\-Draw\-Ruler\-::m\-Close\-Svg\-Item\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a72b3fd06a1ed5dd3facd96ba93639398}
+
+
+Definition at line 63 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a46299ed6a2cf838fdfc9e5927a0b4d4b}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!m\-Show\-Buttons@{m\-Show\-Buttons}}
+\index{m\-Show\-Buttons@{m\-Show\-Buttons}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{m\-Show\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Abstract\-Draw\-Ruler\-::m\-Show\-Buttons\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a46299ed6a2cf838fdfc9e5927a0b4d4b}
+
+
+Definition at line 62 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a45fe34ca6300be3f91ec904a97985f8a}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Dark\-Background\-Draw\-Color@{s\-Dark\-Background\-Draw\-Color}}
+\index{s\-Dark\-Background\-Draw\-Color@{s\-Dark\-Background\-Draw\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Dark\-Background\-Draw\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::s\-Dark\-Background\-Draw\-Color = Q\-Color(0xff, 0xff, 0xff, s\-Draw\-Transparency)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a45fe34ca6300be3f91ec904a97985f8a}
+
+
+Definition at line 83 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a9542dab0821f8763d97963476d8e16c5}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Dark\-Background\-Edge\-Fill\-Color@{s\-Dark\-Background\-Edge\-Fill\-Color}}
+\index{s\-Dark\-Background\-Edge\-Fill\-Color@{s\-Dark\-Background\-Edge\-Fill\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Dark\-Background\-Edge\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::s\-Dark\-Background\-Edge\-Fill\-Color = Q\-Color(0xdd, 0xdd, 0xdd, s\-Fill\-Transparency)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a9542dab0821f8763d97963476d8e16c5}
+
+
+Definition at line 81 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_ab274e7ca2eeb2e2f2947af8d920c9389}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Dark\-Background\-Middle\-Fill\-Color@{s\-Dark\-Background\-Middle\-Fill\-Color}}
+\index{s\-Dark\-Background\-Middle\-Fill\-Color@{s\-Dark\-Background\-Middle\-Fill\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Dark\-Background\-Middle\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::s\-Dark\-Background\-Middle\-Fill\-Color = Q\-Color(0xb5, 0xb5, 0xb5, s\-Fill\-Transparency)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_ab274e7ca2eeb2e2f2947af8d920c9389}
+
+
+Definition at line 82 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a68d7e7147ed55b3a197d2fa90a30b84c}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Degree\-To\-Qt\-Angle\-Unit@{s\-Degree\-To\-Qt\-Angle\-Unit}}
+\index{s\-Degree\-To\-Qt\-Angle\-Unit@{s\-Degree\-To\-Qt\-Angle\-Unit}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Degree\-To\-Qt\-Angle\-Unit}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Abstract\-Draw\-Ruler\-::s\-Degree\-To\-Qt\-Angle\-Unit = 16\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a68d7e7147ed55b3a197d2fa90a30b84c}
+
+
+Definition at line 86 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a052023f4bc0064aa6b1cf72f4e8b1b87}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Draw\-Transparency@{s\-Draw\-Transparency}}
+\index{s\-Draw\-Transparency@{s\-Draw\-Transparency}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Draw\-Transparency}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Abstract\-Draw\-Ruler\-::s\-Draw\-Transparency = 192\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a052023f4bc0064aa6b1cf72f4e8b1b87}
+
+
+Definition at line 89 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_ac1c6c55d78cb6754791f657a8de5ef7e}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Fill\-Transparency@{s\-Fill\-Transparency}}
+\index{s\-Fill\-Transparency@{s\-Fill\-Transparency}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Fill\-Transparency}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Abstract\-Draw\-Ruler\-::s\-Fill\-Transparency = 127\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_ac1c6c55d78cb6754791f657a8de5ef7e}
+
+
+Definition at line 88 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a7462cd58ac10ab7911361ac63dd8cc81}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Left\-Edge\-Margin@{s\-Left\-Edge\-Margin}}
+\index{s\-Left\-Edge\-Margin@{s\-Left\-Edge\-Margin}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Left\-Edge\-Margin}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Abstract\-Draw\-Ruler\-::s\-Left\-Edge\-Margin = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a7462cd58ac10ab7911361ac63dd8cc81}
+
+
+Definition at line 85 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a9d7a6e8677dc8ea83707b7af2d2879d9}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Light\-Background\-Draw\-Color@{s\-Light\-Background\-Draw\-Color}}
+\index{s\-Light\-Background\-Draw\-Color@{s\-Light\-Background\-Draw\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Light\-Background\-Draw\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::s\-Light\-Background\-Draw\-Color = Q\-Color(0x33, 0x33, 0x33, s\-Draw\-Transparency)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a9d7a6e8677dc8ea83707b7af2d2879d9}
+
+
+Definition at line 80 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a23289fe8e275562b9abb4f3264cbfb40}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Light\-Background\-Edge\-Fill\-Color@{s\-Light\-Background\-Edge\-Fill\-Color}}
+\index{s\-Light\-Background\-Edge\-Fill\-Color@{s\-Light\-Background\-Edge\-Fill\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Light\-Background\-Edge\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::s\-Light\-Background\-Edge\-Fill\-Color = Q\-Color(0xc3, 0xc3, 0xc3, s\-Fill\-Transparency)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a23289fe8e275562b9abb4f3264cbfb40}
+
+
+Definition at line 78 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_ad4dcc64c13c7d491f73fbe26d3fee521}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Light\-Background\-Middle\-Fill\-Color@{s\-Light\-Background\-Middle\-Fill\-Color}}
+\index{s\-Light\-Background\-Middle\-Fill\-Color@{s\-Light\-Background\-Middle\-Fill\-Color}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Light\-Background\-Middle\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Color U\-B\-Abstract\-Draw\-Ruler\-::s\-Light\-Background\-Middle\-Fill\-Color = Q\-Color(0x72, 0x72, 0x72, s\-Fill\-Transparency)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_ad4dcc64c13c7d491f73fbe26d3fee521}
+
+
+Definition at line 79 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a55740bf0a8ca5f716c90287e721fbe89}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Pixels\-Per\-Millimeter@{s\-Pixels\-Per\-Millimeter}}
+\index{s\-Pixels\-Per\-Millimeter@{s\-Pixels\-Per\-Millimeter}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Pixels\-Per\-Millimeter}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Abstract\-Draw\-Ruler\-::s\-Pixels\-Per\-Millimeter\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a55740bf0a8ca5f716c90287e721fbe89}
+
+
+Definition at line 91 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_ac6fa2ca97290e4240571b0986de855cc}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Rotation\-Radius@{s\-Rotation\-Radius}}
+\index{s\-Rotation\-Radius@{s\-Rotation\-Radius}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Rotation\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Abstract\-Draw\-Ruler\-::s\-Rotation\-Radius = 15\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_ac6fa2ca97290e4240571b0986de855cc}
+
+
+Definition at line 87 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_af6ab3c413950b0276b304a289116728e}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!s\-Rounding\-Radius@{s\-Rounding\-Radius}}
+\index{s\-Rounding\-Radius@{s\-Rounding\-Radius}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{s\-Rounding\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Abstract\-Draw\-Ruler\-::s\-Rounding\-Radius = {\bf s\-Left\-Edge\-Margin} / 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_af6ab3c413950b0276b304a289116728e}
+
+
+Definition at line 90 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+\hypertarget{class_u_b_abstract_draw_ruler_a70a96710815722c56698ba48197bf996}{\index{U\-B\-Abstract\-Draw\-Ruler@{U\-B\-Abstract\-Draw\-Ruler}!start\-Draw\-Position@{start\-Draw\-Position}}
+\index{start\-Draw\-Position@{start\-Draw\-Position}!UBAbstractDrawRuler@{U\-B\-Abstract\-Draw\-Ruler}}
+\subsubsection[{start\-Draw\-Position}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point\-F U\-B\-Abstract\-Draw\-Ruler\-::start\-Draw\-Position\hspace{0.3cm}{\ttfamily [protected]}}}\label{d0/de1/class_u_b_abstract_draw_ruler_a70a96710815722c56698ba48197bf996}
+
+
+Definition at line 66 of file U\-B\-Abstract\-Draw\-Ruler.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_abstract_draw_ruler_8h}{U\-B\-Abstract\-Draw\-Ruler.\-h}\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_abstract_draw_ruler_8cpp}{U\-B\-Abstract\-Draw\-Ruler.\-cpp}\end{DoxyCompactItemize}

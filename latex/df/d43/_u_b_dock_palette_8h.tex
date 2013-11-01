@@ -1,0 +1,143 @@
+\hypertarget{_u_b_dock_palette_8h}{\section{Sankore-\/3.1/src/gui/\-U\-B\-Dock\-Palette.h File Reference}
+\label{df/d43/_u_b_dock_palette_8h}\index{Sankore-\/3.\-1/src/gui/\-U\-B\-Dock\-Palette.\-h@{Sankore-\/3.\-1/src/gui/\-U\-B\-Dock\-Palette.\-h}}
+}
+{\ttfamily \#include $<$Q\-Widget$>$}\\*
+{\ttfamily \#include $<$Q\-Mouse\-Event$>$}\\*
+{\ttfamily \#include $<$Q\-Brush$>$}\\*
+{\ttfamily \#include $<$Q\-Paint\-Event$>$}\\*
+{\ttfamily \#include $<$Q\-Resize\-Event$>$}\\*
+{\ttfamily \#include $<$Q\-Event$>$}\\*
+{\ttfamily \#include $<$Q\-Time$>$}\\*
+{\ttfamily \#include $<$Q\-Point$>$}\\*
+{\ttfamily \#include $<$Q\-Pixmap$>$}\\*
+{\ttfamily \#include $<$Q\-Map$>$}\\*
+{\ttfamily \#include $<$Q\-Stacked\-Widget$>$}\\*
+{\ttfamily \#include $<$Q\-V\-Box\-Layout$>$}\\*
+{\ttfamily \#include $<$Q\-Vector$>$}\\*
+{\ttfamily \#include \char`\"{}U\-B\-Dock\-Palette\-Widget.\-h\char`\"{}}\\*
+Include dependency graph for U\-B\-Dock\-Palette.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d28/_u_b_dock_palette_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d01/_u_b_dock_palette_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_u_b_tab_dock_palette}{U\-B\-Tab\-Dock\-Palette}
+\item 
+class \hyperlink{class_u_b_dock_palette}{U\-B\-Dock\-Palette}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_u_b_dock_palette_8h_a6511bfd47ae935d09420c07d0ae15af9}{T\-A\-B\-S\-I\-Z\-E}~50
+\item 
+\#define \hyperlink{_u_b_dock_palette_8h_a1ed9f298793e154bad871f210b9c6f50}{C\-L\-I\-C\-K\-T\-I\-M\-E}~1000000
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4}{e\-U\-B\-Dock\-Orientation} \{ \hyperlink{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4a6779010d54409be4efb075cd5591c521}{e\-U\-B\-Dock\-Orientation\-\_\-\-Left}, 
+\hyperlink{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ace411e818c68d642c35034220ac4707f}{e\-U\-B\-Dock\-Orientation\-\_\-\-Right}, 
+\hyperlink{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ac3d208f523e7877a22a417208b67e84c}{e\-U\-B\-Dock\-Orientation\-\_\-\-Top}, 
+\hyperlink{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ae798ed938379506b3aa4192615fa77de}{e\-U\-B\-Dock\-Orientation\-\_\-\-Bottom}
+ \}
+\begin{DoxyCompactList}\small\item\em The dock positions. \end{DoxyCompactList}\item 
+enum \hyperlink{_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87}{e\-U\-B\-Dock\-Tab\-Orientation} \{ \hyperlink{_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87a34ec637194df293da11659e7bb1969b9}{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Up}, 
+\hyperlink{_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87a363c2def8c15c7d3f1ead42d2dc06701}{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Down}
+ \}
+\item 
+enum \hyperlink{_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053}{e\-U\-B\-Dock\-Palette\-Type} \{ \hyperlink{_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053a2e16a75a7d470665686f64084f073cd5}{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-L\-E\-F\-T}, 
+\hyperlink{_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053aa98c653b6e47ec71a2035e501ad516db}{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-R\-I\-G\-H\-T}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_u_b_dock_palette_8h_a1ed9f298793e154bad871f210b9c6f50}{\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!C\-L\-I\-C\-K\-T\-I\-M\-E@{C\-L\-I\-C\-K\-T\-I\-M\-E}}
+\index{C\-L\-I\-C\-K\-T\-I\-M\-E@{C\-L\-I\-C\-K\-T\-I\-M\-E}!UBDockPalette.h@{U\-B\-Dock\-Palette.\-h}}
+\subsubsection[{C\-L\-I\-C\-K\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-L\-I\-C\-K\-T\-I\-M\-E~1000000}}\label{df/d43/_u_b_dock_palette_8h_a1ed9f298793e154bad871f210b9c6f50}
+
+
+Definition at line 46 of file U\-B\-Dock\-Palette.\-h.
+
+\hypertarget{_u_b_dock_palette_8h_a6511bfd47ae935d09420c07d0ae15af9}{\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!T\-A\-B\-S\-I\-Z\-E@{T\-A\-B\-S\-I\-Z\-E}}
+\index{T\-A\-B\-S\-I\-Z\-E@{T\-A\-B\-S\-I\-Z\-E}!UBDockPalette.h@{U\-B\-Dock\-Palette.\-h}}
+\subsubsection[{T\-A\-B\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-B\-S\-I\-Z\-E~50}}\label{df/d43/_u_b_dock_palette_8h_a6511bfd47ae935d09420c07d0ae15af9}
+
+
+Definition at line 45 of file U\-B\-Dock\-Palette.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4}{\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Orientation@{e\-U\-B\-Dock\-Orientation}}
+\index{e\-U\-B\-Dock\-Orientation@{e\-U\-B\-Dock\-Orientation}!UBDockPalette.h@{U\-B\-Dock\-Palette.\-h}}
+\subsubsection[{e\-U\-B\-Dock\-Orientation}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-U\-B\-Dock\-Orientation}}}\label{df/d43/_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4}
+
+
+The dock positions. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{e\-U\-B\-Dock\-Orientation\-\_\-\-Left@{e\-U\-B\-Dock\-Orientation\-\_\-\-Left}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Orientation\-\_\-\-Left@{e\-U\-B\-Dock\-Orientation\-\_\-\-Left}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4a6779010d54409be4efb075cd5591c521}{e\-U\-B\-Dock\-Orientation\-\_\-\-Left}\label{df/d43/_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4a6779010d54409be4efb075cd5591c521}
+}]\index{e\-U\-B\-Dock\-Orientation\-\_\-\-Right@{e\-U\-B\-Dock\-Orientation\-\_\-\-Right}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Orientation\-\_\-\-Right@{e\-U\-B\-Dock\-Orientation\-\_\-\-Right}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ace411e818c68d642c35034220ac4707f}{e\-U\-B\-Dock\-Orientation\-\_\-\-Right}\label{df/d43/_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ace411e818c68d642c35034220ac4707f}
+}]Left dock \index{e\-U\-B\-Dock\-Orientation\-\_\-\-Top@{e\-U\-B\-Dock\-Orientation\-\_\-\-Top}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Orientation\-\_\-\-Top@{e\-U\-B\-Dock\-Orientation\-\_\-\-Top}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ac3d208f523e7877a22a417208b67e84c}{e\-U\-B\-Dock\-Orientation\-\_\-\-Top}\label{df/d43/_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ac3d208f523e7877a22a417208b67e84c}
+}]Right dock \index{e\-U\-B\-Dock\-Orientation\-\_\-\-Bottom@{e\-U\-B\-Dock\-Orientation\-\_\-\-Bottom}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Orientation\-\_\-\-Bottom@{e\-U\-B\-Dock\-Orientation\-\_\-\-Bottom}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ae798ed938379506b3aa4192615fa77de}{e\-U\-B\-Dock\-Orientation\-\_\-\-Bottom}\label{df/d43/_u_b_dock_palette_8h_a697273b91063b41b5f17e942bcc445c4ae798ed938379506b3aa4192615fa77de}
+}]\mbox{[}to be implemented\mbox{]}Top dock \mbox{[}to be implemented\mbox{]}Bottom dock \end{description}
+\end{Desc}
+
+
+
+Definition at line 51 of file U\-B\-Dock\-Palette.\-h.
+
+\hypertarget{_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053}{\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Palette\-Type@{e\-U\-B\-Dock\-Palette\-Type}}
+\index{e\-U\-B\-Dock\-Palette\-Type@{e\-U\-B\-Dock\-Palette\-Type}!UBDockPalette.h@{U\-B\-Dock\-Palette.\-h}}
+\subsubsection[{e\-U\-B\-Dock\-Palette\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-U\-B\-Dock\-Palette\-Type}}}\label{df/d43/_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-L\-E\-F\-T@{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-L\-E\-F\-T}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Palette\-Type\-\_\-\-L\-E\-F\-T@{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-L\-E\-F\-T}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053a2e16a75a7d470665686f64084f073cd5}{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-L\-E\-F\-T}\label{df/d43/_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053a2e16a75a7d470665686f64084f073cd5}
+}]\index{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-R\-I\-G\-H\-T@{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-R\-I\-G\-H\-T}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Palette\-Type\-\_\-\-R\-I\-G\-H\-T@{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-R\-I\-G\-H\-T}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053aa98c653b6e47ec71a2035e501ad516db}{e\-U\-B\-Dock\-Palette\-Type\-\_\-\-R\-I\-G\-H\-T}\label{df/d43/_u_b_dock_palette_8h_a63e99c0675ae955b642f5e77e3070053aa98c653b6e47ec71a2035e501ad516db}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 90 of file U\-B\-Dock\-Palette.\-h.
+
+\hypertarget{_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87}{\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Tab\-Orientation@{e\-U\-B\-Dock\-Tab\-Orientation}}
+\index{e\-U\-B\-Dock\-Tab\-Orientation@{e\-U\-B\-Dock\-Tab\-Orientation}!UBDockPalette.h@{U\-B\-Dock\-Palette.\-h}}
+\subsubsection[{e\-U\-B\-Dock\-Tab\-Orientation}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-U\-B\-Dock\-Tab\-Orientation}}}\label{df/d43/_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Up@{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Up}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Up@{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Up}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87a34ec637194df293da11659e7bb1969b9}{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Up}\label{df/d43/_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87a34ec637194df293da11659e7bb1969b9}
+}]\index{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Down@{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Down}!U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}}\index{U\-B\-Dock\-Palette.\-h@{U\-B\-Dock\-Palette.\-h}!e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Down@{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Down}}\item[{\em 
+\hypertarget{_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87a363c2def8c15c7d3f1ead42d2dc06701}{e\-U\-B\-Dock\-Tab\-Orientation\-\_\-\-Down}\label{df/d43/_u_b_dock_palette_8h_a8417e31f28356d29373f251be2649a87a363c2def8c15c7d3f1ead42d2dc06701}
+}]Up tabs Down tabs \end{description}
+\end{Desc}
+
+
+
+Definition at line 59 of file U\-B\-Dock\-Palette.\-h.
+

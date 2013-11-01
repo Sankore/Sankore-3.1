@@ -1,0 +1,226 @@
+\hypertarget{class_u_b_graphics_item_undo_command}{\section{U\-B\-Graphics\-Item\-Undo\-Command Class Reference}
+\label{d2/df2/class_u_b_graphics_item_undo_command}\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Item\-Undo\-Command.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Item\-Undo\-Command\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{d4/dec/class_u_b_graphics_item_undo_command__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Item\-Undo\-Command\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{db/d48/class_u_b_graphics_item_undo_command__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Q\-Multi\-Map\\*
+$<$ \hyperlink{class_u_b_graphics_group_container_item}{U\-B\-Graphics\-Group\-Container\-Item} \\*
+$\ast$, Q\-Uuid $>$ \hyperlink{class_u_b_graphics_item_undo_command_a4aa053457a498a33bbfef270fbf4608a}{Group\-Data\-Table}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_item_undo_command_a26b802488d780d6ae3866042813ce87a}{U\-B\-Graphics\-Item\-Undo\-Command} (\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$p\-Scene, const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&p\-Removed\-Items, const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&p\-Added\-Items, const \hyperlink{class_u_b_graphics_item_undo_command_a4aa053457a498a33bbfef270fbf4608a}{Group\-Data\-Table} \&groups\-Map=\hyperlink{class_u_b_graphics_item_undo_command_a4aa053457a498a33bbfef270fbf4608a}{Group\-Data\-Table}())
+\item 
+\hyperlink{class_u_b_graphics_item_undo_command_a33921b783afcc94373200089b1d2c414}{U\-B\-Graphics\-Item\-Undo\-Command} (\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$p\-Scene, Q\-Graphics\-Item $\ast$p\-Removed\-Item, Q\-Graphics\-Item $\ast$p\-Added\-Item)
+\item 
+virtual \hyperlink{class_u_b_graphics_item_undo_command_a14b7dd11561d819a18fc1b81c67a76f4}{$\sim$\-U\-B\-Graphics\-Item\-Undo\-Command} ()
+\item 
+Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \hyperlink{class_u_b_graphics_item_undo_command_aacd0354963a00b0d0528588e5eefbd78}{Get\-Added\-List} ()
+\item 
+Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \hyperlink{class_u_b_graphics_item_undo_command_a5d60f1df43ac7f7d785117da9d602ffe}{Get\-Removed\-List} ()
+\item 
+virtual \hyperlink{class_u_b_abstract_undo_command_a85016029bd4ceb03a8247b3c01e2bd97}{Undo\-Type} \hyperlink{class_u_b_graphics_item_undo_command_aa1bbdd494ad151b48edf59dc1c29d42d}{get\-Type} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_undo_command_ad72c268f481bda2170f4b0cafe193bd5}{undo} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_item_undo_command_a85f77fad80b241baaf0c35b98ee7de82}{redo} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file U\-B\-Graphics\-Item\-Undo\-Command.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_u_b_graphics_item_undo_command_a4aa053457a498a33bbfef270fbf4608a}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!Group\-Data\-Table@{Group\-Data\-Table}}
+\index{Group\-Data\-Table@{Group\-Data\-Table}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{Group\-Data\-Table}]{\setlength{\rightskip}{0pt plus 5cm}typedef Q\-Multi\-Map$<${\bf U\-B\-Graphics\-Group\-Container\-Item}$\ast$, Q\-Uuid$>$ {\bf U\-B\-Graphics\-Item\-Undo\-Command\-::\-Group\-Data\-Table}}}\label{d2/df2/class_u_b_graphics_item_undo_command_a4aa053457a498a33bbfef270fbf4608a}
+
+
+Definition at line 38 of file U\-B\-Graphics\-Item\-Undo\-Command.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_item_undo_command_a26b802488d780d6ae3866042813ce87a}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{U\-B\-Graphics\-Item\-Undo\-Command}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Item\-Undo\-Command\-::\-U\-B\-Graphics\-Item\-Undo\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Scene} $\ast$}]{p\-Scene, }
+\item[{const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&}]{p\-Removed\-Items, }
+\item[{const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&}]{p\-Added\-Items, }
+\item[{const {\bf Group\-Data\-Table} \&}]{groups\-Map = {\ttfamily {\bf Group\-Data\-Table}()}}
+\end{DoxyParamCaption}
+)}}\label{d2/df2/class_u_b_graphics_item_undo_command_a26b802488d780d6ae3866042813ce87a}
+
+
+Definition at line 38 of file U\-B\-Graphics\-Item\-Undo\-Command.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/df2/class_u_b_graphics_item_undo_command_a26b802488d780d6ae3866042813ce87a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_undo_command_a33921b783afcc94373200089b1d2c414}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{U\-B\-Graphics\-Item\-Undo\-Command}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Item\-Undo\-Command\-::\-U\-B\-Graphics\-Item\-Undo\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Scene} $\ast$}]{p\-Scene, }
+\item[{Q\-Graphics\-Item $\ast$}]{p\-Removed\-Item, }
+\item[{Q\-Graphics\-Item $\ast$}]{p\-Added\-Item}
+\end{DoxyParamCaption}
+)}}\label{d2/df2/class_u_b_graphics_item_undo_command_a33921b783afcc94373200089b1d2c414}
+
+
+Definition at line 60 of file U\-B\-Graphics\-Item\-Undo\-Command.\-cpp.
+
+\hypertarget{class_u_b_graphics_item_undo_command_a14b7dd11561d819a18fc1b81c67a76f4}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!$\sim$\-U\-B\-Graphics\-Item\-Undo\-Command@{$\sim$\-U\-B\-Graphics\-Item\-Undo\-Command}}
+\index{$\sim$\-U\-B\-Graphics\-Item\-Undo\-Command@{$\sim$\-U\-B\-Graphics\-Item\-Undo\-Command}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Item\-Undo\-Command}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Item\-Undo\-Command\-::$\sim$\-U\-B\-Graphics\-Item\-Undo\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d2/df2/class_u_b_graphics_item_undo_command_a14b7dd11561d819a18fc1b81c67a76f4}
+
+
+Definition at line 79 of file U\-B\-Graphics\-Item\-Undo\-Command.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_item_undo_command_aacd0354963a00b0d0528588e5eefbd78}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!Get\-Added\-List@{Get\-Added\-List}}
+\index{Get\-Added\-List@{Get\-Added\-List}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{Get\-Added\-List}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Set$<$Q\-Graphics\-Item$\ast$$>$ U\-B\-Graphics\-Item\-Undo\-Command\-::\-Get\-Added\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d2/df2/class_u_b_graphics_item_undo_command_aacd0354963a00b0d0528588e5eefbd78}
+
+
+Definition at line 48 of file U\-B\-Graphics\-Item\-Undo\-Command.\-h.
+
+\hypertarget{class_u_b_graphics_item_undo_command_a5d60f1df43ac7f7d785117da9d602ffe}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!Get\-Removed\-List@{Get\-Removed\-List}}
+\index{Get\-Removed\-List@{Get\-Removed\-List}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{Get\-Removed\-List}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Set$<$Q\-Graphics\-Item$\ast$$>$ U\-B\-Graphics\-Item\-Undo\-Command\-::\-Get\-Removed\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d2/df2/class_u_b_graphics_item_undo_command_a5d60f1df43ac7f7d785117da9d602ffe}
+
+
+Definition at line 49 of file U\-B\-Graphics\-Item\-Undo\-Command.\-h.
+
+\hypertarget{class_u_b_graphics_item_undo_command_aa1bbdd494ad151b48edf59dc1c29d42d}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Undo\-Type} U\-B\-Graphics\-Item\-Undo\-Command\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/df2/class_u_b_graphics_item_undo_command_aa1bbdd494ad151b48edf59dc1c29d42d}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_undo_command_aea1857e5425cbb2c14b4ae58bf3b4d9c}{U\-B\-Abstract\-Undo\-Command}.
+
+
+
+Definition at line 51 of file U\-B\-Graphics\-Item\-Undo\-Command.\-h.
+
+\hypertarget{class_u_b_graphics_item_undo_command_a85f77fad80b241baaf0c35b98ee7de82}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!redo@{redo}}
+\index{redo@{redo}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{redo}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Undo\-Command\-::redo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/df2/class_u_b_graphics_item_undo_command_a85f77fad80b241baaf0c35b98ee7de82}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_undo_command_a6de13cf6ae729763431413aa39b78e82}{U\-B\-Abstract\-Undo\-Command}.
+
+
+
+Definition at line 185 of file U\-B\-Graphics\-Item\-Undo\-Command.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/df2/class_u_b_graphics_item_undo_command_a85f77fad80b241baaf0c35b98ee7de82_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_item_undo_command_ad72c268f481bda2170f4b0cafe193bd5}{\index{U\-B\-Graphics\-Item\-Undo\-Command@{U\-B\-Graphics\-Item\-Undo\-Command}!undo@{undo}}
+\index{undo@{undo}!UBGraphicsItemUndoCommand@{U\-B\-Graphics\-Item\-Undo\-Command}}
+\subsubsection[{undo}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Item\-Undo\-Command\-::undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d2/df2/class_u_b_graphics_item_undo_command_ad72c268f481bda2170f4b0cafe193bd5}
+
+
+Reimplemented from \hyperlink{class_u_b_abstract_undo_command_a91cd202e68ba7cc83f8490a6eec15dcc}{U\-B\-Abstract\-Undo\-Command}.
+
+
+
+Definition at line 84 of file U\-B\-Graphics\-Item\-Undo\-Command.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/df2/class_u_b_graphics_item_undo_command_ad72c268f481bda2170f4b0cafe193bd5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_item_undo_command_8h}{U\-B\-Graphics\-Item\-Undo\-Command.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_item_undo_command_8cpp}{U\-B\-Graphics\-Item\-Undo\-Command.\-cpp}\end{DoxyCompactItemize}

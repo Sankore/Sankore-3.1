@@ -1,0 +1,217 @@
+\hypertarget{class_u_b_actionable_widget}{\section{U\-B\-Actionable\-Widget Class Reference}
+\label{da/d07/class_u_b_actionable_widget}\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Actionable\-Widget.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Actionable\-Widget\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{d6/d91/class_u_b_actionable_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Actionable\-Widget\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{d9/d8c/class_u_b_actionable_widget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_actionable_widget_a8c6d3747f77809ba16d13b85c9ed6e67}{close} (Q\-Widget $\ast$w)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_actionable_widget_af32171f29ba03fbdf6029d8f8c16547c}{U\-B\-Actionable\-Widget} (Q\-Widget $\ast$parent=0, const char $\ast$name=\char`\"{}U\-B\-Actionable\-Widget\char`\"{})
+\item 
+\hyperlink{class_u_b_actionable_widget_a5cfc37bf9d674a1e4fee1782a6868622}{$\sim$\-U\-B\-Actionable\-Widget} ()
+\item 
+void \hyperlink{class_u_b_actionable_widget_ae1c1866157c89fbc104e5e8b06a0b5a5}{add\-Action} (\hyperlink{_u_b_actionable_widget_8h_a0fa695ac021b50f72dc2656fd68768a1}{e\-Action} act)
+\item 
+void \hyperlink{class_u_b_actionable_widget_ad700c6071729d5eba632a064a6906fd2}{remove\-Action} (\hyperlink{_u_b_actionable_widget_8h_a0fa695ac021b50f72dc2656fd68768a1}{e\-Action} act)
+\item 
+void \hyperlink{class_u_b_actionable_widget_a70f50d1babe69bd5ed5f48ba8a9c8d03}{remove\-All\-Actions} ()
+\item 
+void \hyperlink{class_u_b_actionable_widget_a1aa5129030acfb692abf6ab0d7f9e53a}{set\-Actions\-Visible} (bool b\-Visible)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_actionable_widget_a87a4cf4ee68b0dde99a050bb3c0b86c7}{set\-Actions\-Parent} (Q\-Widget $\ast$parent)
+\item 
+void \hyperlink{class_u_b_actionable_widget_a702d3b49cd297cad86d84ec7fa618283}{unset\-Actions\-Parent} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Vector$<$ \hyperlink{_u_b_actionable_widget_8h_a0fa695ac021b50f72dc2656fd68768a1}{e\-Action} $>$ \hyperlink{class_u_b_actionable_widget_a007e456e980693b9d6986a7839a88e9d}{m\-Actions}
+\item 
+Q\-Push\-Button \hyperlink{class_u_b_actionable_widget_a38e1cace7d01e5d41830e1c62118d7c3}{m\-Close\-Buttons}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 40 of file U\-B\-Actionable\-Widget.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_actionable_widget_af32171f29ba03fbdf6029d8f8c16547c}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}}
+\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{U\-B\-Actionable\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Actionable\-Widget\-::\-U\-B\-Actionable\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{name = {\ttfamily \char`\"{}UBActionableWidget\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_actionable_widget_af32171f29ba03fbdf6029d8f8c16547c}
+
+
+Definition at line 31 of file U\-B\-Actionable\-Widget.\-cpp.
+
+\hypertarget{class_u_b_actionable_widget_a5cfc37bf9d674a1e4fee1782a6868622}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!$\sim$\-U\-B\-Actionable\-Widget@{$\sim$\-U\-B\-Actionable\-Widget}}
+\index{$\sim$\-U\-B\-Actionable\-Widget@{$\sim$\-U\-B\-Actionable\-Widget}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{$\sim$\-U\-B\-Actionable\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Actionable\-Widget\-::$\sim$\-U\-B\-Actionable\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_actionable_widget_a5cfc37bf9d674a1e4fee1782a6868622}
+
+
+Definition at line 42 of file U\-B\-Actionable\-Widget.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_actionable_widget_ae1c1866157c89fbc104e5e8b06a0b5a5}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!add\-Action@{add\-Action}}
+\index{add\-Action@{add\-Action}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{add\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Actionable\-Widget\-::add\-Action (
+\begin{DoxyParamCaption}
+\item[{{\bf e\-Action}}]{act}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_actionable_widget_ae1c1866157c89fbc104e5e8b06a0b5a5}
+
+
+Definition at line 47 of file U\-B\-Actionable\-Widget.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_actionable_widget_ae1c1866157c89fbc104e5e8b06a0b5a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_actionable_widget_a8c6d3747f77809ba16d13b85c9ed6e67}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!close@{close}}
+\index{close@{close}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Actionable\-Widget\-::close (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{da/d07/class_u_b_actionable_widget_a8c6d3747f77809ba16d13b85c9ed6e67}
+\hypertarget{class_u_b_actionable_widget_ad700c6071729d5eba632a064a6906fd2}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!remove\-Action@{remove\-Action}}
+\index{remove\-Action@{remove\-Action}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{remove\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Actionable\-Widget\-::remove\-Action (
+\begin{DoxyParamCaption}
+\item[{{\bf e\-Action}}]{act}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_actionable_widget_ad700c6071729d5eba632a064a6906fd2}
+
+
+Definition at line 54 of file U\-B\-Actionable\-Widget.\-cpp.
+
+\hypertarget{class_u_b_actionable_widget_a70f50d1babe69bd5ed5f48ba8a9c8d03}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!remove\-All\-Actions@{remove\-All\-Actions}}
+\index{remove\-All\-Actions@{remove\-All\-Actions}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{remove\-All\-Actions}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Actionable\-Widget\-::remove\-All\-Actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_actionable_widget_a70f50d1babe69bd5ed5f48ba8a9c8d03}
+
+
+Definition at line 61 of file U\-B\-Actionable\-Widget.\-cpp.
+
+\hypertarget{class_u_b_actionable_widget_a87a4cf4ee68b0dde99a050bb3c0b86c7}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!set\-Actions\-Parent@{set\-Actions\-Parent}}
+\index{set\-Actions\-Parent@{set\-Actions\-Parent}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{set\-Actions\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Actionable\-Widget\-::set\-Actions\-Parent (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d07/class_u_b_actionable_widget_a87a4cf4ee68b0dde99a050bb3c0b86c7}
+
+
+Definition at line 78 of file U\-B\-Actionable\-Widget.\-cpp.
+
+\hypertarget{class_u_b_actionable_widget_a1aa5129030acfb692abf6ab0d7f9e53a}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!set\-Actions\-Visible@{set\-Actions\-Visible}}
+\index{set\-Actions\-Visible@{set\-Actions\-Visible}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{set\-Actions\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Actionable\-Widget\-::set\-Actions\-Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Visible}
+\end{DoxyParamCaption}
+)}}\label{da/d07/class_u_b_actionable_widget_a1aa5129030acfb692abf6ab0d7f9e53a}
+
+
+Definition at line 66 of file U\-B\-Actionable\-Widget.\-cpp.
+
+\hypertarget{class_u_b_actionable_widget_a702d3b49cd297cad86d84ec7fa618283}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!unset\-Actions\-Parent@{unset\-Actions\-Parent}}
+\index{unset\-Actions\-Parent@{unset\-Actions\-Parent}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{unset\-Actions\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Actionable\-Widget\-::unset\-Actions\-Parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d07/class_u_b_actionable_widget_a702d3b49cd297cad86d84ec7fa618283}
+
+
+Definition at line 85 of file U\-B\-Actionable\-Widget.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/class_u_b_actionable_widget_a702d3b49cd297cad86d84ec7fa618283_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_actionable_widget_a007e456e980693b9d6986a7839a88e9d}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!m\-Actions@{m\-Actions}}
+\index{m\-Actions@{m\-Actions}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{m\-Actions}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<${\bf e\-Action}$>$ U\-B\-Actionable\-Widget\-::m\-Actions\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d07/class_u_b_actionable_widget_a007e456e980693b9d6986a7839a88e9d}
+
+
+Definition at line 57 of file U\-B\-Actionable\-Widget.\-h.
+
+\hypertarget{class_u_b_actionable_widget_a38e1cace7d01e5d41830e1c62118d7c3}{\index{U\-B\-Actionable\-Widget@{U\-B\-Actionable\-Widget}!m\-Close\-Buttons@{m\-Close\-Buttons}}
+\index{m\-Close\-Buttons@{m\-Close\-Buttons}!UBActionableWidget@{U\-B\-Actionable\-Widget}}
+\subsubsection[{m\-Close\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Push\-Button U\-B\-Actionable\-Widget\-::m\-Close\-Buttons\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d07/class_u_b_actionable_widget_a38e1cace7d01e5d41830e1c62118d7c3}
+
+
+Definition at line 58 of file U\-B\-Actionable\-Widget.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/custom\-Widgets/\hyperlink{_u_b_actionable_widget_8h}{U\-B\-Actionable\-Widget.\-h}\item 
+Sankore-\/3.\-1/src/custom\-Widgets/\hyperlink{_u_b_actionable_widget_8cpp}{U\-B\-Actionable\-Widget.\-cpp}\end{DoxyCompactItemize}

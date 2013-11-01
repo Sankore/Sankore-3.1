@@ -1,0 +1,26 @@
+var class_u_b_features_widget =
+[
+    [ "UBFeaturesWidget", "d5/d85/class_u_b_features_widget.html#a8afc3d83bd8b57f0260c1269f63b435a", null ],
+    [ "~UBFeaturesWidget", "d5/d85/class_u_b_features_widget.html#a7b7505bc48708e471b4b2f308613da51", null ],
+    [ "allowDeleteButton", "d5/d85/class_u_b_features_widget.html#a4f2254cacc5be2dec26bbc1df9d89c64", null ],
+    [ "allowNewFolderButton", "d5/d85/class_u_b_features_widget.html#a7d18f32be65dab4fdb11cb8943285fc9", null ],
+    [ "createBookmark", "d5/d85/class_u_b_features_widget.html#af136c56999bd58253550b801bd878861", null ],
+    [ "createLink", "d5/d85/class_u_b_features_widget.html#ab83c320466c7891343ffa9d08aa2998d", null ],
+    [ "getFeaturesController", "d5/d85/class_u_b_features_widget.html#a946bfb20fe9a568639b4c29d3dfaee13", null ],
+    [ "iconToLeft", "d5/d85/class_u_b_features_widget.html#a8e2f90dca75977d5b03115256b62c833", null ],
+    [ "iconToRight", "d5/d85/class_u_b_features_widget.html#aa050970cbf30675a9af1ee903b3da45f", null ],
+    [ "importFromUrl", "d5/d85/class_u_b_features_widget.html#aab4acbb5fa9d8fba519660c781105d78", null ],
+    [ "importImage", "d5/d85/class_u_b_features_widget.html#a0ea71a693142a8fe1fcb0a4eaa3983ff", null ],
+    [ "scrollbarHorisontalPadding", "d5/d85/class_u_b_features_widget.html#ac6e33c5101c48100ef8a8a656bd8ab66", null ],
+    [ "scrollbarVerticalIndent", "d5/d85/class_u_b_features_widget.html#a6b31ea1dd487ddc29b244471ccd05840", null ],
+    [ "sendFileNameList", "d5/d85/class_u_b_features_widget.html#abbee873a4a34ded00a04ff77b7db1592", null ],
+    [ "switchToBookmarks", "d5/d85/class_u_b_features_widget.html#ab29b9f76dd155474f87953271b8f6bec", null ],
+    [ "switchToElement", "d5/d85/class_u_b_features_widget.html#ac65a2b7772322d14f33465c770cf4d4d", null ],
+    [ "switchToRoot", "d5/d85/class_u_b_features_widget.html#a2c5b07c7999012faa4d9ea7749f35fe5", null ],
+    [ "visibleInMode", "d5/d85/class_u_b_features_widget.html#af22ce8cdddad66f4ef5feab9351858aa", null ],
+    [ "defaultThumbnailSize", "d5/d85/class_u_b_features_widget.html#ac4514a281fca525b14a1f5c2695e7c08", null ],
+    [ "maxThumbnailSize", "d5/d85/class_u_b_features_widget.html#aeaababf494eed37a667f67b4b781014e", null ],
+    [ "minThumbnailSize", "d5/d85/class_u_b_features_widget.html#aea292678d7f53f575fe57cf713aa30a3", null ],
+    [ "objNameFeatureList", "d5/d85/class_u_b_features_widget.html#aeb129068ba72a8bbbf17f36064241be0", null ],
+    [ "objNamePathList", "d5/d85/class_u_b_features_widget.html#aa984f0c0bb6559cce4bb9ae7ebf88b33", null ]
+];

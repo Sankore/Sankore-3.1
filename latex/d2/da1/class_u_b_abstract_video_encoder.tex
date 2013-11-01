@@ -1,0 +1,467 @@
+\hypertarget{class_u_b_abstract_video_encoder}{\section{U\-B\-Abstract\-Video\-Encoder Class Reference}
+\label{d2/da1/class_u_b_abstract_video_encoder}\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Abstract\-Video\-Encoder.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Abstract\-Video\-Encoder\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/daa/class_u_b_abstract_video_encoder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Abstract\-Video\-Encoder\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{d7/d19/class_u_b_abstract_video_encoder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_abstract_video_encoder_aac4ef445610633732ffc74e83450dda4}{encoding\-Status} (const Q\-String \&p\-Status)
+\item 
+void \hyperlink{class_u_b_abstract_video_encoder_aa4e03edd2cb73ad5ccb94daa23268b54}{encoding\-Finished} (bool ok)
+\item 
+void \hyperlink{class_u_b_abstract_video_encoder_a314566aa45510979eda49b487fd0113c}{audio\-Level\-Changed} (quint8 level)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_abstract_video_encoder_ab9656acba80cfe74980b16dc90423b73}{U\-B\-Abstract\-Video\-Encoder} (Q\-Object $\ast$p\-Parent=0)
+\item 
+virtual \hyperlink{class_u_b_abstract_video_encoder_a33d1abd59a213d0c9ff9776a8478c709}{$\sim$\-U\-B\-Abstract\-Video\-Encoder} ()
+\item 
+virtual bool \hyperlink{class_u_b_abstract_video_encoder_aa56593934a8cf8d04135131db547833e}{start} ()=0
+\item 
+virtual bool \hyperlink{class_u_b_abstract_video_encoder_a801e301615033b92ead75e531edb9c02}{stop} ()=0
+\item 
+virtual bool \hyperlink{class_u_b_abstract_video_encoder_ae871a77aeda9ccb98efeb85db2889446}{pause} ()
+\item 
+virtual bool \hyperlink{class_u_b_abstract_video_encoder_a99dada54baedf71288f70c78dcf6ac1a}{unpause} ()
+\item 
+virtual bool \hyperlink{class_u_b_abstract_video_encoder_a6fdee9e00977574dde3094ad5e536d91}{can\-Pause} ()
+\item 
+virtual void \hyperlink{class_u_b_abstract_video_encoder_ab74514eba01c7b8dcce926934dd6838a}{new\-Pixmap} (const Q\-Image \&p\-Image, long timestamp)=0
+\item 
+virtual void \hyperlink{class_u_b_abstract_video_encoder_a51c1523562454b18ea4066b5a4c805e2}{new\-Chapter} (const Q\-String \&p\-Label, long timestamp)
+\item 
+void \hyperlink{class_u_b_abstract_video_encoder_a6255653005e6a14f455f1948591db794}{set\-Frames\-Per\-Second} (int p\-Fps)
+\item 
+int \hyperlink{class_u_b_abstract_video_encoder_a2188fa51abf5736939cb971c8030f54c}{frames\-Per\-Second} () const 
+\item 
+virtual Q\-String \hyperlink{class_u_b_abstract_video_encoder_a8feffc37810d5b9ee249545028c65cae}{video\-File\-Extension} () const =0
+\item 
+virtual void \hyperlink{class_u_b_abstract_video_encoder_ad818fe4bbe2eca67923e9ddcc6b55950}{set\-Video\-File\-Name} (const Q\-String \&p\-File\-Name)
+\item 
+virtual Q\-String \hyperlink{class_u_b_abstract_video_encoder_ab8322081d835d9045ab9c7cc4845c2a7}{video\-File\-Name} ()
+\item 
+virtual void \hyperlink{class_u_b_abstract_video_encoder_acdac7b3bcec229a6953f85279e833a2a}{set\-Video\-Size} (const Q\-Size \&p\-Size)
+\item 
+virtual Q\-Size \hyperlink{class_u_b_abstract_video_encoder_ab4c34762f756b5779a6befa3c3bdcc47}{video\-Size} () const 
+\item 
+virtual long \hyperlink{class_u_b_abstract_video_encoder_af9ea652bda987ed6874f1a8fc2055cc8}{video\-Bits\-Per\-Second} () const 
+\item 
+virtual void \hyperlink{class_u_b_abstract_video_encoder_abff86ce967d23f7da2c61c01343585cc}{set\-Video\-Bits\-Per\-Second} (long p\-Video\-Bits\-Per\-Second)
+\item 
+virtual Q\-String \hyperlink{class_u_b_abstract_video_encoder_ab3f6d08c89768a4fc724cfd6da53ac16}{last\-Error\-Message} ()=0
+\item 
+virtual void \hyperlink{class_u_b_abstract_video_encoder_a4f9a57a0a7afa22d06b5fef2dbb19c6a}{set\-Audio\-Recording\-Device} (const Q\-String p\-Audio\-Recording\-Device)
+\item 
+virtual Q\-String \hyperlink{class_u_b_abstract_video_encoder_af4bd868b266dbcd3ec158650002598b5}{audio\-Recording\-Device} ()
+\item 
+virtual void \hyperlink{class_u_b_abstract_video_encoder_ab5fae0f75a1993fe478442e0aa9d0c14}{set\-Record\-Audio} (bool p\-Record\-Audio)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_abstract_video_encoder_ab9656acba80cfe74980b16dc90423b73}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}}
+\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{U\-B\-Abstract\-Video\-Encoder}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Abstract\-Video\-Encoder\-::\-U\-B\-Abstract\-Video\-Encoder (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{p\-Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d2/da1/class_u_b_abstract_video_encoder_ab9656acba80cfe74980b16dc90423b73}
+
+
+Definition at line 28 of file U\-B\-Abstract\-Video\-Encoder.\-cpp.
+
+\hypertarget{class_u_b_abstract_video_encoder_a33d1abd59a213d0c9ff9776a8478c709}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!$\sim$\-U\-B\-Abstract\-Video\-Encoder@{$\sim$\-U\-B\-Abstract\-Video\-Encoder}}
+\index{$\sim$\-U\-B\-Abstract\-Video\-Encoder@{$\sim$\-U\-B\-Abstract\-Video\-Encoder}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{$\sim$\-U\-B\-Abstract\-Video\-Encoder}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Abstract\-Video\-Encoder\-::$\sim$\-U\-B\-Abstract\-Video\-Encoder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a33d1abd59a213d0c9ff9776a8478c709}
+
+
+Definition at line 38 of file U\-B\-Abstract\-Video\-Encoder.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_abstract_video_encoder_a314566aa45510979eda49b487fd0113c}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!audio\-Level\-Changed@{audio\-Level\-Changed}}
+\index{audio\-Level\-Changed@{audio\-Level\-Changed}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{audio\-Level\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Video\-Encoder\-::audio\-Level\-Changed (
+\begin{DoxyParamCaption}
+\item[{quint8}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a314566aa45510979eda49b487fd0113c}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_abstract_video_encoder_a314566aa45510979eda49b487fd0113c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_video_encoder_af4bd868b266dbcd3ec158650002598b5}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!audio\-Recording\-Device@{audio\-Recording\-Device}}
+\index{audio\-Recording\-Device@{audio\-Recording\-Device}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{audio\-Recording\-Device}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Abstract\-Video\-Encoder\-::audio\-Recording\-Device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_af4bd868b266dbcd3ec158650002598b5}
+
+
+Definition at line 100 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_abstract_video_encoder_af4bd868b266dbcd3ec158650002598b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_video_encoder_a6fdee9e00977574dde3094ad5e536d91}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!can\-Pause@{can\-Pause}}
+\index{can\-Pause@{can\-Pause}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{can\-Pause}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool U\-B\-Abstract\-Video\-Encoder\-::can\-Pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a6fdee9e00977574dde3094ad5e536d91}
+
+
+Reimplemented in \hyperlink{class_u_b_windows_media_video_encoder_a15d2ae84e27fc9156ae662ae05e1a316}{U\-B\-Windows\-Media\-Video\-Encoder}.
+
+
+
+Definition at line 45 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_aa4e03edd2cb73ad5ccb94daa23268b54}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!encoding\-Finished@{encoding\-Finished}}
+\index{encoding\-Finished@{encoding\-Finished}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{encoding\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Video\-Encoder\-::encoding\-Finished (
+\begin{DoxyParamCaption}
+\item[{bool}]{ok}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/da1/class_u_b_abstract_video_encoder_aa4e03edd2cb73ad5ccb94daa23268b54}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_abstract_video_encoder_aa4e03edd2cb73ad5ccb94daa23268b54_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_video_encoder_aac4ef445610633732ffc74e83450dda4}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!encoding\-Status@{encoding\-Status}}
+\index{encoding\-Status@{encoding\-Status}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{encoding\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Video\-Encoder\-::encoding\-Status (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d2/da1/class_u_b_abstract_video_encoder_aac4ef445610633732ffc74e83450dda4}
+\hypertarget{class_u_b_abstract_video_encoder_a2188fa51abf5736939cb971c8030f54c}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!frames\-Per\-Second@{frames\-Per\-Second}}
+\index{frames\-Per\-Second@{frames\-Per\-Second}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{frames\-Per\-Second}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Abstract\-Video\-Encoder\-::frames\-Per\-Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a2188fa51abf5736939cb971c8030f54c}
+
+
+Definition at line 56 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_abstract_video_encoder_a2188fa51abf5736939cb971c8030f54c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_video_encoder_ab3f6d08c89768a4fc724cfd6da53ac16}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!last\-Error\-Message@{last\-Error\-Message}}
+\index{last\-Error\-Message@{last\-Error\-Message}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{last\-Error\-Message}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Abstract\-Video\-Encoder\-::last\-Error\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_ab3f6d08c89768a4fc724cfd6da53ac16}
+
+
+Implemented in \hyperlink{class_u_b_quick_time_video_encoder_a20cf47e6a5eda4d29d1878f0822f58bd}{U\-B\-Quick\-Time\-Video\-Encoder}, and \hyperlink{class_u_b_windows_media_video_encoder_ac201751663b965622f2dedf468493a35}{U\-B\-Windows\-Media\-Video\-Encoder}.
+
+\hypertarget{class_u_b_abstract_video_encoder_a51c1523562454b18ea4066b5a4c805e2}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!new\-Chapter@{new\-Chapter}}
+\index{new\-Chapter@{new\-Chapter}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{new\-Chapter}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Video\-Encoder\-::new\-Chapter (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Label, }
+\item[{long}]{timestamp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a51c1523562454b18ea4066b5a4c805e2}
+
+
+Reimplemented in \hyperlink{class_u_b_windows_media_video_encoder_ac5cf17870ab8834c45ae80155743daf7}{U\-B\-Windows\-Media\-Video\-Encoder}.
+
+
+
+Definition at line 44 of file U\-B\-Abstract\-Video\-Encoder.\-cpp.
+
+\hypertarget{class_u_b_abstract_video_encoder_ab74514eba01c7b8dcce926934dd6838a}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!new\-Pixmap@{new\-Pixmap}}
+\index{new\-Pixmap@{new\-Pixmap}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{new\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Video\-Encoder\-::new\-Pixmap (
+\begin{DoxyParamCaption}
+\item[{const Q\-Image \&}]{p\-Image, }
+\item[{long}]{timestamp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_ab74514eba01c7b8dcce926934dd6838a}
+
+
+Implemented in \hyperlink{class_u_b_windows_media_video_encoder_a064b4202443b041b2680c9082a70a384}{U\-B\-Windows\-Media\-Video\-Encoder}, and \hyperlink{class_u_b_quick_time_video_encoder_a119172562e5b7c49f920faba76e12563}{U\-B\-Quick\-Time\-Video\-Encoder}.
+
+\hypertarget{class_u_b_abstract_video_encoder_ae871a77aeda9ccb98efeb85db2889446}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!pause@{pause}}
+\index{pause@{pause}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool U\-B\-Abstract\-Video\-Encoder\-::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_ae871a77aeda9ccb98efeb85db2889446}
+
+
+Reimplemented in \hyperlink{class_u_b_windows_media_video_encoder_a58feb0ad63b6e980b77e5a7cd9392f7c}{U\-B\-Windows\-Media\-Video\-Encoder}.
+
+
+
+Definition at line 41 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_a4f9a57a0a7afa22d06b5fef2dbb19c6a}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!set\-Audio\-Recording\-Device@{set\-Audio\-Recording\-Device}}
+\index{set\-Audio\-Recording\-Device@{set\-Audio\-Recording\-Device}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{set\-Audio\-Recording\-Device}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Video\-Encoder\-::set\-Audio\-Recording\-Device (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{p\-Audio\-Recording\-Device}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a4f9a57a0a7afa22d06b5fef2dbb19c6a}
+
+
+Definition at line 95 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_a6255653005e6a14f455f1948591db794}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!set\-Frames\-Per\-Second@{set\-Frames\-Per\-Second}}
+\index{set\-Frames\-Per\-Second@{set\-Frames\-Per\-Second}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{set\-Frames\-Per\-Second}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Abstract\-Video\-Encoder\-::set\-Frames\-Per\-Second (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Fps}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a6255653005e6a14f455f1948591db794}
+
+
+Definition at line 51 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_ab5fae0f75a1993fe478442e0aa9d0c14}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!set\-Record\-Audio@{set\-Record\-Audio}}
+\index{set\-Record\-Audio@{set\-Record\-Audio}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{set\-Record\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Video\-Encoder\-::set\-Record\-Audio (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Record\-Audio}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_ab5fae0f75a1993fe478442e0aa9d0c14}
+
+
+Implemented in \hyperlink{class_u_b_quick_time_video_encoder_ae3c9201f5d14e49801b06e77f9fdaf01}{U\-B\-Quick\-Time\-Video\-Encoder}, and \hyperlink{class_u_b_windows_media_video_encoder_a8161cc1d5203e07de5bcf92b6b7e9acf}{U\-B\-Windows\-Media\-Video\-Encoder}.
+
+\hypertarget{class_u_b_abstract_video_encoder_abff86ce967d23f7da2c61c01343585cc}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!set\-Video\-Bits\-Per\-Second@{set\-Video\-Bits\-Per\-Second}}
+\index{set\-Video\-Bits\-Per\-Second@{set\-Video\-Bits\-Per\-Second}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{set\-Video\-Bits\-Per\-Second}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Video\-Encoder\-::set\-Video\-Bits\-Per\-Second (
+\begin{DoxyParamCaption}
+\item[{long}]{p\-Video\-Bits\-Per\-Second}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_abff86ce967d23f7da2c61c01343585cc}
+
+
+Definition at line 88 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_ad818fe4bbe2eca67923e9ddcc6b55950}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!set\-Video\-File\-Name@{set\-Video\-File\-Name}}
+\index{set\-Video\-File\-Name@{set\-Video\-File\-Name}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{set\-Video\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Video\-Encoder\-::set\-Video\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-File\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_ad818fe4bbe2eca67923e9ddcc6b55950}
+
+
+Definition at line 63 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_acdac7b3bcec229a6953f85279e833a2a}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!set\-Video\-Size@{set\-Video\-Size}}
+\index{set\-Video\-Size@{set\-Video\-Size}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{set\-Video\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Abstract\-Video\-Encoder\-::set\-Video\-Size (
+\begin{DoxyParamCaption}
+\item[{const Q\-Size \&}]{p\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_acdac7b3bcec229a6953f85279e833a2a}
+
+
+Definition at line 73 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_aa56593934a8cf8d04135131db547833e}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!start@{start}}
+\index{start@{start}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool U\-B\-Abstract\-Video\-Encoder\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_aa56593934a8cf8d04135131db547833e}
+
+
+Implemented in \hyperlink{class_u_b_quick_time_video_encoder_a0c595b139425a5d9e0d535807946bf68}{U\-B\-Quick\-Time\-Video\-Encoder}, and \hyperlink{class_u_b_windows_media_video_encoder_a88826be28b76bc7917daac0c8b077037}{U\-B\-Windows\-Media\-Video\-Encoder}.
+
+\hypertarget{class_u_b_abstract_video_encoder_a801e301615033b92ead75e531edb9c02}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!stop@{stop}}
+\index{stop@{stop}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool U\-B\-Abstract\-Video\-Encoder\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a801e301615033b92ead75e531edb9c02}
+
+
+Implemented in \hyperlink{class_u_b_windows_media_video_encoder_a9f665f07f31a18c712653890abc7c6e6}{U\-B\-Windows\-Media\-Video\-Encoder}, and \hyperlink{class_u_b_quick_time_video_encoder_aa0151d5ee1872cf9fa863dac08f927b2}{U\-B\-Quick\-Time\-Video\-Encoder}.
+
+\hypertarget{class_u_b_abstract_video_encoder_a99dada54baedf71288f70c78dcf6ac1a}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!unpause@{unpause}}
+\index{unpause@{unpause}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{unpause}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool U\-B\-Abstract\-Video\-Encoder\-::unpause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a99dada54baedf71288f70c78dcf6ac1a}
+
+
+Reimplemented in \hyperlink{class_u_b_windows_media_video_encoder_ae4d2d6fbc01e62141279fd17f8f89e76}{U\-B\-Windows\-Media\-Video\-Encoder}.
+
+
+
+Definition at line 43 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+\hypertarget{class_u_b_abstract_video_encoder_af9ea652bda987ed6874f1a8fc2055cc8}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!video\-Bits\-Per\-Second@{video\-Bits\-Per\-Second}}
+\index{video\-Bits\-Per\-Second@{video\-Bits\-Per\-Second}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{video\-Bits\-Per\-Second}]{\setlength{\rightskip}{0pt plus 5cm}virtual long U\-B\-Abstract\-Video\-Encoder\-::video\-Bits\-Per\-Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_af9ea652bda987ed6874f1a8fc2055cc8}
+
+
+Definition at line 83 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_abstract_video_encoder_af9ea652bda987ed6874f1a8fc2055cc8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_video_encoder_a8feffc37810d5b9ee249545028c65cae}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!video\-File\-Extension@{video\-File\-Extension}}
+\index{video\-File\-Extension@{video\-File\-Extension}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{video\-File\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Abstract\-Video\-Encoder\-::video\-File\-Extension (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_a8feffc37810d5b9ee249545028c65cae}
+
+
+Implemented in \hyperlink{class_u_b_windows_media_video_encoder_aa22fb19e4f464b9f8043191fbb57280a}{U\-B\-Windows\-Media\-Video\-Encoder}, and \hyperlink{class_u_b_quick_time_video_encoder_a8f2892b2c077bc52f0c82dc112795c15}{U\-B\-Quick\-Time\-Video\-Encoder}.
+
+\hypertarget{class_u_b_abstract_video_encoder_ab8322081d835d9045ab9c7cc4845c2a7}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!video\-File\-Name@{video\-File\-Name}}
+\index{video\-File\-Name@{video\-File\-Name}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{video\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String U\-B\-Abstract\-Video\-Encoder\-::video\-File\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_ab8322081d835d9045ab9c7cc4845c2a7}
+
+
+Definition at line 68 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_abstract_video_encoder_ab8322081d835d9045ab9c7cc4845c2a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_abstract_video_encoder_ab4c34762f756b5779a6befa3c3bdcc47}{\index{U\-B\-Abstract\-Video\-Encoder@{U\-B\-Abstract\-Video\-Encoder}!video\-Size@{video\-Size}}
+\index{video\-Size@{video\-Size}!UBAbstractVideoEncoder@{U\-B\-Abstract\-Video\-Encoder}}
+\subsubsection[{video\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-Size U\-B\-Abstract\-Video\-Encoder\-::video\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d2/da1/class_u_b_abstract_video_encoder_ab4c34762f756b5779a6befa3c3bdcc47}
+
+
+Definition at line 78 of file U\-B\-Abstract\-Video\-Encoder.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da1/class_u_b_abstract_video_encoder_ab4c34762f756b5779a6befa3c3bdcc47_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/podcast/\hyperlink{_u_b_abstract_video_encoder_8h}{U\-B\-Abstract\-Video\-Encoder.\-h}\item 
+Sankore-\/3.\-1/src/podcast/\hyperlink{_u_b_abstract_video_encoder_8cpp}{U\-B\-Abstract\-Video\-Encoder.\-cpp}\end{DoxyCompactItemize}

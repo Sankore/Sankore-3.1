@@ -1,0 +1,290 @@
+\hypertarget{class_u_b_document_tree_view}{\section{U\-B\-Document\-Tree\-View Class Reference}
+\label{da/d16/class_u_b_document_tree_view}\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Document\-Controller.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Document\-Tree\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d9/d1f/class_u_b_document_tree_view__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_document_tree_view_ab603fd056fbd771f92b8e3008e745b78}{set\-Selected\-And\-Expanded} (const Q\-Model\-Index \&p\-Index, bool p\-Expand=true)
+\item 
+void \hyperlink{class_u_b_document_tree_view_ac4ae6d7b0e1c1fa635183133cb5a0069}{on\-Model\-Index\-Changed} (const Q\-Model\-Index \&p\-New\-Index, const Q\-Model\-Index \&p\-Old\-Index)
+\item 
+void \hyperlink{class_u_b_document_tree_view_ac9e847ad2b2e8fb7a12fab80a8eea1e8}{h\-Slider\-Range\-Changed} (int min, int max)
+\item 
+void \hyperlink{class_u_b_document_tree_view_a776f3ae88bf5cad79fdd6eec358bc0d0}{adjust\-Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_document_tree_view_a3ef4cb8dc8a2d81efffa042829a244e2}{U\-B\-Document\-Tree\-View} (Q\-Widget $\ast$parent=0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_document_tree_view_a28868926ec451f2bb32178e5d53edaa9}{drag\-Enter\-Event} (Q\-Drag\-Enter\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_document_tree_view_a1a0ae3e2f2c94f767e0702680a37906d}{drag\-Leave\-Event} (Q\-Drag\-Leave\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_document_tree_view_a57b90cd037e3dd8bf096a0138d30d5ee}{drag\-Move\-Event} (Q\-Drag\-Move\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_document_tree_view_a8364df11d6b3285ea0684673801b0b6c}{drop\-Event} (Q\-Drop\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_document_tree_view_a2ce720d0c684045f200f2563022139cc}{paint\-Event} (Q\-Paint\-Event $\ast$event)
+\item 
+\hyperlink{class_u_b_document_tree_model}{U\-B\-Document\-Tree\-Model} $\ast$ \hyperlink{class_u_b_document_tree_view_a2b3206b0a159d6831e7e0138b2b43228}{full\-Model} ()
+\item 
+void \hyperlink{class_u_b_document_tree_view_a01af3b2ab4276f23082e7b11b57a4581}{rows\-About\-To\-Be\-Removed} (const Q\-Model\-Index \&parent, int start, int end)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 247 of file U\-B\-Document\-Controller.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_document_tree_view_a3ef4cb8dc8a2d81efffa042829a244e2}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}}
+\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{U\-B\-Document\-Tree\-View}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Document\-Tree\-View\-::\-U\-B\-Document\-Tree\-View (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{da/d16/class_u_b_document_tree_view_a3ef4cb8dc8a2d81efffa042829a244e2}
+
+
+Definition at line 1067 of file U\-B\-Document\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d16/class_u_b_document_tree_view_a3ef4cb8dc8a2d81efffa042829a244e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_document_tree_view_a776f3ae88bf5cad79fdd6eec358bc0d0}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!adjust\-Size@{adjust\-Size}}
+\index{adjust\-Size@{adjust\-Size}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{adjust\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::adjust\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{da/d16/class_u_b_document_tree_view_a776f3ae88bf5cad79fdd6eec358bc0d0}
+
+
+Definition at line 1266 of file U\-B\-Document\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d16/class_u_b_document_tree_view_a776f3ae88bf5cad79fdd6eec358bc0d0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_tree_view_a28868926ec451f2bb32178e5d53edaa9}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!drag\-Enter\-Event@{drag\-Enter\-Event}}
+\index{drag\-Enter\-Event@{drag\-Enter\-Event}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{drag\-Enter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::drag\-Enter\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Drag\-Enter\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d16/class_u_b_document_tree_view_a28868926ec451f2bb32178e5d53edaa9}
+
+
+Definition at line 1116 of file U\-B\-Document\-Controller.\-cpp.
+
+\hypertarget{class_u_b_document_tree_view_a1a0ae3e2f2c94f767e0702680a37906d}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!drag\-Leave\-Event@{drag\-Leave\-Event}}
+\index{drag\-Leave\-Event@{drag\-Leave\-Event}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{drag\-Leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::drag\-Leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Drag\-Leave\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d16/class_u_b_document_tree_view_a1a0ae3e2f2c94f767e0702680a37906d}
+
+
+Definition at line 1123 of file U\-B\-Document\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d16/class_u_b_document_tree_view_a1a0ae3e2f2c94f767e0702680a37906d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_tree_view_a57b90cd037e3dd8bf096a0138d30d5ee}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!drag\-Move\-Event@{drag\-Move\-Event}}
+\index{drag\-Move\-Event@{drag\-Move\-Event}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{drag\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::drag\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Drag\-Move\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d16/class_u_b_document_tree_view_a57b90cd037e3dd8bf096a0138d30d5ee}
+
+
+Definition at line 1131 of file U\-B\-Document\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d16/class_u_b_document_tree_view_a57b90cd037e3dd8bf096a0138d30d5ee_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_tree_view_a8364df11d6b3285ea0684673801b0b6c}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!drop\-Event@{drop\-Event}}
+\index{drop\-Event@{drop\-Event}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{drop\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::drop\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Drop\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d16/class_u_b_document_tree_view_a8364df11d6b3285ea0684673801b0b6c}
+
+
+Definition at line 1152 of file U\-B\-Document\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{da/d16/class_u_b_document_tree_view_a8364df11d6b3285ea0684673801b0b6c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_tree_view_a2b3206b0a159d6831e7e0138b2b43228}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!full\-Model@{full\-Model}}
+\index{full\-Model@{full\-Model}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{full\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Tree\-Model}$\ast$ U\-B\-Document\-Tree\-View\-::full\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{da/d16/class_u_b_document_tree_view_a2b3206b0a159d6831e7e0138b2b43228}
+
+
+Definition at line 268 of file U\-B\-Document\-Controller.\-h.
+
+\hypertarget{class_u_b_document_tree_view_ac9e847ad2b2e8fb7a12fab80a8eea1e8}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!h\-Slider\-Range\-Changed@{h\-Slider\-Range\-Changed}}
+\index{h\-Slider\-Range\-Changed@{h\-Slider\-Range\-Changed}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{h\-Slider\-Range\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::h\-Slider\-Range\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{da/d16/class_u_b_document_tree_view_ac9e847ad2b2e8fb7a12fab80a8eea1e8}
+
+
+Definition at line 1104 of file U\-B\-Document\-Controller.\-cpp.
+
+\hypertarget{class_u_b_document_tree_view_ac4ae6d7b0e1c1fa635183133cb5a0069}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!on\-Model\-Index\-Changed@{on\-Model\-Index\-Changed}}
+\index{on\-Model\-Index\-Changed@{on\-Model\-Index\-Changed}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{on\-Model\-Index\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::on\-Model\-Index\-Changed (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{p\-New\-Index, }
+\item[{const Q\-Model\-Index \&}]{p\-Old\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{da/d16/class_u_b_document_tree_view_ac4ae6d7b0e1c1fa635183133cb5a0069}
+
+
+Definition at line 1098 of file U\-B\-Document\-Controller.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d16/class_u_b_document_tree_view_ac4ae6d7b0e1c1fa635183133cb5a0069_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_document_tree_view_a2ce720d0c684045f200f2563022139cc}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d16/class_u_b_document_tree_view_a2ce720d0c684045f200f2563022139cc}
+
+
+Definition at line 1219 of file U\-B\-Document\-Controller.\-cpp.
+
+\hypertarget{class_u_b_document_tree_view_a01af3b2ab4276f23082e7b11b57a4581}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!rows\-About\-To\-Be\-Removed@{rows\-About\-To\-Be\-Removed}}
+\index{rows\-About\-To\-Be\-Removed@{rows\-About\-To\-Be\-Removed}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{rows\-About\-To\-Be\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::rows\-About\-To\-Be\-Removed (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{parent, }
+\item[{int}]{start, }
+\item[{int}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{da/d16/class_u_b_document_tree_view_a01af3b2ab4276f23082e7b11b57a4581}
+
+
+Definition at line 1224 of file U\-B\-Document\-Controller.\-cpp.
+
+\hypertarget{class_u_b_document_tree_view_ab603fd056fbd771f92b8e3008e745b78}{\index{U\-B\-Document\-Tree\-View@{U\-B\-Document\-Tree\-View}!set\-Selected\-And\-Expanded@{set\-Selected\-And\-Expanded}}
+\index{set\-Selected\-And\-Expanded@{set\-Selected\-And\-Expanded}!UBDocumentTreeView@{U\-B\-Document\-Tree\-View}}
+\subsubsection[{set\-Selected\-And\-Expanded}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Document\-Tree\-View\-::set\-Selected\-And\-Expanded (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{p\-Index, }
+\item[{bool}]{p\-Expand = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{da/d16/class_u_b_document_tree_view_ab603fd056fbd771f92b8e3008e745b78}
+
+
+Definition at line 1077 of file U\-B\-Document\-Controller.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d16/class_u_b_document_tree_view_ab603fd056fbd771f92b8e3008e745b78_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/document/\hyperlink{_u_b_document_controller_8h}{U\-B\-Document\-Controller.\-h}\item 
+Sankore-\/3.\-1/src/document/\hyperlink{_u_b_document_controller_8cpp}{U\-B\-Document\-Controller.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,130 @@
+\hypertarget{class_w_b_download_item}{\section{W\-B\-Download\-Item Class Reference}
+\label{d1/d7a/class_w_b_download_item}\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}}
+}
+
+
+{\ttfamily \#include $<$W\-B\-Download\-Manager.\-h$>$}
+
+
+
+Collaboration diagram for W\-B\-Download\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{d6/d9d/class_w_b_download_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_download_item_a01e7e68de330f4d2621ebfd709800072}{status\-Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_download_item_ae98363fcd3077100e78b528eb931efbf}{W\-B\-Download\-Item} (Q\-Network\-Reply $\ast$reply=0, bool request\-File\-Name=false, Q\-Widget $\ast$parent=0, Q\-String custom\-Download\-Path=Q\-String())
+\begin{DoxyCompactList}\small\item\em Download\-Item is a widget that is displayed in the download manager list. \end{DoxyCompactList}\item 
+bool \hyperlink{class_w_b_download_item_a8fabeb71f2281ea7853f9b814a830650}{downloading} () const 
+\item 
+bool \hyperlink{class_w_b_download_item_aceb7546f21a0887150bc21d20b3a45f8}{downloaded\-Successfully} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Url \hyperlink{class_w_b_download_item_ac9f3934c2505e3ceb68fb330a8702493}{m\-\_\-url}
+\item 
+Q\-File \hyperlink{class_w_b_download_item_a1694a95d565679f7d12285b697ccf839}{m\-\_\-output}
+\item 
+Q\-Network\-Reply $\ast$ \hyperlink{class_w_b_download_item_a2c41d2e38b2be81d4cb4d6565a339fda}{m\-\_\-reply}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 74 of file W\-B\-Download\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_w_b_download_item_ae98363fcd3077100e78b528eb931efbf}{\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!W\-B\-Download\-Item@{W\-B\-Download\-Item}}
+\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!WBDownloadItem@{W\-B\-Download\-Item}}
+\subsubsection[{W\-B\-Download\-Item}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-Download\-Item\-::\-W\-B\-Download\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Network\-Reply $\ast$}]{reply = {\ttfamily 0}, }
+\item[{bool}]{request\-File\-Name = {\ttfamily false}, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{Q\-String}]{custom\-Download\-Path = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)}}\label{d1/d7a/class_w_b_download_item_ae98363fcd3077100e78b528eb931efbf}
+
+
+Download\-Item is a widget that is displayed in the download manager list. 
+
+It moves the data from the Q\-Network\-Reply into the Q\-File as well as update the information/progressbar and report errors. 
+
+Definition at line 83 of file W\-B\-Download\-Manager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_w_b_download_item_aceb7546f21a0887150bc21d20b3a45f8}{\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!downloaded\-Successfully@{downloaded\-Successfully}}
+\index{downloaded\-Successfully@{downloaded\-Successfully}!WBDownloadItem@{W\-B\-Download\-Item}}
+\subsubsection[{downloaded\-Successfully}]{\setlength{\rightskip}{0pt plus 5cm}bool W\-B\-Download\-Item\-::downloaded\-Successfully (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d1/d7a/class_w_b_download_item_aceb7546f21a0887150bc21d20b3a45f8}
+
+
+Definition at line 377 of file W\-B\-Download\-Manager.\-cpp.
+
+\hypertarget{class_w_b_download_item_a8fabeb71f2281ea7853f9b814a830650}{\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!downloading@{downloading}}
+\index{downloading@{downloading}!WBDownloadItem@{W\-B\-Download\-Item}}
+\subsubsection[{downloading}]{\setlength{\rightskip}{0pt plus 5cm}bool W\-B\-Download\-Item\-::downloading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d1/d7a/class_w_b_download_item_a8fabeb71f2281ea7853f9b814a830650}
+
+
+Definition at line 371 of file W\-B\-Download\-Manager.\-cpp.
+
+\hypertarget{class_w_b_download_item_a01e7e68de330f4d2621ebfd709800072}{\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!status\-Changed@{status\-Changed}}
+\index{status\-Changed@{status\-Changed}!WBDownloadItem@{W\-B\-Download\-Item}}
+\subsubsection[{status\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Download\-Item\-::status\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d7a/class_w_b_download_item_a01e7e68de330f4d2621ebfd709800072}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_w_b_download_item_a1694a95d565679f7d12285b697ccf839}{\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!m\-\_\-output@{m\-\_\-output}}
+\index{m\-\_\-output@{m\-\_\-output}!WBDownloadItem@{W\-B\-Download\-Item}}
+\subsubsection[{m\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}Q\-File W\-B\-Download\-Item\-::m\-\_\-output}}\label{d1/d7a/class_w_b_download_item_a1694a95d565679f7d12285b697ccf839}
+
+
+Definition at line 88 of file W\-B\-Download\-Manager.\-h.
+
+\hypertarget{class_w_b_download_item_a2c41d2e38b2be81d4cb4d6565a339fda}{\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!m\-\_\-reply@{m\-\_\-reply}}
+\index{m\-\_\-reply@{m\-\_\-reply}!WBDownloadItem@{W\-B\-Download\-Item}}
+\subsubsection[{m\-\_\-reply}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Network\-Reply$\ast$ W\-B\-Download\-Item\-::m\-\_\-reply}}\label{d1/d7a/class_w_b_download_item_a2c41d2e38b2be81d4cb4d6565a339fda}
+
+
+Definition at line 89 of file W\-B\-Download\-Manager.\-h.
+
+\hypertarget{class_w_b_download_item_ac9f3934c2505e3ceb68fb330a8702493}{\index{W\-B\-Download\-Item@{W\-B\-Download\-Item}!m\-\_\-url@{m\-\_\-url}}
+\index{m\-\_\-url@{m\-\_\-url}!WBDownloadItem@{W\-B\-Download\-Item}}
+\subsubsection[{m\-\_\-url}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Url W\-B\-Download\-Item\-::m\-\_\-url}}\label{d1/d7a/class_w_b_download_item_ac9f3934c2505e3ceb68fb330a8702493}
+
+
+Definition at line 86 of file W\-B\-Download\-Manager.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_download_manager_8h}{W\-B\-Download\-Manager.\-h}\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_download_manager_8cpp}{W\-B\-Download\-Manager.\-cpp}\end{DoxyCompactItemize}

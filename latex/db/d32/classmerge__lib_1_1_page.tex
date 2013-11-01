@@ -1,0 +1,269 @@
+\hypertarget{classmerge__lib_1_1_page}{\section{merge\-\_\-lib\-:\-:Page Class Reference}
+\label{db/d32/classmerge__lib_1_1_page}\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}}
+}
+
+
+{\ttfamily \#include $<$Page.\-h$>$}
+
+
+
+Collaboration diagram for merge\-\_\-lib\-:\-:Page\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{d1/df8/classmerge__lib_1_1_page__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmerge__lib_1_1_page_aa52175576e1fb031ce196e6c15a5f6ed}{Page} (unsigned int page\-Number)
+\item 
+\hyperlink{classmerge__lib_1_1_page_a2341fff1cc032ab6528874175e7dd841}{$\sim$\-Page} ()
+\item 
+unsigned int \hyperlink{classmerge__lib_1_1_page_af87022d9114f62bbf82cceffe9e52750}{get\-Page\-Number} ()
+\item 
+void \hyperlink{classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd}{merge} (\hyperlink{classmerge__lib_1_1_page}{Page} $\ast$source\-Page, \hyperlink{classmerge__lib_1_1_document}{Document} $\ast$parent\-Document, \hyperlink{structmerge__lib_1_1_merge_page_description}{Merge\-Page\-Description} \&description, bool is\-Page\-Duplicated)
+\item 
+void \hyperlink{classmerge__lib_1_1_page_ad678b5944cf1fc7e59dca7e51f36fe93}{recalculate\-Object\-Numbers} (unsigned int \&new\-Number)
+\item 
+std\-::string \& \hyperlink{classmerge__lib_1_1_page_a44ee21d43416ffe184aae26532e5fae8}{get\-Page\-Content} ()
+\item 
+const \hyperlink{classmerge__lib_1_1_object_a4e1f3bf43d9fc39fea3829f7ae1da4a8}{Object\-::\-Children} \& \hyperlink{classmerge__lib_1_1_page_a276d1b8ec3698c7e92c6c04614136b28}{get\-Page\-Refs} ()
+\item 
+\hyperlink{classmerge__lib_1_1_object}{Object} $\ast$ \hyperlink{classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9}{page\-To\-X\-Object} (std\-::vector$<$ \hyperlink{classmerge__lib_1_1_object}{Object} $\ast$ $>$ \&all\-Objects, std\-::vector$<$ \hyperlink{classmerge__lib_1_1_object}{Object} $\ast$ $>$ \&annots, bool is\-Clone\-Needed)
+\item 
+void \hyperlink{classmerge__lib_1_1_page_ae68588d9882b3cdec7e46650c0de6111}{set\-Rotation} (int rotation)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmerge__lib_1_1_page_ab80291af9c262f63b83fa9c16f12014d}{Parser}
+\item 
+class \hyperlink{classmerge__lib_1_1_page_ae6313e6ba562663368267af32ecf3ac0}{Page\-Elements\-Factory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file Page.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmerge__lib_1_1_page_aa52175576e1fb031ce196e6c15a5f6ed}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!Page@{Page}}
+\index{Page@{Page}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{Page}]{\setlength{\rightskip}{0pt plus 5cm}Page\-::\-Page (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{page\-Number}
+\end{DoxyParamCaption}
+)}}\label{db/d32/classmerge__lib_1_1_page_aa52175576e1fb031ce196e6c15a5f6ed}
+
+
+Definition at line 48 of file Page.\-cpp.
+
+\hypertarget{classmerge__lib_1_1_page_a2341fff1cc032ab6528874175e7dd841}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!$\sim$\-Page@{$\sim$\-Page}}
+\index{$\sim$\-Page@{$\sim$\-Page}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{$\sim$\-Page}]{\setlength{\rightskip}{0pt plus 5cm}Page\-::$\sim$\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{db/d32/classmerge__lib_1_1_page_a2341fff1cc032ab6528874175e7dd841}
+
+
+Definition at line 55 of file Page.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmerge__lib_1_1_page_a44ee21d43416ffe184aae26532e5fae8}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!get\-Page\-Content@{get\-Page\-Content}}
+\index{get\-Page\-Content@{get\-Page\-Content}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{get\-Page\-Content}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string \& Page\-::get\-Page\-Content (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{db/d32/classmerge__lib_1_1_page_a44ee21d43416ffe184aae26532e5fae8}
+
+
+Definition at line 61 of file Page.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{db/d32/classmerge__lib_1_1_page_a44ee21d43416ffe184aae26532e5fae8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_af87022d9114f62bbf82cceffe9e52750}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!get\-Page\-Number@{get\-Page\-Number}}
+\index{get\-Page\-Number@{get\-Page\-Number}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{get\-Page\-Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int merge\-\_\-lib\-::\-Page\-::get\-Page\-Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{db/d32/classmerge__lib_1_1_page_af87022d9114f62bbf82cceffe9e52750}
+
+
+Definition at line 46 of file Page.\-h.
+
+\hypertarget{classmerge__lib_1_1_page_a276d1b8ec3698c7e92c6c04614136b28}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!get\-Page\-Refs@{get\-Page\-Refs}}
+\index{get\-Page\-Refs@{get\-Page\-Refs}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{get\-Page\-Refs}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Object\-::\-Children} \& Page\-::get\-Page\-Refs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{db/d32/classmerge__lib_1_1_page_a276d1b8ec3698c7e92c6c04614136b28}
+
+
+Definition at line 66 of file Page.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classmerge__lib_1_1_page_a276d1b8ec3698c7e92c6c04614136b28_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!merge@{merge}}
+\index{merge@{merge}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{merge}]{\setlength{\rightskip}{0pt plus 5cm}void Page\-::merge (
+\begin{DoxyParamCaption}
+\item[{{\bf Page} $\ast$}]{source\-Page, }
+\item[{{\bf Document} $\ast$}]{parent\-Document, }
+\item[{{\bf Merge\-Page\-Description} \&}]{description, }
+\item[{bool}]{is\-Page\-Duplicated}
+\end{DoxyParamCaption}
+)}}\label{db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd}
+
+
+Definition at line 466 of file Page.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!page\-To\-X\-Object@{page\-To\-X\-Object}}
+\index{page\-To\-X\-Object@{page\-To\-X\-Object}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{page\-To\-X\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object} $\ast$ Page\-::page\-To\-X\-Object (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Object} $\ast$ $>$ \&}]{all\-Objects, }
+\item[{std\-::vector$<$ {\bf Object} $\ast$ $>$ \&}]{annots, }
+\item[{bool}]{is\-Clone\-Needed}
+\end{DoxyParamCaption}
+)}}\label{db/d32/classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9}
+
+
+Definition at line 77 of file Page.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_ad678b5944cf1fc7e59dca7e51f36fe93}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!recalculate\-Object\-Numbers@{recalculate\-Object\-Numbers}}
+\index{recalculate\-Object\-Numbers@{recalculate\-Object\-Numbers}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{recalculate\-Object\-Numbers}]{\setlength{\rightskip}{0pt plus 5cm}void Page\-::recalculate\-Object\-Numbers (
+\begin{DoxyParamCaption}
+\item[{unsigned int \&}]{new\-Number}
+\end{DoxyParamCaption}
+)}}\label{db/d32/classmerge__lib_1_1_page_ad678b5944cf1fc7e59dca7e51f36fe93}
+
+
+Definition at line 72 of file Page.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d32/classmerge__lib_1_1_page_ad678b5944cf1fc7e59dca7e51f36fe93_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmerge__lib_1_1_page_ae68588d9882b3cdec7e46650c0de6111}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!set\-Rotation@{set\-Rotation}}
+\index{set\-Rotation@{set\-Rotation}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{set\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}void merge\-\_\-lib\-::\-Page\-::set\-Rotation (
+\begin{DoxyParamCaption}
+\item[{int}]{rotation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{db/d32/classmerge__lib_1_1_page_ae68588d9882b3cdec7e46650c0de6111}
+
+
+Definition at line 56 of file Page.\-h.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classmerge__lib_1_1_page_ae6313e6ba562663368267af32ecf3ac0}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!Page\-Elements\-Factory@{Page\-Elements\-Factory}}
+\index{Page\-Elements\-Factory@{Page\-Elements\-Factory}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{Page\-Elements\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}friend class Page\-Elements\-Factory\hspace{0.3cm}{\ttfamily [friend]}}}\label{db/d32/classmerge__lib_1_1_page_ae6313e6ba562663368267af32ecf3ac0}
+
+
+Definition at line 40 of file Page.\-h.
+
+\hypertarget{classmerge__lib_1_1_page_ab80291af9c262f63b83fa9c16f12014d}{\index{merge\-\_\-lib\-::\-Page@{merge\-\_\-lib\-::\-Page}!Parser@{Parser}}
+\index{Parser@{Parser}!merge_lib::Page@{merge\-\_\-lib\-::\-Page}}
+\subsubsection[{Parser}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Parser}\hspace{0.3cm}{\ttfamily [friend]}}}\label{db/d32/classmerge__lib_1_1_page_ab80291af9c262f63b83fa9c16f12014d}
+
+
+Definition at line 39 of file Page.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/pdf-\/merger/\hyperlink{_page_8h}{Page.\-h}\item 
+Sankore-\/3.\-1/src/pdf-\/merger/\hyperlink{_page_8cpp}{Page.\-cpp}\end{DoxyCompactItemize}

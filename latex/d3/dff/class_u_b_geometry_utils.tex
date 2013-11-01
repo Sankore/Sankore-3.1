@@ -1,0 +1,232 @@
+\hypertarget{class_u_b_geometry_utils}{\section{U\-B\-Geometry\-Utils Class Reference}
+\label{d3/dff/class_u_b_geometry_utils}\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Geometry\-Utils.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Geometry\-Utils\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{d8/d81/class_u_b_geometry_utils__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-Polygon\-F \hyperlink{class_u_b_geometry_utils_a379c882cb437d18ebf536bdc1f40d12f}{line\-To\-Polygon} (const Q\-Line\-F \&p\-Line, const qreal \&p\-Width)
+\item 
+static Q\-Rect\-F \hyperlink{class_u_b_geometry_utils_a8d1e50c5d7d52bcf01179511b4231356}{line\-To\-Inner\-Rect} (const Q\-Line\-F \&p\-Line, const qreal \&p\-Width)
+\item 
+static Q\-Polygon\-F \hyperlink{class_u_b_geometry_utils_a12ba7130be2103b70f39138073d3d4ec}{arc\-To\-Polygon} (const Q\-Line\-F \&start\-Radius, qreal span\-Angle, qreal width)
+\item 
+static Q\-Polygon\-F \hyperlink{class_u_b_geometry_utils_afdba873a14962f8c8e5746d8c8b74b53}{line\-To\-Polygon} (const Q\-Point\-F \&p\-Start, const Q\-Point\-F \&p\-End, const qreal \&p\-Start\-Width, const qreal \&p\-End\-Width)
+\item 
+static Q\-Point\-F \hyperlink{class_u_b_geometry_utils_a488ce1d8bccec0310e6cb7a359aef854}{point\-Constrained\-In\-Rect} (Q\-Point\-F point, Q\-Rect\-F rect)
+\item 
+static Q\-Point \hyperlink{class_u_b_geometry_utils_aa03a6f34b91aa807404db6eaf8c8e9eb}{point\-Constrained\-In\-Rect} (Q\-Point point, Q\-Rect rect)
+\item 
+static void \hyperlink{class_u_b_geometry_utils_a84c18013880b48ced22fd7bf1c91aa2a}{crash\-Point\-List} (Q\-Vector$<$ Q\-Point\-F $>$ \&points)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_u_b_geometry_utils_a57c5feb3a3234d02f24fb5a4c10fcc06}{centimeter\-Graduation\-Height} = 15
+\item 
+static const int \hyperlink{class_u_b_geometry_utils_a619b34e990f58aecca2a3f029fade400}{half\-Centimeter\-Graduation\-Height} = 10
+\item 
+static const int \hyperlink{class_u_b_geometry_utils_a73d6393ad58bf658d1dfc10cebb61921}{millimeter\-Graduation\-Height} = 5
+\item 
+static const int \hyperlink{class_u_b_geometry_utils_a88024bb127e395f7eafc59df9bc39f63}{millimeters\-Per\-Centimeter} = 10
+\item 
+static const int \hyperlink{class_u_b_geometry_utils_a5169b28d2a1b47f292dbc6d79a1dc8ef}{millimeters\-Per\-Half\-Centimeter} = 5
+\item 
+static const float \hyperlink{class_u_b_geometry_utils_a1f5d4e8f0ad9766ef4325e41562b5d33}{inch\-Size} = 25.\-4f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file U\-B\-Geometry\-Utils.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_geometry_utils_a12ba7130be2103b70f39138073d3d4ec}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!arc\-To\-Polygon@{arc\-To\-Polygon}}
+\index{arc\-To\-Polygon@{arc\-To\-Polygon}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{arc\-To\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Polygon\-F U\-B\-Geometry\-Utils\-::arc\-To\-Polygon (
+\begin{DoxyParamCaption}
+\item[{const Q\-Line\-F \&}]{start\-Radius, }
+\item[{qreal}]{span\-Angle, }
+\item[{qreal}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a12ba7130be2103b70f39138073d3d4ec}
+
+
+Definition at line 132 of file U\-B\-Geometry\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dff/class_u_b_geometry_utils_a12ba7130be2103b70f39138073d3d4ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_geometry_utils_a84c18013880b48ced22fd7bf1c91aa2a}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!crash\-Point\-List@{crash\-Point\-List}}
+\index{crash\-Point\-List@{crash\-Point\-List}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{crash\-Point\-List}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Geometry\-Utils\-::crash\-Point\-List (
+\begin{DoxyParamCaption}
+\item[{Q\-Vector$<$ Q\-Point\-F $>$ \&}]{points}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a84c18013880b48ced22fd7bf1c91aa2a}
+
+
+Definition at line 223 of file U\-B\-Geometry\-Utils.\-cpp.
+
+\hypertarget{class_u_b_geometry_utils_a8d1e50c5d7d52bcf01179511b4231356}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!line\-To\-Inner\-Rect@{line\-To\-Inner\-Rect}}
+\index{line\-To\-Inner\-Rect@{line\-To\-Inner\-Rect}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{line\-To\-Inner\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F U\-B\-Geometry\-Utils\-::line\-To\-Inner\-Rect (
+\begin{DoxyParamCaption}
+\item[{const Q\-Line\-F \&}]{p\-Line, }
+\item[{const qreal \&}]{p\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a8d1e50c5d7d52bcf01179511b4231356}
+
+
+Definition at line 210 of file U\-B\-Geometry\-Utils.\-cpp.
+
+\hypertarget{class_u_b_geometry_utils_a379c882cb437d18ebf536bdc1f40d12f}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!line\-To\-Polygon@{line\-To\-Polygon}}
+\index{line\-To\-Polygon@{line\-To\-Polygon}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{line\-To\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Polygon\-F U\-B\-Geometry\-Utils\-::line\-To\-Polygon (
+\begin{DoxyParamCaption}
+\item[{const Q\-Line\-F \&}]{p\-Line, }
+\item[{const qreal \&}]{p\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a379c882cb437d18ebf536bdc1f40d12f}
+
+
+Definition at line 46 of file U\-B\-Geometry\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dff/class_u_b_geometry_utils_a379c882cb437d18ebf536bdc1f40d12f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_geometry_utils_afdba873a14962f8c8e5746d8c8b74b53}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!line\-To\-Polygon@{line\-To\-Polygon}}
+\index{line\-To\-Polygon@{line\-To\-Polygon}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{line\-To\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Polygon\-F U\-B\-Geometry\-Utils\-::line\-To\-Polygon (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{p\-Start, }
+\item[{const Q\-Point\-F \&}]{p\-End, }
+\item[{const qreal \&}]{p\-Start\-Width, }
+\item[{const qreal \&}]{p\-End\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_afdba873a14962f8c8e5746d8c8b74b53}
+
+
+Definition at line 84 of file U\-B\-Geometry\-Utils.\-cpp.
+
+\hypertarget{class_u_b_geometry_utils_a488ce1d8bccec0310e6cb7a359aef854}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!point\-Constrained\-In\-Rect@{point\-Constrained\-In\-Rect}}
+\index{point\-Constrained\-In\-Rect@{point\-Constrained\-In\-Rect}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{point\-Constrained\-In\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point\-F U\-B\-Geometry\-Utils\-::point\-Constrained\-In\-Rect (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{point, }
+\item[{Q\-Rect\-F}]{rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a488ce1d8bccec0310e6cb7a359aef854}
+
+
+Definition at line 198 of file U\-B\-Geometry\-Utils.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dff/class_u_b_geometry_utils_a488ce1d8bccec0310e6cb7a359aef854_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_geometry_utils_aa03a6f34b91aa807404db6eaf8c8e9eb}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!point\-Constrained\-In\-Rect@{point\-Constrained\-In\-Rect}}
+\index{point\-Constrained\-In\-Rect@{point\-Constrained\-In\-Rect}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{point\-Constrained\-In\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point U\-B\-Geometry\-Utils\-::point\-Constrained\-In\-Rect (
+\begin{DoxyParamCaption}
+\item[{Q\-Point}]{point, }
+\item[{Q\-Rect}]{rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_aa03a6f34b91aa807404db6eaf8c8e9eb}
+
+
+Definition at line 204 of file U\-B\-Geometry\-Utils.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_geometry_utils_a57c5feb3a3234d02f24fb5a4c10fcc06}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!centimeter\-Graduation\-Height@{centimeter\-Graduation\-Height}}
+\index{centimeter\-Graduation\-Height@{centimeter\-Graduation\-Height}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{centimeter\-Graduation\-Height}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Geometry\-Utils\-::centimeter\-Graduation\-Height = 15\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a57c5feb3a3234d02f24fb5a4c10fcc06}
+
+
+Definition at line 49 of file U\-B\-Geometry\-Utils.\-h.
+
+\hypertarget{class_u_b_geometry_utils_a619b34e990f58aecca2a3f029fade400}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!half\-Centimeter\-Graduation\-Height@{half\-Centimeter\-Graduation\-Height}}
+\index{half\-Centimeter\-Graduation\-Height@{half\-Centimeter\-Graduation\-Height}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{half\-Centimeter\-Graduation\-Height}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Geometry\-Utils\-::half\-Centimeter\-Graduation\-Height = 10\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a619b34e990f58aecca2a3f029fade400}
+
+
+Definition at line 50 of file U\-B\-Geometry\-Utils.\-h.
+
+\hypertarget{class_u_b_geometry_utils_a1f5d4e8f0ad9766ef4325e41562b5d33}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!inch\-Size@{inch\-Size}}
+\index{inch\-Size@{inch\-Size}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{inch\-Size}]{\setlength{\rightskip}{0pt plus 5cm}const float U\-B\-Geometry\-Utils\-::inch\-Size = 25.\-4f\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a1f5d4e8f0ad9766ef4325e41562b5d33}
+
+
+Definition at line 54 of file U\-B\-Geometry\-Utils.\-h.
+
+\hypertarget{class_u_b_geometry_utils_a73d6393ad58bf658d1dfc10cebb61921}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!millimeter\-Graduation\-Height@{millimeter\-Graduation\-Height}}
+\index{millimeter\-Graduation\-Height@{millimeter\-Graduation\-Height}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{millimeter\-Graduation\-Height}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Geometry\-Utils\-::millimeter\-Graduation\-Height = 5\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a73d6393ad58bf658d1dfc10cebb61921}
+
+
+Definition at line 51 of file U\-B\-Geometry\-Utils.\-h.
+
+\hypertarget{class_u_b_geometry_utils_a88024bb127e395f7eafc59df9bc39f63}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!millimeters\-Per\-Centimeter@{millimeters\-Per\-Centimeter}}
+\index{millimeters\-Per\-Centimeter@{millimeters\-Per\-Centimeter}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{millimeters\-Per\-Centimeter}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Geometry\-Utils\-::millimeters\-Per\-Centimeter = 10\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a88024bb127e395f7eafc59df9bc39f63}
+
+
+Definition at line 52 of file U\-B\-Geometry\-Utils.\-h.
+
+\hypertarget{class_u_b_geometry_utils_a5169b28d2a1b47f292dbc6d79a1dc8ef}{\index{U\-B\-Geometry\-Utils@{U\-B\-Geometry\-Utils}!millimeters\-Per\-Half\-Centimeter@{millimeters\-Per\-Half\-Centimeter}}
+\index{millimeters\-Per\-Half\-Centimeter@{millimeters\-Per\-Half\-Centimeter}!UBGeometryUtils@{U\-B\-Geometry\-Utils}}
+\subsubsection[{millimeters\-Per\-Half\-Centimeter}]{\setlength{\rightskip}{0pt plus 5cm}const int U\-B\-Geometry\-Utils\-::millimeters\-Per\-Half\-Centimeter = 5\hspace{0.3cm}{\ttfamily [static]}}}\label{d3/dff/class_u_b_geometry_utils_a5169b28d2a1b47f292dbc6d79a1dc8ef}
+
+
+Definition at line 53 of file U\-B\-Geometry\-Utils.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/frameworks/\hyperlink{_u_b_geometry_utils_8h}{U\-B\-Geometry\-Utils.\-h}\item 
+Sankore-\/3.\-1/src/frameworks/\hyperlink{_u_b_geometry_utils_8cpp}{U\-B\-Geometry\-Utils.\-cpp}\end{DoxyCompactItemize}

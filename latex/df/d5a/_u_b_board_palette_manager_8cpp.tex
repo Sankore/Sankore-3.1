@@ -1,0 +1,62 @@
+\hypertarget{_u_b_board_palette_manager_8cpp}{\section{Sankore-\/3.1/src/board/\-U\-B\-Board\-Palette\-Manager.cpp File Reference}
+\label{df/d5a/_u_b_board_palette_manager_8cpp}\index{Sankore-\/3.\-1/src/board/\-U\-B\-Board\-Palette\-Manager.\-cpp@{Sankore-\/3.\-1/src/board/\-U\-B\-Board\-Palette\-Manager.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}U\-B\-Board\-Palette\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frameworks/\-U\-B\-Platform\-Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frameworks/\-U\-B\-File\-System\-Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Application.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Application\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Settings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Setting.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-U\-B\-Display\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Main\-Window.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Stylus\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Keyboard\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Tool\-Widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Zoom\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Web\-Tools\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Action\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Favorite\-Tool\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Dock\-Teacher\-Guide\-Widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Startup\-Hints\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gui/\-U\-B\-Create\-Link\-Palette.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}web/\-U\-B\-Web\-Page.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}web/\-U\-B\-Web\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}web/browser/\-W\-B\-Browser\-Window.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}web/browser/\-W\-B\-Tab\-Widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}web/browser/\-W\-B\-Web\-View.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}desktop/\-U\-B\-Desktop\-Annotation\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}network/\-U\-B\-Network\-Access\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}network/\-U\-B\-Server\-X\-M\-L\-Http\-Request.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}domain/\-U\-B\-Graphics\-Scene.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}domain/\-U\-B\-Graphics\-Pixmap\-Item.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}document/\-U\-B\-Document\-Proxy.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}podcast/\-U\-B\-Podcast\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}board/\-U\-B\-Drawing\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tools/\-U\-B\-Tools\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}U\-B\-Board\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}document/\-U\-B\-Document\-Controller.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/memcheck.\-h\char`\"{}}\\*
+Include dependency graph for U\-B\-Board\-Palette\-Manager.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d98/_u_b_board_palette_manager_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{_u_b_board_palette_manager_8cpp_acd6e7dc9d862934bd40312dc0e1b0418}{is\-First\-Resized} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_u_b_board_palette_manager_8cpp_acd6e7dc9d862934bd40312dc0e1b0418}{\index{U\-B\-Board\-Palette\-Manager.\-cpp@{U\-B\-Board\-Palette\-Manager.\-cpp}!is\-First\-Resized@{is\-First\-Resized}}
+\index{is\-First\-Resized@{is\-First\-Resized}!UBBoardPaletteManager.cpp@{U\-B\-Board\-Palette\-Manager.\-cpp}}
+\subsubsection[{is\-First\-Resized}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-First\-Resized = true}}\label{df/d5a/_u_b_board_palette_manager_8cpp_acd6e7dc9d862934bd40312dc0e1b0418}
+
+
+Definition at line 492 of file U\-B\-Board\-Palette\-Manager.\-cpp.
+

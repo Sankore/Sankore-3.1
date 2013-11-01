@@ -1,0 +1,3415 @@
+\hypertarget{class_u_b_graphics_scene}{\section{U\-B\-Graphics\-Scene Class Reference}
+\label{dc/db2/class_u_b_graphics_scene}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Scene.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Scene\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/df7/class_u_b_graphics_scene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Scene\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/de5/class_u_b_graphics_scene__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_u_b_graphics_scene_1_1_scene_view_state}{Scene\-View\-State}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bd}{clear\-Case} \{ \hyperlink{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bdaa6eb8805c739ae37c1ccc642e349d64a}{clear\-Items\-And\-Annotations} =  0, 
+\hyperlink{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bdacb981f9a21d9fe0d25a36bf87f65fdbd}{clear\-Annotations}, 
+\hyperlink{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bda2cceee3e464d8eefbcefe28ff01c5b9b}{clear\-Items}, 
+\hyperlink{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bda7cbc0b3bd2370d97d8f6fd57de2ddea5}{clear\-Background}
+ \}
+\item 
+enum \hyperlink{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130}{Rendering\-Context} \{ \hyperlink{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a33eac653fc9ca8bff8f52582adf9950d}{Screen} =  0, 
+\hyperlink{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a88b768f36ba02ea7ceaecab4f7e609e5}{Non\-Screen}, 
+\hyperlink{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130ae5ae070b19e16661b83bce788a69b7fa}{Pdf\-Export}, 
+\hyperlink{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a9d6ab9514fa05c478e507197759cbc6b}{Podcast}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_graphics_scene_a883f9c98b65f6fb3fd559abd3969fd42}{init\-Stroke} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_abb129e3c7327ec690d7c4f5f5dee3836}{hide\-Eraser} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_ad34fd16dd510a1a28cf2df3227a57a14}{set\-Background} (bool p\-Is\-Dark, bool p\-Is\-Crossed)
+\item 
+void \hyperlink{class_u_b_graphics_scene_af42d001c250f1368e664c3243500373f}{set\-Background\-Zoom\-Factor} (qreal zoom)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a9c819f5d1dd2c630c8bb62c11d17fa5f}{set\-Drawing\-Mode} (bool b\-Mode\-Desktop)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a6cfc68b3907297af710a1d8d1492d4ea}{deselect\-All\-Items} ()
+\item 
+\hyperlink{class_u_b_graphics_pixmap_item}{U\-B\-Graphics\-Pixmap\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_ab76488f73cd11e58ce91a3b7e2467bf6}{add\-Pixmap} (const Q\-Pixmap \&p\-Pixmap, Q\-Graphics\-Item $\ast$replace\-For, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0), qreal scale\-Factor=1.\-0, bool p\-Use\-Animation=false)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a72110f0d1fe8495355f25975ed7a1ed3}{text\-Undo\-Command\-Added} (\hyperlink{class_u_b_graphics_text_item}{U\-B\-Graphics\-Text\-Item} $\ast$text\-Item)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a05efdd2cb21422270b1735c38faf0839}{set\-Tool\-Cursor} (int tool)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a23ff2728419619904a2d7680c63cb0eb}{selection\-Changed\-Processing} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a94a8bb0eb91d5db7904d7bc2932cdc0e}{update\-Group\-Button\-State} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_ae1ba0d5c8d2980ebe07e7207d868b4db}{move\-Magnifier} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a2a4e3d9011f5636f040fb6582a559d84}{move\-Magnifier} (Q\-Point new\-Pos, bool force\-Grab=false)
+\item 
+void \hyperlink{class_u_b_graphics_scene_acde00412f74076075aa080093588b308}{close\-Magnifier} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_aeddbb21827440839eab75eb9f01a7647}{zoom\-In\-Magnifier} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a7cd496f1aae3c1ab0f372fa2e9a75370}{zoom\-Out\-Magnifier} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_aacb578d05b2d7fe372556ebdd4061029}{change\-Magnifier\-Mode} (int mode)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a8bded4f617b9d1d9cbd10e1b4c7545bf}{resized\-Magnifier} (qreal new\-Percent)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_graphics_scene_a83c404a044e0e608b63b998751af645d}{page\-Size\-Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_graphics_scene_a7ccefa0b71c3b0ae6634eed91a5444b7}{enable\-Undo\-Redo\-Stack} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a464b1abf70e29b2a606415e85a53fa28}{set\-U\-R\-Stack\-Enable} (bool enable)
+\item 
+bool \hyperlink{class_u_b_graphics_scene_a3a19626bcbff3475ed3c0f0b5fb58036}{is\-U\-R\-Stack\-Is\-Enabled} ()
+\item 
+\hyperlink{class_u_b_graphics_scene_a759a1e2470ba43f042d0c56c4cf70539}{U\-B\-Graphics\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$parent, bool \hyperlink{class_u_b_graphics_scene_a7ccefa0b71c3b0ae6634eed91a5444b7}{enable\-Undo\-Redo\-Stack}=true)
+\item 
+virtual \hyperlink{class_u_b_graphics_scene_a45555106bf190853ab97190ef910b72e}{$\sim$\-U\-B\-Graphics\-Scene} ()
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a27b80506198fc72a3039c90ebef7a0d3}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_scene_a6b3b2507342f09b1169b7b1ef1427118}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_graphics_scene_a5d793edf48a0905e7dc1725b3f6da449}{scene\-Deep\-Copy} () const 
+\item 
+void \hyperlink{class_u_b_graphics_scene_a6e861912547654e47c26f7d8e72201e8}{clear\-Content} (\hyperlink{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bd}{clear\-Case} p\-Case=\hyperlink{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bdaa6eb8805c739ae37c1ccc642e349d64a}{clear\-Items\-And\-Annotations})
+\item 
+bool \hyperlink{class_u_b_graphics_scene_aa7b9011c76710841c644801d235ae3f2}{input\-Device\-Press} (const Q\-Point\-F \&scene\-Pos, const qreal \&pressure=1.\-0)
+\item 
+bool \hyperlink{class_u_b_graphics_scene_a9354a46739a316286901ebd12b2bcf1b}{input\-Device\-Move} (const Q\-Point\-F \&scene\-Pos, const qreal \&pressure=1.\-0)
+\item 
+bool \hyperlink{class_u_b_graphics_scene_a6e04dca4d1484c4e44cc63c8a5b0e2da}{input\-Device\-Release} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_ad531983c966ef07c7dde8cebf8cf3903}{leave\-Event} (Q\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a546b3015e60c63f2ef0e72fed5e4eb35}{add\-Item} (Q\-Graphics\-Item $\ast$item)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a769a40e7bebcaf040e391eed5f5d3f56}{remove\-Item} (Q\-Graphics\-Item $\ast$item)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a18bf3af9f52c9deb3149d9b82409cc02}{add\-Items} (const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&item)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a51dd0fbb2c591323cddfcc14972b8594}{remove\-Items} (const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&item)
+\item 
+\hyperlink{class_u_b_graphics_widget_item}{U\-B\-Graphics\-Widget\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_aff586f570c8625a51bccef943662a29d}{add\-Widget} (const Q\-Url \&p\-Widget\-Url, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_apple_widget_item}{U\-B\-Graphics\-Apple\-Widget\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_aa86ec061e79ba18c2efe73a6bf10bf33}{add\-Apple\-Widget} (const Q\-Url \&p\-Widget\-Url, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_w3_c_widget_item}{U\-B\-Graphics\-W3\-C\-Widget\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_acb26de2926454faf9c5ca66989779d82}{add\-W3\-C\-Widget} (const Q\-Url \&p\-Widget\-Url, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+void \hyperlink{class_u_b_graphics_scene_aa63a9c1b5eb1de5a0d06a0f2b449648a}{add\-Graphics\-Widget} (\hyperlink{class_u_b_graphics_widget_item}{U\-B\-Graphics\-Widget\-Item} $\ast$graphics\-Widget, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_media_item}{U\-B\-Graphics\-Media\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a02401493ef5bda150a808a6a92223386}{add\-Media} (const Q\-Url \&p\-Media\-File\-Url, bool should\-Play\-Asap, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_media_item}{U\-B\-Graphics\-Media\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a8b4f713ed62bc53e6b4f884ac0abc29f}{add\-Video} (const Q\-Url \&p\-Video\-File\-Url, bool should\-Play\-Asap, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_media_item}{U\-B\-Graphics\-Media\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a3cb053323480903a3b3b49c14cbb44e8}{add\-Audio} (const Q\-Url \&p\-Audio\-File\-Url, bool should\-Play\-Asap, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_svg_item}{U\-B\-Graphics\-Svg\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a274053bbdde02c1d4626254d2123171a}{add\-Svg} (const Q\-Url \&p\-Svg\-File\-Url, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0), const Q\-Byte\-Array p\-Data=Q\-Byte\-Array())
+\item 
+\hyperlink{class_u_b_graphics_text_item}{U\-B\-Graphics\-Text\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_adbfabe62d183758c50d8259d2e569152}{add\-Text} (const Q\-String \&p\-String, const Q\-Point\-F \&p\-Top\-Left=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_text_item}{U\-B\-Graphics\-Text\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a2ae7b40259282b306f5dc21e1e12e607}{text\-For\-Object\-Name} (const Q\-String \&p\-String, const Q\-String \&object\-Name=\char`\"{}U\-B\-T\-G\-Zero\-Page\-Session\-Title\char`\"{})
+\item 
+\hyperlink{class_u_b_graphics_text_item}{U\-B\-Graphics\-Text\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_aebfa0ab541a75af5b21b384e4a05c00e}{add\-Text\-With\-Font} (const Q\-String \&p\-String, const Q\-Point\-F \&p\-Top\-Left=Q\-Point\-F(0, 0), int point\-Size=-\/1, const Q\-String \&font\-Family=\char`\"{}\char`\"{}, bool bold=false, bool italic=false)
+\item 
+\hyperlink{class_u_b_graphics_text_item}{U\-B\-Graphics\-Text\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a0161e4cd7210721409b7da0e20fc6260}{add\-Text\-Html} (const Q\-String \&p\-String=Q\-String(), const Q\-Point\-F \&p\-Top\-Left=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_w3_c_widget_item}{U\-B\-Graphics\-W3\-C\-Widget\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a2729368a3a28a4d9669f23f171752194}{add\-O\-Embed} (const Q\-Url \&p\-Content\-Url, const Q\-Point\-F \&p\-Pos=Q\-Point\-F(0, 0))
+\item 
+\hyperlink{class_u_b_graphics_group_container_item}{U\-B\-Graphics\-Group\-Container\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_a9ec671a9afcc75a52267102c0a22b98b}{create\-Group} (Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$ items)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a4e26483b01f706f83cbbffaac618dbc6}{add\-Group} (\hyperlink{class_u_b_graphics_group_container_item}{U\-B\-Graphics\-Group\-Container\-Item} $\ast$group\-Item)
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_graphics_scene_af73c8ccfbf79c5b00b5195ab3de28328}{set\-As\-Background\-Object} (Q\-Graphics\-Item $\ast$item, bool p\-Adapt\-Transformation=false, bool expand=false)
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_graphics_scene_a49ec61d268a5757bb2d1f2ed7f4b8d26}{background\-Object} () const 
+\item 
+bool \hyperlink{class_u_b_graphics_scene_a918a255067499aa71829c286924a2e53}{is\-Background\-Object} (const Q\-Graphics\-Item $\ast$item) const 
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_graphics_scene_ad5c308fdec8c2a7656b1caa35ece19e4}{scale\-To\-Fit\-Document\-Size} (Q\-Graphics\-Item $\ast$item, bool center=false, int margin=0, bool expand=false)
+\item 
+Q\-Rect\-F \hyperlink{class_u_b_graphics_scene_a16c659f8d2d2d8c09eff096f6f290b44}{normalized\-Scene\-Rect} (qreal ratio=-\/1.\-0)
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_graphics_scene_a00577d96d8060f76953659cc48ecdff4}{item\-For\-Uuid} (Q\-Uuid \hyperlink{class_u_b_item_a242c8e4390dc3244bd42023b349b042b}{uuid})
+\item 
+void \hyperlink{class_u_b_graphics_scene_a941121f7dc85d8868d108fe7f3397193}{move\-To} (const Q\-Point\-F \&p\-Point)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a539db7c6773c2f0f560b1be082e71c8e}{draw\-Line\-To} (const Q\-Point\-F \&p\-End\-Point, const qreal \&p\-Width, bool b\-Line\-Style)
+\item 
+void \hyperlink{class_u_b_graphics_scene_aa337ae1428c734e7b4bef8a7404c926b}{erase\-Line\-To} (const Q\-Point\-F \&p\-End\-Point, const qreal \&p\-Width)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a56e8a13badcf6e0c4780557e45752fbe}{draw\-Arc\-To} (const Q\-Point\-F \&p\-Center\-Point, qreal p\-Span\-Angle)
+\item 
+bool \hyperlink{class_u_b_graphics_scene_aa764f68de12837b568b1c2abd45a92eb}{is\-Empty} () const 
+\item 
+void \hyperlink{class_u_b_graphics_scene_ab0be6ef8f35c143360e4816cef2ef80a}{set\-Document} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document)
+\item 
+\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_graphics_scene_a718297b6e060113fee9e8c7e822f6d39}{document} () const 
+\item 
+bool \hyperlink{class_u_b_graphics_scene_ad91ed6e458beecd1ee198991c703082c}{is\-Dark\-Background} () const 
+\item 
+bool \hyperlink{class_u_b_graphics_scene_a5aae0ae9d03855f49d4eec4d69f772a9}{is\-Light\-Background} () const 
+\item 
+bool \hyperlink{class_u_b_graphics_scene_a0e75e26b28c507fa963915433078e238}{is\-Crossed\-Background} () const 
+\item 
+bool \hyperlink{class_u_b_graphics_scene_a1b5b38e0006cfbbad81bcc2ec20da600}{has\-Background} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a9202ba429a1f36097245ff3f3ab2923c}{add\-Ruler} (Q\-Point\-F center)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a9e90c1135dfb13c9f0ce52e79c2888e1}{add\-Protractor} (Q\-Point\-F center)
+\item 
+void \hyperlink{class_u_b_graphics_scene_aa8ac2bb89fd0938d3befa5d572437456}{add\-Compass} (Q\-Point\-F center)
+\item 
+void \hyperlink{class_u_b_graphics_scene_ab8df2497fc918346cb013ab03b2f08f3}{add\-Triangle} (Q\-Point\-F center)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a68db5657dde886826bad2e633db1c703}{add\-Magnifier} (\hyperlink{class_u_b_magnifier_params}{U\-B\-Magnifier\-Params} params)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a8d8bb9ec5703090690312c04be144cdb}{add\-Aristo} (Q\-Point\-F center)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a02a8ac1e658e33332317c9e5b9ee6ee8}{add\-Mask} (const Q\-Point\-F \&center=Q\-Point\-F())
+\item 
+void \hyperlink{class_u_b_graphics_scene_a81fa8cbc224c10469d7cb44e3a8eaf6c}{add\-Cache} ()
+\item 
+Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$ \hyperlink{class_u_b_graphics_scene_a8c683870fe53e039ff4fed003c114482}{get\-Fast\-Access\-Items} ()
+\item 
+\hyperlink{class_u_b_graphics_scene_1_1_scene_view_state}{Scene\-View\-State} \hyperlink{class_u_b_graphics_scene_a2c461538b738de847dfe029bb27b7439}{view\-State} () const 
+\item 
+void \hyperlink{class_u_b_graphics_scene_a3d3e53091814e68510f12c4b40649e1b}{set\-View\-State} (const \hyperlink{class_u_b_graphics_scene_1_1_scene_view_state}{Scene\-View\-State} \&p\-View\-State)
+\item 
+virtual void \hyperlink{class_u_b_graphics_scene_a3fac42724b4c9d395698cc7e16f902ab}{set\-Rendering\-Quality} (\hyperlink{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53}{U\-B\-Item\-::\-Rendering\-Quality} p\-Rendering\-Quality)
+\item 
+Q\-List$<$ Q\-Url $>$ \hyperlink{class_u_b_graphics_scene_a601351bf55e81a30a79943a4080f5978}{relative\-Dependencies} () const 
+\item 
+Q\-Size \hyperlink{class_u_b_graphics_scene_aec88131e2343abb3e86dc5efcd8de622}{nominal\-Size} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a30821700452b29351caedb551fc1e834}{set\-Nominal\-Size} (const Q\-Size \&p\-Size)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a8f4bb049a0411b5b0239e50342e57db3}{set\-Nominal\-Size} (int p\-Width, int p\-Height)
+\item 
+qreal \hyperlink{class_u_b_graphics_scene_a5059be753d44af966649115ae9ebfd08}{change\-Z\-Level\-To} (Q\-Graphics\-Item $\ast$item, \hyperlink{class_u_b_z_layer_controller_aaea26acb88959955623736b3127f96b3}{U\-B\-Z\-Layer\-Controller\-::move\-Destination} dest)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a55dad0b5d2cacfc62edb5bee3bf0a0fc}{set\-Rendering\-Context} (\hyperlink{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130}{Rendering\-Context} p\-Rendering\-Context)
+\item 
+\hyperlink{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130}{Rendering\-Context} \hyperlink{class_u_b_graphics_scene_a430675c3c5406f64129e4cdefb379861}{rendering\-Context} () const 
+\item 
+Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \hyperlink{class_u_b_graphics_scene_a18e33c67e244cacb4fbf5fd0abda84cf}{tools} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a8c3c528109db216ef85eb8d960b01805}{register\-Tool} (Q\-Graphics\-Item $\ast$item)
+\item 
+const Q\-Point\-F \& \hyperlink{class_u_b_graphics_scene_a5c4103129de7ab6a38bf7912cb07643e}{previous\-Point} ()
+\item 
+void \hyperlink{class_u_b_graphics_scene_a07ce06fdfce6141bbb1c709eb1c48974}{set\-Selected\-Z\-Level} (Q\-Graphics\-Item $\ast$item)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a96bcf498668cc92b4d7c4df04f86a8bc}{set\-Own\-Zlevel} (Q\-Graphics\-Item $\ast$item)
+\item 
+\hyperlink{class_u_b_graphics_polygon_item}{U\-B\-Graphics\-Polygon\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_add209174dcc6cedf595fab2fb2409012}{polygon\-To\-Polygon\-Item} (const Q\-Polygon\-F p\-Polygon)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-Uuid \hyperlink{class_u_b_graphics_scene_a37bc5dc575e03198f923190aa28471a4}{get\-Personal\-Uuid} (Q\-Graphics\-Item $\ast$item)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_polygon_item}{U\-B\-Graphics\-Polygon\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_acbae52cff367277a4545689a84580148}{line\-To\-Polygon\-Item} (const Q\-Line\-F \&p\-Line, const qreal \&p\-Width)
+\item 
+\hyperlink{class_u_b_graphics_polygon_item}{U\-B\-Graphics\-Polygon\-Item} $\ast$ \hyperlink{class_u_b_graphics_scene_adec9587c37629dfc0c0f97ad7e55b1d5}{arc\-To\-Polygon\-Item} (const Q\-Line\-F \&p\-Start\-Radius, qreal p\-Span\-Angle, qreal p\-Width)
+\item 
+void \hyperlink{class_u_b_graphics_scene_aaf699f898652e303dce0a2e32912cc38}{init\-Polygon\-Item} (\hyperlink{class_u_b_graphics_polygon_item}{U\-B\-Graphics\-Polygon\-Item} $\ast$)
+\item 
+void \hyperlink{class_u_b_graphics_scene_a33bbd5491a97af58af92258277b082a6}{draw\-Eraser} (const Q\-Point\-F \&p\-End\-Point, bool is\-First\-Draw=false)
+\item 
+void \hyperlink{class_u_b_graphics_scene_ac27d72055526bee27be5423783199e72}{draw\-Pointer} (const Q\-Point\-F \&p\-End\-Point, bool is\-First\-Draw=false)
+\item 
+void \hyperlink{class_u_b_graphics_scene_ab0deb0a23ddf5b7fd731d462e09f6a93}{Dispose\-Magnifier\-Q\-Widgets} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_scene_a07dbd2ed42e2a4ed6519f958f4ef5138}{key\-Release\-Event} (Q\-Key\-Event $\ast$key\-Event)
+\item 
+void \hyperlink{class_u_b_graphics_scene_abf9af798da94f99bf882f12efece0c4c}{recolor\-All\-Items} ()
+\item 
+virtual void \hyperlink{class_u_b_graphics_scene_aae6c0821542f935f82dcd3db7b667243}{draw\-Items} (Q\-Painter $\ast$painter, int num\-Items, Q\-Graphics\-Item $\ast$items\mbox{[}$\,$\mbox{]}, const Q\-Style\-Option\-Graphics\-Item options\mbox{[}$\,$\mbox{]}, Q\-Widget $\ast$widget=0)
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_graphics_scene_ab97281916a62e6721053cf31fab06e5f}{root\-Item} (Q\-Graphics\-Item $\ast$item) const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_scene_a3fc3dc565b7e1f6a8e9afcd29bc9f2d5}{draw\-Background} (Q\-Painter $\ast$painter, const Q\-Rect\-F \&rect)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 106 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bd}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!clear\-Case@{clear\-Case}}
+\index{clear\-Case@{clear\-Case}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{clear\-Case}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Graphics\-Scene\-::clear\-Case}}}\label{dc/db2/class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bd}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{clear\-Items\-And\-Annotations@{clear\-Items\-And\-Annotations}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!clear\-Items\-And\-Annotations@{clear\-Items\-And\-Annotations}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bdaa6eb8805c739ae37c1ccc642e349d64a}{clear\-Items\-And\-Annotations}\label{dc/db2/class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bdaa6eb8805c739ae37c1ccc642e349d64a}
+}]\index{clear\-Annotations@{clear\-Annotations}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!clear\-Annotations@{clear\-Annotations}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bdacb981f9a21d9fe0d25a36bf87f65fdbd}{clear\-Annotations}\label{dc/db2/class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bdacb981f9a21d9fe0d25a36bf87f65fdbd}
+}]\index{clear\-Items@{clear\-Items}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!clear\-Items@{clear\-Items}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bda2cceee3e464d8eefbcefe28ff01c5b9b}{clear\-Items}\label{dc/db2/class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bda2cceee3e464d8eefbcefe28ff01c5b9b}
+}]\index{clear\-Background@{clear\-Background}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!clear\-Background@{clear\-Background}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bda7cbc0b3bd2370d97d8f6fd57de2ddea5}{clear\-Background}\label{dc/db2/class_u_b_graphics_scene_a35c5d1a0571964d92e864db92e29d5bda7cbc0b3bd2370d97d8f6fd57de2ddea5}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 112 of file U\-B\-Graphics\-Scene.\-h.
+
+\hypertarget{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!Rendering\-Context@{Rendering\-Context}}
+\index{Rendering\-Context@{Rendering\-Context}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{Rendering\-Context}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Graphics\-Scene\-::\-Rendering\-Context}}}\label{dc/db2/class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Screen@{Screen}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!Screen@{Screen}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a33eac653fc9ca8bff8f52582adf9950d}{Screen}\label{dc/db2/class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a33eac653fc9ca8bff8f52582adf9950d}
+}]\index{Non\-Screen@{Non\-Screen}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!Non\-Screen@{Non\-Screen}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a88b768f36ba02ea7ceaecab4f7e609e5}{Non\-Screen}\label{dc/db2/class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a88b768f36ba02ea7ceaecab4f7e609e5}
+}]\index{Pdf\-Export@{Pdf\-Export}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!Pdf\-Export@{Pdf\-Export}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130ae5ae070b19e16661b83bce788a69b7fa}{Pdf\-Export}\label{dc/db2/class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130ae5ae070b19e16661b83bce788a69b7fa}
+}]\index{Podcast@{Podcast}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!Podcast@{Podcast}}\item[{\em 
+\hypertarget{class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a9d6ab9514fa05c478e507197759cbc6b}{Podcast}\label{dc/db2/class_u_b_graphics_scene_a58c07654e56235641dd3aeb92ac24130a9d6ab9514fa05c478e507197759cbc6b}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 281 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_scene_a759a1e2470ba43f042d0c56c4cf70539}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}}
+\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{U\-B\-Graphics\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Scene\-::\-U\-B\-Graphics\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{parent, }
+\item[{bool}]{enable\-Undo\-Redo\-Stack = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a759a1e2470ba43f042d0c56c4cf70539}
+
+
+Definition at line 271 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a759a1e2470ba43f042d0c56c4cf70539_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a759a1e2470ba43f042d0c56c4cf70539_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a45555106bf190853ab97190ef910b72e}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!$\sim$\-U\-B\-Graphics\-Scene@{$\sim$\-U\-B\-Graphics\-Scene}}
+\index{$\sim$\-U\-B\-Graphics\-Scene@{$\sim$\-U\-B\-Graphics\-Scene}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Scene\-::$\sim$\-U\-B\-Graphics\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_a45555106bf190853ab97190ef910b72e}
+
+
+Definition at line 318 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a45555106bf190853ab97190ef910b72e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_scene_aa86ec061e79ba18c2efe73a6bf10bf33}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Apple\-Widget@{add\-Apple\-Widget}}
+\index{add\-Apple\-Widget@{add\-Apple\-Widget}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Apple\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Apple\-Widget\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Apple\-Widget (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Widget\-Url, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aa86ec061e79ba18c2efe73a6bf10bf33}
+
+
+Definition at line 1322 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa86ec061e79ba18c2efe73a6bf10bf33_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa86ec061e79ba18c2efe73a6bf10bf33_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a8d8bb9ec5703090690312c04be144cdb}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Aristo@{add\-Aristo}}
+\index{add\-Aristo@{add\-Aristo}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Aristo}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Aristo (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{center}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a8d8bb9ec5703090690312c04be144cdb}
+
+
+Definition at line 2023 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a8d8bb9ec5703090690312c04be144cdb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a8d8bb9ec5703090690312c04be144cdb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a3cb053323480903a3b3b49c14cbb44e8}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Audio@{add\-Audio}}
+\index{add\-Audio@{add\-Audio}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Media\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Audio (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Audio\-File\-Url, }
+\item[{bool}]{should\-Play\-Asap, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a3cb053323480903a3b3b49c14cbb44e8}
+
+
+Definition at line 1298 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a3cb053323480903a3b3b49c14cbb44e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a81fa8cbc224c10469d7cb44e3a8eaf6c}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Cache@{add\-Cache}}
+\index{add\-Cache@{add\-Cache}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a81fa8cbc224c10469d7cb44e3a8eaf6c}
+
+
+Definition at line 2039 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a81fa8cbc224c10469d7cb44e3a8eaf6c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a81fa8cbc224c10469d7cb44e3a8eaf6c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aa8ac2bb89fd0938d3befa5d572437456}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Compass@{add\-Compass}}
+\index{add\-Compass@{add\-Compass}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Compass}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Compass (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{center}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aa8ac2bb89fd0938d3befa5d572437456}
+
+
+Definition at line 2009 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa8ac2bb89fd0938d3befa5d572437456_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa8ac2bb89fd0938d3befa5d572437456_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aa63a9c1b5eb1de5a0d06a0f2b449648a}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Graphics\-Widget@{add\-Graphics\-Widget}}
+\index{add\-Graphics\-Widget@{add\-Graphics\-Widget}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Graphics\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Graphics\-Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Widget\-Item} $\ast$}]{graphics\-Widget, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aa63a9c1b5eb1de5a0d06a0f2b449648a}
+
+
+Definition at line 1340 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa63a9c1b5eb1de5a0d06a0f2b449648a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa63a9c1b5eb1de5a0d06a0f2b449648a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a4e26483b01f706f83cbbffaac618dbc6}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Group@{add\-Group}}
+\index{add\-Group@{add\-Group}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Group}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Group (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Group\-Container\-Item} $\ast$}]{group\-Item}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a4e26483b01f706f83cbbffaac618dbc6}
+
+
+Definition at line 1434 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a4e26483b01f706f83cbbffaac618dbc6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a546b3015e60c63f2ef0e72fed5e4eb35}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Item@{add\-Item}}
+\index{add\-Item@{add\-Item}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_a546b3015e60c63f2ef0e72fed5e4eb35}
+
+
+Reimplemented from \hyperlink{class_u_b_core_graphics_scene_a0a190111cab43448533b69bf8699ab38}{U\-B\-Core\-Graphics\-Scene}.
+
+
+
+Definition at line 1641 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a546b3015e60c63f2ef0e72fed5e4eb35_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a546b3015e60c63f2ef0e72fed5e4eb35_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a18bf3af9f52c9deb3149d9b82409cc02}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Items@{add\-Items}}
+\index{add\-Items@{add\-Items}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Items (
+\begin{DoxyParamCaption}
+\item[{const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a18bf3af9f52c9deb3149d9b82409cc02}
+
+
+Definition at line 1653 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a18bf3af9f52c9deb3149d9b82409cc02_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a68db5657dde886826bad2e633db1c703}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Magnifier@{add\-Magnifier}}
+\index{add\-Magnifier@{add\-Magnifier}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Magnifier (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Magnifier\-Params}}]{params}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a68db5657dde886826bad2e633db1c703}
+
+
+Definition at line 1877 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a68db5657dde886826bad2e633db1c703_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a68db5657dde886826bad2e633db1c703_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a02a8ac1e658e33332317c9e5b9ee6ee8}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Mask@{add\-Mask}}
+\index{add\-Mask@{add\-Mask}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Mask (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{center = {\ttfamily QPointF()}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a02a8ac1e658e33332317c9e5b9ee6ee8}
+
+
+Definition at line 2054 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a02a8ac1e658e33332317c9e5b9ee6ee8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a02a8ac1e658e33332317c9e5b9ee6ee8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a02401493ef5bda150a808a6a92223386}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Media@{add\-Media}}
+\index{add\-Media@{add\-Media}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Media}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Media\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Media (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Media\-File\-Url, }
+\item[{bool}]{should\-Play\-Asap, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a02401493ef5bda150a808a6a92223386}
+
+
+Definition at line 1254 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a02401493ef5bda150a808a6a92223386_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a02401493ef5bda150a808a6a92223386_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a2729368a3a28a4d9669f23f171752194}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-O\-Embed@{add\-O\-Embed}}
+\index{add\-O\-Embed@{add\-O\-Embed}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-O\-Embed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-W3\-C\-Widget\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-O\-Embed (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Content\-Url, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a2729368a3a28a4d9669f23f171752194}
+
+
+Definition at line 1375 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a2729368a3a28a4d9669f23f171752194_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a2729368a3a28a4d9669f23f171752194_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ab76488f73cd11e58ce91a3b7e2467bf6}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Pixmap@{add\-Pixmap}}
+\index{add\-Pixmap@{add\-Pixmap}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Pixmap\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Pixmap (
+\begin{DoxyParamCaption}
+\item[{const Q\-Pixmap \&}]{p\-Pixmap, }
+\item[{Q\-Graphics\-Item $\ast$}]{replace\-For, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,0)}, }
+\item[{qreal}]{scale\-Factor = {\ttfamily 1.0}, }
+\item[{bool}]{p\-Use\-Animation = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_ab76488f73cd11e58ce91a3b7e2467bf6}
+
+
+Definition at line 1208 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab76488f73cd11e58ce91a3b7e2467bf6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab76488f73cd11e58ce91a3b7e2467bf6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a9e90c1135dfb13c9f0ce52e79c2888e1}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Protractor@{add\-Protractor}}
+\index{add\-Protractor@{add\-Protractor}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Protractor}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Protractor (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{center}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a9e90c1135dfb13c9f0ce52e79c2888e1}
+
+
+Definition at line 1843 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9e90c1135dfb13c9f0ce52e79c2888e1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9e90c1135dfb13c9f0ce52e79c2888e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a9202ba429a1f36097245ff3f3ab2923c}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Ruler@{add\-Ruler}}
+\index{add\-Ruler@{add\-Ruler}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Ruler}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Ruler (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{center}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a9202ba429a1f36097245ff3f3ab2923c}
+
+
+Definition at line 1829 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9202ba429a1f36097245ff3f3ab2923c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9202ba429a1f36097245ff3f3ab2923c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a274053bbdde02c1d4626254d2123171a}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Svg@{add\-Svg}}
+\index{add\-Svg@{add\-Svg}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Svg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Svg\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Svg (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Svg\-File\-Url, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}, }
+\item[{const Q\-Byte\-Array}]{p\-Data = {\ttfamily QByteArray()}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a274053bbdde02c1d4626254d2123171a}
+
+
+Definition at line 1461 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a274053bbdde02c1d4626254d2123171a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a274053bbdde02c1d4626254d2123171a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_adbfabe62d183758c50d8259d2e569152}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Text@{add\-Text}}
+\index{add\-Text@{add\-Text}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Text\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Text (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-String, }
+\item[{const Q\-Point\-F \&}]{p\-Top\-Left = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_adbfabe62d183758c50d8259d2e569152}
+
+
+Definition at line 1493 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_adbfabe62d183758c50d8259d2e569152_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a0161e4cd7210721409b7da0e20fc6260}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Text\-Html@{add\-Text\-Html}}
+\index{add\-Text\-Html@{add\-Text\-Html}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Text\-Html}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Text\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Text\-Html (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-String = {\ttfamily QString()}, }
+\item[{const Q\-Point\-F \&}]{p\-Top\-Left = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a0161e4cd7210721409b7da0e20fc6260}
+
+
+Definition at line 1610 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a0161e4cd7210721409b7da0e20fc6260_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a0161e4cd7210721409b7da0e20fc6260_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aebfa0ab541a75af5b21b384e4a05c00e}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Text\-With\-Font@{add\-Text\-With\-Font}}
+\index{add\-Text\-With\-Font@{add\-Text\-With\-Font}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Text\-With\-Font}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Text\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Text\-With\-Font (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-String, }
+\item[{const Q\-Point\-F \&}]{p\-Top\-Left = {\ttfamily QPointF(0,~0)}, }
+\item[{int}]{point\-Size = {\ttfamily -\/1}, }
+\item[{const Q\-String \&}]{font\-Family = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{bool}]{bold = {\ttfamily false}, }
+\item[{bool}]{italic = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aebfa0ab541a75af5b21b384e4a05c00e}
+
+
+Definition at line 1553 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aebfa0ab541a75af5b21b384e4a05c00e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aebfa0ab541a75af5b21b384e4a05c00e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ab8df2497fc918346cb013ab03b2f08f3}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Triangle@{add\-Triangle}}
+\index{add\-Triangle@{add\-Triangle}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::add\-Triangle (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{center}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_ab8df2497fc918346cb013ab03b2f08f3}
+
+
+Definition at line 1860 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab8df2497fc918346cb013ab03b2f08f3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab8df2497fc918346cb013ab03b2f08f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a8b4f713ed62bc53e6b4f884ac0abc29f}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Video@{add\-Video}}
+\index{add\-Video@{add\-Video}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Video}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Media\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Video (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Video\-File\-Url, }
+\item[{bool}]{should\-Play\-Asap, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a8b4f713ed62bc53e6b4f884ac0abc29f}
+
+
+Definition at line 1293 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a8b4f713ed62bc53e6b4f884ac0abc29f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_acb26de2926454faf9c5ca66989779d82}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-W3\-C\-Widget@{add\-W3\-C\-Widget}}
+\index{add\-W3\-C\-Widget@{add\-W3\-C\-Widget}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-W3\-C\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-W3\-C\-Widget\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-W3\-C\-Widget (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Widget\-Url, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_acb26de2926454faf9c5ca66989779d82}
+
+
+Definition at line 1331 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_acb26de2926454faf9c5ca66989779d82_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_acb26de2926454faf9c5ca66989779d82_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aff586f570c8625a51bccef943662a29d}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!add\-Widget@{add\-Widget}}
+\index{add\-Widget@{add\-Widget}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{add\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Widget\-Item} $\ast$ U\-B\-Graphics\-Scene\-::add\-Widget (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Widget\-Url, }
+\item[{const Q\-Point\-F \&}]{p\-Pos = {\ttfamily QPointF(0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aff586f570c8625a51bccef943662a29d}
+
+
+Definition at line 1303 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aff586f570c8625a51bccef943662a29d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_adec9587c37629dfc0c0f97ad7e55b1d5}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!arc\-To\-Polygon\-Item@{arc\-To\-Polygon\-Item}}
+\index{arc\-To\-Polygon\-Item@{arc\-To\-Polygon\-Item}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{arc\-To\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Polygon\-Item} $\ast$ U\-B\-Graphics\-Scene\-::arc\-To\-Polygon\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Line\-F \&}]{p\-Start\-Radius, }
+\item[{qreal}]{p\-Span\-Angle, }
+\item[{qreal}]{p\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_adec9587c37629dfc0c0f97ad7e55b1d5}
+
+
+Definition at line 1027 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_adec9587c37629dfc0c0f97ad7e55b1d5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_adec9587c37629dfc0c0f97ad7e55b1d5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a49ec61d268a5757bb2d1f2ed7f4b8d26}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!background\-Object@{background\-Object}}
+\index{background\-Object@{background\-Object}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{background\-Object}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item$\ast$ U\-B\-Graphics\-Scene\-::background\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a49ec61d268a5757bb2d1f2ed7f4b8d26}
+
+
+Definition at line 172 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a49ec61d268a5757bb2d1f2ed7f4b8d26_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aacb578d05b2d7fe372556ebdd4061029}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!change\-Magnifier\-Mode@{change\-Magnifier\-Mode}}
+\index{change\-Magnifier\-Mode@{change\-Magnifier\-Mode}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{change\-Magnifier\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::change\-Magnifier\-Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_aacb578d05b2d7fe372556ebdd4061029}
+
+
+Definition at line 1989 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aacb578d05b2d7fe372556ebdd4061029_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aacb578d05b2d7fe372556ebdd4061029_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a5059be753d44af966649115ae9ebfd08}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!change\-Z\-Level\-To@{change\-Z\-Level\-To}}
+\index{change\-Z\-Level\-To@{change\-Z\-Level\-To}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{change\-Z\-Level\-To}]{\setlength{\rightskip}{0pt plus 5cm}qreal U\-B\-Graphics\-Scene\-::change\-Z\-Level\-To (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item, }
+\item[{{\bf U\-B\-Z\-Layer\-Controller\-::move\-Destination}}]{dest}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a5059be753d44af966649115ae9ebfd08}
+
+
+Definition at line 2157 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a5059be753d44af966649115ae9ebfd08_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a5059be753d44af966649115ae9ebfd08_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a6e861912547654e47c26f7d8e72201e8}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!clear\-Content@{clear\-Content}}
+\index{clear\-Content@{clear\-Content}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{clear\-Content}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::clear\-Content (
+\begin{DoxyParamCaption}
+\item[{{\bf clear\-Case}}]{p\-Case = {\ttfamily {\bf clear\-Items\-And\-Annotations}}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a6e861912547654e47c26f7d8e72201e8}
+
+
+Definition at line 1128 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a6e861912547654e47c26f7d8e72201e8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a6e861912547654e47c26f7d8e72201e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_acde00412f74076075aa080093588b308}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!close\-Magnifier@{close\-Magnifier}}
+\index{close\-Magnifier@{close\-Magnifier}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{close\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::close\-Magnifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_acde00412f74076075aa080093588b308}
+
+
+Definition at line 1964 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_acde00412f74076075aa080093588b308_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_acde00412f74076075aa080093588b308_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a6b3b2507342f09b1169b7b1ef1427118}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Graphics\-Scene\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_a6b3b2507342f09b1169b7b1ef1427118}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 129 of file U\-B\-Graphics\-Scene.\-h.
+
+\hypertarget{class_u_b_graphics_scene_a9ec671a9afcc75a52267102c0a22b98b}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!create\-Group@{create\-Group}}
+\index{create\-Group@{create\-Group}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{create\-Group}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Group\-Container\-Item} $\ast$ U\-B\-Graphics\-Scene\-::create\-Group (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ Q\-Graphics\-Item $\ast$ $>$}]{items}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a9ec671a9afcc75a52267102c0a22b98b}
+
+
+Definition at line 1399 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9ec671a9afcc75a52267102c0a22b98b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9ec671a9afcc75a52267102c0a22b98b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a27b80506198fc72a3039c90ebef7a0d3}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Scene\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_a27b80506198fc72a3039c90ebef7a0d3}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 1123 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a27b80506198fc72a3039c90ebef7a0d3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a6cfc68b3907297af710a1d8d1492d4ea}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!deselect\-All\-Items@{deselect\-All\-Items}}
+\index{deselect\-All\-Items@{deselect\-All\-Items}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{deselect\-All\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::deselect\-All\-Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a6cfc68b3907297af710a1d8d1492d4ea}
+
+
+Definition at line 1692 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a6cfc68b3907297af710a1d8d1492d4ea_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ab0deb0a23ddf5b7fd731d462e09f6a93}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!Dispose\-Magnifier\-Q\-Widgets@{Dispose\-Magnifier\-Q\-Widgets}}
+\index{Dispose\-Magnifier\-Q\-Widgets@{Dispose\-Magnifier\-Q\-Widgets}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{Dispose\-Magnifier\-Q\-Widgets}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::\-Dispose\-Magnifier\-Q\-Widgets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_ab0deb0a23ddf5b7fd731d462e09f6a93}
+
+
+Definition at line 690 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab0deb0a23ddf5b7fd731d462e09f6a93_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab0deb0a23ddf5b7fd731d462e09f6a93_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a718297b6e060113fee9e8c7e822f6d39}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!document@{document}}
+\index{document@{document}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy}$\ast$ U\-B\-Graphics\-Scene\-::document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a718297b6e060113fee9e8c7e822f6d39}
+
+
+Definition at line 197 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a718297b6e060113fee9e8c7e822f6d39_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a56e8a13badcf6e0c4780557e45752fbe}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!draw\-Arc\-To@{draw\-Arc\-To}}
+\index{draw\-Arc\-To@{draw\-Arc\-To}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{draw\-Arc\-To}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::draw\-Arc\-To (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{p\-Center\-Point, }
+\item[{qreal}]{p\-Span\-Angle}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a56e8a13badcf6e0c4780557e45752fbe}
+
+
+Definition at line 882 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a56e8a13badcf6e0c4780557e45752fbe_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a3fc3dc565b7e1f6a8e9afcd29bc9f2d5}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!draw\-Background@{draw\-Background}}
+\index{draw\-Background@{draw\-Background}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{draw\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::draw\-Background (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Rect\-F \&}]{rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_a3fc3dc565b7e1f6a8e9afcd29bc9f2d5}
+
+
+Definition at line 2235 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a3fc3dc565b7e1f6a8e9afcd29bc9f2d5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a33bbd5491a97af58af92258277b082a6}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!draw\-Eraser@{draw\-Eraser}}
+\index{draw\-Eraser@{draw\-Eraser}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{draw\-Eraser}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::draw\-Eraser (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{p\-End\-Point, }
+\item[{bool}]{is\-First\-Draw = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_a33bbd5491a97af58af92258277b082a6}
+
+
+Definition at line 654 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a33bbd5491a97af58af92258277b082a6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a33bbd5491a97af58af92258277b082a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aae6c0821542f935f82dcd3db7b667243}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!draw\-Items@{draw\-Items}}
+\index{draw\-Items@{draw\-Items}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{draw\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::draw\-Items (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{int}]{num\-Items, }
+\item[{Q\-Graphics\-Item $\ast$}]{items\mbox{[}$\,$\mbox{]}, }
+\item[{const Q\-Style\-Option\-Graphics\-Item}]{options\mbox{[}$\,$\mbox{]}, }
+\item[{Q\-Widget $\ast$}]{widget = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_aae6c0821542f935f82dcd3db7b667243}
+
+
+Definition at line 2174 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aae6c0821542f935f82dcd3db7b667243_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a539db7c6773c2f0f560b1be082e71c8e}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!draw\-Line\-To@{draw\-Line\-To}}
+\index{draw\-Line\-To@{draw\-Line\-To}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{draw\-Line\-To}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::draw\-Line\-To (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{p\-End\-Point, }
+\item[{const qreal \&}]{p\-Width, }
+\item[{bool}]{b\-Line\-Style}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a539db7c6773c2f0f560b1be082e71c8e}
+
+
+Definition at line 729 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a539db7c6773c2f0f560b1be082e71c8e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a539db7c6773c2f0f560b1be082e71c8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ac27d72055526bee27be5423783199e72}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!draw\-Pointer@{draw\-Pointer}}
+\index{draw\-Pointer@{draw\-Pointer}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{draw\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::draw\-Pointer (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{p\-End\-Point, }
+\item[{bool}]{is\-First\-Draw = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_ac27d72055526bee27be5423783199e72}
+
+
+Definition at line 672 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ac27d72055526bee27be5423783199e72_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ac27d72055526bee27be5423783199e72_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a7ccefa0b71c3b0ae6634eed91a5444b7}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!enable\-Undo\-Redo\-Stack@{enable\-Undo\-Redo\-Stack}}
+\index{enable\-Undo\-Redo\-Stack@{enable\-Undo\-Redo\-Stack}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{enable\-Undo\-Redo\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::enable\-Undo\-Redo\-Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a7ccefa0b71c3b0ae6634eed91a5444b7}
+
+
+Definition at line 120 of file U\-B\-Graphics\-Scene.\-h.
+
+\hypertarget{class_u_b_graphics_scene_aa337ae1428c734e7b4bef8a7404c926b}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!erase\-Line\-To@{erase\-Line\-To}}
+\index{erase\-Line\-To@{erase\-Line\-To}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{erase\-Line\-To}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::erase\-Line\-To (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{p\-End\-Point, }
+\item[{const qreal \&}]{p\-Width}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aa337ae1428c734e7b4bef8a7404c926b}
+
+
+Definition at line 780 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa337ae1428c734e7b4bef8a7404c926b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa337ae1428c734e7b4bef8a7404c926b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a8c683870fe53e039ff4fed003c114482}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!get\-Fast\-Access\-Items@{get\-Fast\-Access\-Items}}
+\index{get\-Fast\-Access\-Items@{get\-Fast\-Access\-Items}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{get\-Fast\-Access\-Items}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$Q\-Graphics\-Item$\ast$$>$ U\-B\-Graphics\-Scene\-::get\-Fast\-Access\-Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a8c683870fe53e039ff4fed003c114482}
+
+
+Definition at line 232 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a8c683870fe53e039ff4fed003c114482_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a37bc5dc575e03198f923190aa28471a4}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!get\-Personal\-Uuid@{get\-Personal\-Uuid}}
+\index{get\-Personal\-Uuid@{get\-Personal\-Uuid}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{get\-Personal\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Uuid U\-B\-Graphics\-Scene\-::get\-Personal\-Uuid (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dc/db2/class_u_b_graphics_scene_a37bc5dc575e03198f923190aa28471a4}
+
+
+Definition at line 2151 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a37bc5dc575e03198f923190aa28471a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a1b5b38e0006cfbbad81bcc2ec20da600}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!has\-Background@{has\-Background}}
+\index{has\-Background@{has\-Background}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{has\-Background}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::has\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a1b5b38e0006cfbbad81bcc2ec20da600}
+
+
+Definition at line 217 of file U\-B\-Graphics\-Scene.\-h.
+
+\hypertarget{class_u_b_graphics_scene_abb129e3c7327ec690d7c4f5f5dee3836}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!hide\-Eraser@{hide\-Eraser}}
+\index{hide\-Eraser@{hide\-Eraser}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{hide\-Eraser}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::hide\-Eraser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_abb129e3c7327ec690d7c4f5f5dee3836}
+
+
+Definition at line 1043 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_abb129e3c7327ec690d7c4f5f5dee3836_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aaf699f898652e303dce0a2e32912cc38}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!init\-Polygon\-Item@{init\-Polygon\-Item}}
+\index{init\-Polygon\-Item@{init\-Polygon\-Item}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{init\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::init\-Polygon\-Item (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Polygon\-Item} $\ast$}]{polygon\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_aaf699f898652e303dce0a2e32912cc38}
+
+
+Definition at line 996 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aaf699f898652e303dce0a2e32912cc38_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aaf699f898652e303dce0a2e32912cc38_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a883f9c98b65f6fb3fd559abd3969fd42}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!init\-Stroke@{init\-Stroke}}
+\index{init\-Stroke@{init\-Stroke}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{init\-Stroke}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::init\-Stroke (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a883f9c98b65f6fb3fd559abd3969fd42}
+
+
+Definition at line 2393 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a883f9c98b65f6fb3fd559abd3969fd42_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a9354a46739a316286901ebd12b2bcf1b}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!input\-Device\-Move@{input\-Device\-Move}}
+\index{input\-Device\-Move@{input\-Device\-Move}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{input\-Device\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::input\-Device\-Move (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{scene\-Pos, }
+\item[{const qreal \&}]{pressure = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a9354a46739a316286901ebd12b2bcf1b}
+
+
+Definition at line 458 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9354a46739a316286901ebd12b2bcf1b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9354a46739a316286901ebd12b2bcf1b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aa7b9011c76710841c644801d235ae3f2}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!input\-Device\-Press@{input\-Device\-Press}}
+\index{input\-Device\-Press@{input\-Device\-Press}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{input\-Device\-Press}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::input\-Device\-Press (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{scene\-Pos, }
+\item[{const qreal \&}]{pressure = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aa7b9011c76710841c644801d235ae3f2}
+
+
+Definition at line 367 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa7b9011c76710841c644801d235ae3f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa7b9011c76710841c644801d235ae3f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a6e04dca4d1484c4e44cc63c8a5b0e2da}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!input\-Device\-Release@{input\-Device\-Release}}
+\index{input\-Device\-Release@{input\-Device\-Release}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{input\-Device\-Release}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::input\-Device\-Release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a6e04dca4d1484c4e44cc63c8a5b0e2da}
+
+
+Definition at line 546 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a6e04dca4d1484c4e44cc63c8a5b0e2da_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a6e04dca4d1484c4e44cc63c8a5b0e2da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a918a255067499aa71829c286924a2e53}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!is\-Background\-Object@{is\-Background\-Object}}
+\index{is\-Background\-Object@{is\-Background\-Object}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{is\-Background\-Object}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::is\-Background\-Object (
+\begin{DoxyParamCaption}
+\item[{const Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a918a255067499aa71829c286924a2e53}
+
+
+Definition at line 177 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a918a255067499aa71829c286924a2e53_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a0e75e26b28c507fa963915433078e238}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!is\-Crossed\-Background@{is\-Crossed\-Background}}
+\index{is\-Crossed\-Background@{is\-Crossed\-Background}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{is\-Crossed\-Background}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::is\-Crossed\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a0e75e26b28c507fa963915433078e238}
+
+
+Definition at line 212 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a0e75e26b28c507fa963915433078e238_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ad91ed6e458beecd1ee198991c703082c}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!is\-Dark\-Background@{is\-Dark\-Background}}
+\index{is\-Dark\-Background@{is\-Dark\-Background}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{is\-Dark\-Background}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::is\-Dark\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_ad91ed6e458beecd1ee198991c703082c}
+
+
+Definition at line 202 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ad91ed6e458beecd1ee198991c703082c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aa764f68de12837b568b1c2abd45a92eb}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dc/db2/class_u_b_graphics_scene_aa764f68de12837b568b1c2abd45a92eb}
+
+
+Definition at line 1700 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aa764f68de12837b568b1c2abd45a92eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a5aae0ae9d03855f49d4eec4d69f772a9}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!is\-Light\-Background@{is\-Light\-Background}}
+\index{is\-Light\-Background@{is\-Light\-Background}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{is\-Light\-Background}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::is\-Light\-Background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a5aae0ae9d03855f49d4eec4d69f772a9}
+
+
+Definition at line 207 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a5aae0ae9d03855f49d4eec4d69f772a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a3a19626bcbff3475ed3c0f0b5fb58036}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!is\-U\-R\-Stack\-Is\-Enabled@{is\-U\-R\-Stack\-Is\-Enabled}}
+\index{is\-U\-R\-Stack\-Is\-Enabled@{is\-U\-R\-Stack\-Is\-Enabled}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{is\-U\-R\-Stack\-Is\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Graphics\-Scene\-::is\-U\-R\-Stack\-Is\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a3a19626bcbff3475ed3c0f0b5fb58036}
+
+
+Definition at line 122 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a3a19626bcbff3475ed3c0f0b5fb58036_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a00577d96d8060f76953659cc48ecdff4}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!item\-For\-Uuid@{item\-For\-Uuid}}
+\index{item\-For\-Uuid@{item\-For\-Uuid}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{item\-For\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item $\ast$ U\-B\-Graphics\-Scene\-::item\-For\-Uuid (
+\begin{DoxyParamCaption}
+\item[{Q\-Uuid}]{uuid}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a00577d96d8060f76953659cc48ecdff4}
+
+
+Definition at line 1777 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a00577d96d8060f76953659cc48ecdff4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a00577d96d8060f76953659cc48ecdff4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a07dbd2ed42e2a4ed6519f958f4ef5138}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!key\-Release\-Event@{key\-Release\-Event}}
+\index{key\-Release\-Event@{key\-Release\-Event}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{key\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::key\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{key\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_a07dbd2ed42e2a4ed6519f958f4ef5138}
+
+
+Definition at line 2288 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a07dbd2ed42e2a4ed6519f958f4ef5138_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ad531983c966ef07c7dde8cebf8cf3903}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!leave\-Event@{leave\-Event}}
+\index{leave\-Event@{leave\-Event}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_ad531983c966ef07c7dde8cebf8cf3903}
+
+
+Definition at line 1049 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ad531983c966ef07c7dde8cebf8cf3903_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ad531983c966ef07c7dde8cebf8cf3903_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_acbae52cff367277a4545689a84580148}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!line\-To\-Polygon\-Item@{line\-To\-Polygon\-Item}}
+\index{line\-To\-Polygon\-Item@{line\-To\-Polygon\-Item}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{line\-To\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Polygon\-Item} $\ast$ U\-B\-Graphics\-Scene\-::line\-To\-Polygon\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Line\-F \&}]{p\-Line, }
+\item[{const qreal \&}]{p\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_acbae52cff367277a4545689a84580148}
+
+
+Definition at line 987 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_acbae52cff367277a4545689a84580148_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_acbae52cff367277a4545689a84580148_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ae1ba0d5c8d2980ebe07e7207d868b4db}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!move\-Magnifier@{move\-Magnifier}}
+\index{move\-Magnifier@{move\-Magnifier}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{move\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::move\-Magnifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_ae1ba0d5c8d2980ebe07e7207d868b4db}
+
+
+Definition at line 1928 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ae1ba0d5c8d2980ebe07e7207d868b4db_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ae1ba0d5c8d2980ebe07e7207d868b4db_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a2a4e3d9011f5636f040fb6582a559d84}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!move\-Magnifier@{move\-Magnifier}}
+\index{move\-Magnifier@{move\-Magnifier}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{move\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::move\-Magnifier (
+\begin{DoxyParamCaption}
+\item[{Q\-Point}]{new\-Pos, }
+\item[{bool}]{force\-Grab = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a2a4e3d9011f5636f040fb6582a559d84}
+
+
+Definition at line 1938 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a2a4e3d9011f5636f040fb6582a559d84_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a941121f7dc85d8868d108fe7f3397193}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!move\-To@{move\-To}}
+\index{move\-To@{move\-To}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{move\-To}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::move\-To (
+\begin{DoxyParamCaption}
+\item[{const Q\-Point\-F \&}]{p\-Point}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a941121f7dc85d8868d108fe7f3397193}
+
+
+Definition at line 720 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a941121f7dc85d8868d108fe7f3397193_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aec88131e2343abb3e86dc5efcd8de622}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!nominal\-Size@{nominal\-Size}}
+\index{nominal\-Size@{nominal\-Size}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{nominal\-Size}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size U\-B\-Graphics\-Scene\-::nominal\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_aec88131e2343abb3e86dc5efcd8de622}
+
+
+Definition at line 2113 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aec88131e2343abb3e86dc5efcd8de622_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aec88131e2343abb3e86dc5efcd8de622_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a16c659f8d2d2d8c09eff096f6f290b44}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!normalized\-Scene\-Rect@{normalized\-Scene\-Rect}}
+\index{normalized\-Scene\-Rect@{normalized\-Scene\-Rect}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{normalized\-Scene\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F U\-B\-Graphics\-Scene\-::normalized\-Scene\-Rect (
+\begin{DoxyParamCaption}
+\item[{qreal}]{ratio = {\ttfamily -\/1.0}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a16c659f8d2d2d8c09eff096f6f290b44}
+
+
+Definition at line 1738 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a16c659f8d2d2d8c09eff096f6f290b44_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a16c659f8d2d2d8c09eff096f6f290b44_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a83c404a044e0e608b63b998751af645d}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!page\-Size\-Changed@{page\-Size\-Changed}}
+\index{page\-Size\-Changed@{page\-Size\-Changed}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{page\-Size\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::page\-Size\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dc/db2/class_u_b_graphics_scene_a83c404a044e0e608b63b998751af645d}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a83c404a044e0e608b63b998751af645d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_add209174dcc6cedf595fab2fb2409012}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!polygon\-To\-Polygon\-Item@{polygon\-To\-Polygon\-Item}}
+\index{polygon\-To\-Polygon\-Item@{polygon\-To\-Polygon\-Item}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{polygon\-To\-Polygon\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Polygon\-Item} $\ast$ U\-B\-Graphics\-Scene\-::polygon\-To\-Polygon\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Polygon\-F}]{p\-Polygon}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_add209174dcc6cedf595fab2fb2409012}
+
+
+Definition at line 1034 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_add209174dcc6cedf595fab2fb2409012_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_add209174dcc6cedf595fab2fb2409012_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a5c4103129de7ab6a38bf7912cb07643e}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!previous\-Point@{previous\-Point}}
+\index{previous\-Point@{previous\-Point}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{previous\-Point}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Point\-F\& U\-B\-Graphics\-Scene\-::previous\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a5c4103129de7ab6a38bf7912cb07643e}
+
+
+Definition at line 303 of file U\-B\-Graphics\-Scene.\-h.
+
+\hypertarget{class_u_b_graphics_scene_abf9af798da94f99bf882f12efece0c4c}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!recolor\-All\-Items@{recolor\-All\-Items}}
+\index{recolor\-All\-Items@{recolor\-All\-Items}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{recolor\-All\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::recolor\-All\-Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_abf9af798da94f99bf882f12efece0c4c}
+
+
+Definition at line 957 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_abf9af798da94f99bf882f12efece0c4c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_abf9af798da94f99bf882f12efece0c4c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a8c3c528109db216ef85eb8d960b01805}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!register\-Tool@{register\-Tool}}
+\index{register\-Tool@{register\-Tool}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{register\-Tool}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::register\-Tool (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a8c3c528109db216ef85eb8d960b01805}
+
+
+Definition at line 298 of file U\-B\-Graphics\-Scene.\-h.
+
+\hypertarget{class_u_b_graphics_scene_a601351bf55e81a30a79943a4080f5978}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!relative\-Dependencies@{relative\-Dependencies}}
+\index{relative\-Dependencies@{relative\-Dependencies}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{relative\-Dependencies}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Q\-Url $>$ U\-B\-Graphics\-Scene\-::relative\-Dependencies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dc/db2/class_u_b_graphics_scene_a601351bf55e81a30a79943a4080f5978}
+
+
+Definition at line 2085 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a601351bf55e81a30a79943a4080f5978_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a601351bf55e81a30a79943a4080f5978_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a769a40e7bebcaf040e391eed5f5d3f56}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!remove\-Item@{remove\-Item}}
+\index{remove\-Item@{remove\-Item}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{remove\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::remove\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a769a40e7bebcaf040e391eed5f5d3f56}
+
+
+Definition at line 1665 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a769a40e7bebcaf040e391eed5f5d3f56_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a769a40e7bebcaf040e391eed5f5d3f56_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a51dd0fbb2c591323cddfcc14972b8594}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!remove\-Items@{remove\-Items}}
+\index{remove\-Items@{remove\-Items}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{remove\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::remove\-Items (
+\begin{DoxyParamCaption}
+\item[{const Q\-Set$<$ Q\-Graphics\-Item $\ast$ $>$ \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a51dd0fbb2c591323cddfcc14972b8594}
+
+
+Definition at line 1680 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a51dd0fbb2c591323cddfcc14972b8594_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a430675c3c5406f64129e4cdefb379861}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!rendering\-Context@{rendering\-Context}}
+\index{rendering\-Context@{rendering\-Context}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{rendering\-Context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rendering\-Context} U\-B\-Graphics\-Scene\-::rendering\-Context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a430675c3c5406f64129e4cdefb379861}
+
+
+Definition at line 291 of file U\-B\-Graphics\-Scene.\-h.
+
+\hypertarget{class_u_b_graphics_scene_a8bded4f617b9d1d9cbd10e1b4c7545bf}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!resized\-Magnifier@{resized\-Magnifier}}
+\index{resized\-Magnifier@{resized\-Magnifier}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{resized\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::resized\-Magnifier (
+\begin{DoxyParamCaption}
+\item[{qreal}]{new\-Percent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a8bded4f617b9d1d9cbd10e1b4c7545bf}
+
+
+Definition at line 1997 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a8bded4f617b9d1d9cbd10e1b4c7545bf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a8bded4f617b9d1d9cbd10e1b4c7545bf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ab97281916a62e6721053cf31fab06e5f}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!root\-Item@{root\-Item}}
+\index{root\-Item@{root\-Item}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{root\-Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item $\ast$ U\-B\-Graphics\-Scene\-::root\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/db2/class_u_b_graphics_scene_ab97281916a62e6721053cf31fab06e5f}
+
+
+Definition at line 2162 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab97281916a62e6721053cf31fab06e5f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ad5c308fdec8c2a7656b1caa35ece19e4}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!scale\-To\-Fit\-Document\-Size@{scale\-To\-Fit\-Document\-Size}}
+\index{scale\-To\-Fit\-Document\-Size@{scale\-To\-Fit\-Document\-Size}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{scale\-To\-Fit\-Document\-Size}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item $\ast$ U\-B\-Graphics\-Scene\-::scale\-To\-Fit\-Document\-Size (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item, }
+\item[{bool}]{center = {\ttfamily false}, }
+\item[{int}]{margin = {\ttfamily 0}, }
+\item[{bool}]{expand = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_ad5c308fdec8c2a7656b1caa35ece19e4}
+
+
+Definition at line 1806 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ad5c308fdec8c2a7656b1caa35ece19e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a5d793edf48a0905e7dc1725b3f6da449}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!scene\-Deep\-Copy@{scene\-Deep\-Copy}}
+\index{scene\-Deep\-Copy@{scene\-Deep\-Copy}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{scene\-Deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Graphics\-Scene\-::scene\-Deep\-Copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dc/db2/class_u_b_graphics_scene_a5d793edf48a0905e7dc1725b3f6da449}
+
+
+Definition at line 1055 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a5d793edf48a0905e7dc1725b3f6da449_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a5d793edf48a0905e7dc1725b3f6da449_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a23ff2728419619904a2d7680c63cb0eb}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!selection\-Changed\-Processing@{selection\-Changed\-Processing}}
+\index{selection\-Changed\-Processing@{selection\-Changed\-Processing}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{selection\-Changed\-Processing}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::selection\-Changed\-Processing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a23ff2728419619904a2d7680c63cb0eb}
+
+
+Definition at line 329 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a23ff2728419619904a2d7680c63cb0eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_af73c8ccfbf79c5b00b5195ab3de28328}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-As\-Background\-Object@{set\-As\-Background\-Object}}
+\index{set\-As\-Background\-Object@{set\-As\-Background\-Object}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-As\-Background\-Object}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item $\ast$ U\-B\-Graphics\-Scene\-::set\-As\-Background\-Object (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item, }
+\item[{bool}]{p\-Adapt\-Transformation = {\ttfamily false}, }
+\item[{bool}]{expand = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_af73c8ccfbf79c5b00b5195ab3de28328}
+
+
+Definition at line 1705 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_af73c8ccfbf79c5b00b5195ab3de28328_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_af73c8ccfbf79c5b00b5195ab3de28328_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ad34fd16dd510a1a28cf2df3227a57a14}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Background@{set\-Background}}
+\index{set\-Background@{set\-Background}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Background (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\-Is\-Dark, }
+\item[{bool}]{p\-Is\-Crossed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_ad34fd16dd510a1a28cf2df3227a57a14}
+
+
+Definition at line 903 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ad34fd16dd510a1a28cf2df3227a57a14_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ad34fd16dd510a1a28cf2df3227a57a14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_af42d001c250f1368e664c3243500373f}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Background\-Zoom\-Factor@{set\-Background\-Zoom\-Factor}}
+\index{set\-Background\-Zoom\-Factor@{set\-Background\-Zoom\-Factor}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Background\-Zoom\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Background\-Zoom\-Factor (
+\begin{DoxyParamCaption}
+\item[{qreal}]{zoom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_af42d001c250f1368e664c3243500373f}
+
+
+Definition at line 947 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_af42d001c250f1368e664c3243500373f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_ab0be6ef8f35c143360e4816cef2ef80a}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Document@{set\-Document}}
+\index{set\-Document@{set\-Document}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Document}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_ab0be6ef8f35c143360e4816cef2ef80a}
+
+
+Definition at line 1792 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab0be6ef8f35c143360e4816cef2ef80a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_ab0be6ef8f35c143360e4816cef2ef80a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a9c819f5d1dd2c630c8bb62c11d17fa5f}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Drawing\-Mode@{set\-Drawing\-Mode}}
+\index{set\-Drawing\-Mode@{set\-Drawing\-Mode}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Drawing\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Drawing\-Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Mode\-Desktop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a9c819f5d1dd2c630c8bb62c11d17fa5f}
+
+
+Definition at line 952 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a9c819f5d1dd2c630c8bb62c11d17fa5f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a30821700452b29351caedb551fc1e834}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Nominal\-Size@{set\-Nominal\-Size}}
+\index{set\-Nominal\-Size@{set\-Nominal\-Size}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Nominal\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Nominal\-Size (
+\begin{DoxyParamCaption}
+\item[{const Q\-Size \&}]{p\-Size}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a30821700452b29351caedb551fc1e834}
+
+
+Definition at line 2123 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a30821700452b29351caedb551fc1e834_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a30821700452b29351caedb551fc1e834_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a8f4bb049a0411b5b0239e50342e57db3}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Nominal\-Size@{set\-Nominal\-Size}}
+\index{set\-Nominal\-Size@{set\-Nominal\-Size}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Nominal\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Nominal\-Size (
+\begin{DoxyParamCaption}
+\item[{int}]{p\-Width, }
+\item[{int}]{p\-Height}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a8f4bb049a0411b5b0239e50342e57db3}
+
+
+Definition at line 2136 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a8f4bb049a0411b5b0239e50342e57db3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a96bcf498668cc92b4d7c4df04f86a8bc}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Own\-Zlevel@{set\-Own\-Zlevel}}
+\index{set\-Own\-Zlevel@{set\-Own\-Zlevel}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Own\-Zlevel}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Own\-Zlevel (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a96bcf498668cc92b4d7c4df04f86a8bc}
+
+
+Definition at line 2146 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a96bcf498668cc92b4d7c4df04f86a8bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a55dad0b5d2cacfc62edb5bee3bf0a0fc}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Rendering\-Context@{set\-Rendering\-Context}}
+\index{set\-Rendering\-Context@{set\-Rendering\-Context}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Rendering\-Context}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Rendering\-Context (
+\begin{DoxyParamCaption}
+\item[{{\bf Rendering\-Context}}]{p\-Rendering\-Context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a55dad0b5d2cacfc62edb5bee3bf0a0fc}
+
+
+Definition at line 286 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a55dad0b5d2cacfc62edb5bee3bf0a0fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a3fac42724b4c9d395698cc7e16f902ab}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Rendering\-Quality@{set\-Rendering\-Quality}}
+\index{set\-Rendering\-Quality@{set\-Rendering\-Quality}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Rendering\-Quality}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Rendering\-Quality (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item\-::\-Rendering\-Quality}}]{p\-Rendering\-Quality}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dc/db2/class_u_b_graphics_scene_a3fac42724b4c9d395698cc7e16f902ab}
+
+
+Reimplemented from \hyperlink{class_u_b_item_ab91a4a587b0981ff59f7ddedc6dbe68c}{U\-B\-Item}.
+
+
+
+Definition at line 2068 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a3fac42724b4c9d395698cc7e16f902ab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a3fac42724b4c9d395698cc7e16f902ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a07ce06fdfce6141bbb1c709eb1c48974}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Selected\-Z\-Level@{set\-Selected\-Z\-Level}}
+\index{set\-Selected\-Z\-Level@{set\-Selected\-Z\-Level}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Selected\-Z\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Selected\-Z\-Level (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a07ce06fdfce6141bbb1c709eb1c48974}
+
+
+Definition at line 2141 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a07ce06fdfce6141bbb1c709eb1c48974_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a07ce06fdfce6141bbb1c709eb1c48974_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a05efdd2cb21422270b1735c38faf0839}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-Tool\-Cursor@{set\-Tool\-Cursor}}
+\index{set\-Tool\-Cursor@{set\-Tool\-Cursor}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-Tool\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-Tool\-Cursor (
+\begin{DoxyParamCaption}
+\item[{int}]{tool}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a05efdd2cb21422270b1735c38faf0839}
+
+
+Definition at line 2377 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a05efdd2cb21422270b1735c38faf0839_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a05efdd2cb21422270b1735c38faf0839_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a464b1abf70e29b2a606415e85a53fa28}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-U\-R\-Stack\-Enable@{set\-U\-R\-Stack\-Enable}}
+\index{set\-U\-R\-Stack\-Enable@{set\-U\-R\-Stack\-Enable}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-U\-R\-Stack\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-U\-R\-Stack\-Enable (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a464b1abf70e29b2a606415e85a53fa28}
+
+
+Definition at line 121 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a464b1abf70e29b2a606415e85a53fa28_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a3d3e53091814e68510f12c4b40649e1b}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!set\-View\-State@{set\-View\-State}}
+\index{set\-View\-State@{set\-View\-State}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{set\-View\-State}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::set\-View\-State (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scene\-View\-State} \&}]{p\-View\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a3d3e53091814e68510f12c4b40649e1b}
+
+
+Definition at line 264 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a3d3e53091814e68510f12c4b40649e1b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a2ae7b40259282b306f5dc21e1e12e607}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!text\-For\-Object\-Name@{text\-For\-Object\-Name}}
+\index{text\-For\-Object\-Name@{text\-For\-Object\-Name}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{text\-For\-Object\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Text\-Item} $\ast$ U\-B\-Graphics\-Scene\-::text\-For\-Object\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-String, }
+\item[{const Q\-String \&}]{object\-Name = {\ttfamily \char`\"{}UBTGZeroPageSessionTitle\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{dc/db2/class_u_b_graphics_scene_a2ae7b40259282b306f5dc21e1e12e607}
+
+
+Definition at line 1500 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a2ae7b40259282b306f5dc21e1e12e607_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a72110f0d1fe8495355f25975ed7a1ed3}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!text\-Undo\-Command\-Added@{text\-Undo\-Command\-Added}}
+\index{text\-Undo\-Command\-Added@{text\-Undo\-Command\-Added}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{text\-Undo\-Command\-Added}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::text\-Undo\-Command\-Added (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Text\-Item} $\ast$}]{text\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a72110f0d1fe8495355f25975ed7a1ed3}
+
+
+Definition at line 1247 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a72110f0d1fe8495355f25975ed7a1ed3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a18e33c67e244cacb4fbf5fd0abda84cf}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!tools@{tools}}
+\index{tools@{tools}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{tools}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Set$<$Q\-Graphics\-Item$\ast$$>$ U\-B\-Graphics\-Scene\-::tools (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a18e33c67e244cacb4fbf5fd0abda84cf}
+
+
+Definition at line 296 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a18e33c67e244cacb4fbf5fd0abda84cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a94a8bb0eb91d5db7904d7bc2932cdc0e}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!update\-Group\-Button\-State@{update\-Group\-Button\-State}}
+\index{update\-Group\-Button\-State@{update\-Group\-Button\-State}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{update\-Group\-Button\-State}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::update\-Group\-Button\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a94a8bb0eb91d5db7904d7bc2932cdc0e}
+
+
+Definition at line 338 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a94a8bb0eb91d5db7904d7bc2932cdc0e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a94a8bb0eb91d5db7904d7bc2932cdc0e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a2c461538b738de847dfe029bb27b7439}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!view\-State@{view\-State}}
+\index{view\-State@{view\-State}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{view\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scene\-View\-State} U\-B\-Graphics\-Scene\-::view\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/db2/class_u_b_graphics_scene_a2c461538b738de847dfe029bb27b7439}
+
+
+Definition at line 259 of file U\-B\-Graphics\-Scene.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a2c461538b738de847dfe029bb27b7439_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_aeddbb21827440839eab75eb9f01a7647}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!zoom\-In\-Magnifier@{zoom\-In\-Magnifier}}
+\index{zoom\-In\-Magnifier@{zoom\-In\-Magnifier}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{zoom\-In\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::zoom\-In\-Magnifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_aeddbb21827440839eab75eb9f01a7647}
+
+
+Definition at line 1970 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aeddbb21827440839eab75eb9f01a7647_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_aeddbb21827440839eab75eb9f01a7647_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_scene_a7cd496f1aae3c1ab0f372fa2e9a75370}{\index{U\-B\-Graphics\-Scene@{U\-B\-Graphics\-Scene}!zoom\-Out\-Magnifier@{zoom\-Out\-Magnifier}}
+\index{zoom\-Out\-Magnifier@{zoom\-Out\-Magnifier}!UBGraphicsScene@{U\-B\-Graphics\-Scene}}
+\subsubsection[{zoom\-Out\-Magnifier}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Scene\-::zoom\-Out\-Magnifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dc/db2/class_u_b_graphics_scene_a7cd496f1aae3c1ab0f372fa2e9a75370}
+
+
+Definition at line 1979 of file U\-B\-Graphics\-Scene.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a7cd496f1aae3c1ab0f372fa2e9a75370_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/db2/class_u_b_graphics_scene_a7cd496f1aae3c1ab0f372fa2e9a75370_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_scene_8h}{U\-B\-Graphics\-Scene.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_scene_8cpp}{U\-B\-Graphics\-Scene.\-cpp}\end{DoxyCompactItemize}

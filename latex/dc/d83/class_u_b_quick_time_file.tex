@@ -1,0 +1,282 @@
+\hypertarget{class_u_b_quick_time_file}{\section{U\-B\-Quick\-Time\-File Class Reference}
+\label{dc/d83/class_u_b_quick_time_file}\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Quick\-Time\-File.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Quick\-Time\-File\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{d1/d3a/class_u_b_quick_time_file__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_u_b_quick_time_file_1_1_video_frame}{Video\-Frame}
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_quick_time_file_aefaf4dded33e2b141bad9d84f1b5f79b}{audio\-Level\-Changed} (quint8 level)
+\item 
+void \hyperlink{class_u_b_quick_time_file_a18d2ed94e9a361ddff1c33e86d6ee223}{compression\-Session\-Started} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_quick_time_file_a8b183929af839adda8469c50aafec804}{U\-B\-Quick\-Time\-File} (Q\-Object $\ast$p\-Parent=0)
+\item 
+virtual \hyperlink{class_u_b_quick_time_file_a325ab25a94fb3b6652117ab1347afc0f}{$\sim$\-U\-B\-Quick\-Time\-File} ()
+\item 
+bool \hyperlink{class_u_b_quick_time_file_a71331fb2262b24bd4eb10a7764bfe6cb}{init} (const Q\-String \&video\-File\-Name, const Q\-String \&profile\-Data, int p\-Frames\-Per\-Second, const Q\-Size \&p\-Frame\-Size, bool record\-Audio=true, const Q\-String \&audio\-Device\-Name=Q\-String(\char`\"{}Default\char`\"{}))
+\item 
+void \hyperlink{class_u_b_quick_time_file_a30f0b207a0bd98228663be5ee93bfb62}{stop} ()
+\item 
+C\-V\-Pixel\-Buffer\-Ref \hyperlink{class_u_b_quick_time_file_aa499bdf13d0882700d43d966fa2115d0}{new\-Pixel\-Buffer} ()
+\item 
+bool \hyperlink{class_u_b_quick_time_file_afd6079763923599898f37a64570442e9}{is\-Compression\-Session\-Running} ()
+\item 
+Q\-String \hyperlink{class_u_b_quick_time_file_af93b4c47885cd60be9732b5916349363}{last\-Error\-Message} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Q\-Queue$<$ \hyperlink{struct_u_b_quick_time_file_1_1_video_frame}{Video\-Frame} $>$ \hyperlink{class_u_b_quick_time_file_a284f54a169c1a7b24b7d0ff7fc907f2d}{frame\-Queue}
+\item 
+static Q\-Mutex \hyperlink{class_u_b_quick_time_file_a8179154729e1bfcda66f9c0cd52ec2cb}{frame\-Queue\-Mutex}
+\item 
+static Q\-Wait\-Condition \hyperlink{class_u_b_quick_time_file_adadd465cfdc1fb11d583b56b9b388128}{frame\-Buffer\-Not\-Empty}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_quick_time_file_a40bd8000c77cd381fe894a3660cdb3b4}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file U\-B\-Quick\-Time\-File.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_quick_time_file_a8b183929af839adda8469c50aafec804}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}}
+\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{U\-B\-Quick\-Time\-File}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Quick\-Time\-File\-::\-U\-B\-Quick\-Time\-File (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{p\-Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{dc/d83/class_u_b_quick_time_file_a8b183929af839adda8469c50aafec804}
+
+
+Definition at line 38 of file U\-B\-Quick\-Time\-File.\-cpp.
+
+\hypertarget{class_u_b_quick_time_file_a325ab25a94fb3b6652117ab1347afc0f}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!$\sim$\-U\-B\-Quick\-Time\-File@{$\sim$\-U\-B\-Quick\-Time\-File}}
+\index{$\sim$\-U\-B\-Quick\-Time\-File@{$\sim$\-U\-B\-Quick\-Time\-File}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{$\sim$\-U\-B\-Quick\-Time\-File}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Quick\-Time\-File\-::$\sim$\-U\-B\-Quick\-Time\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dc/d83/class_u_b_quick_time_file_a325ab25a94fb3b6652117ab1347afc0f}
+
+
+Definition at line 565 of file U\-B\-Quick\-Time\-File.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_quick_time_file_aefaf4dded33e2b141bad9d84f1b5f79b}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!audio\-Level\-Changed@{audio\-Level\-Changed}}
+\index{audio\-Level\-Changed@{audio\-Level\-Changed}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{audio\-Level\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Quick\-Time\-File\-::audio\-Level\-Changed (
+\begin{DoxyParamCaption}
+\item[{quint8}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dc/d83/class_u_b_quick_time_file_aefaf4dded33e2b141bad9d84f1b5f79b}
+\hypertarget{class_u_b_quick_time_file_a18d2ed94e9a361ddff1c33e86d6ee223}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!compression\-Session\-Started@{compression\-Session\-Started}}
+\index{compression\-Session\-Started@{compression\-Session\-Started}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{compression\-Session\-Started}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Quick\-Time\-File\-::compression\-Session\-Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dc/d83/class_u_b_quick_time_file_a18d2ed94e9a361ddff1c33e86d6ee223}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d83/class_u_b_quick_time_file_a18d2ed94e9a361ddff1c33e86d6ee223_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_quick_time_file_a71331fb2262b24bd4eb10a7764bfe6cb}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!init@{init}}
+\index{init@{init}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Quick\-Time\-File\-::init (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{video\-File\-Name, }
+\item[{const Q\-String \&}]{profile\-Data, }
+\item[{int}]{p\-Frames\-Per\-Second, }
+\item[{const Q\-Size \&}]{p\-Frame\-Size, }
+\item[{bool}]{record\-Audio = {\ttfamily true}, }
+\item[{const Q\-String \&}]{audio\-Device\-Name = {\ttfamily QString(\char`\"{}Default\char`\"{})}}
+\end{DoxyParamCaption}
+)}}\label{dc/d83/class_u_b_quick_time_file_a71331fb2262b24bd4eb10a7764bfe6cb}
+
+
+Definition at line 59 of file U\-B\-Quick\-Time\-File.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d83/class_u_b_quick_time_file_a71331fb2262b24bd4eb10a7764bfe6cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_quick_time_file_afd6079763923599898f37a64570442e9}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!is\-Compression\-Session\-Running@{is\-Compression\-Session\-Running}}
+\index{is\-Compression\-Session\-Running@{is\-Compression\-Session\-Running}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{is\-Compression\-Session\-Running}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Quick\-Time\-File\-::is\-Compression\-Session\-Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d83/class_u_b_quick_time_file_afd6079763923599898f37a64570442e9}
+
+
+Definition at line 51 of file U\-B\-Quick\-Time\-File.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d83/class_u_b_quick_time_file_afd6079763923599898f37a64570442e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_quick_time_file_af93b4c47885cd60be9732b5916349363}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!last\-Error\-Message@{last\-Error\-Message}}
+\index{last\-Error\-Message@{last\-Error\-Message}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{last\-Error\-Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Quick\-Time\-File\-::last\-Error\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dc/d83/class_u_b_quick_time_file_af93b4c47885cd60be9732b5916349363}
+
+
+Definition at line 56 of file U\-B\-Quick\-Time\-File.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d83/class_u_b_quick_time_file_af93b4c47885cd60be9732b5916349363_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_quick_time_file_aa499bdf13d0882700d43d966fa2115d0}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!new\-Pixel\-Buffer@{new\-Pixel\-Buffer}}
+\index{new\-Pixel\-Buffer@{new\-Pixel\-Buffer}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{new\-Pixel\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}C\-V\-Pixel\-Buffer\-Ref U\-B\-Quick\-Time\-File\-::new\-Pixel\-Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d83/class_u_b_quick_time_file_aa499bdf13d0882700d43d966fa2115d0}
+
+
+Definition at line 571 of file U\-B\-Quick\-Time\-File.\-cpp.
+
+\hypertarget{class_u_b_quick_time_file_a40bd8000c77cd381fe894a3660cdb3b4}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!run@{run}}
+\index{run@{run}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Quick\-Time\-File\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dc/d83/class_u_b_quick_time_file_a40bd8000c77cd381fe894a3660cdb3b4}
+
+
+Definition at line 90 of file U\-B\-Quick\-Time\-File.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d83/class_u_b_quick_time_file_a40bd8000c77cd381fe894a3660cdb3b4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_quick_time_file_a30f0b207a0bd98228663be5ee93bfb62}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!stop@{stop}}
+\index{stop@{stop}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Quick\-Time\-File\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dc/d83/class_u_b_quick_time_file_a30f0b207a0bd98228663be5ee93bfb62}
+
+
+Definition at line 267 of file U\-B\-Quick\-Time\-File.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d83/class_u_b_quick_time_file_a30f0b207a0bd98228663be5ee93bfb62_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_quick_time_file_adadd465cfdc1fb11d583b56b9b388128}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!frame\-Buffer\-Not\-Empty@{frame\-Buffer\-Not\-Empty}}
+\index{frame\-Buffer\-Not\-Empty@{frame\-Buffer\-Not\-Empty}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{frame\-Buffer\-Not\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Wait\-Condition U\-B\-Quick\-Time\-File\-::frame\-Buffer\-Not\-Empty\hspace{0.3cm}{\ttfamily [static]}}}\label{dc/d83/class_u_b_quick_time_file_adadd465cfdc1fb11d583b56b9b388128}
+
+
+Definition at line 69 of file U\-B\-Quick\-Time\-File.\-h.
+
+\hypertarget{class_u_b_quick_time_file_a284f54a169c1a7b24b7d0ff7fc907f2d}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!frame\-Queue@{frame\-Queue}}
+\index{frame\-Queue@{frame\-Queue}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{frame\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Queue$<$ {\bf U\-B\-Quick\-Time\-File\-::\-Video\-Frame} $>$ U\-B\-Quick\-Time\-File\-::frame\-Queue\hspace{0.3cm}{\ttfamily [static]}}}\label{dc/d83/class_u_b_quick_time_file_a284f54a169c1a7b24b7d0ff7fc907f2d}
+
+
+Definition at line 67 of file U\-B\-Quick\-Time\-File.\-h.
+
+\hypertarget{class_u_b_quick_time_file_a8179154729e1bfcda66f9c0cd52ec2cb}{\index{U\-B\-Quick\-Time\-File@{U\-B\-Quick\-Time\-File}!frame\-Queue\-Mutex@{frame\-Queue\-Mutex}}
+\index{frame\-Queue\-Mutex@{frame\-Queue\-Mutex}!UBQuickTimeFile@{U\-B\-Quick\-Time\-File}}
+\subsubsection[{frame\-Queue\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Mutex U\-B\-Quick\-Time\-File\-::frame\-Queue\-Mutex\hspace{0.3cm}{\ttfamily [static]}}}\label{dc/d83/class_u_b_quick_time_file_a8179154729e1bfcda66f9c0cd52ec2cb}
+
+
+Definition at line 68 of file U\-B\-Quick\-Time\-File.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/podcast/quicktime/\hyperlink{_u_b_quick_time_file_8h}{U\-B\-Quick\-Time\-File.\-h}\item 
+Sankore-\/3.\-1/src/podcast/quicktime/\hyperlink{_u_b_quick_time_file_8cpp}{U\-B\-Quick\-Time\-File.\-cpp}\end{DoxyCompactItemize}

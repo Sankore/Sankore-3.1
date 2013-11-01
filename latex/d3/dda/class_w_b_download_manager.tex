@@ -1,0 +1,307 @@
+\hypertarget{class_w_b_download_manager}{\section{W\-B\-Download\-Manager Class Reference}
+\label{d3/dda/class_w_b_download_manager}\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}}
+}
+
+
+{\ttfamily \#include $<$W\-B\-Download\-Manager.\-h$>$}
+
+
+
+Collaboration diagram for W\-B\-Download\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{d4/dab/class_w_b_download_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686}{Remove\-Policy} \{ \hyperlink{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686a7e4cdbd8d8eab9036eb411f4130c9d21}{Never}, 
+\hyperlink{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686ac4efc71587b44216e99083404e4e08bf}{Exit}, 
+\hyperlink{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686a927c5222a5aa61c7391e4db53da5a1c4}{Success\-Full\-Download}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_download_manager_a0f84a26b21d560bd1b319d2fc28de045}{download} (const Q\-Network\-Request \&request, bool request\-File\-Name=false)
+\item 
+void \hyperlink{class_w_b_download_manager_a4795a89cd67f04f5b8d5d1c6e4755c48}{download} (const Q\-Url \&url, bool request\-File\-Name=false)
+\item 
+void \hyperlink{class_w_b_download_manager_a5a77a673138269e511f8b5eba077c6c7}{handle\-Unsupported\-Content} (Q\-Network\-Reply $\ast$reply, bool request\-File\-Name=false, Q\-String custom\-Download\-Path=Q\-String())
+\item 
+void \hyperlink{class_w_b_download_manager_aa31322f2226526ab3577a90716a861be}{cleanup} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_download_manager_a0781b95191fdabe86c15f841ba6c4f0d}{W\-B\-Download\-Manager} (Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Download\-Manager is a Dialog that contains a list of Download\-Items. \end{DoxyCompactList}\item 
+\hyperlink{class_w_b_download_manager_ac3db8733c5e2726c82ddba10d8f47710}{$\sim$\-W\-B\-Download\-Manager} ()
+\item 
+int \hyperlink{class_w_b_download_manager_a0695a3b83db7886b53069ac2c12aab48}{active\-Downloads} () const 
+\item 
+\hyperlink{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686}{Remove\-Policy} \hyperlink{class_w_b_download_manager_a4a8e3ea393bf1785df22de1a4e66362f}{remove\-Policy} () const 
+\item 
+void \hyperlink{class_w_b_download_manager_a5a5f33b920108d0a0d9e7fce091dd979}{set\-Remove\-Policy} (\hyperlink{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686}{Remove\-Policy} policy)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686}{Remove\-Policy} \hyperlink{class_w_b_download_manager_ae5c266e269523e64042724bdf2264898}{remove\-Policy}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_w_b_download_manager_a40bac202323241472ac8ac200dd00a98}{W\-B\-Download\-Model}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 121 of file W\-B\-Download\-Manager.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!Remove\-Policy@{Remove\-Policy}}
+\index{Remove\-Policy@{Remove\-Policy}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{Remove\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf W\-B\-Download\-Manager\-::\-Remove\-Policy}}}\label{d3/dda/class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Never@{Never}!W\-B\-Download\-Manager@{W\-B\-Download\-Manager}}\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!Never@{Never}}\item[{\em 
+\hypertarget{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686a7e4cdbd8d8eab9036eb411f4130c9d21}{Never}\label{d3/dda/class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686a7e4cdbd8d8eab9036eb411f4130c9d21}
+}]\index{Exit@{Exit}!W\-B\-Download\-Manager@{W\-B\-Download\-Manager}}\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!Exit@{Exit}}\item[{\em 
+\hypertarget{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686ac4efc71587b44216e99083404e4e08bf}{Exit}\label{d3/dda/class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686ac4efc71587b44216e99083404e4e08bf}
+}]\index{Success\-Full\-Download@{Success\-Full\-Download}!W\-B\-Download\-Manager@{W\-B\-Download\-Manager}}\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!Success\-Full\-Download@{Success\-Full\-Download}}\item[{\em 
+\hypertarget{class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686a927c5222a5aa61c7391e4db53da5a1c4}{Success\-Full\-Download}\label{d3/dda/class_w_b_download_manager_ab10eb3722996f2a36c2778da4591f686a927c5222a5aa61c7391e4db53da5a1c4}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 128 of file W\-B\-Download\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_w_b_download_manager_a0781b95191fdabe86c15f841ba6c4f0d}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!W\-B\-Download\-Manager@{W\-B\-Download\-Manager}}
+\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{W\-B\-Download\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-Download\-Manager\-::\-W\-B\-Download\-Manager (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d3/dda/class_w_b_download_manager_a0781b95191fdabe86c15f841ba6c4f0d}
+
+
+Download\-Manager is a Dialog that contains a list of Download\-Items. 
+
+It is a basic download manager. It only downloads the file, doesn't do Bit\-Torrent, extract zipped files or anything fancy. 
+
+Definition at line 407 of file W\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dda/class_w_b_download_manager_a0781b95191fdabe86c15f841ba6c4f0d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_download_manager_ac3db8733c5e2726c82ddba10d8f47710}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!$\sim$\-W\-B\-Download\-Manager@{$\sim$\-W\-B\-Download\-Manager}}
+\index{$\sim$\-W\-B\-Download\-Manager@{$\sim$\-W\-B\-Download\-Manager}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{$\sim$\-W\-B\-Download\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-Download\-Manager\-::$\sim$\-W\-B\-Download\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d3/dda/class_w_b_download_manager_ac3db8733c5e2726c82ddba10d8f47710}
+
+
+Definition at line 429 of file W\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dda/class_w_b_download_manager_ac3db8733c5e2726c82ddba10d8f47710_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_w_b_download_manager_a0695a3b83db7886b53069ac2c12aab48}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!active\-Downloads@{active\-Downloads}}
+\index{active\-Downloads@{active\-Downloads}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{active\-Downloads}]{\setlength{\rightskip}{0pt plus 5cm}int W\-B\-Download\-Manager\-::active\-Downloads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d3/dda/class_w_b_download_manager_a0695a3b83db7886b53069ac2c12aab48}
+
+
+Definition at line 438 of file W\-B\-Download\-Manager.\-cpp.
+
+\hypertarget{class_w_b_download_manager_aa31322f2226526ab3577a90716a861be}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Download\-Manager\-::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/dda/class_w_b_download_manager_aa31322f2226526ab3577a90716a861be}
+
+
+Definition at line 639 of file W\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dda/class_w_b_download_manager_aa31322f2226526ab3577a90716a861be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dda/class_w_b_download_manager_aa31322f2226526ab3577a90716a861be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_download_manager_a0f84a26b21d560bd1b319d2fc28de045}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!download@{download}}
+\index{download@{download}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{download}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Download\-Manager\-::download (
+\begin{DoxyParamCaption}
+\item[{const Q\-Network\-Request \&}]{request, }
+\item[{bool}]{request\-File\-Name = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/dda/class_w_b_download_manager_a0f84a26b21d560bd1b319d2fc28de045}
+
+
+Definition at line 450 of file W\-B\-Download\-Manager.\-cpp.
+
+\hypertarget{class_w_b_download_manager_a4795a89cd67f04f5b8d5d1c6e4755c48}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!download@{download}}
+\index{download@{download}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{download}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Download\-Manager\-::download (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url, }
+\item[{bool}]{request\-File\-Name = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{d3/dda/class_w_b_download_manager_a4795a89cd67f04f5b8d5d1c6e4755c48}
+
+
+Definition at line 143 of file W\-B\-Download\-Manager.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{d3/dda/class_w_b_download_manager_a4795a89cd67f04f5b8d5d1c6e4755c48_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{d3/dda/class_w_b_download_manager_a4795a89cd67f04f5b8d5d1c6e4755c48_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_download_manager_a5a77a673138269e511f8b5eba077c6c7}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!handle\-Unsupported\-Content@{handle\-Unsupported\-Content}}
+\index{handle\-Unsupported\-Content@{handle\-Unsupported\-Content}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{handle\-Unsupported\-Content}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Download\-Manager\-::handle\-Unsupported\-Content (
+\begin{DoxyParamCaption}
+\item[{Q\-Network\-Reply $\ast$}]{reply, }
+\item[{bool}]{request\-File\-Name = {\ttfamily false}, }
+\item[{Q\-String}]{custom\-Download\-Path = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/dda/class_w_b_download_manager_a5a77a673138269e511f8b5eba077c6c7}
+
+
+Definition at line 458 of file W\-B\-Download\-Manager.\-cpp.
+
+\hypertarget{class_w_b_download_manager_a4a8e3ea393bf1785df22de1a4e66362f}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!remove\-Policy@{remove\-Policy}}
+\index{remove\-Policy@{remove\-Policy}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{remove\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Remove\-Policy} W\-B\-Download\-Manager\-::remove\-Policy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d3/dda/class_w_b_download_manager_a4a8e3ea393bf1785df22de1a4e66362f}
+\hypertarget{class_w_b_download_manager_a5a5f33b920108d0a0d9e7fce091dd979}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!set\-Remove\-Policy@{set\-Remove\-Policy}}
+\index{set\-Remove\-Policy@{set\-Remove\-Policy}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{set\-Remove\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-Download\-Manager\-::set\-Remove\-Policy (
+\begin{DoxyParamCaption}
+\item[{{\bf Remove\-Policy}}]{policy}
+\end{DoxyParamCaption}
+)}}\label{d3/dda/class_w_b_download_manager_a5a5f33b920108d0a0d9e7fce091dd979}
+
+
+Definition at line 555 of file W\-B\-Download\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dda/class_w_b_download_manager_a5a5f33b920108d0a0d9e7fce091dd979_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_w_b_download_manager_a40bac202323241472ac8ac200dd00a98}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!W\-B\-Download\-Model@{W\-B\-Download\-Model}}
+\index{W\-B\-Download\-Model@{W\-B\-Download\-Model}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{W\-B\-Download\-Model}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf W\-B\-Download\-Model}\hspace{0.3cm}{\ttfamily [friend]}}}\label{d3/dda/class_w_b_download_manager_a40bac202323241472ac8ac200dd00a98}
+
+
+Definition at line 164 of file W\-B\-Download\-Manager.\-h.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_w_b_download_manager_ae5c266e269523e64042724bdf2264898}{\index{W\-B\-Download\-Manager@{W\-B\-Download\-Manager}!remove\-Policy@{remove\-Policy}}
+\index{remove\-Policy@{remove\-Policy}!WBDownloadManager@{W\-B\-Download\-Manager}}
+\subsubsection[{remove\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-Download\-Manager\-::\-Remove\-Policy} W\-B\-Download\-Manager\-::remove\-Policy\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{d3/dda/class_w_b_download_manager_ae5c266e269523e64042724bdf2264898}
+
+
+Definition at line 124 of file W\-B\-Download\-Manager.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_download_manager_8h}{W\-B\-Download\-Manager.\-h}\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_download_manager_8cpp}{W\-B\-Download\-Manager.\-cpp}\end{DoxyCompactItemize}

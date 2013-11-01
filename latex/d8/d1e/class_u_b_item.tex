@@ -1,0 +1,367 @@
+\hypertarget{class_u_b_item}{\section{U\-B\-Item Class Reference}
+\label{d8/d1e/class_u_b_item}\index{U\-B\-Item@{U\-B\-Item}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Item.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d90/class_u_b_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{d4/d87/class_u_b_item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53}{Rendering\-Quality} \{ \hyperlink{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53a69cf79005220669d8bc6ef771d1f4c11}{Rendering\-Quality\-Normal} =  0, 
+\hyperlink{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53ae16608cfe88cd2f880a850534e08ee06}{Rendering\-Quality\-High}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_u_b_item_a069f4e36b423df18b1b4248a393e7779}{$\sim$\-U\-B\-Item} ()
+\item 
+virtual Q\-Uuid \hyperlink{class_u_b_item_a242c8e4390dc3244bd42023b349b042b}{uuid} () const 
+\item 
+virtual void \hyperlink{class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8}{set\-Uuid} (const Q\-Uuid \&p\-Uuid)
+\item 
+virtual \hyperlink{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53}{Rendering\-Quality} \hyperlink{class_u_b_item_afd8def287752a60400e61ab7f6032d11}{rendering\-Quality} () const 
+\item 
+virtual void \hyperlink{class_u_b_item_ab91a4a587b0981ff59f7ddedc6dbe68c}{set\-Rendering\-Quality} (\hyperlink{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53}{Rendering\-Quality} p\-Rendering\-Quality)
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{deep\-Copy} () const =0
+\item 
+virtual void \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const =0
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431}{scene} ()
+\item 
+virtual Q\-Url \hyperlink{class_u_b_item_a00e4ed31113afaff42aa33e826b996dd}{source\-Url} () const 
+\item 
+virtual void \hyperlink{class_u_b_item_a4bf8fcd7a87467665279902d30d28581}{set\-Source\-Url} (const Q\-Url \&p\-Source\-Url)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_item_a8c38f2d78945907ece6dc5a585d7aa13}{U\-B\-Item} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Uuid \hyperlink{class_u_b_item_a4cb5aeff8000c84de48bf0a2ab6376ef}{m\-Uuid}
+\item 
+\hyperlink{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53}{Rendering\-Quality} \hyperlink{class_u_b_item_a87b164f64911804513b9167e6d16a9cf}{m\-Rendering\-Quality}
+\item 
+Q\-Url \hyperlink{class_u_b_item_ad90f56dfda5ef98f0d5139bd49840faa}{m\-Source\-Url}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file U\-B\-Item.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53}{\index{U\-B\-Item@{U\-B\-Item}!Rendering\-Quality@{Rendering\-Quality}}
+\index{Rendering\-Quality@{Rendering\-Quality}!UBItem@{U\-B\-Item}}
+\subsubsection[{Rendering\-Quality}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Item\-::\-Rendering\-Quality}}}\label{d8/d1e/class_u_b_item_a4d073757053cafbe4f26c17ea1224d53}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Rendering\-Quality\-Normal@{Rendering\-Quality\-Normal}!U\-B\-Item@{U\-B\-Item}}\index{U\-B\-Item@{U\-B\-Item}!Rendering\-Quality\-Normal@{Rendering\-Quality\-Normal}}\item[{\em 
+\hypertarget{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53a69cf79005220669d8bc6ef771d1f4c11}{Rendering\-Quality\-Normal}\label{d8/d1e/class_u_b_item_a4d073757053cafbe4f26c17ea1224d53a69cf79005220669d8bc6ef771d1f4c11}
+}]\index{Rendering\-Quality\-High@{Rendering\-Quality\-High}!U\-B\-Item@{U\-B\-Item}}\index{U\-B\-Item@{U\-B\-Item}!Rendering\-Quality\-High@{Rendering\-Quality\-High}}\item[{\em 
+\hypertarget{class_u_b_item_a4d073757053cafbe4f26c17ea1224d53ae16608cfe88cd2f880a850534e08ee06}{Rendering\-Quality\-High}\label{d8/d1e/class_u_b_item_a4d073757053cafbe4f26c17ea1224d53ae16608cfe88cd2f880a850534e08ee06}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 44 of file U\-B\-Item.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_item_a8c38f2d78945907ece6dc5a585d7aa13}{\index{U\-B\-Item@{U\-B\-Item}!U\-B\-Item@{U\-B\-Item}}
+\index{U\-B\-Item@{U\-B\-Item}!UBItem@{U\-B\-Item}}
+\subsubsection[{U\-B\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Item\-::\-U\-B\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/d1e/class_u_b_item_a8c38f2d78945907ece6dc5a585d7aa13}
+
+
+Definition at line 37 of file U\-B\-Item.\-cpp.
+
+\hypertarget{class_u_b_item_a069f4e36b423df18b1b4248a393e7779}{\index{U\-B\-Item@{U\-B\-Item}!$\sim$\-U\-B\-Item@{$\sim$\-U\-B\-Item}}
+\index{$\sim$\-U\-B\-Item@{$\sim$\-U\-B\-Item}!UBItem@{U\-B\-Item}}
+\subsubsection[{$\sim$\-U\-B\-Item}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Item\-::$\sim$\-U\-B\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_a069f4e36b423df18b1b4248a393e7779}
+
+
+Definition at line 44 of file U\-B\-Item.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{\index{U\-B\-Item@{U\-B\-Item}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBItem@{U\-B\-Item}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Item\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d8/d1e/class_u_b_item_a21483eccaad22369e9fe6bca838af029}
+
+
+Implemented in \hyperlink{class_u_b_graphics_w3_c_widget_item_ac66c8274e94b6818db04a60e712ac97c}{U\-B\-Graphics\-W3\-C\-Widget\-Item}, \hyperlink{class_u_b_graphics_apple_widget_item_acf4a19fa67c6752e18087e82ad64e973}{U\-B\-Graphics\-Apple\-Widget\-Item}, \hyperlink{class_u_b_graphics_scene_a6b3b2507342f09b1169b7b1ef1427118}{U\-B\-Graphics\-Scene}, \hyperlink{class_u_b_graphics_media_item_a1fea58ac7234a2090777c67d2a88e5f4}{U\-B\-Graphics\-Media\-Item}, \hyperlink{class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a}{U\-B\-Graphics\-Polygon\-Item}, \hyperlink{class_u_b_graphics_aristo_af67823d02c787d0f52b8955454a2bfa8}{U\-B\-Graphics\-Aristo}, \hyperlink{class_u_b_graphics_svg_item_a467ce14bcf2b4c27a01ab128c6149b1c}{U\-B\-Graphics\-Svg\-Item}, \hyperlink{class_u_b_graphics_cache_a1ed78b934144d8cceaa274f6ff2c82cf}{U\-B\-Graphics\-Cache}, \hyperlink{class_u_b_graphics_triangle_ad90ae6a2a2237bb2f119d89c93be0c94}{U\-B\-Graphics\-Triangle}, \hyperlink{class_u_b_graphics_curtain_item_a8378742b3277026ab68263bedb11c407}{U\-B\-Graphics\-Curtain\-Item}, \hyperlink{class_u_b_graphics_p_d_f_item_ab3d90209627f4a32b21fbdb527bd4468}{U\-B\-Graphics\-P\-D\-F\-Item}, \hyperlink{class_u_b_graphics_text_item_a14c3b9ff16071a306fe0834577aa26fa}{U\-B\-Graphics\-Text\-Item}, \hyperlink{class_u_b_graphics_compass_a6ddc850411604453d18acdfd26e4020f}{U\-B\-Graphics\-Compass}, \hyperlink{class_u_b_graphics_ruler_adb8e2e0d97de3099a4c66d21674cab02}{U\-B\-Graphics\-Ruler}, \hyperlink{class_u_b_graphics_pixmap_item_a800d04419404cec2d43f4feccb1673e6}{U\-B\-Graphics\-Pixmap\-Item}, \hyperlink{class_u_b_graphics_protractor_a4ac849a2b7e1dd840b694082e20fd6ed}{U\-B\-Graphics\-Protractor}, \hyperlink{class_u_b_graphics_group_container_item_a70f918cf5ac238dc33232946fa893f9a}{U\-B\-Graphics\-Group\-Container\-Item}, and \hyperlink{class_u_b_graphics_strokes_group_ab34ce07e062a2f2bd454dc2309b88396}{U\-B\-Graphics\-Strokes\-Group}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_a21483eccaad22369e9fe6bca838af029_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{\index{U\-B\-Item@{U\-B\-Item}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBItem@{U\-B\-Item}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf U\-B\-Item}$\ast$ U\-B\-Item\-::deep\-Copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d8/d1e/class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}
+
+
+Implemented in \hyperlink{class_u_b_graphics_w3_c_widget_item_acf920df1d2e797ea341429c76d75c3c7}{U\-B\-Graphics\-W3\-C\-Widget\-Item}, \hyperlink{class_u_b_graphics_apple_widget_item_ae49df281f365ca52cf00315eecb45a71}{U\-B\-Graphics\-Apple\-Widget\-Item}, \hyperlink{class_u_b_graphics_scene_a27b80506198fc72a3039c90ebef7a0d3}{U\-B\-Graphics\-Scene}, \hyperlink{class_u_b_graphics_widget_item_a9ba7781db36c5b1ed3f4db389d78d07e}{U\-B\-Graphics\-Widget\-Item}, \hyperlink{class_u_b_graphics_media_item_a8adbf02f86a23b2d2884efe8855e0556}{U\-B\-Graphics\-Media\-Item}, \hyperlink{class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7}{U\-B\-Graphics\-Polygon\-Item}, \hyperlink{class_u_b_graphics_aristo_a9139b4fed7604be23bd8cb429b12d54a}{U\-B\-Graphics\-Aristo}, \hyperlink{class_u_b_graphics_svg_item_a312cf73a521c514c48a0e866771ba75e}{U\-B\-Graphics\-Svg\-Item}, \hyperlink{class_u_b_graphics_cache_ad69d3f9eb75cea2bfe292a26e481395c}{U\-B\-Graphics\-Cache}, \hyperlink{class_u_b_graphics_triangle_ade6146ebb71b5eeee4266fb156c4fe76}{U\-B\-Graphics\-Triangle}, \hyperlink{class_u_b_graphics_curtain_item_ad19bcb248c88c2111d95122ccd2b5a59}{U\-B\-Graphics\-Curtain\-Item}, \hyperlink{class_u_b_graphics_ruler_a3f12aaa2bb10de151191bfa57097aeb4}{U\-B\-Graphics\-Ruler}, \hyperlink{class_u_b_graphics_p_d_f_item_a128b9926bef054d7246dfcd356571f36}{U\-B\-Graphics\-P\-D\-F\-Item}, \hyperlink{class_u_b_graphics_text_item_a6be4507f88dccb25e1e063ec36cf6f47}{U\-B\-Graphics\-Text\-Item}, \hyperlink{class_u_b_graphics_compass_aa92ffb4c40fee74462a5a0fc165d1dce}{U\-B\-Graphics\-Compass}, \hyperlink{class_u_b_graphics_protractor_a36c6ab509cee1d80a9e717b07bf2eda1}{U\-B\-Graphics\-Protractor}, \hyperlink{class_u_b_graphics_group_container_item_aeb38fce11d606a6a0c97544ff5fa776f}{U\-B\-Graphics\-Group\-Container\-Item}, \hyperlink{class_u_b_graphics_pixmap_item_a1b0fbc4ae6ba2796e5cccb0ea16b8c70}{U\-B\-Graphics\-Pixmap\-Item}, and \hyperlink{class_u_b_graphics_strokes_group_a4932a359f046811fc1d555d5d6b49b38}{U\-B\-Graphics\-Strokes\-Group}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_item_afd8def287752a60400e61ab7f6032d11}{\index{U\-B\-Item@{U\-B\-Item}!rendering\-Quality@{rendering\-Quality}}
+\index{rendering\-Quality@{rendering\-Quality}!UBItem@{U\-B\-Item}}
+\subsubsection[{rendering\-Quality}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Rendering\-Quality} U\-B\-Item\-::rendering\-Quality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_afd8def287752a60400e61ab7f6032d11}
+
+
+Definition at line 59 of file U\-B\-Item.\-h.
+
+\hypertarget{class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431}{\index{U\-B\-Item@{U\-B\-Item}!scene@{scene}}
+\index{scene@{scene}!UBItem@{U\-B\-Item}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf U\-B\-Graphics\-Scene}$\ast$ U\-B\-Item\-::scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_widget_item_ad7cad83001340bbfd1ec361a09f6a454}{U\-B\-Graphics\-Widget\-Item}, \hyperlink{class_u_b_graphics_media_item_a5b064d18526d1ed0eee805d35fdaa679}{U\-B\-Graphics\-Media\-Item}, \hyperlink{class_u_b_graphics_svg_item_a92e88b5e4e6214adcd9ac0feeae07cde}{U\-B\-Graphics\-Svg\-Item}, \hyperlink{class_u_b_graphics_polygon_item_af7ecdc68fa4901afd6720eb8d987e947}{U\-B\-Graphics\-Polygon\-Item}, \hyperlink{class_u_b_graphics_p_d_f_item_a1ae5bb3192282698c436e8200fffd33f}{U\-B\-Graphics\-P\-D\-F\-Item}, \hyperlink{class_u_b_graphics_text_item_a78498298ea53c6baee150a3a04a27f51}{U\-B\-Graphics\-Text\-Item}, \hyperlink{class_u_b_graphics_pixmap_item_a972dad2ba6b44804cfff411fb54c15ee}{U\-B\-Graphics\-Pixmap\-Item}, and \hyperlink{class_u_b_graphics_proxy_widget_af75c8bf52df5e6ed091d4b4277fbe8b8}{U\-B\-Graphics\-Proxy\-Widget}.
+
+
+
+Definition at line 73 of file U\-B\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_item_ab91a4a587b0981ff59f7ddedc6dbe68c}{\index{U\-B\-Item@{U\-B\-Item}!set\-Rendering\-Quality@{set\-Rendering\-Quality}}
+\index{set\-Rendering\-Quality@{set\-Rendering\-Quality}!UBItem@{U\-B\-Item}}
+\subsubsection[{set\-Rendering\-Quality}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Item\-::set\-Rendering\-Quality (
+\begin{DoxyParamCaption}
+\item[{{\bf Rendering\-Quality}}]{p\-Rendering\-Quality}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_ab91a4a587b0981ff59f7ddedc6dbe68c}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_scene_a3fac42724b4c9d395698cc7e16f902ab}{U\-B\-Graphics\-Scene}, \hyperlink{class_u_b_graphics_svg_item_af9482489d2553eef2d4223a6faab6188}{U\-B\-Graphics\-Svg\-Item}, and \hyperlink{class_u_b_graphics_p_d_f_item_a61251d03ad330a5b3115221981b94526}{U\-B\-Graphics\-P\-D\-F\-Item}.
+
+
+
+Definition at line 64 of file U\-B\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_ab91a4a587b0981ff59f7ddedc6dbe68c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_item_a4bf8fcd7a87467665279902d30d28581}{\index{U\-B\-Item@{U\-B\-Item}!set\-Source\-Url@{set\-Source\-Url}}
+\index{set\-Source\-Url@{set\-Source\-Url}!UBItem@{U\-B\-Item}}
+\subsubsection[{set\-Source\-Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Item\-::set\-Source\-Url (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{p\-Source\-Url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_a4bf8fcd7a87467665279902d30d28581}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_media_item_a36a57baf502db973b4541db3f2479731}{U\-B\-Graphics\-Media\-Item}.
+
+
+
+Definition at line 83 of file U\-B\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_a4bf8fcd7a87467665279902d30d28581_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8}{\index{U\-B\-Item@{U\-B\-Item}!set\-Uuid@{set\-Uuid}}
+\index{set\-Uuid@{set\-Uuid}!UBItem@{U\-B\-Item}}
+\subsubsection[{set\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}virtual void U\-B\-Item\-::set\-Uuid (
+\begin{DoxyParamCaption}
+\item[{const Q\-Uuid \&}]{p\-Uuid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8}
+
+
+Reimplemented in \hyperlink{class_u_b_graphics_w3_c_widget_item_ab094d8bf072b39d5c9bc8e9c82a07787}{U\-B\-Graphics\-W3\-C\-Widget\-Item}, \hyperlink{class_u_b_graphics_apple_widget_item_aa880379f04a9117a521e944f44717302}{U\-B\-Graphics\-Apple\-Widget\-Item}, \hyperlink{class_u_b_graphics_widget_item_ad4cc767e9fb672aaaad3ce852249dd6e}{U\-B\-Graphics\-Widget\-Item}, \hyperlink{class_u_b_graphics_text_item_a91ebcd957d46156859eeb3e9047194bc}{U\-B\-Graphics\-Text\-Item}, \hyperlink{class_u_b_graphics_svg_item_ad775cde3b5bbedde62e7e3c0dda06dd1}{U\-B\-Graphics\-Svg\-Item}, \hyperlink{class_u_b_graphics_pixmap_item_a822a466ea3b7a87e5c109e1af96c3d14}{U\-B\-Graphics\-Pixmap\-Item}, \hyperlink{class_u_b_graphics_p_d_f_item_afefe73ee3ba44104aa9ff14126fa74d0}{U\-B\-Graphics\-P\-D\-F\-Item}, \hyperlink{class_u_b_graphics_group_container_item_adf49f1e629c8ddf5d65ffe8d3ac63ab2}{U\-B\-Graphics\-Group\-Container\-Item}, \hyperlink{class_u_b_graphics_curtain_item_aa1d6ddfc26a642ef1bac6d256be9cb84}{U\-B\-Graphics\-Curtain\-Item}, \hyperlink{class_u_b_graphics_strokes_group_ad0e51596bc0652b4889c3f215332ad72}{U\-B\-Graphics\-Strokes\-Group}, \hyperlink{class_u_b_graphics_polygon_item_a97f0b29bd07773c31b351da735b82efd}{U\-B\-Graphics\-Polygon\-Item}, and \hyperlink{class_u_b_graphics_proxy_widget_ab0828daa6cded97da73d0e04e1f1891b}{U\-B\-Graphics\-Proxy\-Widget}.
+
+
+
+Definition at line 54 of file U\-B\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_aebe809da60b1ea31f4c2fe612d2513e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_item_a00e4ed31113afaff42aa33e826b996dd}{\index{U\-B\-Item@{U\-B\-Item}!source\-Url@{source\-Url}}
+\index{source\-Url@{source\-Url}!UBItem@{U\-B\-Item}}
+\subsubsection[{source\-Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-Url U\-B\-Item\-::source\-Url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_a00e4ed31113afaff42aa33e826b996dd}
+
+
+Definition at line 78 of file U\-B\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_a00e4ed31113afaff42aa33e826b996dd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_item_a242c8e4390dc3244bd42023b349b042b}{\index{U\-B\-Item@{U\-B\-Item}!uuid@{uuid}}
+\index{uuid@{uuid}!UBItem@{U\-B\-Item}}
+\subsubsection[{uuid}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-Uuid U\-B\-Item\-::uuid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d8/d1e/class_u_b_item_a242c8e4390dc3244bd42023b349b042b}
+
+
+Definition at line 49 of file U\-B\-Item.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1e/class_u_b_item_a242c8e4390dc3244bd42023b349b042b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_item_a87b164f64911804513b9167e6d16a9cf}{\index{U\-B\-Item@{U\-B\-Item}!m\-Rendering\-Quality@{m\-Rendering\-Quality}}
+\index{m\-Rendering\-Quality@{m\-Rendering\-Quality}!UBItem@{U\-B\-Item}}
+\subsubsection[{m\-Rendering\-Quality}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rendering\-Quality} U\-B\-Item\-::m\-Rendering\-Quality\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/d1e/class_u_b_item_a87b164f64911804513b9167e6d16a9cf}
+
+
+Definition at line 92 of file U\-B\-Item.\-h.
+
+\hypertarget{class_u_b_item_ad90f56dfda5ef98f0d5139bd49840faa}{\index{U\-B\-Item@{U\-B\-Item}!m\-Source\-Url@{m\-Source\-Url}}
+\index{m\-Source\-Url@{m\-Source\-Url}!UBItem@{U\-B\-Item}}
+\subsubsection[{m\-Source\-Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Url U\-B\-Item\-::m\-Source\-Url\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/d1e/class_u_b_item_ad90f56dfda5ef98f0d5139bd49840faa}
+
+
+Definition at line 94 of file U\-B\-Item.\-h.
+
+\hypertarget{class_u_b_item_a4cb5aeff8000c84de48bf0a2ab6376ef}{\index{U\-B\-Item@{U\-B\-Item}!m\-Uuid@{m\-Uuid}}
+\index{m\-Uuid@{m\-Uuid}!UBItem@{U\-B\-Item}}
+\subsubsection[{m\-Uuid}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Uuid U\-B\-Item\-::m\-Uuid\hspace{0.3cm}{\ttfamily [protected]}}}\label{d8/d1e/class_u_b_item_a4cb5aeff8000c84de48bf0a2ab6376ef}
+
+
+Definition at line 90 of file U\-B\-Item.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_item_8h}{U\-B\-Item.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_item_8cpp}{U\-B\-Item.\-cpp}\end{DoxyCompactItemize}

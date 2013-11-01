@@ -1,0 +1,460 @@
+\hypertarget{class_delegate_media_control}{\section{Delegate\-Media\-Control Class Reference}
+\label{df/d0d/class_delegate_media_control}\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Item\-Delegate.\-h$>$}
+
+
+
+Collaboration diagram for Delegate\-Media\-Control\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d79/class_delegate_media_control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_delegate_media_control_a750d5874b4b76748e648fa7a433a87e1}{used} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_delegate_media_control_a31c53908b3b591beade946286b2cf06d}{Delegate\-Media\-Control} (\hyperlink{class_u_b_graphics_media_item}{U\-B\-Graphics\-Media\-Item} $\ast$p\-Delegated, Q\-Graphics\-Item $\ast$parent=0)
+\item 
+virtual \hyperlink{class_delegate_media_control_a55d74623ac9cd55a4d88dbed422456ee}{$\sim$\-Delegate\-Media\-Control} ()
+\item 
+void \hyperlink{class_delegate_media_control_a92cda710b5277e70386ded97135742a5}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\item 
+Q\-Painter\-Path \hyperlink{class_delegate_media_control_a13834c535fe5c4445df5113af5d2b795}{shape} () const 
+\item 
+virtual void \hyperlink{class_delegate_media_control_a3913058c72f4551084bb30ad6a4806c7}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_delegate_media_control_ab39f60ffa2394305d26cdfde9edbf05f}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_delegate_media_control_ae406ff2527a878411d414336f85050dc}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_delegate_media_control_a94d2f24370dd05a8f479375dee461cd1}{update} ()
+\item 
+void \hyperlink{class_delegate_media_control_a6af0a98e1ae9093b906dfd44d1572952}{position\-Handles} ()
+\item 
+void \hyperlink{class_delegate_media_control_a463f01b70494794b7e54b273a1d0a412}{update\-Ticker} (qint64 time)
+\item 
+void \hyperlink{class_delegate_media_control_a18566e9073d0e81ed0de968b2511d226}{total\-Time\-Changed} (qint64 new\-Total\-Time)
+\item 
+Q\-Size\-F \hyperlink{class_delegate_media_control_a1c953c26adc9ddcfdd1208bef453aa96}{lcd\-Area\-Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_delegate_media_control_af8f79991d087022818dc65ae168cd384}{seek\-To\-Mouse\-Pos} (Q\-Point\-F mouse\-Pos)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_media_item}{U\-B\-Graphics\-Media\-Item} $\ast$ \hyperlink{class_delegate_media_control_a8a08cfff7b99e4dca1ea7e0cd9f0c097}{m\-Delegate}
+\item 
+bool \hyperlink{class_delegate_media_control_a06fd542ee0278e369a39b9158f0acb35}{m\-Display\-Current\-Time}
+\item 
+qint64 \hyperlink{class_delegate_media_control_a37ede0fb091f0faa6a06f50a7eaf7fae}{m\-Current\-Time\-In\-Ms}
+\item 
+qint64 \hyperlink{class_delegate_media_control_a31ae1114209781ed2921257c16219392}{m\-Total\-Time\-In\-Ms}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 142 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_delegate_media_control_a31c53908b3b591beade946286b2cf06d}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!Delegate\-Media\-Control@{Delegate\-Media\-Control}}
+\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{Delegate\-Media\-Control}]{\setlength{\rightskip}{0pt plus 5cm}Delegate\-Media\-Control\-::\-Delegate\-Media\-Control (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Media\-Item} $\ast$}]{p\-Delegated, }
+\item[{Q\-Graphics\-Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{df/d0d/class_delegate_media_control_a31c53908b3b591beade946286b2cf06d}
+
+
+Definition at line 1289 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a31c53908b3b591beade946286b2cf06d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_a55d74623ac9cd55a4d88dbed422456ee}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!$\sim$\-Delegate\-Media\-Control@{$\sim$\-Delegate\-Media\-Control}}
+\index{$\sim$\-Delegate\-Media\-Control@{$\sim$\-Delegate\-Media\-Control}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{$\sim$\-Delegate\-Media\-Control}]{\setlength{\rightskip}{0pt plus 5cm}virtual Delegate\-Media\-Control\-::$\sim$\-Delegate\-Media\-Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{df/d0d/class_delegate_media_control_a55d74623ac9cd55a4d88dbed422456ee}
+
+
+Definition at line 150 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_delegate_media_control_a1c953c26adc9ddcfdd1208bef453aa96}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!lcd\-Area\-Size@{lcd\-Area\-Size}}
+\index{lcd\-Area\-Size@{lcd\-Area\-Size}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{lcd\-Area\-Size}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Size\-F Delegate\-Media\-Control\-::lcd\-Area\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{df/d0d/class_delegate_media_control_a1c953c26adc9ddcfdd1208bef453aa96}
+
+
+Definition at line 168 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a1c953c26adc9ddcfdd1208bef453aa96_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_ab39f60ffa2394305d26cdfde9edbf05f}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{df/d0d/class_delegate_media_control_ab39f60ffa2394305d26cdfde9edbf05f}
+
+
+Definition at line 1435 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_ab39f60ffa2394305d26cdfde9edbf05f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_a3913058c72f4551084bb30ad6a4806c7}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{df/d0d/class_delegate_media_control_a3913058c72f4551084bb30ad6a4806c7}
+
+
+Definition at line 1421 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a3913058c72f4551084bb30ad6a4806c7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_ae406ff2527a878411d414336f85050dc}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{df/d0d/class_delegate_media_control_ae406ff2527a878411d414336f85050dc}
+
+
+Definition at line 1472 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_ae406ff2527a878411d414336f85050dc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_a92cda710b5277e70386ded97135742a5}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!paint@{paint}}
+\index{paint@{paint}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{df/d0d/class_delegate_media_control_a92cda710b5277e70386ded97135742a5}
+
+
+Definition at line 1309 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+\hypertarget{class_delegate_media_control_a6af0a98e1ae9093b906dfd44d1572952}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!position\-Handles@{position\-Handles}}
+\index{position\-Handles@{position\-Handles}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{position\-Handles}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::position\-Handles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{df/d0d/class_delegate_media_control_a6af0a98e1ae9093b906dfd44d1572952}
+
+
+Definition at line 1344 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a6af0a98e1ae9093b906dfd44d1572952_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a6af0a98e1ae9093b906dfd44d1572952_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_af8f79991d087022818dc65ae168cd384}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!seek\-To\-Mouse\-Pos@{seek\-To\-Mouse\-Pos}}
+\index{seek\-To\-Mouse\-Pos@{seek\-To\-Mouse\-Pos}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{seek\-To\-Mouse\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::seek\-To\-Mouse\-Pos (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{mouse\-Pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d0d/class_delegate_media_control_af8f79991d087022818dc65ae168cd384}
+
+
+Definition at line 1448 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_af8f79991d087022818dc65ae168cd384_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{df/d0d/class_delegate_media_control_af8f79991d087022818dc65ae168cd384_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_a13834c535fe5c4445df5113af5d2b795}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!shape@{shape}}
+\index{shape@{shape}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Painter\-Path Delegate\-Media\-Control\-::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{df/d0d/class_delegate_media_control_a13834c535fe5c4445df5113af5d2b795}
+
+
+Definition at line 1337 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+\hypertarget{class_delegate_media_control_a18566e9073d0e81ed0de968b2511d226}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!total\-Time\-Changed@{total\-Time\-Changed}}
+\index{total\-Time\-Changed@{total\-Time\-Changed}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{total\-Time\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::total\-Time\-Changed (
+\begin{DoxyParamCaption}
+\item[{qint64}]{new\-Total\-Time}
+\end{DoxyParamCaption}
+)}}\label{df/d0d/class_delegate_media_control_a18566e9073d0e81ed0de968b2511d226}
+
+
+Definition at line 1410 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a18566e9073d0e81ed0de968b2511d226_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a18566e9073d0e81ed0de968b2511d226_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_a94d2f24370dd05a8f479375dee461cd1}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!update@{update}}
+\index{update@{update}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{df/d0d/class_delegate_media_control_a94d2f24370dd05a8f479375dee461cd1}
+
+
+Definition at line 1393 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{df/d0d/class_delegate_media_control_a94d2f24370dd05a8f479375dee461cd1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a94d2f24370dd05a8f479375dee461cd1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_a463f01b70494794b7e54b273a1d0a412}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!update\-Ticker@{update\-Ticker}}
+\index{update\-Ticker@{update\-Ticker}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{update\-Ticker}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::update\-Ticker (
+\begin{DoxyParamCaption}
+\item[{qint64}]{time}
+\end{DoxyParamCaption}
+)}}\label{df/d0d/class_delegate_media_control_a463f01b70494794b7e54b273a1d0a412}
+
+
+Definition at line 1403 of file U\-B\-Graphics\-Item\-Delegate.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a463f01b70494794b7e54b273a1d0a412_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a463f01b70494794b7e54b273a1d0a412_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_delegate_media_control_a750d5874b4b76748e648fa7a433a87e1}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!used@{used}}
+\index{used@{used}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{used}]{\setlength{\rightskip}{0pt plus 5cm}void Delegate\-Media\-Control\-::used (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{df/d0d/class_delegate_media_control_a750d5874b4b76748e648fa7a433a87e1}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d0d/class_delegate_media_control_a750d5874b4b76748e648fa7a433a87e1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_delegate_media_control_a37ede0fb091f0faa6a06f50a7eaf7fae}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!m\-Current\-Time\-In\-Ms@{m\-Current\-Time\-In\-Ms}}
+\index{m\-Current\-Time\-In\-Ms@{m\-Current\-Time\-In\-Ms}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{m\-Current\-Time\-In\-Ms}]{\setlength{\rightskip}{0pt plus 5cm}qint64 Delegate\-Media\-Control\-::m\-Current\-Time\-In\-Ms\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d0d/class_delegate_media_control_a37ede0fb091f0faa6a06f50a7eaf7fae}
+
+
+Definition at line 179 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_media_control_a8a08cfff7b99e4dca1ea7e0cd9f0c097}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!m\-Delegate@{m\-Delegate}}
+\index{m\-Delegate@{m\-Delegate}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{m\-Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Media\-Item}$\ast$ Delegate\-Media\-Control\-::m\-Delegate\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d0d/class_delegate_media_control_a8a08cfff7b99e4dca1ea7e0cd9f0c097}
+
+
+Definition at line 176 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_media_control_a06fd542ee0278e369a39b9158f0acb35}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!m\-Display\-Current\-Time@{m\-Display\-Current\-Time}}
+\index{m\-Display\-Current\-Time@{m\-Display\-Current\-Time}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{m\-Display\-Current\-Time}]{\setlength{\rightskip}{0pt plus 5cm}bool Delegate\-Media\-Control\-::m\-Display\-Current\-Time\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d0d/class_delegate_media_control_a06fd542ee0278e369a39b9158f0acb35}
+
+
+Definition at line 177 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+\hypertarget{class_delegate_media_control_a31ae1114209781ed2921257c16219392}{\index{Delegate\-Media\-Control@{Delegate\-Media\-Control}!m\-Total\-Time\-In\-Ms@{m\-Total\-Time\-In\-Ms}}
+\index{m\-Total\-Time\-In\-Ms@{m\-Total\-Time\-In\-Ms}!DelegateMediaControl@{Delegate\-Media\-Control}}
+\subsubsection[{m\-Total\-Time\-In\-Ms}]{\setlength{\rightskip}{0pt plus 5cm}qint64 Delegate\-Media\-Control\-::m\-Total\-Time\-In\-Ms\hspace{0.3cm}{\ttfamily [protected]}}}\label{df/d0d/class_delegate_media_control_a31ae1114209781ed2921257c16219392}
+
+
+Definition at line 180 of file U\-B\-Graphics\-Item\-Delegate.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_item_delegate_8h}{U\-B\-Graphics\-Item\-Delegate.\-h}\item 
+Sankore-\/3.\-1/src/domain/\hyperlink{_u_b_graphics_item_delegate_8cpp}{U\-B\-Graphics\-Item\-Delegate.\-cpp}\end{DoxyCompactItemize}

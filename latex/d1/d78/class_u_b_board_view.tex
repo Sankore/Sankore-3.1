@@ -1,0 +1,1255 @@
+\hypertarget{class_u_b_board_view}{\section{U\-B\-Board\-View Class Reference}
+\label{d1/d78/class_u_b_board_view}\index{U\-B\-Board\-View@{U\-B\-Board\-View}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Board\-View.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Board\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{d8/d63/class_u_b_board_view__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_view_a2d30679bb82bf535f21be9331b1e2f05}{virtual\-Keyboard\-Activated} (bool b)
+\item 
+void \hyperlink{class_u_b_board_view_af1ecc328373e86fc00110611606b62e4}{long\-Press\-Event} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_board_view_a169a2815ea03ff65e02ba68202b6748d}{resized} (Q\-Resize\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+void \hyperlink{class_u_b_board_view_a89b87a105417f12c13bde309188c57d1}{hidden} ()
+\item 
+void \hyperlink{class_u_b_board_view_a07e6f339699cd4eba80a485c7e8e5b21}{shown} ()
+\item 
+void \hyperlink{class_u_b_board_view_aafb5973b4a8212dc1e16ca11019ad931}{click\-On\-Board} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_board_view_acd0ed87356ff26df8cbf3e9c62e495c2}{U\-B\-Board\-View} (\hyperlink{class_u_b_board_controller}{U\-B\-Board\-Controller} $\ast$p\-Controller, Q\-Widget $\ast$p\-Parent=0, bool is\-Control=false, bool is\-Desktop=false)
+\item 
+\hyperlink{class_u_b_board_view_a19c086b6973f9998e50f737204a4460a}{U\-B\-Board\-View} (\hyperlink{class_u_b_board_controller}{U\-B\-Board\-Controller} $\ast$p\-Controller, int p\-Start\-Layer, int p\-End\-Layer, Q\-Widget $\ast$p\-Parent=0, bool is\-Control=false, bool is\-Desktop=false)
+\item 
+virtual \hyperlink{class_u_b_board_view_acecd182e9c8cea49b5ab9b6bbf64f87f}{$\sim$\-U\-B\-Board\-View} ()
+\item 
+\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_board_view_a471b5373f2debb2c5cb6e2d0db6b74f1}{scene} ()
+\item 
+void \hyperlink{class_u_b_board_view_a67410b1a3e2af79f17fa37999c96e534}{forced\-Tablet\-Release} ()
+\item 
+void \hyperlink{class_u_b_board_view_a2c6d79af6b95057a648ca9235dea89ac}{set\-Tool\-Cursor} (int tool)
+\item 
+void \hyperlink{class_u_b_board_view_a8f77b8aadcbfb88f92362906960bea89}{rubber\-Items} ()
+\item 
+void \hyperlink{class_u_b_board_view_a712b3d478ccea75d1adf746ad44ea64b}{move\-Rubbered\-Items} (Q\-Point\-F moving\-Vector)
+\item 
+void \hyperlink{class_u_b_board_view_abb4c24e88d8f141448c0fc69849d97b9}{set\-Multiselection} (bool enable)
+\item 
+bool \hyperlink{class_u_b_board_view_ab75675b9d680aa0990d99bf75a2a98b5}{is\-Multiple\-Selection\-Enabled} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_u_b_board_view_a6d2e66eedc57c62d4351fbc4f3cc6569}{item\-Is\-Locked} (Q\-Graphics\-Item $\ast$item)
+\item 
+bool \hyperlink{class_u_b_board_view_aea986caa709a9c6f2877b41e5d7bbdea}{is\-U\-B\-Item} (Q\-Graphics\-Item $\ast$item)
+\item 
+bool \hyperlink{class_u_b_board_view_a17cf1c3f67b4f9281f21abf8ec5b32b5}{is\-Cpp\-Tool} (Q\-Graphics\-Item $\ast$item)
+\item 
+void \hyperlink{class_u_b_board_view_a3e6f545e0dac2d4108b835dc0d0bfc9e}{handle\-Items\-Selection} (Q\-Graphics\-Item $\ast$item)
+\item 
+bool \hyperlink{class_u_b_board_view_a1cab6df2225f2748e66144b4eaa89844}{item\-Should\-Receive\-Mouse\-Press\-Event} (Q\-Graphics\-Item $\ast$item)
+\item 
+bool \hyperlink{class_u_b_board_view_a0d5ff37e2ae889c4cb6a7a7bc608c267}{item\-Should\-Receive\-Suspended\-Mouse\-Press\-Event} (Q\-Graphics\-Item $\ast$item)
+\item 
+bool \hyperlink{class_u_b_board_view_a7943c576795e6fbb1138203abbea65c8}{item\-Have\-Parent\-With\-Type} (Q\-Graphics\-Item $\ast$item, int type)
+\item 
+bool \hyperlink{class_u_b_board_view_abbe27791d3c99c505f38e8b87013e9f2}{item\-Should\-Be\-Moved} (Q\-Graphics\-Item $\ast$item)
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_board_view_a6984a1cb5fb66a66b18e37966d6e127e}{determine\-Item\-To\-Press} (Q\-Graphics\-Item $\ast$item)
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{class_u_b_board_view_ab7d920be31a90777998b2bd7af2fb96b}{determine\-Item\-To\-Move} (Q\-Graphics\-Item $\ast$item)
+\item 
+void \hyperlink{class_u_b_board_view_a1818c4d69a09adc9bb98079d2210564d}{handle\-Item\-Mouse\-Press} (Q\-Mouse\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+void \hyperlink{class_u_b_board_view_aa0ffd2f772d688eb459b316c36404188}{handle\-Item\-Mouse\-Move} (Q\-Mouse\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual bool \hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event} (Q\-Event $\ast$e)
+\item 
+virtual void \hyperlink{class_u_b_board_view_a9216e870eac1d8f36049186dc8ab1410}{key\-Press\-Event} (Q\-Key\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a64d50d771a575166d7f5c9ad52aaf412}{key\-Release\-Event} (Q\-Key\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_ad5109e5f034af7b194f4dc6606fe16e6}{tablet\-Event} (Q\-Tablet\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a43eb1207291905e9daa7c618a3c203bb}{mouse\-Double\-Click\-Event} (Q\-Mouse\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a6fc3391590c435e0ae26c43d2bd76d14}{mouse\-Press\-Event} (Q\-Mouse\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_adf1b48aff41094593ba1054627b4c52b}{mouse\-Move\-Event} (Q\-Mouse\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_acc4206bbb27829580a337c81708be4a3}{mouse\-Release\-Event} (Q\-Mouse\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a127153f054ca62fc556b398b4edf45b8}{wheel\-Event} (Q\-Wheel\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a35bbcf045afccb4bb80b966a29c333e2}{leave\-Event} (Q\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a75607af38a7dcfc8299a7f441e5a822f}{focus\-Out\-Event} (Q\-Focus\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_afec76b8b1ffab6b5a335e509dd62338c}{draw\-Items} (Q\-Painter $\ast$painter, int num\-Items, Q\-Graphics\-Item $\ast$items\mbox{[}$\,$\mbox{]}, const Q\-Style\-Option\-Graphics\-Item options\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a1bb7794094c4bb04637b0df2bc0c0fa9}{drop\-Event} (Q\-Drop\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a623b7deba0e5a085b86c976a4ff3aae3}{drag\-Move\-Event} (Q\-Drag\-Move\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_a3bb327e5c2538237a7fd862448b22e7f}{resize\-Event} (Q\-Resize\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_ae2f232fb2d55f9345f6b8867906ea891}{draw\-Background} (Q\-Painter $\ast$painter, const Q\-Rect\-F \&rect)
+\item 
+virtual void \hyperlink{class_u_b_board_view_af482c8eb0142e114e4263795685e437e}{show\-Event} (Q\-Show\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\item 
+virtual void \hyperlink{class_u_b_board_view_ab118f7e4aa5c8391591f8d95e65a3ab0}{hide\-Event} (Q\-Hide\-Event $\ast$\hyperlink{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{event})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file U\-B\-Board\-View.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_board_view_acd0ed87356ff26df8cbf3e9c62e495c2}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!U\-B\-Board\-View@{U\-B\-Board\-View}}
+\index{U\-B\-Board\-View@{U\-B\-Board\-View}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{U\-B\-Board\-View}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Board\-View\-::\-U\-B\-Board\-View (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Board\-Controller} $\ast$}]{p\-Controller, }
+\item[{Q\-Widget $\ast$}]{p\-Parent = {\ttfamily 0}, }
+\item[{bool}]{is\-Control = {\ttfamily false}, }
+\item[{bool}]{is\-Desktop = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_acd0ed87356ff26df8cbf3e9c62e495c2}
+
+
+Definition at line 85 of file U\-B\-Board\-View.\-cpp.
+
+\hypertarget{class_u_b_board_view_a19c086b6973f9998e50f737204a4460a}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!U\-B\-Board\-View@{U\-B\-Board\-View}}
+\index{U\-B\-Board\-View@{U\-B\-Board\-View}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{U\-B\-Board\-View}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Board\-View\-::\-U\-B\-Board\-View (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Board\-Controller} $\ast$}]{p\-Controller, }
+\item[{int}]{p\-Start\-Layer, }
+\item[{int}]{p\-End\-Layer, }
+\item[{Q\-Widget $\ast$}]{p\-Parent = {\ttfamily 0}, }
+\item[{bool}]{is\-Control = {\ttfamily false}, }
+\item[{bool}]{is\-Desktop = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_a19c086b6973f9998e50f737204a4460a}
+
+
+Definition at line 107 of file U\-B\-Board\-View.\-cpp.
+
+\hypertarget{class_u_b_board_view_acecd182e9c8cea49b5ab9b6bbf64f87f}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!$\sim$\-U\-B\-Board\-View@{$\sim$\-U\-B\-Board\-View}}
+\index{$\sim$\-U\-B\-Board\-View@{$\sim$\-U\-B\-Board\-View}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{$\sim$\-U\-B\-Board\-View}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Board\-View\-::$\sim$\-U\-B\-Board\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_acecd182e9c8cea49b5ab9b6bbf64f87f}
+
+
+Definition at line 128 of file U\-B\-Board\-View.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_board_view_aafb5973b4a8212dc1e16ca11019ad931}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!click\-On\-Board@{click\-On\-Board}}
+\index{click\-On\-Board@{click\-On\-Board}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{click\-On\-Board}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::click\-On\-Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d78/class_u_b_board_view_aafb5973b4a8212dc1e16ca11019ad931}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_aafb5973b4a8212dc1e16ca11019ad931_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_ab7d920be31a90777998b2bd7af2fb96b}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!determine\-Item\-To\-Move@{determine\-Item\-To\-Move}}
+\index{determine\-Item\-To\-Move@{determine\-Item\-To\-Move}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{determine\-Item\-To\-Move}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item $\ast$ U\-B\-Board\-View\-::determine\-Item\-To\-Move (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_ab7d920be31a90777998b2bd7af2fb96b}
+
+
+Definition at line 743 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_ab7d920be31a90777998b2bd7af2fb96b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_ab7d920be31a90777998b2bd7af2fb96b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a6984a1cb5fb66a66b18e37966d6e127e}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!determine\-Item\-To\-Press@{determine\-Item\-To\-Press}}
+\index{determine\-Item\-To\-Press@{determine\-Item\-To\-Press}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{determine\-Item\-To\-Press}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item $\ast$ U\-B\-Board\-View\-::determine\-Item\-To\-Press (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a6984a1cb5fb66a66b18e37966d6e127e}
+
+
+Definition at line 712 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a6984a1cb5fb66a66b18e37966d6e127e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a6984a1cb5fb66a66b18e37966d6e127e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a623b7deba0e5a085b86c976a4ff3aae3}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!drag\-Move\-Event@{drag\-Move\-Event}}
+\index{drag\-Move\-Event@{drag\-Move\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{drag\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::drag\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Drag\-Move\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a623b7deba0e5a085b86c976a4ff3aae3}
+
+
+Definition at line 1522 of file U\-B\-Board\-View.\-cpp.
+
+\hypertarget{class_u_b_board_view_ae2f232fb2d55f9345f6b8867906ea891}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!draw\-Background@{draw\-Background}}
+\index{draw\-Background@{draw\-Background}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{draw\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::draw\-Background (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Rect\-F \&}]{rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_ae2f232fb2d55f9345f6b8867906ea891}
+
+
+Definition at line 1564 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_ae2f232fb2d55f9345f6b8867906ea891_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_afec76b8b1ffab6b5a335e509dd62338c}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!draw\-Items@{draw\-Items}}
+\index{draw\-Items@{draw\-Items}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{draw\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::draw\-Items (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{int}]{num\-Items, }
+\item[{Q\-Graphics\-Item $\ast$}]{items\mbox{[}$\,$\mbox{]}, }
+\item[{const Q\-Style\-Option\-Graphics\-Item}]{options\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_afec76b8b1ffab6b5a335e509dd62338c}
+
+
+Definition at line 1489 of file U\-B\-Board\-View.\-cpp.
+
+\hypertarget{class_u_b_board_view_a1bb7794094c4bb04637b0df2bc0c0fa9}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!drop\-Event@{drop\-Event}}
+\index{drop\-Event@{drop\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{drop\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::drop\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Drop\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a1bb7794094c4bb04637b0df2bc0c0fa9}
+
+
+Definition at line 1528 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a1bb7794094c4bb04637b0df2bc0c0fa9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!event@{event}}
+\index{event@{event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af}
+
+
+Definition at line 322 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a9052cd8486cf023aaff430a859f2f4af_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a75607af38a7dcfc8299a7f441e5a822f}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!focus\-Out\-Event@{focus\-Out\-Event}}
+\index{focus\-Out\-Event@{focus\-Out\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{focus\-Out\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::focus\-Out\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Focus\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a75607af38a7dcfc8299a7f441e5a822f}
+
+
+Definition at line 1681 of file U\-B\-Board\-View.\-cpp.
+
+\hypertarget{class_u_b_board_view_a67410b1a3e2af79f17fa37999c96e534}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!forced\-Tablet\-Release@{forced\-Tablet\-Release}}
+\index{forced\-Tablet\-Release@{forced\-Tablet\-Release}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{forced\-Tablet\-Release}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::forced\-Tablet\-Release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_a67410b1a3e2af79f17fa37999c96e534}
+
+
+Definition at line 1418 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a67410b1a3e2af79f17fa37999c96e534_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a67410b1a3e2af79f17fa37999c96e534_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_aa0ffd2f772d688eb459b316c36404188}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!handle\-Item\-Mouse\-Move@{handle\-Item\-Mouse\-Move}}
+\index{handle\-Item\-Mouse\-Move@{handle\-Item\-Mouse\-Move}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{handle\-Item\-Mouse\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::handle\-Item\-Mouse\-Move (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_aa0ffd2f772d688eb459b316c36404188}
+
+
+Definition at line 823 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_aa0ffd2f772d688eb459b316c36404188_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_aa0ffd2f772d688eb459b316c36404188_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a1818c4d69a09adc9bb98079d2210564d}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!handle\-Item\-Mouse\-Press@{handle\-Item\-Mouse\-Press}}
+\index{handle\-Item\-Mouse\-Press@{handle\-Item\-Mouse\-Press}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{handle\-Item\-Mouse\-Press}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::handle\-Item\-Mouse\-Press (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a1818c4d69a09adc9bb98079d2210564d}
+
+
+Definition at line 782 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a1818c4d69a09adc9bb98079d2210564d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a1818c4d69a09adc9bb98079d2210564d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a3e6f545e0dac2d4108b835dc0d0bfc9e}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!handle\-Items\-Selection@{handle\-Items\-Selection}}
+\index{handle\-Items\-Selection@{handle\-Items\-Selection}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{handle\-Items\-Selection}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::handle\-Items\-Selection (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a3e6f545e0dac2d4108b835dc0d0bfc9e}
+
+
+Definition at line 488 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a3e6f545e0dac2d4108b835dc0d0bfc9e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a3e6f545e0dac2d4108b835dc0d0bfc9e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a89b87a105417f12c13bde309188c57d1}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!hidden@{hidden}}
+\index{hidden@{hidden}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{hidden}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::hidden (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d78/class_u_b_board_view_a89b87a105417f12c13bde309188c57d1}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a89b87a105417f12c13bde309188c57d1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_ab118f7e4aa5c8391591f8d95e65a3ab0}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!hide\-Event@{hide\-Event}}
+\index{hide\-Event@{hide\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{hide\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::hide\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Hide\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_ab118f7e4aa5c8391591f8d95e65a3ab0}
+
+
+Definition at line 182 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_ab118f7e4aa5c8391591f8d95e65a3ab0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a17cf1c3f67b4f9281f21abf8ec5b32b5}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!is\-Cpp\-Tool@{is\-Cpp\-Tool}}
+\index{is\-Cpp\-Tool@{is\-Cpp\-Tool}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{is\-Cpp\-Tool}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::is\-Cpp\-Tool (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a17cf1c3f67b4f9281f21abf8ec5b32b5}
+
+
+Definition at line 478 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a17cf1c3f67b4f9281f21abf8ec5b32b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_ab75675b9d680aa0990d99bf75a2a98b5}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!is\-Multiple\-Selection\-Enabled@{is\-Multiple\-Selection\-Enabled}}
+\index{is\-Multiple\-Selection\-Enabled@{is\-Multiple\-Selection\-Enabled}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{is\-Multiple\-Selection\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::is\-Multiple\-Selection\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d1/d78/class_u_b_board_view_ab75675b9d680aa0990d99bf75a2a98b5}
+
+
+Definition at line 56 of file U\-B\-Board\-View.\-h.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_ab75675b9d680aa0990d99bf75a2a98b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_aea986caa709a9c6f2877b41e5d7bbdea}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!is\-U\-B\-Item@{is\-U\-B\-Item}}
+\index{is\-U\-B\-Item@{is\-U\-B\-Item}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{is\-U\-B\-Item}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::is\-U\-B\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_aea986caa709a9c6f2877b41e5d7bbdea}
+
+
+Definition at line 468 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_aea986caa709a9c6f2877b41e5d7bbdea_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a7943c576795e6fbb1138203abbea65c8}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!item\-Have\-Parent\-With\-Type@{item\-Have\-Parent\-With\-Type}}
+\index{item\-Have\-Parent\-With\-Type@{item\-Have\-Parent\-With\-Type}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{item\-Have\-Parent\-With\-Type}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::item\-Have\-Parent\-With\-Type (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a7943c576795e6fbb1138203abbea65c8}
+
+
+Definition at line 457 of file U\-B\-Board\-View.\-cpp.
+
+\hypertarget{class_u_b_board_view_a6d2e66eedc57c62d4351fbc4f3cc6569}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!item\-Is\-Locked@{item\-Is\-Locked}}
+\index{item\-Is\-Locked@{item\-Is\-Locked}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{item\-Is\-Locked}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::item\-Is\-Locked (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a6d2e66eedc57c62d4351fbc4f3cc6569}
+
+
+Definition at line 449 of file U\-B\-Board\-View.\-cpp.
+
+\hypertarget{class_u_b_board_view_abbe27791d3c99c505f38e8b87013e9f2}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!item\-Should\-Be\-Moved@{item\-Should\-Be\-Moved}}
+\index{item\-Should\-Be\-Moved@{item\-Should\-Be\-Moved}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{item\-Should\-Be\-Moved}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::item\-Should\-Be\-Moved (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_abbe27791d3c99c505f38e8b87013e9f2}
+
+
+Definition at line 664 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_abbe27791d3c99c505f38e8b87013e9f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_abbe27791d3c99c505f38e8b87013e9f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a1cab6df2225f2748e66144b4eaa89844}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!item\-Should\-Receive\-Mouse\-Press\-Event@{item\-Should\-Receive\-Mouse\-Press\-Event}}
+\index{item\-Should\-Receive\-Mouse\-Press\-Event@{item\-Should\-Receive\-Mouse\-Press\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{item\-Should\-Receive\-Mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::item\-Should\-Receive\-Mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a1cab6df2225f2748e66144b4eaa89844}
+
+
+Definition at line 536 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a1cab6df2225f2748e66144b4eaa89844_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a1cab6df2225f2748e66144b4eaa89844_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a0d5ff37e2ae889c4cb6a7a7bc608c267}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!item\-Should\-Receive\-Suspended\-Mouse\-Press\-Event@{item\-Should\-Receive\-Suspended\-Mouse\-Press\-Event}}
+\index{item\-Should\-Receive\-Suspended\-Mouse\-Press\-Event@{item\-Should\-Receive\-Suspended\-Mouse\-Press\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{item\-Should\-Receive\-Suspended\-Mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Board\-View\-::item\-Should\-Receive\-Suspended\-Mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Item $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d78/class_u_b_board_view_a0d5ff37e2ae889c4cb6a7a7bc608c267}
+
+
+Definition at line 631 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a0d5ff37e2ae889c4cb6a7a7bc608c267_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a0d5ff37e2ae889c4cb6a7a7bc608c267_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a9216e870eac1d8f36049186dc8ab1410}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::key\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a9216e870eac1d8f36049186dc8ab1410}
+
+
+Definition at line 196 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a9216e870eac1d8f36049186dc8ab1410_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a64d50d771a575166d7f5c9ad52aaf412}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!key\-Release\-Event@{key\-Release\-Event}}
+\index{key\-Release\-Event@{key\-Release\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{key\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::key\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a64d50d771a575166d7f5c9ad52aaf412}
+
+
+Definition at line 307 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a64d50d771a575166d7f5c9ad52aaf412_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a35bbcf045afccb4bb80b966a29c333e2}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!leave\-Event@{leave\-Event}}
+\index{leave\-Event@{leave\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a35bbcf045afccb4bb80b966a29c333e2}
+
+
+Definition at line 1480 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a35bbcf045afccb4bb80b966a29c333e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_af1ecc328373e86fc00110611606b62e4}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!long\-Press\-Event@{long\-Press\-Event}}
+\index{long\-Press\-Event@{long\-Press\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{long\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::long\-Press\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d78/class_u_b_board_view_af1ecc328373e86fc00110611606b62e4}
+
+
+Definition at line 968 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_af1ecc328373e86fc00110611606b62e4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_af1ecc328373e86fc00110611606b62e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a43eb1207291905e9daa7c618a3c203bb}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!mouse\-Double\-Click\-Event@{mouse\-Double\-Click\-Event}}
+\index{mouse\-Double\-Click\-Event@{mouse\-Double\-Click\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{mouse\-Double\-Click\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::mouse\-Double\-Click\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a43eb1207291905e9daa7c618a3c203bb}
+
+
+Definition at line 1438 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a43eb1207291905e9daa7c618a3c203bb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_adf1b48aff41094593ba1054627b4c52b}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_adf1b48aff41094593ba1054627b4c52b}
+
+
+Definition at line 1136 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_adf1b48aff41094593ba1054627b4c52b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_adf1b48aff41094593ba1054627b4c52b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a6fc3391590c435e0ae26c43d2bd76d14}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a6fc3391590c435e0ae26c43d2bd76d14}
+
+
+Definition at line 992 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d1/d78/class_u_b_board_view_a6fc3391590c435e0ae26c43d2bd76d14_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a6fc3391590c435e0ae26c43d2bd76d14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_acc4206bbb27829580a337c81708be4a3}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_acc4206bbb27829580a337c81708be4a3}
+
+
+Definition at line 1250 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_acc4206bbb27829580a337c81708be4a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a712b3d478ccea75d1adf746ad44ea64b}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!move\-Rubbered\-Items@{move\-Rubbered\-Items}}
+\index{move\-Rubbered\-Items@{move\-Rubbered\-Items}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{move\-Rubbered\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::move\-Rubbered\-Items (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{moving\-Vector}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_a712b3d478ccea75d1adf746ad44ea64b}
+
+
+Definition at line 873 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a712b3d478ccea75d1adf746ad44ea64b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a169a2815ea03ff65e02ba68202b6748d}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!resized@{resized}}
+\index{resized@{resized}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{resized}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::resized (
+\begin{DoxyParamCaption}
+\item[{Q\-Resize\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d78/class_u_b_board_view_a169a2815ea03ff65e02ba68202b6748d}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a169a2815ea03ff65e02ba68202b6748d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a3bb327e5c2538237a7fd862448b22e7f}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!resize\-Event@{resize\-Event}}
+\index{resize\-Event@{resize\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{resize\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::resize\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Resize\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a3bb327e5c2538237a7fd862448b22e7f}
+
+
+Definition at line 1552 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a3bb327e5c2538237a7fd862448b22e7f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a8f77b8aadcbfb88f92362906960bea89}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!rubber\-Items@{rubber\-Items}}
+\index{rubber\-Items@{rubber\-Items}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{rubber\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::rubber\-Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_a8f77b8aadcbfb88f92362906960bea89}
+
+
+Definition at line 861 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a8f77b8aadcbfb88f92362906960bea89_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a471b5373f2debb2c5cb6e2d0db6b74f1}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!scene@{scene}}
+\index{scene@{scene}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Board\-View\-::scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_a471b5373f2debb2c5cb6e2d0db6b74f1}
+
+
+Definition at line 176 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a471b5373f2debb2c5cb6e2d0db6b74f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_abb4c24e88d8f141448c0fc69849d97b9}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!set\-Multiselection@{set\-Multiselection}}
+\index{set\-Multiselection@{set\-Multiselection}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{set\-Multiselection}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::set\-Multiselection (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_abb4c24e88d8f141448c0fc69849d97b9}
+
+
+Definition at line 895 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_abb4c24e88d8f141448c0fc69849d97b9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a2c6d79af6b95057a648ca9235dea89ac}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!set\-Tool\-Cursor@{set\-Tool\-Cursor}}
+\index{set\-Tool\-Cursor@{set\-Tool\-Cursor}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{set\-Tool\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::set\-Tool\-Cursor (
+\begin{DoxyParamCaption}
+\item[{int}]{tool}
+\end{DoxyParamCaption}
+)}}\label{d1/d78/class_u_b_board_view_a2c6d79af6b95057a648ca9235dea89ac}
+
+
+Definition at line 1687 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a2c6d79af6b95057a648ca9235dea89ac_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a2c6d79af6b95057a648ca9235dea89ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_af482c8eb0142e114e4263795685e437e}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!show\-Event@{show\-Event}}
+\index{show\-Event@{show\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{show\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::show\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Show\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_af482c8eb0142e114e4263795685e437e}
+
+
+Definition at line 189 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_af482c8eb0142e114e4263795685e437e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a07e6f339699cd4eba80a485c7e8e5b21}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!shown@{shown}}
+\index{shown@{shown}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{shown}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::shown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d78/class_u_b_board_view_a07e6f339699cd4eba80a485c7e8e5b21}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a07e6f339699cd4eba80a485c7e8e5b21_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_ad5109e5f034af7b194f4dc6606fe16e6}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!tablet\-Event@{tablet\-Event}}
+\index{tablet\-Event@{tablet\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{tablet\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::tablet\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Tablet\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_ad5109e5f034af7b194f4dc6606fe16e6}
+
+
+Definition at line 350 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_ad5109e5f034af7b194f4dc6606fe16e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a2d30679bb82bf535f21be9331b1e2f05}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!virtual\-Keyboard\-Activated@{virtual\-Keyboard\-Activated}}
+\index{virtual\-Keyboard\-Activated@{virtual\-Keyboard\-Activated}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{virtual\-Keyboard\-Activated}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::virtual\-Keyboard\-Activated (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d78/class_u_b_board_view_a2d30679bb82bf535f21be9331b1e2f05}
+
+
+Definition at line 1656 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a2d30679bb82bf535f21be9331b1e2f05_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_board_view_a127153f054ca62fc556b398b4edf45b8}{\index{U\-B\-Board\-View@{U\-B\-Board\-View}!wheel\-Event@{wheel\-Event}}
+\index{wheel\-Event@{wheel\-Event}!UBBoardView@{U\-B\-Board\-View}}
+\subsubsection[{wheel\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Board\-View\-::wheel\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Wheel\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d78/class_u_b_board_view_a127153f054ca62fc556b398b4edf45b8}
+
+
+Definition at line 1445 of file U\-B\-Board\-View.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d78/class_u_b_board_view_a127153f054ca62fc556b398b4edf45b8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_board_view_8h}{U\-B\-Board\-View.\-h}\item 
+Sankore-\/3.\-1/src/board/\hyperlink{_u_b_board_view_8cpp}{U\-B\-Board\-View.\-cpp}\end{DoxyCompactItemize}

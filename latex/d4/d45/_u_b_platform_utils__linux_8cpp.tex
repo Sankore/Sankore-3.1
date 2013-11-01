@@ -1,0 +1,172 @@
+\hypertarget{_u_b_platform_utils__linux_8cpp}{\section{Sankore-\/3.1/src/frameworks/\-U\-B\-Platform\-Utils\-\_\-linux.cpp File Reference}
+\label{d4/d45/_u_b_platform_utils__linux_8cpp}\index{Sankore-\/3.\-1/src/frameworks/\-U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{Sankore-\/3.\-1/src/frameworks/\-U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}U\-B\-Platform\-Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Qt\-Gui$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$X11/\-Xlib.\-h$>$}\\*
+{\ttfamily \#include $<$X11/keysym.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}frameworks/\-U\-B\-File\-System\-Utils.\-h\char`\"{}}\\*
+Include dependency graph for U\-B\-Platform\-Utils\-\_\-linux.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d3f/_u_b_platform_utils__linux_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_u_b_platform_utils__linux_8cpp_a56435facea9874c907f2afc3f40af30b}{K\-E\-Y\-B\-T\-D\-E\-C\-L}(s1, s2, cl\-Switch, code)~\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(s1, code, 0), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(s2, code, 1))
+\item 
+\#define \hyperlink{_u_b_platform_utils__linux_8cpp_a44b4aaa0af7047d58c872fa341ec048c}{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X1}(s1, s2, cl\-Switch, code, cs1, cs2)~\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs1, code, 0), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs2, code, 1))
+\item 
+\#define \hyperlink{_u_b_platform_utils__linux_8cpp_a0da0ce10b33cc5917a731ca33d99ac27}{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X2}(s1, s2, cl\-Switch, code, cs1, cs2)~\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs1, code, 2), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs2, code, 3))
+\item 
+\#define \hyperlink{_u_b_platform_utils__linux_8cpp_a0d62f199ff719f40bd691c01fa3645f4}{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X6}(s1, s2, cl\-Switch, code, cs1, cs2, cs3, cs4, cs5, cs6)~\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs1, code, 0), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs2, code, 1), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs3, code, 2), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs4, code, 3), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs5, code, 4), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs6, code, 5))
+\item 
+\#define \hyperlink{_u_b_platform_utils__linux_8cpp_ae556552c175567f093a67972bac8becb}{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X8}(s1, s2, cl\-Switch, code, cs1, cs2, cs3, cs4, cs5, cs6, cs7, cs8)~\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs1, code, 0), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs2, code, 1), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs3, code, 2), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs4, code, 3), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs5, code, 4), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs6, code, 5), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs7, code, 6), \hyperlink{struct_k_e_y_c_o_d_e}{K\-E\-Y\-C\-O\-D\-E}(cs8, code, 7))
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T} \hyperlink{_u_b_platform_utils__linux_8cpp_ac7ce84d09b5d117b6d732bca353ab3a7}{E\-N\-G\-L\-I\-S\-H\-\_\-\-L\-O\-C\-A\-L\-E} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T} \hyperlink{_u_b_platform_utils__linux_8cpp_afbc26fbd555e8ff34c48868c720ae825}{R\-U\-S\-S\-I\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T} \hyperlink{_u_b_platform_utils__linux_8cpp_abf2a94a05d6d5076da0edc6da445b2f3}{G\-E\-R\-M\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T} \hyperlink{_u_b_platform_utils__linux_8cpp_ab6ded858a96e43270f236992845b10c2}{F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{struct_k_e_y_b_t}{K\-E\-Y\-B\-T} \hyperlink{_u_b_platform_utils__linux_8cpp_a57c6e144e1de1146322b77fc7af86b42}{S\-W\-I\-S\-S\-\_\-\-F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_u_b_platform_utils__linux_8cpp_a56435facea9874c907f2afc3f40af30b}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!K\-E\-Y\-B\-T\-D\-E\-C\-L@{K\-E\-Y\-B\-T\-D\-E\-C\-L}}
+\index{K\-E\-Y\-B\-T\-D\-E\-C\-L@{K\-E\-Y\-B\-T\-D\-E\-C\-L}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{K\-E\-Y\-B\-T\-D\-E\-C\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-B\-T\-D\-E\-C\-L(
+\begin{DoxyParamCaption}
+\item[{}]{s1, }
+\item[{}]{s2, }
+\item[{}]{cl\-Switch, }
+\item[{}]{code}
+\end{DoxyParamCaption}
+)~{\bf K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, {\bf K\-E\-Y\-C\-O\-D\-E}(s1, code, 0), {\bf K\-E\-Y\-C\-O\-D\-E}(s2, code, 1))}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_a56435facea9874c907f2afc3f40af30b}
+
+
+Definition at line 133 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_a44b4aaa0af7047d58c872fa341ec048c}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X1@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X1}}
+\index{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X1@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X1}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X1}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X1(
+\begin{DoxyParamCaption}
+\item[{}]{s1, }
+\item[{}]{s2, }
+\item[{}]{cl\-Switch, }
+\item[{}]{code, }
+\item[{}]{cs1, }
+\item[{}]{cs2}
+\end{DoxyParamCaption}
+)~{\bf K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, {\bf K\-E\-Y\-C\-O\-D\-E}(cs1, code, 0), {\bf K\-E\-Y\-C\-O\-D\-E}(cs2, code, 1))}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_a44b4aaa0af7047d58c872fa341ec048c}
+
+
+Definition at line 135 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_a0da0ce10b33cc5917a731ca33d99ac27}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X2@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X2}}
+\index{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X2@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X2}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X2}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X2(
+\begin{DoxyParamCaption}
+\item[{}]{s1, }
+\item[{}]{s2, }
+\item[{}]{cl\-Switch, }
+\item[{}]{code, }
+\item[{}]{cs1, }
+\item[{}]{cs2}
+\end{DoxyParamCaption}
+)~{\bf K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, {\bf K\-E\-Y\-C\-O\-D\-E}(cs1, code, 2), {\bf K\-E\-Y\-C\-O\-D\-E}(cs2, code, 3))}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_a0da0ce10b33cc5917a731ca33d99ac27}
+
+
+Definition at line 136 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_a0d62f199ff719f40bd691c01fa3645f4}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X6@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X6}}
+\index{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X6@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X6}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X6}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X6(
+\begin{DoxyParamCaption}
+\item[{}]{s1, }
+\item[{}]{s2, }
+\item[{}]{cl\-Switch, }
+\item[{}]{code, }
+\item[{}]{cs1, }
+\item[{}]{cs2, }
+\item[{}]{cs3, }
+\item[{}]{cs4, }
+\item[{}]{cs5, }
+\item[{}]{cs6}
+\end{DoxyParamCaption}
+)~{\bf K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, {\bf K\-E\-Y\-C\-O\-D\-E}(cs1, code, 0), {\bf K\-E\-Y\-C\-O\-D\-E}(cs2, code, 1), {\bf K\-E\-Y\-C\-O\-D\-E}(cs3, code, 2), {\bf K\-E\-Y\-C\-O\-D\-E}(cs4, code, 3), {\bf K\-E\-Y\-C\-O\-D\-E}(cs5, code, 4), {\bf K\-E\-Y\-C\-O\-D\-E}(cs6, code, 5))}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_a0d62f199ff719f40bd691c01fa3645f4}
+
+
+Definition at line 138 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_ae556552c175567f093a67972bac8becb}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X8@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X8}}
+\index{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X8@{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X8}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X8}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-B\-T\-D\-E\-C\-L\-E\-X8(
+\begin{DoxyParamCaption}
+\item[{}]{s1, }
+\item[{}]{s2, }
+\item[{}]{cl\-Switch, }
+\item[{}]{code, }
+\item[{}]{cs1, }
+\item[{}]{cs2, }
+\item[{}]{cs3, }
+\item[{}]{cs4, }
+\item[{}]{cs5, }
+\item[{}]{cs6, }
+\item[{}]{cs7, }
+\item[{}]{cs8}
+\end{DoxyParamCaption}
+)~{\bf K\-E\-Y\-B\-T}(s1, s2, cl\-Switch, 0, 0, {\bf K\-E\-Y\-C\-O\-D\-E}(cs1, code, 0), {\bf K\-E\-Y\-C\-O\-D\-E}(cs2, code, 1), {\bf K\-E\-Y\-C\-O\-D\-E}(cs3, code, 2), {\bf K\-E\-Y\-C\-O\-D\-E}(cs4, code, 3), {\bf K\-E\-Y\-C\-O\-D\-E}(cs5, code, 4), {\bf K\-E\-Y\-C\-O\-D\-E}(cs6, code, 5), {\bf K\-E\-Y\-C\-O\-D\-E}(cs7, code, 6), {\bf K\-E\-Y\-C\-O\-D\-E}(cs8, code, 7))}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_ae556552c175567f093a67972bac8becb}
+
+
+Definition at line 140 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_u_b_platform_utils__linux_8cpp_ac7ce84d09b5d117b6d732bca353ab3a7}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!E\-N\-G\-L\-I\-S\-H\-\_\-\-L\-O\-C\-A\-L\-E@{E\-N\-G\-L\-I\-S\-H\-\_\-\-L\-O\-C\-A\-L\-E}}
+\index{E\-N\-G\-L\-I\-S\-H\-\_\-\-L\-O\-C\-A\-L\-E@{E\-N\-G\-L\-I\-S\-H\-\_\-\-L\-O\-C\-A\-L\-E}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{E\-N\-G\-L\-I\-S\-H\-\_\-\-L\-O\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\-E\-Y\-B\-T} E\-N\-G\-L\-I\-S\-H\-\_\-\-L\-O\-C\-A\-L\-E\mbox{[}$\,$\mbox{]}}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_ac7ce84d09b5d117b6d732bca353ab3a7}
+
+
+Definition at line 143 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_ab6ded858a96e43270f236992845b10c2}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E@{F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E}}
+\index{F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E@{F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\-E\-Y\-B\-T} F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E\mbox{[}$\,$\mbox{]}}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_ab6ded858a96e43270f236992845b10c2}
+
+
+Definition at line 300 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_abf2a94a05d6d5076da0edc6da445b2f3}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!G\-E\-R\-M\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E@{G\-E\-R\-M\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E}}
+\index{G\-E\-R\-M\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E@{G\-E\-R\-M\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{G\-E\-R\-M\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\-E\-Y\-B\-T} G\-E\-R\-M\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E\mbox{[}$\,$\mbox{]}}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_abf2a94a05d6d5076da0edc6da445b2f3}
+
+
+Definition at line 248 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_afbc26fbd555e8ff34c48868c720ae825}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!R\-U\-S\-S\-I\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E@{R\-U\-S\-S\-I\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E}}
+\index{R\-U\-S\-S\-I\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E@{R\-U\-S\-S\-I\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{R\-U\-S\-S\-I\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\-E\-Y\-B\-T} R\-U\-S\-S\-I\-A\-N\-\_\-\-L\-O\-C\-A\-L\-E\mbox{[}$\,$\mbox{]}}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_afbc26fbd555e8ff34c48868c720ae825}
+
+
+Definition at line 195 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+
+\hypertarget{_u_b_platform_utils__linux_8cpp_a57c6e144e1de1146322b77fc7af86b42}{\index{U\-B\-Platform\-Utils\-\_\-linux.\-cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}!S\-W\-I\-S\-S\-\_\-\-F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E@{S\-W\-I\-S\-S\-\_\-\-F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E}}
+\index{S\-W\-I\-S\-S\-\_\-\-F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E@{S\-W\-I\-S\-S\-\_\-\-F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E}!UBPlatformUtils_linux.cpp@{U\-B\-Platform\-Utils\-\_\-linux.\-cpp}}
+\subsubsection[{S\-W\-I\-S\-S\-\_\-\-F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\-E\-Y\-B\-T} S\-W\-I\-S\-S\-\_\-\-F\-R\-E\-N\-C\-H\-\_\-\-L\-O\-C\-A\-L\-E\mbox{[}$\,$\mbox{]}}}\label{d4/d45/_u_b_platform_utils__linux_8cpp_a57c6e144e1de1146322b77fc7af86b42}
+
+
+Definition at line 353 of file U\-B\-Platform\-Utils\-\_\-linux.\-cpp.
+

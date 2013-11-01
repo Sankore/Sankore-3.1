@@ -1,0 +1,282 @@
+\hypertarget{class_w_b_history_model}{\section{W\-B\-History\-Model Class Reference}
+\label{df/dac/class_w_b_history_model}\index{W\-B\-History\-Model@{W\-B\-History\-Model}}
+}
+
+
+{\ttfamily \#include $<$W\-B\-History.\-h$>$}
+
+
+
+Collaboration diagram for W\-B\-History\-Model\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d0/d58/class_w_b_history_model__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_w_b_history_model_a898ccbc40f3547db69e302996901723a}{Roles} \{ \hyperlink{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa21e0ebb4102bbd1b564cefd80e2f4bf0}{Date\-Role} =  Qt\-:\-:User\-Role + 1, 
+\hyperlink{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa2a1895e7f09208d01fc26fe7d120bd86}{Date\-Time\-Role} =  Qt\-:\-:User\-Role + 2, 
+\hyperlink{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa6a0df8a211fcd913899873dd290a050c}{Url\-Role} =  Qt\-:\-:User\-Role + 3, 
+\hyperlink{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa6e15164773a727795cf597160dc02bbb}{Url\-String\-Role} =  Qt\-:\-:User\-Role + 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_history_model_a756d78c9591f3804bcb0653451d285d9}{history\-Reset} ()
+\item 
+void \hyperlink{class_w_b_history_model_a1f0db156717f0eccbfda2058b5885aeb}{entry\-Added} ()
+\item 
+void \hyperlink{class_w_b_history_model_a2bf955c8d5195ee2d9d281e53ef89ea8}{entry\-Updated} (int offset)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_history_model_a0e5762776be2b33652171b81b7e52efe}{W\-B\-History\-Model} (\hyperlink{class_w_b_history_manager}{W\-B\-History\-Manager} $\ast$history, Q\-Object $\ast$parent=0)
+\item 
+Q\-Variant \hyperlink{class_w_b_history_model_a67599d7e32056287276197996be84084}{header\-Data} (int section, Qt\-::\-Orientation orientation, int role=Qt\-::\-Display\-Role) const 
+\item 
+Q\-Variant \hyperlink{class_w_b_history_model_a538a970592c893b38572801279e249a4}{data} (const Q\-Model\-Index \&index, int role=Qt\-::\-Display\-Role) const 
+\item 
+int \hyperlink{class_w_b_history_model_ac33fd2a53e6145f37ee02298edcedb77}{column\-Count} (const Q\-Model\-Index \&parent=Q\-Model\-Index()) const 
+\item 
+int \hyperlink{class_w_b_history_model_a761d669ec889b4e7815a3fea79c31b54}{row\-Count} (const Q\-Model\-Index \&parent=Q\-Model\-Index()) const 
+\item 
+bool \hyperlink{class_w_b_history_model_a791836de2c93231a2eb7d5b4ae355405}{remove\-Rows} (int row, int count, const Q\-Model\-Index \&parent=Q\-Model\-Index())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 156 of file W\-B\-History.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_w_b_history_model_a898ccbc40f3547db69e302996901723a}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!Roles@{Roles}}
+\index{Roles@{Roles}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{Roles}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf W\-B\-History\-Model\-::\-Roles}}}\label{df/dac/class_w_b_history_model_a898ccbc40f3547db69e302996901723a}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Date\-Role@{Date\-Role}!W\-B\-History\-Model@{W\-B\-History\-Model}}\index{W\-B\-History\-Model@{W\-B\-History\-Model}!Date\-Role@{Date\-Role}}\item[{\em 
+\hypertarget{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa21e0ebb4102bbd1b564cefd80e2f4bf0}{Date\-Role}\label{df/dac/class_w_b_history_model_a898ccbc40f3547db69e302996901723aa21e0ebb4102bbd1b564cefd80e2f4bf0}
+}]\index{Date\-Time\-Role@{Date\-Time\-Role}!W\-B\-History\-Model@{W\-B\-History\-Model}}\index{W\-B\-History\-Model@{W\-B\-History\-Model}!Date\-Time\-Role@{Date\-Time\-Role}}\item[{\em 
+\hypertarget{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa2a1895e7f09208d01fc26fe7d120bd86}{Date\-Time\-Role}\label{df/dac/class_w_b_history_model_a898ccbc40f3547db69e302996901723aa2a1895e7f09208d01fc26fe7d120bd86}
+}]\index{Url\-Role@{Url\-Role}!W\-B\-History\-Model@{W\-B\-History\-Model}}\index{W\-B\-History\-Model@{W\-B\-History\-Model}!Url\-Role@{Url\-Role}}\item[{\em 
+\hypertarget{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa6a0df8a211fcd913899873dd290a050c}{Url\-Role}\label{df/dac/class_w_b_history_model_a898ccbc40f3547db69e302996901723aa6a0df8a211fcd913899873dd290a050c}
+}]\index{Url\-String\-Role@{Url\-String\-Role}!W\-B\-History\-Model@{W\-B\-History\-Model}}\index{W\-B\-History\-Model@{W\-B\-History\-Model}!Url\-String\-Role@{Url\-String\-Role}}\item[{\em 
+\hypertarget{class_w_b_history_model_a898ccbc40f3547db69e302996901723aa6e15164773a727795cf597160dc02bbb}{Url\-String\-Role}\label{df/dac/class_w_b_history_model_a898ccbc40f3547db69e302996901723aa6e15164773a727795cf597160dc02bbb}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 166 of file W\-B\-History.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_w_b_history_model_a0e5762776be2b33652171b81b7e52efe}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!W\-B\-History\-Model@{W\-B\-History\-Model}}
+\index{W\-B\-History\-Model@{W\-B\-History\-Model}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{W\-B\-History\-Model}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-History\-Model\-::\-W\-B\-History\-Model (
+\begin{DoxyParamCaption}
+\item[{{\bf W\-B\-History\-Manager} $\ast$}]{history, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{df/dac/class_w_b_history_model_a0e5762776be2b33652171b81b7e52efe}
+
+
+Definition at line 392 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dac/class_w_b_history_model_a0e5762776be2b33652171b81b7e52efe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_w_b_history_model_ac33fd2a53e6145f37ee02298edcedb77}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!column\-Count@{column\-Count}}
+\index{column\-Count@{column\-Count}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{column\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int W\-B\-History\-Model\-::column\-Count (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}\label{df/dac/class_w_b_history_model_ac33fd2a53e6145f37ee02298edcedb77}
+
+
+Definition at line 479 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_model_a538a970592c893b38572801279e249a4}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!data@{data}}
+\index{data@{data}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant W\-B\-History\-Model\-::data (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{index, }
+\item[{int}]{role = {\ttfamily Qt\-:\-:DisplayRole}}
+\end{DoxyParamCaption}
+) const}}\label{df/dac/class_w_b_history_model_a538a970592c893b38572801279e249a4}
+
+
+Definition at line 439 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dac/class_w_b_history_model_a538a970592c893b38572801279e249a4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_model_a1f0db156717f0eccbfda2058b5885aeb}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!entry\-Added@{entry\-Added}}
+\index{entry\-Added@{entry\-Added}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{entry\-Added}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Model\-::entry\-Added (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{df/dac/class_w_b_history_model_a1f0db156717f0eccbfda2058b5885aeb}
+
+
+Definition at line 413 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dac/class_w_b_history_model_a1f0db156717f0eccbfda2058b5885aeb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_model_a2bf955c8d5195ee2d9d281e53ef89ea8}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!entry\-Updated@{entry\-Updated}}
+\index{entry\-Updated@{entry\-Updated}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{entry\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Model\-::entry\-Updated (
+\begin{DoxyParamCaption}
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{df/dac/class_w_b_history_model_a2bf955c8d5195ee2d9d281e53ef89ea8}
+
+
+Definition at line 419 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dac/class_w_b_history_model_a2bf955c8d5195ee2d9d281e53ef89ea8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_model_a67599d7e32056287276197996be84084}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!header\-Data@{header\-Data}}
+\index{header\-Data@{header\-Data}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{header\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant W\-B\-History\-Model\-::header\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{section, }
+\item[{Qt\-::\-Orientation}]{orientation, }
+\item[{int}]{role = {\ttfamily Qt\-:\-:DisplayRole}}
+\end{DoxyParamCaption}
+) const}}\label{df/dac/class_w_b_history_model_a67599d7e32056287276197996be84084}
+
+
+Definition at line 425 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_model_a756d78c9591f3804bcb0653451d285d9}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!history\-Reset@{history\-Reset}}
+\index{history\-Reset@{history\-Reset}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{history\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Model\-::history\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{df/dac/class_w_b_history_model_a756d78c9591f3804bcb0653451d285d9}
+
+
+Definition at line 408 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dac/class_w_b_history_model_a756d78c9591f3804bcb0653451d285d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_model_a791836de2c93231a2eb7d5b4ae355405}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!remove\-Rows@{remove\-Rows}}
+\index{remove\-Rows@{remove\-Rows}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{remove\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}bool W\-B\-History\-Model\-::remove\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{count, }
+\item[{const Q\-Model\-Index \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+)}}\label{df/dac/class_w_b_history_model_a791836de2c93231a2eb7d5b4ae355405}
+
+
+Definition at line 489 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dac/class_w_b_history_model_a791836de2c93231a2eb7d5b4ae355405_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_model_a761d669ec889b4e7815a3fea79c31b54}{\index{W\-B\-History\-Model@{W\-B\-History\-Model}!row\-Count@{row\-Count}}
+\index{row\-Count@{row\-Count}!WBHistoryModel@{W\-B\-History\-Model}}
+\subsubsection[{row\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int W\-B\-History\-Model\-::row\-Count (
+\begin{DoxyParamCaption}
+\item[{const Q\-Model\-Index \&}]{parent = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const}}\label{df/dac/class_w_b_history_model_a761d669ec889b4e7815a3fea79c31b54}
+
+
+Definition at line 484 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dac/class_w_b_history_model_a761d669ec889b4e7815a3fea79c31b54_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_history_8h}{W\-B\-History.\-h}\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_history_8cpp}{W\-B\-History.\-cpp}\end{DoxyCompactItemize}

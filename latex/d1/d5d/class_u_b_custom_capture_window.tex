@@ -1,0 +1,247 @@
+\hypertarget{class_u_b_custom_capture_window}{\section{U\-B\-Custom\-Capture\-Window Class Reference}
+\label{d1/d5d/class_u_b_custom_capture_window}\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Custom\-Capture\-Window.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Custom\-Capture\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{d7/d8b/class_u_b_custom_capture_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_custom_capture_window_a730b16ee07f9bfdf54bbf41415672563}{U\-B\-Custom\-Capture\-Window} (Q\-Widget $\ast$parent=0)
+\item 
+virtual \hyperlink{class_u_b_custom_capture_window_a90c0067e95a06fcd308c8377f466f799}{$\sim$\-U\-B\-Custom\-Capture\-Window} ()
+\item 
+int \hyperlink{class_u_b_custom_capture_window_a5a46205859c969a802ce8df4105b7934}{execute} (const Q\-Pixmap \&p\-Screen\-Pixmap)
+\item 
+Q\-Pixmap \hyperlink{class_u_b_custom_capture_window_af1a5085a72638542a35473065de585e9}{get\-Selected\-Pixmap} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_u_b_custom_capture_window_ab5494d4c45fc5dbdb39d2131f1e254aa}{show\-Event} (Q\-Show\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_custom_capture_window_ac26ad528214146b0f1e6e701d63017f9}{mouse\-Move\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_custom_capture_window_aa5eda111931dd5d60a8d2bb9e8e1eb30}{mouse\-Press\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_custom_capture_window_a39018a4cc02155e3f5b477cb21505126}{mouse\-Release\-Event} (Q\-Mouse\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_custom_capture_window_a2c7caedce728db39da2abd10ff9fb39d}{key\-Press\-Event} (Q\-Key\-Event $\ast$event)
+\item 
+virtual void \hyperlink{class_u_b_custom_capture_window_a0afabb009c50c5878da9b7cd443ac99e}{paint\-Event} (Q\-Paint\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Pixmap \hyperlink{class_u_b_custom_capture_window_ae47c19f393caad44319b55c30db43e40}{m\-Whole\-Screen\-Pixmap}
+\item 
+Q\-Rubber\-Band $\ast$ \hyperlink{class_u_b_custom_capture_window_a242415d0c985fcaec2f796a742f3fe0a}{m\-Selection\-Band}
+\item 
+Q\-Style $\ast$ \hyperlink{class_u_b_custom_capture_window_a2123422c01b98254eee4ad218c22c80e}{m\-Rubber\-Band\-Style}
+\item 
+Q\-Point \hyperlink{class_u_b_custom_capture_window_a55fd0b0fae074d24f3d2e2be9bcfad0c}{m\-Origin}
+\item 
+bool \hyperlink{class_u_b_custom_capture_window_a5c4361a10e32676ba7f2c2861b43cbd2}{m\-Is\-Selecting}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to do the custom capture of Uninotes 
+
+Definition at line 30 of file U\-B\-Custom\-Capture\-Window.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_custom_capture_window_a730b16ee07f9bfdf54bbf41415672563}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}}
+\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{U\-B\-Custom\-Capture\-Window}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Custom\-Capture\-Window\-::\-U\-B\-Custom\-Capture\-Window (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{d1/d5d/class_u_b_custom_capture_window_a730b16ee07f9bfdf54bbf41415672563}
+
+
+Definition at line 29 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+\hypertarget{class_u_b_custom_capture_window_a90c0067e95a06fcd308c8377f466f799}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!$\sim$\-U\-B\-Custom\-Capture\-Window@{$\sim$\-U\-B\-Custom\-Capture\-Window}}
+\index{$\sim$\-U\-B\-Custom\-Capture\-Window@{$\sim$\-U\-B\-Custom\-Capture\-Window}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{$\sim$\-U\-B\-Custom\-Capture\-Window}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Custom\-Capture\-Window\-::$\sim$\-U\-B\-Custom\-Capture\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d5d/class_u_b_custom_capture_window_a90c0067e95a06fcd308c8377f466f799}
+
+
+Definition at line 41 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_custom_capture_window_a5a46205859c969a802ce8df4105b7934}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!execute@{execute}}
+\index{execute@{execute}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Custom\-Capture\-Window\-::execute (
+\begin{DoxyParamCaption}
+\item[{const Q\-Pixmap \&}]{p\-Screen\-Pixmap}
+\end{DoxyParamCaption}
+)}}\label{d1/d5d/class_u_b_custom_capture_window_a5a46205859c969a802ce8df4105b7934}
+
+
+Definition at line 61 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d5d/class_u_b_custom_capture_window_a5a46205859c969a802ce8df4105b7934_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_custom_capture_window_af1a5085a72638542a35473065de585e9}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!get\-Selected\-Pixmap@{get\-Selected\-Pixmap}}
+\index{get\-Selected\-Pixmap@{get\-Selected\-Pixmap}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{get\-Selected\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap U\-B\-Custom\-Capture\-Window\-::get\-Selected\-Pixmap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/d5d/class_u_b_custom_capture_window_af1a5085a72638542a35473065de585e9}
+
+
+Definition at line 48 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d5d/class_u_b_custom_capture_window_af1a5085a72638542a35473065de585e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_custom_capture_window_a2c7caedce728db39da2abd10ff9fb39d}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Custom\-Capture\-Window\-::key\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d5d/class_u_b_custom_capture_window_a2c7caedce728db39da2abd10ff9fb39d}
+
+
+Definition at line 126 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+\hypertarget{class_u_b_custom_capture_window_ac26ad528214146b0f1e6e701d63017f9}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Custom\-Capture\-Window\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d5d/class_u_b_custom_capture_window_ac26ad528214146b0f1e6e701d63017f9}
+
+
+Definition at line 76 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+\hypertarget{class_u_b_custom_capture_window_aa5eda111931dd5d60a8d2bb9e8e1eb30}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Custom\-Capture\-Window\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d5d/class_u_b_custom_capture_window_aa5eda111931dd5d60a8d2bb9e8e1eb30}
+
+
+Definition at line 87 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+\hypertarget{class_u_b_custom_capture_window_a39018a4cc02155e3f5b477cb21505126}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Custom\-Capture\-Window\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d5d/class_u_b_custom_capture_window_a39018a4cc02155e3f5b477cb21505126}
+
+
+Definition at line 106 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+\hypertarget{class_u_b_custom_capture_window_a0afabb009c50c5878da9b7cd443ac99e}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Custom\-Capture\-Window\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d5d/class_u_b_custom_capture_window_a0afabb009c50c5878da9b7cd443ac99e}
+
+
+Definition at line 148 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+\hypertarget{class_u_b_custom_capture_window_ab5494d4c45fc5dbdb39d2131f1e254aa}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!show\-Event@{show\-Event}}
+\index{show\-Event@{show\-Event}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{show\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Custom\-Capture\-Window\-::show\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Show\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{d1/d5d/class_u_b_custom_capture_window_ab5494d4c45fc5dbdb39d2131f1e254aa}
+
+
+Definition at line 143 of file U\-B\-Custom\-Capture\-Window.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_custom_capture_window_a5c4361a10e32676ba7f2c2861b43cbd2}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!m\-Is\-Selecting@{m\-Is\-Selecting}}
+\index{m\-Is\-Selecting@{m\-Is\-Selecting}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{m\-Is\-Selecting}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Custom\-Capture\-Window\-::m\-Is\-Selecting\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d5d/class_u_b_custom_capture_window_a5c4361a10e32676ba7f2c2861b43cbd2}
+
+
+Definition at line 57 of file U\-B\-Custom\-Capture\-Window.\-h.
+
+\hypertarget{class_u_b_custom_capture_window_a55fd0b0fae074d24f3d2e2be9bcfad0c}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!m\-Origin@{m\-Origin}}
+\index{m\-Origin@{m\-Origin}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{m\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point U\-B\-Custom\-Capture\-Window\-::m\-Origin\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d5d/class_u_b_custom_capture_window_a55fd0b0fae074d24f3d2e2be9bcfad0c}
+
+
+Definition at line 56 of file U\-B\-Custom\-Capture\-Window.\-h.
+
+\hypertarget{class_u_b_custom_capture_window_a2123422c01b98254eee4ad218c22c80e}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!m\-Rubber\-Band\-Style@{m\-Rubber\-Band\-Style}}
+\index{m\-Rubber\-Band\-Style@{m\-Rubber\-Band\-Style}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{m\-Rubber\-Band\-Style}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Style$\ast$ U\-B\-Custom\-Capture\-Window\-::m\-Rubber\-Band\-Style\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d5d/class_u_b_custom_capture_window_a2123422c01b98254eee4ad218c22c80e}
+
+
+Definition at line 55 of file U\-B\-Custom\-Capture\-Window.\-h.
+
+\hypertarget{class_u_b_custom_capture_window_a242415d0c985fcaec2f796a742f3fe0a}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!m\-Selection\-Band@{m\-Selection\-Band}}
+\index{m\-Selection\-Band@{m\-Selection\-Band}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{m\-Selection\-Band}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rubber\-Band$\ast$ U\-B\-Custom\-Capture\-Window\-::m\-Selection\-Band\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d5d/class_u_b_custom_capture_window_a242415d0c985fcaec2f796a742f3fe0a}
+
+
+Definition at line 54 of file U\-B\-Custom\-Capture\-Window.\-h.
+
+\hypertarget{class_u_b_custom_capture_window_ae47c19f393caad44319b55c30db43e40}{\index{U\-B\-Custom\-Capture\-Window@{U\-B\-Custom\-Capture\-Window}!m\-Whole\-Screen\-Pixmap@{m\-Whole\-Screen\-Pixmap}}
+\index{m\-Whole\-Screen\-Pixmap@{m\-Whole\-Screen\-Pixmap}!UBCustomCaptureWindow@{U\-B\-Custom\-Capture\-Window}}
+\subsubsection[{m\-Whole\-Screen\-Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap U\-B\-Custom\-Capture\-Window\-::m\-Whole\-Screen\-Pixmap\hspace{0.3cm}{\ttfamily [protected]}}}\label{d1/d5d/class_u_b_custom_capture_window_ae47c19f393caad44319b55c30db43e40}
+
+
+Definition at line 53 of file U\-B\-Custom\-Capture\-Window.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/desktop/\hyperlink{_u_b_custom_capture_window_8h}{U\-B\-Custom\-Capture\-Window.\-h}\item 
+Sankore-\/3.\-1/src/desktop/\hyperlink{_u_b_custom_capture_window_8cpp}{U\-B\-Custom\-Capture\-Window.\-cpp}\end{DoxyCompactItemize}

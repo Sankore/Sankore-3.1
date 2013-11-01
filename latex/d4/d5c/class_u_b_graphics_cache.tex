@@ -1,0 +1,612 @@
+\hypertarget{class_u_b_graphics_cache}{\section{U\-B\-Graphics\-Cache Class Reference}
+\label{d4/d5c/class_u_b_graphics_cache}\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Graphics\-Cache.\-h$>$}
+
+
+
+Inheritance diagram for U\-B\-Graphics\-Cache\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d5d/class_u_b_graphics_cache__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\-B\-Graphics\-Cache\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d44/class_u_b_graphics_cache__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aa}{e\-Mode} \{ \hyperlink{class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aaa83a35c452140f48acb380a78aa7a9423}{On\-Click} =  0, 
+\hyperlink{class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aaa0a843dc02b203dc03d7e6199191ccdeb}{Persistent}
+ \}
+\item 
+enum \{ \hyperlink{class_u_b_graphics_cache_a51142ffae19dd793b126d69433117edcae2a2971867d7c709556783d664814bbd}{Type} =  U\-B\-Graphics\-Item\-Type\-:\-:cache\-Item\-Type
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_graphics_cache_a548ad3388753e636ec29db3a05fc43a9}{$\sim$\-U\-B\-Graphics\-Cache} ()
+\item 
+virtual int \hyperlink{class_u_b_graphics_cache_adf6146b2d4680edeee501e93e30f58e0}{type} () const 
+\item 
+virtual \hyperlink{class_u_b_item}{U\-B\-Item} $\ast$ \hyperlink{class_u_b_graphics_cache_ad69d3f9eb75cea2bfe292a26e481395c}{deep\-Copy} () const 
+\item 
+virtual void \hyperlink{class_u_b_graphics_cache_a1ed78b934144d8cceaa274f6ff2c82cf}{copy\-Item\-Parameters} (\hyperlink{class_u_b_item}{U\-B\-Item} $\ast$copy) const 
+\item 
+Q\-Color \hyperlink{class_u_b_graphics_cache_a37847ef6d96093a76c130fb18d80f06c}{mask\-Color} ()
+\item 
+void \hyperlink{class_u_b_graphics_cache_a9d7f126906a562015d9c49a13e7344ae}{set\-Mask\-Color} (Q\-Color color)
+\item 
+\hyperlink{_u_b_graphics_cache_8h_ac59628c0f9ed257ff9874210c6ad3232}{e\-Mask\-Shape} \hyperlink{class_u_b_graphics_cache_a88b2e2b2a70b36e9d1f438da25971e43}{maskshape} ()
+\item 
+void \hyperlink{class_u_b_graphics_cache_a8f55e3605e79ddc129f06f7053adfcd2}{set\-Mask\-Shape} (\hyperlink{_u_b_graphics_cache_8h_ac59628c0f9ed257ff9874210c6ad3232}{e\-Mask\-Shape} shape)
+\item 
+int \hyperlink{class_u_b_graphics_cache_a656d5d7f1d022eb28d8c6e18771f55f9}{hole\-Width} ()
+\item 
+int \hyperlink{class_u_b_graphics_cache_a3f94b8be025492106c989e0894d52573}{hole\-Height} ()
+\item 
+void \hyperlink{class_u_b_graphics_cache_a6090256dd3e539d00f3a07a63fd1a4c0}{set\-Hole\-Width} (int width)
+\item 
+void \hyperlink{class_u_b_graphics_cache_a48cb7de5d02867189ac0f0e78fc2a1f9}{set\-Hole\-Height} (int height)
+\item 
+void \hyperlink{class_u_b_graphics_cache_ab52d5e77a5f14200b5d9559aee283427}{set\-Hole\-Pos} (Q\-Point\-F pos)
+\item 
+void \hyperlink{class_u_b_graphics_cache_a31d7adeb4495e251dba2338c457418da}{set\-Hole\-Size} (Q\-Size size)
+\item 
+void \hyperlink{class_u_b_graphics_cache_a6f0086c7036226f7218e7c754ffe39af}{set\-Mode} (int mode)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_u_b_graphics_cache}{U\-B\-Graphics\-Cache} $\ast$ \hyperlink{class_u_b_graphics_cache_af544095b94b560b72c01a84cf709bc14}{instance} (\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$\hyperlink{class_u_b_item_a3aacc37e7f32b28047f771d0e6abc431}{scene})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_graphics_cache_ab4fb4a7a081fb482f5c806d9ab089619}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\item 
+void \hyperlink{class_u_b_graphics_cache_adf19ad04e270c17bb3af4e7b9299a06d}{hover\-Enter\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_cache_ad36232c21000dddc606c26b2c0ed51a3}{hover\-Leave\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_cache_a369a1a69ff2669aa36aae287ff9769f1}{hover\-Move\-Event} (Q\-Graphics\-Scene\-Hover\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_cache_a57e514d857fbc73624c8c8a2b74b2f4e}{mouse\-Move\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_cache_aebdac7f272e9f6a8b74e29ceb29ff176}{mouse\-Press\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\item 
+void \hyperlink{class_u_b_graphics_cache_a5452fc56ed8ed91eae21dac7d5e40776}{mouse\-Release\-Event} (Q\-Graphics\-Scene\-Mouse\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file U\-B\-Graphics\-Cache.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_u_b_graphics_cache_a51142ffae19dd793b126d69433117edc}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{d4/d5c/class_u_b_graphics_cache_a51142ffae19dd793b126d69433117edc}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{Type@{Type}!U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}}\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!Type@{Type}}\item[{\em 
+\hypertarget{class_u_b_graphics_cache_a51142ffae19dd793b126d69433117edcae2a2971867d7c709556783d664814bbd}{Type}\label{d4/d5c/class_u_b_graphics_cache_a51142ffae19dd793b126d69433117edcae2a2971867d7c709556783d664814bbd}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 53 of file U\-B\-Graphics\-Cache.\-h.
+
+\hypertarget{class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aa}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!e\-Mode@{e\-Mode}}
+\index{e\-Mode@{e\-Mode}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{e\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf U\-B\-Graphics\-Cache\-::e\-Mode}}}\label{d4/d5c/class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aa}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{On\-Click@{On\-Click}!U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}}\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!On\-Click@{On\-Click}}\item[{\em 
+\hypertarget{class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aaa83a35c452140f48acb380a78aa7a9423}{On\-Click}\label{d4/d5c/class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aaa83a35c452140f48acb380a78aa7a9423}
+}]\index{Persistent@{Persistent}!U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}}\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!Persistent@{Persistent}}\item[{\em 
+\hypertarget{class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aaa0a843dc02b203dc03d7e6199191ccdeb}{Persistent}\label{d4/d5c/class_u_b_graphics_cache_a960329a65b2dc045d3bf3c10511fb2aaa0a843dc02b203dc03d7e6199191ccdeb}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 43 of file U\-B\-Graphics\-Cache.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_graphics_cache_a548ad3388753e636ec29db3a05fc43a9}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!$\sim$\-U\-B\-Graphics\-Cache@{$\sim$\-U\-B\-Graphics\-Cache}}
+\index{$\sim$\-U\-B\-Graphics\-Cache@{$\sim$\-U\-B\-Graphics\-Cache}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{$\sim$\-U\-B\-Graphics\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Graphics\-Cache\-::$\sim$\-U\-B\-Graphics\-Cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a548ad3388753e636ec29db3a05fc43a9}
+
+
+Definition at line 89 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_graphics_cache_a1ed78b934144d8cceaa274f6ff2c82cf}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!copy\-Item\-Parameters@{copy\-Item\-Parameters}}
+\index{copy\-Item\-Parameters@{copy\-Item\-Parameters}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{copy\-Item\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::copy\-Item\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Item} $\ast$}]{copy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d5c/class_u_b_graphics_cache_a1ed78b934144d8cceaa274f6ff2c82cf}
+
+
+Implements \hyperlink{class_u_b_item_a21483eccaad22369e9fe6bca838af029}{U\-B\-Item}.
+
+
+
+Definition at line 105 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a1ed78b934144d8cceaa274f6ff2c82cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_ad69d3f9eb75cea2bfe292a26e481395c}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!deep\-Copy@{deep\-Copy}}
+\index{deep\-Copy@{deep\-Copy}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{deep\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Item} $\ast$ U\-B\-Graphics\-Cache\-::deep\-Copy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d5c/class_u_b_graphics_cache_ad69d3f9eb75cea2bfe292a26e481395c}
+
+
+Implements \hyperlink{class_u_b_item_a5ef870748a215b3f5f3218d0178b17b9}{U\-B\-Item}.
+
+
+
+Definition at line 94 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_ad69d3f9eb75cea2bfe292a26e481395c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a3f94b8be025492106c989e0894d52573}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!hole\-Height@{hole\-Height}}
+\index{hole\-Height@{hole\-Height}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{hole\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Graphics\-Cache\-::hole\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a3f94b8be025492106c989e0894d52573}
+
+
+Definition at line 274 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a3f94b8be025492106c989e0894d52573_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a656d5d7f1d022eb28d8c6e18771f55f9}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!hole\-Width@{hole\-Width}}
+\index{hole\-Width@{hole\-Width}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{hole\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int U\-B\-Graphics\-Cache\-::hole\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a656d5d7f1d022eb28d8c6e18771f55f9}
+
+
+Definition at line 269 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a656d5d7f1d022eb28d8c6e18771f55f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_adf19ad04e270c17bb3af4e7b9299a06d}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!hover\-Enter\-Event@{hover\-Enter\-Event}}
+\index{hover\-Enter\-Event@{hover\-Enter\-Event}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{hover\-Enter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::hover\-Enter\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d5c/class_u_b_graphics_cache_adf19ad04e270c17bb3af4e7b9299a06d}
+
+
+Definition at line 206 of file U\-B\-Graphics\-Cache.\-cpp.
+
+\hypertarget{class_u_b_graphics_cache_ad36232c21000dddc606c26b2c0ed51a3}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!hover\-Leave\-Event@{hover\-Leave\-Event}}
+\index{hover\-Leave\-Event@{hover\-Leave\-Event}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{hover\-Leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::hover\-Leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d5c/class_u_b_graphics_cache_ad36232c21000dddc606c26b2c0ed51a3}
+
+
+Definition at line 216 of file U\-B\-Graphics\-Cache.\-cpp.
+
+\hypertarget{class_u_b_graphics_cache_a369a1a69ff2669aa36aae287ff9769f1}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!hover\-Move\-Event@{hover\-Move\-Event}}
+\index{hover\-Move\-Event@{hover\-Move\-Event}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{hover\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::hover\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Hover\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d5c/class_u_b_graphics_cache_a369a1a69ff2669aa36aae287ff9769f1}
+
+
+Definition at line 223 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a369a1a69ff2669aa36aae287ff9769f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_af544095b94b560b72c01a84cf709bc14}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!instance@{instance}}
+\index{instance@{instance}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Cache} $\ast$ U\-B\-Graphics\-Cache\-::instance (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Graphics\-Scene} $\ast$}]{scene}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d4/d5c/class_u_b_graphics_cache_af544095b94b560b72c01a84cf709bc14}
+
+
+Definition at line 38 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d4/d5c/class_u_b_graphics_cache_af544095b94b560b72c01a84cf709bc14_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_af544095b94b560b72c01a84cf709bc14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a37847ef6d96093a76c130fb18d80f06c}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!mask\-Color@{mask\-Color}}
+\index{mask\-Color@{mask\-Color}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{mask\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color U\-B\-Graphics\-Cache\-::mask\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a37847ef6d96093a76c130fb18d80f06c}
+
+
+Definition at line 116 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a37847ef6d96093a76c130fb18d80f06c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a88b2e2b2a70b36e9d1f438da25971e43}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!maskshape@{maskshape}}
+\index{maskshape@{maskshape}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{maskshape}]{\setlength{\rightskip}{0pt plus 5cm}{\bf e\-Mask\-Shape} U\-B\-Graphics\-Cache\-::maskshape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a88b2e2b2a70b36e9d1f438da25971e43}
+
+
+Definition at line 127 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a88b2e2b2a70b36e9d1f438da25971e43_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a57e514d857fbc73624c8c8a2b74b2f4e}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!mouse\-Move\-Event@{mouse\-Move\-Event}}
+\index{mouse\-Move\-Event@{mouse\-Move\-Event}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{mouse\-Move\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::mouse\-Move\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d5c/class_u_b_graphics_cache_a57e514d857fbc73624c8c8a2b74b2f4e}
+
+
+Definition at line 228 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a57e514d857fbc73624c8c8a2b74b2f4e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_aebdac7f272e9f6a8b74e29ceb29ff176}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!mouse\-Press\-Event@{mouse\-Press\-Event}}
+\index{mouse\-Press\-Event@{mouse\-Press\-Event}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{mouse\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::mouse\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d5c/class_u_b_graphics_cache_aebdac7f272e9f6a8b74e29ceb29ff176}
+
+
+Definition at line 193 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_aebdac7f272e9f6a8b74e29ceb29ff176_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a5452fc56ed8ed91eae21dac7d5e40776}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!mouse\-Release\-Event@{mouse\-Release\-Event}}
+\index{mouse\-Release\-Event@{mouse\-Release\-Event}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{mouse\-Release\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::mouse\-Release\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Graphics\-Scene\-Mouse\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d5c/class_u_b_graphics_cache_a5452fc56ed8ed91eae21dac7d5e40776}
+
+
+Definition at line 233 of file U\-B\-Graphics\-Cache.\-cpp.
+
+\hypertarget{class_u_b_graphics_cache_ab4fb4a7a081fb482f5c806d9ab089619}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!paint@{paint}}
+\index{paint@{paint}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{d4/d5c/class_u_b_graphics_cache_ab4fb4a7a081fb482f5c806d9ab089619}
+
+
+Definition at line 158 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_ab4fb4a7a081fb482f5c806d9ab089619_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a48cb7de5d02867189ac0f0e78fc2a1f9}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!set\-Hole\-Height@{set\-Hole\-Height}}
+\index{set\-Hole\-Height@{set\-Hole\-Height}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{set\-Hole\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::set\-Hole\-Height (
+\begin{DoxyParamCaption}
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a48cb7de5d02867189ac0f0e78fc2a1f9}
+
+
+Definition at line 285 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a48cb7de5d02867189ac0f0e78fc2a1f9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_ab52d5e77a5f14200b5d9559aee283427}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!set\-Hole\-Pos@{set\-Hole\-Pos}}
+\index{set\-Hole\-Pos@{set\-Hole\-Pos}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{set\-Hole\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::set\-Hole\-Pos (
+\begin{DoxyParamCaption}
+\item[{Q\-Point\-F}]{pos}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_ab52d5e77a5f14200b5d9559aee283427}
+
+
+Definition at line 259 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_ab52d5e77a5f14200b5d9559aee283427_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a31d7adeb4495e251dba2338c457418da}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!set\-Hole\-Size@{set\-Hole\-Size}}
+\index{set\-Hole\-Size@{set\-Hole\-Size}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{set\-Hole\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::set\-Hole\-Size (
+\begin{DoxyParamCaption}
+\item[{Q\-Size}]{size}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a31d7adeb4495e251dba2338c457418da}
+
+
+Definition at line 291 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a31d7adeb4495e251dba2338c457418da_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a6090256dd3e539d00f3a07a63fd1a4c0}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!set\-Hole\-Width@{set\-Hole\-Width}}
+\index{set\-Hole\-Width@{set\-Hole\-Width}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{set\-Hole\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::set\-Hole\-Width (
+\begin{DoxyParamCaption}
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a6090256dd3e539d00f3a07a63fd1a4c0}
+
+
+Definition at line 279 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a6090256dd3e539d00f3a07a63fd1a4c0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_a9d7f126906a562015d9c49a13e7344ae}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!set\-Mask\-Color@{set\-Mask\-Color}}
+\index{set\-Mask\-Color@{set\-Mask\-Color}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{set\-Mask\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::set\-Mask\-Color (
+\begin{DoxyParamCaption}
+\item[{Q\-Color}]{color}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a9d7f126906a562015d9c49a13e7344ae}
+
+
+Definition at line 121 of file U\-B\-Graphics\-Cache.\-cpp.
+
+\hypertarget{class_u_b_graphics_cache_a8f55e3605e79ddc129f06f7053adfcd2}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!set\-Mask\-Shape@{set\-Mask\-Shape}}
+\index{set\-Mask\-Shape@{set\-Mask\-Shape}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{set\-Mask\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::set\-Mask\-Shape (
+\begin{DoxyParamCaption}
+\item[{{\bf e\-Mask\-Shape}}]{shape}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a8f55e3605e79ddc129f06f7053adfcd2}
+
+
+Definition at line 132 of file U\-B\-Graphics\-Cache.\-cpp.
+
+\hypertarget{class_u_b_graphics_cache_a6f0086c7036226f7218e7c754ffe39af}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!set\-Mode@{set\-Mode}}
+\index{set\-Mode@{set\-Mode}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{set\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Graphics\-Cache\-::set\-Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{d4/d5c/class_u_b_graphics_cache_a6f0086c7036226f7218e7c754ffe39af}
+
+
+Definition at line 145 of file U\-B\-Graphics\-Cache.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5c/class_u_b_graphics_cache_a6f0086c7036226f7218e7c754ffe39af_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_graphics_cache_adf6146b2d4680edeee501e93e30f58e0}{\index{U\-B\-Graphics\-Cache@{U\-B\-Graphics\-Cache}!type@{type}}
+\index{type@{type}!UBGraphicsCache@{U\-B\-Graphics\-Cache}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int U\-B\-Graphics\-Cache\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{d4/d5c/class_u_b_graphics_cache_adf6146b2d4680edeee501e93e30f58e0}
+
+
+Definition at line 55 of file U\-B\-Graphics\-Cache.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_graphics_cache_8h}{U\-B\-Graphics\-Cache.\-h}\item 
+Sankore-\/3.\-1/src/tools/\hyperlink{_u_b_graphics_cache_8cpp}{U\-B\-Graphics\-Cache.\-cpp}\end{DoxyCompactItemize}

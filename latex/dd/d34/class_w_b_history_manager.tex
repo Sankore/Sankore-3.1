@@ -1,0 +1,496 @@
+\hypertarget{class_w_b_history_manager}{\section{W\-B\-History\-Manager Class Reference}
+\label{dd/d34/class_w_b_history_manager}\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}}
+}
+
+
+{\ttfamily \#include $<$W\-B\-History.\-h$>$}
+
+
+
+Collaboration diagram for W\-B\-History\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{df/df7/class_w_b_history_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_history_manager_a8aeebe09c94695b3e139ca534234e3a9}{clear} ()
+\item 
+void \hyperlink{class_w_b_history_manager_a28ae9f1cea36d3351846d33378cf1d42}{load\-Settings} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_history_manager_ab8ca2ee909188de7a1756d84fcf406f4}{history\-Reset} ()
+\item 
+void \hyperlink{class_w_b_history_manager_a47811019ca3f38969becf80093a53f40}{entry\-Added} (const \hyperlink{class_w_b_history_item}{W\-B\-History\-Item} \&item)
+\item 
+void \hyperlink{class_w_b_history_manager_a0a4f98730bf77d6f1b22e2d2b0cc1bb3}{entry\-Removed} (const \hyperlink{class_w_b_history_item}{W\-B\-History\-Item} \&item)
+\item 
+void \hyperlink{class_w_b_history_manager_aab586f70afd1f679d6064e0cb714b482}{entry\-Updated} (int offset)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_b_history_manager_af6e554315a62f73b992821d871eeef5d}{W\-B\-History\-Manager} (Q\-Object $\ast$parent=0)
+\item 
+\hyperlink{class_w_b_history_manager_ac912f50bf4800fc792baae0d1e8b3e7e}{$\sim$\-W\-B\-History\-Manager} ()
+\item 
+bool \hyperlink{class_w_b_history_manager_acc7ef1d1cbfd3a31c3f6a106262238e6}{history\-Contains} (const Q\-String \&url) const 
+\item 
+void \hyperlink{class_w_b_history_manager_ac17f733de040227c0d309299928ef157}{add\-History\-Entry} (const Q\-String \&url)
+\item 
+void \hyperlink{class_w_b_history_manager_a23ef7e0b61749b3b33591e9ca6413a4a}{update\-History\-Item} (const Q\-Url \&url, const Q\-String \&title)
+\item 
+int \hyperlink{class_w_b_history_manager_a1b7cfda2a8c886a7b14da5a43940b6c7}{history\-Limit} () const 
+\item 
+void \hyperlink{class_w_b_history_manager_a73e44c1cb296fdcc42cb7567fe534f90}{set\-History\-Limit} (int limit)
+\item 
+Q\-List$<$ \hyperlink{class_w_b_history_item}{W\-B\-History\-Item} $>$ \hyperlink{class_w_b_history_manager_ae0f6c3f537992122192559a4f711a60d}{history} () const 
+\item 
+void \hyperlink{class_w_b_history_manager_ac749e2513aa93549de988bb15781d258}{set\-History} (const Q\-List$<$ \hyperlink{class_w_b_history_item}{W\-B\-History\-Item} $>$ \&\hyperlink{class_w_b_history_manager_ae0f6c3f537992122192559a4f711a60d}{history}, bool loaded\-And\-Sorted=false)
+\item 
+\hyperlink{class_w_b_history_model}{W\-B\-History\-Model} $\ast$ \hyperlink{class_w_b_history_manager_a9b399152d33e2e38fa6774ebf2e394aa}{history\-Model} () const 
+\item 
+\hyperlink{class_w_b_history_filter_model}{W\-B\-History\-Filter\-Model} $\ast$ \hyperlink{class_w_b_history_manager_a182cb054df373934f2a90025768bc070}{history\-Filter\-Model} () const 
+\item 
+\hyperlink{class_w_b_history_tree_model}{W\-B\-History\-Tree\-Model} $\ast$ \hyperlink{class_w_b_history_manager_a2928319fdfb6988be63872b10fdd3e1a}{history\-Tree\-Model} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb}{add\-History\-Item} (const \hyperlink{class_w_b_history_item}{W\-B\-History\-Item} \&item)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_w_b_history_manager_ac239829b6d6ba9045ee8f2e7951e97d0}{history\-Limit}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 100 of file W\-B\-History.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_w_b_history_manager_af6e554315a62f73b992821d871eeef5d}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!W\-B\-History\-Manager@{W\-B\-History\-Manager}}
+\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{W\-B\-History\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-History\-Manager\-::\-W\-B\-History\-Manager (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{dd/d34/class_w_b_history_manager_af6e554315a62f73b992821d871eeef5d}
+
+
+Definition at line 79 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_af6e554315a62f73b992821d871eeef5d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_ac912f50bf4800fc792baae0d1e8b3e7e}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!$\sim$\-W\-B\-History\-Manager@{$\sim$\-W\-B\-History\-Manager}}
+\index{$\sim$\-W\-B\-History\-Manager@{$\sim$\-W\-B\-History\-Manager}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{$\sim$\-W\-B\-History\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}W\-B\-History\-Manager\-::$\sim$\-W\-B\-History\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dd/d34/class_w_b_history_manager_ac912f50bf4800fc792baae0d1e8b3e7e}
+
+
+Definition at line 104 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_ac912f50bf4800fc792baae0d1e8b3e7e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_w_b_history_manager_ac17f733de040227c0d309299928ef157}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!add\-History\-Entry@{add\-History\-Entry}}
+\index{add\-History\-Entry@{add\-History\-Entry}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{add\-History\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::add\-History\-Entry (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{dd/d34/class_w_b_history_manager_ac17f733de040227c0d309299928ef157}
+
+
+Definition at line 119 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_ac17f733de040227c0d309299928ef157_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!add\-History\-Item@{add\-History\-Item}}
+\index{add\-History\-Item@{add\-History\-Item}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{add\-History\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::add\-History\-Item (
+\begin{DoxyParamCaption}
+\item[{const {\bf W\-B\-History\-Item} \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{dd/d34/class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb}
+
+
+Definition at line 195 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a8aeebe09c94695b3e139ca534234e3a9}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!clear@{clear}}
+\index{clear@{clear}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/d34/class_w_b_history_manager_a8aeebe09c94695b3e139ca534234e3a9}
+
+
+Definition at line 237 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a8aeebe09c94695b3e139ca534234e3a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a47811019ca3f38969becf80093a53f40}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!entry\-Added@{entry\-Added}}
+\index{entry\-Added@{entry\-Added}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{entry\-Added}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::entry\-Added (
+\begin{DoxyParamCaption}
+\item[{const {\bf W\-B\-History\-Item} \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dd/d34/class_w_b_history_manager_a47811019ca3f38969becf80093a53f40}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a47811019ca3f38969becf80093a53f40_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a0a4f98730bf77d6f1b22e2d2b0cc1bb3}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!entry\-Removed@{entry\-Removed}}
+\index{entry\-Removed@{entry\-Removed}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{entry\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::entry\-Removed (
+\begin{DoxyParamCaption}
+\item[{const {\bf W\-B\-History\-Item} \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dd/d34/class_w_b_history_manager_a0a4f98730bf77d6f1b22e2d2b0cc1bb3}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a0a4f98730bf77d6f1b22e2d2b0cc1bb3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_aab586f70afd1f679d6064e0cb714b482}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!entry\-Updated@{entry\-Updated}}
+\index{entry\-Updated@{entry\-Updated}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{entry\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::entry\-Updated (
+\begin{DoxyParamCaption}
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dd/d34/class_w_b_history_manager_aab586f70afd1f679d6064e0cb714b482}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_aab586f70afd1f679d6064e0cb714b482_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_ae0f6c3f537992122192559a4f711a60d}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history@{history}}
+\index{history@{history}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf W\-B\-History\-Item} $>$ W\-B\-History\-Manager\-::history (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dd/d34/class_w_b_history_manager_ae0f6c3f537992122192559a4f711a60d}
+
+
+Definition at line 109 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_ae0f6c3f537992122192559a4f711a60d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_acc7ef1d1cbfd3a31c3f6a106262238e6}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history\-Contains@{history\-Contains}}
+\index{history\-Contains@{history\-Contains}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history\-Contains}]{\setlength{\rightskip}{0pt plus 5cm}bool W\-B\-History\-Manager\-::history\-Contains (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{url}
+\end{DoxyParamCaption}
+) const}}\label{dd/d34/class_w_b_history_manager_acc7ef1d1cbfd3a31c3f6a106262238e6}
+
+
+Definition at line 114 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_acc7ef1d1cbfd3a31c3f6a106262238e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a182cb054df373934f2a90025768bc070}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history\-Filter\-Model@{history\-Filter\-Model}}
+\index{history\-Filter\-Model@{history\-Filter\-Model}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history\-Filter\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-History\-Filter\-Model} $\ast$ W\-B\-History\-Manager\-::history\-Filter\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dd/d34/class_w_b_history_manager_a182cb054df373934f2a90025768bc070}
+
+
+Definition at line 152 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_manager_a1b7cfda2a8c886a7b14da5a43940b6c7}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history\-Limit@{history\-Limit}}
+\index{history\-Limit@{history\-Limit}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}int W\-B\-History\-Manager\-::history\-Limit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dd/d34/class_w_b_history_manager_a1b7cfda2a8c886a7b14da5a43940b6c7}
+\hypertarget{class_w_b_history_manager_a9b399152d33e2e38fa6774ebf2e394aa}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history\-Model@{history\-Model}}
+\index{history\-Model@{history\-Model}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-History\-Model} $\ast$ W\-B\-History\-Manager\-::history\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dd/d34/class_w_b_history_manager_a9b399152d33e2e38fa6774ebf2e394aa}
+
+
+Definition at line 147 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_manager_ab8ca2ee909188de7a1756d84fcf406f4}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history\-Reset@{history\-Reset}}
+\index{history\-Reset@{history\-Reset}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::history\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{dd/d34/class_w_b_history_manager_ab8ca2ee909188de7a1756d84fcf406f4}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_ab8ca2ee909188de7a1756d84fcf406f4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a2928319fdfb6988be63872b10fdd3e1a}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history\-Tree\-Model@{history\-Tree\-Model}}
+\index{history\-Tree\-Model@{history\-Tree\-Model}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history\-Tree\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-B\-History\-Tree\-Model} $\ast$ W\-B\-History\-Manager\-::history\-Tree\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{dd/d34/class_w_b_history_manager_a2928319fdfb6988be63872b10fdd3e1a}
+
+
+Definition at line 157 of file W\-B\-History.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a2928319fdfb6988be63872b10fdd3e1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a28ae9f1cea36d3351846d33378cf1d42}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!load\-Settings@{load\-Settings}}
+\index{load\-Settings@{load\-Settings}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{load\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::load\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{dd/d34/class_w_b_history_manager_a28ae9f1cea36d3351846d33378cf1d42}
+
+
+Definition at line 246 of file W\-B\-History.\-cpp.
+
+\hypertarget{class_w_b_history_manager_ac749e2513aa93549de988bb15781d258}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!set\-History@{set\-History}}
+\index{set\-History@{set\-History}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{set\-History}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::set\-History (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ {\bf W\-B\-History\-Item} $>$ \&}]{history, }
+\item[{bool}]{loaded\-And\-Sorted = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{dd/d34/class_w_b_history_manager_ac749e2513aa93549de988bb15781d258}
+
+
+Definition at line 128 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_ac749e2513aa93549de988bb15781d258_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_ac749e2513aa93549de988bb15781d258_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a73e44c1cb296fdcc42cb7567fe534f90}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!set\-History\-Limit@{set\-History\-Limit}}
+\index{set\-History\-Limit@{set\-History\-Limit}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{set\-History\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::set\-History\-Limit (
+\begin{DoxyParamCaption}
+\item[{int}]{limit}
+\end{DoxyParamCaption}
+)}}\label{dd/d34/class_w_b_history_manager_a73e44c1cb296fdcc42cb7567fe534f90}
+
+
+Definition at line 228 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a73e44c1cb296fdcc42cb7567fe534f90_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_w_b_history_manager_a23ef7e0b61749b3b33591e9ca6413a4a}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!update\-History\-Item@{update\-History\-Item}}
+\index{update\-History\-Item@{update\-History\-Item}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{update\-History\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void W\-B\-History\-Manager\-::update\-History\-Item (
+\begin{DoxyParamCaption}
+\item[{const Q\-Url \&}]{url, }
+\item[{const Q\-String \&}]{title}
+\end{DoxyParamCaption}
+)}}\label{dd/d34/class_w_b_history_manager_a23ef7e0b61749b3b33591e9ca6413a4a}
+
+
+Definition at line 207 of file W\-B\-History.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d34/class_w_b_history_manager_a23ef7e0b61749b3b33591e9ca6413a4a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_w_b_history_manager_ac239829b6d6ba9045ee8f2e7951e97d0}{\index{W\-B\-History\-Manager@{W\-B\-History\-Manager}!history\-Limit@{history\-Limit}}
+\index{history\-Limit@{history\-Limit}!WBHistoryManager@{W\-B\-History\-Manager}}
+\subsubsection[{history\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}int W\-B\-History\-Manager\-::history\-Limit\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{dd/d34/class_w_b_history_manager_ac239829b6d6ba9045ee8f2e7951e97d0}
+
+
+Definition at line 102 of file W\-B\-History.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_history_8h}{W\-B\-History.\-h}\item 
+Sankore-\/3.\-1/src/web/browser/\hyperlink{_w_b_history_8cpp}{W\-B\-History.\-cpp}\end{DoxyCompactItemize}

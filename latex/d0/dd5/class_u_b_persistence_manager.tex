@@ -1,0 +1,1659 @@
+\hypertarget{class_u_b_persistence_manager}{\section{U\-B\-Persistence\-Manager Class Reference}
+\label{d0/dd5/class_u_b_persistence_manager}\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}}
+}
+
+
+{\ttfamily \#include $<$U\-B\-Persistence\-Manager.\-h$>$}
+
+
+
+Collaboration diagram for U\-B\-Persistence\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/dae/class_u_b_persistence_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_b_persistence_manager_a729bdda358bcfdffa6364d6081291c8b}{proxy\-List\-Changed} ()
+\item 
+void \hyperlink{class_u_b_persistence_manager_a8dd4370a27a8e122031ad9ca23722492}{document\-Created} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+void \hyperlink{class_u_b_persistence_manager_aa9c4499efd1d6a0b7efaf0aacb856a5c}{document\-Metadata\-Changed} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+void \hyperlink{class_u_b_persistence_manager_a59fea00197400c0b0855c06bdac1160b}{document\-Will\-Be\-Deleted} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+void \hyperlink{class_u_b_persistence_manager_a2d8a86cfd7b404f100326f6c6066f6d2}{document\-Scene\-Created} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int p\-Index)
+\item 
+void \hyperlink{class_u_b_persistence_manager_aa8d29f9972ca8d523ca994658c481923}{document\-Scene\-Will\-Be\-Deleted} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int p\-Index)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_u_b_persistence_manager_a2bb60bc321b56117430ab8aeb351d6bb}{$\sim$\-U\-B\-Persistence\-Manager} ()
+\item 
+virtual \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3}{create\-Document} (const Q\-String \&p\-Group\-Name=\char`\"{}\char`\"{}, const Q\-String \&p\-Name=\char`\"{}\char`\"{}, bool with\-Empty\-Page=true, Q\-String directory=Q\-String(), int page\-Count=0, bool prompt\-Dialog\-If\-Exists=false)
+\item 
+virtual \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b}{create\-New\-Document} (const Q\-String \&p\-Group\-Name=\char`\"{}\char`\"{}, const Q\-String \&p\-Name=\char`\"{}\char`\"{}, bool with\-Empty\-Page=true, Q\-String directory=Q\-String(), int page\-Count=0, bool prompt\-Dialog\-If\-Exists=false)
+\item 
+virtual \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_persistence_manager_ac815cff8d53be5e6bb870aa4e83319f7}{create\-Document\-From\-Dir} (const Q\-String \&p\-Document\-Directory, const Q\-String \&p\-Group\-Name=\char`\"{}\char`\"{}, const Q\-String \&p\-Name=\char`\"{}\char`\"{}, bool with\-Empty\-Page=false, bool add\-Title\-Page=false, bool prompt\-Dialog\-If\-Exists=false)
+\item 
+virtual \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2}{persist\-Document\-Metadata} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+virtual \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$ \hyperlink{class_u_b_persistence_manager_ac38f7641c3942edd498b39babf860eba}{duplicate\-Document} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e}{delete\-Document} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25}{delete\-Document\-Scenes} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, const Q\-List$<$ int $>$ \&indexes)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_aba40a98502fd7478221462306c2eb234}{duplicate\-Document\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int index)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17}{copy\-Document\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$from, int from\-Index, \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$to, int to\-Index)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675}{persist\-Document\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$p\-Scene, const int p\-Scene\-Index)
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff}{create\-Document\-Scene\-At} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int index, bool use\-Undo\-Redo\-Stack=true)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a}{insert\-Document\-Scene\-At} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$scene, int index, bool persist=true)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda}{move\-Scene\-To\-Index} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int source, int target)
+\item 
+virtual \hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66}{load\-Document\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int scene\-Index)
+\item 
+\hyperlink{class_u_b_graphics_scene}{U\-B\-Graphics\-Scene} $\ast$ \hyperlink{class_u_b_persistence_manager_a6812070bd7380792fe0ffe0d16a92009}{get\-Document\-Scene} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, int scene\-Index)
+\item 
+void \hyperlink{class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713}{reassign\-Doc\-Proxy} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$new\-Document, \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$old\-Document)
+\item 
+virtual Q\-String\-List \hyperlink{class_u_b_persistence_manager_a930dab54f70136727669a6affc63d3a4}{all\-Shapes} ()
+\item 
+virtual Q\-String\-List \hyperlink{class_u_b_persistence_manager_a6516bded73f27ad772ab3da5c71de270}{all\-Gips} ()
+\item 
+virtual Q\-String\-List \hyperlink{class_u_b_persistence_manager_ae434e62944d681d75eb806de1e63d067}{all\-Images} (const Q\-Dir \&dir)
+\item 
+virtual Q\-String\-List \hyperlink{class_u_b_persistence_manager_a5b9b59f231ff8a55077661033f4c7a13}{all\-Videos} (const Q\-Dir \&dir)
+\item 
+virtual Q\-String\-List \hyperlink{class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b}{all\-Widgets} (const Q\-Dir \&dir)
+\item 
+Q\-String \hyperlink{class_u_b_persistence_manager_a03e1d327109aaa0518419218cce9fbaf}{generate\-Unique\-Document\-Path} ()
+\item 
+Q\-String \hyperlink{class_u_b_persistence_manager_aa2c28ad3b3d850102dd65f780c14513a}{generate\-Unique\-Document\-Path} (const Q\-String \&base\-Folder)
+\item 
+Q\-String \hyperlink{class_u_b_persistence_manager_a0d029c2acb9d049c74b13701bb46e234}{teacher\-Guide\-Absolute\-Object\-Path} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+Q\-String \hyperlink{class_u_b_persistence_manager_ac5bb862a97a7da0f0e37c4d24dead09d}{add\-Object\-To\-Teacher\-Guide\-Directory} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, Q\-String p\-Path)
+\item 
+Q\-String \hyperlink{class_u_b_persistence_manager_a3370b47b5038c6fe3aa2f82cbac49de4}{add\-Widget\-To\-Teacher\-Guide\-Directory} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, Q\-String p\-Path)
+\item 
+bool \hyperlink{class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0}{add\-Directory\-Content\-To\-Document} (const Q\-String \&document\-Root\-Folder, \hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document)
+\item 
+void \hyperlink{class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad}{create\-Document\-Proxies\-Structure} (bool interactive=false)
+\item 
+void \hyperlink{class_u_b_persistence_manager_aa00b9d2c95e5524c6017f05259cb93dc}{create\-Document\-Proxies\-Structure} (const Q\-File\-Info\-List \&content\-Info, bool interactive=false)
+\item 
+Q\-Dialog\-::\-Dialog\-Code \hyperlink{class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0}{process\-Interactive\-Replacement\-Dialog} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Proxy)
+\item 
+Q\-String\-List \hyperlink{class_u_b_persistence_manager_ad81fe5639a1a8bab6a779f78158e4d33}{document\-Sub\-Directories} ()
+\item 
+virtual bool \hyperlink{class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4}{is\-Empty} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+virtual void \hyperlink{class_u_b_persistence_manager_a2d3ecf90c9dba3cd79c5c36156278b85}{purge\-Empty\-Documents} ()
+\item 
+bool \hyperlink{class_u_b_persistence_manager_aecba1556fd7a0608c8a183f1104721c2}{add\-Graphics\-Widget\-To\-Document} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$m\-Document\-Proxy, Q\-String path, Q\-Uuid object\-Uuid, Q\-String \&destination\-Path)
+\item 
+bool \hyperlink{class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1}{add\-File\-To\-Document} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy, Q\-String path, const Q\-String \&subdir, Q\-Uuid object\-Uuid, Q\-String \&destination\-Path, Q\-Byte\-Array $\ast$data=N\-U\-L\-L)
+\item 
+bool \hyperlink{class_u_b_persistence_manager_aa95ab0380bb515e3ab7ef24f4edb7999}{may\-Have\-Video} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+bool \hyperlink{class_u_b_persistence_manager_a2024fa073874438098f0a5bd2ba93928}{may\-Have\-Audio} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+bool \hyperlink{class_u_b_persistence_manager_a77fb7cc43d3533e558d43bbefe375135}{may\-Have\-P\-D\-F} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+bool \hyperlink{class_u_b_persistence_manager_ae2a836bf573c4b9d71c0dcdfed20c602}{may\-Have\-S\-V\-G\-Images} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+bool \hyperlink{class_u_b_persistence_manager_aa237811b3805b3e3f7514a8624e439db}{may\-Have\-Widget} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$p\-Document\-Proxy)
+\item 
+Q\-String \hyperlink{class_u_b_persistence_manager_a17473610061f1247e204e1373edba773}{adjust\-Document\-Virtual\-Path} (const Q\-String \&str)
+\item 
+void \hyperlink{class_u_b_persistence_manager_af9c60a1285be9efd821c4603540defa2}{closing} ()
+\item 
+bool \hyperlink{class_u_b_persistence_manager_a8fe0be7694e8322dc7234e37bccbc78f}{is\-Scene\-In\-Cached} (\hyperlink{class_u_b_document_proxy}{U\-B\-Document\-Proxy} $\ast$proxy, int index) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_u_b_persistence_manager}{U\-B\-Persistence\-Manager} $\ast$ \hyperlink{class_u_b_persistence_manager_ad8b7a880564523143d73c6b86d887769}{persistence\-Manager} ()
+\item 
+static void \hyperlink{class_u_b_persistence_manager_a3a2587297272388d7c63abd7cf237406}{destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_b_document_tree_node}{U\-B\-Document\-Tree\-Node} $\ast$ \hyperlink{class_u_b_persistence_manager_ac901694c75aea223436f520692703f81}{m\-Document\-Tree\-Structure}
+\item 
+\hyperlink{class_u_b_document_tree_model}{U\-B\-Document\-Tree\-Model} $\ast$ \hyperlink{class_u_b_persistence_manager_a2e25c262cc712d327aeb68f40ba8085f}{m\-Document\-Tree\-Structure\-Model}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_afc92c7516c08081b8443076d1554e471}{image\-Directory} = \char`\"{}images\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a12dbae5a490687164448695c8e278f35}{object\-Directory} = \char`\"{}objects\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a6d2a1dff335f20f14fba15798c778aa7}{video\-Directory} = \char`\"{}videos\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_ad68b2f4bbd480f2119432f4b6f4b20d3}{audio\-Directory} = \char`\"{}audios\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a7c481362bd285b72aa501b9a6f70b314}{widget\-Directory} = \char`\"{}widgets\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a7cf10cf338fb0268d89d4b916043da40}{teacher\-Guide\-Directory} = \char`\"{}teacher\-Guide\-Objects\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a2e74c9a3298e87f0aca9e9e087ef5dcc}{my\-Documents\-Name} = \char`\"{}My\-Documents\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a7eaef6e12db76b89277eca477511204e}{models\-Name} = \char`\"{}Models\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a785a394deaab51518902d5afbfcc694b}{untitled\-Documents\-Name} = \char`\"{}Untitled\-Documents\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_ade8494f17a2732ac48f67f9a64b477c0}{f\-Folders} = \char`\"{}folders.\-xml\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_a904c350945d0fd7cf109e939822d5fe3}{t\-Folder} = \char`\"{}folder\char`\"{}
+\item 
+static const Q\-String \hyperlink{class_u_b_persistence_manager_acec3642d6307c311babc692556ce946e}{a\-Name} = \char`\"{}name\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file U\-B\-Persistence\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_b_persistence_manager_a2bb60bc321b56117430ab8aeb351d6bb}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!$\sim$\-U\-B\-Persistence\-Manager@{$\sim$\-U\-B\-Persistence\-Manager}}
+\index{$\sim$\-U\-B\-Persistence\-Manager@{$\sim$\-U\-B\-Persistence\-Manager}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{$\sim$\-U\-B\-Persistence\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}U\-B\-Persistence\-Manager\-::$\sim$\-U\-B\-Persistence\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a2bb60bc321b56117430ab8aeb351d6bb}
+
+
+Definition at line 117 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!add\-Directory\-Content\-To\-Document@{add\-Directory\-Content\-To\-Document}}
+\index{add\-Directory\-Content\-To\-Document@{add\-Directory\-Content\-To\-Document}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{add\-Directory\-Content\-To\-Document}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::add\-Directory\-Content\-To\-Document (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{document\-Root\-Folder, }
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0}
+
+
+Definition at line 974 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!add\-File\-To\-Document@{add\-File\-To\-Document}}
+\index{add\-File\-To\-Document@{add\-File\-To\-Document}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{add\-File\-To\-Document}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::add\-File\-To\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{Q\-String}]{path, }
+\item[{const Q\-String \&}]{subdir, }
+\item[{Q\-Uuid}]{object\-Uuid, }
+\item[{Q\-String \&}]{destination\-Path, }
+\item[{Q\-Byte\-Array $\ast$}]{data = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1}
+
+
+Definition at line 1123 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aecba1556fd7a0608c8a183f1104721c2}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!add\-Graphics\-Widget\-To\-Document@{add\-Graphics\-Widget\-To\-Document}}
+\index{add\-Graphics\-Widget\-To\-Document@{add\-Graphics\-Widget\-To\-Document}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{add\-Graphics\-Widget\-To\-Document}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::add\-Graphics\-Widget\-To\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{m\-Document\-Proxy, }
+\item[{Q\-String}]{path, }
+\item[{Q\-Uuid}]{object\-Uuid, }
+\item[{Q\-String \&}]{destination\-Path}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_aecba1556fd7a0608c8a183f1104721c2}
+
+
+Definition at line 1179 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aecba1556fd7a0608c8a183f1104721c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ac5bb862a97a7da0f0e37c4d24dead09d}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!add\-Object\-To\-Teacher\-Guide\-Directory@{add\-Object\-To\-Teacher\-Guide\-Directory}}
+\index{add\-Object\-To\-Teacher\-Guide\-Directory@{add\-Object\-To\-Teacher\-Guide\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{add\-Object\-To\-Teacher\-Guide\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Persistence\-Manager\-::add\-Object\-To\-Teacher\-Guide\-Directory (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{Q\-String}]{p\-Path}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_ac5bb862a97a7da0f0e37c4d24dead09d}
+
+
+Definition at line 1070 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ac5bb862a97a7da0f0e37c4d24dead09d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a3370b47b5038c6fe3aa2f82cbac49de4}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!add\-Widget\-To\-Teacher\-Guide\-Directory@{add\-Widget\-To\-Teacher\-Guide\-Directory}}
+\index{add\-Widget\-To\-Teacher\-Guide\-Directory@{add\-Widget\-To\-Teacher\-Guide\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{add\-Widget\-To\-Teacher\-Guide\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Persistence\-Manager\-::add\-Widget\-To\-Teacher\-Guide\-Directory (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{Q\-String}]{p\-Path}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a3370b47b5038c6fe3aa2f82cbac49de4}
+
+
+Definition at line 1095 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a3370b47b5038c6fe3aa2f82cbac49de4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a17473610061f1247e204e1373edba773}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!adjust\-Document\-Virtual\-Path@{adjust\-Document\-Virtual\-Path}}
+\index{adjust\-Document\-Virtual\-Path@{adjust\-Document\-Virtual\-Path}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{adjust\-Document\-Virtual\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Persistence\-Manager\-::adjust\-Document\-Virtual\-Path (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{str}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a17473610061f1247e204e1373edba773}
+
+
+Definition at line 258 of file U\-B\-Persistence\-Manager.\-cpp.
+
+\hypertarget{class_u_b_persistence_manager_a6516bded73f27ad772ab3da5c71de270}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!all\-Gips@{all\-Gips}}
+\index{all\-Gips@{all\-Gips}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{all\-Gips}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Persistence\-Manager\-::all\-Gips (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a6516bded73f27ad772ab3da5c71de270}
+
+
+Definition at line 323 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a6516bded73f27ad772ab3da5c71de270_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ae434e62944d681d75eb806de1e63d067}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!all\-Images@{all\-Images}}
+\index{all\-Images@{all\-Images}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{all\-Images}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Persistence\-Manager\-::all\-Images (
+\begin{DoxyParamCaption}
+\item[{const Q\-Dir \&}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_ae434e62944d681d75eb806de1e63d067}
+
+
+Definition at line 343 of file U\-B\-Persistence\-Manager.\-cpp.
+
+\hypertarget{class_u_b_persistence_manager_a930dab54f70136727669a6affc63d3a4}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!all\-Shapes@{all\-Shapes}}
+\index{all\-Shapes@{all\-Shapes}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{all\-Shapes}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Persistence\-Manager\-::all\-Shapes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a930dab54f70136727669a6affc63d3a4}
+
+
+Definition at line 303 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a930dab54f70136727669a6affc63d3a4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a5b9b59f231ff8a55077661033f4c7a13}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!all\-Videos@{all\-Videos}}
+\index{all\-Videos@{all\-Videos}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{all\-Videos}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Persistence\-Manager\-::all\-Videos (
+\begin{DoxyParamCaption}
+\item[{const Q\-Dir \&}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a5b9b59f231ff8a55077661033f4c7a13}
+
+
+Definition at line 360 of file U\-B\-Persistence\-Manager.\-cpp.
+
+\hypertarget{class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!all\-Widgets@{all\-Widgets}}
+\index{all\-Widgets@{all\-Widgets}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{all\-Widgets}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Persistence\-Manager\-::all\-Widgets (
+\begin{DoxyParamCaption}
+\item[{const Q\-Dir \&}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b}
+
+
+Definition at line 377 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d0/dd5/class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_af9c60a1285be9efd821c4603540defa2}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!closing@{closing}}
+\index{closing@{closing}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{closing}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::closing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_af9c60a1285be9efd821c4603540defa2}
+
+
+Definition at line 276 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_af9c60a1285be9efd821c4603540defa2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!copy\-Document\-Scene@{copy\-Document\-Scene}}
+\index{copy\-Document\-Scene@{copy\-Document\-Scene}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{copy\-Document\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::copy\-Document\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{from, }
+\item[{int}]{from\-Index, }
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{to, }
+\item[{int}]{to\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17}
+
+
+Definition at line 692 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!create\-Document@{create\-Document}}
+\index{create\-Document@{create\-Document}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{create\-Document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy} $\ast$ U\-B\-Persistence\-Manager\-::create\-Document (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Group\-Name = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const Q\-String \&}]{p\-Name = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{bool}]{with\-Empty\-Page = {\ttfamily true}, }
+\item[{Q\-String}]{directory = {\ttfamily QString()}, }
+\item[{int}]{page\-Count = {\ttfamily 0}, }
+\item[{bool}]{prompt\-Dialog\-If\-Exists = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3}
+
+
+Definition at line 397 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ac815cff8d53be5e6bb870aa4e83319f7}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!create\-Document\-From\-Dir@{create\-Document\-From\-Dir}}
+\index{create\-Document\-From\-Dir@{create\-Document\-From\-Dir}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{create\-Document\-From\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy} $\ast$ U\-B\-Persistence\-Manager\-::create\-Document\-From\-Dir (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Document\-Directory, }
+\item[{const Q\-String \&}]{p\-Group\-Name = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const Q\-String \&}]{p\-Name = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{bool}]{with\-Empty\-Page = {\ttfamily false}, }
+\item[{bool}]{add\-Title\-Page = {\ttfamily false}, }
+\item[{bool}]{prompt\-Dialog\-If\-Exists = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_ac815cff8d53be5e6bb870aa4e83319f7}
+
+
+Definition at line 463 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ac815cff8d53be5e6bb870aa4e83319f7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ac815cff8d53be5e6bb870aa4e83319f7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!create\-Document\-Proxies\-Structure@{create\-Document\-Proxies\-Structure}}
+\index{create\-Document\-Proxies\-Structure@{create\-Document\-Proxies\-Structure}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{create\-Document\-Proxies\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::create\-Document\-Proxies\-Structure (
+\begin{DoxyParamCaption}
+\item[{bool}]{interactive = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad}
+
+
+Definition at line 121 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aa00b9d2c95e5524c6017f05259cb93dc}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!create\-Document\-Proxies\-Structure@{create\-Document\-Proxies\-Structure}}
+\index{create\-Document\-Proxies\-Structure@{create\-Document\-Proxies\-Structure}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{create\-Document\-Proxies\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::create\-Document\-Proxies\-Structure (
+\begin{DoxyParamCaption}
+\item[{const Q\-File\-Info\-List \&}]{content\-Info, }
+\item[{bool}]{interactive = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_aa00b9d2c95e5524c6017f05259cb93dc}
+
+
+Definition at line 156 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aa00b9d2c95e5524c6017f05259cb93dc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!create\-Document\-Scene\-At@{create\-Document\-Scene\-At}}
+\index{create\-Document\-Scene\-At@{create\-Document\-Scene\-At}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{create\-Document\-Scene\-At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Persistence\-Manager\-::create\-Document\-Scene\-At (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{index, }
+\item[{bool}]{use\-Undo\-Redo\-Stack = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff}
+
+
+Definition at line 729 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!create\-New\-Document@{create\-New\-Document}}
+\index{create\-New\-Document@{create\-New\-Document}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{create\-New\-Document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy} $\ast$ U\-B\-Persistence\-Manager\-::create\-New\-Document (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p\-Group\-Name = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const Q\-String \&}]{p\-Name = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{bool}]{with\-Empty\-Page = {\ttfamily true}, }
+\item[{Q\-String}]{directory = {\ttfamily QString()}, }
+\item[{int}]{page\-Count = {\ttfamily 0}, }
+\item[{bool}]{prompt\-Dialog\-If\-Exists = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b}
+
+
+Definition at line 448 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!delete\-Document@{delete\-Document}}
+\index{delete\-Document@{delete\-Document}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{delete\-Document}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::delete\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e}
+
+
+Definition at line 523 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!delete\-Document\-Scenes@{delete\-Document\-Scenes}}
+\index{delete\-Document\-Scenes@{delete\-Document\-Scenes}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{delete\-Document\-Scenes}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::delete\-Document\-Scenes (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{const Q\-List$<$ int $>$ \&}]{indexes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25}
+
+
+Definition at line 576 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a3a2587297272388d7c63abd7cf237406}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!destroy@{destroy}}
+\index{destroy@{destroy}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a3a2587297272388d7c63abd7cf237406}
+
+
+Definition at line 110 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a3a2587297272388d7c63abd7cf237406_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a8dd4370a27a8e122031ad9ca23722492}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!document\-Created@{document\-Created}}
+\index{document\-Created@{document\-Created}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{document\-Created}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::document\-Created (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/dd5/class_u_b_persistence_manager_a8dd4370a27a8e122031ad9ca23722492}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a8dd4370a27a8e122031ad9ca23722492_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aa9c4499efd1d6a0b7efaf0aacb856a5c}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!document\-Metadata\-Changed@{document\-Metadata\-Changed}}
+\index{document\-Metadata\-Changed@{document\-Metadata\-Changed}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{document\-Metadata\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::document\-Metadata\-Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/dd5/class_u_b_persistence_manager_aa9c4499efd1d6a0b7efaf0aacb856a5c}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aa9c4499efd1d6a0b7efaf0aacb856a5c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a2d8a86cfd7b404f100326f6c6066f6d2}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!document\-Scene\-Created@{document\-Scene\-Created}}
+\index{document\-Scene\-Created@{document\-Scene\-Created}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{document\-Scene\-Created}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::document\-Scene\-Created (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{p\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/dd5/class_u_b_persistence_manager_a2d8a86cfd7b404f100326f6c6066f6d2}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a2d8a86cfd7b404f100326f6c6066f6d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aa8d29f9972ca8d523ca994658c481923}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!document\-Scene\-Will\-Be\-Deleted@{document\-Scene\-Will\-Be\-Deleted}}
+\index{document\-Scene\-Will\-Be\-Deleted@{document\-Scene\-Will\-Be\-Deleted}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{document\-Scene\-Will\-Be\-Deleted}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::document\-Scene\-Will\-Be\-Deleted (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{p\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/dd5/class_u_b_persistence_manager_aa8d29f9972ca8d523ca994658c481923}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aa8d29f9972ca8d523ca994658c481923_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ad81fe5639a1a8bab6a779f78158e4d33}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!document\-Sub\-Directories@{document\-Sub\-Directories}}
+\index{document\-Sub\-Directories@{document\-Sub\-Directories}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{document\-Sub\-Directories}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List U\-B\-Persistence\-Manager\-::document\-Sub\-Directories (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/dd5/class_u_b_persistence_manager_ad81fe5639a1a8bab6a779f78158e4d33}
+
+
+Definition at line 137 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a59fea00197400c0b0855c06bdac1160b}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!document\-Will\-Be\-Deleted@{document\-Will\-Be\-Deleted}}
+\index{document\-Will\-Be\-Deleted@{document\-Will\-Be\-Deleted}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{document\-Will\-Be\-Deleted}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::document\-Will\-Be\-Deleted (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/dd5/class_u_b_persistence_manager_a59fea00197400c0b0855c06bdac1160b}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a59fea00197400c0b0855c06bdac1160b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ac38f7641c3942edd498b39babf860eba}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!duplicate\-Document@{duplicate\-Document}}
+\index{duplicate\-Document@{duplicate\-Document}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{duplicate\-Document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy} $\ast$ U\-B\-Persistence\-Manager\-::duplicate\-Document (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_ac38f7641c3942edd498b39babf860eba}
+
+
+Definition at line 537 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ac38f7641c3942edd498b39babf860eba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ac38f7641c3942edd498b39babf860eba_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aba40a98502fd7478221462306c2eb234}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!duplicate\-Document\-Scene@{duplicate\-Document\-Scene}}
+\index{duplicate\-Document\-Scene@{duplicate\-Document\-Scene}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{duplicate\-Document\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::duplicate\-Document\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_aba40a98502fd7478221462306c2eb234}
+
+
+Definition at line 671 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aba40a98502fd7478221462306c2eb234_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a03e1d327109aaa0518419218cce9fbaf}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!generate\-Unique\-Document\-Path@{generate\-Unique\-Document\-Path}}
+\index{generate\-Unique\-Document\-Path@{generate\-Unique\-Document\-Path}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{generate\-Unique\-Document\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Persistence\-Manager\-::generate\-Unique\-Document\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a03e1d327109aaa0518419218cce9fbaf}
+
+
+Definition at line 959 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a03e1d327109aaa0518419218cce9fbaf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aa2c28ad3b3d850102dd65f780c14513a}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!generate\-Unique\-Document\-Path@{generate\-Unique\-Document\-Path}}
+\index{generate\-Unique\-Document\-Path@{generate\-Unique\-Document\-Path}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{generate\-Unique\-Document\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Persistence\-Manager\-::generate\-Unique\-Document\-Path (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{base\-Folder}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_aa2c28ad3b3d850102dd65f780c14513a}
+
+
+Definition at line 951 of file U\-B\-Persistence\-Manager.\-cpp.
+
+\hypertarget{class_u_b_persistence_manager_a6812070bd7380792fe0ffe0d16a92009}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!get\-Document\-Scene@{get\-Document\-Scene}}
+\index{get\-Document\-Scene@{get\-Document\-Scene}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{get\-Document\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene}$\ast$ U\-B\-Persistence\-Manager\-::get\-Document\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{scene\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{d0/dd5/class_u_b_persistence_manager_a6812070bd7380792fe0ffe0d16a92009}
+
+
+Definition at line 111 of file U\-B\-Persistence\-Manager.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a6812070bd7380792fe0ffe0d16a92009_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!insert\-Document\-Scene\-At@{insert\-Document\-Scene\-At}}
+\index{insert\-Document\-Scene\-At@{insert\-Document\-Scene\-At}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{insert\-Document\-Scene\-At}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::insert\-Document\-Scene\-At (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{{\bf U\-B\-Graphics\-Scene} $\ast$}]{scene, }
+\item[{int}]{index, }
+\item[{bool}]{persist = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a}
+
+
+Definition at line 753 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::is\-Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4}
+
+
+Definition at line 1013 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a8fe0be7694e8322dc7234e37bccbc78f}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!is\-Scene\-In\-Cached@{is\-Scene\-In\-Cached}}
+\index{is\-Scene\-In\-Cached@{is\-Scene\-In\-Cached}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{is\-Scene\-In\-Cached}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::is\-Scene\-In\-Cached (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{proxy, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{d0/dd5/class_u_b_persistence_manager_a8fe0be7694e8322dc7234e37bccbc78f}
+
+
+Definition at line 298 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a8fe0be7694e8322dc7234e37bccbc78f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!load\-Document\-Scene@{load\-Document\-Scene}}
+\index{load\-Document\-Scene@{load\-Document\-Scene}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{load\-Document\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Graphics\-Scene} $\ast$ U\-B\-Persistence\-Manager\-::load\-Document\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{scene\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66}
+
+
+Definition at line 817 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a2024fa073874438098f0a5bd2ba93928}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!may\-Have\-Audio@{may\-Have\-Audio}}
+\index{may\-Have\-Audio@{may\-Have\-Audio}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{may\-Have\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::may\-Have\-Audio (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a2024fa073874438098f0a5bd2ba93928}
+
+
+Definition at line 1273 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a2024fa073874438098f0a5bd2ba93928_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a77fb7cc43d3533e558d43bbefe375135}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!may\-Have\-P\-D\-F@{may\-Have\-P\-D\-F}}
+\index{may\-Have\-P\-D\-F@{may\-Have\-P\-D\-F}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{may\-Have\-P\-D\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::may\-Have\-P\-D\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a77fb7cc43d3533e558d43bbefe375135}
+
+
+Definition at line 1280 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a77fb7cc43d3533e558d43bbefe375135_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ae2a836bf573c4b9d71c0dcdfed20c602}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!may\-Have\-S\-V\-G\-Images@{may\-Have\-S\-V\-G\-Images}}
+\index{may\-Have\-S\-V\-G\-Images@{may\-Have\-S\-V\-G\-Images}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{may\-Have\-S\-V\-G\-Images}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::may\-Have\-S\-V\-G\-Images (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_ae2a836bf573c4b9d71c0dcdfed20c602}
+
+
+Definition at line 1291 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ae2a836bf573c4b9d71c0dcdfed20c602_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aa95ab0380bb515e3ab7ef24f4edb7999}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!may\-Have\-Video@{may\-Have\-Video}}
+\index{may\-Have\-Video@{may\-Have\-Video}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{may\-Have\-Video}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::may\-Have\-Video (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_aa95ab0380bb515e3ab7ef24f4edb7999}
+
+
+Definition at line 1266 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aa95ab0380bb515e3ab7ef24f4edb7999_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_aa237811b3805b3e3f7514a8624e439db}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!may\-Have\-Widget@{may\-Have\-Widget}}
+\index{may\-Have\-Widget@{may\-Have\-Widget}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{may\-Have\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-B\-Persistence\-Manager\-::may\-Have\-Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_aa237811b3805b3e3f7514a8624e439db}
+
+
+Definition at line 1302 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_aa237811b3805b3e3f7514a8624e439db_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!move\-Scene\-To\-Index@{move\-Scene\-To\-Index}}
+\index{move\-Scene\-To\-Index@{move\-Scene\-To\-Index}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{move\-Scene\-To\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::move\-Scene\-To\-Index (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{int}]{source, }
+\item[{int}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda}
+
+
+Definition at line 779 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!persist\-Document\-Metadata@{persist\-Document\-Metadata}}
+\index{persist\-Document\-Metadata@{persist\-Document\-Metadata}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{persist\-Document\-Metadata}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Proxy} $\ast$ U\-B\-Persistence\-Manager\-::persist\-Document\-Metadata (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2}
+
+
+Definition at line 872 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!persist\-Document\-Scene@{persist\-Document\-Scene}}
+\index{persist\-Document\-Scene@{persist\-Document\-Scene}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{persist\-Document\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::persist\-Document\-Scene (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy, }
+\item[{{\bf U\-B\-Graphics\-Scene} $\ast$}]{p\-Scene, }
+\item[{const int}]{p\-Scene\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675}
+
+
+Definition at line 840 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_ad8b7a880564523143d73c6b86d887769}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!persistence\-Manager@{persistence\-Manager}}
+\index{persistence\-Manager@{persistence\-Manager}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{persistence\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Persistence\-Manager} $\ast$ U\-B\-Persistence\-Manager\-::persistence\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_ad8b7a880564523143d73c6b86d887769}
+
+
+Definition at line 100 of file U\-B\-Persistence\-Manager.\-cpp.
+
+\hypertarget{class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!process\-Interactive\-Replacement\-Dialog@{process\-Interactive\-Replacement\-Dialog}}
+\index{process\-Interactive\-Replacement\-Dialog@{process\-Interactive\-Replacement\-Dialog}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{process\-Interactive\-Replacement\-Dialog}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Dialog\-::\-Dialog\-Code U\-B\-Persistence\-Manager\-::process\-Interactive\-Replacement\-Dialog (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0}
+
+
+Definition at line 199 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a729bdda358bcfdffa6364d6081291c8b}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!proxy\-List\-Changed@{proxy\-List\-Changed}}
+\index{proxy\-List\-Changed@{proxy\-List\-Changed}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{proxy\-List\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::proxy\-List\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d0/dd5/class_u_b_persistence_manager_a729bdda358bcfdffa6364d6081291c8b}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a729bdda358bcfdffa6364d6081291c8b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a2d3ecf90c9dba3cd79c5c36156278b85}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!purge\-Empty\-Documents@{purge\-Empty\-Documents}}
+\index{purge\-Empty\-Documents@{purge\-Empty\-Documents}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{purge\-Empty\-Documents}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::purge\-Empty\-Documents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/dd5/class_u_b_persistence_manager_a2d3ecf90c9dba3cd79c5c36156278b85}
+
+
+Definition at line 1039 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a2d3ecf90c9dba3cd79c5c36156278b85_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!reassign\-Doc\-Proxy@{reassign\-Doc\-Proxy}}
+\index{reassign\-Doc\-Proxy@{reassign\-Doc\-Proxy}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{reassign\-Doc\-Proxy}]{\setlength{\rightskip}{0pt plus 5cm}void U\-B\-Persistence\-Manager\-::reassign\-Doc\-Proxy (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{new\-Document, }
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{old\-Document}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713}
+
+
+Definition at line 835 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_u_b_persistence_manager_a0d029c2acb9d049c74b13701bb46e234}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!teacher\-Guide\-Absolute\-Object\-Path@{teacher\-Guide\-Absolute\-Object\-Path}}
+\index{teacher\-Guide\-Absolute\-Object\-Path@{teacher\-Guide\-Absolute\-Object\-Path}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{teacher\-Guide\-Absolute\-Object\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String U\-B\-Persistence\-Manager\-::teacher\-Guide\-Absolute\-Object\-Path (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-B\-Document\-Proxy} $\ast$}]{p\-Document\-Proxy}
+\end{DoxyParamCaption}
+)}}\label{d0/dd5/class_u_b_persistence_manager_a0d029c2acb9d049c74b13701bb46e234}
+
+
+Definition at line 1065 of file U\-B\-Persistence\-Manager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/class_u_b_persistence_manager_a0d029c2acb9d049c74b13701bb46e234_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_b_persistence_manager_acec3642d6307c311babc692556ce946e}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!a\-Name@{a\-Name}}
+\index{a\-Name@{a\-Name}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{a\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::a\-Name = \char`\"{}name\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_acec3642d6307c311babc692556ce946e}
+
+
+Definition at line 63 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_ad68b2f4bbd480f2119432f4b6f4b20d3}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!audio\-Directory@{audio\-Directory}}
+\index{audio\-Directory@{audio\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{audio\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::audio\-Directory = \char`\"{}audios\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_ad68b2f4bbd480f2119432f4b6f4b20d3}
+
+
+Definition at line 54 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_ade8494f17a2732ac48f67f9a64b477c0}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!f\-Folders@{f\-Folders}}
+\index{f\-Folders@{f\-Folders}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{f\-Folders}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::f\-Folders = \char`\"{}folders.\-xml\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_ade8494f17a2732ac48f67f9a64b477c0}
+
+
+Definition at line 61 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_afc92c7516c08081b8443076d1554e471}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!image\-Directory@{image\-Directory}}
+\index{image\-Directory@{image\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{image\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::image\-Directory = \char`\"{}images\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_afc92c7516c08081b8443076d1554e471}
+
+
+Definition at line 51 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_ac901694c75aea223436f520692703f81}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!m\-Document\-Tree\-Structure@{m\-Document\-Tree\-Structure}}
+\index{m\-Document\-Tree\-Structure@{m\-Document\-Tree\-Structure}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{m\-Document\-Tree\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Tree\-Node}$\ast$ U\-B\-Persistence\-Manager\-::m\-Document\-Tree\-Structure}}\label{d0/dd5/class_u_b_persistence_manager_ac901694c75aea223436f520692703f81}
+
+
+Definition at line 115 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a2e25c262cc712d327aeb68f40ba8085f}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!m\-Document\-Tree\-Structure\-Model@{m\-Document\-Tree\-Structure\-Model}}
+\index{m\-Document\-Tree\-Structure\-Model@{m\-Document\-Tree\-Structure\-Model}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{m\-Document\-Tree\-Structure\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-B\-Document\-Tree\-Model}$\ast$ U\-B\-Persistence\-Manager\-::m\-Document\-Tree\-Structure\-Model}}\label{d0/dd5/class_u_b_persistence_manager_a2e25c262cc712d327aeb68f40ba8085f}
+
+
+Definition at line 116 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a7eaef6e12db76b89277eca477511204e}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!models\-Name@{models\-Name}}
+\index{models\-Name@{models\-Name}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{models\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::models\-Name = \char`\"{}Models\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a7eaef6e12db76b89277eca477511204e}
+
+
+Definition at line 59 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a2e74c9a3298e87f0aca9e9e087ef5dcc}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!my\-Documents\-Name@{my\-Documents\-Name}}
+\index{my\-Documents\-Name@{my\-Documents\-Name}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{my\-Documents\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::my\-Documents\-Name = \char`\"{}My\-Documents\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a2e74c9a3298e87f0aca9e9e087ef5dcc}
+
+
+Definition at line 58 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a12dbae5a490687164448695c8e278f35}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!object\-Directory@{object\-Directory}}
+\index{object\-Directory@{object\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{object\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::object\-Directory = \char`\"{}objects\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a12dbae5a490687164448695c8e278f35}
+
+
+Definition at line 52 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a7cf10cf338fb0268d89d4b916043da40}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!teacher\-Guide\-Directory@{teacher\-Guide\-Directory}}
+\index{teacher\-Guide\-Directory@{teacher\-Guide\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{teacher\-Guide\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::teacher\-Guide\-Directory = \char`\"{}teacher\-Guide\-Objects\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a7cf10cf338fb0268d89d4b916043da40}
+
+
+Definition at line 56 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a904c350945d0fd7cf109e939822d5fe3}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!t\-Folder@{t\-Folder}}
+\index{t\-Folder@{t\-Folder}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{t\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::t\-Folder = \char`\"{}folder\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a904c350945d0fd7cf109e939822d5fe3}
+
+
+Definition at line 62 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a785a394deaab51518902d5afbfcc694b}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!untitled\-Documents\-Name@{untitled\-Documents\-Name}}
+\index{untitled\-Documents\-Name@{untitled\-Documents\-Name}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{untitled\-Documents\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::untitled\-Documents\-Name = \char`\"{}Untitled\-Documents\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a785a394deaab51518902d5afbfcc694b}
+
+
+Definition at line 60 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a6d2a1dff335f20f14fba15798c778aa7}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!video\-Directory@{video\-Directory}}
+\index{video\-Directory@{video\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{video\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::video\-Directory = \char`\"{}videos\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a6d2a1dff335f20f14fba15798c778aa7}
+
+
+Definition at line 53 of file U\-B\-Persistence\-Manager.\-h.
+
+\hypertarget{class_u_b_persistence_manager_a7c481362bd285b72aa501b9a6f70b314}{\index{U\-B\-Persistence\-Manager@{U\-B\-Persistence\-Manager}!widget\-Directory@{widget\-Directory}}
+\index{widget\-Directory@{widget\-Directory}!UBPersistenceManager@{U\-B\-Persistence\-Manager}}
+\subsubsection[{widget\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String U\-B\-Persistence\-Manager\-::widget\-Directory = \char`\"{}widgets\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{d0/dd5/class_u_b_persistence_manager_a7c481362bd285b72aa501b9a6f70b314}
+
+
+Definition at line 55 of file U\-B\-Persistence\-Manager.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_persistence_manager_8h}{U\-B\-Persistence\-Manager.\-h}\item 
+Sankore-\/3.\-1/src/core/\hyperlink{_u_b_persistence_manager_8cpp}{U\-B\-Persistence\-Manager.\-cpp}\end{DoxyCompactItemize}
