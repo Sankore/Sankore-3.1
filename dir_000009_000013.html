@@ -7,6 +7,12 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -58,6 +64,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dir_7d6d68be4f452814e43b66a7c76c6136.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,18 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="contents">
 <h3>core &rarr; domain Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in Sankore-3.1/src/core</th><th class="dirtab">Includes file in Sankore-3.1/src/domain</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d5/d36/_u_b_application_controller_8cpp.html">UBApplicationController.cpp</a></td><td class="dirtab"><a class="el" href="de/dee/_u_b_graphics_pixmap_item_8h.html">UBGraphicsPixmapItem.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d5/d36/_u_b_application_controller_8cpp.html">UBApplicationController.cpp</a></td><td class="dirtab"><a class="el" href="d7/dd8/_u_b_graphics_widget_item_8h.html">UBGraphicsWidgetItem.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d3/d10/_u_b_document_manager_8cpp.html">UBDocumentManager.cpp</a></td><td class="dirtab"><a class="el" href="de/dee/_u_b_graphics_pixmap_item_8h.html">UBGraphicsPixmapItem.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d3/d10/_u_b_document_manager_8cpp.html">UBDocumentManager.cpp</a></td><td class="dirtab"><a class="el" href="d7/d87/_u_b_graphics_scene_8h.html">UBGraphicsScene.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d3/d10/_u_b_document_manager_8cpp.html">UBDocumentManager.cpp</a></td><td class="dirtab"><a class="el" href="db/dd5/_u_b_graphics_svg_item_8h.html">UBGraphicsSvgItem.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d5/dd1/_u_b_mime_data_8cpp.html">UBMimeData.cpp</a></td><td class="dirtab"><a class="el" href="d6/d46/_u_b_item_8h.html">UBItem.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d8/d14/_u_b_scene_cache_8cpp.html">UBSceneCache.cpp</a></td><td class="dirtab"><a class="el" href="d7/d87/_u_b_graphics_scene_8h.html">UBGraphicsScene.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d0/d26/_u_b_scene_cache_8h.html">UBSceneCache.h</a></td><td class="dirtab"><a class="el" href="d7/d87/_u_b_graphics_scene_8h.html">UBGraphicsScene.h</a></td></tr></table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 1 2013 12:10:37 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 12:17:19 for Open-Sankoré by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
+  </ul>
+</div>
 </body>
 </html>
