@@ -110,6 +110,13 @@ UBGraphicsItemPlayAudioAction::~UBGraphicsItemPlayAudioAction()
         mMediaObject->stop();
 }
 
+void UBGraphicsItemPlayAudioAction::onSourceHide()
+{
+    if(mMediaObject->state() == Phonon::PlayingState){
+        mMediaObject->stop();
+    }
+}
+
 void UBGraphicsItemPlayAudioAction::play()
 {
     if(mMediaObject->state() == Phonon::PlayingState){

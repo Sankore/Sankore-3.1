@@ -2698,6 +2698,15 @@ void UBBoardController::freezeW3CWidgets(bool freeze)
         foreach(QGraphicsItem *item, list)
         {
             freezeW3CWidget(item, freeze);
+            //TODO Claudio remove this hack
+            // this is not a good place to make this check as isn't the good place to do the previous check.
+            // try to detect hide event of the qgraphicsitem
+            UBGraphicsItem* graphicsItem = dynamic_cast<UBGraphicsItem*>(item);
+            if(graphicsItem){
+                UBGraphicsItemDelegate* delegate = graphicsItem->Delegate();
+                if(delegate && delegate->action() && delegate->action()->linkType() == eLinkToAudio)
+                    dynamic_cast<UBGraphicsItemPlayAudioAction*>(delegate->action())->onSourceHide();
+            }
         }
     }
 }

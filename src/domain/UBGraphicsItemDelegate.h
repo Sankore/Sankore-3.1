@@ -268,6 +268,8 @@ class UBGraphicsItemDelegate : public QObject
 
         void setFlippable(bool flippable);
         void setRotatable(bool pCanRotate);
+        void setLocked(bool pLocked);
+
         bool isFlippable();
 
         void setCanTrigAnAction(bool canTrig);

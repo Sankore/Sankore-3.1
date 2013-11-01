@@ -239,8 +239,13 @@ UBGraphicsItemDelegate::~UBGraphicsItemDelegate()
 {
     if (UBApplication::boardController)
         disconnect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
-    // do not release mMimeData.
-    // the mMimeData is owned by QDrag since the setMimeData call as specified in the documentation
+        // do not release mMimeData.
+        // the mMimeData is owned by QDrag since the setMimeData call as specified in the documentation
+
+    if(mAction->linkType() == eLinkToAudio){
+        UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(mAction);
+        audioAction->onSourceHide();
+    }
 }
 
 QVariant UBGraphicsItemDelegate::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value)
@@ -650,9 +655,12 @@ void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
     mMenu->removeAction(mShowPanelToAddAnAction);
     QString actionLabel;
     switch (mAction->linkType()) {
-    case eLinkToAudio:
+    case eLinkToAudio:{
         actionLabel= tr("Remove link to audio");
+        UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(action);
+        connect(mDeleteButton,SIGNAL(clicked()),audioAction,SLOT(onSourceHide()));
         break;
+    }
     case eLinkToPage:
         actionLabel = tr("Remove link to page");
         break;
@@ -736,6 +744,15 @@ void UBGraphicsItemDelegate::setRotatable(bool pCanRotate)
 
     if (mDelegated) {
         mDelegated->setData(UBGraphicsItemData::ItemRotatable, QVariant(pCanRotate));
+    }
+}
+
+void UBGraphicsItemDelegate::setLocked(bool pLocked)
+{
+    Q_ASSERT(mDelegated);
+
+    if (mDelegated) {
+        mDelegated->setData(UBGraphicsItemData::ItemLocked, QVariant(pLocked));
     }
 }
 

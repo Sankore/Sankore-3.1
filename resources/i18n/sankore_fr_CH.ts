@@ -577,10 +577,12 @@
     </message>
     <message>
         <source>eduMedia</source>
+        <translatorcomment>y a t&apos;il une fonction cachée ?</translatorcomment>
         <translation>eduMedia</translation>
     </message>
     <message>
         <source>Import eduMedia simulation</source>
+        <translatorcomment>y a t&apos;il une fonction cachée ?</translatorcomment>
         <translation>Importer une simulation eduMedia</translation>
     </message>
     <message>
@@ -621,6 +623,7 @@
     </message>
     <message>
         <source>Podcast</source>
+        <translatorcomment>le terme de ScreenCast serait plus approprié et plus juste</translatorcomment>
         <translation>Podcast</translation>
     </message>
     <message>
@@ -845,7 +848,7 @@
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translation type="unfinished">Signet</translation>
+        <translation>Signet</translation>
     </message>
 </context>
 <context>
@@ -985,6 +988,22 @@
         <source>Ungroup</source>
         <translation>Dégrouper</translation>
     </message>
+    <message>
+        <source>Failed to duplicate %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to paste %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplication successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paste successful</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
@@ -1013,11 +1032,11 @@
     </message>
     <message>
         <source>Alpha:</source>
-        <translation>Alpha :</translation>
+        <translation>Transparence :</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation>Géométrie :</translation>
+        <translation>Forme :</translation>
     </message>
     <message>
         <source>Width: </source>
@@ -1252,7 +1271,7 @@
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation type="unfinished"></translation>
+        <translation>Le document &quot;modèle&quot; n&apos;est pas éditable. Copiez le dans le dossier &quot;Mes documents&quot; pour pouvoir l&apos;utiliser ou l&apos;éditer.</translation>
     </message>
 </context>
 <context>
@@ -1318,7 +1337,7 @@
     </message>
     <message>
         <source>Export canceled ...</source>
-        <translation>Exportation annulée ...</translation>
+        <translation>Export annulé ...</translation>
     </message>
     <message>
         <source>Converting page %1/%2 ...</source>
@@ -1330,7 +1349,7 @@
     </message>
     <message>
         <source>Uploading Sankore File on Web.</source>
-        <translation>Fichier Open-Sankoré en cours de transfert vers Planète-Sankoré.</translation>
+        <translation>Document Open-Sankoré en cours de transfert vers Planète-Sankoré.</translation>
     </message>
     <message>
         <source>Document uploaded correctly on the web.</source>
@@ -1362,7 +1381,7 @@ Providing a new name will create a new document.</source>
         <translatorcomment>j&apos;ai ajouté le terme &quot;Attention&quot; car cette opération est dangereuse (et pas trop conforme aux habitudes ou l&apos;on place en général un n° de version à la fin du fichier pour les différencier et eviter l&apos;effacement)</translatorcomment>
         <translation>Le nom %1 est déjà utilisé.
 ATTENTION : En gardant ce nom, l&apos;ancien document sera écrasé par le nouveau.
-Un nouveau nom vous permettra un nouveau document.
+Un nouveau nom vous permettra de conserver l&apos;ancier document.
 </translation>
     </message>
 </context>
@@ -1384,13 +1403,19 @@ Un nouveau nom vous permettra un nouveau document.
         <source>Untitled documents</source>
         <translation>Documents sans titre</translation>
     </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="unfinished">Copie de la page %1/%2 en cours</translation>
-    </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation>
+            <numerusform>%1 page copiée</numerusform>
+            <numerusform>%1 pages copiées</numerusform>
+        </translation>
+    </message>
+</context>
+<context>
+    <name>UBDocumentTreeView</name>
+    <message numerus="yes">
+        <source>%1 pages copied</source>
+        <translation>
             <numerusform>%1 page copiée</numerusform>
             <numerusform>%1 pages copiées</numerusform>
         </translation>
@@ -1984,11 +2009,11 @@ Un nouveau nom vous permettra un nouveau document.
     <name>UBIntranetPodcastPublisher</name>
     <message>
         <source>Error while publishing video to intranet (%1)</source>
-        <translation>Erreur durant la publication de la vidéo sur l&apos;intranet (%1)</translation>
+        <translation>Erreur durant la publication de la vidéo sur l&apos;ENT (%1)</translation>
     </message>
     <message>
         <source>Publishing to Intranet in progress %1 %</source>
-        <translation>Publication sur l&apos;intranet en cours %1 %</translation>
+        <translation>Publication sur l&apos;ENT en cours %1 %</translation>
     </message>
 </context>
 <context>
@@ -2152,7 +2177,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Publish to Intranet</source>
-        <translation>Publier sur l&apos;intranet</translation>
+        <translation>Publier sur l&apos;ENT</translation>
     </message>
     <message>
         <source>Publish to Youtube</source>
@@ -2311,7 +2336,11 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Bambara</source>
-        <translation type="unfinished"></translation>
+        <translation>Bambara</translation>
+    </message>
+    <message>
+        <source>Galician</source>
+        <translation>Galicien</translation>
     </message>
 </context>
 <context>
@@ -2390,6 +2419,14 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Type title here...</source>
         <translation>Renseigner le titre ici ...</translation>
+    </message>
+    <message>
+        <source>Drag and drop</source>
+        <translation>Glisser-déposer</translation>
+    </message>
+    <message>
+        <source>The currect action is not supported. The teacher bar is design to work only with media stored locally.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2547,7 +2584,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
-        <translation>%1 vignettes créées ...</translation>
+        <translation>%1 vignette(s) créée(s) ...</translation>
     </message>
 </context>
 <context>
@@ -2585,7 +2622,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation>Page complète</translation>
+        <translation>Page entière</translation>
     </message>
     <message>
         <source>Embed </source>
@@ -2767,7 +2804,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     </message>
     <message>
         <source>There are no documents that should be imported</source>
-        <translation>Aucun document au format Uniboard n&apos;a été trouvé</translation>
+        <translation>Aucun document à importer n&apos;a été trouvé</translation>
     </message>
 </context>
 <context>
@@ -2865,7 +2902,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <name>WBHistoryTreeModel</name>
     <message>
         <source>Earlier Today</source>
-        <translation>Précédemment dans la journée</translation>
+        <translation>Consulté précédemment</translation>
     </message>
     <message>
         <source>%1 items</source>
@@ -3061,7 +3098,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation>Sauvegarder les paramètres de connexion. </translation>
+        <translation>Enregistrer les paramètres de connexion. </translation>
     </message>
 </context>
 <context>
@@ -3366,19 +3403,68 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
-&lt;tr&gt;
-&lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Les licences proposées ci-dessous sont en langue anglaise afin de respecter le cadre légal et officiel de ces textes qui ne disposent pas d&apos;une traduction officialisée en français.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Translations&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;A special thanks to:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Alexander Angelov and Iva Ninova for Bulgarian&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Francesc Busquets and Toni Hortal for Catalan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Christophe Gallego for Corsican&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Jaroslav Krejčí, Janek Wagner for Czech&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Geert Kraeye and Derk Klomp for Dutch&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Christian Oïhénart and François Bocquet for French&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Hans-Peter Zahno and Klaus Tenner for German&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Yannis Kaskamanidis for Greek&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Lalit Mohan for Hindi&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Antonello Comi and Marco Menardi for Italian&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Didier Clerc for Japanese&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Faraniaina Domoina Rabarijaona for Malagasy&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Patricia Fisch and César Marques for Portuguese&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Ilia Ryabokon for Russian&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Anki Chen for Traditional Chinese&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Jaroslav Ryník for Slovak&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Dorian Fuentes and Juan José Gutiérrez Aparicio for Spanish&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Ferhat Ozkasgarli for Turkish&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Ana Feito and Enrique Fernandez for Galician&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Traductions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Nos remerciements pour les traductions:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Alexander Angelov et Iva Ninova pour le Bulgare&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Francesc Busquets et Toni Hortal pour le Catalan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Christophe Gallego pour le Corse&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Jaroslav Krejčí et Janek Wagner pour le Tchèque&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Geert Kraeye et Derk Klomp pour le Néerlandais&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Christian Oïhénart et François Bocquet pour le Français&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Hans-Peter Zahno et Klaus Tenner pour l&apos;Allemand&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Yannis Kaskamanidis pour le Grec&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Lalit Mohan pour l&apos;Hindi&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Antonello Comi et Marco Menardi pour l&apos;Italien&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Didier Clerc pour le Japonais&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Faraniaina Domoina Rabarijaona pour le Malgasce&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Patricia Fisch et César Marques pour le Portugais&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Ilia Ryabokon pour le Russe&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Anki Chen pour le Chinois Traditionnel&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Jaroslav Ryník pour le Slovaque&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Dorian Fuentes et Juan José Gutiérrez Aparicio pour l&apos;Espagnol&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Ferhat Ozkasgarli pour le Turc&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;        • Ana Feito et Enrique Fernandez pour le Galicien&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

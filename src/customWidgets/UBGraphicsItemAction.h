@@ -78,6 +78,9 @@ public:
     void setPath(QString audioPath);
     QString fullPath();
 
+public slots:
+    void onSourceHide();
+
 private:
     QString mAudioPath;
     Phonon::MediaObject *mMediaObject;
