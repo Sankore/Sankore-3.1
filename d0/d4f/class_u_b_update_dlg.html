@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d4f/class_u_b_update_dlg.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d4f/class_u_b_update_dlg.html','../
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -159,7 +139,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7c28affc974bd580e5c207913a751209"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4f/class_u_b_update_dlg.html#a7c28affc974bd580e5c207913a751209">mProgressLayout</a></td></tr>
 <tr class="memitem:a2e4599824724e08c86fd15907a1e6e06"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4f/class_u_b_update_dlg.html#a2e4599824724e08c86fd15907a1e6e06">mProgressLabel</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00036">36</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abd417884a0f3eb0e271948962e068b2c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -189,6 +172,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QDialog(parent)</div>
 <div class="line">    , <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#ad53508de9de655f17e4a52160e834379">mMainLayout</a>(NULL)</div>
 <div class="line">    , <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#ac15a22637a0f58c4c2303094bb540a30">mNbFilesLabel</a>(NULL)</div>
@@ -281,6 +266,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (NULL != <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#ac5b525e5fad5cbf816bc6ad55b3a9aab">mpDlgBttn</a>)</div>
 <div class="line">    {</div>
@@ -364,6 +351,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html#l00203">203</a> of file <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a2b7c2b988f28373c1f32c12399992f45">mBkpPath</a>-&gt;text();</div>
 <div class="line">}</div>
@@ -399,6 +388,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html#l00171">171</a> of file <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString qsSelectedDir;</div>
 <div class="line">    qsSelectedDir = QFileDialog::getExistingDirectory(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Select a backup folder&quot;</span>), <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a2b7c2b988f28373c1f32c12399992f45">mBkpPath</a>-&gt;text());</div>
@@ -437,6 +428,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html#l00189">189</a> of file <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    this-&gt;hide();</div>
 <div class="line">    QString qsMsg;</div>
@@ -481,6 +474,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html#l00178">178</a> of file <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a2e4599824724e08c86fd15907a1e6e06">mProgressLabel</a> = <span class="keyword">new</span> QLabel(<a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a8f53502d4a2a1b2f754073b5755f0e6c">mProgressWidget</a>);</div>
 <div class="line">    <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a2e4599824724e08c86fd15907a1e6e06">mProgressLabel</a>-&gt;setText(tr(<span class="stringliteral">&quot;Please wait the import process will start soon...&quot;</span>));</div>
@@ -532,6 +527,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html#l00208">208</a> of file <a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a2e4599824724e08c86fd15907a1e6e06">mProgressLabel</a>-&gt;setText(tr(<span class="stringliteral">&quot;Updating file &quot;</span>) + fileName);</div>
 <div class="line">}</div>
@@ -589,6 +586,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00060">60</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2b7c2b988f28373c1f32c12399992f45"></a>
@@ -608,6 +607,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00061">61</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
 
 </div>
 </div>
@@ -629,6 +630,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00062">62</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a437471a4b3f6bf93663aba84d1388f57"></a>
@@ -648,6 +651,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00069">69</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
 
 </div>
 </div>
@@ -669,6 +674,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00065">65</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af76c1088907da387e5b2040988b70828"></a>
@@ -688,6 +695,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00064">64</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
 
 </div>
 </div>
@@ -709,6 +718,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00057">57</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac15a22637a0f58c4c2303094bb540a30"></a>
@@ -728,6 +739,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00059">59</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
 
 </div>
 </div>
@@ -749,6 +762,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00063">63</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2e4599824724e08c86fd15907a1e6e06"></a>
@@ -768,6 +783,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00072">72</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
 
 </div>
 </div>
@@ -789,6 +806,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00071">71</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8f53502d4a2a1b2f754073b5755f0e6c"></a>
@@ -808,6 +827,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00070">70</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
 
 </div>
 </div>
@@ -829,22 +850,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html#l00068">68</a> of file <a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a></li>
-<li><a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp.html">UBUpdateDlg.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../db/dc7/_u_b_update_dlg_8h_source.html">UBUpdateDlg.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../dc/df2/_u_b_update_dlg_8cpp_source.html">UBUpdateDlg.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d4f/class_u_b_update_dlg.html">UBUpdateDlg</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:33 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d4/d16/class_u_b_preferences_dialog.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d4/d16/class_u_b_preferences_dialog.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -134,7 +114,10 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a358fe8042f8cf2cabfaa6fe0fa8a47ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html">UBPreferencesController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d16/class_u_b_preferences_dialog.html#a358fe8042f8cf2cabfaa6fe0fa8a47ec">mPreferencesController</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00044">44</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa6d65af738b6fa627bb937b08fc87f3b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -164,6 +147,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">    :QDialog(parent,f)</div>
 <div class="line">    ,<a class="code" href="../../d4/d16/class_u_b_preferences_dialog.html#a358fe8042f8cf2cabfaa6fe0fa8a47ec">mPreferencesController</a>(prefController)</div>
 <div class="line">{</div>
@@ -183,6 +168,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -210,6 +197,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d16/class_u_b_preferences_dialog.html#a358fe8042f8cf2cabfaa6fe0fa8a47ec">mPreferencesController</a>-&gt;<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a4d15e8c361bfc3f791143a06ffa0bf6c">inputValuesConsistence</a>())</div>
 <div class="line">        e-&gt;accept();</div>
@@ -247,22 +236,20 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00054">54</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a></li>
-<li><a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp.html">UBPreferencesController.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d4/d16/class_u_b_preferences_dialog.html">UBPreferencesDialog</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:30 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

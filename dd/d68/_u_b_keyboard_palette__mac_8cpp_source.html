@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/d68/_u_b_keyboard_palette__mac_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('dd/d68/_u_b_keyboard_palette__mac_8cpp
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBKeyboardPalette_mac.cpp</div>  </div>
@@ -167,24 +151,24 @@ $(document).ready(function(){initNavTree('dd/d68/_u_b_keyboard_palette__mac_8cpp
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        CGEventPost(kCGHIDEventTap, event2);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> UBKeyboardPalette::createCtrlButtons()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a4fe1940a7883e8c2cbe8115130d31d79">UBKeyboardPalette::createCtrlButtons</a>()</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        ctrlButtons = <span class="keyword">new</span> <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html">UBKeyboardButton</a>*[9];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html">UBKeyboardButton</a>*[9];</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        ctrlButtons[0] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, 51, <span class="stringliteral">&quot;backspace&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ctrlButtons[1] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, 48, <span class="stringliteral">&quot;tab&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        ctrlButtons[2] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a581dfcd5d1c8859bf8b05143bcc82245">UBCapsLockButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;capslock&quot;</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ctrlButtons[3] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Enter&quot;</span>), 76);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        ctrlButtons[4] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a1b5e1692d61dd3978962a4590ba37a49">UBShiftButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;shift&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ctrlButtons[5] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a1b5e1692d61dd3978962a4590ba37a49">UBShiftButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;shift&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ctrlButtons[6] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#ad529f92a5b8f216b0a349c6ef547780f">UBLocaleButton</a>(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ctrlButtons[7] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;&quot;</span>, 49);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ctrlButtons[8] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#ad529f92a5b8f216b0a349c6ef547780f">UBLocaleButton</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[0] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, 51, <span class="stringliteral">&quot;backspace&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[1] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, 48, <span class="stringliteral">&quot;tab&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[2] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a581dfcd5d1c8859bf8b05143bcc82245">UBCapsLockButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;capslock&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[3] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Enter&quot;</span>), 76);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[4] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a1b5e1692d61dd3978962a4590ba37a49">UBShiftButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;shift&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[5] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a1b5e1692d61dd3978962a4590ba37a49">UBShiftButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;shift&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[6] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#ad529f92a5b8f216b0a349c6ef547780f">UBLocaleButton</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[7] = <span class="keyword">new</span> <a class="code" href="../../d3/db6/class_u_b_cntrl_button.html">UBCntrlButton</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;&quot;</span>, 49);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a>[8] = <span class="keyword">new</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#ad529f92a5b8f216b0a349c6ef547780f">UBLocaleButton</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> UBKeyboardPalette::checkLayout()</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a66b82c67e76214def8461b6a7b64d845">UBKeyboardPalette::checkLayout</a>()</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    TISInputSourceRef selectedLocale = TISCopyCurrentKeyboardInputSource();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
@@ -210,25 +194,21 @@ $(document).ready(function(){initNavTree('dd/d68/_u_b_keyboard_palette__mac_8cpp
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> UBKeyboardPalette::onActivated(<span class="keywordtype">bool</span>)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a28fc73141e73b77b52fda5f170e25c2d">UBKeyboardPalette::onActivated</a>(<span class="keywordtype">bool</span>)</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> UBKeyboardPalette::onLocaleChanged(<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>* locale)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a52d457564d7c77f267e3f37b1640f71f">UBKeyboardPalette::onLocaleChanged</a>(<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>* locale)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    UBPlatformUtils::SetMacLocaleByIdentifier(locale-&gt;<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a53ed8afa7b75cf945a31239d93493610">id</a>);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../dd/d68/_u_b_keyboard_palette__mac_8cpp.html">UBKeyboardPalette_mac.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

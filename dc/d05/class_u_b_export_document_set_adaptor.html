@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/d05/class_u_b_export_document_set_adaptor.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dc/d05/class_u_b_export_document_set_a
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -154,13 +134,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ae07fa34ac60fbd228314181ff53c3a62 inherit pro_attribs_class_u_b_export_adaptor"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#ae07fa34ac60fbd228314181ff53c3a62">mIsVerbose</a></td></tr>
 <tr class="memitem:a8345c9797470e5b5af71b98fe936cded inherit pro_attribs_class_u_b_export_adaptor"><td class="memItemLeft" align="right" valign="top">QPointer&lt; QAction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#a8345c9797470e5b5af71b98fe936cded">mAssociatedAction</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/d48/_u_b_export_document_set_adaptor_8h_source.html#l00040">40</a> of file <a class="el" href="../../db/d48/_u_b_export_document_set_adaptor_8h_source.html">UBExportDocumentSetAdaptor.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad3a17f0144caa08768cc367b8d5f9161"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a4ba5672b438cccbfbd7afb2dc4e1492f">THIRD_PARTY_WARNINGS_DISABLE</a> <a class="el" href="../../d0/d8b/_sankore-3_81_2plugins_2cffadaptor_2src_2_u_b_globals_8h.html#a0894cd93d9a4f6a440afefa239d280b8">THIRD_PARTY_WARNINGS_ENABLE</a> UBExportDocumentSetAdaptor::UBExportDocumentSetAdaptor </td>
+          <td class="memname"><a class="el" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a4ba5672b438cccbfbd7afb2dc4e1492f">THIRD_PARTY_WARNINGS_DISABLE</a> <a class="el" href="../../d8/da7/plugins_2cffadaptor_2src_2_u_b_globals_8h.html#a0894cd93d9a4f6a440afefa239d280b8">THIRD_PARTY_WARNINGS_ENABLE</a> UBExportDocumentSetAdaptor::UBExportDocumentSetAdaptor </td>
           <td>(</td>
           <td class="paramtype">QObject *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
@@ -168,6 +151,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d8/dd5/class_u_b_export_adaptor.html#aaca09f974c79a54ea09cdc6867de4021">UBExportAdaptor</a>(parent)</div>
 <div class="line">{</div>
 <div class="line"></div>
@@ -195,6 +180,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -231,6 +218,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00147">147</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> i = 0;</div>
 <div class="line">    i++;</div>
@@ -314,6 +303,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#a0ab1b01c053f3e342276a3fe526652b4">UBExportAdaptor</a>.</p>
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00188">188</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = qobject_cast&lt;<span class="keyword">const</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a>*&gt;(selectedIndex.model());</div>
 <div class="line">    <span class="keywordflow">if</span> (!selectedIndex.isValid() || docModel-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ad6186a892df7569976b194849f17ff3f">isDocument</a>(selectedIndex)) {</div>
@@ -356,6 +347,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#a4627b5f14336f1a52dae470a45bf4a97">UBExportAdaptor</a>.</p>
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00137">137</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;.ubx&quot;</span>);</div>
 <div class="line">}</div>
@@ -384,6 +377,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#a899c4b6a2431b5bc9da7a053a475ef80">UBExportAdaptor</a>.</p>
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> tr(<span class="stringliteral">&quot;Export to Sankore UBX Format&quot;</span>);</div>
 <div class="line">}</div>
@@ -413,6 +408,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#a9333b1d118d0bf445acbda90ae35135d">UBExportAdaptor</a>.</p>
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QModelIndex treeViewParentIndex;</div>
 <div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a> *persistenceManager = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>();</div>
@@ -494,6 +491,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html#l00106">106</a> of file <a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a> *persistenceManager = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>();</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *treeModel = persistenceManager-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
@@ -529,8 +528,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d05/class_u_b_export_document_set_adaptor_a058f0d8ec19fe99785554e6f77660ac5_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d05/class_u_b_export_document_set_adaptor_a058f0d8ec19fe99785554e6f77660ac5_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -546,19 +544,15 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/d48/_u_b_export_document_set_adaptor_8h_source.html">UBExportDocumentSetAdaptor.h</a></li>
-<li><a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp.html">UBExportDocumentSetAdaptor.cpp</a></li>
+<li>Sankore-3.1/src/adaptors/<a class="el" href="../../db/d48/_u_b_export_document_set_adaptor_8h_source.html">UBExportDocumentSetAdaptor.h</a></li>
+<li>Sankore-3.1/src/adaptors/<a class="el" href="../../dc/d25/_u_b_export_document_set_adaptor_8cpp_source.html">UBExportDocumentSetAdaptor.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dc/d05/class_u_b_export_document_set_adaptor.html">UBExportDocumentSetAdaptor</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:23 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

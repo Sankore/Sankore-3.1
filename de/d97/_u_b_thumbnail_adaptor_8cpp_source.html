@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/d97/_u_b_thumbnail_adaptor_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('de/d97/_u_b_thumbnail_adaptor_8cpp_sou
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ba3bda1af5b46be6c34dbdf9592f1d27.html">adaptors</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBThumbnailAdaptor.cpp</div>  </div>
@@ -146,7 +130,7 @@ $(document).ready(function(){initNavTree('de/d97/_u_b_thumbnail_adaptor_8cpp_sou
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d90/_u_b_svg_subset_adaptor_8h.html">UBSvgSubsetAdaptor.h</a>&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> UBThumbnailAdaptor::generateMissingThumbnails(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy)</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a39712b41b735a84c9cd6c1460e5ccd12">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a39712b41b735a84c9cd6c1460e5ccd12">UBThumbnailAdaptor::generateMissingThumbnails</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> existingPageCount = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
@@ -188,7 +172,7 @@ $(document).ready(function(){initNavTree('de/d97/_u_b_thumbnail_adaptor_8cpp_sou
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    QFile file(fileName);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (!file.exists())</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        generateMissingThumbnails(proxy);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a39712b41b735a84c9cd6c1460e5ccd12">generateMissingThumbnails</a>(proxy);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    QPixmap* pix = <span class="keyword">new</span> QPixmap();</div>
@@ -204,7 +188,7 @@ $(document).ready(function(){initNavTree('de/d97/_u_b_thumbnail_adaptor_8cpp_sou
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> pix;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> UBThumbnailAdaptor::updateDocumentToHandleZeroPage(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy)</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a655787fe08746afefcf5bfc06805a22c">  101</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a655787fe08746afefcf5bfc06805a22c">UBThumbnailAdaptor::updateDocumentToHandleZeroPage</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;teacherGuidePageZeroActivated-&gt;get().toBool()){</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, 0);</div>
@@ -217,8 +201,8 @@ $(document).ready(function(){initNavTree('de/d97/_u_b_thumbnail_adaptor_8cpp_sou
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#adcb1e2aedc83a85ac0407d9332f8ea65">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#adcb1e2aedc83a85ac0407d9332f8ea65">UBThumbnailAdaptor::load</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, QList&lt;const QPixmap*&gt;&amp; list)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    updateDocumentToHandleZeroPage(proxy);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    generateMissingThumbnails(proxy);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a655787fe08746afefcf5bfc06805a22c">updateDocumentToHandleZeroPage</a>(proxy);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a39712b41b735a84c9cd6c1460e5ccd12">generateMissingThumbnails</a>(proxy);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">foreach</span>(<span class="keyword">const</span> QPixmap* pm, list)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">delete</span> pm;</div>
@@ -291,15 +275,11 @@ $(document).ready(function(){initNavTree('de/d97/_u_b_thumbnail_adaptor_8cpp_sou
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> QUrl::fromLocalFile(fileName);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ba3bda1af5b46be6c34dbdf9592f1d27.html">adaptors</a></li><li class="navelem"><a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp.html">UBThumbnailAdaptor.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:41 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:12 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d1e/class_u_b_item.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d8/d1e/class_u_b_item.html','../../');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -158,7 +138,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a87b164f64911804513b9167e6d16a9cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1e/class_u_b_item.html#a4d073757053cafbe4f26c17ea1224d53">RenderingQuality</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#a87b164f64911804513b9167e6d16a9cf">mRenderingQuality</a></td></tr>
 <tr class="memitem:ad90f56dfda5ef98f0d5139bd49840faa"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#ad90f56dfda5ef98f0d5139bd49840faa">mSourceUrl</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00034">34</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a4d073757053cafbe4f26c17ea1224d53"></a>
 <div class="memitem">
 <div class="memproto">
@@ -176,6 +159,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00044">44</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d8/d1e/class_u_b_item.html#a4d073757053cafbe4f26c17ea1224d53a69cf79005220669d8bc6ef771d1f4c11">RenderingQualityNormal</a> = 0, <a class="code" href="../../d8/d1e/class_u_b_item.html#a4d073757053cafbe4f26c17ea1224d53ae16608cfe88cd2f880a850534e08ee06">RenderingQualityHigh</a></div>
 <div class="line">        };</div>
@@ -203,6 +188,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/d2b/_u_b_item_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../dd/d2b/_u_b_item_8cpp_source.html">UBItem.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d8/d1e/class_u_b_item.html#a4cb5aeff8000c84de48bf0a2ab6376ef">mUuid</a>(QUuid())</div>
 <div class="line">    , <a class="code" href="../../d8/d1e/class_u_b_item.html#a87b164f64911804513b9167e6d16a9cf">mRenderingQuality</a>(<a class="code" href="../../d8/d1e/class_u_b_item.html#a4d073757053cafbe4f26c17ea1224d53a69cf79005220669d8bc6ef771d1f4c11">UBItem::RenderingQualityNormal</a>)</div>
 <div class="line">{</div>
@@ -231,6 +218,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/d2b/_u_b_item_8cpp_source.html#l00044">44</a> of file <a class="el" href="../../dd/d2b/_u_b_item_8cpp_source.html">UBItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -329,6 +318,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00059">59</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d8/d1e/class_u_b_item.html#a87b164f64911804513b9167e6d16a9cf">mRenderingQuality</a>;</div>
 <div class="line">        }</div>
@@ -357,6 +348,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad7cad83001340bbfd1ec361a09f6a454">UBGraphicsWidgetItem</a>, <a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5b064d18526d1ed0eee805d35fdaa679">UBGraphicsMediaItem</a>, <a class="el" href="../../d1/dce/class_u_b_graphics_svg_item.html#a92e88b5e4e6214adcd9ac0feeae07cde">UBGraphicsSvgItem</a>, <a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#af7ecdc68fa4901afd6720eb8d987e947">UBGraphicsPolygonItem</a>, <a class="el" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html#a1ae5bb3192282698c436e8200fffd33f">UBGraphicsPDFItem</a>, <a class="el" href="../../da/d65/class_u_b_graphics_text_item.html#a78498298ea53c6baee150a3a04a27f51">UBGraphicsTextItem</a>, <a class="el" href="../../d1/d78/class_u_b_graphics_pixmap_item.html#a972dad2ba6b44804cfff411fb54c15ee">UBGraphicsPixmapItem</a>, and <a class="el" href="../../dd/d13/class_u_b_graphics_proxy_widget.html#af75c8bf52df5e6ed091d4b4277fbe8b8">UBGraphicsProxyWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00073">73</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> 0;</div>
 <div class="line">        }</div>
@@ -396,6 +389,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../dc/db2/class_u_b_graphics_scene.html#a3fac42724b4c9d395698cc7e16f902ab">UBGraphicsScene</a>, <a class="el" href="../../d1/dce/class_u_b_graphics_svg_item.html#af9482489d2553eef2d4223a6faab6188">UBGraphicsSvgItem</a>, and <a class="el" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html#a61251d03ad330a5b3115221981b94526">UBGraphicsPDFItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00064">64</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d8/d1e/class_u_b_item.html#a87b164f64911804513b9167e6d16a9cf">mRenderingQuality</a> = pRenderingQuality;</div>
 <div class="line">        }</div>
@@ -435,6 +430,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a36a57baf502db973b4541db3f2479731">UBGraphicsMediaItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00083">83</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d8/d1e/class_u_b_item.html#ad90f56dfda5ef98f0d5139bd49840faa">mSourceUrl</a> = pSourceUrl;</div>
 <div class="line">        }</div>
@@ -474,6 +471,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#ab094d8bf072b39d5c9bc8e9c82a07787">UBGraphicsW3CWidgetItem</a>, <a class="el" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html#aa880379f04a9117a521e944f44717302">UBGraphicsAppleWidgetItem</a>, <a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad4cc767e9fb672aaaad3ce852249dd6e">UBGraphicsWidgetItem</a>, <a class="el" href="../../da/d65/class_u_b_graphics_text_item.html#a91ebcd957d46156859eeb3e9047194bc">UBGraphicsTextItem</a>, <a class="el" href="../../d1/dce/class_u_b_graphics_svg_item.html#ad775cde3b5bbedde62e7e3c0dda06dd1">UBGraphicsSvgItem</a>, <a class="el" href="../../d1/d78/class_u_b_graphics_pixmap_item.html#a822a466ea3b7a87e5c109e1af96c3d14">UBGraphicsPixmapItem</a>, <a class="el" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html#afefe73ee3ba44104aa9ff14126fa74d0">UBGraphicsPDFItem</a>, <a class="el" href="../../de/d93/class_u_b_graphics_group_container_item.html#adf49f1e629c8ddf5d65ffe8d3ac63ab2">UBGraphicsGroupContainerItem</a>, <a class="el" href="../../d5/d13/class_u_b_graphics_curtain_item.html#aa1d6ddfc26a642ef1bac6d256be9cb84">UBGraphicsCurtainItem</a>, <a class="el" href="../../d3/d0b/class_u_b_graphics_strokes_group.html#ad0e51596bc0652b4889c3f215332ad72">UBGraphicsStrokesGroup</a>, <a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a97f0b29bd07773c31b351da735b82efd">UBGraphicsPolygonItem</a>, and <a class="el" href="../../dd/d13/class_u_b_graphics_proxy_widget.html#ab0828daa6cded97da73d0e04e1f1891b">UBGraphicsProxyWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00054">54</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">                <a class="code" href="../../d8/d1e/class_u_b_item.html#a4cb5aeff8000c84de48bf0a2ab6376ef">mUuid</a> = pUuid;</div>
 <div class="line">        }</div>
@@ -510,6 +509,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00078">78</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d8/d1e/class_u_b_item.html#ad90f56dfda5ef98f0d5139bd49840faa">mSourceUrl</a>;</div>
 <div class="line">        }</div>
@@ -546,6 +547,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00049">49</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">                <span class="keywordflow">return</span> <a class="code" href="../../d8/d1e/class_u_b_item.html#a4cb5aeff8000c84de48bf0a2ab6376ef">mUuid</a>;</div>
 <div class="line">        }</div>
@@ -581,6 +584,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00092">92</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad90f56dfda5ef98f0d5139bd49840faa"></a>
@@ -600,6 +605,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00094">94</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
 
 </div>
 </div>
@@ -621,22 +628,20 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/d46/_u_b_item_8h_source.html#l00090">90</a> of file <a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a></li>
-<li><a class="el" href="../../dd/d2b/_u_b_item_8cpp.html">UBItem.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../dd/d2b/_u_b_item_8cpp_source.html">UBItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d8/d1e/class_u_b_item.html">UBItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

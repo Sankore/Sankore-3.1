@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/d7c/class_u_b_t_g_action_widget.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('da/d7c/class_u_b_t_g_action_widget.htm
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -146,7 +126,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a90832256b52d4abff1bc5856d0ae0951"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a></td></tr>
 <tr class="memitem:acea3b4eb9cecaa779e46cb565438b9bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d07/class_u_b_t_g_adaptable_text.html">UBTGAdaptableText</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00079">79</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4208c03d9ae6e8a88c1cfe228985fb76"></a>
 <div class="memitem">
 <div class="memproto">
@@ -184,13 +167,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00082">82</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                                             : QWidget(parent)</div>
 <div class="line">  , <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(name);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
 <div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a> = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
 <div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a> = <span class="keyword">new</span> QComboBox(<span class="keyword">this</span>);</div>
 <div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;setObjectName(<span class="stringliteral">&quot;DockPaletteWidgetComboBox&quot;</span>);</div>
@@ -230,10 +215,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00105">105</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -252,6 +239,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;setCurrentIndex(element.attribute(<span class="stringliteral">&quot;owner&quot;</span>).toInt());</div>
 <div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a11880e0e1a770203ba9a4e189e07226d">setInitialText</a>(element.attribute(<span class="stringliteral">&quot;task&quot;</span>));</div>
@@ -299,6 +288,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d6/d3f/classi_u_b_t_g_save_data.html#a189e5299cf41b83ae6cca36a45e4b585">iUBTGSaveData</a>.</p>
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00118">118</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html">tUBGEElementNode</a>* result = <span class="keyword">new</span> <a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html">tUBGEElementNode</a>();</div>
 <div class="line">    result-&gt;<a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html#a889b0141b125b4440cde206ba57d9c8a">name</a> = <span class="stringliteral">&quot;action&quot;</span>;</div>
@@ -352,6 +343,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00091">91</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a90832256b52d4abff1bc5856d0ae0951"></a>
@@ -371,6 +364,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00092">92</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
 
 </div>
 </div>
@@ -392,6 +387,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00093">93</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a086b9638e6e8ef218e96b33bc6a1ebc2"></a>
@@ -412,22 +409,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00096">96</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
-<li><a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html">UBTGActionWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:32 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

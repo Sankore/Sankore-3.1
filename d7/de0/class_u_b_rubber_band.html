@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/de0/class_u_b_rubber_band.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d7/de0/class_u_b_rubber_band.html','..
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -160,7 +140,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a89293edb5f82bde68c52111bf3fabb3d"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a89293edb5f82bde68c52111bf3fabb3d">mLastPressedPoint</a></td></tr>
 <tr class="memitem:af617e161de7fe8c8bb9b38d52528ee72"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#af617e161de7fe8c8bb9b38d52528ee72">mLastMousePos</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00029">29</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a089e134071ca496f8f77a815bdac7672"></a>
 <div class="memitem">
 <div class="memproto">
@@ -200,6 +183,8 @@ Private Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00038">38</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a>,</div>
 <div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a312d1fc9d3a3f1b6ca0436af0580b684">Top</a>,</div>
@@ -238,6 +223,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html">UBRubberBand.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QRubberBand(s, p)</div>
 <div class="line">    , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a>(<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a>)</div>
 <div class="line">    , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>(20)</div>
@@ -283,6 +270,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html#l00064">64</a> of file <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html">UBRubberBand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a>)</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a>;</div>
@@ -312,6 +301,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html#l00070">70</a> of file <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html">UBRubberBand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a>)</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a>;</div>
@@ -422,6 +413,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html">UBRubberBand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a8c8c34ee2bf7a75bd4f62fd88c877caf">determineResizingMode</a>(event-&gt;pos());</div>
 <div class="line"></div>
@@ -541,6 +534,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html#l00149">149</a> of file <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html">UBRubberBand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a> = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a8c8c34ee2bf7a75bd4f62fd88c877caf">determineResizingMode</a>(event-&gt;pos());</div>
 <div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a> = <span class="keyword">true</span>;</div>
@@ -587,6 +582,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html#l00252">252</a> of file <a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html">UBRubberBand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a> = <span class="keyword">false</span>;</div>
@@ -614,6 +611,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00057">57</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af617e161de7fe8c8bb9b38d52528ee72"></a>
@@ -633,6 +632,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00062">62</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
 
 </div>
 </div>
@@ -654,6 +655,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00061">61</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2d421a381dac3a7e275dc35fc008515f"></a>
@@ -673,6 +676,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00060">60</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
 
 </div>
 </div>
@@ -694,6 +699,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00059">59</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afa4cbfa89310361d986055315200ab25"></a>
@@ -714,22 +721,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html#l00058">58</a> of file <a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a></li>
-<li><a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp.html">UBRubberBand.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp_source.html">UBRubberBand.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html">UBRubberBand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:31 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

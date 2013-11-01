@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/d7e/_u_b_spinning_wheel_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('de/d7e/_u_b_spinning_wheel_8cpp_source
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBSpinningWheel.cpp</div>  </div>
@@ -166,7 +150,7 @@ $(document).ready(function(){initNavTree('de/d7e/_u_b_spinning_wheel_8cpp_source
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    pen.setCapStyle(Qt::RoundCap);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    painter.setPen(pen);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    painter.rotate(30 * (mPosition % 12));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    painter.rotate(30 * (<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#adcd4a85ae5e2115d61ad2a8e6c2f3fb5">mPosition</a> % 12));</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 12; i++)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
@@ -181,18 +165,18 @@ $(document).ready(function(){initNavTree('de/d7e/_u_b_spinning_wheel_8cpp_source
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#acbcc339c4ad8ac331812ef58581e8264">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#acbcc339c4ad8ac331812ef58581e8264">UBSpinningWheel::startAnimation</a>()</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (mTimerID == 0)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> == 0)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        mTimerID = startTimer(42);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> = startTimer(42);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#afce6e8912a9ea4ce878ea2a0dcd47d7e">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#afce6e8912a9ea4ce878ea2a0dcd47d7e">UBSpinningWheel::stopAnimation</a>()</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (mTimerID != 0)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> != 0)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        killTimer(mTimerID);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        mTimerID = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        killTimer(<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> = 0;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
@@ -200,7 +184,7 @@ $(document).ready(function(){initNavTree('de/d7e/_u_b_spinning_wheel_8cpp_source
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    Q_UNUSED(event);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    mPosition.ref();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#adcd4a85ae5e2115d61ad2a8e6c2f3fb5">mPosition</a>.ref();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    update();</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
@@ -208,15 +192,11 @@ $(document).ready(function(){initNavTree('de/d7e/_u_b_spinning_wheel_8cpp_source
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../de/d7e/_u_b_spinning_wheel_8cpp.html">UBSpinningWheel.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

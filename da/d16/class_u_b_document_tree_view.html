@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/d16/class_u_b_document_tree_view.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('da/d16/class_u_b_document_tree_view.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -149,7 +129,10 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a65f30c6518ff4413859eeeb4046bd94d"><td class="memItemLeft" align="right" valign="top">Qt::DropAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#a65f30c6518ff4413859eeeb4046bd94d">acceptableAction</a> (const QModelIndex &amp;dragIndex, const QModelIndex &amp;atIndex)</td></tr>
 <tr class="memitem:a95cd9658a133984334dd6ebd43ca9bf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#a95cd9658a133984334dd6ebd43ca9bf6">updateIndexEnvirons</a> (const QModelIndex &amp;index)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00247">247</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3ef4cb8dc8a2d81efffa042829a244e2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +146,8 @@ Private Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01067">1067</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                      : QTreeView(parent)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(<span class="stringliteral">&quot;UBDocumentTreeView&quot;</span>);</div>
@@ -216,6 +201,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01244">1244</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;inModel(dragIndex)) {</div>
 <div class="line">        <span class="keywordflow">if</span> (atIndex == <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;trashIndex() || <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;inTrash(atIndex)) {</div>
@@ -260,6 +247,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01266">1266</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    resizeColumnToContents(0);</div>
 <div class="line"></div>
@@ -304,6 +293,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01116">1116</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a28868926ec451f2bb32178e5d53edaa9">QTreeView::dragEnterEvent</a>(event);</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
@@ -333,6 +324,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01123">1123</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = qobject_cast&lt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a>*&gt;(model());</div>
@@ -372,6 +365,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01131">1131</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> acceptIt = <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#aae247f5fa6b6023ee9d2bb3c6834b26d">isAcceptable</a>(selectedIndexes().first(), indexAt(event-&gt;pos()));</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;mimeData()-&gt;hasFormat(<a class="code" href="../../d8/d81/class_u_b_application.html#ad4f533c7971ce1c441b13a1b61e17525">UBApplication::mimeTypeUniboardPage</a>)) {</div>
@@ -424,6 +419,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01152">1152</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;ignore();</div>
 <div class="line">    <span class="keyword">event</span>-&gt;setDropAction(Qt::IgnoreAction);</div>
@@ -521,6 +518,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00268">268</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> qobject_cast&lt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a>*&gt;(model());}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -565,6 +564,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01104">1104</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(min);</div>
 <div class="line">    Q_UNUSED(max);</div>
@@ -609,6 +610,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01229">1229</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!dragIndex.isValid()) {</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -674,6 +677,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01098">1098</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(pOldIndex)</div>
 <div class="line">    <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#ab603fd056fbd771f92b8e3008e745b78">setSelectedAndExpanded</a>(pNewIndex, true);</div>
@@ -711,6 +716,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01219">1219</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2ce720d0c684045f200f2563022139cc">QTreeView::paintEvent</a>(event);</div>
 <div class="line">}</div>
@@ -754,6 +761,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01224">1224</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a01af3b2ab4276f23082e7b11b57a4581">QTreeView::rowsAboutToBeRemoved</a>(parent, start, end);</div>
 <div class="line">}</div>
@@ -791,6 +800,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01077">1077</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!pIndex.isValid()) {</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -843,6 +854,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01258">1258</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRect updateRect = visualRect(index);</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> multipler = 3;</div>
@@ -862,19 +875,15 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html">UBDocumentTreeView</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:23 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -26,8 +26,8 @@ var searchData=
   ['scalesize',['scaleSize',['../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55',1,'UBGraphicsTextItemDelegate']]],
   ['scaletextsize',['scaleTextSize',['../d9/dbd/class_u_b_graphics_text_item_delegate.html#a31031f4a0ecc99956015db236d973ac6',1,'UBGraphicsTextItemDelegate']]],
   ['scaletofitdocumentsize',['scaleToFitDocumentSize',['../dc/db2/class_u_b_graphics_scene.html#ad5c308fdec8c2a7656b1caa35ece19e4',1,'UBGraphicsScene']]],
-  ['scaling',['Scaling',['../d5/ded/class_u_b_graphics_delegate_frame.html#aa3195d439757dd154944daea507f5b94aa2b91fa8ff5510f3dd719d0a4f3b2e3f',1,'UBGraphicsDelegateFrame::Scaling()'],['../d0/d83/classmerge__lib_1_1_scaling.html#ae86e47901770e3e37db2c1b3a4484fd8',1,'merge_lib::Scaling::Scaling()']]],
   ['scaling',['Scaling',['../d0/d83/classmerge__lib_1_1_scaling.html',1,'merge_lib']]],
+  ['scaling',['Scaling',['../d5/ded/class_u_b_graphics_delegate_frame.html#aa3195d439757dd154944daea507f5b94aa2b91fa8ff5510f3dd719d0a4f3b2e3f',1,'UBGraphicsDelegateFrame::Scaling()'],['../d0/d83/classmerge__lib_1_1_scaling.html#ae86e47901770e3e37db2c1b3a4484fd8',1,'merge_lib::Scaling::Scaling()']]],
   ['scanall',['scanAll',['../d5/db4/class_u_b_features_computing_thread.html#a81ae9e8a075bd208b01a5a7eed2bf076',1,'UBFeaturesComputingThread']]],
   ['scancategory',['scanCategory',['../d5/db4/class_u_b_features_computing_thread.html#ac17a85b57f0817af9c0c3733de201c75',1,'UBFeaturesComputingThread::scanCategory()'],['../d8/d33/class_u_b_features_controller.html#a1144dedb4b331da981b249c8178dd925',1,'UBFeaturesController::scanCategory()'],['../da/d07/class_u_b_features_central_widget.html#a9b95c22434b5b29fec0fc4f71600a235',1,'UBFeaturesCentralWidget::scanCategory()']]],
   ['scandirs',['scanDirs',['../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a0d84a4e878308b260d4f8eb842ec9392',1,'UBForeignObjectsHandler.cpp']]],
@@ -130,7 +130,7 @@ var searchData=
   ['sessiontitle',['sessionTitle',['../db/d66/class_u_b_settings.html#a541db9f46c2319a1a9f43052cf338abf',1,'UBSettings']]],
   ['sessiontype',['sessionType',['../db/d66/class_u_b_settings.html#ad3493cc837846b1736c44fc02658420f',1,'UBSettings']]],
   ['set',['set',['../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed',1,'UBSetting']]],
-  ['set_5fstyle_5fsheet',['SET_STYLE_SHEET',['../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656',1,'UBGlobals.h']]],
+  ['set_5fstyle_5fsheet',['SET_STYLE_SHEET',['../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656',1,'UBGlobals.h']]],
   ['setacceptpolicy',['setAcceptPolicy',['../dd/d20/class_u_b_cookie_jar.html#ab6b6cf7752cbdd6287fd55f185933bf6',1,'UBCookieJar']]],
   ['setaction',['setAction',['../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a6cd80c1431c47bd41e8f2c935cd43da7',1,'UBGraphicsGroupContainerItemDelegate::setAction()'],['../dd/dd5/class_u_b_graphics_item_delegate.html#a3b597fdf7d09e24866416826075c4381',1,'UBGraphicsItemDelegate::setAction()']]],
   ['setactions',['setActions',['../de/dc5/class_u_b_action_palette.html#ae928fec429c08192e49470821f3006f4',1,'UBActionPalette']]],
@@ -663,7 +663,5 @@ var searchData=
   ['syoutubedeveloperkey',['sYouTubeDeveloperKey',['../df/d84/class_u_b_you_tube_publisher.html#a7a15da9511cb406711044619ea04bc9a',1,'UBYouTubePublisher']]],
   ['systemlanguage',['systemLanguage',['../d4/d99/class_u_b_platform_utils.html#a160873cff39be9402ffeb0aa978e101c',1,'UBPlatformUtils']]],
   ['systemscalefactor',['systemScaleFactor',['../d7/d62/class_u_b_board_controller.html#a6f46e3fe2ffde7ca74f50f175504c229',1,'UBBoardController']]],
-  ['systemscalefactorchanged',['systemScaleFactorChanged',['../d7/d62/class_u_b_board_controller.html#a696505e51a5a2c14cfaaffc2f2be590d',1,'UBBoardController']]],
-  ['ubglobals_2eh',['UBGlobals.h',['../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html',1,'']]],
-  ['ubglobals_2eh',['UBGlobals.h',['../d0/d8b/_sankore-3_81_2plugins_2cffadaptor_2src_2_u_b_globals_8h.html',1,'']]]
+  ['systemscalefactorchanged',['systemScaleFactorChanged',['../d7/d62/class_u_b_board_controller.html#a696505e51a5a2c14cfaaffc2f2be590d',1,'UBBoardController']]]
 ];

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">LZWDecode.cpp</div>  </div>
@@ -151,13 +135,13 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      _curSequenceLength(0)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   clearTable();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">clearTable</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a7033f5929123a8cfdf9d5ceff69512b6">   50</a></span>&#160;<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a7033f5929123a8cfdf9d5ceff69512b6">LZWDecode::~LZWDecode</a>()</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keywordflow">if</span>( _predict ) </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keywordflow">if</span>( <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a> ) </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keyword">delete</span> _predict;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keyword">delete</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
@@ -176,52 +160,52 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) head.find(<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#aa827dbf05230cde8051f66721ee78c47">FilterPredictor::DECODE_PARAM_TOKEN</a>)  != -1 )</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;         _predict = <span class="keyword">new</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         _predict-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab45acfb2cd146059037a607f4d008df7">initialize</a>(objectWithStream);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         _earlyChange = _predict-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab633eb1564a580644998e42bb429e4ef">getEarlyChange</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a>-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab45acfb2cd146059037a607f4d008df7">initialize</a>(objectWithStream);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aaadd22c587791a262f0c3304c186a2f6">_earlyChange</a> = <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a>-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab633eb1564a580644998e42bb429e4ef">getEarlyChange</a>();</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      _readBits = 0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      _readBuf = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      clearTable();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aab00e5959ccaf5683fb36d8149dccd29">_readBits</a> = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ad749cc6fb08a2c9881a25d81f0b870ee">_readBuf</a> = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">clearTable</a>();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> LZWDecode::clearTable() </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">LZWDecode::clearTable</a>() </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   _nextCode = 258;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   _bitsToRead = 9;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   _curSequenceLength = 0;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   _first = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> = 258;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a> = 9;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a> = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a3a922ad3cf0e4f6d73a7c27b930da7fa">_first</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">int</span> LZWDecode::getCode() </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6cf0b21c2af0d4c9a1c4b285b51d6573">   91</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6cf0b21c2af0d4c9a1c4b285b51d6573">LZWDecode::getCode</a>() </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   <span class="keywordtype">int</span> c = 0;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   <span class="keywordtype">int</span> code = 0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <span class="keywordflow">while</span> (_readBits &lt; _bitsToRead) </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <span class="keywordflow">while</span> (<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aab00e5959ccaf5683fb36d8149dccd29">_readBits</a> &lt; <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a>) </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">if</span>( _curSymbolIndex &lt; _encoded.size() )</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">if</span>( <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a00063343f79462b05c78c6bbd8d45a2a">_curSymbolIndex</a> &lt; <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a74ac13e1f3a105cdc28af148d238929e">_encoded</a>.size() )</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;         c = _encoded[_curSymbolIndex++];</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;         c = <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a74ac13e1f3a105cdc28af148d238929e">_encoded</a>[<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a00063343f79462b05c78c6bbd8d45a2a">_curSymbolIndex</a>++];</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;         <span class="keywordflow">return</span> EOF;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      _readBuf = (_readBuf &lt;&lt; 8) | (c &amp; 0xff);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      _readBits += 8;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ad749cc6fb08a2c9881a25d81f0b870ee">_readBuf</a> = (<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ad749cc6fb08a2c9881a25d81f0b870ee">_readBuf</a> &lt;&lt; 8) | (c &amp; 0xff);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aab00e5959ccaf5683fb36d8149dccd29">_readBits</a> += 8;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   code = (_readBuf &gt;&gt; (_readBits - _bitsToRead)) &amp; ((1 &lt;&lt; _bitsToRead) - 1);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   _readBits -= _bitsToRead;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   code = (<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ad749cc6fb08a2c9881a25d81f0b870ee">_readBuf</a> &gt;&gt; (<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aab00e5959ccaf5683fb36d8149dccd29">_readBits</a> - <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a>)) &amp; ((1 &lt;&lt; <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a>) - 1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aab00e5959ccaf5683fb36d8149dccd29">_readBits</a> -= <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   <span class="keywordflow">return</span> code;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// Method performs LZW decoding</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ae9e21b398f133e575c6b1e11a8f7ea30">  115</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ae9e21b398f133e575c6b1e11a8f7ea30">LZWDecode::decode</a>(std::string &amp; encoded)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;   _curSymbolIndex = 0;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   _encoded = encoded;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a00063343f79462b05c78c6bbd8d45a2a">_curSymbolIndex</a> = 0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a74ac13e1f3a105cdc28af148d238929e">_encoded</a> = encoded;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;   <span class="comment">// LZW decoding</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;   std::string decoded;</div>
@@ -237,10 +221,10 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;   <span class="keywordtype">unsigned</span> curSequence[4097];  </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;   <span class="keywordtype">int</span> nextLength = 0;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;   clearTable();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;   <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">clearTable</a>();</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;   <span class="keywordflow">while</span>(1)</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;   {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="keywordtype">int</span> code = getCode();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="keywordtype">int</span> code = <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6cf0b21c2af0d4c9a1c4b285b51d6573">getCode</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">if</span>( code == EOF || code == 257 )</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;         <span class="comment">// finish</span></div>
@@ -248,37 +232,37 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      }</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <span class="keywordflow">if</span>( code == 256 )</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;         clearTable();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">clearTable</a>();</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;         <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">if</span>( _nextCode &gt;= 4997 )</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">if</span>( <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> &gt;= 4997 )</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      {</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;         std::cout&lt;&lt;<span class="stringliteral">&quot;Bad LZW stream - unexpected clearTable\n&quot;</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;         clearTable();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">clearTable</a>();</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;         <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      nextLength = _curSequenceLength + 1;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      nextLength = <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a> + 1;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="keywordflow">if</span>( code &lt; 256 )</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      {</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;         curSequence[ 0 ] = code;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;         _curSequenceLength = 1;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a> = 1;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>( code &lt; _nextCode )</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>( code &lt; <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> )</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;         <span class="comment">//lets take sequence from table</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;         _curSequenceLength = decTable[code].length;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a> = decTable[code].length;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;         <span class="keywordtype">int</span> j = code;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;         <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = _curSequenceLength - 1; i &gt; 0; i--)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;         <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a> - 1; i &gt; 0; i--)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;         {</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            curSequence[ i ] = decTable[j].tail;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            j = decTable[ j ].head;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;         }</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;         curSequence[0] = j;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>( code == _nextCode )</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span>( code == <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> )</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        curSequence[ _curSequenceLength ] = newChar;  </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;         ++_curSequenceLength;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        curSequence[ <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a> ] = newChar;  </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;         ++<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a>;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      }</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      {</div>
@@ -286,34 +270,34 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;         <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      }</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      newChar = curSequence[0];      </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="keywordflow">if</span>( _first ) </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="keywordflow">if</span>( <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a3a922ad3cf0e4f6d73a7c27b930da7fa">_first</a> ) </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;         _first = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;         <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a3a922ad3cf0e4f6d73a7c27b930da7fa">_first</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      }</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      {</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;         <span class="comment">// lets build decoding table</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;         decTable[ _nextCode ].length = nextLength;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;         decTable[ _nextCode ].head = prevCode;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;         decTable[ _nextCode ].tail = newChar;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;         ++ _nextCode;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;         decTable[ <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> ].length = nextLength;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;         decTable[ <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> ].head = prevCode;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;         decTable[ <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> ].tail = newChar;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;         ++ <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a>;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;         <span class="comment">// processing of PDF LZW parameter</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;         <span class="keywordflow">if</span> (_nextCode + _earlyChange == 512)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;         <span class="keywordflow">if</span> (<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> + <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aaadd22c587791a262f0c3304c186a2f6">_earlyChange</a> == 512)</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;         {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            _bitsToRead = 10;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a> = 10;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;         }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_nextCode + _earlyChange == 1024)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> + <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aaadd22c587791a262f0c3304c186a2f6">_earlyChange</a> == 1024)</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;         {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            _bitsToRead = 11;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a> = 11;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;         }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_nextCode + _earlyChange == 2048)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a> + <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aaadd22c587791a262f0c3304c186a2f6">_earlyChange</a> == 2048)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;         {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            _bitsToRead = 12;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a> = 12;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;         }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      }</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      prevCode = code;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="comment">// put current sequence to output stream</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0;i &lt; _curSequenceLength;i++)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0;i &lt; <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a>;i++)</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      {</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;         decoded += (char)curSequence[ i ];</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      }</div>
@@ -321,9 +305,9 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;   encoded = decoded;</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;   <span class="comment">// if predictor exists for that object, then lets decode it</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;   <span class="keywordflow">if</span>( _predict )</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;   <span class="keywordflow">if</span>( <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a> )</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;   {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      _predict-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a1b9360122a5f9ad101a11614029da051">decode</a>(encoded);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a>-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a1b9360122a5f9ad101a11614029da051">decode</a>(encoded);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;   }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;   <span class="keywordflow">return</span> <span class="keyword">true</span>; </div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
@@ -331,15 +315,11 @@ $(document).ready(function(){initNavTree('da/d98/_l_z_w_decode_8cpp_source.html'
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../da/d98/_l_z_w_decode_8cpp.html">LZWDecode.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

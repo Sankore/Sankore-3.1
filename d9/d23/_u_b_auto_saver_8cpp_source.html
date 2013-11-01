@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d9/d23/_u_b_auto_saver_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d9/d23/_u_b_auto_saver_8cpp_source.htm
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBAutoSaver.cpp</div>  </div>
@@ -185,28 +169,28 @@ $(document).ready(function(){initNavTree('d9/d23/_u_b_auto_saver_8cpp_source.htm
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#ab01926a852e5b362695e713b0a05f924">   80</a></span>&#160;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#ab01926a852e5b362695e713b0a05f924">UBAutoSaver::~UBAutoSaver</a>()</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (mTimer.isActive())</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.isActive())</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;AutoSaver: still active when destroyed, changes not saved.&quot;</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">UBAutoSaver::changeOccurred</a>()</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (mFirstChange.isNull())</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        mFirstChange.start();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a>.isNull())</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a>.start();</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (mFirstChange.elapsed() &gt; <a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#a26c50ab923a8c13c3c032940dfbde38f">MAXWAIT</a>)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a>.elapsed() &gt; <a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#a26c50ab923a8c13c3c032940dfbde38f">MAXWAIT</a>)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        mTimer.start(<a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#ae9d8b569014bf7c467f90fe98a0f844b">AUTOSAVE_IN</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.start(<a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#ae9d8b569014bf7c467f90fe98a0f844b">AUTOSAVE_IN</a>, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#ac8075c3307a9c465da38c2d9b70dbf65">  101</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#ac8075c3307a9c465da38c2d9b70dbf65">UBAutoSaver::timerEvent</a>(QTimerEvent *event)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (event-&gt;timerId() == mTimer.timerId())</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (event-&gt;timerId() == <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.timerId())</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
@@ -219,11 +203,11 @@ $(document).ready(function(){initNavTree('d9/d23/_u_b_auto_saver_8cpp_source.htm
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">UBAutoSaver::saveIfNeccessary</a>()</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (!mTimer.isActive())</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.isActive())</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    mTimer.stop();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    mFirstChange = QTime();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.stop();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a> = QTime();</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (!QMetaObject::invokeMethod(parent(), <span class="stringliteral">&quot;save&quot;</span>, Qt::DirectConnection))</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
@@ -232,15 +216,11 @@ $(document).ready(function(){initNavTree('d9/d23/_u_b_auto_saver_8cpp_source.htm
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li><li class="navelem"><a class="el" href="../../d9/d23/_u_b_auto_saver_8cpp.html">UBAutoSaver.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

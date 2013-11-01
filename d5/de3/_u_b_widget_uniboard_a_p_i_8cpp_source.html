@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4ece80c69b6edd07df782a5802cea5a3.html">api</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBWidgetUniboardAPI.cpp</div>  </div>
@@ -193,11 +177,11 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (w3CGraphicsWidget)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        mMessagesAPI = <span class="keyword">new</span> <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html">UBWidgetMessageAPI</a>(w3CGraphicsWidget);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        mDatastoreAPI = <span class="keyword">new</span> <a class="code" href="../../df/d36/class_u_b_datastore_a_p_i.html">UBDatastoreAPI</a>(w3CGraphicsWidget);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a03110e436bd8d67f07cd90fa7650f7c6">mMessagesAPI</a> = <span class="keyword">new</span> <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html">UBWidgetMessageAPI</a>(w3CGraphicsWidget);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a3ee7308a65df7fc717881dda90a9e335">mDatastoreAPI</a> = <span class="keyword">new</span> <a class="code" href="../../df/d36/class_u_b_datastore_a_p_i.html">UBDatastoreAPI</a>(w3CGraphicsWidget);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(downloadFinished(<span class="keywordtype">bool</span>,<a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>,QByteArray)), <span class="keyword">this</span>, SLOT(onDownloadFinished(<span class="keywordtype">bool</span>,<a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>,QByteArray)));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(downloadFinished(<span class="keywordtype">bool</span>,<a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>,QByteArray)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a94c2f421cbddda472dc2ab6791acfa46">onDownloadFinished</a>(<span class="keywordtype">bool</span>,<a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>,QByteArray)));</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
@@ -208,19 +192,19 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;QObject* <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a1c971367d27f8cef5c2ef61daa402beb">UBWidgetUniboardAPI::messages</a>()</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> mMessagesAPI;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a03110e436bd8d67f07cd90fa7650f7c6">mMessagesAPI</a>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;QObject* <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a45fed0e3d59f3d3e9a438c08ca4e216c">UBWidgetUniboardAPI::datastore</a>()</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> mDatastoreAPI;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a3ee7308a65df7fc717881dda90a9e335">mDatastoreAPI</a>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a604a13d819109e92582be7da921cfae3">  115</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a604a13d819109e92582be7da921cfae3">UBWidgetUniboardAPI::setTool</a>(<span class="keyword">const</span> QString&amp; toolString)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">const</span> QString lower = toolString.toLower();</div>
@@ -250,7 +234,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
 <div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a14d16c4c2e1e817d2dcbf435cac487d5">  145</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a14d16c4c2e1e817d2dcbf435cac487d5">UBWidgetUniboardAPI::setPenColor</a>(<span class="keyword">const</span> QString&amp; penColor)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
@@ -279,7 +263,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
 <div class="line"><a name="l00174"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a187ba2eec4390879bff5cbafa4f42046">  174</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a187ba2eec4390879bff5cbafa4f42046">UBWidgetUniboardAPI::setMarkerColor</a>(<span class="keyword">const</span> QString&amp; penColor)</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
@@ -313,7 +297,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// download url should be moved to the scene from the controller</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a358f3f88d1fa9e41620170d76a806f93">downloadURL</a>(QUrl(pUrl), QString(), QPointF(x, y), QSize(width, height), background);</div>
@@ -323,8 +307,8 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
 <div class="line"><a name="l00218"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a62c626fae4d23f4dc53a9e8b3b11a589">  218</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a62c626fae4d23f4dc53a9e8b3b11a589">UBWidgetUniboardAPI::setBackground</a>(<span class="keywordtype">bool</span> pIsDark, <span class="keywordtype">bool</span> pIsCrossed)</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (mScene)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad34fd16dd510a1a28cf2df3227a57a14">setBackground</a>(pIsDark, pIsCrossed);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad34fd16dd510a1a28cf2df3227a57a14">setBackground</a>(pIsDark, pIsCrossed);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
@@ -334,8 +318,8 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        || qIsInf(x) || qIsInf(y))</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">if</span> (mScene)</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(QPointF(x, y));</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(QPointF(x, y));</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
@@ -345,8 +329,8 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        || qIsInf(x) || qIsInf(y) || qIsInf(pWidth))</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (mScene)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a539db7c6773c2f0f560b1be082e71c8e">drawLineTo</a>(QPointF(x, y), pWidth,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a539db7c6773c2f0f560b1be082e71c8e">drawLineTo</a>(QPointF(x, y), pWidth,</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;stylusTool() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>);</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
@@ -357,15 +341,15 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;       || qIsInf(x) || qIsInf(y) || qIsInf(pWidth))</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;       <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> (mScene)</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#aa337ae1428c734e7b4bef8a7404c926b">eraseLineTo</a>(QPointF(x, y), pWidth);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#aa337ae1428c734e7b4bef8a7404c926b">eraseLineTo</a>(QPointF(x, y), pWidth);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
 <div class="line"><a name="l00259"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a4c4dd082d6ed9397e4658a41f78638f5">  259</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a4c4dd082d6ed9397e4658a41f78638f5">UBWidgetUniboardAPI::clear</a>()</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (mScene)</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a6e861912547654e47c26f7d8e72201e8">clearContent</a>(<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a35c5d1a0571964d92e864db92e29d5bdaa6eb8805c739ae37c1ccc642e349d64a">UBGraphicsScene::clearItemsAndAnnotations</a>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a6e861912547654e47c26f7d8e72201e8">clearContent</a>(<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a35c5d1a0571964d92e864db92e29d5bdaa6eb8805c739ae37c1ccc642e349d64a">UBGraphicsScene::clearItemsAndAnnotations</a>);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
@@ -376,7 +360,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;       <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ade5522bea3f3045a0da1dda6853b3cce">zoom</a>(factor, QPointF(x, y));</div>
@@ -389,7 +373,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;       || qIsInf(x) || qIsInf(y))</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;       <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#adbaa867e0f26de80826355c25fe41d82">centerOn</a>(QPointF(x, y));</div>
@@ -402,7 +386,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        || qIsInf(x) || qIsInf(y))</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a313ec9c04c62913c305ac521ae649467">handScroll</a>(x, y);</div>
@@ -416,37 +400,37 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        || qIsInf(x) || qIsInf(y))</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (mScene)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#aebfa0ab541a75af5b21b384e4a05c00e">addTextWithFont</a>(text, QPointF(x, y), size, font, bold, italic);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#aebfa0ab541a75af5b21b384e4a05c00e">addTextWithFont</a>(text, QPointF(x, y), size, font, bold, italic);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keywordtype">int</span> UBWidgetUniboardAPI::pageCount()</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a87a3fd7ed838965a27616fc410c218eb">UBWidgetUniboardAPI::pageCount</a>()</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (mScene &amp;&amp; mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a718297b6e060113fee9e8c7e822f6d39">document</a>())</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span> mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a718297b6e060113fee9e8c7e822f6d39">document</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>();</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a> &amp;&amp; <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a718297b6e060113fee9e8c7e822f6d39">document</a>())</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a718297b6e060113fee9e8c7e822f6d39">document</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>();</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a43780354b20b4749b16e677c4f014f85">UBWidgetUniboardAPI::currentPageNumber</a>()</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#ad01a56b49c536c6e5b7dd955520081ba">UBWidgetUniboardAPI::currentPageNumber</a>()</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;{</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// TODO UB 4.x widget find a better way to get the current page number</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a82e3690c789dc021cdb134e3704c7b7a">activeSceneIndex</a>() + 1;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;QString UBWidgetUniboardAPI::getObjDir()</div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a8dff50a7ff70ab9c27807a8a97fa53f1">  341</a></span>&#160;QString <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a8dff50a7ff70ab9c27807a8a97fa53f1">UBWidgetUniboardAPI::getObjDir</a>()</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;{</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">return</span> mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae72c192f0c682aa4f058d63e5f4be45e">getOwnFolder</a>().toLocalFile() + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a9ee22f25f3a2727b5f64ba9620b7b9d0">objectsPath</a> + <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae72c192f0c682aa4f058d63e5f4be45e">getOwnFolder</a>().toLocalFile() + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a9ee22f25f3a2727b5f64ba9620b7b9d0">objectsPath</a> + <span class="stringliteral">&quot;/&quot;</span>;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
 <div class="line"><a name="l00346"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a4be78c6409ca79ad472a68079cf1ec24">  346</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a4be78c6409ca79ad472a68079cf1ec24">UBWidgetUniboardAPI::showMessage</a>(<span class="keyword">const</span> QString&amp; message)</div>
@@ -457,7 +441,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
 <div class="line"><a name="l00352"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a271e5811f036be68281a1384aabd382e">  352</a></span>&#160;QString <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a271e5811f036be68281a1384aabd382e">UBWidgetUniboardAPI::pageThumbnail</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> pageNumber)</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;{</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != mScene)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene() != <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#af91e12d4db1f81e05fbd80e690987e3a">mScene</a>)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *doc = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>();</div>
@@ -481,27 +465,27 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        || qIsInf(width) || qIsInf(height))</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> (mGraphicsWidget)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>)</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a7c8b82feec47cdc2232bfab7faa246ac">resize</a>(width, height);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a7c8b82feec47cdc2232bfab7faa246ac">resize</a>(width, height);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;}</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
 <div class="line"><a name="l00385"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a9a6c2b3270887c5a8ff1cfb6e9f530a6">  385</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a9a6c2b3270887c5a8ff1cfb6e9f530a6">UBWidgetUniboardAPI::setPreference</a>(<span class="keyword">const</span> QString&amp; key, QString value)</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">if</span> (mGraphicsWidget)</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>)</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a52b2fd4a9042146506fd4175de913988">setPreference</a>(key, value);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a52b2fd4a9042146506fd4175de913988">setPreference</a>(key, value);</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;</div>
 <div class="line"><a name="l00394"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aa0e0266fdfa1b04fe5ea36c9df438c94">  394</a></span>&#160;QString <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aa0e0266fdfa1b04fe5ea36c9df438c94">UBWidgetUniboardAPI::preference</a>(<span class="keyword">const</span> QString&amp; key , <span class="keyword">const</span> QString&amp; pDefault)</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;{</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">if</span> (mGraphicsWidget &amp;&amp; mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a8f6c733f621b9388f7b01ed60e0bac19">preferences</a>().contains(key))</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a> &amp;&amp; <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a8f6c733f621b9388f7b01ed60e0bac19">preferences</a>().contains(key))</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    {</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">return</span> mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a5ef1829e940853a2eaac69c250db56e8">preference</a>(key);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a5ef1829e940853a2eaac69c250db56e8">preference</a>(key);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    {</div>
@@ -514,17 +498,17 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;{</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    QStringList keys;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">if</span> (mGraphicsWidget)</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        keys = mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a8f6c733f621b9388f7b01ed60e0bac19">preferences</a>().keys();</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>)</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        keys = <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a8f6c733f621b9388f7b01ed60e0bac19">preferences</a>().keys();</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">return</span> keys;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;QString UBWidgetUniboardAPI::uuid()</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;QString <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aa51503e124e819ff6fa3d8ae727785bb">UBWidgetUniboardAPI::uuid</a>()</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;{</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">if</span> (mGraphicsWidget)</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#af1f88e3aef7d3360b2302ebe2f6c9627">UBStringUtils::toCanonicalUuid</a>(mGraphicsWidget-&gt;<a class="code" href="../../d8/d1e/class_u_b_item.html#a242c8e4390dc3244bd42023b349b042b">uuid</a>());</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>)</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#af1f88e3aef7d3360b2302ebe2f6c9627">UBStringUtils::toCanonicalUuid</a>(<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d8/d1e/class_u_b_item.html#a242c8e4390dc3244bd42023b349b042b">uuid</a>());</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;}</div>
@@ -535,14 +519,14 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">return</span> QLocale().name();</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;QString UBWidgetUniboardAPI::lang()</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;QString <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a370bbae9a5b1c324958a09ec21f7b93b">UBWidgetUniboardAPI::lang</a>()</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;{</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    QString lang = QLocale().name();</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    QString <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a370bbae9a5b1c324958a09ec21f7b93b">lang</a> = QLocale().name();</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">if</span> (lang.length() &gt; 2)</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        lang[2] = QLatin1Char(<span class="charliteral">&#39;-&#39;</span>);</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordflow">return</span> lang;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a370bbae9a5b1c324958a09ec21f7b93b">lang</a>;</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;}</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;</div>
 <div class="line"><a name="l00442"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aef1ab30622e14e2a0d4830d1e6be64a1">  442</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aef1ab30622e14e2a0d4830d1e6be64a1">UBWidgetUniboardAPI::returnStatus</a>(<span class="keyword">const</span> QString&amp; method, <span class="keyword">const</span> QString&amp; status)</div>
@@ -586,9 +570,9 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;</div>
 <div class="line"><a name="l00481"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a705c72538c5b4971d3e7bfacae9173d8">  481</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a705c72538c5b4971d3e7bfacae9173d8">UBWidgetUniboardAPI::enableDropOnWidget</a>(<span class="keywordtype">bool</span> enable)</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;{</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordflow">if</span> (mGraphicsWidget)</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>)</div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    {</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        mGraphicsWidget-&gt;setAcceptDrops(enable);</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;setAcceptDrops(enable);</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    }</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;}</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;</div>
@@ -600,8 +584,8 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    QString contentType;</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordtype">bool</span> downloaded = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    QGraphicsView *tmpView = mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad7cad83001340bbfd1ec361a09f6a454">scene</a>()-&gt;views().at(0);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    QPoint dropPoint(mGraphicsWidget-&gt;mapFromScene(tmpView-&gt;mapToScene(event-&gt;pos().toPoint())).toPoint());</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    QGraphicsView *tmpView = <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad7cad83001340bbfd1ec361a09f6a454">scene</a>()-&gt;views().at(0);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    QPoint dropPoint(<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;mapFromScene(tmpView-&gt;mapToScene(event-&gt;pos().toPoint())).toPoint());</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    Qt::DropActions dropActions = <span class="keyword">event</span>-&gt;possibleActions();</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    Qt::MouseButtons dropMouseButtons = <span class="keyword">event</span>-&gt;buttons();</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    Qt::KeyboardModifiers dropModifiers = <span class="keyword">event</span>-&gt;modifiers();</div>
@@ -632,7 +616,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ae81de2ab2b3e04bf4e04e02a85e0026d">dropMouseButtons</a> = dropMouseButtons;</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ac01c63c05c6449d85ab1eb842a3c1804">dropModifiers</a> = dropModifiers;</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            registerIDWidget(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;addFileToDownload(desc));</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a571b6f1f9c79c7b40ee17191d14bdaae">registerIDWidget</a>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;addFileToDownload(desc));</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        }</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;</div>
@@ -645,8 +629,8 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            QString extention = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8dcbcd889a2c79495470ff11f955c0b6">UBFileSystemUtils::extension</a>(fileName);</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;            contentType = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a272b08b8f8907091333982fb53a7aa2a">UBFileSystemUtils::mimeTypeFromFileName</a>(fileName);</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            <span class="keywordflow">if</span> (supportedTypeHeader(contentType)) {</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                destFileName = getObjDir() + QUuid::createUuid().toString() + <span class="stringliteral">&quot;.&quot;</span> + extention;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#ac23af5620148eb0fb8b06679d5e73dbe">supportedTypeHeader</a>(contentType)) {</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                destFileName = <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a8dff50a7ff70ab9c27807a8a97fa53f1">getObjDir</a>() + QUuid::createUuid().toString() + <span class="stringliteral">&quot;.&quot;</span> + extention;</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a21fb5e77a59d910b4aa94a0e71f04578">UBFileSystemUtils::copyFile</a>(fileName, destFileName)) {</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                    qDebug() &lt;&lt; <span class="stringliteral">&quot;can&#39;t copy from&quot;</span> &lt;&lt; fileName &lt;&lt; <span class="stringliteral">&quot;to&quot;</span> &lt;&lt; destFileName;</div>
@@ -658,16 +642,16 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        }</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    }</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    qDebug() &lt;&lt; destFileName;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    QString mimeText = createMimeText(downloaded, contentType, destFileName);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    QString mimeText = <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a304617677e560db286db8cab9e047641">createMimeText</a>(downloaded, contentType, destFileName);</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    dropMimeData-&gt;setData(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a5b92658623e3fd3910f54e3011236732">tMimeText</a>, mimeText.toAscii());</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="keyword">event</span>-&gt;setMimeData(dropMimeData);</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;}</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;<span class="keywordtype">void</span> UBWidgetUniboardAPI::onDownloadFinished(<span class="keywordtype">bool</span> pSuccess, <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="code" href="../../da/d13/_u_b_http_get_8cpp.html#afde83e8a66b1328a06c071b0cc7e6f36">desc</a>, QByteArray pData)</div>
+<div class="line"><a name="l00561"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a94c2f421cbddda472dc2ab6791acfa46">  561</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a94c2f421cbddda472dc2ab6791acfa46">UBWidgetUniboardAPI::onDownloadFinished</a>(<span class="keywordtype">bool</span> pSuccess, <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="code" href="../../da/d13/_u_b_http_get_8cpp.html#afde83e8a66b1328a06c071b0cc7e6f36">desc</a>, QByteArray pData)</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;{</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">//if widget recieves is waiting for this id then process</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keywordflow">if</span> (!takeIDWidget(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>))</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aba03b6927f995393d95fe596dfd1dd8d">takeIDWidget</a>(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>))</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordflow">if</span> (!pSuccess) {</div>
@@ -678,12 +662,12 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    QString contentType = desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a1c01babcf4424316306f17ed49245aaf">contentTypeHeader</a>;</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    QString extention = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a91f25baf989fa9da017a954239b4c0a2">UBFileSystemUtils::fileExtensionFromMimeType</a>(contentType);</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="keywordflow">if</span> (!supportedTypeHeader(contentType)) {</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#ac23af5620148eb0fb8b06679d5e73dbe">supportedTypeHeader</a>(contentType)) {</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;actions for mime type&quot;</span> &lt;&lt; contentType &lt;&lt; <span class="stringliteral">&quot;are not supported&quot;</span>;</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    }</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    QString objDir = getObjDir();</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    QString objDir = <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a8dff50a7ff70ab9c27807a8a97fa53f1">getObjDir</a>();</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordflow">if</span> (!QDir().exists(objDir)) {</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <span class="keywordflow">if</span> (!QDir().mkpath(objDir)) {</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            qDebug() &lt;&lt; <span class="stringliteral">&quot;can&#39;t create objects directory path. Check the permissions&quot;</span>;</div>
@@ -704,26 +688,26 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    }</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    QGraphicsView *tmpView = mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad7cad83001340bbfd1ec361a09f6a454">scene</a>()-&gt;views().at(0);</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    QPoint dropPoint(mGraphicsWidget-&gt;mapFromScene(tmpView-&gt;mapToScene(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a0344f0e1006956277665248807244798">dropPoint</a>)).toPoint());</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    QGraphicsView *tmpView = <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad7cad83001340bbfd1ec361a09f6a454">scene</a>()-&gt;views().at(0);</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    QPoint dropPoint(<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;mapFromScene(tmpView-&gt;mapToScene(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a0344f0e1006956277665248807244798">dropPoint</a>)).toPoint());</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    QMimeData dropMimeData;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    QString mimeText = createMimeText(<span class="keyword">true</span>, contentType, destFileName);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    QString mimeText = <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a304617677e560db286db8cab9e047641">createMimeText</a>(<span class="keyword">true</span>, contentType, destFileName);</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    dropMimeData.setData(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a5b92658623e3fd3910f54e3011236732">tMimeText</a>, mimeText.toAscii());</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    destFile.close();</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="comment">//To make js interpreter accept drop event we need to generate move event first.</span></div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    QDragMoveEvent pseudoMove(dropPoint, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ac41e67945d6b6da1762155a155e0d18a">dropActions</a>, &amp;dropMimeData, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ae81de2ab2b3e04bf4e04e02a85e0026d">dropMouseButtons</a>, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ac01c63c05c6449d85ab1eb842a3c1804">dropModifiers</a>);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    QApplication::sendEvent(mGraphicsWidget,&amp;pseudoMove);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    QApplication::sendEvent(<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>,&amp;pseudoMove);</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    QDropEvent readyEvent(dropPoint, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ac41e67945d6b6da1762155a155e0d18a">dropActions</a>, &amp;dropMimeData, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ae81de2ab2b3e04bf4e04e02a85e0026d">dropMouseButtons</a>, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ac01c63c05c6449d85ab1eb842a3c1804">dropModifiers</a>);</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="comment">//sending event to destination either it had been downloaded or not</span></div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    QApplication::sendEvent(mGraphicsWidget,&amp;readyEvent);</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    QApplication::sendEvent(<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>,&amp;readyEvent);</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    readyEvent.acceptProposedAction();</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;}</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;QString UBWidgetUniboardAPI::createMimeText(<span class="keywordtype">bool</span> downloaded, <span class="keyword">const</span> QString &amp;mimeType, <span class="keyword">const</span> QString &amp;fileName)</div>
+<div class="line"><a name="l00620"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a304617677e560db286db8cab9e047641">  620</a></span>&#160;QString <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a304617677e560db286db8cab9e047641">UBWidgetUniboardAPI::createMimeText</a>(<span class="keywordtype">bool</span> downloaded, <span class="keyword">const</span> QString &amp;mimeType, <span class="keyword">const</span> QString &amp;fileName)</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;{</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    QString mimeXml;</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    QXmlStreamWriter writer(&amp;mimeXml);</div>
@@ -731,7 +715,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    writer.writeStartDocument();</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    writer.writeStartElement(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#ad85337dbeb5aacf63b20a8b547aae113">tMainSection</a>);</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    writer.writeTextElement(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#ac3aa49f2f4b3102d589798f595e99cda">tReady</a>, boolToStr(downloaded));</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    writer.writeTextElement(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#ac3aa49f2f4b3102d589798f595e99cda">tReady</a>, <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#ad6ed3e54bf067cea79ca52f6b03e442c">boolToStr</a>(downloaded));</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">if</span> (downloaded) {</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        <span class="keywordflow">if</span> (!mimeType.isEmpty()) {</div>
@@ -743,7 +727,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        }</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        QString relatedFileName = fileName;</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        relatedFileName = relatedFileName.remove(mGraphicsWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae72c192f0c682aa4f058d63e5f4be45e">getOwnFolder</a>().toLocalFile() + <span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        relatedFileName = relatedFileName.remove(<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a69a56362089a924872466a105bb06aa8">mGraphicsWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae72c192f0c682aa4f058d63e5f4be45e">getOwnFolder</a>().toLocalFile() + <span class="stringliteral">&quot;/&quot;</span>);</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        writer.writeTextElement(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#aa16b97735977a9cc13c95c505b1a277e">tPath</a>, relatedFileName);   <span class="comment">//writing path to created object</span></div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    }</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;</div>
@@ -753,17 +737,17 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="keywordflow">return</span> mimeXml;</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;}</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;<span class="keywordtype">bool</span> UBWidgetUniboardAPI::supportedTypeHeader(<span class="keyword">const</span> QString &amp;typeHeader)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#ac23af5620148eb0fb8b06679d5e73dbe">  650</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#ac23af5620148eb0fb8b06679d5e73dbe">UBWidgetUniboardAPI::supportedTypeHeader</a>(<span class="keyword">const</span> QString &amp;typeHeader)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <span class="keywordflow">return</span>     typeHeader.startsWith(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a57660732bda113a1a5c182d8d77200d3">imageAlias</a>) || typeHeader.startsWith(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a3bf5d58e8404ee513fab8703701eee2e">imageAliasCap</a>)</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;            || typeHeader.startsWith(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a581b29fbf31fa2798578ab858fd20cfb">audioAlias</a>) || typeHeader.startsWith(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a8a85f46cc394aacb84fab194a96d6334">audioAliasCap</a>)</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;            || typeHeader.startsWith(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a99ad12b4611372fefeed862472f2efd4">videoAlias</a>) || typeHeader.startsWith(<a class="code" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a2ef1ba69afd375c8dc5712afe1336736">videoAliasCap</a>);</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;}</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="keywordtype">bool</span> UBWidgetUniboardAPI::takeIDWidget(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00657"></a><span class="lineno"><a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aba03b6927f995393d95fe596dfd1dd8d">  657</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#aba03b6927f995393d95fe596dfd1dd8d">UBWidgetUniboardAPI::takeIDWidget</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;{</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="keywordflow">if</span> (webDownloadIds.contains(<span class="keywordtype">id</span>)) {</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        webDownloadIds.removeAll(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a1a5ee641c0a54a091cb8d278d0f25b40">webDownloadIds</a>.contains(<span class="keywordtype">id</span>)) {</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a1a5ee641c0a54a091cb8d278d0f25b40">webDownloadIds</a>.removeAll(<span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    }</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -782,7 +766,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    }</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">if</span> (supportedTypeHeader(<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a272b08b8f8907091333982fb53a7aa2a">UBFileSystemUtils::mimeTypeFromFileName</a>(fileName)))</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#ac23af5620148eb0fb8b06679d5e73dbe">supportedTypeHeader</a>(<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a272b08b8f8907091333982fb53a7aa2a">UBFileSystemUtils::mimeTypeFromFileName</a>(fileName)))</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -806,7 +790,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;</div>
 <div class="line"><a name="l00701"></a><span class="lineno"><a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">  701</a></span>&#160;QString <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">UBDocumentDatastoreAPI::key</a>(<span class="keywordtype">int</span> index)</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;{</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;   QMap&lt;QString, QString&gt; entries = mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;   QMap&lt;QString, QString&gt; entries = <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;   <span class="keywordflow">if</span> (index &lt; entries.size())</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;       <span class="keywordflow">return</span> entries.keys().at(index);</div>
@@ -818,7 +802,7 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;</div>
 <div class="line"><a name="l00713"></a><span class="lineno"><a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#acd5de33585ba0cb768823d9fa6daee78">  713</a></span>&#160;QString <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#acd5de33585ba0cb768823d9fa6daee78">UBDocumentDatastoreAPI::getItem</a>(<span class="keyword">const</span> QString&amp; key)</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;{</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    QMap&lt;QString, QString&gt; entries = mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    QMap&lt;QString, QString&gt; entries = <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keywordflow">if</span> (entries.contains(key))</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    {</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordflow">return</span> entries.value(key);</div>
@@ -832,56 +816,52 @@ $(document).ready(function(){initNavTree('d5/de3/_u_b_widget_uniboard_a_p_i_8cpp
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;</div>
 <div class="line"><a name="l00727"></a><span class="lineno"><a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#ae08fc3972fc708b22d4b5c1611254083">  727</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#ae08fc3972fc708b22d4b5c1611254083">UBDocumentDatastoreAPI::length</a>()</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;{</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;   <span class="keywordflow">return</span> mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>().size();</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;   <span class="keywordflow">return</span> <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>().size();</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;}</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;</div>
 <div class="line"><a name="l00733"></a><span class="lineno"><a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a4c030e84ad9deeecca59bda73f662c9f">  733</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a4c030e84ad9deeecca59bda73f662c9f">UBDocumentDatastoreAPI::setItem</a>(<span class="keyword">const</span> QString&amp; key, <span class="keyword">const</span> QString&amp; value)</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;{</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="keywordflow">if</span> (mGraphicsW3CWidget)</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>)</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    {</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad3ed087bab8549dcd0aedbf369bfad25">setDatastoreEntry</a>(key, value);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad3ed087bab8549dcd0aedbf369bfad25">setDatastoreEntry</a>(key, value);</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    }</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;}</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;</div>
 <div class="line"><a name="l00742"></a><span class="lineno"><a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a9a5d28cd39f1eb8875f14be8e2a1e942">  742</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a9a5d28cd39f1eb8875f14be8e2a1e942">UBDocumentDatastoreAPI::removeItem</a>(<span class="keyword">const</span> QString&amp; key)</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;{</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae584a5a79f3b19d3c56505bac2d12098">removeDatastoreEntry</a>(key);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae584a5a79f3b19d3c56505bac2d12098">removeDatastoreEntry</a>(key);</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;}</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
 <div class="line"><a name="l00748"></a><span class="lineno"><a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#aafcf2ed0ffceb5890d62d392ed7a7d89">  748</a></span>&#160; <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#aafcf2ed0ffceb5890d62d392ed7a7d89">UBDocumentDatastoreAPI::clear</a>()</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;{</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a29c5f3e633880d174fc0ba7328b6ca2c">removeAllDatastoreEntries</a>();</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a29c5f3e633880d174fc0ba7328b6ca2c">removeAllDatastoreEntries</a>();</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;}</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;</div>
 <div class="line"><a name="l00754"></a><span class="lineno"><a class="code" href="../../df/d36/class_u_b_datastore_a_p_i.html#a38f5262cbb1dc60d8338e7927a2250c8">  754</a></span>&#160;<a class="code" href="../../df/d36/class_u_b_datastore_a_p_i.html#a38f5262cbb1dc60d8338e7927a2250c8">UBDatastoreAPI::UBDatastoreAPI</a>(<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a> *widget)</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    : QObject(widget)</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;{</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    mDocumentDatastore = <span class="keyword">new</span> <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html">UBDocumentDatastoreAPI</a>(widget);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <a class="code" href="../../df/d36/class_u_b_datastore_a_p_i.html#a314738bf0a2c4f69e70e9cdf343d5431">mDocumentDatastore</a> = <span class="keyword">new</span> <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html">UBDocumentDatastoreAPI</a>(widget);</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;}</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;QObject* <a class="code" href="../../df/d36/class_u_b_datastore_a_p_i.html#ab0faf5ac0828ac1e3b4101f78e8f3841">UBDatastoreAPI::document</a>()</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;{</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="keywordflow">return</span> mDocumentDatastore;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../df/d36/class_u_b_datastore_a_p_i.html#a314738bf0a2c4f69e70e9cdf343d5431">mDocumentDatastore</a>;</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;}</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4ece80c69b6edd07df782a5802cea5a3.html">api</a></li><li class="navelem"><a class="el" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html">UBWidgetUniboardAPI.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:41 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:12 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

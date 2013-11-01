@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/ddf/_u_b_base32_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('dc/ddf/_u_b_base32_8cpp_source.html','
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBBase32.cpp</div>  </div>
@@ -131,9 +115,9 @@ $(document).ready(function(){initNavTree('dc/ddf/_u_b_base32_8cpp_source.html','
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;QString UBBase32::sBase32Chars = <span class="stringliteral">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ234567&quot;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;QString <a class="code" href="../../da/d95/class_u_b_base32.html#a6a348c146796894e22f8b3fb3d7f6965">UBBase32::sBase32Chars</a> = <span class="stringliteral">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ234567&quot;</span>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">int</span> UBBase32::sBase32Lookup[] =</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../da/d95/class_u_b_base32.html#a0ffabee53d5f409b82a7e772962b6e81">UBBase32::sBase32Lookup</a>[] =</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    { 0xFF,0xFF,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F, <span class="comment">// &#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, <span class="comment">// &#39;8&#39;, &#39;9&#39;, &#39;:&#39;, &#39;;&#39;, &#39;&lt;&#39;, &#39;=&#39;, &#39;&gt;&#39;, &#39;?&#39;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      0xFF,0x00,0x01,0x02,0x03,0x04,0x05,0x06, <span class="comment">// &#39;@&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;</span></div>
@@ -161,7 +145,7 @@ $(document).ready(function(){initNavTree('dc/ddf/_u_b_base32_8cpp_source.html','
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (lookup &lt; 0 || lookup &gt;= 80)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> digit = sBase32Lookup[(int)lookup];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> digit = <a class="code" href="../../da/d95/class_u_b_base32.html#a0ffabee53d5f409b82a7e772962b6e81">sBase32Lookup</a>[(int)lookup];</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">/* If this digit is not in the table, ignore it */</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (digit == 0xFF)</div>
@@ -197,15 +181,11 @@ $(document).ready(function(){initNavTree('dc/ddf/_u_b_base32_8cpp_source.html','
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li><li class="navelem"><a class="el" href="../../dc/ddf/_u_b_base32_8cpp.html">UBBase32.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

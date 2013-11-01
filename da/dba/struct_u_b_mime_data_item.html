@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/dba/struct_u_b_mime_data_item.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('da/dba/struct_u_b_mime_data_item.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -133,7 +113,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a14a52c7e42ed2bd6340e699b6d4b2d19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#a14a52c7e42ed2bd6340e699b6d4b2d19">mSceneIndex</a></td></tr>
 <tr class="memitem:ab95ec0afb1cb0375d6728484c217cd70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#ab95ec0afb1cb0375d6728484c217cd70">mTargetProxy</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html#l00032">32</a> of file <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4c73b9bcfee2addad5874563154ef90c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +146,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp_source.html#l00033">33</a> of file <a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp_source.html">UBMimeData.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a5b8b921c96e50bf08b4937aacda53327">mProxy</a>(proxy)</div>
 <div class="line">    , <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a14a52c7e42ed2bd6340e699b6d4b2d19">mSceneIndex</a>(<a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a1c596d4dd198c6c454b40a4ad10cf7fd">sceneIndex</a>)</div>
 <div class="line">    , <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#ab95ec0afb1cb0375d6728484c217cd70">mTargetProxy</a>(targetProxy)</div>
@@ -192,6 +177,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp_source.html">UBMimeData.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -219,6 +206,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html#l00038">38</a> of file <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a5b8b921c96e50bf08b4937aacda53327">mProxy</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -252,6 +241,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html#l00039">39</a> of file <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a14a52c7e42ed2bd6340e699b6d4b2d19">mSceneIndex</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -284,6 +275,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html#l00043">43</a> of file <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a14a52c7e42ed2bd6340e699b6d4b2d19"></a>
@@ -303,6 +296,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html#l00044">44</a> of file <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a>.</p>
 
 </div>
 </div>
@@ -324,22 +319,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html#l00045">45</a> of file <a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li><a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a></li>
-<li><a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp.html">UBMimeData.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp_source.html">UBMimeData.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html">UBMimeDataItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

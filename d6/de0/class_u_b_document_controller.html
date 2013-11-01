@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d6/de0/class_u_b_document_controller.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d6/de0/class_u_b_document_controller.h
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -299,7 +279,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad573f4f006c0eac302455c6bd20421a7 inherit pub_static_methods_class_u_b_document_container"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/class_u_b_document_container.html#ad573f4f006c0eac302455c6bd20421a7">pageFromSceneIndex</a> (int sceneIndex)</td></tr>
 <tr class="memitem:a50018eb826fe5ea46d168cf02b8f1dd8 inherit pub_static_methods_class_u_b_document_container"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/class_u_b_document_container.html#a50018eb826fe5ea46d168cf02b8f1dd8">sceneIndexFromPage</a> (int sceneIndex)</td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00299">299</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="ad7fc793af571ee4203a71db414e0829e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -325,6 +308,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00305">305</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">                      {</div>
 <div class="line">        <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ad7fc793af571ee4203a71db414e0829eafb747ec402e2dadc84431f1be50b9e2c">MoveToTrash</a> = 0</div>
 <div class="line">        , <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ad7fc793af571ee4203a71db414e0829ea49a5db03b5db91da05879d12051b6fd7">CompleteDelete</a></div>
@@ -357,6 +342,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00314">314</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a817080b199ec90e8d8133cef019c7306a47c61dfa359a9cfcacbe85b3c48742cd">None</a> = 0, <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a817080b199ec90e8d8133cef019c7306a139ed0e4d09ae6be1263b0fac7cd583e">Folder</a>, <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a817080b199ec90e8d8133cef019c7306a681a2ef0d6323c1197770f397d745756">Document</a>, <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a817080b199ec90e8d8133cef019c7306ac67b30424be6e9f9cf29c59a4d0d01ef">Page</a></div>
 <div class="line">    };</div>
@@ -377,6 +364,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01355">1355</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">   : <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5849f5f460c00d25d5a07f99bfb4a973">UBDocumentContainer</a>(mainWindow-&gt;centralWidget())</div>
 <div class="line">   , <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a5dff5d4455f06313db9c053c641da7dc">mSelectionType</a>(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a817080b199ec90e8d8133cef019c7306a47c61dfa359a9cfcacbe85b3c48742cd">None</a>)</div>
 <div class="line">   , <a class="code" href="../../d6/de0/class_u_b_document_controller.html#aafc5a6981e05de3d44c5e9b824f41186">mParentWidget</a>(mainWindow-&gt;centralWidget())</div>
@@ -431,6 +420,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01379">1379</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordflow">if</span> (<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>)</div>
 <div class="line">       <span class="keyword">delete</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>;</div>
@@ -452,6 +443,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02256">2256</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultPath = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#acd595117bf50e916afa5e0639d656227">lastImportFilePath</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line">    QString filePath = QFileDialog::getOpenFileName(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#aafc5a6981e05de3d44c5e9b824f41186">mParentWidget</a>, tr(<span class="stringliteral">&quot;Open Supported File&quot;</span>), defaultPath, <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a76098e4be543e87a5fc05c6d471a2670">UBDocumentManager::documentManager</a>()-&gt;importFileFilter());</div>
@@ -522,6 +515,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02244">2244</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* document = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ac009dfae4ba933392930af69b2f4641a">selectedDocumentProxy</a>();</div>
 <div class="line"></div>
@@ -572,6 +567,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02207">2207</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* document = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ac009dfae4ba933392930af69b2f4641a">selectedDocumentProxy</a>();</div>
 <div class="line"></div>
@@ -647,6 +644,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02720">2720</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* document = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ac009dfae4ba933392930af69b2f4641a">selectedDocumentProxy</a>();</div>
 <div class="line"></div>
@@ -729,6 +728,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02539">2539</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));</div>
 <div class="line"></div>
@@ -812,6 +813,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02641">2641</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QStringList result;</div>
 <div class="line"></div>
@@ -848,6 +851,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02512">2512</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a055b47c7e54512851b378cb6471d0a9d">mIsClosing</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
@@ -879,8 +884,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9d81934600570ee50be364c33d5478e0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9d81934600570ee50be364c33d5478e0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -889,8 +893,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9d81934600570ee50be364c33d5478e0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9d81934600570ee50be364c33d5478e0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -908,6 +911,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01735">1735</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a347d60e0f849281d267bc43666dadff4">mDocumentWidget</a>;</div>
 <div class="line">}</div>
@@ -917,8 +922,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_abf8464ae901a12f1354e48e06fb33daf_icgraph.svg" width="100%" height="525"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_abf8464ae901a12f1354e48e06fb33daf_icgraph.svg" width="100%" height="525"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -944,6 +948,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02788">2788</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// TODO - implemented me</span></div>
 <div class="line">}</div>
@@ -979,6 +985,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01385">1385</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a> *pManager = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>();</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = pManager-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
@@ -1043,6 +1051,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01451">1451</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a> *pManager = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>();</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = pManager-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
@@ -1070,8 +1080,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a201a8f0b6cf3dbd9d221147e5f50bf48_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a201a8f0b6cf3dbd9d221147e5f50bf48_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1117,6 +1126,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02948">2948</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(newIndex);</div>
 <div class="line">    Q_UNUSED(PreviousIndex);</div>
@@ -1137,8 +1148,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a31c133ed208c58832912aedd8cf094c1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a31c133ed208c58832912aedd8cf094c1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1173,6 +1183,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02782">2782</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// TODO - implemented me</span></div>
 <div class="line">}</div>
@@ -1208,6 +1220,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00334">334</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ab3393b42a0558bdca0da7844d529bd2c">mDefaultDocumentGroupName</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1242,6 +1256,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02075">2075</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
 <div class="line">    <span class="keywordflow">while</span> (docModel-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe969ce75dea4388d4d1b56a74d9ab9f">rowCount</a>(pIndex)) {</div>
@@ -1263,8 +1279,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a4dd7b6932ca6db035202a206c64c793b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a4dd7b6932ca6db035202a206c64c793b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1292,6 +1307,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02964">2964</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (itemsToDelete.count() &gt; 0)</div>
 <div class="line">    {</div>
@@ -1370,6 +1387,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02010">2010</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
 <div class="line">    QModelIndex currentIndex = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ae66d6637a55e6b886c6c1e658f7f3eb2">firstSelectedTreeIndex</a>();</div>
@@ -1419,8 +1438,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-29-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a585faed52b3ca1aa66bad2d0383eb026_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a585faed52b3ca1aa66bad2d0383eb026_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1472,6 +1490,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03052">3052</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pTypeSelection == <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a817080b199ec90e8d8133cef019c7306ac67b30424be6e9f9cf29c59a4d0d01ef">Page</a>) {</div>
 <div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../d6/de0/class_u_b_document_controller.html#accc0789631bbb7846e00bcfacd57e930">firstSceneSelected</a>()) {</div>
@@ -1545,6 +1565,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02442">2442</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(pSceneIndex);</div>
 <div class="line"></div>
@@ -1595,6 +1617,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00333">333</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a76d028d4d4706cd93f8a8713af7e5c19">mDocumentTrashGroupName</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1629,6 +1653,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02111">2111</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;thumbnailWidget-&gt;setThumbnailWidth(value);</div>
 <div class="line"></div>
@@ -1675,6 +1701,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01815">1815</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;displayMode() != <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39a3cc9258fdbf77ba4b2e5cbfaf8d96162">UBApplicationController::Document</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -1772,6 +1800,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02055">2055</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
 <div class="line">    <span class="keywordflow">if</span> (!docModel-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a37960814e9120332dcdd89a88822737f">isCatalog</a>(index)) {</div>
@@ -1796,8 +1826,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-40-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a71e0a0bc3ee2521a969739fb6c420c92_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a71e0a0bc3ee2521a969739fb6c420c92_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1832,6 +1861,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02093">2093</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QAction *currentExportAction = qobject_cast&lt;QAction *&gt;(sender());</div>
 <div class="line">    QVariant actionData = currentExportAction-&gt;data();</div>
@@ -1849,8 +1880,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-42-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aa0c116eaa42f5ca95b5bfe99824e9d32_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aa0c116eaa42f5ca95b5bfe99824e9d32_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1885,6 +1915,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02106">2106</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -1936,6 +1968,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01411">1411</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTreeWidgetItemIterator it(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;documentTreeWidget);</div>
 <div class="line"></div>
@@ -1975,6 +2009,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03076">3076</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#accc0789631bbb7846e00bcfacd57e930">firstSceneSelected</a> = <span class="keyword">false</span>;</div>
 <div class="line">    QList&lt;QGraphicsItem*&gt; selection = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;thumbnailWidget-&gt;selectedItems();</div>
@@ -2011,6 +2047,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03046">3046</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a2f7342bf55f69cf7e3c569e25229fa1e">selectedTreeIndexes</a>().count() ? <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a2f7342bf55f69cf7e3c569e25229fa1e">selectedTreeIndexes</a>().first() : QModelIndex();</div>
 <div class="line">}</div>
@@ -2048,6 +2086,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01496">1496</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a9b97588b2b1c80196ac783ab0a3ec42b">selectedProxies</a>().count() ? <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a9b97588b2b1c80196ac783ab0a3ec42b">selectedProxies</a>().first() : 0;</div>
 <div class="line">}</div>
@@ -2057,8 +2097,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-49-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aadb04f4c4251bd9d381065705f8da7e4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aadb04f4c4251bd9d381065705f8da7e4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2067,8 +2106,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-50-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-50-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aadb04f4c4251bd9d381065705f8da7e4_icgraph.svg" width="100%" height="508"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aadb04f4c4251bd9d381065705f8da7e4_icgraph.svg" width="100%" height="508"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2105,6 +2143,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02800">2800</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(old);</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *treeModel = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
@@ -2148,8 +2188,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-51-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-51-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aa70db6b7dd1728a18683312b3f410c9e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aa70db6b7dd1728a18683312b3f410c9e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2167,6 +2206,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03003">3003</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;QGraphicsItem*&gt; selectedItems = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;thumbnailWidget-&gt;selectedItems();</div>
 <div class="line"></div>
@@ -2209,6 +2250,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01774">1774</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -2235,6 +2278,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02713">2713</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/de0/class_u_b_document_controller.html#af4f5815803b2363ca19a5b41a9117112">mMessageWindow</a>)</div>
 <div class="line">        <a class="code" href="../../d6/de0/class_u_b_document_controller.html#af4f5815803b2363ca19a5b41a9117112">mMessageWindow</a>-&gt;hideMessage();</div>
@@ -2272,6 +2317,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02161">2161</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html">UBDocumentManager</a> *docManager = <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a76098e4be543e87a5fc05c6d471a2670">UBDocumentManager::documentManager</a>();</div>
 <div class="line"></div>
@@ -2358,6 +2405,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02665">2665</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//check version</span></div>
 <div class="line">    QString docVersion = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#aba93539ec11aad9eb4156cb4edf246ba">metaData</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a944257fa012bc74d251227ea8a6afb99">UBSettings::documentVersion</a>).toString();</div>
@@ -2435,6 +2484,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02118">2118</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>* proxyItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>*<span class="keyword">&gt;</span>(item);</div>
 <div class="line"></div>
@@ -2481,8 +2532,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-58-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-58-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aefd1db69416b8e8c516dd9b290fd2c0f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_aefd1db69416b8e8c516dd9b290fd2c0f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2509,6 +2559,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01578">1578</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a5dff5d4455f06313db9c053c641da7dc">mSelectionType</a> = newSelection;</div>
 <div class="line">    <a class="code" href="../../d6/de0/class_u_b_document_controller.html#afa1658f058c031b3ecb4755e0b3a7216">updateActions</a>();</div>
@@ -2555,6 +2607,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00343">343</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a347d60e0f849281d267bc43666dadff4">mDocumentWidget</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -2590,6 +2644,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01862">1862</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> index = proxyTi-&gt;parent()-&gt;indexOfChild(proxyTi);</div>
 <div class="line">    index --;</div>
@@ -2687,6 +2743,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01928">1928</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> changeCurrentDocument = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; groupTi-&gt;childCount(); i++)</div>
@@ -2816,6 +2874,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02297">2297</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/dc6/class_u_b_document_container.html#a4deb511d6a7b576f325daf8aea188f54">UBDocumentContainer::movePageToIndex</a>(source, target))</div>
 <div class="line">    {</div>
@@ -2866,6 +2926,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01780">1780</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));</div>
 <div class="line"></div>
@@ -2933,6 +2995,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03036">3036</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> page != 0;</div>
 <div class="line">}</div>
@@ -2961,6 +3025,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03031">3031</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> page != 0;</div>
 <div class="line">}</div>
@@ -2990,6 +3056,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03023">3023</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;teacherGuidePageZeroActivated-&gt;get().toBool())</div>
 <div class="line">        <span class="keywordflow">return</span> page != 0 &amp;&amp; page &lt; <a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>() - 1;</div>
@@ -3030,6 +3098,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03015">3015</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;teacherGuidePageZeroActivated-&gt;get().toBool())</div>
 <div class="line">        <span class="keywordflow">return</span> page &gt;= 2;</div>
@@ -3088,6 +3158,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02503">2503</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(item);</div>
 <div class="line">    Q_UNUSED(index);</div>
@@ -3146,6 +3218,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02454">2454</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(item);</div>
 <div class="line">    Q_UNUSED(index);</div>
@@ -3196,6 +3270,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02317">2317</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a055b47c7e54512851b378cb6471d0a9d">mIsClosing</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -3250,6 +3326,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02794">2794</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// TODO - implemented me</span></div>
 <div class="line">}</div>
@@ -3286,6 +3364,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03089">3089</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
 <div class="line">    <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *currentDocumentProxy = <a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>();</div>
@@ -3401,6 +3481,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02656">2656</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QModelIndex selectedIndex = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ae66d6637a55e6b886c6c1e658f7f3eb2">firstSelectedTreeIndex</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (selectedIndex.isValid()) {</div>
@@ -3459,6 +3541,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01428">1428</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (proxy==NULL)</div>
 <div class="line">    {</div>
@@ -3486,8 +3570,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-83-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-83-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ab4fa92eecfbd5ba3493bf7892cdd8ae0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ab4fa92eecfbd5ba3493bf7892cdd8ae0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3496,8 +3579,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-84-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-84-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ab4fa92eecfbd5ba3493bf7892cdd8ae0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ab4fa92eecfbd5ba3493bf7892cdd8ae0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3523,6 +3605,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01522">1522</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;QTreeWidgetItem *&gt; selectedItems = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;documentTreeWidget-&gt;selectedItems();</div>
 <div class="line"></div>
@@ -3578,6 +3662,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01475">1475</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#adc9c453bae3eb78fdf3d63db4f16f3bd">proxyForIndex</a>(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#ae66d6637a55e6b886c6c1e658f7f3eb2">firstSelectedTreeIndex</a>());</div>
 <div class="line">}</div>
@@ -3587,8 +3673,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-86-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-86-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ac009dfae4ba933392930af69b2f4641a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ac009dfae4ba933392930af69b2f4641a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3623,6 +3708,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01501">1501</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a> &amp;&amp; <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;documentTreeWidget)</div>
 <div class="line">    {</div>
@@ -3673,6 +3760,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01480">1480</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;UBDocumentProxy*&gt; result;</div>
 <div class="line"></div>
@@ -3688,8 +3777,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-89-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-89-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9b97588b2b1c80196ac783ab0a3ec42b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9b97588b2b1c80196ac783ab0a3ec42b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3698,8 +3786,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-90-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-90-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9b97588b2b1c80196ac783ab0a3ec42b_icgraph.svg" width="100%" height="508"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a9b97588b2b1c80196ac783ab0a3ec42b_icgraph.svg" width="100%" height="508"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3725,6 +3812,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01491">1491</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;documentTreeView-&gt;selectionModel()-&gt;selectedIndexes();</div>
 <div class="line">}</div>
@@ -3761,6 +3850,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02333">2333</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a055b47c7e54512851b378cb6471d0a9d">mIsClosing</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -3873,8 +3964,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-92-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-92-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ae4434a0bbd63b169707ddbd593257e93_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_ae4434a0bbd63b169707ddbd593257e93_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3922,6 +4012,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../da/dc6/class_u_b_document_container.html#af4ec175500cc0917a65d77f50b2ddca5">UBDocumentContainer</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l03041">3041</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a097804748c35b992649703b34879f93a">UBDocumentContainer::setDocument</a>(document, forceReload);</div>
 <div class="line">}</div>
@@ -3958,6 +4050,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01747">1747</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a3f226a11737dfa61febf49423fd01203">mToolsPalette</a> = <span class="keyword">new</span> <a class="code" href="../../d9/dee/class_u_b_document_tools_palette.html">UBDocumentToolsPalette</a>(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#abf8464ae901a12f1354e48e06fb33daf">controlView</a>());</div>
@@ -3987,8 +4081,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-96-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-96-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a8478146da974d97d711cfe769bd14a08_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a8478146da974d97d711cfe769bd14a08_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -4014,6 +4107,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01741">1741</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a71985ce0344b74bc3e5ed1d7f44a2017">UBApplication::app</a>()-&gt;<a class="code" href="../../d8/d81/class_u_b_application.html#adde68e147924747e76e51286b2ffc9e7">insertSpaceToToolbarBeforeAction</a>(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a94df96242c85ede2e0441127ff8bacd3">mMainWindow</a>-&gt;documentToolBar, <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a94df96242c85ede2e0441127ff8bacd3">mMainWindow</a>-&gt;actionBoard);</div>
 <div class="line">    connect(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a94df96242c85ede2e0441127ff8bacd3">mMainWindow</a>-&gt;actionDocumentTools, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#afc7d15a8ac67eebe5f3c5b55dc4798ff">toggleDocumentToolsPalette</a>()));</div>
@@ -4059,6 +4154,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01585">1585</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a347d60e0f849281d267bc43666dadff4">mDocumentWidget</a>)</div>
@@ -4247,6 +4344,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01763">1763</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ab4fa92eecfbd5ba3493bf7892cdd8ae0">selectDocument</a>(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#abec7dbda9864540c6760ec22f3fe3328">mBoardController</a>-&gt;<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>());</div>
 <div class="line"></div>
@@ -4270,8 +4369,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-102-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-102-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a515c0abd53c46d51464ebca366e757fc_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a515c0abd53c46d51464ebca366e757fc_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -4308,6 +4406,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02693">2693</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/de0/class_u_b_document_controller.html#af4f5815803b2363ca19a5b41a9117112">mMessageWindow</a>)</div>
 <div class="line">    {</div>
@@ -4369,6 +4469,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02474">2474</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>;</div>
 <div class="line">    QModelIndex selectedIndex = <a class="code" href="../../d6/de0/class_u_b_document_controller.html#ae66d6637a55e6b886c6c1e658f7f3eb2">firstSelectedTreeIndex</a>();</div>
@@ -4436,6 +4538,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02309">2309</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> maxWidth = qMin(<a class="code" href="../../db/d66/class_u_b_settings.html#a7baff769a2e029fd39bebab986daf29f">UBSettings::maxThumbnailWidth</a>, <a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;thumbnailWidget-&gt;width());</div>
 <div class="line"></div>
@@ -4473,6 +4577,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02763">2763</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a3f226a11737dfa61febf49423fd01203">mToolsPalette</a>-&gt;isVisible() &amp;&amp; !<a class="code" href="../../d6/de0/class_u_b_document_controller.html#ad1573c660d260a70ab00963579f0023b">mToolsPalettePositionned</a>)</div>
 <div class="line">    {</div>
@@ -4541,6 +4647,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01547">1547</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(previous)</div>
 <div class="line"></div>
@@ -4574,7 +4682,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-110-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-110-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a36a841a4f05c184f0f9e9a8806f804db_icgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_document_controller_a36a841a4f05c184f0f9e9a8806f804db_icgraph.svg" width="100%" height="561"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </p>
@@ -4612,6 +4720,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l01567">1567</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(deselected)</div>
 <div class="line"></div>
@@ -4653,6 +4763,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02839">2839</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a055b47c7e54512851b378cb6471d0a9d">mIsClosing</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -4791,6 +4903,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02623">2623</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTreeWidgetItemIterator it(<a class="code" href="../../d6/de0/class_u_b_document_controller.html#a87f02eb914f0f2eafc156efcaad29996">mDocumentUI</a>-&gt;documentTreeWidget);</div>
 <div class="line">    <span class="keywordflow">while</span> (*it)</div>
@@ -4848,6 +4962,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l02936">2936</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html">UBDocumentManager</a> *documentManager = <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a76098e4be543e87a5fc05c6d471a2670">UBDocumentManager::documentManager</a>();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; documentManager-&gt;<a class="code" href="../../d2/da1/class_u_b_document_manager.html#aa3dcc18dae4cb2b64c7af2c7c3122ee5">supportedExportAdaptors</a>().length(); i++)</div>
@@ -4899,6 +5015,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00395">395</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="accedfd5a1860b98e849820d0185cd2a6"></a>
@@ -4918,6 +5036,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00394">394</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -4939,6 +5059,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00396">396</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abec7dbda9864540c6760ec22f3fe3328"></a>
@@ -4958,6 +5080,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00389">389</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -4979,6 +5103,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00408">408</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7eefcc1f3991bbad4e13e3a7bcb5d530"></a>
@@ -4998,6 +5124,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00407">407</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -5019,6 +5147,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00405">405</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a76d028d4d4706cd93f8a8713af7e5c19"></a>
@@ -5038,6 +5168,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00404">404</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -5059,6 +5191,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00390">390</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a347d60e0f849281d267bc43666dadff4"></a>
@@ -5078,6 +5212,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00392">392</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -5099,6 +5235,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00397">397</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a94df96242c85ede2e0441127ff8bacd3"></a>
@@ -5118,6 +5256,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00391">391</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -5139,6 +5279,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00393">393</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aafc5a6981e05de3d44c5e9b824f41186"></a>
@@ -5158,6 +5300,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00388">388</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -5179,6 +5323,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00385">385</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3f226a11737dfa61febf49423fd01203"></a>
@@ -5198,6 +5344,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00398">398</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -5219,6 +5367,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00399">399</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a46b5da691504f6a400deded662dace2c"></a>
@@ -5239,22 +5389,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00400">400</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d6/de0/class_u_b_document_controller.html">UBDocumentController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:58 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:22 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

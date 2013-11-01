@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/d84/class_u_b_c_f_f_adaptor.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('de/d84/class_u_b_c_f_f_adaptor.html','
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -150,7 +130,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ade944442cda0e856ad7d6ee90b8a005c"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">tmpDirs</a></td></tr>
 <tr class="memitem:a3a0c6714c2d4fde28bcaefd1a47587c0"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3a0c6714c2d4fde28bcaefd1a47587c0">mConversionMessages</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html#l00036">36</a> of file <a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html">UBCFFAdaptor.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a506410a7764fc7485311e9cca7d86c72"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +146,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{}</div>
 </div><!-- fragment -->
 </div>
@@ -179,6 +164,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00352">352</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#af7d2a4b0e2ea88cc25dd886c7b62ad21">freeTmpDirs</a>();</div>
 <div class="line">}</div>
@@ -232,6 +219,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00214">214</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFileInfoList dirFiles = QDir(dirName).entryInfoList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot);</div>
 <div class="line">    QListIterator&lt;QFileInfo&gt; iter(dirFiles);</div>
@@ -310,6 +299,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00236">236</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFile sourceFile(fileName);</div>
 <div class="line"></div>
@@ -390,6 +381,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00184">184</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QDir toDir = QFileInfo(destination).dir();</div>
 <div class="line">    <span class="keywordflow">if</span> (!toDir.exists())</div>
@@ -462,6 +455,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00045">45</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;starting converion from&quot;</span> &lt;&lt; from &lt;&lt; <span class="stringliteral">&quot;to&quot;</span> &lt;&lt; to;</div>
 <div class="line"></div>
@@ -552,6 +547,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00275">275</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> tmpNumber = 0;</div>
 <div class="line">    QDir systemTmp = QDir::temp();</div>
@@ -603,6 +600,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00302">302</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pDirPath == <span class="stringliteral">&quot;&quot;</span> || pDirPath == <span class="stringliteral">&quot;.&quot;</span> || pDirPath == <span class="stringliteral">&quot;..&quot;</span>)</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -663,6 +662,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00336">336</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ab751ea62bef1e789811699470d0f011b">deleteDir</a>(dir))</div>
@@ -713,6 +714,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00346">346</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span> (QString dir, <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">tmpDirs</a>)</div>
 <div class="line">        <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a033121fe518f5e687f4bf96b1a9c9b88">freeDir</a>(dir);</div>
@@ -750,6 +753,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00331">331</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3a0c6714c2d4fde28bcaefd1a47587c0">mConversionMessages</a>;</div>
 <div class="line">}</div>
@@ -786,6 +791,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html#l00096">96</a> of file <a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QuaZip zip(zipFile);</div>
 <div class="line"></div>
@@ -912,6 +919,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html#l00059">59</a> of file <a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html">UBCFFAdaptor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ade944442cda0e856ad7d6ee90b8a005c"></a>
@@ -932,22 +941,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html#l00058">58</a> of file <a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html">UBCFFAdaptor.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html">UBCFFAdaptor.h</a></li>
-<li><a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp.html">UBCFFAdaptor.cpp</a></li>
+<li>Sankore-3.1/plugins/cffadaptor/src/<a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html">UBCFFAdaptor.h</a></li>
+<li>Sankore-3.1/plugins/cffadaptor/src/<a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp_source.html">UBCFFAdaptor.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html">UBCFFAdaptor</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:20 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

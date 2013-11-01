@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d4/de3/classmerge__lib_1_1_parser.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,11 @@ $(document).ready(function(){initNavTree('d4/de3/classmerge__lib_1_1_parser.html
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">Parser</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -193,7 +177,10 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <tr class="memitem:a2e1d609c14cb305239d77aff2b1deb20"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2e1d609c14cb305239d77aff2b1deb20">_readTrailerAndRterievePrev</a> (const unsigned int startPositionForSearch, unsigned int &amp;previosXref)</td></tr>
 <tr class="memitem:a9fa701b9d070dcc4d5c1d076aa47ccff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9fa701b9d070dcc4d5c1d076aa47ccff">_clearParser</a> ()</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00041">41</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0c16db1ac6d8d9c78fbcf5168fee3db7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -214,6 +201,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00044">44</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
 <div class="fragment"><div class="line">: <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a>(0), <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>(), <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>(), <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>(0)  {};</div>
 </div><!-- fragment -->
 </div>
@@ -263,6 +252,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00106">106</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a> = 0;</div>
 <div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.clear();</div>
@@ -303,6 +294,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00409">409</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a81c4b1a307991f43f054e8807185f8c0">_skipWhiteSpacesFromContent</a>(leftBound);</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tokensCount = 0;</div>
@@ -350,6 +343,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00088">88</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(docName);</div>
 <div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a> = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a>;</div>
@@ -390,6 +385,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00154">154</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rootObjectNumber = 0;</div>
 <div class="line">   <span class="keywordflow">try</span></div>
@@ -484,6 +481,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00366">366</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   fromPosition = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a81c4b1a307991f43f054e8807185f8c0">_skipWhiteSpacesFromContent</a>(fromPosition);</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfLine = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<span class="stringliteral">&quot;\n\r&quot;</span>, fromPosition);</div>
@@ -515,6 +514,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00115">115</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   ifstream pdfFile;</div>
 <div class="line">   pdfFile.open (fileName, ios::binary );</div>
@@ -585,6 +586,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00375">375</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keyword">static</span> std::pair&lt;unsigned int, unsigned int&gt; bounds;</div>
 <div class="line">   bounds.first = str.rfind(<span class="charliteral">&#39;\n&#39;</span>, fromPosition);</div>
@@ -643,6 +646,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00387">387</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   fromPosition = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a81c4b1a307991f43f054e8807185f8c0">_skipWhiteSpacesFromContent</a>(fromPosition);</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>, fromPosition);</div>
@@ -724,6 +729,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00442">442</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   hasObjectStream = <span class="keyword">false</span>;</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> currentPosition = objectPosition;</div>
@@ -829,8 +836,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1189d2610c4c3ed58056ce9a0bc504b8_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1189d2610c4c3ed58056ce9a0bc504b8_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -857,6 +863,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00194">194</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> currentPosition(0), startOfNextSearch(0);</div>
 <div class="line">   <span class="keyword">static</span> std::map&lt;unsigned int, std::vector&lt;unsigned int&gt; &gt;  searchResult;</div>
@@ -934,8 +942,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a790b3291140a3cc7d5cf0347127c5cdd_cgraph.svg" width="512" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a790b3291140a3cc7d5cf0347127c5cdd_cgraph.svg" width="512" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -961,6 +968,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00354">354</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> leftBoundOfStartOfXref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.rfind(<span class="stringliteral">&quot;startxref&quot;</span>);</div>
 <div class="line">   leftBoundOfStartOfXref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a>, leftBoundOfStartOfXref);</div>
@@ -1003,6 +1012,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00543">543</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfTrailer = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>,<span class="stringliteral">&quot;trailer&quot;</span>, <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9ee3baabc2c873a62a135a323224aad6">_getStartOfXrefWithRoot</a>());</div>
@@ -1076,6 +1087,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00566">566</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfTrailer = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>,<span class="stringliteral">&quot;trailer&quot;</span>, startPositionForSearch);</div>
 <div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) startOfTrailer == -1 )</div>
@@ -1130,6 +1143,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00275">275</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{      </div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> currentPostion = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9ee3baabc2c873a62a135a323224aad6">_getStartOfXrefWithRoot</a>();</div>
 <div class="line">   <span class="keywordflow">do</span></div>
@@ -1240,6 +1255,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00064">64</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   std::string &amp; objectContent = objectWithKids-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfKids = objectContent.find(<span class="stringliteral">&quot;/Kids&quot;</span>);</div>
@@ -1305,6 +1322,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00267">267</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numberSearchCounter = currentPosition;    </div>
 <div class="line">   <span class="keywordflow">while</span>(((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a>.find(str[numberSearchCounter]) != -1) &amp;&amp; --numberSearchCounter)</div>
@@ -1370,6 +1389,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00425">425</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = fromPosition;</div>
 <div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>.find(str[0]) != -1)</div>
@@ -1409,6 +1430,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00433">433</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = fromPosition;</div>
 <div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>.find(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>[position]) != -1)</div>
@@ -1459,6 +1482,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00823">823</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> foundEnd = -1;</div>
 <div class="line">   std::stack&lt;std::string&gt; delimStack;</div>
@@ -1589,6 +1614,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00700">700</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">size_t</span> cur_pos  = start;</div>
 <div class="line">   <span class="comment">// lets find pattern first</span></div>
@@ -1627,8 +1654,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a10e184b6efbae358d74f48f92406b679_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a10e184b6efbae358d74f48f92406b679_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1671,6 +1697,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00786">786</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">size_t</span> cur_pos  = start;</div>
 <div class="line">   <span class="comment">// lets find pattern first</span></div>
@@ -1712,8 +1740,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1238dc538fd46f2cbd5c14f5d9fc9f86_icgraph.svg" width="100%" height="466"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1238dc538fd46f2cbd5c14f5d9fc9f86_icgraph.svg" width="100%" height="466"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1768,6 +1795,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00674">674</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">size_t</span> cur_pos  = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(content,pattern,start);</div>
 <div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) cur_pos == -1 )</div>
@@ -1838,6 +1867,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00593">593</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordflow">if</span>( position &gt;= str.size() )</div>
 <div class="line">   {</div>
@@ -1867,8 +1898,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a9e91332f7f45b04ce4753c03c8ff4de5_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a9e91332f7f45b04ce4753c03c8ff4de5_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1929,6 +1959,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 
 <p>getNextWord </p>
 <p>method finds and returns next word from the string For example: " 1 0 R \n" will return "1" , then "0" then "R" </p>
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00622">622</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordflow">if</span>( found )</div>
 <div class="line">   {</div>
@@ -1971,8 +2003,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1981,8 +2012,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_icgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_icgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2001,6 +2031,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a> = <span class="keyword">new</span> <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a>(fileName);</div>
 <div class="line">   <span class="keywordflow">try</span></div>
@@ -2061,6 +2093,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00739">739</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   std::string openBraces = <span class="stringliteral">&quot;&lt;[({&quot;</span>;</div>
 <div class="line">   <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
@@ -2129,6 +2163,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 
 <p>trim </p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>: document this function </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/df6/_parser_8cpp_source.html#l00664">664</a> of file <a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   std::string::size_type pos1 = str.find_first_not_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>);</div>
 <div class="line">   std::string::size_type pos2 = str.find_last_not_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>);</div>
@@ -2150,8 +2186,7 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a89825c31c50fa949dab5b0b4974b7677_icgraph.svg" width="100%" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a89825c31c50fa949dab5b0b4974b7677_icgraph.svg" width="100%" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2176,6 +2211,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00094">94</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad4811a7d46bb4b2795b22b4bef2f10bb"></a>
@@ -2195,6 +2232,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00092">92</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
 
 </div>
 </div>
@@ -2216,6 +2255,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00093">93</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a861ca5313f20519108b925eb1572e84c"></a>
@@ -2235,6 +2276,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00091">91</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
 
 </div>
 </div>
@@ -2256,6 +2299,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00048">48</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a01f083b2ba8adb53f83734343c075458"></a>
@@ -2275,6 +2320,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00049">49</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
 
 </div>
 </div>
@@ -2296,6 +2343,8 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00047">47</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a470d149d6e6683e66d895e4a5afe1ba5"></a>
@@ -2316,22 +2365,20 @@ unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d40/_parser_8h_source.html#l00050">50</a> of file <a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a></li>
-<li><a class="el" href="../../de/df6/_parser_8cpp.html">Parser.cpp</a></li>
+<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a></li>
+<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../de/df6/_parser_8cpp_source.html">Parser.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">Parser</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:13 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:37 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

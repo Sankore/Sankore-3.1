@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d9/d07/class_u_b_t_g_adaptable_text.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d9/d07/class_u_b_t_g_adaptable_text.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -161,7 +141,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aeb942d5c761ae96e023deaa8ef434ac9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#aeb942d5c761ae96e023deaa8ef434ac9">mIsUpdatingSize</a></td></tr>
 <tr class="memitem:ac0c2f7865da2552c9e41e4683c350607"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#ac0c2f7865da2552c9e41e4683c350607">mMaximumLength</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00100">100</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a48618a00fb15801d1e40e1ec98a2c540"></a>
 <div class="memitem">
 <div class="memproto">
@@ -199,6 +182,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00130">130</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                                              :QTextEdit(parent)</div>
 <div class="line">  , <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a0d2934057700df82641112831702144b">mBottomMargin</a>(5)</div>
 <div class="line">  , <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#ac088bea95f43bb62c996f97e4cb369d8">mpTreeWidgetItem</a>(widget)</div>
@@ -242,6 +227,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00250">250</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a0d2934057700df82641112831702144b">mBottomMargin</a> = newValue;</div>
 <div class="line">    <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#ad1dc392b4eb83cd13e37b9f0e808a036">onTextChanged</a>();</div>
@@ -288,6 +275,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00256">256</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(isReadOnly()){</div>
 <div class="line">        e-&gt;ignore();</div>
@@ -328,6 +317,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00265">265</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a196a86ef5f0b83aa9b5376b1551a7a4e">managePlaceholder</a>(<span class="keyword">false</span>);</div>
 <div class="line">    <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a1cd4b4a49e4ae95cc7bd6af01320f5ce">QTextEdit::focusOutEvent</a>(e);</div>
@@ -365,6 +356,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00271">271</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMimeData editedMimeData;</div>
 <div class="line">    QTextDocument textDoc;</div>
@@ -422,6 +415,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00163">163</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a2a65d95bc5641c89db53fac4bc0cfafb">QTextEdit::keyReleaseEvent</a>(e);</div>
 <div class="line"></div>
@@ -448,6 +443,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00297">297</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(focus){</div>
 <div class="line">        <span class="keywordflow">if</span>(toPlainText() == <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a837fb5245f301628fa7a6bc1616ad511">mPlaceHolderText</a>){</div>
@@ -504,6 +501,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00196">196</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal documentSize = document()-&gt;size().height();</div>
 <div class="line">    <span class="keywordflow">if</span>(height() == documentSize + <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a0d2934057700df82641112831702144b">mBottomMargin</a>){</div>
@@ -553,6 +552,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00230">230</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a6e22a20d81d664d677945d9ebb8b6d68">mHasPlaceHolder</a> &amp;&amp; !<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a837fb5245f301628fa7a6bc1616ad511">mPlaceHolderText</a>.isEmpty()){</div>
 <div class="line">        setTextColor(QColor(Qt::lightGray));</div>
@@ -605,6 +606,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00314">314</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTextDocument* doc = document();</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != doc){</div>
@@ -639,6 +642,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00223">223</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setText(<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#abc01215ceb6a24147b846b344b7557ce">text</a>);</div>
 <div class="line">    setReadOnly(<span class="keyword">false</span>);</div>
@@ -678,6 +683,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#ac0c2f7865da2552c9e41e4683c350607">mMaximumLength</a> = length;</div>
 <div class="line">}</div>
@@ -706,6 +713,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00153">153</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a6e22a20d81d664d677945d9ebb8b6d68">mHasPlaceHolder</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
@@ -747,6 +756,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(e);</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#aeb942d5c761ae96e023deaa8ef434ac9">mIsUpdatingSize</a> &amp;&amp; !hasFocus() &amp;&amp; <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a6e22a20d81d664d677945d9ebb8b6d68">mHasPlaceHolder</a> &amp;&amp; toPlainText().isEmpty() &amp;&amp; !isReadOnly()){</div>
@@ -782,6 +793,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00243">243</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setText(<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#abc01215ceb6a24147b846b344b7557ce">text</a>);</div>
 <div class="line">    setReadOnly(<span class="keyword">true</span>);</div>
@@ -820,6 +833,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html#l00187">187</a> of file <a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString result = toPlainText();</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a6e22a20d81d664d677945d9ebb8b6d68">mHasPlaceHolder</a> &amp;&amp; result == <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a837fb5245f301628fa7a6bc1616ad511">mPlaceHolderText</a>)</div>
@@ -859,6 +874,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00126">126</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6e22a20d81d664d677945d9ebb8b6d68"></a>
@@ -878,6 +895,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00129">129</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
 
 </div>
 </div>
@@ -899,6 +918,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00131">131</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac0c2f7865da2552c9e41e4683c350607"></a>
@@ -918,6 +939,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00132">132</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
 
 </div>
 </div>
@@ -939,6 +962,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00128">128</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a837fb5245f301628fa7a6bc1616ad511"></a>
@@ -958,6 +983,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00130">130</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
 
 </div>
 </div>
@@ -979,22 +1006,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html#l00127">127</a> of file <a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
-<li><a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp_source.html">UBTeacherGuideWidgetsTools.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d9/d07/class_u_b_t_g_adaptable_text.html">UBTGAdaptableText</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:32 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ba3bda1af5b46be6c34dbdf9592f1d27.html">adaptors</a></li><li class="navelem"><a class="el" href="../../dir_c2c2062ae07505a994185fba6fade769.html">publishing</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBDocumentPublisher.cpp</div>  </div>
@@ -176,7 +160,7 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        , mPassword(<span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        , bLoginCookieSet(false)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    init();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a559df67fc847106fa021830abbca2c77">init</a>();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
@@ -196,36 +180,36 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    mUsername = settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ae0c3fadd0acb79ed423ec34e82c06e9b">communityUsername</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    mPassword = settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ad3bb15a7e2c5d6bfa5c2a33cea93e9a5">communityPassword</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aa968398655445734f75597a8e155f7aa">mUsername</a> = settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ae0c3fadd0acb79ed423ec34e82c06e9b">communityUsername</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ab43615bbbc9c3f0da80efb60be0119ac">mPassword</a> = settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ad3bb15a7e2c5d6bfa5c2a33cea93e9a5">communityPassword</a>();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html">UBPublicationDlg</a> dlg;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(QDialog::Accepted == dlg.exec())</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        mDocInfos.<a class="code" href="../../d4/d55/structs_document_infos.html#af5c9a5ab7a6a10f869ef7d9c06b472e7">title</a> = dlg.<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a79f81d1a7e514f34a8ae593cef4d1a9e">title</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        mDocInfos.<a class="code" href="../../d4/d55/structs_document_infos.html#a737608f157499ca87f256f5a67336357">description</a> = dlg.<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#ab89586fd90f3ce1e55bcce34995653cf">description</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a53dcdbec4dd859e21c8afce6906baff1">mDocInfos</a>.<a class="code" href="../../d4/d55/structs_document_infos.html#af5c9a5ab7a6a10f869ef7d9c06b472e7">title</a> = dlg.<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a79f81d1a7e514f34a8ae593cef4d1a9e">title</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a53dcdbec4dd859e21c8afce6906baff1">mDocInfos</a>.<a class="code" href="../../d4/d55/structs_document_infos.html#a737608f157499ca87f256f5a67336357">description</a> = dlg.<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#ab89586fd90f3ce1e55bcce34995653cf">description</a>();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        buildUbwFile();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ac6a7b91093faed242e6b99280adca16b">buildUbwFile</a>();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="../../d8/d81/class_u_b_application.html#afd12508537e75aaa6789431e60b60b44">UBApplication::showMessage</a>(tr(<span class="stringliteral">&quot;Uploading Sankore File on Web.&quot;</span>));</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        sendUbw(mUsername, mPassword);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aa1c9b34c126b5eaa4024fa22b00dfdf4">sendUbw</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aa968398655445734f75597a8e155f7aa">mUsername</a>, <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ab43615bbbc9c3f0da80efb60be0119ac">mPassword</a>);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">void</span> UBDocumentPublisher::buildUbwFile()</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ac6a7b91093faed242e6b99280adca16b">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ac6a7b91093faed242e6b99280adca16b">UBDocumentPublisher::buildUbwFile</a>()</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QDir d;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    d.mkpath(<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a077517980ac1053b24899243e3bc44f6">UBFileSystemUtils::defaultTempDirPath</a>());</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QString tmpDir = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aa3c7075cc43aa4b8dcefd7d06fab2d6a">UBFileSystemUtils::createTempDir</a>();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8289391e8ff8c366727435455aa8a733">UBFileSystemUtils::copyDir</a>(mSourceDocument-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>(), tmpDir))</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8289391e8ff8c366727435455aa8a733">UBFileSystemUtils::copyDir</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a23de70f364c11fbf8468f86e7d6f6406">mSourceDocument</a>-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>(), tmpDir))</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        QString documentName = mSourceDocument-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#aedacb3e1363fef8910851f8f7c4d1a7a">name</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        QString documentName = <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a23de70f364c11fbf8468f86e7d6f6406">mSourceDocument</a>-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#aedacb3e1363fef8910851f8f7c4d1a7a">name</a>();</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        mPublishingPath = tmpDir;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        mPublishingSize = mSourceDocument-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> = tmpDir;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a7082a53194c3d1c61d78ffba6251f179">mPublishingSize</a> = <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a23de70f364c11fbf8468f86e7d6f6406">mSourceDocument</a>-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>();</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ab8e8d3cbfb56648b5789087b34ff98f1">rasterizeScenes</a>();</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
@@ -233,39 +217,39 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html">UBExportFullPDF</a> pdfExporter;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        pdfExporter.<a class="code" href="../../d8/dd5/class_u_b_export_adaptor.html#ad1c81c7aca05513cb4ea5611c55e3075">setVerbode</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        pdfExporter.<a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a2101b6fdc6ed273a6e2c062d5ce7e12c">persistsDocument</a>(mSourceDocument, mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + documentName + <span class="stringliteral">&quot;.pdf&quot;</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        pdfExporter.<a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a2101b6fdc6ed273a6e2c062d5ce7e12c">persistsDocument</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a23de70f364c11fbf8468f86e7d6f6406">mSourceDocument</a>, <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + documentName + <span class="stringliteral">&quot;.pdf&quot;</span>);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="../../d9/d32/class_u_b_export_document.html">UBExportDocument</a> ubzExporter;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ubzExporter.<a class="code" href="../../d8/dd5/class_u_b_export_adaptor.html#ad1c81c7aca05513cb4ea5611c55e3075">setVerbode</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        ubzExporter.<a class="code" href="../../d9/d32/class_u_b_export_document.html#a24861f6f95b01dab4ef70ae05d0acaa6">persistsDocument</a>(mSourceDocument, mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + documentName + <span class="stringliteral">&quot;.ubz&quot;</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        ubzExporter.<a class="code" href="../../d9/d32/class_u_b_export_document.html#a24861f6f95b01dab4ef70ae05d0acaa6">persistsDocument</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a23de70f364c11fbf8468f86e7d6f6406">mSourceDocument</a>, <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + documentName + <span class="stringliteral">&quot;.ubz&quot;</span>);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// remove all useless files</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pageIndex = 0; pageIndex &lt; mPublishingSize; pageIndex++) {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            QString filename = mPublishingPath + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>,pageIndex);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pageIndex = 0; pageIndex &lt; <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a7082a53194c3d1c61d78ffba6251f179">mPublishingSize</a>; pageIndex++) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            QString filename = <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>,pageIndex);</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            QFile::remove(filename);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#afc92c7516c08081b8443076d1554e471">UBPersistenceManager::imageDirectory</a>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a12dbae5a490687164448695c8e278f35">UBPersistenceManager::objectDirectory</a>);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a6d2a1dff335f20f14fba15798c778aa7">UBPersistenceManager::videoDirectory</a>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad68b2f4bbd480f2119432f4b6f4b20d3">UBPersistenceManager::audioDirectory</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#afc92c7516c08081b8443076d1554e471">UBPersistenceManager::imageDirectory</a>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a12dbae5a490687164448695c8e278f35">UBPersistenceManager::objectDirectory</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a6d2a1dff335f20f14fba15798c778aa7">UBPersistenceManager::videoDirectory</a>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad68b2f4bbd480f2119432f4b6f4b20d3">UBPersistenceManager::audioDirectory</a>);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        mTmpZipFile = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a077517980ac1053b24899243e3bc44f6">UBFileSystemUtils::defaultTempDirPath</a>() + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#af1f88e3aef7d3360b2302ebe2f6c9627">UBStringUtils::toCanonicalUuid</a>(QUuid::createUuid()) + <span class="stringliteral">&quot;.ubw~&quot;</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a8d12fb6e7f9447f2177f43c988f579aa">mTmpZipFile</a> = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a077517980ac1053b24899243e3bc44f6">UBFileSystemUtils::defaultTempDirPath</a>() + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#af1f88e3aef7d3360b2302ebe2f6c9627">UBStringUtils::toCanonicalUuid</a>(QUuid::createUuid()) + <span class="stringliteral">&quot;.ubw&quot;</span>;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        QuaZip zip(mTmpZipFile);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        QuaZip zip(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a8d12fb6e7f9447f2177f43c988f579aa">mTmpZipFile</a>);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        zip.setFileNameCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (!zip.open(QuaZip::mdCreate))</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            qWarning() &lt;&lt; <span class="stringliteral">&quot;Export failed. Cause: zip.open(): &quot;</span> &lt;&lt; zip.getZipError() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; mTmpZipFile;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            qWarning() &lt;&lt; <span class="stringliteral">&quot;Export failed. Cause: zip.open(): &quot;</span> &lt;&lt; zip.getZipError() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a8d12fb6e7f9447f2177f43c988f579aa">mTmpZipFile</a>;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            QApplication::restoreOverrideCursor();</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        QuaZipFile outFile(&amp;zip);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a2249a0e78e47e7b80ad832e70f6bbc2c">UBFileSystemUtils::compressDirInZip</a>(mPublishingPath, <span class="stringliteral">&quot;&quot;</span>, &amp;outFile, <span class="keyword">true</span>))</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a2249a0e78e47e7b80ad832e70f6bbc2c">UBFileSystemUtils::compressDirInZip</a>(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a>, <span class="stringliteral">&quot;&quot;</span>, &amp;outFile, <span class="keyword">true</span>))</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            qWarning(<span class="stringliteral">&quot;Export failed. compressDirInZip failed ...&quot;</span>);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            zip.close();</div>
@@ -296,14 +280,14 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00190"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ab8e8d3cbfb56648b5789087b34ff98f1">  190</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ab8e8d3cbfb56648b5789087b34ff98f1">UBDocumentPublisher::rasterizeScenes</a>()</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pageIndex = 0; pageIndex &lt; mPublishingSize; pageIndex++)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pageIndex = 0; pageIndex &lt; <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a7082a53194c3d1c61d78ffba6251f179">mPublishingSize</a>; pageIndex++)</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="../../d8/d81/class_u_b_application.html#afd12508537e75aaa6789431e60b60b44">UBApplication::showMessage</a>(tr(<span class="stringliteral">&quot;Converting page %1/%2 ...&quot;</span>).arg(<a class="code" href="../../da/dc6/class_u_b_document_container.html#ad573f4f006c0eac302455c6bd20421a7">UBDocumentContainer::pageFromSceneIndex</a>(pageIndex)).arg(mPublishingSize), <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> publishingDocument(mPublishingPath);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> publishingDocument(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a>);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="../../d9/dc7/class_u_b_svg_subset_rasterizer.html">UBSvgSubsetRasterizer</a> rasterizer(&amp;publishingDocument, pageIndex);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        QString filename = mPublishingPath + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.jpg&quot;</span>,pageIndex);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        QString filename = <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.jpg&quot;</span>,pageIndex);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        rasterizer.<a class="code" href="../../d9/dc7/class_u_b_svg_subset_rasterizer.html#a747d13e01c5a4410020daa9ae6f53bf3">rasterizeToFile</a>(filename);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
@@ -313,7 +297,7 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
 <div class="line"><a name="l00208"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aea4a5203521c93d261a71ee35b63bb4b">  208</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aea4a5203521c93d261a71ee35b63bb4b">UBDocumentPublisher::updateGoogleMapApiKey</a>()</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;{</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    QDir widgestDir(mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7c481362bd285b72aa501b9a6f70b314">UBPersistenceManager::widgetDirectory</a>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    QDir widgestDir(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7c481362bd285b72aa501b9a6f70b314">UBPersistenceManager::widgetDirectory</a>);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    QString uniboardWebGoogleMapApiKey = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa52b8e29071c46d7c615b0528003bc4c">uniboardWebGoogleMapApiKey</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
@@ -352,9 +336,9 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
 <div class="line"><a name="l00247"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aa639517feea98992bb76ddb66521326c">  247</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aa639517feea98992bb76ddb66521326c">UBDocumentPublisher::upgradeDocumentForPublishing</a>()</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pageIndex = 0; pageIndex &lt; mPublishingSize; pageIndex++)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pageIndex = 0; pageIndex &lt; <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a7082a53194c3d1c61d78ffba6251f179">mPublishingSize</a>; pageIndex++)</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> publishingDocument(mPublishingPath);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> publishingDocument(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a>);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *scene = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a5abb38920769f1acbb2cfa21b0c8eb0a">UBSvgSubsetAdaptor::loadScene</a>(&amp;publishingDocument, pageIndex);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        QList&lt;UBGraphicsW3CWidgetItem*&gt; widgets;</div>
@@ -368,7 +352,7 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            }</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        QString filename = mPublishingPath + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.json&quot;</span>,pageIndex);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        QString filename = <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.json&quot;</span>,pageIndex);</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        QFile jsonFile(filename);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span> (jsonFile.open(QIODevice::WriteOnly | QIODevice::Truncate))</div>
@@ -480,7 +464,7 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (!startFileName.startsWith(<span class="stringliteral">&quot;http://&quot;</span>))</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        QString startFilePath = mPublishingPath + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7c481362bd285b72aa501b9a6f70b314">UBPersistenceManager::widgetDirectory</a> + <span class="stringliteral">&quot;/&quot;</span> + widgetItem-&gt;<a class="code" href="../../d8/d1e/class_u_b_item.html#a242c8e4390dc3244bd42023b349b042b">uuid</a>().toString() + <span class="stringliteral">&quot;.wgt/&quot;</span> + startFileName;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        QString startFilePath = <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a62b358eabdc999d310f45c098fb5f28c">mPublishingPath</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7c481362bd285b72aa501b9a6f70b314">UBPersistenceManager::widgetDirectory</a> + <span class="stringliteral">&quot;/&quot;</span> + widgetItem-&gt;<a class="code" href="../../d8/d1e/class_u_b_item.html#a242c8e4390dc3244bd42023b349b042b">uuid</a>().toString() + <span class="stringliteral">&quot;.wgt/&quot;</span> + startFileName;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        QFile startFile(startFilePath);</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
@@ -545,7 +529,7 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                            lines &lt;&lt; <span class="stringliteral">&quot;    widget.preferences.clear = function() {}&quot;</span>;</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                            lines &lt;&lt; <span class="stringliteral">&quot;    var uniboard = {};&quot;</span>;</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                            lines &lt;&lt; <span class="stringliteral">&quot;    uniboard.pageCount = &quot;</span> + QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(mPublishingSize) + <span class="stringliteral">&quot;;&quot;</span>;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                            lines &lt;&lt; <span class="stringliteral">&quot;    uniboard.pageCount = &quot;</span> + QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a7082a53194c3d1c61d78ffba6251f179">mPublishingSize</a>) + <span class="stringliteral">&quot;;&quot;</span>;</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                            lines &lt;&lt; <span class="stringliteral">&quot;    uniboard.currentPageNumber = &quot;</span> + QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(pageNumber) + <span class="stringliteral">&quot;;&quot;</span>;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                            lines &lt;&lt; <span class="stringliteral">&quot;    uniboard.uuid = &#39;&quot;</span> + <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#af1f88e3aef7d3360b2302ebe2f6c9627">UBStringUtils::toCanonicalUuid</a>(widgetItem-&gt;<a class="code" href="../../d8/d1e/class_u_b_item.html#a242c8e4390dc3244bd42023b349b042b">uuid</a>()) + <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                            lines &lt;&lt; <span class="stringliteral">&quot;    uniboard.lang = navigator.language;&quot;</span>;</div>
@@ -659,20 +643,20 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    }</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;}</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;<span class="keywordtype">void</span> UBDocumentPublisher::init()</div>
+<div class="line"><a name="l00556"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a559df67fc847106fa021830abbca2c77">  556</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a559df67fc847106fa021830abbca2c77">UBDocumentPublisher::init</a>()</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;{</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    mCrlf=0x0d;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    mCrlf+=0x0a;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    mDocInfos.<a class="code" href="../../d4/d55/structs_document_infos.html#af5c9a5ab7a6a10f869ef7d9c06b472e7">title</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    mDocInfos.<a class="code" href="../../d4/d55/structs_document_infos.html#a737608f157499ca87f256f5a67336357">description</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>=0x0d;</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>+=0x0a;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a53dcdbec4dd859e21c8afce6906baff1">mDocInfos</a>.<a class="code" href="../../d4/d55/structs_document_infos.html#af5c9a5ab7a6a10f869ef7d9c06b472e7">title</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a53dcdbec4dd859e21c8afce6906baff1">mDocInfos</a>.<a class="code" href="../../d4/d55/structs_document_infos.html#a737608f157499ca87f256f5a67336357">description</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    mpCookieJar = <span class="keyword">new</span> QNetworkCookieJar();</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    mpNetworkMgr = <span class="keyword">new</span> QNetworkAccessManager(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a89bc38cd26cbe5146773932a03dbb7bf">mpCookieJar</a> = <span class="keyword">new</span> QNetworkCookieJar();</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ad536bd974367d04686e8b70e12278cdc">mpNetworkMgr</a> = <span class="keyword">new</span> QNetworkAccessManager(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    connect(mpNetworkMgr, SIGNAL(finished(QNetworkReply*)), <span class="keyword">this</span>, SLOT(onFinished(QNetworkReply*)));</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    connect(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ad536bd974367d04686e8b70e12278cdc">mpNetworkMgr</a>, SIGNAL(finished(QNetworkReply*)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a6e09761afe031f3aa92beea81c917d21">onFinished</a>(QNetworkReply*)));</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;}</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="keywordtype">void</span> UBDocumentPublisher::onFinished(QNetworkReply *reply)</div>
+<div class="line"><a name="l00569"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a6e09761afe031f3aa92beea81c917d21">  569</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a6e09761afe031f3aa92beea81c917d21">UBDocumentPublisher::onFinished</a>(QNetworkReply *reply)</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;{</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    QVariant cookieHeader = reply-&gt;rawHeader(<span class="stringliteral">&quot;Set-Cookie&quot;</span>);</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="comment">// First we concatenate all the Set-Cookie values (the packet can contains many of them)</span></div>
@@ -713,11 +697,11 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    reply-&gt;deleteLater();</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;}</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="keywordtype">void</span> UBDocumentPublisher::sendUbw(QString username, QString password)</div>
+<div class="line"><a name="l00610"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aa1c9b34c126b5eaa4024fa22b00dfdf4">  610</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#aa1c9b34c126b5eaa4024fa22b00dfdf4">UBDocumentPublisher::sendUbw</a>(QString username, QString password)</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;{</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="keywordflow">if</span> (QFile::exists(mTmpZipFile))</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="keywordflow">if</span> (QFile::exists(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a8d12fb6e7f9447f2177f43c988f579aa">mTmpZipFile</a>))</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    {</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        QFile f(mTmpZipFile);</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        QFile f(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a8d12fb6e7f9447f2177f43c988f579aa">mTmpZipFile</a>);</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        <span class="keywordflow">if</span> (f.open(QIODevice::ReadOnly))</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        {</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;            QFileInfo fi(f);</div>
@@ -728,38 +712,38 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;            boundary = <span class="stringliteral">&quot;---WebKitFormBoundaryDKBTgA53MiyWrzLY&quot;</span>;</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;            multipartHeader = <span class="stringliteral">&quot;multipart/form-data; boundary=&quot;</span>+boundary;</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            data=<span class="stringliteral">&quot;--&quot;</span>+boundary+mCrlf;</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            data+=<span class="stringliteral">&quot;Content-Disposition: form-data; name=\&quot;title\&quot;&quot;</span> + mCrlf + mCrlf + mDocInfos.<a class="code" href="../../d4/d55/structs_document_infos.html#af5c9a5ab7a6a10f869ef7d9c06b472e7">title</a> + mCrlf;</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            data+=<span class="stringliteral">&quot;--&quot;</span>+boundary+mCrlf;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            data+=<span class="stringliteral">&quot;Content-Disposition: form-data; name=\&quot;description\&quot;&quot;</span> + mCrlf + mCrlf + mDocInfos.<a class="code" href="../../d4/d55/structs_document_infos.html#a737608f157499ca87f256f5a67336357">description</a>.remove(<span class="stringliteral">&quot;\n&quot;</span>) + mCrlf;</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            data+=<span class="stringliteral">&quot;--&quot;</span>+boundary+mCrlf;</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            data+=<span class="stringliteral">&quot;Content-Disposition: form-data; name=\&quot;file\&quot;; filename=\&quot;&quot;</span>+ fi.fileName() +<span class="stringliteral">&quot;\&quot;&quot;</span>+mCrlf;</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            data+=<span class="stringliteral">&quot;Content-Type: application/octet-stream&quot;</span>+mCrlf+mCrlf;</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            data=<span class="stringliteral">&quot;--&quot;</span>+boundary+<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            data+=<span class="stringliteral">&quot;Content-Disposition: form-data; name=\&quot;title\&quot;&quot;</span> + mCrlf + mCrlf + <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a53dcdbec4dd859e21c8afce6906baff1">mDocInfos</a>.<a class="code" href="../../d4/d55/structs_document_infos.html#af5c9a5ab7a6a10f869ef7d9c06b472e7">title</a> + <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            data+=<span class="stringliteral">&quot;--&quot;</span>+boundary+<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            data+=<span class="stringliteral">&quot;Content-Disposition: form-data; name=\&quot;description\&quot;&quot;</span> + mCrlf + mCrlf + <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a53dcdbec4dd859e21c8afce6906baff1">mDocInfos</a>.<a class="code" href="../../d4/d55/structs_document_infos.html#a737608f157499ca87f256f5a67336357">description</a>.remove(<span class="stringliteral">&quot;\n&quot;</span>) + <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            data+=<span class="stringliteral">&quot;--&quot;</span>+boundary+<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            data+=<span class="stringliteral">&quot;Content-Disposition: form-data; name=\&quot;file\&quot;; filename=\&quot;&quot;</span>+ fi.fileName() +<span class="stringliteral">&quot;\&quot;&quot;</span>+<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            data+=<span class="stringliteral">&quot;Content-Type: application/octet-stream&quot;</span>+mCrlf+<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;            datatoSend=data.toAscii(); <span class="comment">// convert data string to byte array for request</span></div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            datatoSend += ba;</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            datatoSend += mCrlf;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            datatoSend += <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a4f0198c6fb58c24a811d3d65b8526a2e">mCrlf</a>;</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            datatoSend += QString(<span class="stringliteral">&quot;--%0--%1&quot;</span>).arg(boundary).arg(mCrlf);</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            QNetworkRequest request(QUrl(QString(<a class="code" href="../../d8/d66/_u_b_document_publisher_8h.html#ac02823267be61bba582d7b800de856dc">DOCPUBLICATION_URL</a>).toAscii().constData()));</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            request.setHeader(QNetworkRequest::ContentTypeHeader, multipartHeader);</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            request.setHeader(QNetworkRequest::ContentLengthHeader,datatoSend.size());</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            QString b64Auth = getBase64Of(QString(<span class="stringliteral">&quot;%0:%1&quot;</span>).arg(username).arg(password));</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            QString b64Auth = <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a0c227954a3cdcd4cc4731f2d9daa9842">getBase64Of</a>(QString(<span class="stringliteral">&quot;%0:%1&quot;</span>).arg(username).arg(password));</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            request.setRawHeader(<span class="stringliteral">&quot;Authorization&quot;</span>, QString(<span class="stringliteral">&quot;Basic %0&quot;</span>).arg(b64Auth).toAscii().constData());</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            request.setRawHeader(<span class="stringliteral">&quot;Host&quot;</span>, <span class="stringliteral">&quot;planete.sankore.org&quot;</span>);</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            request.setRawHeader(<span class="stringliteral">&quot;Accept&quot;</span>, <span class="stringliteral">&quot;*/*&quot;</span>);</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            request.setRawHeader(<span class="stringliteral">&quot;Accept-Language&quot;</span>, <span class="stringliteral">&quot;en-US,*&quot;</span>);</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            mpCookieJar-&gt;setCookiesFromUrl(mCookies, QUrl(<a class="code" href="../../d8/d66/_u_b_document_publisher_8h.html#ac02823267be61bba582d7b800de856dc">DOCPUBLICATION_URL</a>));</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            mpNetworkMgr-&gt;setCookieJar(mpCookieJar);</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a89bc38cd26cbe5146773932a03dbb7bf">mpCookieJar</a>-&gt;setCookiesFromUrl(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a97cac940b7200ab3cf57483d9ac62f9d">mCookies</a>, QUrl(<a class="code" href="../../d8/d66/_u_b_document_publisher_8h.html#ac02823267be61bba582d7b800de856dc">DOCPUBLICATION_URL</a>));</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ad536bd974367d04686e8b70e12278cdc">mpNetworkMgr</a>-&gt;setCookieJar(<a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a89bc38cd26cbe5146773932a03dbb7bf">mpCookieJar</a>);</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            <span class="comment">// Send the file</span></div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            mpNetworkMgr-&gt;post(request,datatoSend);</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#ad536bd974367d04686e8b70e12278cdc">mpNetworkMgr</a>-&gt;post(request,datatoSend);</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        }</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    }</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;}</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;QString UBDocumentPublisher::getBase64Of(QString stringToEncode)</div>
+<div class="line"><a name="l00656"></a><span class="lineno"><a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a0c227954a3cdcd4cc4731f2d9daa9842">  656</a></span>&#160;QString <a class="code" href="../../da/d3c/class_u_b_document_publisher.html#a0c227954a3cdcd4cc4731f2d9daa9842">UBDocumentPublisher::getBase64Of</a>(QString stringToEncode)</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;{</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keywordflow">return</span> stringToEncode.toAscii().toBase64();</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;}</div>
@@ -779,62 +763,62 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    setFixedSize(400, 150);</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    setWindowTitle(tr(<span class="stringliteral">&quot;Proxy Login&quot;</span>));</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    mpLayout = <span class="keyword">new</span> QVBoxLayout();</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    setLayout(mpLayout);</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    mpUserLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    mpLayout-&gt;addLayout(mpUserLayout);</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    mpPasswordLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    mpLayout-&gt;addLayout(mpPasswordLayout);</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a> = <span class="keyword">new</span> QVBoxLayout();</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    setLayout(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acf6b689378160c0aacdf75c8567167ce">mpUserLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>-&gt;addLayout(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acf6b689378160c0aacdf75c8567167ce">mpUserLayout</a>);</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a6d6528bdb54d617f2055ece7999aace0">mpPasswordLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>-&gt;addLayout(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a6d6528bdb54d617f2055ece7999aace0">mpPasswordLayout</a>);</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    mpUserLabel = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Username:&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    mpUsername = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    mpUserLayout-&gt;addWidget(mpUserLabel, 0);</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    mpUserLayout-&gt;addWidget(mpUsername, 1);</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a2a77f5dc31bb3b28b3f3e2364ab8e762">mpUserLabel</a> = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Username:&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a36e0e9531c6b59228e221d2e6ebb6da7">mpUsername</a> = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acf6b689378160c0aacdf75c8567167ce">mpUserLayout</a>-&gt;addWidget(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a2a77f5dc31bb3b28b3f3e2364ab8e762">mpUserLabel</a>, 0);</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acf6b689378160c0aacdf75c8567167ce">mpUserLayout</a>-&gt;addWidget(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a36e0e9531c6b59228e221d2e6ebb6da7">mpUsername</a>, 1);</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    mpPasswordLabel = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Password:&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    mpPassword = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    mpPasswordLayout-&gt;addWidget(mpPasswordLabel, 0);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    mpPasswordLayout-&gt;addWidget(mpPassword, 1);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a9bde86546e20205374ea28f48a772e2d">mpPasswordLabel</a> = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Password:&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acb62e66a7a59e64866579b733c5b08c7">mpPassword</a> = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a6d6528bdb54d617f2055ece7999aace0">mpPasswordLayout</a>-&gt;addWidget(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a9bde86546e20205374ea28f48a772e2d">mpPasswordLabel</a>, 0);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a6d6528bdb54d617f2055ece7999aace0">mpPasswordLayout</a>-&gt;addWidget(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acb62e66a7a59e64866579b733c5b08c7">mpPassword</a>, 1);</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    mpButtons = <span class="keyword">new</span> QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    mpLayout-&gt;addWidget(mpButtons);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a96903aedcdac556431380c3085f1eeda">mpButtons</a> = <span class="keyword">new</span> QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>-&gt;addWidget(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a96903aedcdac556431380c3085f1eeda">mpButtons</a>);</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    connect(mpButtons, SIGNAL(accepted()), <span class="keyword">this</span>, SLOT(accept()));</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    connect(mpButtons, SIGNAL(rejected()), <span class="keyword">this</span>, SLOT(reject()));</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    connect(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a96903aedcdac556431380c3085f1eeda">mpButtons</a>, SIGNAL(accepted()), <span class="keyword">this</span>, SLOT(accept()));</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    connect(<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a96903aedcdac556431380c3085f1eeda">mpButtons</a>, SIGNAL(rejected()), <span class="keyword">this</span>, SLOT(reject()));</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;}</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;</div>
 <div class="line"><a name="l00701"></a><span class="lineno"><a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a1bcc0d81ba37e3f4432d3d4c7f925ca3">  701</a></span>&#160;<a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a1bcc0d81ba37e3f4432d3d4c7f925ca3">UBProxyLoginDlg::~UBProxyLoginDlg</a>()</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;{</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keywordflow">if</span>(NULL != mpLayout)</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>)</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keyword">delete</span> mpLayout;</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        mpLayout = NULL;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a> = NULL;</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    }</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordflow">if</span>(NULL != mpButtons)</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a96903aedcdac556431380c3085f1eeda">mpButtons</a>)</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    {</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <span class="keyword">delete</span> mpButtons;</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        mpButtons = NULL;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a96903aedcdac556431380c3085f1eeda">mpButtons</a>;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a96903aedcdac556431380c3085f1eeda">mpButtons</a> = NULL;</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    }</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordflow">if</span>(NULL != mpUserLabel)</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a2a77f5dc31bb3b28b3f3e2364ab8e762">mpUserLabel</a>)</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    {</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <span class="keyword">delete</span> mpUserLabel;</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        mpUserLabel = NULL;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a2a77f5dc31bb3b28b3f3e2364ab8e762">mpUserLabel</a>;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a2a77f5dc31bb3b28b3f3e2364ab8e762">mpUserLabel</a> = NULL;</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    }</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keywordflow">if</span>(NULL != mpPasswordLabel)</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a9bde86546e20205374ea28f48a772e2d">mpPasswordLabel</a>)</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    {</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="keyword">delete</span> mpPasswordLabel;</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        mpPasswordLabel = NULL;</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a9bde86546e20205374ea28f48a772e2d">mpPasswordLabel</a>;</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a9bde86546e20205374ea28f48a772e2d">mpPasswordLabel</a> = NULL;</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    }</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <span class="keywordflow">if</span>(NULL != mpUsername)</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a36e0e9531c6b59228e221d2e6ebb6da7">mpUsername</a>)</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    {</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        <span class="keyword">delete</span> mpUsername;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        mpUsername = NULL;</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a36e0e9531c6b59228e221d2e6ebb6da7">mpUsername</a>;</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a36e0e9531c6b59228e221d2e6ebb6da7">mpUsername</a> = NULL;</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    }</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordflow">if</span>(NULL != mpPassword)</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acb62e66a7a59e64866579b733c5b08c7">mpPassword</a>)</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        <span class="keyword">delete</span> mpPassword;</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        mpPassword = NULL;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acb62e66a7a59e64866579b733c5b08c7">mpPassword</a>;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acb62e66a7a59e64866579b733c5b08c7">mpPassword</a> = NULL;</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    }</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;}</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;</div>
@@ -853,77 +837,77 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    resize(500, 300);</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    mpLayout = <span class="keyword">new</span> QVBoxLayout();</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    setLayout(mpLayout);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a> = <span class="keyword">new</span> QVBoxLayout();</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    setLayout(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a>);</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    mpTitleLabel = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Title:&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    mpTitle = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    mpTitleLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    mpTitleLayout-&gt;addWidget(mpTitleLabel, 0);</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    mpTitleLayout-&gt;addWidget(mpTitle, 1);</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    mpLayout-&gt;addLayout(mpTitleLayout, 0);</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a8db328105f29fce312fdfdaf3a672979">mpTitleLabel</a> = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Title:&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#af35d6522ae522114ea1360e469863b7d">mpTitle</a> = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a5ccdbdc122aa2931ce542378bf4607a1">mpTitleLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a5ccdbdc122aa2931ce542378bf4607a1">mpTitleLayout</a>-&gt;addWidget(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a8db328105f29fce312fdfdaf3a672979">mpTitleLabel</a>, 0);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a5ccdbdc122aa2931ce542378bf4607a1">mpTitleLayout</a>-&gt;addWidget(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#af35d6522ae522114ea1360e469863b7d">mpTitle</a>, 1);</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a>-&gt;addLayout(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a5ccdbdc122aa2931ce542378bf4607a1">mpTitleLayout</a>, 0);</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    mpDescLabel = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Description:&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    mpLayout-&gt;addWidget(mpDescLabel, 0);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#ab88dbbc13ee2b65f431c6da13f2b0a93">mpDescLabel</a> = <span class="keyword">new</span> QLabel(tr(<span class="stringliteral">&quot;Description:&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a>-&gt;addWidget(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#ab88dbbc13ee2b65f431c6da13f2b0a93">mpDescLabel</a>, 0);</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    mpDescription = <span class="keyword">new</span> QTextEdit(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    mpLayout-&gt;addWidget(mpDescription, 1);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aac725e543756fd5d06666862b051e42e">mpDescription</a> = <span class="keyword">new</span> QTextEdit(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a>-&gt;addWidget(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aac725e543756fd5d06666862b051e42e">mpDescription</a>, 1);</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    mpButtons = <span class="keyword">new</span> QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, Qt::Horizontal, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    mpButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setText(tr(<span class="stringliteral">&quot;Publish&quot;</span>));</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    mpLayout-&gt;addWidget(mpButtons);</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a> = <span class="keyword">new</span> QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, Qt::Horizontal, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>-&gt;button(QDialogButtonBox::Ok)-&gt;setText(tr(<span class="stringliteral">&quot;Publish&quot;</span>));</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a>-&gt;addWidget(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>);</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    mpButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    connect(mpButtons, SIGNAL(accepted()), <span class="keyword">this</span>, SLOT(accept()));</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    connect(mpButtons, SIGNAL(rejected()), <span class="keyword">this</span>, SLOT(reject()));</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    connect(mpTitle, SIGNAL(textChanged(QString)), <span class="keyword">this</span>, SLOT(onTextChanged()));</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    connect(mpDescription, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(onTextChanged()));</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    connect(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>, SIGNAL(accepted()), <span class="keyword">this</span>, SLOT(accept()));</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    connect(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>, SIGNAL(rejected()), <span class="keyword">this</span>, SLOT(reject()));</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    connect(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#af35d6522ae522114ea1360e469863b7d">mpTitle</a>, SIGNAL(textChanged(QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abe67e936baad87658c8e063cfb3b083f">onTextChanged</a>()));</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    connect(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aac725e543756fd5d06666862b051e42e">mpDescription</a>, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abe67e936baad87658c8e063cfb3b083f">onTextChanged</a>()));</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;}</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;</div>
 <div class="line"><a name="l00778"></a><span class="lineno"><a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aded6039b67e12da4df5ae050eb2b012e">  778</a></span>&#160;<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aded6039b67e12da4df5ae050eb2b012e">UBPublicationDlg::~UBPublicationDlg</a>()</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;{</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="keywordflow">if</span>(NULL != mpTitleLabel)</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a8db328105f29fce312fdfdaf3a672979">mpTitleLabel</a>)</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    {</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <span class="keyword">delete</span> mpTitleLabel;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        mpTitleLabel = NULL;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a8db328105f29fce312fdfdaf3a672979">mpTitleLabel</a>;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a8db328105f29fce312fdfdaf3a672979">mpTitleLabel</a> = NULL;</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    }</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="keywordflow">if</span>(NULL != mpTitle)</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#af35d6522ae522114ea1360e469863b7d">mpTitle</a>)</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    {</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="keyword">delete</span> mpTitle;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        mpTitle = NULL;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#af35d6522ae522114ea1360e469863b7d">mpTitle</a>;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#af35d6522ae522114ea1360e469863b7d">mpTitle</a> = NULL;</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    }</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keywordflow">if</span>(NULL != mpDescLabel)</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#ab88dbbc13ee2b65f431c6da13f2b0a93">mpDescLabel</a>)</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    {</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        <span class="keyword">delete</span> mpDescLabel;</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        mpDescLabel = NULL;</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#ab88dbbc13ee2b65f431c6da13f2b0a93">mpDescLabel</a>;</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#ab88dbbc13ee2b65f431c6da13f2b0a93">mpDescLabel</a> = NULL;</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    }</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="keywordflow">if</span>(NULL != mpDescription)</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aac725e543756fd5d06666862b051e42e">mpDescription</a>)</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    {</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        <span class="keyword">delete</span> mpDescription;</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        mpDescription = NULL;</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aac725e543756fd5d06666862b051e42e">mpDescription</a>;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aac725e543756fd5d06666862b051e42e">mpDescription</a> = NULL;</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    }</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">if</span>(NULL != mpButtons)</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>)</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    {</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        <span class="keyword">delete</span> mpButtons;</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        mpButtons = NULL;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>;</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a> = NULL;</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    }</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordflow">if</span>(NULL != mpTitleLayout)</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a5ccdbdc122aa2931ce542378bf4607a1">mpTitleLayout</a>)</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    {</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keyword">delete</span> mpTitleLayout;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        mpTitleLayout = NULL;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a5ccdbdc122aa2931ce542378bf4607a1">mpTitleLayout</a>;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a5ccdbdc122aa2931ce542378bf4607a1">mpTitleLayout</a> = NULL;</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    }</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="keywordflow">if</span>(NULL != mpLayout)</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a>)</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    {</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keyword">delete</span> mpLayout;</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        mpLayout = NULL;</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a>;</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abc39468a62bd7e89cbec2278b08db1e6">mpLayout</a> = NULL;</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    }</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;}</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;<span class="keywordtype">void</span> UBPublicationDlg::onTextChanged()</div>
+<div class="line"><a name="l00817"></a><span class="lineno"><a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abe67e936baad87658c8e063cfb3b083f">  817</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#abe67e936baad87658c8e063cfb3b083f">UBPublicationDlg::onTextChanged</a>()</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;{</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="keywordtype">bool</span> bPublishButtonState = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    <span class="keywordflow">if</span>(mpTitle-&gt;text() != <span class="stringliteral">&quot;&quot;</span> &amp;&amp; mpDescription-&gt;document()-&gt;toPlainText() != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#af35d6522ae522114ea1360e469863b7d">mpTitle</a>-&gt;text() != <span class="stringliteral">&quot;&quot;</span> &amp;&amp; <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#aac725e543756fd5d06666862b051e42e">mpDescription</a>-&gt;document()-&gt;toPlainText() != <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    {</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;        bPublishButtonState = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    }</div>
@@ -932,18 +916,14 @@ $(document).ready(function(){initNavTree('d7/d94/_u_b_document_publisher_8cpp_so
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        bPublishButtonState = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    }</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    mpButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(bPublishButtonState);</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <a class="code" href="../../d7/daf/class_u_b_publication_dlg.html#a1bff8b8063a4880406393a85021692aa">mpButtons</a>-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(bPublishButtonState);</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ba3bda1af5b46be6c34dbdf9592f1d27.html">adaptors</a></li><li class="navelem"><a class="el" href="../../dir_c2c2062ae07505a994185fba6fade769.html">publishing</a></li><li class="navelem"><a class="el" href="../../d7/d94/_u_b_document_publisher_8cpp.html">UBDocumentPublisher.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:41 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:12 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

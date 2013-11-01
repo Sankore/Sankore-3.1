@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/d49/_u_b_page_size_undo_command_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d3/d49/_u_b_page_size_undo_command_8cp
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBPageSizeUndoCommand.cpp</div>  </div>
@@ -142,7 +126,7 @@ $(document).ready(function(){initNavTree('d3/d49/_u_b_page_size_undo_command_8cp
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        , mPreviousSize(previousSize)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        , mNewSize(newSize)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mFirstRedo = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a20e905e2d7a9d1eebd8ad5b4d00ab634">mFirstRedo</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#ae113fb8432d48bd7055b166ee987d97c">   42</a></span>&#160;<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#ae113fb8432d48bd7055b166ee987d97c">UBPageSizeUndoCommand::~UBPageSizeUndoCommand</a>()</div>
@@ -152,13 +136,13 @@ $(document).ready(function(){initNavTree('d3/d49/_u_b_page_size_undo_command_8cp
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a94c683dc241bc250649f83de89bdbc7e">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a94c683dc241bc250649f83de89bdbc7e">UBPageSizeUndoCommand::undo</a>()</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (!mScene){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>){</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(mPreviousSize);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a743a147991205b263660203f31bae910">mPreviousSize</a>);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// force refresh, QT is a bit lazy and take a lot of time (nb item ^2 ?) to trigger repaint</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mScene-&gt;update(mScene-&gt;sceneRect());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;update(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;sceneRect());</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
@@ -166,31 +150,27 @@ $(document).ready(function(){initNavTree('d3/d49/_u_b_page_size_undo_command_8cp
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// the Undo framework calls a redo while appending the undo command.</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// as we have already plotted the elements, we do not want to do it twice</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (!mFirstRedo)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a20e905e2d7a9d1eebd8ad5b4d00ab634">mFirstRedo</a>)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (!mScene){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>){</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(mNewSize);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#ab453ed148a9ae110d2adaf6b4e7dc185">mNewSize</a>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// force refresh, QT is a bit lazy and take a lot of time (nb item ^2) to trigger repaint</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        mScene-&gt;update(mScene-&gt;sceneRect());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;update(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;sceneRect());</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        mFirstRedo = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a20e905e2d7a9d1eebd8ad5b4d00ab634">mFirstRedo</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../d3/d49/_u_b_page_size_undo_command_8cpp.html">UBPageSizeUndoCommand.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

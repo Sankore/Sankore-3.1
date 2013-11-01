@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d6c/class_u_b_document_replace_dialog.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d6c/class_u_b_document_replace_dial
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -154,7 +134,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a4d43d39673fd9f784e1f39f1de89827f"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a4d43d39673fd9f784e1f39f1de89827f">cancelText</a></td></tr>
 <tr class="memitem:a7a68d03d97ebed634e4975b496f3674a"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a7a68d03d97ebed634e4975b496f3674a">mLabelText</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00050">50</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a50cba28a22932f68178bb48faef79075"></a>
 <div class="memitem">
 <div class="memproto">
@@ -190,6 +173,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QDialog(parent, pFlags)</div>
 <div class="line">    , <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#ac16c038f305167b07d7dc530e3f5140b">mFileNameList</a>(pFileList)</div>
 <div class="line">    , <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a2e16809e6a9cfc81fd1ad315ee290b0c">mIncommingName</a>(pIncommingName)</div>
@@ -265,6 +250,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#aa037c92c8b7e343ce69c08450e83716b">QDialog::accept</a>();</div>
 <div class="line">}</div>
@@ -349,6 +336,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00158">158</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> tr(<span class="stringliteral">&quot;The name %1 is allready used.\nKeeping this name will replace the document.\nProviding a new name will create a new document.&quot;</span>)</div>
 <div class="line">            .arg(documentName);</div>
@@ -385,6 +374,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00060">60</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a411c9a02229af54b33caef1bbda101b0">mLineEdit</a>-&gt;text();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -420,6 +411,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">//     if !mFileNameList.contains(pStr.trimmed(), Qt::CaseSensitive)</span></div>
 <div class="line"></div>
@@ -480,6 +473,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00168">168</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a411c9a02229af54b33caef1bbda101b0">mLineEdit</a>-&gt;clear();</div>
 <div class="line">    emit <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#ab6c5c723d67de91c164f373a85c05c19">closeDialog</a>();</div>
@@ -530,6 +525,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#ac16c038f305167b07d7dc530e3f5140b">mFileNameList</a> = pLst;</div>
 <div class="line">    <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a2e16809e6a9cfc81fd1ad315ee290b0c">mIncommingName</a> = fileName;</div>
@@ -563,6 +560,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a6176528f2d104e963f98df7371f10451">mValidator</a>-&gt;setRegExp(pRegExp);</div>
 <div class="line">}</div>
@@ -582,6 +581,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(pStr);</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/d6c/class_u_b_document_replace_dialog.html#a411c9a02229af54b33caef1bbda101b0">mLineEdit</a>-&gt;hasAcceptableInput();</div>
@@ -617,6 +618,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00077">77</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af4f75c64ca827e692b406ff6c716565b"></a>
@@ -636,6 +639,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00078">78</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -657,6 +662,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00080">80</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac16c038f305167b07d7dc530e3f5140b"></a>
@@ -676,6 +683,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00075">75</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -697,6 +706,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00076">76</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7a68d03d97ebed634e4975b496f3674a"></a>
@@ -716,6 +727,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00081">81</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -737,6 +750,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00073">73</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6176528f2d104e963f98df7371f10451"></a>
@@ -756,6 +771,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00074">74</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -777,22 +794,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00079">79</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d6c/class_u_b_document_replace_dialog.html">UBDocumentReplaceDialog</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:22 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

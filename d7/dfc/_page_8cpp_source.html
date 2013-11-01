@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Page.cpp</div>  </div>
@@ -166,28 +150,28 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a44ee21d43416ffe184aae26532e5fae8">   61</a></span>&#160;std::string &amp; <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a44ee21d43416ffe184aae26532e5fae8">Page::getPageContent</a>()</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   <span class="keywordflow">return</span> _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a276d1b8ec3698c7e92c6c04614136b28">   66</a></span>&#160;<span class="keyword">const</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a4e1f3bf43d9fc39fea3829f7ae1da4a8">Object::Children</a> &amp;  <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a276d1b8ec3698c7e92c6c04614136b28">Page::getPageRefs</a>()</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   <span class="keywordflow">return</span> _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aab580190b963beb33f2ad2c5241a9605">getChildren</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aab580190b963beb33f2ad2c5241a9605">getChildren</a>();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ad678b5944cf1fc7e59dca7e51f36fe93">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ad678b5944cf1fc7e59dca7e51f36fe93">Page::recalculateObjectNumbers</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; newNumber)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a54aaa67b196c1ee3f75fcb2b5b45c4d7">recalculateObjectNumbers</a>(newNumber);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a54aaa67b196c1ee3f75fcb2b5b45c4d7">recalculateObjectNumbers</a>(newNumber);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a791406130fe3cd5b50923100eca1acf9">   77</a></span>&#160;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a791406130fe3cd5b50923100eca1acf9">Page::pageToXObject</a>(std::vector&lt;Object *&gt; &amp; allObjects, std::vector&lt;Object *&gt; &amp; annots, <span class="keywordtype">bool</span> isCloneNeeded)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * xObject = (isCloneNeeded) ? _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ae2b09666b49e415642bd168fa5d76ba2">getClone</a>(allObjects) : _root;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   <span class="keywordflow">return</span> _pageToXObject(xObject, annots);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * xObject = (isCloneNeeded) ? <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ae2b09666b49e415642bd168fa5d76ba2">getClone</a>(allObjects) : <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">_pageToXObject</a>(xObject, annots);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * Page::_pageToXObject(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp; page, std::vector&lt;Object *&gt; &amp; annots)</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">   84</a></span>&#160;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">Page::_pageToXObject</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp; page, std::vector&lt;Object *&gt; &amp; annots)</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{   </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeParent = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Parent&quot;</span>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeBleedBox = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/BleedBox&quot;</span>);</div>
@@ -301,7 +285,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">// function updates parent reference of annotation with new page object</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _updateAnnotParentPage(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *annotation,<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *newParentPage)</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="code" href="../../d7/dfc/_page_8cpp.html#ae1d70b77c2d5b60801d4de55ef4dc132">  198</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d7/dfc/_page_8cpp.html#ae1d70b77c2d5b60801d4de55ef4dc132">_updateAnnotParentPage</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *annotation,<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *newParentPage)</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;   <span class="keywordflow">if</span>( annotation )</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;   {</div>
@@ -342,7 +326,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">// function performs adjusting of some color parameters of annotation</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// to avoid interference with overlay content</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _updateAnnotFormColor(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *annotation )</div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="code" href="../../d7/dfc/_page_8cpp.html#a26aba0d283e16a74263236b3db8a19db">  239</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d7/dfc/_page_8cpp.html#a26aba0d283e16a74263236b3db8a19db">_updateAnnotFormColor</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *annotation )</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;   std::string &amp;objectContent = annotation-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) objectContent.find(<span class="stringliteral">&quot;/Widget&quot;</span>) == -1 )</div>
@@ -368,12 +352,12 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html">Filter</a> filter(childWithAP);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      std::string decodedStream;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      filter.getDecodedStream(decodedStream);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      filter.<a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a111a1cb125cfc3d2391365e864be4d5c">getDecodedStream</a>(decodedStream);</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      <span class="comment">// lets iterate over stream and find operator f and remove it!</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      <span class="keywordtype">size_t</span> beg = 0;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      <span class="keywordtype">size_t</span> found = 0;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      std::string token;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      std::string <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      <span class="keywordflow">while</span>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aea1235b1ef3c67048cc9f32ecb30918a" title="getNextWord">Parser::getNextWord</a>(token,decodedStream,beg,&amp;found))</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      {</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;         <span class="keywordflow">if</span>( token == <span class="stringliteral">&quot;f&quot;</span> || token == <span class="stringliteral">&quot;F&quot;</span> )</div>
@@ -432,7 +416,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">// they are inherited from parent object</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment">// this method processes such cases and insert resources from parent to page </span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">// for correct X-Object transformation</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> processBasePageResources(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *basePage)</div>
+<div class="line"><a name="l00329"></a><span class="lineno"><a class="code" href="../../d7/dfc/_page_8cpp.html#a6c2ce677b35a7a6cf054968df4da42b0">  329</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d7/dfc/_page_8cpp.html#a6c2ce677b35a7a6cf054968df4da42b0">processBasePageResources</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *basePage)</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;{</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;   <span class="keywordflow">if</span>( basePage == NULL )</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;   {</div>
@@ -501,7 +485,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;   }</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;std::string Page::_getMergedPageContent(  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; contentPosition, </div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ae56102e8ba506d0ee2f2b28ad8e2cbdf">  398</a></span>&#160;std::string <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ae56102e8ba506d0ee2f2b28ad8e2cbdf">Page::_getMergedPageContent</a>(  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; contentPosition, </div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; parentPosition, </div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; originalPage1Position, </div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; originalPage2Position,</div>
@@ -518,9 +502,9 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;   <span class="comment">//object number 1 will be recalculated during serialization</span></div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;   content.append(<span class="stringliteral">&quot;1 0 R\n&quot;</span>);</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;   <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/MediaBox&quot;</span>);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;   mediaBox.x2 = description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ad6b36eb19b4dae99029fcabb092973ee">outPageWidth</a>;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;   mediaBox.y2 = description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a47d237c4b51e371993f1c855a5ba0af6">outPageHeight</a>;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;   mediaBox.appendRectangleToString(content, <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;   mediaBox.<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a5f3b6541b34a0f5484cbb78cf1587854">x2</a> = description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ad6b36eb19b4dae99029fcabb092973ee">outPageWidth</a>;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;   mediaBox.<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a29e8913a7de8214057c8eae5045695e5">y2</a> = description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a47d237c4b51e371993f1c855a5ba0af6">outPageHeight</a>;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;   mediaBox.<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#afa3ba9cfa8812322bc535ca5e31d924d">appendRectangleToString</a>(content, <span class="stringliteral">&quot; &quot;</span>);</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;   content.append(<span class="stringliteral">&quot;/Parent &quot;</span>);</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;   parentPosition = content.size();</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;   <span class="comment">//object number 1 will be recalculated during serialization</span></div>
@@ -552,7 +536,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> basePageRectangle(<span class="stringliteral">&quot;/BBox&quot;</span>, basePage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; annots.size(); ++i)</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;      {</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;         _updateAnnotFormColor(annots[i]);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;         <a class="code" href="../../d7/dfc/_page_8cpp.html#a26aba0d283e16a74263236b3db8a19db">_updateAnnotFormColor</a>(annots[i]);</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;         <a class="code" href="../../d7/dfc/_page_8cpp.html#ad748c0b63c61b58b3362e53390f7c66d">_recalculateAnnotsCoordinates</a>(annots[i], basePageRectangle, mediaBox, description);</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> annotationPosition;</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;         annotationPosition.push_back(content.size());</div>
@@ -579,11 +563,11 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;   {</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;      <span class="comment">// Lets recalculate final transformation of overlay page</span></div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;      <span class="comment">// before it will be places into XObject</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/MediaBox&quot;</span>,_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/MediaBox&quot;</span>,<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#af15089010dfa9f89cdffbae0b99d06f0">overlayPageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#aa3f45594e5ba11d8e6050c6df53cee67">recalculateTranslation</a>(mediaBox.getWidth(),mediaBox.getHeight());</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;      std::vector&lt;Object *&gt; fake;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;      _pageToXObject(_root, fake);</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;      <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">_pageToXObject</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>, fake);</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;   }</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;   std::vector&lt;Object *&gt; toAllObjects;</div>
@@ -591,13 +575,13 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * sourcePageToXObject = 0;</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;   {  </div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;      <a class="code" href="../../db/d07/classmerge__lib_1_1_rotation_handler.html">RotationHandler</a> rotationHandler(sourcePage-&gt;_root, <span class="stringliteral">&quot;/Rotate&quot;</span>, *<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;      <a class="code" href="../../db/d07/classmerge__lib_1_1_rotation_handler.html">RotationHandler</a> rotationHandler(sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>, <span class="stringliteral">&quot;/Rotate&quot;</span>, *<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;      rotationHandler.<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a>();</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a843e801e2eb4c707bf54ad24e9ab1a15">basePageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a68d44b6cf26f1f689393885bb86395c5">addRotation</a>(_rotation);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a843e801e2eb4c707bf54ad24e9ab1a15">basePageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a68d44b6cf26f1f689393885bb86395c5">addRotation</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cbb195dbb991cb2fa46c03bd6189f6c">_rotation</a>);</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) sourcePage-&gt;_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>().find(<span class="stringliteral">&quot;/Annots&quot;</span>) != -1 )</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>().find(<span class="stringliteral">&quot;/Annots&quot;</span>) != -1 )</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;      {</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *crop = sourcePage-&gt;_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a748cda680f3a23133864c0757ad7f058">findPatternInObjOrParents</a>(<span class="stringliteral">&quot;/CropBox&quot;</span>);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *crop = sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a748cda680f3a23133864c0757ad7f058">findPatternInObjOrParents</a>(<span class="stringliteral">&quot;/CropBox&quot;</span>);</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;         <span class="keywordflow">if</span>( crop )</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;         {</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            <span class="comment">// we need to calculate special compensational shifting</span></div>
@@ -612,7 +596,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;            }</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;         }</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;      }</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;      processBasePageResources(sourcePage-&gt;_root);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;      <a class="code" href="../../d7/dfc/_page_8cpp.html#a6c2ce677b35a7a6cf054968df4da42b0">processBasePageResources</a>(sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>);</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;      sourcePageToXObject = sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a791406130fe3cd5b50923100eca1acf9">pageToXObject</a>(toAllObjects, annotations, isPageDuplicated);</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/BBox&quot;</span>, sourcePageToXObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a843e801e2eb4c707bf54ad24e9ab1a15">basePageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#aa3f45594e5ba11d8e6050c6df53cee67">recalculateTranslation</a>(mediaBox.getWidth(),mediaBox.getHeight());      </div>
@@ -626,14 +610,14 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;      error.append(<span class="stringliteral">&quot;There is no object with Kids field&quot;</span>);</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(error);</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;   }</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> pagePosition = catalog-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5413e83ed98fbab3a852efac0a1d783f">removeChild</a>(_root);</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> pagePosition = catalog-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5413e83ed98fbab3a852efac0a1d783f">removeChild</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>);</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;   <span class="comment">//create merged Page</span></div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> contentPosition, parentPosition, originalPage1Position, originalPage2Position;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;   std::pair&lt;unsigned int, unsigned int&gt; originalPageNumbers(_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), 0);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;   std::pair&lt;unsigned int, unsigned int&gt; originalPageNumbers(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), 0);</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;      originalPageNumbers.second = sourcePageToXObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>();</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;   std::vector &lt;Object::ChildAndItPositionInContent&gt; annotsAndItPositions;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;   std::string mergedPageContent = _getMergedPageContent(contentPosition, </div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;   std::string mergedPageContent = <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ae56102e8ba506d0ee2f2b28ad8e2cbdf">_getMergedPageContent</a>(contentPosition, </div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;      parentPosition, </div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;      originalPage1Position, </div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;      originalPage2Position, </div>
@@ -643,7 +627,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;      annotations,</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;      annotsAndItPositions</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;      );</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * mergedPage = <span class="keyword">new</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>(_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a63d0ca3a029a3084e66ba862afd690c2">getgenerationNumber</a>(), mergedPageContent);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * mergedPage = <span class="keyword">new</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a63d0ca3a029a3084e66ba862afd690c2">getgenerationNumber</a>(), mergedPageContent);</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;   toAllObjects.push_back(mergedPage);</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;   std::vector &lt; unsigned int &gt; contentPositionVec, parentPositionVec, originalPage1PositionVec, originalPage2PositionVec;</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;   contentPositionVec.push_back(contentPosition);</div>
@@ -656,7 +640,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;   mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(contentOfMergedPage, contentPositionVec);</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;   mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(catalog, parentPositionVec);</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ae09130909c8a12252d4544bfdfea4138">skipOverlayPage</a>)</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(_root, originalPage1PositionVec);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>, originalPage1PositionVec);</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(sourcePageToXObject, originalPage2PositionVec);</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;      <span class="comment">// Annotation parent page should be changed, since we moved old page</span></div>
@@ -665,7 +649,7 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;   {</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt; annotations.size();i++)</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;      {</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;         _updateAnnotParentPage(annotations[i],mergedPage);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;         <a class="code" href="../../d7/dfc/_page_8cpp.html#ae1d70b77c2d5b60801d4de55ef4dc132">_updateAnnotParentPage</a>(annotations[i],mergedPage);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;      }</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;   }</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; annotsAndItPositions.size(); ++i)</div>
@@ -673,20 +657,16 @@ $(document).ready(function(){initNavTree('d7/dfc/_page_8cpp_source.html','../../
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(annotsAndItPositions[i].first, annotsAndItPositions[i].second);</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;   }</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;   catalog-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(mergedPage, pagePosition);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;   _root = mergedPage; </div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;   <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a> = mergedPage; </div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;}</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d7/dfc/_page_8cpp.html">Page.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

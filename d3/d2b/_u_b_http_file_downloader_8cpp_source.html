@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/d2b/_u_b_http_file_downloader_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d3/d2b/_u_b_http_file_downloader_8cpp_
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBHttpFileDownloader.cpp</div>  </div>
@@ -148,50 +132,50 @@ $(document).ready(function(){initNavTree('d3/d2b/_u_b_http_file_downloader_8cpp_
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a36b270df4a29afd0b819ee83912297b1">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a36b270df4a29afd0b819ee83912297b1">UBHttpFileDownloader::download</a>(<span class="keyword">const</span> QList&lt;QUrl&gt;&amp; urls, <span class="keyword">const</span> QList&lt;QFile*&gt;&amp; files)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        mUrlsToDownload = urls;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        mFilesToSave = files;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#ac82d64a93e2f3f28e7d2725a251a84f2">mUrlsToDownload</a> = urls;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ff0bbdfc3cd4c2db49f9a4906a26905">mFilesToSave</a> = files;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        mSuccess = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        downloadNext();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ee86cfff01e4974a77cb886e2f2b2ba">downloadNext</a>();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> UBHttpFileDownloader::downloadNext()</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ee86cfff01e4974a77cb886e2f2b2ba">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ee86cfff01e4974a77cb886e2f2b2ba">UBHttpFileDownloader::downloadNext</a>()</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (mUrlsToDownload.length() &gt; 0 &amp;&amp; mFilesToSave.length() &gt; 0)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#ac82d64a93e2f3f28e7d2725a251a84f2">mUrlsToDownload</a>.length() &gt; 0 &amp;&amp; <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ff0bbdfc3cd4c2db49f9a4906a26905">mFilesToSave</a>.length() &gt; 0)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                QUrl url = mUrlsToDownload.takeFirst();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                mCurrentFile = mFilesToSave.takeFirst();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                QUrl url = <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#ac82d64a93e2f3f28e7d2725a251a84f2">mUrlsToDownload</a>.takeFirst();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a> = <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ff0bbdfc3cd4c2db49f9a4906a26905">mFilesToSave</a>.takeFirst();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (!mCurrentFile-&gt;open(QIODevice::WriteOnly | QIODevice::Truncate))</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;open(QIODevice::WriteOnly | QIODevice::Truncate))</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            qCritical() &lt;&lt; <span class="stringliteral">&quot;cannot open &quot;</span> &lt;&lt; mCurrentFile &lt;&lt; <span class="stringliteral">&quot; for writing ...&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            qCritical() &lt;&lt; <span class="stringliteral">&quot;cannot open &quot;</span> &lt;&lt; <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a> &lt;&lt; <span class="stringliteral">&quot; for writing ...&quot;</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="../../db/dad/class_u_b_network_access_manager.html">UBNetworkAccessManager</a> * nam = <a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                QNetworkRequest request(url);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            mReply = nam-&gt;<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#a4939a9c1018c4cc416db0f1b1dcbe581">get</a>(request); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a> = nam-&gt;<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#a4939a9c1018c4cc416db0f1b1dcbe581">get</a>(request); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            connect(mReply, SIGNAL(finished ()), <span class="keyword">this</span>, SLOT(finished ()));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                connect(mReply, SIGNAL(error ( QNetworkReply::NetworkError )),</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                <span class="keyword">this</span>, SLOT(error ( QNetworkReply::NetworkError)));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                connect(mReply, SIGNAL(downloadProgress ( qint64 , qint64  )),</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                <span class="keyword">this</span>, SLOT(downloadProgress(qint64 , qint64)));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">finished</a> ()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">finished</a> ()));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a5f03d272353785cc1de12d40e25cd064">error</a> ( QNetworkReply::NetworkError )),</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a5f03d272353785cc1de12d40e25cd064">error</a> ( QNetworkReply::NetworkError)));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a924a36e001a2507544e1951e00d4de96">downloadProgress</a> ( qint64 , qint64  )),</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a924a36e001a2507544e1951e00d4de96">downloadProgress</a>(qint64 , qint64)));</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                connect(mReply, SIGNAL(readyRead ()), <span class="keyword">this</span>, SLOT( readyRead()));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a8f6fd0b7c6368ac545eb4602181b06ef">readyRead</a> ()), <span class="keyword">this</span>, SLOT( <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a8f6fd0b7c6368ac545eb4602181b06ef">readyRead</a>()));</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                emit <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a69402d8027c5a439e6565e8ca143e3a4">finished</a>(mSuccess);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                emit <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">finished</a>(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> UBHttpFileDownloader::downloadProgress (qint64 bytesReceived, qint64 bytesTotal)</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a924a36e001a2507544e1951e00d4de96">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a924a36e001a2507544e1951e00d4de96">UBHttpFileDownloader::downloadProgress</a> (qint64 bytesReceived, qint64 bytesTotal)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Q_UNUSED(bytesReceived);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Q_UNUSED(bytesTotal);</div>
@@ -199,40 +183,36 @@ $(document).ready(function(){initNavTree('d3/d2b/_u_b_http_file_downloader_8cpp_
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">void</span> UBHttpFileDownloader::error ( QNetworkReply::NetworkError code )</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a5f03d272353785cc1de12d40e25cd064">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a5f03d272353785cc1de12d40e25cd064">UBHttpFileDownloader::error</a> ( QNetworkReply::NetworkError code )</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;UBHttpFileDownloader::error : code=&quot;</span> &lt;&lt; code;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    mSuccess = mSuccess &amp;&amp; (code == QNetworkReply::NoError);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a> = <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a> &amp;&amp; (code == QNetworkReply::NoError);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a69402d8027c5a439e6565e8ca143e3a4">UBHttpFileDownloader::finished</a> ()</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">UBHttpFileDownloader::finished</a> ()</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        mCurrentFile-&gt;flush();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        mCurrentFile-&gt;close();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;flush();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;close();</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (mReply)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keyword">delete</span> mReply;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keyword">delete</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        downloadNext();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ee86cfff01e4974a77cb886e2f2b2ba">downloadNext</a>();</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">void</span> UBHttpFileDownloader::readyRead()</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a8f6fd0b7c6368ac545eb4602181b06ef">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a8f6fd0b7c6368ac545eb4602181b06ef">UBHttpFileDownloader::readyRead</a>()</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        mCurrentFile-&gt;write(mReply-&gt;readAll());</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;write(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>-&gt;readAll());</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li><li class="navelem"><a class="el" href="../../d3/d2b/_u_b_http_file_downloader_8cpp.html">UBHttpFileDownloader.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

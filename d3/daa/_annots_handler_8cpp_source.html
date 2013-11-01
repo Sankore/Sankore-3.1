@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/daa/_annots_handler_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d3/daa/_annots_handler_8cpp_source.htm
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">AnnotsHandler.cpp</div>  </div>
@@ -132,10 +116,10 @@ $(document).ready(function(){initNavTree('d3/daa/_annots_handler_8cpp_source.htm
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span>merge_lib;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> AnnotsHandler::_processObjectContent(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement)</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#aa427e3f714337239270d24dda06b25d3">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#aa427e3f714337239270d24dda06b25d3">AnnotsHandler::_processObjectContent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfAnnots = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2164e57a4264777fa75b091967c2cb23">_findEndOfElementContent</a>(startOfPageElement);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   _annotations = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(startOfPageElement, endOfAnnots);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a> = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(startOfPageElement, endOfAnnots);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   <span class="comment">// sometimes annotations array is defined not directly in page object content but </span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="comment">// in referred object.</span></div>
@@ -147,19 +131,19 @@ $(document).ready(function(){initNavTree('d3/daa/_annots_handler_8cpp_source.htm
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="comment">// references.</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="comment">// lets check the content if it is really annotation object</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordflow">if</span>( _annotations.size() )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordflow">if</span>( <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.size() )</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * child = _annotations[0];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * child = <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>[0];</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      std::string childContent = child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(childContent,<span class="stringliteral">&quot;/Rect&quot;</span>) == -1 &amp;&amp;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;         (<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(childContent,<span class="stringliteral">&quot;/Subtype&quot;</span>) == -1 )</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;         <span class="comment">// this was not Annotation but reference to array </span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;         <span class="comment">// of annotations </span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;         _annotations.erase(_annotations.begin(),_annotations.end());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;         <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.erase(<a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.begin(),<a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.end());</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         <span class="keywordtype">size_t</span> begin = 0;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         <span class="keywordtype">size_t</span> end  = childContent.size()-1;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;         _annotations = child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(begin,end);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;         <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a> = child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(begin,end);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;         </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         <span class="comment">// lets update the parent in order to skip this intermediate child</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;         <span class="comment">// For now it seems to be not needed, but code below is working</span></div>
@@ -191,15 +175,11 @@ $(document).ready(function(){initNavTree('d3/daa/_annots_handler_8cpp_source.htm
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d3/daa/_annots_handler_8cpp.html">AnnotsHandler.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

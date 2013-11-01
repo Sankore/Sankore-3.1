@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/d85/_u_b_color_picker_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('dc/d85/_u_b_color_picker_8cpp_source.h
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBColorPicker.cpp</div>  </div>
@@ -161,11 +145,11 @@ $(document).ready(function(){initNavTree('dc/d85/_u_b_color_picker_8cpp_source.h
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QPainter painter(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (mSelectedColorIndex &lt; mColors.size())</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> &lt; <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.size())</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        painter.setRenderHint(QPainter::Antialiasing);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        painter.setBrush(mColors.at(mSelectedColorIndex));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        painter.setBrush(<a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.at(<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>));</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        painter.drawRect(0, 0, width(), height());</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
@@ -176,29 +160,25 @@ $(document).ready(function(){initNavTree('dc/d85/_u_b_color_picker_8cpp_source.h
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        mSelectedColorIndex++;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>++;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (mSelectedColorIndex &gt;= mColors.size())</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            mSelectedColorIndex = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> &gt;= <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.size())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> = 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        repaint();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        emit <a class="code" href="../../db/d45/class_u_b_color_picker.html#afea88024868ef4f0208dc318284170ee">colorSelected</a>(mColors.at(mSelectedColorIndex));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        emit <a class="code" href="../../db/d45/class_u_b_color_picker.html#afea88024868ef4f0208dc318284170ee">colorSelected</a>(<a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.at(<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>));</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../dc/d85/_u_b_color_picker_8cpp.html">UBColorPicker.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

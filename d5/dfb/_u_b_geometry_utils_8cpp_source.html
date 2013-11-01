@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/dfb/_u_b_geometry_utils_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d5/dfb/_u_b_geometry_utils_8cpp_source
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGeometryUtils.cpp</div>  </div>
@@ -139,12 +123,12 @@ $(document).ready(function(){initNavTree('d5/dfb/_u_b_geometry_utils_8cpp_source
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/dff/class_u_b_geometry_utils.html#a5169b28d2a1b47f292dbc6d79a1dc8ef">UBGeometryUtils::millimetersPerHalfCentimeter</a> = 5;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="../../d3/dff/class_u_b_geometry_utils.html#a1f5d4e8f0ad9766ef4325e41562b5d33">UBGeometryUtils::inchSize</a> = 25.4f;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;UBGeometryUtils::UBGeometryUtils()</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="../../d3/dff/class_u_b_geometry_utils.html#af104cb8007b39306b4515401aaf58727">   36</a></span>&#160;<a class="code" href="../../d3/dff/class_u_b_geometry_utils.html#af104cb8007b39306b4515401aaf58727">UBGeometryUtils::UBGeometryUtils</a>()</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;UBGeometryUtils::~UBGeometryUtils()</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="../../d3/dff/class_u_b_geometry_utils.html#a4cff84dc31e079acccd23ec3caf41771">   41</a></span>&#160;<a class="code" href="../../d3/dff/class_u_b_geometry_utils.html#a4cff84dc31e079acccd23ec3caf41771">UBGeometryUtils::~UBGeometryUtils</a>()</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
@@ -344,15 +328,11 @@ $(document).ready(function(){initNavTree('d5/dfb/_u_b_geometry_utils_8cpp_source
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li><li class="navelem"><a class="el" href="../../d5/dfb/_u_b_geometry_utils_8cpp.html">UBGeometryUtils.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

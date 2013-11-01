@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/dac/class_w_b_history_model.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/dac/class_w_b_history_model.html','
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -149,7 +129,10 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad4b0e315d3f4009e2a62d1bb4d13a2fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/d2d/_w_b_history_8h_source.html#l00156">156</a> of file <a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a898ccbc40f3547db69e302996901723a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -171,6 +154,8 @@ Private Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../df/d2d/_w_b_history_8h_source.html#l00166">166</a> of file <a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a>.</p>
 <div class="fragment"><div class="line">                   {</div>
 <div class="line">            <a class="code" href="../../df/dac/class_w_b_history_model.html#a898ccbc40f3547db69e302996901723aa21e0ebb4102bbd1b564cefd80e2f4bf0">DateRole</a> = Qt::UserRole + 1,</div>
 <div class="line">            <a class="code" href="../../df/dac/class_w_b_history_model.html#a898ccbc40f3547db69e302996901723aa2a1895e7f09208d01fc26fe7d120bd86">DateTimeRole</a> = Qt::UserRole + 2,</div>
@@ -204,6 +189,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00392">392</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QAbstractTableModel(parent)</div>
 <div class="line">    , <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>(history)</div>
 <div class="line">{</div>
@@ -244,6 +231,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00479">479</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (parent.isValid()) ? 0 : 2;</div>
 <div class="line">}</div>
@@ -273,6 +262,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00439">439</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;WBHistoryItem&gt; lst = <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (index.row() &lt; 0 || index.row() &gt;= lst.size())</div>
@@ -343,6 +334,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00413">413</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    beginInsertRows(QModelIndex(), 0, 0);</div>
 <div class="line">    endInsertRows();</div>
@@ -380,6 +373,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00419">419</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QModelIndex idx = index(offset, 0);</div>
 <div class="line">    emit dataChanged(idx, idx);</div>
@@ -425,6 +420,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00425">425</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (orientation == Qt::Horizontal</div>
 <div class="line">        &amp;&amp; role == Qt::DisplayRole)</div>
@@ -460,6 +457,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00408">408</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    reset();</div>
 <div class="line">}</div>
@@ -504,6 +503,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00489">489</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (parent.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -543,6 +544,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html#l00484">484</a> of file <a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (parent.isValid()) ? 0 : <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>().count();</div>
 <div class="line">}</div>
@@ -577,22 +580,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d2d/_w_b_history_8h_source.html#l00181">181</a> of file <a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
-<li><a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/ddb/_w_b_history_8cpp_source.html">WBHistory.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:35 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

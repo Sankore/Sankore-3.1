@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d6/d56/class_u_b_graphics_compass.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d6/d56/class_u_b_graphics_compass.html
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -260,7 +240,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a87b164f64911804513b9167e6d16a9cf inherit pro_attribs_class_u_b_item"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1e/class_u_b_item.html#a4d073757053cafbe4f26c17ea1224d53">RenderingQuality</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#a87b164f64911804513b9167e6d16a9cf">mRenderingQuality</a></td></tr>
 <tr class="memitem:ad90f56dfda5ef98f0d5139bd49840faa inherit pro_attribs_class_u_b_item"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#ad90f56dfda5ef98f0d5139bd49840faa">mSourceUrl</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00035">35</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a50616d0d5cabf43accda398a5c43a48d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -276,6 +259,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00043">43</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 <div class="fragment"><div class="line">{ <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a50616d0d5cabf43accda398a5c43a48da40b976067d322eb3d65fce74d9af0761">Type</a> = <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28af3de1d4150790abea1ee370d18d24f45">UBGraphicsItemType::CompassItemType</a> };</div>
 </div><!-- fragment -->
 </div>
@@ -293,6 +278,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QGraphicsRectItem()</div>
 <div class="line">    , <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a6063405406b009ecf73012454951705c">mRotating</a>(<span class="keyword">false</span>)</div>
@@ -377,6 +364,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00093">93</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -404,6 +393,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00769">769</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRectF itemRect = boundingRect();</div>
 <div class="line">    QTransform itemTransform = sceneTransform();</div>
@@ -444,6 +435,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00484">484</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap closePixmap(<span class="stringliteral">&quot;:/images/closeTool.svg&quot;</span>);</div>
 <div class="line"></div>
@@ -492,6 +485,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00467">467</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> Qt::ArrowCursor;</div>
 <div class="line">}</div>
@@ -530,6 +525,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a21483eccaad22369e9fe6bca838af029">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a> *cp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>*<span class="keyword">&gt;</span>(copy);</div>
 <div class="line">    <span class="keywordflow">if</span> (cp)</div>
@@ -574,6 +571,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a5ef870748a215b3f5f3218d0178b17b9">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00098">98</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>* copy = <span class="keyword">new</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a91a6c74574ce890cbc0e81eab39c0389">UBGraphicsCompass</a>();</div>
 <div class="line"></div>
@@ -615,6 +614,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00529">529</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1a3eb0e9cf6fe3b48023a54fc63991c5">mDrewCenterCross</a>)</div>
 <div class="line">    {</div>
@@ -675,6 +676,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00746">746</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab6d359dc8994503d9ee1b0f5561e705b">sDarkBackgroundDrawColor</a> : <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1878565310f00f4c6ef6c91cc31e8658">sLightBackgroundDrawColor</a>;</div>
 <div class="line">}</div>
@@ -719,6 +722,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00472">472</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a96e59ab15670f58d5d8fec54620d0a65">mDrawCursor</a>;</div>
 <div class="line">}</div>
@@ -754,6 +759,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00756">756</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abfb318576225b8f3f1a54a21363ec30b">sDarkBackgroundEdgeFillColor</a> : <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a191282ca40317368912da0307854e21f">sLightBackgroundEdgeFillColor</a>;</div>
 <div class="line">}</div>
@@ -798,6 +805,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00761">761</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFont <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">font</a>(<span class="stringliteral">&quot;Arial&quot;</span>);</div>
 <div class="line">    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">font</a>.setPixelSize(16);</div>
@@ -868,6 +877,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00477">477</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRectF rotationRect(rect().width() / 2 - rect().height() / 2, 0, rect().height(), rect().height());</div>
 <div class="line">    rotationRect.translate(rect().topLeft());</div>
@@ -905,6 +916,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00656">656</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path;</div>
 <div class="line">    path.moveTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left() + 4, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().top());</div>
@@ -977,6 +990,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00318">318</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a> &amp;&amp;</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
@@ -1038,6 +1053,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00348">348</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a> &amp;&amp;</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
@@ -1083,6 +1100,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00362">362</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a> &amp;&amp;</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
@@ -1154,6 +1173,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00182">182</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (change == QGraphicsItem::ItemSceneChange)</div>
 <div class="line">    {</div>
@@ -1186,6 +1207,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00785">785</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRect pencilRect(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().top(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().height());</div>
 <div class="line">    update(pencilRect);</div>
@@ -1222,6 +1245,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00751">751</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa7d841f21b828b4f29c2d0a8bc0a8895">sDarkBackgroundMiddleFillColor</a> : <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5f5e2fde637f707d36681fe69b1c2748">sLightBackgroundMiddleFillColor</a>;</div>
 <div class="line">}</div>
@@ -1267,6 +1292,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00232">232</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a> &amp;&amp;</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
@@ -1343,6 +1370,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00193">193</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a> &amp;&amp;</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
@@ -1413,6 +1442,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00277">277</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a> &amp;&amp;</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
@@ -1484,6 +1515,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00452">452</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> Qt::SizeAllCursor;</div>
 <div class="line">}</div>
@@ -1519,6 +1552,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00635">635</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path;</div>
 <div class="line">    path.moveTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a>, rect().center().y() - 8);</div>
@@ -1579,6 +1614,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00613">613</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path;</div>
 <div class="line">    path.moveTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a>, rect().center().y() - 4);</div>
@@ -1631,6 +1668,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00581">581</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QPointF(rect().x(), rect().y() + rect().height() / 2);</div>
 <div class="line">}</div>
@@ -1666,6 +1705,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00603">603</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path;</div>
 <div class="line">    path.moveTo(rect().left(), rect().center().y());</div>
@@ -1723,6 +1764,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00120">120</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(styleOption);</div>
 <div class="line">    Q_UNUSED(widget);</div>
@@ -1815,6 +1858,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00392">392</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal angle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">angleInDegrees</a>();</div>
 <div class="line"></div>
@@ -1877,6 +1922,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00570">570</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPointF needleCrossCenter = mapToScene(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>());</div>
 <div class="line">    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(QPointF(needleCrossCenter.x() - 5, needleCrossCenter.y()));</div>
@@ -1928,6 +1975,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00415">415</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal radiusInCentimeters = rect().width() / (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aff562b6a50024c96dab1b2124a8d4753">mPixelsPerMillimeter</a> * 10);</div>
 <div class="line">    QString format = rect().width() &gt;= <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad99feb33783713c01acfa19321660ff3">sDisplayRadiusUnitMinLength</a> ? <span class="stringliteral">&quot;%1 cm&quot;</span> : <span class="stringliteral">&quot;%1&quot;</span>;</div>
@@ -2004,6 +2053,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00722">722</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path;</div>
 <div class="line">    path.moveTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right(), rect().center().y() - 16);</div>
@@ -2062,6 +2113,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00702">702</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path;</div>
 <div class="line">    path.moveTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>, rect().center().y() - 8);</div>
@@ -2112,6 +2165,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00586">586</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QPointF(rect().right(), rect().center().y());</div>
 <div class="line">}</div>
@@ -2147,6 +2202,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00688">688</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> penWidthIndex = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a6ec1b63a496028bc006f9a360f10e74f">penWidthIndex</a>();</div>
 <div class="line">    <span class="keywordtype">int</span> logicalCompassPencilWidth = penWidthIndex &gt; 1 ? 8 : (penWidthIndex &gt; 0 ? 4 : 2);</div>
@@ -2200,6 +2257,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00779">779</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRect pencilRect(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().top(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().height());</div>
 <div class="line">    update(pencilRect);</div>
@@ -2236,6 +2295,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00502">502</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap resizePixmap(<span class="stringliteral">&quot;:/images/resizeCompass.svg&quot;</span>);</div>
 <div class="line"></div>
@@ -2284,6 +2345,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00457">457</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac647cfbca667dfd1a8d345d60a09bc6c">mResizeCursor</a>;</div>
 <div class="line">}</div>
@@ -2320,6 +2383,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00520">520</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTransform transform;</div>
 <div class="line">    transform.translate(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>().x(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>().y());</div>
@@ -2368,6 +2433,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00462">462</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d8/d23/class_u_b_resources.html#af681f547d1374c661b79246375397337">UBResources::resources</a>()-&gt;<a class="code" href="../../d8/d23/class_u_b_resources.html#ab236f6e21733987cf38e8d2d3f35b341">rotateCursor</a>;</div>
 <div class="line">}</div>
@@ -2412,6 +2479,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00741">741</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">QGraphicsRectItem::scene</a>());</div>
 <div class="line">}</div>
@@ -2447,6 +2516,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00591">591</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abb74e55d392596244cf2c2abc141289d">needleShape</a>();</div>
 <div class="line">    path = path.united(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad3f72cf41986684d90e04c93dffec8fb">needleBaseShape</a>());</div>
@@ -2498,6 +2569,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00045">45</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a50616d0d5cabf43accda398a5c43a48da40b976067d322eb3d65fce74d9af0761">Type</a>;</div>
 <div class="line">        }</div>
@@ -2524,6 +2597,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00560">560</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap pix(<span class="stringliteral">&quot;:/images/cursors/drawCompass.png&quot;</span>);</div>
 <div class="line">    qreal angle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">angleInDegrees</a>();</div>
@@ -2573,6 +2648,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html#l00550">550</a> of file <a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap pix(<span class="stringliteral">&quot;:/images/cursors/resize.png&quot;</span>);</div>
 <div class="line">    qreal angle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">angleInDegrees</a>();</div>
@@ -2621,6 +2698,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00122">122</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4c8db8ef56eab244631d4cf2b8ac5f1f"></a>
@@ -2640,6 +2719,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00120">120</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2661,6 +2742,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00112">112</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a20c3176c81d9e3eb2175dcb26d194c84"></a>
@@ -2680,6 +2763,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00115">115</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2701,6 +2786,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00123">123</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2422d54b7dff9bc2d8866f75db98c7f1"></a>
@@ -2720,6 +2807,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00119">119</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2741,6 +2830,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00110">110</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aff562b6a50024c96dab1b2124a8d4753"></a>
@@ -2760,6 +2851,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00124">124</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2781,6 +2874,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00111">111</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a71234356af470c4c277968f52c3487b5"></a>
@@ -2800,6 +2895,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00121">121</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2821,6 +2918,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00113">113</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6063405406b009ecf73012454951705c"></a>
@@ -2840,6 +2939,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00114">114</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2861,6 +2962,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00118">118</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abce342e8e58937e09f0221b3226ce373"></a>
@@ -2880,6 +2983,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00116">116</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2901,6 +3006,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00117">117</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab6d359dc8994503d9ee1b0f5561e705b"></a>
@@ -2920,6 +3027,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00141">141</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2941,6 +3050,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00139">139</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa7d841f21b828b4f29c2d0a8bc0a8895"></a>
@@ -2960,6 +3071,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00140">140</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -2981,6 +3094,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00127">127</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac0160b920edb367bcf0609075ccfa44c"></a>
@@ -3000,6 +3115,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00133">133</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -3021,6 +3138,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00142">142</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad99feb33783713c01acfa19321660ff3"></a>
@@ -3040,6 +3159,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00143">143</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -3061,6 +3182,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00135">135</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2459a4519896137d87138fa38ccf7d4e"></a>
@@ -3080,6 +3203,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00134">134</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -3101,6 +3226,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00138">138</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a191282ca40317368912da0307854e21f"></a>
@@ -3121,6 +3248,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00136">136</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5f5e2fde637f707d36681fe69b1c2748"></a>
@@ -3140,6 +3269,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00137">137</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -3164,6 +3295,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        + 32 + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a44e241b247aa6a8b3cd50fd4e6937a1d">UBGraphicsCompass::sDefaultRect</a>.height() + 32 + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">UBGraphicsCompass::sPencilBaseLength</a></div>
 <div class="line">        + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">UBGraphicsCompass::sPencilLength</a></div>
 </div><!-- fragment -->
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00132">132</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a083265c13ca5b407ef97c98e0a27dacc"></a>
@@ -3183,6 +3316,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00129">129</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -3204,6 +3339,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00128">128</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0b8767e8bb3ea86759cb45d41397f878"></a>
@@ -3223,6 +3360,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00131">131</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
 
 </div>
 </div>
@@ -3244,22 +3383,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html#l00130">130</a> of file <a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a></li>
-<li><a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp.html">UBGraphicsCompass.cpp</a></li>
+<li>Sankore-3.1/src/tools/<a class="el" href="../../df/d9b/_u_b_graphics_compass_8h_source.html">UBGraphicsCompass.h</a></li>
+<li>Sankore-3.1/src/tools/<a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp_source.html">UBGraphicsCompass.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:01 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:25 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/d62/class_u_b_board_controller.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d7/d62/class_u_b_board_controller.html
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -354,7 +334,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a583c4b6c7dc310605e3154c8ba136704"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d62/class_u_b_board_controller.html#a583c4b6c7dc310605e3154c8ba136704">mActionGroupText</a></td></tr>
 <tr class="memitem:a4235adf4f5b9f38b4857ab8ae0952328"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d62/class_u_b_board_controller.html#a4235adf4f5b9f38b4857ab8ae0952328">mActionUngroupText</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00061">61</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6d5d5894174958720c91e1e1f19b150f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -368,6 +351,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5849f5f460c00d25d5a07f99bfb4a973">UBDocumentContainer</a>(mainWindow-&gt;centralWidget())</div>
 <div class="line">    , <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>(mainWindow)</div>
 <div class="line">    , <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>(0)</div>
@@ -436,6 +421,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00167">167</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a0576027b69e46e85a45163cd6a6b3ae5">mDisplayView</a>;</div>
 <div class="line">}</div>
@@ -463,6 +450,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00184">184</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a583c4b6c7dc310605e3154c8ba136704">mActionGroupText</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -487,6 +476,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00185">185</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a4235adf4f5b9f38b4857ab8ae0952328">mActionUngroupText</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -503,6 +494,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01905">1905</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>;</div>
 <div class="line">}</div>
@@ -539,6 +532,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00097">97</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>;</div>
 <div class="line">        }</div>
@@ -590,6 +585,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01911">1911</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a>;</div>
 <div class="line">}</div>
@@ -649,6 +646,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02287">2287</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QUuid uuid = QUuid::createUuid();</div>
 <div class="line">    QUrl concreteUrl = pSourceUrl;</div>
@@ -723,6 +722,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02601">2601</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultPath = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a8f07c9c5f1acc312c384f91da004eda7">lastImportToLibraryPath</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line"></div>
@@ -759,8 +760,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a0a2ba2fe74609d2bb43ad1b6893b59c4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a0a2ba2fe74609d2bb43ad1b6893b59c4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -801,6 +801,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01118">1118</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString widgetUrl;</div>
 <div class="line">    QString lSourceUrl = sourceUrl.replace(<span class="stringliteral">&quot;\n&quot;</span>,<span class="stringliteral">&quot;&quot;</span>).replace(<span class="stringliteral">&quot;\r&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
@@ -889,6 +891,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00474">474</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a12b23dc20db7b2e2014911c5785ba1bc">persistCurrentScene</a>();</div>
@@ -915,8 +919,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aae6e6e83f5207333812d4021dc7f535e_icgraph.svg" width="100%" height="590"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aae6e6e83f5207333812d4021dc7f535e_icgraph.svg" width="100%" height="590"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -959,6 +962,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00522">522</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* scene = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aff136b4bcedbd0af3ee2a6ede8af6f66">loadDocumentScene</a>(proxy, sceneIndex);</div>
 <div class="line"></div>
@@ -1010,6 +1015,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00487">487</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (scene)</div>
 <div class="line">    {</div>
@@ -1097,6 +1104,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02252">2252</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QUuid uuid = QUuid::createUuid();</div>
 <div class="line">    QUrl concreteUrl = pSourceUrl;</div>
@@ -1183,6 +1192,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02321">2321</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a>* w3cWidgetItem = 0;</div>
 <div class="line"></div>
@@ -1253,6 +1264,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01788">1788</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>)</div>
 <div class="line">    {</div>
@@ -1327,6 +1340,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00832">832</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#aaafa825c25da0324cf8323307fd61ed3">blackout</a>();</div>
 <div class="line">}</div>
@@ -1345,8 +1360,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a78633b7cc8144607a3c0919c4237c26c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a78633b7cc8144607a3c0919c4237c26c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1373,6 +1387,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01818">1818</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
@@ -1413,8 +1429,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a393758547e91d1cdc54239fac734caf7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a393758547e91d1cdc54239fac734caf7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1506,6 +1521,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00182">182</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa998b2835bd8605183a5ddddd9815dde">mCacheWidgetIsEnabled</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1540,6 +1557,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00898">898</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;centerOn(scenePoint);</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#a4cdde5cc4906f7f7ccdbe1a78ac98f3c">adjustDisplayView</a>();</div>
@@ -1586,6 +1605,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00892">892</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#adbaa867e0f26de80826355c25fe41d82">centerOn</a>(QPointF(0,0));</div>
 <div class="line">}</div>
@@ -1641,6 +1662,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01800">1800</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> currentIsDark = <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>();</div>
 <div class="line">    <span class="keywordtype">bool</span> currentIsCrossed = <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a0e75e26b28c507fa963915433078e238">isCrossedBackground</a>();</div>
@@ -1698,6 +1721,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00775">775</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>)</div>
 <div class="line">    {</div>
@@ -1721,8 +1746,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-36-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-36-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aa05f3be4a1645d76f034f38269fc6cf0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aa05f3be4a1645d76f034f38269fc6cf0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1748,6 +1772,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00797">797</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>)</div>
 <div class="line">    {</div>
@@ -1770,8 +1796,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-38-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab47067d535d9086bd8e9e84176c02036_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab47067d535d9086bd8e9e84176c02036_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1797,6 +1822,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00806">806</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>)</div>
 <div class="line">    {</div>
@@ -1819,8 +1846,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-40-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a7c98cc515d722b671686bb6a77a89a3b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a7c98cc515d722b671686bb6a77a89a3b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1846,6 +1872,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00786">786</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>)</div>
 <div class="line">    {</div>
@@ -1869,8 +1897,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-42-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a3fe7c336f24feec07902020905386ca0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a3fe7c336f24feec07902020905386ca0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1888,6 +1915,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01726">1726</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">// The code has been removed because it leads to a strange error and because the final goal has never been</span></div>
 <div class="line"><span class="comment">// reached on tests and sound a little bit strange.</span></div>
@@ -1973,6 +2002,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01927">1927</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a46239e72ce95629cb84acd08c9e09faf">mIsClosing</a> = <span class="keyword">true</span>;</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a52b5505624b5584673fb2e75cbb269aa">ClearUndoStack</a>();</div>
@@ -1993,8 +2024,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-45-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a5d7e796ca2cd932cf3827fa79231a4c0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a5d7e796ca2cd932cf3827fa79231a4c0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2020,6 +2050,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01997">1997</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad8fe02921e2f770bdef6ad91f497cdaa">mPenColorOnDarkBackground</a> = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a27b620db7e6282d277935289450229a6">penColor</a>(<span class="keyword">true</span>);</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad1351f2036902c89be495e30a40346ce">mPenColorOnLightBackground</a> = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a27b620db7e6282d277935289450229a6">penColor</a>(<span class="keyword">false</span>);</div>
@@ -2041,8 +2073,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-47-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ada048c4b8a301aa9d7795093834956bd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ada048c4b8a301aa9d7795093834956bd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2068,6 +2099,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00374">374</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    connect(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;actionAdd, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a0a2ba2fe74609d2bb43ad1b6893b59c4">addItem</a>()));</div>
 <div class="line">    connect(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;actionNewPage, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aae6e6e83f5207333812d4021dc7f535e">addScene</a>()));</div>
@@ -2103,8 +2136,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-49-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a0292260502bb0cbe4bc3c83f3a3283bc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a0292260502bb0cbe4bc3c83f3a3283bc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2130,6 +2162,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00082">82</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a69287470a4691f3fcc8e0f1f5512acf3">mControlContainer</a>;</div>
 <div class="line">        }</div>
@@ -2158,6 +2192,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00272">272</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;geometry();</div>
 <div class="line">}</div>
@@ -2184,6 +2220,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00087">87</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>;</div>
 <div class="line">        }</div>
@@ -2212,6 +2250,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00266">266</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;geometry().size();</div>
 <div class="line">}</div>
@@ -2254,7 +2294,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-53-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-53-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a43951f02a518680a34c38a1ac4533fc0_icgraph.svg" width="100%" height="596"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a43951f02a518680a34c38a1ac4533fc0_icgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </p>
@@ -2281,6 +2321,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02393">2393</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;UBItem*&gt; selected;</div>
 <div class="line"></div>
@@ -2336,6 +2378,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00173">173</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;teacherGuidePageZeroActivated-&gt;get().toBool())</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a>;</div>
@@ -2374,6 +2418,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02006">2006</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>)</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;viewportTransform().m11() / <a class="code" href="../../d7/d62/class_u_b_board_controller.html#af0a985e4b3a0ad7c53fc6210b3565993">mSystemScaleFactor</a>;</div>
@@ -2413,6 +2459,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02351">2351</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//---------------------------------------------------------//</span></div>
 <div class="line"></div>
@@ -2487,6 +2535,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00747">747</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()-&gt;<a class="code" href="../../da/dc6/class_u_b_document_container.html#ae84266eece665659405100eaf4e7d8d0">pageCount</a>()&gt;=2)</div>
 <div class="line">    {</div>
@@ -2542,6 +2592,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02643">2643</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a134accb6745f0bc3683bcc1fffd48872">displayMetadata</a>(metadatas);</div>
 <div class="line">}</div>
@@ -2619,6 +2671,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00092">92</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a0576027b69e46e85a45163cd6a6b3ae5">mDisplayView</a>;</div>
 <div class="line">        }</div>
@@ -2628,8 +2682,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-66-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-66-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a6c6255c94a1f826a5a23a4d5c68819ec_icgraph.svg" width="654" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a6c6255c94a1f826a5a23a4d5c68819ec_icgraph.svg" width="654" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -2647,6 +2700,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00260">260</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a0576027b69e46e85a45163cd6a6b3ae5">mDisplayView</a>-&gt;geometry().size();</div>
 <div class="line">}</div>
@@ -2673,6 +2728,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00187">187</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa0c274ea308fc6eda3d66ae1785315fd">mDocumentNavigator</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-67" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2741,6 +2798,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01917">1917</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(pIndex);</div>
 <div class="line"></div>
@@ -2782,6 +2841,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01846">1846</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>() == pProxy)</div>
 <div class="line">    {</div>
@@ -2890,6 +2951,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01166">1166</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(pSuccess);</div>
 <div class="line"></div>
@@ -3440,6 +3503,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01034">1034</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;something has been dropped on the board! Url is: &quot;</span> &lt;&lt; url.toString();</div>
 <div class="line">    QString sUrl = url.toString();</div>
@@ -3573,6 +3638,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00557">557</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!item)</div>
 <div class="line">        <span class="keywordflow">return</span> NULL;</div>
@@ -3796,6 +3863,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00532">532</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a12b23dc20db7b2e2014911c5785ba1bc">persistCurrentScene</a>();</div>
@@ -3853,6 +3922,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00550">550</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;displayMode() != <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39aa0f9efa6fbb8f90678211cb00da2b646">UBApplicationController::Board</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -3864,8 +3935,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-78-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-78-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_af1a84b94fde6cc9e91d9f60723e70a00_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_af1a84b94fde6cc9e91d9f60723e70a00_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3902,6 +3972,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02201">2201</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QUrl widgetUrl;</div>
 <div class="line">    QTemporaryFile tmp;</div>
@@ -3969,6 +4041,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00975">975</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> &gt; 0)</div>
 <div class="line">    {</div>
@@ -4033,6 +4107,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02669">2669</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(item-&gt;type() == <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a87fa860d4a5f30733ad0a69b808376cda3246eda160045d14b903c6d2da6146b6">UBGraphicsW3CWidgetItem::Type</a>)</div>
 <div class="line">    {</div>
@@ -4089,6 +4165,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02648">2648</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> &gt;= 0)</div>
 <div class="line">    {</div>
@@ -4151,6 +4229,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02229">2229</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>)</div>
 <div class="line">    {</div>
@@ -4213,6 +4293,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01004">1004</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QAction *groupAction = <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionGroupItems;</div>
 <div class="line">    QList&lt;QGraphicsItem*&gt; selItems = <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a5bf93ad343de7f09150d634ef3a8c459">activeScene</a>()-&gt;selectedItems();</div>
@@ -4256,8 +4338,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-90-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-90-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a97432044e27c3063f8e46bcb31d75d65_icgraph.svg" width="646" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a97432044e27c3063f8e46bcb31d75d65_icgraph.svg" width="646" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -4294,6 +4375,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00935">935</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;translate(dx, dy);</div>
 <div class="line"></div>
@@ -4343,6 +4426,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02021">2021</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionLibrary-&gt;setChecked(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -4379,6 +4464,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01866">1866</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6c2f40c909c357e232d5d65b4f6fbbe4">mMessageWindow</a>-&gt;<a class="code" href="../../d5/d02/class_u_b_message_window.html#af0f92d33532361f4048ab584621518f8">hideMessage</a>();</div>
 <div class="line">}</div>
@@ -4424,6 +4511,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02624">2624</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> <a class="code" href="../../da/dc6/class_u_b_document_container.html#ae84266eece665659405100eaf4e7d8d0">pageCount</a> = <a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a88b0c1b5b98707cc71dae42c5fbcae56">UBApplication::documentController</a>-&gt;addFileToDocument(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()))</div>
@@ -4446,8 +4535,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-97-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-97-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a3c02908763bd2bb49d7006cbf2f1cff8_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a3c02908763bd2bb49d7006cbf2f1cff8_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -4465,6 +4553,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00134">134</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a50a3a56de6549d3c324468d3ede35137">setupViews</a>();</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6761e02604fb3aa8ecbfc5fd4a5d87f3">setupToolbar</a>();</div>
@@ -4510,8 +4600,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-99-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-99-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aa728cb7c1b979b2d4ae45638a7386dde_icgraph.svg" width="456" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aa728cb7c1b979b2d4ae45638a7386dde_icgraph.svg" width="456" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -4537,6 +4626,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00406">406</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;QAction*&gt; allToolbarActions;</div>
 <div class="line"></div>
@@ -4568,8 +4659,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-101-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-101-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aec976e1b66187047b9d96b4887645913_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aec976e1b66187047b9d96b4887645913_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -4595,6 +4685,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00990">990</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> &lt; <a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()-&gt;<a class="code" href="../../da/dc6/class_u_b_document_container.html#ae84266eece665659405100eaf4e7d8d0">pageCount</a>() - 1)</div>
 <div class="line">    {</div>
@@ -4648,6 +4740,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01934">1934</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a48a76b8334628b68b447692917d04043">mCleanupDone</a>)</div>
 <div class="line">    {</div>
@@ -4683,8 +4777,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-105-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-105-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ad65e77dc7c59d45d71dfc3cb3b9a07ad_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ad65e77dc7c59d45d71dfc3cb3b9a07ad_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -4711,6 +4804,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00824">824</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(ret);</div>
 <div class="line"></div>
@@ -4739,6 +4834,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00140">140</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa1671cc9cbe4bea0323d15daf5a60487">mMarkerColorOnDarkBackground</a>;</div>
 <div class="line">        }</div>
@@ -4775,6 +4872,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00145">145</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab15f0fc01218035f9f3684688d0bb6ca">mMarkerColorOnLightBackground</a>;</div>
 <div class="line">        }</div>
@@ -4812,6 +4911,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02550">2550</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a464b1abf70e29b2a606415e85a53fa28">setURStackEnable</a>(<span class="keyword">false</span>);</div>
 <div class="line">    <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a> *toolW3C = <a class="code" href="../../d7/d62/class_u_b_board_controller.html#abae2655269e06f72767de71b8513f6be">duplicateItem</a>(dynamic_cast&lt;UBItem *&gt;(graphicsWidget));</div>
@@ -4876,6 +4977,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01708">1708</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>())</div>
 <div class="line">    {</div>
@@ -4934,6 +5037,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02572">2572</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a> *widgetToScene = toolWidget-&gt;<a class="code" href="../../dc/de3/class_u_b_tool_widget.html#a249e84f1b176bc3df2b5223157d36747">toolWidget</a>();</div>
 <div class="line"></div>
@@ -5011,6 +5116,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00960">960</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> &lt; <a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()-&gt;<a class="code" href="../../da/dc6/class_u_b_document_container.html#ae84266eece665659405100eaf4e7d8d0">pageCount</a>() - 1)</div>
 <div class="line">    {</div>
@@ -5038,8 +5145,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-115-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-115-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab5d4e87dcef6ff72e804f6cb5a26a8f3_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab5d4e87dcef6ff72e804f6cb5a26a8f3_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -5058,6 +5164,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02129">2129</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(visible)</div>
 <div class="line">    {</div>
@@ -5103,6 +5211,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02633">2633</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa19e0faf07ab9cebd4d4dbf30bc074a3">pageChanged</a>();</div>
 <div class="line">}</div>
@@ -5182,6 +5292,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02638">2638</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -5191,8 +5303,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-121-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-121-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aff87476bd084cae0b75c0cd8fb0b2123_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aff87476bd084cae0b75c0cd8fb0b2123_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -5285,6 +5396,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00162">162</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#adc5098fe0747e53e8ccc7f52ca11bcc3">mPaletteManager</a>;</div>
 <div class="line">        }</div>
@@ -5321,6 +5434,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02417">2417</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QClipboard *clipboard = QApplication::clipboard();</div>
 <div class="line">    QPointF pos(0, 0);</div>
@@ -5375,8 +5490,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-127-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-127-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a762afc02398aec4c9136e00984cc3120_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a762afc02398aec4c9136e00984cc3120_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -5402,6 +5516,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00130">130</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad8fe02921e2f770bdef6ad91f497cdaa">mPenColorOnDarkBackground</a>;</div>
 <div class="line">        }</div>
@@ -5438,6 +5554,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00135">135</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad1351f2036902c89be495e30a40346ce">mPenColorOnLightBackground</a>;</div>
 <div class="line">        }</div>
@@ -5467,6 +5585,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02031">2031</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()</div>
 <div class="line">            &amp;&amp; <a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>() &amp;&amp; <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a> &amp;&amp; <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> != <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a239310f22a6904fae5cad67946d37bbf">mDeletingSceneIndex</a></div>
@@ -5519,6 +5639,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00945">945</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> &gt; 0)</div>
 <div class="line">    {</div>
@@ -5546,8 +5668,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-133-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-133-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aeef919027b89d95c392a7e0fe5a6444d_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_aeef919027b89d95c392a7e0fe5a6444d_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -5590,6 +5711,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02427">2427</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pMimeData-&gt;hasFormat(<a class="code" href="../../d8/d81/class_u_b_application.html#ad4f533c7971ce1c441b13a1b61e17525">UBApplication::mimeTypeUniboardPage</a>))</div>
 <div class="line">    {</div>
@@ -5737,6 +5860,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00770">770</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa0c274ea308fc6eda3d66ae1785315fd">mDocumentNavigator</a>-&gt;<a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a19e6b14c3fa310dac6714a4b941b588a" title="Generate the thumbnails.">generateThumbnails</a>(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
@@ -5782,6 +5907,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02014">2014</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    toolWidget-&gt;hide();</div>
 <div class="line"></div>
@@ -5819,6 +5946,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02159">2159</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>)</div>
 <div class="line">    {</div>
@@ -5869,6 +5998,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01879">1879</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ae66e1ff40cb166c699ce25bfa893012e">updateActionStates</a>();</div>
 <div class="line">    emit <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a5f23d849d22a50ade6d1da830b181def">pageSelectionChanged</a>(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a82e3690c789dc021cdb134e3704c7b7a">activeSceneIndex</a>());</div>
@@ -5924,6 +6055,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01646">1646</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a841bddc6510eae8e42219433ebf6141f">saveViewState</a>();</div>
 <div class="line"></div>
@@ -6018,6 +6151,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01641">1641</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6a1f06f9fecbba81ab58d813faae3fb0">setActiveDocumentScene</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>(), pSceneIndex);</div>
 <div class="line">}</div>
@@ -6046,6 +6181,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00224">224</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (displayRect.isNull())</div>
 <div class="line">    {</div>
@@ -6112,6 +6249,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01958">1958</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a51849b177dc6bed87fd110056627ae94">setColorIndex</a>(pColorIndex);</div>
 <div class="line"></div>
@@ -6164,8 +6303,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-148-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-148-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a7d9d265f0f98e913898c06bf897dbf2f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a7d9d265f0f98e913898c06bf897dbf2f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -6192,6 +6330,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01872">1872</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;boardToolBar-&gt;setDisabled(disable);</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;setDisabled(disable);</div>
@@ -6230,6 +6370,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00186">186</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa0c274ea308fc6eda3d66ae1785315fd">mDocumentNavigator</a> = navigator;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-150" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -6264,6 +6406,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00120">120</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa1671cc9cbe4bea0323d15daf5a60487">mMarkerColorOnDarkBackground</a> = pColor;</div>
 <div class="line">        }</div>
@@ -6300,6 +6444,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00125">125</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab15f0fc01218035f9f3684688d0bb6ca">mMarkerColorOnLightBackground</a> = pColor;</div>
 <div class="line">        }</div>
@@ -6328,6 +6474,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02112">2112</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#aec88131e2343abb3e86dc5efcd8de622">nominalSize</a>() != newSize)</div>
 <div class="line">    {</div>
@@ -6385,6 +6533,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00102">102</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad8fe02921e2f770bdef6ad91f497cdaa">mPenColorOnDarkBackground</a> == pColor)</div>
 <div class="line">                <span class="keywordflow">return</span>;</div>
@@ -6434,6 +6584,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00111">111</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad1351f2036902c89be495e30a40346ce">mPenColorOnLightBackground</a> == pColor)</div>
 <div class="line">                <span class="keywordflow">return</span>;</div>
@@ -6483,6 +6635,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02097">2097</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(checked);</div>
 <div class="line">    QSize newSize = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a2c7e1b2471296349a87237358c932077">documentSizes</a>.value(<a class="code" href="../../d5/d35/struct_document_size_ratio.html#a5a7547375e6ea65421c7cbe46b2aed8aa51eb5a722c07e48b7ab668c5fa3f5105">DocumentSizeRatio::Ratio4_3</a>);</div>
@@ -6519,6 +6673,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00425">425</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> highResolution = <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;width() &gt; 1024;</div>
 <div class="line">    QSize iconSize;</div>
@@ -6580,6 +6736,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00363">363</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>)</div>
 <div class="line">    {</div>
@@ -6603,8 +6761,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-162-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-162-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ad363554dfb70642a295c4b002f396ec5_icgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ad363554dfb70642a295c4b002f396ec5_icgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -6622,6 +6779,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00217">217</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#adc5098fe0747e53e8ccc7f52ca11bcc3">mPaletteManager</a>)</div>
 <div class="line">        <a class="code" href="../../d7/d62/class_u_b_board_controller.html#adc5098fe0747e53e8ccc7f52ca11bcc3">mPaletteManager</a>-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a04b4a969c6ee900494c45adb18ed3880">setupLayout</a>();</div>
@@ -6641,8 +6800,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-164-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-164-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a6d2e9c5462d58eaddbe0ee3f70661053_icgraph.svg" width="435" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a6d2e9c5462d58eaddbe0ee3f70661053_icgraph.svg" width="435" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -6668,6 +6826,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00278">278</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a> *settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line"></div>
@@ -6765,8 +6925,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-166-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-166-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a6761e02604fb3aa8ecbfc5fd4a5d87f3_icgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a6761e02604fb3aa8ecbfc5fd4a5d87f3_icgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -6792,6 +6951,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00180">180</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a69287470a4691f3fcc8e0f1f5512acf3">mControlContainer</a> = <span class="keyword">new</span> QWidget(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;centralWidget());</div>
 <div class="line"></div>
@@ -6841,8 +7002,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-168-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-168-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a50a3a56de6549d3c324468d3ede35137_icgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a50a3a56de6549d3c324468d3ede35137_icgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -6869,6 +7029,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02082">2082</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(checked);</div>
 <div class="line">    QSize newSize = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a2c7e1b2471296349a87237358c932077">documentSizes</a>.value(<a class="code" href="../../d5/d35/struct_document_size_ratio.html#a5a7547375e6ea65421c7cbe46b2aed8aaeec4d492a00d52b14dc46a7f76e6541f">DocumentSizeRatio::Ratio16_9</a>);</div>
@@ -6913,6 +7075,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02026">2026</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionLibrary-&gt;setChecked(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -6949,6 +7113,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00815">815</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>())</div>
 <div class="line">        <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a12b23dc20db7b2e2014911c5785ba1bc">persistCurrentScene</a>();</div>
@@ -6989,6 +7155,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00838">838</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a4d5e22da0b52e04622837b0c1280e67b">show</a>)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a>);</div>
@@ -7009,8 +7177,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-173-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-173-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_afe5b00725eb8f522892c0730f2ef0e08_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_afe5b00725eb8f522892c0730f2ef0e08_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -7047,6 +7214,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01860">1860</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6c2f40c909c357e232d5d65b4f6fbbe4">mMessageWindow</a>-&gt;<a class="code" href="../../d5/d02/class_u_b_message_window.html#a8c6e3ff66e94a5ff2e11ebf52d5a8b35">showMessage</a>(message, showSpinningWheel);</div>
 <div class="line">}</div>
@@ -7124,6 +7293,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00396">396</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a4e526bf1704cc013539413d792c65d6a">freezeW3CWidgets</a>(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -7142,8 +7313,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-177-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-177-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a19e197f121e0ed3e0204e7d528dc6307_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a19e197f121e0ed3e0204e7d528dc6307_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -7169,6 +7339,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00401">401</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#a4e526bf1704cc013539413d792c65d6a">freezeW3CWidgets</a>(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
@@ -7187,8 +7359,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-179-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-179-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab9ade242e787595dd2dbafdf3b3329a5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab9ade242e787595dd2dbafdf3b3329a5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -7215,6 +7386,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02185">2185</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a315df832d127b0b3491e9088643bd74e">UBPlatformUtils::hasVirtualKeyboard</a>() &amp;&amp; <a class="code" href="../../d7/d62/class_u_b_board_controller.html#adc5098fe0747e53e8ccc7f52ca11bcc3">mPaletteManager</a>-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a01a14c9ae374265868a703f63770b5df">mKeyboardPalette</a>)</div>
 <div class="line">    {</div>
@@ -7243,8 +7416,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-181-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-181-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab46e478b8096354cf99816a1565a3b8e_icgraph.svg" width="643" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ab46e478b8096354cf99816a1565a3b8e_icgraph.svg" width="643" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -7271,6 +7443,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00462">462</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (tool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a1b1628b54292ecf76005e74cdadde67b">UBStylusTool::ZoomIn</a> || tool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a98abcea5dce959c6d62fdfb9eae0d1d3">UBStylusTool::ZoomOut</a>)</div>
 <div class="line">    {</div>
@@ -7313,6 +7487,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00150">150</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d62/class_u_b_board_controller.html#af0a985e4b3a0ad7c53fc6210b3565993">mSystemScaleFactor</a>;</div>
 <div class="line">        }</div>
@@ -7384,6 +7560,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02544">2544</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d9/def/class_u_b_podcast_controller.html#a8acf4b0bab6aa6ad4846b9044d7fda96">UBPodcastController::instance</a>())</div>
 <div class="line">        <a class="code" href="../../d9/def/class_u_b_podcast_controller.html#a8acf4b0bab6aa6ad4846b9044d7fda96">UBPodcastController::instance</a>()-&gt;<a class="code" href="../../d9/def/class_u_b_podcast_controller.html#ab9f47a41e489b242fed9396277dfc5af">toggleRecordingPalette</a>(checked);</div>
@@ -7431,6 +7609,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00455">455</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFontMetricsF fontMetrics(<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;font());</div>
 <div class="line">    <span class="keywordflow">return</span> fontMetrics.elidedText(text, Qt::ElideRight, maxWidth);</div>
@@ -7441,8 +7621,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-186-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-186-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a2ba318b0464e00a842624ffde7c6d716_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a2ba318b0464e00a842624ffde7c6d716_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -7469,6 +7648,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01886">1886</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(canUndo);</div>
 <div class="line"></div>
@@ -7492,8 +7673,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-188-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-188-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a0b4c8939c4b301f523681164e8abf803_icgraph.svg" width="667" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_a0b4c8939c4b301f523681164e8abf803_icgraph.svg" width="667" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -7519,6 +7699,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l01897">1897</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;actionBack-&gt;setEnabled(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>() &amp;&amp; (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> &gt; 0));</div>
 <div class="line">    <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;actionForward-&gt;setEnabled(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>() &amp;&amp; (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa6ae07cb04ce4d86e718ba484fc60eca">mActiveSceneIndex</a> &lt; <a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()-&gt;<a class="code" href="../../da/dc6/class_u_b_document_container.html#ae84266eece665659405100eaf4e7d8d0">pageCount</a>() - 1));</div>
@@ -7577,6 +7759,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02588">2588</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (isDark &amp;&amp; !isCrossed)</div>
 <div class="line">        <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acc686ade8c0956204dfb993185d8d286">mMainWindow</a>-&gt;actionPlainDarkBackground-&gt;setChecked(<span class="keyword">true</span>);</div>
@@ -7620,6 +7804,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02170">2170</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//adjust background style</span></div>
 <div class="line">    QString newBackgroundStyle;</div>
@@ -7675,6 +7861,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02142">2142</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ada4ed011d8f97bedba64650c7a32f82f">mActiveScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#aec88131e2343abb3e86dc5efcd8de622">nominalSize</a>() == <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a2c7e1b2471296349a87237358c932077">documentSizes</a>.value(<a class="code" href="../../d5/d35/struct_document_size_ratio.html#a5a7547375e6ea65421c7cbe46b2aed8aaeec4d492a00d52b14dc46a7f76e6541f">DocumentSizeRatio::Ratio16_9</a>))</div>
 <div class="line">    {</div>
@@ -7731,6 +7919,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l02043">2043</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal newScaleFactor = 1.0;</div>
 <div class="line"></div>
@@ -7820,6 +8010,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00905">905</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    QPointF viewCenter = <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;mapToScene(QRect(0, 0, <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;width(), <a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;height()).center());</div>
@@ -7862,7 +8054,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-199-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-199-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ade5522bea3f3045a0da1dda6853b3cce_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d62/class_u_b_board_controller_ade5522bea3f3045a0da1dda6853b3cce_icgraph.svg" width="100%" height="521"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </p>
@@ -7924,6 +8116,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00846">846</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;transform().m11() &gt; <a class="code" href="../../d6/dd0/_u_b_8h.html#add58e2ca485ca59965af3231772bb13a">UB_MAX_ZOOM</a>)</div>
 <div class="line">    {</div>
@@ -7974,6 +8168,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00857">857</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ((<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;horizontalScrollBar()-&gt;maximum() == 0) &amp;&amp; (<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acbd541e832dfc45c5cae8a1d65d17a2d">mControlView</a>-&gt;verticalScrollBar()-&gt;maximum() == 0))</div>
 <div class="line">    {</div>
@@ -8027,6 +8223,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html#l00872">872</a> of file <a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTransform tr;</div>
 <div class="line"></div>
@@ -8084,6 +8282,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00309">309</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a705ff91f4f10d1ce5e285742b18ad3af"></a>
@@ -8103,6 +8303,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00304">304</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8124,6 +8326,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00310">310</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ada4ed011d8f97bedba64650c7a32f82f"></a>
@@ -8143,6 +8347,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00286">286</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8164,6 +8370,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00287">287</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa998b2835bd8605183a5ddddd9815dde"></a>
@@ -8183,6 +8391,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00305">305</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8204,6 +8414,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00303">303</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a69287470a4691f3fcc8e0f1f5512acf3"></a>
@@ -8223,6 +8435,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00293">293</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8244,6 +8458,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00295">295</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acbd541e832dfc45c5cae8a1d65d17a2d"></a>
@@ -8263,6 +8479,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00291">291</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8284,6 +8502,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00307">307</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0576027b69e46e85a45163cd6a6b3ae5"></a>
@@ -8303,6 +8523,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00292">292</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8324,6 +8546,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00294">294</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a46239e72ce95629cb84acd08c9e09faf"></a>
@@ -8343,6 +8567,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00297">297</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8364,6 +8590,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00306">306</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acc686ade8c0956204dfb993185d8d286"></a>
@@ -8383,6 +8611,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00285">285</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8404,6 +8634,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00300">300</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab15f0fc01218035f9f3684688d0bb6ca"></a>
@@ -8423,6 +8655,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00301">301</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8444,6 +8678,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00290">290</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a09091adf97554abcba05c98cf95dc8e7"></a>
@@ -8463,6 +8699,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00308">308</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8484,6 +8722,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00288">288</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad8fe02921e2f770bdef6ad91f497cdaa"></a>
@@ -8503,6 +8743,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00298">298</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8524,6 +8766,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00299">299</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8f032a9933f91ee7a8c695ee6b1a11fc"></a>
@@ -8543,6 +8787,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00289">289</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
 
 </div>
 </div>
@@ -8564,6 +8810,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00302">302</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac2e49348ca31651dca933bb63a61f164"></a>
@@ -8584,22 +8832,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html#l00296">296</a> of file <a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a></li>
-<li><a class="el" href="../../d8/d16/_u_b_board_controller_8cpp.html">UBBoardController.cpp</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../dd/ddb/_u_b_board_controller_8h_source.html">UBBoardController.h</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../d8/d16/_u_b_board_controller_8cpp_source.html">UBBoardController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d7/d62/class_u_b_board_controller.html">UBBoardController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:56 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:19 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

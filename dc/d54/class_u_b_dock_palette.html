@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/d54/class_u_b_dock_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dc/d54/class_u_b_dock_palette.html','.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -253,7 +233,10 @@ Private Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:a087cc121fd30b34b5df5556e9391ffbf"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_u_b_dock_palette.html#a087cc121fd30b34b5df5556e9391ffbf">UBTabDockPalette</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00097">97</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6f6fcc9a6785126f2e668742c886905e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -285,6 +268,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The constructor. </p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00044">44</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">:QWidget(parent, Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint)</div>
 <div class="line">, <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a32701f18f9d1f1b31c568fc0349632c5">mCurrentMode</a>(<a class="code" href="../../d5/dba/_u_b_dock_palette_widget_8h.html#af3b2828ed1bf91ad13c73e4e1b3b529ea3e7cf372296b0ae399bc1425045d3ec0">eUBDockPaletteWidget_BOARD</a>)</div>
 <div class="line">, <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ae4ee6d66d55079cb8fc31fb5c890faf4">mOrientation</a>(<a class="code" href="../../df/d43/_u_b_dock_palette_8h.html#a697273b91063b41b5f17e942bcc445c4a6779010d54409be4efb075cd5591c521">eUBDockOrientation_Left</a>)</div>
@@ -364,6 +349,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The destructor. </p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a6af957d91461245a458cc5207e4398b1">mpStackWidget</a>)</div>
 <div class="line">    {</div>
@@ -401,6 +388,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00374">374</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a80ec644a3bc1740715ec00e4f26cab22">mTabWidgets</a>.contains(widget) &amp;&amp; widget-&gt;<a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a01341ae084f62d986ee2c2a9e0f51542">visibleState</a>())</div>
 <div class="line">    {</div>
@@ -456,6 +445,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00533">533</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setParent(widget);</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;setParent(widget);</div>
@@ -494,6 +485,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the border size </p>
 <dl class="section return"><dt>Returns</dt><dd>the border size </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00255">255</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 15;</div>
 <div class="line">}</div>
@@ -533,6 +526,8 @@ Friends</h2></td></tr>
 
 <p>Get the collapse width value. </p>
 <dl class="section return"><dt>Returns</dt><dd>the collapse widht value </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00281">281</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a0b425ad7936ee42a5dcf117b4327bde4">mCollapseWidth</a>;</div>
 <div class="line">}</div>
@@ -562,6 +557,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Connect the show / hide signals of the widget related to this dock palette. </p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00453">453</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a06811fe8b1f887c8705882f408b6576f">mRegisteredWidgets</a>.size(); i++)</div>
 <div class="line">    {</div>
@@ -613,6 +610,8 @@ Friends</h2></td></tr>
 
 <p>Get the custom margin. </p>
 <dl class="section return"><dt>Returns</dt><dd>the custom margin value </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00365">365</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 5;</div>
 <div class="line">}</div>
@@ -657,6 +656,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00189">189</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <span class="comment">// We want to set the cursor as an arrow everytime it enters the palette</span></div>
@@ -685,6 +686,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00136">136</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;<a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#afe70e307d985dab9654ba7a60bcb8aef">mVerticalOffset</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -701,6 +704,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00525">525</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRect tabsRect = <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;rect();</div>
 <div class="line">    QPoint topLeft = <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;mapToParent(tabsRect.topLeft());</div>
@@ -731,6 +736,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00131">131</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a06811fe8b1f887c8705882f408b6576f">mRegisteredWidgets</a>; }</div>
 </div><!-- fragment -->
 </div>
@@ -755,6 +762,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00134">134</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;<a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#a2d29d83d569604654f24c94422c17d42">mFlotable</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -788,6 +797,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <span class="comment">// Restore the cursor to its previous shape</span></div>
@@ -816,6 +827,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00492">492</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//   if (!mHTab) {</span></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/d43/_u_b_dock_palette_8h.html#a8417e31f28356d29373f251be2649a87a34ec637194df293da11659e7bb1969b9">eUBDockTabOrientation_Up</a> == <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#aa285a86c3980a4a67e3c54e1d6a2e0df">mTabsOrientation</a>) {</div>
@@ -885,6 +898,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles the 'all download finished' notification. </p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00482">482</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a80ec644a3bc1740715ec00e4f26cab22">mTabWidgets</a>.size(); i++){</div>
 <div class="line">        <a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html">UBDockPaletteWidget</a>* pW = <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a80ec644a3bc1740715ec00e4f26cab22">mTabWidgets</a>.at(i);</div>
@@ -935,6 +950,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00116">116</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(documentProxy);</div>
 <div class="line">}</div>
@@ -979,6 +996,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00441">441</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a06811fe8b1f887c8705882f408b6576f">mRegisteredWidgets</a>.contains(widget))</div>
 <div class="line">    {</div>
@@ -1036,6 +1055,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00409">409</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#abe601a30ebea6b08998224bad8eaa7e8" title="Handle the resize event.">resizeEvent</a>(event);</div>
 <div class="line">}</div>
@@ -1080,6 +1101,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00427">427</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a06811fe8b1f887c8705882f408b6576f">mRegisteredWidgets</a>.contains(widget))</div>
 <div class="line">    {</div>
@@ -1131,6 +1154,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Update the tab position regarding the toolbar position (up or down) </p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00346">346</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Get the position of the tab</span></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;appToolBarPositionedAtTop-&gt;get().toBool())</div>
@@ -1180,6 +1205,8 @@ Friends</h2></td></tr>
 
 <p>Get the current orientation. </p>
 <dl class="section return"><dt>Returns</dt><dd>the current orientation </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00125">125</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ae4ee6d66d55079cb8fc31fb5c890faf4">mOrientation</a>;</div>
 <div class="line">}</div>
@@ -1224,6 +1251,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00211">211</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
@@ -1272,6 +1301,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00139">139</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a549b9282f400f4c5cd80efe6efd0451c">mPaletteType</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -1299,6 +1330,8 @@ Friends</h2></td></tr>
 
 <p>Get the radius size. </p>
 <dl class="section return"><dt>Returns</dt><dd>the radius size </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00264">264</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 5;</div>
 <div class="line">}</div>
@@ -1335,6 +1368,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00466">466</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a06811fe8b1f887c8705882f408b6576f">mRegisteredWidgets</a>.contains(widget))</div>
 <div class="line">    {</div>
@@ -1379,6 +1414,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00391">391</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> nWidget = <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a80ec644a3bc1740715ec00e4f26cab22">mTabWidgets</a>.indexOf(widget);</div>
 <div class="line">    <span class="keywordflow">if</span>( nWidget &gt;= 0 )</div>
@@ -1444,6 +1481,8 @@ Friends</h2></td></tr>
 </dl>
 
 <p>Reimplemented in <a class="el" href="../../df/db6/class_u_b_navigator_palette.html#a6ee06feda0cccbfd3a5071368e0ce142">UBNavigatorPalette</a>, <a class="el" href="../../d9/d48/class_u_b_right_palette.html#abe3c59eacb8e43c88a6290ecc16d9697">UBRightPalette</a>, and <a class="el" href="../../de/d4d/class_u_b_left_palette.html#a43e1b4228ad821e4c0b1c261086e36b7">UBLeftPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#aaa2875f5907c022762b4cde1ee69e961" title="Set the maximum width.">updateMaxWidth</a>();</div>
@@ -1513,6 +1552,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00519">519</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> numTabs = <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a80ec644a3bc1740715ec00e4f26cab22">mTabWidgets</a>.size();</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;setFixedSize(2 * <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac21a897b4fba940a69a092cd870d2421">border</a>(), (numTabs * <a class="code" href="../../df/d43/_u_b_dock_palette_8h.html#a6511bfd47ae935d09420c07d0ae15af9">TABSIZE</a>) + qMax(numTabs - 1, 0) * <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a2b809cad2069843fb95bb02872edfd9c" title="Get the tab spacing.">tabSpacing</a>());</div>
@@ -1560,6 +1601,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00137">137</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;<a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#afe70e307d985dab9654ba7a60bcb8aef">mVerticalOffset</a> = newOffset;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1594,6 +1637,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00242">242</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a75d5806767dde185d5c4231f3c313088">mBackgroundBrush</a> != brush)</div>
 <div class="line">    {</div>
@@ -1625,6 +1670,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00134">134</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Set the size</span></div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ae4ee6d66d55079cb8fc31fb5c890faf4">mOrientation</a> = <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a92148a9db7361b6f037eda1213cde579" title="Get the current orientation.">orientation</a>;</div>
@@ -1682,6 +1729,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00135">135</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;<a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#a2d29d83d569604654f24c94422c17d42">mFlotable</a> = newFlotable;}</div>
 </div><!-- fragment -->
 </div>
@@ -1707,6 +1756,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00338">338</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#aa285a86c3980a4a67e3c54e1d6a2e0df">mTabsOrientation</a> = <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a92148a9db7361b6f037eda1213cde579" title="Get the current orientation.">orientation</a>;</div>
 <div class="line">}</div>
@@ -1752,6 +1803,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00538">538</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a2f0e89d9ac6050f816e95f1c2a42086b">QWidget::setVisible</a>(visible);</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac9c77ec45922ff62bc9d7d7492b14df9">mTabPalette</a>-&gt;setVisible(visible);</div>
@@ -1789,6 +1842,8 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00308">308</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a6af957d91461245a458cc5207e4398b1">mpStackWidget</a>-&gt;setCurrentIndex(tabIndex);</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a5a410c0bb7ca9aee7698b2f055adf600">mCurrentTab</a> = tabIndex;</div>
@@ -1827,6 +1882,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../de/d4d/class_u_b_left_palette.html#a1390f53120608624d6c33e6144ca4204">UBLeftPalette</a>, and <a class="el" href="../../d9/d48/class_u_b_right_palette.html#a3347b1b9346d58d1134480d192a12dd3">UBRightPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00544">544</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#afb8107764021a65434ec4424e9ffdb94">mLastOpenedTabForMode</a>.insert(<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a32701f18f9d1f1b31c568fc0349632c5">mCurrentMode</a>, <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a6af957d91461245a458cc5207e4398b1">mpStackWidget</a>-&gt;currentIndex());</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a32701f18f9d1f1b31c568fc0349632c5">mCurrentMode</a> = mode;</div>
@@ -1893,6 +1950,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>collapse/expand automatically the palette after a click on its tab </p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00289">289</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// If the current tab is not the clicked one, show its content</span></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a5a410c0bb7ca9aee7698b2f055adf600">mCurrentTab</a> != tabIndex)</div>
@@ -1950,6 +2009,8 @@ Friends</h2></td></tr>
 
 <p>Get the tab spacing. </p>
 <dl class="section return"><dt>Returns</dt><dd>the tab spacing </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00418">418</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 2;</div>
 <div class="line">}</div>
@@ -1988,6 +2049,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Toggle the collapse / expand state. </p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00323">323</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(width() &lt; <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a0b425ad7936ee42a5dcf117b4327bde4">mCollapseWidth</a>)</div>
 <div class="line">        resize(<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a4632ac43fa9b7f64df64ff263a5886ce">mLastWidth</a>,height());</div>
@@ -2033,6 +2096,8 @@ Friends</h2></td></tr>
 <p>Set the maximum width. </p>
 
 <p>Reimplemented in <a class="el" href="../../de/d4d/class_u_b_left_palette.html#aa29a345c379c79a6a4862c45fac018ec">UBLeftPalette</a>, and <a class="el" href="../../d9/d48/class_u_b_right_palette.html#abb19744e0b3c162256a26f061ec21332">UBRightPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00272">272</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Only the inherited class will overload this method</span></div>
 <div class="line">}</div>
@@ -2067,6 +2132,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00100">100</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <h2>Member Data Documentation</h2>
@@ -2089,6 +2156,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The current background brush </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00158">158</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a260643aac69a6ecff7b344bafd9cfffe"></a>
@@ -2109,6 +2178,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>A flag used to allow the resize </p>
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00164">164</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2131,6 +2202,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The click time </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00172">172</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0b425ad7936ee42a5dcf117b4327bde4"></a>
@@ -2151,6 +2224,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The width that trig the collapse </p>
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00168">168</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2173,6 +2248,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The current tab widget </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00190">190</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a32701f18f9d1f1b31c568fc0349632c5"></a>
@@ -2184,6 +2261,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00129">129</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2206,6 +2285,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The current tab index </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00184">184</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4dd61dbf2e05e83fc8b04474741824fb"></a>
@@ -2226,6 +2307,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The h position of the tab </p>
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00178">178</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2248,6 +2331,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Last opened tab index depending on mode </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00192">192</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4632ac43fa9b7f64df64ff263a5886ce"></a>
@@ -2268,6 +2353,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The last width of the palette </p>
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00170">170</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2290,6 +2377,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The mouse pressed position </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00174">174</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae4ee6d66d55079cb8fc31fb5c890faf4"></a>
@@ -2311,6 +2400,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The current dock orientation </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00156">156</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a549b9282f400f4c5cd80efe6efd0451c"></a>
@@ -2330,6 +2421,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00206">206</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2352,6 +2445,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The layout </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00182">182</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a25e6b09786386b27e982a224431dfb8d"></a>
@@ -2372,6 +2467,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The preferred height </p>
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00162">162</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2394,6 +2491,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The preferred width </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00160">160</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6af957d91461245a458cc5207e4398b1"></a>
@@ -2414,6 +2513,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The stacked widget </p>
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00180">180</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2436,6 +2537,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The current widget </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00188">188</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa4ccb0ada33ff1b10f9354f87df8f2f1"></a>
@@ -2457,6 +2560,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>A flag indicating if the palette has been resized between a click and a release </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00166">166</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac9c77ec45922ff62bc9d7d7492b14df9"></a>
@@ -2476,6 +2581,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00207">207</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2498,6 +2605,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The tab orientation </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00176">176</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a80ec644a3bc1740715ec00e4f26cab22"></a>
@@ -2519,22 +2628,20 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The visible tab widgets </p>
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00186">186</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a></li>
-<li><a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp.html">UBDockPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dc/d54/class_u_b_dock_palette.html">UBDockPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:58 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:21 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

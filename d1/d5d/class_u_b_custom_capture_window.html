@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d5d/class_u_b_custom_capture_window.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/d5d/class_u_b_custom_capture_window
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -147,6 +127,8 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>This class is used to do the custom capture of Uninotes </p>
+
+<p>Definition at line <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html#l00030">30</a> of file <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a730b16ee07f9bfdf54bbf41415672563"></a>
 <div class="memitem">
@@ -161,6 +143,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QDialog(parent, Qt::FramelessWindowHint  | Qt::Window)</div>
 <div class="line">    , <a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a242415d0c985fcaec2f796a742f3fe0a">mSelectionBand</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a2123422c01b98254eee4ad218c22c80e">mRubberBandStyle</a>(0)</div>
@@ -193,6 +177,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a242415d0c985fcaec2f796a742f3fe0a">mSelectionBand</a>;</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a2123422c01b98254eee4ad218c22c80e">mRubberBandStyle</a>;</div>
@@ -214,6 +200,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#ae47c19f393caad44319b55c30db43e40">mWholeScreenPixmap</a> = pScreenPixmap;</div>
 <div class="line"></div>
@@ -251,6 +239,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a242415d0c985fcaec2f796a742f3fe0a">mSelectionBand</a>)</div>
 <div class="line">    {</div>
@@ -295,6 +285,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00126">126</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Escape)</div>
 <div class="line">    {</div>
@@ -333,6 +325,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00076">76</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a5c4361a10e32676ba7f2c2861b43cbd2">mIsSelecting</a>)</div>
 <div class="line">    {</div>
@@ -365,6 +359,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00087">87</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a5c4361a10e32676ba7f2c2861b43cbd2">mIsSelecting</a>)</div>
 <div class="line">    {</div>
@@ -405,6 +401,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00106">106</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d5d/class_u_b_custom_capture_window.html#a5c4361a10e32676ba7f2c2861b43cbd2">mIsSelecting</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
@@ -446,6 +444,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
@@ -475,6 +475,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">}</div>
@@ -500,6 +502,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html#l00057">57</a> of file <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a55fd0b0fae074d24f3d2e2be9bcfad0c"></a>
@@ -519,6 +523,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html#l00056">56</a> of file <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a>.</p>
 
 </div>
 </div>
@@ -540,6 +546,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html#l00055">55</a> of file <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a242415d0c985fcaec2f796a742f3fe0a"></a>
@@ -559,6 +567,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html#l00054">54</a> of file <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a>.</p>
 
 </div>
 </div>
@@ -580,22 +590,20 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html#l00053">53</a> of file <a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a></li>
-<li><a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp.html">UBCustomCaptureWindow.cpp</a></li>
+<li>Sankore-3.1/src/desktop/<a class="el" href="../../d1/d4b/_u_b_custom_capture_window_8h_source.html">UBCustomCaptureWindow.h</a></li>
+<li>Sankore-3.1/src/desktop/<a class="el" href="../../d0/d78/_u_b_custom_capture_window_8cpp_source.html">UBCustomCaptureWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/d5d/class_u_b_custom_capture_window.html">UBCustomCaptureWindow</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:20 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

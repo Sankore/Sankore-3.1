@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBActionPalette.cpp</div>  </div>
@@ -188,7 +172,7 @@ $(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a116bac7a7085808b3b1c1fd51e124956">addAction</a>(action);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    actionChanged();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a2a996cf0d279955a5322800493ad0119">actionChanged</a>();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
@@ -205,8 +189,8 @@ $(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a4278be12faa1ca4cbbb360fb360a12d1">mMapActionToButton</a>[action] = button;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    connect(button, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(buttonClicked()));</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    connect(action, SIGNAL(changed()), <span class="keyword">this</span>, SLOT(actionChanged()));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    connect(button, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a40216f168183eecab89bcbafd56cbefd">buttonClicked</a>()));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    connect(action, SIGNAL(changed()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a2a996cf0d279955a5322800493ad0119">actionChanged</a>()));</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> button;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
@@ -221,7 +205,7 @@ $(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a5c4efb6a44c5e95f151c9ab00cdd57f7">mActions</a> &lt;&lt; action;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keywordtype">void</span> UBActionPalette::buttonClicked()</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="../../de/dc5/class_u_b_action_palette.html#a40216f168183eecab89bcbafd56cbefd">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a40216f168183eecab89bcbafd56cbefd">UBActionPalette::buttonClicked</a>()</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/dc5/class_u_b_action_palette.html#af2223114a8714b10a9bcb0289a7e133e">mAutoClose</a>)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
@@ -261,7 +245,7 @@ $(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        ++i;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    connect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#abee5fd5d774e46838952b4632add4e46">mButtonGroup</a>, SIGNAL(buttonClicked(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#ada3077d2b24368051f6d63f704bdddde">buttonGroupClicked</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    connect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#abee5fd5d774e46838952b4632add4e46">mButtonGroup</a>, SIGNAL(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a40216f168183eecab89bcbafd56cbefd">buttonClicked</a>(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#ada3077d2b24368051f6d63f704bdddde">buttonGroupClicked</a>(<span class="keywordtype">int</span>)));</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
@@ -344,7 +328,7 @@ $(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keywordtype">void</span> UBActionPalette::actionChanged()</div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="code" href="../../de/dc5/class_u_b_action_palette.html#a2a996cf0d279955a5322800493ad0119">  241</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a2a996cf0d279955a5322800493ad0119">UBActionPalette::actionChanged</a>()</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a5c4efb6a44c5e95f151c9ab00cdd57f7">mActions</a>.length() &amp;&amp; i &lt; <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>.length(); i++)</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    {</div>
@@ -418,15 +402,11 @@ $(document).ready(function(){initNavTree('d6/da4/_u_b_action_palette_8cpp_source
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d6/da4/_u_b_action_palette_8cpp.html">UBActionPalette.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

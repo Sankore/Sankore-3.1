@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/dfa/class_u_b_desktop_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d7/dfa/class_u_b_desktop_palette.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -251,6 +231,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The uninotes window. This window is controlled by UBUninotesWindowController. </p>
+
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00036">36</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a988f398743822ce378c62be1685056d9"></a>
 <div class="memitem">
@@ -275,6 +257,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a389dab585e37f7e97617370ee784a514">UBActionPalette</a>(Qt::TopLeftCorner, parent)</div>
 <div class="line">    , <a class="code" href="../../d7/dfa/class_u_b_desktop_palette.html#a10ca6fe9efcde8e25c53fa5ec3d6c782">mShowHideAction</a>(NULL)</div>
 <div class="line">    , <a class="code" href="../../d7/dfa/class_u_b_desktop_palette.html#a8fe120757d918e434343c3bc17c1c5ce">mDisplaySelectAction</a>(NULL)</div>
@@ -361,6 +345,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00098">98</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -380,6 +366,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setWindowOpacity(1.0);</div>
 <div class="line">}</div>
@@ -409,6 +397,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00231">231</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPoint p;</div>
 <div class="line"></div>
@@ -476,6 +466,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setWindowOpacity(0.0);</div>
 <div class="line">    qApp-&gt;processEvents();</div>
@@ -514,6 +506,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#acf3ead0c3d8a3bde89b934ad208e9f9a">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00245">245</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/dfa/class_u_b_desktop_palette.html#a43412e2d24063190c6960c63aeeb2a37">rightPalette</a>-&gt;width();</div>
 <div class="line">}</div>
@@ -550,6 +544,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00214">214</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    QIcon penIcon;</div>
@@ -588,6 +584,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00167">167</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;QAction*&gt; <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a6f0c33558354c13ccc5111cfa385a2ff">actions</a>;</div>
 <div class="line">    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#aba0381d16879caa1c9001f8591330e7c">clearLayout</a>();</div>
@@ -658,6 +656,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00150">150</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(location);</div>
 <div class="line">    QList&lt;QAction*&gt; <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a6f0c33558354c13ccc5111cfa385a2ff">actions</a>;</div>
@@ -713,6 +713,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00250">250</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPoint p = pos();</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a45f8ba7b4a88755089596c30b040b1cc">minimizedLocation</a>() == <a class="code" href="../../d5/d6f/_u_b_floating_palette_8h.html#ac8adc001960a33bd6c76686f775bd7eba181fed417eb207a4bab64801c7c1654b">eMinimizedLocation_Right</a>)</div>
@@ -796,6 +798,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dfa/class_u_b_desktop_palette.html#a8fe120757d918e434343c3bc17c1c5ce">mDisplaySelectAction</a>-&gt;setVisible(visible);</div>
 <div class="line">}</div>
@@ -833,6 +837,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dfa/class_u_b_desktop_palette.html#a10ca6fe9efcde8e25c53fa5ec3d6c782">mShowHideAction</a>-&gt;setVisible(visible);</div>
 <div class="line">}</div>
@@ -871,6 +877,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#ad1b5652affcca631745df045446974fa">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00196">196</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    QIcon penIcon;</div>
@@ -911,6 +919,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#a9a02203ee57211f01b98984dc88029f2">mirroringEnabled</a>(checked);</div>
 <div class="line">}</div>
@@ -1013,6 +1023,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/dfa/class_u_b_desktop_palette.html#a10ca6fe9efcde8e25c53fa5ec3d6c782">mShowHideAction</a>)</div>
 <div class="line">        <a class="code" href="../../d7/dfa/class_u_b_desktop_palette.html#a10ca6fe9efcde8e25c53fa5ec3d6c782">mShowHideAction</a>-&gt;setChecked(pShowEnabled);</div>
@@ -1080,6 +1092,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00079">79</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9d55086d975603ca94801ff4cfa11b9f"></a>
@@ -1099,6 +1113,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00080">80</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1120,6 +1136,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00078">78</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8fe120757d918e434343c3bc17c1c5ce"></a>
@@ -1139,6 +1157,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00076">76</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1160,6 +1180,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00077">77</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a10ca6fe9efcde8e25c53fa5ec3d6c782"></a>
@@ -1179,6 +1201,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00075">75</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1200,22 +1224,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html#l00083">83</a> of file <a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a></li>
-<li><a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp.html">UBDesktopPalette.cpp</a></li>
+<li>Sankore-3.1/src/desktop/<a class="el" href="../../dd/db3/_u_b_desktop_palette_8h_source.html">UBDesktopPalette.h</a></li>
+<li>Sankore-3.1/src/desktop/<a class="el" href="../../d8/db1/_u_b_desktop_palette_8cpp_source.html">UBDesktopPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d7/dfa/class_u_b_desktop_palette.html">UBDesktopPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:21 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

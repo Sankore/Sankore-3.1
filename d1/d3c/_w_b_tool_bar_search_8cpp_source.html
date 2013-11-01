@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d3c/_w_b_tool_bar_search_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d1/d3c/_w_b_tool_bar_search_8cpp_sourc
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">WBToolBarSearch.cpp</div>  </div>
@@ -188,59 +172,59 @@ $(document).ready(function(){initNavTree('d1/d3c/_w_b_tool_bar_search_8cpp_sourc
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    , mStringListModel(new QStringListModel(this))</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    QMenu *m = <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a44e00f3dccf769084ebe0b994baab91b">menu</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    connect(m, SIGNAL(aboutToShow()), <span class="keyword">this</span>, SLOT(aboutToShowMenu()));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    connect(m, SIGNAL(triggered(QAction*)), <span class="keyword">this</span>, SLOT(triggeredMenuAction(QAction*)));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    connect(m, SIGNAL(aboutToShow()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a9620a554c58c2198e5440c9d8f9853f4">aboutToShowMenu</a>()));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    connect(m, SIGNAL(triggered(QAction*)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aee63d1400861457065332313678130e1">triggeredMenuAction</a>(QAction*)));</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    QCompleter *completer = <span class="keyword">new</span> QCompleter(mStringListModel, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    QCompleter *completer = <span class="keyword">new</span> QCompleter(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    completer-&gt;setCompletionMode(QCompleter::InlineCompletion);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;setCompleter(completer);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    connect(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>(), SIGNAL(returnPressed()), SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a24eb7599264750fc0fe2c6d5d5a2b6d3">searchNow</a>()));</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a6a7e5818f01dfbf6c71f38f2d1f80978">setInactiveText</a>(tr(<span class="stringliteral">&quot;Search&quot;</span>));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    load();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a79339146e1f8173d3005b5a092a430a4">load</a>();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#ad2c182d4521800767ecad2676b2b185a">   97</a></span>&#160;<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#ad2c182d4521800767ecad2676b2b185a">WBToolbarSearch::~WBToolbarSearch</a>()</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    mAutosaver-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> WBToolbarSearch::save()</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aaa38bd12f9ae34285a5d08d6276b59ca">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aaa38bd12f9ae34285a5d08d6276b59ca">WBToolbarSearch::save</a>()</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    QSettings settings;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;toolbarsearch&quot;</span>));</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;recentSearches&quot;</span>), mStringListModel-&gt;stringList());</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;maximumSaved&quot;</span>), mMaxSavedSearches);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;recentSearches&quot;</span>), <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;stringList());</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;maximumSaved&quot;</span>), <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    settings.endGroup();</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> WBToolbarSearch::load()</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a79339146e1f8173d3005b5a092a430a4">  111</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a79339146e1f8173d3005b5a092a430a4">WBToolbarSearch::load</a>()</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QSettings settings;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;toolbarsearch&quot;</span>));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QStringList list = settings.value(QLatin1String(<span class="stringliteral">&quot;recentSearches&quot;</span>)).toStringList();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    mMaxSavedSearches = settings.value(QLatin1String(<span class="stringliteral">&quot;maximumSaved&quot;</span>), mMaxSavedSearches).toInt();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    mStringListModel-&gt;setStringList(list);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a> = settings.value(QLatin1String(<span class="stringliteral">&quot;maximumSaved&quot;</span>), <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>).toInt();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;setStringList(list);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    settings.endGroup();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a24eb7599264750fc0fe2c6d5d5a2b6d3">  121</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a24eb7599264750fc0fe2c6d5d5a2b6d3">WBToolbarSearch::searchNow</a>()</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    QString searchText = <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;text();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    QStringList newList = mStringListModel-&gt;stringList();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    QStringList newList = <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;stringList();</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> (newList.contains(searchText))</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        newList.removeAt(newList.indexOf(searchText));</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    newList.prepend(searchText);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (newList.size() &gt;= mMaxSavedSearches)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (newList.size() &gt;= <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>)</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        newList.removeLast();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    QWebSettings *globalSettings = QWebSettings::globalSettings();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (!globalSettings-&gt;testAttribute(QWebSettings::PrivateBrowsingEnabled))</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        mStringListModel-&gt;setStringList(newList);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        mAutosaver-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;setStringList(newList);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    QUrl url(QLatin1String(<span class="stringliteral">&quot;http://www.google.com/search&quot;</span>));</div>
@@ -251,12 +235,12 @@ $(document).ready(function(){initNavTree('d1/d3c/_w_b_tool_bar_search_8cpp_sourc
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    emit <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a4ccdd0957e5628c7f6bbb7ada7d6ebc5">search</a>(url);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keywordtype">void</span> WBToolbarSearch::aboutToShowMenu()</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a9620a554c58c2198e5440c9d8f9853f4">  148</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a9620a554c58c2198e5440c9d8f9853f4">WBToolbarSearch::aboutToShowMenu</a>()</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;selectAll();</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    QMenu *m = <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a44e00f3dccf769084ebe0b994baab91b">menu</a>();</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    m-&gt;clear();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    QStringList list = mStringListModel-&gt;stringList();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    QStringList list = <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;stringList();</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span> (list.isEmpty())</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        m-&gt;addAction(tr(<span class="stringliteral">&quot;No Recent Searches&quot;</span>));</div>
@@ -274,7 +258,7 @@ $(document).ready(function(){initNavTree('d1/d3c/_w_b_tool_bar_search_8cpp_sourc
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    m-&gt;addAction(tr(<span class="stringliteral">&quot;Clear Recent Searches&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#ab7ebe2c0430bc2b31f37942bcbb11de5">clear</a>()));</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keywordtype">void</span> WBToolbarSearch::triggeredMenuAction(QAction *action)</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aee63d1400861457065332313678130e1">  171</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aee63d1400861457065332313678130e1">WBToolbarSearch::triggeredMenuAction</a>(QAction *action)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    QVariant v = action-&gt;data();</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">if</span> (v.canConvert&lt;QString&gt;())</div>
@@ -287,20 +271,16 @@ $(document).ready(function(){initNavTree('d1/d3c/_w_b_tool_bar_search_8cpp_sourc
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
 <div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#ab7ebe2c0430bc2b31f37942bcbb11de5">  182</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#ab7ebe2c0430bc2b31f37942bcbb11de5">WBToolbarSearch::clear</a>()</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    mStringListModel-&gt;setStringList(QStringList());</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    mAutosaver-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;setStringList(QStringList());</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li><li class="navelem"><a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp.html">WBToolBarSearch.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:44 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

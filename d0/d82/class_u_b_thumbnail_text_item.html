@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d82/class_u_b_thumbnail_text_item.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d82/class_u_b_thumbnail_text_item.h
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -135,7 +115,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a334622cbcf39c1350a75db15907eb005"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a334622cbcf39c1350a75db15907eb005">mUnelidedText</a></td></tr>
 <tr class="memitem:acf61f1c2d8a172ddd9c4c6580233d2d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#acf61f1c2d8a172ddd9c4c6580233d2d2">mIsHighlighted</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00316">316</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa431b21e175c8d2fda6d74e05f18eefd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -157,6 +140,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00319">319</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 <div class="fragment"><div class="line">            : QGraphicsTextItem(text)</div>
 <div class="line">            , <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a334622cbcf39c1350a75db15907eb005">mUnelidedText</a>(text)</div>
 <div class="line">            , <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#acf61f1c2d8a172ddd9c4c6580233d2d2">mIsHighlighted</a>(<span class="keyword">true</span>)</div>
@@ -187,6 +172,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00327">327</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> QRectF(QPointF(0.0, 0.0), QSize(<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a>, QFontMetricsF(font()).height() + 5));}</div>
 </div><!-- fragment -->
 </div>
@@ -211,6 +198,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00347">347</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            QFontMetricsF fm(font());</div>
 <div class="line">            QString elidedText = fm.elidedText(<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a334622cbcf39c1350a75db15907eb005">mUnelidedText</a>, Qt::ElideRight, <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a>);</div>
@@ -257,6 +246,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00341">341</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#acf61f1c2d8a172ddd9c4c6580233d2d2">mIsHighlighted</a> = enable;</div>
 <div class="line">            <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a6c7bd56033a9597bad9acb56e829b4f6">computeText</a>();</div>
@@ -303,6 +294,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00329">329</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">                <span class="keywordflow">if</span> (<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a> != pWidth)</div>
 <div class="line">                {</div>
@@ -352,6 +345,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00339">339</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -375,6 +370,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00365">365</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a334622cbcf39c1350a75db15907eb005"></a>
@@ -394,6 +391,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00364">364</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 
 </div>
 </div>
@@ -415,21 +414,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00363">363</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html">UBThumbnailTextItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:33 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBSceneCache.cpp</div>  </div>
@@ -169,7 +153,7 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">foreach</span>(<a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> key, existingKeys)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        mCachedSceneCount -= QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::remove(key);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">mCachedSceneCount</a> -= QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::remove(key);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> key(proxy, pageIndex);</div>
@@ -177,24 +161,24 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::contains(key))</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::insert</a>(key, scene);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        mCachedKeyFIFO.enqueue(key);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.enqueue(key);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (mCachedSceneCount &gt;= <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;pageCacheSize-&gt;get().toInt())</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">mCachedSceneCount</a> &gt;= <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;pageCacheSize-&gt;get().toInt())</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            compactCache();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a3fb8dc0f975cefa634cf97c15c478e0c">compactCache</a>();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::insert</a>(key, scene);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        mCachedKeyFIFO.enqueue(key);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.enqueue(key);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        mCachedSceneCount++;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">mCachedSceneCount</a>++;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (mViewStates.contains(key))</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a98c9d0b64d87414c869c5d0807c67b43">mViewStates</a>.contains(key))</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        scene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a3d3e53091814e68510f12c4b40649e1b">setViewState</a>(mViewStates.value(key));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        scene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a3d3e53091814e68510f12c4b40649e1b">setViewState</a>(<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a98c9d0b64d87414c869c5d0807c67b43">mViewStates</a>.value(key));</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
@@ -214,8 +198,8 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* scene = <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::value</a>(key);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        mCachedKeyFIFO.removeAll(key);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        mCachedKeyFIFO.enqueue(key);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.removeAll(key);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.enqueue(key);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> scene;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
@@ -234,13 +218,13 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> key(proxy, pageIndex);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">int</span> count = QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::remove(key);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        mCachedKeyFIFO.removeAll(key);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.removeAll(key);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        mViewStates.insert(key, scene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a2c461538b738de847dfe029bb27b7439">viewState</a>());</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a98c9d0b64d87414c869c5d0807c67b43">mViewStates</a>.insert(key, scene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a2c461538b738de847dfe029bb27b7439">viewState</a>());</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        scene-&gt;deleteLater();</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        mCachedSceneCount -= count;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">mCachedSceneCount</a> -= count;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
@@ -262,21 +246,21 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::contains(keySource))</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        scene = <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::value</a>(keySource);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        mCachedKeyFIFO.removeAll(keySource);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.removeAll(keySource);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span> (sourceIndex &lt; targetIndex)</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = sourceIndex + 1; i &lt;= targetIndex; i++)</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            internalMoveScene(proxy, i, i - 1);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a16417fd70405280bcc6bdd6c5cb94ef0">internalMoveScene</a>(proxy, i, i - 1);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = sourceIndex - 1; i &gt;= targetIndex; i--)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            internalMoveScene(proxy, i, i + 1);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a16417fd70405280bcc6bdd6c5cb94ef0">internalMoveScene</a>(proxy, i, i + 1);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
@@ -285,12 +269,12 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">if</span> (scene)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    {</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(proxy, targetIndex, scene);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        mCachedKeyFIFO.enqueue(keyTarget);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.enqueue(keyTarget);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::contains(keyTarget))</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        scene = QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::take(keyTarget);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        mCachedKeyFIFO.removeAll(keyTarget);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.removeAll(keyTarget);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
@@ -299,7 +283,7 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = endIncIndex; i &gt;= startIncIndex; i--)</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        internalMoveScene(proxy, i, i + 1);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a16417fd70405280bcc6bdd6c5cb94ef0">internalMoveScene</a>(proxy, i, i + 1);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
@@ -321,27 +305,27 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span> (currentScene) {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            currentScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ab0be6ef8f35c143360e4816cef2ef80a">setDocument</a>(newDocument);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        }</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        mCachedKeyFIFO.removeAll(sourceKey);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.removeAll(sourceKey);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordtype">int</span> count = QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::remove(sourceKey);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        mCachedSceneCount -= count;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">mCachedSceneCount</a> -= count;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(newDocument, i, currentScene);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keywordtype">void</span> UBSceneCache::internalMoveScene(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keywordtype">int</span> sourceIndex, <span class="keywordtype">int</span> targetIndex)</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a16417fd70405280bcc6bdd6c5cb94ef0">  227</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a16417fd70405280bcc6bdd6c5cb94ef0">UBSceneCache::internalMoveScene</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keywordtype">int</span> sourceIndex, <span class="keywordtype">int</span> targetIndex)</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;{</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> sourceKey(proxy, sourceIndex);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">if</span> (QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::contains(sourceKey))</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    {</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* scene = QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::take(sourceKey);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        mCachedKeyFIFO.removeAll(sourceKey);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.removeAll(sourceKey);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> targetKey(proxy, targetIndex);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::insert</a>(targetKey, scene);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        mCachedKeyFIFO.enqueue(targetKey);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.enqueue(targetKey);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">else</span></div>
@@ -351,22 +335,22 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        {</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="comment">/*UBGraphicsScene* scene = */</span>QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::take(targetKey);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            mCachedKeyFIFO.removeAll(targetKey);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.removeAll(targetKey);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="keywordtype">void</span> UBSceneCache::compactCache()</div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a3fb8dc0f975cefa634cf97c15c478e0c">  254</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a3fb8dc0f975cefa634cf97c15c478e0c">UBSceneCache::compactCache</a>()</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordtype">bool</span> foundUnusedScene = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">int</span> count = 0;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (!mCachedKeyFIFO.isEmpty())</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.isEmpty())</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keyword">const</span> <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> nextKey = mCachedKeyFIFO.dequeue();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keyword">const</span> <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> nextKey = <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.dequeue();</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordflow">if</span> (QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::contains(nextKey))</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            {</div>
@@ -379,19 +363,19 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    mCachedKeyFIFO.enqueue(nextKey);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.enqueue(nextKey);</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            }</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        count++;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">while</span> (!foundUnusedScene &amp;&amp; count &lt; mCachedKeyFIFO.size());</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">while</span> (!foundUnusedScene &amp;&amp; count &lt; <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>.size());</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keywordtype">void</span> UBSceneCache::dumpCacheContent()</div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a8cb59f393bc9a09128481a481ea8e931">  288</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a8cb59f393bc9a09128481a481ea8e931">UBSceneCache::dumpCacheContent</a>()</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">foreach</span>(<a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> key, keys())</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    {</div>
@@ -406,15 +390,11 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_scene_cache_8cpp_source.ht
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp.html">UBSceneCache.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

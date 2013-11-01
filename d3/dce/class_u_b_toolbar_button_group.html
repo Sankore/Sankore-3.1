@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/dce/class_u_b_toolbar_button_group.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d3/dce/class_u_b_toolbar_button_group.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -161,7 +141,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a12eb64d30d239952d7d9dd12a8261320"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dce/class_u_b_toolbar_button_group.html#a12eb64d30d239952d7d9dd12a8261320">mDisplayLabel</a></td></tr>
 <tr class="memitem:ad8a9fb6c41c5455589e1cbb86672da47"><td class="memItemLeft" align="right" valign="top">QActionGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dce/class_u_b_toolbar_button_group.html#ad8a9fb6c41c5455589e1cbb86672da47">mActionGroup</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00030">30</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a97f7ad344c8d692022c69317ee7a2ad0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -185,6 +168,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QWidget(toolBar)</div>
 <div class="line">    , <a class="code" href="../../d3/dce/class_u_b_toolbar_button_group.html#a69922c192c669d361b315dd3d66218d6">mActions</a>(actions)</div>
 <div class="line">    , <a class="code" href="../../d3/dce/class_u_b_toolbar_button_group.html#aa0c0d156aecadf590b44f7d723a536b4">mCurrentIndex</a>(-1)</div>
@@ -272,6 +257,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00092">92</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -332,6 +319,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00193">193</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> isDarkBackground = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a57270646688a0214f4fc2c8d2f31d7a6">isDarkBackground</a>();</div>
 <div class="line"></div>
@@ -367,8 +356,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_aa209164c95dd708651983a8b4ae6581d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_aa209164c95dd708651983a8b4ae6581d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -386,6 +374,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00141">141</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/class_u_b_toolbar_button_group.html#aa0c0d156aecadf590b44f7d723a536b4">mCurrentIndex</a>;</div>
 <div class="line">}</div>
@@ -419,8 +409,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_a60e3045cc3273baa92a1c0a74930e612_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_a60e3045cc3273baa92a1c0a74930e612_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -447,6 +436,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00215">215</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/dce/class_u_b_toolbar_button_group.html#a12eb64d30d239952d7d9dd12a8261320">mDisplayLabel</a> = display.toBool();</div>
 <div class="line">    QVBoxLayout* verticalLayout = (QVBoxLayout*)layout();</div>
@@ -459,8 +450,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_ac8bc9ca93209b238e12d24df9f6a8836_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_ac8bc9ca93209b238e12d24df9f6a8836_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -487,6 +477,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00161">161</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
 <div class="line">    QStyleOptionToolButton option;</div>
@@ -540,6 +532,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00119">119</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span>(QWidget *widget, action-&gt;associatedWidgets())</div>
 <div class="line">    {</div>
@@ -604,6 +598,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap pixmap(12, 12);</div>
 <div class="line">    pixmap.fill(color);</div>
@@ -625,8 +621,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_ad6e26c61e1c563337064379a5a13217f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_ad6e26c61e1c563337064379a5a13217f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -653,6 +648,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(index &lt; <a class="code" href="../../d3/dce/class_u_b_toolbar_button_group.html#a87db3fd9c49f823d307bc260ab8dd52c">mButtons</a>.size());</div>
 <div class="line"></div>
@@ -681,8 +678,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_a320eb80ca5653765cfd281069a1e7b78_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_a320eb80ca5653765cfd281069a1e7b78_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -711,6 +707,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html#l00097">97</a> of file <a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(index &lt; <a class="code" href="../../d3/dce/class_u_b_toolbar_button_group.html#a69922c192c669d361b315dd3d66218d6">mActions</a>.size());</div>
 <div class="line"></div>
@@ -729,8 +727,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_a174fe9c5145d4d29a40b867cfaf8aa32_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dce/class_u_b_toolbar_button_group_a174fe9c5145d4d29a40b867cfaf8aa32_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -755,6 +752,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00052">52</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a69922c192c669d361b315dd3d66218d6"></a>
@@ -774,6 +773,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00048">48</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
 
 </div>
 </div>
@@ -795,6 +796,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00049">49</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa0c0d156aecadf590b44f7d723a536b4"></a>
@@ -814,6 +817,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00050">50</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
 
 </div>
 </div>
@@ -835,6 +840,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00051">51</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a56461380f9200ecc3c4b95d513309373"></a>
@@ -854,6 +861,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00047">47</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
 
 </div>
 </div>
@@ -875,22 +884,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html#l00046">46</a> of file <a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a></li>
-<li><a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp.html">UBToolbarButtonGroup.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../de/dee/_u_b_toolbar_button_group_8h_source.html">UBToolbarButtonGroup.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/da6/_u_b_toolbar_button_group_8cpp_source.html">UBToolbarButtonGroup.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d3/dce/class_u_b_toolbar_button_group.html">UBToolbarButtonGroup</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:33 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/d05/class_u_b_scene_thumbnail_navig_pixmap.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('da/d05/class_u_b_scene_thumbnail_navig
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -183,7 +163,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_u_b_thumbnail"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_u_b_thumbnail')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../de/d65/class_u_b_thumbnail.html">UBThumbnail</a></td></tr>
 <tr class="memitem:a40a2d16aea31b6963a83a32fc282a049 inherit pro_attribs_class_u_b_thumbnail"><td class="memItemLeft" align="right" valign="top">QGraphicsRectItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00265">265</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae3f37c84b87c05513db49e5a6d75697f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,6 +196,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00831">831</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#ad38f35c75626fb14f6bf91325836358c">UBSceneThumbnailPixmap</a>(pix, proxy, pSceneIndex)</div>
 <div class="line">    , <a class="code" href="../../da/d05/class_u_b_scene_thumbnail_navig_pixmap.html#a7c7714369a5f3f92b3e8c73bd95d95c7">bButtonsVisible</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../da/d05/class_u_b_scene_thumbnail_navig_pixmap.html#ac4b365f3706f0868f173e42f40d83247">bCanDelete</a>(<span class="keyword">false</span>)</div>
@@ -249,6 +234,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00845">845</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -276,6 +263,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00932">932</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;yesNoQuestion(QObject::tr(<span class="stringliteral">&quot;Remove Page&quot;</span>), QObject::tr(<span class="stringliteral">&quot;Are you sure you want to remove 1 page from the selected document &#39;%0&#39;?&quot;</span>).arg(<a class="code" href="../../d8/d81/class_u_b_application.html#a88b0c1b5b98707cc71dae42c5fbcae56">UBApplication::documentController</a>-&gt;selectedDocument()-&gt;metaData(<a class="code" href="../../db/d66/class_u_b_settings.html#ac835acad66226a9b63347e2ed55fbd13">UBSettings::documentName</a>).toString()))){</div>
 <div class="line">                <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad1c70c75fad194f67cd944e203d15e49">deleteScene</a>(<a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>());</div>
@@ -322,6 +311,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00939">939</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ae84d5e3160402f05efcf708a8b81ba36">duplicateScene</a>(<a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>());</div>
 <div class="line">}</div>
@@ -367,6 +358,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00850">850</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">    <a class="code" href="../../da/d05/class_u_b_scene_thumbnail_navig_pixmap.html#a2e00995be889b4ae68554b0d47b397f3">updateButtonsState</a>();</div>
@@ -405,6 +398,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00857">857</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">    <a class="code" href="../../da/d05/class_u_b_scene_thumbnail_navig_pixmap.html#a7c7714369a5f3f92b3e8c73bd95d95c7">bButtonsVisible</a> = <span class="keyword">false</span>;</div>
@@ -434,6 +429,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00891">891</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPointF p = <span class="keyword">event</span>-&gt;pos();</div>
 <div class="line"></div>
@@ -481,6 +478,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00950">950</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>() &lt; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;selectedDocument()-&gt;pageCount()-1)</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa7a87412c99f4e2c12b23468d946296e">moveSceneToIndex</a>(<a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>(), <a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>() + 1);</div>
@@ -526,6 +525,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00944">944</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>()!=0)</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aa7a87412c99f4e2c12b23468d946296e">moveSceneToIndex</a>(<a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>(), <a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a9bc67f587cd73ff2119dd6aa06a07871">sceneIndex</a>() - 1);</div>
@@ -590,6 +591,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/d35/class_u_b_thumbnail_pixmap.html#a253d9e1e1b1a12ad50dd8c7dc7c8938c">UBThumbnailPixmap</a>.</p>
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00864">864</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(option);</div>
 <div class="line">    Q_UNUSED(widget);</div>
@@ -638,6 +641,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html#l00908">908</a> of file <a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../da/d05/class_u_b_scene_thumbnail_navig_pixmap.html#ac4b365f3706f0868f173e42f40d83247">bCanDelete</a> = <span class="keyword">false</span>;</div>
@@ -700,6 +705,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00284">284</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac4b365f3706f0868f173e42f40d83247"></a>
@@ -719,6 +726,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00285">285</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 
 </div>
 </div>
@@ -740,6 +749,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00288">288</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a820dfa0cd05fd5b8e1f43886a24faf6c"></a>
@@ -759,6 +770,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00287">287</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
 
 </div>
 </div>
@@ -780,22 +793,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html#l00286">286</a> of file <a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
-<li><a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp.html">UBThumbnailWidget.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp_source.html">UBThumbnailWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../da/d05/class_u_b_scene_thumbnail_navig_pixmap.html">UBSceneThumbnailNavigPixmap</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:31 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

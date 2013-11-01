@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/dcc/class_u_b_document_navigator.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d3/dcc/class_u_b_document_navigator.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -169,7 +149,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7da43ee19c717f7ec1c1a106d1b68d70"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcc/class_u_b_document_navigator.html#a7da43ee19c717f7ec1c1a106d1b68d70">mThumbnailWidth</a></td></tr>
 <tr class="memitem:a1da861aeaf4119c67012265bd22eccb8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcc/class_u_b_document_navigator.html#a1da861aeaf4119c67012265bd22eccb8">mThumbnailMinWidth</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html#l00039">39</a> of file <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6f5bd3d8c43ad063b094245113fa0b9b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -202,6 +185,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                         :QGraphicsView(parent)</div>
 <div class="line">  , <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a5217c01649dc4bf012da729b494108f3">mScene</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#aa148a4ed817eb26b209ab3f3ab2155a0">mNbColumns</a>(1)</div>
@@ -247,6 +232,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00076">76</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a5217c01649dc4bf012da729b494108f3">mScene</a>)</div>
 <div class="line">    {</div>
@@ -281,6 +268,8 @@ Private Attributes</h2></td></tr>
 
 <p>Get the border size. </p>
 <dl class="section return"><dt>Returns</dt><dd>the border size in pixels </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00230">230</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 20;</div>
 <div class="line">}</div>
@@ -319,6 +308,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generate the thumbnails. </p>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00088">88</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a4f8fca9914a9dab609a0d8f2911be336">mThumbsWithLabels</a>.clear();</div>
 <div class="line">    <span class="keywordflow">foreach</span>(QGraphicsItem* it, <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a5217c01649dc4bf012da729b494108f3">mScene</a>-&gt;items())</div>
@@ -402,6 +393,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00254">254</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QGraphicsItem* pClickedItem = itemAt(event-&gt;pos());</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != pClickedItem)</div>
@@ -474,6 +467,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00295">295</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">}</div>
@@ -495,6 +490,8 @@ Private Attributes</h2></td></tr>
 
 <p>Get the number of columns. </p>
 <dl class="section return"><dt>Returns</dt><dd>the number of thumbnails columns </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00203">203</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#aa148a4ed817eb26b209ab3f3ab2155a0">mNbColumns</a>;</div>
 <div class="line">}</div>
@@ -531,6 +528,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> c  = 0;</div>
 <div class="line">    <span class="keywordflow">foreach</span>(<a class="code" href="../../d3/d5d/class_u_b_img_text_thumbnail_element.html">UBImgTextThumbnailElement</a> el, <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a4f8fca9914a9dab609a0d8f2911be336">mThumbsWithLabels</a>)</div>
@@ -589,6 +588,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Put the element in the right place in the scene. </p>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00168">168</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal thumbnailHeight = <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a7da43ee19c717f7ec1c1a106d1b68d70">mThumbnailWidth</a> / <a class="code" href="../../db/d66/class_u_b_settings.html#ab2bdac6ad6c19dfbe7a5ded5d5c6b5a0">UBSettings::minScreenRatio</a>;</div>
 <div class="line"></div>
@@ -659,6 +660,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00239">239</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
@@ -701,6 +704,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00194">194</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#aa148a4ed817eb26b209ab3f3ab2155a0">mNbColumns</a> = <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#af3fe4f59d6a1b642c72f45646a29359b" title="Get the number of columns.">nbColumns</a>;</div>
 <div class="line">}</div>
@@ -737,6 +742,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00212">212</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a1da861aeaf4119c67012265bd22eccb8">mThumbnailMinWidth</a> = width;</div>
 <div class="line">}</div>
@@ -758,6 +765,8 @@ Private Attributes</h2></td></tr>
 
 <p>Get the thumbnails minimum width. </p>
 <dl class="section return"><dt>Returns</dt><dd>the minimum thumbnails width </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00221">221</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a1da861aeaf4119c67012265bd22eccb8">mThumbnailMinWidth</a>;</div>
 <div class="line">}</div>
@@ -793,6 +802,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Generate the new thumbnail</span></div>
 <div class="line">    <span class="comment">//UBGraphicsScene* pScene = UBApplication::boardController-&gt;activeScene();</span></div>
@@ -853,6 +864,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The current number of columns </p>
 
+<p>Definition at line <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html#l00074">74</a> of file <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5217c01649dc4bf012da729b494108f3"></a>
@@ -873,6 +886,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The scene </p>
+
+<p>Definition at line <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html#l00068">68</a> of file <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a>.</p>
 
 </div>
 </div>
@@ -895,6 +910,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The current thumbnails minimum width </p>
 
+<p>Definition at line <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html#l00078">78</a> of file <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7da43ee19c717f7ec1c1a106d1b68d70"></a>
@@ -915,6 +932,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The current thumbnails width </p>
+
+<p>Definition at line <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html#l00076">76</a> of file <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a>.</p>
 
 </div>
 </div>
@@ -937,22 +956,20 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The current selected item The list of current thumbnails with labels </p>
 
+<p>Definition at line <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html#l00072">72</a> of file <a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a></li>
-<li><a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp.html">UBDocumentNavigator.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/d0f/_u_b_document_navigator_8h_source.html">UBDocumentNavigator.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d8/d6b/_u_b_document_navigator_8cpp_source.html">UBDocumentNavigator.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d3/dcc/class_u_b_document_navigator.html">UBDocumentNavigator</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:58 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:22 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

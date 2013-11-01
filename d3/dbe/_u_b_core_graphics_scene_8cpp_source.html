@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/dbe/_u_b_core_graphics_scene_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d3/dbe/_u_b_core_graphics_scene_8cpp_s
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBCoreGraphicsScene.cpp</div>  </div>
@@ -146,11 +130,11 @@ $(document).ready(function(){initNavTree('d3/dbe/_u_b_core_graphics_scene_8cpp_s
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//we must delete removed items that are no more in any scene</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//at groups deleting some items can be added to mItemsToDelete, so we need to use iterators.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">foreach</span>(QGraphicsItem* item, mItemsToDelete){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">foreach</span>(QGraphicsItem* item, <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>){</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (item &amp;&amp; item-&gt;type() != <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28a538c35024d3b2c7152210a70900d669f">UBGraphicsItemType::PolygonItemType</a> &amp;&amp; item-&gt;type() != QGraphicsItem::UserType &amp;&amp; item-&gt;type() != <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28a21415a6f105be70102129f61bd0621fe">UBGraphicsItemType::groupContainerType</a> &amp;&amp; (item-&gt;scene() == NULL || item-&gt;scene() == <span class="keyword">this</span>))</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">delete</span> item;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mItemsToDelete.clear();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.clear();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a0a190111cab43448533b69bf8699ab38">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a0a190111cab43448533b69bf8699ab38">UBCoreGraphicsScene::addItem</a>(QGraphicsItem* item)</div>
@@ -183,13 +167,13 @@ $(document).ready(function(){initNavTree('d3/dbe/_u_b_core_graphics_scene_8cpp_s
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aa834de4c7e8874b466bdbccda0ef2053">   78</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aa834de4c7e8874b466bdbccda0ef2053">UBCoreGraphicsScene::deleteItem</a>(QGraphicsItem* item)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(mItemsToDelete.contains(item))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.contains(item))</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a> *item_casted = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a> *<span class="keyword">&gt;</span>(item);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (item_casted != NULL)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            item_casted-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a83e8d1b8f4bbbc024a15f645a39d6e49">clearSource</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        mItemsToDelete.remove(item);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.remove(item);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">delete</span> item;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        item = NULL;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -201,26 +185,22 @@ $(document).ready(function(){initNavTree('d3/dbe/_u_b_core_graphics_scene_8cpp_s
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a310c66a09239231971b65da11d89886f">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a310c66a09239231971b65da11d89886f">UBCoreGraphicsScene::removeItemFromDeletion</a>(QGraphicsItem *item)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(NULL != item){</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        mItemsToDelete.remove(item);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.remove(item);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a240a89647f25063e195ceaae23277fbb">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a240a89647f25063e195ceaae23277fbb">UBCoreGraphicsScene::addItemToDeletion</a>(QGraphicsItem *item)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (item) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        mItemsToDelete.insert(item);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.insert(item);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li><li class="navelem"><a class="el" href="../../d3/dbe/_u_b_core_graphics_scene_8cpp.html">UBCoreGraphicsScene.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBSettings.cpp</div>  </div>
@@ -143,7 +127,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;QPointer&lt;UBSettings&gt; UBSettings::sSingleton = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;QPointer&lt;UBSettings&gt; <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">UBSettings::sSingleton</a> = 0;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a5e5079f8062a48661b0a60b3656fc7c1">UBSettings::pointerDiameter</a> = 40;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ae97d3bcabc04a1efbad5ff97032790ef">UBSettings::crossSize</a> = 32;</div>
@@ -173,8 +157,8 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;QString <a class="code" href="../../db/d66/class_u_b_settings.html#a20733676315376a77a45d82895e592a9">UBSettings::uniboardApplicationNamespaceUri</a> = <span class="stringliteral">&quot;http://uniboard.mnemis.com/application&quot;</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> UBSettings::sDefaultFontPixelSize = 36;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *UBSettings::sDefaultFontFamily = <span class="stringliteral">&quot;Arial&quot;</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a91ed62418f3551985a117cb42982d641">UBSettings::sDefaultFontPixelSize</a> = 36;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d66/class_u_b_settings.html#a3709371e769f9e1c9326820297b41fdc">UBSettings::sDefaultFontFamily</a> = <span class="stringliteral">&quot;Arial&quot;</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;QString <a class="code" href="../../db/d66/class_u_b_settings.html#a3aa1126a8aaeb41a39c42a9952ba3cdd">UBSettings::currentFileVersion</a> = <span class="stringliteral">&quot;4.6.0&quot;</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
@@ -195,7 +179,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;QColor <a class="code" href="../../db/d66/class_u_b_settings.html#add3118144065710146552c7f61fdf491">UBSettings::documentViewLightColor</a> = QColor(241, 241, 241);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;QPointer&lt;QSettings&gt; UBSettings::sAppSettings = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;QPointer&lt;QSettings&gt; <a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">UBSettings::sAppSettings</a> = 0;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a7baff769a2e029fd39bebab986daf29f">UBSettings::maxThumbnailWidth</a> = 400;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ab24f23ee045a939cacac49c1d9669220">UBSettings::defaultThumbnailWidth</a> = 150;</div>
@@ -227,20 +211,20 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">  122</a></span>&#160;<a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (!sSingleton)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        sSingleton = <span class="keyword">new</span> <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>(qApp);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> sSingleton;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a> = <span class="keyword">new</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ad703e9b5a7efdb68b9c6ecef0df7cce2">UBSettings</a>(qApp);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
 <div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#aef12631aa822bcd9e335e1fadf7174c7">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d66/class_u_b_settings.html#aef12631aa822bcd9e335e1fadf7174c7">UBSettings::destroy</a>()</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> (sSingleton)</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">delete</span> sSingleton;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    sSingleton = NULL;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a> = NULL;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;QSettings* UBSettings::getAppSettings()</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">  137</a></span>&#160;QSettings* <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">UBSettings::getAppSettings</a>()</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span> (!UBSettings::sAppSettings)</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    {</div>
@@ -256,20 +240,20 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        UBSettings::sAppSettings = <span class="keyword">new</span> QSettings(appSettings, QSettings::IniFormat, 0);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">return</span> UBSettings::sAppSettings;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">UBSettings::sAppSettings</a>;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;UBSettings::UBSettings(QObject *parent)</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#ad703e9b5a7efdb68b9c6ecef0df7cce2">  157</a></span>&#160;<a class="code" href="../../db/d66/class_u_b_settings.html#ad703e9b5a7efdb68b9c6ecef0df7cce2">UBSettings::UBSettings</a>(QObject *parent)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    : QObject(parent)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#afd0d739b2cfac7e2d05be7415f6692df">InitKeyboardPaletteKeyBtnSizes</a>();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    mAppSettings = UBSettings::getAppSettings();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a> = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">UBSettings::getAppSettings</a>();</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    QString userSettingsFile = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">UBSettings::userDataDirectory</a>() + <span class="stringliteral">&quot;/UniboardUser.config&quot;</span>;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    mUserSettings = <span class="keyword">new</span> QSettings(userSettingsFile, QSettings::IniFormat, parent);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a> = <span class="keyword">new</span> QSettings(userSettingsFile, QSettings::IniFormat, parent);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#a68816e710a1a3b22a25c9317460d9c17">appPreferredLanguage</a> = <span class="keyword">new</span> <a class="code" href="../../d7/d24/class_u_b_setting.html">UBSetting</a>(<span class="keyword">this</span>,<span class="stringliteral">&quot;App&quot;</span>,<span class="stringliteral">&quot;PreferredLanguage&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
@@ -278,9 +262,9 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;UBSettings::~UBSettings()</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#af6ac6181c0ad137f303491717fbd0775">  175</a></span>&#160;<a class="code" href="../../db/d66/class_u_b_settings.html#af6ac6181c0ad137f303491717fbd0775">UBSettings::~UBSettings</a>()</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">delete</span> mAppSettings;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a3d9bffe65c4eaa52e30e086ccf77617d">supportedKeyboardSizes</a>)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a3d9bffe65c4eaa52e30e086ccf77617d">supportedKeyboardSizes</a>;</div>
@@ -517,7 +501,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#aee964b872d72f35bd573653ead9256db">favoritesNativeToolUris</a> = <span class="keyword">new</span> <a class="code" href="../../d7/d24/class_u_b_setting.html">UBSetting</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;App&quot;</span>, <span class="stringliteral">&quot;FavoriteToolURIs&quot;</span>, uris);</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="comment">// removed in version 4.4.b.2</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    mUserSettings-&gt;remove(<span class="stringliteral">&quot;Podcast/RecordMicrophone&quot;</span>);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;remove(<span class="stringliteral">&quot;Podcast/RecordMicrophone&quot;</span>);</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#adaf41115f2bd2098819ae25afb294494">replyWWSerialPort</a> = <span class="keyword">new</span> <a class="code" href="../../d7/d24/class_u_b_setting.html">UBSetting</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;Voting&quot;</span>, <span class="stringliteral">&quot;ReplyWWSerialPort&quot;</span>, 3);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
@@ -547,24 +531,24 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#a99e641a68f671ef213d2936828d537e2">libIconSize</a> = <span class="keyword">new</span> <a class="code" href="../../d7/d24/class_u_b_setting.html">UBSetting</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;Library&quot;</span>, <span class="stringliteral">&quot;LibIconSize&quot;</span>, <a class="code" href="../../db/d66/class_u_b_settings.html#ab45c93d398ec2d37a65a8e463a7734d1">defaultLibraryIconSize</a>);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    cleanNonPersistentSettings();</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#a4ba89f331e9c115406ce684f193afb82">cleanNonPersistentSettings</a>();</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;}</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;</div>
 <div class="line"><a name="l00448"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">  448</a></span>&#160;QVariant <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">UBSettings::value</a> ( <span class="keyword">const</span> QString &amp; key, <span class="keyword">const</span> QVariant &amp; defaultValue)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">if</span> (!sAppSettings-&gt;contains(key) &amp;&amp; !(defaultValue == QVariant()))</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a>-&gt;contains(key) &amp;&amp; !(defaultValue == QVariant()))</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    {</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        sAppSettings-&gt;setValue(key, defaultValue);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a>-&gt;setValue(key, defaultValue);</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    }</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordflow">return</span> mUserSettings-&gt;value(key, sAppSettings-&gt;value(key, defaultValue));</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;value(key, <a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a>-&gt;value(key, defaultValue));</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;}</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;</div>
 <div class="line"><a name="l00459"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">  459</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">UBSettings::setValue</a> (<span class="keyword">const</span> QString &amp; key, <span class="keyword">const</span> QVariant &amp; value)</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;{</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    mUserSettings-&gt;setValue(key, value);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;setValue(key, value);</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;}</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;</div>
@@ -850,7 +834,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;</div>
 <div class="line"><a name="l00745"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#aff04ceea46fd5131313d443c361ed870">  745</a></span>&#160;QString <a class="code" href="../../db/d66/class_u_b_settings.html#aff04ceea46fd5131313d443c361ed870">UBSettings::fontFamily</a>()</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;{</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontFamily&quot;</span>, sDefaultFontFamily).toString();</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontFamily&quot;</span>, <a class="code" href="../../db/d66/class_u_b_settings.html#a3709371e769f9e1c9326820297b41fdc">sDefaultFontFamily</a>).toString();</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;}</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;</div>
@@ -862,7 +846,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;</div>
 <div class="line"><a name="l00757"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#aee6ffac311ea8bcc7322d0713c14fbd9">  757</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../db/d66/class_u_b_settings.html#aee6ffac311ea8bcc7322d0713c14fbd9">UBSettings::fontPixelSize</a>()</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;{</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontPixelSize&quot;</span>, sDefaultFontPixelSize).toInt();</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontPixelSize&quot;</span>, <a class="code" href="../../db/d66/class_u_b_settings.html#a91ed62418f3551985a117cb42982d641">sDefaultFontPixelSize</a>).toInt();</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;}</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
@@ -910,11 +894,11 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keyword">static</span> QString dataDirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keywordflow">if</span>(dataDirPath.isEmpty()){</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;App/DataDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            dataDirPath = getAppSettings()-&gt;value(<span class="stringliteral">&quot;App/DataDirectory&quot;</span>).toString();</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            dataDirPath = replaceWildcard(dataDirPath);</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;App/DataDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            dataDirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;App/DataDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            dataDirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(dataDirPath);</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(dataDirPath))</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dataDirPath))</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                <span class="keywordflow">return</span> dataDirPath;</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;Impossible to create datadirpath &quot;</span> &lt;&lt; dataDirPath;</div>
@@ -931,18 +915,18 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;{</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <span class="keyword">static</span> QString imageDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    <span class="keywordflow">if</span>(imageDirectory.isEmpty()){</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;App/UserImageDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            imageDirectory = getAppSettings()-&gt;value(<span class="stringliteral">&quot;App/UserImageDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;App/UserImageDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            imageDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;App/UserImageDirectory&quot;</span>).toString();</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;            imageDirectory = replaceWildcard(imageDirectory);</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(imageDirectory))</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;            imageDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(imageDirectory);</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(imageDirectory))</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                <span class="keywordflow">return</span> imageDirectory;</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;failed to create image directory &quot;</span> &lt;&lt; imageDirectory;</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        }</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        imageDirectory = QDesktopServices::storageLocation(QDesktopServices::PicturesLocation) + <span class="stringliteral">&quot;/Sankore&quot;</span>;</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        checkDirectory(imageDirectory);</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(imageDirectory);</div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    }</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    <span class="keywordflow">return</span> imageDirectory;</div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;}</div>
@@ -952,10 +936,10 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;{</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    <span class="keyword">static</span> QString videoDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    <span class="keywordflow">if</span>(videoDirectory.isEmpty()){</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;App/UserVideoDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            videoDirectory = getAppSettings()-&gt;value(<span class="stringliteral">&quot;App/UserVideoDirectory&quot;</span>).toString();</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            videoDirectory = replaceWildcard(videoDirectory);</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(videoDirectory))</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;App/UserVideoDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            videoDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;App/UserVideoDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            videoDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(videoDirectory);</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(videoDirectory))</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                <span class="keywordflow">return</span> videoDirectory;</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;failed to create video directory &quot;</span> &lt;&lt; videoDirectory;</div>
@@ -969,7 +953,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;            videoDirectory = videoDirectory + <span class="stringliteral">&quot;/Sankore&quot;</span>;</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        checkDirectory(videoDirectory);</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(videoDirectory);</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    }</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <span class="keywordflow">return</span> videoDirectory;</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;}</div>
@@ -978,18 +962,18 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;{</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    <span class="keyword">static</span> QString audioDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    <span class="keywordflow">if</span>(audioDirectory.isEmpty()){</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;App/UserAudioDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            audioDirectory = getAppSettings()-&gt;value(<span class="stringliteral">&quot;App/UserAudioDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;App/UserAudioDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            audioDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;App/UserAudioDirectory&quot;</span>).toString();</div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;            audioDirectory = replaceWildcard(audioDirectory);</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(audioDirectory))</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;            audioDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(audioDirectory);</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(audioDirectory))</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                <span class="keywordflow">return</span> audioDirectory;</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;failed to create image directory &quot;</span> &lt;&lt; audioDirectory;</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        }</div>
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        audioDirectory = QDesktopServices::storageLocation(QDesktopServices::MusicLocation) + <span class="stringliteral">&quot;/Sankore&quot;</span>;</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        checkDirectory(audioDirectory);</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(audioDirectory);</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    }</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <span class="keywordflow">return</span> audioDirectory;</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;}</div>
@@ -999,18 +983,18 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;{</div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;Podcast/RecordingDirectory&quot;</span>))</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;Podcast/RecordingDirectory&quot;</span>))</div>
 <div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        {</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;            dirPath = getAppSettings()-&gt;value(<span class="stringliteral">&quot;Podcast/RecordingDirectory&quot;</span>).toString();</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;            dirPath = replaceWildcard(dirPath);</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(dirPath))</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;            dirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;Podcast/RecordingDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;            dirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(dirPath);</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dirPath))</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                <span class="keywordflow">return</span> dirPath;</div>
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;failed to create dir &quot;</span> &lt;&lt; dirPath;</div>
 <div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;        }</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;        dirPath = QDesktopServices::storageLocation(QDesktopServices::DesktopLocation);</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;        checkDirectory(dirPath);</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dirPath);</div>
 <div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    }</div>
 <div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    <span class="keywordflow">return</span> dirPath;</div>
 <div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;}</div>
@@ -1021,7 +1005,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    <span class="keyword">static</span> QString documentDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="keywordflow">if</span>(documentDirectory.isEmpty()){</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        documentDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/document&quot;</span>;</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        checkDirectory(documentDirectory);</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(documentDirectory);</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    }</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    <span class="keywordflow">return</span> documentDirectory;</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;}</div>
@@ -1031,7 +1015,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    <span class="keyword">static</span> QString bookmarkDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <span class="keywordflow">if</span>(bookmarkDirectory.isEmpty()){</div>
 <div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        bookmarkDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/bookmark&quot;</span>;</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        checkDirectory(bookmarkDirectory);</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(bookmarkDirectory);</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;    }</div>
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    <span class="keywordflow">return</span> bookmarkDirectory;</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;}</div>
@@ -1041,7 +1025,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    <span class="keyword">static</span> QString filePath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <span class="keywordflow">if</span>(filePath.isEmpty()){</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        QString dirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/libraryPalette&quot;</span>;</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;        checkDirectory(dirPath);</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dirPath);</div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;        filePath = dirPath + <span class="stringliteral">&quot;/favorite.dat&quot;</span>;</div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    }</div>
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    <span class="keywordflow">return</span> filePath;</div>
@@ -1052,7 +1036,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    <span class="keyword">static</span> QString trashPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    <span class="keywordflow">if</span>(trashPath.isEmpty()){</div>
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;        trashPath = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/libraryPalette/trash&quot;</span>;</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;        checkDirectory(trashPath);</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(trashPath);</div>
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    }</div>
 <div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    <span class="keywordflow">return</span> trashPath;</div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;}</div>
@@ -1063,7 +1047,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;        dirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/library/gips&quot;</span>;</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;        checkDirectory(dirPath);</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dirPath);</div>
 <div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;    }</div>
 <div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    <span class="keywordflow">return</span> dirPath;</div>
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;}</div>
@@ -1101,7 +1085,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;        dirPath = <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#ae595b29e794b20564550fd45515fc0a8">UBPlatformUtils::applicationResourcesDirectory</a>() + <span class="stringliteral">&quot;/library/search&quot;</span>;</div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;        checkDirectory(dirPath);</div>
+<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dirPath);</div>
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    }</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <span class="keywordflow">return</span> dirPath;</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;}</div>
@@ -1125,7 +1109,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;    <span class="keyword">static</span> QString animationDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;    <span class="keywordflow">if</span>(animationDirectory.isEmpty()){</div>
 <div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;        animationDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/animationUserDirectory&quot;</span>;</div>
-<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;        checkDirectory(animationDirectory);</div>
+<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(animationDirectory);</div>
 <div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;    }</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;    <span class="keywordflow">return</span> animationDirectory;</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;}</div>
@@ -1134,16 +1118,16 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;{</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;    <span class="keyword">static</span> QString interactiveDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;    <span class="keywordflow">if</span>(interactiveDirectory.isEmpty()){</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;App/UserInteractiveContentDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;            interactiveDirectory = getAppSettings()-&gt;value(<span class="stringliteral">&quot;App/UserInteractiveContentDirectory&quot;</span>).toString();</div>
-<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;            interactiveDirectory = replaceWildcard(interactiveDirectory);</div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(interactiveDirectory))</div>
+<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;App/UserInteractiveContentDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;            interactiveDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;App/UserInteractiveContentDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;            interactiveDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(interactiveDirectory);</div>
+<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(interactiveDirectory))</div>
 <div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;                <span class="keywordflow">return</span> interactiveDirectory;</div>
 <div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;failed to create directory &quot;</span> &lt;&lt; interactiveDirectory;</div>
 <div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;        }</div>
 <div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        interactiveDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/interactive content&quot;</span>;</div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        checkDirectory(interactiveDirectory);</div>
+<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(interactiveDirectory);</div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;    }</div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;    <span class="keywordflow">return</span> interactiveDirectory;</div>
 <div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;}</div>
@@ -1152,16 +1136,16 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;{</div>
 <div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;    <span class="keyword">static</span> QString applicationDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;    <span class="keywordflow">if</span>(applicationDirectory.isEmpty()){</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;App/UserApplicationDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;            applicationDirectory = getAppSettings()-&gt;value(<span class="stringliteral">&quot;App/UserApplicationDirectory&quot;</span>).toString();</div>
-<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;            applicationDirectory = replaceWildcard(applicationDirectory);</div>
-<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(applicationDirectory))</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;App/UserApplicationDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;            applicationDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;App/UserApplicationDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;            applicationDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(applicationDirectory);</div>
+<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(applicationDirectory))</div>
 <div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;                <span class="keywordflow">return</span> applicationDirectory;</div>
 <div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;failed to create directory &quot;</span> &lt;&lt; applicationDirectory;</div>
 <div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;        }</div>
 <div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;        applicationDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/application&quot;</span>;</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;        checkDirectory(applicationDirectory);</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(applicationDirectory);</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;    }</div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    <span class="keywordflow">return</span> applicationDirectory;</div>
 <div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;}</div>
@@ -1265,17 +1249,17 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;{</div>
 <div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;        <span class="keywordflow">if</span> (sAppSettings &amp;&amp; getAppSettings()-&gt;contains(<span class="stringliteral">&quot;App/UserInteractiveFavoritesDirectory&quot;</span>)) {</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;            dirPath = getAppSettings()-&gt;value(<span class="stringliteral">&quot;App/UserInteractiveFavoritesDirectory&quot;</span>).toString();</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;            dirPath = replaceWildcard(dirPath);</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;            <span class="keywordflow">if</span>(checkDirectory(dirPath))</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;contains(<span class="stringliteral">&quot;App/UserInteractiveFavoritesDirectory&quot;</span>)) {</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;            dirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>()-&gt;value(<span class="stringliteral">&quot;App/UserInteractiveFavoritesDirectory&quot;</span>).toString();</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;            dirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(dirPath);</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dirPath))</div>
 <div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;                <span class="keywordflow">return</span> dirPath;</div>
 <div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;                qCritical() &lt;&lt; <span class="stringliteral">&quot;failed to create directory &quot;</span> &lt;&lt; dirPath;</div>
 <div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;        }</div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;</div>
 <div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;        dirPath = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">userDataDirectory</a>() + <span class="stringliteral">&quot;/interactive favorites&quot;</span>;</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;        checkDirectory(dirPath);</div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(dirPath);</div>
 <div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;    }</div>
 <div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;    <span class="keywordflow">return</span> dirPath;</div>
 <div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;}</div>
@@ -1285,19 +1269,19 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;{</div>
 <div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;    QNetworkProxy* proxy = 0;</div>
 <div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;</div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;    <span class="keywordflow">if</span> (mAppSettings-&gt;value(<span class="stringliteral">&quot;Proxy/Enabled&quot;</span>, <span class="keyword">false</span>).toBool()) {</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>-&gt;value(<span class="stringliteral">&quot;Proxy/Enabled&quot;</span>, <span class="keyword">false</span>).toBool()) {</div>
 <div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;</div>
 <div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;        proxy = <span class="keyword">new</span> QNetworkProxy();</div>
 <div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;        <span class="keywordflow">if</span> (mAppSettings-&gt;value(<span class="stringliteral">&quot;Proxy/Type&quot;</span>, <span class="stringliteral">&quot;HTTP&quot;</span>).toString() == <span class="stringliteral">&quot;Socks5&quot;</span>)</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>-&gt;value(<span class="stringliteral">&quot;Proxy/Type&quot;</span>, <span class="stringliteral">&quot;HTTP&quot;</span>).toString() == <span class="stringliteral">&quot;Socks5&quot;</span>)</div>
 <div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;            proxy-&gt;setType(QNetworkProxy::Socks5Proxy);</div>
 <div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;            proxy-&gt;setType(QNetworkProxy::HttpProxy);</div>
 <div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;        proxy-&gt;setHostName(mAppSettings-&gt;value(<span class="stringliteral">&quot;Proxy/HostName&quot;</span>).toString());</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;        proxy-&gt;setPort(mAppSettings-&gt;value(<span class="stringliteral">&quot;Proxy/Port&quot;</span>, 1080).toInt());</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;        proxy-&gt;setUser(mAppSettings-&gt;value(<span class="stringliteral">&quot;Proxy/UserName&quot;</span>).toString());</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;        proxy-&gt;setPassword(mAppSettings-&gt;value(<span class="stringliteral">&quot;Proxy/Password&quot;</span>).toString());</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;        proxy-&gt;setHostName(<a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>-&gt;value(<span class="stringliteral">&quot;Proxy/HostName&quot;</span>).toString());</div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;        proxy-&gt;setPort(<a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>-&gt;value(<span class="stringliteral">&quot;Proxy/Port&quot;</span>, 1080).toInt());</div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;        proxy-&gt;setUser(<a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>-&gt;value(<span class="stringliteral">&quot;Proxy/UserName&quot;</span>).toString());</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;        proxy-&gt;setPassword(<a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>-&gt;value(<span class="stringliteral">&quot;Proxy/Password&quot;</span>).toString());</div>
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;    }</div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;</div>
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;    <span class="keywordflow">return</span> proxy;</div>
@@ -1308,19 +1292,19 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;{</div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;    QString encrypted = <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a4c45d0ac631978066fc4df0b6c0f982a">UBCryptoUtils::instance</a>()-&gt;<a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a0a214cd089f3e728eb1758df195bbdb3">symetricEncrypt</a>(password);</div>
 <div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    mUserSettings-&gt;setValue(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>, encrypted);</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;setValue(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>, encrypted);</div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;}</div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;</div>
 <div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;</div>
 <div class="line"><a name="l01209"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#abbc40418a1408fcf5a05ef0fe512e818"> 1209</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d66/class_u_b_settings.html#abbc40418a1408fcf5a05ef0fe512e818">UBSettings::removePassword</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>)</div>
 <div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;{</div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    mUserSettings-&gt;remove(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;remove(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;}</div>
 <div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;</div>
 <div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;</div>
 <div class="line"><a name="l01215"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a777d499c976f274487411b565b278e16"> 1215</a></span>&#160;QString <a class="code" href="../../db/d66/class_u_b_settings.html#a777d499c976f274487411b565b278e16">UBSettings::password</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">id</span>)</div>
 <div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;{</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    QString encrypted = mUserSettings-&gt;value(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>).toString();</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    QString encrypted = <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;value(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>).toString();</div>
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;</div>
 <div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;    QString result = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;</div>
@@ -1400,7 +1384,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#a99e641a68f671ef213d2936828d537e2">libIconSize</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(size));</div>
 <div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;}</div>
 <div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;<span class="keywordtype">bool</span> UBSettings::checkDirectory(QString&amp; dirPath)</div>
+<div class="line"><a name="l01297"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa"> 1297</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">UBSettings::checkDirectory</a>(QString&amp; dirPath)</div>
 <div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;{</div>
 <div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    QDir dir(dirPath);</div>
@@ -1409,7 +1393,7 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;}</div>
 <div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;QString UBSettings::replaceWildcard(QString&amp; path)</div>
+<div class="line"><a name="l01306"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0"> 1306</a></span>&#160;QString <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">UBSettings::replaceWildcard</a>(QString&amp; path)</div>
 <div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;{</div>
 <div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;    QString result(path);</div>
 <div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;</div>
@@ -1432,10 +1416,10 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;</div>
 <div class="line"><a name="l01327"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#ac6466b506dfb956b43f2c07a655e475c"> 1327</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ac6466b506dfb956b43f2c07a655e475c">UBSettings::closing</a>()</div>
 <div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;{</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;    cleanNonPersistentSettings();</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#a4ba89f331e9c115406ce684f193afb82">cleanNonPersistentSettings</a>();</div>
 <div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;}</div>
 <div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;</div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;<span class="keywordtype">void</span> UBSettings::cleanNonPersistentSettings()</div>
+<div class="line"><a name="l01332"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a4ba89f331e9c115406ce684f193afb82"> 1332</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a4ba89f331e9c115406ce684f193afb82">UBSettings::cleanNonPersistentSettings</a>()</div>
 <div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;{</div>
 <div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../db/d66/class_u_b_settings.html#a28cdd1c327f6b9f8228b0e76a24de0d8">communityCredentialsPersistence</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool()){</div>
 <div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#a23ae0e9782365ef8baeff3618292ceb5">communityPsw</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(<span class="stringliteral">&quot;&quot;</span>));</div>
@@ -1448,15 +1432,11 @@ $(document).ready(function(){initNavTree('d5/d5d/_u_b_settings_8cpp_source.html'
 <div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;    }</div>
 <div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../d5/d5d/_u_b_settings_8cpp.html">UBSettings.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/d13/_u_b_http_get_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('da/d13/_u_b_http_get_8cpp_source.html'
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBHttpGet.cpp</div>  </div>
@@ -151,81 +135,81 @@ $(document).ready(function(){initNavTree('da/d13/_u_b_http_get_8cpp_source.html'
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#af9596c4fd2fe27bf7b4af1f069c9fd02">   46</a></span>&#160;<a class="code" href="../../de/d40/class_u_b_http_get.html#af9596c4fd2fe27bf7b4af1f069c9fd02">UBHttpGet::~UBHttpGet</a>()</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (mReply)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        mIsSelfAborting = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        mReply-&gt;abort();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keyword">delete</span> mReply;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="../../de/d40/class_u_b_http_get.html#a087d44971efdce997877ff6e574c49c3">mIsSelfAborting</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;abort();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keyword">delete</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#a5c25272ca90dfb2d1d42784907d39c41">   56</a></span>&#160;QNetworkReply* <a class="code" href="../../de/d40/class_u_b_http_get.html#a5c25272ca90dfb2d1d42784907d39c41">UBHttpGet::get</a>(QUrl pUrl, QPointF pPos, QSize pSize, <span class="keywordtype">bool</span> isBackground)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mPos = pPos;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    mSize = pSize;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mIsBackground = isBackground;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../de/d40/class_u_b_http_get.html#a7bf151a00b370356b7c8e5503815f0d1">mPos</a> = pPos;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../de/d40/class_u_b_http_get.html#a953b47e3544361a32540da681cdcd085">mSize</a> = pSize;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../de/d40/class_u_b_http_get.html#afe2752bc3169d40994420104fec2a6b1">mIsBackground</a> = isBackground;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (mReply)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">delete</span> mReply;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../db/dad/class_u_b_network_access_manager.html">UBNetworkAccessManager</a> * nam = <a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    mReply = nam-&gt;<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#a4939a9c1018c4cc416db0f1b1dcbe581">get</a>(QNetworkRequest(pUrl)); <span class="comment">//mReply deleted by this destructor</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a> = nam-&gt;<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#a4939a9c1018c4cc416db0f1b1dcbe581">get</a>(QNetworkRequest(pUrl)); <span class="comment">//mReply deleted by this destructor</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    mDownloadedBytes.clear();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="../../de/d40/class_u_b_http_get.html#a8c5659a8830d93ef435460b53576565d">mDownloadedBytes</a>.clear();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    connect(mReply, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(requestFinished()));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    connect(mReply, SIGNAL(readyRead()), <span class="keyword">this</span>, SLOT(readyRead()));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    connect(mReply, SIGNAL(<a class="code" href="../../de/d40/class_u_b_http_get.html#a57e3023ed944a2eb3047dd32af7a79df">downloadProgress</a>(qint64, qint64)), <span class="keyword">this</span>, SLOT(downloadProgressed(qint64, qint64)));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    connect(<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/d40/class_u_b_http_get.html#abc84821c1ca451f16cc41332664211ef">requestFinished</a>()));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    connect(<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>, SIGNAL(<a class="code" href="../../de/d40/class_u_b_http_get.html#a8d22352b7bfd77228108394a0f26554e">readyRead</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/d40/class_u_b_http_get.html#a8d22352b7bfd77228108394a0f26554e">readyRead</a>()));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    connect(<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>, SIGNAL(<a class="code" href="../../de/d40/class_u_b_http_get.html#a57e3023ed944a2eb3047dd32af7a79df">downloadProgress</a>(qint64, qint64)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/d40/class_u_b_http_get.html#a153cc2cd9e5af8a9645e67281168850a">downloadProgressed</a>(qint64, qint64)));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> mReply;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> UBHttpGet::readyRead()</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#a8d22352b7bfd77228108394a0f26554e">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#a8d22352b7bfd77228108394a0f26554e">UBHttpGet::readyRead</a>()</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (mReply)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                mDownloadedBytes += mReply-&gt;readAll();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="../../de/d40/class_u_b_http_get.html#a8c5659a8830d93ef435460b53576565d">mDownloadedBytes</a> += <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;readAll();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">void</span> UBHttpGet::requestFinished()</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#abc84821c1ca451f16cc41332664211ef">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#abc84821c1ca451f16cc41332664211ef">UBHttpGet::requestFinished</a>()</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (!mReply || mIsSelfAborting)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a> || <a class="code" href="../../de/d40/class_u_b_http_get.html#a087d44971efdce997877ff6e574c49c3">mIsSelfAborting</a>)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (mReply-&gt;error() != QNetworkReply::NoError)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;error() != QNetworkReply::NoError)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        qWarning() &lt;&lt; mReply-&gt;url().toString() &lt;&lt; <span class="stringliteral">&quot;get finished with error : &quot;</span> &lt;&lt; mReply-&gt;error();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        qWarning() &lt;&lt; <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;url().toString() &lt;&lt; <span class="stringliteral">&quot;get finished with error : &quot;</span> &lt;&lt; <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;error();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        mDownloadedBytes.clear();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="../../de/d40/class_u_b_http_get.html#a8c5659a8830d93ef435460b53576565d">mDownloadedBytes</a>.clear();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        mRedirectionCount = 0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="../../de/d40/class_u_b_http_get.html#acb8380de29e1bf5532cc9d1d8004e532">mRedirectionCount</a> = 0;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        emit <a class="code" href="../../de/d40/class_u_b_http_get.html#a3d8f398fcc863e20756a0d4060097d32">downloadFinished</a>(<span class="keyword">false</span>, mReply-&gt;url(), mReply-&gt;errorString(), mDownloadedBytes, mPos, mSize, mIsBackground);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        emit <a class="code" href="../../de/d40/class_u_b_http_get.html#a3d8f398fcc863e20756a0d4060097d32">downloadFinished</a>(<span class="keyword">false</span>, <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;url(), <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;errorString(), <a class="code" href="../../de/d40/class_u_b_http_get.html#a8c5659a8830d93ef435460b53576565d">mDownloadedBytes</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#a7bf151a00b370356b7c8e5503815f0d1">mPos</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#a953b47e3544361a32540da681cdcd085">mSize</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#afe2752bc3169d40994420104fec2a6b1">mIsBackground</a>);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        qDebug() &lt;&lt; mReply-&gt;url().toString() &lt;&lt; <span class="stringliteral">&quot;http get finished ...&quot;</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        qDebug() &lt;&lt; <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;url().toString() &lt;&lt; <span class="stringliteral">&quot;http get finished ...&quot;</span>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (mReply-&gt;header(QNetworkRequest::LocationHeader).isValid() &amp;&amp; mRedirectionCount &lt; 10)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;header(QNetworkRequest::LocationHeader).isValid() &amp;&amp; <a class="code" href="../../de/d40/class_u_b_http_get.html#acb8380de29e1bf5532cc9d1d8004e532">mRedirectionCount</a> &lt; 10)</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            mRedirectionCount++;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keyword">get</span>(mReply-&gt;header(QNetworkRequest::LocationHeader).toUrl(), mPos, mSize, mIsBackground);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="../../de/d40/class_u_b_http_get.html#acb8380de29e1bf5532cc9d1d8004e532">mRedirectionCount</a>++;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keyword">get</span>(<a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;header(QNetworkRequest::LocationHeader).toUrl(), <a class="code" href="../../de/d40/class_u_b_http_get.html#a7bf151a00b370356b7c8e5503815f0d1">mPos</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#a953b47e3544361a32540da681cdcd085">mSize</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#afe2752bc3169d40994420104fec2a6b1">mIsBackground</a>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        mRedirectionCount = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="../../de/d40/class_u_b_http_get.html#acb8380de29e1bf5532cc9d1d8004e532">mRedirectionCount</a> = 0;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        emit <a class="code" href="../../de/d40/class_u_b_http_get.html#a3d8f398fcc863e20756a0d4060097d32">downloadFinished</a>(<span class="keyword">true</span>, mReply-&gt;url(), mReply-&gt;header(QNetworkRequest::ContentTypeHeader).toString(),</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        mDownloadedBytes, mPos, mSize, mIsBackground);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        emit <a class="code" href="../../de/d40/class_u_b_http_get.html#a3d8f398fcc863e20756a0d4060097d32">downloadFinished</a>(<span class="keyword">true</span>, <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;url(), <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>-&gt;header(QNetworkRequest::ContentTypeHeader).toString(),</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        <a class="code" href="../../de/d40/class_u_b_http_get.html#a8c5659a8830d93ef435460b53576565d">mDownloadedBytes</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#a7bf151a00b370356b7c8e5503815f0d1">mPos</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#a953b47e3544361a32540da681cdcd085">mSize</a>, <a class="code" href="../../de/d40/class_u_b_http_get.html#afe2752bc3169d40994420104fec2a6b1">mIsBackground</a>);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> UBHttpGet::downloadProgressed(qint64 bytesReceived, qint64 bytesTotal)</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#a153cc2cd9e5af8a9645e67281168850a">  122</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#a153cc2cd9e5af8a9645e67281168850a">UBHttpGet::downloadProgressed</a>(qint64 bytesReceived, qint64 bytesTotal)</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">//    qDebug() &lt;&lt; &quot;received: &quot; &lt;&lt; bytesReceived &lt;&lt; &quot;, / &quot; &lt;&lt; bytesTotal &lt;&lt; &quot; bytes&quot;;</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (-1 != bytesTotal)</div>
@@ -235,15 +219,11 @@ $(document).ready(function(){initNavTree('da/d13/_u_b_http_get_8cpp_source.html'
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li><li class="navelem"><a class="el" href="../../da/d13/_u_b_http_get_8cpp.html">UBHttpGet.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

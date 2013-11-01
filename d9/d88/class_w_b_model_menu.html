@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d9/d88/class_w_b_model_menu.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d9/d88/class_w_b_model_menu.html','../
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -179,7 +159,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6f6891dce3576ffc9cd35782520273ec"><td class="memItemLeft" align="right" valign="top">QAbstractItemModel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a></td></tr>
 <tr class="memitem:a19c7746cf0e2127023956d90441b9d16"><td class="memItemLeft" align="right" valign="top">QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d88/class_w_b_model_menu.html#a19c7746cf0e2127023956d90441b9d16">m_root</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00071">71</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aac39319b5cc4bc1b29828af0f72b512f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -193,6 +176,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00071">71</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QMenu(parent)</div>
 <div class="line">    , <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae3d934ba3eef2a969455da0c5a00841f">m_maxRows</a>(7)</div>
 <div class="line">    , <a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">m_firstSeparator</a>(-1)</div>
@@ -236,6 +221,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00153">153</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (QMenu *menu = qobject_cast&lt;QMenu*&gt;(sender())) </div>
 <div class="line">    {</div>
@@ -346,6 +333,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00177">177</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!menu)</div>
 <div class="line">    {</div>
@@ -411,6 +400,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">m_firstSeparator</a>;</div>
 <div class="line">}</div>
@@ -471,6 +462,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00249">249</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QVariant v = action-&gt;data();</div>
 <div class="line">    <span class="keywordflow">if</span> (v.canConvert&lt;QModelIndex&gt;())</div>
@@ -505,6 +498,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00137">137</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a3acd04a1f9d370ab54bd24514b99a8a0">m_hoverRole</a>;</div>
 <div class="line">}</div>
@@ -540,6 +535,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00230">230</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFontMetrics fm(font());</div>
 <div class="line">    <span class="keywordflow">if</span> (-1 == <a class="code" href="../../d9/d88/class_w_b_model_menu.html#afaac03612ca2c4c1b2448fe987d242de">m_maxWidth</a>)</div>
@@ -580,6 +577,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00220">220</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QIcon icon = qvariant_cast&lt;QIcon&gt;(index.data(Qt::DecorationRole));</div>
 <div class="line">    QAction *action = <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">makeAction</a>(icon, index.data().toString(), <span class="keyword">this</span>);</div>
@@ -612,6 +611,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae3d934ba3eef2a969455da0c5a00841f">m_maxRows</a>;</div>
 <div class="line">}</div>
@@ -630,6 +631,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00097">97</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a>;</div>
 <div class="line">}</div>
@@ -667,6 +670,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d2/d4c/class_w_b_history_menu.html#abd509c7b92a5ec976075da73b085b161">WBHistoryMenu</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00088">88</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -694,6 +699,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d2/d4c/class_w_b_history_menu.html#aabb9b25104062579b378e22480d143c4">WBHistoryMenu</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">}</div>
@@ -712,6 +719,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a19c7746cf0e2127023956d90441b9d16">m_root</a>;</div>
 <div class="line">}</div>
@@ -730,6 +739,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00147">147</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">m_separatorRole</a>;</div>
 <div class="line">}</div>
@@ -749,6 +760,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">m_firstSeparator</a> = offset;</div>
 <div class="line">}</div>
@@ -777,6 +790,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00132">132</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a3acd04a1f9d370ab54bd24514b99a8a0">m_hoverRole</a> = role;</div>
 <div class="line">}</div>
@@ -805,6 +820,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae3d934ba3eef2a969455da0c5a00841f">m_maxRows</a> = max;</div>
 <div class="line">}</div>
@@ -824,6 +841,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00092">92</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a> = <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae18fd53c1993bff66dc1b3db0cfd45cd">model</a>;</div>
 <div class="line">}</div>
@@ -861,6 +880,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a19c7746cf0e2127023956d90441b9d16">m_root</a> = index;</div>
 <div class="line">}</div>
@@ -880,6 +901,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">m_separatorRole</a> = role;</div>
 <div class="line">}</div>
@@ -907,6 +930,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html#l00239">239</a> of file <a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QVariant v = action-&gt;data();</div>
 <div class="line">    <span class="keywordflow">if</span> (v.canConvert&lt;QModelIndex&gt;())</div>
@@ -955,6 +980,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00118">118</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3acd04a1f9d370ab54bd24514b99a8a0"></a>
@@ -974,6 +1001,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00120">120</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
 
 </div>
 </div>
@@ -995,6 +1024,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00117">117</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afaac03612ca2c4c1b2448fe987d242de"></a>
@@ -1014,6 +1045,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00119">119</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
 
 </div>
 </div>
@@ -1035,6 +1068,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00122">122</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a19c7746cf0e2127023956d90441b9d16"></a>
@@ -1054,6 +1089,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00123">123</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
 
 </div>
 </div>
@@ -1075,22 +1112,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html#l00121">121</a> of file <a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a></li>
-<li><a class="el" href="../../df/d4c/_w_b_model_menu_8cpp.html">WBModelMenu.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../da/d22/_w_b_model_menu_8h_source.html">WBModelMenu.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d4c/_w_b_model_menu_8cpp_source.html">WBModelMenu.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d9/d88/class_w_b_model_menu.html">WBModelMenu</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:36 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

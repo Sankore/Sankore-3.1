@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d6f/classmerge__lib_1_1_transformation_description.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,11 @@ $(document).ready(function(){initNavTree('df/d6f/classmerge__lib_1_1_transformat
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html">TransformationDescription</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -142,7 +126,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ac9e589397edf27a8fa50755ad1945bfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d27/namespacemerge__lib.html#abbc56c33e072a8c7b4494d50942a06a4">PageTransformations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#ac9e589397edf27a8fa50755ad1945bfa">_transforms</a></td></tr>
 <tr class="memitem:a7dd15cc36baeb79df4380d2edb186b6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d27/namespacemerge__lib.html#abbc56c33e072a8c7b4494d50942a06a4">PageTransformations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a7dd15cc36baeb79df4380d2edb186b6c">_annotsTransforms</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00195">195</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4678e77ab1a1c2f060956b8324bd0d3a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -186,6 +173,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00198">198</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">                       : <span class="comment">// rotation (0,90,180,270)</span></div>
 <div class="line">      <a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a202cc8088a6a05a15546827f29ba6b65">_x</a>(x),<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a048fd2ecbce4641109fc4ac413e702d5">_y</a>(y),<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#aeca419415dff750bc7e55151a0c3aaee">_scale</a>(scale),<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#abea475d6a7e49ccd3459ac91e12c5515">_angel</a>(angel)</div>
 <div class="line">      {</div>
@@ -231,6 +220,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00214">214</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0;i&lt;<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a7dd15cc36baeb79df4380d2edb186b6c">_annotsTransforms</a>.size();i++)</div>
 <div class="line">         {</div>
@@ -275,6 +266,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00309">309</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         *<span class="keyword">this</span> = copy;</div>
 <div class="line">      }</div>
@@ -303,6 +296,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00260">260</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a7dd15cc36baeb79df4380d2edb186b6c">_annotsTransforms</a>.push_back(trans.getClone());</div>
 <div class="line">      }</div>
@@ -348,6 +343,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00235">235</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <span class="keywordflow">if</span>( rotation )</div>
 <div class="line">         {</div>
@@ -390,6 +387,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00250">250</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">           <a class="code" href="../../d2/d27/namespacemerge__lib.html#abbc56c33e072a8c7b4494d50942a06a4">PageTransformations</a> trans;</div>
 <div class="line">           trans = <a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#ac9e589397edf27a8fa50755ad1945bfa">_transforms</a>;</div>
@@ -431,6 +430,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00332">332</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         std::stringstream content;</div>
 <div class="line">         <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0;i&lt;<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#ac9e589397edf27a8fa50755ad1945bfa">_transforms</a>.size();i++)</div>
@@ -471,6 +472,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00246">246</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <span class="keywordflow">return</span> <a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#ac9e589397edf27a8fa50755ad1945bfa">_transforms</a>;</div>
 <div class="line">      }</div>
@@ -498,6 +501,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00313">313</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <span class="keywordflow">if</span>( <span class="keyword">this</span> != &amp;copy )</div>
 <div class="line">         {</div>
@@ -550,6 +555,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00268">268</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <span class="keywordtype">double</span> dx1 = 0;</div>
 <div class="line">         <span class="keywordtype">double</span> dy1 = 0;</div>
@@ -630,6 +637,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00347">347</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7dd15cc36baeb79df4380d2edb186b6c"></a>
@@ -649,6 +658,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00350">350</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 
 </div>
 </div>
@@ -670,6 +681,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00346">346</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac9e589397edf27a8fa50755ad1945bfa"></a>
@@ -689,6 +702,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00349">349</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
 
 </div>
 </div>
@@ -710,6 +725,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00344">344</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a048fd2ecbce4641109fc4ac413e702d5"></a>
@@ -730,21 +747,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d21/_transformation_8h_source.html#l00345">345</a> of file <a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a></li>
+<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d3/d21/_transformation_8h_source.html">Transformation.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html">TransformationDescription</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:13 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:37 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

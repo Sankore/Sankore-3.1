@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d6a/class_u_b_graphics_group_container_item_delegate.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/d6a/class_u_b_graphics_group_contai
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -226,7 +206,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:adf8972176c6e60c4a78e90eee2f97540 inherit pro_attribs_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html">UBGraphicsToolBarItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a></td></tr>
 <tr class="memitem:a87e149520c268ac29f26412129d2cca2 inherit pro_attribs_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html#l00031">31</a> of file <a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html">UBGraphicsGroupContainerItemDelegate.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6b4eaefe62afbb555bd92103d391c627"></a>
 <div class="memitem">
 <div class="memproto">
@@ -250,6 +233,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00049">49</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                                                                     :</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a78857ae5335c1a31581a38210d8b2e5e">UBGraphicsItemDelegate</a>(pDelegated, parent, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>), <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aca0f754a4dec127fa233c20c4d4e337a">mDestroyGroupButton</a>(0)</div>
 <div class="line"></div>
@@ -294,6 +279,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#afd35164da102e7acbb5d7dd097618a5c">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00130">130</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#add356059ee48a2efe7cd66223bebe3cd">UBGraphicsItemDelegate::buildButtons</a>();</div>
 <div class="line">}</div>
@@ -323,6 +310,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37a264e2942f9d1a2f74fe2dd0d5c9b1">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00064">64</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a8003eac64477c1c5ed3e80ae72f1b3dc">mLockAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Locked&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad3145f046572af4adcc760833c11c599">lock</a>(<span class="keywordtype">bool</span>)));</div>
 <div class="line">    QIcon lockIcon;</div>
@@ -367,6 +356,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad45be6a0cc44a46d51b7fd70eb5a3c79">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line">}</div>
@@ -405,6 +396,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa87cd62cebcb17e5233ee5a96e2bf748">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00150">150</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event)</div>
 <div class="line"></div>
@@ -436,6 +429,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1e3cda77c7ecc5f3e8863947b0a8f217">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00135">135</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event)</div>
 <div class="line">    <span class="comment">//TODO claudio</span></div>
@@ -484,6 +479,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76f992490575724a33bc0813f80f7a98">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00157">157</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event)</div>
 <div class="line"></div>
@@ -512,6 +509,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00086">86</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html">UBCreateLinkPalette</a>* linkPalette = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ad11cb96ff392a1f70ec87784dcd80039">linkPalette</a>();</div>
 <div class="line">    linkPalette-&gt;show();</div>
@@ -558,6 +557,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00119">119</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>){</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#ac4585fac2807289c85e56c79f0ba6b08">actionRemoved</a>();</div>
@@ -609,6 +610,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>;</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;removeAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a>);</div>
@@ -665,6 +668,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3b597fdf7d09e24866416826075c4381">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a6cd80c1431c47bd41e8f2c935cd43da7">UBGraphicsItemDelegate::setAction</a>(action);</div>
 <div class="line">}</div>
@@ -699,22 +704,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html#l00049">49</a> of file <a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html">UBGraphicsGroupContainerItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html">UBGraphicsGroupContainerItemDelegate.h</a></li>
-<li><a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp.html">UBGraphicsGroupContainerItemDelegate.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html">UBGraphicsGroupContainerItemDelegate.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html">UBGraphicsGroupContainerItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html">UBGraphicsGroupContainerItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:25 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

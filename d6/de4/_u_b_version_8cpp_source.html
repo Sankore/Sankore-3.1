@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d6/de4/_u_b_version_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d6/de4/_u_b_version_8cpp_source.html',
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBVersion.cpp</div>  </div>
@@ -159,94 +143,94 @@ $(document).ready(function(){initNavTree('d6/de4/_u_b_version_8cpp_source.html',
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#a7dc5d2b5857cb37713d04705a948e41c">   54</a></span>&#160;QString <a class="code" href="../../d2/da9/class_u_b_version.html#a7dc5d2b5857cb37713d04705a948e41c">UBVersion::toString</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>() ? mString : <span class="stringliteral">&quot;INVALID&quot;</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>() ? <a class="code" href="../../d2/da9/class_u_b_version.html#ae4c27773588a7c02f07dfa216fc14f5d">mString</a> : <span class="stringliteral">&quot;INVALID&quot;</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#a9bd4c45d822805cdb385011efe919b6e">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a9bd4c45d822805cdb385011efe919b6e">UBVersion::setString</a>(<span class="keyword">const</span> QString &amp;<span class="keywordtype">string</span>)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mIsValid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    mString = string;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../d2/da9/class_u_b_version.html#ae4c27773588a7c02f07dfa216fc14f5d">mString</a> = string;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QStringList versionParts = <span class="keywordtype">string</span>.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> count = versionParts.count();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (count &lt;  2)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        mIsValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    mPlatform = versionParts.at(0).toInt(&amp;mIsValid);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a> = versionParts.at(0).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    mMajor = versionParts.at(1).toInt(&amp;mIsValid);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a> = versionParts.at(1).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (count == 2)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        mMinor = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count == 3)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// Format 4.1.2 (implicitly release)</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        mMinor = versionParts.at(2).toInt(&amp;mIsValid);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = versionParts.at(2).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count &gt;= 4)</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// Format 4.1.x.2 (where x = a|b|r|&lt;integer&gt;)</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (<span class="stringliteral">&quot;a&quot;</span> == versionParts.at(2))</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4ab8e4fd775ba181b65c0fb6929cc7c6b3">Alpha</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4ab8e4fd775ba181b65c0fb6929cc7c6b3">Alpha</a>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;b&quot;</span> == versionParts.at(2))</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aefbfbaaca302a957185ade21ac0f8fd2">Beta</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aefbfbaaca302a957185ade21ac0f8fd2">Beta</a>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;r&quot;</span> == versionParts.at(2))</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            mMinor = versionParts.at(2).toInt(&amp;mIsValid);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = versionParts.at(2).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        QStringList lastParts = versionParts.at(3).split(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        mMinor = lastParts.at(0).toInt();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = lastParts.at(0).toInt();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">  117</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">UBVersion::isValid</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> mIsValid;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#a2b36e2c1e8e7d7d4f460d6fb4be583cf">  122</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a2b36e2c1e8e7d7d4f460d6fb4be583cf">UBVersion::platformNumber</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> mPlatform;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a>;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#a8c40c9646522bc7823b1471dae667032">  128</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a8c40c9646522bc7823b1471dae667032">UBVersion::majorNumber</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> mMajor;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
 <div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#a33dbf7bcbeac1846a362b511ffe0c2c3">  134</a></span>&#160;<a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4">ReleaseStage</a> <a class="code" href="../../d2/da9/class_u_b_version.html#a33dbf7bcbeac1846a362b511ffe0c2c3">UBVersion::releaseStage</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> mReleaseStage;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
 <div class="line"><a name="l00140"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#a4cd2b7b3fc51f76729f511858be8986c">  140</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a4cd2b7b3fc51f76729f511858be8986c">UBVersion::minorNumber</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> mMinor;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
 <div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="../../d2/da9/class_u_b_version.html#af3c0eea3ec18a269184cf7419bc7edaf">  146</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/da9/class_u_b_version.html#af3c0eea3ec18a269184cf7419bc7edaf">UBVersion::operator &lt; </a>(<span class="keyword">const</span> <a class="code" href="../../d2/da9/class_u_b_version.html">UBVersion</a> &amp;otherVersion)<span class="keyword"> const</span></div>
@@ -292,15 +276,11 @@ $(document).ready(function(){initNavTree('d6/de4/_u_b_version_8cpp_source.html',
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li><li class="navelem"><a class="el" href="../../d6/de4/_u_b_version_8cpp.html">UBVersion.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

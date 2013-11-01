@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d9e/class_u_b_main_window.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d8/d9e/class_u_b_main_window.html','..
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -166,7 +146,10 @@ Protected Attributes</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a4686d953fa0fccd711181eac75418478"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html#l00037">37</a> of file <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a603814523782399bc82d1c7013c356c9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -190,6 +173,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QMainWindow(parent, flags)</div>
 <div class="line">    , <a class="code" href="../../d8/d9e/class_u_b_main_window.html#aa64036e9f2bb881efda179dc8456dafb">mBoardWidget</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea">mWebWidget</a>(0)</div>
@@ -245,6 +230,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00071">71</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line">    {</div>
@@ -269,6 +256,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00080">80</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d8/d9e/class_u_b_main_window.html#aa64036e9f2bb881efda179dc8456dafb">mBoardWidget</a>)</div>
 <div class="line">    {</div>
@@ -282,8 +271,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a811b3f7960316901f2f988fafb96fdc6_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a811b3f7960316901f2f988fafb96fdc6_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -302,6 +290,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00116">116</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d8/d9e/class_u_b_main_window.html#ab0686e7ba525d0d7dc7fb86b707ac363">mDocumentsWidget</a>)</div>
 <div class="line">    {</div>
@@ -334,6 +324,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00097">97</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea">mWebWidget</a>)</div>
 <div class="line">    {</div>
@@ -374,6 +366,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;ignore();</div>
 <div class="line">    emit <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a14588af40d18048b05e7f4261f040134">closeEvent_Signal</a>(event);</div>
@@ -443,6 +437,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html#l00073">73</a> of file <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="comment">// no pop up on toolbar</span></div>
 <div class="line">            <span class="keywordflow">return</span> 0;</div>
@@ -462,6 +458,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00255">255</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line">    {</div>
@@ -504,6 +502,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00242">242</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a907ee78e907b30203375117b5af1848f">oneButtonMessageBox</a>(windowTitle, text, QMessageBox::Information);</div>
 <div class="line">}</div>
@@ -522,8 +522,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a653d248fb5b159abdf4d30b7cbf6e490_icgraph.svg" width="100%" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a653d248fb5b159abdf4d30b7cbf6e490_icgraph.svg" width="100%" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -550,6 +549,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a03476c76604b877356f244c1ae1dc6b5">QMainWindow::keyPressEvent</a>(event);</div>
 <div class="line"></div>
@@ -601,6 +602,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00225">225</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMessageBox messageBox;</div>
 <div class="line">    messageBox.setParent(<span class="keyword">this</span>);</div>
@@ -644,6 +647,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00180">180</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// HACK :  When opening the file save dialog during the document exportation,</span></div>
 <div class="line">    <span class="comment">//         some buttons of the toolbar become disabled without any reason. We</span></div>
@@ -671,6 +676,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00247">247</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line">    {</div>
@@ -702,6 +709,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d9e/class_u_b_main_window.html#aa64036e9f2bb881efda179dc8456dafb">mBoardWidget</a>)</div>
 <div class="line">    {</div>
@@ -733,6 +742,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00125">125</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d9e/class_u_b_main_window.html#ab0686e7ba525d0d7dc7fb86b707ac363">mDocumentsWidget</a>)</div>
 <div class="line">    {</div>
@@ -745,8 +756,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_abf3656d99f6c694bd38bb51fe6ee4252_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_abf3656d99f6c694bd38bb51fe6ee4252_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -764,6 +774,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00106">106</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;popped out from StackedLayout size height: &quot;</span> &lt;&lt; <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea">mWebWidget</a>-&gt;height() &lt;&lt; <span class="stringliteral">&quot; width: &quot;</span> &lt;&lt; <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea">mWebWidget</a>-&gt;width();</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea">mWebWidget</a>)</div>
@@ -807,6 +819,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00237">237</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a907ee78e907b30203375117b5af1848f">oneButtonMessageBox</a>(windowTitle,text, QMessageBox::Warning);</div>
 <div class="line">}</div>
@@ -855,6 +869,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html#l00196">196</a> of file <a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMessageBox messageBox;</div>
 <div class="line">    messageBox.setParent(<span class="keyword">this</span>);</div>
@@ -913,6 +929,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html#l00081">81</a> of file <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab0686e7ba525d0d7dc7fb86b707ac363"></a>
@@ -932,6 +950,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html#l00083">83</a> of file <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -953,6 +973,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html#l00090">90</a> of file <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2c37b6336535a741661bbeb7e1375d8e"></a>
@@ -972,6 +994,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html#l00079">79</a> of file <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a>.</p>
 
 </div>
 </div>
@@ -993,22 +1017,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html#l00082">82</a> of file <a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a></li>
-<li><a class="el" href="../../d3/d21/_u_b_main_window_8cpp.html">UBMainWindow.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/d21/_u_b_main_window_8cpp_source.html">UBMainWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d8/d9e/class_u_b_main_window.html">UBMainWindow</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

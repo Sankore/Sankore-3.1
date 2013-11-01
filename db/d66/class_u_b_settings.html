@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('db/d66/class_u_b_settings.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('db/d66/class_u_b_settings.html','../..
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -435,7 +415,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:ae685c97e958d7f8d38b250824435c74f"><td class="memItemLeft" align="right" valign="top">static QPointer&lt; QSettings &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a> = 0</td></tr>
 <tr class="memitem:a903a55800cb053ee5d03ca8cc97fe5c7"><td class="memItemLeft" align="right" valign="top">static QPointer&lt; <a class="el" href="../../db/d66/class_u_b_settings.html">UBSettings</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a> = 0</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00034">34</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad703e9b5a7efdb68b9c6ecef0df7cce2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -457,6 +440,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00157">157</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(parent)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#afd0d739b2cfac7e2d05be7415f6692df">InitKeyboardPaletteKeyBtnSizes</a>();</div>
@@ -514,6 +499,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>;</div>
 <div class="line"></div>
@@ -536,6 +523,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01131">1131</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./library/animations&quot;</span>);</div>
 <div class="line"></div>
@@ -572,6 +561,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01088">1088</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./library/applications&quot;</span>);</div>
 <div class="line"></div>
@@ -608,6 +599,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01103">1103</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./library/audios&quot;</span>);</div>
 <div class="line"></div>
@@ -644,6 +637,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00987">987</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultFontDirectory = <span class="stringliteral">&quot;/fonts&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a7fe813cc5c24f87615cdeb7a33c2b890">applicationCustomizationDirectory</a>() + defaultFontDirectory;</div>
@@ -682,6 +677,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00980">980</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;/customizations&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#ae595b29e794b20564550fd45515fc0a8">UBPlatformUtils::applicationResourcesDirectory</a>() + defaultRelativePath;</div>
@@ -721,6 +718,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01003">1003</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./library/pictures&quot;</span>);</div>
 <div class="line"></div>
@@ -757,6 +756,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01074">1074</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./library/interactivities&quot;</span>);</div>
 <div class="line"></div>
@@ -793,6 +794,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00966">966</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./library/shape&quot;</span>);</div>
 <div class="line"></div>
@@ -838,6 +841,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01145">1145</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./startupHints&quot;</span>);</div>
 <div class="line"></div>
@@ -882,6 +887,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01117">1117</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString defaultRelativePath = QString(<span class="stringliteral">&quot;./library/videos&quot;</span>);</div>
 <div class="line"></div>
@@ -927,6 +934,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01297">1297</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line">    QDir dir(dirPath);</div>
@@ -967,6 +976,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01332">1332</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../db/d66/class_u_b_settings.html#a28cdd1c327f6b9f8228b0e76a24de0d8">communityCredentialsPersistence</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool()){</div>
 <div class="line">        <a class="code" href="../../db/d66/class_u_b_settings.html#a23ae0e9782365ef8baeff3618292ceb5">communityPsw</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(<span class="stringliteral">&quot;&quot;</span>));</div>
@@ -993,8 +1004,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a4ba89f331e9c115406ce684f193afb82_icgraph.svg" width="100%" height="408"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a4ba89f331e9c115406ce684f193afb82_icgraph.svg" width="100%" height="408"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1012,6 +1022,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01327">1327</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a4ba89f331e9c115406ce684f193afb82">cleanNonPersistentSettings</a>();</div>
 <div class="line">}</div>
@@ -1030,8 +1042,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_ac6466b506dfb956b43f2c07a655e475c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_ac6466b506dfb956b43f2c07a655e475c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1057,6 +1068,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00414">414</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 <div class="fragment"><div class="line">{ emit <a class="code" href="../../db/d66/class_u_b_settings.html#a982d08ba0c3cc28ee49f240814a8ae57">colorContextChanged</a>(); }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1124,6 +1137,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01274">1274</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a23ae0e9782365ef8baeff3618292ceb5">communityPsw</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line">}</div>
@@ -1160,6 +1175,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01264">1264</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ae56024b1544199d1e60fe5a7b00e04fa">communityUser</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line">}</div>
@@ -1196,6 +1213,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00671">671</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal width = 0;</div>
 <div class="line"></div>
@@ -1252,6 +1271,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00603">603</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a500571c8d157287ae6135eed3651159e">markerColor</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a57270646688a0214f4fc2c8d2f31d7a6">isDarkBackground</a>());</div>
 <div class="line">}</div>
@@ -1279,6 +1300,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00562">562</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal width = 0;</div>
 <div class="line"></div>
@@ -1335,6 +1358,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00521">521</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a27b620db7e6282d277935289450229a6">penColor</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a57270646688a0214f4fc2c8d2f31d7a6">isDarkBackground</a>());</div>
 <div class="line">}</div>
@@ -1362,6 +1387,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00480">480</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal width = 0;</div>
 <div class="line"></div>
@@ -1426,6 +1453,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00129">129</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>)</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>;</div>
@@ -1455,6 +1484,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00641">641</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/EraserFineWidth&quot;</span>, 16).toDouble();</div>
 <div class="line">}</div>
@@ -1491,6 +1522,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00651">651</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/EraserMediumWidth&quot;</span>, 64).toDouble();</div>
 <div class="line">}</div>
@@ -1527,6 +1560,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00661">661</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/EraserStrongWidth&quot;</span>, 128).toDouble();</div>
 <div class="line">}</div>
@@ -1563,6 +1598,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00631">631</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/EraserCircleWidthIndex&quot;</span>, 1).toInt();</div>
 <div class="line">}</div>
@@ -1581,8 +1618,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-45-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_ada05e29c99278807b42b57371908f18e_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_ada05e29c99278807b42b57371908f18e_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1600,6 +1636,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00745">745</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontFamily&quot;</span>, <a class="code" href="../../db/d66/class_u_b_settings.html#a3709371e769f9e1c9326820297b41fdc">sDefaultFontFamily</a>).toString();</div>
 <div class="line">}</div>
@@ -1636,6 +1674,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00757">757</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontPixelSize&quot;</span>, <a class="code" href="../../db/d66/class_u_b_settings.html#a91ed62418f3551985a117cb42982d641">sDefaultFontPixelSize</a>).toInt();</div>
 <div class="line">}</div>
@@ -1663,6 +1703,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00768">768</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontPointSize&quot;</span>, 12).toInt();</div>
 <div class="line">}</div>
@@ -1707,6 +1749,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00137">137</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">UBSettings::sAppSettings</a>)</div>
 <div class="line">    {</div>
@@ -1766,6 +1810,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00116">116</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a28cdd1c327f6b9f8228b0e76a24de0d8">communityCredentialsPersistence</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-53" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1800,6 +1846,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01178">1178</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QNetworkProxy* proxy = 0;</div>
 <div class="line"></div>
@@ -1845,6 +1893,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00211">211</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#aa5b30a6658aa14bfde4232d8ce7a2abc">productWebUrl</a> =  <span class="keyword">new</span> <a class="code" href="../../d7/d24/class_u_b_setting.html">UBSetting</a>(<span class="keyword">this</span>, <span class="stringliteral">&quot;App&quot;</span>, <span class="stringliteral">&quot;ProductWebAddress&quot;</span>, <span class="stringliteral">&quot;http://www.sankore.org&quot;</span>);</div>
 <div class="line"></div>
@@ -2112,6 +2162,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00183">183</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a3d9bffe65c4eaa52e30e086ccf77617d">supportedKeyboardSizes</a> = <span class="keyword">new</span> QStringList();</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a3d9bffe65c4eaa52e30e086ccf77617d">supportedKeyboardSizes</a>-&gt;append(<span class="stringliteral">&quot;29x29&quot;</span>);</div>
@@ -2142,6 +2194,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00778">778</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontIsBold&quot;</span>, <span class="keyword">false</span>).toBool();</div>
 <div class="line">}</div>
@@ -2178,6 +2232,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00702">702</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/CrossedBackground&quot;</span>, 0).toBool();</div>
 <div class="line">}</div>
@@ -2215,6 +2271,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00696">696</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/DarkBackground&quot;</span>, 0).toBool();</div>
 <div class="line">}</div>
@@ -2252,6 +2310,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00790">790</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/FontIsItalic&quot;</span>, <span class="keyword">false</span>).toBool();</div>
 <div class="line">}</div>
@@ -2288,6 +2348,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00733">733</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/StylusPaletteIsVisible&quot;</span>, <span class="keyword">true</span>).toBool();</div>
 <div class="line">}</div>
@@ -2315,6 +2377,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01289">1289</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">                               {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a99e641a68f671ef213d2936828d537e2">libIconSize</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toInt();</div>
 <div class="line">}</div>
@@ -2343,6 +2407,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00609">609</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;QColor&gt; colors = <a class="code" href="../../db/d66/class_u_b_settings.html#a3796f6c804d5079753f29d253facee99">markerColors</a>(onDarkBackground);</div>
 <div class="line">    <span class="keywordflow">return</span> colors.at(<a class="code" href="../../db/d66/class_u_b_settings.html#a74efce0dd871313e0c9cabdc84a0a5d0">markerColorIndex</a>());</div>
@@ -2362,8 +2428,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-70-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-70-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a500571c8d157287ae6135eed3651159e_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a500571c8d157287ae6135eed3651159e_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2381,6 +2446,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00588">588</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/MarkerColorIndex&quot;</span>, 0).toInt();</div>
 <div class="line">}</div>
@@ -2399,8 +2466,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-72-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-72-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a74efce0dd871313e0c9cabdc84a0a5d0_icgraph.svg" width="100%" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a74efce0dd871313e0c9cabdc84a0a5d0_icgraph.svg" width="100%" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2419,6 +2485,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00616">616</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (onDarkBackground)</div>
 <div class="line">    {</div>
@@ -2463,6 +2531,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00547">547</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/MarkerLineWidthIndex&quot;</span>, 0).toInt();</div>
 <div class="line">}</div>
@@ -2500,6 +2570,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01215">1215</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString encrypted = <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;value(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>).toString();</div>
 <div class="line"></div>
@@ -2545,6 +2617,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00527">527</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;QColor&gt; colors = <a class="code" href="../../db/d66/class_u_b_settings.html#aedb07c4d22207e705dfabfe7497d078d">penColors</a>(onDarkBackground);</div>
 <div class="line">    <span class="keywordflow">return</span> colors.at(<a class="code" href="../../db/d66/class_u_b_settings.html#a92682392a72ab8c73355572de1a21672">penColorIndex</a>());</div>
@@ -2564,8 +2638,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-80-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-80-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a27b620db7e6282d277935289450229a6_icgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a27b620db7e6282d277935289450229a6_icgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2583,6 +2656,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00506">506</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/PenColorIndex&quot;</span>, 0).toInt();</div>
 <div class="line">}</div>
@@ -2601,8 +2676,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-82-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-82-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a92682392a72ab8c73355572de1a21672_icgraph.svg" width="100%" height="559"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a92682392a72ab8c73355572de1a21672_icgraph.svg" width="100%" height="559"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2621,6 +2695,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00534">534</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (onDarkBackground)</div>
 <div class="line">    {</div>
@@ -2665,6 +2741,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00465">465</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>(<span class="stringliteral">&quot;Board/PenLineWidthIndex&quot;</span>, 0).toInt();</div>
 <div class="line">}</div>
@@ -2683,7 +2761,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-86-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-86-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a6ec1b63a496028bc006f9a360f10e74f_icgraph.svg" width="100%" height="583"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a6ec1b63a496028bc006f9a360f10e74f_icgraph.svg" width="100%" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </p>
@@ -2702,6 +2780,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01246">1246</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString idPassword = <span class="stringliteral">&quot;http.proxy.pass&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a777d499c976f274487411b565b278e16">password</a>(idPassword);</div>
@@ -2740,6 +2820,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01228">1228</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString idUsername = <span class="stringliteral">&quot;http.proxy.user&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a777d499c976f274487411b565b278e16">password</a>(idUsername);</div>
@@ -2779,6 +2861,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01209">1209</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;remove(QString(<span class="stringliteral">&quot;Vault/&quot;</span>) + <span class="keywordtype">id</span>);</div>
 <div class="line">}</div>
@@ -2788,8 +2872,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-91-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-91-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_abbc40418a1408fcf5a05ef0fe512e818_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_abbc40418a1408fcf5a05ef0fe512e818_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2816,6 +2899,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01306">1306</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString result(path);</div>
 <div class="line"></div>
@@ -2870,6 +2955,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00784">784</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/FontIsBold&quot;</span>, bold);</div>
 <div class="line">}</div>
@@ -2907,6 +2994,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01279">1279</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a23ae0e9782365ef8baeff3618292ceb5">communityPsw</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(<a class="code" href="../../db/d66/class_u_b_settings.html#a777d499c976f274487411b565b278e16">password</a>));</div>
 <div class="line">}</div>
@@ -2944,6 +3033,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01284">1284</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a28cdd1c327f6b9f8228b0e76a24de0d8">communityCredentialsPersistence</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(persistence));</div>
 <div class="line">}</div>
@@ -2981,6 +3072,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01269">1269</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#ae56024b1544199d1e60fe5a7b00e04fa">communityUser</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(username));</div>
 <div class="line">}</div>
@@ -3018,6 +3111,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00715">715</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/CrossedBackground&quot;</span>, <a class="code" href="../../db/d66/class_u_b_settings.html#a72b8921582b808d3803c663ab43a1bf9">isCrossedBackground</a>);</div>
 <div class="line">}</div>
@@ -3056,6 +3151,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00708">708</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/DarkBackground&quot;</span>, <a class="code" href="../../db/d66/class_u_b_settings.html#a57270646688a0214f4fc2c8d2f31d7a6">isDarkBackground</a>);</div>
 <div class="line">    emit <a class="code" href="../../db/d66/class_u_b_settings.html#a982d08ba0c3cc28ee49f240814a8ae57">colorContextChanged</a>();</div>
@@ -3103,6 +3200,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00646">646</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/EraserFineWidth&quot;</span>, width);</div>
 <div class="line">}</div>
@@ -3139,6 +3238,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00656">656</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/EraserMediumWidth&quot;</span>, width);</div>
 <div class="line">}</div>
@@ -3175,6 +3276,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00666">666</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/EraserStrongWidth&quot;</span>, width);</div>
 <div class="line">}</div>
@@ -3211,6 +3314,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00636">636</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/EraserCircleWidthIndex&quot;</span>, index);</div>
 <div class="line">}</div>
@@ -3248,6 +3353,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00751">751</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/FontFamily&quot;</span>, family);</div>
 <div class="line">}</div>
@@ -3285,6 +3392,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00763">763</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/FontPixelSize&quot;</span>, pixelSize);</div>
 <div class="line">}</div>
@@ -3313,6 +3422,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00773">773</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/FontPointSize&quot;</span>, pointSize);</div>
 <div class="line">}</div>
@@ -3350,6 +3461,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00796">796</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/FontIsItalic&quot;</span>, italic);</div>
 <div class="line">}</div>
@@ -3387,6 +3500,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01293">1293</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                  {</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a99e641a68f671ef213d2936828d537e2">libIconSize</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(size));</div>
 <div class="line">}</div>
@@ -3423,6 +3538,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00594">594</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (index != <a class="code" href="../../db/d66/class_u_b_settings.html#a74efce0dd871313e0c9cabdc84a0a5d0">markerColorIndex</a>())</div>
 <div class="line">    {</div>
@@ -3444,8 +3561,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-120-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-120-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a9016ec901a0d81130998a09a6afdc335_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_a9016ec901a0d81130998a09a6afdc335_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3472,6 +3588,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00727">727</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a661e9108d58aa9374decbbd60ee9dbe4">boardMarkerPressureSensitive</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(sensitive);</div>
 <div class="line">}</div>
@@ -3508,6 +3626,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00553">553</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (index != <a class="code" href="../../db/d66/class_u_b_settings.html#af50bacac0c267fd53d838ff890d528f1">markerWidthIndex</a>())</div>
 <div class="line">    {</div>
@@ -3558,6 +3678,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01201">1201</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString encrypted = <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a4c45d0ac631978066fc4df0b6c0f982a">UBCryptoUtils::instance</a>()-&gt;<a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a0a214cd089f3e728eb1758df195bbdb3">symetricEncrypt</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a777d499c976f274487411b565b278e16">password</a>);</div>
 <div class="line"></div>
@@ -3605,6 +3727,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00512">512</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (index != <a class="code" href="../../db/d66/class_u_b_settings.html#a92682392a72ab8c73355572de1a21672">penColorIndex</a>())</div>
 <div class="line">    {</div>
@@ -3626,8 +3750,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-127-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-127-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_acc0c7274abb6e7ea12f6912209793f4d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d66/class_u_b_settings_acc0c7274abb6e7ea12f6912209793f4d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3654,6 +3777,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00721">721</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a9d839d72ab401185bb7cd41ee27a7823">boardPenPressureSensitive</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(sensitive);</div>
 <div class="line">}</div>
@@ -3690,6 +3815,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00471">471</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (index != <a class="code" href="../../db/d66/class_u_b_settings.html#a6ec1b63a496028bc006f9a360f10e74f">penWidthIndex</a>())</div>
 <div class="line">    {</div>
@@ -3730,6 +3857,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01253">1253</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString idPassword = <span class="stringliteral">&quot;http.proxy.pass&quot;</span>;</div>
 <div class="line"></div>
@@ -3773,6 +3902,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01235">1235</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString idUsername = <span class="stringliteral">&quot;http.proxy.user&quot;</span>;</div>
 <div class="line"></div>
@@ -3823,6 +3954,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00739">739</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#acf2a7dc86ac6849cdae8ad611ba71878">setValue</a>(<span class="stringliteral">&quot;Board/StylusPaletteIsVisible&quot;</span>, visible);</div>
 <div class="line">}</div>
@@ -3858,6 +3991,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>)</div>
 <div class="line">        <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a> = <span class="keyword">new</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ad703e9b5a7efdb68b9c6ecef0df7cce2">UBSettings</a>(qApp);</div>
@@ -3906,6 +4041,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00459">459</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>-&gt;setValue(key, <a class="code" href="../../db/d66/class_u_b_settings.html#a30f5b15068954099f41c054979593275">value</a>);</div>
 <div class="line">}</div>
@@ -3942,6 +4079,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01017">1017</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString animationDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(animationDirectory.isEmpty()){</div>
@@ -3982,6 +4121,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01045">1045</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString applicationDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(applicationDirectory.isEmpty()){</div>
@@ -4030,6 +4171,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00871">871</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString audioDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(audioDirectory.isEmpty()){</div>
@@ -4080,6 +4223,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00923">923</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString bookmarkDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(bookmarkDirectory.isEmpty()){</div>
@@ -4120,6 +4265,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00802">802</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">static</span> QString dataDirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -4181,6 +4328,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00913">913</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString documentDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(documentDirectory.isEmpty()){</div>
@@ -4231,6 +4380,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00933">933</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString filePath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(filePath.isEmpty()){</div>
@@ -4264,6 +4415,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00955">955</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
@@ -4313,6 +4466,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00824">824</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString imageDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(imageDirectory.isEmpty()){</div>
@@ -4363,6 +4518,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01027">1027</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString interactiveDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(interactiveDirectory.isEmpty()){</div>
@@ -4421,6 +4578,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01158">1158</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
@@ -4470,6 +4629,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00892">892</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
@@ -4529,6 +4690,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01068">1068</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString result = <a class="code" href="../../db/d66/class_u_b_settings.html#a6c3967de3dd30645b64cb0d28dbe3336">userWidgetPath</a>().replace(<a class="code" href="../../db/d66/class_u_b_settings.html#ada0e16c52c194af83a8e6510a3b74c76">userInteractiveDirectory</a>(), <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> result.startsWith(<span class="stringliteral">&quot;/&quot;</span>) ? result.right(result.count() - 1) : result;</div>
@@ -4574,6 +4737,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00993">993</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString dirPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(dirPath.isEmpty()){</div>
@@ -4614,6 +4779,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00944">944</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString trashPath = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(trashPath.isEmpty()){</div>
@@ -4663,6 +4830,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00845">845</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> QString videoDirectory = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(videoDirectory.isEmpty()){</div>
@@ -4719,6 +4888,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l01063">1063</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ada0e16c52c194af83a8e6510a3b74c76">userInteractiveDirectory</a>() + tr(<span class="stringliteral">&quot;/Web&quot;</span>);</div>
 <div class="line">}</div>
@@ -4756,6 +4927,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00190">190</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// if boardKeyboardPaletteKeyBtnSize is not initialized, or supportedKeyboardSizes not initialized or empty</span></div>
 <div class="line">    <span class="keywordflow">if</span>( !<a class="code" href="../../db/d66/class_u_b_settings.html#a56680561172b80d4f577be8a5829db10">boardKeyboardPaletteKeyBtnSize</a> ||</div>
@@ -4827,6 +5000,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html#l00448">448</a> of file <a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a>-&gt;contains(key) &amp;&amp; !(defaultValue == QVariant()))</div>
 <div class="line">    {</div>
@@ -4859,6 +5034,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00379">379</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae222117a6ae8b801087888a673a76096"></a>
@@ -4870,6 +5047,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00238">238</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -4883,6 +5062,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00239">239</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a30feb2e7e4c453fd0ef2e4c019fc8995"></a>
@@ -4894,6 +5075,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00243">243</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -4907,6 +5090,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00245">245</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3d652cedf169318ecb09570f081146f2"></a>
@@ -4919,6 +5104,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00246">246</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae6a9a56f54ae912cf860fb8a88d54255"></a>
@@ -4930,6 +5117,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00314">314</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -4951,6 +5140,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00230">230</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a68816e710a1a3b22a25c9317460d9c17"></a>
@@ -4962,6 +5153,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00241">241</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -4975,6 +5168,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00267">267</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adf80724a5b19f7164a194113d40b8e1f"></a>
@@ -4986,6 +5181,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00250">250</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -4999,6 +5196,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00237">237</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aee5ac1a9d519a121417130531130b778"></a>
@@ -5010,6 +5209,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00240">240</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5023,6 +5224,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00236">236</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5ca43f0a662f527bf32637439c602747"></a>
@@ -5034,6 +5237,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00248">248</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5055,6 +5260,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00220">220</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a56680561172b80d4f577be8a5829db10"></a>
@@ -5066,6 +5273,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00265">265</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5087,6 +5296,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00157">157</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3c96cf37dc85d70412b7bd64658686da"></a>
@@ -5098,6 +5309,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00280">280</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5111,6 +5324,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00285">285</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4b7af9f01a8c26c2089451a7f472fb60"></a>
@@ -5122,6 +5337,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00286">286</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5135,6 +5352,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00256">256</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ade781b9fcdd9c51423729bdac51cf242"></a>
@@ -5146,6 +5365,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00282">282</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5159,6 +5380,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00283">283</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4f8e7aa90ecb8c2c45118961ad182063"></a>
@@ -5170,6 +5393,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00257">257</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5183,6 +5408,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00261">261</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a912e41e00b9eecee7f098c44f52713a4"></a>
@@ -5194,6 +5421,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00258">258</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5207,6 +5436,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00274">274</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afbce5811f6a1971349a19050393d7471"></a>
@@ -5218,6 +5449,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00275">275</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5231,6 +5464,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00252">252</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afe36b37ed64b4ce64c263e1ab0b32541"></a>
@@ -5242,6 +5477,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00271">271</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5255,6 +5492,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00272">272</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a56812af7a16f6ad2bf07ffebe2af7aba"></a>
@@ -5266,6 +5505,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00253">253</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5279,6 +5520,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00260">260</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa1d3e7cc36f9e9f5391b8149edc5ef8d"></a>
@@ -5290,6 +5533,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00254">254</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5303,6 +5548,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00316">316</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a26882941f5a5ba68576e09f815b1b6a6"></a>
@@ -5314,6 +5561,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00263">263</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5327,6 +5576,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00298">298</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac08df540708d2636d25fed0bf04c8392"></a>
@@ -5338,6 +5589,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00391">391</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5351,6 +5604,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00388">388</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad55a1c27f720ce9ff548ef80d784ee03"></a>
@@ -5363,6 +5618,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00389">389</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a34d0e6aa27365de82ac42191d4faf9a6"></a>
@@ -5374,6 +5631,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00390">390</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5395,6 +5654,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00176">176</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a28cdd1c327f6b9f8228b0e76a24de0d8"></a>
@@ -5406,6 +5667,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00371">371</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5419,6 +5682,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00370">370</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae56024b1544199d1e60fe5a7b00e04fa"></a>
@@ -5430,6 +5695,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00369">369</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5451,6 +5718,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00159">159</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0c8533421b3460c374d4a19a716b2a8a"></a>
@@ -5470,6 +5739,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00160">160</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5491,6 +5762,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00175">175</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3aa1126a8aaeb41a39c42a9952ba3cdd"></a>
@@ -5510,6 +5783,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00199">199</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5531,6 +5806,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00212">212</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2544c7a176904cf329a239a6352c77ed"></a>
@@ -5550,6 +5827,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00208">208</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5571,6 +5850,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00206">206</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a717ca3e6f874a3b6a2e674016a74862d"></a>
@@ -5590,6 +5871,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00209">209</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5611,6 +5894,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00213">213</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab24f23ee045a939cacac49c1d9669220"></a>
@@ -5630,6 +5915,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00205">205</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5651,6 +5938,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00211">211</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4dd74f823ed8465998d8d4f701e6fdfd"></a>
@@ -5670,6 +5959,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00210">210</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5691,6 +5982,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00195">195</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a840d7de55a46ac70210981b48afbea68"></a>
@@ -5710,6 +6003,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00179">179</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5731,6 +6026,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00182">182</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac835acad66226a9b63347e2ed55fbd13"></a>
@@ -5750,6 +6047,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00180">180</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5771,6 +6070,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00181">181</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4cb6c93982e98da81931f1391db0013c"></a>
@@ -5790,6 +6091,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00172">172</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5811,6 +6114,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00173">173</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2c7e1b2471296349a87237358c932077"></a>
@@ -5823,6 +6128,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00318">318</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6a94e430347f10aa5882ef4c26cbe918"></a>
@@ -5834,6 +6141,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00351">351</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5855,6 +6164,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00184">184</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a944257fa012bc74d251227ea8a6afb99"></a>
@@ -5874,6 +6185,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00183">183</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5895,6 +6208,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00164">164</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad409d408cad2bec308e795d578ae4e11"></a>
@@ -5914,6 +6229,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00166">166</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5935,6 +6252,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00167">167</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3bdae429668ae6e3d609a059c8ba5eae"></a>
@@ -5954,6 +6273,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00169">169</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5975,6 +6296,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00170">170</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aee964b872d72f35bd573653ead9256db"></a>
@@ -5986,6 +6309,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00343">343</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -5999,6 +6324,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00269">269</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abd7c3af35f64a130229bdd2d0ac6966c"></a>
@@ -6011,6 +6338,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00355">355</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7611712c43c9117dc809ba0a9cd4488f"></a>
@@ -6022,6 +6351,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00380">380</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6043,6 +6374,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00222">222</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0b93ca2ce7cf596982b1611393fd900f"></a>
@@ -6054,6 +6387,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00352">352</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6075,6 +6410,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00224">224</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a892b406d947337b92a2590fb638f4730"></a>
@@ -6086,6 +6423,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00341">341</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6099,6 +6438,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00340">340</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af8fe40526842d1417407512372516df3"></a>
@@ -6110,6 +6451,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00376">376</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6123,6 +6466,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00306">306</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac09981b17cde076f6c2b902b63dfe2cd"></a>
@@ -6134,6 +6479,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00305">305</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6147,6 +6494,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00302">302</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9d57a5cf038caefb6a2ed1f169b19ae6"></a>
@@ -6158,6 +6507,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00303">303</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6171,6 +6522,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00308">308</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a521b887a58000c11bcac7b0d85b5ba95"></a>
@@ -6182,6 +6535,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00310">310</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6195,6 +6550,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00312">312</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad2545490b7627629f168dc9cf7f253d2"></a>
@@ -6206,6 +6563,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00311">311</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6219,6 +6578,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00365">365</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3a4a5e502951a3bde57cca8bdb5736cb"></a>
@@ -6230,6 +6591,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00364">364</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6243,6 +6606,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00367">367</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a956d853b5bc1decb27572fb1b92681fd"></a>
@@ -6255,6 +6620,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00366">366</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a99e641a68f671ef213d2936828d537e2"></a>
@@ -6266,6 +6633,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00384">384</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6287,6 +6656,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00216">216</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a82c958efcb6a1f1e49062fb06aaf388d"></a>
@@ -6298,6 +6669,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00386">386</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6319,6 +6692,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00421">421</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7baff769a2e029fd39bebab986daf29f"></a>
@@ -6338,6 +6713,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00204">204</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6359,6 +6736,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00218">218</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a844761cf83bfd8eb2885fbbd4f89e82f"></a>
@@ -6370,6 +6749,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00300">300</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6391,6 +6772,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00422">422</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1043e0bbaff0c3e31eb6472d771967a2"></a>
@@ -6410,6 +6793,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00177">177</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6431,6 +6816,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00228">228</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3b15f9b10941aad5dcc81472fde33ea3"></a>
@@ -6451,6 +6838,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00162">162</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aac2ebdada657a3505f3e3b924a02e4f8"></a>
@@ -6462,6 +6851,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00296">296</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6475,6 +6866,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00374">374</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0bb5fa51820495ec8eae651b5a4e1b7c"></a>
@@ -6486,6 +6879,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00373">373</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6507,6 +6902,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00161">161</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9b23093384b7e7fc7e51f28aff9191a3"></a>
@@ -6518,6 +6915,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00321">321</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6531,6 +6930,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00322">322</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af913238e2c69d4b6bf1bddc9b8d0dd4e"></a>
@@ -6542,6 +6943,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00323">323</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6555,6 +6958,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00328">328</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ade358dfc3050406270ae6754bafc04b7"></a>
@@ -6566,6 +6971,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00325">325</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6579,6 +6986,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00339">339</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6b089347aa3dc84801f3f4979547e852"></a>
@@ -6590,6 +6999,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00331">331</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6603,6 +7014,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00329">329</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab8756a27d8b5a900364370d7c97b6a9e"></a>
@@ -6615,6 +7028,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00326">326</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad1dc0e79b487d48b5814d29fc394ad37"></a>
@@ -6626,6 +7041,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00327">327</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6647,6 +7064,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00156">156</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa5b30a6658aa14bfde4232d8ce7a2abc"></a>
@@ -6658,6 +7077,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00232">232</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6671,6 +7092,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00347">347</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac615d44f786768589ce4169d1a40b221"></a>
@@ -6682,6 +7105,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00346">346</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6695,6 +7120,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00349">349</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adaf41115f2bd2098819ae25afb294494"></a>
@@ -6706,6 +7133,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00345">345</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6719,6 +7148,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00359">359</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3afa5ce4240c63f9932185937c6410c5"></a>
@@ -6730,6 +7161,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00358">358</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6743,6 +7176,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00361">361</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a984d587f2762540e8e766bfe4ba828c5"></a>
@@ -6754,6 +7189,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00360">360</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6767,6 +7204,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00363">363</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a33295d163e4f9af2326a0b969b0fdcc4"></a>
@@ -6778,6 +7217,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00362">362</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6799,6 +7240,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00429">429</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3709371e769f9e1c9326820297b41fdc"></a>
@@ -6818,6 +7261,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00425">425</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6839,6 +7284,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00424">424</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0b87a7cf69175a342007c69a14b74610"></a>
@@ -6858,6 +7305,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00187">187</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6879,6 +7328,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00190">190</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2512bb750de3636997d3198fee3648d6"></a>
@@ -6898,6 +7349,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00189">189</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6919,6 +7372,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00193">193</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0e8511b43547195f233f69ac7ce7b175"></a>
@@ -6938,6 +7393,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00188">188</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6959,6 +7416,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00191">191</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a541db9f46c2319a1a9f43052cf338abf"></a>
@@ -6978,6 +7437,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00186">186</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -6999,6 +7460,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00192">192</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a775f91fb0a35180d4df55234201e431d"></a>
@@ -7010,6 +7473,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00354">354</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7023,6 +7488,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00234">234</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9c592dd313b4b929821f21f310342fdc"></a>
@@ -7034,6 +7501,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00356">356</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7055,6 +7524,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00430">430</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3d9bffe65c4eaa52e30e086ccf77617d"></a>
@@ -7066,6 +7537,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00053">53</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7079,6 +7552,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00320">320</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a677486ca02da069640c8db3c2f9b1593"></a>
@@ -7090,6 +7565,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00377">377</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7103,6 +7580,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00382">382</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac19853b7eb0ebe29c2f6146a8b92d031"></a>
@@ -7114,6 +7593,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00381">381</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7135,6 +7616,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00215">215</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0e7fcd8a39b252af1670c0a099ad26cc"></a>
@@ -7154,6 +7637,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00197">197</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7175,6 +7660,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00226">226</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a20733676315376a77a45d82895e592a9"></a>
@@ -7194,6 +7681,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00202">202</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7215,6 +7704,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00201">201</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2bc708f57654f04563cf29d82d9d9d6a"></a>
@@ -7226,6 +7717,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00336">336</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7239,6 +7732,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00335">335</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa52b8e29071c46d7c615b0528003bc4c"></a>
@@ -7250,6 +7745,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00337">337</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7263,6 +7760,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00277">277</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abb0809c7edab4cf15754a6d185f1fd06"></a>
@@ -7274,6 +7773,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00278">278</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7295,6 +7796,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00221">221</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afbbe4e4356efe6c65b2b9495d5afeb80"></a>
@@ -7306,6 +7809,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00353">353</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7319,6 +7824,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00293">293</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac95325200a02330d13b31458916a2d4a"></a>
@@ -7330,6 +7837,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00292">292</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7343,6 +7852,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00291">291</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae9ed072bbf0fed079bba6a8e976fa4d5"></a>
@@ -7354,6 +7865,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00294">294</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7367,6 +7880,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00289">289</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adb8d7a0850fe577904e805075e4c3d19"></a>
@@ -7378,6 +7893,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00288">288</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7399,6 +7916,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00223">223</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac1c11264ddacac37cbf0561f195f637b"></a>
@@ -7410,6 +7929,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00333">333</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
 
 </div>
 </div>
@@ -7423,22 +7944,20 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html#l00332">332</a> of file <a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a></li>
-<li><a class="el" href="../../d5/d5d/_u_b_settings_8cpp.html">UBSettings.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d1/d92/_u_b_settings_8h_source.html">UBSettings.h</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d5/d5d/_u_b_settings_8cpp_source.html">UBSettings.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../db/d66/class_u_b_settings.html">UBSettings</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:31 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/dbf/class_u_b_server_x_m_l_http_request.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/dbf/class_u_b_server_x_m_l_http_req
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -165,7 +145,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ac54f3bee90ebdd645b5d199e7293ad4d"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ac54f3bee90ebdd645b5d199e7293ad4d">mPutPayload</a></td></tr>
 <tr class="memitem:a5408feacd8be10eb07a64022c1136340"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a5408feacd8be10eb07a64022c1136340">mPostPayload</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00032">32</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0fd99f0fbcd42473bf5b04c695586472"></a>
 <div class="memitem">
 <div class="memproto">
@@ -189,6 +172,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00033">33</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(pNam)</div>
 <div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>(<span class="keyword">false</span>)</div>
@@ -223,6 +208,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>;</div>
 <div class="line">}</div>
@@ -253,6 +240,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.insert(key, value);</div>
 <div class="line">}</div>
@@ -288,6 +277,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00210">210</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>)</div>
 <div class="line">    {</div>
@@ -351,6 +342,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00223">223</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a> &amp;&amp; bytesTotal &gt; 1024)</div>
 <div class="line">    {</div>
@@ -403,6 +396,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00235">235</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
 <div class="line">    {</div>
@@ -448,6 +443,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00250">250</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
 <div class="line">    {</div>
@@ -559,6 +556,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
@@ -622,6 +621,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
@@ -682,7 +683,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_ae3b7956d7cbf7f8bf391813a301c1079_icgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_ae3b7956d7cbf7f8bf391813a301c1079_icgraph.svg" width="100%" height="553"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </p>
@@ -756,6 +757,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
@@ -830,6 +833,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00307">307</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.append(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;readAll());</div>
 <div class="line"></div>
@@ -863,6 +868,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00317">317</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a> = pVerbose;</div>
 <div class="line">}</div>
@@ -891,6 +898,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00173">173</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
@@ -968,6 +977,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html#l00295">295</a> of file <a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a> &amp;&amp; bytesTotal &gt; 0)</div>
 <div class="line">    {</div>
@@ -1018,6 +1029,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00072">72</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a443b9cdb49f1734883511c772d782055"></a>
@@ -1037,6 +1050,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00077">77</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
 
 </div>
 </div>
@@ -1058,6 +1073,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00069">69</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3ff97fdd9036c0fe5e034250d03fe05a"></a>
@@ -1077,6 +1094,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00070">70</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
 
 </div>
 </div>
@@ -1098,6 +1117,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00081">81</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4ccc8f73a82b55619d31e340f45b852c"></a>
@@ -1117,6 +1138,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00079">79</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
 
 </div>
 </div>
@@ -1138,6 +1161,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00086">86</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac54f3bee90ebdd645b5d199e7293ad4d"></a>
@@ -1157,6 +1182,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00085">85</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
 
 </div>
 </div>
@@ -1178,6 +1205,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00083">83</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a26399ab9228f9befd3f74494f6c4b2ef"></a>
@@ -1197,6 +1226,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00073">73</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
 
 </div>
 </div>
@@ -1218,22 +1249,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html#l00075">75</a> of file <a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a></li>
-<li><a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp.html">UBServerXMLHttpRequest.cpp</a></li>
+<li>Sankore-3.1/src/network/<a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a></li>
+<li>Sankore-3.1/src/network/<a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp_source.html">UBServerXMLHttpRequest.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:31 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

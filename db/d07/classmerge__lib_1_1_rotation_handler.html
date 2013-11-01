@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('db/d07/classmerge__lib_1_1_rotation_handler.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,11 @@ $(document).ready(function(){initNavTree('db/d07/classmerge__lib_1_1_rotation_ha
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../db/d07/classmerge__lib_1_1_rotation_handler.html">RotationHandler</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -160,7 +144,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a794f4d90a0b09b60d60b00c0ebde68c6 inherit pro_attribs_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a794f4d90a0b09b60d60b00c0ebde68c6">_handlerName</a></td></tr>
 <tr class="memitem:a3f2f76c9182628763aafd37a2020b6e0 inherit pro_attribs_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html">PageElementHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html#l00035">35</a> of file <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a87ab70ad73fed0d4dc86966c5bec4169"></a>
 <div class="memitem">
 <div class="memproto">
@@ -198,6 +185,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html#l00038">38</a> of file <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a>.</p>
 <div class="fragment"><div class="line">                                                                                    : </div>
 <div class="line">         <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#ada309a9bc3d0047d0038680cee9ac5be">PageElementHandler</a>(page),</div>
 <div class="line">            <a class="code" href="../../db/d07/classmerge__lib_1_1_rotation_handler.html#aaff8fce2f914adbdee737a85f8854e30">_basePage</a>(basePage)</div>
@@ -236,6 +225,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html#l00044">44</a> of file <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a>.</p>
 <div class="fragment"><div class="line">         {</div>
 <div class="line">         }</div>
 </div><!-- fragment -->
@@ -263,6 +254,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html#l00069">69</a> of file <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a>.</p>
 <div class="fragment"><div class="line">{Q_UNUSED(startOfPageElement);};</div>
 </div><!-- fragment -->
 </div>
@@ -288,6 +281,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html#l00049">49</a> of file <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfElement = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2164e57a4264777fa75b091967c2cb23">_findEndOfElementContent</a>(startOfPageElement);</div>
 <div class="line">         std::string rotationField = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>().substr(startOfPageElement, endOfElement - startOfPageElement);</div>
@@ -338,21 +333,19 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html#l00069">69</a> of file <a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a></li>
+<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d6/d53/_rotation_handler_8h_source.html">RotationHandler.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../db/d07/classmerge__lib_1_1_rotation_handler.html">RotationHandler</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:13 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:37 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/dce/class_u_b_graphics_svg_item.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/dce/class_u_b_graphics_svg_item.htm
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -197,7 +177,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a6952774d19830afc8429f649a7163390 inherit pub_static_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#a6952774d19830afc8429f649a7163390">getOwnZValue</a> (QGraphicsItem *item)</td></tr>
 <tr class="memitem:a5d46f6a79c685a5fb14da104ffa5e755 inherit pub_static_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#a5d46f6a79c685a5fb14da104ffa5e755">Delegate</a> (QGraphicsItem *pItem)</td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html#l00037">37</a> of file <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html">UBGraphicsSvgItem.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a302cf0b20dc15004e1b6e434eefe7be3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,6 +196,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html#l00054">54</a> of file <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html">UBGraphicsSvgItem.h</a>.</p>
 <div class="fragment"><div class="line">{ <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a302cf0b20dc15004e1b6e434eefe7be3a3f3431da10951964803c71682b2768d7">Type</a> = <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28ad927ad638b0f7702741b097220f57b14">UBGraphicsItemType::SvgItemType</a> };</div>
 </div><!-- fragment -->
 </div>
@@ -241,6 +226,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QGraphicsSvgItem(pFilePath, parent)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#aefe5ca00c7f91a56938b35611149a779">init</a>();</div>
@@ -297,6 +284,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00057">57</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QGraphicsSvgItem(parent)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#aefe5ca00c7f91a56938b35611149a779">init</a>();</div>
@@ -338,6 +327,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00091">91</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -367,6 +358,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a21483eccaad22369e9fe6bca838af029">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a> *cp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a>*<span class="keyword">&gt;</span>(copy);</div>
 <div class="line">    <span class="keywordflow">if</span> (cp)</div>
@@ -433,6 +426,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a5ef870748a215b3f5f3218d0178b17b9">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00162">162</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a>* copy = <span class="keyword">new</span> <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a47ac7a4adf4bb678692aa98cc30809bf">UBGraphicsSvgItem</a>(this-&gt;<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#aa5c2b14a2d193b26cbb03952e37698cf">fileData</a>());</div>
 <div class="line"></div>
@@ -469,6 +464,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00096">96</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a3c8483b0bbddc94eec846f450735c13f">mFileData</a>;</div>
 <div class="line">}</div>
@@ -497,6 +494,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00069">69</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a86b481353d96038e1b371f5ef6f5e44f">UBItemLayerType::Object</a>);</div>
 <div class="line"></div>
@@ -568,6 +567,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QVariant newValue = <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5851301422e4533173600b1264b852fb">itemChange</a>(change, value);</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#abb1e317552020abec0df6a1363773ffa">QGraphicsSvgItem::itemChange</a>(change, newValue);</div>
@@ -605,6 +606,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00132">132</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a957f4a1795a4113f1d61517fe752c628">mouseMoveEvent</a>(event))</div>
 <div class="line">    {</div>
@@ -648,6 +651,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMimeData* pMime = <span class="keyword">new</span> QMimeData();</div>
 <div class="line">    QPixmap pixmap = <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a0d1b06f4717d38207ff6bc070ed9cb5e">toPixmapItem</a>()-&gt;pixmap();</div>
@@ -701,6 +706,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76f992490575724a33bc0813f80f7a98">mouseReleaseEvent</a>(event);</div>
 <div class="line">    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a01e9196ba8595cb8868fbff6d0a3d2d5">QGraphicsSvgItem::mouseReleaseEvent</a>(event);</div>
@@ -754,6 +761,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00152">152</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Never draw the rubber band, we draw our custom selection with the DelegateFrame</span></div>
 <div class="line">    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);</div>
@@ -786,6 +795,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d8/d1e/class_u_b_item.html#a3aacc37e7f32b28047f771d0e6abc431">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00215">215</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> qobject_cast&lt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*&gt;(<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a92e88b5e4e6214adcd9ac0feeae07cde">QGraphicsItem::scene</a>());</div>
 <div class="line">}</div>
@@ -813,6 +824,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html#l00049">49</a> of file <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html">UBGraphicsSvgItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a3c8483b0bbddc94eec846f450735c13f">mFileData</a> = pFileData;</div>
 <div class="line">        }</div>
@@ -842,6 +855,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d8/d1e/class_u_b_item.html#ab91a4a587b0981ff59f7ddedc6dbe68c">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#af9482489d2553eef2d4223a6faab6188">UBItem::setRenderingQuality</a>(pRenderingQuality);</div>
 <div class="line"></div>
@@ -880,6 +895,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d8/d1e/class_u_b_item.html#aebe809da60b1ea31f4c2fe612d2513e8">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00240">240</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#ad775cde3b5bbedde62e7e3c0dda06dd1">UBItem::setUuid</a>(pUuid);</div>
 <div class="line">    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba23c3d8f02812e7cb8117e41294a6ff1d">UBGraphicsItemData::ItemUuid</a>, QVariant(pUuid)); <span class="comment">//store item uuid inside the QGraphicsItem to fast operations with Items on the scene</span></div>
@@ -916,6 +933,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html#l00222">222</a> of file <a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QImage image(renderer()-&gt;viewBox().size(), QImage::Format_ARGB32);</div>
 <div class="line">    QPainter painter(&amp;image);</div>
@@ -967,6 +986,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#acab0781401cac08c9ad99b0cd0fa8480">UBGraphicsItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html#l00056">56</a> of file <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html">UBGraphicsSvgItem.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#a302cf0b20dc15004e1b6e434eefe7be3a3f3431da10951964803c71682b2768d7">Type</a>;</div>
 <div class="line">        }</div>
@@ -992,22 +1013,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html#l00085">85</a> of file <a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html">UBGraphicsSvgItem.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html">UBGraphicsSvgItem.h</a></li>
-<li><a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp.html">UBGraphicsSvgItem.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../db/dd5/_u_b_graphics_svg_item_8h_source.html">UBGraphicsSvgItem.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d4/dce/_u_b_graphics_svg_item_8cpp_source.html">UBGraphicsSvgItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:04 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:28 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

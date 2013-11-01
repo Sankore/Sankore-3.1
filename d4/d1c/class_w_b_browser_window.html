@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d4/d1c/class_w_b_browser_window.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d4/d1c/class_w_b_browser_window.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -215,6 +195,8 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The MainWindow of the Browser view. </p>
 <p>Handles the tab widget and all the actions </p>
+
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00086">86</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3598ae963d79363f3c23455d1e1ccc08"></a>
 <div class="memitem">
@@ -245,6 +227,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00096">96</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">        : QWidget(parent)</div>
 <div class="line">        , <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a6ebb25415312ed284d404aa8cf520545">mWebToolBar</a>(0)</div>
 <div class="line">        , <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a4abfc22fac62129c7b83e55db2e968be">mSearchToolBar</a>(0)</div>
@@ -316,6 +300,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>){</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>;</div>
@@ -351,6 +337,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00570">570</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a36164eda66db405f79f91dd779a99ad2">mHistoryBackMenu</a>-&gt;clear();</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
@@ -424,6 +412,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00604">604</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a3e91536a52f61593758690daa31ba3c1">mHistoryForwardMenu</a>-&gt;clear();</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
@@ -554,6 +544,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00288">288</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#ad96750c7f8a3aca9ec9d157d25cea89a">mSearchAction</a>)</div>
 <div class="line">    {</div>
@@ -583,6 +575,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00550">550</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a78dc4fc8da7fdc428adfc652823fe67a">loadPage</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;webAddBookmarkUrl-&gt;get().toString() + <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>()-&gt;<a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toString());</div>
 <div class="line">}</div>
@@ -627,6 +621,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00544">544</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a78dc4fc8da7fdc428adfc652823fe67a">loadPage</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;webBookmarksPage-&gt;get().toString());</div>
 <div class="line">}</div>
@@ -672,6 +668,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00409">409</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">    deleteLater();</div>
@@ -699,6 +697,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00160">160</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a>*)<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>()-&gt;cookieJar();</div>
 <div class="line">}</div>
@@ -734,6 +734,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00378">378</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ac4e5333657411084af40f7faa20cac55">newTab</a>();</div>
 <div class="line">}</div>
@@ -761,6 +763,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00516">516</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a9e2f5d93990c02fbb4edf2418e51828b">currentWebView</a>();</div>
 <div class="line">}</div>
@@ -806,6 +810,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00166">166</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a5fa4068cd203f9f9a23b12a1b252cd2e">sDownloadManager</a>) {</div>
 <div class="line">        <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a5fa4068cd203f9f9a23b12a1b252cd2e">sDownloadManager</a> = <span class="keyword">new</span> <a class="code" href="../../d3/dda/class_w_b_download_manager.html">WBDownloadManager</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>);</div>
@@ -846,6 +852,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00529">529</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setGeometry(geometry);</div>
 <div class="line">}</div>
@@ -882,6 +890,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00297">297</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString urlStr = <span class="keywordtype">string</span>.trimmed();</div>
 <div class="line">    QRegExp test(QLatin1String(<span class="stringliteral">&quot;^[a-zA-Z]+\\:.*&quot;</span>));</div>
@@ -973,6 +983,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a0dfde378ad9cc7fc40f415063ad4b164">sHistoryManager</a>) {</div>
 <div class="line">        <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a0dfde378ad9cc7fc40f415063ad4b164">sHistoryManager</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a>();</div>
@@ -1014,6 +1026,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00503">503</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QUrl url = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a8a5c6d4ceb45bde18872a41b63e1ba3c">guessUrlFromString</a>(page);</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#af1feb1efb3072427b2bf17c16d975bd7">loadUrl</a>(url);</div>
@@ -1060,6 +1074,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00358">358</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>() || !url.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -1109,6 +1125,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00368">368</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!url.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -1173,6 +1191,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00637">637</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QWebHistory *history = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>()-&gt;history();  </div>
 <div class="line"></div>
@@ -1229,6 +1249,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00556">556</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a9e2f5d93990c02fbb4edf2418e51828b">currentWebView</a>();</div>
 <div class="line">}</div>
@@ -1264,6 +1286,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00193">193</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">new</span> QShortcut(QKeySequence(Qt::Key_F6), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a230652bb0d11f9f503bd3cfbb4944d65">slotSwapFocus</a>()));</div>
 <div class="line">}</div>
@@ -1308,6 +1332,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00199">199</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a6ebb25415312ed284d404aa8cf520545">mWebToolBar</a> = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#ab79757bf2fb6d5836ed168a5b7a92adc">mUniboardMainWindow</a>-&gt;webToolBar;</div>
 <div class="line"></div>
@@ -1408,6 +1434,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00260">260</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a6ebb25415312ed284d404aa8cf520545">mWebToolBar</a> = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#ab79757bf2fb6d5836ed168a5b7a92adc">mUniboardMainWindow</a>-&gt;tutorialToolBar;</div>
 <div class="line"></div>
@@ -1474,6 +1502,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00562">562</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (attop)</div>
 <div class="line">        <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;setTabPosition(QTabWidget::North);</div>
@@ -1495,6 +1525,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00185">185</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRect desktopRect = QApplication::desktop()-&gt;screenGeometry();</div>
 <div class="line">    QSize size = desktopRect.size() * qreal(0.9);</div>
@@ -1523,6 +1555,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00391">391</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a93ae86b454649b8efc8e707503693226">downloadManager</a>()-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0f84a26b21d560bd1b319d2fc28de045">download</a>(<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>()-&gt;url(), <span class="keyword">true</span>);</div>
 <div class="line">}</div>
@@ -1558,6 +1592,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00475">475</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a78dc4fc8da7fdc428adfc652823fe67a">loadPage</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;webHomePage-&gt;get().toString());</div>
 <div class="line">}</div>
@@ -1603,6 +1639,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00522">522</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a0e5ba6f2522c8965db9838d42a007276">mChaseWidget</a>)</div>
 <div class="line">        <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a0e5ba6f2522c8965db9838d42a007276">mChaseWidget</a>-&gt;<a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#aa65e948e3aa9b1838b889a94350e46fe">setAnimated</a>(progress &gt; 0 &amp;&amp; progress &lt; 100);</div>
@@ -1648,6 +1686,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00384">384</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a9736f81410f28db2e7adea81f5a6745d">currentLineEdit</a>()-&gt;selectAll();</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a9736f81410f28db2e7adea81f5a6745d">currentLineEdit</a>()-&gt;setFocus();</div>
@@ -1684,6 +1724,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00494">494</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>()-&gt;hasFocus())</div>
 <div class="line">        <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a9736f81410f28db2e7adea81f5a6745d">currentLineEdit</a>()-&gt;setFocus();</div>
@@ -1732,6 +1774,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00488">488</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(enable);</div>
 <div class="line">}</div>
@@ -1759,6 +1803,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00397">397</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(<span class="keywordtype">string</span>);</div>
 <div class="line">}</div>
@@ -1786,6 +1832,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00403">403</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(title);</div>
 <div class="line">}</div>
@@ -1821,6 +1869,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00459">459</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -1858,6 +1908,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00416">416</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html">WBWebView</a> *currentWebView = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>();</div>
 <div class="line"></div>
@@ -1917,6 +1969,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00437">437</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html">WBWebView</a> *currentWebView = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>();</div>
 <div class="line"></div>
@@ -1978,6 +2032,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00467">467</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -2015,6 +2071,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00481">481</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a4abfc22fac62129c7b83e55db2e968be">mSearchToolBar</a>-&gt;<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;selectAll();</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a4abfc22fac62129c7b83e55db2e968be">mSearchToolBar</a>-&gt;<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;setFocus();</div>
@@ -2052,6 +2110,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00535">535</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QWidget* current = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>-&gt;widget(index);</div>
 <div class="line"></div>
@@ -2091,6 +2151,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html#l00510">510</a> of file <a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a11828f011c9147e63604a45653bcfb0b">mTabWidget</a>;</div>
 <div class="line">}</div>
@@ -2149,6 +2211,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00168">168</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a36164eda66db405f79f91dd779a99ad2"></a>
@@ -2168,6 +2232,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00177">177</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
 
 </div>
 </div>
@@ -2189,6 +2255,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00178">178</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7cee7a402e52b85d39f26a410d85e3ec"></a>
@@ -2208,6 +2276,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00173">173</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
 
 </div>
 </div>
@@ -2229,6 +2299,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00171">171</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4abfc22fac62129c7b83e55db2e968be"></a>
@@ -2248,6 +2320,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00167">167</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
 
 </div>
 </div>
@@ -2269,6 +2343,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00169">169</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab79757bf2fb6d5836ed168a5b7a92adc"></a>
@@ -2288,6 +2364,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00175">175</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
 
 </div>
 </div>
@@ -2309,6 +2387,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00166">166</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5fa4068cd203f9f9a23b12a1b252cd2e"></a>
@@ -2328,6 +2408,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00159">159</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
 
 </div>
 </div>
@@ -2349,22 +2431,20 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html#l00158">158</a> of file <a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a></li>
-<li><a class="el" href="../../d4/d12/_w_b_browser_window_8cpp.html">WBBrowserWindow.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d7/d14/_w_b_browser_window_8h_source.html">WBBrowserWindow.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d4/d12/_w_b_browser_window_8cpp_source.html">WBBrowserWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d4/d1c/class_w_b_browser_window.html">WBBrowserWindow</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:35 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

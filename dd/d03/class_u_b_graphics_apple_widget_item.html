@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/d03/class_u_b_graphics_apple_widget_item.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dd/d03/class_u_b_graphics_apple_widget
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -244,7 +224,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:afcd938be72e65d4517c96df6841796f0 inherit pro_attribs_class_u_b_graphics_widget_item"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html#afcd938be72e65d4517c96df6841796f0">mDatastore</a></td></tr>
 <tr class="memitem:aef3b6f64a7f5c8e7c67b7e9645052658 inherit pro_attribs_class_u_b_graphics_widget_item"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html#aef3b6f64a7f5c8e7c67b7e9645052658">mPreferences</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/dd8/_u_b_graphics_widget_item_8h_source.html#l00189">189</a> of file <a class="el" href="../../d7/dd8/_u_b_graphics_widget_item_8h_source.html">UBGraphicsWidgetItem.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3f66fa0eaecafd9f739fb3a3759738ea"></a>
 <div class="memitem">
 <div class="memproto">
@@ -268,6 +251,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html#l00668">668</a> of file <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html">UBGraphicsWidgetItem.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ac1a304e8be3f2ece6dd370210f25c90b">UBGraphicsWidgetItem</a>(pWidgetUrl, parent)</div>
 <div class="line">{</div>
 <div class="line">    QString path = pWidgetUrl.toLocalFile();</div>
@@ -337,6 +322,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html#l00707">707</a> of file <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html">UBGraphicsWidgetItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">/* NOOP */</span></div>
 <div class="line">}</div>
@@ -367,6 +354,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a21483eccaad22369e9fe6bca838af029">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html#l00728">728</a> of file <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html">UBGraphicsWidgetItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a> *cp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a>*<span class="keyword">&gt;</span>(copy);</div>
 <div class="line">    <span class="keywordflow">if</span> (cp)</div>
@@ -429,6 +418,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html#a9ba7781db36c5b1ed3f4db389d78d07e">UBGraphicsWidgetItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html#l00718">718</a> of file <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html">UBGraphicsWidgetItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a> *appleWidget = <span class="keyword">new</span> <a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html#a3f66fa0eaecafd9f739fb3a3759738ea">UBGraphicsAppleWidgetItem</a>(QGraphicsWebView::url(), parentItem());</div>
 <div class="line"></div>
@@ -472,6 +463,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad4cc767e9fb672aaaad3ce852249dd6e">UBGraphicsWidgetItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html#l00712">712</a> of file <a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html">UBGraphicsWidgetItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html#aa880379f04a9117a521e944f44717302">UBItem::setUuid</a>(pUuid);</div>
 <div class="line">    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba23c3d8f02812e7cb8117e41294a6ff1d">UBGraphicsItemData::ItemUuid</a>, QVariant(pUuid)); <span class="comment">//store item uuid inside the QGraphicsItem to fast operations with Items on the scene</span></div>
@@ -489,19 +482,15 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/dd8/_u_b_graphics_widget_item_8h_source.html">UBGraphicsWidgetItem.h</a></li>
-<li><a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp.html">UBGraphicsWidgetItem.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d7/dd8/_u_b_graphics_widget_item_8h_source.html">UBGraphicsWidgetItem.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d6/dda/_u_b_graphics_widget_item_8cpp_source.html">UBGraphicsWidgetItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:01 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:25 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

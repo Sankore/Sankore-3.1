@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/d9c/class_u_b_locale_button.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('de/d9c/class_u_b_locale_button.html','
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -159,7 +139,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7b7c22df6975f5c884549f0b3b0319b7 inherit pro_methods_class_u_b_keyboard_button"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#a7b7c22df6975f5c884549f0b3b0319b7">sendUnicodeSymbol</a> (<a class="el" href="../../d2/dab/struct_k_e_y_c_o_d_e.html">KEYCODE</a> keycode)</td></tr>
 <tr class="memitem:a5374d35bdf3793d8fc13c13d7a96efdf inherit pro_methods_class_u_b_keyboard_button"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#a5374d35bdf3793d8fc13c13d7a96efdf">sendControlSymbol</a> (int nSymbol)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00287">287</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a154f03521f30681deeb61ebf4d1f2c13"></a>
 <div class="memitem">
 <div class="memproto">
@@ -173,6 +156,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00733">733</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">        :<a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#ab1f5c4db91f193fdf65402a0a23aa819">UBKeyboardButton</a>(parent)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/d9c/class_u_b_locale_button.html#a36aa8f803e96076e132307ba7e1e5c3e">localeMenu</a> = <span class="keyword">new</span> QMenu(<span class="keyword">this</span>);</div>
@@ -200,6 +185,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00747">747</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../de/d9c/class_u_b_locale_button.html#a36aa8f803e96076e132307ba7e1e5c3e">localeMenu</a>;</div>
 <div class="line">}</div>
@@ -229,6 +216,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#aab34537366dea90f113b85dac6da80d9">UBKeyboardButton</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00752">752</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -256,6 +245,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#a92423df2600435a21ae871fca421d4bd">UBKeyboardButton</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00756">756</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a24bb19c40ac54159a6cccac7d2b17202">keyboard</a>-&gt;<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a81336a2103daeb7dc6cdfccbd16d3c28">languagePopupActive</a> = <span class="keyword">true</span>;</div>
 <div class="line">    QAction* action = <a class="code" href="../../de/d9c/class_u_b_locale_button.html#a36aa8f803e96076e132307ba7e1e5c3e">localeMenu</a>-&gt;exec(mapToGlobal(QPoint(0,0)));</div>
@@ -301,6 +292,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#ac4a441fad9d6cb8d63a54318e6738eac">UBKeyboardButton</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00768">768</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> QString* localeName = <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a24bb19c40ac54159a6cccac7d2b17202">keyboard</a>-&gt;<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#aaafc7f05ad6c2b4f63eaf553174e0ab6">getLocaleName</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (localeName!=NULL)</div>
@@ -337,22 +330,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00300">300</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
-<li><a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp.html">UBKeyboardPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../de/d9c/class_u_b_locale_button.html">UBLocaleButton</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

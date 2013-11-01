@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d76/class_u_b_windows_media_video_encoder.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d76/class_u_b_windows_media_video_e
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -177,7 +157,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa4e03edd2cb73ad5ccb94daa23268b54 inherit signals_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa4e03edd2cb73ad5ccb94daa23268b54">encodingFinished</a> (bool ok)</td></tr>
 <tr class="memitem:a314566aa45510979eda49b487fd0113c inherit signals_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a> (quint8 level)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00035">35</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6902002f07e574ef46f2e975cf75eac8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -191,6 +174,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00036">36</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab9656acba80cfe74980b16dc90423b73">UBAbstractVideoEncoder</a>(pParent)</div>
 <div class="line">    , <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>(0)</div>
@@ -223,6 +208,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -252,6 +239,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a6fdee9e00977574dde3094ad5e536d91">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00049">49</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <span class="keyword">true</span>;};</div>
 </div><!-- fragment -->
 </div>
@@ -278,6 +267,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab3f6d08c89768a4fc724cfd6da53ac16">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00059">59</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a38b54f5f1670140c15b7491666957a9f">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
@@ -317,6 +308,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a51c1523562454b18ea4066b5a4c805e2">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00153">153</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>)</div>
 <div class="line">       <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;startNewChapter(pLabel, timestamp);</div>
@@ -357,6 +350,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab74514eba01c7b8dcce926934dd6838a">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00141">141</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a> &amp;&amp; !<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a>)</div>
 <div class="line">    {</div>
@@ -391,6 +386,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ae871a77aeda9ccb98efeb85db2889446">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00209">209</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line"></div>
@@ -450,6 +447,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00179">179</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(timestamp);</div>
 <div class="line"></div>
@@ -521,6 +520,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab5fae0f75a1993fe478442e0aa9d0c14">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00160">160</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a> != pRecordAudio)</div>
 <div class="line">    {</div>
@@ -571,6 +572,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa56593934a8cf8d04135131db547833e">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString profile = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a2ac72615beed06db3a4b5bb847a77822">UBFileSystemUtils::readTextFile</a>(<span class="stringliteral">&quot;:/podcast/uniboard.prx&quot;</span>);</div>
 <div class="line"></div>
@@ -650,6 +653,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a801e301615033b92ead75e531edb9c02">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> audioOk = <span class="keyword">true</span>;</div>
 <div class="line"></div>
@@ -720,6 +725,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a99dada54baedf71288f70c78dcf6ac1a">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html#l00228">228</a> of file <a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line"></div>
@@ -760,6 +767,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a8feffc37810d5b9ee249545028c65cae">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00054">54</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="stringliteral">&quot;wmv&quot;</span>;</div>
 <div class="line">        }</div>
@@ -785,6 +794,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00077">77</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a146bb01971d761af98640cfbded1807c"></a>
@@ -804,6 +815,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00080">80</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
 
 </div>
 </div>
@@ -825,6 +838,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00079">79</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a38b54f5f1670140c15b7491666957a9f"></a>
@@ -844,6 +859,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00074">74</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
 
 </div>
 </div>
@@ -865,6 +882,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00076">76</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0960b300e5fc19035597fe82a3073457"></a>
@@ -884,6 +903,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00072">72</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
 
 </div>
 </div>
@@ -905,22 +926,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html#l00071">71</a> of file <a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a></li>
-<li><a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp.html">UBWindowsMediaVideoEncoder.cpp</a></li>
+<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a></li>
+<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp_source.html">UBWindowsMediaVideoEncoder.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html">UBWindowsMediaVideoEncoder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:34 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d4/df9/class_w_b_edit_table_view.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d4/df9/class_w_b_edit_table_view.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -130,7 +110,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab40e16c3d64fb3712ca28644eeeb95da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df9/class_w_b_edit_table_view.html#ab40e16c3d64fb3712ca28644eeeb95da">WBEditTableView</a> (QWidget *parent=0)</td></tr>
 <tr class="memitem:ad1f22df09c5846ec738a9e1a9367b561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df9/class_w_b_edit_table_view.html#ad1f22df09c5846ec738a9e1a9367b561">keyPressEvent</a> (QKeyEvent *event)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d3/d07/_w_b_edit_table_view_8h_source.html#l00070">70</a> of file <a class="el" href="../../d3/d07/_w_b_edit_table_view_8h_source.html">WBEditTableView.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab40e16c3d64fb3712ca28644eeeb95da"></a>
 <div class="memitem">
 <div class="memproto">
@@ -144,6 +127,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html#l00070">70</a> of file <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html">WBEditTableView.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QTableView(parent)</div>
 <div class="line">{</div>
 <div class="line">}</div>
@@ -164,6 +149,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html#l00075">75</a> of file <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html">WBEditTableView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ((event-&gt;key() == Qt::Key_Delete</div>
 <div class="line">        || <span class="keyword">event</span>-&gt;key() == Qt::Key_Backspace)</div>
@@ -206,6 +193,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html#l00099">99</a> of file <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html">WBEditTableView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (model())</div>
 <div class="line">        model()-&gt;removeRows(0, model()-&gt;rowCount(rootIndex()), rootIndex());</div>
@@ -233,6 +222,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html#l00087">87</a> of file <a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html">WBEditTableView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!model() || !selectionModel())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -256,19 +247,15 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d3/d07/_w_b_edit_table_view_8h_source.html">WBEditTableView.h</a></li>
-<li><a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp.html">WBEditTableView.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d3/d07/_w_b_edit_table_view_8h_source.html">WBEditTableView.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d1/da2/_w_b_edit_table_view_8cpp_source.html">WBEditTableView.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d4/df9/class_w_b_edit_table_view.html">WBEditTableView</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:35 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

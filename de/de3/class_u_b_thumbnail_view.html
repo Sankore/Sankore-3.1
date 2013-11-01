@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/de3/class_u_b_thumbnail_view.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('de/de3/class_u_b_thumbnail_view.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -135,7 +115,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a83b3510d682bb3d3405dadd92d0d36eb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de3/class_u_b_thumbnail_view.html#a83b3510d682bb3d3405dadd92d0d36eb">drawBackground</a> (QPainter *painter, const QRectF &amp;rect)</td></tr>
 <tr class="memitem:a550c709e1525f451761ad4370c569b14"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de3/class_u_b_thumbnail_view.html#a550c709e1525f451761ad4370c569b14">mouseDoubleClickEvent</a> (QMouseEvent *event)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../dc/d40/_u_b_thumbnail_view_8h_source.html#l00031">31</a> of file <a class="el" href="../../dc/d40/_u_b_thumbnail_view_8h_source.html">UBThumbnailView.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a56ca20e79108cb195cd7c5dfc7f410b7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -148,6 +131,8 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html#l00031">31</a> of file <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html">UBThumbnailView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);</div>
 <div class="line">    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);</div>
@@ -176,6 +161,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html#l00038">38</a> of file <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html">UBThumbnailView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -246,6 +233,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html">UBThumbnailView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Do not draw crossed background in thumbnails</span></div>
 <div class="line">    <span class="keywordflow">if</span> (qobject_cast&lt;UBGraphicsScene*&gt;(scene())-&gt;isDarkBackground())</div>
@@ -281,6 +270,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html#l00056">56</a> of file <a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html">UBThumbnailView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    emit <a class="code" href="../../de/de3/class_u_b_thumbnail_view.html#a7f1ddd44a1dca43b728c6d68aecd33f5">doubleClicked</a>();</div>
@@ -298,19 +289,15 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dc/d40/_u_b_thumbnail_view_8h_source.html">UBThumbnailView.h</a></li>
-<li><a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp.html">UBThumbnailView.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../dc/d40/_u_b_thumbnail_view_8h_source.html">UBThumbnailView.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../dd/df6/_u_b_thumbnail_view_8cpp_source.html">UBThumbnailView.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../de/de3/class_u_b_thumbnail_view.html">UBThumbnailView</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:33 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

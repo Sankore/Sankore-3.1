@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4ece80c69b6edd07df782a5802cea5a3.html">api</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBWidgetMessageAPI.cpp</div>  </div>
@@ -137,7 +121,7 @@ $(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    : QObject(parent)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    , mGraphicsWidgetItem(graphicsWidgetItem)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    connect(<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">UBWidgetAPIMessageBroker::instance</a>(), SIGNAL(newMessage(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(onNewMessage(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), Qt::QueuedConnection);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    connect(<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">UBWidgetAPIMessageBroker::instance</a>(), SIGNAL(newMessage(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af1dc22ac7d5ead2309f8801c1d1efc2c">onNewMessage</a>(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), Qt::QueuedConnection);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af047cb11849fe33f642093620b6e413d">   37</a></span>&#160;<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af047cb11849fe33f642093620b6e413d">UBWidgetMessageAPI::~UBWidgetMessageAPI</a>()</div>
@@ -152,11 +136,11 @@ $(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> UBWidgetMessageAPI::onNewMessage(<span class="keyword">const</span> QString&amp; pTopicName, <span class="keyword">const</span> QString&amp; pMessage)</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af1dc22ac7d5ead2309f8801c1d1efc2c">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af1dc22ac7d5ead2309f8801c1d1efc2c">UBWidgetMessageAPI::onNewMessage</a>(<span class="keyword">const</span> QString&amp; pTopicName, <span class="keyword">const</span> QString&amp; pMessage)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (mSubscribedTopics.contains(pTopicName))</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a>.contains(pTopicName))</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (mGraphicsWidgetItem &amp;&amp; mGraphicsWidgetItem-&gt;page() &amp;&amp; mGraphicsWidgetItem-&gt;page()-&gt;mainFrame())</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a> &amp;&amp; <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>-&gt;page() &amp;&amp; <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>-&gt;page()-&gt;mainFrame())</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            QString js;</div>
@@ -164,7 +148,7 @@ $(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            js += <span class="stringliteral">&quot;{widget.messages.onmessage(&#39;&quot;</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            js += pMessage + <span class="stringliteral">&quot;&#39;, &#39;&quot;</span> + pTopicName + <span class="stringliteral">&quot;&#39;)}&quot;</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            mGraphicsWidgetItem-&gt;page()-&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>-&gt;page()-&gt;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                mainFrame()-&gt;evaluateJavaScript(js);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
@@ -173,17 +157,17 @@ $(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>* UBWidgetAPIMessageBroker::sInstance = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>* <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a4502cf0d98f7bc0afa7812b3554b0daf">UBWidgetAPIMessageBroker::sInstance</a> = 0;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;UBWidgetAPIMessageBroker::UBWidgetAPIMessageBroker(QObject *parent)</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#ae5b9fef6126ef42e3b4ee149cd6e73c2">   73</a></span>&#160;<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#ae5b9fef6126ef42e3b4ee149cd6e73c2">UBWidgetAPIMessageBroker::UBWidgetAPIMessageBroker</a>(QObject *parent)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    : QObject(parent)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;UBWidgetAPIMessageBroker::~UBWidgetAPIMessageBroker()</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a028defb975f3a8b91974c233288daef9">   80</a></span>&#160;<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a028defb975f3a8b91974c233288daef9">UBWidgetAPIMessageBroker::~UBWidgetAPIMessageBroker</a>()</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
@@ -191,10 +175,10 @@ $(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">   86</a></span>&#160;<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>* <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">UBWidgetAPIMessageBroker::instance</a>()</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (!sInstance)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        sInstance = <span class="keyword">new</span> <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#af72d66aadc04a5b23e8ca42c0944273a">UBApplication::staticMemoryCleaner</a>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a4502cf0d98f7bc0afa7812b3554b0daf">sInstance</a>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a4502cf0d98f7bc0afa7812b3554b0daf">sInstance</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#ae5b9fef6126ef42e3b4ee149cd6e73c2">UBWidgetAPIMessageBroker</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#af72d66aadc04a5b23e8ca42c0944273a">UBApplication::staticMemoryCleaner</a>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> sInstance;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a4502cf0d98f7bc0afa7812b3554b0daf">sInstance</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
@@ -204,15 +188,11 @@ $(document).ready(function(){initNavTree('dc/d22/_u_b_widget_message_a_p_i_8cpp_
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    emit <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a3eb3aae947d7d867f2c3017a99afd0c9">newMessage</a>(pTopicName, pMessage);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4ece80c69b6edd07df782a5802cea5a3.html">api</a></li><li class="navelem"><a class="el" href="../../dc/d22/_u_b_widget_message_a_p_i_8cpp.html">UBWidgetMessageAPI.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:41 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:12 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

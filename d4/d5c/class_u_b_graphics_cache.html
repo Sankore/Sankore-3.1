@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d4/d5c/class_u_b_graphics_cache.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d4/d5c/class_u_b_graphics_cache.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -221,7 +201,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a87b164f64911804513b9167e6d16a9cf inherit pro_attribs_class_u_b_item"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1e/class_u_b_item.html#a4d073757053cafbe4f26c17ea1224d53">RenderingQuality</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#a87b164f64911804513b9167e6d16a9cf">mRenderingQuality</a></td></tr>
 <tr class="memitem:ad90f56dfda5ef98f0d5139bd49840faa inherit pro_attribs_class_u_b_item"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#ad90f56dfda5ef98f0d5139bd49840faa">mSourceUrl</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00039">39</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a51142ffae19dd793b126d69433117edc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -237,6 +220,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00053">53</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 <div class="fragment"><div class="line">{ <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a51142ffae19dd793b126d69433117edcae2a2971867d7c709556783d664814bbd">Type</a> = <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28a6451bcee28bc3998f10870c9231f4701">UBGraphicsItemType::cacheItemType</a> };</div>
 </div><!-- fragment -->
 </div>
@@ -258,6 +243,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00043">43</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a960329a65b2dc045d3bf3c10511fb2aaa83a35c452140f48acb380a78aa7a9423">OnClick</a> = 0,</div>
 <div class="line">        <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a960329a65b2dc045d3bf3c10511fb2aaa0a843dc02b203dc03d7e6199191ccdeb">Persistent</a></div>
@@ -278,6 +265,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#afcb7d59f36db52edb948a0f7d077bd78">sInstances</a>.remove(<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a2081205dff371c14c3acbd33c9bafed6">mScene</a>);</div>
 <div class="line">}</div>
@@ -305,6 +294,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00045">45</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                       : QGraphicsRectItem()</div>
 <div class="line">  , <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a4aa3f52bed120ee657abb679401cc8af">mMaskColor</a>(Qt::black)</div>
 <div class="line">  , <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#af89dac4eebb2c6483e5aaf6d14958d5f">mMaskShape</a>(<a class="code" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232a07f69a00fec0245d0ac76ff2e81db521">eMaskShape_Circle</a>)</div>
@@ -393,6 +384,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a21483eccaad22369e9fe6bca838af029">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00105">105</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a> *cp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>*<span class="keyword">&gt;</span>(copy);</div>
 <div class="line">    <span class="keywordflow">if</span> (cp)</div>
@@ -437,6 +430,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a5ef870748a215b3f5f3218d0178b17b9">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>* copy = <span class="keyword">new</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#ad97f4613cc51cb654e9ff3c6db4fdfd8">UBGraphicsCache</a>(<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a2081205dff371c14c3acbd33c9bafed6">mScene</a>);</div>
 <div class="line"></div>
@@ -479,6 +474,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00246">246</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a88283ca8ae547557220cb2de22a78a56">mDrawMask</a> = draw;</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a88283ca8ae547557220cb2de22a78a56">mDrawMask</a>)</div>
@@ -514,6 +511,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00274">274</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>.height();</div>
 <div class="line">}</div>
@@ -541,6 +540,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00269">269</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>.width();</div>
 <div class="line">}</div>
@@ -578,6 +579,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00206">206</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a7d0e32351955d14f46be0f6ee19e8335">mShouldDrawAtHoverEnter</a>)</div>
 <div class="line">        <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#ab51c8e49d13dae60ad149ef6e4127e43">drawHole</a>(<span class="keyword">true</span>);</div>
@@ -619,6 +622,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00216">216</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a7d0e32351955d14f46be0f6ee19e8335">mShouldDrawAtHoverEnter</a> = <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a88283ca8ae547557220cb2de22a78a56">mDrawMask</a>;</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#ab51c8e49d13dae60ad149ef6e4127e43">drawHole</a>(<span class="keyword">false</span>);</div>
@@ -657,6 +662,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00223">223</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#ab52d5e77a5f14200b5d9559aee283427">setHolePos</a>(event-&gt;pos());</div>
 <div class="line">}</div>
@@ -692,6 +699,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setFlag(QGraphicsItem::ItemIsMovable, <span class="keyword">true</span>);</div>
 <div class="line">    setFlag(QGraphicsItem::ItemIsSelectable, <span class="keyword">true</span>);</div>
@@ -721,6 +730,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00038">38</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#afcb7d59f36db52edb948a0f7d077bd78">sInstances</a>.contains(scene))</div>
 <div class="line">        <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#afcb7d59f36db52edb948a0f7d077bd78">sInstances</a>.insert(scene, <span class="keyword">new</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>(scene));</div>
@@ -760,6 +771,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00116">116</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a4aa3f52bed120ee657abb679401cc8af">mMaskColor</a>;</div>
 <div class="line">}</div>
@@ -788,6 +801,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#af89dac4eebb2c6483e5aaf6d14958d5f">mMaskShape</a>;</div>
 <div class="line">}</div>
@@ -825,6 +840,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00228">228</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#ab52d5e77a5f14200b5d9559aee283427">setHolePos</a>(event-&gt;pos());</div>
 <div class="line">}</div>
@@ -861,6 +878,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00193">193</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a960329a65b2dc045d3bf3c10511fb2aaa83a35c452140f48acb380a78aa7a9423">OnClick</a> == <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a51337929c1e8e87c79fc2d39be90190c">mCurrentMode</a>)</div>
 <div class="line">    {</div>
@@ -905,6 +924,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00233">233</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
@@ -965,6 +986,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00158">158</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(option);</div>
 <div class="line">    Q_UNUSED(widget);</div>
@@ -1023,6 +1046,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00285">285</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>.setHeight(height);</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a34d0e6aa27365de82ac42191d4faf9a6">casheLastHoleSize</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>);</div>
@@ -1061,6 +1086,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00259">259</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a9cb1acc1151d2920bcfb6d9a9130fb8d">mHolePos</a> = pos;</div>
 <div class="line"></div>
@@ -1103,6 +1130,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00291">291</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a> = size/<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>()-&gt;viewportTransform().m11();</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a34d0e6aa27365de82ac42191d4faf9a6">casheLastHoleSize</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>);</div>
@@ -1141,6 +1170,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00279">279</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>.setWidth(width);   </div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a34d0e6aa27365de82ac42191d4faf9a6">casheLastHoleSize</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>);</div>
@@ -1180,6 +1211,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00121">121</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a4aa3f52bed120ee657abb679401cc8af">mMaskColor</a> = color;</div>
 <div class="line">    update();</div>
@@ -1210,6 +1243,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00132">132</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#af89dac4eebb2c6483e5aaf6d14958d5f">mMaskShape</a> = shape;</div>
 <div class="line">    update();</div>
@@ -1240,6 +1275,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a51337929c1e8e87c79fc2d39be90190c">mCurrentMode</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a960329a65b2dc045d3bf3c10511fb2aa">eMode</a><span class="keyword">&gt;</span>(mode);</div>
 <div class="line"></div>
@@ -1292,6 +1329,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00055">55</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a51142ffae19dd793b126d69433117edcae2a2971867d7c709556783d664814bbd">Type</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -1317,6 +1356,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html#l00297">297</a> of file <a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRectF r;</div>
 <div class="line">    <span class="keywordtype">int</span> x;</div>
@@ -1361,6 +1402,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00100">100</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3da30c623726c9b86672f8876895e065"></a>
@@ -1380,6 +1423,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00110">110</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 
 </div>
 </div>
@@ -1401,6 +1446,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00093">93</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9cb1acc1151d2920bcfb6d9a9130fb8d"></a>
@@ -1420,6 +1467,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00094">94</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 
 </div>
 </div>
@@ -1441,6 +1490,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00102">102</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4aa3f52bed120ee657abb679401cc8af"></a>
@@ -1460,6 +1511,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00091">91</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 
 </div>
 </div>
@@ -1481,6 +1534,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00092">92</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8432b4027bb82497ba68e58dfd529b49"></a>
@@ -1500,6 +1555,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00096">96</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 
 </div>
 </div>
@@ -1521,6 +1578,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00095">95</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4eb89febd44bee5c5e4c4b7de53ac25a"></a>
@@ -1540,6 +1599,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00109">109</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 
 </div>
 </div>
@@ -1561,6 +1622,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00097">97</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7d0e32351955d14f46be0f6ee19e8335"></a>
@@ -1580,6 +1643,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00098">98</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
 
 </div>
 </div>
@@ -1601,22 +1666,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html#l00089">89</a> of file <a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a></li>
-<li><a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp.html">UBGraphicsCache.cpp</a></li>
+<li>Sankore-3.1/src/tools/<a class="el" href="../../d8/d96/_u_b_graphics_cache_8h_source.html">UBGraphicsCache.h</a></li>
+<li>Sankore-3.1/src/tools/<a class="el" href="../../d7/d76/_u_b_graphics_cache_8cpp_source.html">UBGraphicsCache.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:01 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:25 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_94e594cdd27e95416cbd3d01270586ae.html">intranet</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBIntranetPodcastPublisher.cpp</div>  </div>
@@ -161,23 +145,23 @@ $(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4965ecc747e29ef3c2a180d4078e1fbd">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4965ecc747e29ef3c2a180d4078e1fbd">UBIntranetPodcastPublisher::publishVideo</a>(<span class="keyword">const</span> QString&amp; videoFilePath, <span class="keywordtype">long</span> durationInMs)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mVideoFilePath = videoFilePath;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    mVideoDurationInMs = durationInMs;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a> = videoFilePath;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a65fc0813c1968cd48c20c022a6428795">mVideoDurationInMs</a> = durationInMs;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html">UBIntranetPodcastPublishingDialog</a> pub(mVideoFilePath, <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html">UBIntranetPodcastPublishingDialog</a> pub(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>, <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    pub.title-&gt;setText(QFileInfo(mVideoFilePath).completeBaseName());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    pub.title-&gt;setText(QFileInfo(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>).completeBaseName());</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    QString defaultAuthor = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a892b406d947337b92a2590fb638f4730">intranetPodcastAuthor</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    pub.author-&gt;setText(defaultAuthor);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (pub.exec() == QDialog::Accepted)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        mTitle = pub.title-&gt;text();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        mDescription = pub.description-&gt;toPlainText();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        mAuthor  = pub.author-&gt;text();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a44a379aae578bc17ef2705ab484bbb9d">mTitle</a> = pub.title-&gt;text();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ae31dd8fa956e9c73abc119e3289b1c86">mDescription</a> = pub.description-&gt;toPlainText();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaa22ee2f496e8fd84daae91b75c6edf2">mAuthor</a>  = pub.author-&gt;text();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a892b406d947337b92a2590fb638f4730">intranetPodcastAuthor</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(mAuthor);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a892b406d947337b92a2590fb638f4730">intranetPodcastAuthor</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaa22ee2f496e8fd84daae91b75c6edf2">mAuthor</a>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a5bd46ab637671de895e047500f5eb975">postVideoPublishingRequest</a>();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
@@ -214,22 +198,22 @@ $(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../d8/d81/class_u_b_application.html#afd12508537e75aaa6789431e60b60b44">UBApplication::showMessage</a>(<span class="stringliteral">&quot;Publishing video to the intranet&quot;</span>, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    mPublishingRequest = <span class="keyword">new</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a>(<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>());</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a> = <span class="keyword">new</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a>(<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>());</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    connect(mPublishingRequest, SIGNAL(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)), <span class="keyword">this</span>,  SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)));</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    connect(mPublishingRequest, SIGNAL(finished(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#acf2339af36b92c6d132dd15519c0b056">postVideoPublishingResponse</a>(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    connect(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>, SIGNAL(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)), <span class="keyword">this</span>,  SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    connect(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>, SIGNAL(finished(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#acf2339af36b92c6d132dd15519c0b056">postVideoPublishingResponse</a>(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    QByteArray payload;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    payload.append(metadata().toUtf8());</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    payload.append(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a1f09b2ee4a2d10d22fa15f5de68684b0">metadata</a>().toUtf8());</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    mPublishingRequest-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a6bc3fcbabc21855cd7ca127bee77fb5d">setVerbose</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a6bc3fcbabc21855cd7ca127bee77fb5d">setVerbose</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    mPublishingRequest-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ae3b7956d7cbf7f8bf391813a301c1079">post</a>(url, payload);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ae3b7956d7cbf7f8bf391813a301c1079">post</a>(url, payload);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;QString UBIntranetPodcastPublisher::metadata()</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a1f09b2ee4a2d10d22fa15f5de68684b0">  126</a></span>&#160;QString <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a1f09b2ee4a2d10d22fa15f5de68684b0">UBIntranetPodcastPublisher::metadata</a>()</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    QStringList metadatas;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
@@ -247,9 +231,9 @@ $(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    QString date = <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#aca5c79d1ca00f4ecbf5e014b7d9810a6">UBStringUtils::toUtcIsoDateTime</a>(QDateTime::currentDateTime());</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    QString duration = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((mVideoDurationInMs / 1000) + 1);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    QString duration = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a65fc0813c1968cd48c20c022a6428795">mVideoDurationInMs</a> / 1000) + 1);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    QFileInfo fi(mVideoFilePath);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    QFileInfo fi(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    QString fileName = fi.fileName();</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    QString computerName =  <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a6bf71483635b95189385501950c100cf">UBPlatformUtils::computerName</a>();</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    QString fileSize = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(fi.size());</div>
@@ -257,22 +241,22 @@ $(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    QString templatePath = <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#ae595b29e794b20564550fd45515fc0a8">UBPlatformUtils::applicationResourcesDirectory</a>() + <span class="stringliteral">&quot;/etc/intranet-podcast-metadata.template&quot;</span>;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    QString templateContent = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a2ac72615beed06db3a4b5bb847a77822">UBFileSystemUtils::readTextFile</a>(templatePath);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> templateContent.replace(<span class="stringliteral">&quot;{title}&quot;</span>, mTitle)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                          .replace(<span class="stringliteral">&quot;{description}&quot;</span>, mDescription)</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                          .replace(<span class="stringliteral">&quot;{author}&quot;</span>, mAuthor)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> templateContent.replace(<span class="stringliteral">&quot;{title}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a44a379aae578bc17ef2705ab484bbb9d">mTitle</a>)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                          .replace(<span class="stringliteral">&quot;{description}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ae31dd8fa956e9c73abc119e3289b1c86">mDescription</a>)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                          .replace(<span class="stringliteral">&quot;{author}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaa22ee2f496e8fd84daae91b75c6edf2">mAuthor</a>)</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                          .replace(<span class="stringliteral">&quot;{publicationISODateTime}&quot;</span>, date)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                          .replace(<span class="stringliteral">&quot;{duration}&quot;</span>, duration)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                          .replace(<span class="stringliteral">&quot;{fileName}&quot;</span>, fileName)</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                          .replace(<span class="stringliteral">&quot;{computerName}&quot;</span>, computerName)</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                          .replace(<span class="stringliteral">&quot;{fileSize}&quot;</span>, fileSize)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                          .replace(<span class="stringliteral">&quot;{filePath}&quot;</span>, mVideoFilePath);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                          .replace(<span class="stringliteral">&quot;{filePath}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
 <div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#acf2339af36b92c6d132dd15519c0b056">  167</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#acf2339af36b92c6d132dd15519c0b056">UBIntranetPodcastPublisher::postVideoPublishingResponse</a>(<span class="keywordtype">bool</span> success, <span class="keyword">const</span> QByteArray&amp; pPayload)</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    mPublishingRequest-&gt;deleteLater();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>-&gt;deleteLater();</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span>(success)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
@@ -307,16 +291,16 @@ $(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    connect(dialogButtons, SIGNAL(accepted()), <span class="keyword">this</span>, SLOT(accept()));</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    connect(dialogButtons, SIGNAL(rejected()), <span class="keyword">this</span>, SLOT(reject()));</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    connect(title, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    connect(description, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(updateUIState()));</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    connect(author, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    connect(title, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    connect(description, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">updateUIState</a>()));</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    connect(author, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setText(tr(<span class="stringliteral">&quot;Publish&quot;</span>));</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keywordtype">void</span> UBIntranetPodcastPublishingDialog::updateUIState(<span class="keyword">const</span> QString&amp; <span class="keywordtype">string</span>)</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">  213</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">UBIntranetPodcastPublishingDialog::updateUIState</a>(<span class="keyword">const</span> QString&amp; <span class="keywordtype">string</span>)</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    Q_UNUSED(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
@@ -327,15 +311,11 @@ $(document).ready(function(){initNavTree('d5/d24/_u_b_intranet_podcast_publisher
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(ok);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_94e594cdd27e95416cbd3d01270586ae.html">intranet</a></li><li class="navelem"><a class="el" href="../../d5/d24/_u_b_intranet_podcast_publisher_8cpp.html">UBIntranetPodcastPublisher.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

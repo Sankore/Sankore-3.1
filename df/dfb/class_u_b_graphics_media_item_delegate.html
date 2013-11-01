@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/dfb/class_u_b_graphics_media_item_delegate.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/dfb/class_u_b_graphics_media_item_d
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -242,7 +222,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a2e13161a55c9568ef3ebcebbf549d4cb inherit signals_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a2e13161a55c9568ef3ebcebbf549d4cb">showOnDisplayChanged</a> (bool shown)</td></tr>
 <tr class="memitem:a4afe1bba736659418f3d165ff935ad05 inherit signals_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a4afe1bba736659418f3d165ff935ad05">lockChanged</a> (bool locked)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00037">37</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4537890b1bc61c757fcfcbac5790a07b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -272,6 +255,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a78857ae5335c1a31581a38210d8b2e5e">UBGraphicsItemDelegate</a>(pDelegated, parent, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>, <span class="keyword">true</span>)</div>
 <div class="line">    , <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#ae6c2550cd7836da9af6f1250248e819b">mMedia</a>(pMedia)</div>
 <div class="line">    , <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a3f7c09c6bfaeb788b1b85c0225c78f8d">mToolBarShowTimer</a>(NULL)</div>
@@ -333,6 +318,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a3f7c09c6bfaeb788b1b85c0225c78f8d">mToolBarShowTimer</a>)</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a3f7c09c6bfaeb788b1b85c0225c78f8d">mToolBarShowTimer</a>;</div>
@@ -363,6 +350,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#afd35164da102e7acbb5d7dd097618a5c">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a10af235b512235a940a35b4b2988cde5">mPlayPauseButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/play.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
 <div class="line">    connect(<a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a10af235b512235a940a35b4b2988cde5">mPlayPauseButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#ac947682092d79a94f345660ece49292d">togglePlayPause</a>()));</div>
@@ -439,6 +428,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad45be6a0cc44a46d51b7fd70eb5a3c79">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00218">218</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line">}</div>
@@ -474,6 +465,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00084">84</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;hide();</div>
 <div class="line">}</div>
@@ -520,6 +513,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00254">254</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(newstate);</div>
 <div class="line">    Q_UNUSED(oldstate);</div>
@@ -574,6 +569,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1e3cda77c7ecc5f3e8863947b0a8f217">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00073">73</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;show();</div>
@@ -608,6 +605,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ab5bea580591d38d488f536d80278eade">UBGraphicsItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a0d2d62936d516875a60975d4f66d3dde">UBGraphicsItemDelegate::positionHandles</a>();</div>
 <div class="line"></div>
@@ -709,6 +708,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>() &amp;&amp; <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>()-&gt;mediaObject())</div>
 <div class="line">        <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>()-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acb9624b430d6dcf237200bdb86daf5d4">mediaObject</a>()-&gt;stop();</div>
@@ -747,6 +748,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00209">209</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>()-&gt;isMuted())</div>
 <div class="line">        <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#af04cff1ac6ce4dea0ac103c95f740007">mMuteButton</a>-&gt;<a class="code" href="../../da/dec/class_delegate_button.html#ad19af21c9249e5a94865d2386668482a">setFileName</a>(<span class="stringliteral">&quot;:/images/soundOff.svg&quot;</span>);</div>
@@ -794,6 +797,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00224">224</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>() &amp;&amp; <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>()-&gt;mediaObject()) {</div>
 <div class="line"></div>
@@ -864,6 +869,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00286">286</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a68cba7dc02297fe37d7c0f8ace77b280">mMediaControl</a>-&gt;<a class="code" href="../../df/d0d/class_delegate_media_control.html#a18566e9073d0e81ed0de968b2511d226">totalTimeChanged</a>(newTotalTime);</div>
 <div class="line">}</div>
@@ -908,6 +915,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00267">267</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Phonon::MediaObject* media = <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>()-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acb9624b430d6dcf237200bdb86daf5d4">mediaObject</a>();</div>
 <div class="line"></div>
@@ -958,6 +967,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html#l00278">278</a> of file <a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Phonon::MediaObject* media = <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">delegated</a>()-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acb9624b430d6dcf237200bdb86daf5d4">mediaObject</a>();</div>
 <div class="line">    <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a68cba7dc02297fe37d7c0f8ace77b280">mMediaControl</a>-&gt;<a class="code" href="../../df/d0d/class_delegate_media_control.html#a18566e9073d0e81ed0de968b2511d226">totalTimeChanged</a>(media-&gt;totalTime());</div>
@@ -1003,6 +1014,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00081">81</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae6c2550cd7836da9af6f1250248e819b"></a>
@@ -1022,6 +1035,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00078">78</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -1043,6 +1058,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00076">76</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af04cff1ac6ce4dea0ac103c95f740007"></a>
@@ -1062,6 +1079,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00075">75</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -1083,6 +1102,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00073">73</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1e4e109e8f668e66fc0ebfcb22fd024d"></a>
@@ -1102,6 +1123,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00074">74</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -1123,22 +1146,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html#l00080">80</a> of file <a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a></li>
-<li><a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp.html">UBGraphicsMediaItemDelegate.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d4/d27/_u_b_graphics_media_item_delegate_8h_source.html">UBGraphicsMediaItemDelegate.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../df/d20/_u_b_graphics_media_item_delegate_8cpp_source.html">UBGraphicsMediaItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html">UBGraphicsMediaItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:26 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

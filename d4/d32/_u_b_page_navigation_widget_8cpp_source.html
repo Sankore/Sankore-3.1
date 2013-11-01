@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d4/d32/_u_b_page_navigation_widget_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d4/d32/_u_b_page_navigation_widget_8cp
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBPageNavigationWidget.cpp</div>  </div>
@@ -152,65 +136,65 @@ $(document).ready(function(){initNavTree('d4/d32/_u_b_page_navigation_widget_8cp
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Build the gui</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mLayout = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    setLayout(mLayout);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1d3dd5f9e39ac529f4d6816fdd5d9836">mLayout</a> = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    setLayout(<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1d3dd5f9e39ac529f4d6816fdd5d9836">mLayout</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mNavigator = <span class="keyword">new</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html">UBDocumentNavigator</a>(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mLayout-&gt;addWidget(mNavigator, 1);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a232fe8645294c884d0c2d8869d2ab222">mNavigator</a> = <span class="keyword">new</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html">UBDocumentNavigator</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1d3dd5f9e39ac529f4d6816fdd5d9836">mLayout</a>-&gt;addWidget(<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a232fe8645294c884d0c2d8869d2ab222">mNavigator</a>, 1);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mHLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mLayout-&gt;addLayout(mHLayout, 0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a0c64f1667a807075d61cf222cc34e9ee">mHLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1d3dd5f9e39ac529f4d6816fdd5d9836">mLayout</a>-&gt;addLayout(<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a0c64f1667a807075d61cf222cc34e9ee">mHLayout</a>, 0);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    mPageNbr = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    mClock = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mHLayout-&gt;addWidget(mPageNbr);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    mHLayout-&gt;addWidget(mClock);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a> = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a> = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a0c64f1667a807075d61cf222cc34e9ee">mHLayout</a>-&gt;addWidget(<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a0c64f1667a807075d61cf222cc34e9ee">mHLayout</a>-&gt;addWidget(<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Configure the page number indicator</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    mPageNbr-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#abb36254c65368f6f40b2d9dc84948574" title="Set the page number.">setPageNumber</a>(0, 0);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    mPageNbr-&gt;setAlignment(Qt::AlignHCenter);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a>-&gt;setAlignment(Qt::AlignHCenter);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Configure the clock</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    mClock-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel {color: white; background-color: transparent; text-align: center; font-family: Arial; font-weight: bold; font-size: 20px}&quot;</span>));</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    mTimeFormat = QLocale::system().timeFormat(QLocale::ShortFormat);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    mClock-&gt;setAlignment(Qt::AlignHCenter);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel {color: white; background-color: transparent; text-align: center; font-family: Arial; font-weight: bold; font-size: 20px}&quot;</span>));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a44ea25d12093d9ced4f5e8f3c3946b40">mTimeFormat</a> = QLocale::system().timeFormat(QLocale::ShortFormat);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a>-&gt;setAlignment(Qt::AlignHCenter);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//strip seconds</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    mTimeFormat = mTimeFormat.remove(<span class="stringliteral">&quot;:ss&quot;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    mTimeFormat = mTimeFormat.remove(<span class="stringliteral">&quot;:s&quot;</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    mTimerID = startTimer(1000);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a44ea25d12093d9ced4f5e8f3c3946b40">mTimeFormat</a> = <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a44ea25d12093d9ced4f5e8f3c3946b40">mTimeFormat</a>.remove(<span class="stringliteral">&quot;:ss&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a44ea25d12093d9ced4f5e8f3c3946b40">mTimeFormat</a> = <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a44ea25d12093d9ced4f5e8f3c3946b40">mTimeFormat</a>.remove(<span class="stringliteral">&quot;:s&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a809525d9fa29693871e3b2495e8d0b82">mTimerID</a> = startTimer(1000);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a5e5839945df49e97fc8097601d98e31d">   88</a></span>&#160;<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a5e5839945df49e97fc8097601d98e31d" title="Destructor.">UBPageNavigationWidget::~UBPageNavigationWidget</a>()</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    killTimer(mTimerID);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    killTimer(<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a809525d9fa29693871e3b2495e8d0b82">mTimerID</a>);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span>(NULL != mClock)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a>)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">delete</span> mClock;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        mClock = NULL;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a> = NULL;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(NULL != mPageNbr)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a>)</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">delete</span> mPageNbr;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        mPageNbr = NULL;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a> = NULL;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span>(NULL != mHLayout)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a0c64f1667a807075d61cf222cc34e9ee">mHLayout</a>)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">delete</span> mHLayout;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        mHLayout = NULL;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a0c64f1667a807075d61cf222cc34e9ee">mHLayout</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a0c64f1667a807075d61cf222cc34e9ee">mHLayout</a> = NULL;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span>(NULL != mLayout)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1d3dd5f9e39ac529f4d6816fdd5d9836">mLayout</a>)</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">delete</span> mLayout;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        mLayout = NULL;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1d3dd5f9e39ac529f4d6816fdd5d9836">mLayout</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1d3dd5f9e39ac529f4d6816fdd5d9836">mLayout</a> = NULL;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span>(NULL != mNavigator)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a232fe8645294c884d0c2d8869d2ab222">mNavigator</a>)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">delete</span> mNavigator;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        mNavigator = NULL;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a232fe8645294c884d0c2d8869d2ab222">mNavigator</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a232fe8645294c884d0c2d8869d2ab222">mNavigator</a> = NULL;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
@@ -224,42 +208,38 @@ $(document).ready(function(){initNavTree('d4/d32/_u_b_page_navigation_widget_8cp
 <div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ac1bc151ba98ff3623a67fc23c08f8125">  133</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ac1bc151ba98ff3623a67fc23c08f8125" title="Notify a timer event.">UBPageNavigationWidget::timerEvent</a>(QTimerEvent *event)</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    Q_UNUSED(event);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    updateTime();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1518412d0b35e62add2e357656f9919d" title="Update the current time.">updateTime</a>();</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keywordtype">void</span> UBPageNavigationWidget::updateTime()</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1518412d0b35e62add2e357656f9919d">  142</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a1518412d0b35e62add2e357656f9919d" title="Update the current time.">UBPageNavigationWidget::updateTime</a>()</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (mClock)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a>)</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        mClock-&gt;setText(QLocale::system().toString (QTime::currentTime(), mTimeFormat));</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#ab346a3a61c8dc668a7dcbb3669d207fe">mClock</a>-&gt;setText(QLocale::system().toString (QTime::currentTime(), <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a44ea25d12093d9ced4f5e8f3c3946b40">mTimeFormat</a>));</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
 <div class="line"><a name="l00155"></a><span class="lineno"><a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#abb36254c65368f6f40b2d9dc84948574">  155</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#abb36254c65368f6f40b2d9dc84948574" title="Set the page number.">UBPageNavigationWidget::setPageNumber</a>(<span class="keywordtype">int</span> current, <span class="keywordtype">int</span> total)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    mPageNbr-&gt;setText(QString(<span class="stringliteral">&quot;%1 / %2&quot;</span>).arg(current).arg(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a50018eb826fe5ea46d168cf02b8f1dd8">UBDocumentContainer::sceneIndexFromPage</a>(total)));</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a36f1f2ac34d02fb623105bb7421777d3">mPageNbr</a>-&gt;setText(QString(<span class="stringliteral">&quot;%1 / %2&quot;</span>).arg(current).arg(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a50018eb826fe5ea46d168cf02b8f1dd8">UBDocumentContainer::sceneIndexFromPage</a>(total)));</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordtype">int</span> UBPageNavigationWidget::customMargin()</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a2299065ffb1b1a4ce3ce17a8f8a6a9ff">  164</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a2299065ffb1b1a4ce3ce17a8f8a6a9ff" title="Get the custom margin value.">UBPageNavigationWidget::customMargin</a>()</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">return</span> 5;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">int</span> UBPageNavigationWidget::border()</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a523c79c3738b7fb1a79074dacb99cddf">  173</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/def/class_u_b_page_navigation_widget.html#a523c79c3738b7fb1a79074dacb99cddf" title="Get the border value.">UBPageNavigationWidget::border</a>()</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> 15;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d4/d32/_u_b_page_navigation_widget_8cpp.html">UBPageNavigationWidget.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

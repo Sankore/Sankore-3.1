@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d25/class_u_b_startup_hints_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d25/class_u_b_startup_hints_palette
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -198,7 +178,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa60468f6497774009446c5761ab73fd0 inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#aa60468f6497774009446c5761ab73fd0">sLayoutContentMargin</a> = 12</td></tr>
 <tr class="memitem:ac78ed632e01f218be6aa7201e0ac4e3f inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#ac78ed632e01f218be6aa7201e0ac4e3f">sLayoutSpacing</a> = 15</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html#l00036">36</a> of file <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aad63bc3c56b04a4632294e74cacef6a6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -212,6 +195,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00039">39</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                            :</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a0f6f20a3b1bb802881b939a19f42fb03">UBFloatingPalette</a>(Qt::TopRightCorner,parent)</div>
 <div class="line">{</div>
@@ -264,6 +249,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00068">68</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">//    DELETEPTR(mButtonLayout);</span></div>
 <div class="line"><span class="comment">//    DELETEPTR(mLayout);</span></div>
@@ -292,6 +279,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00114">114</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 40;</div>
 <div class="line">}</div>
@@ -318,6 +307,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    hide();</div>
 <div class="line">}</div>
@@ -353,6 +344,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00119">119</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a>-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a72926d4c2ae2e6220cb9b9996892e5fa">mpSankoreAPI</a>);</div>
 <div class="line">}</div>
@@ -391,6 +384,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a0753813a51d64397eb365d854a71491c">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;pos().x() &gt;= 0 &amp;&amp; <span class="keyword">event</span>-&gt;pos().x() &lt; QPixmap(<span class="stringliteral">&quot;:/images/close.svg&quot;</span>).width()</div>
 <div class="line">        &amp;&amp; <span class="keyword">event</span>-&gt;pos().y() &gt;= 0 &amp;&amp; <span class="keyword">event</span>-&gt;pos().y() &lt; QPixmap(<span class="stringliteral">&quot;:/images/close.svg&quot;</span>).height())</div>
@@ -434,6 +429,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00101">101</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#adf80724a5b19f7164a194113d40b8e1f">appStartupHintsEnabled</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#ace7b75378f8faad31ab6ce6ea1c7589b">setBool</a>(state == Qt::Checked);</div>
 <div class="line">}</div>
@@ -481,6 +478,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a8244a24b5bda64467ad6af028d93fd7b">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00074">74</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a7dc51b85fd9ca55c193cc4da9354fb91">UBFloatingPalette::paintEvent</a>(event);</div>
 <div class="line"></div>
@@ -513,6 +512,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#ad1b5652affcca631745df045446974fa">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html#l00106">106</a> of file <a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#abc34a1ea7b29b6aaa4a0ea25d5715210">adjustSizeAndPosition</a>();</div>
@@ -549,6 +550,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html#l00058">58</a> of file <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adf3a0726728a1928de67b6e792c0fdc6"></a>
@@ -568,6 +571,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html#l00057">57</a> of file <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a>.</p>
 
 </div>
 </div>
@@ -589,6 +594,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html#l00059">59</a> of file <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a19ccc6f47dd725c0d6dc15c155029d8a"></a>
@@ -608,6 +615,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html#l00060">60</a> of file <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a>.</p>
 
 </div>
 </div>
@@ -629,22 +638,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html#l00056">56</a> of file <a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a></li>
-<li><a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp.html">UBStartupHintsPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d4/d08/_u_b_startup_hints_palette_8h_source.html">UBStartupHintsPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp_source.html">UBStartupHintsPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d25/class_u_b_startup_hints_palette.html">UBStartupHintsPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:31 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/d14/class_u_b_application_controller.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('da/d14/class_u_b_application_controlle
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -220,7 +200,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8595db8bd89b28076b35d46e054dfd43"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d14/class_u_b_application_controller.html#a8595db8bd89b28076b35d46e054dfd43">networkAccessManager</a></td></tr>
 <tr class="memitem:a9fdc1da884d5b52c58f24dc95e311d76"><td class="memItemLeft" align="right" valign="top">QHttp *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d14/class_u_b_application_controller.html#a9fdc1da884d5b52c58f24dc95e311d76">mHttp</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00045">45</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a72ac04dd6883ac94b53e8e1dcdf2af39"></a>
 <div class="memitem">
 <div class="memproto">
@@ -246,6 +229,8 @@ Private Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00093">93</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39aa0f9efa6fbb8f90678211cb00da2b646">Board</a> = 0, <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39a9ce3a4e10162d943b31ed0256217beff">Internet</a>, <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39a3cc9258fdbf77ba4b2e5cbfaf8d96162">Document</a>, <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39af61436ac684ec52876d001078836cb71">Tutorial</a>, <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39ae736b178ecd74f11875671f9235542d2">ParaschoolEditor</a>, <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39a4271c2cddb6ba22c68839f271f76fe46">WebDocument</a></div>
 <div class="line">        };</div>
@@ -294,6 +279,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00069">69</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(parent)</div>
 <div class="line">    , <a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>(pMainWindow)</div>
 <div class="line">    , <a class="code" href="../../da/d14/class_u_b_application_controller.html#a20de84a057fe13ec2ee6bf4a03ccead0">mControlView</a>(pControlView)</div>
@@ -375,6 +362,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00125">125</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span>(<a class="code" href="../../d1/d78/class_u_b_board_view.html">UBBoardView</a>* view, <a class="code" href="../../da/d14/class_u_b_application_controller.html#acd65c7cfb4d0426d7c539b1e9549fa0b">mPreviousViews</a>)</div>
 <div class="line">    {</div>
@@ -409,6 +398,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00816">816</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!UBApplication::closingDown())</div>
 <div class="line">    {</div>
@@ -458,6 +449,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00796">796</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!UBApplication::closingDown())</div>
 <div class="line">    {</div>
@@ -507,6 +500,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00836">836</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!UBApplication::closingDown())</div>
 <div class="line">    {</div>
@@ -548,6 +543,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00180">180</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> highResolution = <a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>-&gt;width() &gt; 1024;</div>
 <div class="line"></div>
@@ -620,6 +617,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00320">320</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!embedCode.isEmpty())</div>
 <div class="line">    {</div>
@@ -688,6 +687,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Add the pPixmap to the current scene and reactivate the board. This Slot is connected with uninotes to manage the transition between board and uninotes. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00285">285</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!pPixmap.isNull())</div>
 <div class="line">    {</div>
@@ -753,6 +754,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00212">212</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d14/class_u_b_application_controller.html#a6257fdd4f0d1592be5e37489147a4f66">mDisplayView</a>)</div>
 <div class="line">    {</div>
@@ -827,6 +830,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00244">244</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> viewIndex = pActiveSceneIndex;</div>
 <div class="line"></div>
@@ -892,6 +897,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00279">279</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a84caf1d192dc758cd7c2cd0d45cfa3f4">mDisplayManager</a>-&gt;<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ad63e13d90aee1a779ba82c72345fbad7">blackout</a>();</div>
 <div class="line">}</div>
@@ -910,8 +917,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_aaafa825c25da0324cf8323307fd61ed3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_aaafa825c25da0324cf8323307fd61ed3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -937,6 +943,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00559">559</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../da/d14/class_u_b_application_controller.html#a9fdc1da884d5b52c58f24dc95e311d76">mHttp</a>)</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../da/d14/class_u_b_application_controller.html#a9fdc1da884d5b52c58f24dc95e311d76">mHttp</a>;</div>
@@ -986,6 +994,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00608">608</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;appEnableAutomaticSoftwareUpdates-&gt;get().toBool()){</div>
 <div class="line">        <a class="code" href="../../da/d14/class_u_b_application_controller.html#adf7f6aa5380f166ed961000cb3bed6a1">isNoUpdateDisplayed</a> = <span class="keyword">false</span>;</div>
@@ -1033,6 +1043,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00616">616</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#adf7f6aa5380f166ed961000cb3bed6a1">isNoUpdateDisplayed</a> = <span class="keyword">true</span>;</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#ae6ac86a9d6bcd998b6435ea5de3300e7">checkUpdate</a> ();</div>
@@ -1061,6 +1073,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00688">688</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d14/class_u_b_application_controller.html#a9155b8fecaa89d7565ad2a1820dc6d0b">mMirror</a>)</div>
 <div class="line">        <a class="code" href="../../da/d14/class_u_b_application_controller.html#a9155b8fecaa89d7565ad2a1820dc6d0b">mMirror</a>-&gt;<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a86fde636fadf9a639177c0e8ff76b915">stop</a>();</div>
@@ -1089,8 +1103,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_a13ca4ebb295f8dd80390ab49c96ff7c3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_a13ca4ebb295f8dd80390ab49c96ff7c3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1150,6 +1163,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00083">83</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../da/d14/class_u_b_application_controller.html#a84caf1d192dc758cd7c2cd0d45cfa3f4">mDisplayManager</a>;</div>
 <div class="line">        }</div>
@@ -1186,6 +1201,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00098">98</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../da/d14/class_u_b_application_controller.html#ae0579c4e5c7c4d8ee09814aa8bffb63c">mMainMode</a>;</div>
 <div class="line">        }</div>
@@ -1222,6 +1239,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00586">586</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QScriptValue scriptValue;</div>
 <div class="line">    QScriptEngine scriptEngine;</div>
@@ -1283,6 +1302,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00622">622</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae0579c4e5c7c4d8ee09814aa8bffb63c">mMainMode</a> == <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39aa0f9efa6fbb8f90678211cb00da2b646">Board</a>)</div>
 <div class="line">    {</div>
@@ -1345,6 +1366,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00722">722</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> QFile fileToOpen(pFilePath);</div>
 <div class="line"></div>
@@ -1417,6 +1440,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00054">54</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../da/d14/class_u_b_application_controller.html#a8fd9fa4e3d231100be679a62c76b2cd6">mInitialHScroll</a>; }</div>
 </div><!-- fragment -->
 </div>
@@ -1441,6 +1466,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00055">55</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../da/d14/class_u_b_application_controller.html#a1d10c0cdb9d2dd2b0f81c15aa8429e02">mInitialVScroll</a>; }</div>
 </div><!-- fragment -->
 </div>
@@ -1458,6 +1485,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a84caf1d192dc758cd7c2cd0d45cfa3f4">mDisplayManager</a>-&gt;<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8b704ad13b84eb0353814ff4113b8e85">setControlWidget</a>(<a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>);</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a84caf1d192dc758cd7c2cd0d45cfa3f4">mDisplayManager</a>-&gt;<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a621254d8cb7ab7967cdab619c76962f5">setDisplayWidget</a>(<a class="code" href="../../da/d14/class_u_b_application_controller.html#a6257fdd4f0d1592be5e37489147a4f66">mDisplayView</a>);</div>
@@ -1483,8 +1512,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-33-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_ad4515cc1199971e7fba2b5afca906781_icgraph.svg" width="462" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_ad4515cc1199971e7fba2b5afca906781_icgraph.svg" width="462" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1513,6 +1541,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a8fd9fa4e3d231100be679a62c76b2cd6">mInitialHScroll</a> = horizontalPosition;</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a1d10c0cdb9d2dd2b0f81c15aa8429e02">mInitialVScroll</a> = verticalPostition;</div>
@@ -1565,6 +1595,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00105">105</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../da/d14/class_u_b_application_controller.html#ad02960f64b57595d0b0259ddd64c4ae8">mIsShowingDesktop</a>;</div>
 <div class="line">        }</div>
@@ -1618,6 +1650,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00661">661</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d14/class_u_b_application_controller.html#a9155b8fecaa89d7565ad2a1820dc6d0b">mMirror</a>)</div>
 <div class="line">    {</div>
@@ -1684,6 +1718,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00158">158</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a08b1f4c2db7f5005579800cac076234c">initViewState</a>(<a class="code" href="../../da/d14/class_u_b_application_controller.html#a20de84a057fe13ec2ee6bf4a03ccead0">mControlView</a>-&gt;horizontalScrollBar()-&gt;value(),</div>
 <div class="line">            <a class="code" href="../../da/d14/class_u_b_application_controller.html#a20de84a057fe13ec2ee6bf4a03ccead0">mControlView</a>-&gt;verticalScrollBar()-&gt;value());</div>
@@ -1761,6 +1797,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00652">652</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d14/class_u_b_application_controller.html#a9155b8fecaa89d7565ad2a1820dc6d0b">mMirror</a>)</div>
 <div class="line">    {</div>
@@ -1801,6 +1839,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00341">341</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>-&gt;webToolBar-&gt;hide();</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>-&gt;documentToolBar-&gt;hide();</div>
@@ -1889,6 +1929,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00466">466</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> desktopWidgetIndex = qApp-&gt;desktop()-&gt;screenNumber(<a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>);</div>
 <div class="line"></div>
@@ -1948,6 +1990,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00426">426</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>-&gt;webToolBar-&gt;hide();</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a3b60b448f860a081e76a11eb5eafc237">mMainWindow</a>-&gt;boardToolBar-&gt;hide();</div>
@@ -2001,8 +2045,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-47-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_a074e9435d9ab3aff5d05ab47e5a37e3e_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d14/class_u_b_application_controller_a074e9435d9ab3aff5d05ab47e5a37e3e_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2020,6 +2063,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00389">389</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>)</div>
@@ -2099,6 +2144,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00704">704</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!UBApplication::closingDown())</div>
 <div class="line">    {</div>
@@ -2156,6 +2203,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00530">530</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>)</div>
@@ -2224,6 +2273,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00494">494</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>)</div>
@@ -2298,6 +2349,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00088">88</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../da/d14/class_u_b_application_controller.html#a5c3c538c6d76d4c6ca4b704467be70e6">mUninoteController</a>;</div>
 <div class="line">        }</div>
@@ -2344,6 +2397,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00569">569</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordflow">if</span> (error){</div>
 <div class="line">       qWarning() &lt;&lt; <span class="stringliteral">&quot;http command id&quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;return the error: &quot;</span> &lt;&lt; <a class="code" href="../../da/d14/class_u_b_application_controller.html#a9fdc1da884d5b52c58f24dc95e311d76">mHttp</a>-&gt;errorString();</div>
@@ -2399,6 +2454,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00755">755</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a84caf1d192dc758cd7c2cd0d45cfa3f4">mDisplayManager</a>-&gt;<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a89345c872ad8abfdde371811d10b7044">setUseMultiScreen</a>(use);</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a84caf1d192dc758cd7c2cd0d45cfa3f4">mDisplayManager</a>-&gt;<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a29552f5710e39a7e45c63627ead4d0e6">adjustScreens</a>(0);</div>
@@ -2429,6 +2486,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html#l00764">764</a> of file <a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString scriptDirPath = <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#ae595b29e794b20564550fd45515fc0a8">UBPlatformUtils::applicationResourcesDirectory</a>() + <span class="stringliteral">&quot;/widget-inline-js&quot;</span>;</div>
 <div class="line">    QDir scriptDir(scriptDirPath);</div>
@@ -2497,6 +2556,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00177">177</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a90088ed397581f61caa0d78d9bd87986"></a>
@@ -2516,6 +2577,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00170">170</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2537,6 +2600,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00158">158</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3b3e42a56122c82919aa6ca06aa22fea"></a>
@@ -2556,6 +2621,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00171">171</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2577,6 +2644,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00154">154</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a84caf1d192dc758cd7c2cd0d45cfa3f4"></a>
@@ -2596,6 +2665,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00168">168</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2617,6 +2688,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00155">155</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9fdc1da884d5b52c58f24dc95e311d76"></a>
@@ -2636,6 +2709,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00182">182</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2657,6 +2732,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00162">162</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1d10c0cdb9d2dd2b0f81c15aa8429e02"></a>
@@ -2676,6 +2753,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00162">162</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2697,6 +2776,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00175">175</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae0579c4e5c7c4d8ee09814aa8bffb63c"></a>
@@ -2716,6 +2797,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00166">166</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2737,6 +2820,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00152">152</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9155b8fecaa89d7565ad2a1820dc6d0b"></a>
@@ -2756,6 +2841,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00160">160</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2777,6 +2864,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00156">156</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5c3c538c6d76d4c6ca4b704467be70e6"></a>
@@ -2796,6 +2885,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00150">150</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
 
 </div>
 </div>
@@ -2817,22 +2908,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html#l00179">179</a> of file <a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a></li>
-<li><a class="el" href="../../d5/d36/_u_b_application_controller_8cpp.html">UBApplicationController.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../db/d86/_u_b_application_controller_8h_source.html">UBApplicationController.h</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d5/d36/_u_b_application_controller_8cpp_source.html">UBApplicationController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../da/d14/class_u_b_application_controller.html">UBApplicationController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:55 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:18 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

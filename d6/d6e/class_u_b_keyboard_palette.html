@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d6/d6e/class_u_b_keyboard_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d6/d6e/class_u_b_keyboard_palette.html
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -299,7 +279,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa60468f6497774009446c5761ab73fd0 inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#aa60468f6497774009446c5761ab73fd0">sLayoutContentMargin</a> = 12</td></tr>
 <tr class="memitem:ac78ed632e01f218be6aa7201e0ac4e3f inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#ac78ed632e01f218be6aa7201e0ac4e3f">sLayoutSpacing</a> = 15</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00084">84</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa37fa74f921fa125b304707b858c4d24"></a>
 <div class="memitem">
 <div class="memproto">
@@ -313,6 +296,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">        : <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a389dab585e37f7e97617370ee784a514">UBActionPalette</a>(Qt::TopRightCorner, parent)</div>
 <div class="line">{</div>
 <div class="line"></div>
@@ -381,6 +366,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//for (int i=0; i&lt;47; i++)</span></div>
 <div class="line">    <span class="comment">//    delete buttons[i];</span></div>
@@ -439,6 +426,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00249">249</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QSize rSize = <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a0753b0ec9b10e348b8a531a72ad10149">sizeHint</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (rSize != size())</div>
@@ -466,8 +455,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d6e/class_u_b_keyboard_palette_a9ca20112f36af4cfa66a792c23eb6a64_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d6e/class_u_b_keyboard_palette_a9ca20112f36af4cfa66a792c23eb6a64_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -493,6 +481,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a>.</p>
 <div class="fragment"><div class="line">{}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -526,6 +516,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html#l00160">160</a> of file <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a33f51621b951a59ea5d1db123443729c">ctrlButtons</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html">UBKeyboardButton</a>*[9];</div>
 <div class="line"></div>
@@ -574,6 +566,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a2d23d85ab504d42ccbd603a8eb5c543c">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00219">219</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#aef54c43da0af803602863f013f643aaa">keyboardActive</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -616,6 +610,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00103">103</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 <div class="fragment"><div class="line">{QString res; res.sprintf(<span class="stringliteral">&quot;%dx%d&quot;</span>, <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a2703020b8e54ecb7dbd47b5a59e70389">btnWidth</a>, <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a8962dc6970979b1e417b39ba7ad05975">btnHeight</a>); <span class="keywordflow">return</span> res;}</div>
 </div><!-- fragment -->
 </div>
@@ -640,6 +636,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00181">181</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a21f5effb3b82fc431de3e5f7f35d612d">locales</a> == NULL ? NULL : &amp;(<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a21f5effb3b82fc431de3e5f7f35d612d">locales</a>[<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a5cc143fd2f778206618afad6f0dcb2b6">nCurrentLocale</a>]-&gt;<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a2b0a9e2afe0dff9abdc767ab8d29f59a">name</a>);</div>
 <div class="line">}</div>
@@ -675,6 +673,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00113">113</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionVirtualKeyboard-&gt;activate(QAction::Trigger);</div>
 <div class="line">}</div>
@@ -710,6 +710,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00090">90</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#af8d731f629b8476184064ca887a6f5fb">m_isVisible</a> = <span class="keyword">false</span>;</div>
 <div class="line">    setVisible(<span class="keyword">false</span>);</div>
@@ -766,6 +768,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00100">100</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a21f5effb3b82fc431de3e5f7f35d612d">locales</a>!= NULL;}</div>
 </div><!-- fragment -->
 </div>
@@ -824,6 +828,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00130">130</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a289f55c2084f9c084006b5db4b463c6f">setKeyButtonSize</a>(size.toString());</div>
 <div class="line">}</div>
@@ -869,6 +875,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00231">231</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a81336a2103daeb7dc6cdfccbd16d3c28">languagePopupActive</a> || !<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#aef54c43da0af803602863f013f643aaa">keyboardActive</a> || <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a657c2c6a41c9a06ca8d7ec9e5e67a7e9">mIsMoving</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -978,6 +986,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00243">243</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a54509a0865871f992c417e36b3f4a5c2">UBActionPalette::moveEvent</a>(event);</div>
 <div class="line">    emit <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#abc5328ca16e99915385f5164e89ec954">moved</a>(event-&gt;pos());</div>
@@ -1015,6 +1025,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html#l00179">179</a> of file <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (activated)</div>
 <div class="line">    {</div>
@@ -1104,6 +1116,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00386">386</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a28fc73141e73b77b52fda5f170e25c2d">onActivated</a>(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -1140,6 +1154,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html#l00229">229</a> of file <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> maxMapOffset = 3; <span class="comment">//Suppose to have at least 2 keysym groups due to X11 xlib specification</span></div>
 <div class="line"></div>
@@ -1242,6 +1258,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../de/dc5/class_u_b_action_palette.html#a70b2e19272054aba6cf9ea8ddfd0955b">UBActionPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00263">263</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a66b82c67e76214def8461b6a7b64d845">checkLayout</a>();</div>
 <div class="line"></div>
@@ -1420,6 +1438,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00135">135</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (locale!=NULL)</div>
 <div class="line">    {</div>
@@ -1456,6 +1476,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00201">201</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QStringList strs = _strSize.split(<span class="charliteral">&#39;x&#39;</span>);</div>
 <div class="line"></div>
@@ -1514,6 +1536,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00186">186</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a21f5effb3b82fc431de3e5f7f35d612d">locales</a> != NULL)</div>
 <div class="line">    {</div>
@@ -1569,6 +1593,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#af8d731f629b8476184064ca887a6f5fb">m_isVisible</a> = show;</div>
 <div class="line">}</div>
@@ -1604,6 +1630,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00174">174</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> w = contentsMargins().left() + 15 * <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a2703020b8e54ecb7dbd47b5a59e70389">btnWidth</a> + contentsMargins().right();</div>
 <div class="line">    <span class="keywordtype">int</span> h = contentsMargins().top() + 5 * <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a8962dc6970979b1e417b39ba7ad05975">btnHeight</a> + contentsMargins().bottom();</div>
@@ -1615,8 +1643,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d6e/class_u_b_keyboard_palette_a0753b0ec9b10e348b8a531a72ad10149_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d6e/class_u_b_keyboard_palette_a0753b0ec9b10e348b8a531a72ad10149_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1643,6 +1670,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00124">124</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a5cc143fd2f778206618afad6f0dcb2b6">nCurrentLocale</a> = nLocale;</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#ac6c2255d9b2f9c18dd794194c03b9c47">setInput</a>(<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a21f5effb3b82fc431de3e5f7f35d612d">locales</a>[<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a5cc143fd2f778206618afad6f0dcb2b6">nCurrentLocale</a>]);</div>
@@ -1680,6 +1709,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00118">118</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#acaac045d872cd85602623a0c7c65d4c7">m_pos</a> = pos;</div>
 <div class="line">    move(pos);</div>
@@ -1706,6 +1737,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00089">89</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2fee37f0ee7ccf18ed88d1b5b948df46"></a>
@@ -1725,6 +1758,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00088">88</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1746,6 +1781,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00092">92</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad529f92a5b8f216b0a349c6ef547780f"></a>
@@ -1766,6 +1803,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00091">91</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1b5e1692d61dd3978962a4590ba37a49"></a>
@@ -1785,6 +1824,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00090">90</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1807,6 +1848,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00135">135</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2703020b8e54ecb7dbd47b5a59e70389"></a>
@@ -1826,6 +1869,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00134">134</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1847,6 +1892,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00158">158</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2d909b6f756fa79b5c4a540f4cab9de8"></a>
@@ -1866,6 +1913,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00176">176</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1887,6 +1936,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00124">124</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a33f51621b951a59ea5d1db123443729c"></a>
@@ -1907,6 +1958,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00159">159</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9d0abd15cff143a07e6af72ef606e3bd"></a>
@@ -1918,6 +1971,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00098">98</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1939,6 +1994,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00138">138</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a81336a2103daeb7dc6cdfccbd16d3c28"></a>
@@ -1958,6 +2015,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00137">137</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1979,6 +2038,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00128">128</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af8d731f629b8476184064ca887a6f5fb"></a>
@@ -1991,6 +2052,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00106">106</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acaac045d872cd85602623a0c7c65d4c7"></a>
@@ -2002,6 +2065,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00107">107</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2023,6 +2088,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00176">176</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a71d96ddaeb03a3c8e75dec9274210a59"></a>
@@ -2042,6 +2109,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00176">176</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2063,6 +2132,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00126">126</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8607ac73d82334965befc3e8580fcb4b"></a>
@@ -2082,6 +2153,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00127">127</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2103,6 +2176,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00130">130</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac467a9543cc5794c9f08d295063b0351"></a>
@@ -2122,6 +2197,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00156">156</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2143,6 +2220,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00125">125</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab5ba725c0853d7e402e94195368e7ef3"></a>
@@ -2162,6 +2241,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00131">131</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -2183,6 +2264,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00174">174</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a74a528e1583463f1c68553ae1b4d4ccc"></a>
@@ -2203,25 +2286,23 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00133">133</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
-<li><a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp.html">UBKeyboardPalette.cpp</a></li>
-<li><a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp.html">UBKeyboardPalette_linux.cpp</a></li>
-<li><a class="el" href="../../dd/d68/_u_b_keyboard_palette__mac_8cpp.html">UBKeyboardPalette_mac.cpp</a></li>
-<li><a class="el" href="../../da/d7d/_u_b_keyboard_palette__win_8cpp.html">UBKeyboardPalette_win.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../dd/d68/_u_b_keyboard_palette__mac_8cpp_source.html">UBKeyboardPalette_mac.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../da/d7d/_u_b_keyboard_palette__win_8cpp_source.html">UBKeyboardPalette_win.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d6/d6e/class_u_b_keyboard_palette.html">UBKeyboardPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

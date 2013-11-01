@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d63/_content_handler_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d8/d63/_content_handler_8cpp_source.ht
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">ContentHandler.cpp</div>  </div>
@@ -141,7 +125,7 @@ $(document).ready(function(){initNavTree('d8/d63/_content_handler_8cpp_source.ht
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">using namespace </span>merge_lib;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//concatenate stream of all objects which contain Content of Page</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> ContentHandler::_processObjectContent(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement)</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#ac81784df6c8becfb20f2079418ba5300">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#ac81784df6c8becfb20f2079418ba5300">ContentHandler::_processObjectContent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfPage = _findEndOfElementContent(startOfPageElement);</div>
@@ -152,7 +136,7 @@ $(document).ready(function(){initNavTree('d8/d63/_content_handler_8cpp_source.ht
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//write concatenated stream to Page object</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> ContentHandler::_changeObjectContent(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement)</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#a4d793a1570756cc1242760af9b9db0f1">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#a4d793a1570756cc1242760af9b9db0f1">ContentHandler::_changeObjectContent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfPage = _findEndOfElementContent(startOfPageElement);</div>
@@ -173,7 +157,7 @@ $(document).ready(function(){initNavTree('d8/d63/_content_handler_8cpp_source.ht
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// object - object with stream</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//leftBound - left bound of object&#39;s content</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">//rightBound - right bound of object&#39;s content</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">string</span> ContentHandler::_retrieveStreamContent(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">merge_lib::Object</a> * <span class="keywordtype">object</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> leftBound, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rightBound)</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#a3e3cbe4bac9bfe87308bbce79cfa0cae">   70</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#a3e3cbe4bac9bfe87308bbce79cfa0cae">ContentHandler::_retrieveStreamContent</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">merge_lib::Object</a> * <span class="keywordtype">object</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> leftBound, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rightBound)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{   </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keywordflow">return</span> (object-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a42a15267894aa3119b5eb5e389c705fa" title="hasStream">hasStream</a>()) ? </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      _getStreamFromContent(<span class="keywordtype">object</span>) :</div>
@@ -181,7 +165,7 @@ $(document).ready(function(){initNavTree('d8/d63/_content_handler_8cpp_source.ht
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">//get stream from Array elements</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">string</span> ContentHandler::_getStreamFromReferencies(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">merge_lib::Object</a> * objectWithArray, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> leftBound, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rightBound)</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#a01fae2d8b303942e4ec346c51bc934b5">   78</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#a01fae2d8b303942e4ec346c51bc934b5">ContentHandler::_getStreamFromReferencies</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">merge_lib::Object</a> * objectWithArray, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> leftBound, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rightBound)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   std::string result;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   std::vector&lt;Object *&gt; referencies = objectWithArray-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(leftBound, rightBound);</div>
@@ -194,24 +178,20 @@ $(document).ready(function(){initNavTree('d8/d63/_content_handler_8cpp_source.ht
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">//get stream from Object</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">string</span> ContentHandler::_getStreamFromContent(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">merge_lib::Object</a> * objectWithStream)</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#ae0cf4febb14019cea97a6fd7fb84454e">   91</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html#ae0cf4febb14019cea97a6fd7fb84454e">ContentHandler::_getStreamFromContent</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">merge_lib::Object</a> * objectWithStream)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html">Filter</a> filter(objectWithStream);    </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   <span class="keywordtype">string</span> decodedStream;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   filter.getDecodedStream(decodedStream);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   filter.<a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a111a1cb125cfc3d2391365e864be4d5c">getDecodedStream</a>(decodedStream);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   <span class="keywordflow">return</span> decodedStream;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d8/d63/_content_handler_8cpp.html">ContentHandler.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

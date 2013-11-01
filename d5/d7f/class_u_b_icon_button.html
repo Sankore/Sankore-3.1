@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/d7f/class_u_b_icon_button.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d5/d7f/class_u_b_icon_button.html','..
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -143,7 +123,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a5ae4c66eff1527c51f88cbdd6f88c398"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html#a5ae4c66eff1527c51f88cbdd6f88c398">mIconSize</a></td></tr>
 <tr class="memitem:a8b678ffd804e56764790e2ddbe6590d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html#l00029">29</a> of file <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a87f92b0abd00c9b83bc1efc8b50715b3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -167,6 +150,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html#l00031">31</a> of file <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html">UBIconButton.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QAbstractButton(parent)</div>
 <div class="line">    , <a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
@@ -230,6 +215,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html#l00062">62</a> of file <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html">UBIconButton.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a5ae4c66eff1527c51f88cbdd6f88c398">mIconSize</a>;</div>
 <div class="line">}</div>
@@ -257,6 +244,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html#l00055">55</a> of file <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html">UBIconButton.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
@@ -295,6 +284,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html">UBIconButton.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a>)</div>
 <div class="line">        setChecked(<span class="keyword">true</span>);</div>
@@ -325,6 +316,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html">UBIconButton.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
 <div class="line">    QPixmap pixmap = icon().pixmap(<a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a5ae4c66eff1527c51f88cbdd6f88c398">mIconSize</a>, isChecked() ? QIcon::Selected : QIcon::Normal);</div>
@@ -354,6 +347,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html#l00036">36</a> of file <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a> = pToggleable;}</div>
 </div><!-- fragment -->
 </div>
@@ -377,6 +372,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html#l00045">45</a> of file <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8b678ffd804e56764790e2ddbe6590d6"></a>
@@ -397,22 +394,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html#l00046">46</a> of file <a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a></li>
-<li><a class="el" href="../../d0/d62/_u_b_icon_button_8cpp.html">UBIconButton.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d0/d62/_u_b_icon_button_8cpp_source.html">UBIconButton.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html">UBIconButton</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:28 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/d21/_u_b_main_window_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d3/d21/_u_b_main_window_8cpp_source.ht
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBMainWindow.cpp</div>  </div>
@@ -149,8 +133,8 @@ $(document).ready(function(){initNavTree('d3/d21/_u_b_main_window_8cpp_source.ht
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Ui::MainWindow::setupUi(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    mpDownloadWidget = <span class="keyword">new</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mpDownloadWidget-&gt;setWindowModality(Qt::ApplicationModal);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a> = <span class="keyword">new</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>-&gt;setWindowModality(Qt::ApplicationModal);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//Setting tooltip colors staticly, since they look not quite well on different color themes</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QPalette toolTipPalette;</div>
@@ -176,10 +160,10 @@ $(document).ready(function(){initNavTree('d3/d21/_u_b_main_window_8cpp_source.ht
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="../../d8/d9e/class_u_b_main_window.html#a6f4df1b80b3201a8f4fa3316b1a5d0e9">   71</a></span>&#160;<a class="code" href="../../d8/d9e/class_u_b_main_window.html#a6f4df1b80b3201a8f4fa3316b1a5d0e9">UBMainWindow::~UBMainWindow</a>()</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(NULL != mpDownloadWidget)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">delete</span> mpDownloadWidget;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        mpDownloadWidget = NULL;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a> = NULL;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
@@ -352,29 +336,25 @@ $(document).ready(function(){initNavTree('d3/d21/_u_b_main_window_8cpp_source.ht
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
 <div class="line"><a name="l00247"></a><span class="lineno"><a class="code" href="../../d8/d9e/class_u_b_main_window.html#ae2949414a83e39ea1e86ed36dd875cb8">  247</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d9e/class_u_b_main_window.html#ae2949414a83e39ea1e86ed36dd875cb8">UBMainWindow::showDownloadWidget</a>()</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span>(NULL != mpDownloadWidget)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        mpDownloadWidget-&gt;show();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>-&gt;show();</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
 <div class="line"><a name="l00255"></a><span class="lineno"><a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4b99a4654dccfb65a5599c9fb8d3fb8a">  255</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4b99a4654dccfb65a5599c9fb8d3fb8a">UBMainWindow::hideDownloadWidget</a>()</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span>(NULL != mpDownloadWidget)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        mpDownloadWidget-&gt;hide();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>-&gt;hide();</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d3/d21/_u_b_main_window_8cpp.html">UBMainWindow.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

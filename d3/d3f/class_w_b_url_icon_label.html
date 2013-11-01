@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/d3f/class_w_b_url_icon_label.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d3/d3f/class_w_b_url_icon_label.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -137,7 +117,10 @@ Protected Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:afff70b21b1c2f2788f700efe8317e2ec"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d3f/class_w_b_url_icon_label.html#afff70b21b1c2f2788f700efe8317e2ec">m_dragStartPos</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00233">233</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8f59e6d48d3e640d1692c2187c73485b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -151,6 +134,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00250">250</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QLabel(parent)</div>
 <div class="line">    , <a class="code" href="../../d3/d3f/class_w_b_url_icon_label.html#a355a9c9777d749ef3e43a28202d32dd4">m_webView</a>(0)</div>
 <div class="line">{</div>
@@ -182,6 +167,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00265">265</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;buttons() == Qt::LeftButton</div>
 <div class="line">        &amp;&amp; (<span class="keyword">event</span>-&gt;pos() - <a class="code" href="../../d3/d3f/class_w_b_url_icon_label.html#afff70b21b1c2f2788f700efe8317e2ec">m_dragStartPos</a>).manhattanLength() &gt; QApplication::startDragDistance()</div>
@@ -229,6 +216,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00258">258</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;button() == Qt::LeftButton)</div>
 <div class="line">        <a class="code" href="../../d3/d3f/class_w_b_url_icon_label.html#afff70b21b1c2f2788f700efe8317e2ec">m_dragStartPos</a> = event-&gt;pos();</div>
@@ -256,6 +245,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00246">246</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a355a9c9777d749ef3e43a28202d32dd4"></a>
@@ -268,21 +259,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00239">239</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp.html">WBUrlLineEdit.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d3/d3f/class_w_b_url_icon_label.html">WBUrlIconLabel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:36 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

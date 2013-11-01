@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/d0f/class_u_b_display_manager.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dd/d0f/class_u_b_display_manager.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -188,7 +168,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a67bad609a6e6a5996641257d964420cd"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106">DisplayRole</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd">mScreenIndexesRoles</a></td></tr>
 <tr class="memitem:a0db3ff12a3a597baac02e1774d75d8fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00032">32</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a8ca88c477b630972d2d9fa7810162106"></a>
 <div class="memitem">
 <div class="memproto">
@@ -218,6 +201,8 @@ Private Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00067">67</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a57e4587d958cafc8042532bdb6027acb">None</a> = 0, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a1edc3ec56f2181bd9580d4e40fddad93">Control</a>, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a71761afed29f078efd2e43feacffefed">Display</a>, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a58c2534100f07932c5d5abf7151b056c">Previous1</a>, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a4543d641767b589dc8a28ee2df17c8db">Previous2</a>, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a5f808d237a5d20bc903d1ad99ef78604">Previous3</a>, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a9a0d74ec9324537a11931218df566c7e">Previous4</a>, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a995b8a82495623dd9aeea1fd4891a831">Previous5</a></div>
 <div class="line">        };</div>
@@ -238,6 +223,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00039">39</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(parent)</div>
 <div class="line">    , <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>(-1)</div>
 <div class="line">    , <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>(-1)</div>
@@ -286,6 +273,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -314,6 +303,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00181">181</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(screen);</div>
 <div class="line"></div>
@@ -338,8 +329,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a29552f5710e39a7e45c63627ead4d0e6_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a29552f5710e39a7e45c63627ead4d0e6_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -365,6 +355,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00240">240</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;int&gt; screenIndexes;</div>
 <div class="line"></div>
@@ -418,8 +410,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ad63e13d90aee1a779ba82c72345fbad7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ad63e13d90aee1a779ba82c72345fbad7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -445,6 +436,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00074">74</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>;</div>
 <div class="line">        }</div>
@@ -463,6 +456,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00165">165</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>);</div>
 <div class="line">}</div>
@@ -490,6 +485,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00170">170</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>);</div>
 <div class="line">}</div>
@@ -516,6 +513,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00052">52</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1;</div>
 <div class="line">        }</div>
@@ -525,8 +524,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aeaddf24885b0612083da8b4045a35847_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aeaddf24885b0612083da8b4045a35847_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -552,6 +550,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00057">57</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a> &gt; -1;</div>
 <div class="line">        }</div>
@@ -588,6 +588,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00062">62</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> !<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.isEmpty();</div>
 <div class="line">        }</div>
@@ -614,6 +616,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> screenCount = <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6e992c0a4a0042501c94b218328529d4">numScreens</a>();</div>
 <div class="line"></div>
@@ -672,8 +676,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aa8284ad27f57b0bb8811da517714e40a_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aa8284ad27f57b0bb8811da517714e40a_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -691,6 +694,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.size();</div>
 <div class="line">}</div>
@@ -718,6 +723,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00110">110</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a>)</div>
 <div class="line">    {</div>
@@ -761,6 +768,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00193">193</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a> &amp;&amp; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1)</div>
@@ -811,8 +820,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a55df2e19654e480ac5e38806cd0f097c_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a55df2e19654e480ac5e38806cd0f097c_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -839,6 +847,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(swap);</div>
 <div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a29552f5710e39a7e45c63627ead4d0e6">adjustScreens</a>(-1);</div>
@@ -881,8 +891,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8220ab5aebf94b5b596db35b4c9b767f_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8220ab5aebf94b5b596db35b4c9b767f_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -901,6 +910,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00129">129</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aeaddf24885b0612083da8b4045a35847">hasControl</a>() &amp;&amp; pControlWidget &amp;&amp; (pControlWidget != <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>))</div>
 <div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a> = pControlWidget;</div>
@@ -920,8 +931,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8b704ad13b84eb0353814ff4113b8e85_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8b704ad13b84eb0353814ff4113b8e85_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -940,6 +950,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00135">135</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(pControlWidget &amp;&amp; (pControlWidget != <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>))</div>
 <div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a> = pControlWidget;</div>
@@ -950,8 +962,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a28e33f53af270ad368f70c705380fb6b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a28e33f53af270ad368f70c705380fb6b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -970,6 +981,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00141">141</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(pDisplayWidget &amp;&amp; (pDisplayWidget != <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>))</div>
 <div class="line">    {</div>
@@ -1020,6 +1033,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00159">159</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a> = pPreviousViews;</div>
 <div class="line">}</div>
@@ -1029,8 +1044,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ae0930b6418b998eddc3dae6ca0e835d3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ae0930b6418b998eddc3dae6ca0e835d3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1067,6 +1081,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00293">293</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(role);</div>
 <div class="line">    Q_UNUSED(screenIndex);</div>
@@ -1087,6 +1103,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00300">300</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a> = pUse;</div>
 <div class="line">}</div>
@@ -1096,8 +1114,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a89345c872ad8abfdde371811d10b7044_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a89345c872ad8abfdde371811d10b7044_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1123,6 +1140,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html#l00281">281</a> of file <a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">while</span> (!<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">mBlackoutWidgets</a>.isEmpty())</div>
 <div class="line">    {</div>
@@ -1147,8 +1166,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a0d39dbe11146c6e9ebbe03f14bbebd2e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a0d39dbe11146c6e9ebbe03f14bbebd2e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1173,6 +1191,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00120">120</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1d33055b6ec537b516ac88d0f622c33b"></a>
@@ -1192,6 +1212,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00104">104</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 
 </div>
 </div>
@@ -1213,6 +1235,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00112">112</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2724e9260106d2ecd79769a1bb2b7213"></a>
@@ -1232,6 +1256,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00110">110</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 
 </div>
 </div>
@@ -1253,6 +1279,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00116">116</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6ba48a7d08a49ec9c1e9d1b2b3e130a7"></a>
@@ -1272,6 +1300,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00106">106</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 
 </div>
 </div>
@@ -1293,6 +1323,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00114">114</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2742b5a48594bd560d57ebaf0ee4de84"></a>
@@ -1312,6 +1344,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00118">118</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 
 </div>
 </div>
@@ -1333,6 +1367,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00108">108</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a67bad609a6e6a5996641257d964420cd"></a>
@@ -1352,6 +1388,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00122">122</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
 
 </div>
 </div>
@@ -1373,22 +1411,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html#l00124">124</a> of file <a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a></li>
-<li><a class="el" href="../../d5/d28/_u_b_display_manager_8cpp.html">UBDisplayManager.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d5/d28/_u_b_display_manager_8cpp_source.html">UBDisplayManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html">UBDisplayManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:21 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

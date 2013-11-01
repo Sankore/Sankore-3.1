@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/ded/_u_b_idle_timer_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('df/ded/_u_b_idle_timer_8cpp_source.htm
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBIdleTimer.cpp</div>  </div>
@@ -158,11 +142,11 @@ $(document).ready(function(){initNavTree('df/ded/_u_b_idle_timer_8cpp_source.htm
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// if the event is an input event (mouse / tablet / keyboard)</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (dynamic_cast&lt;QInputEvent*&gt;(event))</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        mLastInputEventTime = QDateTime::currentDateTime();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (mCursorIsHidden)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a8a4a48f45b54d523429a0de1a60f5b70">mLastInputEventTime</a> = QDateTime::currentDateTime();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a>)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            QApplication::restoreOverrideCursor();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            mCursorIsHidden = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
@@ -176,27 +160,23 @@ $(document).ready(function(){initNavTree('df/ded/_u_b_idle_timer_8cpp_source.htm
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">bool</span> hasWaitCuror = (UBApplication::overrideCursor() &amp;&amp;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                (UBApplication::overrideCursor()-&gt;shape() == Qt::WaitCursor));</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (!mCursorIsHidden</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            &amp;&amp; (mLastInputEventTime.secsTo(QDateTime::currentDateTime()) &gt;= 2)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            &amp;&amp; (<a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a8a4a48f45b54d523429a0de1a60f5b70">mLastInputEventTime</a>.secsTo(QDateTime::currentDateTime()) &gt;= 2)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        &amp;&amp; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        &amp;&amp; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;controlView()</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        &amp;&amp; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>()-&gt;hasFocus()</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        &amp;&amp; !hasWaitCuror)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        QApplication::setOverrideCursor(QCursor(Qt::BlankCursor));</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        mCursorIsHidden = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../df/ded/_u_b_idle_timer_8cpp.html">UBIdleTimer.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

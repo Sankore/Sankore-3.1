@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/d73/_u_b_graphics_group_container_item_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d7/d73/_u_b_graphics_group_container_i
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGraphicsGroupContainerItem.cpp</div>  </div>
@@ -254,7 +238,7 @@ $(document).ready(function(){initNavTree('d7/d73/_u_b_graphics_group_container_i
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    item-&gt;setTransform(newItemTransform);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">//    item-&gt;d_func()-&gt;setIsMemberOfGroup(true);</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    prepareGeometryChange();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    itemsBoundingRect |= itemTransform.mapRect(item-&gt;boundingRect() | item-&gt;childrenBoundingRect());</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb">itemsBoundingRect</a> |= itemTransform.mapRect(item-&gt;boundingRect() | item-&gt;childrenBoundingRect());</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    update();</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
 <div class="line"><a name="l00154"></a><span class="lineno"><a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a7da3a6916abfde2a91c77b9ec2ab974c">  154</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a7da3a6916abfde2a91c77b9ec2ab974c">UBGraphicsGroupContainerItem::removeFromGroup</a>(QGraphicsItem *item)</div>
@@ -278,30 +262,30 @@ $(document).ready(function(){initNavTree('d7/d73/_u_b_graphics_group_container_i
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
 <div class="line"><a name="l00173"></a><span class="lineno"><a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a162cb637cd3d001612aff2ac301809cb">  173</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a162cb637cd3d001612aff2ac301809cb">UBGraphicsGroupContainerItem::deselectCurrentItem</a>()</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (mCurrentItem)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>)</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">switch</span>(mCurrentItem-&gt;type())</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>-&gt;type())</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        {</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a8c363fe2aad7d560e8132f7b2f551f64a89d6e26f73d521f2aa319b661c5ff01a">UBGraphicsTextItem::Type</a>:</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;              {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(mCurrentItem)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;              }</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;              <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a940b930449b3aaf6cd9be3639d8d19f2a1694a0279d66b57a1604aba2a2921781">UBGraphicsMediaItem::Type</a>:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;              {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>*<span class="keyword">&gt;</span>(mCurrentItem)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;              }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;              <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        mCurrentItem-&gt;setSelected(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        mCurrentItem = NULL;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>-&gt;setSelected(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a> = NULL;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
 <div class="line"><a name="l00196"></a><span class="lineno"><a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a5fce14470bd8997b8ff38a06252f2c1e">  196</a></span>&#160;QRectF <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a5fce14470bd8997b8ff38a06252f2c1e">UBGraphicsGroupContainerItem::boundingRect</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">return</span> itemsBoundingRect;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb">itemsBoundingRect</a>;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
 <div class="line"><a name="l00200"></a><span class="lineno"><a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a9c1cc570884ac8ee043aaac32601b986">  200</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a9c1cc570884ac8ee043aaac32601b986">UBGraphicsGroupContainerItem::paint</a>(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option,</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                               QWidget *widget)</div>
@@ -521,18 +505,14 @@ $(document).ready(function(){initNavTree('d7/d73/_u_b_graphics_group_container_i
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="comment">// ### Quite expensive. But removeFromGroup() isn&#39;t called very often.</span></div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    prepareGeometryChange();</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    itemsBoundingRect = childrenBoundingRect();</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb">itemsBoundingRect</a> = childrenBoundingRect();</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../d7/d73/_u_b_graphics_group_container_item_8cpp.html">UBGraphicsGroupContainerItem.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

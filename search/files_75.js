@@ -126,6 +126,8 @@ var searchData=
   ['ubforeignobjectshandler_2eh',['UBForeignObjectsHandler.h',['../d7/de8/_u_b_foreign_objects_handler_8h.html',1,'']]],
   ['ubgeometryutils_2ecpp',['UBGeometryUtils.cpp',['../d5/dfb/_u_b_geometry_utils_8cpp.html',1,'']]],
   ['ubgeometryutils_2eh',['UBGeometryUtils.h',['../d4/d46/_u_b_geometry_utils_8h.html',1,'']]],
+  ['ubglobals_2eh',['UBGlobals.h',['../d5/d65/src_2globals_2_u_b_globals_8h.html',1,'']]],
+  ['ubglobals_2eh',['UBGlobals.h',['../d8/da7/plugins_2cffadaptor_2src_2_u_b_globals_8h.html',1,'']]],
   ['ubgraphicsaristo_2ecpp',['UBGraphicsAristo.cpp',['../d1/df7/_u_b_graphics_aristo_8cpp.html',1,'']]],
   ['ubgraphicsaristo_2eh',['UBGraphicsAristo.h',['../d9/d02/_u_b_graphics_aristo_8h.html',1,'']]],
   ['ubgraphicsaudioitem_2eh',['UBGraphicsAudioItem.h',['../d5/d5f/_u_b_graphics_audio_item_8h.html',1,'']]],

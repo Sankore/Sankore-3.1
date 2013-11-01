@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/df9/_u_b_graphics_group_container_item_delegate_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('df/df9/_u_b_graphics_group_container_i
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGraphicsGroupContainerItemDelegate.cpp</div>  </div>
@@ -184,21 +168,21 @@ $(document).ready(function(){initNavTree('df/df9/_u_b_graphics_group_container_i
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    showIcon.addPixmap(QPixmap(<span class="stringliteral">&quot;:/images/eyeClosed.svg&quot;</span>), QIcon::Normal, QIcon::Off);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9b7e283947d4119142569e0cd5d1fcdc">mShowOnDisplayAction</a>-&gt;setIcon(showIcon);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Add an action&quot;</span>),<span class="keyword">this</span>,SLOT(onAddActionClicked()));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Add an action&quot;</span>),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#ae20debcaed312dfffb33acb0b4377890">onAddActionClicked</a>()));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//TODO claudio</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// duplicated code UBGraphicsDelegateItem</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">void</span> UBGraphicsGroupContainerItemDelegate::onAddActionClicked()</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#ae20debcaed312dfffb33acb0b4377890">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#ae20debcaed312dfffb33acb0b4377890">UBGraphicsGroupContainerItemDelegate::onAddActionClicked</a>()</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html">UBCreateLinkPalette</a>* linkPalette = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ad11cb96ff392a1f70ec87784dcd80039">linkPalette</a>();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    linkPalette-&gt;show();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    connect(linkPalette,SIGNAL(definedAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)),<span class="keyword">this</span>,SLOT(saveAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    connect(linkPalette,SIGNAL(definedAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a16a0856608265aefda40b513610ad3b6">saveAction</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)));</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">//TODO claudio</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// duplicated code UBGraphicsDelegateItem</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> UBGraphicsGroupContainerItemDelegate::saveAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a16a0856608265aefda40b513610ad3b6">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a16a0856608265aefda40b513610ad3b6">UBGraphicsGroupContainerItemDelegate::saveAction</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;removeAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a>);</div>
@@ -216,13 +200,13 @@ $(document).ready(function(){initNavTree('df/df9/_u_b_graphics_group_container_i
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(actionLabel,<span class="keyword">this</span>,SLOT(onRemoveActionClicked()));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(actionLabel,<span class="keyword">this</span>,SLOT(<a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aeeb2c2fd3464c1ee0a6775b530f72d05">onRemoveActionClicked</a>()));</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a>);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">//TODO claudio</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">// duplicated code UBGraphicsDelegateItem</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> UBGraphicsGroupContainerItemDelegate::onRemoveActionClicked()</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aeeb2c2fd3464c1ee0a6775b530f72d05">  119</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aeeb2c2fd3464c1ee0a6775b530f72d05">UBGraphicsGroupContainerItemDelegate::onRemoveActionClicked</a>()</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>){</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#ac4585fac2807289c85e56c79f0ba6b08">actionRemoved</a>();</div>
@@ -272,15 +256,11 @@ $(document).ready(function(){initNavTree('df/df9/_u_b_graphics_group_container_i
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a6cd80c1431c47bd41e8f2c935cd43da7">UBGraphicsItemDelegate::setAction</a>(action);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp.html">UBGraphicsGroupContainerItemDelegate.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

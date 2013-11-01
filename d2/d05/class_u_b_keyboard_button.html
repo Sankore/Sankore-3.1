@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d2/d05/class_u_b_keyboard_button.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d2/d05/class_u_b_keyboard_button.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -160,7 +140,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a300a8dff924d84148b773a3009643a4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a></td></tr>
 <tr class="memitem:aaad1cb9f60abd0e96475209603f99194"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00179">179</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab1f5c4db91f193fdf65402a0a23aa819"></a>
 <div class="memitem">
 <div class="memproto">
@@ -184,6 +167,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00430">430</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">        :QWidget(parent),</div>
 <div class="line">        <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a24bb19c40ac54159a6cccac7d2b17202">keyboard</a>(parent),</div>
 <div class="line">        <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a>(<span class="keyword">false</span>),</div>
@@ -211,6 +196,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00444">444</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a72d0a599d85f6cb818ff818fd101afbb">imgContent</a> != NULL)</div>
 <div class="line">    {</div>
@@ -243,6 +230,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00500">500</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a> = <span class="keyword">true</span>;</div>
 <div class="line">    update();</div>
@@ -272,6 +261,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../dc/d3d/class_u_b_shift_button.html#a16ce8da99234755369dac01b85912027">UBShiftButton</a>, and <a class="el" href="../../d6/dab/class_u_b_caps_lock_button.html#a446a1e846cff26cf63da26a477744b42">UBCapsLockButton</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00453">453</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a>;</div>
 <div class="line">}</div>
@@ -308,6 +299,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00506">506</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a> = <span class="keyword">false</span>;</div>
 <div class="line">    update();</div>
@@ -336,6 +329,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00512">512</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a> = <span class="keyword">true</span>;</div>
@@ -375,6 +370,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00520">520</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a> = <span class="keyword">false</span>;</div>
 <div class="line">    update();</div>
@@ -516,6 +513,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html#l00458">458</a> of file <a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
@@ -589,6 +588,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Obtain the X11 display.</span></div>
 <div class="line">    Display *display = XOpenDisplay(0);</div>
@@ -647,6 +648,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html#l00118">118</a> of file <a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Obtain the X11 display.</span></div>
 <div class="line">    Display *display = XOpenDisplay(0);</div>
@@ -675,8 +678,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d05/class_u_b_keyboard_button_a7b7c22df6975f5c884549f0b3b0319b7_cgraph.svg" width="574" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d05/class_u_b_keyboard_button_a7b7c22df6975f5c884549f0b3b0319b7_cgraph.svg" width="574" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -710,6 +712,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00212">212</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aaad1cb9f60abd0e96475209603f99194"></a>
@@ -729,6 +733,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00213">213</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -750,6 +756,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00190">190</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a24bb19c40ac54159a6cccac7d2b17202"></a>
@@ -769,6 +777,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00206">206</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
 
 </div>
 </div>
@@ -790,6 +800,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00191">191</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4942440a8d820ed502f2d36f63882d64"></a>
@@ -810,25 +822,23 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html#l00189">189</a> of file <a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
-<li><a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp.html">UBKeyboardPalette.cpp</a></li>
-<li><a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp.html">UBKeyboardPalette_linux.cpp</a></li>
-<li><a class="el" href="../../dd/d68/_u_b_keyboard_palette__mac_8cpp.html">UBKeyboardPalette_mac.cpp</a></li>
-<li><a class="el" href="../../da/d7d/_u_b_keyboard_palette__win_8cpp.html">UBKeyboardPalette_win.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp_source.html">UBKeyboardPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp_source.html">UBKeyboardPalette_linux.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../dd/d68/_u_b_keyboard_palette__mac_8cpp_source.html">UBKeyboardPalette_mac.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../da/d7d/_u_b_keyboard_palette__win_8cpp_source.html">UBKeyboardPalette_win.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html">UBKeyboardButton</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

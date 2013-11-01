@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d79/class_u_b_favorite_tool_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d79/class_u_b_favorite_tool_palette
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -201,7 +181,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa60468f6497774009446c5761ab73fd0 inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#aa60468f6497774009446c5761ab73fd0">sLayoutContentMargin</a> = 12</td></tr>
 <tr class="memitem:ac78ed632e01f218be6aa7201e0ac4e3f inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#ac78ed632e01f218be6aa7201e0ac4e3f">sLayoutSpacing</a> = 15</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/df9/_u_b_favorite_tool_palette_8h_source.html#l00031">31</a> of file <a class="el" href="../../d8/df9/_u_b_favorite_tool_palette_8h_source.html">UBFavoriteToolPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5c96e32fc43e9342cde947b25425516c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -215,6 +198,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp_source.html">UBFavoriteToolPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a389dab585e37f7e97617370ee784a514">UBActionPalette</a>(Qt::Horizontal, parent)</div>
 <div class="line">{</div>
 <div class="line">    QWidget *container = <span class="keyword">new</span> QWidget(<span class="keyword">this</span>);</div>
@@ -334,6 +319,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp_source.html">UBFavoriteToolPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -361,6 +348,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp_source.html">UBFavoriteToolPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// we need the sender :-( hugly ...</span></div>
 <div class="line">    QAction* action = qobject_cast&lt;QAction*&gt;(sender());</div>
@@ -396,19 +385,15 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d8/df9/_u_b_favorite_tool_palette_8h_source.html">UBFavoriteToolPalette.h</a></li>
-<li><a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp.html">UBFavoriteToolPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d8/df9/_u_b_favorite_tool_palette_8h_source.html">UBFavoriteToolPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp_source.html">UBFavoriteToolPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d79/class_u_b_favorite_tool_palette.html">UBFavoriteToolPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:23 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

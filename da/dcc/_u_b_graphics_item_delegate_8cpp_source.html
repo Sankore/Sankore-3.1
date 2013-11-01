@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGraphicsItemDelegate.cpp</div>  </div>
@@ -196,27 +180,27 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="../../da/dec/class_delegate_button.html#a2c591caf75e5e1319371da41a5248c8b">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/dec/class_delegate_button.html#a2c591caf75e5e1319371da41a5248c8b">DelegateButton::mousePressEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (mShowProgressIndicator) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        QTimer::singleShot(300, <span class="keyword">this</span>, SLOT(startShowProgress()));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../da/dec/class_delegate_button.html#a43290cb38e10c6f34e4018f357d8b00e">mShowProgressIndicator</a>) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        QTimer::singleShot(300, <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/dec/class_delegate_button.html#a74f48c785196c2a5316e12e646a38fac">startShowProgress</a>()));</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    mIsPressed = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../da/dec/class_delegate_button.html#a45ec9558622cf4f68d638bdb1011d7c8">mIsPressed</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// make sure delegate is selected, to avoid control being hidden</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    mPressedTime = QTime::currentTime();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../da/dec/class_delegate_button.html#aab8e9336658351dfc8e42ea142c90d7b">mPressedTime</a> = QTime::currentTime();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">event</span>-&gt;setAccepted(!mIsTransparentToMouseEvent);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">event</span>-&gt;setAccepted(!<a class="code" href="../../da/dec/class_delegate_button.html#a432a5060d59d8da7269a2bfdb8308e1f">mIsTransparentToMouseEvent</a>);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="../../da/dec/class_delegate_button.html#abb4b6d2f7f59ba770c0081b243218d40">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/dec/class_delegate_button.html#abb4b6d2f7f59ba770c0081b243218d40">DelegateButton::mouseReleaseEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (mShowProgressIndicator &amp;&amp; mProgressTimerId != -1) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        killTimer(mProgressTimerId);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        mPressProgres = 0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../da/dec/class_delegate_button.html#a43290cb38e10c6f34e4018f357d8b00e">mShowProgressIndicator</a> &amp;&amp; <a class="code" href="../../da/dec/class_delegate_button.html#ab2371dfb716b275351871d1e515d4a8d">mProgressTimerId</a> != -1) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        killTimer(<a class="code" href="../../da/dec/class_delegate_button.html#ab2371dfb716b275351871d1e515d4a8d">mProgressTimerId</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="../../da/dec/class_delegate_button.html#a431e09cbc8f97b2ca73d0bb8656f0b66">mPressProgres</a> = 0;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    mIsPressed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> timeto = qAbs(QTime::currentTime().msecsTo(mPressedTime));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../da/dec/class_delegate_button.html#a45ec9558622cf4f68d638bdb1011d7c8">mIsPressed</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> timeto = qAbs(QTime::currentTime().msecsTo(<a class="code" href="../../da/dec/class_delegate_button.html#aab8e9336658351dfc8e42ea142c90d7b">mPressedTime</a>));</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (timeto &lt; <a class="code" href="../../db/d66/class_u_b_settings.html#a0549e150ac04cce8f3dc444a435a003b">UBSettings::longClickInterval</a>) {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        emit <a class="code" href="../../da/dec/class_delegate_button.html#ad4823c632f1e03c024d1796919bb1ba9">clicked</a>();</div>
@@ -224,7 +208,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        emit <a class="code" href="../../da/dec/class_delegate_button.html#a13772a108dd6f6ed279b4ae705d69099">longClicked</a>();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">event</span>-&gt;setAccepted(!mIsTransparentToMouseEvent);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">event</span>-&gt;setAccepted(!<a class="code" href="../../da/dec/class_delegate_button.html#a432a5060d59d8da7269a2bfdb8308e1f">mIsTransparentToMouseEvent</a>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    update();</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
@@ -233,7 +217,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="../../da/dec/class_delegate_button.html#adc5a62c8bc264b3d111c2c3f6b39ad2b">QGraphicsSvgItem::paint</a>(painter, option, widget);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (mIsPressed &amp;&amp; mShowProgressIndicator) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../da/dec/class_delegate_button.html#a45ec9558622cf4f68d638bdb1011d7c8">mIsPressed</a> &amp;&amp; <a class="code" href="../../da/dec/class_delegate_button.html#a43290cb38e10c6f34e4018f357d8b00e">mShowProgressIndicator</a>) {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        QPen pen;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        pen.setBrush(Qt::white);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        pen.setWidth(3);</div>
@@ -241,7 +225,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        painter-&gt;setPen(pen);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">int</span> spanAngle = qMin(mPressProgres, <a class="code" href="../../db/d66/class_u_b_settings.html#a0549e150ac04cce8f3dc444a435a003b">UBSettings::longClickInterval</a>) * 360 / <a class="code" href="../../db/d66/class_u_b_settings.html#a0549e150ac04cce8f3dc444a435a003b">UBSettings::longClickInterval</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">int</span> spanAngle = qMin(<a class="code" href="../../da/dec/class_delegate_button.html#a431e09cbc8f97b2ca73d0bb8656f0b66">mPressProgres</a>, <a class="code" href="../../db/d66/class_u_b_settings.html#a0549e150ac04cce8f3dc444a435a003b">UBSettings::longClickInterval</a>) * 360 / <a class="code" href="../../db/d66/class_u_b_settings.html#a0549e150ac04cce8f3dc444a435a003b">UBSettings::longClickInterval</a>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        painter-&gt;drawArc(option-&gt;rect.adjusted(pen.width(), pen.width(), -pen.width(), -pen.width()), 16 * 90, -16 * spanAngle);</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        painter-&gt;restore();</div>
@@ -250,16 +234,16 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
 <div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="../../da/dec/class_delegate_button.html#ab90305e2485e7a69ce2643ef1494f740">  145</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/dec/class_delegate_button.html#ab90305e2485e7a69ce2643ef1494f740">DelegateButton::timerEvent</a>(QTimerEvent *event)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (event-&gt;timerId() == mProgressTimerId) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        mPressProgres = qAbs(QTime::currentTime().msecsTo(mPressedTime));</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (event-&gt;timerId() == <a class="code" href="../../da/dec/class_delegate_button.html#ab2371dfb716b275351871d1e515d4a8d">mProgressTimerId</a>) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="../../da/dec/class_delegate_button.html#a431e09cbc8f97b2ca73d0bb8656f0b66">mPressProgres</a> = qAbs(QTime::currentTime().msecsTo(<a class="code" href="../../da/dec/class_delegate_button.html#aab8e9336658351dfc8e42ea142c90d7b">mPressedTime</a>));</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        update();</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">void</span> DelegateButton::startShowProgress()</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="../../da/dec/class_delegate_button.html#a74f48c785196c2a5316e12e646a38fac">  153</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/dec/class_delegate_button.html#a74f48c785196c2a5316e12e646a38fac">DelegateButton::startShowProgress</a>()</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (mIsPressed) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;         mProgressTimerId = startTimer(37);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../da/dec/class_delegate_button.html#a45ec9558622cf4f68d638bdb1011d7c8">mIsPressed</a>) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;         <a class="code" href="../../da/dec/class_delegate_button.html#ab2371dfb716b275351871d1e515d4a8d">mProgressTimerId</a> = startTimer(37);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
@@ -293,10 +277,10 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
 <div class="line"><a name="l00188"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1de77276aba7276defacd0b87c9b87c7">  188</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1de77276aba7276defacd0b87c9b87c7">UBGraphicsItemDelegate::init</a>()</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (mToolBarUsed)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a0904fa90ddd612d056f5935c517c9230">mToolBarUsed</a>)</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a> = <span class="keyword">new</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html">UBGraphicsToolBarItem</a>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a> = <span class="keyword">new</span> <a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html">UBGraphicsDelegateFrame</a>(<span class="keyword">this</span>, QRectF(0, 0, 0, 0), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae7c03f2f6e86504ca5ae7a9b2d8a74f0">mFrameWidth</a>, mRespectRatio);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a> = <span class="keyword">new</span> <a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html">UBGraphicsDelegateFrame</a>(<span class="keyword">this</span>, QRectF(0, 0, 0, 0), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae7c03f2f6e86504ca5ae7a9b2d8a74f0">mFrameWidth</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#acc35565cfa5e4a5eb6c257d520b53ac5">mRespectRatio</a>);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;hide();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;setFlag(QGraphicsItem::ItemIsSelectable, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
@@ -348,7 +332,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="comment">// do not release mMimeData.</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment">// the mMimeData is owned by QDrag since the setMimeData call as specified in the documentation</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#a77a5fe1adb68432afba1d5136a10998c">linkType</a>() == <a class="code" href="../../d1/d45/_u_b_graphics_item_action_8h.html#aa31a6f470b9e87919e1a5142f3e70b3fa0fb5bcb2ac4bbfb5a3948ab1a334bcbc">eLinkToAudio</a>){</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a> &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#a77a5fe1adb68432afba1d5136a10998c">linkType</a>() == <a class="code" href="../../d1/d45/_u_b_graphics_item_action_8h.html#aa31a6f470b9e87919e1a5142f3e70b3fa0fb5bcb2ac4bbfb5a3948ab1a334bcbc">eLinkToAudio</a>){</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <a class="code" href="../../db/d0c/class_u_b_graphics_item_play_audio_action.html">UBGraphicsItemPlayAudioAction</a>* audioAction = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../db/d0c/class_u_b_graphics_item_play_audio_action.html">UBGraphicsItemPlayAudioAction</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        audioAction-&gt;<a class="code" href="../../db/d0c/class_u_b_graphics_item_play_audio_action.html#abbc4cedaaac8f90ba66b418b179324e5">onSourceHide</a>();</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
@@ -402,9 +386,9 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
 <div class="line"><a name="l00297"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1e3cda77c7ecc5f3e8863947b0a8f217">  297</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1e3cda77c7ecc5f3e8863947b0a8f217">UBGraphicsItemDelegate::mousePressEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    mDragStartPosition = <span class="keyword">event</span>-&gt;pos();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aafcee0e47c6af21325a3ac975d05df3f">mDragStartPosition</a> = <span class="keyword">event</span>-&gt;pos();</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    mMoved = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9c3458765aff01f9afc048e965de39ab">mMoved</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ac6e6021ca2e53bb636b22e49d2ff7b97">startUndoStep</a>();</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
@@ -421,21 +405,21 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
 <div class="line"><a name="l00316"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad397d41e717526ee8bdf667294efdbe9">  316</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad397d41e717526ee8bdf667294efdbe9">UBGraphicsItemDelegate::setMimeData</a>(QMimeData *mimeData)</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;{</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    mMimeData = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aec3617785a8d9a10f1e9ca0044917778">mimeData</a>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1df8405ed946406de63913c2e817e5d3">mMimeData</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aec3617785a8d9a10f1e9ca0044917778">mimeData</a>;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
 <div class="line"><a name="l00321"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa87cd62cebcb17e5233ee5a96e2bf748">  321</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa87cd62cebcb17e5233ee5a96e2bf748">UBGraphicsItemDelegate::mouseMoveEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">if</span>(mMimeData) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1df8405ed946406de63913c2e817e5d3">mMimeData</a>) {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        QDrag* mDrag = <span class="keyword">new</span> QDrag(event-&gt;widget());</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        mDrag-&gt;setMimeData(mMimeData);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (!mDragPixmap.isNull()) {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            mDrag-&gt;setPixmap(mDragPixmap);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            mDrag-&gt;setHotSpot(mDragPixmap.rect().center());</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        mDrag-&gt;setMimeData(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1df8405ed946406de63913c2e817e5d3">mMimeData</a>);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3236d60e8ea4773ab205b154325598f0">mDragPixmap</a>.isNull()) {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            mDrag-&gt;setPixmap(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3236d60e8ea4773ab205b154325598f0">mDragPixmap</a>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            mDrag-&gt;setHotSpot(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3236d60e8ea4773ab205b154325598f0">mDragPixmap</a>.rect().center());</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        mDrag-&gt;exec();</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        mDragPixmap = QPixmap();</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        mMoved = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3236d60e8ea4773ab205b154325598f0">mDragPixmap</a> = QPixmap();</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9c3458765aff01f9afc048e965de39ab">mMoved</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -455,7 +439,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    Q_UNUSED(event);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> currentTool = (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>();</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span>(!mMoved &amp;&amp; currentTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9c3458765aff01f9afc048e965de39ab">mMoved</a> &amp;&amp; currentTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    {</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#a20f6321da9c93720ed36426693be51c5">play</a>();</div>
@@ -506,12 +490,12 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordtype">bool</span> shownOnDisplay = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>).toInt() != <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>;</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9d8abde4377bdfda898d6055585c0e8e">showHide</a>(shownOnDisplay);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba58a083455c298d786bec3d1af87ef1b5">UBGraphicsItemData::ItemLocked</a>, QVariant(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a344ec42f448a0989823fb8f85188cdac">isLocked</a>()));</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        updateFrame();</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a65e4fd8ac2e979d29a35886e68fa1267">updateFrame</a>();</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a> != <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;stylusTool())</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;show();</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        updateButtons(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a6d9111d87f760a683ecf1547727f9195">updateButtons</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a> &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a8e37445297c7cb9aa0001554312a001d">isVisibleOnBoard</a>())</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        {</div>
@@ -532,8 +516,8 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00426"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#acb4eac8e78e9da283c48f7cd1f24d5a7">  426</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#acb4eac8e78e9da283c48f7cd1f24d5a7">UBGraphicsItemDelegate::setZOrderButtonsVisible</a>(<span class="keywordtype">bool</span> visible)</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;{</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">if</span> (visible) {</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        updateFrame();</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        updateButtons();</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a65e4fd8ac2e979d29a35886e68fa1267">updateFrame</a>();</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a6d9111d87f760a683ecf1547727f9195">updateButtons</a>();</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        QPointF newUpPoint = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;mapToItem(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae4a5db7a8e39d892bb606bf251eb653c">mZOrderUpButton</a>-&gt;pos());</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        QPointF newDownPoint = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;mapToItem(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a70d87a6726bcd84a212f61856d895192">mZOrderDownButton</a>-&gt;pos());</div>
@@ -565,7 +549,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        }</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#aacd9c3fb5b977bd0251bdbab346578e7">setAntiScale</a>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a>);</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#abfe38268d0d095ab895a27c0a8b5a833">positionHandles</a>();</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        updateButtons(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a6d9111d87f760a683ecf1547727f9195">updateButtons</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        <span class="keywordflow">foreach</span>(<a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* button, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abd27d9387610bf45761035ee4ae6ff37">mButtons</a>) {</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            scene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(button);</div>
@@ -644,18 +628,18 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#abfe38268d0d095ab895a27c0a8b5a833">positionHandles</a>();</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;}</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="keywordtype">void</span> UBGraphicsItemDelegate::showHideRecurs(<span class="keyword">const</span> QVariant &amp;pShow, QGraphicsItem *pItem)</div>
+<div class="line"><a name="l00541"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa10c35aa211a8b1fcdf11209b8b13c9d">  541</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa10c35aa211a8b1fcdf11209b8b13c9d">UBGraphicsItemDelegate::showHideRecurs</a>(<span class="keyword">const</span> QVariant &amp;pShow, QGraphicsItem *pItem)</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;{</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    pItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, pShow);</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">foreach</span> (QGraphicsItem *insideItem, pItem-&gt;childItems()) {</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        showHideRecurs(pShow, insideItem);</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa10c35aa211a8b1fcdf11209b8b13c9d">showHideRecurs</a>(pShow, insideItem);</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;}</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;</div>
 <div class="line"><a name="l00549"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9d8abde4377bdfda898d6055585c0e8e">  549</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9d8abde4377bdfda898d6055585c0e8e">UBGraphicsItemDelegate::showHide</a>(<span class="keywordtype">bool</span> show)</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;{</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    QVariant showFlag = QVariant(show ? <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a86b481353d96038e1b371f5ef6f5e44f">UBItemLayerType::Object</a> : <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>);</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    showHideRecurs(showFlag, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa10c35aa211a8b1fcdf11209b8b13c9d">showHideRecurs</a>(showFlag, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;update();</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    emit <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a2e13161a55c9568ef3ebcebbf549d4cb">showOnDisplayChanged</a>(show);</div>
@@ -675,15 +659,15 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;</div>
 <div class="line"><a name="l00570"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ac6e6021ca2e53bb636b22e49d2ff7b97">  570</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ac6e6021ca2e53bb636b22e49d2ff7b97">UBGraphicsItemDelegate::startUndoStep</a>()</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;{</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    mPreviousPosition = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;pos();</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    mPreviousTransform = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;transform();</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    mPreviousZValue = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;zValue();</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1afa6d6ae4de824af8f81c5a770337ea">mPreviousPosition</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;pos();</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af4ebe96bf4185d2d12510c962f0b971f">mPreviousTransform</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;transform();</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a184b927b77ea70e01763414e887ab57f">mPreviousZValue</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;zValue();</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keywordflow">if</span> (resizableItem)</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        mPreviousSize = resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a97d0d97df113d870f0e463ace0b050c7">size</a>();</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76fc8a8c836a3ccfde3e1a5521a18a41">mPreviousSize</a> = resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a97d0d97df113d870f0e463ace0b050c7">size</a>();</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        mPreviousSize = QSizeF();</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76fc8a8c836a3ccfde3e1a5521a18a41">mPreviousSize</a> = QSizeF();</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;}</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;</div>
@@ -691,17 +675,17 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;{</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;pos() != mPreviousPosition</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        || <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;transform() != mPreviousTransform</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        || <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;zValue() != mPreviousZValue</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        || (resizableItem &amp;&amp; resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a97d0d97df113d870f0e463ace0b050c7">size</a>() != mPreviousSize))</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;pos() != <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1afa6d6ae4de824af8f81c5a770337ea">mPreviousPosition</a></div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        || <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;transform() != <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af4ebe96bf4185d2d12510c962f0b971f">mPreviousTransform</a></div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        || <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;zValue() != <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a184b927b77ea70e01763414e887ab57f">mPreviousZValue</a></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        || (resizableItem &amp;&amp; resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a97d0d97df113d870f0e463ace0b050c7">size</a>() != <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76fc8a8c836a3ccfde3e1a5521a18a41">mPreviousSize</a>))</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    {</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html">UBGraphicsItemTransformUndoCommand</a> *uc =</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                <span class="keyword">new</span> <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html">UBGraphicsItemTransformUndoCommand</a>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>,</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                                                       mPreviousPosition,</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                                                       mPreviousTransform,</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                                                       mPreviousZValue,</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                                                       mPreviousSize);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                                                       <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1afa6d6ae4de824af8f81c5a770337ea">mPreviousPosition</a>,</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                                                       <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af4ebe96bf4185d2d12510c962f0b971f">mPreviousTransform</a>,</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                                                       <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a184b927b77ea70e01763414e887ab57f">mPreviousZValue</a>,</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                                                       <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76fc8a8c836a3ccfde3e1a5521a18a41">mPreviousSize</a>);</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <a class="code" href="../../d8/d81/class_u_b_application.html#a94e54cea75617b63d6cf97612430a77d">UBApplication::undoStack</a>-&gt;push(uc);</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    }</div>
@@ -735,7 +719,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    showIcon.addPixmap(QPixmap(<span class="stringliteral">&quot;:/images/eyeClosed.svg&quot;</span>), QIcon::Normal, QIcon::Off);</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9b7e283947d4119142569e0cd5d1fcdc">mShowOnDisplayAction</a>-&gt;setIcon(showIcon);</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">if</span> (mShowGoContentButton)</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a88ceea9e2573a90f075880662fe10113">mShowGoContentButton</a>)</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    {</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9a521276a587e652033769498837deec">mGotoContentSourceAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Go to Content Source&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae05eb9447f89914dd9a19bab0d8b0ef0">gotoContentSource</a>()));</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div>
@@ -744,18 +728,18 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9a521276a587e652033769498837deec">mGotoContentSourceAction</a>-&gt;setIcon(sourceIcon);</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    }</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordflow">if</span>(mCanTrigAnAction)</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Add an action&quot;</span>),<span class="keyword">this</span>,SLOT(onAddActionClicked()));</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad46dcf05ef40d214c379fc96b9bc058f">mCanTrigAnAction</a>)</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Add an action&quot;</span>),<span class="keyword">this</span>,SLOT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a09c14f46afcd76e0ffee69949194d5e5">onAddActionClicked</a>()));</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;}</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="keywordtype">void</span> UBGraphicsItemDelegate::onAddActionClicked()</div>
+<div class="line"><a name="l00645"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a09c14f46afcd76e0ffee69949194d5e5">  645</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a09c14f46afcd76e0ffee69949194d5e5">UBGraphicsItemDelegate::onAddActionClicked</a>()</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;{</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html">UBCreateLinkPalette</a>* linkPalette = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ad11cb96ff392a1f70ec87784dcd80039">linkPalette</a>();</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    linkPalette-&gt;show();</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    connect(linkPalette,SIGNAL(definedAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)),<span class="keyword">this</span>,SLOT(saveAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)));</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    connect(linkPalette,SIGNAL(definedAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)),<span class="keyword">this</span>,SLOT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af73f48f5b7efbf930141205f606756ed">saveAction</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)));</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;}</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;<span class="keywordtype">void</span> UBGraphicsItemDelegate::saveAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
+<div class="line"><a name="l00652"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af73f48f5b7efbf930141205f606756ed">  652</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af73f48f5b7efbf930141205f606756ed">UBGraphicsItemDelegate::saveAction</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;{</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>;</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;removeAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a>);</div>
@@ -776,11 +760,11 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    }</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(actionLabel,<span class="keyword">this</span>,SLOT(onRemoveActionClicked()));</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(actionLabel,<span class="keyword">this</span>,SLOT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5b396a6421786c67429b067809d39d04">onRemoveActionClicked</a>()));</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a>);</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;}</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;<span class="keywordtype">void</span> UBGraphicsItemDelegate::onRemoveActionClicked()</div>
+<div class="line"><a name="l00677"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5b396a6421786c67429b067809d39d04">  677</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5b396a6421786c67429b067809d39d04">UBGraphicsItemDelegate::onRemoveActionClicked</a>()</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;{</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>){</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#ac4585fac2807289c85e56c79f0ba6b08">actionRemoved</a>();</div>
@@ -829,7 +813,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;</div>
 <div class="line"><a name="l00724"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9572bb54e20bfe135d9560885a1e4aa8">  724</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9572bb54e20bfe135d9560885a1e4aa8">UBGraphicsItemDelegate::setFlippable</a>(<span class="keywordtype">bool</span> flippable)</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;{</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    mFlippable = flippable;</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5073d82187fb319adfaaa1efe4e1afac">mFlippable</a> = flippable;</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    Q_ASSERT (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>) {</div>
@@ -839,12 +823,12 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;</div>
 <div class="line"><a name="l00734"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a698c3af60576af37a916a93ee3a82a25">  734</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a698c3af60576af37a916a93ee3a82a25">UBGraphicsItemDelegate::setCanTrigAnAction</a>(<span class="keywordtype">bool</span> canTrig)</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;{</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    mCanTrigAnAction = canTrig;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad46dcf05ef40d214c379fc96b9bc058f">mCanTrigAnAction</a> = canTrig;</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;}</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;</div>
 <div class="line"><a name="l00739"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aea85facebaec66edecbdf81280a9c918">  739</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aea85facebaec66edecbdf81280a9c918">UBGraphicsItemDelegate::setRotatable</a>(<span class="keywordtype">bool</span> pCanRotate)</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;{</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    mCanRotate = pCanRotate;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a0275fb16e739910799593e89440ff8e6">mCanRotate</a> = pCanRotate;</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    Q_ASSERT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;</div>
@@ -864,10 +848,10 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;</div>
 <div class="line"><a name="l00759"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae25633a784590906e9bcd62a45b7dcf9">  759</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae25633a784590906e9bcd62a45b7dcf9">UBGraphicsItemDelegate::isFlippable</a>()</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;{</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordflow">return</span> mFlippable;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5073d82187fb319adfaaa1efe4e1afac">mFlippable</a>;</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;}</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;<span class="keywordtype">void</span> UBGraphicsItemDelegate::updateFrame()</div>
+<div class="line"><a name="l00764"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a65e4fd8ac2e979d29a35886e68fa1267">  764</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a65e4fd8ac2e979d29a35886e68fa1267">UBGraphicsItemDelegate::updateFrame</a>()</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;{</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a> &amp;&amp; !<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;scene() &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene())</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    {</div>
@@ -878,7 +862,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#abfe38268d0d095ab895a27c0a8b5a833">positionHandles</a>();</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;}</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="keywordtype">void</span> UBGraphicsItemDelegate::updateButtons(<span class="keywordtype">bool</span> showUpdated)</div>
+<div class="line"><a name="l00775"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a6d9111d87f760a683ecf1547727f9195">  775</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a6d9111d87f760a683ecf1547727f9195">UBGraphicsItemDelegate::updateButtons</a>(<span class="keywordtype">bool</span> showUpdated)</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;{</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    QTransform tr;</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    tr.scale(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a>);</div>
@@ -913,7 +897,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            button-&gt;setTransform(tr);</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (button-&gt;<a class="code" href="../../da/dec/class_delegate_button.html#ad7816ad8702609ec134d4d198c5b370a">getSection</a>() == Qt::BottomLeftSection) {</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            button-&gt;setParentItem(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>);</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            button-&gt;setPos(bottomX + (++j * 1.6 * <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae7c03f2f6e86504ca5ae7a9b2d8a74f0">mFrameWidth</a> * mAntiScaleRatio), bottomY);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            button-&gt;setPos(bottomX + (++j * 1.6 * <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ae7c03f2f6e86504ca5ae7a9b2d8a74f0">mFrameWidth</a> * <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a>), bottomY);</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            button-&gt;setTransform(tr);</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (button-&gt;<a class="code" href="../../da/dec/class_delegate_button.html#ad7816ad8702609ec134d4d198c5b370a">getSection</a>() == Qt::TitleBarArea || button-&gt;<a class="code" href="../../da/dec/class_delegate_button.html#ad7816ad8702609ec134d4d198c5b370a">getSection</a>() == Qt::NoSection){</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            ++k;</div>
@@ -940,7 +924,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00834"></a><span class="lineno"><a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3b597fdf7d09e24866416826075c4381">  834</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3b597fdf7d09e24866416826075c4381">UBGraphicsItemDelegate::setAction</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;{</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    <span class="keywordflow">if</span>(!action)</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        onRemoveActionClicked();</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5b396a6421786c67429b067809d39d04">onRemoveActionClicked</a>();</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    <span class="keywordflow">else</span>{</div>
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a698c3af60576af37a916a93ee3a82a25">setCanTrigAnAction</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>){</div>
@@ -949,7 +933,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a> = <span class="keyword">new</span> QMenu(<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;controlView());</div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37a264e2942f9d1a2f74fe2dd0d5c9b1">decorateMenu</a>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>);</div>
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        }</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        saveAction(action);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af73f48f5b7efbf930141205f606756ed">saveAction</a>(action);</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    }</div>
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;}</div>
 <div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;</div>
@@ -963,7 +947,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    mElementsPadding(2)</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;{</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    QRectF rect = this-&gt;rect();</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    rect.setHeight(mInitialHeight);</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    rect.setHeight(<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a16bd92409c578a01936b5abf2a1d0cc8">mInitialHeight</a>);</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    rect.setWidth(parent-&gt;boundingRect().width());</div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    this-&gt;setRect(rect);</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;</div>
@@ -977,10 +961,10 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00871"></a><span class="lineno"><a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#afb333932944e51dd53af4d61f4920d76">  871</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#afb333932944e51dd53af4d61f4920d76">UBGraphicsToolBarItem::positionHandles</a>()</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;{</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    <span class="keywordtype">int</span> itemXOffset = 0;</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    <span class="keywordflow">foreach</span> (QGraphicsItem* item, mItemsOnToolBar)</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    <span class="keywordflow">foreach</span> (QGraphicsItem* item, <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad17fd3042d9a7140df7c99ed538e6bef">mItemsOnToolBar</a>)</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    {</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        item-&gt;setPos(itemXOffset, 0);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        itemXOffset += (item-&gt;boundingRect().width()+mElementsPadding);</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        itemXOffset += (item-&gt;boundingRect().width()+<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a037655cbef90769b130792eb1587a2ab">mElementsPadding</a>);</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        item-&gt;show();</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    }</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;}</div>
@@ -990,7 +974,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a88a96bf42a11d028087d59eb0a897ca8">QGraphicsRectItem::update</a>();</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;}</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;<span class="keywordtype">void</span> UBGraphicsToolBarItem::paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget)</div>
+<div class="line"><a name="l00887"></a><span class="lineno"><a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a9ac1c69cbf3e44f1608a06481e4d0158">  887</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a9ac1c69cbf3e44f1608a06481e4d0158">UBGraphicsToolBarItem::paint</a>(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget)</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;{</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;    Q_UNUSED(option);</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    Q_UNUSED(widget);</div>
@@ -1005,8 +989,8 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;</div>
 <div class="line"><a name="l00900"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#adad4a492d0515d2623893a60c6a781b6">  900</a></span>&#160;<a class="code" href="../../db/dc2/class_media_timer.html#adad4a492d0515d2623893a60c6a781b6">MediaTimer::MediaTimer</a>(QGraphicsItem * parent): QGraphicsRectItem(parent)</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;{</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    val        = 0;</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;    smallPoint = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a0e0a018eac2a2984fde7441afbc94773">val</a>        = 0;</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">setNumDigits</a>(6);</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;}</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;</div>
@@ -1015,46 +999,46 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;</div>
 <div class="line"><a name="l00910"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">  910</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">MediaTimer::positionHandles</a>()</div>
 <div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;{</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;    digitSpace = smallPoint ? 2 : 1;</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    ySegLen    = rect().height()*5/12;</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    xSegLen    = ySegLen*2/3;</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    segLen     = xSegLen;</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    xAdvance   = segLen*(5 + digitSpace)/5;</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    xOffset    = (rect().width() - ndigits*xAdvance + segLen/5)/2;</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;    yOffset    = rect().height() - ySegLen*2;</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a7c84ee4caebe80bbd2db990d484da3ab">digitSpace</a> = <a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a> ? 2 : 1;</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a4f0b974590f016dfe48074f68c9b9e22">ySegLen</a>    = rect().height()*5/12;</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#af4c4333b8a173643b513dfe411e3d219">xSegLen</a>    = <a class="code" href="../../db/dc2/class_media_timer.html#a4f0b974590f016dfe48074f68c9b9e22">ySegLen</a>*2/3;</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>     = <a class="code" href="../../db/dc2/class_media_timer.html#af4c4333b8a173643b513dfe411e3d219">xSegLen</a>;</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a>   = <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>*(5 + <a class="code" href="../../db/dc2/class_media_timer.html#a7c84ee4caebe80bbd2db990d484da3ab">digitSpace</a>)/5;</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a11fe98f24e5fe64336e650d1ea239f6e">xOffset</a>    = (rect().width() - <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>*<a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a> + <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/5)/2;</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a9d2dc23b062bdee6ef458035a4d04a72">yOffset</a>    = rect().height() - <a class="code" href="../../db/dc2/class_media_timer.html#a4f0b974590f016dfe48074f68c9b9e22">ySegLen</a>*2;</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    setRect(rect().x(), rect().y(), xOffset + xAdvance*ndigits, rect().height());</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    setRect(rect().x(), rect().y(), xOffset + <a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a>*<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>, rect().height());</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;}</div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;<span class="keywordtype">void</span> MediaTimer::drawString(<span class="keyword">const</span> QString &amp;s, QPainter &amp;p,</div>
+<div class="line"><a name="l00923"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#a237434492fc9819e9c77e51b72aab48a">  923</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#a237434492fc9819e9c77e51b72aab48a">MediaTimer::drawString</a>(<span class="keyword">const</span> QString &amp;s, QPainter &amp;p,</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                                   QBitArray *newPoints, <span class="keywordtype">bool</span> newString)</div>
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;{</div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    QPoint  pos;</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;  i&lt;ndigits; i++) {</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        pos = QPoint(xOffset + xAdvance*i, yOffset);</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;  i&lt;<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>; i++) {</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        pos = QPoint(<a class="code" href="../../db/dc2/class_media_timer.html#a11fe98f24e5fe64336e650d1ea239f6e">xOffset</a> + <a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a>*i, <a class="code" href="../../db/dc2/class_media_timer.html#a9d2dc23b062bdee6ef458035a4d04a72">yOffset</a>);</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;        <span class="keywordflow">if</span> (newString)</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            drawDigit(pos, p, segLen, s[i].toLatin1(), digitStr[i].toLatin1());</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, s[i].toLatin1(), <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>[i].toLatin1());</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;            drawDigit(pos, p, segLen, s[i].toLatin1());</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;            <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, s[i].toLatin1());</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        <span class="keywordflow">if</span> (newPoints) {</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            <span class="keywordtype">char</span> newPoint = newPoints-&gt;testBit(i) ? <span class="charliteral">&#39;.&#39;</span> : <span class="charliteral">&#39; &#39;</span>;</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            <span class="keywordflow">if</span> (newString) {</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                <span class="keywordtype">char</span> oldPoint = points.testBit(i) ? <span class="charliteral">&#39;.&#39;</span> : <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                drawDigit(pos, p, segLen, newPoint, oldPoint);</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                <span class="keywordtype">char</span> oldPoint = <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.testBit(i) ? <span class="charliteral">&#39;.&#39;</span> : <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, newPoint, oldPoint);</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                drawDigit(pos, p, segLen, newPoint);</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, newPoint);</div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;            }</div>
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        }</div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    }</div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    <span class="keywordflow">if</span> (newString) {</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        digitStr = s;</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        digitStr.truncate(ndigits);</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a> = s;</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.truncate(ndigits);</div>
 <div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;        <span class="keywordflow">if</span> (newPoints)</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;            points = *newPoints;</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;            <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a> = *newPoints;</div>
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    }</div>
 <div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;}</div>
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;<span class="keywordtype">void</span> MediaTimer::drawDigit(<span class="keyword">const</span> QPoint &amp;pos, QPainter &amp;p, <span class="keywordtype">int</span> segLen,</div>
+<div class="line"><a name="l00951"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">  951</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">MediaTimer::drawDigit</a>(<span class="keyword">const</span> QPoint &amp;pos, QPainter &amp;p, <span class="keywordtype">int</span> segLen,</div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;                                  <span class="keywordtype">char</span> newCh, <span class="keywordtype">char</span> oldCh)</div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;{</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;     <span class="keywordtype">char</span> updates[18][2];        <span class="comment">// can hold 2 times number of segments, only</span></div>
@@ -1068,13 +1052,13 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;     <span class="keyword">const</span> <span class="keywordtype">char</span> draw       = 1;</div>
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;     <span class="keyword">const</span> <span class="keywordtype">char</span> leaveAlone = 2;</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;     segs = getSegments(oldCh);</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;     segs = <a class="code" href="../../db/dc2/class_media_timer.html#aaa143303bfb5a3eab091dc17849e3f41">getSegments</a>(oldCh);</div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;     <span class="keywordflow">for</span> (nErases=0; segs[nErases] != 99; nErases++) {</div>
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;         updates[nErases][0] = erase;            <span class="comment">// get segments to erase to</span></div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;         updates[nErases][1] = segs[nErases];    <span class="comment">// remove old char</span></div>
 <div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;     }</div>
 <div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;     nUpdates = nErases;</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;     segs = getSegments(newCh);</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;     segs = <a class="code" href="../../db/dc2/class_media_timer.html#aaa143303bfb5a3eab091dc17849e3f41">getSegments</a>(newCh);</div>
 <div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;     <span class="keywordflow">for</span>(i = 0 ; segs[i] != 99 ; i++) {</div>
 <div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;         <span class="keywordflow">for</span> (j=0;  j&lt;nErases; j++)</div>
 <div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;             <span class="keywordflow">if</span> (segs[i] == updates[j][1]) {   <span class="comment">// same segment ?</span></div>
@@ -1089,13 +1073,13 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;     }</div>
 <div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;     <span class="keywordflow">for</span> (i=0; i&lt;nUpdates; i++) {</div>
 <div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;         <span class="keywordflow">if</span> (updates[i][0] == draw)</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;             drawSegment(pos, updates[i][1], p, segLen);</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;             <a class="code" href="../../db/dc2/class_media_timer.html#aeb76038909ad9a0419efcc3b3d970085">drawSegment</a>(pos, updates[i][1], p, segLen);</div>
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;         <span class="keywordflow">if</span> (updates[i][0] == erase)</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;             drawSegment(pos, updates[i][1], p, segLen, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;             <a class="code" href="../../db/dc2/class_media_timer.html#aeb76038909ad9a0419efcc3b3d970085">drawSegment</a>(pos, updates[i][1], p, segLen, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;     }</div>
 <div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;}</div>
 <div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;</div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;<span class="keywordtype">char</span> MediaTimer::segments [][8] =</div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;<span class="keywordtype">char</span> <a class="code" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">MediaTimer::segments</a> [][8] =</div>
 <div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;        {</div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;              { 0, 1, 2, 4, 5, 6,99, 0},             <span class="comment">// 0    0</span></div>
 <div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;              { 2, 5,99, 0, 0, 0, 0, 0},             <span class="comment">// 1    1</span></div>
@@ -1111,19 +1095,19 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;              {99, 0, 0, 0, 0, 0, 0, 0}              <span class="comment">// 11   empty</span></div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;        };</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;</div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* MediaTimer::getSegments(<span class="keywordtype">char</span> ch)               <span class="comment">// gets list of segments for ch</span></div>
+<div class="line"><a name="l01008"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#aaa143303bfb5a3eab091dc17849e3f41"> 1008</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../db/dc2/class_media_timer.html#aaa143303bfb5a3eab091dc17849e3f41">MediaTimer::getSegments</a>(<span class="keywordtype">char</span> ch)               <span class="comment">// gets list of segments for ch</span></div>
 <div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;{</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;     <span class="keywordflow">if</span> (ch &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; ch &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
-<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;        <span class="keywordflow">return</span> segments[ch - <span class="charliteral">&#39;0&#39;</span>];</div>
+<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">segments</a>[ch - <span class="charliteral">&#39;0&#39;</span>];</div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;:&#39;</span>)</div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        <span class="keywordflow">return</span> segments[10];</div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">segments</a>[10];</div>
 <div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>)</div>
-<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;        <span class="keywordflow">return</span> segments[11];</div>
+<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">segments</a>[11];</div>
 <div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;</div>
 <div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;     <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;}</div>
 <div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;</div>
-<div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;<span class="keywordtype">void</span> MediaTimer::drawSegment(<span class="keyword">const</span> QPoint &amp;pos, <span class="keywordtype">char</span> segmentNo, QPainter &amp;p,</div>
+<div class="line"><a name="l01020"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#aeb76038909ad9a0419efcc3b3d970085"> 1020</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#aeb76038909ad9a0419efcc3b3d970085">MediaTimer::drawSegment</a>(<span class="keyword">const</span> QPoint &amp;pos, <span class="keywordtype">char</span> segmentNo, QPainter &amp;p,</div>
 <div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;                                    <span class="keywordtype">int</span> segLen, <span class="keywordtype">bool</span> erase)</div>
 <div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;{</div>
 <div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;    Q_UNUSED(erase);</div>
@@ -1262,7 +1246,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#undef DARK</span></div>
 <div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;<span class="keywordtype">void</span> MediaTimer::addPoint(QPolygon &amp;a, <span class="keyword">const</span> QPoint &amp;p)</div>
+<div class="line"><a name="l01159"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#ab2040f17e70afd1479aaa5e6a07254ed"> 1159</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#ab2040f17e70afd1479aaa5e6a07254ed">MediaTimer::addPoint</a>(QPolygon &amp;a, <span class="keyword">const</span> QPoint &amp;p)</div>
 <div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;{</div>
 <div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    uint n = a.size();</div>
 <div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    a.resize(n + 1);</div>
@@ -1275,24 +1259,24 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    Q_UNUSED(option);</div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    Q_UNUSED(widget);</div>
 <div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    <span class="keywordflow">if</span> (smallPoint)</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;        drawString(digitStr, *p, &amp;points, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a>)</div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a237434492fc9819e9c77e51b72aab48a">drawString</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>, *p, &amp;<a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;        drawString(digitStr, *p, 0, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a237434492fc9819e9c77e51b72aab48a">drawString</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>, *p, 0, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;}</div>
 <div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;<span class="keywordtype">void</span> MediaTimer::internalSetString(<span class="keyword">const</span> QString&amp; s)</div>
+<div class="line"><a name="l01178"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#a881c812245c995496527d0d4d3c9fe32"> 1178</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#a881c812245c995496527d0d4d3c9fe32">MediaTimer::internalSetString</a>(<span class="keyword">const</span> QString&amp; s)</div>
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;{</div>
 <div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;    QString buffer;</div>
 <div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;    <span class="keywordtype">int</span> len = s.length();</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;    QBitArray newPoints(ndigits);</div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;    QBitArray newPoints(<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>);</div>
 <div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    <span class="keywordflow">if</span> (!smallPoint) {</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;        <span class="keywordflow">if</span> (len == ndigits)</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a>) {</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;        <span class="keywordflow">if</span> (len == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>)</div>
 <div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;            buffer = s;</div>
 <div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;            buffer = s.right(ndigits).rightJustified(ndigits, QLatin1Char(<span class="charliteral">&#39; &#39;</span>));</div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;            buffer = s.right(<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>).rightJustified(<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>, QLatin1Char(<span class="charliteral">&#39; &#39;</span>));</div>
 <div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;        <span class="keywordtype">int</span>  index = -1;</div>
 <div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;        <span class="keywordtype">bool</span> lastWasPoint = <span class="keyword">true</span>;</div>
@@ -1300,7 +1284,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;        <span class="keywordflow">for</span> (i=0; i&lt;len; i++) {</div>
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;            <span class="keywordflow">if</span> (s[i] == QLatin1Char(<span class="charliteral">&#39;.&#39;</span>)) {</div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;                <span class="keywordflow">if</span> (lastWasPoint) {           <span class="comment">// point already set for digit?</span></div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;                    <span class="keywordflow">if</span> (index == ndigits - 1) <span class="comment">// no more digits</span></div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;                    <span class="keywordflow">if</span> (index == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> - 1) <span class="comment">// no more digits</span></div>
 <div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;                    index++;</div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;                    buffer[index] = QLatin1Char(<span class="charliteral">&#39; &#39;</span>);        <span class="comment">// 2 points in a row, add space</span></div>
@@ -1308,7 +1292,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                newPoints.setBit(index);        <span class="comment">// set decimal point</span></div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;                lastWasPoint = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                <span class="keywordflow">if</span> (index == ndigits - 1)</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                <span class="keywordflow">if</span> (index == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> - 1)</div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                index++;</div>
 <div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                buffer[index] = s[i];</div>
@@ -1316,7 +1300,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;                lastWasPoint = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;            }</div>
 <div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;        }</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;        <span class="keywordflow">if</span> (index &lt; ((<span class="keywordtype">int</span>) ndigits) - 1) {</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;        <span class="keywordflow">if</span> (index &lt; ((<span class="keywordtype">int</span>) <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>) - 1) {</div>
 <div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;            <span class="keywordflow">for</span>(i=index; i&gt;=0; i--) {</div>
 <div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;                buffer[ndigits - 1 - index + i] = buffer[i];</div>
 <div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;                newPoints.setBit(ndigits - 1 - index + i,</div>
@@ -1329,23 +1313,23 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;        }</div>
 <div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;    }</div>
 <div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;    <span class="keywordflow">if</span> (buffer == digitStr)</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;    <span class="keywordflow">if</span> (buffer == <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>)</div>
 <div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;</div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;    digitStr = buffer;</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    <span class="keywordflow">if</span> (smallPoint)</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        points = newPoints;</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a> = buffer;</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a>)</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a> = newPoints;</div>
 <div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;    update();</div>
 <div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;}</div>
 <div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;</div>
 <div class="line"><a name="l01235"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#a035f4771f2d409ccaa3d347f31aa8dfc"> 1235</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#a035f4771f2d409ccaa3d347f31aa8dfc">MediaTimer::display</a>(<span class="keyword">const</span> QString &amp;s)</div>
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;{</div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    val = 0;</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a0e0a018eac2a2984fde7441afbc94773">val</a> = 0;</div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;    <span class="keywordtype">bool</span> ok = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    <span class="keywordtype">double</span> v = s.toDouble(&amp;ok);</div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;    <span class="keywordflow">if</span> (ok)</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        val = v;</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;    internalSetString(s);</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a0e0a018eac2a2984fde7441afbc94773">val</a> = v;</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a881c812245c995496527d0d4d3c9fe32">internalSetString</a>(s);</div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;}</div>
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;</div>
 <div class="line"><a name="l01245"></a><span class="lineno"><a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343"> 1245</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">MediaTimer::setNumDigits</a>(<span class="keywordtype">int</span> numDigits)</div>
@@ -1358,35 +1342,35 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        qWarning(<span class="stringliteral">&quot;QLCDNumber::setNumDigits: Min 0 digits allowed&quot;</span>);</div>
 <div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;        numDigits = 0;</div>
 <div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;    }</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;    <span class="keywordflow">if</span> (digitStr.isNull()) {                  <span class="comment">// from constructor</span></div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;        ndigits = numDigits + numDigits/2 - 1;</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;        digitStr.fill(QLatin1Char(<span class="charliteral">&#39; &#39;</span>), ndigits);</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;        points.fill(0, ndigits);</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;        digitStr[ndigits - 1] = QLatin1Char(<span class="charliteral">&#39;0&#39;</span>);            <span class="comment">// &quot;0&quot; is the default number</span></div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.isNull()) {                  <span class="comment">// from constructor</span></div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> = numDigits + numDigits/2 - 1;</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.fill(QLatin1Char(<span class="charliteral">&#39; &#39;</span>), <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>);</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.fill(0, <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>);</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>[<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> - 1] = QLatin1Char(<span class="charliteral">&#39;0&#39;</span>);            <span class="comment">// &quot;0&quot; is the default number</span></div>
 <div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        <span class="keywordflow">if</span> (numDigits == ndigits)             <span class="comment">// no change</span></div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        <span class="keywordflow">if</span> (numDigits == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>)             <span class="comment">// no change</span></div>
 <div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;        <span class="keyword">register</span> <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        <span class="keywordtype">int</span> dif;</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <span class="keywordflow">if</span> (numDigits &gt; ndigits) {            <span class="comment">// expand</span></div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;            dif = numDigits - ndigits;</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <span class="keywordflow">if</span> (numDigits &gt; <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>) {            <span class="comment">// expand</span></div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;            dif = numDigits - <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>;</div>
 <div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;            QString buf;</div>
 <div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;            buf.fill(QLatin1Char(<span class="charliteral">&#39; &#39;</span>), dif);</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;            digitStr.insert(0, buf);</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;            points.resize(numDigits);</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;            <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.insert(0, buf);</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;            <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.resize(numDigits);</div>
 <div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;            <span class="keywordflow">for</span> (i=numDigits-1; i&gt;=dif; i--)</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                points.setBit(i, points.testBit(i-dif));</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.setBit(i, <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.testBit(i-dif));</div>
 <div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;            <span class="keywordflow">for</span> (i=0; i&lt;dif; i++)</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                points.clearBit(i);</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.clearBit(i);</div>
 <div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;        } <span class="keywordflow">else</span> {                                        <span class="comment">// shrink</span></div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;            dif = ndigits - numDigits;</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;            digitStr = digitStr.right(numDigits);</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;            QBitArray tmpPoints = points;</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;            points.resize(numDigits);</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;            dif = <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> - numDigits;</div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;            <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a> = <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.right(numDigits);</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;            QBitArray tmpPoints = <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>;</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;            <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.resize(numDigits);</div>
 <div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;            <span class="keywordflow">for</span> (i=0; i&lt;(int)numDigits; i++)</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                points.setBit(i, tmpPoints.testBit(i+dif));</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.setBit(i, tmpPoints.testBit(i+dif));</div>
 <div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;        }</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;        ndigits = numDigits;</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;        <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> = numDigits;</div>
 <div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;        update();</div>
 <div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;    }</div>
 <div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;    <a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">positionHandles</a>();</div>
@@ -1406,7 +1390,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    setPen(Qt::NoPen);</div>
 <div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
 <div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;    lcdTimer = <span class="keyword">new</span> <a class="code" href="../../db/dc2/class_media_timer.html">MediaTimer</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a> = <span class="keyword">new</span> <a class="code" href="../../db/dc2/class_media_timer.html">MediaTimer</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;</div>
 <div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1">update</a>();</div>
 <div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;}</div>
@@ -1420,20 +1404,20 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;</div>
 <div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    QPainterPath path;</div>
 <div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;    path.addRoundedRect(mSeecArea, mSeecArea.height()/2, mSeecArea.height()/2);</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;    path.addRoundedRect(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>, <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2, <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2);</div>
 <div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;    painter-&gt;fillPath(path, brush());</div>
 <div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;    qreal frameWidth = mSeecArea.height() / 2;</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;    qreal frameWidth = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height() / 2;</div>
 <div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;    <span class="keywordtype">int</span> position = frameWidth;</div>
 <div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;</div>
 <div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a> &gt; 0)</div>
 <div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;    {</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        position = frameWidth + ((mSeecArea.width() - (2 * frameWidth)) / <a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a>) * <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>;</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        position = frameWidth + ((<a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - (2 * frameWidth)) / <a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a>) * <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>;</div>
 <div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;    }</div>
 <div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;</div>
 <div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;    <span class="keywordtype">int</span> clearance = 2;</div>
 <div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;    <span class="keywordtype">int</span> radius = frameWidth-clearance;</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;    QRectF r(position - radius, clearance+mSeecAreaBorderHeight, radius * 2, radius * 2);</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;    QRectF r(position - radius, clearance+<a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a>, radius * 2, radius * 2);</div>
 <div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;</div>
 <div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;    painter-&gt;setBrush(<a class="code" href="../../db/d66/class_u_b_settings.html#add3118144065710146552c7f61fdf491">UBSettings::documentViewLightColor</a>);</div>
 <div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;    painter-&gt;drawEllipse(r);</div>
@@ -1456,44 +1440,44 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    QTime tTotal;</div>
 <div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    tTotal = tTotal.addMSecs(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a>);</div>
 <div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;</div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;    mLCDTimerArea.setHeight(parentItem()-&gt;boundingRect().height());</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.setHeight(parentItem()-&gt;boundingRect().height());</div>
 <div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;</div>
 <div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;    <span class="keywordtype">int</span> digitsCount = 2;</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;    <span class="keywordtype">int</span> timerWidth = mLCDTimerArea.height();</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;    <span class="keywordtype">int</span> timerWidth = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.height();</div>
 <div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;</div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    mDisplayFormat = <span class="stringliteral">&quot;ss&quot;</span>;</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a> = <span class="stringliteral">&quot;ss&quot;</span>;</div>
 <div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;</div>
 <div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;    <span class="keywordflow">if</span> (tTotal.minute() &gt; 0)</div>
 <div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    {</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;        mDisplayFormat = <span class="stringliteral">&quot;mm:&quot;</span> + mDisplayFormat;</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;        <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a> = <span class="stringliteral">&quot;mm:&quot;</span> + <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a>;</div>
 <div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;        digitsCount += 3;</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;        timerWidth += mLCDTimerArea.height()*0.5;</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;        timerWidth += <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.height()*0.5;</div>
 <div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;    }</div>
 <div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;</div>
 <div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;    <span class="keywordflow">if</span> (tTotal.hour() &gt; 0)</div>
 <div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    {</div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        mDisplayFormat = <span class="stringliteral">&quot;hh:&quot;</span> + mDisplayFormat;</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a> = <span class="stringliteral">&quot;hh:&quot;</span> + <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a>;</div>
 <div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;        digitsCount += 3;</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;        timerWidth += mLCDTimerArea.height();</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;        timerWidth += <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.height();</div>
 <div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    }</div>
 <div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    lcdTimer-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">setNumDigits</a>(digitsCount);</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">setNumDigits</a>(digitsCount);</div>
 <div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;    mLCDTimerArea.setWidth(timerWidth);</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.setWidth(timerWidth);</div>
 <div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;</div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;    lcdTimer-&gt;setRect(mLCDTimerArea);</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;setRect(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>);</div>
 <div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;</div>
 <div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;    <span class="comment">// not the best solution, but it works.</span></div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    lcdTimer-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">positionHandles</a>();</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    mLCDTimerArea = lcdTimer-&gt;rect();</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">positionHandles</a>();</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a> = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;rect();</div>
 <div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    <span class="comment">// -------------------------------------</span></div>
 <div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    lcdTimer-&gt;setPos(rect().width() - mLCDTimerArea.width(), 0);</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;setPos(rect().width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.width(), 0);</div>
 <div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    mSeecAreaBorderHeight = rect().height()/20;</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    mSeecArea.setWidth(rect().width()-mLCDTimerArea.width()-2);</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    mSeecArea.setHeight(rect().height()-2*mSeecAreaBorderHeight);</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    mSeecArea.setY(mSeecAreaBorderHeight);</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a> = rect().height()/20;</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.setWidth(rect().width()-<a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.width()-2);</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.setHeight(rect().height()-2*<a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a>);</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.setY(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a>);</div>
 <div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;}</div>
 <div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;</div>
 <div class="line"><a name="l01393"></a><span class="lineno"><a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1"> 1393</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1">DelegateMediaControl::update</a>()</div>
@@ -1501,7 +1485,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;    QTime tCurrent;</div>
 <div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;    tCurrent = tCurrent.addMSecs(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a> &lt; 0 ? 0 : <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>);</div>
 <div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;</div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;    lcdTimer-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a035f4771f2d409ccaa3d347f31aa8dfc">display</a>(tCurrent.toString(mDisplayFormat));</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a035f4771f2d409ccaa3d347f31aa8dfc">display</a>(tCurrent.toString(<a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a>));</div>
 <div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;</div>
 <div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1">QGraphicsRectItem::update</a>();</div>
 <div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;}</div>
@@ -1526,7 +1510,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;</div>
 <div class="line"><a name="l01421"></a><span class="lineno"><a class="code" href="../../df/d0d/class_delegate_media_control.html#a3913058c72f4551084bb30ad6a4806c7"> 1421</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d0d/class_delegate_media_control.html#a3913058c72f4551084bb30ad6a4806c7">DelegateMediaControl::mousePressEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;{</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;   qreal frameWidth =  mSeecArea.height()/2;</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;   qreal frameWidth =  <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2;</div>
 <div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;    <span class="keywordflow">if</span> (boundingRect().contains(event-&gt;pos() - QPointF(frameWidth,0))</div>
 <div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;        &amp;&amp; boundingRect().contains(event-&gt;pos() + QPointF(frameWidth,0)))</div>
 <div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    {</div>
@@ -1540,7 +1524,7 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;</div>
 <div class="line"><a name="l01435"></a><span class="lineno"><a class="code" href="../../df/d0d/class_delegate_media_control.html#ab39f60ffa2394305d26cdfde9edbf05f"> 1435</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab39f60ffa2394305d26cdfde9edbf05f">DelegateMediaControl::mouseMoveEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;{</div>
-<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;    qreal frameWidth = mSeecArea.height() / 2;</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;    qreal frameWidth = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height() / 2;</div>
 <div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;    <span class="keywordflow">if</span> (boundingRect().contains(event-&gt;pos() - QPointF(frameWidth,0))</div>
 <div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;        &amp;&amp; boundingRect().contains(event-&gt;pos() + QPointF(frameWidth,0)))</div>
 <div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;    {</div>
@@ -1557,11 +1541,11 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;    qreal frameWidth = rect().height() / 2;</div>
 <div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;</div>
 <div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;    minX = frameWidth;</div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;    length = mSeecArea.width() - mSeecArea.height();</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;    length = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height();</div>
 <div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;</div>
 <div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;    qreal mouseX = mousePos.x();</div>
-<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    <span class="keywordflow">if</span> (mouseX &gt;= (mSeecArea.width() - mSeecArea.height()/2))</div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        mouseX = mSeecArea.width() - mSeecArea.height()/2;</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    <span class="keywordflow">if</span> (mouseX &gt;= (<a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2))</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        mouseX = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2;</div>
 <div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;</div>
 <div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a> &gt; 0 &amp;&amp; length &gt; 0 &amp;&amp; <a class="code" href="../../df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097">mDelegate</a></div>
 <div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;        &amp;&amp; <a class="code" href="../../df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097">mDelegate</a>-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acb9624b430d6dcf237200bdb86daf5d4">mediaObject</a>() &amp;&amp; <a class="code" href="../../df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097">mDelegate</a>-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acb9624b430d6dcf237200bdb86daf5d4">mediaObject</a>()-&gt;isSeekable())</div>
@@ -1582,15 +1566,11 @@ $(document).ready(function(){initNavTree('da/dcc/_u_b_graphics_item_delegate_8cp
 <div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

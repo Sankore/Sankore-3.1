@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ed8013f237dc461738538501041f195e.html">tools</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGraphicsCompass.cpp</div>  </div>
@@ -139,17 +123,17 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">const</span> QRect UBGraphicsCompass::sDefaultRect = QRect(0, -20, 300, 48);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">const</span> QColor UBGraphicsCompass::sLightBackgroundMiddleFillColor = QColor(0x72, 0x72, 0x72, sFillTransparency);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">const</span> QColor UBGraphicsCompass::sLightBackgroundEdgeFillColor = QColor(0xc3, 0xc3, 0xc3, sFillTransparency);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">const</span> QColor UBGraphicsCompass::sLightBackgroundDrawColor = QColor(0x33, 0x33, 0x33, sDrawTransparency);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">const</span> QColor UBGraphicsCompass::sDarkBackgroundMiddleFillColor = QColor(0xb5, 0xb5, 0xb5, sFillTransparency);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">const</span> QColor UBGraphicsCompass::sDarkBackgroundEdgeFillColor = QColor(0xdd, 0xdd, 0xdd, sFillTransparency);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">const</span> QColor UBGraphicsCompass::sDarkBackgroundDrawColor = QColor(0xff, 0xff, 0xff, sDrawTransparency);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">const</span> QRect <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a44e241b247aa6a8b3cd50fd4e6937a1d">UBGraphicsCompass::sDefaultRect</a> = QRect(0, -20, 300, 48);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">const</span> QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5f5e2fde637f707d36681fe69b1c2748">UBGraphicsCompass::sLightBackgroundMiddleFillColor</a> = QColor(0x72, 0x72, 0x72, sFillTransparency);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">const</span> QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a191282ca40317368912da0307854e21f">UBGraphicsCompass::sLightBackgroundEdgeFillColor</a> = QColor(0xc3, 0xc3, 0xc3, sFillTransparency);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">const</span> QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1878565310f00f4c6ef6c91cc31e8658">UBGraphicsCompass::sLightBackgroundDrawColor</a> = QColor(0x33, 0x33, 0x33, sDrawTransparency);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">const</span> QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa7d841f21b828b4f29c2d0a8bc0a8895">UBGraphicsCompass::sDarkBackgroundMiddleFillColor</a> = QColor(0xb5, 0xb5, 0xb5, sFillTransparency);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">const</span> QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abfb318576225b8f3f1a54a21363ec30b">UBGraphicsCompass::sDarkBackgroundEdgeFillColor</a> = QColor(0xdd, 0xdd, 0xdd, sFillTransparency);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">const</span> QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab6d359dc8994503d9ee1b0f5561e705b">UBGraphicsCompass::sDarkBackgroundDrawColor</a> = QColor(0xff, 0xff, 0xff, sDrawTransparency);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> UBGraphicsCompass::sMinRadius = UBGraphicsCompass::sNeedleLength + UBGraphicsCompass::sNeedleBaseLength</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        + 32 + UBGraphicsCompass::sDefaultRect.height() + 32 + UBGraphicsCompass::sPencilBaseLength</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        + UBGraphicsCompass::sPencilLength;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aeade0578b7cd204c75ad0fab1b28c744">UBGraphicsCompass::sMinRadius</a> = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">UBGraphicsCompass::sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">UBGraphicsCompass::sNeedleBaseLength</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        + 32 + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a44e241b247aa6a8b3cd50fd4e6937a1d">UBGraphicsCompass::sDefaultRect</a>.height() + 32 + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">UBGraphicsCompass::sPencilBaseLength</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">UBGraphicsCompass::sPencilLength</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a91a6c74574ce890cbc0e81eab39c0389">   48</a></span>&#160;<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a91a6c74574ce890cbc0e81eab39c0389">UBGraphicsCompass::UBGraphicsCompass</a>()</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    : QGraphicsRectItem()</div>
@@ -164,11 +148,11 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    , mAntiScaleRatio(1.0)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    , mDrewCenterCross(false)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    setRect(sDefaultRect);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    setRect(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a44e241b247aa6a8b3cd50fd4e6937a1d">sDefaultRect</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//TODO claudio: remove code duplication</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QDesktopWidget* desktop = UBApplication::desktop();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> dpiCommon = (desktop-&gt;physicalDpiX() + desktop-&gt;physicalDpiY()) / 2;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mPixelsPerMillimeter = qRound(dpiCommon / 25.4f);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aff562b6a50024c96dab1b2124a8d4753">mPixelsPerMillimeter</a> = qRound(dpiCommon / 25.4f);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    setFlag(QGraphicsItem::ItemIsMovable, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    setFlag(QGraphicsItem::ItemIsSelectable, <span class="keyword">true</span>);</div>
@@ -176,24 +160,24 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    setAcceptsHoverEvents(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    mCloseSvgItem = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/closeTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    mCloseSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    mCloseSvgItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a> = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/closeTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    mResizeSvgItem = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/resizeCompass.svg&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    mResizeSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    mResizeSvgItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a> = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/resizeCompass.svg&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    updateResizeCursor();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    updateDrawCursor();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a45bbc9f39659194a7eaccdf2d228249f">updateResizeCursor</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a969538f62737614b1f04b8dbefe95041">updateDrawCursor</a>();</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    unsetCursor();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bacbe7e8290ad84618c29310455744ee5b">UBGraphicsItemData::itemLayerType</a>, QVariant(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da21f89658948604baf4c7b0c69cbd59bb">itemLayerType::CppTool</a>)); <span class="comment">//Necessary to set if we want z value to be assigned correctly</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    setFlag(QGraphicsItem::ItemIsSelectable, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>, SIGNAL(penColorChanged()), <span class="keyword">this</span>, SLOT(penColorChanged()));</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    connect(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>(), SIGNAL(lineWidthIndexChanged(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(lineWidthChanged()));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>, SIGNAL(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e0d030708265b1049e4a92592253111">penColorChanged</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e0d030708265b1049e4a92592253111">penColorChanged</a>()));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    connect(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>(), SIGNAL(lineWidthIndexChanged(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afe64a8701920afedad8c05f1223017c4">lineWidthChanged</a>()));</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a638747f45bb75fd36e1a05f239fa7a89">   93</a></span>&#160;<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a638747f45bb75fd36e1a05f239fa7a89">UBGraphicsCompass::~UBGraphicsCompass</a>()</div>
@@ -228,60 +212,60 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    Q_UNUSED(styleOption);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    Q_UNUSED(widget);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    mAntiScaleRatio = 1 / (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6f46e3fe2ffde7ca74f50f175504c229">systemScaleFactor</a>() * <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>());</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a> = 1 / (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6f46e3fe2ffde7ca74f50f175504c229">systemScaleFactor</a>() * <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>());</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    QTransform antiScaleTransform;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    antiScaleTransform.scale(mAntiScaleRatio, mAntiScaleRatio);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    antiScaleTransform.scale(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a>, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a>);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    mCloseSvgItem-&gt;setTransform(antiScaleTransform);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    mCloseSvgItem-&gt;setPos(</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        closeButtonRect().center().x() - mCloseSvgItem-&gt;boundingRect().width() * mAntiScaleRatio / 2,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        closeButtonRect().center().y() - mCloseSvgItem-&gt;boundingRect().height() * mAntiScaleRatio / 2);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setTransform(antiScaleTransform);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setPos(</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">closeButtonRect</a>().center().x() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;boundingRect().width() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a> / 2,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">closeButtonRect</a>().center().y() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;boundingRect().height() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a> / 2);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    mResizeSvgItem-&gt;setTransform(antiScaleTransform);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    mResizeSvgItem-&gt;setPos(</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        resizeButtonRect().center().x() - mResizeSvgItem-&gt;boundingRect().width() * mAntiScaleRatio / 2,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        resizeButtonRect().center().y() - mResizeSvgItem-&gt;boundingRect().height() * mAntiScaleRatio / 2);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setTransform(antiScaleTransform);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setPos(</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1728773d69b009ee0c69553740eb33c4">resizeButtonRect</a>().center().x() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;boundingRect().width() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a> / 2,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1728773d69b009ee0c69553740eb33c4">resizeButtonRect</a>().center().y() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;boundingRect().height() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a> / 2);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    painter-&gt;setPen(drawColor());</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    painter-&gt;drawRoundedRect(hingeRect(), 4, 4);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    painter-&gt;fillPath(hingeShape(), middleFillColor());</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    painter-&gt;setPen(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4dee437469f94057cfda2990c300a7b8">drawColor</a>());</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    painter-&gt;drawRoundedRect(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>(), 4, 4);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aff8cc04f6115bfb3db6f98c418ecc708">hingeShape</a>(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">middleFillColor</a>());</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    painter-&gt;fillPath(needleShape(), middleFillColor());</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    painter-&gt;drawPath(needleShape());</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    painter-&gt;fillPath(needleBaseShape(), middleFillColor());</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    painter-&gt;drawPath(needleBaseShape());</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abb74e55d392596244cf2c2abc141289d">needleShape</a>(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">middleFillColor</a>());</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    painter-&gt;drawPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abb74e55d392596244cf2c2abc141289d">needleShape</a>());</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad3f72cf41986684d90e04c93dffec8fb">needleBaseShape</a>(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">middleFillColor</a>());</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    painter-&gt;drawPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad3f72cf41986684d90e04c93dffec8fb">needleBaseShape</a>());</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    QLinearGradient needleArmLinearGradient(</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        QPointF(rect().left() + sNeedleLength + sNeedleBaseLength, rect().center().y()),</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        QPointF(hingeRect().left(), rect().center().y()));</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    needleArmLinearGradient.setColorAt(0, edgeFillColor());</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    needleArmLinearGradient.setColorAt(1, middleFillColor());</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    painter-&gt;fillPath(needleArmShape(), needleArmLinearGradient);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    painter-&gt;drawPath(needleArmShape());</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        QPointF(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a>, rect().center().y()),</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        QPointF(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left(), rect().center().y()));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    needleArmLinearGradient.setColorAt(0, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a8439ef785e94832bdb89403087d98303">edgeFillColor</a>());</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    needleArmLinearGradient.setColorAt(1, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">middleFillColor</a>());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9d2e780b09cd323644ff2bbcba711076">needleArmShape</a>(), needleArmLinearGradient);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    painter-&gt;drawPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9d2e780b09cd323644ff2bbcba711076">needleArmShape</a>());</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    QRectF hingeGripRect(rect().center().x() - 16, rect().center().y() - 16, 32, 32);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    painter-&gt;drawEllipse(hingeGripRect);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span> (mShowButtons)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        paintAngleDisplay(painter);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a888c289ed9b13af6beb449727f61d631">paintAngleDisplay</a>(painter);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    QLinearGradient pencilArmLinearGradient(</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        QPointF(hingeRect().right(), rect().center().y()),</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        QPointF(rect().right() - sPencilLength - sPencilBaseLength, rect().center().y()));</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    pencilArmLinearGradient.setColorAt(0, middleFillColor());</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    pencilArmLinearGradient.setColorAt(1, edgeFillColor());</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    painter-&gt;fillPath(pencilArmShape(), pencilArmLinearGradient);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    painter-&gt;drawPath(pencilArmShape());</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        QPointF(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right(), rect().center().y()),</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        QPointF(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>, rect().center().y()));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    pencilArmLinearGradient.setColorAt(0, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">middleFillColor</a>());</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    pencilArmLinearGradient.setColorAt(1, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a8439ef785e94832bdb89403087d98303">edgeFillColor</a>());</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2c47fccf2076d2b3afab0b28c90e2dc1">pencilArmShape</a>(), pencilArmLinearGradient);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    painter-&gt;drawPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2c47fccf2076d2b3afab0b28c90e2dc1">pencilArmShape</a>());</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (scene()-&gt;isDarkBackground())</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        painter-&gt;fillPath(pencilShape(), <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;penColorOnDarkBackground());</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;isDarkBackground())</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac83f38299ad72f8759f0505e13f4aede">pencilShape</a>(), <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;penColorOnDarkBackground());</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        painter-&gt;fillPath(pencilShape(), <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;penColorOnLightBackground());</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac83f38299ad72f8759f0505e13f4aede">pencilShape</a>(), <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;penColorOnLightBackground());</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    painter-&gt;fillPath(pencilBaseShape(), middleFillColor());</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    painter-&gt;drawPath(pencilBaseShape());</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    painter-&gt;fillPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afca3c624f61e6b9b381dab8fc870605d">pencilBaseShape</a>(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">middleFillColor</a>());</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    painter-&gt;drawPath(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afca3c624f61e6b9b381dab8fc870605d">pencilBaseShape</a>());</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">if</span> (mResizing || mRotating || mDrawing || (mShowButtons &amp;&amp; rect().width() &gt; sDisplayRadiusOnPencilArmMinLength))</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        paintRadiusDisplay(painter);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a> || <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a6063405406b009ecf73012454951705c">mRotating</a> || <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a> || (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a> &amp;&amp; rect().width() &gt; <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aabb586069909cae6b8f0e780a0e77790">sDisplayRadiusOnPencilArmMinLength</a>))</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#acdf690a7b3c729b58668bbde8793ca01">paintRadiusDisplay</a>(painter);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
@@ -289,8 +273,8 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">if</span> (change == QGraphicsItem::ItemSceneChange)</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        mCloseSvgItem-&gt;setParentItem(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        mResizeSvgItem-&gt;setParentItem(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setParentItem(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setParentItem(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1312b497b77914e6d55314cdb2488fd0">QGraphicsRectItem::itemChange</a>(change, value);</div>
@@ -304,35 +288,35 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">bool</span> closing = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span> (resizeButtonRect().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1728773d69b009ee0c69553740eb33c4">resizeButtonRect</a>().contains(event-&gt;pos()))</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        mResizing = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        mRotating = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a6063405406b009ecf73012454951705c">mRotating</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hingeRect().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().contains(event-&gt;pos()))</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        mRotating = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        mResizing = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a6063405406b009ecf73012454951705c">mRotating</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!closeButtonRect().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">closeButtonRect</a>().contains(event-&gt;pos()))</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        mDrawing = <span class="keyword">event</span>-&gt;pos().x() &gt; rect().right() - sPencilLength - sPencilBaseLength;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">if</span> (mDrawing)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a> = <span class="keyword">event</span>-&gt;pos().x() &gt; rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a>)</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            mSpanAngleInDegrees = 0;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            mSceneArcStartPoint = mapToScene(pencilPosition());</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a883f9c98b65f6fb3fd559abd3969fd42">initStroke</a>();</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(mSceneArcStartPoint);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a> = 0;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac0268c655264854a82e76a0ec6cd79d1">mSceneArcStartPoint</a> = mapToScene(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abf19b9fa74b84540d9e0545a778c9795">pencilPosition</a>());</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a883f9c98b65f6fb3fd559abd3969fd42">initStroke</a>();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac0268c655264854a82e76a0ec6cd79d1">mSceneArcStartPoint</a>);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        }</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac46f798cbb16c5c96fbca1f261822e53">QGraphicsRectItem::mousePressEvent</a>(event);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">else</span> </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        closing = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    mResizeSvgItem-&gt;setVisible(mShowButtons &amp;&amp; mResizing);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    mCloseSvgItem-&gt;setVisible(mShowButtons &amp;&amp; closing);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setVisible(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a> &amp;&amp; <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a>);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setVisible(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a> &amp;&amp; closing);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
 <div class="line"><a name="l00232"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a524de67b4d3b7dcdfc98ba061038cd14">  232</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a524de67b4d3b7dcdfc98ba061038cd14">UBGraphicsCompass::mouseMoveEvent</a>(QGraphicsSceneMouseEvent *event)</div>
@@ -341,39 +325,39 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (!mResizing &amp;&amp; !mRotating &amp;&amp; !mDrawing)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a> &amp;&amp; !<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a6063405406b009ecf73012454951705c">mRotating</a> &amp;&amp; !<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a>)</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a524de67b4d3b7dcdfc98ba061038cd14">QGraphicsRectItem::mouseMoveEvent</a>(event);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        mDrewCenterCross = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1a3eb0e9cf6fe3b48023a54fc63991c5">mDrewCenterCross</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">if</span> (mResizing)</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a>)</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        {</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            QPointF delta = <span class="keyword">event</span>-&gt;pos() - <span class="keyword">event</span>-&gt;lastPos();</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">if</span> (rect().width() + delta.x() &lt; sMinRadius)</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                delta.setX(sMinRadius - rect().width());</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">if</span> (rect().width() + delta.x() &lt; <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aeade0578b7cd204c75ad0fab1b28c744">sMinRadius</a>)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                delta.setX(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aeade0578b7cd204c75ad0fab1b28c744">sMinRadius</a> - rect().width());</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            setRect(QRectF(rect().topLeft(), QSizeF(rect().width() + delta.x(), rect().height())));</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            QLineF currentLine(needlePosition(), event-&gt;pos());</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            QLineF lastLine(needlePosition(), event-&gt;lastPos());</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            QLineF currentLine(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>(), event-&gt;pos());</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            QLineF lastLine(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>(), event-&gt;lastPos());</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            qreal deltaAngle = currentLine.angleTo(lastLine);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordflow">if</span> (deltaAngle &gt; 180)</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                deltaAngle -= 360;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (deltaAngle &lt; -180)</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                deltaAngle += 360;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            rotateAroundNeedle(deltaAngle);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad450891f8664b51126bff39318112dc5">rotateAroundNeedle</a>(deltaAngle);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">if</span> (mDrawing)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a>)</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                mSpanAngleInDegrees += deltaAngle;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">if</span> (mSpanAngleInDegrees &gt;= 1080)</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    mSpanAngleInDegrees -= 360;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mSpanAngleInDegrees &lt; -1080)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    mSpanAngleInDegrees += 360;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                drawArc();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a> += deltaAngle;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a> &gt;= 1080)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a> -= 360;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a> &lt; -1080)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a> += 360;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a3b221029aa782160327163d7d48b626f">drawArc</a>();</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            }</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
@@ -386,23 +370,23 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (mResizing)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a>)</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mRotating)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a6063405406b009ecf73012454951705c">mRotating</a>)</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        updateResizeCursor();</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        updateDrawCursor();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a45bbc9f39659194a7eaccdf2d228249f">updateResizeCursor</a>();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a969538f62737614b1f04b8dbefe95041">updateDrawCursor</a>();</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mDrawing)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a>)</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        updateResizeCursor();</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        updateDrawCursor();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a45bbc9f39659194a7eaccdf2d228249f">updateResizeCursor</a>();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a969538f62737614b1f04b8dbefe95041">updateDrawCursor</a>();</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (closeButtonRect().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">closeButtonRect</a>().contains(event-&gt;pos()))</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    {</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        hide();</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
@@ -413,12 +397,12 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    {</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5fcfc89194559c4a2fa655f7ac7f8ff1">QGraphicsRectItem::mouseReleaseEvent</a>(event);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    mRotating = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    mResizing = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    mDrawing = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a6063405406b009ecf73012454951705c">mRotating</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5d6f470fdb65586595c05ae67d861b93">mResizing</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (scene())</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        scene()-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#ad92b735788dc8e172f091a13e899b783">setModified</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>())</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#ad92b735788dc8e172f091a13e899b783">setModified</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
 <div class="line"><a name="l00318"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2667b78936a87cf0b86573c4847df86d">  318</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2667b78936a87cf0b86573c4847df86d">UBGraphicsCompass::hoverEnterEvent</a>(QGraphicsSceneHoverEvent *event)</div>
@@ -427,25 +411,25 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    mOuterCursor = cursor();</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    mShowButtons = shape().contains(event-&gt;pos());</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#added0ac76428073d177f86512524475f">mOuterCursor</a> = cursor();</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a> = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e5b0e734f56d1bd2385484261e99343">shape</a>().contains(event-&gt;pos());</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    mCloseSvgItem-&gt;setParentItem(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    mResizeSvgItem-&gt;setParentItem(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setParentItem(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setParentItem(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    mCloseSvgItem-&gt;setVisible(mShowButtons);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span> (mShowButtons)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setVisible(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>)</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> (hingeRect().contains(event-&gt;pos()))</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            setCursor(rotateCursor());</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event-&gt;pos().x() &gt; rect().right() - sPencilLength - sPencilBaseLength)</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            setCursor(drawCursor());</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resizeButtonRect().contains(event-&gt;pos()))</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            setCursor(resizeCursor());</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (closeButtonRect().contains(event-&gt;pos()))</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            setCursor(closeCursor());</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0ebb4fb01f3fcabad833c1e1b9483cd4">rotateCursor</a>());</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event-&gt;pos().x() &gt; rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a3f75ac56370278c990e7736e02d878cc">drawCursor</a>());</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1728773d69b009ee0c69553740eb33c4">resizeButtonRect</a>().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2486e885d5a903817fcb3c37544ead46">resizeCursor</a>());</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">closeButtonRect</a>().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a308e76f092fe19157112627542e193a4">closeCursor</a>());</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            setCursor(moveCursor());</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a92701e9e155ea6167b6e90b2743232fe">moveCursor</a>());</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    update();</div>
@@ -457,9 +441,9 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    mShowButtons = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    mCloseSvgItem-&gt;setVisible(mShowButtons);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    mResizeSvgItem-&gt;setVisible(mShowButtons);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setVisible(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setVisible(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>);</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    unsetCursor();</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    update();</div>
@@ -471,41 +455,41 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    mShowButtons = shape().contains(event-&gt;pos());</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    mCloseSvgItem-&gt;setVisible(mShowButtons);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    mResizeSvgItem-&gt;setVisible(mShowButtons);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">if</span> (mShowButtons)</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a> = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e5b0e734f56d1bd2385484261e99343">shape</a>().contains(event-&gt;pos());</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4c8db8ef56eab244631d4cf2b8ac5f1f">mCloseSvgItem</a>-&gt;setVisible(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a71234356af470c4c277968f52c3487b5">mResizeSvgItem</a>-&gt;setVisible(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abce342e8e58937e09f0221b3226ce373">mShowButtons</a>)</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> (hingeRect().contains(event-&gt;pos()))</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            setCursor(rotateCursor());</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event-&gt;pos().x() &gt; rect().right() - sPencilLength - sPencilBaseLength)</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            setCursor(drawCursor());</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resizeButtonRect().contains(event-&gt;pos()))</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            setCursor(resizeCursor());</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (closeButtonRect().contains(event-&gt;pos()))</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            setCursor(closeCursor());</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0ebb4fb01f3fcabad833c1e1b9483cd4">rotateCursor</a>());</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event-&gt;pos().x() &gt; rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>)</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a3f75ac56370278c990e7736e02d878cc">drawCursor</a>());</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1728773d69b009ee0c69553740eb33c4">resizeButtonRect</a>().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2486e885d5a903817fcb3c37544ead46">resizeCursor</a>());</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">closeButtonRect</a>().contains(event-&gt;pos()))</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a308e76f092fe19157112627542e193a4">closeCursor</a>());</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            setCursor(moveCursor());</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a92701e9e155ea6167b6e90b2743232fe">moveCursor</a>());</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        setCursor(mOuterCursor);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        setCursor(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#added0ac76428073d177f86512524475f">mOuterCursor</a>);</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    update();</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::paintAngleDisplay(QPainter *painter)</div>
+<div class="line"><a name="l00392"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a888c289ed9b13af6beb449727f61d631">  392</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a888c289ed9b13af6beb449727f61d631">UBGraphicsCompass::paintAngleDisplay</a>(QPainter *painter)</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    qreal angle = angleInDegrees();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    qreal angle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">angleInDegrees</a>();</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    qreal angleValue = mDrawing ? - mSpanAngleInDegrees : angle;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    qreal angleValue = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a20c3176c81d9e3eb2175dcb26d194c84">mDrawing</a> ? - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a> : angle;</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    QString angleText = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(angleValue, 0, <span class="charliteral">&#39;f&#39;</span>, 1) + <span class="stringliteral">&quot;°&quot;</span>;</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    painter-&gt;save();</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    painter-&gt;setFont(font());</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    painter-&gt;setFont(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">font</a>());</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        QFontMetricsF fm(painter-&gt;font());</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    painter-&gt;translate(hingeRect().center());</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    painter-&gt;translate(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().center());</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    painter-&gt;rotate(angle);</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        painter-&gt;drawText(</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        QRectF(</div>
@@ -518,26 +502,26 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    painter-&gt;restore();</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;}</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::paintRadiusDisplay(QPainter *painter)</div>
+<div class="line"><a name="l00415"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#acdf690a7b3c729b58668bbde8793ca01">  415</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#acdf690a7b3c729b58668bbde8793ca01">UBGraphicsCompass::paintRadiusDisplay</a>(QPainter *painter)</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;{</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    qreal radiusInCentimeters = rect().width() / (mPixelsPerMillimeter * 10);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    QString format = rect().width() &gt;= sDisplayRadiusUnitMinLength ? <span class="stringliteral">&quot;%1 cm&quot;</span> : <span class="stringliteral">&quot;%1&quot;</span>;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    qreal radiusInCentimeters = rect().width() / (<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aff562b6a50024c96dab1b2124a8d4753">mPixelsPerMillimeter</a> * 10);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    QString format = rect().width() &gt;= <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad99feb33783713c01acfa19321660ff3">sDisplayRadiusUnitMinLength</a> ? <span class="stringliteral">&quot;%1 cm&quot;</span> : <span class="stringliteral">&quot;%1&quot;</span>;</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    QString radiusText = QString(format).arg(radiusInCentimeters, 0, <span class="charliteral">&#39;f&#39;</span>, 1);</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">bool</span> onPencilArm = rect().width() &gt; sDisplayRadiusOnPencilArmMinLength;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">bool</span> onPencilArm = rect().width() &gt; <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aabb586069909cae6b8f0e780a0e77790">sDisplayRadiusOnPencilArmMinLength</a>;</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    painter-&gt;save();</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    painter-&gt;setFont(font());</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    painter-&gt;setFont(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">font</a>());</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    QFontMetricsF fm(painter-&gt;font());</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    QPointF textCenter;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">if</span> (onPencilArm)</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        textCenter = QPointF(rect().right() - sPencilBaseLength - sPencilLength - fm.width(radiusText) / 2 - 24 - 8, rect().center().y());</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        textCenter = QPointF(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - fm.width(radiusText) / 2 - 24 - 8, rect().center().y());</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        textCenter = QPointF((rect().left() + sNeedleLength + sNeedleBaseLength + hingeRect().left()) / 2, rect().center().y());</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        textCenter = QPointF((rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left()) / 2, rect().center().y());</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    painter-&gt;translate(textCenter);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    qreal angle = angleInDegrees();</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    qreal angle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">angleInDegrees</a>();</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keywordflow">if</span> (angle &gt; 180)</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        angle -= 360;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (angle &lt; -180)</div>
@@ -555,48 +539,48 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    painter-&gt;restore();</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;}</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;QCursor UBGraphicsCompass::moveCursor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a92701e9e155ea6167b6e90b2743232fe">  452</a></span>&#160;QCursor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a92701e9e155ea6167b6e90b2743232fe">UBGraphicsCompass::moveCursor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keywordflow">return</span> Qt::SizeAllCursor;</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;}</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;QCursor UBGraphicsCompass::resizeCursor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2486e885d5a903817fcb3c37544ead46">  457</a></span>&#160;QCursor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2486e885d5a903817fcb3c37544ead46">UBGraphicsCompass::resizeCursor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keywordflow">return</span> mResizeCursor;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac647cfbca667dfd1a8d345d60a09bc6c">mResizeCursor</a>;</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;}</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;QCursor UBGraphicsCompass::rotateCursor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0ebb4fb01f3fcabad833c1e1b9483cd4">  462</a></span>&#160;QCursor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0ebb4fb01f3fcabad833c1e1b9483cd4">UBGraphicsCompass::rotateCursor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/d23/class_u_b_resources.html#af681f547d1374c661b79246375397337">UBResources::resources</a>()-&gt;<a class="code" href="../../d8/d23/class_u_b_resources.html#ab236f6e21733987cf38e8d2d3f35b341">rotateCursor</a>;</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;}</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;QCursor UBGraphicsCompass::closeCursor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a308e76f092fe19157112627542e193a4">  467</a></span>&#160;QCursor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a308e76f092fe19157112627542e193a4">UBGraphicsCompass::closeCursor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordflow">return</span> Qt::ArrowCursor;</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;}</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;QCursor UBGraphicsCompass::drawCursor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a3f75ac56370278c990e7736e02d878cc">  472</a></span>&#160;QCursor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a3f75ac56370278c990e7736e02d878cc">UBGraphicsCompass::drawCursor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordflow">return</span> mDrawCursor;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a96e59ab15670f58d5d8fec54620d0a65">mDrawCursor</a>;</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;}</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;QRectF UBGraphicsCompass::hingeRect()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">  477</a></span>&#160;QRectF <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">UBGraphicsCompass::hingeRect</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    QRectF rotationRect(rect().width() / 2 - rect().height() / 2, 0, rect().height(), rect().height());</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    rotationRect.translate(rect().topLeft());</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="keywordflow">return</span> rotationRect;</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;}</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;QRectF UBGraphicsCompass::closeButtonRect()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00484"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">  484</a></span>&#160;QRectF <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0af041bcb316f2626678a666626dd6a6">UBGraphicsCompass::closeButtonRect</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    QPixmap closePixmap(<span class="stringliteral">&quot;:/images/closeTool.svg&quot;</span>);</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    QSizeF closeRectSize(</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        closePixmap.width() * mAntiScaleRatio,</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        closePixmap.height() * mAntiScaleRatio);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        closePixmap.width() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a>,</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        closePixmap.height() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a>);</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    QPointF closeRectTopLeft(</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        sNeedleLength + sNeedleBaseLength + 4,</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a> + 4,</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        (rect().height() - closeRectSize.height()) / 2);</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    QRectF closeRect(closeRectTopLeft, closeRectSize);</div>
@@ -605,16 +589,16 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">return</span> closeRect;</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;}</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;QRectF UBGraphicsCompass::resizeButtonRect()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1728773d69b009ee0c69553740eb33c4">  502</a></span>&#160;QRectF <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1728773d69b009ee0c69553740eb33c4">UBGraphicsCompass::resizeButtonRect</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    QPixmap resizePixmap(<span class="stringliteral">&quot;:/images/resizeCompass.svg&quot;</span>);</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    QSizeF resizeRectSize(</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        resizePixmap.width() * mAntiScaleRatio,</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        resizePixmap.height() * mAntiScaleRatio);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        resizePixmap.width() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a>,</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        resizePixmap.height() * <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1f7b156ed07e633402b488c71240b7b8">mAntiScaleRatio</a>);</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    QPointF resizeRectTopLeft(</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        rect().width() - sPencilLength - sPencilBaseLength - resizeRectSize.width() - 4,</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        rect().width() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a> - resizeRectSize.width() - 4,</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        (rect().height() - resizeRectSize.height()) / 2);</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    QRectF resizeRect(resizeRectTopLeft, resizeRectSize);</div>
@@ -623,113 +607,113 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="keywordflow">return</span> resizeRect;</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;}</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::rotateAroundNeedle(qreal angle)</div>
+<div class="line"><a name="l00520"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad450891f8664b51126bff39318112dc5">  520</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad450891f8664b51126bff39318112dc5">UBGraphicsCompass::rotateAroundNeedle</a>(qreal angle)</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;{</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    QTransform transform;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    transform.translate(needlePosition().x(), needlePosition().y());</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    transform.translate(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>().x(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>().y());</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    transform.rotate(angle);</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    transform.translate(- needlePosition().x(), - needlePosition().y());</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    transform.translate(- <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>().x(), - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>().y());</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    setTransform(transform, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;}</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::drawArc()</div>
+<div class="line"><a name="l00529"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a3b221029aa782160327163d7d48b626f">  529</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a3b221029aa782160327163d7d48b626f">UBGraphicsCompass::drawArc</a>()</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;{</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordflow">if</span> (!mDrewCenterCross)</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1a3eb0e9cf6fe3b48023a54fc63991c5">mDrewCenterCross</a>)</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    {</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        paintCenterCross();</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        mDrewCenterCross = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(mSceneArcStartPoint);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aacb9f9dd58594c4bee56e5e2876a8709">paintCenterCross</a>();</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1a3eb0e9cf6fe3b48023a54fc63991c5">mDrewCenterCross</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac0268c655264854a82e76a0ec6cd79d1">mSceneArcStartPoint</a>);</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    }</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    QPointF sceneNeedlePosition = mapToScene(needlePosition());</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    qreal arcSpanAngle = mSpanAngleInDegrees;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    QPointF sceneNeedlePosition = mapToScene(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>());</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    qreal arcSpanAngle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a53831f7bb2c99a91a1518c000041febd">mSpanAngleInDegrees</a>;</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="keywordflow">if</span> (arcSpanAngle &gt; 360)</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        arcSpanAngle = 360;</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arcSpanAngle &lt; -360)</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        arcSpanAngle = -360;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordflow">if</span> (!mDrewCircle || (-360 != arcSpanAngle &amp;&amp; 360 != arcSpanAngle))</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2422d54b7dff9bc2d8866f75db98c7f1">mDrewCircle</a> || (-360 != arcSpanAngle &amp;&amp; 360 != arcSpanAngle))</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    {</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        mDrewCircle = (-360 == arcSpanAngle || 360 == arcSpanAngle);</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a56e8a13badcf6e0c4780557e45752fbe">drawArcTo</a>(sceneNeedlePosition, arcSpanAngle);</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2422d54b7dff9bc2d8866f75db98c7f1">mDrewCircle</a> = (-360 == arcSpanAngle || 360 == arcSpanAngle);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a56e8a13badcf6e0c4780557e45752fbe">drawArcTo</a>(sceneNeedlePosition, arcSpanAngle);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    }</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;}</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::updateResizeCursor()</div>
+<div class="line"><a name="l00550"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a45bbc9f39659194a7eaccdf2d228249f">  550</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a45bbc9f39659194a7eaccdf2d228249f">UBGraphicsCompass::updateResizeCursor</a>()</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;{</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    QPixmap pix(<span class="stringliteral">&quot;:/images/cursors/resize.png&quot;</span>);</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    qreal angle = angleInDegrees();</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    qreal angle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">angleInDegrees</a>();</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    QTransform tr;</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    tr.rotate(- angle);</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    mResizeCursor = QCursor(pix.transformed(tr, Qt::SmoothTransformation), pix.width() / 2,  pix.height() / 2);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac647cfbca667dfd1a8d345d60a09bc6c">mResizeCursor</a> = QCursor(pix.transformed(tr, Qt::SmoothTransformation), pix.width() / 2,  pix.height() / 2);</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;}</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::updateDrawCursor()</div>
+<div class="line"><a name="l00560"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a969538f62737614b1f04b8dbefe95041">  560</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a969538f62737614b1f04b8dbefe95041">UBGraphicsCompass::updateDrawCursor</a>()</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;{</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    QPixmap pix(<span class="stringliteral">&quot;:/images/cursors/drawCompass.png&quot;</span>);</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    qreal angle = angleInDegrees();</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    qreal angle = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">angleInDegrees</a>();</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    QTransform tr;</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    tr.rotate(- angle);</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    mDrawCursor = QCursor(pix.transformed(tr, Qt::SmoothTransformation), pix.width() / 2,  pix.height() / 2);</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a96e59ab15670f58d5d8fec54620d0a65">mDrawCursor</a> = QCursor(pix.transformed(tr, Qt::SmoothTransformation), pix.width() / 2,  pix.height() / 2);</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;}</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::paintCenterCross()</div>
+<div class="line"><a name="l00570"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aacb9f9dd58594c4bee56e5e2876a8709">  570</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aacb9f9dd58594c4bee56e5e2876a8709">UBGraphicsCompass::paintCenterCross</a>()</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;{</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    QPointF needleCrossCenter = mapToScene(needlePosition());</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(QPointF(needleCrossCenter.x() - 5, needleCrossCenter.y()));</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a539db7c6773c2f0f560b1be082e71c8e">drawLineTo</a>(QPointF(needleCrossCenter.x() + 5, needleCrossCenter.y()), 1,</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    QPointF needleCrossCenter = mapToScene(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">needlePosition</a>());</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(QPointF(needleCrossCenter.x() - 5, needleCrossCenter.y()));</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a539db7c6773c2f0f560b1be082e71c8e">drawLineTo</a>(QPointF(needleCrossCenter.x() + 5, needleCrossCenter.y()), 1,</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(QPointF(needleCrossCenter.x(), needleCrossCenter.y() - 5));</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a539db7c6773c2f0f560b1be082e71c8e">drawLineTo</a>(QPointF(needleCrossCenter.x(), needleCrossCenter.y() + 5), 1,</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a941121f7dc85d8868d108fe7f3397193">moveTo</a>(QPointF(needleCrossCenter.x(), needleCrossCenter.y() - 5));</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a539db7c6773c2f0f560b1be082e71c8e">drawLineTo</a>(QPointF(needleCrossCenter.x(), needleCrossCenter.y() + 5), 1,</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>);</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;}</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;QPointF UBGraphicsCompass::needlePosition()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00581"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">  581</a></span>&#160;QPointF <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa4b0f02d7e8fcb08b7b4779c1bc38aef">UBGraphicsCompass::needlePosition</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keywordflow">return</span> QPointF(rect().x(), rect().y() + rect().height() / 2);</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;}</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;QPointF UBGraphicsCompass::pencilPosition()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abf19b9fa74b84540d9e0545a778c9795">  586</a></span>&#160;QPointF <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abf19b9fa74b84540d9e0545a778c9795">UBGraphicsCompass::pencilPosition</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordflow">return</span> QPointF(rect().right(), rect().center().y());</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;}</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;QPainterPath UBGraphicsCompass::shape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e5b0e734f56d1bd2385484261e99343">  591</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e5b0e734f56d1bd2385484261e99343">UBGraphicsCompass::shape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    QPainterPath path = needleShape();</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    path = path.united(needleBaseShape());</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    path = path.united(needleArmShape());</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    path.addRect(hingeRect());</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    path = path.united(pencilArmShape());</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    path = path.united(pencilBaseShape());</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    path = path.united(pencilShape());</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    QPainterPath path = <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abb74e55d392596244cf2c2abc141289d">needleShape</a>();</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    path = path.united(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad3f72cf41986684d90e04c93dffec8fb">needleBaseShape</a>());</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    path = path.united(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9d2e780b09cd323644ff2bbcba711076">needleArmShape</a>());</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    path.addRect(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>());</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    path = path.united(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2c47fccf2076d2b3afab0b28c90e2dc1">pencilArmShape</a>());</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    path = path.united(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afca3c624f61e6b9b381dab8fc870605d">pencilBaseShape</a>());</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    path = path.united(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac83f38299ad72f8759f0505e13f4aede">pencilShape</a>());</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;}</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;QPainterPath UBGraphicsCompass::needleShape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abb74e55d392596244cf2c2abc141289d">  603</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abb74e55d392596244cf2c2abc141289d">UBGraphicsCompass::needleShape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    QPainterPath path;</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    path.moveTo(rect().left(), rect().center().y());</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    path.lineTo(rect().left() + sNeedleLength, rect().center().y() - 2);</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    path.lineTo(rect().left() + sNeedleLength, rect().center().y() + 2);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    path.lineTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a>, rect().center().y() - 2);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    path.lineTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a>, rect().center().y() + 2);</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    path.closeSubpath();</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;}</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;QPainterPath UBGraphicsCompass::needleBaseShape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00613"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad3f72cf41986684d90e04c93dffec8fb">  613</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad3f72cf41986684d90e04c93dffec8fb">UBGraphicsCompass::needleBaseShape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    QPainterPath path;</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    path.moveTo(rect().left() + sNeedleLength, rect().center().y() - 4);</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    path.moveTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a>, rect().center().y() - 4);</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        rect().left() + sNeedleLength,</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a>,</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        rect().center().y() - 8,</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        180, -90);</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    path.lineTo(rect().left() + sNeedleLength + sNeedleBaseLength, rect().center().y() - 8);</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    path.lineTo(rect().left() + sNeedleLength + sNeedleBaseLength, rect().center().y() + 8);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    path.lineTo(rect().left() + sNeedleLength + 4, rect().center().y() + 8);</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    path.lineTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a>, rect().center().y() - 8);</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    path.lineTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a>, rect().center().y() + 8);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    path.lineTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + 4, rect().center().y() + 8);</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        rect().left() + sNeedleLength,</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a>,</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        rect().center().y(),</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        -90, -90);</div>
@@ -738,20 +722,20 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;}</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;QPainterPath UBGraphicsCompass::needleArmShape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9d2e780b09cd323644ff2bbcba711076">  635</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9d2e780b09cd323644ff2bbcba711076">UBGraphicsCompass::needleArmShape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    QPainterPath path;</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    path.moveTo(rect().left() + sNeedleLength + sNeedleBaseLength, rect().center().y() - 8);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    path.moveTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a>, rect().center().y() - 8);</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        rect().left() + sNeedleLength + sNeedleBaseLength,</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a>,</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        rect().center().y() - 12,</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        180, -90);</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    path.lineTo(hingeRect().left(), rect().center().y() - 16);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    path.lineTo(hingeRect().left(), rect().center().y() + 16);</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    path.lineTo(rect().left() + sNeedleLength + sNeedleBaseLength + 4, rect().center().y() + 12);</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    path.lineTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left(), rect().center().y() - 16);</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    path.lineTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left(), rect().center().y() + 16);</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    path.lineTo(rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a> + 4, rect().center().y() + 12);</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        rect().left() + sNeedleLength + sNeedleBaseLength,</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        rect().left() + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a9a46403f60ded749a78212b20b55b386">sNeedleLength</a> + <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a083265c13ca5b407ef97c98e0a27dacc">sNeedleBaseLength</a>,</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        rect().center().y() + 4,</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        -90, -90);</div>
@@ -759,120 +743,120 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;}</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;QPainterPath UBGraphicsCompass::hingeShape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aff8cc04f6115bfb3db6f98c418ecc708">  656</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aff8cc04f6115bfb3db6f98c418ecc708">UBGraphicsCompass::hingeShape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    QPainterPath path;</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    path.moveTo(hingeRect().left() + 4, hingeRect().top());</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    path.lineTo(hingeRect().right() - 4, hingeRect().top());</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    path.moveTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left() + 4, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().top());</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    path.lineTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right() - 4, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().top());</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        hingeRect().right() - 8,</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;        hingeRect().top(),</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right() - 8,</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().top(),</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        90, -90);</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    path.lineTo(hingeRect().right(), hingeRect().bottom() - 4);</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    path.lineTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().bottom() - 4);</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        hingeRect().right() - 8,</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        hingeRect().bottom() - 8,</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right() - 8,</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().bottom() - 8,</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        0, -90);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    path.lineTo(hingeRect().left() + 4, hingeRect().bottom());</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    path.lineTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left() + 4, <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().bottom());</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        hingeRect().left(),</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        hingeRect().bottom() - 8,</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left(),</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().bottom() - 8,</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        -90, -90);</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    path.lineTo(hingeRect().left(), hingeRect().top() + 4);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    path.lineTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().top() + 4);</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        hingeRect().left(),</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        hingeRect().top(),</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().left(),</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().top(),</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        -180, -90);</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    path.closeSubpath();</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;}</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;QPainterPath UBGraphicsCompass::pencilShape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac83f38299ad72f8759f0505e13f4aede">  688</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ac83f38299ad72f8759f0505e13f4aede">UBGraphicsCompass::pencilShape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="keywordtype">int</span> penWidthIndex = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a6ec1b63a496028bc006f9a360f10e74f">penWidthIndex</a>();</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="keywordtype">int</span> logicalCompassPencilWidth = penWidthIndex &gt; 1 ? 8 : (penWidthIndex &gt; 0 ? 4 : 2);</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    QPainterPath path;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    path.moveTo(rect().right() - sPencilLength, rect().center().y() - logicalCompassPencilWidth / 2);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    path.moveTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().center().y() - logicalCompassPencilWidth / 2);</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    path.lineTo(rect().right() - logicalCompassPencilWidth / 2, rect().center().y() - logicalCompassPencilWidth / 2);</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    QRectF tipRect(rect().right() - logicalCompassPencilWidth, rect().center().y() - logicalCompassPencilWidth / 2, logicalCompassPencilWidth, logicalCompassPencilWidth);</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    path.arcTo(tipRect, 90, -180);</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    path.lineTo(rect().right() - sPencilLength, rect().center().y() + logicalCompassPencilWidth / 2);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    path.lineTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().center().y() + logicalCompassPencilWidth / 2);</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    path.closeSubpath();</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;}</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;QPainterPath UBGraphicsCompass::pencilBaseShape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afca3c624f61e6b9b381dab8fc870605d">  702</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afca3c624f61e6b9b381dab8fc870605d">UBGraphicsCompass::pencilBaseShape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    QPainterPath path;</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    path.moveTo(rect().right() - sPencilLength - sPencilBaseLength, rect().center().y() - 8);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    path.lineTo(rect().right() - sPencilLength - 4, rect().center().y() - 8);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    path.moveTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>, rect().center().y() - 8);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    path.lineTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - 4, rect().center().y() - 8);</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        rect().right() - sPencilLength - 8, rect().center().y() - 8,</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - 8, rect().center().y() - 8,</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        90, -90);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    path.lineTo(rect().right() - sPencilLength, rect().center().y() + 4);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    path.lineTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().center().y() + 4);</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        rect().right() - sPencilLength - 8, rect().center().y(),</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - 8, rect().center().y(),</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        0, -90);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    path.lineTo(rect().right() - sPencilLength - sPencilBaseLength, rect().center().y() + 8);</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    path.lineTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>, rect().center().y() + 8);</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    path.closeSubpath();</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;}</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;QPainterPath UBGraphicsCompass::pencilArmShape()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2c47fccf2076d2b3afab0b28c90e2dc1">  722</a></span>&#160;QPainterPath <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a2c47fccf2076d2b3afab0b28c90e2dc1">UBGraphicsCompass::pencilArmShape</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    QPainterPath path;</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    path.moveTo(hingeRect().right(), rect().center().y() - 16);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    path.lineTo(rect().right() - sPencilLength - sPencilBaseLength - 4, rect().center().y() - 12);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    path.moveTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right(), rect().center().y() - 16);</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    path.lineTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a> - 4, rect().center().y() - 12);</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        rect().right() - sPencilLength - sPencilBaseLength - 8, rect().center().y() - 12,</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a> - 8, rect().center().y() - 12,</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        90, -90);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    path.lineTo(rect().right() - sPencilLength - sPencilBaseLength, rect().center().y() + 8);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    path.lineTo(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a>, rect().center().y() + 8);</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    path.arcTo(</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        rect().right() - sPencilLength - sPencilBaseLength - 8, rect().center().y() + 4,</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a> - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0b8767e8bb3ea86759cb45d41397f878">sPencilBaseLength</a> - 8, rect().center().y() + 4,</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        8, 8,</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        0, -90);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    path.lineTo(hingeRect().right(), rect().center().y() + 16);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    path.lineTo(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab5175262fb00f3ec72dbb6fee87ca51e">hingeRect</a>().right(), rect().center().y() + 16);</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    path.closeSubpath();</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordflow">return</span> path;</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;}</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* UBGraphicsCompass::scene()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">  741</a></span>&#160;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">UBGraphicsCompass::scene</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*<span class="keyword">&gt;</span>(QGraphicsRectItem::scene());</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">QGraphicsRectItem::scene</a>());</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;}</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;QColor UBGraphicsCompass::drawColor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00746"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4dee437469f94057cfda2990c300a7b8">  746</a></span>&#160;QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a4dee437469f94057cfda2990c300a7b8">UBGraphicsCompass::drawColor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="keywordflow">return</span> scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? sDarkBackgroundDrawColor : sLightBackgroundDrawColor;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ab6d359dc8994503d9ee1b0f5561e705b">sDarkBackgroundDrawColor</a> : <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a1878565310f00f4c6ef6c91cc31e8658">sLightBackgroundDrawColor</a>;</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;}</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;QColor UBGraphicsCompass::middleFillColor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00751"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">  751</a></span>&#160;QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afee615afe94d8a5f55b2682f49243fd5">UBGraphicsCompass::middleFillColor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordflow">return</span> scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? sDarkBackgroundMiddleFillColor : sLightBackgroundMiddleFillColor;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aa7d841f21b828b4f29c2d0a8bc0a8895">sDarkBackgroundMiddleFillColor</a> : <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a5f5e2fde637f707d36681fe69b1c2748">sLightBackgroundMiddleFillColor</a>;</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;}</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;QColor UBGraphicsCompass::edgeFillColor()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a8439ef785e94832bdb89403087d98303">  756</a></span>&#160;QColor <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a8439ef785e94832bdb89403087d98303">UBGraphicsCompass::edgeFillColor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="keywordflow">return</span> scene()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? sDarkBackgroundEdgeFillColor : sLightBackgroundEdgeFillColor;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#ad717a40b768a74f4014a1c5534ae6f71">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad91ed6e458beecd1ee198991c703082c">isDarkBackground</a>() ? <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#abfb318576225b8f3f1a54a21363ec30b">sDarkBackgroundEdgeFillColor</a> : <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a191282ca40317368912da0307854e21f">sLightBackgroundEdgeFillColor</a>;</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;}</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;QFont UBGraphicsCompass::font()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00761"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">  761</a></span>&#160;QFont <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">UBGraphicsCompass::font</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    QFont font(<span class="stringliteral">&quot;Arial&quot;</span>);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    QFont <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">font</a>(<span class="stringliteral">&quot;Arial&quot;</span>);</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    font.setPixelSize(16);</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    font.setBold(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keywordflow">return</span> font;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#aea6c25400ae31097db1425bf8a06511b">font</a>;</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;}</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;qreal UBGraphicsCompass::angleInDegrees()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">  769</a></span>&#160;qreal <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a718585aa82ab2d54338f4b824938cad3">UBGraphicsCompass::angleInDegrees</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    QRectF itemRect = boundingRect();</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    QTransform itemTransform = sceneTransform();</div>
@@ -882,27 +866,23 @@ $(document).ready(function(){initNavTree('de/dc5/_u_b_graphics_compass_8cpp_sour
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    <span class="keywordflow">return</span> topLine.angle();</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;}</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::penColorChanged()</div>
+<div class="line"><a name="l00779"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e0d030708265b1049e4a92592253111">  779</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a0e0d030708265b1049e4a92592253111">UBGraphicsCompass::penColorChanged</a>()</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;{</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    QRect pencilRect(rect().right() - sPencilLength, rect().top(), sPencilLength, rect().height());</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    QRect pencilRect(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().top(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().height());</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    update(pencilRect);</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;}</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;<span class="keywordtype">void</span> UBGraphicsCompass::lineWidthChanged()</div>
+<div class="line"><a name="l00785"></a><span class="lineno"><a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afe64a8701920afedad8c05f1223017c4">  785</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#afe64a8701920afedad8c05f1223017c4">UBGraphicsCompass::lineWidthChanged</a>()</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;{</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    QRect pencilRect(rect().right() - sPencilLength, rect().top(), sPencilLength, rect().height());</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    QRect pencilRect(rect().right() - <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().top(), <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html#a944264fe2193a994a9ff6be1d75206ee">sPencilLength</a>, rect().height());</div>
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    update(pencilRect);</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ed8013f237dc461738538501041f195e.html">tools</a></li><li class="navelem"><a class="el" href="../../de/dc5/_u_b_graphics_compass_8cpp.html">UBGraphicsCompass.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

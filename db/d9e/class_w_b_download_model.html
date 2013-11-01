@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('db/d9e/class_w_b_download_model.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('db/d9e/class_w_b_download_model.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -136,7 +116,10 @@ Private Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:a51953c82a69006744cca1a7f922e0a26"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d9e/class_w_b_download_model.html#a51953c82a69006744cca1a7f922e0a26">WBDownloadManager</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00169">169</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aec5696570085f68b40f276c84e9f43de"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,6 +143,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00664">664</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QAbstractListModel(parent)</div>
 <div class="line">    , <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>(downloadManager)</div>
 <div class="line">{</div>
@@ -192,6 +177,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00671">671</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (index.row() &lt; 0 || index.row() &gt;= <a class="code" href="../../db/d9e/class_w_b_download_model.html#a1bddb1e72a09902bb24df9e0e4e13787">rowCount</a>(index.parent()))</div>
 <div class="line">        <span class="keywordflow">return</span> QVariant();</div>
@@ -243,6 +230,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00690">690</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (parent.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -297,6 +286,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00684">684</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (parent.isValid()) ? 0 : <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0b8e124ece5d9e8e37ff7bc533bcc571">mDownloads</a>.count();</div>
 <div class="line">}</div>
@@ -331,6 +322,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00171">171</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+
 </div>
 </div>
 <h2>Member Data Documentation</h2>
@@ -352,22 +345,20 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00181">181</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a></li>
-<li><a class="el" href="../../d1/d12/_w_b_download_manager_8cpp.html">WBDownloadManager.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../db/d9e/class_w_b_download_model.html">WBDownloadModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:35 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

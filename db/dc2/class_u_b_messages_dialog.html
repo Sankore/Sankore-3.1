@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('db/dc2/class_u_b_messages_dialog.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('db/dc2/class_u_b_messages_dialog.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -135,7 +115,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a5aca90c606f237a13ae3c9c297d03bca"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html#a5aca90c606f237a13ae3c9c297d03bca">mMessages</a></td></tr>
 <tr class="memitem:a1234d3eb2675205885689b4c236a100a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html#a1234d3eb2675205885689b4c236a100a">mMessagesFontSize</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html#l00029">29</a> of file <a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html">UBMessagesDialog.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a878c7d6564e8acc38133ba99868abba5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -159,6 +142,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp_source.html#l00026">26</a> of file <a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp_source.html">UBMessagesDialog.cpp</a>.</p>
 <div class="fragment"><div class="line">: QWidget(parent)</div>
 <div class="line">{</div>
 <div class="line">    resize(400, 0);</div>
@@ -191,6 +176,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp_source.html">UBMessagesDialog.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
 <div class="line">}</div><!-- fragment -->
@@ -218,6 +205,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp_source.html#l00036">36</a> of file <a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp_source.html">UBMessagesDialog.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/dc2/class_u_b_messages_dialog.html#a5aca90c606f237a13ae3c9c297d03bca">mMessages</a> = messages;</div>
 <div class="line"></div>
@@ -281,6 +270,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html#l00041">41</a> of file <a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html">UBMessagesDialog.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1234d3eb2675205885689b4c236a100a"></a>
@@ -301,22 +292,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html#l00042">42</a> of file <a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html">UBMessagesDialog.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html">UBMessagesDialog.h</a></li>
-<li><a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp.html">UBMessagesDialog.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html">UBMessagesDialog.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp_source.html">UBMessagesDialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html">UBMessagesDialog</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

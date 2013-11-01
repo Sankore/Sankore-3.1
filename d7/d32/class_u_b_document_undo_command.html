@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/d32/class_u_b_document_undo_command.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d7/d32/class_u_b_document_undo_command
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -164,7 +144,10 @@ Additional Inherited Members</h2></td></tr>
 <br/>
  }</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html#l00033">33</a> of file <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9403a14b3e3439c8f99790dc990632d8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -200,6 +183,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html#l00031">31</a> of file <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html">UBDocumentUndoCommand.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d7/d32/class_u_b_document_undo_command.html#a5bae65f76bb5bc488fe47870cd4adcb9">mDocument</a>(pDocument)</div>
 <div class="line">    , <a class="code" href="../../d7/d32/class_u_b_document_undo_command.html#a296eee43669325b22cbf0e4523db6445">mUndoScenes</a>(pOldScenes)</div>
 <div class="line">    , <a class="code" href="../../d7/d32/class_u_b_document_undo_command.html#af8881a2ab552e3eca7fc67de8894eda8">mRedoScenes</a>(pNewScenes)</div>
@@ -230,6 +215,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html">UBDocumentUndoCommand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -259,6 +246,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#aea1857e5425cbb2c14b4ae58bf3b4d9c">UBAbstractUndoCommand</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html#l00040">40</a> of file <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/d07/class_u_b_abstract_undo_command.html#a85016029bd4ceb03a8247b3c01e2bd97acacd422641e39f943d210ed4f56cc9cf">undotype_DOCUMENT</a>; };</div>
 </div><!-- fragment -->
 </div>
@@ -285,6 +274,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a6de13cf6ae729763431413aa39b78e82">UBAbstractUndoCommand</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html#l00051">51</a> of file <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html">UBDocumentUndoCommand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -313,6 +304,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a91cd202e68ba7cc83f8490a6eec15dcc">UBAbstractUndoCommand</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html">UBDocumentUndoCommand.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -338,6 +331,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html#l00052">52</a> of file <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5bae65f76bb5bc488fe47870cd4adcb9"></a>
@@ -357,6 +352,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html#l00049">49</a> of file <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a>.</p>
 
 </div>
 </div>
@@ -378,6 +375,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html#l00051">51</a> of file <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a296eee43669325b22cbf0e4523db6445"></a>
@@ -398,22 +397,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html#l00050">50</a> of file <a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a></li>
-<li><a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp.html">UBDocumentUndoCommand.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d3/dc3/_u_b_document_undo_command_8h_source.html">UBDocumentUndoCommand.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../df/d4d/_u_b_document_undo_command_8cpp_source.html">UBDocumentUndoCommand.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d7/d32/class_u_b_document_undo_command.html">UBDocumentUndoCommand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:23 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

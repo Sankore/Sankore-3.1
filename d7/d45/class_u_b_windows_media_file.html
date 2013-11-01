@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/d45/class_u_b_windows_media_file.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d7/d45/class_u_b_windows_media_file.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -164,7 +144,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9963c638b51bd5778c13735f8579eff1"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html">MarkerInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1">mChapters</a></td></tr>
 <tr class="memitem:a1c1a12638e8d3da5c55e5fe5f9ce5795"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795">mVideoFileName</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00032">32</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7a285d5e38b023d67338b85375554023"></a>
 <div class="memitem">
 <div class="memproto">
@@ -178,6 +161,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
 <div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>(0)</div>
@@ -214,6 +199,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00242">242</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -252,6 +239,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00418">418</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    INSSBuffer *sampleBuffer = 0;</div>
 <div class="line"></div>
@@ -324,6 +313,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00376">376</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(pImage.format() == QImage::Format_RGB32);</div>
 <div class="line"></div>
@@ -387,6 +378,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00195">195</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line"></div>
@@ -499,6 +492,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">mFramesPerSecond</a> = pFramesPerSecond;</div>
 <div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795">mVideoFileName</a> = videoFileName;</div>
@@ -691,6 +686,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00289">289</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    BITMAPINFO bmpInfo;</div>
 <div class="line"></div>
@@ -816,6 +813,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00050">50</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
@@ -843,6 +842,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00067">67</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            QWORD qwordMs = ms;</div>
 <div class="line">            <span class="keywordflow">return</span> (qwordMs * 10000);</div>
@@ -879,6 +880,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00248">248</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a>)</div>
@@ -950,6 +953,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00468">468</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a> = error;</div>
 <div class="line">    qWarning() &lt;&lt; error;</div>
@@ -989,6 +994,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html#l00458">458</a> of file <a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    MarkerInfo mi;</div>
 <div class="line">    mi.label = pLabel;</div>
@@ -1018,6 +1025,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00083">83</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9963c638b51bd5778c13735f8579eff1"></a>
@@ -1037,6 +1046,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00094">94</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 
 </div>
 </div>
@@ -1058,6 +1069,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00084">84</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3b54e7191a8864d6f659dc2866b8db90"></a>
@@ -1077,6 +1090,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00086">86</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 
 </div>
 </div>
@@ -1098,6 +1113,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00075">75</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1c1a12638e8d3da5c55e5fe5f9ce5795"></a>
@@ -1117,6 +1134,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00096">96</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 
 </div>
 </div>
@@ -1138,6 +1157,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00082">82</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a489cd991fb1fc594975edb913a0148e9"></a>
@@ -1157,6 +1178,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00081">81</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 
 </div>
 </div>
@@ -1178,6 +1201,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00078">78</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a36346dbecbe95c597b656026968de6ff"></a>
@@ -1197,6 +1222,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00077">77</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 
 </div>
 </div>
@@ -1218,6 +1245,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00073">73</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1eff308210a239622b867ce8972bd81e"></a>
@@ -1237,6 +1266,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00079">79</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
 
 </div>
 </div>
@@ -1258,22 +1289,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html#l00074">74</a> of file <a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a></li>
-<li><a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp.html">UBWindowsMediaFile.cpp</a></li>
+<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a></li>
+<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp_source.html">UBWindowsMediaFile.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html">UBWindowsMediaFile</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:34 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

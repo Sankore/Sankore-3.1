@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d78/class_w_b_tab_bar.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/d78/class_w_b_tab_bar.html','../../
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -161,7 +141,10 @@ Private Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:abff7b061276b5d2a7cdd9019d925059b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#abff7b061276b5d2a7cdd9019d925059b">WBTabWidget</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html#l00074">74</a> of file <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a059a3b50612d69cebed1c5ba1b2392eb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -175,6 +158,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00080">80</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QTabBar(parent)</div>
 <div class="line">{</div>
 <div class="line"></div>
@@ -263,6 +248,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00152">152</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
 <div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
@@ -325,6 +312,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00168">168</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
 <div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
@@ -387,6 +376,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00160">160</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
 <div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
@@ -426,6 +417,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMenu menu;</div>
 <div class="line">    menu.addAction(tr(<span class="stringliteral">&quot;New &amp;Tab&quot;</span>), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a845c426f236cbd3bb419fed27aad66a6">newTab</a>()), QKeySequence::AddTab);</div>
@@ -495,6 +488,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00183">183</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;buttons() == Qt::LeftButton) {</div>
 <div class="line">        <span class="keywordtype">int</span> diffX = <span class="keyword">event</span>-&gt;pos().x() - <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a>.x();</div>
@@ -541,6 +536,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;button() == Qt::LeftButton)</div>
 <div class="line">        <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a> = event-&gt;pos();</div>
@@ -657,6 +654,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00220">220</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
 <div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
@@ -695,6 +694,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html#l00113">113</a> of file <a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (QShortcut *shortCut = qobject_cast&lt;QShortcut*&gt;(sender())) {</div>
 <div class="line">        <span class="keywordtype">int</span> index = <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a58b28ab137c40aabd05c53f1806e8cc4">mTabShortcuts</a>.indexOf(shortCut);</div>
@@ -768,6 +769,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html#l00104">104</a> of file <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a>.</p>
+
 </div>
 </div>
 <h2>Member Data Documentation</h2>
@@ -789,6 +792,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html#l00106">106</a> of file <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a58b28ab137c40aabd05c53f1806e8cc4"></a>
@@ -809,22 +814,20 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html#l00103">103</a> of file <a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a></li>
-<li><a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp.html">WBTabWidget.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp_source.html">WBTabWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/d78/class_w_b_tab_bar.html">WBTabBar</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:36 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

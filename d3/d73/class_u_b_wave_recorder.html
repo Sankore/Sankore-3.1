@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/d73/class_u_b_wave_recorder.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d3/d73/class_u_b_wave_recorder.html','
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -166,7 +146,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a537d2103240b33154a5eb0230f747cbd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a537d2103240b33154a5eb0230f747cbd">mSampleRate</a></td></tr>
 <tr class="memitem:a6b09ada6f588a0827be7731a2a697849"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a6b09ada6f588a0827be7731a2a697849">mBitsPerSample</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00031">31</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6d2a1330302ac010e93b77d4d62737be"></a>
 <div class="memitem">
 <div class="memproto">
@@ -180,6 +163,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00030">30</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
 <div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a>(0)</div>
@@ -213,6 +198,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -232,6 +219,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00154">154</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (waveInReset(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line">    {</div>
@@ -289,6 +278,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00212">212</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>)</div>
 <div class="line">    {</div>
@@ -333,6 +324,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00049">49</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    UINT deviceID = WAVE_MAPPER;</div>
 <div class="line"></div>
@@ -434,6 +427,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00073">73</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>;</div>
 <div class="line">        }</div>
@@ -469,6 +464,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00046">46</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab5253b8fa28a913e97558c189ae4a7da">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
@@ -495,6 +492,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00051">51</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 <div class="fragment"><div class="line">                          {</div>
 <div class="line">            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a>;</div>
 <div class="line">        }</div>
@@ -565,6 +564,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00067">67</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab5253b8fa28a913e97558c189ae4a7da">mLastErrorMessage</a> = pLastErrorMessage;</div>
 <div class="line">            qWarning() &lt;&lt; <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab5253b8fa28a913e97558c189ae4a7da">mLastErrorMessage</a>;</div>
@@ -593,6 +594,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00121">121</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>)</div>
 <div class="line">    {</div>
@@ -633,6 +636,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00140">140</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
@@ -676,6 +681,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00225">225</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QStringList devices;</div>
 <div class="line"></div>
@@ -769,6 +776,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html#l00181">181</a> of file <a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(param2);</div>
 <div class="line"></div>
@@ -836,6 +845,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00093">93</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2a255c57c8697a4ed2a81790a76db8de"></a>
@@ -855,6 +866,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00087">87</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 
 </div>
 </div>
@@ -876,6 +889,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00084">84</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab5253b8fa28a913e97558c189ae4a7da"></a>
@@ -895,6 +910,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00078">78</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 
 </div>
 </div>
@@ -916,6 +933,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00085">85</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a86280ccb944c78baeb84d3772e1b062b"></a>
@@ -935,6 +954,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00091">91</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 
 </div>
 </div>
@@ -956,6 +977,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00089">89</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a537d2103240b33154a5eb0230f747cbd"></a>
@@ -975,6 +998,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00092">92</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
 
 </div>
 </div>
@@ -996,6 +1021,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00082">82</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a493ac5caa2079fc285f087bbf28575b0"></a>
@@ -1016,22 +1043,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html#l00080">80</a> of file <a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a></li>
-<li><a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp.html">UBWaveRecorder.cpp</a></li>
+<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a></li>
+<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp_source.html">UBWaveRecorder.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:33 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

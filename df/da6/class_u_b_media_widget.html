@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/da6/class_u_b_media_widget.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/da6/class_u_b_media_widget.html','.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -217,7 +197,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_u_b_actionable_widget"><td colspan="2" onclick="javascript:toggleInherit('signals_class_u_b_actionable_widget')"><img src="../../closed.png" alt="-"/>&nbsp;Signals inherited from <a class="el" href="../../da/d07/class_u_b_actionable_widget.html">UBActionableWidget</a></td></tr>
 <tr class="memitem:a8c6d3747f77809ba16d13b85c9ed6e67 inherit signals_class_u_b_actionable_widget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/class_u_b_actionable_widget.html#a8c6d3747f77809ba16d13b85c9ed6e67">close</a> (QWidget *w)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00071">71</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0187e8e7030cfa09ad4728e9edea5166"></a>
 <div class="memitem">
 <div class="memproto">
@@ -257,6 +240,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00036">36</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                              :<a class="code" href="../../da/d07/class_u_b_actionable_widget.html#af32171f29ba03fbdf6029d8f8c16547c">UBActionableWidget</a>(parent, name)</div>
 <div class="line">  , <a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../df/da6/class_u_b_media_widget.html#a60be77e4d4a146276c3e22c063e6f586">mpVideoWidget</a>(NULL)</div>
@@ -273,7 +258,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  , <a class="code" href="../../df/da6/class_u_b_media_widget.html#a2eeae3a7b70d2f63e014d5e3086d5807">mMediaLayout</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../df/da6/class_u_b_media_widget.html#a54fe19f067816cb94bee2aef0504b678">mpCover</a>(NULL)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../da/d07/class_u_b_actionable_widget.html#ae1c1866157c89fbc104e5e8b06a0b5a5">addAction</a>(<a class="code" href="../../d7/d31/_u_b_actionable_widget_8h.html#a0fa695ac021b50f72dc2656fd68768a1a2ff4913ad1b45864be7bbd2502bd6740">eAction_Close</a>);</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#a3cf58a51788cda59959af98343875d3c">mType</a> = type;</div>
@@ -326,18 +311,20 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a702d3b49cd297cad86d84ec7fa618283">unsetActionsParent</a>();</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a9ce0c630dbb973de275b8ace5d11a3a0">mpSlider</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#ade63a91f73195ed910aa951f25e35aed">mpPauseButton</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a81598d939ca871e9487180ba753e51bd">mpPlayStopButton</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a9d8935e1556772ee5f66043450467ecb">mpAudioOutput</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a60be77e4d4a146276c3e22c063e6f586">mpVideoWidget</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a54fe19f067816cb94bee2aef0504b678">mpCover</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#ab27db1ddf2625473fb0c871df87558d4">mpMediaContainer</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a3e80cbdd1e2234362a753bab1f935dfe">mpSeekerLayout</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a89229093e2360e4a7cc2f6f38a659dd0">mpLayout</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a9ce0c630dbb973de275b8ace5d11a3a0">mpSlider</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#ade63a91f73195ed910aa951f25e35aed">mpPauseButton</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a81598d939ca871e9487180ba753e51bd">mpPlayStopButton</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a9d8935e1556772ee5f66043450467ecb">mpAudioOutput</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a60be77e4d4a146276c3e22c063e6f586">mpVideoWidget</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a54fe19f067816cb94bee2aef0504b678">mpCover</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#ab27db1ddf2625473fb0c871df87558d4">mpMediaContainer</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a3e80cbdd1e2234362a753bab1f935dfe">mpSeekerLayout</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a89229093e2360e4a7cc2f6f38a659dd0">mpLayout</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -374,6 +361,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adapt the widget size to the video in order to keep the good aspect ratio. </p>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00192">192</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/da6/class_u_b_media_widget.html#ab27db1ddf2625473fb0c871df87558d4">mpMediaContainer</a>){</div>
 <div class="line">        <span class="keywordtype">int</span> origW = <a class="code" href="../../df/da6/class_u_b_media_widget.html#ab27db1ddf2625473fb0c871df87558d4">mpMediaContainer</a>-&gt;width();</div>
@@ -410,6 +399,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the border </p>
 <dl class="section return"><dt>Returns</dt><dd>the actual border </dd></dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00300">300</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../df/da6/class_u_b_media_widget.html#a3b0f9409bc7892bcbdc80ab9b75e6e35">mBorder</a>;</div>
 <div class="line">}</div>
@@ -438,6 +429,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create the media player. </p>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00153">153</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#ab27db1ddf2625473fb0c871df87558d4">mpMediaContainer</a> = <span class="keyword">new</span> QWidget();</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#ab27db1ddf2625473fb0c871df87558d4">mpMediaContainer</a>-&gt;setObjectName(<span class="stringliteral">&quot;UBMediaVideoContainer&quot;</span>);</div>
@@ -514,6 +507,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>-&gt;state() == Phonon::PlayingState)</div>
 <div class="line">        <a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>-&gt;stop();</div>
@@ -537,6 +532,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the media type. </p>
 <dl class="section return"><dt>Returns</dt><dd>the media type </dd></dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00119">119</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../df/da6/class_u_b_media_widget.html#a3cf58a51788cda59959af98343875d3c">mType</a>;</div>
 <div class="line">}</div>
@@ -565,6 +562,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pause the media. </p>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00291">291</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>-&gt;pause();</div>
 <div class="line">}</div>
@@ -602,6 +601,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Toggle Play-Stop. </p>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00272">272</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">switch</span>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>-&gt;state()){</div>
 <div class="line">    <span class="keywordflow">case</span> Phonon::PlayingState:</div>
@@ -657,6 +658,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00262">262</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../df/da6/class_u_b_media_widget.html#a2698dcc17cb389370a366cd78baebf35">mAutoUpdate</a>){</div>
 <div class="line">        <a class="code" href="../../df/da6/class_u_b_media_widget.html#adecee35631985d9cce0dc6120ff0a22e">mpMediaObject</a>-&gt;seek(value);</div>
@@ -714,6 +717,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00209">209</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../df/da6/class_u_b_media_widget.html#ae565f9863cf161823bc811e88c4c3f59">mGeneratingThumbnail</a>){</div>
 <div class="line">        <span class="keywordflow">if</span>(Phonon::LoadingState == oldState &amp;&amp; Phonon::StoppedState == newState){</div>
@@ -782,6 +787,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00251">251</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#a2698dcc17cb389370a366cd78baebf35">mAutoUpdate</a> = <span class="keyword">true</span>;</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#a9ce0c630dbb973de275b8ace5d11a3a0">mpSlider</a>-&gt;setValue((<span class="keywordtype">int</span>)currentTime);</div>
@@ -828,6 +835,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00242">242</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#a9ce0c630dbb973de275b8ace5d11a3a0">mpSlider</a>-&gt;setMaximum(total);</div>
 <div class="line">}</div>
@@ -872,6 +881,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00309">309</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(ev);</div>
 <div class="line">}</div>
@@ -899,6 +910,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00318">318</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/da6/class_u_b_media_widget.html#a54fe19f067816cb94bee2aef0504b678">mpCover</a>){</div>
 <div class="line">        <a class="code" href="../../df/da6/class_u_b_media_widget.html#a54fe19f067816cb94bee2aef0504b678">mpCover</a>-&gt;setPixmap(QPixmap(coverPath));</div>
@@ -937,6 +950,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<span class="stringliteral">&quot;&quot;</span> != filePath);</div>
 <div class="line">    <a class="code" href="../../df/da6/class_u_b_media_widget.html#a825363acb624843a461aa2581da66626">mFilePath</a> = filePath;</div>
@@ -990,6 +1005,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00081">81</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../df/da6/class_u_b_media_widget.html#a5709ccd71348915ead3b02a007352907">mUrl</a> = <a class="code" href="../../df/da6/class_u_b_media_widget.html#a3811e4d8d152cf88ebf389448d765268">url</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1024,6 +1041,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html#l00124">124</a> of file <a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../df/da6/class_u_b_media_widget.html#a3cf58a51788cda59959af98343875d3c">mType</a> == <a class="code" href="../../d5/dc0/_u_b_media_widget_8h.html#ae77abac744002ced1ee359ba04878301a56b7ca440b5e73b5ed3d5346c2fbee42">eMediaType_Audio</a>){</div>
 <div class="line">                <span class="keywordflow">return</span>;</div>
@@ -1073,6 +1092,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00082">82</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../df/da6/class_u_b_media_widget.html#a5709ccd71348915ead3b02a007352907">mUrl</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1106,6 +1127,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>An indicator of the seeker auto update in progress </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00122">122</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3b0f9409bc7892bcbdc80ab9b75e6e35"></a>
@@ -1126,6 +1149,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The border </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00126">126</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1148,6 +1173,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The current media file path </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00089">89</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae565f9863cf161823bc811e88c4c3f59"></a>
@@ -1168,6 +1195,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>An indicator of the thumbnail generation in progress </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00124">124</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1190,6 +1219,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The media layout </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00130">130</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9d8935e1556772ee5f66043450467ecb"></a>
@@ -1210,6 +1241,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The audio renderer </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00110">110</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1232,6 +1265,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The audio cover </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00132">132</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a89229093e2360e4a7cc2f6f38a659dd0"></a>
@@ -1252,6 +1287,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The principal layout of this widget </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00112">112</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1274,6 +1311,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>A widget that will contain the media </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00128">128</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adecee35631985d9cce0dc6120ff0a22e"></a>
@@ -1294,6 +1333,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The media object </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00106">106</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1316,6 +1357,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The pause button </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00118">118</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a81598d939ca871e9487180ba753e51bd"></a>
@@ -1336,6 +1379,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The play-stop button </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00116">116</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1358,6 +1403,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The seeker layout </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00114">114</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9ce0c630dbb973de275b8ace5d11a3a0"></a>
@@ -1378,6 +1425,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The seeker slider </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00120">120</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1400,6 +1449,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The video renderer </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00108">108</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3cf58a51788cda59959af98343875d3c"></a>
@@ -1420,6 +1471,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The current media type </p>
+
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00104">104</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1442,22 +1495,20 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The media url </p>
 
+<p>Definition at line <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html#l00134">134</a> of file <a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a></li>
-<li><a class="el" href="../../db/d7e/_u_b_media_widget_8cpp.html">UBMediaWidget.cpp</a></li>
+<li>Sankore-3.1/src/customWidgets/<a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a></li>
+<li>Sankore-3.1/src/customWidgets/<a class="el" href="../../db/d7e/_u_b_media_widget_8cpp_source.html">UBMediaWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/da6/class_u_b_media_widget.html">UBMediaWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

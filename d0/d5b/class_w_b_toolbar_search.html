@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d5b/class_w_b_toolbar_search.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d5b/class_w_b_toolbar_search.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -189,7 +169,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header properties_class_w_b_search_line_edit"><td colspan="2" onclick="javascript:toggleInherit('properties_class_w_b_search_line_edit')"><img src="../../closed.png" alt="-"/>&nbsp;Properties inherited from <a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html">WBSearchLineEdit</a></td></tr>
 <tr class="memitem:a50a8748d17d08f45fbf6fb43b3c5f56d inherit properties_class_w_b_search_line_edit"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#a50a8748d17d08f45fbf6fb43b3c5f56d">inactiveText</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html#l00074">74</a> of file <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7cc7398b8f94e62dfbc13801f227e716"></a>
 <div class="memitem">
 <div class="memproto">
@@ -203,6 +186,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00078">78</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a2e5341c027fc5800ad24c1beee6bc8b1">WBSearchLineEdit</a>(parent)</div>
 <div class="line">    , <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>(<span class="keyword">new</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a>(<span class="keyword">this</span>))</div>
 <div class="line">    , <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>(10)</div>
@@ -244,6 +229,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00097">97</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line">}</div>
@@ -280,6 +267,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;selectAll();</div>
 <div class="line">    QMenu *m = <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a44e00f3dccf769084ebe0b994baab91b">menu</a>();</div>
@@ -342,6 +331,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00182">182</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;setStringList(QStringList());</div>
 <div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();;</div>
@@ -387,6 +378,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QSettings settings;</div>
 <div class="line">    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;toolbarsearch&quot;</span>));</div>
@@ -427,6 +420,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QSettings settings;</div>
 <div class="line">    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;toolbarsearch&quot;</span>));</div>
@@ -490,6 +485,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00121">121</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString searchText = <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;text();</div>
 <div class="line">    QStringList newList = <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;stringList();</div>
@@ -557,6 +554,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html#l00171">171</a> of file <a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QVariant v = action-&gt;data();</div>
 <div class="line">    <span class="keywordflow">if</span> (v.canConvert&lt;QString&gt;())</div>
@@ -606,6 +605,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html#l00097">97</a> of file <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aab66a2e3ed8714666895d2c4aa154a42"></a>
@@ -625,6 +626,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html#l00098">98</a> of file <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a>.</p>
 
 </div>
 </div>
@@ -646,22 +649,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html#l00099">99</a> of file <a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a></li>
-<li><a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp.html">WBToolBarSearch.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp_source.html">WBToolBarSearch.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html">WBToolbarSearch</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:36 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

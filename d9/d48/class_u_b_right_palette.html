@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d9/d48/class_u_b_right_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d9/d48/class_u_b_right_palette.html','
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -231,7 +211,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:afb8107764021a65434ec4424e9ffdb94 inherit pro_attribs_class_u_b_dock_palette"><td class="memItemLeft" align="right" valign="top">QMap&lt; <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h.html#af3b2828ed1bf91ad13c73e4e1b3b529e">eUBDockPaletteWidgetMode</a>, <br class="typebreak"/>
 int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_u_b_dock_palette.html#afb8107764021a65434ec4424e9ffdb94">mLastOpenedTabForMode</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d2/dc1/_u_b_right_palette_8h_source.html#l00029">29</a> of file <a class="el" href="../../d2/dc1/_u_b_right_palette_8h_source.html">UBRightPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1511f65218e83962d96b619d8a964a96"></a>
 <div class="memitem">
 <div class="memproto">
@@ -257,6 +240,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </div><div class="memdoc">
 
 <p>The constructor. </p>
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                               :</div>
 <div class="line">    <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a6f6fcc9a6785126f2e668742c886905e" title="The constructor.">UBDockPalette</a>(<a class="code" href="../../df/d43/_u_b_dock_palette_8h.html#a63e99c0675ae955b642f5e77e3070053aa98c653b6e47ec71a2035e501ad516db">eUBDockPaletteType_RIGHT</a>, parent)</div>
 <div class="line">{</div>
@@ -307,6 +292,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </div><div class="memdoc">
 
 <p>The destructor. </p>
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00062">62</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -334,6 +321,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d48/class_u_b_right_palette.html#a806b0ebdada76153add26b1079f10e2f">UBDockPalette::hideEvent</a>(event);</div>
 <div class="line">}</div>
@@ -363,6 +352,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </div><div class="memdoc">
 
 <p>Handle the mouse move event  as the mouse move event. </p>
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00070">70</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a260643aac69a6ecff7b344bafd9cfffe">mCanResize</a>)</div>
 <div class="line">    {</div>
@@ -435,6 +426,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </dl>
 
 <p>Reimplemented from <a class="el" href="../../dc/d54/class_u_b_dock_palette.html#abe601a30ebea6b08998224bad8eaa7e8">UBDockPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00082">82</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> newWidth = width();</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a32701f18f9d1f1b31c568fc0349632c5">mCurrentMode</a> == <a class="code" href="../../d5/dba/_u_b_dock_palette_widget_8h.html#af3b2828ed1bf91ad13c73e4e1b3b529ea3e7cf372296b0ae399bc1425045d3ec0">eUBDockPaletteWidget_BOARD</a>){</div>
@@ -488,6 +481,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d48/class_u_b_right_palette.html#a9c82d52ad9fa99ecf5d51e9630eb4e09">UBDockPalette::showEvent</a>(event);</div>
 <div class="line">}</div>
@@ -509,6 +504,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dc/d54/class_u_b_dock_palette.html#a6e4d5f85e28f73801dd029bf8a2f2057">UBDockPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00114">114</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> newModeWidth;</div>
 <div class="line">    <span class="keywordflow">if</span>(mode == <a class="code" href="../../d5/dba/_u_b_dock_palette_widget_8h.html#af3b2828ed1bf91ad13c73e4e1b3b529ea3e7cf372296b0ae399bc1425045d3ec0">eUBDockPaletteWidget_BOARD</a>){</div>
@@ -580,6 +577,8 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <p>Update the maximum width. </p>
 
 <p>Reimplemented from <a class="el" href="../../dc/d54/class_u_b_dock_palette.html#aaa2875f5907c022762b4cde1ee69e961">UBDockPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setMaximumWidth((<span class="keywordtype">int</span>)(parentWidget()-&gt;width() * 0.45));</div>
 <div class="line">    setMaximumHeight(parentWidget()-&gt;height());</div>
@@ -589,19 +588,15 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d2/dc1/_u_b_right_palette_8h_source.html">UBRightPalette.h</a></li>
-<li><a class="el" href="../../df/d7f/_u_b_right_palette_8cpp.html">UBRightPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/dc1/_u_b_right_palette_8h_source.html">UBRightPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d7f/_u_b_right_palette_8cpp_source.html">UBRightPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:30 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/dc1/class_u_b_proxy_login_dlg.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dd/dc1/class_u_b_proxy_login_dlg.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -138,7 +118,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a36e0e9531c6b59228e221d2e6ebb6da7"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a36e0e9531c6b59228e221d2e6ebb6da7">mpUsername</a></td></tr>
 <tr class="memitem:acb62e66a7a59e64866579b733c5b08c7"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acb62e66a7a59e64866579b733c5b08c7">mpPassword</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00044">44</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2f2711bcb8d4c121c1410a3c8a6ff758"></a>
 <div class="memitem">
 <div class="memproto">
@@ -162,6 +145,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d94/_u_b_document_publisher_8cpp_source.html#l00662">662</a> of file <a class="el" href="../../d7/d94/_u_b_document_publisher_8cpp_source.html">UBDocumentPublisher.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                 :QDialog(parent)</div>
 <div class="line">  , <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acf6b689378160c0aacdf75c8567167ce">mpUserLayout</a>(NULL)</div>
@@ -215,6 +200,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d94/_u_b_document_publisher_8cpp_source.html#l00701">701</a> of file <a class="el" href="../../d7/d94/_u_b_document_publisher_8cpp_source.html">UBDocumentPublisher.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a05ee465b39a74b2101914efa2735adfb">mpLayout</a>)</div>
 <div class="line">    {</div>
@@ -271,6 +258,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00052">52</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#acb62e66a7a59e64866579b733c5b08c7">mpPassword</a>-&gt;text();}</div>
 </div><!-- fragment -->
 </div>
@@ -295,6 +284,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00051">51</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/dc1/class_u_b_proxy_login_dlg.html#a36e0e9531c6b59228e221d2e6ebb6da7">mpUsername</a>-&gt;text();}</div>
 </div><!-- fragment -->
 </div>
@@ -318,6 +309,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00058">58</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a05ee465b39a74b2101914efa2735adfb"></a>
@@ -337,6 +330,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00055">55</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
 
 </div>
 </div>
@@ -358,6 +353,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00062">62</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9bde86546e20205374ea28f48a772e2d"></a>
@@ -377,6 +374,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00060">60</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
 
 </div>
 </div>
@@ -398,6 +397,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00057">57</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2a77f5dc31bb3b28b3f3e2364ab8e762"></a>
@@ -417,6 +418,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00059">59</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
 
 </div>
 </div>
@@ -438,6 +441,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00056">56</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a36e0e9531c6b59228e221d2e6ebb6da7"></a>
@@ -458,22 +463,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html#l00061">61</a> of file <a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a></li>
-<li><a class="el" href="../../d7/d94/_u_b_document_publisher_8cpp.html">UBDocumentPublisher.cpp</a></li>
+<li>Sankore-3.1/src/adaptors/publishing/<a class="el" href="../../d8/d66/_u_b_document_publisher_8h_source.html">UBDocumentPublisher.h</a></li>
+<li>Sankore-3.1/src/adaptors/publishing/<a class="el" href="../../d7/d94/_u_b_document_publisher_8cpp_source.html">UBDocumentPublisher.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dd/dc1/class_u_b_proxy_login_dlg.html">UBProxyLoginDlg</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:30 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

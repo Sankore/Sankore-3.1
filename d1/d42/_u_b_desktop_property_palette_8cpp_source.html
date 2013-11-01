@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d42/_u_b_desktop_property_palette_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d1/d42/_u_b_desktop_property_palette_8
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_8ebb89634e1987729655e2e2ec5841f3.html">desktop</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBDesktopPropertyPalette.cpp</div>  </div>
@@ -144,7 +128,7 @@ $(document).ready(function(){initNavTree('d1/d42/_u_b_desktop_property_palette_8
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#ad2014614e7eff4eacadef3bc4b4d6c7b">   39</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#ad2014614e7eff4eacadef3bc4b4d6c7b">UBDesktopPropertyPalette::getParentRightOffset</a>()</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> rightPalette-&gt;width();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a>-&gt;width();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
@@ -192,7 +176,7 @@ $(document).ready(function(){initNavTree('d1/d42/_u_b_desktop_property_palette_8
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span> UBDesktopPenPalette::onButtonReleased()</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#ad04790ae55474177a65ae9e512fcdd15">   89</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#ad04790ae55474177a65ae9e512fcdd15">UBDesktopPenPalette::onButtonReleased</a>()</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a23c62043071f0e7691a0dbdfcc20a2dd">close</a>();</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
@@ -201,7 +185,7 @@ $(document).ready(function(){initNavTree('d1/d42/_u_b_desktop_property_palette_8
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>.size(); i++)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        disconnect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>.at(i), SIGNAL(released()), <span class="keyword">this</span>, SLOT(onButtonReleased()));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        disconnect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>.at(i), SIGNAL(released()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#ad04790ae55474177a65ae9e512fcdd15">onButtonReleased</a>()));</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
@@ -209,7 +193,7 @@ $(document).ready(function(){initNavTree('d1/d42/_u_b_desktop_property_palette_8
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>.size(); i++)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        connect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>.at(i), SIGNAL(released()), <span class="keyword">this</span>, SLOT(onButtonReleased()));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        connect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>.at(i), SIGNAL(released()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#ad04790ae55474177a65ae9e512fcdd15">onButtonReleased</a>()));</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
@@ -277,15 +261,11 @@ $(document).ready(function(){initNavTree('d1/d42/_u_b_desktop_property_palette_8
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_8ebb89634e1987729655e2e2ec5841f3.html">desktop</a></li><li class="navelem"><a class="el" href="../../d1/d42/_u_b_desktop_property_palette_8cpp.html">UBDesktopPropertyPalette.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

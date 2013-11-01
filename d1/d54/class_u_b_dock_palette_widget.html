@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d54/class_u_b_dock_palette_widget.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/d54/class_u_b_dock_palette_widget.h
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -156,7 +136,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a53e0db7a927af2934470ea519f67657d"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h.html#af3b2828ed1bf91ad13c73e4e1b3b529e">eUBDockPaletteWidgetMode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html#a53e0db7a927af2934470ea519f67657d">mRegisteredModes</a></td></tr>
 <tr class="memitem:a6625e60cb42b4fc13a91b307e24c9e3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html#a6625e60cb42b4fc13a91b307e24c9e3d">mVisibleState</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html#l00043">43</a> of file <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae56c793e5cd0e20514e5e1519a59a7e0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -180,6 +163,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                         :QWidget(parent)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(<a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a1c7779c0584c0d2541b4c05acc1ffbbb">name</a>);</div>
@@ -199,6 +184,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -261,6 +248,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d5/d85/class_u_b_features_widget.html#a8e2f90dca75977d5b03115256b62c833">UBFeaturesWidget</a>, <a class="el" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a682048aab160c3d4fea70963e592418b">UBCachePropertiesWidget</a>, <a class="el" href="../../d1/def/class_u_b_page_navigation_widget.html#ab7aa80f9d977b641ffe4a1c8edd456b3">UBPageNavigationWidget</a>, <a class="el" href="../../d8/d83/class_u_b_dock_download_widget.html#a8474519ab2378af0a8d6549dc33c7706">UBDockDownloadWidget</a>, and <a class="el" href="../../db/d9c/class_u_b_dock_teacher_guide_widget.html#a2b04bcafd400a4d02343e043469f7b83">UBDockTeacherGuideWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html#l00044">44</a> of file <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QPixmap();</div>
 <div class="line">}</div>
@@ -298,6 +287,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d5/d85/class_u_b_features_widget.html#aa050970cbf30675a9af1ee903b3da45f">UBFeaturesWidget</a>, <a class="el" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a1b60da7de1885e6bb6ef349aba6fd738">UBCachePropertiesWidget</a>, <a class="el" href="../../d1/def/class_u_b_page_navigation_widget.html#a165996a524aa6a8416b82f1575212ac4">UBPageNavigationWidget</a>, <a class="el" href="../../d8/d83/class_u_b_dock_download_widget.html#a4ab9f642dd92add5dba52b8b48033d04">UBDockDownloadWidget</a>, and <a class="el" href="../../db/d9c/class_u_b_dock_teacher_guide_widget.html#aafeef05289620980be10e63b600715fc">UBDockTeacherGuideWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html#l00039">39</a> of file <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QPixmap();</div>
 <div class="line">}</div>
@@ -325,6 +316,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html#l00049">49</a> of file <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a6dbb15ff090986f543d2614778c343cb">mName</a>;</div>
 <div class="line">}</div>
@@ -334,7 +327,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d54/class_u_b_dock_palette_widget_a1c7779c0584c0d2541b4c05acc1ffbbb_icgraph.svg" width="100%" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d54/class_u_b_dock_palette_widget_a1c7779c0584c0d2541b4c05acc1ffbbb_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </p>
@@ -355,6 +348,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>When a widget registers a mode it means that it would be displayed on that mode </p>
+
+<p>Definition at line <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html#l00057">57</a> of file <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a53e0db7a927af2934470ea519f67657d">mRegisteredModes</a>.contains(mode))</div>
 <div class="line">        <a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a53e0db7a927af2934470ea519f67657d">mRegisteredModes</a>.append(mode);</div>
@@ -383,6 +378,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html#l00060">60</a> of file <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a6625e60cb42b4fc13a91b307e24c9e3d">mVisibleState</a> = state;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -451,6 +448,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html#l00063">63</a> of file <a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    this-&gt;setVisible(this-&gt;<a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#ad009164555cbcfdf26f52e5939a1d843">visibleInMode</a>( newMode ));</div>
 <div class="line">}</div>
@@ -521,6 +520,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html#l00059">59</a> of file <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a6625e60cb42b4fc13a91b307e24c9e3d">mVisibleState</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -554,6 +555,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html#l00073">73</a> of file <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a53e0db7a927af2934470ea519f67657d"></a>
@@ -573,6 +576,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html#l00076">76</a> of file <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a>.</p>
 
 </div>
 </div>
@@ -594,22 +599,20 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html#l00078">78</a> of file <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a></li>
-<li><a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp.html">UBDockPaletteWidget.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h_source.html">UBDockPaletteWidget.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/d41/_u_b_dock_palette_widget_8cpp_source.html">UBDockPaletteWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html">UBDockPaletteWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:58 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:21 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

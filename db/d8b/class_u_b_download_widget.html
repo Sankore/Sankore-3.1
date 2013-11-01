@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('db/d8b/class_u_b_download_widget.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('db/d8b/class_u_b_download_widget.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -158,7 +138,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a100e626b85b7b76eae26d309517ddaa7"><td class="memItemLeft" align="right" valign="top">QTreeWidgetItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a></td></tr>
 <tr class="memitem:a6ee79d09bbed83b5cd2ad124b1f41da2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d80/class_u_b_download_progress_delegate.html">UBDownloadProgressDelegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a6ee79d09bbed83b5cd2ad124b1f41da2">mProgressBarDelegate</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html#l00052">52</a> of file <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aab012195b6f2e6b30fbff7a93d2ee5b2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -191,6 +174,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                   :QWidget(parent)</div>
 <div class="line">  , <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>(NULL)</div>
@@ -200,7 +185,7 @@ Private Attributes</h2></td></tr>
 <div class="line">{</div>
 <div class="line">    setObjectName(name);</div>
 <div class="line">    setWindowTitle(tr(<span class="stringliteral">&quot;Downloading files&quot;</span>));</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
 <div class="line">    resize(400, 300);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a> = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
@@ -255,6 +240,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>)</div>
 <div class="line">    {</div>
@@ -303,6 +290,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add the current downloads. </p>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QVector&lt;sDownloadFileDesc&gt; actualDL = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#acefaa070ff6fcbabb908d16e4a807b59" title="Get the list of the current downloads.">currentDownloads</a>();</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;Actual downloads size: &quot;</span> &lt;&lt; actualDL.size();</div>
@@ -364,6 +353,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add the pending downloads. </p>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QVector&lt;sDownloadFileDesc&gt; pendingDL = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4beef0fa708d68bcf92f73b029ed9f60" title="Get the list of the pending downloads.">pendingDownloads</a>();</div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;pendingDL.size(); i++)</div>
@@ -417,6 +408,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles the Cancel button action. </p>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a9ec94b78d3b4eb2d003657590f3a2839" title="Cancel all downloads.">cancelDownloads</a>();</div>
 <div class="line">}</div>
@@ -470,6 +463,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00190">190</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(<span class="keywordtype">id</span>);</div>
 <div class="line">    <span class="comment">// Refresh the file&#39;s list</span></div>
@@ -543,6 +538,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>)</div>
 <div class="line">    {</div>
@@ -597,6 +594,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Refresh the tree of downloaded files. </p>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00110">110</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>)</div>
 <div class="line">    {</div>
@@ -666,6 +665,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html#l00210">210</a> of file <a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>( <a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa77de800b575536ddb2bc76e9c6b0bba9">eItemColumn_Close</a> == col</div>
 <div class="line">            &amp;&amp; <span class="stringliteral">&quot;&quot;</span> != pItem-&gt;text(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>)){</div>
@@ -715,6 +716,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The button layout </p>
 
+<p>Definition at line <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html#l00073">73</a> of file <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a78cd954d04e67242e89c87ff34e10623"></a>
@@ -735,6 +738,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The 'Cancel' button </p>
+
+<p>Definition at line <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html#l00077">77</a> of file <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a>.</p>
 
 </div>
 </div>
@@ -757,6 +762,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>A temporary tree widget item </p>
 
+<p>Definition at line <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html#l00079">79</a> of file <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5621bddb30dbaf77394a99449dedd6e0"></a>
@@ -777,6 +784,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The general layout of this widget </p>
+
+<p>Definition at line <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html#l00071">71</a> of file <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a>.</p>
 
 </div>
 </div>
@@ -799,6 +808,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The delegate that will draw the progressbars </p>
 
+<p>Definition at line <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html#l00081">81</a> of file <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4044df85d186f413096c8f32fd19a809"></a>
@@ -820,22 +831,20 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The treeview that will display the files list </p>
 
+<p>Definition at line <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html#l00075">75</a> of file <a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a></li>
-<li><a class="el" href="../../db/df9/_u_b_download_widget_8cpp.html">UBDownloadWidget.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../db/df9/_u_b_download_widget_8cpp_source.html">UBDownloadWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:23 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

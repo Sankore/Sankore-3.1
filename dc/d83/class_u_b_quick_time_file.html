@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/d83/class_u_b_quick_time_file.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dc/d83/class_u_b_quick_time_file.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -201,7 +181,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a906029536f6993d81856cdd2ef032d7d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_u_b_quick_time_file.html#a906029536f6993d81856cdd2ef032d7d">mAudioRecordingDeviceName</a></td></tr>
 <tr class="memitem:a08f41790735aedbf0d14c0cfa3855e3a"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_u_b_quick_time_file.html#a08f41790735aedbf0d14c0cfa3855e3a">mPendingFrames</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00035">35</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8b183929af839adda8469c50aafec804"></a>
 <div class="memitem">
 <div class="memproto">
@@ -215,6 +198,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00038">38</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QThread(pParent)</div>
 <div class="line">    , <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#ac0a47b93b5d10b18ef3d000cfadb96c0">mVideoCompressionSession</a>(0)</div>
 <div class="line">    , <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#ac93393a4843baab313dcd4035ab76aee">mVideoMedia</a>(0)</div>
@@ -256,6 +241,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00565">565</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -294,6 +281,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00415">415</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a08f41790735aedbf0d14c0cfa3855e3a">mPendingFrames</a>--;</div>
 <div class="line"></div>
@@ -391,6 +380,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00397">397</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(session);</div>
 <div class="line">    Q_UNUSED(reserved);</div>
@@ -466,6 +457,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00616">616</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(pLength);</div>
 <div class="line">    <span class="comment">//qDebug() &lt;&lt; &quot;appendAudioBuffer&quot; &lt;&lt; QThread::currentThread();</span></div>
@@ -545,6 +538,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00585">585</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    TimeValue64 msTimeStampScaled = msTimeStamp * <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a3d0fbfc75bfbfc7e784ad752b9eff4c4">mTimeScale</a> / 1000;</div>
 <div class="line"></div>
@@ -647,6 +642,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00294">294</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    OSStatus err = noErr;</div>
 <div class="line"></div>
@@ -820,6 +817,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00519">519</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a486ab09632a17422600dd172c4a54779">mRecordAudio</a>)</div>
 <div class="line">    {</div>
@@ -904,6 +903,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    CodecType codecType = kH264CodecType;</div>
 <div class="line"></div>
@@ -1076,6 +1077,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00445">445</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a596e1266aa0ca2c465f2bb755a778963">mOutputMovie</a>)</div>
 <div class="line">    {</div>
@@ -1166,6 +1169,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00497">497</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#ac93393a4843baab313dcd4035ab76aee">mVideoMedia</a> = NewTrackMedia(<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a9a94b17a66f603f0b2fd41b91d2e37f1">mVideoOutputTrack</a>, VideoMediaType, <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a3d0fbfc75bfbfc7e784ad752b9eff4c4">mTimeScale</a>, 0, 0);</div>
 <div class="line">    OSStatus err = GetMoviesError();</div>
@@ -1226,6 +1231,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00272">272</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a2838017fa633936158e72c5fac3f7956">mCompressionSessionRunning</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
@@ -1313,6 +1320,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a76b8b79d320d0594105f34a4d21a5c23">mFrameSize</a> = pFrameSize;</div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a80e3ca334a7f90f9dbaad7e9e547ea86">mFramesPerSecond</a> = pFramesPerSecond;</div>
@@ -1372,6 +1381,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00051">51</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a2838017fa633936158e72c5fac3f7956">mCompressionSessionRunning</a>;</div>
 <div class="line">        }</div>
@@ -1407,6 +1418,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00056">56</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a5e49c21f0cb6cfc05d0678c901d20090">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
@@ -1434,6 +1447,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00571">571</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    CVPixelBufferRef pixelBuffer = 0;</div>
 <div class="line"></div>
@@ -1486,6 +1501,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00090">90</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    EnterMoviesOnThread(kCSAcceptThreadSafeComponentsOnlyMode);</div>
 <div class="line"></div>
@@ -1559,6 +1576,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00646">646</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a5e49c21f0cb6cfc05d0678c901d20090">mLastErrorMessage</a> = error;</div>
 <div class="line">    qWarning() &lt;&lt; <span class="stringliteral">&quot;UBQuickTimeFile error&quot;</span> &lt;&lt; error;</div>
@@ -1587,6 +1606,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html#l00267">267</a> of file <a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a99022f26661f9d46b7d1c4e39efd6b63">mSouldStopCompression</a> = <span class="keyword">true</span>;</div>
 <div class="line">}</div>
@@ -1621,6 +1642,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00069">69</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a284f54a169c1a7b24b7d0ff7fc907f2d"></a>
@@ -1640,6 +1663,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00067">67</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1661,6 +1686,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00068">68</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ace78df2a4bd67db54e027bf6067c8785"></a>
@@ -1680,6 +1707,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00129">129</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1701,6 +1730,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00138">138</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2838017fa633936158e72c5fac3f7956"></a>
@@ -1720,6 +1751,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00136">136</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1741,6 +1774,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00113">113</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a76b8b79d320d0594105f34a4d21a5c23"></a>
@@ -1760,6 +1795,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00121">121</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1781,6 +1818,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00120">120</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5e49c21f0cb6cfc05d0678c901d20090"></a>
@@ -1800,6 +1839,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00127">127</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1821,6 +1862,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00117">117</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aade8e27e84e069a5d19a71c0ee4883bc"></a>
@@ -1840,6 +1883,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00118">118</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1861,6 +1906,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00139">139</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a486ab09632a17422600dd172c4a54779"></a>
@@ -1880,6 +1927,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00125">125</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1901,6 +1950,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00135">135</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8d0711a3b378de4f44fdfe08afa96167"></a>
@@ -1920,6 +1971,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00115">115</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1941,6 +1994,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00109">109</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a16acc9f5d083a7adec271927d03e1191"></a>
@@ -1960,6 +2015,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00111">111</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -1981,6 +2038,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00133">133</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3d0fbfc75bfbfc7e784ad752b9eff4c4"></a>
@@ -2000,6 +2059,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00123">123</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -2021,6 +2082,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00106">106</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8345d9fb4aefce598afd6058a922e5c7"></a>
@@ -2040,6 +2103,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00122">122</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -2061,6 +2126,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00108">108</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9a94b17a66f603f0b2fd41b91d2e37f1"></a>
@@ -2080,6 +2147,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00110">110</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
 
 </div>
 </div>
@@ -2101,22 +2170,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html#l00131">131</a> of file <a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a></li>
-<li><a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp.html">UBQuickTimeFile.cpp</a></li>
+<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../d4/d28/_u_b_quick_time_file_8h_source.html">UBQuickTimeFile.h</a></li>
+<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../dc/d9e/_u_b_quick_time_file_8cpp_source.html">UBQuickTimeFile.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dc/d83/class_u_b_quick_time_file.html">UBQuickTimeFile</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:30 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

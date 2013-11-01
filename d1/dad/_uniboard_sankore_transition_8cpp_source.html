@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_eb18335ff9b85550ba18312bbc915f59.html">transition</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UniboardSankoreTransition.cpp</div>  </div>
@@ -155,10 +139,10 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a4b4662dc50a912b252e5f4de7406f8e8">   50</a></span>&#160;<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a4b4662dc50a912b252e5f4de7406f8e8">UniboardSankoreTransition::~UniboardSankoreTransition</a>()</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span>(NULL != mTransitionDlg)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">delete</span> mTransitionDlg;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        mTransitionDlg = NULL;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a> = NULL;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a>){</div>
@@ -167,7 +151,7 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> UniboardSankoreTransition::rollbackDocumentsTransition(QFileInfoList&amp; fileInfoList)</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a6e704fed81e6cd095694b43da074a0f2">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a6e704fed81e6cd095694b43da074a0f2">UniboardSankoreTransition::rollbackDocumentsTransition</a>(QFileInfoList&amp; fileInfoList)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    QFileInfoList::iterator fileInfo;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> (fileInfo = fileInfoList.begin(); fileInfo != fileInfoList.end(); fileInfo += 1) {</div>
@@ -202,10 +186,10 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        QString backupDirectoryPath = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#af850f64fdd630fc78510c856f00ffa4f">UBFileSystemUtils::normalizeFilePath</a>(QDesktopServices::storageLocation(QDesktopServices::DesktopLocation));</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (fileInfoList.count() != 0){</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            mTransitionDlg = <span class="keyword">new</span> <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html">UBUpdateDlg</a>(NULL, fileInfoList.count(), backupDirectoryPath);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            connect(mTransitionDlg, SIGNAL(updateFiles()), <span class="keyword">this</span>, SLOT(startDocumentTransition()));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a50f8659c57e4989ac789a0c81d7e8509">transitionFinished</a>(<span class="keywordtype">bool</span>)), mTransitionDlg, SLOT(onFilesUpdated(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            mTransitionDlg-&gt;show();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a> = <span class="keyword">new</span> <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html">UBUpdateDlg</a>(NULL, fileInfoList.count(), backupDirectoryPath);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            connect(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>, SIGNAL(updateFiles()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ad13a76cb192d9b6027d762ca07edf561">startDocumentTransition</a>()));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a50f8659c57e4989ac789a0c81d7e8509">transitionFinished</a>(<span class="keywordtype">bool</span>)), <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>, SLOT(onFilesUpdated(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>-&gt;show();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">else</span>{</div>
@@ -213,11 +197,11 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">void</span> UniboardSankoreTransition::startDocumentTransition()</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ad13a76cb192d9b6027d762ca07edf561">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ad13a76cb192d9b6027d762ca07edf561">UniboardSankoreTransition::startDocumentTransition</a>()</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a> = <span class="keyword">new</span> <a class="code" href="../../d6/db6/class_uniboard_sankore_thread.html">UniboardSankoreThread</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a>-&gt;start();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    connect(<span class="keyword">this</span>,SIGNAL(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ac85cd549e8ef554a0f29618c5b6de561">transitioningFile</a>(QString)),mTransitionDlg,SLOT(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ac85cd549e8ef554a0f29618c5b6de561">transitioningFile</a>(QString)));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    connect(<span class="keyword">this</span>,SIGNAL(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ac85cd549e8ef554a0f29618c5b6de561">transitioningFile</a>(QString)),<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>,SLOT(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ac85cd549e8ef554a0f29618c5b6de561">transitioningFile</a>(QString)));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
@@ -349,7 +333,7 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 <div class="line"><a name="l00243"></a><span class="lineno"><a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a9b27fb4acafb20d28b9423bd724cc279">  243</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a9b27fb4acafb20d28b9423bd724cc279">UniboardSankoreTransition::executeTransition</a>()</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    QString backupDestinationPath = mTransitionDlg-&gt;<a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a0b0302a432ab7ae868db31f23d3d9da2">backupPath</a>() + <span class="stringliteral">&quot;/OldSankoreAndUniboardVersionsBackup&quot;</span>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    QString backupDestinationPath = <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>-&gt;<a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a0b0302a432ab7ae868db31f23d3d9da2">backupPath</a>() + <span class="stringliteral">&quot;/OldSankoreAndUniboardVersionsBackup&quot;</span>;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    result = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8289391e8ff8c366727435455aa8a733">UBFileSystemUtils::copyDir</a>(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a1d345315b23aecd23f91196c14071457">mUniboardSourceDirectory</a> + <span class="stringliteral">&quot;/document&quot;</span>, backupDestinationPath);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    result &amp;= <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8289391e8ff8c366727435455aa8a733">UBFileSystemUtils::copyDir</a>(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a996150102eb052a27b3b317c8e4813d8">mOldSankoreDirectory</a> + <span class="stringliteral">&quot;/document&quot;</span>, backupDestinationPath);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
@@ -375,7 +359,7 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">if</span> (!result){</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;The transition has failed&quot;</span>;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        rollbackDocumentsTransition(fileInfoList);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a6e704fed81e6cd095694b43da074a0f2">rollbackDocumentsTransition</a>(fileInfoList);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(backupDestinationPath);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">else</span>{</div>
@@ -405,15 +389,11 @@ $(document).ready(function(){initNavTree('d1/dad/_uniboard_sankore_transition_8c
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_eb18335ff9b85550ba18312bbc915f59.html">transition</a></li><li class="navelem"><a class="el" href="../../d1/dad/_uniboard_sankore_transition_8cpp.html">UniboardSankoreTransition.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d2/d79/class_u_b_scene_cache.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d2/d79/class_u_b_scene_cache.html','..
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -149,7 +129,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a98c9d0b64d87414c869c5d0807c67b43"><td class="memItemLeft" align="right" valign="top">QHash&lt; <a class="el" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a>, <br class="typebreak"/>
 <a class="el" href="../../d5/dec/class_u_b_graphics_scene_1_1_scene_view_state.html">UBGraphicsScene::SceneViewState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d79/class_u_b_scene_cache.html#a98c9d0b64d87414c869c5d0807c67b43">mViewStates</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html#l00069">69</a> of file <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html">UBSceneCache.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afcb9fbc590e6d3e6a94b00b501c06b90"></a>
 <div class="memitem">
 <div class="memproto">
@@ -162,6 +145,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">mCachedSceneCount</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
@@ -189,6 +174,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00044">44</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -216,6 +203,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00254">254</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> foundUnusedScene = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordtype">int</span> count = 0;</div>
@@ -292,6 +281,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00096">96</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> key(proxy, pageIndex);</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a1554a6fd285fb5a9cf10007f9ac370fc">QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::contains</a>(key);</div>
@@ -338,6 +329,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00050">50</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* newScene = <span class="keyword">new</span> <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>(proxy, useUndoRedoStack);</div>
 <div class="line">    <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(proxy, pageIndex, newScene);</div>
@@ -387,6 +380,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00288">288</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span>(<a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> key, keys())</div>
 <div class="line">    {</div>
@@ -441,6 +436,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00060">60</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;UBSceneCacheID&gt; existingKeys = QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::keys(scene);</div>
 <div class="line"></div>
@@ -533,6 +530,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00227">227</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> sourceKey(proxy, sourceIndex);</div>
 <div class="line"></div>
@@ -608,6 +607,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00150">150</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> keySource(proxy, sourceIndex);</div>
 <div class="line"></div>
@@ -692,6 +693,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!newDocument || !oldDocument) {</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -751,6 +754,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>(); i++)</div>
 <div class="line">    {</div>
@@ -802,6 +807,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* scene = <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">value</a>(proxy, pageIndex);</div>
 <div class="line"></div>
@@ -869,6 +876,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00192">192</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = endIncIndex; i &gt;= startIncIndex; i--)</div>
 <div class="line">    {</div>
@@ -920,6 +929,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d7c/class_u_b_scene_cache_i_d.html">UBSceneCacheID</a> key(proxy, pageIndex);</div>
 <div class="line"></div>
@@ -971,6 +982,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html#l00084">84</a> of file <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html">UBSceneCache.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">QHash&lt;UBSceneCacheID, UBGraphicsScene*&gt;::value</a>(key);</div>
 <div class="line">        }</div>
@@ -1005,6 +1018,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html#l00109">109</a> of file <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html">UBSceneCache.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a42d17d7108e9d176c579a251ebe8a181"></a>
@@ -1024,6 +1039,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html#l00107">107</a> of file <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html">UBSceneCache.h</a>.</p>
 
 </div>
 </div>
@@ -1045,22 +1062,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html#l00111">111</a> of file <a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html">UBSceneCache.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html">UBSceneCache.h</a></li>
-<li><a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp.html">UBSceneCache.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d0/d26/_u_b_scene_cache_8h_source.html">UBSceneCache.h</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d8/d14/_u_b_scene_cache_8cpp_source.html">UBSceneCache.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/d79/class_u_b_scene_cache.html">UBSceneCache</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:31 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

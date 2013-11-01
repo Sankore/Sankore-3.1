@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d23/class_u_b_resources.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d8/d23/class_u_b_resources.html','../.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -162,7 +142,10 @@ Private Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a74bafe6515d3e8a32cf5dbe86d169744"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/d23/class_u_b_resources.html">UBResources</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d23/class_u_b_resources.html#a74bafe6515d3e8a32cf5dbe86d169744">sSingleton</a> = 0</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00029">29</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a23b50d13532910f04873a27f629a23d8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -184,6 +167,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html#l00036">36</a> of file <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html">UBResources.cpp</a>.</p>
 <div class="fragment"><div class="line"> : QObject(pParent)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
@@ -221,6 +206,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html">UBResources.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -248,6 +235,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html">UBResources.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString customFontDirectory = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#adcdef136a2f203e0ddf283196fff991a">applicationCustomFontDirectory</a>();</div>
 <div class="line">    QStringList fontFiles = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a0116cc080d1cb3ef854125e0088c8cf6">UBFileSystemUtils::allFiles</a>(customFontDirectory);</div>
@@ -298,6 +287,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00035">35</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d8/d23/class_u_b_resources.html#aa346b8a0b87fcec0e64b671c05ac925f">mCustomFontList</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -331,6 +322,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html#l00060">60</a> of file <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html">UBResources.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Cursors</span></div>
 <div class="line">    <a class="code" href="../../d8/d23/class_u_b_resources.html#a498cda238b893be4af2c5f692e015247">penCursor</a>       = QCursor(Qt::CrossCursor);</div>
@@ -379,6 +372,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html">UBResources.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d8/d23/class_u_b_resources.html#a74bafe6515d3e8a32cf5dbe86d169744">sSingleton</a>)</div>
 <div class="line">    {</div>
@@ -423,6 +418,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00057">57</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9e69d6645d67e7a42e6dcc5773470740"></a>
@@ -434,6 +431,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00061">61</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
 
 </div>
 </div>
@@ -447,6 +446,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00051">51</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af9aebbfa5288b8428b4684cb38e7b85c"></a>
@@ -459,6 +460,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00054">54</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a833fbc6e776701f9c3e45b4a286a1d70"></a>
@@ -470,6 +473,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00052">52</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
 
 </div>
 </div>
@@ -491,6 +496,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00046">46</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a498cda238b893be4af2c5f692e015247"></a>
@@ -502,6 +509,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00050">50</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
 
 </div>
 </div>
@@ -515,6 +524,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00058">58</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aeb58734a86bc61559d8d2b561f2aa092"></a>
@@ -527,6 +538,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00053">53</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab236f6e21733987cf38e8d2d3f35b341"></a>
@@ -538,6 +551,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00060">60</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
 
 </div>
 </div>
@@ -559,6 +574,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00044">44</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3c7b9b13f2adc873f577fac9a30093c7"></a>
@@ -570,6 +587,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00059">59</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
 
 </div>
 </div>
@@ -583,6 +602,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00055">55</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a83e6b8bd0380901222ea318c647290f7"></a>
@@ -595,22 +616,20 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/d01/_u_b_resources_8h_source.html#l00056">56</a> of file <a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a></li>
-<li><a class="el" href="../../d0/d51/_u_b_resources_8cpp.html">UBResources.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../db/d01/_u_b_resources_8h_source.html">UBResources.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d0/d51/_u_b_resources_8cpp_source.html">UBResources.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d8/d23/class_u_b_resources.html">UBResources</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:30 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGraphicsTextItem.cpp</div>  </div>
@@ -167,7 +151,7 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aea85facebaec66edecbdf81280a9c918">setRotatable</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a698c3af60576af37a916a93ee3a82a25">setCanTrigAnAction</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    mTypeTextHereLabel = tr(<span class="stringliteral">&quot;&lt;Type Text Here&gt;&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#aee1fec11df927ec8ed052888bbca37c9">mTypeTextHereLabel</a> = tr(<span class="stringliteral">&quot;&lt;Type Text Here&gt;&quot;</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a86b481353d96038e1b371f5ef6f5e44f">UBItemLayerType::Object</a>);</div>
@@ -182,10 +166,10 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a91ebcd957d46156859eeb3e9047194bc">setUuid</a>(QUuid::createUuid());</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    connect(document(), SIGNAL(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>()), <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>(), SLOT(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>()));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    connect(document(), SIGNAL(undoCommandAdded()), <span class="keyword">this</span>, SLOT(undoCommandAdded()));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    connect(document(), SIGNAL(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a183a4cfe37778a09a0c895f3c7e4e88d">undoCommandAdded</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a183a4cfe37778a09a0c895f3c7e4e88d">undoCommandAdded</a>()));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    connect(document()-&gt;documentLayout(), SIGNAL(documentSizeChanged(<span class="keyword">const</span> QSizeF &amp;)),</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">this</span>, SLOT(documentSizeChanged(<span class="keyword">const</span> QSizeF &amp;)));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    connect(document()-&gt;documentLayout(), SIGNAL(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#af8e979ce1e9395d000f7b2d68d813009">documentSizeChanged</a>(<span class="keyword">const</span> QSizeF &amp;)),</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#af8e979ce1e9395d000f7b2d68d813009">documentSizeChanged</a>(<span class="keyword">const</span> QSizeF &amp;)));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
@@ -193,22 +177,22 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;QVariant UBGraphicsTextItem::itemChange(GraphicsItemChange change, <span class="keyword">const</span> QVariant &amp;value)</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a1732743d88922274ace18be319b58de6">   90</a></span>&#160;QVariant <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a1732743d88922274ace18be319b58de6">UBGraphicsTextItem::itemChange</a>(GraphicsItemChange change, <span class="keyword">const</span> QVariant &amp;value)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    QVariant newValue = value;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>())</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        newValue = <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5851301422e4533173600b1264b852fb">itemChange</a>(change, value);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> QGraphicsTextItem::itemChange(change, newValue);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a1732743d88922274ace18be319b58de6">QGraphicsTextItem::itemChange</a>(change, newValue);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a0785fc26e52582a3e7a8491e84d65373">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a0785fc26e52582a3e7a8491e84d65373">UBGraphicsTextItem::mousePressEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// It is a cludge...</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a> == <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;stylusTool())</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        QGraphicsTextItem::mousePressEvent(event);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a0785fc26e52582a3e7a8491e84d65373">QGraphicsTextItem::mousePressEvent</a>(event);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        clearFocus();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -243,34 +227,34 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (!data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>).toBool())</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> elapsed = mLastMousePressTime.msecsTo(QTime::currentTime());</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> elapsed = <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#acb8afb9a85f15cb571772b92c5090284">mLastMousePressTime</a>.msecsTo(QTime::currentTime());</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (elapsed &lt; <a class="code" href="../../d8/d81/class_u_b_application.html#a71985ce0344b74bc3e5ed1d7f44a2017">UBApplication::app</a>()-&gt;doubleClickInterval())</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        mMultiClickState++;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> (mMultiClickState &gt; 3)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            mMultiClickState = 1;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a>++;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> &gt; 3)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> = 1;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        mMultiClickState = 1;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> = 1;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    mLastMousePressTime = QTime::currentTime();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#acb8afb9a85f15cb571772b92c5090284">mLastMousePressTime</a> = QTime::currentTime();</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (mMultiClickState == 1)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> == 1)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">//        setTextInteractionFlags(Qt::TextEditorInteraction);</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        QGraphicsTextItem::mousePressEvent(event);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a0785fc26e52582a3e7a8491e84d65373">QGraphicsTextItem::mousePressEvent</a>(event);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        setFocus();</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mMultiClickState == 2)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> == 2)</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        QTextCursor tc= textCursor();</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        tc.select(QTextCursor::WordUnderCursor);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        setTextCursor(tc);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mMultiClickState == 3)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> == 3)</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        QTextCursor tc= textCursor();</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        tc.select(QTextCursor::Document);</div>
@@ -278,19 +262,19 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        mMultiClickState = 0;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> = 0;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a5924011c38b05741817ec8ebfeb0e82a">  179</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a5924011c38b05741817ec8ebfeb0e82a">UBGraphicsTextItem::mouseMoveEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>() || !<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;mouseMoveEvent(event))</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>() || !<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a5924011c38b05741817ec8ebfeb0e82a">mouseMoveEvent</a>(event))</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        QGraphicsTextItem::mouseMoveEvent(event);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a5924011c38b05741817ec8ebfeb0e82a">QGraphicsTextItem::mouseMoveEvent</a>(event);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a94b640344c6ba2491448fff42bf1321a">  187</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a94b640344c6ba2491448fff42bf1321a">UBGraphicsTextItem::mouseReleaseEvent</a>(QGraphicsSceneMouseEvent *event)</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// scene()-&gt;itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes.</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// It is a cludge...</span></div>
@@ -300,19 +284,19 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">if</span>( fabs(distance.x()) &lt; 1 &amp;&amp; fabs(distance.y()) &lt; 1 )</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76f992490575724a33bc0813f80f7a98">mouseReleaseEvent</a>(event);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            QGraphicsTextItem::mouseReleaseEvent(event);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a94b640344c6ba2491448fff42bf1321a">QGraphicsTextItem::mouseReleaseEvent</a>(event);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        clearFocus();</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (mMultiClickState == 1)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a">mMultiClickState</a> == 1)</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    {</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>())</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a76f992490575724a33bc0813f80f7a98">mouseReleaseEvent</a>(event);</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        QGraphicsTextItem::mouseReleaseEvent(event);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a94b640344c6ba2491448fff42bf1321a">QGraphicsTextItem::mouseReleaseEvent</a>(event);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
@@ -320,9 +304,9 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItem::paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget)</div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a6fd257fac2fd660d0c3094ddcac6b367">  217</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a6fd257fac2fd660d0c3094ddcac6b367">UBGraphicsTextItem::paint</a>(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget)</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    QColor color = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a57270646688a0214f4fc2c8d2f31d7a6">isDarkBackground</a>() ? mColorOnDarkBackground : mColorOnLightBackground;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    QColor color = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a57270646688a0214f4fc2c8d2f31d7a6">isDarkBackground</a>() ? <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a96807b3041f73ba8130ee2e71eabdef7">mColorOnDarkBackground</a> : <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a3c9b511a1c0f5de989df3bd229af3110">mColorOnLightBackground</a>;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    setDefaultTextColor(color);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// Never draw the rubber band, we draw our custom selection with the DelegateFrame</span></div>
@@ -330,14 +314,14 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    styleOption.state &amp;= ~QStyle::State_Selected;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    styleOption.state &amp;= ~QStyle::State_HasFocus;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    QGraphicsTextItem::paint(painter, &amp;styleOption, widget);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a6fd257fac2fd660d0c3094ddcac6b367">QGraphicsTextItem::paint</a>(painter, &amp;styleOption, widget);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (widget == <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;controlView()-&gt;viewport() &amp;&amp;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            !isSelected() &amp;&amp; toPlainText().isEmpty())</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        painter-&gt;setFont(font());</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        painter-&gt;setPen(<a class="code" href="../../db/d66/class_u_b_settings.html#a625a557a8d25f36ff54fa6c7747cee86">UBSettings::paletteColor</a>);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        painter-&gt;drawText(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a7c2191ecf4c0e619bbe1a80d00a68406">boundingRect</a>(), Qt::AlignCenter, mTypeTextHereLabel);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        painter-&gt;drawText(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a7c2191ecf4c0e619bbe1a80d00a68406">boundingRect</a>(), Qt::AlignCenter, <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#aee1fec11df927ec8ed052888bbca37c9">mTypeTextHereLabel</a>);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
@@ -405,7 +389,7 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">if</span> (toPlainText().isEmpty())</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        qreal minWidth = fm.width(mTypeTextHereLabel);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        qreal minWidth = fm.width(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#aee1fec11df927ec8ed052888bbca37c9">mTypeTextHereLabel</a>);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        newWidth = qMax(minWidth, newWidth);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
@@ -417,7 +401,7 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    QFontMetrics fm(font());</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    qreal minHeight = fm.height() + document()-&gt;documentMargin() * 2;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    mTextHeight = qMax(minHeight, height);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a158f10cb3dd0a7efad6d2ccc68430533">mTextHeight</a> = qMax(minHeight, height);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    update();</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    setFocus();</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
@@ -425,7 +409,7 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
 <div class="line"><a name="l00320"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a7aa93056029f13ae3cdc9a7771e8748e">  320</a></span>&#160;qreal <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a7aa93056029f13ae3cdc9a7771e8748e">UBGraphicsTextItem::textHeight</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">return</span> mTextHeight;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a158f10cb3dd0a7efad6d2ccc68430533">mTextHeight</a>;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
@@ -471,26 +455,22 @@ $(document).ready(function(){initNavTree('de/da0/_u_b_graphics_text_item_8cpp_so
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;}</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItem::undoCommandAdded()</div>
+<div class="line"><a name="l00368"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a183a4cfe37778a09a0c895f3c7e4e88d">  368</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a183a4cfe37778a09a0c895f3c7e4e88d">UBGraphicsTextItem::undoCommandAdded</a>()</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    emit <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a1b9e41208efe10b9d640ee45c2e2dcec">textUndoCommandAdded</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItem::documentSizeChanged(<span class="keyword">const</span> QSizeF &amp; newSize)</div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#af8e979ce1e9395d000f7b2d68d813009">  374</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#af8e979ce1e9395d000f7b2d68d813009">UBGraphicsTextItem::documentSizeChanged</a>(<span class="keyword">const</span> QSizeF &amp; newSize)</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;{</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a9a461e55837ce00341381e2f2bb642e8">resize</a>(newSize.width(), newSize.height());</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../de/da0/_u_b_graphics_text_item_8cpp.html">UBGraphicsTextItem.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

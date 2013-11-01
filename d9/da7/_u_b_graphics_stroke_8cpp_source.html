@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d9/da7/_u_b_graphics_stroke_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d9/da7/_u_b_graphics_stroke_8cpp_sourc
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGraphicsStroke.cpp</div>  </div>
@@ -148,29 +132,29 @@ $(document).ready(function(){initNavTree('d9/da7/_u_b_graphics_stroke_8cpp_sourc
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a76ff6a3c17efa506459591785d749f47">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a76ff6a3c17efa506459591785d749f47">UBGraphicsStroke::addPolygon</a>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* pol)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">remove</span>(pol);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    mPolygons &lt;&lt; pol;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a> &lt;&lt; pol;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#aeecdbfc012ba82636e96ffe0d9d13846">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#aeecdbfc012ba82636e96ffe0d9d13846">UBGraphicsStroke::remove</a>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* polygonItem)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> n = mPolygons.indexOf(polygonItem);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> n = <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.indexOf(polygonItem);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (n&gt;=0)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        mPolygons.removeAt(n);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.removeAt(n);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a19d0be99f5ef2ac596e13ef018ec1d77">   55</a></span>&#160;QList&lt;UBGraphicsPolygonItem*&gt; <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a19d0be99f5ef2ac596e13ef018ec1d77">UBGraphicsStroke::polygons</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> mPolygons;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a391767e8456dbee54956d48709dccf70">   61</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a391767e8456dbee54956d48709dccf70">UBGraphicsStroke::hasPressure</a>()</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (mPolygons.count() &gt; 2)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.count() &gt; 2)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        qreal nominalWidth = mPolygons.at(0)-&gt;originalWidth();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        qreal nominalWidth = <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.at(0)-&gt;originalWidth();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">foreach</span>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* pol, mPolygons)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">foreach</span>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* pol, <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (!pol-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a7132e5315a262757037e72e5fa379d5d">isNominalLine</a>() || pol-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#aacda0659f1614f24634e4f7276ff1618">originalWidth</a>() != nominalWidth)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -190,7 +174,7 @@ $(document).ready(function(){initNavTree('d9/da7/_u_b_graphics_stroke_8cpp_sourc
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#ab428c04960df5879645e0f36ddae265b">   85</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#ab428c04960df5879645e0f36ddae265b">UBGraphicsStroke::hasAlpha</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (mPolygons.length() &gt; 0 &amp;&amp; mPolygons.at(0)-&gt;color().alphaF() != 1.0)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.length() &gt; 0 &amp;&amp; <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.at(0)-&gt;color().alphaF() != 1.0)</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
@@ -202,21 +186,17 @@ $(document).ready(function(){initNavTree('d9/da7/_u_b_graphics_stroke_8cpp_sourc
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a04f3372bd06e1dc691bab2bac738ff89">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a04f3372bd06e1dc691bab2bac738ff89">UBGraphicsStroke::clear</a>()</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span>(!mPolygons.empty()){</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        mPolygons.clear();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.empty()){</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.clear();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../d9/da7/_u_b_graphics_stroke_8cpp.html">UBGraphicsStroke.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

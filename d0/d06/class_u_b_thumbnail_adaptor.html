@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d06/class_u_b_thumbnail_adaptor.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d06/class_u_b_thumbnail_adaptor.htm
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
@@ -138,7 +118,10 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a39712b41b735a84c9cd6c1460e5ccd12"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a39712b41b735a84c9cd6c1460e5ccd12">generateMissingThumbnails</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *proxy)</td></tr>
 <tr class="memitem:a655787fe08746afefcf5bfc06805a22c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a655787fe08746afefcf5bfc06805a22c">updateDocumentToHandleZeroPage</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *proxy)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d0/d61/_u_b_thumbnail_adaptor_8h_source.html#l00033">33</a> of file <a class="el" href="../../d0/d61/_u_b_thumbnail_adaptor_8h_source.html">UBThumbnailAdaptor.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a249acf6c8bfe4abaaa0947e65e043786"></a>
 <div class="memitem">
 <div class="memproto">
@@ -159,6 +142,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d61/_u_b_thumbnail_adaptor_8h_source.html#l00050">50</a> of file <a class="el" href="../../d0/d61/_u_b_thumbnail_adaptor_8h_source.html">UBThumbnailAdaptor.h</a>.</p>
 <div class="fragment"><div class="line">{}</div>
 </div><!-- fragment -->
 </div>
@@ -185,6 +170,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html#l00124">124</a> of file <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span>(<span class="keyword">const</span> QPixmap* pm, list)</div>
 <div class="line">        <span class="keyword">delete</span> pm;</div>
@@ -224,6 +211,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> existingPageCount = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>();</div>
 <div class="line"></div>
@@ -310,6 +299,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html#l00078">78</a> of file <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, pageIndex);</div>
 <div class="line"></div>
@@ -384,6 +375,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a655787fe08746afefcf5bfc06805a22c">updateDocumentToHandleZeroPage</a>(proxy);</div>
 <div class="line">    <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a39712b41b735a84c9cd6c1460e5ccd12">generateMissingThumbnails</a>(proxy);</div>
@@ -459,6 +452,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html#l00131">131</a> of file <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, pageIndex);</div>
 <div class="line"></div>
@@ -559,6 +554,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html#l00181">181</a> of file <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, pageIndex);</div>
 <div class="line"></div>
@@ -606,6 +603,8 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html#l00101">101</a> of file <a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;teacherGuidePageZeroActivated-&gt;get().toBool()){</div>
 <div class="line">        QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, 0);</div>
@@ -638,19 +637,15 @@ Static Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d0/d61/_u_b_thumbnail_adaptor_8h_source.html">UBThumbnailAdaptor.h</a></li>
-<li><a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp.html">UBThumbnailAdaptor.cpp</a></li>
+<li>Sankore-3.1/src/adaptors/<a class="el" href="../../d0/d61/_u_b_thumbnail_adaptor_8h_source.html">UBThumbnailAdaptor.h</a></li>
+<li>Sankore-3.1/src/adaptors/<a class="el" href="../../de/d97/_u_b_thumbnail_adaptor_8cpp_source.html">UBThumbnailAdaptor.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d06/class_u_b_thumbnail_adaptor.html">UBThumbnailAdaptor</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:33 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

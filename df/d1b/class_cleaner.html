@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d1b/class_cleaner.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/d1b/class_cleaner.html','../../');}
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -142,7 +122,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa2d5de9548c2b7210283c1efd30d3e7b"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d1b/class_cleaner.html#aa2d5de9548c2b7210283c1efd30d3e7b">mDomIdsMap</a></td></tr>
 <tr class="memitem:a5fbc4ae18dcdc38786c5e85069ca8580"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d1b/class_cleaner.html#a5fbc4ae18dcdc38786c5e85069ca8580">mPresentIdsMap</a></td></tr>
 </table>
-<h2>Member Function Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00185">185</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
+</div><h2>Member Function Documentation</h2>
 <a class="anchor" id="a66d21628434637f05ddcdc65bfd7993b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +146,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00227">227</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        QFileInfoList ifs = QDir(<a class="code" href="../../df/d1b/class_cleaner.html#aa91c0bf30a483ddaf86f1208056f11bc">mCurrentDir</a>).entryInfoList(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#aa5718d8575e37a1df961a749ebc20f62">trashFilter</a>, QDir::NoDotAndDotDot | QDir::Files);</div>
 <div class="line">        <span class="keywordflow">foreach</span> (QFileInfo ifo, ifs) {</div>
@@ -211,6 +196,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00188">188</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        <a class="code" href="../../df/d1b/class_cleaner.html#aa91c0bf30a483ddaf86f1208056f11bc">mCurrentDir</a> = dir.toLocalFile();</div>
 <div class="line">        <a class="code" href="../../df/d1b/class_cleaner.html#a66d21628434637f05ddcdc65bfd7993b">cleanTrash</a>();</div>
@@ -253,8 +240,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_a6ba5fe8cb906e0387b7c9fdde76eaa69_cgraph.svg" width="100%" height="568"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_a6ba5fe8cb906e0387b7c9fdde76eaa69_cgraph.svg" width="100%" height="568"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -290,6 +276,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00235">235</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        Q_ASSERT(!dom.isNull());</div>
 <div class="line"></div>
@@ -307,8 +295,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_a344448bc6234c9cdb67f9b1e56887e04_cgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_a344448bc6234c9cdb67f9b1e56887e04_cgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -344,6 +331,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00274">274</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        <span class="comment">// Taking information from the physical file system</span></div>
 <div class="line">        QStringList domIds = <a class="code" href="../../df/d1b/class_cleaner.html#aa2d5de9548c2b7210283c1efd30d3e7b">mDomIdsMap</a>.keys();</div>
@@ -388,6 +377,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00262">262</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        QFileInfoList fileList = QDir(scanDir).entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);</div>
 <div class="line">        <span class="keywordflow">foreach</span> (QFileInfo nInfo, fileList) {</div>
@@ -439,6 +430,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00248">248</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        QString absPrefix = <a class="code" href="../../df/d1b/class_cleaner.html#aa91c0bf30a483ddaf86f1208056f11bc">mCurrentDir</a> + <span class="stringliteral">&quot;/&quot;</span>;</div>
 <div class="line">        QStringList dirsList = <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a0d84a4e878308b260d4f8eb842ec9392">scanDirs</a>.split(<span class="stringliteral">&quot;,&quot;</span>, QString::SkipEmptyParts);</div>
@@ -457,8 +450,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_a2788703c256856bd526e148922ed4cfa_cgraph.svg" width="539" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_a2788703c256856bd526e148922ed4cfa_cgraph.svg" width="539" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -494,6 +486,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00333">333</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        QString type = element.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#ae3972be9306049b03517d9117cc685ed">aType</a>);</div>
 <div class="line">        <span class="keywordflow">if</span> (type == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a29a1f14af2aa5d834e1a1843d3873154">vText</a>) { <span class="comment">// We don&#39;t have to care of the text object</span></div>
@@ -564,6 +558,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00287">287</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        <span class="keywordflow">if</span> (what == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a77a22abe3234cb90c4024ea559501c56">tVideo</a></div>
 <div class="line">                || what == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a3e328511b456f91d06aec6c9d357eff5">tAudio</a></div>
@@ -581,8 +577,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_aaac0b2131198da8d159126756de6f3a1_cgraph.svg" width="582" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d1b/class_cleaner_aaac0b2131198da8d159126756de6f3a1_cgraph.svg" width="582" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -618,6 +613,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00320">320</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        QString path = element.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a18afd6f5511f627e7dd96dd2e48f3874">aHref</a>);</div>
 <div class="line">        <span class="keywordflow">if</span> (path.isNull()) {</div>
@@ -671,6 +668,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00300">300</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        QDomElement nMediaElement = element.firstChildElement(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a940e13d3cb6460ef5bd1edede67fca97">tMedia</a>);</div>
 <div class="line">        <span class="keywordflow">while</span> (!nMediaElement.isNull()) {</div>
@@ -729,6 +728,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00354">354</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa2d5de9548c2b7210283c1efd30d3e7b"></a>
@@ -748,6 +749,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00356">356</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -769,6 +772,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00357">357</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a98f528385365ca352dbebcc7e86275a6"></a>
@@ -789,21 +794,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html#l00355">355</a> of file <a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html">UBForeignObjectsHandler.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp_source.html">UBForeignObjectsHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/d1b/class_cleaner.html">Cleaner</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:17 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

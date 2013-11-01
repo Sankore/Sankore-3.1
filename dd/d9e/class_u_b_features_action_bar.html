@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/d9e/class_u_b_features_action_bar.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dd/d9e/class_u_b_features_action_bar.h
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -190,7 +170,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa9d338cb0d508231333dc22d891bf4fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a></td></tr>
 <tr class="memitem:ad5a518a54b34825497bb316cc586a98c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00060">60</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a631a181efda4a630f40d9502515c79bc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -220,6 +203,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                                                              : QWidget (parent)</div>
 <div class="line">        , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ab8ebb647a1a6532a428499d7da9d89cb">featuresController</a>(controller)</div>
 <div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>(NULL)</div>
@@ -352,6 +337,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00344">344</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -444,6 +431,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00248">248</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;setEnabled(pAllow);</div>
 <div class="line">}</div>
@@ -471,6 +460,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00091">91</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;setEnabled(pAllow);}</div>
 </div><!-- fragment -->
 </div>
@@ -495,6 +486,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00069">69</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 <div class="fragment"><div class="line">{ <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;clear(); }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -594,6 +587,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00253">253</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{       </div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a> *fMimeData = qobject_cast&lt;<span class="keyword">const</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a>*&gt;(<span class="keyword">event</span>-&gt;mimeData());</div>
 <div class="line"></div>
@@ -679,6 +674,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00288">288</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;type() == QEvent::DragEnter) {</div>
 <div class="line">        QDragEnterEvent *enterEvent = <span class="keyword">static_cast&lt;</span>QDragEnterEvent*<span class="keyword">&gt;</span>(event);</div>
@@ -765,6 +762,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00238">238</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setEnabled(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -823,6 +822,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00219">219</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a4efc551e002a4c18a86e0e08a3a6cf68">addElementsToFavorite</a>();</div>
 <div class="line">}</div>
@@ -867,6 +868,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00214">214</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a30066887b3866485d8dbf208361ee820">newFolderToCreate</a>();</div>
 <div class="line">}</div>
@@ -911,6 +914,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00224">224</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad98a309cdc263a8903a66350d4eadc0a">removeElementsFromFavorite</a>();</div>
 <div class="line">}</div>
@@ -955,6 +960,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00233">233</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ac8ae0628b5a9be66a377d45f04aeac26">rescanModel</a>();</div>
 <div class="line">}</div>
@@ -999,6 +1006,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00229">229</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a4b196bdb6db18808e3fad1032de46377">deleteSelectedElements</a>();</div>
 <div class="line">}</div>
@@ -1044,6 +1053,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00208">208</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(txt)</div>
 <div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a39a52a8fce9c541d3b5cf5a41498ef01">searchElement</a>(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;text());</div>
@@ -1219,6 +1230,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">switch</span>( <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af441110c211c5422a4472875f6f92b4a">currentState</a> )</div>
 <div class="line">    {</div>
@@ -1307,6 +1320,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00137">137</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af441110c211c5422a4472875f6f92b4a">currentState</a> = state;</div>
 <div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad31f29dbd94293ca781a3d88b233a1c6">setButtons</a>();</div>
@@ -1352,6 +1367,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html#l00243">243</a> of file <a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setEnabled(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
@@ -1377,6 +1394,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00101">101</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab8ebb647a1a6532a428499d7da9d89cb"></a>
@@ -1396,6 +1415,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00100">100</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1417,6 +1438,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00106">106</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af07dd23b81167c3e8118c3cc110f7d90"></a>
@@ -1436,6 +1459,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00103">103</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1457,6 +1482,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00108">108</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7cfac0e4545a3b02be6e5ccecf86b362"></a>
@@ -1476,6 +1503,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00114">114</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1497,6 +1526,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00121">121</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a45b3152a3418f740d1ed5b93a63299fb"></a>
@@ -1516,6 +1547,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00112">112</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1537,6 +1570,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00120">120</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af1c0c7701a12f02c6dad5c84d45da2e4"></a>
@@ -1556,6 +1591,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00109">109</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1577,6 +1614,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00117">117</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5e5cfaf06e091789a9b04d00c569fb3e"></a>
@@ -1596,6 +1635,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00116">116</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1617,6 +1658,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00123">123</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab05f28910f4923587a6413af9e9f8fca"></a>
@@ -1636,6 +1679,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00115">115</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1657,6 +1702,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00122">122</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af366a0bd45d36278b835df0b9ce18ded"></a>
@@ -1676,6 +1723,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00111">111</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1697,6 +1746,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00119">119</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a63c4e3fc81bc4dba3f5485a01e2c8510"></a>
@@ -1716,6 +1767,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00104">104</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1737,6 +1790,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00113">113</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4d5cfb6ffd7438026e57f6328e93c60d"></a>
@@ -1756,6 +1811,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00110">110</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
 
 </div>
 </div>
@@ -1777,6 +1834,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00118">118</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a10bd53838e9acdd0e3a2c44e69523d9e"></a>
@@ -1797,22 +1856,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html#l00107">107</a> of file <a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a></li>
-<li><a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp.html">UBFeaturesActionBar.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp_source.html">UBFeaturesActionBar.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html">UBFeaturesActionBar</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:24 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

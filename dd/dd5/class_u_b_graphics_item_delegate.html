@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/dd5/class_u_b_graphics_item_delegate.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dd/dd5/class_u_b_graphics_item_delegat
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -254,7 +234,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a88ceea9e2573a90f075880662fe10113"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a88ceea9e2573a90f075880662fe10113">mShowGoContentButton</a></td></tr>
 <tr class="memitem:a9c3458765aff01f9afc048e965de39ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9c3458765aff01f9afc048e965de39ab">mMoved</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00224">224</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a78857ae5335c1a31581a38210d8b2e5e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -302,6 +285,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00160">160</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(parent)</div>
 <div class="line">    , <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>(pDelegated)</div>
 <div class="line">    , <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aed94a4b82e2b6b34a08036c872a5e277">mDeleteButton</a>(NULL)</div>
@@ -360,6 +345,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00238">238</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>)</div>
 <div class="line">        disconnect(<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>, SIGNAL(zoomChanged(qreal)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad0cebb7e510d52d24c3a010239bcb5fe">onZoomChanged</a>()));</div>
@@ -404,6 +391,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00284">284</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -438,6 +427,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00281">281</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -474,6 +465,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#a1ae8bd8bb12ca6c81e82eed663bc041b">UBGraphicsVideoItemDelegate</a>, <a class="el" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a8e53c735a7bd5267fca9ae39088e8248">UBGraphicsMediaItemDelegate</a>, <a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#ad8e9a598081a5ade9092d80784297c3c">UBGraphicsAudioItemDelegate</a>, <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aed68d84ee8c86411f7b9197a4220e18f">UBGraphicsTextItemDelegate</a>, and <a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#add356059ee48a2efe7cd66223bebe3cd">UBGraphicsGroupContainerItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00611">611</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -508,6 +501,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00263">263</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a24ba4c4c205386fcdc8c48d6f053d616">mCanDuplicate</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -541,6 +536,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00261">261</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a0275fb16e739910799593e89440ff8e6">mCanRotate</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -575,6 +572,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00290">290</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *castScene = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad45be6a0cc44a46d51b7fd70eb5a3c79">delegated</a>()-&gt;scene());</div>
 <div class="line"></div>
@@ -614,6 +613,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00584">584</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"></div>
@@ -677,6 +678,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a50aee9dacc7199cbea2b7e1d1fd06a18">UBGraphicsTextItemDelegate</a>, <a class="el" href="../../d8/d2c/class_u_b_graphics_widget_item_delegate.html#a79bf31a6cda75de23b70469270de5bd9">UBGraphicsWidgetItemDelegate</a>, and <a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#ad9b48a54f407c9ba9934042d3a4b9958">UBGraphicsGroupContainerItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00615">615</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a8003eac64477c1c5ed3e80ae72f1b3dc">mLockAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Locked&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad3145f046572af4adcc760833c11c599">lock</a>(<span class="keywordtype">bool</span>)));</div>
 <div class="line">    QIcon lockIcon;</div>
@@ -741,6 +744,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#aa305fb51703f64d95297bea405d405c0">UBGraphicsMediaItemDelegate</a>, and <a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a991387e40043f6ec5b6ce602d5300b0f">UBGraphicsGroupContainerItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00385">385</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QGraphicsItem *curDelegate = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;parentItem() &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;parentItem()-&gt;type() == <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad39fe3ee7e219e1d6aa20a87872a95ceaa41722c9d25c5573b0031a811262f974">UBGraphicsGroupContainerItem::Type</a>) {</div>
@@ -784,6 +789,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00491">491</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#abae2655269e06f72767de71b8513f6be">duplicateItem</a>(dynamic_cast&lt;UBItem*&gt;(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad45be6a0cc44a46d51b7fd70eb5a3c79">delegated</a>()), <span class="keyword">true</span>, <a class="code" href="../../dd/ddb/_u_b_board_controller_8h.html#a81078322485d3c56644c4f3414ac1c91ab8680e657318faa2b1b3c06b623792cf">eItemActionType_Duplicate</a>);</div>
 <div class="line">}</div>
@@ -828,6 +835,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00259">259</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -861,6 +870,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00279">279</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -895,6 +906,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00559">559</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d1e/class_u_b_item.html">UBItem</a>* item = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d8/d1e/class_u_b_item.html">UBItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"></div>
@@ -947,6 +960,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00375">375</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event)</div>
 <div class="line">}</div>
@@ -983,6 +998,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00380">380</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event)</div>
 <div class="line">}</div>
@@ -1018,6 +1035,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00517">517</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *curScene = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ab7e25b6f7905ae98161def55e3cabfe1">castUBGraphicsScene</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (curScene) {</div>
@@ -1065,6 +1084,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00510">510</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *curScene = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ab7e25b6f7905ae98161def55e3cabfe1">castUBGraphicsScene</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (curScene) {</div>
@@ -1112,6 +1133,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00503">503</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *curScene = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ab7e25b6f7905ae98161def55e3cabfe1">castUBGraphicsScene</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (curScene) {</div>
@@ -1159,6 +1182,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00496">496</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *curScene = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ab7e25b6f7905ae98161def55e3cabfe1">castUBGraphicsScene</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (curScene) {</div>
@@ -1200,6 +1225,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../de/dbb/class_u_b_graphics_curtain_item_delegate.html#a104baa2babd8d7f8142d11257b750e88">UBGraphicsCurtainItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00188">188</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a0904fa90ddd612d056f5935c517c9230">mToolBarUsed</a>)</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a> = <span class="keyword">new</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html">UBGraphicsToolBarItem</a>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
@@ -1280,6 +1307,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00759">759</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5073d82187fb319adfaaa1efe4e1afac">mFlippable</a>;</div>
 <div class="line">}</div>
@@ -1307,6 +1336,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00485">485</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba58a083455c298d786bec3d1af87ef1b5">UBGraphicsItemData::ItemLocked</a>).toBool();</div>
 <div class="line">}</div>
@@ -1356,6 +1387,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ab61402d03cd4a7cc467a21c583aa16fa">UBGraphicsTextItemDelegate</a>, and <a class="el" href="../../de/dbb/class_u_b_graphics_curtain_item_delegate.html#a9480eca07b4d202e63a718b5e8a6263f">UBGraphicsCurtainItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00251">251</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (change == QGraphicsItem::ItemSelectedHasChanged) {</div>
 <div class="line">        <span class="keywordtype">bool</span> ok;</div>
@@ -1436,6 +1469,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00525">525</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (locked)</div>
 <div class="line">    {</div>
@@ -1516,6 +1551,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00265">265</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1df8405ed946406de63913c2e817e5d3">mMimeData</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1552,6 +1589,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aece12f59a1266894ed380bf6e4d14cbf">UBGraphicsGroupContainerItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00321">321</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1df8405ed946406de63913c2e817e5d3">mMimeData</a>) {</div>
 <div class="line">        QDrag* mDrag = <span class="keyword">new</span> QDrag(event-&gt;widget());</div>
@@ -1593,6 +1632,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a318cc185f2aca7410e47e3954d6f424a">UBGraphicsMediaItemDelegate</a>, <a class="el" href="../../de/dbb/class_u_b_graphics_curtain_item_delegate.html#a249f9c655220d2171acea7a3a656c527">UBGraphicsCurtainItemDelegate</a>, and <a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a0eef4acf8124b18a6f495402188dbefc">UBGraphicsGroupContainerItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00297">297</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aafcee0e47c6af21325a3ac975d05df3f">mDragStartPosition</a> = <span class="keyword">event</span>-&gt;pos();</div>
 <div class="line"></div>
@@ -1654,6 +1695,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#ada28e38639a3ccfadf70bd0628b8d942">UBGraphicsGroupContainerItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00347">347</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
@@ -1722,6 +1765,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00645">645</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html">UBCreateLinkPalette</a>* linkPalette = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ad11cb96ff392a1f70ec87784dcd80039">linkPalette</a>();</div>
 <div class="line">    linkPalette-&gt;show();</div>
@@ -1769,6 +1814,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00677">677</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>){</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#ac4585fac2807289c85e56c79f0ba6b08">actionRemoved</a>();</div>
@@ -1822,6 +1869,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00604">604</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a> = 1 / (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6f46e3fe2ffde7ca74f50f175504c229">systemScaleFactor</a>() * <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>());</div>
 <div class="line"></div>
@@ -1870,6 +1919,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#aeb9b858358a46026f500f9da791f7aaf">UBGraphicsVideoItemDelegate</a>, <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a7ecdc3b3ed05e772714e7bb461de779f">UBGraphicsTextItemDelegate</a>, <a class="el" href="../../de/dbb/class_u_b_graphics_curtain_item_delegate.html#a9cad3186c84745ba1aa13f879a263a58">UBGraphicsCurtainItemDelegate</a>, and <a class="el" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a0d2d62936d516875a60975d4f66d3dde">UBGraphicsMediaItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00397">397</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;isSelected()) {</div>
 <div class="line">        <span class="keywordtype">bool</span> shownOnDisplay = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>).toInt() != <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>;</div>
@@ -1940,6 +1991,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00247">247</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{qDebug() &lt;&lt; mess;}</div>
 </div><!-- fragment -->
 </div>
@@ -1967,6 +2020,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d8/d2c/class_u_b_graphics_widget_item_delegate.html#a675044c8ed63ace1cd9b37644629b4fc">UBGraphicsWidgetItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00451">451</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* scene = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene());</div>
 <div class="line">    <span class="keywordflow">if</span> (scene)</div>
@@ -2041,6 +2096,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00652">652</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>;</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;removeAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a>);</div>
@@ -2101,6 +2158,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a6cd80c1431c47bd41e8f2c935cd43da7">UBGraphicsGroupContainerItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00834">834</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!action)</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5b396a6421786c67429b067809d39d04">onRemoveActionClicked</a>();</div>
@@ -2150,6 +2209,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00827">827</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span>(<a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* pButton, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abd27d9387610bf45761035ee4ae6ff37">mButtons</a>){</div>
 <div class="line">        pButton-&gt;setVisible(visible);</div>
@@ -2179,6 +2240,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00251">251</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{ <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a24ba4c4c205386fcdc8c48d6f053d616">mCanDuplicate</a> = allow; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2206,6 +2269,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00734">734</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad46dcf05ef40d214c379fc96b9bc058f">mCanTrigAnAction</a> = canTrig;</div>
 <div class="line">}</div>
@@ -2243,6 +2308,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00267">267</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a3236d60e8ea4773ab205b154325598f0">mDragPixmap</a> = pix;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-61" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2269,6 +2336,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00724">724</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a5073d82187fb319adfaaa1efe4e1afac">mFlippable</a> = flippable;</div>
 <div class="line"></div>
@@ -2303,6 +2372,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00750">750</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"></div>
@@ -2336,6 +2407,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00316">316</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1df8405ed946406de63913c2e817e5d3">mMimeData</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aec3617785a8d9a10f1e9ca0044917778">mimeData</a>;</div>
 <div class="line">}</div>
@@ -2373,6 +2446,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00739">739</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a0275fb16e739910799593e89440ff8e6">mCanRotate</a> = pCanRotate;</div>
 <div class="line"></div>
@@ -2408,6 +2483,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00426">426</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (visible) {</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a65e4fd8ac2e979d29a35886e68fa1267">updateFrame</a>();</div>
@@ -2464,6 +2541,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00549">549</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QVariant showFlag = QVariant(show ? <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a86b481353d96038e1b371f5ef6f5e44f">UBItemLayerType::Object</a> : <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>);</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa10c35aa211a8b1fcdf11209b8b13c9d">showHideRecurs</a>(showFlag, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
@@ -2524,6 +2603,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00541">541</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    pItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, pShow);</div>
 <div class="line">    <span class="keywordflow">foreach</span> (QGraphicsItem *insideItem, pItem-&gt;childItems()) {</div>
@@ -2563,6 +2644,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00708">708</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>)</div>
 <div class="line">    {</div>
@@ -2644,6 +2727,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00570">570</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1afa6d6ae4de824af8f81c5a770337ea">mPreviousPosition</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;pos();</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af4ebe96bf4185d2d12510c962f0b971f">mPreviousTransform</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;transform();</div>
@@ -2697,6 +2782,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00282">282</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ab5bea580591d38d488f536d80278eade">positionHandles</a>();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-76" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2741,6 +2828,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00775">775</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTransform tr;</div>
 <div class="line">    tr.scale(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a02b5c8199e11b87de2303aa4a5ed09ac">mAntiScaleRatio</a>);</div>
@@ -2833,6 +2922,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00764">764</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a> &amp;&amp; !<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aefc58035670f33d0309f1f572452e8b2">mFrame</a>-&gt;scene() &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene())</div>
 <div class="line">    {</div>
@@ -2886,6 +2977,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a63f892bf8e8b39d2f8449b0ee45f6ca4">UBGraphicsTextItemDelegate</a>, and <a class="el" href="../../d8/d2c/class_u_b_graphics_widget_item_delegate.html#a9fc042cdc18946127bdcd651740bcd5b">UBGraphicsWidgetItemDelegate</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00690">690</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a8003eac64477c1c5ed3e80ae72f1b3dc">mLockAction</a>)</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a8003eac64477c1c5ed3e80ae72f1b3dc">mLockAction</a>-&gt;setChecked(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a344ec42f448a0989823fb8f85188cdac">isLocked</a>());</div>
@@ -2944,6 +3037,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l00338">338</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <span class="keywordflow">if</span>( <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ad45be6a0cc44a46d51b7fd70eb5a3c79">delegated</a>()-&gt;isSelected() )</div>
@@ -2982,6 +3077,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00339">339</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a02b5c8199e11b87de2303aa4a5ed09ac"></a>
@@ -3001,6 +3098,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00333">333</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3022,6 +3121,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00335">335</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a24ba4c4c205386fcdc8c48d6f053d616"></a>
@@ -3041,6 +3142,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00356">356</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3062,6 +3165,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00355">355</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad46dcf05ef40d214c379fc96b9bc058f"></a>
@@ -3081,6 +3186,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00358">358</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3102,6 +3209,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00312">312</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aed94a4b82e2b6b34a08036c872a5e277"></a>
@@ -3121,6 +3230,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00315">315</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3142,6 +3253,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00360">360</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aafcee0e47c6af21325a3ac975d05df3f"></a>
@@ -3162,6 +3275,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00352">352</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a554f13c224fba040eea5ae81d9e429df"></a>
@@ -3181,6 +3296,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00316">316</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3203,6 +3320,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>A boolean saying that this object can be flippable (mirror effect) </p>
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00363">363</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aefc58035670f33d0309f1f572452e8b2"></a>
@@ -3222,6 +3341,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00331">331</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3243,6 +3364,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00332">332</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9a521276a587e652033769498837deec"></a>
@@ -3262,6 +3385,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00327">327</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3283,6 +3408,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00325">325</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abdb23ab4b93f3bc0b28a2329543dd88a"></a>
@@ -3302,6 +3429,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00323">323</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3323,6 +3452,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00317">317</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1df8405ed946406de63913c2e817e5d3"></a>
@@ -3342,6 +3473,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00359">359</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3363,6 +3496,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00368">368</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a72f86dc82a249c68b5dbc75d79061027"></a>
@@ -3382,6 +3517,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00349">349</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3403,6 +3540,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00351">351</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a76fc8a8c836a3ccfde3e1a5521a18a41"></a>
@@ -3422,6 +3561,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00354">354</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3443,6 +3584,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00350">350</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a184b927b77ea70e01763414e887ab57f"></a>
@@ -3462,6 +3605,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00353">353</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3483,6 +3628,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00329">329</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acc35565cfa5e4a5eb6c257d520b53ac5"></a>
@@ -3502,6 +3649,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00357">357</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3523,6 +3672,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00366">366</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9b7e283947d4119142569e0cd5d1fcdc"></a>
@@ -3542,6 +3693,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00326">326</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3563,6 +3716,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00328">328</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1caf5794856eba7480eae9beeff4e2ad"></a>
@@ -3582,6 +3737,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00336">336</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3603,6 +3760,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00337">337</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0904fa90ddd612d056f5935c517c9230"></a>
@@ -3622,6 +3781,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00364">364</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -3643,6 +3804,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00321">321</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae4a5db7a8e39d892bb606bf251eb653c"></a>
@@ -3663,22 +3826,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00320">320</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
-<li><a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:26 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

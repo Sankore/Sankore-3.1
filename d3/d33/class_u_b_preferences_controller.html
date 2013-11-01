@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/d33/class_u_b_preferences_controller.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d3/d33/class_u_b_preferences_controlle
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -184,7 +164,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a2264d33aa3f673e2c5e6a31e9576afbe"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#a2264d33aa3f673e2c5e6a31e9576afbe">sMinPenWidth</a> = 0.5</td></tr>
 <tr class="memitem:a3d3d97e38d3c0931891af366dc0f460a"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#a3d3d97e38d3c0931891af366dc0f460a">sMaxPenWidth</a> = 50.0</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00058">58</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a515f90bc539e0c9410c8b2b538b17017"></a>
 <div class="memitem">
 <div class="memproto">
@@ -198,6 +181,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00068">68</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(parent)</div>
 <div class="line">    , <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a0288d0694614a47ff163395fb0888d8b">mPreferencesWindow</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>(0)</div>
@@ -245,6 +230,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00086">86</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a0288d0694614a47ff163395fb0888d8b">mPreferencesWindow</a>;</div>
 <div class="line"></div>
@@ -279,6 +266,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00097">97</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(screen);</div>
 <div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html">UBDisplayManager</a> displayManager;</div>
@@ -325,6 +314,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00370">370</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//web</span></div>
 <div class="line">    QString homePage = <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;webHomePage-&gt;text();</div>
@@ -380,6 +371,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00527">527</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d45/class_u_b_color_picker.html">UBColorPicker</a> *colorPicker = qobject_cast&lt;<a class="code" href="../../db/d45/class_u_b_color_picker.html">UBColorPicker</a>*&gt;(sender());</div>
 <div class="line"></div>
@@ -445,6 +438,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00386">386</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line"></div>
@@ -558,6 +553,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00191">191</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line"></div>
@@ -700,6 +697,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00341">341</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString backgroundStyle = <span class="stringliteral">&quot;QWidget {background-color: white}&quot;</span>;</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Username_textBox-&gt;setStyleSheet(backgroundStyle);</div>
@@ -759,6 +758,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00321">321</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#adedfe664eb6909d957d09b89d5e761eb">setCommunityPassword</a>(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Password_textEdit-&gt;text());</div>
@@ -805,6 +806,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00328">328</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a6ebeb7cab5dc47ffc530e66ec7be1568">setCommunityPersistence</a>(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;PSCredentialsPersistenceCheckBox-&gt;isChecked());</div>
 <div class="line">}</div>
@@ -849,6 +852,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00314">314</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ab5b70f5ef7cf056b9a9d1485bb442feb">setCommunityUsername</a>(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Username_textBox-&gt;text());</div>
@@ -896,6 +901,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00307">307</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString isoCode = <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a75b09fdffc0b761d3b18565a8e2f0605">mIsoCodeAndLanguage</a>[currentItem] == <span class="stringliteral">&quot;NO_VALUE&quot;</span> ? <span class="stringliteral">&quot;&quot;</span> : <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a75b09fdffc0b761d3b18565a8e2f0605">mIsoCodeAndLanguage</a>[currentItem];</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a68816e710a1a3b22a25c9317460d9c17">appPreferredLanguage</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a452bf3be5cee45828397a0b141c9763f">setString</a>(isoCode);</div>
@@ -943,6 +950,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00302">302</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#adf80724a5b19f7164a194113d40b8e1f">appStartupHintsEnabled</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#ace7b75378f8faad31ab6ce6ea1c7589b">setBool</a>(clicked);</div>
 <div class="line">}</div>
@@ -988,6 +997,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00514">514</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal opacity = ((qreal)value) / 100;</div>
 <div class="line"></div>
@@ -1039,6 +1050,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00333">333</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> checkBoxEnabled = <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Username_textBox-&gt;text().length() || <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Password_textEdit-&gt;text().length();</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;PSCredentialsPersistenceCheckBox-&gt;setEnabled(checkBoxEnabled);</div>
@@ -1076,6 +1089,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a07058e851a855d28494161ffb278d48e">init</a>();</div>
 <div class="line"></div>
@@ -1114,6 +1129,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00579">579</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aee5ac1a9d519a121417130531130b778">appToolBarOrientationVertical</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(!checked);</div>
@@ -1160,6 +1177,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00573">573</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aee5ac1a9d519a121417130531130b778">appToolBarOrientationVertical</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(checked);</div>
@@ -1206,6 +1225,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00563">563</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(checked);</div>
 <div class="line"></div>
@@ -1256,6 +1277,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00461">461</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line"></div>
@@ -1347,6 +1370,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line"></div>
@@ -1465,6 +1490,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00108">108</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a75b09fdffc0b761d3b18565a8e2f0605"></a>
@@ -1484,6 +1511,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00077">77</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
 
 </div>
 </div>
@@ -1505,6 +1534,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00082">82</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae3c9a2c79f6e10837f5a7391f42aacb6"></a>
@@ -1524,6 +1555,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00081">81</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
 
 </div>
 </div>
@@ -1545,6 +1578,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00080">80</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0288d0694614a47ff163395fb0888d8b"></a>
@@ -1564,6 +1599,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00079">79</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
 
 </div>
 </div>
@@ -1585,6 +1622,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00106">106</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2264d33aa3f673e2c5e6a31e9576afbe"></a>
@@ -1604,6 +1643,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00105">105</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
 
 </div>
 </div>
@@ -1625,22 +1666,20 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html#l00104">104</a> of file <a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a></li>
-<li><a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp.html">UBPreferencesController.cpp</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a></li>
+<li>Sankore-3.1/src/core/<a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp_source.html">UBPreferencesController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html">UBPreferencesController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:30 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

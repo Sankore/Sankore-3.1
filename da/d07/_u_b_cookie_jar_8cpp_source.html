@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBCookieJar.cpp</div>  </div>
@@ -179,12 +163,12 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> JAR_VERSION = 23;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a0591b0b541979c2aaf9271b1748df2dd">   76</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a0591b0b541979c2aaf9271b1748df2dd">JAR_VERSION</a> = 23;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;QT_BEGIN_NAMESPACE</div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="../../da/d07/_u_b_cookie_jar_8cpp.html#ac1707bac2fc52daf4ef755b47089373f">   79</a></span>&#160;QDataStream &amp;operator&lt;&lt;(QDataStream &amp;stream, const QList&lt;QNetworkCookie&gt; &amp;list)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    stream &lt;&lt; JAR_VERSION;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    stream &lt;&lt; <a class="code" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a0591b0b541979c2aaf9271b1748df2dd">JAR_VERSION</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    stream &lt;&lt; quint32(list.size());</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); ++i)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        stream &lt;&lt; list.at(i).toRawForm();</div>
@@ -198,7 +182,7 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    quint32 version;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    stream &gt;&gt; version;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (version != JAR_VERSION)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (version != <a class="code" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a0591b0b541979c2aaf9271b1748df2dd">JAR_VERSION</a>)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> stream;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    quint32 count;</div>
@@ -231,21 +215,21 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a4efd3ca12b7d075914317d9c230f8d8e">  126</a></span>&#160;<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a4efd3ca12b7d075914317d9c230f8d8e">UBCookieJar::~UBCookieJar</a>()</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (mKeepCookies == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5ad83a4bb5b5fc5eced6dffd1d7c605ec1">KeepUntilExit</a>)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a> == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5ad83a4bb5b5fc5eced6dffd1d7c605ec1">KeepUntilExit</a>)</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94e6652aedce7f6029298e0d1a6b2e90">clear</a>();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
 <div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94e6652aedce7f6029298e0d1a6b2e90">  133</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94e6652aedce7f6029298e0d1a6b2e90">UBCookieJar::clear</a>()</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    setAllCookies(QList&lt;QNetworkCookie&gt;());</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    emit <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a99fed8dac16c9f2b5bb6a13b5233838d">cookiesChanged</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keywordtype">void</span> UBCookieJar::load()</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">  140</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">UBCookieJar::load</a>()</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (mLoaded)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// load cookies and exceptions</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    qRegisterMetaTypeStreamOperators&lt;QList&lt;QNetworkCookie&gt; &gt;(<span class="stringliteral">&quot;QList&lt;QNetworkCookie&gt;&quot;</span>);</div>
@@ -256,12 +240,12 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    setAllCookies(cookies);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    cookieSettings.beginGroup(QLatin1String(<span class="stringliteral">&quot;Exceptions&quot;</span>));</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    mExceptionsBlock = cookieSettings.value(QLatin1String(<span class="stringliteral">&quot;block&quot;</span>)).toStringList();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    mExceptionsAllow = cookieSettings.value(QLatin1String(<span class="stringliteral">&quot;allow&quot;</span>)).toStringList();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    mExceptionsAllowForSession = cookieSettings.value(QLatin1String(<span class="stringliteral">&quot;allowForSession&quot;</span>)).toStringList();</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    qSort(mExceptionsBlock.begin(), mExceptionsBlock.end());</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    qSort(mExceptionsAllow.begin(), mExceptionsAllow.end());</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    qSort(mExceptionsAllowForSession.begin(), mExceptionsAllowForSession.end());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a> = cookieSettings.value(QLatin1String(<span class="stringliteral">&quot;block&quot;</span>)).toStringList();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a> = cookieSettings.value(QLatin1String(<span class="stringliteral">&quot;allow&quot;</span>)).toStringList();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a> = cookieSettings.value(QLatin1String(<span class="stringliteral">&quot;allowForSession&quot;</span>)).toStringList();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    qSort(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>.end());</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    qSort(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>.end());</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    qSort(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>.end());</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a39ca9f7996692b6fb06eb9cdfee158db">loadSettings</a>();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
@@ -273,28 +257,28 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    QByteArray value = settings.value(QLatin1String(<span class="stringliteral">&quot;acceptCookies&quot;</span>),</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                        QLatin1String(<span class="stringliteral">&quot;AcceptOnlyFromSitesNavigatedTo&quot;</span>)).toByteArray();</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    QMetaEnum acceptPolicyEnum = staticMetaObject.enumerator(staticMetaObject.indexOfEnumerator(<span class="stringliteral">&quot;AcceptPolicy&quot;</span>));</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    mAcceptCookies = acceptPolicyEnum.keyToValue(value) == -1 ?</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a41aa8f72eaf5fd9b6a4de66727c14be7">mAcceptCookies</a> = acceptPolicyEnum.keyToValue(value) == -1 ?</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30aec1d96fa3e31635abc7788de1cb43fce">AcceptOnlyFromSitesNavigatedTo</a> :</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                        <span class="keyword">static_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30">AcceptPolicy</a><span class="keyword">&gt;</span>(acceptPolicyEnum.keyToValue(value));</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    value = settings.value(QLatin1String(<span class="stringliteral">&quot;keepCookiesUntil&quot;</span>), QLatin1String(<span class="stringliteral">&quot;KeepUntilExpire&quot;</span>)).toByteArray();</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    QMetaEnum keepPolicyEnum = staticMetaObject.enumerator(staticMetaObject.indexOfEnumerator(<span class="stringliteral">&quot;KeepPolicy&quot;</span>));</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    mKeepCookies = keepPolicyEnum.keyToValue(value) == -1 ?</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a> = keepPolicyEnum.keyToValue(value) == -1 ?</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5ab44f50ff24116d7c974a581dfafe72cb">KeepUntilExpire</a> :</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        <span class="keyword">static_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5">KeepPolicy</a><span class="keyword">&gt;</span>(keepPolicyEnum.keyToValue(value));</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span> (mKeepCookies == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5ad83a4bb5b5fc5eced6dffd1d7c605ec1">KeepUntilExit</a>)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a> == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5ad83a4bb5b5fc5eced6dffd1d7c605ec1">KeepUntilExit</a>)</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        setAllCookies(QList&lt;QNetworkCookie&gt;());</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    mLoaded = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    emit <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a99fed8dac16c9f2b5bb6a13b5233838d">cookiesChanged</a>();</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keywordtype">void</span> UBCookieJar::save()</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a9e0ce6c4bdbbf286430dd45deba7f07f">  187</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a9e0ce6c4bdbbf286430dd45deba7f07f">UBCookieJar::save</a>()</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    purgeOldCookies();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a417fc42974674224c318c9f504a52ce1">purgeOldCookies</a>();</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    QString directory = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">UBSettings::userDataDirectory</a>();</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (directory.isEmpty())</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        directory = QDir::homePath() + QLatin1String(<span class="stringliteral">&quot;/.&quot;</span>) + QCoreApplication::applicationName();</div>
@@ -310,21 +294,21 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    cookieSettings.setValue(QLatin1String(<span class="stringliteral">&quot;cookies&quot;</span>), qVariantFromValue&lt;QList&lt;QNetworkCookie&gt; &gt;(cookies));</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    cookieSettings.beginGroup(QLatin1String(<span class="stringliteral">&quot;Exceptions&quot;</span>));</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    cookieSettings.setValue(QLatin1String(<span class="stringliteral">&quot;block&quot;</span>), mExceptionsBlock);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    cookieSettings.setValue(QLatin1String(<span class="stringliteral">&quot;allow&quot;</span>), mExceptionsAllow);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    cookieSettings.setValue(QLatin1String(<span class="stringliteral">&quot;allowForSession&quot;</span>), mExceptionsAllowForSession);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    cookieSettings.setValue(QLatin1String(<span class="stringliteral">&quot;block&quot;</span>), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    cookieSettings.setValue(QLatin1String(<span class="stringliteral">&quot;allow&quot;</span>), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    cookieSettings.setValue(QLatin1String(<span class="stringliteral">&quot;allowForSession&quot;</span>), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// save cookie settings</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    QSettings settings;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;cookies&quot;</span>));</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    QMetaEnum acceptPolicyEnum = staticMetaObject.enumerator(staticMetaObject.indexOfEnumerator(<span class="stringliteral">&quot;AcceptPolicy&quot;</span>));</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;acceptCookies&quot;</span>), QLatin1String(acceptPolicyEnum.valueToKey(mAcceptCookies)));</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;acceptCookies&quot;</span>), QLatin1String(acceptPolicyEnum.valueToKey(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a41aa8f72eaf5fd9b6a4de66727c14be7">mAcceptCookies</a>)));</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    QMetaEnum keepPolicyEnum = staticMetaObject.enumerator(staticMetaObject.indexOfEnumerator(<span class="stringliteral">&quot;KeepPolicy&quot;</span>));</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;keepCookiesUntil&quot;</span>), QLatin1String(keepPolicyEnum.valueToKey(mKeepCookies)));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    settings.setValue(QLatin1String(<span class="stringliteral">&quot;keepCookiesUntil&quot;</span>), QLatin1String(keepPolicyEnum.valueToKey(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a>)));</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keywordtype">void</span> UBCookieJar::purgeOldCookies()</div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a417fc42974674224c318c9f504a52ce1">  221</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a417fc42974674224c318c9f504a52ce1">UBCookieJar::purgeOldCookies</a>()</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    QList&lt;QNetworkCookie&gt; cookies = allCookies();</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span> (cookies.isEmpty())</div>
@@ -344,8 +328,8 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00238"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#addc0d5f788aba3157ed9bd8d6bdbb3ec">  238</a></span>&#160;QList&lt;QNetworkCookie&gt; <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#addc0d5f788aba3157ed9bd8d6bdbb3ec">UBCookieJar::cookiesForUrl</a>(<span class="keyword">const</span> QUrl &amp;url)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a> *that = <span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        that-&gt;load();</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        that-&gt;<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">load</a>();</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    QWebSettings *globalSettings = QWebSettings::globalSettings();</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (globalSettings-&gt;testAttribute(QWebSettings::PrivateBrowsingEnabled)) {</div>
@@ -358,21 +342,21 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
 <div class="line"><a name="l00253"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#af6cb054cd0135c81d73967a5cdeb7bc5">  253</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#af6cb054cd0135c81d73967a5cdeb7bc5">UBCookieJar::setCookiesFromUrl</a>(<span class="keyword">const</span> QList&lt;QNetworkCookie&gt; &amp;cookieList, <span class="keyword">const</span> QUrl &amp;url)</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        load();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">load</a>();</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    QWebSettings *globalSettings = QWebSettings::globalSettings();</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (globalSettings-&gt;testAttribute(QWebSettings::PrivateBrowsingEnabled))</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    QString host = url.host();</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">bool</span> eBlock = qBinaryFind(mExceptionsBlock.begin(), mExceptionsBlock.end(), host) != mExceptionsBlock.end();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">bool</span> eAllow = qBinaryFind(mExceptionsAllow.begin(), mExceptionsAllow.end(), host) != mExceptionsAllow.end();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">bool</span> eAllowSession = qBinaryFind(mExceptionsAllowForSession.begin(), mExceptionsAllowForSession.end(), host) != mExceptionsAllowForSession.end();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">bool</span> eBlock = qBinaryFind(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>.end(), host) != <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>.end();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">bool</span> eAllow = qBinaryFind(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>.end(), host) != <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>.end();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">bool</span> eAllowSession = qBinaryFind(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>.end(), host) != <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>.end();</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">bool</span> addedCookies = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// pass exceptions</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">bool</span> acceptInitially = (mAcceptCookies != <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30a4fc70d0bd2704375c9a2397e6019377e">AcceptNever</a>);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">bool</span> acceptInitially = (<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a41aa8f72eaf5fd9b6a4de66727c14be7">mAcceptCookies</a> != <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30a4fc70d0bd2704375c9a2397e6019377e">AcceptNever</a>);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">if</span> ((acceptInitially &amp;&amp; !eBlock)</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        || (!acceptInitially &amp;&amp; (eAllow || eAllowSession))) {</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="comment">// pass url domain == cookie domain</span></div>
@@ -380,7 +364,7 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        soon = soon.addDays(90);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">foreach</span>(QNetworkCookie cookie, cookieList) {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            QList&lt;QNetworkCookie&gt; lst;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">if</span> (mKeepCookies == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5a923ac30529f4f5e137585cca9ff2ebc5">KeepUntilTimeLimit</a></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a> == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5a923ac30529f4f5e137585cca9ff2ebc5">KeepUntilTimeLimit</a></div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                &amp;&amp; !cookie.isSessionCookie()</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                &amp;&amp; cookie.expirationDate() &gt; soon) {</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    cookie.setExpirationDate(soon);</div>
@@ -390,7 +374,7 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                addedCookies = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="comment">// finally force it in if wanted</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keywordflow">if</span> (mAcceptCookies == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30a0e6807da6286aaf3285e6b330016e8a5">AcceptAlways</a>) {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a41aa8f72eaf5fd9b6a4de66727c14be7">mAcceptCookies</a> == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30a0e6807da6286aaf3285e6b330016e8a5">AcceptAlways</a>) {</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    QList&lt;QNetworkCookie&gt; cookies = allCookies();</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    cookies += cookie;</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    setAllCookies(cookies);</div>
@@ -405,7 +389,7 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (addedCookies) {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        emit <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a99fed8dac16c9f2b5bb6a13b5233838d">cookiesChanged</a>();</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">return</span> addedCookies;</div>
@@ -413,96 +397,92 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp_source.htm
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30">UBCookieJar::AcceptPolicy</a> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aeabaec52c8ded8d0ad946077bf3158c9">UBCookieJar::acceptPolicy</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        (<span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>))-&gt;load();</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> mAcceptCookies;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a41aa8f72eaf5fd9b6a4de66727c14be7">mAcceptCookies</a>;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
 <div class="line"><a name="l00315"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ab6b6cf7752cbdd6287fd55f185933bf6">  315</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ab6b6cf7752cbdd6287fd55f185933bf6">UBCookieJar::setAcceptPolicy</a>(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a56b257f6334659d6cbee56ec159c6e30">AcceptPolicy</a> policy)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        load();</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span> (policy == mAcceptCookies)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">load</a>();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span> (policy == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a41aa8f72eaf5fd9b6a4de66727c14be7">mAcceptCookies</a>)</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    mAcceptCookies = policy;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a41aa8f72eaf5fd9b6a4de66727c14be7">mAcceptCookies</a> = policy;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5">UBCookieJar::KeepPolicy</a> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ae06ecf6e5f07a99de69d186c63f0d8a1">UBCookieJar::keepPolicy</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        (<span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>))-&gt;load();</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">return</span> mKeepCookies;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a>;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
 <div class="line"><a name="l00332"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a066435125753c0764d8370d6903d8ce6">  332</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a066435125753c0764d8370d6903d8ce6">UBCookieJar::setKeepPolicy</a>(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ad4d8ed16fd3d612f015191290e4b3cc5">KeepPolicy</a> policy)</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        load();</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (policy == mKeepCookies)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">load</a>();</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (policy == <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a>)</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    mKeepCookies = policy;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a7f76cd04ba30ec539e0ab328b1477e4c">mKeepCookies</a> = policy;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;QStringList <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f3e9c29eaaf8060ab2f3ea174a0bbd">UBCookieJar::blockedCookies</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        (<span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>))-&gt;load();</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> mExceptionsBlock;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;QStringList <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a0f885182b7bd29860a39e89940d07b62">UBCookieJar::allowedCookies</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        (<span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>))-&gt;load();</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">return</span> mExceptionsAllow;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>;</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;QStringList <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a72932c89d37ed011dc0d92b43c787fdf">UBCookieJar::allowForSessionCookies</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        (<span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html">UBCookieJar</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>))-&gt;load();</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">return</span> mExceptionsAllowForSession;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>;</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
 <div class="line"><a name="l00363"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a3fb6b6d8bc9dfc02fd7405f228a01ac6">  363</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a3fb6b6d8bc9dfc02fd7405f228a01ac6">UBCookieJar::setBlockedCookies</a>(<span class="keyword">const</span> QStringList &amp;list)</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        load();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    mExceptionsBlock = list;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    qSort(mExceptionsBlock.begin(), mExceptionsBlock.end());</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">load</a>();</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a> = list;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    qSort(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2b164996959388abce3fadb36d34caef">mExceptionsBlock</a>.end());</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;}</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
 <div class="line"><a name="l00372"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a5b41e7e678fa8d7dc5594be00f14ed8f">  372</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a5b41e7e678fa8d7dc5594be00f14ed8f">UBCookieJar::setAllowedCookies</a>(<span class="keyword">const</span> QStringList &amp;list)</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;{</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        load();</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    mExceptionsAllow = list;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    qSort(mExceptionsAllow.begin(), mExceptionsAllow.end());</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">load</a>();</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a> = list;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    qSort(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#ac26d46ac31a62068fd24ef10af0f0826">mExceptionsAllow</a>.end());</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
 <div class="line"><a name="l00381"></a><span class="lineno"><a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2db5a5051d0c63a3e76a7073a23a9205">  381</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a2db5a5051d0c63a3e76a7073a23a9205">UBCookieJar::setAllowForSessionCookies</a>(<span class="keyword">const</span> QStringList &amp;list)</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;{</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">if</span> (!mLoaded)</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        load();</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    mExceptionsAllowForSession = list;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    qSort(mExceptionsAllowForSession.begin(), mExceptionsAllowForSession.end());</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    mSaveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a00a07176331ffff544fd44b10c1a466c">mLoaded</a>)</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a94f29eeaed4701b60bf8043c255a3fcc">load</a>();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a> = list;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    qSort(<a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>.begin(), <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#aa7fa4d155b3ce4a57009ac08fe79734e">mExceptionsAllowForSession</a>.end());</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <a class="code" href="../../dd/d20/class_u_b_cookie_jar.html#a89738eac7ed215d65deae9a873285711">mSaveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li><li class="navelem"><a class="el" href="../../da/d07/_u_b_cookie_jar_8cpp.html">UBCookieJar.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

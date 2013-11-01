@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/d7a/class_u_b_features_model.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d5/d7a/class_u_b_features_model.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -152,7 +132,10 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a2a53446bc9b0c38ead8a63f86d153dac"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html#l00379">379</a> of file <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab0a3b83d6d44b1836a3334b537ec8932"></a>
 <div class="memitem">
 <div class="memproto">
@@ -184,6 +167,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html#l00387">387</a> of file <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a>.</p>
 <div class="fragment"><div class="line">: QAbstractListModel(parent), <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>(pFeaturesList) {;}</div>
 </div><!-- fragment -->
 </div>
@@ -208,6 +193,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html#l00388">388</a> of file <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a>.</p>
 <div class="fragment"><div class="line">{;}</div>
 </div><!-- fragment -->
 </div>
@@ -234,6 +221,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01305">1305</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    beginInsertRows( QModelIndex(), <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size(), <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size() );</div>
 <div class="line">    <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;append( item );</div>
@@ -274,6 +263,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01202">1202</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!index.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span> QVariant();</div>
@@ -344,6 +335,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01312">1312</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size(); ++i )</div>
 <div class="line">    {</div>
@@ -389,6 +382,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01325">1325</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size(); ++i )</div>
 <div class="line">    {</div>
@@ -433,6 +428,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01337">1337</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> i = <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;indexOf(feature);</div>
 <div class="line">    <span class="keywordflow">if</span> (i == -1) {</div>
@@ -494,6 +491,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01255">1255</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(row)</div>
 <div class="line"></div>
@@ -568,6 +567,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01457">1457</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Qt::ItemFlags resultFlags = <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a9944de5c000cb9dddcdfe2093d319319">QAbstractItemModel::flags</a>(index);</div>
 <div class="line">    <span class="keywordflow">if</span> ( index.isValid() )</div>
@@ -617,6 +618,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01226">1226</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a> *<a class="code" href="../../d5/d7a/class_u_b_features_model.html#a35db03ecc660325c75b346a4ce75e293">mimeData</a> = <span class="keyword">new</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a>();</div>
 <div class="line">    QList &lt;QUrl&gt; urlList;</div>
@@ -650,8 +653,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a35db03ecc660325c75b346a4ce75e293_cgraph.svg" width="414" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a35db03ecc660325c75b346a4ce75e293_cgraph.svg" width="414" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -678,6 +680,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01484">1484</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QStringList types;</div>
 <div class="line">    types &lt;&lt; <span class="stringliteral">&quot;text/uri-list&quot;</span> &lt;&lt; <span class="stringliteral">&quot;image/png&quot;</span> &lt;&lt; <span class="stringliteral">&quot;image/tiff&quot;</span> &lt;&lt; <span class="stringliteral">&quot;image/gif&quot;</span> &lt;&lt; <span class="stringliteral">&quot;image/jpeg&quot;</span>;</div>
@@ -721,6 +725,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01373">1373</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html">UBFeaturesController</a> *curController = qobject_cast&lt;<a class="code" href="../../d8/d33/class_u_b_features_controller.html">UBFeaturesController</a> *&gt;(QObject::parent());</div>
 <div class="line">    <span class="keywordflow">if</span> (!curController)</div>
@@ -847,6 +853,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01360">1360</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ( row &lt; 0 )</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -899,6 +907,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01347">1347</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ( row &lt; 0 )</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -935,6 +945,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html#l01491">1491</a> of file <a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (parent.isValid() || !<a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>)</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
@@ -964,6 +976,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html#l00406">406</a> of file <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> Qt::MoveAction | Qt::CopyAction; }</div>
 </div><!-- fragment -->
 </div>
@@ -987,22 +1001,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html#l00413">413</a> of file <a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp_source.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d5/d7a/class_u_b_features_model.html">UBFeaturesModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:24 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

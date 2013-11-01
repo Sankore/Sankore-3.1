@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">WBWebView.cpp</div>  </div>
@@ -196,7 +180,7 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    setNetworkAccessManager(<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>());</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(unsupportedContent(QNetworkReply *)),</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">this</span>, SLOT(handleUnsupportedContent(QNetworkReply *)));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a4f177fc1cee35b60e7973ff2573025e7">handleUnsupportedContent</a>(QNetworkReply *)));</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../dd/dc8/class_w_b_web_page.html#a1fac1279159f6576bd31cf60a38f8141">   96</a></span>&#160;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html" title="The MainWindow of the Browser view.">WBBrowserWindow</a> *<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a1fac1279159f6576bd31cf60a38f8141">WBWebPage::mainWindow</a>()</div>
@@ -219,25 +203,25 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// ctrl-shift open in new tab and select</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// ctrl-alt open in new window</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (type == QWebPage::NavigationTypeLinkClicked</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        &amp;&amp; (mKeyboardModifiers &amp; Qt::ControlModifier</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            || mPressedButtons == Qt::MidButton))</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        &amp;&amp; (<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9fbec6ca01b2f7c89f1bd5840e150cec">mKeyboardModifiers</a> &amp; Qt::ControlModifier</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            || <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a68bbaf1ee72bf7b34b57c955ba3ca225">mPressedButtons</a> == Qt::MidButton))</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="../../d1/da6/class_w_b_web_view.html">WBWebView</a> *webView;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">bool</span> selectNewTab = (mKeyboardModifiers &amp; Qt::ShiftModifier);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">bool</span> selectNewTab = (<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9fbec6ca01b2f7c89f1bd5840e150cec">mKeyboardModifiers</a> &amp; Qt::ShiftModifier);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        webView = <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a1fac1279159f6576bd31cf60a38f8141">mainWindow</a>()-&gt;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#ab4f8e1054be45e533c69aea40ef4458c">tabWidget</a>()-&gt;<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ac4e5333657411084af40f7faa20cac55">newTab</a>(selectNewTab);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        webView-&gt;<a class="code" href="../../d1/da6/class_w_b_web_view.html#a4832fbab411c1e46c4c00c4300dd9a50">load</a>(request);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        mKeyboardModifiers = Qt::NoModifier;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        mPressedButtons = Qt::NoButton;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9fbec6ca01b2f7c89f1bd5840e150cec">mKeyboardModifiers</a> = Qt::NoModifier;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a68bbaf1ee72bf7b34b57c955ba3ca225">mPressedButtons</a> = Qt::NoButton;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> (frame == mainFrame())</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        mLoadingUrl = request.url();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        emit <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a86b8a9a816d7760c268596f9c98cf286">loadingUrl</a>(mLoadingUrl);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9c2f709f74dd8c8f69acdd2acb1e2801">mLoadingUrl</a> = request.url();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        emit <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a86b8a9a816d7760c268596f9c98cf286">loadingUrl</a>(<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9c2f709f74dd8c8f69acdd2acb1e2801">mLoadingUrl</a>);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/dc8/class_w_b_web_page.html#aaa91776ce1457b7ecd70c65ce86e9966">QWebPage::acceptNavigationRequest</a>(frame, request, type);</div>
@@ -265,7 +249,7 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordtype">void</span> WBWebPage::handleUnsupportedContent(QNetworkReply *reply)</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="code" href="../../dd/dc8/class_w_b_web_page.html#a4f177fc1cee35b60e7973ff2573025e7">  162</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dc8/class_w_b_web_page.html#a4f177fc1cee35b60e7973ff2573025e7">WBWebPage::handleUnsupportedContent</a>(QNetworkReply *reply)</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span>(reply-&gt;url().scheme() == <span class="stringliteral">&quot;mailto&quot;</span>)</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
@@ -345,7 +329,7 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            frames.append(frame);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (mLoadingUrl == reply-&gt;url())</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9c2f709f74dd8c8f69acdd2acb1e2801">mLoadingUrl</a> == reply-&gt;url())</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        mainFrame()-&gt;setHtml(html, reply-&gt;url());</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
@@ -359,27 +343,27 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    setObjectName(<span class="stringliteral">&quot;ubBrowserWebView&quot;</span>);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    setPage(mPage);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    setPage(<a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    QWebView::setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    connect(page(), SIGNAL(statusBarMessage(<span class="keyword">const</span> QString&amp;)),</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keyword">this</span>, SLOT(setStatusBarText(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/da6/class_w_b_web_view.html#ab63d310cdebf2e22e622ab73ad2c53a4">setStatusBarText</a>(<span class="keyword">const</span> QString&amp;)));</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(loadProgress(<span class="keywordtype">int</span>)),</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keyword">this</span>, SLOT(setProgress(<span class="keywordtype">int</span>)));</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/da6/class_w_b_web_view.html#a68d68c51c24a24e7d283404ea557f890">setProgress</a>(<span class="keywordtype">int</span>)));</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(loadFinished(<span class="keywordtype">bool</span>)),</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keyword">this</span>, SLOT(loadFinished(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d1/da6/class_w_b_web_view.html#a2e597020606197c2752564934de9ccac">loadFinished</a>(<span class="keywordtype">bool</span>)),</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/da6/class_w_b_web_view.html#a2e597020606197c2752564934de9ccac">loadFinished</a>(<span class="keywordtype">bool</span>)));</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(loadStarted()),</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keyword">this</span>, SLOT(loadStarted()));</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d1/da6/class_w_b_web_view.html#ae5c3174f15a8e463666559926ef74990">loadStarted</a>()),</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/da6/class_w_b_web_view.html#ae5c3174f15a8e463666559926ef74990">loadStarted</a>()));</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    connect(page(), SIGNAL(loadingUrl(<span class="keyword">const</span> QUrl&amp;)),</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keyword">this</span>, SIGNAL(urlChanged(<span class="keyword">const</span> QUrl &amp;)));</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    connect(page(), SIGNAL(downloadRequested(<span class="keyword">const</span> QNetworkRequest &amp;)),</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keyword">this</span>, SLOT(downloadRequested(<span class="keyword">const</span> QNetworkRequest &amp;)));</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    connect(page(), SIGNAL(<a class="code" href="../../d1/da6/class_w_b_web_view.html#a49dc80a67bf4e00f97fcca40ff0c52ac">downloadRequested</a>(<span class="keyword">const</span> QNetworkRequest &amp;)),</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/da6/class_w_b_web_view.html#a49dc80a67bf4e00f97fcca40ff0c52ac">downloadRequested</a>(<span class="keyword">const</span> QNetworkRequest &amp;)));</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    page()-&gt;setForwardUnsupportedContent(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
@@ -394,7 +378,7 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    {</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        QMenu menu(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        menu.addAction(pageAction(QWebPage::OpenLinkInNewWindow));</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        menu.addAction(tr(<span class="stringliteral">&quot;Open in New Tab&quot;</span>), <span class="keyword">this</span>, SLOT(openLinkInNewTab()));</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        menu.addAction(tr(<span class="stringliteral">&quot;Open in New Tab&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/da6/class_w_b_web_view.html#a06ff14afd47297b9a0ccefd07fdcba7f">openLinkInNewTab</a>()));</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        menu.addSeparator();</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        menu.addAction(pageAction(QWebPage::DownloadLinkToDisk));</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">// Add link to bookmarks...</span></div>
@@ -423,35 +407,35 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keywordtype">void</span> WBWebView::openLinkInNewTab()</div>
+<div class="line"><a name="l00320"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#a06ff14afd47297b9a0ccefd07fdcba7f">  320</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#a06ff14afd47297b9a0ccefd07fdcba7f">WBWebView::openLinkInNewTab</a>()</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    mPage-&gt;mOpenInNewTab = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>-&gt;<a class="code" href="../../dd/dc8/class_w_b_web_page.html#abd1ca386dd1a1028f6afec147257ec58">mOpenInNewTab</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    pageAction(QWebPage::OpenLinkInNewWindow)-&gt;trigger();</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;}</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keywordtype">void</span> WBWebView::setProgress(<span class="keywordtype">int</span> progress)</div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#a68d68c51c24a24e7d283404ea557f890">  327</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#a68d68c51c24a24e7d283404ea557f890">WBWebView::setProgress</a>(<span class="keywordtype">int</span> progress)</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">//qDebug() &lt;&lt; &quot;loading progress&quot; &lt;&lt; progress &lt;&lt; &quot;% in&quot; &lt;&lt; mLoadStartTime.elapsed() &lt;&lt; &quot;ms&quot;;</span></div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;loading in progress: &quot;</span> &lt;&lt; <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toString();</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toString() != mInitialUrl.toString()){</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toString() != <a class="code" href="../../d1/da6/class_w_b_web_view.html#a0da412747c938672ae9815eec6988e77">mInitialUrl</a>.toString()){</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;Url changed!&quot;</span>;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    mProgress = <a class="code" href="../../d1/da6/class_w_b_web_view.html#aeb2913d83da4ef918fb845693aeebb8c">progress</a>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#aac3fc35af39cbfa0e4c4ade561e5482f">mProgress</a> = <a class="code" href="../../d1/da6/class_w_b_web_view.html#aeb2913d83da4ef918fb845693aeebb8c">progress</a>;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keywordtype">void</span> WBWebView::loadStarted()</div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#ae5c3174f15a8e463666559926ef74990">  340</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#ae5c3174f15a8e463666559926ef74990">WBWebView::loadStarted</a>()</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;{</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    mLoadStartTime.start();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#a58ed8cb0ba9f688ec2807c54763828d8">mLoadStartTime</a>.start();</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keywordtype">void</span> WBWebView::loadFinished(<span class="keywordtype">bool</span> ok)</div>
+<div class="line"><a name="l00346"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#a2e597020606197c2752564934de9ccac">  346</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#a2e597020606197c2752564934de9ccac">WBWebView::loadFinished</a>(<span class="keywordtype">bool</span> ok)</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;{</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span> (100 != mProgress)</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span> (100 != <a class="code" href="../../d1/da6/class_w_b_web_view.html#aac3fc35af39cbfa0e4c4ade561e5482f">mProgress</a>)</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    {</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Received finished signal while progress is still:&quot;</span> &lt;&lt; <a class="code" href="../../d1/da6/class_w_b_web_view.html#aeb2913d83da4ef918fb845693aeebb8c">progress</a>()</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                   &lt;&lt; <span class="stringliteral">&quot;Url:&quot;</span> &lt;&lt; <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>();</div>
@@ -462,9 +446,9 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">if</span> (!ok)</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        error = <span class="stringliteral">&quot;with error&quot;</span>;</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;page loaded in&quot;</span> &lt;&lt; mLoadStartTime.elapsed() &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span> &lt;&lt; <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toString() &lt;&lt; error;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;page loaded in&quot;</span> &lt;&lt; <a class="code" href="../../d1/da6/class_w_b_web_view.html#a58ed8cb0ba9f688ec2807c54763828d8">mLoadStartTime</a>.elapsed() &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span> &lt;&lt; <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toString() &lt;&lt; error;</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    mProgress = 0;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#aac3fc35af39cbfa0e4c4ade561e5482f">mProgress</a> = 0;</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
@@ -472,7 +456,7 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;loading &quot;</span> &lt;&lt; url.toString();</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    mInitialUrl = <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#a0da412747c938672ae9815eec6988e77">mInitialUrl</a> = <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#a4832fbab411c1e46c4c00c4300dd9a50">WBWebTrapWebView::load</a>(url);</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
@@ -480,7 +464,7 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;</div>
 <div class="line"><a name="l00375"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#a2fa08768c1808fe832eb67b684d099c2">  375</a></span>&#160;QString <a class="code" href="../../d1/da6/class_w_b_web_view.html#a2fa08768c1808fe832eb67b684d099c2">WBWebView::lastStatusBarText</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">return</span> mLastStatusBarText;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#ac0a59b8a5f58508cea75b67afa6c561f">mLastStatusBarText</a>;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
@@ -495,13 +479,13 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">if</span> (!url.isEmpty())</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;       <span class="keywordflow">return</span> url;</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">return</span> mInitialUrl;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#a0da412747c938672ae9815eec6988e77">mInitialUrl</a>;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
 <div class="line"><a name="l00395"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#a4502e55d3975d0a2148c77c0c0120ba0">  395</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#a4502e55d3975d0a2148c77c0c0120ba0">WBWebView::mousePressEvent</a>(QMouseEvent *event)</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;{</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    mPage-&gt;mPressedButtons = <span class="keyword">event</span>-&gt;buttons();</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    mPage-&gt;mKeyboardModifiers = <span class="keyword">event</span>-&gt;modifiers();</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>-&gt;<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a68bbaf1ee72bf7b34b57c955ba3ca225">mPressedButtons</a> = <span class="keyword">event</span>-&gt;buttons();</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>-&gt;<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9fbec6ca01b2f7c89f1bd5840e150cec">mKeyboardModifiers</a> = <span class="keyword">event</span>-&gt;modifiers();</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#a4502e55d3975d0a2148c77c0c0120ba0">WBWebTrapWebView::mousePressEvent</a>(event);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
@@ -510,7 +494,7 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;{</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#afd03faef9b36faf923f870674a02c522">WBWebTrapWebView::mouseReleaseEvent</a>(event);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span> (!event-&gt;isAccepted() &amp;&amp; (mPage-&gt;mPressedButtons &amp; Qt::MidButton))</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span> (!event-&gt;isAccepted() &amp;&amp; (<a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>-&gt;<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a68bbaf1ee72bf7b34b57c955ba3ca225">mPressedButtons</a> &amp; Qt::MidButton))</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    {</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        QUrl <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>(QApplication::clipboard()-&gt;text(QClipboard::Selection));</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">if</span> (!url.isEmpty() &amp;&amp; url.isValid() &amp;&amp; !url.scheme().isEmpty())</div>
@@ -521,15 +505,15 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="keywordtype">void</span> WBWebView::setStatusBarText(<span class="keyword">const</span> QString &amp;<span class="keywordtype">string</span>)</div>
+<div class="line"><a name="l00418"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#ab63d310cdebf2e22e622ab73ad2c53a4">  418</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab63d310cdebf2e22e622ab73ad2c53a4">WBWebView::setStatusBarText</a>(<span class="keyword">const</span> QString &amp;<span class="keywordtype">string</span>)</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;{</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="comment">//qDebug() &lt;&lt; &quot;WebView::setStatusBarText&quot; &lt;&lt; string;</span></div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    mLastStatusBarText = string;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <a class="code" href="../../d1/da6/class_w_b_web_view.html#ac0a59b8a5f58508cea75b67afa6c561f">mLastStatusBarText</a> = string;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="keywordtype">void</span> WBWebView::downloadRequested(<span class="keyword">const</span> QNetworkRequest &amp;request)</div>
+<div class="line"><a name="l00426"></a><span class="lineno"><a class="code" href="../../d1/da6/class_w_b_web_view.html#a49dc80a67bf4e00f97fcca40ff0c52ac">  426</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#a49dc80a67bf4e00f97fcca40ff0c52ac">WBWebView::downloadRequested</a>(<span class="keyword">const</span> QNetworkRequest &amp;request)</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;{</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a93ae86b454649b8efc8e707503693226">WBBrowserWindow::downloadManager</a>()-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0f84a26b21d560bd1b319d2fc28de045">download</a>(request);</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
@@ -540,15 +524,11 @@ $(document).ready(function(){initNavTree('d0/d19/_w_b_web_view_8cpp_source.html'
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li><li class="navelem"><a class="el" href="../../d0/d19/_w_b_web_view_8cpp.html">WBWebView.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:44 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

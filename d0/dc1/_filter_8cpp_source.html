@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/dc1/_filter_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d0/dc1/_filter_8cpp_source.html','../.
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Filter.cpp</div>  </div>
@@ -142,23 +126,23 @@ $(document).ready(function(){initNavTree('d0/dc1/_filter_8cpp_source.html','../.
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using namespace </span>merge_lib;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;std::map&lt;std::string, Decoder *&gt; Filter::_allDecoders;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;std::map&lt;std::string, Decoder *&gt; <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">Filter::_allDecoders</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a502ee334d42eac3edbaf32b599f9c35e">   41</a></span>&#160;<a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a502ee334d42eac3edbaf32b599f9c35e">Filter::~Filter</a>()</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   std::map&lt;std::string, Decoder *&gt;::iterator it = _allDecoders.begin();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordflow">for</span>(; it != _allDecoders.end(); ++it)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   std::map&lt;std::string, Decoder *&gt;::iterator it = <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.begin();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordflow">for</span>(; it != <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.end(); ++it)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keyword">delete</span> (*it).second;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   _allDecoders.clear();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.clear();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//replace coded stream with decoded</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a111a1cb125cfc3d2391365e864be4d5c">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a111a1cb125cfc3d2391365e864be4d5c">Filter::getDecodedStream</a>(std::string &amp; stream)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   std::vector &lt;Decoder * &gt;  decoders = _getDecoders();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   _objectWithStream-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a771b0f03b96250a9f814d4021f558a9a" title="getStream">getStream</a>(stream);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   std::vector &lt;Decoder * &gt;  decoders = <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a1bae42086c84061b7e395418640e3f7c">_getDecoders</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#ab74c3873c995cde167a4c727ee6931b4">_objectWithStream</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a771b0f03b96250a9f814d4021f558a9a" title="getStream">getStream</a>(stream);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; decoders.size(); ++i)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      decoders[i]-&gt;decode(stream);</div>
@@ -167,11 +151,11 @@ $(document).ready(function(){initNavTree('d0/dc1/_filter_8cpp_source.html','../.
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//parse object&#39;s content and fill out vector with</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//necessary decoders</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;std::vector &lt;Decoder * &gt; Filter::_getDecoders()</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a1bae42086c84061b7e395418640e3f7c">   64</a></span>&#160;std::vector &lt;Decoder * &gt; <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a1bae42086c84061b7e395418640e3f7c">Filter::_getDecoders</a>()</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   std::string streamHeader;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="keyword">static</span> std::string whitespacesAndDelimeters(<span class="stringliteral">&quot; \t\f\v\n\r&lt;&lt;&gt;&gt;]/&quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   _objectWithStream-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a439a2b34f5e9480a36c299e30be0f6f7" title="getHeader">getHeader</a>(streamHeader);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#ab74c3873c995cde167a4c727ee6931b4">_objectWithStream</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a439a2b34f5e9480a36c299e30be0f6f7" title="getHeader">getHeader</a>(streamHeader);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> filterPosition = streamHeader.find(<span class="stringliteral">&quot;/Filter&quot;</span>); </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   std::vector &lt;Decoder * &gt; result;   </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfDecoder = filterPosition + 1;</div>
@@ -186,11 +170,11 @@ $(document).ready(function(){initNavTree('d0/dc1/_filter_8cpp_source.html','../.
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)endOfDecoder == -1)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      std::map&lt;std::string, Decoder *&gt;::iterator foundDecoder = </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         _allDecoders.find(streamHeader.substr(startOfDecoder, endOfDecoder - startOfDecoder));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">if</span>(foundDecoder == _allDecoders.end())</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.find(streamHeader.substr(startOfDecoder, endOfDecoder - startOfDecoder));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">if</span>(foundDecoder == <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.end())</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="../../d3/dbb/classmerge__lib_1_1_decoder.html">Decoder</a> * decoder = foundDecoder-&gt;second;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      decoder-&gt;<a class="code" href="../../d3/dbb/classmerge__lib_1_1_decoder.html#a22e3ea6d6dd067c7641acf3dd00659e3">initialize</a>(_objectWithStream);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      decoder-&gt;<a class="code" href="../../d3/dbb/classmerge__lib_1_1_decoder.html#a22e3ea6d6dd067c7641acf3dd00659e3">initialize</a>(<a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#ab74c3873c995cde167a4c727ee6931b4">_objectWithStream</a>);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      result.push_back(decoder);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <span class="keywordflow">return</span> result;</div>
@@ -198,32 +182,28 @@ $(document).ready(function(){initNavTree('d0/dc1/_filter_8cpp_source.html','../.
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> Filter::_createAllDecodersSet()</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a078dd045848dbcaa4f01be468ae840c6">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a078dd045848dbcaa4f01be468ae840c6">Filter::_createAllDecodersSet</a>()</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keywordflow">if</span>(!_allDecoders.empty())</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keywordflow">if</span>(!<a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.empty())</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;ASCIIHexDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../da/d7d/classmerge__lib_1_1_a_s_c_i_i_hex_decode.html">ASCIIHexDecode</a>()));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;ASCII85Decode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d3/d7a/classmerge__lib_1_1_a_s_c_i_i85_decode.html">ASCII85Decode</a>()));   </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;LZWDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html">LZWDecode</a>()));   </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;FlateDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html">FlateDecode</a>()));   </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;RunLengthDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../dc/d82/classmerge__lib_1_1_run_length_decode.html">RunLengthDecode</a>()));   </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;CCITTFaxDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../de/d74/classmerge__lib_1_1_c_c_i_t_t_fax_decode.html">CCITTFaxDecode</a>()));   </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;JBIG2Decode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../dc/d23/classmerge__lib_1_1_j_b_i_g2_decode.html">JBIG2Decode</a>())); </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   _allDecoders.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;DCTDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d4/da1/classmerge__lib_1_1_d_c_t_decode.html">DCTDecode</a>())); </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;ASCIIHexDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../da/d7d/classmerge__lib_1_1_a_s_c_i_i_hex_decode.html">ASCIIHexDecode</a>()));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;ASCII85Decode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d3/d7a/classmerge__lib_1_1_a_s_c_i_i85_decode.html">ASCII85Decode</a>()));   </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;LZWDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html">LZWDecode</a>()));   </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;FlateDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html">FlateDecode</a>()));   </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;RunLengthDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../dc/d82/classmerge__lib_1_1_run_length_decode.html">RunLengthDecode</a>()));   </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;CCITTFaxDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../de/d74/classmerge__lib_1_1_c_c_i_t_t_fax_decode.html">CCITTFaxDecode</a>()));   </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;JBIG2Decode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../dc/d23/classmerge__lib_1_1_j_b_i_g2_decode.html">JBIG2Decode</a>())); </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>.insert(std::pair&lt;std::string, Decoder *&gt; (std::string(<span class="stringliteral">&quot;DCTDecode&quot;</span>), <span class="keyword">new</span> <a class="code" href="../../d4/da1/classmerge__lib_1_1_d_c_t_decode.html">DCTDecode</a>())); </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d0/dc1/_filter_8cpp.html">Filter.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

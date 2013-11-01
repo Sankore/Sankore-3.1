@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d2/d4d/class_u_b_teacher_guide_presentation_widget.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d2/d4d/class_u_b_teacher_guide_present
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -153,7 +133,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af697494195d707ab92fca8837c4748ff"><td class="memItemLeft" align="right" valign="top">QTreeWidgetItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#af697494195d707ab92fca8837c4748ff">mpRootWidgetItem</a></td></tr>
 <tr class="memitem:a88ba84416f83c3d541b063c9906e5e61"><td class="memItemLeft" align="right" valign="top">QTreeWidgetItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00098">98</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab4323827cb6a2947acc313d3c6048ac8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -185,6 +168,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00407">407</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                                                    :</div>
 <div class="line">    QWidget(parent)</div>
 <div class="line">  , <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a45b918e1178200bf5b8306172a96fe39">mpPageTitle</a>(NULL)</div>
@@ -287,17 +272,19 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00486">486</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a81b807f86e0d0a11f8c01486f644f7e2">mpComment</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a45b918e1178200bf5b8306172a96fe39">mpPageTitle</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a4586fc3a74c64a1b84c3f5000749744d">mpPageNumberLabel</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a50cc8a060677e929563461c3ee8ad179">mpSeparator</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a20e1d2c7643051cfb6c028658bc83d79">mpModePushButton</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a67183228d0b548147933dde949fbb018">mpDocumentTitle</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a6a35b4934ef49af87f4eaf31d13306be">mpButtonTitleLayout</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a76495e35986a0368b79cda151c130d63">mpTreeWidget</a>);</div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a7490519f3f8d4dc47666a7690809ff98">mpLayout</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a81b807f86e0d0a11f8c01486f644f7e2">mpComment</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a45b918e1178200bf5b8306172a96fe39">mpPageTitle</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a4586fc3a74c64a1b84c3f5000749744d">mpPageNumberLabel</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a50cc8a060677e929563461c3ee8ad179">mpSeparator</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a20e1d2c7643051cfb6c028658bc83d79">mpModePushButton</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a67183228d0b548147933dde949fbb018">mpDocumentTitle</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a6a35b4934ef49af87f4eaf31d13306be">mpButtonTitleLayout</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a76495e35986a0368b79cda151c130d63">mpTreeWidget</a>);</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a7490519f3f8d4dc47666a7690809ff98">mpLayout</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -315,13 +302,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00518">518</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a45b918e1178200bf5b8306172a96fe39">mpPageTitle</a>-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#ad2039c06e55398d459a78b6493c37496">showText</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">    <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a81b807f86e0d0a11f8c01486f644f7e2">mpComment</a>-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#ad2039c06e55398d459a78b6493c37496">showText</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">    <span class="comment">//tree clean</span></div>
 <div class="line">    QList&lt;QTreeWidgetItem*&gt; itemToRemove = <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#af697494195d707ab92fca8837c4748ff">mpRootWidgetItem</a>-&gt;takeChildren();</div>
 <div class="line">    <span class="keywordflow">foreach</span>(QTreeWidgetItem* eachItem, itemToRemove) {</div>
-<div class="line">        <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(eachItem);</div>
+<div class="line">        <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(eachItem);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">// the mpMediaSwitchItem is deleted by the previous loop but the pointer is not set to zero</span></div>
 <div class="line">    <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a> = NULL;</div>
@@ -367,6 +356,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00540">540</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a>) {</div>
 <div class="line">        <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a> = <span class="keyword">new</span> QTreeWidgetItem(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#af697494195d707ab92fca8837c4748ff">mpRootWidgetItem</a>);</div>
@@ -422,6 +413,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00509">509</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(<span class="keywordtype">object</span>);</div>
 <div class="line"></div>
@@ -452,6 +445,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00531">531</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a7b69cb728ff3f1fce82c0e314e205fc4">cleanData</a>();</div>
 <div class="line">    <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a4586fc3a74c64a1b84c3f5000749744d">mpPageNumberLabel</a>-&gt;setText(tr(<span class="stringliteral">&quot;Page: %0&quot;</span>).arg(<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;currentPage()));</div>
@@ -511,6 +506,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00638">638</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> associateAction = widget-&gt;data(column, <a class="code" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp.html#a3f96cf31635ff727112ea0b7785a4082a6c192c1f33562437592d2d10665fccc3">tUBTGTreeWidgetItemRole_HasAnAction</a>).toInt();</div>
 <div class="line">    <span class="keywordflow">if</span> (column == 0 &amp;&amp; associateAction != <a class="code" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp.html#a3daa2c3636d5bc666c494145415f1f98ad83d21596eba53fc44475b0e949c2bc0">tUBTGActionAssociateOnClickItem_NONE</a>) {</div>
@@ -582,12 +579,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html#l00554">554</a> of file <a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a7b69cb728ff3f1fce82c0e314e205fc4">cleanData</a>();</div>
 <div class="line"><span class="preprocessor"> #ifdef Q_WS_MAC</span></div>
 <div class="line"><span class="preprocessor"></span>    <span class="keywordflow">if</span>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a> &amp;&amp; <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a>-&gt;isDisabled()){</div>
 <div class="line">        <a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#af697494195d707ab92fca8837c4748ff">mpRootWidgetItem</a>-&gt;removeChild(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a>);</div>
-<div class="line">        <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a>);</div>
+<div class="line">        <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html#a88ba84416f83c3d541b063c9906e5e61">mpMediaSwitchItem</a>);</div>
 <div class="line">    }</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="preprocessor"></span></div>
@@ -704,6 +703,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00119">119</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a81b807f86e0d0a11f8c01486f644f7e2"></a>
@@ -723,6 +724,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00117">117</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
 
 </div>
 </div>
@@ -744,6 +747,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00120">120</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7490519f3f8d4dc47666a7690809ff98"></a>
@@ -763,6 +768,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00118">118</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
 
 </div>
 </div>
@@ -784,6 +791,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00126">126</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a20e1d2c7643051cfb6c028658bc83d79"></a>
@@ -803,6 +812,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00123">123</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
 
 </div>
 </div>
@@ -824,6 +835,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00121">121</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a45b918e1178200bf5b8306172a96fe39"></a>
@@ -843,6 +856,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00116">116</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
 
 </div>
 </div>
@@ -864,6 +879,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00125">125</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a50cc8a060677e929563461c3ee8ad179"></a>
@@ -883,6 +900,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00122">122</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
 
 </div>
 </div>
@@ -904,22 +923,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html#l00124">124</a> of file <a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a></li>
-<li><a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp.html">UBTeacherGuideWidget.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/dd8/_u_b_teacher_guide_widget_8h_source.html">UBTeacherGuideWidget.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/d96/_u_b_teacher_guide_widget_8cpp_source.html">UBTeacherGuideWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/d4d/class_u_b_teacher_guide_presentation_widget.html">UBTeacherGuidePresentationWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:32 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

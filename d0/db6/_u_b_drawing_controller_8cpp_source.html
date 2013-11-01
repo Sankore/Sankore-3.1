@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_so
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7fe1c7b98da3fc0ec4355570b26fa0a9.html">board</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBDrawingController.cpp</div>  </div>
@@ -138,25 +122,25 @@ $(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_so
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d3c/_u_b_main_window_8h.html">gui/UBMainWindow.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>* UBDrawingController::sDrawingController = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>* <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">UBDrawingController::sDrawingController</a> = 0;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">   38</a></span>&#160;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>* <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(!sDrawingController)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        sDrawingController = <span class="keyword">new</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a> = <span class="keyword">new</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a381f5fe1a1745d30bc1abb102ebb3c15">UBDrawingController</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> sDrawingController;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac05daba2d9c39c5bacdd7e63b6e1ab39">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac05daba2d9c39c5bacdd7e63b6e1ab39">UBDrawingController::destroy</a>()</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span>(sDrawingController)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">delete</span> sDrawingController;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    sDrawingController = NULL;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a> = NULL;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;UBDrawingController::UBDrawingController(QObject * parent)</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a381f5fe1a1745d30bc1abb102ebb3c15">   53</a></span>&#160;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a381f5fe1a1745d30bc1abb102ebb3c15">UBDrawingController::UBDrawingController</a>(QObject * parent)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    : QObject(parent)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    , mActiveRuler(NULL)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    , mStylusTool((<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html">UBStylusTool</a>::Enum)-1)</div>
@@ -165,22 +149,22 @@ $(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_so
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    connect(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>(), SIGNAL(colorContextChanged()), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a6f11f789e8f99d826910541657502b35">colorPaletteChanged</a>()));</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPen, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(penToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionEraser, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(eraserToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionMarker, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(markerToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionSelector, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(selectorToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPlay, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(playToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionHand, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(handToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionZoomIn, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(zoomInToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionZoomOut, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(zoomOutToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPointer, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(pointerToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionLine, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(lineToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionText, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(textToolSelected(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionCapture, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(captureToolSelected(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPen, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac50b8d2611584f1b6ce34246bcd89ec6">penToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionEraser, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac9bd7039ea57fe9a8162b31ed4758148">eraserToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionMarker, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac4008b36aa26e54eb31c34525eda6b7b">markerToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionSelector, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a26cd871f064f2f1949bd3b46982b7c18">selectorToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPlay, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a684d708764de024a6ef0b77d14b7f0e3">playToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionHand, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#af8d76f9b5b29b793a0b2b710cd7a970b">handToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionZoomIn, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#afb286643f18871b50ebd9421ca692914">zoomInToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionZoomOut, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a767b7c2868c614a0905cb9951ed11672">zoomOutToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPointer, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9ba30f83d57b0caab30ae82bc8f1e1ee">pointerToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionLine, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2cbdc9d4445dd8abcc4a59b2a6d28c0d">lineToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionText, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#aec62d39119a747c11bf8b46f9e19b7ca">textToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionCapture, SIGNAL(triggered(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a6746622a5b605c5de8e3d5bdabf05aee">captureToolSelected</a>(<span class="keywordtype">bool</span>)));</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;UBDrawingController::~UBDrawingController()</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a852d945c07808d707e564a5b42c925aa">   77</a></span>&#160;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a852d945c07808d707e564a5b42c925aa">UBDrawingController::~UBDrawingController</a>()</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
@@ -188,25 +172,25 @@ $(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_so
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">   83</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">UBDrawingController::stylusTool</a>()</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> mStylusTool;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a38e9144276adfeee7177dc63f9984970">   89</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a38e9144276adfeee7177dc63f9984970">UBDrawingController::latestDrawingTool</a>()</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> mLatestDrawingTool;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a18a3b27b7b2845a4a4d38d8c0eb1199a">mLatestDrawingTool</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">UBDrawingController::setStylusTool</a>(<span class="keywordtype">int</span> tool)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (tool != mStylusTool)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (tool != <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a>)</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a5bf93ad343de7f09150d634ef3a8c459">activeScene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a6cfc68b3907297af710a1d8d1492d4ea">deselectAllItems</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a> || mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                || mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a> || <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                || <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            mLatestDrawingTool = mStylusTool;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a18a3b27b7b2845a4a4d38d8c0eb1199a">mLatestDrawingTool</a> = <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (tool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a> || tool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
@@ -220,32 +204,32 @@ $(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_so
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            emit <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a42605540fe8451289997d9b61a89e642">colorIndexChanged</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;markerColorIndex());</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        mStylusTool = (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)tool;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> = (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)tool;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a>)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a>)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPen-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a4030bd2acedb024b3eec1173e2ebc705">UBStylusTool::Eraser</a>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a4030bd2acedb024b3eec1173e2ebc705">UBStylusTool::Eraser</a>)</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionEraser-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a>)</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionMarker-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a>)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a>)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionSelector-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>)</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPlay-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a9e68ade00ac59560335c1e4c2b70747a">UBStylusTool::Hand</a>)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a9e68ade00ac59560335c1e4c2b70747a">UBStylusTool::Hand</a>)</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionHand-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a1b1628b54292ecf76005e74cdadde67b">UBStylusTool::ZoomIn</a>)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a1b1628b54292ecf76005e74cdadde67b">UBStylusTool::ZoomIn</a>)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionZoomIn-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a98abcea5dce959c6d62fdfb9eae0d1d3">UBStylusTool::ZoomOut</a>)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a98abcea5dce959c6d62fdfb9eae0d1d3">UBStylusTool::ZoomOut</a>)</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionZoomOut-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a985a1fbae887d0fa9227fef4c6f12b04">UBStylusTool::Pointer</a>)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a985a1fbae887d0fa9227fef4c6f12b04">UBStylusTool::Pointer</a>)</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPointer-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionLine-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a348c5633b77064276b97e340aee4357e">UBStylusTool::Text</a>)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a348c5633b77064276b97e340aee4357e">UBStylusTool::Text</a>)</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionText-&gt;setChecked(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mStylusTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a585c78bf85d6c66b5c16ca36f29b7c7f">UBStylusTool::Capture</a>)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a> == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a585c78bf85d6c66b5c16ca36f29b7c7f">UBStylusTool::Capture</a>)</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionCapture-&gt;setChecked(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        emit <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ae9ae9cf749d8ce65205cf8c50df67502">stylusToolChanged</a>(tool);</div>
@@ -433,7 +417,7 @@ $(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_so
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keywordtype">void</span> UBDrawingController::penToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac50b8d2611584f1b6ce34246bcd89ec6">  330</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac50b8d2611584f1b6ce34246bcd89ec6">UBDrawingController::penToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    {</div>
@@ -442,88 +426,84 @@ $(document).ready(function(){initNavTree('d0/db6/_u_b_drawing_controller_8cpp_so
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="keywordtype">void</span> UBDrawingController::eraserToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00339"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac9bd7039ea57fe9a8162b31ed4758148">  339</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac9bd7039ea57fe9a8162b31ed4758148">UBDrawingController::eraserToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;{</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a4030bd2acedb024b3eec1173e2ebc705">UBStylusTool::Eraser</a>);</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keywordtype">void</span> UBDrawingController::markerToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00345"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac4008b36aa26e54eb31c34525eda6b7b">  345</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac4008b36aa26e54eb31c34525eda6b7b">UBDrawingController::markerToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;{</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a>);</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keywordtype">void</span> UBDrawingController::selectorToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00351"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a26cd871f064f2f1949bd3b46982b7c18">  351</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a26cd871f064f2f1949bd3b46982b7c18">UBDrawingController::selectorToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a>);</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="keywordtype">void</span> UBDrawingController::playToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a684d708764de024a6ef0b77d14b7f0e3">  357</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a684d708764de024a6ef0b77d14b7f0e3">UBDrawingController::playToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;{</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>);</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keywordtype">void</span> UBDrawingController::handToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00363"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#af8d76f9b5b29b793a0b2b710cd7a970b">  363</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#af8d76f9b5b29b793a0b2b710cd7a970b">UBDrawingController::handToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a9e68ade00ac59560335c1e4c2b70747a">UBStylusTool::Hand</a>);</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="keywordtype">void</span> UBDrawingController::zoomInToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00370"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#afb286643f18871b50ebd9421ca692914">  370</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#afb286643f18871b50ebd9421ca692914">UBDrawingController::zoomInToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a1b1628b54292ecf76005e74cdadde67b">UBStylusTool::ZoomIn</a>);</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keywordtype">void</span> UBDrawingController::zoomOutToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00377"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a767b7c2868c614a0905cb9951ed11672">  377</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a767b7c2868c614a0905cb9951ed11672">UBDrawingController::zoomOutToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a98abcea5dce959c6d62fdfb9eae0d1d3">UBStylusTool::ZoomOut</a>);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="keywordtype">void</span> UBDrawingController::pointerToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00384"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9ba30f83d57b0caab30ae82bc8f1e1ee">  384</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9ba30f83d57b0caab30ae82bc8f1e1ee">UBDrawingController::pointerToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;{</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a985a1fbae887d0fa9227fef4c6f12b04">UBStylusTool::Pointer</a>);</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="keywordtype">void</span> UBDrawingController::lineToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00391"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2cbdc9d4445dd8abcc4a59b2a6d28c0d">  391</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2cbdc9d4445dd8abcc4a59b2a6d28c0d">UBDrawingController::lineToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;{</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>);</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="keywordtype">void</span> UBDrawingController::textToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#aec62d39119a747c11bf8b46f9e19b7ca">  398</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#aec62d39119a747c11bf8b46f9e19b7ca">UBDrawingController::textToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a348c5633b77064276b97e340aee4357e">UBStylusTool::Text</a>);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="keywordtype">void</span> UBDrawingController::captureToolSelected(<span class="keywordtype">bool</span> checked)</div>
+<div class="line"><a name="l00405"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a6746622a5b605c5de8e3d5bdabf05aee">  405</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a6746622a5b605c5de8e3d5bdabf05aee">UBDrawingController::captureToolSelected</a>(<span class="keywordtype">bool</span> checked)</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;{</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span> (checked)</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a585c78bf85d6c66b5c16ca36f29b7c7f">UBStylusTool::Capture</a>);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;}</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7fe1c7b98da3fc0ec4355570b26fa0a9.html">board</a></li><li class="navelem"><a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp.html">UBDrawingController.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:41 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:12 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

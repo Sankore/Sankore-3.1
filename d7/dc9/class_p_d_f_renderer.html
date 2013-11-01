@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/dc9/class_p_d_f_renderer.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d7/dc9/class_p_d_f_renderer.html','../
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -180,7 +160,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:ab0362104f0a9d7b87afb4af22a5ad65c"><td class="memItemLeft" align="right" valign="top">static QMap&lt; QUuid, QPointer<br class="typebreak"/>
 &lt; <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html">PDFRenderer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#ab0362104f0a9d7b87afb4af22a5ad65c">sRenderers</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00037">37</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2ef00b75cd20961964c1497cc19e43b7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -201,6 +184,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -227,6 +212,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00036">36</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">                         : <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a>(96)</div>
 <div class="line">{</div>
 <div class="line">}</div>
@@ -246,6 +233,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00088">88</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a55a5be69092855a0d66dafd246d65a58">mRefCount</a>.ref();</div>
 <div class="line">}</div>
@@ -273,6 +262,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00093">93</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a55a5be69092855a0d66dafd246d65a58">mRefCount</a>.deref();</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a55a5be69092855a0d66dafd246d65a58">mRefCount</a> == 0)</div>
@@ -313,6 +304,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00059">59</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#aa3f2bca75d2b415cbc6eadca17267dc2">mFileData</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -346,6 +339,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00058">58</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a0be60264576b6bede3ffcb9198711e87">mFileUuid</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -387,7 +382,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/dc9/class_p_d_f_renderer_acd219d79f7b7235c7562a57708147cf9_icgraph.svg" width="667" height="224"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/dc9/class_p_d_f_renderer_acd219d79f7b7235c7562a57708147cf9_icgraph.svg" width="667" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -483,7 +478,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dc9/class_p_d_f_renderer_a505aa007882410f037a5ae711c535412_icgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dc9/class_p_d_f_renderer_a505aa007882410f037a5ae711c535412_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </p>
@@ -577,6 +572,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00045">45</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#ab0362104f0a9d7b87afb4af22a5ad65c">sRenderers</a>.contains(uuid))</div>
 <div class="line">    {</div>
@@ -645,6 +642,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00061">61</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
 <div class="fragment"><div class="line">{ this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> = desiredDPI; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -680,6 +679,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00078">78</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#aa3f2bca75d2b415cbc6eadca17267dc2">mFileData</a> = <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">fileData</a>;</div>
 <div class="line">}</div>
@@ -725,6 +726,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a0be60264576b6bede3ffcb9198711e87">mFileUuid</a> = <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">fileUuid</a>;</div>
 <div class="line">}</div>
@@ -770,6 +773,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html#l00073">73</a> of file <a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a55a5be69092855a0d66dafd246d65a58">mRefCount</a> = refCount;</div>
 <div class="line">}</div>
@@ -838,6 +843,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00078">78</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa3f2bca75d2b415cbc6eadca17267dc2"></a>
@@ -857,6 +864,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00068">68</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -878,6 +887,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00069">69</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a55a5be69092855a0d66dafd246d65a58"></a>
@@ -897,6 +908,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00067">67</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -918,22 +931,20 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html#l00075">75</a> of file <a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a></li>
-<li><a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp.html">PDFRenderer.cpp</a></li>
+<li>Sankore-3.1/src/pdf/<a class="el" href="../../d0/db4/_p_d_f_renderer_8h_source.html">PDFRenderer.h</a></li>
+<li>Sankore-3.1/src/pdf/<a class="el" href="../../d8/d10/_p_d_f_renderer_8cpp_source.html">PDFRenderer.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d7/dc9/class_p_d_f_renderer.html">PDFRenderer</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:18 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

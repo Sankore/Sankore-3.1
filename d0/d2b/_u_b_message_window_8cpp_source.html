@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d2b/_u_b_message_window_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d0/d2b/_u_b_message_window_8cpp_source
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBMessageWindow.cpp</div>  </div>
@@ -137,21 +121,21 @@ $(document).ready(function(){initNavTree('d0/d2b/_u_b_message_window_8cpp_source
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    : <a class="code" href="../../d1/d97/class_u_b_floating_palette.html">UBFloatingPalette</a>(Qt::BottomLeftCorner, parent)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    , mTimerID(-1)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mLayout = <span class="keyword">new</span> QHBoxLayout(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    mSpinningWheel = <span class="keyword">new</span> <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html">UBSpinningWheel</a>(parent);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mLabel = <span class="keyword">new</span> QLabel(parent);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    mLabel-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel { color: white; background-color: transparent; border: none; font-family: Arial; font-size: 14px }&quot;</span>));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a2c171770ed96ca34c867b6d4b505e603">mLayout</a> = <span class="keyword">new</span> QHBoxLayout(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#aa04fe2e5fa25b0274891891291d18484">mSpinningWheel</a> = <span class="keyword">new</span> <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html">UBSpinningWheel</a>(parent);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a399c3d59d56063fb59dd7ac0bd9529e7">mLabel</a> = <span class="keyword">new</span> QLabel(parent);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a399c3d59d56063fb59dd7ac0bd9529e7">mLabel</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel { color: white; background-color: transparent; border: none; font-family: Arial; font-size: 14px }&quot;</span>));</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mOriginalAlpha = <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9911f9e0bdae7562c1327a955974a8e4">mBackgroundBrush</a>.color().alpha();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#ac60c2098ba0ad6e878cb3848130f5d3b">mOriginalAlpha</a> = <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9911f9e0bdae7562c1327a955974a8e4">mBackgroundBrush</a>.color().alpha();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    mLayout-&gt;setContentsMargins(<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 4, <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 4);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a2c171770ed96ca34c867b6d4b505e603">mLayout</a>-&gt;setContentsMargins(<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 4, <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 4);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef Q_WS_MAC</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>    mLayout-&gt;setContentsMargins(<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 8, <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 10);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a2c171770ed96ca34c867b6d4b505e603">mLayout</a>-&gt;setContentsMargins(<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 8, <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 10);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mLayout-&gt;addWidget(mSpinningWheel);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mLayout-&gt;addWidget(mLabel);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a2c171770ed96ca34c867b6d4b505e603">mLayout</a>-&gt;addWidget(<a class="code" href="../../d5/d02/class_u_b_message_window.html#aa04fe2e5fa25b0274891891291d18484">mSpinningWheel</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a2c171770ed96ca34c867b6d4b505e603">mLayout</a>-&gt;addWidget(<a class="code" href="../../d5/d02/class_u_b_message_window.html#a399c3d59d56063fb59dd7ac0bd9529e7">mLabel</a>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../d5/d02/class_u_b_message_window.html#a7c09e97e3625ed93a41020219c86e1ee">   51</a></span>&#160;<a class="code" href="../../d5/d02/class_u_b_message_window.html#a7c09e97e3625ed93a41020219c86e1ee">UBMessageWindow::~UBMessageWindow</a>()</div>
@@ -161,25 +145,25 @@ $(document).ready(function(){initNavTree('d0/d2b/_u_b_message_window_8cpp_source
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../d5/d02/class_u_b_message_window.html#a8c6e3ff66e94a5ff2e11ebf52d5a8b35">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d02/class_u_b_message_window.html#a8c6e3ff66e94a5ff2e11ebf52d5a8b35">UBMessageWindow::showMessage</a>(<span class="keyword">const</span> QString&amp; message, <span class="keywordtype">bool</span> showSpinningWheel)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mTimer.stop();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a1c4940114308e98848ea1db1d80a2d60">mTimer</a>.stop();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mLabel-&gt;setText(message);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#a399c3d59d56063fb59dd7ac0bd9529e7">mLabel</a>-&gt;setText(message);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    QColor fadedColor = <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9911f9e0bdae7562c1327a955974a8e4">mBackgroundBrush</a>.color();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    fadedColor.setAlpha(mOriginalAlpha);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    fadedColor.setAlpha(<a class="code" href="../../d5/d02/class_u_b_message_window.html#ac60c2098ba0ad6e878cb3848130f5d3b">mOriginalAlpha</a>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9911f9e0bdae7562c1327a955974a8e4">mBackgroundBrush</a> = QBrush(fadedColor);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mFadingStep = 25;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#ac35d8221e9ecf8e0c2d3ce477b2edaeb">mFadingStep</a> = 25;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (showSpinningWheel)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        mSpinningWheel-&gt;show();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        mSpinningWheel-&gt;<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#acbcc339c4ad8ac331812ef58581e8264">startAnimation</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../d5/d02/class_u_b_message_window.html#aa04fe2e5fa25b0274891891291d18484">mSpinningWheel</a>-&gt;show();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../d5/d02/class_u_b_message_window.html#aa04fe2e5fa25b0274891891291d18484">mSpinningWheel</a>-&gt;<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#acbcc339c4ad8ac331812ef58581e8264">startAnimation</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        mSpinningWheel-&gt;hide();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        mSpinningWheel-&gt;<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#afce6e8912a9ea4ce878ea2a0dcd47d7e">stopAnimation</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        mTimer.start(200, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../d5/d02/class_u_b_message_window.html#aa04fe2e5fa25b0274891891291d18484">mSpinningWheel</a>-&gt;hide();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../d5/d02/class_u_b_message_window.html#aa04fe2e5fa25b0274891891291d18484">mSpinningWheel</a>-&gt;<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#afce6e8912a9ea4ce878ea2a0dcd47d7e">stopAnimation</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="../../d5/d02/class_u_b_message_window.html#a1c4940114308e98848ea1db1d80a2d60">mTimer</a>.start(200, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#abc34a1ea7b29b6aaa4a0ea25d5715210">adjustSizeAndPosition</a>();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
@@ -194,18 +178,18 @@ $(document).ready(function(){initNavTree('d0/d2b/_u_b_message_window_8cpp_source
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    Q_UNUSED(event);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    mFadingStep--;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#ac35d8221e9ecf8e0c2d3ce477b2edaeb">mFadingStep</a>--;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (mFadingStep &lt; 1)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d02/class_u_b_message_window.html#ac35d8221e9ecf8e0c2d3ce477b2edaeb">mFadingStep</a> &lt; 1)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        hide();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        mTimer.stop();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        mSpinningWheel-&gt;<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#afce6e8912a9ea4ce878ea2a0dcd47d7e">stopAnimation</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="../../d5/d02/class_u_b_message_window.html#a1c4940114308e98848ea1db1d80a2d60">mTimer</a>.stop();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="../../d5/d02/class_u_b_message_window.html#aa04fe2e5fa25b0274891891291d18484">mSpinningWheel</a>-&gt;<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#afce6e8912a9ea4ce878ea2a0dcd47d7e">stopAnimation</a>();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mFadingStep &lt; 10)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d5/d02/class_u_b_message_window.html#ac35d8221e9ecf8e0c2d3ce477b2edaeb">mFadingStep</a> &lt; 10)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        QColor fadedColor = <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9911f9e0bdae7562c1327a955974a8e4">mBackgroundBrush</a>.color();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        fadedColor.setAlpha(mOriginalAlpha / 10 * mFadingStep);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        fadedColor.setAlpha(<a class="code" href="../../d5/d02/class_u_b_message_window.html#ac60c2098ba0ad6e878cb3848130f5d3b">mOriginalAlpha</a> / 10 * <a class="code" href="../../d5/d02/class_u_b_message_window.html#ac35d8221e9ecf8e0c2d3ce477b2edaeb">mFadingStep</a>);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9911f9e0bdae7562c1327a955974a8e4">mBackgroundBrush</a> = QBrush(fadedColor);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        update();</div>
@@ -214,20 +198,16 @@ $(document).ready(function(){initNavTree('d0/d2b/_u_b_message_window_8cpp_source
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="../../d5/d02/class_u_b_message_window.html#af0f92d33532361f4048ab584621518f8">  109</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/d02/class_u_b_message_window.html#af0f92d33532361f4048ab584621518f8">UBMessageWindow::hideMessage</a>()</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    mFadingStep = 0;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../d5/d02/class_u_b_message_window.html#ac35d8221e9ecf8e0c2d3ce477b2edaeb">mFadingStep</a> = 0;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    hide();</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    qApp-&gt;flush();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d0/d2b/_u_b_message_window_8cpp.html">UBMessageWindow.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

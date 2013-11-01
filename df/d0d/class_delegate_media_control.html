@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d0d/class_delegate_media_control.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/d0d/class_delegate_media_control.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -162,7 +142,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a0812f091c7e1511f0e13a0d130378970"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/dc2/class_media_timer.html">MediaTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a></td></tr>
 <tr class="memitem:ab21a0e9f6a84c0d4d7b7f5cccc66ee8f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00142">142</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a31c53908b3b591beade946286b2cf06d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -186,6 +169,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01289">1289</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QGraphicsRectItem(parent)</div>
 <div class="line">    , <a class="code" href="../../df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097">mDelegate</a>(pDelegated)</div>
 <div class="line">    , <a class="code" href="../../df/d0d/class_delegate_media_control.html#a06fd542ee0278e369a39b9158f0acb35">mDisplayCurrentTime</a>(<span class="keyword">false</span>)</div>
@@ -235,6 +220,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00150">150</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="comment">// NOOP</span></div>
 <div class="line">        }</div>
@@ -262,6 +249,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00168">168</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.size();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -296,6 +285,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01435">1435</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal frameWidth = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height() / 2;</div>
 <div class="line">    <span class="keywordflow">if</span> (boundingRect().contains(event-&gt;pos() - QPointF(frameWidth,0))</div>
@@ -340,6 +331,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01421">1421</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   qreal frameWidth =  <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2;</div>
 <div class="line">    <span class="keywordflow">if</span> (boundingRect().contains(event-&gt;pos() - QPointF(frameWidth,0))</div>
@@ -385,6 +378,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01472">1472</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a06fd542ee0278e369a39b9158f0acb35">mDisplayCurrentTime</a> = <span class="keyword">false</span>;</div>
 <div class="line">    this-&gt;<a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1">update</a>();</div>
@@ -431,6 +426,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01309">1309</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(option);</div>
 <div class="line">    Q_UNUSED(widget);</div>
@@ -470,6 +467,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01344">1344</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRectF selfRect = rect();</div>
 <div class="line">    selfRect.setHeight(parentItem()-&gt;boundingRect().height());</div>
@@ -559,6 +558,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01448">1448</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal minX, length;</div>
 <div class="line">    qreal frameWidth = rect().height() / 2;</div>
@@ -614,6 +615,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01337">1337</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainterPath path;</div>
 <div class="line">    path.addRoundedRect(rect(), rect().height()/ 2, rect().height()/2);</div>
@@ -635,6 +638,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01410">1410</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a> != newTotalTime)</div>
 <div class="line">    {</div>
@@ -684,6 +689,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01393">1393</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTime tCurrent;</div>
 <div class="line">    tCurrent = tCurrent.addMSecs(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a> &lt; 0 ? 0 : <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>);</div>
@@ -726,6 +733,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html#l01403">1403</a> of file <a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a> = time;</div>
 <div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1">update</a>();</div>
@@ -802,6 +811,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00189">189</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a37ede0fb091f0faa6a06f50a7eaf7fae"></a>
@@ -821,6 +832,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00179">179</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -842,6 +855,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00176">176</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a06fd542ee0278e369a39b9158f0acb35"></a>
@@ -861,6 +876,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00177">177</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -882,6 +899,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00191">191</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a560e77f9249bd18a2041b17ce7bfa4c3"></a>
@@ -901,6 +920,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00187">187</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -922,6 +943,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00186">186</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a849cbecc7b0ede8fbcf4bbab00345d74"></a>
@@ -941,6 +964,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00184">184</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
 
 </div>
 </div>
@@ -962,6 +987,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00183">183</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a31ae1114209781ed2921257c16219392"></a>
@@ -982,22 +1009,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html#l00180">180</a> of file <a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
-<li><a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
+<li>Sankore-3.1/src/domain/<a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp_source.html">UBGraphicsItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/d0d/class_delegate_media_control.html">DelegateMediaControl</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:18 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

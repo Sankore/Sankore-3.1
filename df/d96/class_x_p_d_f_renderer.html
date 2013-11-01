@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d96/class_x_p_d_f_renderer.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/d96/class_x_p_d_f_renderer.html','.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -179,7 +159,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_p_d_f_renderer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_p_d_f_renderer')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html">PDFRenderer</a></td></tr>
 <tr class="memitem:a2cbfdcd0a7c6bbea158b0e7e324fdbe1 inherit pro_attribs_class_p_d_f_renderer"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html#l00041">41</a> of file <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ade597bd6e6f8b5ee179aae04105cdc26"></a>
 <div class="memitem">
 <div class="memproto">
@@ -203,6 +186,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>(0)</div>
 <div class="line">    , <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a>(0)</div>
 <div class="line">    , <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>(0)</div>
@@ -251,6 +236,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00052">52</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>){</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>;</div>
@@ -316,6 +303,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00162">162</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
 <div class="line">    {</div>
@@ -417,6 +406,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#acd219d79f7b7235c7562a57708147cf9">PDFRenderer</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00072">72</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>)</div>
 <div class="line">    {</div>
@@ -461,6 +452,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#aa952f037d5944d6eb3a06743351be16b">PDFRenderer</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00084">84</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getNumPages();</div>
@@ -502,6 +495,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a2e04c1447992028916c8f5764493aa77">PDFRenderer</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>  <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getPageRotate(pageNumber);</div>
@@ -534,6 +529,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a505aa007882410f037a5ae711c535412">PDFRenderer</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00114">114</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qreal cropWidth = 0;</div>
 <div class="line">    qreal cropHeight = 0;</div>
@@ -604,6 +601,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
 <div class="line">    {</div>
@@ -652,6 +651,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a9e455189ab34238ccc84f42db288ca70">PDFRenderer</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html#l00092">92</a> of file <a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
 <div class="line">    {</div>
@@ -702,6 +703,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html#l00066">66</a> of file <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a49874fa0ef7dafc8e58743cfd7b94014"></a>
@@ -721,6 +724,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html#l00071">71</a> of file <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -742,6 +747,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html#l00068">68</a> of file <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac2cb77d80bad851cae04e14581fe46e2"></a>
@@ -761,6 +768,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html#l00069">69</a> of file <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -782,6 +791,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html#l00072">72</a> of file <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a592aa14fdf0f4418c29a69cedb13c3f8"></a>
@@ -802,22 +813,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html#l00067">67</a> of file <a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a></li>
-<li><a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp.html">XPDFRenderer.cpp</a></li>
+<li>Sankore-3.1/src/pdf/<a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a></li>
+<li>Sankore-3.1/src/pdf/<a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp_source.html">XPDFRenderer.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html">XPDFRenderer</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:36 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

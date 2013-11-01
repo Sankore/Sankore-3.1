@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d14/_u_b_startup_hints_palette_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_startup_hints_palette_8cpp
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBStartupHintsPalette.cpp</div>  </div>
@@ -148,24 +132,24 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_startup_hints_palette_8cpp
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    setObjectName(<span class="stringliteral">&quot;UBStartupHintsPalette&quot;</span>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;appStartupHintsEnabled-&gt;get().toBool()){</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        setFixedSize(700,450);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        mLayout = <span class="keyword">new</span> QVBoxLayout();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        mLayout-&gt;setContentsMargins(10,28,10,10);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        setLayout(mLayout);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#adf3a0726728a1928de67b6e792c0fdc6">mLayout</a> = <span class="keyword">new</span> QVBoxLayout();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#adf3a0726728a1928de67b6e792c0fdc6">mLayout</a>-&gt;setContentsMargins(10,28,10,10);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        setLayout(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#adf3a0726728a1928de67b6e792c0fdc6">mLayout</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        QString url = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ab4cfad68b74a159d257e3a9a5c2df85f">applicationStartupHintsDirectory</a>() + <span class="stringliteral">&quot;/index.html&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        mpWebView = <span class="keyword">new</span> QWebView(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        mpSankoreAPI = <span class="keyword">new</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html">UBWidgetUniboardAPI</a>(0);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        mpWebView-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, mpSankoreAPI);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        connect(mpWebView-&gt;page()-&gt;mainFrame(), SIGNAL(javaScriptWindowObjectCleared()), <span class="keyword">this</span>, SLOT(javaScriptWindowObjectCleared()));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        mpWebView-&gt;setUrl(QUrl::fromLocalFile(url));</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        mpWebView-&gt;setAcceptDrops(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        mLayout-&gt;addWidget(mpWebView);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        mButtonLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        mLayout-&gt;addLayout(mButtonLayout);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        mShowNextTime = <span class="keyword">new</span> QCheckBox(tr(<span class="stringliteral">&quot;Visible next time&quot;</span>),<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        mShowNextTime-&gt;setCheckState(Qt::Checked);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        connect(mShowNextTime,SIGNAL(stateChanged(<span class="keywordtype">int</span>)),<span class="keyword">this</span>,SLOT(onShowNextTimeStateChanged(<span class="keywordtype">int</span>)));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        mButtonLayout-&gt;addStretch();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        mButtonLayout-&gt;addWidget(mShowNextTime);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a> = <span class="keyword">new</span> QWebView(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a72926d4c2ae2e6220cb9b9996892e5fa">mpSankoreAPI</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html">UBWidgetUniboardAPI</a>(0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a>-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a72926d4c2ae2e6220cb9b9996892e5fa">mpSankoreAPI</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        connect(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a>-&gt;page()-&gt;mainFrame(), SIGNAL(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a7e799672dcaa285ff20c58dccb01415d">javaScriptWindowObjectCleared</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a7e799672dcaa285ff20c58dccb01415d">javaScriptWindowObjectCleared</a>()));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a>-&gt;setUrl(QUrl::fromLocalFile(url));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a>-&gt;setAcceptDrops(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#adf3a0726728a1928de67b6e792c0fdc6">mLayout</a>-&gt;addWidget(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a772b53f24ef686d459e945a023e9f8d7">mButtonLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#adf3a0726728a1928de67b6e792c0fdc6">mLayout</a>-&gt;addLayout(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a772b53f24ef686d459e945a023e9f8d7">mButtonLayout</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#aacecfc014d0918f011319b60b29619da">mShowNextTime</a> = <span class="keyword">new</span> QCheckBox(tr(<span class="stringliteral">&quot;Visible next time&quot;</span>),<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#aacecfc014d0918f011319b60b29619da">mShowNextTime</a>-&gt;setCheckState(Qt::Checked);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        connect(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#aacecfc014d0918f011319b60b29619da">mShowNextTime</a>,SIGNAL(stateChanged(<span class="keywordtype">int</span>)),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a8081a85bc4fc56329707dce945527959">onShowNextTimeStateChanged</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a772b53f24ef686d459e945a023e9f8d7">mButtonLayout</a>-&gt;addStretch();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a772b53f24ef686d459e945a023e9f8d7">mButtonLayout</a>-&gt;addWidget(<a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#aacecfc014d0918f011319b60b29619da">mShowNextTime</a>);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        hide();</div>
@@ -186,7 +170,7 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_startup_hints_palette_8cpp
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> UBStartupHintsPalette::close()</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a27caaa9dc4627851a1eb5d4e9d85d545">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a27caaa9dc4627851a1eb5d4e9d85d545">UBStartupHintsPalette::close</a>()</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    hide();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
@@ -198,13 +182,13 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_startup_hints_palette_8cpp
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        &amp;&amp; <span class="keyword">event</span>-&gt;pos().y() &gt;= 0 &amp;&amp; <span class="keyword">event</span>-&gt;pos().y() &lt; QPixmap(<span class="stringliteral">&quot;:/images/close.svg&quot;</span>).height())</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">event</span>-&gt;accept();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        close();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a27caaa9dc4627851a1eb5d4e9d85d545">close</a>();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a84d5b79bde088df7e4c7fb2741cd8b4f">UBFloatingPalette::mouseReleaseEvent</a>(event);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> UBStartupHintsPalette::onShowNextTimeStateChanged(<span class="keywordtype">int</span> state)</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a8081a85bc4fc56329707dce945527959">  101</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a8081a85bc4fc56329707dce945527959">UBStartupHintsPalette::onShowNextTimeStateChanged</a>(<span class="keywordtype">int</span> state)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#adf80724a5b19f7164a194113d40b8e1f">appStartupHintsEnabled</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#ace7b75378f8faad31ab6ce6ea1c7589b">setBool</a>(state == Qt::Checked);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
@@ -217,25 +201,21 @@ $(document).ready(function(){initNavTree('d8/d14/_u_b_startup_hints_palette_8cpp
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">int</span> UBStartupHintsPalette::border()</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#aadd81ef77b51dd19e36614ece1ab655a">  114</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#aadd81ef77b51dd19e36614ece1ab655a">UBStartupHintsPalette::border</a>()</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> 40;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> UBStartupHintsPalette::javaScriptWindowObjectCleared()</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a7e799672dcaa285ff20c58dccb01415d">  119</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a7e799672dcaa285ff20c58dccb01415d">UBStartupHintsPalette::javaScriptWindowObjectCleared</a>()</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    mpWebView-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, mpSankoreAPI);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a19ccc6f47dd725c0d6dc15c155029d8a">mpWebView</a>-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, <a class="code" href="../../d0/d25/class_u_b_startup_hints_palette.html#a72926d4c2ae2e6220cb9b9996892e5fa">mpSankoreAPI</a>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d8/d14/_u_b_startup_hints_palette_8cpp.html">UBStartupHintsPalette.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

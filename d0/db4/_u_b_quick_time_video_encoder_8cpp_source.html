@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_d37d8428862b2ecaaadbfbbc34ddff69.html">quicktime</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBQuickTimeVideoEncoder.cpp</div>  </div>
@@ -163,17 +147,17 @@ $(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QString quality = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa5f3b00cd5e8136cae4cd294c46f5634">podcastQuickTimeQuality</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span>(!mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a71331fb2262b24bd4eb10a7764bfe6cb">init</a>(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">videoFileName</a>(), quality, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">framesPerSecond</a>(), <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">videoSize</a>()</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                , mShouldRecordAudio, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a>()))</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a71331fb2262b24bd4eb10a7764bfe6cb">init</a>(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">videoFileName</a>(), quality, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">framesPerSecond</a>(), <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">videoSize</a>()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                , <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a>, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a>()))</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot init QT compression session&quot;</span> + mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot init QT compression session&quot;</span> + <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>());</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    connect(&amp;mQuickTimeCompressionSession, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(compressionFinished()));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    connect(&amp;mQuickTimeCompressionSession, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    connect(&amp;<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ab778575112e694444b754846c99fb19c">compressionFinished</a>()));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    connect(&amp;<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)));</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    mQuickTimeCompressionSession.start();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.start();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
@@ -181,9 +165,9 @@ $(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aa0151d5ee1872cf9fa863dac08f927b2">   76</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aa0151d5ee1872cf9fa863dac08f927b2">UBQuickTimeVideoEncoder::stop</a>()</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (mQuickTimeCompressionSession.isRunning())</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.isRunning())</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a30f0b207a0bd98228663be5ee93bfb62">stop</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a30f0b207a0bd98228663be5ee93bfb62">stop</a>();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#adadd465cfdc1fb11d583b56b9b388128">UBQuickTimeFile::frameBufferNotEmpty</a>.wakeAll();</div>
@@ -192,11 +176,11 @@ $(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span> UBQuickTimeVideoEncoder::compressionFinished()</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ab778575112e694444b754846c99fb19c">   89</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ab778575112e694444b754846c99fb19c">UBQuickTimeVideoEncoder::compressionFinished</a>()</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        mLastErrorMessage = mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a> = <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>();</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa4e03edd2cb73ad5ccb94daa23268b54">encodingFinished</a>(mLastErrorMessage.length() &gt; 0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa4e03edd2cb73ad5ccb94daa23268b54">encodingFinished</a>(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a>.length() &gt; 0);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
@@ -204,19 +188,19 @@ $(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">//qDebug() &lt;&lt; &quot;New Frame at ms&quot; &lt;&lt; timestamp;</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span>(mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#afd6079763923599898f37a64570442e9">isCompressionSessionRunning</a>())</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#afd6079763923599898f37a64570442e9">isCompressionSessionRunning</a>())</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span>(mPendingImageFrames.length() &gt; 0)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a>.length() &gt; 0)</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">foreach</span>(ImageFrame frame, mPendingImageFrames)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">foreach</span>(<a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html">ImageFrame</a> frame, <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a>)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    encodeFrame(frame.image, frame.timestamp);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">encodeFrame</a>(frame.<a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a1ebacd89ef326c837d0420c9e1aa1faf">image</a>, frame.<a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a9321440a65c49024d5db064d431e45cd">timestamp</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            mPendingImageFrames.clear();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a>.clear();</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        encodeFrame(pImage, timestamp);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">encodeFrame</a>(pImage, timestamp);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#adadd465cfdc1fb11d583b56b9b388128">UBQuickTimeFile::frameBufferNotEmpty</a>.wakeAll();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
@@ -224,19 +208,19 @@ $(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;queuing frame, compressor not ready&quot;</span>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        ImageFrame frame;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        frame.image = pImage;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        frame.timestamp = timestamp;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html">ImageFrame</a> frame;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        frame.<a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a1ebacd89ef326c837d0420c9e1aa1faf">image</a> = pImage;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        frame.<a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a9321440a65c49024d5db064d431e45cd">timestamp</a> = timestamp;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        mPendingImageFrames &lt;&lt; frame;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a> &lt;&lt; frame;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">void</span> UBQuickTimeVideoEncoder::encodeFrame(<span class="keyword">const</span> QImage&amp; pImage, <span class="keywordtype">long</span> timestamp)</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">UBQuickTimeVideoEncoder::encodeFrame</a>(<span class="keyword">const</span> QImage&amp; pImage, <span class="keywordtype">long</span> timestamp)</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    Q_ASSERT(pImage.format() == QImage::QImage::Format_RGB32);  <span class="comment">// &lt;=&gt; CVPixelBuffers / k32BGRAPixelFormat</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    CVPixelBufferRef pixelBuffer = mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#aa499bdf13d0882700d43d966fa2115d0">newPixelBuffer</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    CVPixelBufferRef pixelBuffer = <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#aa499bdf13d0882700d43d966fa2115d0">newPixelBuffer</a>();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (!pixelBuffer)</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Could not retreive a new pixel buffer&quot;</span>);</div>
@@ -277,21 +261,17 @@ $(document).ready(function(){initNavTree('d0/db4/_u_b_quick_time_video_encoder_8
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
 <div class="line"><a name="l00172"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ae3c9201f5d14e49801b06e77f9fdaf01">  172</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ae3c9201f5d14e49801b06e77f9fdaf01">UBQuickTimeVideoEncoder::setRecordAudio</a>(<span class="keywordtype">bool</span> pRecordAudio)</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    mShouldRecordAudio = pRecordAudio;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a> = pRecordAudio;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_d37d8428862b2ecaaadbfbbc34ddff69.html">quicktime</a></li><li class="navelem"><a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp.html">UBQuickTimeVideoEncoder.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

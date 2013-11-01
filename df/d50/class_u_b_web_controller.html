@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d50/class_u_b_web_controller.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/d50/class_u_b_web_controller.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -211,7 +191,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2c02cdac34471040bfd8bc351088ec52"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/class_u_b_web_controller.html#a2c02cdac34471040bfd8bc351088ec52">mOEmbedProviders</a></td></tr>
 <tr class="memitem:ad51020a7ebc866aadb7f277760d6ce9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html">UBOEmbedParser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/class_u_b_web_controller.html#ad51020a7ebc866aadb7f277760d6ce9c">mOEmbedParser</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00041">41</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a39111fb6c022df143222a82026175f7e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -233,6 +216,8 @@ Private Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00061">61</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../df/d50/class_u_b_web_controller.html#a39111fb6c022df143222a82026175f7ea373ad368e9c8f796c07a81a886ae227a">WebBrowser</a> = 0, <a class="code" href="../../df/d50/class_u_b_web_controller.html#a39111fb6c022df143222a82026175f7ea12eaa8f560b3413cad96c00e315b79f4">Tutorial</a>, <a class="code" href="../../df/d50/class_u_b_web_controller.html#a39111fb6c022df143222a82026175f7ea2ee95cc8b14b6de3a773a21ea9f5173a">Paraschool</a>, <a class="code" href="../../df/d50/class_u_b_web_controller.html#a39111fb6c022df143222a82026175f7ea5380769fecb4471f529bbcd0ec26603a">TotalNumberOfWebInstances</a></div>
 <div class="line">        };</div>
@@ -253,6 +238,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00063">63</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(mainWindow-&gt;centralWidget())</div>
 <div class="line">    , <a class="code" href="../../df/d50/class_u_b_web_controller.html#a6dded611b9945d6e64e94a90de62bd72">mMainWindow</a>(mainWindow)</div>
 <div class="line">    , <a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>(0)</div>
@@ -314,6 +301,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#a3e88e6c180d344cba87d2b29c5984a91">mStackedWidget</a>) {</div>
@@ -344,6 +333,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00330">330</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> &amp;&amp; (*mCurrentWebBrowser)-&gt;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
 <div class="line">    {</div>
@@ -429,6 +420,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00554">554</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> highResolution = <a class="code" href="../../df/d50/class_u_b_web_controller.html#a6dded611b9945d6e64e94a90de62bd72">mMainWindow</a>-&gt;width() &gt; 1024;</div>
 <div class="line"></div>
@@ -464,6 +457,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00380">380</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap pix;</div>
 <div class="line"></div>
@@ -555,6 +550,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00659">659</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> &amp;&amp; (*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>)</div>
 <div class="line">            &amp;&amp; (*mCurrentWebBrowser)-&gt;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
@@ -659,6 +656,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00573">573</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#a03cf8fcfbf3d649a8c2d6da6fb458f76">isOEmbedable</a>(currentUrl))</div>
 <div class="line">    {</div>
@@ -703,6 +702,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00587">587</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ( <a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>  &amp;&amp; (*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>) &amp;&amp; (*mCurrentWebBrowser)-&gt;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>()){</div>
 <div class="line">        <span class="comment">// TODO : Uncomment the next lines to continue the youtube button bugfix</span></div>
@@ -758,6 +759,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00489">489</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap webPagePixmap = <a class="code" href="../../df/d50/class_u_b_web_controller.html#a0c8e5de1ef638ae4b222e54313546c22">captureCurrentPage</a>();</div>
 <div class="line"></div>
@@ -809,6 +812,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00637">637</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d50/class_u_b_web_controller.html#ad51020a7ebc866aadb7f277760d6ce9c">mOEmbedParser</a>.<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a0195b4006db357e86d5d6428eba8a11e">parse</a>(*pHtml);</div>
 <div class="line">}</div>
@@ -845,6 +850,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00548">548</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//NOOP</span></div>
 <div class="line">}</div>
@@ -854,8 +861,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d50/class_u_b_web_controller_a7a1b738035d4abfe600f56133f2cd39f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d50/class_u_b_web_controller_a7a1b738035d4abfe600f56133f2cd39f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -881,6 +887,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00089">89</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../df/d50/class_u_b_web_controller.html#ae5e53eb3cfc7d22a6739ece614496716">mBrowserWidget</a>;</div>
 <div class="line">        }</div>
@@ -917,6 +925,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00790">790</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> &amp;&amp; (*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>) &amp;&amp; (*mCurrentWebBrowser)-&gt;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
 <div class="line">    {</div>
@@ -959,6 +969,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00774">774</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> &amp;&amp; !(*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>))</div>
 <div class="line">    {</div>
@@ -991,6 +1003,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00784">784</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (*mCurrentWebBrowser)-&gt;currentTabWebView()-&gt;url();</div>
 <div class="line">}</div>
@@ -1017,6 +1031,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00500">500</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    (*mToolsCurrentPalette)-&gt;setVisible(<span class="keyword">false</span>);</div>
 <div class="line">    qApp-&gt;processEvents();</div>
@@ -1075,6 +1091,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00823">823</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> &amp;&amp; (*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>) &amp;&amp; (*mCurrentWebBrowser)-&gt;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
 <div class="line">    {</div>
@@ -1125,6 +1143,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00068">68</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span>( <a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> != NULL ) <span class="keywordflow">return</span> *<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>;</div>
 <div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">return</span> NULL;</div>
@@ -1152,6 +1172,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00642">642</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Get the source code of the page</span></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>){</div>
@@ -1199,6 +1221,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00525">525</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QDesktopWidget *desktop = QApplication::desktop();</div>
 <div class="line">    <span class="comment">// we capture the screen in which the mouse is.</span></div>
@@ -1242,6 +1266,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00349">349</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> bHasContent = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>){</div>
@@ -1360,6 +1386,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d50/class_u_b_web_controller.html#a2c02cdac34471040bfd8bc351088ec52">mOEmbedProviders</a> &lt;&lt; <span class="stringliteral">&quot;5min.com&quot;</span>;</div>
 <div class="line">    <a class="code" href="../../df/d50/class_u_b_web_controller.html#a2c02cdac34471040bfd8bc351088ec52">mOEmbedProviders</a> &lt;&lt; <span class="stringliteral">&quot;amazon.com&quot;</span>;</div>
@@ -1411,6 +1439,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00741">741</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString urlAsString = pUrl.toString();</div>
 <div class="line"></div>
@@ -1455,6 +1485,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00722">722</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString urlAsString = pUrl.toString();</div>
 <div class="line"></div>
@@ -1496,6 +1528,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00754">754</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> webBrowserAlreadyInstanciated = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d4/d1c/class_w_b_browser_window.html" title="The MainWindow of the Browser view.">WBBrowserWindow</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../df/d50/class_u_b_web_controller.html#a3e88e6c180d344cba87d2b29c5984a91">mStackedWidget</a>-&gt;widget(<a class="code" href="../../df/d50/class_u_b_web_controller.html#a39111fb6c022df143222a82026175f7ea373ad368e9c8f796c07a81a886ae227a">WebBrowser</a>)) != NULL;</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae3d983750cf95a35f7e125f57844957f">showInternet</a>();</div>
@@ -1578,6 +1612,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00612">612</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != pHtml &amp;&amp; NULL != pList){</div>
 <div class="line">        QVector&lt;QString&gt; urlsFound;</div>
@@ -1633,6 +1669,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00814">814</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString title = (*mCurrentWebBrowser)-&gt;currentTabWebView()-&gt;page()-&gt;mainFrame()-&gt;title();</div>
 <div class="line">    QString url = (*mCurrentWebBrowser)-&gt;currentTabWebView()-&gt;page()-&gt;mainFrame()-&gt;url().toString();</div>
@@ -1682,6 +1720,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00834">834</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;QUrl&gt; urls;</div>
 <div class="line"></div>
@@ -1756,6 +1796,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00249">249</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QLocale locale = QLocale();</div>
 <div class="line">    QString language = <span class="stringliteral">&quot;_&quot;</span> + locale.name().left(2);</div>
@@ -1851,6 +1893,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00802">802</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> &amp;&amp; (*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>) &amp;&amp; (*mCurrentWebBrowser)-&gt;<a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a43b315ee4ca51f564a80369546af43de">currentTabWebView</a>())</div>
 <div class="line">    {</div>
@@ -1901,6 +1945,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00538">538</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> hasDisplay = (<a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a> &amp;&amp;</div>
 <div class="line">                       <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#aa5bf5b9c21547340bc4582aeb8d343c0">displayManager</a>() &amp;&amp;</div>
@@ -1951,6 +1997,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00324">324</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d50/class_u_b_web_controller.html#ae5e53eb3cfc7d22a6739ece614496716">mBrowserWidget</a> = pWidget;</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#afa4aa8833852d7c01d1fc46a9f4dacb3">setMirrorSourceWidget</a>(pWidget);</div>
@@ -1997,6 +2045,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00432">432</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!(*<a class="code" href="../../df/d50/class_u_b_web_controller.html#a7c18c822eb7741d33b68c2a230f89ab5">mToolsCurrentPalette</a>))</div>
 <div class="line">    {</div>
@@ -2064,6 +2114,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00305">305</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">switch</span>(type)</div>
 <div class="line">    {</div>
@@ -2116,6 +2168,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00567">567</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a> &amp;&amp; (*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>))</div>
 <div class="line">        (*mCurrentWebBrowser)-&gt;showTabAtTop(attop);</div>
@@ -2154,6 +2208,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00483">483</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    (*mToolsCurrentPalette)-&gt;setVisible(checked);</div>
 <div class="line">}</div>
@@ -2190,6 +2246,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00467">467</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a></div>
 <div class="line">            &amp;&amp; (*<a class="code" href="../../df/d50/class_u_b_web_controller.html#afade7fe3ea8fb02282f6d3d3842584c5">mCurrentWebBrowser</a>)</div>
@@ -2231,6 +2289,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00519">519</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#a9a02203ee57211f01b98984dc88029f2">mirroringEnabled</a>(checked);</div>
 <div class="line">}</div>
@@ -2276,6 +2336,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00189">189</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QLocale locale = QLocale();</div>
 <div class="line">    QString language = <span class="stringliteral">&quot;_&quot;</span> + locale.name().left(2);</div>
@@ -2376,6 +2438,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString webHomePage = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a81373d964e3fa4a318429ff86ba291ae">webHomePage</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line">    QUrl currentUrl = <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a8a5c6d4ceb45bde18872a41b63e1ba3c">WBBrowserWindow::guessUrlFromString</a>(webHomePage);</div>
@@ -2482,6 +2546,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html#l00477">477</a> of file <a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d50/class_u_b_web_controller.html#ae39a12933c315c4f21f1219a713de43e">mTrapContentController</a>-&gt;<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a6bf16d3424c93377578ab0fb31f97418">showTrapContent</a>();</div>
 <div class="line">    <a class="code" href="../../df/d50/class_u_b_web_controller.html#ac373f43baf7f6015989c5f14cfcf36c0">activePageChanged</a>();</div>
@@ -2527,6 +2593,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00123">123</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afade7fe3ea8fb02282f6d3d3842584c5"></a>
@@ -2546,6 +2614,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00121">121</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 
 </div>
 </div>
@@ -2567,6 +2637,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00131">131</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6dded611b9945d6e64e94a90de62bd72"></a>
@@ -2586,6 +2658,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00118">118</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 
 </div>
 </div>
@@ -2607,6 +2681,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00135">135</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2c02cdac34471040bfd8bc351088ec52"></a>
@@ -2626,6 +2702,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00133">133</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 
 </div>
 </div>
@@ -2647,6 +2725,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00116">116</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7c18c822eb7741d33b68c2a230f89ab5"></a>
@@ -2666,6 +2746,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00125">125</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 
 </div>
 </div>
@@ -2687,6 +2769,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00126">126</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6ccb2ff20636ef241314b30c37cfb58a"></a>
@@ -2706,6 +2790,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00128">128</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 
 </div>
 </div>
@@ -2727,6 +2813,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00129">129</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae39a12933c315c4f21f1219a713de43e"></a>
@@ -2746,6 +2834,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00124">124</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
 
 </div>
 </div>
@@ -2767,22 +2857,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html#l00120">120</a> of file <a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a></li>
-<li><a class="el" href="../../d7/d85/_u_b_web_controller_8cpp.html">UBWebController.cpp</a></li>
+<li>Sankore-3.1/src/web/<a class="el" href="../../d2/d6d/_u_b_web_controller_8h_source.html">UBWebController.h</a></li>
+<li>Sankore-3.1/src/web/<a class="el" href="../../d7/d85/_u_b_web_controller_8cpp_source.html">UBWebController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/d50/class_u_b_web_controller.html">UBWebController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:34 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

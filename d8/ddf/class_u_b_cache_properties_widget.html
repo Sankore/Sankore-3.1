@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/ddf/class_u_b_cache_properties_widget.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d8/ddf/class_u_b_cache_properties_widg
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -219,7 +199,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a53e0db7a927af2934470ea519f67657d inherit pro_attribs_class_u_b_dock_palette_widget"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="../../d5/dba/_u_b_dock_palette_widget_8h.html#af3b2828ed1bf91ad13c73e4e1b3b529e">eUBDockPaletteWidgetMode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html#a53e0db7a927af2934470ea519f67657d">mRegisteredModes</a></td></tr>
 <tr class="memitem:a6625e60cb42b4fc13a91b307e24c9e3d inherit pro_attribs_class_u_b_dock_palette_widget"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html#a6625e60cb42b4fc13a91b307e24c9e3d">mVisibleState</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00058">58</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa3bc851e2fa188c9fcdb460eb0cdcadd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -243,6 +226,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                                 :<a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#ae56c793e5cd0e20514e5e1519a59a7e0">UBDockPaletteWidget</a>(parent)</div>
 <div class="line">  , <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#ae5d21559e419c77b86721c3b42cd9ed1">mpLayout</a>(NULL)</div>
 <div class="line">  , <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a5b4af680a6f2a858d1c46edeb729f8be">mpCachePropertiesLabel</a>(NULL)</div>
@@ -267,7 +252,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">{</div>
 <div class="line">    setObjectName(<a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a1c7779c0584c0d2541b4c05acc1ffbbb">name</a>);</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
+<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a6dbb15ff090986f543d2614778c343cb">mName</a> = <span class="stringliteral">&quot;CachePropWidget&quot;</span>;</div>
 <div class="line">    <a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#a6625e60cb42b4fc13a91b307e24c9e3d">mVisibleState</a> = <span class="keyword">false</span>;</div>
@@ -431,6 +416,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00272">272</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -492,6 +479,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html#a722c531dded95f4c728e92628fcef619">UBDockPaletteWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00070">70</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> QPixmap(<span class="stringliteral">&quot;:images/cache_open.png&quot;</span>);}</div>
 </div><!-- fragment -->
 </div>
@@ -518,6 +507,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html#ac0e6c3f6468d43b112e5fc81bf2127dd">UBDockPaletteWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00071">71</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> QPixmap(<span class="stringliteral">&quot;:images/cache_open.png&quot;</span>);}</div>
 </div><!-- fragment -->
 </div>
@@ -543,6 +534,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00492">492</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a0e185708d960e30981f29a6d5ec1c367">mActualColor</a>.setAlpha(alpha);</div>
 <div class="line">    <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#ac5b52e15d01d3d09c872c22e2a8a9c45">syncCacheColor</a>(<a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a0e185708d960e30981f29a6d5ec1c367">mActualColor</a>);</div>
@@ -588,6 +581,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00481">481</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../d1/d54/class_u_b_dock_palette_widget.html#aba3521bff44ff86eeaf70eaa0e1e57b2">showTab</a>(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
@@ -632,6 +627,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00277">277</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../dd/da1/_u_b_cache_properties_widget_8cpp.html#aa91f5b8362fe7933c8ef80b1b159fc66">mCaches</a>.empty())</div>
 <div class="line">    {</div>
@@ -691,6 +688,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00325">325</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Show the color picker</span></div>
 <div class="line">    QColor newColor = QColorDialog::getColor(<a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a0e185708d960e30981f29a6d5ec1c367">mActualColor</a>,<span class="keyword">this</span>);</div>
@@ -739,6 +738,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00498">498</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a5ad24a496193946dcb06ebad4c24e7c0">maximumShapeSize</a> = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>()-&gt;size();</div>
@@ -796,6 +797,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00448">448</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#aec8df10badd91993fbe4a9136f1141e9">mpCurrentCache</a>)</div>
 <div class="line">    {</div>
@@ -859,6 +862,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00472">472</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Qt::CheckState cur_state = <span class="keyword">static_cast&lt;</span>Qt::CheckState<span class="keyword">&gt;</span>(state);</div>
 <div class="line">    <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#adf3f8e96e75f83b4a84165b1d4ffcb2e">mKeepAspectRatio</a> = Qt::Checked == cur_state;</div>
@@ -908,6 +913,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00486">486</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#aec8df10badd91993fbe4a9136f1141e9">mpCurrentCache</a>-&gt;<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a6f0086c7036226f7218e7c754ffe39af">setMode</a>(mode);</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ad55a1c27f720ce9ff548ef80d784ee03">cacheMode</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(mode);</div>
@@ -954,6 +961,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00425">425</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#aec8df10badd91993fbe4a9136f1141e9">mpCurrentCache</a>)</div>
 <div class="line">    {</div>
@@ -1017,6 +1026,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00515">515</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(newZoom)</div>
 <div class="line"></div>
@@ -1067,6 +1078,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00297">297</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a0e185708d960e30981f29a6d5ec1c367">mActualColor</a> = color;</div>
 <div class="line">    <a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#a7d83545b384002103928af7c40286e42">mpAplhaSlider</a>-&gt;setValue(color.alpha());</div>
@@ -1134,6 +1147,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00357">357</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> isBoardMode = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="comment">// this widget can work only on Board mode</span></div>
@@ -1241,6 +1256,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html#l00333">333</a> of file <a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d8/ddf/class_u_b_cache_properties_widget.html#aa976cb3d3bf830145af6f643ba90f1e9">mpCircleButton</a>-&gt;hasFocus())</div>
 <div class="line">    {</div>
@@ -1307,6 +1324,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d1/d54/class_u_b_dock_palette_widget.html#ad009164555cbcfdf26f52e5939a1d843">UBDockPaletteWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00065">65</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        <span class="keywordflow">return</span> mode == <a class="code" href="../../d5/dba/_u_b_dock_palette_widget_8h.html#af3b2828ed1bf91ad13c73e4e1b3b529ea3e7cf372296b0ae399bc1425045d3ec0">eUBDockPaletteWidget_BOARD</a>;</div>
 <div class="line">    }</div>
@@ -1332,6 +1351,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00122">122</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a611b62255d106a116ef09cfcd0996048"></a>
@@ -1351,6 +1372,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00123">123</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1372,6 +1395,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00129">129</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a75df4e6b3fe12eb98d6bd5471c59c2de"></a>
@@ -1391,6 +1416,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00128">128</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1412,6 +1439,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00125">125</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a34639dc31939205e244f278815bbf706"></a>
@@ -1431,6 +1460,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00127">127</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1452,6 +1483,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00126">126</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a10edae5e47628cab00850f3e3a991b2f"></a>
@@ -1471,6 +1504,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00097">97</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1492,6 +1527,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00109">109</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5b4af680a6f2a858d1c46edeb729f8be"></a>
@@ -1511,6 +1548,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00095">95</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1532,6 +1571,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00107">107</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a02e9c1f93646f2b91301c5df6ad6d9fe"></a>
@@ -1551,6 +1592,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00108">108</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1572,6 +1615,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00114">114</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa46b28eaaa12d7a7b4fb3baa6abc9d0c"></a>
@@ -1591,6 +1636,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00096">96</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1612,6 +1659,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00112">112</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aec8df10badd91993fbe4a9136f1141e9"></a>
@@ -1631,6 +1680,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00124">124</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1652,6 +1703,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00099">99</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6c3254d763c1140bf74dc5d47aacb23c"></a>
@@ -1671,6 +1724,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00101">101</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1692,6 +1747,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00111">111</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3ecff4d602c234a6c39487b1cae9d698"></a>
@@ -1711,6 +1768,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00104">104</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1732,6 +1791,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00094">94</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0f284624301ef11bf3305f1ccd040ec8"></a>
@@ -1751,6 +1812,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00121">121</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1772,6 +1835,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00102">102</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8525afcf1fe6cda15c9d4d2cf584735e"></a>
@@ -1791,6 +1856,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00119">119</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1812,6 +1879,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00103">103</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acdc1994c4dd33cd91d892bfac278d44e"></a>
@@ -1831,6 +1900,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00120">120</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1852,6 +1923,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00116">116</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a821188285227547033e738f5fa378fc1"></a>
@@ -1871,6 +1944,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00115">115</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1892,6 +1967,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00118">118</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9f7047c3cd3296050ed1055ef25dc397"></a>
@@ -1911,6 +1988,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00105">105</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1932,6 +2011,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00098">98</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8f694fda5661494efe77b5a4ea916e3e"></a>
@@ -1951,6 +2032,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00113">113</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -1972,6 +2055,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00117">117</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a52edde1c14cfa28f7ad353add40276c0"></a>
@@ -1991,6 +2076,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00106">106</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
 
 </div>
 </div>
@@ -2012,6 +2099,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00100">100</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7858a4011db14a4374d411ada0aae23f"></a>
@@ -2032,22 +2121,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html#l00110">110</a> of file <a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a></li>
-<li><a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp.html">UBCachePropertiesWidget.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp_source.html">UBCachePropertiesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d8/ddf/class_u_b_cache_properties_widget.html">UBCachePropertiesWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:20 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

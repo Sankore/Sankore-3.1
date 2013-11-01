@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d97/class_u_b_floating_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/d97/class_u_b_floating_palette.html
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -195,7 +175,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6fff6adce97ba3b833d170981ef4c0fe"><td class="memItemLeft" align="right" valign="top">Qt::Corner&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a6fff6adce97ba3b833d170981ef4c0fe">mDefaultPosition</a></td></tr>
 <tr class="memitem:a5c39be1c1eca7cede371092d532b6be3"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a5c39be1c1eca7cede371092d532b6be3">mOldPos</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00039">39</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0f6f20a3b1bb802881b939a19f42fb03"></a>
 <div class="memitem">
 <div class="memproto">
@@ -219,6 +202,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QWidget(parent, parent ? Qt::Widget : Qt::Tool | (Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint))</div>
 <div class="line">    , <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a5fb4099a5276d969d5463eb96df94521">mCustomPosition</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a657c2c6a41c9a06ca8d7ec9e5e67a7e9">mIsMoving</a>(<span class="keyword">false</span>)</div>
@@ -268,6 +253,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Add another floating palette to the associated palette. All associated palettes will have the same width that is calculated as the minimum width of all associated palettes. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00189">189</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a66a111bde796e0b51ee51178f8edac13">mAssociatedPalette</a>.append(pOtherPalette);</div>
 <div class="line">}</div>
@@ -305,6 +292,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00211">211</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QSize newPreferredSize = <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#aec5822b784da7d590ff463ed9cb44be9">preferredSize</a>();</div>
 <div class="line"></div>
@@ -379,6 +368,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../de/dc5/class_u_b_action_palette.html#acb5a31a19bf700a33de7414e890c7231">UBActionPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00100">100</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
@@ -418,6 +409,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d6/d6e/class_u_b_keyboard_palette.html#aae4678e17eafebc83dfb4b1abaf72d04">UBKeyboardPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00106">106</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    emit <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a19cc4afd477ddaa4421339056e16c93e">mouseEntered</a>();</div>
@@ -456,6 +449,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d7/dfa/class_u_b_desktop_palette.html#aa6f4f3da38505de57603b9ea27a6473f">UBDesktopPalette</a>, and <a class="el" href="../../d7/dae/class_u_b_desktop_property_palette.html#ad2014614e7eff4eacadef3bc4b4d6c7b">UBDesktopPropertyPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00154">154</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
@@ -492,6 +487,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00280">280</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 5;</div>
 <div class="line">}</div>
@@ -584,6 +581,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00092">92</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9a18560fab9292060ec15e5f92f2307e">mMinimizedLocation</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -618,6 +617,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00285">285</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#af0c44f42e9176f6efd30c3963c259d7a">mCanBeMinimized</a>)</div>
 <div class="line">    {</div>
@@ -773,6 +774,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00126">126</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a657c2c6a41c9a06ca8d7ec9e5e67a7e9">mIsMoving</a>)</div>
 <div class="line">    {</div>
@@ -818,6 +821,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;button() == Qt::LeftButton)</div>
 <div class="line">    {</div>
@@ -856,6 +861,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../de/dc5/class_u_b_action_palette.html#ac2780ac183ab9614a28199e252f0d447">UBActionPalette</a>, <a class="el" href="../../df/db9/class_u_b_create_link_palette.html#aebd7160b8ab9afc579ad20053a18fd2f">UBCreateLinkPalette</a>, and <a class="el" href="../../d0/d25/class_u_b_startup_hints_palette.html#a84d5b79bde088df7e4c7fb2741cd8b4f">UBStartupHintsPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00140">140</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a657c2c6a41c9a06ca8d7ec9e5e67a7e9">mIsMoving</a>)</div>
 <div class="line">    {</div>
@@ -901,6 +908,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00159">159</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QWidget *parent = parentWidget();</div>
 <div class="line"></div>
@@ -1006,6 +1015,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d6/d6e/class_u_b_keyboard_palette.html#ae1f571abb2fd626d7263fdfce9d52261">UBKeyboardPalette</a>, <a class="el" href="../../de/dc5/class_u_b_action_palette.html#a70b2e19272054aba6cf9ea8ddfd0955b">UBActionPalette</a>, <a class="el" href="../../df/db9/class_u_b_create_link_palette.html#aa9068ea053c50338107c3ee65d9bba53">UBCreateLinkPalette</a>, and <a class="el" href="../../d0/d25/class_u_b_startup_hints_palette.html#a7dc51b85fd9ca55c193cc4da9354fb91">UBStartupHintsPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00257">257</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
 <div class="line">    painter.setRenderHint(QPainter::Antialiasing);</div>
@@ -1051,6 +1062,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00199">199</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QSize palettePreferredSize = sizeHint();</div>
 <div class="line"></div>
@@ -1096,6 +1109,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d2/dbd/class_u_b_clock_palette.html#a64df46fcd7c5482d72c5e78d6ad53dfa">UBClockPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 10;</div>
 <div class="line">}</div>
@@ -1131,6 +1146,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00243">243</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/d97/class_u_b_floating_palette.html">UBFloatingPalette</a>* palette, <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a66a111bde796e0b51ee51178f8edac13">mAssociatedPalette</a>)</div>
 <div class="line">    {</div>
@@ -1172,6 +1189,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00194">194</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a66a111bde796e0b51ee51178f8edac13">mAssociatedPalette</a>.removeOne(pOtherPalette);</div>
 <div class="line">}</div>
@@ -1199,6 +1218,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00343">343</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    move(<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a5c39be1c1eca7cede371092d532b6be3">mOldPos</a>);</div>
 <div class="line">}</div>
@@ -1226,6 +1247,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00338">338</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a5c39be1c1eca7cede371092d532b6be3">mOldPos</a> = pos();</div>
 <div class="line">}</div>
@@ -1254,6 +1277,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00075">75</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9911f9e0bdae7562c1327a955974a8e4">mBackgroundBrush</a> != brush)</div>
 <div class="line">    {</div>
@@ -1286,6 +1311,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00085">85</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a5fb4099a5276d969d5463eb96df94521">mCustomPosition</a> = pFlag;</div>
 <div class="line"></div>
@@ -1327,6 +1354,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00068">68</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a154c8a83dd77e2d02071a46c19976db2">mbGrip</a> = newGrip;</div>
 <div class="line">    update();</div>
@@ -1356,6 +1385,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00333">333</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#af0c44f42e9176f6efd30c3963c259d7a">mCanBeMinimized</a> = permission;</div>
 <div class="line">}</div>
@@ -1394,6 +1425,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../df/db9/class_u_b_create_link_palette.html#a84493dda08b44ff851c683df649acbf1">UBCreateLinkPalette</a>, <a class="el" href="../../d7/dfa/class_u_b_desktop_palette.html#a1d1a55372fc59e681f23cfd895716a8c">UBDesktopPalette</a>, <a class="el" href="../../d0/d25/class_u_b_startup_hints_palette.html#a8b1252835307d05ac38c24059548e822">UBStartupHintsPalette</a>, and <a class="el" href="../../d2/dbd/class_u_b_clock_palette.html#af46e4aa5486523a69f906f3cbf744612">UBClockPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html#l00252">252</a> of file <a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a187ee35c53cfad79bb5b30dff1800732">moveInsideParent</a>(pos());</div>
 <div class="line">}</div>
@@ -1428,6 +1461,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00098">98</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9911f9e0bdae7562c1327a955974a8e4"></a>
@@ -1447,6 +1482,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00082">82</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1468,6 +1505,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00083">83</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af0c44f42e9176f6efd30c3963c259d7a"></a>
@@ -1487,6 +1526,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00100">100</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1508,6 +1549,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00087">87</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6fff6adce97ba3b833d170981ef4c0fe"></a>
@@ -1527,6 +1570,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00102">102</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1548,6 +1593,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00099">99</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a657c2c6a41c9a06ca8d7ec9e5e67a7e9"></a>
@@ -1567,6 +1614,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00088">88</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1588,6 +1637,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00101">101</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5c39be1c1eca7cede371092d532b6be3"></a>
@@ -1607,6 +1658,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00104">104</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1628,6 +1681,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00084">84</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac78ed632e01f218be6aa7201e0ac4e3f"></a>
@@ -1648,22 +1703,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html#l00085">85</a> of file <a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a></li>
-<li><a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp.html">UBFloatingPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/d6f/_u_b_floating_palette_8h_source.html">UBFloatingPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/d05/_u_b_floating_palette_8cpp_source.html">UBFloatingPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html">UBFloatingPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:01 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:24 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

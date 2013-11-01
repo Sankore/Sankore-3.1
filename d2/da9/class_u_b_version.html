@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d2/da9/class_u_b_version.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d2/da9/class_u_b_version.html','../../
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -145,7 +125,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a1aa912b74f54e5e8d18d4e19c244f896"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a></td></tr>
 <tr class="memitem:abd648e3b45cdf368ac86a3fae852b317"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4">ReleaseStage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d6/d60/_u_b_version_8h_source.html#l00031">31</a> of file <a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8de16363b89e71b411aaea85ccd85ca6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -158,6 +141,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a>(-1)</div>
 <div class="line">    , <a class="code" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a>(-1)</div>
@@ -181,6 +166,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/da9/class_u_b_version.html#a9bd4c45d822805cdb385011efe919b6e">setString</a>(<span class="keywordtype">string</span>);</div>
 <div class="line">}</div>
@@ -216,6 +203,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -235,6 +224,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>;</div>
 <div class="line">}</div>
@@ -262,6 +253,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00128">128</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a>;</div>
@@ -299,6 +292,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00140">140</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a>;</div>
@@ -337,6 +332,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
 <div class="line">    Q_ASSERT(otherVersion.<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
@@ -376,6 +373,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00162">162</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
 <div class="line">    Q_ASSERT(otherVersion.<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
@@ -410,6 +409,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00173">173</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
 <div class="line">    Q_ASSERT(otherVersion.<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
@@ -448,6 +449,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a>;</div>
@@ -485,6 +488,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00134">134</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a>;</div>
@@ -523,6 +528,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a> = <span class="keyword">true</span>;</div>
 <div class="line">    <a class="code" href="../../d2/da9/class_u_b_version.html#ae4c27773588a7c02f07dfa216fc14f5d">mString</a> = string;</div>
@@ -612,6 +619,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>() ? <a class="code" href="../../d2/da9/class_u_b_version.html#ae4c27773588a7c02f07dfa216fc14f5d">mString</a> : <span class="stringliteral">&quot;INVALID&quot;</span>;</div>
 <div class="line">}</div>
@@ -646,6 +655,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/d60/_u_b_version_8h_source.html#l00054">54</a> of file <a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae76c2ce9cd4c374e38279f7b40ef94c0"></a>
@@ -665,6 +676,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d60/_u_b_version_8h_source.html#l00056">56</a> of file <a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a>.</p>
 
 </div>
 </div>
@@ -686,6 +699,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/d60/_u_b_version_8h_source.html#l00057">57</a> of file <a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac311188ac430b399a9ef314c2426c05c"></a>
@@ -705,6 +720,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d60/_u_b_version_8h_source.html#l00055">55</a> of file <a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a>.</p>
 
 </div>
 </div>
@@ -726,6 +743,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/d60/_u_b_version_8h_source.html#l00058">58</a> of file <a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae4c27773588a7c02f07dfa216fc14f5d"></a>
@@ -746,22 +765,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/d60/_u_b_version_8h_source.html#l00053">53</a> of file <a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a></li>
-<li><a class="el" href="../../d6/de4/_u_b_version_8cpp.html">UBVersion.cpp</a></li>
+<li>Sankore-3.1/src/frameworks/<a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a></li>
+<li>Sankore-3.1/src/frameworks/<a class="el" href="../../d6/de4/_u_b_version_8cpp_source.html">UBVersion.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/da9/class_u_b_version.html">UBVersion</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:33 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

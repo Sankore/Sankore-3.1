@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d78/class_u_b_board_view.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/d78/class_u_b_board_view.html','../
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -235,7 +215,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a0f5311c997cc86b8d253a2a34daae3c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d78/class_u_b_board_view.html#a0f5311c997cc86b8d253a2a34daae3c8">bIsDesktop</a></td></tr>
 <tr class="memitem:a70d0e91d4eb9ea2ed7cf430ef71bf4a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d78/class_u_b_board_view.html#a70d0e91d4eb9ea2ed7cf430ef71bf4a4">mRubberBandInPlayMode</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00036">36</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acd0ed87356ff26df8cbf3e9c62e495c2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -271,6 +254,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00085">85</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">: QGraphicsView (pParent)</div>
 <div class="line">, <a class="code" href="../../d1/d78/class_u_b_board_view.html#a971cf606a20eb17ac9a3f93fc84c7fe3">mController</a> (pController)</div>
 <div class="line">, <a class="code" href="../../d1/d78/class_u_b_board_view.html#a526af1d6f5a4202e31de678adb3660c3">mIsCreatingTextZone</a> (<span class="keyword">false</span>)</div>
@@ -350,6 +335,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">: QGraphicsView (pParent)</div>
 <div class="line">, <a class="code" href="../../d1/d78/class_u_b_board_view.html#a971cf606a20eb17ac9a3f93fc84c7fe3">mController</a> (pController)</div>
 <div class="line">, <a class="code" href="../../d1/d78/class_u_b_board_view.html#aae7e4f76f22a41be049e59c4c22f5791">suspendedMousePressEvent</a>(NULL)</div>
@@ -401,6 +388,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00128">128</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">                           {</div>
 <div class="line">  <span class="comment">//NOOP</span></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d78/class_u_b_board_view.html#aae7e4f76f22a41be049e59c4c22f5791">suspendedMousePressEvent</a>)</div>
@@ -463,6 +452,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00743">743</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(item)</div>
 <div class="line">    {</div>
@@ -542,6 +533,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00712">712</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(item)</div>
 <div class="line">    {</div>
@@ -612,6 +605,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01522">1522</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <a class="code" href="../../d1/d78/class_u_b_board_view.html#a623b7deba0e5a085b86c976a4ff3aae3">QGraphicsView::dragMoveEvent</a>(<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
 <div class="line">  <span class="keyword">event</span>-&gt;acceptProposedAction();</div>
@@ -650,6 +645,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01564">1564</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (testAttribute (Qt::WA_TranslucentBackground))</div>
 <div class="line">    {</div>
@@ -785,6 +782,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01489">1489</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (!<a class="code" href="../../d1/d78/class_u_b_board_view.html#aca25fa1effe164810f4b75d8b6ad6a1f">mFilterZIndex</a>)</div>
 <div class="line">    {</div>
@@ -846,6 +845,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01528">1528</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QGraphicsItem *onItem = itemAt(<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>-&gt;pos().x(),<span class="keyword">event</span>-&gt;pos().y());</div>
 <div class="line">    <span class="keywordflow">if</span> (onItem &amp;&amp; onItem-&gt;type() == <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a87fa860d4a5f30733ad0a69b808376cda3246eda160045d14b903c6d2da6146b6">UBGraphicsWidgetItem::Type</a>) {</div>
@@ -900,6 +901,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00322">322</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (e-&gt;type () == QEvent::Gesture)</div>
 <div class="line">    {</div>
@@ -959,6 +962,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01681">1681</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  Q_UNUSED (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
 <div class="line">}</div>
@@ -977,6 +982,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01418">1418</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a46780033fa6c82b291e3c9c3d7a0ab96">mMouseButtonIsPressed</a> || <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2644ff57d4a0328a5025207a05cd29e5">mTabletStylusIsPressed</a> || <a class="code" href="../../d1/d78/class_u_b_board_view.html#a5d09a72d85bedf954551aba30e67a138">mPendingStylusReleaseEvent</a>)</div>
@@ -1036,6 +1043,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00823">823</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// determine item to move (maybee we need to move group of item or his parent.</span></div>
 <div class="line">    <a class="code" href="../../d1/d78/class_u_b_board_view.html#ae59a8cf8a3c54e2f23679adc5247a127">movingItem</a> = <a class="code" href="../../d1/d78/class_u_b_board_view.html#ab7d920be31a90777998b2bd7af2fb96b">determineItemToMove</a>(<a class="code" href="../../d1/d78/class_u_b_board_view.html#ae59a8cf8a3c54e2f23679adc5247a127">movingItem</a>);</div>
@@ -1114,6 +1123,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00782">782</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d78/class_u_b_board_view.html#ad456e440f056e88646e6ad0a4285dbbf">mLastPressedMousePos</a> = mapToScene(<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>-&gt;pos());</div>
 <div class="line"></div>
@@ -1195,6 +1206,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00488">488</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">// we need to select new pressed itemOnBoard and deselect all other items.</span></div>
 <div class="line"><span class="comment">// the trouble is in:</span></div>
@@ -1283,6 +1296,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01737">1737</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (item-&gt;isSelected())</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -1346,6 +1361,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00182">182</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  Q_UNUSED (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
 <div class="line">  emit <a class="code" href="../../d1/d78/class_u_b_board_view.html#a89b87a105417f12c13bde309188c57d1">hidden</a> ();</div>
@@ -1382,6 +1399,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00134">134</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  connect (<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a> ()-&gt;boardPenPressureSensitive, SIGNAL (changed (QVariant)),</div>
 <div class="line">           <span class="keyword">this</span>, SLOT (<a class="code" href="../../d1/d78/class_u_b_board_view.html#af407ceeadef1bb77f84d3fe6afbf98f4">settingChanged</a> (QVariant)));</div>
@@ -1463,6 +1482,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01666">1666</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QDesktopWidget *desktop = qApp-&gt;desktop ();</div>
 <div class="line">    <span class="keywordtype">bool</span> isValidPoint = <span class="keyword">false</span>;</div>
@@ -1508,6 +1529,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00478">478</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (item-&gt;type() == <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28af3de1d4150790abea1ee370d18d24f45">UBGraphicsItemType::CompassItemType</a></div>
 <div class="line">        || item-&gt;type() == <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28ad57cd5c3576095b396adc64fe928e558">UBGraphicsItemType::RulerItemType</a></div>
@@ -1548,6 +1571,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00056">56</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2925793cf65457195f0169c476b8cceb">mMultipleSelectionIsEnabled</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1582,6 +1607,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00468">468</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ((<a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28a4ce80b4ee994e44eefc4a28acfe12587">UBGraphicsItemType::UserTypesCount</a> &gt; item-&gt;type()) &amp;&amp; (item-&gt;type() &gt; QGraphicsItem::UserType))</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -1633,6 +1660,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00457">457</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!item)</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -1667,6 +1696,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00449">449</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!item)</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -1697,6 +1728,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00664">664</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!item)</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -1784,6 +1817,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00536">536</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment">Some items should receive mouse press events averytime,</span></div>
@@ -1919,6 +1954,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00631">631</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!item)</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -1992,6 +2029,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00196">196</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="comment">// send to the scene anyway</span></div>
 <div class="line">  QApplication::sendEvent (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a471b5373f2debb2c5cb6e2d0db6b74f1">scene</a> (), <a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
@@ -2133,6 +2172,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00307">307</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="comment">// if (!event-&gt;isAccepted ())</span></div>
 <div class="line">    {</div>
@@ -2178,6 +2219,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01480">1480</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a471b5373f2debb2c5cb6e2d0db6b74f1">scene</a> ())</div>
 <div class="line">    <a class="code" href="../../d1/d78/class_u_b_board_view.html#a471b5373f2debb2c5cb6e2d0db6b74f1">scene</a> ()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad531983c966ef07c7dde8cebf8cf3903">leaveEvent</a> (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
@@ -2216,6 +2259,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00968">968</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a> *drawingController = <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>();</div>
 <div class="line">   <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> currentTool = (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a> ();</div>
@@ -2280,6 +2325,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01438">1438</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="comment">// We don&#39;t want a double click, we want two clicks</span></div>
 <div class="line">  <a class="code" href="../../d1/d78/class_u_b_board_view.html#a6fc3391590c435e0ae26c43d2bd76d14">mousePressEvent</a> (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
@@ -2317,6 +2364,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01136">1136</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span>(!<a class="code" href="../../d1/d78/class_u_b_board_view.html#a93466f9bf73cce786c694159a583da52">mIsDragInProgress</a> &amp;&amp; ((mapToScene(<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>-&gt;pos()) - <a class="code" href="../../d1/d78/class_u_b_board_view.html#ad456e440f056e88646e6ad0a4285dbbf">mLastPressedMousePos</a>).manhattanLength() &lt; QApplication::startDragDistance()))</div>
 <div class="line">  {</div>
@@ -2470,6 +2519,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00992">992</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d1/d78/class_u_b_board_view.html#afef87917cfce8c28417ac4134adf41fa">bIsControl</a> &amp;&amp; !<a class="code" href="../../d1/d78/class_u_b_board_view.html#a0f5311c997cc86b8d253a2a34daae3c8">bIsDesktop</a>) {</div>
 <div class="line">        <span class="keyword">event</span>-&gt;ignore();</div>
@@ -2653,6 +2704,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01250">1250</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> currentTool = (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a> ();</div>
 <div class="line"></div>
@@ -2843,6 +2896,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00873">873</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRectF invalidateRect = <a class="code" href="../../d1/d78/class_u_b_board_view.html#a471b5373f2debb2c5cb6e2d0db6b74f1">scene</a>()-&gt;itemsBoundingRect();</div>
 <div class="line"></div>
@@ -2962,6 +3017,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01552">1552</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keyword">const</span> qreal maxWidth = width () * 10;</div>
 <div class="line">  <span class="keyword">const</span> qreal maxHeight = height () * 10;</div>
@@ -2995,6 +3052,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00861">861</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d78/class_u_b_board_view.html#af36a91a16085808d3a5afb242774daf0">mUBRubberBand</a>)</div>
 <div class="line">        <a class="code" href="../../d1/d78/class_u_b_board_view.html#ac9f9dd1808c627c7adfb082c43ae82c1">mRubberedItems</a> = items(<a class="code" href="../../d1/d78/class_u_b_board_view.html#af36a91a16085808d3a5afb242774daf0">mUBRubberBand</a>-&gt;geometry());</div>
@@ -3029,6 +3088,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keywordflow">return</span> qobject_cast&lt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*&gt; (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a471b5373f2debb2c5cb6e2d0db6b74f1">QGraphicsView::scene</a> ());</div>
 <div class="line">}</div>
@@ -3038,8 +3099,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-50-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-50-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d78/class_u_b_board_view_a471b5373f2debb2c5cb6e2d0db6b74f1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d78/class_u_b_board_view_a471b5373f2debb2c5cb6e2d0db6b74f1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3058,6 +3118,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00895">895</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2925793cf65457195f0169c476b8cceb">mMultipleSelectionIsEnabled</a> = enable;</div>
 <div class="line">}</div>
@@ -3095,6 +3157,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01647">1647</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  Q_UNUSED (newValue);</div>
 <div class="line"></div>
@@ -3136,6 +3200,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01687">1687</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  QWidget *controlViewport = viewport ();</div>
 <div class="line">  <span class="keywordflow">switch</span> (tool)</div>
@@ -3198,8 +3264,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-55-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-55-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d78/class_u_b_board_view_a2c6d79af6b95057a648ca9235dea89ac_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d78/class_u_b_board_view_a2c6d79af6b95057a648ca9235dea89ac_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3226,6 +3291,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00117">117</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordtype">bool</span> ok;</div>
 <div class="line">            <span class="keywordtype">int</span> <a class="code" href="../../dc/d14/structitem_layer_type.html">itemLayerType</a> = item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>).toInt(&amp;ok);</div>
@@ -3264,6 +3331,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00189">189</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  Q_UNUSED (<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
 <div class="line">  emit <a class="code" href="../../d1/d78/class_u_b_board_view.html#a07e6f339699cd4eba80a485c7e8e5b21">shown</a> ();</div>
@@ -3333,6 +3402,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l00350">350</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d1/d78/class_u_b_board_view.html#a2bbfa53a24c205ed741830990051b258">mUseHighResTabletEvent</a>) {</div>
 <div class="line">        <span class="keyword">event</span>-&gt;setAccepted (<span class="keyword">false</span>);</div>
@@ -3463,6 +3534,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01656">1656</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a4e367ec2409fb19b6e7c44d0ad620e59">UBPlatformUtils::setWindowNonActivableFlag</a>(<span class="keyword">this</span>, b);</div>
 <div class="line">    <a class="code" href="../../d1/d78/class_u_b_board_view.html#a3fe810edd6f1b7c3e8bf3a517d0b36b3">mVirtualKeyboardActive</a> = b;</div>
@@ -3501,6 +3574,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html#l01445">1445</a> of file <a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (isInteractive () &amp;&amp; <a class="code" href="../../d1/d78/class_u_b_board_view.html#a127153f054ca62fc556b398b4edf45b8">wheelEvent</a>-&gt;orientation () == Qt::Vertical)</div>
 <div class="line">    {</div>
@@ -3564,6 +3639,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00169">169</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0f5311c997cc86b8d253a2a34daae3c8"></a>
@@ -3583,6 +3660,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00170">170</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3604,6 +3683,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00126">126</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac9be0163bcfcebb015faf976b51287ba"></a>
@@ -3623,6 +3704,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00128">128</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3644,6 +3727,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00129">129</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af0c81f8257b9d34ac2f4ea5a8cfbecdc"></a>
@@ -3663,6 +3748,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00146">146</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3684,6 +3771,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00145">145</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a93466f9bf73cce786c694159a583da52"></a>
@@ -3703,6 +3792,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00167">167</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3724,6 +3815,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00162">162</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad456e440f056e88646e6ad0a4285dbbf"></a>
@@ -3743,6 +3836,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00154">154</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3764,6 +3859,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00164">164</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a54c4838df6ca5708750961f2c37f0347"></a>
@@ -3783,6 +3880,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00165">165</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3804,6 +3903,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00141">141</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a46780033fa6c82b291e3c9c3d7a0ab96"></a>
@@ -3823,6 +3924,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00136">136</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3844,6 +3947,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00138">138</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2925793cf65457195f0169c476b8cceb"></a>
@@ -3863,6 +3968,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00168">168</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3884,6 +3991,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00151">151</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9803fe233fde42ebe85989b2a709a034"></a>
@@ -3903,6 +4012,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00158">158</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3924,6 +4035,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00155">155</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5d09a72d85bedf954551aba30e67a138"></a>
@@ -3943,6 +4056,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00134">134</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -3964,6 +4079,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00140">140</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a75963ab580c47197cd0564a1470fffdc"></a>
@@ -3983,6 +4100,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00137">137</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -4004,6 +4123,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00144">144</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a70d0e91d4eb9ea2ed7cf430ef71bf4a4"></a>
@@ -4023,6 +4144,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00171">171</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -4044,6 +4167,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00161">161</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aac4f548b1028f4e30d9fea5bdc979861"></a>
@@ -4063,6 +4188,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00128">128</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -4084,6 +4211,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00131">131</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af36a91a16085808d3a5afb242774daf0"></a>
@@ -4103,6 +4232,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00159">159</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -4124,6 +4255,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00142">142</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad3a3ddc2f125bb1476a5c479234e5de1"></a>
@@ -4143,6 +4276,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00132">132</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -4164,6 +4299,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00150">150</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a39f14fbab26e7a24fe52bd70198e91c7"></a>
@@ -4183,6 +4320,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00153">153</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
 
 </div>
 </div>
@@ -4204,22 +4343,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html#l00156">156</a> of file <a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a></li>
-<li><a class="el" href="../../d4/dc1/_u_b_board_view_8cpp.html">UBBoardView.cpp</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../dc/d86/_u_b_board_view_8h_source.html">UBBoardView.h</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../d4/dc1/_u_b_board_view_8cpp_source.html">UBBoardView.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/d78/class_u_b_board_view.html">UBBoardView</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:56 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:20 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

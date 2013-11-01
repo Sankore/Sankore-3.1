@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d6/dbb/class_w_b_ex_line_edit.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d6/dbb/class_w_b_ex_line_edit.html','.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -156,7 +136,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a43fd1d49e8339c475bbfbcce357b9ce5"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a></td></tr>
 <tr class="memitem:acff3e8a85c6f0b78bf0824b8029ccad2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d88/class_w_b_clear_button.html">WBClearButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#acff3e8a85c6f0b78bf0824b8029ccad2">mClearButton</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html#l00075">75</a> of file <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7e84a43757d628a94c07bc48465083e6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -170,6 +153,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00076">76</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
 <div class="line">    , <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a39f9e6233d3184edda737d1bea2b356e">mLeftWidget</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>(<span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>))</div>
@@ -226,6 +211,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00197">197</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>-&gt;type() == QEvent::ShortcutOverride)</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;event(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
@@ -256,6 +243,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;event(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a2a7a01d15589a4921018362bff1c1061">QWidget::focusInEvent</a>(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
@@ -286,6 +275,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d6/d29/class_w_b_url_line_edit.html#ab61a2516c92a9c044d85ef9b9e49f234">WBUrlLineEdit</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00178">178</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;event(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
 <div class="line"></div>
@@ -321,6 +312,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    option-&gt;initFrom(<span class="keyword">this</span>);</div>
 <div class="line">    option-&gt;rect = contentsRect();</div>
@@ -369,6 +362,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00218">218</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;event(e);</div>
 <div class="line">}</div>
@@ -388,6 +383,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00212">212</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;inputMethodQuery(property);</div>
 <div class="line">}</div>
@@ -415,6 +412,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00191">191</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;event(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a1878c2689872b926fad31ec3f5929242">QWidget::keyPressEvent</a>(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
@@ -434,6 +433,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a39f9e6233d3184edda737d1bea2b356e">mLeftWidget</a>;</div>
 <div class="line">}</div>
@@ -460,6 +461,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html#l00082">82</a> of file <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -497,6 +500,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#a2912b8499cade9e57fad779b084deb32">WBSearchLineEdit</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00206">206</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// No default painting</span></div>
 <div class="line">}</div>
@@ -526,6 +531,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#a26254b38cda1c4b20e139b66e31934ee">WBSearchLineEdit</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a39f9e6233d3184edda737d1bea2b356e">mLeftWidget</a>);</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a7798d1c875d908b7efc1d3f987b433fb">updateGeometries</a>();</div>
@@ -556,6 +563,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">delete</span> <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a39f9e6233d3184edda737d1bea2b356e">mLeftWidget</a>;</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a39f9e6233d3184edda737d1bea2b356e">mLeftWidget</a> = widget;</div>
@@ -599,6 +608,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#abe9c3dd2ea75106d6288828bd2c4eb35">WBSearchLineEdit</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00224">224</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ac67aa5012b828c4e29528cfe31eddde2">QWidget::setVisible</a>(pVisible);</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;setVisible(pVisible);</div>
@@ -620,6 +631,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;setFrame(<span class="keyword">true</span>);</div>
 <div class="line">    QSize size = <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;sizeHint();</div>
@@ -649,6 +662,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html#l00129">129</a> of file <a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QStyleOptionFrameV2 panel;</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a4c9c286ad93cbd2ec4df7de9a13e7cec">initStyleOption</a>(&amp;panel);</div>
@@ -707,6 +722,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html#l00108">108</a> of file <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a39f9e6233d3184edda737d1bea2b356e"></a>
@@ -726,6 +743,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html#l00106">106</a> of file <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -747,22 +766,20 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html#l00107">107</a> of file <a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a></li>
-<li><a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp.html">WBUrlLineEdit.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp_source.html">WBUrlLineEdit.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html">WBExLineEdit</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:35 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

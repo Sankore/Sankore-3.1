@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/d38/class_u_b_board_palette_manager.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('dc/d38/class_u_b_board_palette_manager
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -233,7 +213,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a1547864c1404ca58457b5bc5f26b4939"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d9c/class_u_b_dock_teacher_guide_widget.html">UBDockTeacherGuideWidget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d38/class_u_b_board_palette_manager.html#a1547864c1404ca58457b5bc5f26b4939">mpTeacherGuideWidget</a></td></tr>
 <tr class="memitem:a922a1c9235fae51198c35f525822122b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d38/class_u_b_board_palette_manager.html#a922a1c9235fae51198c35f525822122b">mDownloadInProgress</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00054">54</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab2ca22bf5af16f59e273a72731a138ae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -257,6 +240,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00075">75</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(container)</div>
 <div class="line">    , <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a01a14c9ae374265868a703f63770b5df">mKeyboardPalette</a>(0)</div>
 <div class="line">    , <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a2e6478b9eff52e3d2681705a6db41a77">mWebToolsCurrentPalette</a>(0)</div>
@@ -318,6 +303,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00107">107</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// mAddedItemPalette is delete automatically because of is parent</span></div>
@@ -350,6 +337,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00553">553</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *activeScene =  <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a5bf93ad343de7f09150d634ef3a8c459">activeScene</a>();</div>
 <div class="line">    <span class="keywordtype">int</span> pageIndex = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a82e3690c789dc021cdb134e3704c7b7a">activeSceneIndex</a>();</div>
@@ -401,6 +390,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00644">644</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#afccb4858dd3cbd35178c6332ec0dab5b">mItemUrl</a> = pUrl;</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a385e83af1a955dd4b6f8b29775161171">mPixmap</a> = QPixmap();</div>
@@ -475,6 +466,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00862">862</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#afccb4858dd3cbd35178c6332ec0dab5b">mItemUrl</a> = sourceUrl;</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a385e83af1a955dd4b6f8b29775161171">mPixmap</a> = pPixmap;</div>
@@ -516,6 +509,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00067">67</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a91a5cb7be9abcc371a450227214b4f44">mAddItemPalette</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -540,6 +535,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00874">874</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae4a1adf81a7b5d4f5d6120699833f0bb">showBoard</a>();</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a91a5cb7be9abcc371a450227214b4f44">mAddItemPalette</a>-&gt;hide();</div>
@@ -596,6 +593,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00899">899</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a385e83af1a955dd4b6f8b29775161171">mPixmap</a>.isNull())</div>
 <div class="line">    {</div>
@@ -663,6 +662,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00892">892</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#aae6e6e83f5207333812d4021dc7f535e">addScene</a>();</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#aacf3827c30cd7a5461ec757f0da98d5b">addItemToCurrentPage</a>();</div>
@@ -708,6 +709,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00588">588</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionBackgrounds-&gt;setChecked(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -743,6 +746,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00538">538</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionCrossedLightBackground-&gt;isChecked())</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a8d30367b74f5356851433f76f1cc37de">changeBackground</a>(<span class="keyword">false</span>, <span class="keyword">true</span>);</div>
@@ -799,6 +804,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00655">655</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> rightPaletteVisible = <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ab760dfe013e1c269880d105f933f16ed">mRightPalette</a>-&gt;<a class="code" href="../../d9/d48/class_u_b_right_palette.html#a3347b1b9346d58d1134480d192a12dd3">switchMode</a>(newMode);</div>
 <div class="line">    <span class="keywordtype">bool</span> leftPaletteVisible = <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a143d638f4de90342be6dcdcba13da761">mLeftPalette</a>-&gt;<a class="code" href="../../de/d4d/class_u_b_left_palette.html#a1390f53120608624d6c33e6144ca4204">switchMode</a>(newMode);</div>
@@ -1046,6 +1053,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00977">977</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> bVertical = var.toBool();</div>
 <div class="line">    <span class="keywordtype">bool</span> bVisible = <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a5a792e719359a56126f46fa877c67657">mStylusPalette</a>-&gt;isVisible();</div>
@@ -1102,6 +1111,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00411">411</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    connect(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionStylus, SIGNAL(toggled(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a0af19a61e099340c07d10e59316046df">toggleStylusPalette</a>(<span class="keywordtype">bool</span>)));</div>
 <div class="line"></div>
@@ -1227,8 +1238,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_a420304b3f9b0f0172e3eb844f8d2fd8b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_a420304b3f9b0f0172e3eb844f8d2fd8b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1246,6 +1256,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l01004">1004</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a420304b3f9b0f0172e3eb844f8d2fd8b">connectToDocController</a>();</div>
 <div class="line">}</div>
@@ -1264,8 +1276,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_aa4ad780181b5a1259303f1ea54497613_icgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_aa4ad780181b5a1259303f1ea54497613_icgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1291,6 +1302,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00493">493</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> innerMargin = <a class="code" href="../../db/d66/class_u_b_settings.html#aff1d52afbc3bda4b82ad2bba4d7f86b0">UBSettings::boardMargin</a>;</div>
 <div class="line"></div>
@@ -1348,8 +1361,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_ae6c1074d6b9fffe113dde7a543f7a460_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_ae6c1074d6b9fffe113dde7a543f7a460_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1375,6 +1387,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00370">370</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a2bf997c9edb3bf7a419245e1b1a1bac8">mEraseButtonPressedTime</a> = QTime::currentTime();</div>
 <div class="line"></div>
@@ -1422,6 +1436,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00379">379</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a98a40b52f39ec95ea2a77c0aca545611">mPendingEraseButtonPressed</a>)</div>
 <div class="line">    {</div>
@@ -1478,6 +1494,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00613">613</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionErase-&gt;setChecked(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -1513,6 +1531,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00065">65</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ae4fa01edcdb917e0c44d090e8350f66f">mpFeaturesWidget</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1520,8 +1540,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-30-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_aa4f173738cc75b31d7cee042b238e69b_icgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_aa4f173738cc75b31d7cee042b238e69b_icgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1539,6 +1558,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a5a792e719359a56126f46fa877c67657">mStylusPalette</a>-&gt;<a class="code" href="../../d2/dfd/class_u_b_stylus_palette.html#a88643ee79adc6b2e6531cf42471ed975">initPosition</a>();</div>
 <div class="line">}</div>
@@ -1574,6 +1595,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00063">63</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a143d638f4de90342be6dcdcba13da761">mLeftPalette</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1608,6 +1631,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00398">398</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">      <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae3d983750cf95a35f7e125f57844957f">showInternet</a>();</div>
 <div class="line">      <a class="code" href="../../d8/d81/class_u_b_application.html#a69b7fb1f61b12d6d98ea689e4073d809">UBApplication::webController</a>-&gt;<a class="code" href="../../df/d50/class_u_b_web_controller.html#a9386961472ce9dd1126326045728ebe4">loadUrl</a>(url);</div>
@@ -1636,6 +1661,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l01036">1036</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a0d50333b0c480ff634f62dac64aa0c97">mLinkPalette</a>)</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a0d50333b0c480ff634f62dac64aa0c97">mLinkPalette</a>;</div>
@@ -1675,6 +1702,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00321">321</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#aa1d1cfc69388648bafd6645dbaafd5dc">mPageButtonPressedTime</a> = QTime::currentTime();</div>
 <div class="line"></div>
@@ -1722,6 +1751,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00330">330</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ae8c137c5e71d00bcbd3d7938a0ac3b4b">mPendingPageButtonPressed</a>)</div>
 <div class="line">    {</div>
@@ -1801,6 +1832,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00632">632</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPages-&gt;setChecked(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
@@ -1836,6 +1869,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00949">949</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a628c7a76d0608f25c8e591cdb50c8c05">mPanButtonPressedTime</a> = QTime::currentTime();</div>
 <div class="line"></div>
@@ -1883,6 +1918,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00958">958</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a67338d2cf9cb95257dba3a0a2b47e1e4">mPendingPanButtonPressed</a>)</div>
 <div class="line">    {</div>
@@ -1985,6 +2022,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00405">405</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae3d983750cf95a35f7e125f57844957f">showInternet</a>();</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a69b7fb1f61b12d6d98ea689e4073d809">UBApplication::webController</a>-&gt;<a class="code" href="../../df/d50/class_u_b_web_controller.html#a9386961472ce9dd1126326045728ebe4">loadUrl</a>(QUrl(link));</div>
@@ -2013,6 +2052,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l01009">1009</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ab760dfe013e1c269880d105f933f16ed">mRightPalette</a>-&gt;update();</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a143d638f4de90342be6dcdcba13da761">mLeftPalette</a>-&gt;update();</div>
@@ -2040,6 +2081,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00064">64</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ab760dfe013e1c269880d105f933f16ed">mRightPalette</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2047,8 +2090,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-45-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_a6d89a033f9869ffd5c66b54f7492c938_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_a6d89a033f9869ffd5c66b54f7492c938_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2075,6 +2117,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00077">77</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a2e6478b9eff52e3d2681705a6db41a77">mWebToolsCurrentPalette</a> = palette;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2111,6 +2155,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set up the dock palette widgets. </p>
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00130">130</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//------------------------------------------------//</span></div>
@@ -2190,6 +2236,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -2199,8 +2247,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-49-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_a04b4a969c6ee900494c45adb18ed3880_icgraph.svg" width="651" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_a04b4a969c6ee900494c45adb18ed3880_icgraph.svg" width="651" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -2226,6 +2273,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00235">235</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a315df832d127b0b3491e9088643bd74e">UBPlatformUtils::hasVirtualKeyboard</a>())</div>
@@ -2344,6 +2393,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00971">971</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a01a14c9ae374265868a703f63770b5df">mKeyboardPalette</a>)</div>
 <div class="line">        <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a01a14c9ae374265868a703f63770b5df">mKeyboardPalette</a>-&gt;setVisible(show);</div>
@@ -2354,8 +2405,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-52-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-52-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_ae8dba03662fcca8a9d3db38ddade8b95_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d38/class_u_b_board_palette_manager_ae8dba03662fcca8a9d3db38ddade8b95_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2382,6 +2432,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00216">216</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../da/d14/class_u_b_application_controller.html#a72ac04dd6883ac94b53e8e1dcdf2af39">UBApplicationController::MainMode</a> currMode = <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#a9ce27c18f3093893087d8f2de6ef45c2">displayMode</a>();</div>
 <div class="line">    <span class="keywordflow">if</span>(!isDesktop)</div>
@@ -2432,6 +2484,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00178">178</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">//    Board = 0, Internet, Document, Tutorial, ParaschoolEditor, WebDocument</span></div>
 <div class="line"></div>
@@ -2492,6 +2546,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l01015">1015</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a922a1c9235fae51198c35f525822122b">mDownloadInProgress</a>)</div>
 <div class="line">    {</div>
@@ -2534,6 +2590,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l01025">1025</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a922a1c9235fae51198c35f525822122b">mDownloadInProgress</a>)</div>
 <div class="line">    {</div>
@@ -2584,6 +2642,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00066">66</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a5a792e719359a56126f46fa877c67657">mStylusPalette</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -2608,6 +2668,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00080">80</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a1547864c1404ca58457b5bc5f26b4939">mpTeacherGuideWidget</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2643,6 +2705,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00574">574</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ab43f02524870ac78147d8efaa2160b12">mBackgroundsPalette</a>-&gt;setVisible(checked);</div>
 <div class="line"></div>
@@ -2696,6 +2760,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00600">600</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#adf08a6643f4a4f66cb9c1557badb266b">mErasePalette</a>-&gt;setVisible(checked);</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
@@ -2748,6 +2814,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00619">619</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a6bde6ee5697761dde60fdd7bb5d0172c">mPagePalette</a>-&gt;setVisible(checked);</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
@@ -2800,6 +2868,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00594">594</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a5a792e719359a56126f46fa877c67657">mStylusPalette</a>-&gt;setVisible(checked);</div>
 <div class="line">}</div>
@@ -2836,6 +2906,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00638">638</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/def/class_u_b_podcast_controller.html#a8acf4b0bab6aa6ad4846b9044d7fda96">UBPodcastController::instance</a>()-&gt;<a class="code" href="../../d9/def/class_u_b_podcast_controller.html#ab9f47a41e489b242fed9396277dfc5af">toggleRecordingPalette</a>(checked);</div>
 <div class="line">}</div>
@@ -2880,6 +2952,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00927">927</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#aec06a62b4038d2e56e7edc209d9dc325">mZoomButtonPressedTime</a> = QTime::currentTime();</div>
 <div class="line"></div>
@@ -2927,6 +3001,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html#l00936">936</a> of file <a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a7365e25e28536b35faae7cffcc345e46">mPendingZoomButtonPressed</a>)</div>
 <div class="line">    {</div>
@@ -2978,6 +3054,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00125">125</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab43f02524870ac78147d8efaa2160b12"></a>
@@ -2997,6 +3075,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00123">123</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3018,6 +3098,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00110">110</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5cd1ba75f521e31eb5a292a09c2af564"></a>
@@ -3037,6 +3119,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00109">109</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3058,6 +3142,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00158">158</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2bf997c9edb3bf7a419245e1b1a1bac8"></a>
@@ -3077,6 +3163,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00143">143</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3098,6 +3186,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00126">126</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afccb4858dd3cbd35178c6332ec0dab5b"></a>
@@ -3118,6 +3208,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00129">129</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a01a14c9ae374265868a703f63770b5df"></a>
@@ -3129,6 +3221,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00073">73</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3151,6 +3245,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The left dock palette </p>
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00119">119</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0d50333b0c480ff634f62dac64aa0c97"></a>
@@ -3170,6 +3266,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00116">116</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3191,6 +3289,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00134">134</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6bde6ee5697761dde60fdd7bb5d0172c"></a>
@@ -3211,6 +3311,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00127">127</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a628c7a76d0608f25c8e591cdb50c8c05"></a>
@@ -3230,6 +3332,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00140">140</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3252,6 +3356,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The cache properties widget </p>
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00150">150</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7939956d2f6beeb0aebd82d15a54ba23"></a>
@@ -3273,6 +3379,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The download widget </p>
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00155">155</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a98a40b52f39ec95ea2a77c0aca545611"></a>
@@ -3292,6 +3400,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00144">144</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3313,6 +3423,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00135">135</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a67338d2cf9cb95257dba3a0a2b47e1e4"></a>
@@ -3332,6 +3444,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00141">141</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3353,6 +3467,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00138">138</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae4fa01edcdb917e0c44d090e8350f66f"></a>
@@ -3372,6 +3488,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00152">152</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3393,6 +3511,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00130">130</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2496ea51aa9226b6c4f69a18d7a6db69"></a>
@@ -3412,6 +3532,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00131">131</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3434,6 +3556,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The page navigator widget </p>
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00147">147</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1547864c1404ca58457b5bc5f26b4939"></a>
@@ -3453,6 +3577,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00156">156</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3475,6 +3601,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The right dock palette </p>
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00121">121</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acdf0c9d6dc0ccc1625ab063e9ba80809"></a>
@@ -3494,6 +3622,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00132">132</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3515,6 +3645,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00112">112</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad5d7888f81f7aa820b820dbfba49c036"></a>
@@ -3534,6 +3666,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00115">115</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3555,6 +3689,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00124">124</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2e6478b9eff52e3d2681705a6db41a77"></a>
@@ -3566,6 +3702,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00078">78</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
 
 </div>
 </div>
@@ -3587,6 +3725,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00137">137</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab4855baf13b9e471cd0b09dfbd52cd3e"></a>
@@ -3607,22 +3747,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html#l00114">114</a> of file <a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a></li>
-<li><a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp.html">UBBoardPaletteManager.cpp</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../df/d29/_u_b_board_palette_manager_8h_source.html">UBBoardPaletteManager.h</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../df/d5a/_u_b_board_palette_manager_8cpp_source.html">UBBoardPaletteManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dc/d38/class_u_b_board_palette_manager.html">UBBoardPaletteManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:56 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:19 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

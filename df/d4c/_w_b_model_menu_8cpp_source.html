@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d4c/_w_b_model_menu_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('df/d4c/_w_b_model_menu_8cpp_source.htm
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">WBModelMenu.cpp</div>  </div>
@@ -183,7 +167,7 @@ $(document).ready(function(){initNavTree('df/d4c/_w_b_model_menu_8cpp_source.htm
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    , m_separatorRole(0)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    , m_model(0)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(aboutToShow()), <span class="keyword">this</span>, SLOT(aboutToShow()));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae76e76d8f12efb51b19bc2c6ac43d5ce">aboutToShow</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae76e76d8f12efb51b19bc2c6ac43d5ce">aboutToShow</a>()));</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a0d58bbdb18b7a7927eab00f66a115663">   83</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a0d58bbdb18b7a7927eab00f66a115663">WBModelMenu::prePopulated</a>()</div>
@@ -197,66 +181,66 @@ $(document).ready(function(){initNavTree('df/d4c/_w_b_model_menu_8cpp_source.htm
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae25bb6bd67167246c9768b28c60f721f">   92</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae25bb6bd67167246c9768b28c60f721f">WBModelMenu::setModel</a>(QAbstractItemModel *model)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    m_model = <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae18fd53c1993bff66dc1b3db0cfd45cd">model</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a> = <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae18fd53c1993bff66dc1b3db0cfd45cd">model</a>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae18fd53c1993bff66dc1b3db0cfd45cd">   97</a></span>&#160;QAbstractItemModel *<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae18fd53c1993bff66dc1b3db0cfd45cd">WBModelMenu::model</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> m_model;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a230a8056c6e3e7412e9490890dccd75e">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a230a8056c6e3e7412e9490890dccd75e">WBModelMenu::setMaxRows</a>(<span class="keywordtype">int</span> max)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    m_maxRows = max;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae3d934ba3eef2a969455da0c5a00841f">m_maxRows</a> = max;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
 <div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a0c2631ecd0587f3875671f3a324d1f51">  107</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a0c2631ecd0587f3875671f3a324d1f51">WBModelMenu::maxRows</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> m_maxRows;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae3d934ba3eef2a969455da0c5a00841f">m_maxRows</a>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab41ef3ac8c800cc4d62fcb66695cc5aa">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab41ef3ac8c800cc4d62fcb66695cc5aa">WBModelMenu::setFirstSeparator</a>(<span class="keywordtype">int</span> offset)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    m_firstSeparator = offset;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">m_firstSeparator</a> = offset;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#ad6ac59c5f7e1e5c52574dad3d3e02085">  117</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ad6ac59c5f7e1e5c52574dad3d3e02085">WBModelMenu::firstSeparator</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> m_firstSeparator;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">m_firstSeparator</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a506ecdcd36e1993b4a9de9394ee708b6">  122</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a506ecdcd36e1993b4a9de9394ee708b6">WBModelMenu::setRootIndex</a>(<span class="keyword">const</span> QModelIndex &amp;index)</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    m_root = index;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a19c7746cf0e2127023956d90441b9d16">m_root</a> = index;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#aaabfcf2232589eee6351a99f3a9d0b2b">  127</a></span>&#160;QModelIndex <a class="code" href="../../d9/d88/class_w_b_model_menu.html#aaabfcf2232589eee6351a99f3a9d0b2b">WBModelMenu::rootIndex</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> m_root;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a19c7746cf0e2127023956d90441b9d16">m_root</a>;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
 <div class="line"><a name="l00132"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a568a6ea3c568613fd07c54568ddd102d">  132</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a568a6ea3c568613fd07c54568ddd102d">WBModelMenu::setHoverRole</a>(<span class="keywordtype">int</span> role)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    m_hoverRole = role;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a3acd04a1f9d370ab54bd24514b99a8a0">m_hoverRole</a> = role;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#af276d2679024fb35f0aae9834c74fdf8">  137</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#af276d2679024fb35f0aae9834c74fdf8">WBModelMenu::hoverRole</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> m_hoverRole;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a3acd04a1f9d370ab54bd24514b99a8a0">m_hoverRole</a>;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
 <div class="line"><a name="l00142"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#abf82fad1d46cad36ff851ccfd2d6e85c">  142</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#abf82fad1d46cad36ff851ccfd2d6e85c">WBModelMenu::setSeparatorRole</a>(<span class="keywordtype">int</span> role)</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    m_separatorRole = role;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">m_separatorRole</a> = role;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a8d3d3100eb58e0d31c19941702602695">  147</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a8d3d3100eb58e0d31c19941702602695">WBModelMenu::separatorRole</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> m_separatorRole;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">m_separatorRole</a>;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;Q_DECLARE_METATYPE(QModelIndex)</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;void <a class="code" href="../../d9/d88/class_w_b_model_menu.html">WBModelMenu</a>::aboutToShow()</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae76e76d8f12efb51b19bc2c6ac43d5ce">  153</a></span>&#160;void <a class="code" href="../../d9/d88/class_w_b_model_menu.html">WBModelMenu</a>::aboutToShow()</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (QMenu *menu = qobject_cast&lt;QMenu*&gt;(sender())) </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
@@ -292,38 +276,38 @@ $(document).ready(function(){initNavTree('df/d4c/_w_b_model_menu_8cpp_source.htm
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        QVariant v;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        v.setValue(parent);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        menu-&gt;menuAction()-&gt;setData(v);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        connect(menu, SIGNAL(aboutToShow()), <span class="keyword">this</span>, SLOT(aboutToShow()));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        connect(menu, SIGNAL(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae76e76d8f12efb51b19bc2c6ac43d5ce">aboutToShow</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae76e76d8f12efb51b19bc2c6ac43d5ce">aboutToShow</a>()));</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> end = m_model-&gt;rowCount(parent);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> end = <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a>-&gt;rowCount(parent);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">if</span> (max != -1)</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        end = qMin(max, end);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    connect(menu, SIGNAL(triggered(QAction*)), <span class="keyword">this</span>, SLOT(triggered(QAction*)));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    connect(menu, SIGNAL(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#a982885a8cd29372bdc5af91924a39d73">triggered</a>(QAction*)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#a982885a8cd29372bdc5af91924a39d73">triggered</a>(QAction*)));</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    connect(menu, SIGNAL(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ac3383d3a239583b3963ecc967d2db62a">hovered</a>(QAction*)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ac3383d3a239583b3963ecc967d2db62a">hovered</a>(QAction*)));</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; end; ++i)</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        QModelIndex idx = m_model-&gt;index(i, 0, parent);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (m_model-&gt;hasChildren(idx))</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        QModelIndex idx = <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a>-&gt;index(i, 0, parent);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a>-&gt;hasChildren(idx))</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a9bd0e5c35608cc60b18c79d4773e54c0">createMenu</a>(idx, -1, menu);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        } </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (m_separatorRole != 0</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                &amp;&amp; idx.data(m_separatorRole).toBool())</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">m_separatorRole</a> != 0</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                &amp;&amp; idx.data(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">m_separatorRole</a>).toBool())</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                addSeparator();</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                menu-&gt;addAction(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">makeAction</a>(idx));</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span> (menu == <span class="keyword">this</span> &amp;&amp; i == m_firstSeparator - 1)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span> (menu == <span class="keyword">this</span> &amp;&amp; i == <a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">m_firstSeparator</a> - 1)</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            addSeparator();</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;QAction *<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">WBModelMenu::makeAction</a>(<span class="keyword">const</span> QModelIndex &amp;index)</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a24bae8b8b44c7c3f55ac82308eee9d2e">  220</a></span>&#160;QAction *<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">WBModelMenu::makeAction</a>(<span class="keyword">const</span> QModelIndex &amp;index)</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    QIcon icon = qvariant_cast&lt;QIcon&gt;(index.data(Qt::DecorationRole));</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    QAction *action = <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">makeAction</a>(icon, index.data().toString(), <span class="keyword">this</span>);</div>
@@ -336,13 +320,13 @@ $(document).ready(function(){initNavTree('df/d4c/_w_b_model_menu_8cpp_source.htm
 <div class="line"><a name="l00230"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">  230</a></span>&#160;QAction *<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">WBModelMenu::makeAction</a>(<span class="keyword">const</span> QIcon &amp;icon, <span class="keyword">const</span> QString &amp;text, QObject *parent)</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    QFontMetrics fm(font());</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">if</span> (-1 == m_maxWidth)</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        m_maxWidth = fm.width(QLatin1Char(<span class="charliteral">&#39;m&#39;</span>)) * 30;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    QString smallText = fm.elidedText(text, Qt::ElideMiddle, m_maxWidth);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">if</span> (-1 == <a class="code" href="../../d9/d88/class_w_b_model_menu.html#afaac03612ca2c4c1b2448fe987d242de">m_maxWidth</a>)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="../../d9/d88/class_w_b_model_menu.html#afaac03612ca2c4c1b2448fe987d242de">m_maxWidth</a> = fm.width(QLatin1Char(<span class="charliteral">&#39;m&#39;</span>)) * 30;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    QString smallText = fm.elidedText(text, Qt::ElideMiddle, <a class="code" href="../../d9/d88/class_w_b_model_menu.html#afaac03612ca2c4c1b2448fe987d242de">m_maxWidth</a>);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> QAction(icon, smallText, parent);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keywordtype">void</span> WBModelMenu::triggered(QAction *action)</div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a982885a8cd29372bdc5af91924a39d73">  239</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a982885a8cd29372bdc5af91924a39d73">WBModelMenu::triggered</a>(QAction *action)</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    QVariant v = action-&gt;data();</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (v.canConvert&lt;QModelIndex&gt;())</div>
@@ -352,28 +336,24 @@ $(document).ready(function(){initNavTree('df/d4c/_w_b_model_menu_8cpp_source.htm
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ac3383d3a239583b3963ecc967d2db62a">WBModelMenu::hovered</a>(QAction *action)</div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#acf1599e1d5858541411d9e7f06369f37">  249</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ac3383d3a239583b3963ecc967d2db62a">WBModelMenu::hovered</a>(QAction *action)</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    QVariant v = action-&gt;data();</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">if</span> (v.canConvert&lt;QModelIndex&gt;())</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        QModelIndex idx = qvariant_cast&lt;QModelIndex&gt;(v);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        QString hoveredString = idx.data(m_hoverRole).toString();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        QString hoveredString = idx.data(<a class="code" href="../../d9/d88/class_w_b_model_menu.html#a3acd04a1f9d370ab54bd24514b99a8a0">m_hoverRole</a>).toString();</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">if</span> (!hoveredString.isEmpty())</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            emit <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ac3383d3a239583b3963ecc967d2db62a">hovered</a>(hoveredString);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li><li class="navelem"><a class="el" href="../../df/d4c/_w_b_model_menu_8cpp.html">WBModelMenu.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:44 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

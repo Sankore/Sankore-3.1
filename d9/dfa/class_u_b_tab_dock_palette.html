@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d9/dfa/class_u_b_tab_dock_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d9/dfa/class_u_b_tab_dock_palette.html
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -144,7 +124,10 @@ Private Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:aa0f04264fb0827ce3eadc17a3ffea17d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfa/class_u_b_tab_dock_palette.html#aa0f04264fb0827ce3eadc17a3ffea17d">UBDockPalette</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00067">67</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6f235b1416e3461a9a34a3188037d83d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -168,6 +151,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00578">578</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                              :</div>
 <div class="line">            QWidget(parent)</div>
 <div class="line">, <a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#a50d5a34a1d3ec4f94a90e7d187709539">dock</a>(dockPalette)</div>
@@ -203,6 +188,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00660">660</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -230,6 +217,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00690">690</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPoint p = <span class="keyword">event</span>-&gt;pos();</div>
 <div class="line"></div>
@@ -315,6 +304,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00664">664</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#a50d5a34a1d3ec4f94a90e7d187709539">dock</a>-&gt;<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a70b3694376d28f25de47e1d1c5c0c958">mClickTime</a> = QTime::currentTime();</div>
 <div class="line">    <span class="comment">// The goal here is to verify if the user can resize the widget.</span></div>
@@ -364,6 +355,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00744">744</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#a50d5a34a1d3ec4f94a90e7d187709539">dock</a>-&gt;<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#aa4ccb0ada33ff1b10f9354f87df8f2f1">mResized</a> &amp;&amp; <a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#a50d5a34a1d3ec4f94a90e7d187709539">dock</a>-&gt;<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a70b3694376d28f25de47e1d1c5c0c958">mClickTime</a>.elapsed() &lt; <a class="code" href="../../df/d43/_u_b_dock_palette_8h.html#a1ed9f298793e154bad871f210b9c6f50">CLICKTIME</a>) {</div>
@@ -415,6 +408,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html#l00590">590</a> of file <a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> nTabs = <a class="code" href="../../d9/dfa/class_u_b_tab_dock_palette.html#a50d5a34a1d3ec4f94a90e7d187709539">dock</a>-&gt;<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a80ec644a3bc1740715ec00e4f26cab22">mTabWidgets</a>.size();</div>
 <div class="line">    <span class="keywordflow">if</span> (nTabs &lt;= 0) {</div>
@@ -515,6 +510,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00070">70</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <h2>Member Data Documentation</h2>
@@ -536,6 +533,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00084">84</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2d29d83d569604654f24c94422c17d42"></a>
@@ -555,6 +554,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00086">86</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
 
 </div>
 </div>
@@ -576,22 +577,20 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html#l00085">85</a> of file <a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a></li>
-<li><a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp.html">UBDockPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d43/_u_b_dock_palette_8h_source.html">UBDockPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/dc4/_u_b_dock_palette_8cpp_source.html">UBDockPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d9/dfa/class_u_b_tab_dock_palette.html">UBTabDockPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:32 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

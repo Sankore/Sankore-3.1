@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d03/_u_b_actionable_widget_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d1/d03/_u_b_actionable_widget_8cpp_sou
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b4d3489c2dfb928cc86e7253e7d6f386.html">customWidgets</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBActionableWidget.cpp</div>  </div>
@@ -142,7 +126,7 @@ $(document).ready(function(){initNavTree('d1/d03/_u_b_actionable_widget_8cpp_sou
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a38e1cace7d01e5d41830e1c62118d7c3">mCloseButtons</a>.setIcon(QIcon(QPixmap(<span class="stringliteral">&quot;:images/close.svg&quot;</span>)));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a38e1cace7d01e5d41830e1c62118d7c3">mCloseButtons</a>.setGeometry(0, 0, 2*<a class="code" href="../../d7/d31/_u_b_actionable_widget_8h.html#a668cd4fafa3b22e3f34baee2a9e3696e">ACTIONSIZE</a>, <a class="code" href="../../d7/d31/_u_b_actionable_widget_8h.html#a668cd4fafa3b22e3f34baee2a9e3696e">ACTIONSIZE</a>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a38e1cace7d01e5d41830e1c62118d7c3">mCloseButtons</a>.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    connect(&amp;<a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a38e1cace7d01e5d41830e1c62118d7c3">mCloseButtons</a>, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(onCloseClicked()));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    connect(&amp;<a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a38e1cace7d01e5d41830e1c62118d7c3">mCloseButtons</a>, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a1a3b33db1a6f8f2155e9f7e99c0ab5dd">onCloseClicked</a>()));</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a5cfc37bf9d674a1e4fee1782a6868622">   42</a></span>&#160;<a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a5cfc37bf9d674a1e4fee1782a6868622">UBActionableWidget::~UBActionableWidget</a>()</div>
@@ -176,7 +160,7 @@ $(document).ready(function(){initNavTree('d1/d03/_u_b_actionable_widget_8cpp_sou
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> UBActionableWidget::onCloseClicked()</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a1a3b33db1a6f8f2155e9f7e99c0ab5dd">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a1a3b33db1a6f8f2155e9f7e99c0ab5dd">UBActionableWidget::onCloseClicked</a>()</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    emit <a class="code" href="../../da/d07/class_u_b_actionable_widget.html#a8c6d3747f77809ba16d13b85c9ed6e67">close</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
@@ -195,15 +179,11 @@ $(document).ready(function(){initNavTree('d1/d03/_u_b_actionable_widget_8cpp_sou
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b4d3489c2dfb928cc86e7253e7d6f386.html">customWidgets</a></li><li class="navelem"><a class="el" href="../../d1/d03/_u_b_actionable_widget_8cpp.html">UBActionableWidget.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

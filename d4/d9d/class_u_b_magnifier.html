@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d4/d9d/class_u_b_magnifier.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d4/d9d/class_u_b_magnifier.html','../.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -210,7 +190,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6b654b774bedaf65db06b39abaf78168"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9d/class_u_b_magnifier.html#a6b654b774bedaf65db06b39abaf78168">gView</a></td></tr>
 <tr class="memitem:ad3e5ba067a1adff000360fea5a2c1e3f"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9d/class_u_b_magnifier.html#ad3e5ba067a1adff000360fea5a2c1e3f">mView</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00038">38</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a6c6c18c690a2b5951c96834210a48d91"></a>
 <div class="memitem">
 <div class="memproto">
@@ -230,6 +213,8 @@ Private Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00043">43</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 <div class="fragment"><div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6c6c18c690a2b5951c96834210a48d91a6a8030c25128ae93617471dc82f09230">circular</a> = 0,</div>
 <div class="line">        <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6c6c18c690a2b5951c96834210a48d91a463b5e7a719ea427222b6ffa53b38415">rectangular</a>,</div>
@@ -262,6 +247,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QWidget(parent, parent ? Qt::Widget : Qt::Tool | (Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint))</div>
 <div class="line">    , <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ade983c56155f2ab08934e39a8add9e65">mShouldMoveWidget</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a074638234ed5ecf0c5f4005dcf9263d7">mShouldResizeWidget</a>(<span class="keyword">false</span>)</div>
@@ -336,6 +323,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00087">87</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a204f74b39d6e747041e511723c68dcfe">sClosePixmap</a>)</div>
 <div class="line">    {</div>
@@ -385,6 +374,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a2652a040bd98fe55bf49d2ca705b0659">m_iButtonInterval</a> = 5;</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a846a06af56b76d504b01c425ccadfeca">mResizeItemButtonRect</a> = QRect(size().width() - 1.5*<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a61f9315c9b25c6c55a7bd49035dd9609">mResizeItem</a>-&gt;width() - <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a2652a040bd98fe55bf49d2ca705b0659">m_iButtonInterval</a>, size().height() - 1.5*<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a61f9315c9b25c6c55a7bd49035dd9609">mResizeItem</a>-&gt;height() - <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a2652a040bd98fe55bf49d2ca705b0659">m_iButtonInterval</a>, <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a61f9315c9b25c6c55a7bd49035dd9609">mResizeItem</a>-&gt;width(), <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a61f9315c9b25c6c55a7bd49035dd9609">mResizeItem</a>-&gt;height());</div>
@@ -418,6 +409,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6b654b774bedaf65db06b39abaf78168">gView</a> == NULL || <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ad3e5ba067a1adff000360fea5a2c1e3f">mView</a> == NULL) <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
@@ -489,6 +482,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00427">427</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPoint pointToGrab = pGrab;</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5">updPointGrab</a> = pointToGrab;</div>
@@ -538,6 +533,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00357">357</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMatrix transM = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>()-&gt;matrix();</div>
 <div class="line">    QPointF itemPos = <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6b654b774bedaf65db06b39abaf78168">gView</a>-&gt;mapFromGlobal(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5">updPointGrab</a>);</div>
@@ -604,6 +601,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00390">390</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMatrix transM = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>()-&gt;matrix();</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5">updPointGrab</a> = pGrab;</div>
@@ -865,6 +864,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00254">254</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a726ff880fc6615755548b04db3b160a9">m_isInteractive</a>)</div>
 <div class="line">    {</div>
@@ -939,6 +940,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00224">224</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a726ff880fc6615755548b04db3b160a9">m_isInteractive</a>)</div>
 <div class="line">    {</div>
@@ -991,6 +994,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00298">298</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a726ff880fc6615755548b04db3b160a9">m_isInteractive</a>)</div>
 <div class="line">    {</div>
@@ -1060,6 +1065,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00186">186</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
@@ -1112,6 +1119,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00451">451</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a9667ece486e5afd632e43a0e8e5f815b">mDrawingMode</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6c6c18c690a2b5951c96834210a48d91">DrawingMode</a><span class="keyword">&gt;</span>(mode);</div>
 <div class="line"></div>
@@ -1180,6 +1189,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00444">444</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6b654b774bedaf65db06b39abaf78168">gView</a> = view;</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a47b4bac573276fb55796d43336d9ff1f">mRefreshTimer</a>.setInterval(40);</div>
@@ -1219,6 +1230,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00059">59</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ad3e5ba067a1adff000360fea5a2c1e3f">mView</a> = view;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1246,6 +1259,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00114">114</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6b654b774bedaf65db06b39abaf78168">gView</a> == NULL || <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ad3e5ba067a1adff000360fea5a2c1e3f">mView</a> == NULL) <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
@@ -1310,6 +1325,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00170">170</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6f32761f0d49639be70522952a36b671">params</a>.<a class="code" href="../../de/df9/class_u_b_magnifier_params.html#a5f687058468b6b83f15955c657480bc8">zoom</a> = zoom;</div>
 <div class="line">}</div>
@@ -1346,6 +1363,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html#l00336">336</a> of file <a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5">updPointGrab</a>.isNull()))</div>
 <div class="line">        <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a473a5f6edebf14a67f0d71fba84738c8">grabPoint</a>(<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5">updPointGrab</a>);</div>
@@ -1405,6 +1424,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00120">120</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af570d0456df974dd3290edbee7adcf86"></a>
@@ -1424,6 +1445,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00121">121</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1445,6 +1468,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00123">123</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a26a82499d8b3bae09816e2f516226d43"></a>
@@ -1464,6 +1489,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00106">106</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1485,6 +1512,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00094">94</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a726ff880fc6615755548b04db3b160a9"></a>
@@ -1504,6 +1533,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00114">114</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1525,6 +1556,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00111">111</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a19c3c1f51c99c0b2cfd9e77b9591af9c"></a>
@@ -1544,6 +1577,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00090">90</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1565,6 +1600,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00089">89</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a60c46f6fa233df7c20933b68855781d8"></a>
@@ -1584,6 +1621,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00107">107</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1605,6 +1644,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00113">113</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa9896755efd6a80ade87f0581bdfe629"></a>
@@ -1624,6 +1665,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00108">108</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1645,6 +1688,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00103">103</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a846a06af56b76d504b01c425ccadfeca"></a>
@@ -1664,6 +1709,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00104">104</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1685,6 +1732,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00091">91</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a074638234ed5ecf0c5f4005dcf9263d7"></a>
@@ -1704,6 +1753,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00092">92</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1725,6 +1776,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00124">124</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6f32761f0d49639be70522952a36b671"></a>
@@ -1736,6 +1789,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00066">66</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1757,6 +1812,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00119">119</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aaef564708a8f9091c4c1e3eb6f7acb2a"></a>
@@ -1776,6 +1833,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00101">101</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1797,6 +1856,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00102">102</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a204f74b39d6e747041e511723c68dcfe"></a>
@@ -1816,6 +1877,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00095">95</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1837,6 +1900,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00096">96</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4f359c0b0f611b1baad359ba65a9d37e"></a>
@@ -1856,6 +1921,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00099">99</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1877,6 +1944,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00100">100</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a73e5c26959cfa81a511c804333e227b6"></a>
@@ -1896,6 +1965,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00097">97</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1917,6 +1988,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00098">98</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6cf6678349b3fcd3f433529112ceb8c5"></a>
@@ -1936,6 +2009,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00116">116</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
 
 </div>
 </div>
@@ -1957,22 +2032,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html#l00117">117</a> of file <a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a></li>
-<li><a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp.html">UBMagnifer.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d6/dcc/_u_b_magnifer_8h_source.html">UBMagnifer.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/d4b/_u_b_magnifer_8cpp_source.html">UBMagnifer.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d4/d9d/class_u_b_magnifier.html">UBMagnifier</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:29 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

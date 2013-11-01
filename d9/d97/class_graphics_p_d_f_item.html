@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d9/d97/class_graphics_p_d_f_item.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d9/d97/class_graphics_p_d_f_item.html'
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -147,7 +127,10 @@ Protected Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a6437afbb76389c340834ccf054ae99f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d97/class_graphics_p_d_f_item.html#a6437afbb76389c340834ccf054ae99f5">Q_INTERFACES</a> (QGraphicsItem)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html#l00032">32</a> of file <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3633a0f7f9b0764332698d48e01dcbe7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -177,6 +160,8 @@ Private Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html">GraphicsPDFItem.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(0), QGraphicsItem(parentItem)</div>
 <div class="line">    , <a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a515a4f7bc6472e2f74c403d5ce2c15d9">mRenderer</a>(renderer)</div>
 <div class="line">    , <a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a7241c7fc6a0ac3459156c1678c4ecb93">mPageNumber</a>(<a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a7d6a6f4a9eaaea2125bff9244fed220a">pageNumber</a>)</div>
@@ -216,6 +201,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html">GraphicsPDFItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a515a4f7bc6472e2f74c403d5ce2c15d9">mRenderer</a>-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a34c44ce3e92bcd62a97a0d68de320de6">detach</a>();</div>
 <div class="line">}</div>
@@ -252,6 +239,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html">GraphicsPDFItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a515a4f7bc6472e2f74c403d5ce2c15d9">mRenderer</a>-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#acd219d79f7b7235c7562a57708147cf9">isValid</a>())</div>
 <div class="line">    {</div>
@@ -301,6 +290,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html#l00047">47</a> of file <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a515a4f7bc6472e2f74c403d5ce2c15d9">mRenderer</a>-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">fileData</a>(); }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -343,6 +334,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html#l00046">46</a> of file <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a515a4f7bc6472e2f74c403d5ce2c15d9">mRenderer</a>-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">fileUuid</a>(); }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -385,6 +378,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html#l00045">45</a> of file <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a7241c7fc6a0ac3459156c1678c4ecb93">mPageNumber</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -435,6 +430,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html#l00056">56</a> of file <a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html">GraphicsPDFItem.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(widget)</div>
 <div class="line"></div>
@@ -504,6 +501,8 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html#l00051">51</a> of file <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a515a4f7bc6472e2f74c403d5ce2c15d9"></a>
@@ -524,22 +523,20 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html#l00050">50</a> of file <a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a></li>
-<li><a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp.html">GraphicsPDFItem.cpp</a></li>
+<li>Sankore-3.1/src/pdf/<a class="el" href="../../d8/d81/_graphics_p_d_f_item_8h_source.html">GraphicsPDFItem.h</a></li>
+<li>Sankore-3.1/src/pdf/<a class="el" href="../../d6/d8a/_graphics_p_d_f_item_8cpp_source.html">GraphicsPDFItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d9/d97/class_graphics_p_d_f_item.html">GraphicsPDFItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:18 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

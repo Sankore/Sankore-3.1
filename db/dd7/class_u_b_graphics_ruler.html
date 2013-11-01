@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('db/dd7/class_u_b_graphics_ruler.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('db/dd7/class_u_b_graphics_ruler.html',
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -248,7 +228,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a052023f4bc0064aa6b1cf72f4e8b1b87 inherit pro_static_attribs_class_u_b_abstract_draw_ruler"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a052023f4bc0064aa6b1cf72f4e8b1b87">sDrawTransparency</a> = 192</td></tr>
 <tr class="memitem:af6ab3c413950b0276b304a289116728e inherit pro_static_attribs_class_u_b_abstract_draw_ruler"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#af6ab3c413950b0276b304a289116728e">sRoundingRadius</a> = <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a7462cd58ac10ab7911361ac63dd8cc81">sLeftEdgeMargin</a> / 2</td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00036">36</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a6a93f15a0ae10480f1ee4b27d848fa31"></a>
 <div class="memitem">
 <div class="memproto">
@@ -264,6 +247,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00044">44</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
 <div class="fragment"><div class="line">{ <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a6a93f15a0ae10480f1ee4b27d848fa31a59bb52195bca06de6e5994df2025ae47">Type</a> = <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28ad57cd5c3576095b396adc64fe928e558">UBGraphicsItemType::RulerItemType</a> };</div>
 </div><!-- fragment -->
 </div>
@@ -281,6 +266,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00038">38</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QGraphicsRectItem()</div>
 <div class="line">    , <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a81d553b96ae430c26b4c7a2dbcc8e1c9">mResizing</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a802b3a3d41f5b6004c4928ea6e3656bc">mRotating</a>(<span class="keyword">false</span>)</div>
@@ -343,6 +330,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -370,6 +359,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00239">239</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap closePixmap(<span class="stringliteral">&quot;:/images/closeTool.svg&quot;</span>);</div>
 <div class="line"></div>
@@ -422,6 +413,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a21483eccaad22369e9fe6bca838af029">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00093">93</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a> *cp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>*<span class="keyword">&gt;</span>(copy);</div>
 <div class="line">    <span class="keywordflow">if</span> (cp)</div>
@@ -466,6 +459,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d8/d1e/class_u_b_item.html#a5ef870748a215b3f5f3218d0178b17b9">UBItem</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00082">82</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>* copy = <span class="keyword">new</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a36363baee439d09417565d2db44eb6bd">UBGraphicsRuler</a>();</div>
 <div class="line"></div>
@@ -520,6 +515,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a1995cacf2e94402170f4e094f3d752cc">UBAbstractDrawRuler</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00473">473</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPointF itemPos = mapFromScene(scenePos);</div>
 <div class="line"></div>
@@ -577,6 +574,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a8e1a28d6c4c93785ca2cee613ce04435">UBAbstractDrawRuler</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00498">498</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// We never come to this place</span></div>
 <div class="line">    <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#aa47cc19d05fdf2cd45e341fccd7d491f">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a6e04dca4d1484c4e44cc63c8a5b0e2da">inputDeviceRelease</a>();</div>
@@ -614,6 +613,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QRectF rect1(rect().topLeft(), QSizeF(rect().width(), rect().height() / 4));</div>
 <div class="line">    QLinearGradient linearGradient1(</div>
@@ -676,6 +677,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00386">386</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> currentTool = (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a> ();</div>
 <div class="line"></div>
@@ -746,6 +749,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00425">425</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a46299ed6a2cf838fdfc9e5927a0b4d4b">mShowButtons</a> = <span class="keyword">false</span>;</div>
 <div class="line">    setCursor(Qt::ArrowCursor);</div>
@@ -789,6 +794,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00278">278</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> currentTool = (<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a> ()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a> ();</div>
 <div class="line"></div>
@@ -856,6 +863,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (change == QGraphicsItem::ItemVisibleHasChanged)</div>
 <div class="line">    {</div>
@@ -890,6 +899,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00327">327</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a81d553b96ae430c26b4c7a2dbcc8e1c9">mResizing</a> &amp;&amp; !<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a802b3a3d41f5b6004c4928ea6e3656bc">mRotating</a>)</div>
 <div class="line">    {</div>
@@ -951,6 +962,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00304">304</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;pos().x() &gt; <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac1b79d2b2a3a7821123813f0529694c4">resizeButtonRect</a>().left())</div>
 <div class="line">    {</div>
@@ -1005,6 +1018,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00357">357</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a81d553b96ae430c26b4c7a2dbcc8e1c9">mResizing</a>)</div>
 <div class="line">    {</div>
@@ -1081,6 +1096,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(styleOption);</div>
 <div class="line">    Q_UNUSED(widget);</div>
@@ -1142,6 +1159,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a7d5c1375ce4433c8abbe4b0e7781d065">UBAbstractDrawRuler</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00167">167</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    painter-&gt;save();</div>
 <div class="line">    painter-&gt;setFont(<a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#aa2d644906d0527ecd64ef9d8aceed6c4">font</a>());</div>
@@ -1215,6 +1234,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    painter-&gt;drawArc(</div>
 <div class="line">        <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac2162f4d98b12ef60b5a405384c0900a">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#ac6fa2ca97290e4240571b0986de855cc">sRotationRadius</a>, <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac2162f4d98b12ef60b5a405384c0900a">rotationCenter</a>().y() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#ac6fa2ca97290e4240571b0986de855cc">sRotationRadius</a>,</div>
@@ -1262,6 +1283,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00223">223</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap resizePixmap(<span class="stringliteral">&quot;:/images/resizeRuler.svg&quot;</span>);</div>
 <div class="line">    QSizeF resizeRectSize(</div>
@@ -1308,6 +1331,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00087">87</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a51b17c352207eb97f4899510e263f221">mResizeCursor</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1342,6 +1367,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00208">208</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTransform transform;</div>
 <div class="line">    transform.translate(<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac2162f4d98b12ef60b5a405384c0900a">rotationCenter</a>().x(), <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac2162f4d98b12ef60b5a405384c0900a">rotationCenter</a>().y());</div>
@@ -1390,6 +1417,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00258">258</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap rotatePixmap(<span class="stringliteral">&quot;:/images/closeTool.svg&quot;</span>);</div>
 <div class="line"></div>
@@ -1449,6 +1478,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00217">217</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QPointF(rect().x() + <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a7462cd58ac10ab7911361ac63dd8cc81">sLeftEdgeMargin</a>, rect().y());</div>
 <div class="line">}</div>
@@ -1484,6 +1515,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00439">439</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#aa47cc19d05fdf2cd45e341fccd7d491f">QGraphicsRectItem::scene</a>());</div>
 <div class="line">}</div>
@@ -1532,6 +1565,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a62b7651d1eed188e2160343d078a837c">UBAbstractDrawRuler</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00444">444</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPointF itemPos = mapFromScene(scenePos);</div>
 <div class="line"></div>
@@ -1591,6 +1626,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00046">46</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a6a93f15a0ae10480f1ee4b27d848fa31a59bb52195bca06de6e5994df2025ae47">Type</a>;</div>
 <div class="line">        }</div>
@@ -1617,6 +1654,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPixmap pix(<span class="stringliteral">&quot;:/images/cursors/resize.png&quot;</span>);</div>
 <div class="line">    QTransform itemTransform = sceneTransform();</div>
@@ -1670,6 +1709,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00097">97</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a51b17c352207eb97f4899510e263f221"></a>
@@ -1689,6 +1730,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00095">95</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
 
 </div>
 </div>
@@ -1710,6 +1753,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00084">84</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a81d553b96ae430c26b4c7a2dbcc8e1c9"></a>
@@ -1729,6 +1774,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00074">74</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
 
 </div>
 </div>
@@ -1750,6 +1797,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00083">83</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a802b3a3d41f5b6004c4928ea6e3656bc"></a>
@@ -1769,6 +1818,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00075">75</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
 
 </div>
 </div>
@@ -1790,6 +1841,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00100">100</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a41052c1dc9a0954c0dc0074afbc5d7b6"></a>
@@ -1809,6 +1862,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00103">103</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
 
 </div>
 </div>
@@ -1830,22 +1885,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html#l00102">102</a> of file <a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a></li>
-<li><a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp.html">UBGraphicsRuler.cpp</a></li>
+<li>Sankore-3.1/src/tools/<a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h_source.html">UBGraphicsRuler.h</a></li>
+<li>Sankore-3.1/src/tools/<a class="el" href="../../db/dcd/_u_b_graphics_ruler_8cpp_source.html">UBGraphicsRuler.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:03 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:27 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

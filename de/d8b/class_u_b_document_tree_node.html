@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('de/d8b/class_u_b_document_tree_node.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('de/d8b/class_u_b_document_tree_node.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -162,7 +142,10 @@ Private Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:a67c37643a244d3a945253d93304fb8ff"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#a67c37643a244d3a945253d93304fb8ff">UBDocumentTreeModel</a></td></tr>
 </table>
-<h2>Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00085">85</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+</div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="aba3711968b28d176491608c6c451823b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -180,6 +163,8 @@ Friends</h2></td></tr>
 </table>
 </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00090">90</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">              {</div>
 <div class="line">        <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">Catalog</a> = 0</div>
 <div class="line">        , <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823bae35609de155a6945e883c32052259350">Document</a></div>
@@ -223,6 +208,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00197">197</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                                                                              :</div>
 <div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a>(pType)</div>
 <div class="line">  , <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a>(pName)</div>
@@ -257,6 +244,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00096">96</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">: <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a>(<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">Catalog</a>), <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>(0), <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>(0) {;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -282,6 +271,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00277">277</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *curChildren, <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>) {</div>
 <div class="line">        <span class="keyword">delete</span>(curChildren);</div>
@@ -307,6 +298,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00209">209</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pChild) {</div>
 <div class="line">        <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a> += pChild;</div>
@@ -345,6 +338,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00099">99</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -371,6 +366,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00251">251</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a284c9caa7e634a50c2d321b97658e5b6">UBDocumentTreeNode</a>(this-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a></div>
 <div class="line">                                  , this-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a></div>
@@ -411,6 +408,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00260">260</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString result;</div>
 <div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *curNode = <span class="keyword">this</span>;</div>
@@ -458,6 +457,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00103">103</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -494,6 +495,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00217">217</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pChild) {</div>
 <div class="line">        <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.insert(pIndex, pChild);</div>
@@ -533,6 +536,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00110">110</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> !<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -567,6 +572,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00111">111</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a> &amp;&amp; !<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -610,6 +617,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00225">225</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> childIndex = <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.indexOf(child);</div>
 <div class="line">    <span class="keywordflow">if</span> (childIndex == -1) {</div>
@@ -660,6 +669,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00102">102</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -694,6 +705,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00101">101</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -728,6 +741,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00100">100</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -761,6 +776,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00109">109</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -788,6 +805,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html#l00236">236</a> of file <a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (index &lt; 0 || index &gt; <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.count() - 1) {</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -843,6 +862,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00104">104</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a> = str; <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a> = str;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -875,6 +896,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00088">88</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <h2>Member Data Documentation</h2>
@@ -896,6 +919,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00120">120</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3e9de815fc86fd09dfb141846afe11d3"></a>
@@ -915,6 +940,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00118">118</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -936,6 +963,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00117">117</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4860dc34735836f6cde42ce08c8a5d2e"></a>
@@ -955,6 +984,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00119">119</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
 
 </div>
 </div>
@@ -976,6 +1007,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00121">121</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae44d289c425277c8d904ebb38b670355"></a>
@@ -996,22 +1029,20 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html#l00116">116</a> of file <a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp_source.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:23 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

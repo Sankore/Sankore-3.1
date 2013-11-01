@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/da6/class_w_b_web_view.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/da6/class_w_b_web_view.html','../..
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -194,7 +174,10 @@ Additional Inherited Members</h2></td></tr>
 <br/>
  }</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00105">105</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a38d6dace641501c2c5b071cc31c14cfa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -208,6 +191,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00249">249</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a317876fd51d7292ae634fd89b4b66de7">WBWebTrapWebView</a>(parent)</div>
 <div class="line">    , <a class="code" href="../../d1/da6/class_w_b_web_view.html#aac3fc35af39cbfa0e4c4ade561e5482f">mProgress</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>(<span class="keyword">new</span> <a class="code" href="../../dd/dc8/class_w_b_web_page.html">WBWebPage</a>(<span class="keyword">this</span>))</div>
@@ -273,6 +258,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00283">283</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QWebHitTestResult r = page()-&gt;mainFrame()-&gt;hitTestContent(event-&gt;pos());</div>
 <div class="line"></div>
@@ -326,6 +313,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00426">426</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d4/d1c/class_w_b_browser_window.html#a93ae86b454649b8efc8e707503693226">WBBrowserWindow::downloadManager</a>()-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0f84a26b21d560bd1b319d2fc28de045">download</a>(request);</div>
 <div class="line">}</div>
@@ -362,6 +351,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00375">375</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#ac0a59b8a5f58508cea75b67afa6c561f">mLastStatusBarText</a>;</div>
 <div class="line">}</div>
@@ -391,6 +382,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00365">365</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;loading &quot;</span> &lt;&lt; <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>.toString();</div>
 <div class="line"></div>
@@ -448,6 +441,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00431">431</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html#a4832fbab411c1e46c4c00c4300dd9a50">WBWebTrapWebView::load</a>(request, operation, body);</div>
 <div class="line">}</div>
@@ -484,6 +479,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00346">346</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (100 != <a class="code" href="../../d1/da6/class_w_b_web_view.html#aac3fc35af39cbfa0e4c4ade561e5482f">mProgress</a>)</div>
 <div class="line">    {</div>
@@ -541,6 +538,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00340">340</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html#a58ed8cb0ba9f688ec2807c54763828d8">mLoadStartTime</a>.start();</div>
 <div class="line">}</div>
@@ -579,6 +578,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../db/d78/class_w_b_web_trap_web_view.html#aee781ab6308411f503aff112b4d5c6c9">WBWebTrapWebView</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00395">395</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>-&gt;<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a68bbaf1ee72bf7b34b57c955ba3ca225">mPressedButtons</a> = <span class="keyword">event</span>-&gt;buttons();</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>-&gt;<a class="code" href="../../dd/dc8/class_w_b_web_page.html#a9fbec6ca01b2f7c89f1bd5840e150cec">mKeyboardModifiers</a> = <span class="keyword">event</span>-&gt;modifiers();</div>
@@ -611,6 +612,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../db/d78/class_w_b_web_trap_web_view.html#a40453b8f1b1ca67ee79c4874f4b15586">WBWebTrapWebView</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00403">403</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html#afd03faef9b36faf923f870674a02c522">WBWebTrapWebView::mouseReleaseEvent</a>(event);</div>
 <div class="line"></div>
@@ -655,6 +658,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00320">320</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>-&gt;<a class="code" href="../../dd/dc8/class_w_b_web_page.html#abd1ca386dd1a1028f6afec147257ec58">mOpenInNewTab</a> = <span class="keyword">true</span>;</div>
 <div class="line">    pageAction(QWebPage::OpenLinkInNewWindow)-&gt;trigger();</div>
@@ -691,6 +696,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00119">119</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#aac3fc35af39cbfa0e4c4ade561e5482f">mProgress</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -726,6 +733,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00327">327</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//qDebug() &lt;&lt; &quot;loading progress&quot; &lt;&lt; progress &lt;&lt; &quot;% in&quot; &lt;&lt; mLoadStartTime.elapsed() &lt;&lt; &quot;ms&quot;;</span></div>
 <div class="line"></div>
@@ -778,6 +787,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00418">418</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//qDebug() &lt;&lt; &quot;WebView::setStatusBarText&quot; &lt;&lt; string;</span></div>
 <div class="line"></div>
@@ -807,6 +818,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00381">381</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QUrl <a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>;</div>
 <div class="line">    <span class="keywordflow">try</span>{</div>
@@ -852,6 +865,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00111">111</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826">mPage</a>; }</div>
 </div><!-- fragment -->
 </div>
@@ -877,6 +892,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html#l00306">306</a> of file <a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (QApplication::keyboardModifiers() &amp; Qt::ControlModifier)</div>
 <div class="line">    {</div>
@@ -910,6 +927,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00139">139</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac0a59b8a5f58508cea75b67afa6c561f"></a>
@@ -929,6 +948,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00138">138</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
 
 </div>
 </div>
@@ -950,6 +971,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00142">142</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adf97c05468a7cce855e5e5eba53a0826"></a>
@@ -969,6 +992,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00141">141</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
 
 </div>
 </div>
@@ -990,22 +1015,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html#l00140">140</a> of file <a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a></li>
-<li><a class="el" href="../../d0/d19/_w_b_web_view_8cpp.html">WBWebView.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../dc/dcd/_w_b_web_view_8h_source.html">WBWebView.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d0/d19/_w_b_web_view_8cpp_source.html">WBWebView.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/da6/class_w_b_web_view.html">WBWebView</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:36 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

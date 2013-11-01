@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d33/class_u_b_features_controller.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d8/d33/class_u_b_features_controller.h
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -244,7 +224,10 @@ Private Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:a0919cf48cd624319081a39cddeb338b5"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d33/class_u_b_features_controller.html#a0919cf48cd624319081a39cddeb338b5">UBFeaturesWidget</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00261">261</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad7cbd54520c41aad81eec981e4a3132e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -258,6 +241,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00358">358</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                                 :</div>
 <div class="line">    QObject(pParentWidget)</div>
 <div class="line">    ,<a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>(0)</div>
@@ -329,6 +314,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01448">1448</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>) {</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>;</div>
@@ -373,6 +360,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01138">1138</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d9e/struct_category_data.html">CategoryData</a> destData = <a class="code" href="../../d8/d33/class_u_b_features_controller.html#ae98f808560a2988579f61f6202debbbb">getDestinationCategoryForMimeType</a>(pContentSource,sourceUrl);</div>
 <div class="line"></div>
@@ -476,6 +465,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01087">1087</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a358f3f88d1fa9e41620170d76a806f93">downloadURL</a>( item.<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>(), QString(), QPointF(), QSize(), true );</div>
 <div class="line">}</div>
@@ -513,6 +504,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01082">1082</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a358f3f88d1fa9e41620170d76a806f93">downloadURL</a>( item.<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>() );</div>
 <div class="line">}</div>
@@ -558,6 +551,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01050">1050</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString path = <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aadcb12d1a0b5c2c2fa16402443254d71">currentElement</a>.<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>().toLocalFile() + <span class="stringliteral">&quot;/&quot;</span> + name;</div>
 <div class="line"></div>
@@ -613,6 +608,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00766">766</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString filePath = <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a8592ae0251869b74f510efa3a8a9b457">fileNameFromUrl</a>( path );</div>
 <div class="line">    <span class="keywordflow">if</span> ( <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a4c74a24a3c0e7b2b04ea836b7c928219">favoriteSet</a>-&gt;find( path ) == <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a4c74a24a3c0e7b2b04ea836b7c928219">favoriteSet</a>-&gt;end() )</div>
@@ -670,6 +667,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00754">754</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (str.isNull()) {</div>
 <div class="line">        <span class="keywordflow">return</span> QString();</div>
@@ -705,6 +704,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01455">1455</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    pList-&gt;setDragDropMode( QAbstractItemView::DragDrop );</div>
 <div class="line">    pList-&gt;setSelectionMode( QAbstractItemView::ContiguousSelection );</div>
@@ -746,6 +747,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01473">1473</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    pList-&gt;setViewMode(QListView::IconMode );</div>
 <div class="line">    pList-&gt;setIconSize(QSize(<a class="code" href="../../d5/d85/class_u_b_features_widget.html#ac4514a281fca525b14a1f5c2695e7c08">UBFeaturesWidget::defaultThumbnailSize</a> - 10, <a class="code" href="../../d5/d85/class_u_b_features_widget.html#ac4514a281fca525b14a1f5c2695e7c08">UBFeaturesWidget::defaultThumbnailSize</a> - 10));</div>
@@ -796,6 +799,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00879">879</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString result;</div>
 <div class="line">    <span class="keywordtype">int</span> ind = str.lastIndexOf(<span class="stringliteral">&quot;/&quot;</span>);</div>
@@ -830,6 +835,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01316">1316</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString sourcePath = url.toLocalFile();</div>
 <div class="line"></div>
@@ -900,6 +907,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00926">926</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString lFileName = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a19522888b07624d5f7e562be99dd8a80">UBFileSystemUtils::cleanName</a>(fileName);</div>
 <div class="line">    QString bookmarkDirectory = <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aade4e1f1ad502444c2ebb3619bed1d17">bookmarkData</a>.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>().<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>().toLocalFile() + <span class="stringliteral">&quot;/&quot;</span>;</div>
@@ -986,6 +995,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00952">952</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString name = fileName;</div>
 <div class="line">    <span class="keywordflow">if</span>(name.indexOf(<span class="stringliteral">&quot;.&quot;</span>) != -1)</div>
@@ -1071,6 +1082,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00418">418</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(QFileInfo(str).exists() &amp;&amp; QFileInfo(str).isDir());</div>
 <div class="line"></div>
@@ -1124,6 +1137,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00889">889</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString thumbnailPath = path;</div>
 <div class="line">    QString mimetype = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a272b08b8f8907091333982fb53a7aa2a">UBFileSystemUtils::mimeTypeFromFileName</a>(path);</div>
@@ -1188,6 +1203,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01407">1407</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString path = url.toLocalFile();</div>
 <div class="line">    Q_ASSERT( QFileInfo( path ).exists() );</div>
@@ -1243,6 +1260,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01430">1430</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QUrl sourceUrl = pFeature.<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>();</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a22b3cc8f5af7ed86c9dd21acfb82789f">featuresModel</a>-&gt;<a class="code" href="../../d5/d7a/class_u_b_features_model.html#a73c6727d3fd9f3dc2bdb0b62ab27370c">deleteItem</a>(pFeature);</div>
@@ -1312,6 +1331,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00314">314</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <span class="charliteral">&#39;:&#39;</span>;}</div>
 </div><!-- fragment -->
 </div>
@@ -1337,6 +1358,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00796">796</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = url.toString();</div>
 <div class="line">    <span class="keywordflow">if</span> ( fileName.contains( <span class="stringliteral">&quot;uniboardTool://&quot;</span> ) )</div>
@@ -1376,6 +1399,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00805">805</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFileInfo fileInfo(path);</div>
 <div class="line"></div>
@@ -1457,6 +1482,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00281">281</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aade4e1f1ad502444c2ebb3619bed1d17">bookmarkData</a>.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1473,8 +1500,7 @@ Friends</h2></td></tr>
 <div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-31-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_abb0390432dc2882dbed454e9ee748561_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_abb0390432dc2882dbed454e9ee748561_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1500,6 +1526,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00278">278</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aadcb12d1a0b5c2c2fa16402443254d71">currentElement</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -1527,6 +1555,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01098">1098</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ( pMmimeType.contains(<span class="stringliteral">&quot;audio&quot;</span>) )</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a96885273da6eef4ead9cdd4134581e15">audiosData</a>;</div>
@@ -1578,6 +1608,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01092">1092</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString mimetype = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a272b08b8f8907091333982fb53a7aa2a">UBFileSystemUtils::mimeTypeFromFileName</a>( url.toString() );</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#ae98f808560a2988579f61f6202debbbb">getDestinationCategoryForMimeType</a>(mimetype);</div>
@@ -1626,6 +1658,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01272">1272</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">//    QSortFilterProxyModel *model = qobject_cast&lt;QSortFilterProxyModel *&gt;(pOnView-&gt;model());</span></div>
 <div class="line">    QAbstractItemModel *model = 0;</div>
@@ -1669,6 +1703,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01126">1126</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString videoPickerWidgetPath;</div>
 <div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> curFeature, *<a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>)</div>
@@ -1711,6 +1747,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00271">271</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>;}</div>
 </div><!-- fragment -->
 </div>
@@ -1727,6 +1765,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01029">1029</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QStringList strList;</div>
 <div class="line"></div>
@@ -1761,7 +1801,7 @@ Friends</h2></td></tr>
 <div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-38-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a2138108a0bc480221b0344b015b53a28_icgraph.svg" width="662" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a2138108a0bc480221b0344b015b53a28_icgraph.svg" width="662" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -1799,6 +1839,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00847">847</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pFType == <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674fa0392c3a4bd4f52e04de1e0ba3ef540e9">FEATURE_FOLDER</a>) {</div>
 <div class="line">        <span class="keywordflow">return</span> QImage(<span class="stringliteral">&quot;:images/libpalette/folder.svg&quot;</span>);</div>
@@ -1870,6 +1912,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00282">282</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a600c5ec46102f01204da3af436b51cc3">rootData</a>.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1886,8 +1930,7 @@ Friends</h2></td></tr>
 <div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-42-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a0a9c0304c92a91b82776b1df2c7965f8_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a0a9c0304c92a91b82776b1df2c7965f8_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1913,6 +1956,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00280">280</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a2a5e91b0b4a93ba5b1b293c3e7b4f170">trashData</a>.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>(); }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1949,6 +1994,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00921">921</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aac768032f25aac61193518cfc41b73c7">importImage</a>(image, <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aadcb12d1a0b5c2c2fa16402443254d71">currentElement</a>, fileName);</div>
 <div class="line">}</div>
@@ -1993,6 +2040,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00997">997</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString mFileName = fileName;</div>
 <div class="line">    QString filePath;</div>
@@ -2047,6 +2096,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00431">431</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a600c5ec46102f01204da3af436b51cc3">rootData</a> = <a class="code" href="../../d2/d9e/struct_category_data.html">CategoryData</a>(<a class="code" href="../../d5/d32/struct_category_data_1_1_path_data.html">CategoryData::PathData</a>() <span class="comment">//Static library paths for root category. Scanning data</span></div>
 <div class="line">                            .insertr(<a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030aacf2d83eb1af825781eb7b471bf6e25b8">CategoryData::Library</a>, QUrl())</div>
@@ -2286,6 +2337,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01437">1437</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> url.toLocalFile().startsWith(<a class="code" href="../../d8/d33/class_u_b_features_controller.html#a2a5e91b0b4a93ba5b1b293c3e7b4f170">trashData</a>.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>().<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>().toLocalFile());</div>
 <div class="line">}</div>
@@ -2321,6 +2374,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00668">668</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a4c74a24a3c0e7b2b04ea836b7c928219">favoriteSet</a> = <span class="keyword">new</span> QSet&lt;QUrl&gt;();</div>
 <div class="line">    QFile file( <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">UBSettings::userDataDirectory</a>() + <span class="stringliteral">&quot;/favorites.dat&quot;</span> );</div>
@@ -2371,6 +2426,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00638">638</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>-&gt;clear();</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>-&gt;append(<a class="code" href="../../d8/d33/class_u_b_features_controller.html#a600c5ec46102f01204da3af436b51cc3">rootData</a>.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>());</div>
@@ -2476,6 +2533,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01353">1353</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString sourcePath = url.toLocalFile();</div>
 <div class="line"></div>
@@ -2572,6 +2631,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01209">1209</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString sourcePath = url.toLocalFile();</div>
 <div class="line"></div>
@@ -2646,6 +2707,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01441">1441</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a22b3cc8f5af7ed86c9dd21acfb82789f">featuresModel</a>-&gt;<a class="code" href="../../d5/d7a/class_u_b_features_model.html#ad30ab5e1a702838c8664cbfcebad1606">moveData</a>(feature, <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a2a5e91b0b4a93ba5b1b293c3e7b4f170">trashData</a>.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>(), Qt::MoveAction, deleteManualy);</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#ac441a13d4bfca4a13e712cce6857bffc">removeFromFavorite</a>(feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>(), <span class="keyword">true</span>);</div>
@@ -2693,6 +2756,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00307">307</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aadcb12d1a0b5c2c2fa16402443254d71">currentElement</a>.<a class="code" href="../../db/d98/class_u_b_feature.html#a4569d58d046487e2c641b775cad183d1">isFolder</a>() &amp;&amp; <a class="code" href="../../d8/d33/class_u_b_features_controller.html#aadcb12d1a0b5c2c2fa16402443254d71">currentElement</a>.<a class="code" href="../../db/d98/class_u_b_feature.html#a0409ed3573ae447f8e56f77f7975d8b0">testPermissions</a>(<a class="code" href="../../db/d98/class_u_b_feature.html#a7fb84a230f92260b4a29261329ad4180ab9f45fdbdf71b8829ec8d9aff2e445af">UBFeature::WRITE_P</a>);}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2728,6 +2793,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01309">1309</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a9e015bad418bbe94d4f09092f98f4104">featuresProxyModel</a>-&gt;invalidate();</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a969588960a2beb4353c782bcfc43bdb6">featuresSearchModel</a>-&gt;invalidate();</div>
@@ -2768,6 +2835,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00783">783</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ( <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a4c74a24a3c0e7b2b04ea836b7c928219">favoriteSet</a>-&gt;find( path ) != <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a4c74a24a3c0e7b2b04ea836b7c928219">favoriteSet</a>-&gt;end() )</div>
 <div class="line">    {</div>
@@ -2812,6 +2881,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01250">1250</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a22b3cc8f5af7ed86c9dd21acfb82789f">featuresModel</a>-&gt;<a class="code" href="../../d5/d7a/class_u_b_features_model.html#ac1a9616cd7288cc26b27fc6a8dbf04a4">removeRows</a>(0, <a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>-&gt;count());</div>
 <div class="line"></div>
@@ -2860,6 +2931,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00687">687</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFile file( <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">UBSettings::userDataDirectory</a>() + <span class="stringliteral">&quot;/favorites.dat&quot;</span> );</div>
 <div class="line">    file.resize(0);</div>
@@ -2978,6 +3051,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00398">398</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;CategoryData&gt; computingData;</div>
 <div class="line"></div>
@@ -3105,6 +3180,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01292">1292</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pattern.isEmpty()) {</div>
 <div class="line"></div>
@@ -3153,6 +3230,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00279">279</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 <div class="fragment"><div class="line">{<a class="code" href="../../d8/d33/class_u_b_features_controller.html#aadcb12d1a0b5c2c2fa16402443254d71">currentElement</a> = elem;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-75" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -3160,8 +3239,7 @@ Friends</h2></td></tr>
 <div id="dynsection-75-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-75-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a88dfa57014eceb1712c1137947ebe71d_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a88dfa57014eceb1712c1137947ebe71d_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3180,6 +3258,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l01259">1259</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a9e015bad418bbe94d4f09092f98f4104">featuresProxyModel</a>-&gt;setFilterFixedString(pSiftValue);</div>
 <div class="line">    <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a9e015bad418bbe94d4f09092f98f4104">featuresProxyModel</a>-&gt;invalidate();</div>
@@ -3206,8 +3286,7 @@ Friends</h2></td></tr>
 <div id="dynsection-77-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-77-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a1ae7daa901929765eb70c6afdbad6063_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d33/class_u_b_features_controller_a1ae7daa901929765eb70c6afdbad6063_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -3250,6 +3329,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html#l00701">701</a> of file <a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6">featuresList</a>);</div>
 <div class="line"></div>
@@ -3341,6 +3422,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00263">263</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <h2>Member Data Documentation</h2>
@@ -3354,6 +3437,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00328">328</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a96885273da6eef4ead9cdd4134581e15"></a>
@@ -3366,6 +3451,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00325">325</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aade4e1f1ad502444c2ebb3619bed1d17"></a>
@@ -3377,6 +3464,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00336">336</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3398,6 +3487,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00364">364</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aadcb12d1a0b5c2c2fa16402443254d71"></a>
@@ -3418,6 +3509,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00379">379</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a71500c59720c4ce5778bc8cf3bf04510"></a>
@@ -3430,6 +3523,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00339">339</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a252e15cb9fd4a8957f690451517f19d8"></a>
@@ -3441,6 +3536,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00332">332</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3462,6 +3559,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00381">381</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adfa8536255a27666bf1948ca7d3f69e6"></a>
@@ -3481,6 +3580,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00376">376</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3502,6 +3603,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00359">359</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2a167cf54e8fc418f9236089c8de5f9e"></a>
@@ -3521,6 +3624,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00362">362</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3542,6 +3647,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00360">360</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a969588960a2beb4353c782bcfc43bdb6"></a>
@@ -3562,6 +3669,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00361">361</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a93ba08c8e20249435c29fcf20a1e8a6e"></a>
@@ -3574,6 +3683,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00329">329</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a937e5247cebfecd14f7add2f56f35598"></a>
@@ -3585,6 +3696,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00331">331</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3606,6 +3719,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00356">356</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2ec9988c01ecd1cc57994aee3e83012c"></a>
@@ -3625,6 +3740,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00365">365</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3646,6 +3763,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00378">378</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="adefa77cdfc7ce7724827260d27276a6b"></a>
@@ -3657,6 +3776,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00326">326</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3678,6 +3799,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00357">357</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a81f11d3b273515a82f278a85818229f3"></a>
@@ -3689,6 +3812,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00327">327</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3702,6 +3827,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00324">324</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9618c1741e96d986554d89c89448f709"></a>
@@ -3713,6 +3840,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00330">330</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3726,6 +3855,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00338">338</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2a5e91b0b4a93ba5b1b293c3e7b4f170"></a>
@@ -3737,6 +3868,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00334">334</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3758,6 +3891,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00317">317</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa1716f370611e4e5de267ed6d0d6f0fd"></a>
@@ -3769,6 +3904,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00335">335</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
 
 </div>
 </div>
@@ -3782,22 +3919,20 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html#l00333">333</a> of file <a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a></li>
-<li><a class="el" href="../../d1/d76/_u_b_features_controller_8cpp.html">UBFeaturesController.cpp</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../d1/d76/_u_b_features_controller_8cpp_source.html">UBFeaturesController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d8/d33/class_u_b_features_controller.html">UBFeaturesController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:24 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

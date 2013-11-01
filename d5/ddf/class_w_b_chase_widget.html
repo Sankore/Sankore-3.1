@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/ddf/class_w_b_chase_widget.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d5/ddf/class_w_b_chase_widget.html','.
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -149,7 +129,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a099510e384fbb0308133616a57163542"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/class_w_b_chase_widget.html#a099510e384fbb0308133616a57163542">mPixmap</a></td></tr>
 <tr class="memitem:a0b21262bccd80caca3a6518ff4cf3786"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/class_w_b_chase_widget.html#a0b21262bccd80caca3a6518ff4cf3786">mPixmapEnabled</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00071">71</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1f4ca896fa8124b09ce3f925bda88c95"></a>
 <div class="memitem">
 <div class="memproto">
@@ -179,6 +162,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00071">71</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
 <div class="line">    , <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a51fe491cabe20fc92240c3ef65bd2d08">mSegment</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a6e51ee95a7dd78da2d528edfeaa0a144">mDelay</a>(100)</div>
@@ -215,6 +200,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00156">156</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> index = ((seg + <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a51fe491cabe20fc92240c3ef65bd2d08">mSegment</a>) % <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a79c69ef1f2e47c3cad0d147c67ee974a">segmentCount</a>());</div>
 <div class="line">    <span class="keywordtype">int</span> comp = qMax(0, 255 - (index * (255 / <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a79c69ef1f2e47c3cad0d147c67ee974a">segmentCount</a>())));</div>
@@ -262,6 +249,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    QPainter p(<span class="keyword">this</span>);</div>
@@ -326,6 +315,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> 360 / <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a0c7d8ebefc610cbcce53f7f5aa926492">mStep</a>;</div>
 <div class="line">}</div>
@@ -354,6 +345,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00085">85</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a680a50725286a04d52e8b3bff9db190a">mAnimated</a> == value)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -395,6 +388,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00170">170</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#a0b21262bccd80caca3a6518ff4cf3786">mPixmapEnabled</a> = enable;</div>
 <div class="line">}</div>
@@ -413,6 +408,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QSize(32, 32);</div>
 <div class="line">}</div>
@@ -440,6 +437,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;timerId() == <a class="code" href="../../d5/ddf/class_w_b_chase_widget.html#acb6b3f4d802a402426a4ee0de86b0f83">mTimerID</a>) </div>
 <div class="line">    {</div>
@@ -470,6 +469,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00093">93</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6e51ee95a7dd78da2d528edfeaa0a144"></a>
@@ -489,6 +490,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00090">90</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
 
 </div>
 </div>
@@ -510,6 +513,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00094">94</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0b21262bccd80caca3a6518ff4cf3786"></a>
@@ -529,6 +534,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00095">95</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
 
 </div>
 </div>
@@ -550,6 +557,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00089">89</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0c7d8ebefc610cbcce53f7f5aa926492"></a>
@@ -569,6 +578,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00091">91</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
 
 </div>
 </div>
@@ -590,22 +601,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html#l00092">92</a> of file <a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a></li>
-<li><a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp.html">WBChaseWidget.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../dc/dc1/_w_b_chase_widget_8h_source.html">WBChaseWidget.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d5/d07/_w_b_chase_widget_8cpp_source.html">WBChaseWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d5/ddf/class_w_b_chase_widget.html">WBChaseWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:35 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

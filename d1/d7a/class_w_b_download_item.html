@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/d7a/class_w_b_download_item.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/d7a/class_w_b_download_item.html','
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -167,7 +147,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aea0a0db930b3957c1b2fe23ca32cdea7"><td class="memItemLeft" align="right" valign="top">QTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7a/class_w_b_download_item.html#aea0a0db930b3957c1b2fe23ca32cdea7">mDownloadTime</a></td></tr>
 <tr class="memitem:afe5a6d4c558d077007cd5e1aa253cd88"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7a/class_w_b_download_item.html#afe5a6d4c558d077007cd5e1aa253cd88">mCustomDownloadPath</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00074">74</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae98363fcd3077100e78b528eb931efbf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -206,6 +189,8 @@ Private Attributes</h2></td></tr>
 
 <p>DownloadItem is a widget that is displayed in the download manager list. </p>
 <p>It moves the data from the QNetworkReply into the QFile as well as update the information/progressbar and report errors. </p>
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
 <div class="line">    , <a class="code" href="../../d1/d7a/class_w_b_download_item.html#a2c41d2e38b2be81d4cb4d6565a339fda">m_reply</a>(reply)</div>
 <div class="line">    , <a class="code" href="../../d1/d7a/class_w_b_download_item.html#a57bd92aee1df165f1f0526b8c10b4613">mRequestFileName</a>(requestFileName)</div>
@@ -259,6 +244,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00353">353</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString unit;</div>
 <div class="line">    <span class="keywordflow">if</span> (size &lt; 1024)</div>
@@ -298,6 +285,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00377">377</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (stopButton-&gt;isHidden() &amp;&amp; tryAgainButton-&gt;isHidden());</div>
 <div class="line">}</div>
@@ -325,6 +314,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00371">371</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (progressBar-&gt;isVisible());</div>
 <div class="line">}</div>
@@ -371,6 +362,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00288">288</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d7a/class_w_b_download_item.html#a2c86dbdf335a9058bd2f361fbc894981">mBytesReceived</a> = bytesReceived;</div>
 <div class="line">    <span class="keywordflow">if</span> (bytesTotal == -1)</div>
@@ -424,6 +417,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00240">240</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d7a/class_w_b_download_item.html#a57bd92aee1df165f1f0526b8c10b4613">mRequestFileName</a> &amp;&amp; <a class="code" href="../../d1/d7a/class_w_b_download_item.html#a1694a95d565679f7d12285b697ccf839">m_output</a>.fileName().isEmpty())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -496,6 +491,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00273">273</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;DownloadItem::error&quot;</span> &lt;&lt; <a class="code" href="../../d1/d7a/class_w_b_download_item.html#a2c41d2e38b2be81d4cb4d6565a339fda">m_reply</a>-&gt;errorString() &lt;&lt; <a class="code" href="../../d1/d7a/class_w_b_download_item.html#ac9f3934c2505e3ceb68fb330a8702493">m_url</a>;</div>
 <div class="line">    downloadInfoLabel-&gt;setText(tr(<span class="stringliteral">&quot;Network Error: %1&quot;</span>).arg(<a class="code" href="../../d1/d7a/class_w_b_download_item.html#a2c41d2e38b2be81d4cb4d6565a339fda">m_reply</a>-&gt;errorString()));</div>
@@ -534,6 +531,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00383">383</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    progressBar-&gt;hide();</div>
 <div class="line">    stopButton-&gt;setEnabled(<span class="keyword">false</span>);</div>
@@ -590,6 +589,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00140">140</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QSettings settings;</div>
 <div class="line">    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;downloadmanager&quot;</span>));</div>
@@ -660,6 +661,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00105">105</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d1/d7a/class_w_b_download_item.html#a2c41d2e38b2be81d4cb4d6565a339fda">m_reply</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -734,6 +737,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00282">282</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;DownloadItem::metaDataChanged: not handled.&quot;</span>;</div>
 <div class="line">}</div>
@@ -769,6 +774,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00210">210</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    QUrl url = QUrl::fromLocalFile(<a class="code" href="../../d1/d7a/class_w_b_download_item.html#a1694a95d565679f7d12285b697ccf839">m_output</a>.fileName());</div>
@@ -807,6 +814,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Move this function into QNetworkReply to also get file name sent from the server</span></div>
 <div class="line">    QString path = <a class="code" href="../../d1/d7a/class_w_b_download_item.html#ac9f3934c2505e3ceb68fb330a8702493">m_url</a>.path();</div>
@@ -894,6 +903,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00198">198</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    setUpdatesEnabled(<span class="keyword">false</span>);</div>
 <div class="line">    stopButton-&gt;setEnabled(<span class="keyword">false</span>);</div>
@@ -935,6 +946,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00218">218</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!tryAgainButton-&gt;isEnabled())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -995,6 +1008,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html#l00303">303</a> of file <a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d7a/class_w_b_download_item.html#a2c41d2e38b2be81d4cb4d6565a339fda">m_reply</a>-&gt;error() == QNetworkReply::NoError)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -1074,6 +1089,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00088">88</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2c41d2e38b2be81d4cb4d6565a339fda"></a>
@@ -1086,6 +1103,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00089">89</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac9f3934c2505e3ceb68fb330a8702493"></a>
@@ -1097,6 +1116,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00086">86</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
 
 </div>
 </div>
@@ -1118,6 +1139,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00111">111</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afe5a6d4c558d077007cd5e1aa253cd88"></a>
@@ -1137,6 +1160,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00113">113</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
 
 </div>
 </div>
@@ -1158,6 +1183,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00112">112</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a57bd92aee1df165f1f0526b8c10b4613"></a>
@@ -1178,22 +1205,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html#l00110">110</a> of file <a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a></li>
-<li><a class="el" href="../../d1/d12/_w_b_download_manager_8cpp.html">WBDownloadManager.cpp</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a></li>
+<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d1/d12/_w_b_download_manager_8cpp_source.html">WBDownloadManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/d7a/class_w_b_download_item.html">WBDownloadItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:35 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('db/d32/classmerge__lib_1_1_page.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,11 @@ $(document).ready(function(){initNavTree('db/d32/classmerge__lib_1_1_page.html',
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -150,7 +134,10 @@ Friends</h2></td></tr>
 <tr class="memitem:ab80291af9c262f63b83fa9c16f12014d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#ab80291af9c262f63b83fa9c16f12014d">Parser</a></td></tr>
 <tr class="memitem:ae6313e6ba562663368267af32ecf3ac0"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#ae6313e6ba562663368267af32ecf3ac0">PageElementsFactory</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00037">37</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa52175576e1fb031ce196e6c15a5f6ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -164,6 +151,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00048">48</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">                                 : <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>(NULL),<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cea08954203665f181dbe464fd3ac3d">_pageNumber</a>(pageNumber), <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cbb195dbb991cb2fa46c03bd6189f6c">_rotation</a>(0)</div>
 <div class="line">{</div>
 <div class="line"></div>
@@ -183,6 +172,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00055">55</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -263,6 +254,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00398">398</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   std::string content(<span class="stringliteral">&quot;&lt;&lt;\n/Type /Page\n&quot;</span>);   </div>
 <div class="line">   content.append(<span class="stringliteral">&quot;/Contents &quot;</span>);</div>
@@ -326,8 +319,7 @@ Friends</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ae56102e8ba506d0ee2f2b28ad8e2cbdf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ae56102e8ba506d0ee2f2b28ad8e2cbdf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -373,6 +365,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00084">84</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{   </div>
 <div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeParent = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Parent&quot;</span>);</div>
 <div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeBleedBox = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/BleedBox&quot;</span>);</div>
@@ -462,6 +456,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
 <div class="line">}</div>
@@ -497,6 +493,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00046">46</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cea08954203665f181dbe464fd3ac3d">_pageNumber</a>;</div>
 <div class="line">      }</div>
@@ -515,6 +513,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00066">66</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aab580190b963beb33f2ad2c5241a9605">getChildren</a>();</div>
 <div class="line">}</div>
@@ -565,6 +565,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00466">466</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{   </div>
 <div class="line">   <span class="keywordflow">if</span>( sourcePage == NULL )</div>
 <div class="line">   {</div>
@@ -676,8 +678,7 @@ Friends</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -721,6 +722,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * xObject = (isCloneNeeded) ? <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ae2b09666b49e415642bd168fa5d76ba2">getClone</a>(allObjects) : <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>;</div>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">_pageToXObject</a>(xObject, annots);</div>
@@ -759,6 +762,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/dfc/_page_8cpp_source.html#l00072">72</a> of file <a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a54aaa67b196c1ee3f75fcb2b5b45c4d7">recalculateObjectNumbers</a>(newNumber);</div>
 <div class="line">}</div>
@@ -795,6 +800,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00056">56</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
 <div class="fragment"><div class="line">      {</div>
 <div class="line">         <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cbb195dbb991cb2fa46c03bd6189f6c">_rotation</a> = rotation;</div>
 <div class="line">      }</div>
@@ -829,6 +836,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00040">40</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab80291af9c262f63b83fa9c16f12014d"></a>
@@ -848,6 +857,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00039">39</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
 
 </div>
 </div>
@@ -870,6 +881,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00076">76</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4fcd514536caea527b197653e5ac04cf"></a>
@@ -889,6 +902,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00075">75</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
 
 </div>
 </div>
@@ -910,22 +925,20 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/ded/_page_8h_source.html#l00077">77</a> of file <a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a></li>
-<li><a class="el" href="../../d7/dfc/_page_8cpp.html">Page.cpp</a></li>
+<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a></li>
+<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d7/dfc/_page_8cpp_source.html">Page.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:37 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

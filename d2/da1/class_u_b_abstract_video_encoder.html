@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d2/da1/class_u_b_abstract_video_encoder.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d2/da1/class_u_b_abstract_video_encode
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -167,7 +147,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a08ceed682bfc2b804f1c1c4849b6e441"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a></td></tr>
 <tr class="memitem:a4f1220f87f0ee6e2e65c22c02adb9eb3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00029">29</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab9656acba80cfe74980b16dc90423b73"></a>
 <div class="memitem">
 <div class="memproto">
@@ -181,6 +164,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp_source.html">UBAbstractVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
 <div class="line">    , <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a>(10)</div>
 <div class="line">    , <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a>(640, 480)</div>
@@ -212,6 +197,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp_source.html#l00038">38</a> of file <a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp_source.html">UBAbstractVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -272,6 +259,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00100">100</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a>;</div>
 <div class="line">        }</div>
@@ -309,6 +298,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a15d2ae84e27fc9156ae662ae05e1a316">UBWindowsMediaVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00045">45</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 </div><!-- fragment -->
 </div>
@@ -390,6 +381,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00056">56</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a>;</div>
 <div class="line">        }</div>
@@ -463,6 +456,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac5cf17870ab8834c45ae80155743daf7">UBWindowsMediaVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp_source.html#l00044">44</a> of file <a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp_source.html">UBAbstractVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(pLabel);</div>
 <div class="line">    Q_UNUSED(timestamp);</div>
@@ -528,6 +523,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a58feb0ad63b6e980b77e5a7cd9392f7c">UBWindowsMediaVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00041">41</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 </div><!-- fragment -->
 </div>
@@ -553,6 +550,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00095">95</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a> = pAudioRecordingDevice;</div>
 <div class="line">        }</div>
@@ -580,6 +579,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00051">51</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a> = pFps;</div>
 <div class="line">        }</div>
@@ -633,6 +634,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00088">88</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a> = pVideoBitsPerSecond;</div>
 <div class="line">        }</div>
@@ -660,6 +663,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00063">63</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a> = pFileName;</div>
 <div class="line">        }</div>
@@ -687,6 +692,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00073">73</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a> = pSize;</div>
 <div class="line">        }</div>
@@ -765,6 +772,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ae4d2d6fbc01e62141279fd17f8f89e76">UBWindowsMediaVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00043">43</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 </div><!-- fragment -->
 </div>
@@ -789,6 +798,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00083">83</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a>;</div>
 <div class="line">        }</div>
@@ -849,6 +860,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00068">68</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a>;</div>
 <div class="line">        }</div>
@@ -884,6 +897,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00078">78</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a>;</div>
 <div class="line">        }</div>
@@ -918,6 +933,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00125">125</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3cbb147dfef3dae714c55cdb023e2a2e"></a>
@@ -937,6 +954,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00117">117</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 
 </div>
 </div>
@@ -958,6 +977,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00123">123</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a29134295e5cc5d5d6f6198cb42698696"></a>
@@ -977,6 +998,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00119">119</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
 
 </div>
 </div>
@@ -998,22 +1021,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html#l00121">121</a> of file <a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a></li>
-<li><a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp.html">UBAbstractVideoEncoder.cpp</a></li>
+<li>Sankore-3.1/src/podcast/<a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a></li>
+<li>Sankore-3.1/src/podcast/<a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp_source.html">UBAbstractVideoEncoder.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html">UBAbstractVideoEncoder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:18 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

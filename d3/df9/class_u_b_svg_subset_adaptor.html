@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d3/df9/class_u_b_svg_subset_adaptor.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d3/df9/class_u_b_svg_subset_adaptor.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -175,7 +155,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:ad7d9be3374692254bd49ff26eb919f0e"><td class="memItemLeft" align="right" valign="top">static QMap&lt; QString, <br class="typebreak"/>
 <a class="el" href="../../d6/d6d/class_i_data_storage.html">IDataStorage</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad7d9be3374692254bd49ff26eb919f0e">additionalElementToStore</a></td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00056">56</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af49c7f7f588205e3835e71eb80fa93ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -196,6 +179,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00060">60</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 <div class="fragment"><div class="line">{;}</div>
 </div><!-- fragment -->
 </div>
@@ -220,6 +205,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00061">61</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 <div class="fragment"><div class="line">{;}</div>
 </div><!-- fragment -->
 </div>
@@ -256,6 +243,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00235">235</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(domName.isEmpty() || <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad7d9be3374692254bd49ff26eb919f0e">additionalElementToStore</a>.contains(domName)){</div>
 <div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Error adding the element that should persist&quot;</span>;</div>
@@ -298,6 +287,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l03331">3331</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>(); i++)</div>
 <div class="line">    {</div>
@@ -337,8 +328,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_a07f94632e63e37cbbbb6c7436cfcac52_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_a07f94632e63e37cbbbb6c7436cfcac52_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -365,6 +355,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l03367">3367</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>(); i++)</div>
 <div class="line">    {</div>
@@ -402,8 +394,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_a394ed7be5d0e0bad50fbde7901e27df6_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_a394ed7be5d0e0bad50fbde7901e27df6_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -430,6 +421,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00113">113</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QMatrix matrix;</div>
 <div class="line">    QString ts = transform;</div>
@@ -482,6 +475,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00077">77</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 <div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad7d9be3374692254bd49ff26eb919f0e">additionalElementToStore</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -527,6 +522,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00252">252</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, pageIndex);</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;loading scene from&quot;</span> &lt;&lt; fileName;</div>
@@ -602,6 +599,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00324">324</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    UBSvgSubsetReader reader(proxy, <a class="code" href="../../d0/d84/class_u_b_text_tools.html#a5c04a61a545324435217007c82eb24dc">UBTextTools::cleanHtmlCData</a>(QString(pArray)).toAscii());</div>
 <div class="line">    <span class="keywordflow">return</span> reader.loadScene();</div>
@@ -649,6 +648,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00161">161</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>,pPageIndex);</div>
 <div class="line"></div>
@@ -727,6 +728,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l01160">1160</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    UBSvgSubsetWriter writer(proxy, pScene, pageIndex);</div>
 <div class="line">    writer.persistScene(pageIndex);</div>
@@ -737,8 +740,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_ae0246b7ed5045d7515cad861681d7db0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_ae0246b7ed5045d7515cad861681d7db0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -775,6 +777,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00331">331</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754">selectedDocument</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, sceneIndex);</div>
 <div class="line">    QFile file(fileName);</div>
@@ -845,6 +849,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00277">277</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, pageIndex);</div>
 <div class="line"></div>
@@ -938,6 +944,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00184">184</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>,pageIndex);</div>
 <div class="line"></div>
@@ -1029,6 +1037,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00101">101</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;matrix(%1, %2, %3, %4, %5, %6)&quot;</span>)</div>
 <div class="line">           .arg(matrix.m11(), 0 , <span class="charliteral">&#39;g&#39;</span>)</div>
@@ -1072,6 +1082,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00246">246</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> mFileVersion &gt;= 40200 ? <a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a> : <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a7fa236f23e7b67c56ede5a39cf49816b">sFormerUniboardDocumentNamespaceUri</a>;</div>
 <div class="line">}</div>
@@ -1118,6 +1130,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//4.2</span></div>
 <div class="line">    QDomDocument doc = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#addadbf262bd3c1756cd1b208e53c2c7a">loadSceneDocument</a>(proxy, pageIndex);</div>
@@ -1138,8 +1152,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_a1b3ee698579691325ecae28700a02798_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/df9/class_u_b_svg_subset_adaptor_a1b3ee698579691325ecae28700a02798_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1164,6 +1177,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00105">105</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a407409ee2324e304a9c2404eb8965b05"></a>
@@ -1183,6 +1198,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00079">79</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -1204,6 +1221,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00082">82</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3448a034e9c845f9c0ce1c3c87f8cc77"></a>
@@ -1223,6 +1242,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00081">81</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -1244,6 +1265,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00080">80</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ade20b66dff8586c2a270fc0ec0e37140"></a>
@@ -1263,6 +1286,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00086">86</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -1284,6 +1309,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00089">89</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac9df97e19b9bfd3de1064adae0b371f8"></a>
@@ -1303,6 +1330,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00088">88</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -1324,6 +1353,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00100">100</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3d5cad8803cfd188f7849d59d6bd6d9c"></a>
@@ -1343,6 +1374,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00087">87</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -1364,6 +1397,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00084">84</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad5460226f2e1c56cd3b7db062fe7c0da"></a>
@@ -1384,22 +1419,20 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html#l00083">83</a> of file <a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a></li>
-<li><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html">UBSvgSubsetAdaptor.cpp</a></li>
+<li>Sankore-3.1/src/adaptors/<a class="el" href="../../da/d90/_u_b_svg_subset_adaptor_8h_source.html">UBSvgSubsetAdaptor.h</a></li>
+<li>Sankore-3.1/src/adaptors/<a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html">UBSvgSubsetAdaptor.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d3/df9/class_u_b_svg_subset_adaptor.html">UBSvgSubsetAdaptor</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:32 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

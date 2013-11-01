@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/db9/class_u_b_create_link_palette.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('df/db9/class_u_b_create_link_palette.h
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
@@ -220,7 +200,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa60468f6497774009446c5761ab73fd0 inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#aa60468f6497774009446c5761ab73fd0">sLayoutContentMargin</a> = 12</td></tr>
 <tr class="memitem:ac78ed632e01f218be6aa7201e0ac4e3f inherit pro_static_attribs_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#ac78ed632e01f218be6aa7201e0ac4e3f">sLayoutSpacing</a> = 15</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00062">62</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1187c7015d0889e5f274fea870b393e9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,6 +225,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00105">105</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">                                                        :</div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a0f6f20a3b1bb802881b939a19f42fb03">UBFloatingPalette</a>(Qt::TopRightCorner, parent)</div>
 <div class="line">  ,<a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aa21ac3bc88de60712956c72e7e760927">mButtonGroup</a>(0)</div>
@@ -282,6 +267,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00123">123</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -344,6 +331,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00128">128</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QToolButton* button = <span class="keyword">new</span> QToolButton(<a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af2737ed4016a51c4fd5179025c1a5536">mInitialWidget</a>);</div>
 <div class="line">    button-&gt;setIcon(QIcon(iconPath));</div>
@@ -385,6 +374,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00353">353</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a3c18956d9f14ea15b5ab13760914f156">mIsFirstTime</a>){</div>
 <div class="line">        <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#abc34a1ea7b29b6aaa4a0ea25d5715210">adjustSizeAndPosition</a>();</div>
@@ -433,6 +424,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00328">328</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    hide();</div>
 <div class="line">}</div>
@@ -501,6 +494,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af2737ed4016a51c4fd5179025c1a5536">mInitialWidget</a> = <span class="keyword">new</span> QWidget(<span class="keyword">this</span>);</div>
 <div class="line">    QHBoxLayout* initialWidgetLayout = <span class="keyword">new</span> QHBoxLayout(<a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af2737ed4016a51c4fd5179025c1a5536">mInitialWidget</a>);</div>
@@ -665,6 +660,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a0753813a51d64397eb365d854a71491c">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00334">334</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;pos().x() &gt;= 0 &amp;&amp; <span class="keyword">event</span>-&gt;pos().x() &lt; QPixmap(<span class="stringliteral">&quot;:/images/close.svg&quot;</span>).width()</div>
 <div class="line">        &amp;&amp; <span class="keyword">event</span>-&gt;pos().y() &gt;= 0 &amp;&amp; <span class="keyword">event</span>-&gt;pos().y() &lt; QPixmap(<span class="stringliteral">&quot;:/images/close.svg&quot;</span>).height())</div>
@@ -707,6 +704,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00285">285</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab0fb70073540dc1f9aba9095fb28fab">mStackedWidget</a>-&gt;setCurrentIndex(2);</div>
 <div class="line">}</div>
@@ -742,6 +741,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00290">290</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab0fb70073540dc1f9aba9095fb28fab">mStackedWidget</a>-&gt;setCurrentIndex(3);</div>
 <div class="line">}</div>
@@ -777,6 +778,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00274">274</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab0fb70073540dc1f9aba9095fb28fab">mStackedWidget</a>-&gt;setCurrentIndex(0);</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a2d9f0c538dc515da2bc37b7bd269b553">adjustGeometry</a>();</div>
@@ -823,6 +826,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00262">262</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(path.length());</div>
 <div class="line"></div>
@@ -860,6 +865,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00295">295</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af591c65b800cfb1face6a715ed1d0ab0">definedAction</a>(<span class="keyword">new</span> <a class="code" href="../../db/d0c/class_u_b_graphics_item_play_audio_action.html">UBGraphicsItemPlayAudioAction</a>(<a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af4d22d2a7b77820e53e86aaa026c1b04">mAudioFilePath</a>));</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a9c696bcb918c6c98049126055b015ddd">close</a>();</div>
@@ -905,6 +912,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00301">301</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/d45/_u_b_graphics_item_action_8h.html#a86f397563d9e8c205c07f75f5fc48f27">eUBGraphicsItemMovePageAction</a> <span class="keywordtype">id</span> = (<a class="code" href="../../d1/d45/_u_b_graphics_item_action_8h.html#a86f397563d9e8c205c07f75f5fc48f27">eUBGraphicsItemMovePageAction</a>)<a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aa21ac3bc88de60712956c72e7e760927">mButtonGroup</a>-&gt;checkedId();</div>
 <div class="line">    <a class="code" href="../../de/dfb/class_u_b_graphics_item_move_to_page_action.html">UBGraphicsItemMoveToPageAction</a>* action = 0;</div>
@@ -956,6 +965,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00313">313</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    emit <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af591c65b800cfb1face6a715ed1d0ab0">definedAction</a>(<span class="keyword">new</span> <a class="code" href="../../d0/d57/class_u_b_graphics_item_link_to_web_page_action.html">UBGraphicsItemLinkToWebPageAction</a> (<a class="code" href="../../df/db9/class_u_b_create_link_palette.html#ab1af1aba8e0f3b1620850827a408ecd1">mUrlLineEdit</a>-&gt;text()));</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a9c696bcb918c6c98049126055b015ddd">close</a>();</div>
@@ -1002,6 +1013,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00269">269</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab926c33d571e5c132eba0cab55eb91b">mPageComboBox</a>-&gt;setEnabled(checked);</div>
 <div class="line">}</div>
@@ -1037,6 +1050,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00280">280</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab0fb70073540dc1f9aba9095fb28fab">mStackedWidget</a>-&gt;setCurrentIndex(1);</div>
 <div class="line">}</div>
@@ -1075,6 +1090,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a8244a24b5bda64467ad6af028d93fd7b">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00319">319</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aa9068ea053c50338107c3ee65d9bba53">UBFloatingPalette::paintEvent</a>(event);</div>
 <div class="line"></div>
@@ -1107,6 +1124,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#ad1b5652affcca631745df045446974fa">UBFloatingPalette</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html#l00347">347</a> of file <a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a2d9f0c538dc515da2bc37b7bd269b553">adjustGeometry</a>();</div>
@@ -1142,6 +1161,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00096">96</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a17acf2d4e652dcc7487e9b8cf2f0debe"></a>
@@ -1161,6 +1182,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00088">88</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1182,6 +1205,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00093">93</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af2737ed4016a51c4fd5179025c1a5536"></a>
@@ -1201,6 +1226,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00087">87</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1222,6 +1249,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00097">97</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a87d897919c5bceb2dfba4662c2bae5d9"></a>
@@ -1241,6 +1270,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00085">85</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1262,6 +1293,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00094">94</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1ecc4e2e463d52b47ec9807a35204a4c"></a>
@@ -1281,6 +1314,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00089">89</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1302,6 +1337,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00095">95</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aab0fb70073540dc1f9aba9095fb28fab"></a>
@@ -1321,6 +1358,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00086">86</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
 
 </div>
 </div>
@@ -1342,6 +1381,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00092">92</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a695f27c418da9f6f6f92c29cd24de652"></a>
@@ -1362,22 +1403,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html#l00090">90</a> of file <a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a></li>
-<li><a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp.html">UBCreateLinkPalette.cpp</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a></li>
+<li>Sankore-3.1/src/gui/<a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp_source.html">UBCreateLinkPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../df/db9/class_u_b_create_link_palette.html">UBCreateLinkPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:20 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

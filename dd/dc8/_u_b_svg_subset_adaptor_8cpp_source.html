@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ba3bda1af5b46be6c34dbdf9592f1d27.html">adaptors</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBSvgSubsetAdaptor.cpp</div>  </div>
@@ -194,17 +178,17 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a3d5cad8803cfd188f7849d59d6bd6d9c">UBSvgSubsetAdaptor::sPixelUnit</a> = <span class="stringliteral">&quot;px&quot;</span>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac9df97e19b9bfd3de1064adae0b371f8">UBSvgSubsetAdaptor::sFontWeightPrefix</a> = <span class="stringliteral">&quot;font-weight:&quot;</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a67a360fb9d747e9f3dc05022be5a6f29">UBSvgSubsetAdaptor::sFontStylePrefix</a> = <span class="stringliteral">&quot;font-style:&quot;</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">const</span> QString UBSvgSubsetAdaptor::sFormerUniboardDocumentNamespaceUri = <span class="stringliteral">&quot;http://www.mnemis.com/uniboard&quot;</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a7fa236f23e7b67c56ede5a39cf49816b">UBSvgSubsetAdaptor::sFormerUniboardDocumentNamespaceUri</a> = <span class="stringliteral">&quot;http://www.mnemis.com/uniboard&quot;</span>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a4fecaf524ddfc3aeef320a1698ad8e83">   93</a></span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a4fecaf524ddfc3aeef320a1698ad8e83">tElement</a> = <span class="stringliteral">&quot;element&quot;</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a4fecaf524ddfc3aeef320a1698ad8e83">   93</a></span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../d5/d61/_u_b_c_f_f_subset_adaptor_8cpp.html#aac51a7d683dae3149e7a8ab82f98d170">tElement</a> = <span class="stringliteral">&quot;element&quot;</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a75fbc1cf499086547e08ec1b1fc1a177">   94</a></span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a75fbc1cf499086547e08ec1b1fc1a177">tGroup</a> = <span class="stringliteral">&quot;group&quot;</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#aa996427952a15a0818efd765e8fcd9df">   95</a></span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#aa996427952a15a0818efd765e8fcd9df">tStrokeGroup</a> = <span class="stringliteral">&quot;strokeGroup&quot;</span>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a337686d5fc5596fa7d06a9efb4aaaec5">   96</a></span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a337686d5fc5596fa7d06a9efb4aaaec5">tGroups</a> = <span class="stringliteral">&quot;groups&quot;</span>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#afe9debc9a85986a0bb658b48113ca3bc">   97</a></span>&#160;<span class="keyword">const</span> QString <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#afe9debc9a85986a0bb658b48113ca3bc">aId</a> = <span class="stringliteral">&quot;id&quot;</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;QMap&lt;QString,IDataStorage*&gt; UBSvgSubsetAdaptor::additionalElementToStore;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;QMap&lt;QString,IDataStorage*&gt; <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad7d9be3374692254bd49ff26eb919f0e">UBSvgSubsetAdaptor::additionalElementToStore</a>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;QString UBSvgSubsetAdaptor::toSvgTransform(<span class="keyword">const</span> QMatrix&amp; matrix)</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">  101</a></span>&#160;QString <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">UBSvgSubsetAdaptor::toSvgTransform</a>(<span class="keyword">const</span> QMatrix&amp; matrix)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;matrix(%1, %2, %3, %4, %5, %6)&quot;</span>)</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;           .arg(matrix.m11(), 0 , <span class="charliteral">&#39;g&#39;</span>)</div>
@@ -216,7 +200,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;QMatrix UBSvgSubsetAdaptor::fromSvgTransform(<span class="keyword">const</span> QString&amp; transform)</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#acbff1f770b77c5463ef2fd3c47db8643">  113</a></span>&#160;QMatrix <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#acbff1f770b77c5463ef2fd3c47db8643">UBSvgSubsetAdaptor::fromSvgTransform</a>(<span class="keyword">const</span> QString&amp; transform)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QMatrix matrix;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    QString ts = transform;</div>
@@ -240,7 +224,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> itemZIndexComp(<span class="keyword">const</span> QGraphicsItem* item1,</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#af5ff26cfb5b5e8337af0d5b59fe3b91a">  137</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#af5ff26cfb5b5e8337af0d5b59fe3b91a">itemZIndexComp</a>(<span class="keyword">const</span> QGraphicsItem* item1,</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                           <span class="keyword">const</span> QGraphicsItem* item2)</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> item1-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bafd234c2c7d1e0807eaa42fbbe52319fb">UBGraphicsItemData::ItemOwnZValue</a>).toReal() &lt; item2-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bafd234c2c7d1e0807eaa42fbbe52319fb">UBGraphicsItemData::ItemOwnZValue</a>).toReal();</div>
@@ -250,7 +234,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a1b3ee698579691325ecae28700a02798">  144</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a1b3ee698579691325ecae28700a02798">UBSvgSubsetAdaptor::upgradeScene</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keyword">const</span> <span class="keywordtype">int</span> pageIndex)</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">//4.2</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    QDomDocument doc = loadSceneDocument(proxy, pageIndex);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    QDomDocument doc = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#addadbf262bd3c1756cd1b208e53c2c7a">loadSceneDocument</a>(proxy, pageIndex);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    QDomElement elSvg = doc.documentElement(); <span class="comment">// SVG tag</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    QString ubVersion = elSvg.attributeNS(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;version&quot;</span>, <span class="stringliteral">&quot;4.1&quot;</span>); <span class="comment">// default to 4.1</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
@@ -264,7 +248,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;QDomDocument UBSvgSubsetAdaptor::loadSceneDocument(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keyword">const</span> <span class="keywordtype">int</span> pPageIndex)</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#addadbf262bd3c1756cd1b208e53c2c7a">  161</a></span>&#160;QDomDocument <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#addadbf262bd3c1756cd1b208e53c2c7a">UBSvgSubsetAdaptor::loadSceneDocument</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keyword">const</span> <span class="keywordtype">int</span> pPageIndex)</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    QString fileName = proxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>,pPageIndex);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
@@ -340,18 +324,18 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
 <div class="line"><a name="l00235"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#abc0a992e8fee16f940e496dcd5b7e3e6">  235</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#abc0a992e8fee16f940e496dcd5b7e3e6">UBSvgSubsetAdaptor::addElementToBeStored</a>(QString domName, <a class="code" href="../../d6/d6d/class_i_data_storage.html">IDataStorage</a> *dataStorageClass)</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">if</span>(domName.isEmpty() || additionalElementToStore.contains(domName)){</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">if</span>(domName.isEmpty() || <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad7d9be3374692254bd49ff26eb919f0e">additionalElementToStore</a>.contains(domName)){</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Error adding the element that should persist&quot;</span>;</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    additionalElementToStore.insert(domName,dataStorageClass);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad7d9be3374692254bd49ff26eb919f0e">additionalElementToStore</a>.insert(domName,dataStorageClass);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;QString UBSvgSubsetAdaptor::uniboardDocumentNamespaceUriFromVersion(<span class="keywordtype">int</span> mFileVersion)</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a8d028f100e4ad7f80817be31c1462174">  246</a></span>&#160;QString <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a8d028f100e4ad7f80817be31c1462174">UBSvgSubsetAdaptor::uniboardDocumentNamespaceUriFromVersion</a>(<span class="keywordtype">int</span> mFileVersion)</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> mFileVersion &gt;= 40200 ? <a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a> : sFormerUniboardDocumentNamespaceUri;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> mFileVersion &gt;= 40200 ? <a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a> : <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a7fa236f23e7b67c56ede5a39cf49816b">sFormerUniboardDocumentNamespaceUri</a>;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
@@ -427,10 +411,10 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a5abb38920769f1acbb2cfa21b0c8eb0a">UBSvgSubsetAdaptor::loadScene</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keyword">const</span> QByteArray&amp; pArray)</div>
+<div class="line"><a name="l00324"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a6e24774da3a31f4a61141cb634198d0a">  324</a></span>&#160;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a5abb38920769f1acbb2cfa21b0c8eb0a">UBSvgSubsetAdaptor::loadScene</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keyword">const</span> QByteArray&amp; pArray)</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;{</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    UBSvgSubsetReader reader(proxy, <a class="code" href="../../d0/d84/class_u_b_text_tools.html#a5c04a61a545324435217007c82eb24dc">UBTextTools::cleanHtmlCData</a>(QString(pArray)).toAscii());</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">return</span> reader.loadScene();</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html">UBSvgSubsetReader</a> reader(proxy, <a class="code" href="../../d0/d84/class_u_b_text_tools.html#a5c04a61a545324435217007c82eb24dc">UBTextTools::cleanHtmlCData</a>(QString(pArray)).toAscii());</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">return</span> reader.<a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a1998688092c71dad287d03f570816a95">loadScene</a>();</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
@@ -455,7 +439,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;UBSvgSubsetAdaptor::UBSvgSubsetReader::UBSvgSubsetReader(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* pProxy, <span class="keyword">const</span> QByteArray&amp; pXmlData)</div>
+<div class="line"><a name="l00352"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a80e7c3a12e455dde97b6e847be0df392">  352</a></span>&#160;<a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a80e7c3a12e455dde97b6e847be0df392">UBSvgSubsetAdaptor::UBSvgSubsetReader::UBSvgSubsetReader</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* pProxy, <span class="keyword">const</span> QByteArray&amp; pXmlData)</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        : mXmlReader(pXmlData)</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        , mProxy(pProxy)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        , mDocumentPath(pProxy-&gt;persistencePath())</div>
@@ -465,7 +449,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a5abb38920769f1acbb2cfa21b0c8eb0a">UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene</a>()</div>
+<div class="line"><a name="l00362"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a1998688092c71dad287d03f570816a95">  362</a></span>&#160;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a5abb38920769f1acbb2cfa21b0c8eb0a">UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene</a>()</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;{</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    mScene = 0;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a> *currentWidget = 0;</div>
@@ -519,7 +503,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                    }</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                }</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                mNamespaceUri = uniboardDocumentNamespaceUriFromVersion(mFileVersion);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                mNamespaceUri = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a8d028f100e4ad7f80817be31c1462174">uniboardDocumentNamespaceUriFromVersion</a>(mFileVersion);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                QStringRef svgSceneUuid = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;uuid&quot;</span>);</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;</div>
@@ -566,12 +550,12 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                QStringRef ubDarkBackground = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;dark-background&quot;</span>);</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                <span class="keywordflow">if</span> (!ubDarkBackground.isNull())</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                    darkBackground = (ubDarkBackground.toString() == xmlTrue);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                    darkBackground = (ubDarkBackground.toString() == <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a>);</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                QStringRef ubCrossedBackground = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;crossed-background&quot;</span>);</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                <span class="keywordflow">if</span> (!ubDarkBackground.isNull())</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                    crossedBackground = (ubCrossedBackground.toString() == xmlTrue);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                    crossedBackground = (ubCrossedBackground.toString() == <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a>);</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                mScene-&gt;setBackground(darkBackground, crossedBackground);</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;</div>
@@ -710,7 +694,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            }</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mXmlReader.name() == <span class="stringliteral">&quot;image&quot;</span>)</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            {</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                QStringRef imageHref = mXmlReader.attributes().value(nsXLink, <span class="stringliteral">&quot;href&quot;</span>);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                QStringRef imageHref = mXmlReader.attributes().value(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>);</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                <span class="keywordflow">if</span> (!imageHref.isNull())</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                {</div>
@@ -718,7 +702,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                    QStringRef ubBackground = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;background&quot;</span>);</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                    <span class="keywordtype">bool</span> isBackground = (!ubBackground.isNull() &amp;&amp; ubBackground.toString() == xmlTrue);</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                    <span class="keywordtype">bool</span> isBackground = (!ubBackground.isNull() &amp;&amp; ubBackground.toString() == <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a>);</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                    <span class="keywordflow">if</span> (href.contains(<span class="stringliteral">&quot;png&quot;</span>))</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                    {</div>
@@ -924,10 +908,10 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            }</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mXmlReader.name() == <span class="stringliteral">&quot;foreignObject&quot;</span>)</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            {</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                QString href = mXmlReader.attributes().value(nsXLink, <span class="stringliteral">&quot;href&quot;</span>).toString();</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                QString href = mXmlReader.attributes().value(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>).toString();</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                QString src = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;src&quot;</span>).toString();</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                QString type = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;type&quot;</span>).toString();</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                <span class="keywordtype">bool</span> isBackground = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;background&quot;</span>).toString() == xmlTrue;</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                <span class="keywordtype">bool</span> isBackground = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;background&quot;</span>).toString() == <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a>;</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                qreal foreignObjectWidth = mXmlReader.attributes().value(<span class="stringliteral">&quot;width&quot;</span>).toString().toFloat();</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                qreal foreignObjectHeight = mXmlReader.attributes().value(<span class="stringliteral">&quot;height&quot;</span>).toString().toFloat();</div>
@@ -1108,7 +1092,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;}</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;</div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action, QString uuid)</div>
+<div class="line"><a name="l01005"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a6c4422f549929bc8e5503d9dc161b005"> 1005</a></span>&#160;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a6c4422f549929bc8e5503d9dc161b005">UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action, QString uuid)</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;{</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;    <span class="keywordtype">bool</span> isAnActionForStroke = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;    <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *group = <span class="keyword">new</span> <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a>();</div>
@@ -1131,7 +1115,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;                    qDebug() &lt;&lt; <span class="stringliteral">&quot;this is an error if readGroup(UBGraphicsItemAction* action, QString uuid)&quot;</span>;</div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;            }</div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mXmlReader.name() == <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a4fecaf524ddfc3aeef320a1698ad8e83">tElement</a>){</div>
+<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mXmlReader.name() == <a class="code" href="../../d5/d61/_u_b_c_f_f_subset_adaptor_8cpp.html#aac51a7d683dae3149e7a8ab82f98d170">tElement</a>){</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;                QString <span class="keywordtype">id</span> = mXmlReader.attributes().value(<a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#afe9debc9a85986a0bb658b48113ca3bc">aId</a>).toString();</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;<span class="comment">//                QString itemId  = id.right(QUuid().toString().size());</span></div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;<span class="comment">//                QString groupId = id.left(QUuid().toString().size());</span></div>
@@ -1217,7 +1201,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="keywordflow">return</span> group;</div>
 <div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;}</div>
 <div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroupRoot()</div>
+<div class="line"><a name="l01114"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#abd50b68ea1e71c974b7ebbeff02d3fe2"> 1114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#abd50b68ea1e71c974b7ebbeff02d3fe2">UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroupRoot</a>()</div>
 <div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;{</div>
 <div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    mXmlReader.readNext();</div>
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <span class="keywordflow">while</span> (!mXmlReader.atEnd()) {</div>
@@ -1245,7 +1229,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    }</div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;}</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;</div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;QGraphicsItem *UBSvgSubsetAdaptor::UBSvgSubsetReader::readElementFromGroup()</div>
+<div class="line"><a name="l01142"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a2570da3fdd020fe2ce0ebdb4401ed27a"> 1142</a></span>&#160;QGraphicsItem *<a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a2570da3fdd020fe2ce0ebdb4401ed27a">UBSvgSubsetAdaptor::UBSvgSubsetReader::readElementFromGroup</a>()</div>
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;{</div>
 <div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    QGraphicsItem *result = 0;</div>
 <div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    QString <span class="keywordtype">id</span> = mXmlReader.attributes().value(<a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#afe9debc9a85986a0bb658b48113ca3bc">aId</a>).toString();</div>
@@ -1265,12 +1249,12 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;</div>
 <div class="line"><a name="l01160"></a><span class="lineno"><a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ae0246b7ed5045d7515cad861681d7db0"> 1160</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ae0246b7ed5045d7515cad861681d7db0">UBSvgSubsetAdaptor::persistScene</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* pScene, <span class="keyword">const</span> <span class="keywordtype">int</span> pageIndex)</div>
 <div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;{</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    UBSvgSubsetWriter writer(proxy, pScene, pageIndex);</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    writer.persistScene(pageIndex);</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html">UBSvgSubsetWriter</a> writer(proxy, pScene, pageIndex);</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    writer.<a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#afdd045d9995259056d27bff433cb7569">persistScene</a>(pageIndex);</div>
 <div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;}</div>
 <div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;</div>
 <div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;UBSvgSubsetAdaptor::UBSvgSubsetWriter::UBSvgSubsetWriter(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* pScene, <span class="keyword">const</span> <span class="keywordtype">int</span> pageIndex)</div>
+<div class="line"><a name="l01167"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a912cfd5b36a296170c13f9718034ee2d"> 1167</a></span>&#160;<a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a912cfd5b36a296170c13f9718034ee2d">UBSvgSubsetAdaptor::UBSvgSubsetWriter::UBSvgSubsetWriter</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* pScene, <span class="keyword">const</span> <span class="keywordtype">int</span> pageIndex)</div>
 <div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;        : mScene(pScene)</div>
 <div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;        , mDocumentPath(proxy-&gt;persistencePath())</div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;        , mPageIndex(pageIndex)</div>
@@ -1280,7 +1264,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;}</div>
 <div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;</div>
 <div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeSvgElement()</div>
+<div class="line"><a name="l01177"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a1f55224cd1b50d06812efaa0b239d56b"> 1177</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a1f55224cd1b50d06812efaa0b239d56b">UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeSvgElement</a>()</div>
 <div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;{</div>
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;    mXmlWriter.writeStartElement(<span class="stringliteral">&quot;svg&quot;</span>);</div>
 <div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;</div>
@@ -1301,8 +1285,8 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;        mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;nominal-size&quot;</span>, QString(<span class="stringliteral">&quot;%1x%2&quot;</span>).arg(pageNominalSize.width()).arg(pageNominalSize.height()));</div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;    }</div>
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;dark-background&quot;</span>, mScene-&gt;isDarkBackground() ? xmlTrue : xmlFalse);</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;crossed-background&quot;</span>, mScene-&gt;isCrossedBackground() ? xmlTrue : xmlFalse);</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;dark-background&quot;</span>, mScene-&gt;isDarkBackground() ? <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a> : <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a1adfffd7e1374c84381c932b0e15e218">xmlFalse</a>);</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;crossed-background&quot;</span>, mScene-&gt;isCrossedBackground() ? <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a> : <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a1adfffd7e1374c84381c932b0e15e218">xmlFalse</a>);</div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;</div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    QDesktopWidget* desktop = UBApplication::desktop();</div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;pageDpi&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((desktop-&gt;physicalDpiX() + desktop-&gt;physicalDpiY()) / 2));</div>
@@ -1317,7 +1301,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    mXmlWriter.writeEndElement();</div>
 <div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;}</div>
 <div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ae0246b7ed5045d7515cad861681d7db0">UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene</a>(<span class="keywordtype">int</span> pageIndex)</div>
+<div class="line"><a name="l01214"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#afdd045d9995259056d27bff433cb7569"> 1214</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ae0246b7ed5045d7515cad861681d7db0">UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene</a>(<span class="keywordtype">int</span> pageIndex)</div>
 <div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;{</div>
 <div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;    <span class="keywordflow">if</span> (mScene-&gt;isModified() || (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#acb290823de3668d04b0f653e5a8f01e8">teacherGuideDockWidget</a>() &amp;&amp; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#acb290823de3668d04b0f653e5a8f01e8">teacherGuideDockWidget</a>()-&gt;<a class="code" href="../../db/d9c/class_u_b_dock_teacher_guide_widget.html#ac1f1d73be89ff66f9f83dc7472a0c203">teacherGuideWidget</a>()-&gt;<a class="code" href="../../dc/d87/class_u_b_teacher_guide_widget.html#ae2222a39f9d47f140deb9841fac1e5e7">isModified</a>()))</div>
 <div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    {</div>
@@ -1334,17 +1318,17 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        mXmlWriter.setAutoFormatting(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;</div>
 <div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;        mXmlWriter.writeStartDocument();</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        mXmlWriter.writeDefaultNamespace(nsSvg);</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;        mXmlWriter.writeNamespace(nsXLink, <span class="stringliteral">&quot;xlink&quot;</span>);</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        mXmlWriter.writeDefaultNamespace(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a407409ee2324e304a9c2404eb8965b05">nsSvg</a>);</div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;        mXmlWriter.writeNamespace(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;xlink&quot;</span>);</div>
 <div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;        mXmlWriter.writeNamespace(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;ub&quot;</span>);</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;        mXmlWriter.writeNamespace(nsXHtml, <span class="stringliteral">&quot;xhtml&quot;</span>);</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;        mXmlWriter.writeNamespace(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a3448a034e9c845f9c0ce1c3c87f8cc77">nsXHtml</a>, <span class="stringliteral">&quot;xhtml&quot;</span>);</div>
 <div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;</div>
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        writeSvgElement();</div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;</div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        <span class="comment">// Get the items from the scene</span></div>
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;        QList&lt;QGraphicsItem*&gt; items = mScene-&gt;items();</div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        qSort(items.begin(), items.end(), itemZIndexComp);</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        qSort(items.begin(), items.end(), <a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#af5ff26cfb5b5e8337af0d5b59fe3b91a">itemZIndexComp</a>);</div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;</div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a> *openStroke = 0;</div>
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;</div>
@@ -1395,7 +1379,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;                    QMatrix matrix = item-&gt;sceneMatrix();</div>
 <div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;</div>
 <div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;                    <span class="keywordflow">if</span> (!matrix.isIdentity())</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;                        mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, toSvgTransform(matrix));</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;                        mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(matrix));</div>
 <div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;</div>
 <div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;                    <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a>* stroke = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a>* <span class="keyword">&gt;</span>(currentStroke);</div>
 <div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;</div>
@@ -1570,7 +1554,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;            openStroke = 0;</div>
 <div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;        }</div>
 <div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;</div>
-<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;        QMap&lt;QString,IDataStorage*&gt; elements = getAdditionalElementToStore();</div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;        QMap&lt;QString,IDataStorage*&gt; elements = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#aaa783efc35f05dd4db4fb82754c21c87">getAdditionalElementToStore</a>();</div>
 <div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        QVector&lt;tIDataStorage*&gt; dataStorageItems;</div>
 <div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;</div>
 <div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;        <span class="keywordflow">if</span>(elements.value(<span class="stringliteral">&quot;teacherGuide&quot;</span>))</div>
@@ -1645,7 +1629,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01540"></a><span class="lineno"> 1540</span>&#160;}</div>
 <div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;</div>
-<div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistGroupToDom(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *groupDomDocument, <a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
+<div class="line"><a name="l01542"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a7b566bd726c5035332e7b49cc0c8590b"> 1542</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a7b566bd726c5035332e7b49cc0c8590b">UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistGroupToDom</a>(QGraphicsItem *groupItem, QDomElement *curParent, QDomDocument *groupDomDocument, <a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
 <div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;{</div>
 <div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;    QUuid uuid = <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a37bc5dc575e03198f923190aa28471a4">UBGraphicsScene::getPersonalUuid</a>(groupItem);</div>
 <div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;    <span class="keywordflow">if</span> (!uuid.isNull()) {</div>
@@ -1675,7 +1659,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01569"></a><span class="lineno"> 1569</span>&#160;<span class="comment">//                    }</span></div>
 <div class="line"><a name="l01570"></a><span class="lineno"> 1570</span>&#160;<span class="comment">//                }</span></div>
 <div class="line"><a name="l01571"></a><span class="lineno"> 1571</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160;                    QDomElement curSubElement = groupDomDocument-&gt;createElement(tElement);</div>
+<div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160;                    QDomElement curSubElement = groupDomDocument-&gt;createElement(<a class="code" href="../../d5/d61/_u_b_c_f_f_subset_adaptor_8cpp.html#aac51a7d683dae3149e7a8ab82f98d170">tElement</a>);</div>
 <div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;</div>
 <div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;                    curSubElement.setAttribute(<a class="code" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#afe9debc9a85986a0bb658b48113ca3bc">aId</a>, tmpUuid);</div>
 <div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;                    curGroupElement.appendChild(curSubElement);</div>
@@ -1685,7 +1669,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;    }</div>
 <div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;}</div>
 <div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;</div>
-<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::polygonItemToSvgLine(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* polygonItem, <span class="keywordtype">bool</span> groupHoldsInfo)</div>
+<div class="line"><a name="l01582"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ad463ff7a5a40868e43d7c68f3d5f06d3"> 1582</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ad463ff7a5a40868e43d7c68f3d5f06d3">UBSvgSubsetAdaptor::UBSvgSubsetWriter::polygonItemToSvgLine</a>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* polygonItem, <span class="keywordtype">bool</span> groupHoldsInfo)</div>
 <div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;{</div>
 <div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;    mXmlWriter.writeStartElement(<span class="stringliteral">&quot;line&quot;</span>);</div>
 <div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;</div>
@@ -1722,7 +1706,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;}</div>
 <div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;</div>
 <div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;</div>
-<div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::strokeToSvgPolyline(<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a>* stroke, <span class="keywordtype">bool</span> groupHoldsInfo)</div>
+<div class="line"><a name="l01619"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a91c954ea869d2c71cf14f1798e93b6f3"> 1619</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a91c954ea869d2c71cf14f1798e93b6f3">UBSvgSubsetAdaptor::UBSvgSubsetWriter::strokeToSvgPolyline</a>(<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a>* stroke, <span class="keywordtype">bool</span> groupHoldsInfo)</div>
 <div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;{</div>
 <div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;    QList&lt;UBGraphicsPolygonItem*&gt; pols = stroke-&gt;<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a19d0be99f5ef2ac596e13ef018ec1d77">polygons</a>();</div>
 <div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;</div>
@@ -1771,7 +1755,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;}</div>
 <div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;</div>
 <div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;</div>
-<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::strokeToSvgPolygon(<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a>* stroke, <span class="keywordtype">bool</span> groupHoldsInfo)</div>
+<div class="line"><a name="l01668"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a456c933c49a870f1040ec4fbcf62fcc7"> 1668</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a456c933c49a870f1040ec4fbcf62fcc7">UBSvgSubsetAdaptor::UBSvgSubsetWriter::strokeToSvgPolygon</a>(<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a>* stroke, <span class="keywordtype">bool</span> groupHoldsInfo)</div>
 <div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;{</div>
 <div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;    QList&lt;UBGraphicsPolygonItem*&gt; pis = stroke-&gt;<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a19d0be99f5ef2ac596e13ef018ec1d77">polygons</a>();</div>
 <div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;</div>
@@ -1792,7 +1776,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;    }</div>
 <div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;}</div>
 <div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;</div>
-<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::polygonItemToSvgPolygon(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* polygonItem, <span class="keywordtype">bool</span> groupHoldsInfo, <a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
+<div class="line"><a name="l01689"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a5c82a6f1e197d7acedc175ce378ca6fa"> 1689</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a5c82a6f1e197d7acedc175ce378ca6fa">UBSvgSubsetAdaptor::UBSvgSubsetWriter::polygonItemToSvgPolygon</a>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* polygonItem, <span class="keywordtype">bool</span> groupHoldsInfo, <a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
 <div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;{</div>
 <div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;</div>
 <div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;    QPolygonF polygon = polygonItem-&gt;polygon();</div>
@@ -1804,7 +1788,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160;</div>
 <div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;        QString points = pointsToSvgPointsAttribute(polygon);</div>
 <div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160;        mXmlWriter.writeAttribute(<span class="stringliteral">&quot;points&quot;</span>, points);</div>
-<div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160;        mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>,toSvgTransform(polygonItem-&gt;sceneMatrix()));</div>
+<div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160;        mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>,<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(polygonItem-&gt;sceneMatrix()));</div>
 <div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;        mXmlWriter.writeAttribute(<span class="stringliteral">&quot;fill&quot;</span>, polygonItem-&gt;brush().<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a9280bf7621aa90fe3f589d061b5a0af3">color</a>().name());</div>
 <div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;</div>
 <div class="line"><a name="l01704"></a><span class="lineno"> 1704</span>&#160;        qreal alpha = polygonItem-&gt;brush().<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a9280bf7621aa90fe3f589d061b5a0af3">color</a>().alphaF();</div>
@@ -1851,7 +1835,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;}</div>
 <div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;</div>
 <div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;</div>
-<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemFromPolygonSvg(<span class="keyword">const</span> QColor&amp; pDefaultColor)</div>
+<div class="line"><a name="l01748"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#aa8ad91f3efc53567db33b2b6d069cec1"> 1748</a></span>&#160;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#aa8ad91f3efc53567db33b2b6d069cec1">UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemFromPolygonSvg</a>(<span class="keyword">const</span> QColor&amp; pDefaultColor)</div>
 <div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160;{</div>
 <div class="line"><a name="l01750"></a><span class="lineno"> 1750</span>&#160;    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* polygonItem = <span class="keyword">new</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>();</div>
 <div class="line"><a name="l01751"></a><span class="lineno"> 1751</span>&#160;</div>
@@ -1903,7 +1887,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;</div>
 <div class="line"><a name="l01798"></a><span class="lineno"> 1798</span>&#160;    <span class="keywordflow">if</span> (!svgTransform.isNull())</div>
 <div class="line"><a name="l01799"></a><span class="lineno"> 1799</span>&#160;    {</div>
-<div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;        itemMatrix = fromSvgTransform(svgTransform.toString());</div>
+<div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;        itemMatrix = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#acbff1f770b77c5463ef2fd3c47db8643">fromSvgTransform</a>(svgTransform.toString());</div>
 <div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;        polygonItem-&gt;setMatrix(itemMatrix);</div>
 <div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160;    }</div>
 <div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;</div>
@@ -1979,7 +1963,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160;</div>
 <div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;}</div>
 <div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;</div>
-<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemFromLineSvg(<span class="keyword">const</span> QColor&amp; pDefaultColor)</div>
+<div class="line"><a name="l01876"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ae2d6359bb92b9923b49cdc5ed7fe53e0"> 1876</a></span>&#160;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ae2d6359bb92b9923b49cdc5ed7fe53e0">UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemFromLineSvg</a>(<span class="keyword">const</span> QColor&amp; pDefaultColor)</div>
 <div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;{</div>
 <div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;    QStringRef svgX1 = mXmlReader.attributes().value(<span class="stringliteral">&quot;x1&quot;</span>);</div>
 <div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;    QStringRef svgY1 = mXmlReader.attributes().value(<span class="stringliteral">&quot;y1&quot;</span>);</div>
@@ -2087,7 +2071,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l01981"></a><span class="lineno"> 1981</span>&#160;    <span class="keywordflow">return</span> polygonItem;</div>
 <div class="line"><a name="l01982"></a><span class="lineno"> 1982</span>&#160;}</div>
 <div class="line"><a name="l01983"></a><span class="lineno"> 1983</span>&#160;</div>
-<div class="line"><a name="l01984"></a><span class="lineno"> 1984</span>&#160;QList&lt;UBGraphicsPolygonItem*&gt; UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemsFromPolylineSvg(<span class="keyword">const</span> QColor&amp; pDefaultColor)</div>
+<div class="line"><a name="l01984"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ae9ffe980b1b708c35bf9175b12768c03"> 1984</a></span>&#160;QList&lt;UBGraphicsPolygonItem*&gt; <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ae9ffe980b1b708c35bf9175b12768c03">UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItemsFromPolylineSvg</a>(<span class="keyword">const</span> QColor&amp; pDefaultColor)</div>
 <div class="line"><a name="l01985"></a><span class="lineno"> 1985</span>&#160;{</div>
 <div class="line"><a name="l01986"></a><span class="lineno"> 1986</span>&#160;    QStringRef strokeWidth = mXmlReader.attributes().value(<span class="stringliteral">&quot;stroke-width&quot;</span>);</div>
 <div class="line"><a name="l01987"></a><span class="lineno"> 1987</span>&#160;</div>
@@ -2209,7 +2193,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02103"></a><span class="lineno"> 2103</span>&#160;</div>
 <div class="line"><a name="l02104"></a><span class="lineno"> 2104</span>&#160;</div>
 <div class="line"><a name="l02105"></a><span class="lineno"> 2105</span>&#160;</div>
-<div class="line"><a name="l02106"></a><span class="lineno"> 2106</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(<a class="code" href="../../d1/d78/class_u_b_graphics_pixmap_item.html">UBGraphicsPixmapItem</a>* pixmapItem)</div>
+<div class="line"><a name="l02106"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a423a9fd17576273f89fc4985c0ba158b"> 2106</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a423a9fd17576273f89fc4985c0ba158b">UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage</a>(<a class="code" href="../../d1/d78/class_u_b_graphics_pixmap_item.html">UBGraphicsPixmapItem</a>* pixmapItem)</div>
 <div class="line"><a name="l02107"></a><span class="lineno"> 2107</span>&#160;{</div>
 <div class="line"><a name="l02108"></a><span class="lineno"> 2108</span>&#160;    mXmlWriter.writeStartElement(<span class="stringliteral">&quot;image&quot;</span>);</div>
 <div class="line"><a name="l02109"></a><span class="lineno"> 2109</span>&#160;</div>
@@ -2225,7 +2209,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02119"></a><span class="lineno"> 2119</span>&#160;        pixmapItem-&gt;pixmap().toImage().save(path, <span class="stringliteral">&quot;PNG&quot;</span>);</div>
 <div class="line"><a name="l02120"></a><span class="lineno"> 2120</span>&#160;    }</div>
 <div class="line"><a name="l02121"></a><span class="lineno"> 2121</span>&#160;</div>
-<div class="line"><a name="l02122"></a><span class="lineno"> 2122</span>&#160;    mXmlWriter.writeAttribute(nsXLink, <span class="stringliteral">&quot;href&quot;</span>, fileName);</div>
+<div class="line"><a name="l02122"></a><span class="lineno"> 2122</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>, fileName);</div>
 <div class="line"><a name="l02123"></a><span class="lineno"> 2123</span>&#160;</div>
 <div class="line"><a name="l02124"></a><span class="lineno"> 2124</span>&#160;    writeAction(pixmapItem-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>());</div>
 <div class="line"><a name="l02125"></a><span class="lineno"> 2125</span>&#160;    graphicsItemToSvg(pixmapItem);</div>
@@ -2234,7 +2218,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02128"></a><span class="lineno"> 2128</span>&#160;}</div>
 <div class="line"><a name="l02129"></a><span class="lineno"> 2129</span>&#160;</div>
 <div class="line"><a name="l02130"></a><span class="lineno"> 2130</span>&#160;</div>
-<div class="line"><a name="l02131"></a><span class="lineno"> 2131</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
+<div class="line"><a name="l02131"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#aea2eed39da5b448359d47b8b98e68248"> 2131</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#aea2eed39da5b448359d47b8b98e68248">UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeAction</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* action)</div>
 <div class="line"><a name="l02132"></a><span class="lineno"> 2132</span>&#160;{</div>
 <div class="line"><a name="l02133"></a><span class="lineno"> 2133</span>&#160;    <span class="keywordflow">if</span>(action){</div>
 <div class="line"><a name="l02134"></a><span class="lineno"> 2134</span>&#160;        QStringList actionParameters = action-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#a98b5f7dfd1be2d4af567a3bc91c512c1">save</a>();</div>
@@ -2245,7 +2229,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02139"></a><span class="lineno"> 2139</span>&#160;    }</div>
 <div class="line"><a name="l02140"></a><span class="lineno"> 2140</span>&#160;}</div>
 <div class="line"><a name="l02141"></a><span class="lineno"> 2141</span>&#160;</div>
-<div class="line"><a name="l02142"></a><span class="lineno"> 2142</span>&#160;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::readAction()</div>
+<div class="line"><a name="l02142"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#aa280b2dbee8570c994ae786045c08559"> 2142</a></span>&#160;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#aa280b2dbee8570c994ae786045c08559">UBSvgSubsetAdaptor::UBSvgSubsetReader::readAction</a>()</div>
 <div class="line"><a name="l02143"></a><span class="lineno"> 2143</span>&#160;{</div>
 <div class="line"><a name="l02144"></a><span class="lineno"> 2144</span>&#160;    <a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>* result = 0;</div>
 <div class="line"><a name="l02145"></a><span class="lineno"> 2145</span>&#160;    QXmlStreamAttributes attributes = mXmlReader.attributes();</div>
@@ -2274,12 +2258,12 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02168"></a><span class="lineno"> 2168</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l02169"></a><span class="lineno"> 2169</span>&#160;}</div>
 <div class="line"><a name="l02170"></a><span class="lineno"> 2170</span>&#160;</div>
-<div class="line"><a name="l02171"></a><span class="lineno"> 2171</span>&#160;<a class="code" href="../../d1/d78/class_u_b_graphics_pixmap_item.html">UBGraphicsPixmapItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::pixmapItemFromSvg()</div>
+<div class="line"><a name="l02171"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a27b32b9bacc2cf637ec7895a3af16831"> 2171</a></span>&#160;<a class="code" href="../../d1/d78/class_u_b_graphics_pixmap_item.html">UBGraphicsPixmapItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a27b32b9bacc2cf637ec7895a3af16831">UBSvgSubsetAdaptor::UBSvgSubsetReader::pixmapItemFromSvg</a>()</div>
 <div class="line"><a name="l02172"></a><span class="lineno"> 2172</span>&#160;{</div>
 <div class="line"><a name="l02173"></a><span class="lineno"> 2173</span>&#160;</div>
 <div class="line"><a name="l02174"></a><span class="lineno"> 2174</span>&#160;    <a class="code" href="../../d1/d78/class_u_b_graphics_pixmap_item.html">UBGraphicsPixmapItem</a>* pixmapItem = <span class="keyword">new</span> <a class="code" href="../../d1/d78/class_u_b_graphics_pixmap_item.html">UBGraphicsPixmapItem</a>();</div>
 <div class="line"><a name="l02175"></a><span class="lineno"> 2175</span>&#160;</div>
-<div class="line"><a name="l02176"></a><span class="lineno"> 2176</span>&#160;    QStringRef imageHref = mXmlReader.attributes().value(nsXLink, <span class="stringliteral">&quot;href&quot;</span>);</div>
+<div class="line"><a name="l02176"></a><span class="lineno"> 2176</span>&#160;    QStringRef imageHref = mXmlReader.attributes().value(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>);</div>
 <div class="line"><a name="l02177"></a><span class="lineno"> 2177</span>&#160;</div>
 <div class="line"><a name="l02178"></a><span class="lineno"> 2178</span>&#160;    <span class="keywordflow">if</span> (!imageHref.isNull())</div>
 <div class="line"><a name="l02179"></a><span class="lineno"> 2179</span>&#160;    {</div>
@@ -2301,7 +2285,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02195"></a><span class="lineno"> 2195</span>&#160;}</div>
 <div class="line"><a name="l02196"></a><span class="lineno"> 2196</span>&#160;</div>
 <div class="line"><a name="l02197"></a><span class="lineno"> 2197</span>&#160;</div>
-<div class="line"><a name="l02198"></a><span class="lineno"> 2198</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg(<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a>* svgItem)</div>
+<div class="line"><a name="l02198"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a98ed3eb5be33cc6c8c389c1ef34604bb"> 2198</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a98ed3eb5be33cc6c8c389c1ef34604bb">UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg</a>(<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a>* svgItem)</div>
 <div class="line"><a name="l02199"></a><span class="lineno"> 2199</span>&#160;{</div>
 <div class="line"><a name="l02200"></a><span class="lineno"> 2200</span>&#160;</div>
 <div class="line"><a name="l02201"></a><span class="lineno"> 2201</span>&#160;    mXmlWriter.writeStartElement(<span class="stringliteral">&quot;image&quot;</span>);</div>
@@ -2325,7 +2309,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;        file.write(svgItem-&gt;<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html#aa5c2b14a2d193b26cbb03952e37698cf">fileData</a>());</div>
 <div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;    }</div>
 <div class="line"><a name="l02221"></a><span class="lineno"> 2221</span>&#160;</div>
-<div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160;    mXmlWriter.writeAttribute(nsXLink, <span class="stringliteral">&quot;href&quot;</span>, fileName);</div>
+<div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>, fileName);</div>
 <div class="line"><a name="l02223"></a><span class="lineno"> 2223</span>&#160;</div>
 <div class="line"><a name="l02224"></a><span class="lineno"> 2224</span>&#160;    writeAction(svgItem-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>());</div>
 <div class="line"><a name="l02225"></a><span class="lineno"> 2225</span>&#160;</div>
@@ -2335,11 +2319,11 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02229"></a><span class="lineno"> 2229</span>&#160;}</div>
 <div class="line"><a name="l02230"></a><span class="lineno"> 2230</span>&#160;</div>
 <div class="line"><a name="l02231"></a><span class="lineno"> 2231</span>&#160;</div>
-<div class="line"><a name="l02232"></a><span class="lineno"> 2232</span>&#160;<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::svgItemFromSvg()</div>
+<div class="line"><a name="l02232"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac540be34ac889ca97a8ad6ce95f9a81f"> 2232</a></span>&#160;<a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac540be34ac889ca97a8ad6ce95f9a81f">UBSvgSubsetAdaptor::UBSvgSubsetReader::svgItemFromSvg</a>()</div>
 <div class="line"><a name="l02233"></a><span class="lineno"> 2233</span>&#160;{</div>
 <div class="line"><a name="l02234"></a><span class="lineno"> 2234</span>&#160;    <a class="code" href="../../d1/dce/class_u_b_graphics_svg_item.html">UBGraphicsSvgItem</a>* svgItem = 0;</div>
 <div class="line"><a name="l02235"></a><span class="lineno"> 2235</span>&#160;</div>
-<div class="line"><a name="l02236"></a><span class="lineno"> 2236</span>&#160;    QStringRef imageHref = mXmlReader.attributes().value(nsXLink, <span class="stringliteral">&quot;href&quot;</span>);</div>
+<div class="line"><a name="l02236"></a><span class="lineno"> 2236</span>&#160;    QStringRef imageHref = mXmlReader.attributes().value(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>);</div>
 <div class="line"><a name="l02237"></a><span class="lineno"> 2237</span>&#160;</div>
 <div class="line"><a name="l02238"></a><span class="lineno"> 2238</span>&#160;    <span class="keywordflow">if</span> (!imageHref.isNull())</div>
 <div class="line"><a name="l02239"></a><span class="lineno"> 2239</span>&#160;    {</div>
@@ -2361,7 +2345,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02255"></a><span class="lineno"> 2255</span>&#160;}</div>
 <div class="line"><a name="l02256"></a><span class="lineno"> 2256</span>&#160;</div>
 <div class="line"><a name="l02257"></a><span class="lineno"> 2257</span>&#160;</div>
-<div class="line"><a name="l02258"></a><span class="lineno"> 2258</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::pdfItemToLinkedPDF(<a class="code" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html">UBGraphicsPDFItem</a>* pdfItem)</div>
+<div class="line"><a name="l02258"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ab9c821c78076a54583f130fd24447ad3"> 2258</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ab9c821c78076a54583f130fd24447ad3">UBSvgSubsetAdaptor::UBSvgSubsetWriter::pdfItemToLinkedPDF</a>(<a class="code" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html">UBGraphicsPDFItem</a>* pdfItem)</div>
 <div class="line"><a name="l02259"></a><span class="lineno"> 2259</span>&#160;{</div>
 <div class="line"><a name="l02260"></a><span class="lineno"> 2260</span>&#160;    mXmlWriter.writeStartElement(<span class="stringliteral">&quot;foreignObject&quot;</span>);</div>
 <div class="line"><a name="l02261"></a><span class="lineno"> 2261</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;requiredExtensions&quot;</span>, <span class="stringliteral">&quot;http://ns.adobe.com/pdf/1.3/&quot;</span>);</div>
@@ -2385,7 +2369,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02279"></a><span class="lineno"> 2279</span>&#160;        file.write(pdfItem-&gt;<a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#af5c1a8bc9ec172214558bb1d687af72f">fileData</a>());</div>
 <div class="line"><a name="l02280"></a><span class="lineno"> 2280</span>&#160;    }</div>
 <div class="line"><a name="l02281"></a><span class="lineno"> 2281</span>&#160;</div>
-<div class="line"><a name="l02282"></a><span class="lineno"> 2282</span>&#160;    mXmlWriter.writeAttribute(nsXLink, <span class="stringliteral">&quot;href&quot;</span>, fileName + <span class="stringliteral">&quot;#page=&quot;</span> + QString::number(pdfItem-&gt;<a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a7d6a6f4a9eaaea2125bff9244fed220a">pageNumber</a>()));</div>
+<div class="line"><a name="l02282"></a><span class="lineno"> 2282</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>, fileName + <span class="stringliteral">&quot;#page=&quot;</span> + QString::number(pdfItem-&gt;<a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a7d6a6f4a9eaaea2125bff9244fed220a">pageNumber</a>()));</div>
 <div class="line"><a name="l02283"></a><span class="lineno"> 2283</span>&#160;</div>
 <div class="line"><a name="l02284"></a><span class="lineno"> 2284</span>&#160;    graphicsItemToSvg(pdfItem);</div>
 <div class="line"><a name="l02285"></a><span class="lineno"> 2285</span>&#160;</div>
@@ -2393,11 +2377,11 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02287"></a><span class="lineno"> 2287</span>&#160;}</div>
 <div class="line"><a name="l02288"></a><span class="lineno"> 2288</span>&#160;</div>
 <div class="line"><a name="l02289"></a><span class="lineno"> 2289</span>&#160;</div>
-<div class="line"><a name="l02290"></a><span class="lineno"> 2290</span>&#160;<a class="code" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html">UBGraphicsPDFItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::pdfItemFromPDF()</div>
+<div class="line"><a name="l02290"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a244382cd1e9cf5358d55ac6aba3bdbbf"> 2290</a></span>&#160;<a class="code" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html">UBGraphicsPDFItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a244382cd1e9cf5358d55ac6aba3bdbbf">UBSvgSubsetAdaptor::UBSvgSubsetReader::pdfItemFromPDF</a>()</div>
 <div class="line"><a name="l02291"></a><span class="lineno"> 2291</span>&#160;{</div>
 <div class="line"><a name="l02292"></a><span class="lineno"> 2292</span>&#160;    <a class="code" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html">UBGraphicsPDFItem</a>* pdfItem = 0;</div>
 <div class="line"><a name="l02293"></a><span class="lineno"> 2293</span>&#160;</div>
-<div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;    QString href = mXmlReader.attributes().value(nsXLink, <span class="stringliteral">&quot;href&quot;</span>).toString();</div>
+<div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;    QString href = mXmlReader.attributes().value(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>).toString();</div>
 <div class="line"><a name="l02295"></a><span class="lineno"> 2295</span>&#160;    QStringList parts = href.split(<span class="stringliteral">&quot;#page=&quot;</span>);</div>
 <div class="line"><a name="l02296"></a><span class="lineno"> 2296</span>&#160;    <span class="keywordflow">if</span> (parts.count() != 2)</div>
 <div class="line"><a name="l02297"></a><span class="lineno"> 2297</span>&#160;    {</div>
@@ -2416,7 +2400,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02310"></a><span class="lineno"> 2310</span>&#160;    <span class="keywordflow">return</span> pdfItem;</div>
 <div class="line"><a name="l02311"></a><span class="lineno"> 2311</span>&#160;}</div>
 <div class="line"><a name="l02312"></a><span class="lineno"> 2312</span>&#160;</div>
-<div class="line"><a name="l02313"></a><span class="lineno"> 2313</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::audioItemToLinkedAudio(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* audioItem)</div>
+<div class="line"><a name="l02313"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ae20c046eb3eeb6c08471ccbb33eb0ba7"> 2313</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ae20c046eb3eeb6c08471ccbb33eb0ba7">UBSvgSubsetAdaptor::UBSvgSubsetWriter::audioItemToLinkedAudio</a>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* audioItem)</div>
 <div class="line"><a name="l02314"></a><span class="lineno"> 2314</span>&#160;{</div>
 <div class="line"><a name="l02315"></a><span class="lineno"> 2315</span>&#160;    mXmlWriter.writeStartElement(<span class="stringliteral">&quot;audio&quot;</span>);</div>
 <div class="line"><a name="l02316"></a><span class="lineno"> 2316</span>&#160;</div>
@@ -2433,12 +2417,12 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02327"></a><span class="lineno"> 2327</span>&#160;    <span class="keywordflow">if</span>(audioFileHref.startsWith(mDocumentPath))</div>
 <div class="line"><a name="l02328"></a><span class="lineno"> 2328</span>&#160;        audioFileHref = audioFileHref.replace(mDocumentPath + <span class="stringliteral">&quot;/&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l02329"></a><span class="lineno"> 2329</span>&#160;</div>
-<div class="line"><a name="l02330"></a><span class="lineno"> 2330</span>&#160;    mXmlWriter.writeAttribute(nsXLink, <span class="stringliteral">&quot;href&quot;</span>, audioFileHref);</div>
+<div class="line"><a name="l02330"></a><span class="lineno"> 2330</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>, audioFileHref);</div>
 <div class="line"><a name="l02331"></a><span class="lineno"> 2331</span>&#160;    mXmlWriter.writeEndElement();</div>
 <div class="line"><a name="l02332"></a><span class="lineno"> 2332</span>&#160;}</div>
 <div class="line"><a name="l02333"></a><span class="lineno"> 2333</span>&#160;</div>
 <div class="line"><a name="l02334"></a><span class="lineno"> 2334</span>&#160;</div>
-<div class="line"><a name="l02335"></a><span class="lineno"> 2335</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::videoItemToLinkedVideo(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* videoItem)</div>
+<div class="line"><a name="l02335"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a3cd0f006465ce60cbc392130ea77f421"> 2335</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a3cd0f006465ce60cbc392130ea77f421">UBSvgSubsetAdaptor::UBSvgSubsetWriter::videoItemToLinkedVideo</a>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* videoItem)</div>
 <div class="line"><a name="l02336"></a><span class="lineno"> 2336</span>&#160;{</div>
 <div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;    <span class="comment">/* w3c sample</span></div>
 <div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160;<span class="comment">     *</span></div>
@@ -2463,14 +2447,14 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02357"></a><span class="lineno"> 2357</span>&#160;    <span class="keywordflow">if</span>(videoFileHref.startsWith(mDocumentPath))</div>
 <div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;        videoFileHref = videoFileHref.replace(mDocumentPath + <span class="stringliteral">&quot;/&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l02359"></a><span class="lineno"> 2359</span>&#160;</div>
-<div class="line"><a name="l02360"></a><span class="lineno"> 2360</span>&#160;    mXmlWriter.writeAttribute(nsXLink, <span class="stringliteral">&quot;href&quot;</span>, videoFileHref);</div>
+<div class="line"><a name="l02360"></a><span class="lineno"> 2360</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>, videoFileHref);</div>
 <div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160;    mXmlWriter.writeEndElement();</div>
 <div class="line"><a name="l02362"></a><span class="lineno"> 2362</span>&#160;}</div>
 <div class="line"><a name="l02363"></a><span class="lineno"> 2363</span>&#160;</div>
-<div class="line"><a name="l02364"></a><span class="lineno"> 2364</span>&#160;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::audioItemFromSvg()</div>
+<div class="line"><a name="l02364"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#aa8e94d3239893ea585fb71bfafa934b5"> 2364</a></span>&#160;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#aa8e94d3239893ea585fb71bfafa934b5">UBSvgSubsetAdaptor::UBSvgSubsetReader::audioItemFromSvg</a>()</div>
 <div class="line"><a name="l02365"></a><span class="lineno"> 2365</span>&#160;{</div>
 <div class="line"><a name="l02366"></a><span class="lineno"> 2366</span>&#160;</div>
-<div class="line"><a name="l02367"></a><span class="lineno"> 2367</span>&#160;    QStringRef audioHref = mXmlReader.attributes().value(nsXLink, <span class="stringliteral">&quot;href&quot;</span>);</div>
+<div class="line"><a name="l02367"></a><span class="lineno"> 2367</span>&#160;    QStringRef audioHref = mXmlReader.attributes().value(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>);</div>
 <div class="line"><a name="l02368"></a><span class="lineno"> 2368</span>&#160;</div>
 <div class="line"><a name="l02369"></a><span class="lineno"> 2369</span>&#160;    <span class="keywordflow">if</span> (audioHref.isNull())</div>
 <div class="line"><a name="l02370"></a><span class="lineno"> 2370</span>&#160;    {</div>
@@ -2505,10 +2489,10 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02399"></a><span class="lineno"> 2399</span>&#160;    <span class="keywordflow">return</span> audioItem;</div>
 <div class="line"><a name="l02400"></a><span class="lineno"> 2400</span>&#160;}</div>
 <div class="line"><a name="l02401"></a><span class="lineno"> 2401</span>&#160;</div>
-<div class="line"><a name="l02402"></a><span class="lineno"> 2402</span>&#160;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::videoItemFromSvg()</div>
+<div class="line"><a name="l02402"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a7319359bfb730e795480bc6988c67567"> 2402</a></span>&#160;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a7319359bfb730e795480bc6988c67567">UBSvgSubsetAdaptor::UBSvgSubsetReader::videoItemFromSvg</a>()</div>
 <div class="line"><a name="l02403"></a><span class="lineno"> 2403</span>&#160;{</div>
 <div class="line"><a name="l02404"></a><span class="lineno"> 2404</span>&#160;</div>
-<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;    QStringRef videoHref = mXmlReader.attributes().value(nsXLink, <span class="stringliteral">&quot;href&quot;</span>);</div>
+<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;    QStringRef videoHref = mXmlReader.attributes().value(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a9a1c2bd95b31f64b43fda8acc13e2a21">nsXLink</a>, <span class="stringliteral">&quot;href&quot;</span>);</div>
 <div class="line"><a name="l02406"></a><span class="lineno"> 2406</span>&#160;</div>
 <div class="line"><a name="l02407"></a><span class="lineno"> 2407</span>&#160;    <span class="keywordflow">if</span> (videoHref.isNull())</div>
 <div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160;    {</div>
@@ -2543,7 +2527,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02437"></a><span class="lineno"> 2437</span>&#160;    <span class="keywordflow">return</span> videoItem;</div>
 <div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;}</div>
 <div class="line"><a name="l02439"></a><span class="lineno"> 2439</span>&#160;</div>
-<div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetReader::graphicsItemFromSvg(QGraphicsItem* gItem)</div>
+<div class="line"><a name="l02440"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a09b1ae110f3f26f1d44d1541585e07b7"> 2440</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a09b1ae110f3f26f1d44d1541585e07b7">UBSvgSubsetAdaptor::UBSvgSubsetReader::graphicsItemFromSvg</a>(QGraphicsItem* gItem)</div>
 <div class="line"><a name="l02441"></a><span class="lineno"> 2441</span>&#160;{</div>
 <div class="line"><a name="l02442"></a><span class="lineno"> 2442</span>&#160;</div>
 <div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;    QStringRef svgTransform = mXmlReader.attributes().value(<span class="stringliteral">&quot;transform&quot;</span>);</div>
@@ -2552,7 +2536,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02446"></a><span class="lineno"> 2446</span>&#160;</div>
 <div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;    <span class="keywordflow">if</span> (!svgTransform.isNull())</div>
 <div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;    {</div>
-<div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;        itemMatrix = fromSvgTransform(svgTransform.toString());</div>
+<div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;        itemMatrix = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#acbff1f770b77c5463ef2fd3c47db8643">fromSvgTransform</a>(svgTransform.toString());</div>
 <div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;        gItem-&gt;setMatrix(itemMatrix);</div>
 <div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;    }</div>
 <div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;</div>
@@ -2623,7 +2607,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02517"></a><span class="lineno"> 2517</span>&#160;</div>
 <div class="line"><a name="l02518"></a><span class="lineno"> 2518</span>&#160;    <span class="keywordflow">if</span> (!ubLocked.isNull())</div>
 <div class="line"><a name="l02519"></a><span class="lineno"> 2519</span>&#160;    {</div>
-<div class="line"><a name="l02520"></a><span class="lineno"> 2520</span>&#160;        <span class="keywordtype">bool</span> isLocked = (ubLocked.toString() == xmlTrue || ubLocked.toString() == <span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line"><a name="l02520"></a><span class="lineno"> 2520</span>&#160;        <span class="keywordtype">bool</span> isLocked = (ubLocked.toString() == <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a> || ubLocked.toString() == <span class="stringliteral">&quot;1&quot;</span>);</div>
 <div class="line"><a name="l02521"></a><span class="lineno"> 2521</span>&#160;        gItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba58a083455c298d786bec3d1af87ef1b5">UBGraphicsItemData::ItemLocked</a>, QVariant(isLocked));</div>
 <div class="line"><a name="l02522"></a><span class="lineno"> 2522</span>&#160;    }</div>
 <div class="line"><a name="l02523"></a><span class="lineno"> 2523</span>&#160;</div>
@@ -2631,7 +2615,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02525"></a><span class="lineno"> 2525</span>&#160;</div>
 <div class="line"><a name="l02526"></a><span class="lineno"> 2526</span>&#160;    <span class="keywordflow">if</span> (!ubEditable.isNull())</div>
 <div class="line"><a name="l02527"></a><span class="lineno"> 2527</span>&#160;    {</div>
-<div class="line"><a name="l02528"></a><span class="lineno"> 2528</span>&#160;        <span class="keywordtype">bool</span> isEditable = (ubEditable.toString() == xmlTrue || ubEditable.toString() == <span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line"><a name="l02528"></a><span class="lineno"> 2528</span>&#160;        <span class="keywordtype">bool</span> isEditable = (ubEditable.toString() == <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a> || ubEditable.toString() == <span class="stringliteral">&quot;1&quot;</span>);</div>
 <div class="line"><a name="l02529"></a><span class="lineno"> 2529</span>&#160;        gItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(isEditable));</div>
 <div class="line"><a name="l02530"></a><span class="lineno"> 2530</span>&#160;    }</div>
 <div class="line"><a name="l02531"></a><span class="lineno"> 2531</span>&#160;</div>
@@ -2649,7 +2633,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02543"></a><span class="lineno"> 2543</span>&#160;    }</div>
 <div class="line"><a name="l02544"></a><span class="lineno"> 2544</span>&#160;}</div>
 <div class="line"><a name="l02545"></a><span class="lineno"> 2545</span>&#160;</div>
-<div class="line"><a name="l02546"></a><span class="lineno"> 2546</span>&#160;qreal UBSvgSubsetAdaptor::UBSvgSubsetReader::getZValueFromSvg()</div>
+<div class="line"><a name="l02546"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac5f3c4f8713a923b5622d6462502c07d"> 2546</a></span>&#160;qreal <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac5f3c4f8713a923b5622d6462502c07d">UBSvgSubsetAdaptor::UBSvgSubsetReader::getZValueFromSvg</a>()</div>
 <div class="line"><a name="l02547"></a><span class="lineno"> 2547</span>&#160;{</div>
 <div class="line"><a name="l02548"></a><span class="lineno"> 2548</span>&#160;    qreal result = <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a1dc0a9d321bdfa56f71b82e90dc05acd">UBZLayerController::errorNum</a>();</div>
 <div class="line"><a name="l02549"></a><span class="lineno"> 2549</span>&#160;</div>
@@ -2661,7 +2645,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02555"></a><span class="lineno"> 2555</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l02556"></a><span class="lineno"> 2556</span>&#160;}</div>
 <div class="line"><a name="l02557"></a><span class="lineno"> 2557</span>&#160;</div>
-<div class="line"><a name="l02558"></a><span class="lineno"> 2558</span>&#160;QUuid UBSvgSubsetAdaptor::UBSvgSubsetReader::getUuidFromSvg()</div>
+<div class="line"><a name="l02558"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a4dc4d3b6e1ec07caf50cf7a69d1530d5"> 2558</a></span>&#160;QUuid <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a4dc4d3b6e1ec07caf50cf7a69d1530d5">UBSvgSubsetAdaptor::UBSvgSubsetReader::getUuidFromSvg</a>()</div>
 <div class="line"><a name="l02559"></a><span class="lineno"> 2559</span>&#160;{</div>
 <div class="line"><a name="l02560"></a><span class="lineno"> 2560</span>&#160;    QUuid result;</div>
 <div class="line"><a name="l02561"></a><span class="lineno"> 2561</span>&#160;</div>
@@ -2675,7 +2659,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02569"></a><span class="lineno"> 2569</span>&#160;}</div>
 <div class="line"><a name="l02570"></a><span class="lineno"> 2570</span>&#160;</div>
 <div class="line"><a name="l02571"></a><span class="lineno"> 2571</span>&#160;</div>
-<div class="line"><a name="l02572"></a><span class="lineno"> 2572</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsItemToSvg(QGraphicsItem* item)</div>
+<div class="line"><a name="l02572"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a5dce77a057d8d3c299734e0616d86330"> 2572</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a5dce77a057d8d3c299734e0616d86330">UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsItemToSvg</a>(QGraphicsItem* item)</div>
 <div class="line"><a name="l02573"></a><span class="lineno"> 2573</span>&#160;{</div>
 <div class="line"><a name="l02574"></a><span class="lineno"> 2574</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;0&quot;</span>);</div>
 <div class="line"><a name="l02575"></a><span class="lineno"> 2575</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;y&quot;</span>, <span class="stringliteral">&quot;0&quot;</span>);</div>
@@ -2683,7 +2667,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02577"></a><span class="lineno"> 2577</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;width&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().width()));</div>
 <div class="line"><a name="l02578"></a><span class="lineno"> 2578</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;height&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().height()));</div>
 <div class="line"><a name="l02579"></a><span class="lineno"> 2579</span>&#160;</div>
-<div class="line"><a name="l02580"></a><span class="lineno"> 2580</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, toSvgTransform(item-&gt;sceneMatrix()));</div>
+<div class="line"><a name="l02580"></a><span class="lineno"> 2580</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(item-&gt;sceneMatrix()));</div>
 <div class="line"><a name="l02581"></a><span class="lineno"> 2581</span>&#160;</div>
 <div class="line"><a name="l02582"></a><span class="lineno"> 2582</span>&#160;    QString zs;</div>
 <div class="line"><a name="l02583"></a><span class="lineno"> 2583</span>&#160;    zs.setNum(item-&gt;zValue(), <span class="charliteral">&#39;f&#39;</span>); <span class="comment">// &#39;f&#39; keeps precision</span></div>
@@ -2691,7 +2675,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02585"></a><span class="lineno"> 2585</span>&#160;</div>
 <div class="line"><a name="l02586"></a><span class="lineno"> 2586</span>&#160;    <span class="keywordtype">bool</span> isBackground = mScene-&gt;isBackgroundObject(item);</div>
 <div class="line"><a name="l02587"></a><span class="lineno"> 2587</span>&#160;</div>
-<div class="line"><a name="l02588"></a><span class="lineno"> 2588</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;background&quot;</span>, isBackground ? xmlTrue : xmlFalse);</div>
+<div class="line"><a name="l02588"></a><span class="lineno"> 2588</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;background&quot;</span>, isBackground ? <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a> : <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a1adfffd7e1374c84381c932b0e15e218">xmlFalse</a>);</div>
 <div class="line"><a name="l02589"></a><span class="lineno"> 2589</span>&#160;</div>
 <div class="line"><a name="l02590"></a><span class="lineno"> 2590</span>&#160;    <a class="code" href="../../d8/d1e/class_u_b_item.html">UBItem</a>* ubItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d8/d1e/class_u_b_item.html">UBItem</a>*<span class="keyword">&gt;</span>(item);</div>
 <div class="line"><a name="l02591"></a><span class="lineno"> 2591</span>&#160;</div>
@@ -2712,12 +2696,12 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02606"></a><span class="lineno"> 2606</span>&#160;    QVariant locked = item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba58a083455c298d786bec3d1af87ef1b5">UBGraphicsItemData::ItemLocked</a>);</div>
 <div class="line"><a name="l02607"></a><span class="lineno"> 2607</span>&#160;</div>
 <div class="line"><a name="l02608"></a><span class="lineno"> 2608</span>&#160;    <span class="keywordflow">if</span> (!locked.isNull() &amp;&amp; locked.toBool())</div>
-<div class="line"><a name="l02609"></a><span class="lineno"> 2609</span>&#160;        mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;locked&quot;</span>, xmlTrue);</div>
+<div class="line"><a name="l02609"></a><span class="lineno"> 2609</span>&#160;        mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;locked&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a>);</div>
 <div class="line"><a name="l02610"></a><span class="lineno"> 2610</span>&#160;</div>
 <div class="line"><a name="l02611"></a><span class="lineno"> 2611</span>&#160;    QVariant editable = item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>);</div>
 <div class="line"><a name="l02612"></a><span class="lineno"> 2612</span>&#160;    <span class="keywordflow">if</span> (!editable.isNull()) {</div>
 <div class="line"><a name="l02613"></a><span class="lineno"> 2613</span>&#160;        <span class="keywordflow">if</span> (editable.toBool())</div>
-<div class="line"><a name="l02614"></a><span class="lineno"> 2614</span>&#160;            mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;editable&quot;</span>, xmlTrue);</div>
+<div class="line"><a name="l02614"></a><span class="lineno"> 2614</span>&#160;            mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;editable&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a>);</div>
 <div class="line"><a name="l02615"></a><span class="lineno"> 2615</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l02616"></a><span class="lineno"> 2616</span>&#160;            mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;editable&quot;</span>, xmlFalse);</div>
 <div class="line"><a name="l02617"></a><span class="lineno"> 2617</span>&#160;    }</div>
@@ -2726,17 +2710,17 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02620"></a><span class="lineno"> 2620</span>&#160;</div>
 <div class="line"><a name="l02621"></a><span class="lineno"> 2621</span>&#160;</div>
 <div class="line"><a name="l02622"></a><span class="lineno"> 2622</span>&#160;</div>
-<div class="line"><a name="l02623"></a><span class="lineno"> 2623</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsAppleWidgetToSvg(<a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a>* item)</div>
+<div class="line"><a name="l02623"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a08c65de6616a40652f7558cf94d148ab"> 2623</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a08c65de6616a40652f7558cf94d148ab">UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsAppleWidgetToSvg</a>(<a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a>* item)</div>
 <div class="line"><a name="l02624"></a><span class="lineno"> 2624</span>&#160;{</div>
 <div class="line"><a name="l02625"></a><span class="lineno"> 2625</span>&#160;    graphicsWidgetToSvg(item);</div>
 <div class="line"><a name="l02626"></a><span class="lineno"> 2626</span>&#160;}</div>
 <div class="line"><a name="l02627"></a><span class="lineno"> 2627</span>&#160;</div>
-<div class="line"><a name="l02628"></a><span class="lineno"> 2628</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsW3CWidgetToSvg(<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a>* item)</div>
+<div class="line"><a name="l02628"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#afc3dee5fb37656f066c31bc27a33d82a"> 2628</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#afc3dee5fb37656f066c31bc27a33d82a">UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsW3CWidgetToSvg</a>(<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a>* item)</div>
 <div class="line"><a name="l02629"></a><span class="lineno"> 2629</span>&#160;{</div>
 <div class="line"><a name="l02630"></a><span class="lineno"> 2630</span>&#160;    graphicsWidgetToSvg(item);</div>
 <div class="line"><a name="l02631"></a><span class="lineno"> 2631</span>&#160;}</div>
 <div class="line"><a name="l02632"></a><span class="lineno"> 2632</span>&#160;</div>
-<div class="line"><a name="l02633"></a><span class="lineno"> 2633</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsWidgetToSvg(<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a>* item)</div>
+<div class="line"><a name="l02633"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ab57eb1ff768b3c1071d177aec3a7e34a"> 2633</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ab57eb1ff768b3c1071d177aec3a7e34a">UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsWidgetToSvg</a>(<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a>* item)</div>
 <div class="line"><a name="l02634"></a><span class="lineno"> 2634</span>&#160;{</div>
 <div class="line"><a name="l02635"></a><span class="lineno"> 2635</span>&#160;    QUrl widgetRootUrl = item-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a822163a986fcfb4426e91516444486d5">widgetUrl</a>();</div>
 <div class="line"><a name="l02636"></a><span class="lineno"> 2636</span>&#160;    QString uuid = <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#af1f88e3aef7d3360b2302ebe2f6c9627">UBStringUtils::toCanonicalUuid</a>(item-&gt;<a class="code" href="../../d8/d1e/class_u_b_item.html#a242c8e4390dc3244bd42023b349b042b">uuid</a>());</div>
@@ -2769,13 +2753,13 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02663"></a><span class="lineno"> 2663</span>&#160;</div>
 <div class="line"><a name="l02664"></a><span class="lineno"> 2664</span>&#160;    <span class="keywordflow">if</span> (item-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a10fbd95d94f4faf53781c51596e4ded7">isFrozen</a>())</div>
 <div class="line"><a name="l02665"></a><span class="lineno"> 2665</span>&#160;    {</div>
-<div class="line"><a name="l02666"></a><span class="lineno"> 2666</span>&#160;        mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;frozen&quot;</span>, xmlTrue);</div>
+<div class="line"><a name="l02666"></a><span class="lineno"> 2666</span>&#160;        mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;frozen&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a>);</div>
 <div class="line"><a name="l02667"></a><span class="lineno"> 2667</span>&#160;    }</div>
 <div class="line"><a name="l02668"></a><span class="lineno"> 2668</span>&#160;</div>
 <div class="line"><a name="l02669"></a><span class="lineno"> 2669</span>&#160;    QString snapshotPath = mDocumentPath + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7c481362bd285b72aa501b9a6f70b314">UBPersistenceManager::widgetDirectory</a> + <span class="stringliteral">&quot;/&quot;</span> + uuid + <span class="stringliteral">&quot;.png&quot;</span>;</div>
 <div class="line"><a name="l02670"></a><span class="lineno"> 2670</span>&#160;    item-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1155a1b6429369e9e713780a94ad5ecd">snapshot</a>().save(snapshotPath, <span class="stringliteral">&quot;PNG&quot;</span>);</div>
 <div class="line"><a name="l02671"></a><span class="lineno"> 2671</span>&#160;</div>
-<div class="line"><a name="l02672"></a><span class="lineno"> 2672</span>&#160;    mXmlWriter.writeStartElement(nsXHtml, <span class="stringliteral">&quot;iframe&quot;</span>);</div>
+<div class="line"><a name="l02672"></a><span class="lineno"> 2672</span>&#160;    mXmlWriter.writeStartElement(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a3448a034e9c845f9c0ce1c3c87f8cc77">nsXHtml</a>, <span class="stringliteral">&quot;iframe&quot;</span>);</div>
 <div class="line"><a name="l02673"></a><span class="lineno"> 2673</span>&#160;</div>
 <div class="line"><a name="l02674"></a><span class="lineno"> 2674</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;style&quot;</span>, <span class="stringliteral">&quot;border: none&quot;</span>);</div>
 <div class="line"><a name="l02675"></a><span class="lineno"> 2675</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;width&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().width()));</div>
@@ -2824,7 +2808,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02718"></a><span class="lineno"> 2718</span>&#160;}</div>
 <div class="line"><a name="l02719"></a><span class="lineno"> 2719</span>&#160;</div>
 <div class="line"><a name="l02720"></a><span class="lineno"> 2720</span>&#160;</div>
-<div class="line"><a name="l02721"></a><span class="lineno"> 2721</span>&#160;<a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::graphicsAppleWidgetFromSvg()</div>
+<div class="line"><a name="l02721"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#abf5a9934fcd8a86068a40223e4d432ab"> 2721</a></span>&#160;<a class="code" href="../../dd/d03/class_u_b_graphics_apple_widget_item.html">UBGraphicsAppleWidgetItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#abf5a9934fcd8a86068a40223e4d432ab">UBSvgSubsetAdaptor::UBSvgSubsetReader::graphicsAppleWidgetFromSvg</a>()</div>
 <div class="line"><a name="l02722"></a><span class="lineno"> 2722</span>&#160;{</div>
 <div class="line"><a name="l02723"></a><span class="lineno"> 2723</span>&#160;</div>
 <div class="line"><a name="l02724"></a><span class="lineno"> 2724</span>&#160;    QStringRef widgetUrl = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;src&quot;</span>);</div>
@@ -2851,7 +2835,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02745"></a><span class="lineno"> 2745</span>&#160;    <span class="keywordflow">return</span> widgetItem;</div>
 <div class="line"><a name="l02746"></a><span class="lineno"> 2746</span>&#160;}</div>
 <div class="line"><a name="l02747"></a><span class="lineno"> 2747</span>&#160;</div>
-<div class="line"><a name="l02748"></a><span class="lineno"> 2748</span>&#160;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::graphicsW3CWidgetFromSvg()</div>
+<div class="line"><a name="l02748"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac966cfa1d29b7020f0ab1309b7c8cf31"> 2748</a></span>&#160;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac966cfa1d29b7020f0ab1309b7c8cf31">UBSvgSubsetAdaptor::UBSvgSubsetReader::graphicsW3CWidgetFromSvg</a>()</div>
 <div class="line"><a name="l02749"></a><span class="lineno"> 2749</span>&#160;{</div>
 <div class="line"><a name="l02750"></a><span class="lineno"> 2750</span>&#160;    QStringRef widgetUrl = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;src&quot;</span>);</div>
 <div class="line"><a name="l02751"></a><span class="lineno"> 2751</span>&#160;</div>
@@ -2880,7 +2864,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02774"></a><span class="lineno"> 2774</span>&#160;</div>
 <div class="line"><a name="l02775"></a><span class="lineno"> 2775</span>&#160;    QStringRef frozen = mXmlReader.attributes().value(mNamespaceUri, <span class="stringliteral">&quot;frozen&quot;</span>);</div>
 <div class="line"><a name="l02776"></a><span class="lineno"> 2776</span>&#160;</div>
-<div class="line"><a name="l02777"></a><span class="lineno"> 2777</span>&#160;    <span class="keywordflow">if</span> (!frozen.isNull() &amp;&amp; frozen.toString() == xmlTrue &amp;&amp; !snapshot.isNull())</div>
+<div class="line"><a name="l02777"></a><span class="lineno"> 2777</span>&#160;    <span class="keywordflow">if</span> (!frozen.isNull() &amp;&amp; frozen.toString() == <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ad5460226f2e1c56cd3b7db062fe7c0da">xmlTrue</a> &amp;&amp; !snapshot.isNull())</div>
 <div class="line"><a name="l02778"></a><span class="lineno"> 2778</span>&#160;    {</div>
 <div class="line"><a name="l02779"></a><span class="lineno"> 2779</span>&#160;        widgetItem-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1af419d1aa29398ca4946109953345ed">freeze</a>();</div>
 <div class="line"><a name="l02780"></a><span class="lineno"> 2780</span>&#160;    }</div>
@@ -2890,7 +2874,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02784"></a><span class="lineno"> 2784</span>&#160;    <span class="keywordflow">return</span> widgetItem;</div>
 <div class="line"><a name="l02785"></a><span class="lineno"> 2785</span>&#160;}</div>
 <div class="line"><a name="l02786"></a><span class="lineno"> 2786</span>&#160;</div>
-<div class="line"><a name="l02787"></a><span class="lineno"> 2787</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>* item)</div>
+<div class="line"><a name="l02787"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ac07e7aa808b5c5a7f050ea2d888b4527"> 2787</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ac07e7aa808b5c5a7f050ea2d888b4527">UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg</a>(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>* item)</div>
 <div class="line"><a name="l02788"></a><span class="lineno"> 2788</span>&#160;{</div>
 <div class="line"><a name="l02801"></a><span class="lineno"> 2801</span>&#160;    mXmlWriter.writeStartElement(<span class="stringliteral">&quot;foreignObject&quot;</span>);</div>
 <div class="line"><a name="l02802"></a><span class="lineno"> 2802</span>&#160;    mXmlWriter.writeAttribute(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;type&quot;</span>, <span class="stringliteral">&quot;text&quot;</span>);</div>
@@ -2924,7 +2908,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02830"></a><span class="lineno"> 2830</span>&#160;    mXmlWriter.writeEndElement(); <span class="comment">//foreignObject</span></div>
 <div class="line"><a name="l02831"></a><span class="lineno"> 2831</span>&#160;}</div>
 <div class="line"><a name="l02832"></a><span class="lineno"> 2832</span>&#160;</div>
-<div class="line"><a name="l02833"></a><span class="lineno"> 2833</span>&#160;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()</div>
+<div class="line"><a name="l02833"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a46189cc62ec8d97c8d79e9952249fae9"> 2833</a></span>&#160;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a46189cc62ec8d97c8d79e9952249fae9">UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg</a>()</div>
 <div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;{</div>
 <div class="line"><a name="l02835"></a><span class="lineno"> 2835</span>&#160;    qreal width = mXmlReader.attributes().value(<span class="stringliteral">&quot;width&quot;</span>).toString().toFloat();</div>
 <div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160;    qreal height = mXmlReader.attributes().value(<span class="stringliteral">&quot;height&quot;</span>).toString().toFloat();</div>
@@ -2992,20 +2976,20 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;                <span class="keywordflow">if</span> (!fontStyle.isNull()) {</div>
 <div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;                    <span class="keywordflow">foreach</span> (QString styleToken, fontStyle.toString().split(<span class="stringliteral">&quot;;&quot;</span>)) {</div>
 <div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;                        styleToken = styleToken.trimmed();</div>
-<div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;                        <span class="keywordflow">if</span> (styleToken.startsWith(sFontSizePrefix) &amp;&amp; styleToken.endsWith(sPixelUnit)) {</div>
+<div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;                        <span class="keywordflow">if</span> (styleToken.startsWith(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ade20b66dff8586c2a270fc0ec0e37140">sFontSizePrefix</a>) &amp;&amp; styleToken.endsWith(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a3d5cad8803cfd188f7849d59d6bd6d9c">sPixelUnit</a>)) {</div>
 <div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;                            <span class="keywordtype">int</span> fontSize = styleToken.mid(</div>
-<div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;                                               sFontSizePrefix.length(),</div>
-<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;                                               styleToken.length() - sFontSizePrefix.length() - sPixelUnit.length()).toInt();</div>
+<div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;                                               <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ade20b66dff8586c2a270fc0ec0e37140">sFontSizePrefix</a>.length(),</div>
+<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;                                               styleToken.length() - <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ade20b66dff8586c2a270fc0ec0e37140">sFontSizePrefix</a>.length() - <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a3d5cad8803cfd188f7849d59d6bd6d9c">sPixelUnit</a>.length()).toInt();</div>
 <div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160;                            font.setPixelSize(fontSize);</div>
-<div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (styleToken.startsWith(sFontWeightPrefix)) {</div>
+<div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (styleToken.startsWith(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac9df97e19b9bfd3de1064adae0b371f8">sFontWeightPrefix</a>)) {</div>
 <div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160;                            QString fontWeight = styleToken.mid(</div>
-<div class="line"><a name="l02908"></a><span class="lineno"> 2908</span>&#160;                                                     sFontWeightPrefix.length(),</div>
-<div class="line"><a name="l02909"></a><span class="lineno"> 2909</span>&#160;                                                     styleToken.length() - sFontWeightPrefix.length());</div>
+<div class="line"><a name="l02908"></a><span class="lineno"> 2908</span>&#160;                                                     <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac9df97e19b9bfd3de1064adae0b371f8">sFontWeightPrefix</a>.length(),</div>
+<div class="line"><a name="l02909"></a><span class="lineno"> 2909</span>&#160;                                                     styleToken.length() - <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac9df97e19b9bfd3de1064adae0b371f8">sFontWeightPrefix</a>.length());</div>
 <div class="line"><a name="l02910"></a><span class="lineno"> 2910</span>&#160;                            font.setBold(fontWeight.contains(<span class="stringliteral">&quot;bold&quot;</span>));</div>
-<div class="line"><a name="l02911"></a><span class="lineno"> 2911</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (styleToken.startsWith(sFontStylePrefix)) {</div>
+<div class="line"><a name="l02911"></a><span class="lineno"> 2911</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (styleToken.startsWith(<a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a67a360fb9d747e9f3dc05022be5a6f29">sFontStylePrefix</a>)) {</div>
 <div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;                            QString fontStyle = styleToken.mid(</div>
-<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;                                                    sFontStylePrefix.length(),</div>
-<div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160;                                                    styleToken.length() - sFontStylePrefix.length());</div>
+<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;                                                    <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a67a360fb9d747e9f3dc05022be5a6f29">sFontStylePrefix</a>.length(),</div>
+<div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160;                                                    styleToken.length() - <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a67a360fb9d747e9f3dc05022be5a6f29">sFontStylePrefix</a>.length());</div>
 <div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;                            font.setItalic(fontStyle.contains(<span class="stringliteral">&quot;italic&quot;</span>));</div>
 <div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;                        }</div>
 <div class="line"><a name="l02917"></a><span class="lineno"> 2917</span>&#160;                    }</div>
@@ -3059,14 +3043,14 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02965"></a><span class="lineno"> 2965</span>&#160;</div>
 <div class="line"><a name="l02966"></a><span class="lineno"> 2966</span>&#160;</div>
 <div class="line"><a name="l02967"></a><span class="lineno"> 2967</span>&#160;</div>
-<div class="line"><a name="l02968"></a><span class="lineno"> 2968</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::curtainItemToSvg(<a class="code" href="../../d5/d13/class_u_b_graphics_curtain_item.html">UBGraphicsCurtainItem</a>* curtainItem)</div>
+<div class="line"><a name="l02968"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#aa411f9a83d562a1bf3d47f4cca92cfa9"> 2968</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#aa411f9a83d562a1bf3d47f4cca92cfa9">UBSvgSubsetAdaptor::UBSvgSubsetWriter::curtainItemToSvg</a>(<a class="code" href="../../d5/d13/class_u_b_graphics_curtain_item.html">UBGraphicsCurtainItem</a>* curtainItem)</div>
 <div class="line"><a name="l02969"></a><span class="lineno"> 2969</span>&#160;{</div>
 <div class="line"><a name="l02978"></a><span class="lineno"> 2978</span>&#160;    mXmlWriter.writeStartElement(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;curtain&quot;</span>);</div>
 <div class="line"><a name="l02979"></a><span class="lineno"> 2979</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;x&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(curtainItem-&gt;boundingRect().center().x()));</div>
 <div class="line"><a name="l02980"></a><span class="lineno"> 2980</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;y&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(curtainItem-&gt;boundingRect().center().y()));</div>
 <div class="line"><a name="l02981"></a><span class="lineno"> 2981</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;width&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(curtainItem-&gt;boundingRect().width()));</div>
 <div class="line"><a name="l02982"></a><span class="lineno"> 2982</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;height&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(curtainItem-&gt;boundingRect().height()));</div>
-<div class="line"><a name="l02983"></a><span class="lineno"> 2983</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, toSvgTransform(curtainItem-&gt;sceneMatrix()));</div>
+<div class="line"><a name="l02983"></a><span class="lineno"> 2983</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(curtainItem-&gt;sceneMatrix()));</div>
 <div class="line"><a name="l02984"></a><span class="lineno"> 2984</span>&#160;</div>
 <div class="line"><a name="l02985"></a><span class="lineno"> 2985</span>&#160;    <span class="comment">//graphicsItemToSvg(curtainItem);</span></div>
 <div class="line"><a name="l02986"></a><span class="lineno"> 2986</span>&#160;    QString zs;</div>
@@ -3084,7 +3068,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l02998"></a><span class="lineno"> 2998</span>&#160;}</div>
 <div class="line"><a name="l02999"></a><span class="lineno"> 2999</span>&#160;</div>
 <div class="line"><a name="l03000"></a><span class="lineno"> 3000</span>&#160;</div>
-<div class="line"><a name="l03001"></a><span class="lineno"> 3001</span>&#160;<a class="code" href="../../d5/d13/class_u_b_graphics_curtain_item.html">UBGraphicsCurtainItem</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::curtainItemFromSvg()</div>
+<div class="line"><a name="l03001"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a1dbf6d9e7024e0ae68744b9401eaa838"> 3001</a></span>&#160;<a class="code" href="../../d5/d13/class_u_b_graphics_curtain_item.html">UBGraphicsCurtainItem</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a1dbf6d9e7024e0ae68744b9401eaa838">UBSvgSubsetAdaptor::UBSvgSubsetReader::curtainItemFromSvg</a>()</div>
 <div class="line"><a name="l03002"></a><span class="lineno"> 3002</span>&#160;{</div>
 <div class="line"><a name="l03003"></a><span class="lineno"> 3003</span>&#160;    <a class="code" href="../../d5/d13/class_u_b_graphics_curtain_item.html">UBGraphicsCurtainItem</a>* curtainItem = <span class="keyword">new</span> <a class="code" href="../../d5/d13/class_u_b_graphics_curtain_item.html">UBGraphicsCurtainItem</a>();</div>
 <div class="line"><a name="l03004"></a><span class="lineno"> 3004</span>&#160;</div>
@@ -3110,7 +3094,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03024"></a><span class="lineno"> 3024</span>&#160;}</div>
 <div class="line"><a name="l03025"></a><span class="lineno"> 3025</span>&#160;</div>
 <div class="line"><a name="l03026"></a><span class="lineno"> 3026</span>&#160;</div>
-<div class="line"><a name="l03027"></a><span class="lineno"> 3027</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::rulerToSvg(<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>* item)</div>
+<div class="line"><a name="l03027"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ac53de74798c6a8e0163aa8f22c6d0e00"> 3027</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#ac53de74798c6a8e0163aa8f22c6d0e00">UBSvgSubsetAdaptor::UBSvgSubsetWriter::rulerToSvg</a>(<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>* item)</div>
 <div class="line"><a name="l03028"></a><span class="lineno"> 3028</span>&#160;{</div>
 <div class="line"><a name="l03029"></a><span class="lineno"> 3029</span>&#160;</div>
 <div class="line"><a name="l03038"></a><span class="lineno"> 3038</span>&#160;    mXmlWriter.writeStartElement(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;ruler&quot;</span>);</div>
@@ -3118,7 +3102,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03040"></a><span class="lineno"> 3040</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;y&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().y()));</div>
 <div class="line"><a name="l03041"></a><span class="lineno"> 3041</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;width&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().width()));</div>
 <div class="line"><a name="l03042"></a><span class="lineno"> 3042</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;height&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().height()));</div>
-<div class="line"><a name="l03043"></a><span class="lineno"> 3043</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, toSvgTransform(item-&gt;sceneMatrix()));</div>
+<div class="line"><a name="l03043"></a><span class="lineno"> 3043</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(item-&gt;sceneMatrix()));</div>
 <div class="line"><a name="l03044"></a><span class="lineno"> 3044</span>&#160;</div>
 <div class="line"><a name="l03045"></a><span class="lineno"> 3045</span>&#160;    QString zs;</div>
 <div class="line"><a name="l03046"></a><span class="lineno"> 3046</span>&#160;    zs.setNum(item-&gt;zValue(), <span class="charliteral">&#39;f&#39;</span>); <span class="comment">// &#39;f&#39; keeps precision</span></div>
@@ -3135,7 +3119,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03057"></a><span class="lineno"> 3057</span>&#160;}</div>
 <div class="line"><a name="l03058"></a><span class="lineno"> 3058</span>&#160;</div>
 <div class="line"><a name="l03059"></a><span class="lineno"> 3059</span>&#160;</div>
-<div class="line"><a name="l03060"></a><span class="lineno"> 3060</span>&#160;<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::rulerFromSvg()</div>
+<div class="line"><a name="l03060"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a92ab00d5a4a7e122b83300c4010da1a8"> 3060</a></span>&#160;<a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a92ab00d5a4a7e122b83300c4010da1a8">UBSvgSubsetAdaptor::UBSvgSubsetReader::rulerFromSvg</a>()</div>
 <div class="line"><a name="l03061"></a><span class="lineno"> 3061</span>&#160;{</div>
 <div class="line"><a name="l03062"></a><span class="lineno"> 3062</span>&#160;    <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>* ruler = <span class="keyword">new</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html">UBGraphicsRuler</a>();</div>
 <div class="line"><a name="l03063"></a><span class="lineno"> 3063</span>&#160;</div>
@@ -3159,7 +3143,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03081"></a><span class="lineno"> 3081</span>&#160;}</div>
 <div class="line"><a name="l03082"></a><span class="lineno"> 3082</span>&#160;</div>
 <div class="line"><a name="l03083"></a><span class="lineno"> 3083</span>&#160;</div>
-<div class="line"><a name="l03084"></a><span class="lineno"> 3084</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::compassToSvg(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>* item)</div>
+<div class="line"><a name="l03084"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a167f8604f5558789282b8239517ed6dd"> 3084</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a167f8604f5558789282b8239517ed6dd">UBSvgSubsetAdaptor::UBSvgSubsetWriter::compassToSvg</a>(<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>* item)</div>
 <div class="line"><a name="l03085"></a><span class="lineno"> 3085</span>&#160;{</div>
 <div class="line"><a name="l03086"></a><span class="lineno"> 3086</span>&#160;</div>
 <div class="line"><a name="l03095"></a><span class="lineno"> 3095</span>&#160;    mXmlWriter.writeStartElement(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;compass&quot;</span>);</div>
@@ -3167,7 +3151,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03097"></a><span class="lineno"> 3097</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;y&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().y()));</div>
 <div class="line"><a name="l03098"></a><span class="lineno"> 3098</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;width&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().width()));</div>
 <div class="line"><a name="l03099"></a><span class="lineno"> 3099</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;height&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().height()));</div>
-<div class="line"><a name="l03100"></a><span class="lineno"> 3100</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, toSvgTransform(item-&gt;sceneMatrix()));</div>
+<div class="line"><a name="l03100"></a><span class="lineno"> 3100</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(item-&gt;sceneMatrix()));</div>
 <div class="line"><a name="l03101"></a><span class="lineno"> 3101</span>&#160;</div>
 <div class="line"><a name="l03102"></a><span class="lineno"> 3102</span>&#160;    QString zs;</div>
 <div class="line"><a name="l03103"></a><span class="lineno"> 3103</span>&#160;    zs.setNum(item-&gt;zValue(), <span class="charliteral">&#39;f&#39;</span>); <span class="comment">// &#39;f&#39; keeps precision</span></div>
@@ -3184,7 +3168,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03114"></a><span class="lineno"> 3114</span>&#160;}</div>
 <div class="line"><a name="l03115"></a><span class="lineno"> 3115</span>&#160;</div>
 <div class="line"><a name="l03116"></a><span class="lineno"> 3116</span>&#160;</div>
-<div class="line"><a name="l03117"></a><span class="lineno"> 3117</span>&#160;<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::compassFromSvg()</div>
+<div class="line"><a name="l03117"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a275917ae6d61baab4d2dfd97e9620675"> 3117</a></span>&#160;<a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a275917ae6d61baab4d2dfd97e9620675">UBSvgSubsetAdaptor::UBSvgSubsetReader::compassFromSvg</a>()</div>
 <div class="line"><a name="l03118"></a><span class="lineno"> 3118</span>&#160;{</div>
 <div class="line"><a name="l03119"></a><span class="lineno"> 3119</span>&#160;    <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>* compass = <span class="keyword">new</span> <a class="code" href="../../d6/d56/class_u_b_graphics_compass.html">UBGraphicsCompass</a>();</div>
 <div class="line"><a name="l03120"></a><span class="lineno"> 3120</span>&#160;</div>
@@ -3209,7 +3193,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03139"></a><span class="lineno"> 3139</span>&#160;}</div>
 <div class="line"><a name="l03140"></a><span class="lineno"> 3140</span>&#160;</div>
 <div class="line"><a name="l03141"></a><span class="lineno"> 3141</span>&#160;</div>
-<div class="line"><a name="l03142"></a><span class="lineno"> 3142</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::protractorToSvg(<a class="code" href="../../d5/d69/class_u_b_graphics_protractor.html">UBGraphicsProtractor</a>* item)</div>
+<div class="line"><a name="l03142"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#acf86edf0978bf18635e886da8016312b"> 3142</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#acf86edf0978bf18635e886da8016312b">UBSvgSubsetAdaptor::UBSvgSubsetWriter::protractorToSvg</a>(<a class="code" href="../../d5/d69/class_u_b_graphics_protractor.html">UBGraphicsProtractor</a>* item)</div>
 <div class="line"><a name="l03143"></a><span class="lineno"> 3143</span>&#160;{</div>
 <div class="line"><a name="l03144"></a><span class="lineno"> 3144</span>&#160;</div>
 <div class="line"><a name="l03153"></a><span class="lineno"> 3153</span>&#160;    mXmlWriter.writeStartElement(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;protractor&quot;</span>);</div>
@@ -3218,7 +3202,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03156"></a><span class="lineno"> 3156</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;y&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;rect().y()));</div>
 <div class="line"><a name="l03157"></a><span class="lineno"> 3157</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;width&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;rect().width()));</div>
 <div class="line"><a name="l03158"></a><span class="lineno"> 3158</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;height&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;rect().height()));</div>
-<div class="line"><a name="l03159"></a><span class="lineno"> 3159</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, toSvgTransform(item-&gt;sceneMatrix()));</div>
+<div class="line"><a name="l03159"></a><span class="lineno"> 3159</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(item-&gt;sceneMatrix()));</div>
 <div class="line"><a name="l03160"></a><span class="lineno"> 3160</span>&#160;</div>
 <div class="line"><a name="l03161"></a><span class="lineno"> 3161</span>&#160;    QString angle;</div>
 <div class="line"><a name="l03162"></a><span class="lineno"> 3162</span>&#160;    angle.setNum(item-&gt;<a class="code" href="../../d5/d69/class_u_b_graphics_protractor.html#a15353b85e594aa185d56f748409b88a4">angle</a>(), <span class="charliteral">&#39;f&#39;</span>); <span class="comment">// &#39;f&#39; keeps precision</span></div>
@@ -3241,7 +3225,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03179"></a><span class="lineno"> 3179</span>&#160;}</div>
 <div class="line"><a name="l03180"></a><span class="lineno"> 3180</span>&#160;</div>
 <div class="line"><a name="l03181"></a><span class="lineno"> 3181</span>&#160;</div>
-<div class="line"><a name="l03182"></a><span class="lineno"> 3182</span>&#160;<a class="code" href="../../d5/d69/class_u_b_graphics_protractor.html">UBGraphicsProtractor</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::protractorFromSvg()</div>
+<div class="line"><a name="l03182"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac476c96d02012bc4ea5e2a69a2b7cfa3"> 3182</a></span>&#160;<a class="code" href="../../d5/d69/class_u_b_graphics_protractor.html">UBGraphicsProtractor</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ac476c96d02012bc4ea5e2a69a2b7cfa3">UBSvgSubsetAdaptor::UBSvgSubsetReader::protractorFromSvg</a>()</div>
 <div class="line"><a name="l03183"></a><span class="lineno"> 3183</span>&#160;{</div>
 <div class="line"><a name="l03184"></a><span class="lineno"> 3184</span>&#160;    <a class="code" href="../../d5/d69/class_u_b_graphics_protractor.html">UBGraphicsProtractor</a>* protractor = <span class="keyword">new</span> <a class="code" href="../../d5/d69/class_u_b_graphics_protractor.html">UBGraphicsProtractor</a>();</div>
 <div class="line"><a name="l03185"></a><span class="lineno"> 3185</span>&#160;</div>
@@ -3277,7 +3261,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03215"></a><span class="lineno"> 3215</span>&#160;    <span class="keywordflow">return</span> protractor;</div>
 <div class="line"><a name="l03216"></a><span class="lineno"> 3216</span>&#160;}</div>
 <div class="line"><a name="l03217"></a><span class="lineno"> 3217</span>&#160;</div>
-<div class="line"><a name="l03218"></a><span class="lineno"> 3218</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::triangleToSvg(<a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html">UBGraphicsTriangle</a> *item)</div>
+<div class="line"><a name="l03218"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#afcfad38f1c595f3969554b4998c66315"> 3218</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#afcfad38f1c595f3969554b4998c66315">UBSvgSubsetAdaptor::UBSvgSubsetWriter::triangleToSvg</a>(<a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html">UBGraphicsTriangle</a> *item)</div>
 <div class="line"><a name="l03219"></a><span class="lineno"> 3219</span>&#160;{</div>
 <div class="line"><a name="l03220"></a><span class="lineno"> 3220</span>&#160;</div>
 <div class="line"><a name="l03229"></a><span class="lineno"> 3229</span>&#160;    mXmlWriter.writeStartElement(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;triangle&quot;</span>);</div>
@@ -3285,7 +3269,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03231"></a><span class="lineno"> 3231</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;y&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().y()));</div>
 <div class="line"><a name="l03232"></a><span class="lineno"> 3232</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;width&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().width()));</div>
 <div class="line"><a name="l03233"></a><span class="lineno"> 3233</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;height&quot;</span>, QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(item-&gt;boundingRect().height()));</div>
-<div class="line"><a name="l03234"></a><span class="lineno"> 3234</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, toSvgTransform(item-&gt;sceneMatrix()));</div>
+<div class="line"><a name="l03234"></a><span class="lineno"> 3234</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;transform&quot;</span>, <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#ac492081a4a58205ac2177c6ce052a9a9">toSvgTransform</a>(item-&gt;sceneMatrix()));</div>
 <div class="line"><a name="l03235"></a><span class="lineno"> 3235</span>&#160;    mXmlWriter.writeAttribute(<span class="stringliteral">&quot;orientation&quot;</span>, <a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html#a0b703ffccda42820f94297a6e25c1727">UBGraphicsTriangle::orientationToStr</a>(item-&gt;<a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html#a14f8d54a2e79d174b01a19635837e1e3">getOrientation</a>()));</div>
 <div class="line"><a name="l03236"></a><span class="lineno"> 3236</span>&#160;</div>
 <div class="line"><a name="l03237"></a><span class="lineno"> 3237</span>&#160;    QString zs;</div>
@@ -3302,7 +3286,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03248"></a><span class="lineno"> 3248</span>&#160;    mXmlWriter.writeEndElement();</div>
 <div class="line"><a name="l03249"></a><span class="lineno"> 3249</span>&#160;}</div>
 <div class="line"><a name="l03250"></a><span class="lineno"> 3250</span>&#160;</div>
-<div class="line"><a name="l03251"></a><span class="lineno"> 3251</span>&#160;<a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html">UBGraphicsTriangle</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::triangleFromSvg()</div>
+<div class="line"><a name="l03251"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a0c9eb6d73f24e9ee46e4dc299edf4665"> 3251</a></span>&#160;<a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html">UBGraphicsTriangle</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#a0c9eb6d73f24e9ee46e4dc299edf4665">UBSvgSubsetAdaptor::UBSvgSubsetReader::triangleFromSvg</a>()</div>
 <div class="line"><a name="l03252"></a><span class="lineno"> 3252</span>&#160;{</div>
 <div class="line"><a name="l03253"></a><span class="lineno"> 3253</span>&#160;    <a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html">UBGraphicsTriangle</a>* triangle = <span class="keyword">new</span> <a class="code" href="../../da/dd0/class_u_b_graphics_triangle.html">UBGraphicsTriangle</a>();</div>
 <div class="line"><a name="l03254"></a><span class="lineno"> 3254</span>&#160;</div>
@@ -3328,7 +3312,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03274"></a><span class="lineno"> 3274</span>&#160;    <span class="keywordflow">return</span> triangle;</div>
 <div class="line"><a name="l03275"></a><span class="lineno"> 3275</span>&#160;}</div>
 <div class="line"><a name="l03276"></a><span class="lineno"> 3276</span>&#160;</div>
-<div class="line"><a name="l03277"></a><span class="lineno"> 3277</span>&#160;<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>* UBSvgSubsetAdaptor::UBSvgSubsetReader::cacheFromSvg()</div>
+<div class="line"><a name="l03277"></a><span class="lineno"><a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ab2c41d8c8aa2b37e53cf0e79158c838e"> 3277</a></span>&#160;<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>* <a class="code" href="../../d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html#ab2c41d8c8aa2b37e53cf0e79158c838e">UBSvgSubsetAdaptor::UBSvgSubsetReader::cacheFromSvg</a>()</div>
 <div class="line"><a name="l03278"></a><span class="lineno"> 3278</span>&#160;{</div>
 <div class="line"><a name="l03279"></a><span class="lineno"> 3279</span>&#160;    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>* pCache = <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#af544095b94b560b72c01a84cf709bc14">UBGraphicsCache::instance</a>(mScene);</div>
 <div class="line"><a name="l03280"></a><span class="lineno"> 3280</span>&#160;    pCache-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a6a39d921f91e17c4ac61cd4f28e98b2d">UBItemLayerType::Tool</a>));</div>
@@ -3353,7 +3337,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03299"></a><span class="lineno"> 3299</span>&#160;    <span class="keywordflow">return</span> pCache;</div>
 <div class="line"><a name="l03300"></a><span class="lineno"> 3300</span>&#160;}</div>
 <div class="line"><a name="l03301"></a><span class="lineno"> 3301</span>&#160;</div>
-<div class="line"><a name="l03302"></a><span class="lineno"> 3302</span>&#160;<span class="keywordtype">void</span> UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg(<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>* item)</div>
+<div class="line"><a name="l03302"></a><span class="lineno"><a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a70e8e89f93d39be7820ec791cf693efe"> 3302</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html#a70e8e89f93d39be7820ec791cf693efe">UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg</a>(<a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>* item)</div>
 <div class="line"><a name="l03303"></a><span class="lineno"> 3303</span>&#160;{</div>
 <div class="line"><a name="l03304"></a><span class="lineno"> 3304</span>&#160;    mXmlWriter.writeStartElement(<a class="code" href="../../db/d66/class_u_b_settings.html#a17fa3676f5ab483e7125b9ed2c3dfef4">UBSettings::uniboardDocumentNamespaceUri</a>, <span class="stringliteral">&quot;cache&quot;</span>);</div>
 <div class="line"><a name="l03305"></a><span class="lineno"> 3305</span>&#160;</div>
@@ -3457,15 +3441,11 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp_so
 <div class="line"><a name="l03403"></a><span class="lineno"> 3403</span>&#160;</div>
 <div class="line"><a name="l03404"></a><span class="lineno"> 3404</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ba3bda1af5b46be6c34dbdf9592f1d27.html">adaptors</a></li><li class="navelem"><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html">UBSvgSubsetAdaptor.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:41 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:12 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d0/d58/class_u_b_drawing_controller.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d0/d58/class_u_b_drawing_controller.ht
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -196,7 +176,10 @@ Private Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a1937c73768c1a29e36423cf9ae6b36a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a> = 0</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00033">33</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a381f5fe1a1745d30bc1abb102ebb3c15"></a>
 <div class="memitem">
 <div class="memproto">
@@ -218,6 +201,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">    : QObject(parent)</div>
 <div class="line">    , <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a08b17daa8e837ad621058156d633c518">mActiveRuler</a>(NULL)</div>
 <div class="line">    , <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a>((<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a>)-1)</div>
@@ -281,6 +266,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -309,6 +296,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00405">405</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a585c78bf85d6c66b5c16ca36f29b7c7f">UBStylusTool::Capture</a>);</div>
@@ -414,6 +403,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00232">232</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#afae64ee4b072bcc20b5234eec4dc5f56">toolColor</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;isDarkBackground());</div>
 <div class="line">}</div>
@@ -441,6 +432,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00215">215</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a> || <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
 <div class="line">    {</div>
@@ -479,6 +472,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00176">176</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a> || <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
 <div class="line">    {</div>
@@ -527,6 +522,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00159">159</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a> || <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
 <div class="line">    {</div>
@@ -573,6 +570,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>)</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>;</div>
@@ -610,6 +609,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00038">38</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a> = <span class="keyword">new</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a381f5fe1a1745d30bc1abb102ebb3c15">UBDrawingController</a>();</div>
@@ -649,6 +650,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00339">339</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a4030bd2acedb024b3eec1173e2ebc705">UBStylusTool::Eraser</a>);</div>
@@ -696,6 +699,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00363">363</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a9e68ade00ac59560335c1e4c2b70747a">UBStylusTool::Hand</a>);</div>
@@ -734,6 +739,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00151">151</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a>)</div>
 <div class="line">            || (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a>)</div>
@@ -780,6 +787,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00067">67</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
 <div class="fragment"><div class="line">                              {</div>
 <div class="line">                <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3ecfdbe192a5bec4e240c8b59bcf1c34">mIsDesktopMode</a>;</div>
 <div class="line">        }</div>
@@ -798,6 +807,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a18a3b27b7b2845a4a4d38d8c0eb1199a">mLatestDrawingTool</a>;</div>
 <div class="line">}</div>
@@ -834,6 +845,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00391">391</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>);</div>
@@ -915,6 +928,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00345">345</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a>);</div>
@@ -962,6 +977,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00330">330</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">    {</div>
@@ -1012,6 +1029,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00357">357</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a552fd0b0ae42fc66b4f526ad1558952c">UBStylusTool::Play</a>);</div>
@@ -1059,6 +1078,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00384">384</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a985a1fbae887d0fa9227fef4c6f12b04">UBStylusTool::Pointer</a>);</div>
@@ -1106,6 +1127,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00351">351</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a>);</div>
@@ -1153,6 +1176,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00263">263</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(index &gt;= 0 &amp;&amp; index &lt; <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;colorPaletteSize);</div>
 <div class="line"></div>
@@ -1182,8 +1207,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-35-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d58/class_u_b_drawing_controller_a51849b177dc6bed87fd110056627ae94_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d58/class_u_b_drawing_controller_a51849b177dc6bed87fd110056627ae94_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1210,6 +1234,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00280">280</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a4030bd2acedb024b3eec1173e2ebc705">UBStylusTool::Eraser</a>);</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ab7b4875998f2a4465892619851feb31e">setEraserWidthIndex</a>(index);</div>
@@ -1247,6 +1273,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00063">63</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
 <div class="fragment"><div class="line">                                       {</div>
 <div class="line">                <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3ecfdbe192a5bec4e240c8b59bcf1c34">mIsDesktopMode</a> = mode;</div>
 <div class="line">        }</div>
@@ -1284,6 +1312,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00194">194</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a>)</div>
 <div class="line">    {</div>
@@ -1327,6 +1357,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00316">316</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ade781b9fcdd9c51423729bdac51cf242">boardMarkerLightBackgroundColors</a>-&gt;<a class="code" href="../../da/df0/class_u_b_color_list_setting.html#aa066d19edae3dfda0f6e8fa6bacdfbe1">setAlpha</a>(alpha);</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ae049f91718c90652014484c99064a452">boardMarkerLightBackgroundSelectedColors</a>-&gt;<a class="code" href="../../da/df0/class_u_b_color_list_setting.html#aa066d19edae3dfda0f6e8fa6bacdfbe1">setAlpha</a>(alpha);</div>
@@ -1388,6 +1420,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00301">301</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (onDarkBackground)</div>
 <div class="line">    {</div>
@@ -1450,6 +1484,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00286">286</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (onDarkBackground)</div>
 <div class="line">    {</div>
@@ -1504,6 +1540,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (tool != <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a>)</div>
 <div class="line">    {</div>
@@ -1591,6 +1629,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a>;</div>
 <div class="line">}</div>
@@ -1662,6 +1702,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00398">398</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a348c5633b77064276b97e340aee4357e">UBStylusTool::Text</a>);</div>
@@ -1701,6 +1743,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00238">238</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9acc1f592df46406c5346321d1cc9ec676">UBStylusTool::Pen</a> || <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872">stylusTool</a>() == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae4f35ceec94248c1e0b5ad2fc830c68b">UBStylusTool::Line</a>)</div>
 <div class="line">    {</div>
@@ -1765,6 +1809,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00370">370</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a1b1628b54292ecf76005e74cdadde67b">UBStylusTool::ZoomIn</a>);</div>
@@ -1812,6 +1858,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html#l00377">377</a> of file <a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (checked)</div>
 <div class="line">        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009">setStylusTool</a>(<a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a98abcea5dce959c6d62fdfb9eae0d1d3">UBStylusTool::ZoomOut</a>);</div>
@@ -1849,6 +1897,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00061">61</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3ecfdbe192a5bec4e240c8b59bcf1c34"></a>
@@ -1868,6 +1918,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00088">88</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
 
 </div>
 </div>
@@ -1889,6 +1941,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00087">87</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2e952d506b3d17402e734bfd562a35c6"></a>
@@ -1908,6 +1962,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00086">86</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
 
 </div>
 </div>
@@ -1929,22 +1985,20 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html#l00090">90</a> of file <a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a></li>
-<li><a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp.html">UBDrawingController.cpp</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../df/d57/_u_b_drawing_controller_8h_source.html">UBDrawingController.h</a></li>
+<li>Sankore-3.1/src/board/<a class="el" href="../../d0/db6/_u_b_drawing_controller_8cpp_source.html">UBDrawingController.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:23 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

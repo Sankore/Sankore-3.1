@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -72,21 +66,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d1/dae/class_u_b_quick_time_video_encoder.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -101,6 +80,7 @@ $(document).ready(function(){initNavTree('d1/dae/class_u_b_quick_time_video_enco
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -185,7 +165,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa4e03edd2cb73ad5ccb94daa23268b54 inherit signals_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa4e03edd2cb73ad5ccb94daa23268b54">encodingFinished</a> (bool ok)</td></tr>
 <tr class="memitem:a314566aa45510979eda49b487fd0113c inherit signals_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a> (quint8 level)</td></tr>
 </table>
-<h2>Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00036">36</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
+</div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a71c396babd0236d26a09705e34b13099"></a>
 <div class="memitem">
 <div class="memproto">
@@ -199,6 +182,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab9656acba80cfe74980b16dc90423b73">UBAbstractVideoEncoder</a>(pParent)</div>
 <div class="line">    , <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a>(<span class="keyword">true</span>)</div>
@@ -229,6 +214,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00050">50</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -256,6 +243,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a> = <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>();</div>
 <div class="line"></div>
@@ -313,6 +302,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00129">129</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(pImage.format() == QImage::QImage::Format_RGB32);  <span class="comment">// &lt;=&gt; CVPixelBuffers / k32BGRAPixelFormat</span></div>
 <div class="line"></div>
@@ -396,6 +387,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab3f6d08c89768a4fc724cfd6da53ac16">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00061">61</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
@@ -435,6 +428,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab74514eba01c7b8dcce926934dd6838a">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00097">97</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <span class="comment">//qDebug() &lt;&lt; &quot;New Frame at ms&quot; &lt;&lt; timestamp;</span></div>
 <div class="line"></div>
@@ -498,6 +493,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00055">55</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;UBQuickTimeVideoEncoder :&quot;</span> &lt;&lt; pMessage;</div>
 <div class="line">            <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a> = pMessage;</div>
@@ -537,6 +534,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab5fae0f75a1993fe478442e0aa9d0c14">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a> = pRecordAudio;</div>
 <div class="line">}</div>
@@ -565,6 +564,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa56593934a8cf8d04135131db547833e">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00056">56</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString quality = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa5f3b00cd5e8136cae4cd294c46f5634">podcastQuickTimeQuality</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line"></div>
@@ -616,6 +617,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a801e301615033b92ead75e531edb9c02">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html#l00076">76</a> of file <a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.isRunning())</div>
 <div class="line">    {</div>
@@ -660,6 +663,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a8feffc37810d5b9ee249545028c65cae">UBAbstractVideoEncoder</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00050">50</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="stringliteral">&quot;mov&quot;</span>;</div>
 <div class="line">        }</div>
@@ -685,6 +690,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00086">86</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3053a87a60f284d5a610f39d15009e74"></a>
@@ -704,6 +711,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00082">82</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
 
 </div>
 </div>
@@ -725,6 +734,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00084">84</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6f5f0dda1449f86fbd5dd115904efc27"></a>
@@ -745,22 +756,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html#l00088">88</a> of file <a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a></li>
-<li><a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp.html">UBQuickTimeVideoEncoder.cpp</a></li>
+<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a></li>
+<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp_source.html">UBQuickTimeVideoEncoder.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html">UBQuickTimeVideoEncoder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:30 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

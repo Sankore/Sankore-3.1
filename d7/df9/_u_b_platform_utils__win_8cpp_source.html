@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/df9/_u_b_platform_utils__win_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d7/df9/_u_b_platform_utils__win_8cpp_s
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBPlatformUtils_win.cpp</div>  </div>
@@ -139,7 +123,7 @@ $(document).ready(function(){initNavTree('d7/df9/_u_b_platform_utils__win_8cpp_s
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a2ddb91cb25f3a1048a683d5eefda666a">UBPlatformUtils::init</a>()</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        initializeKeyboardLayouts();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a99af2394e2ff6a45db8ab05210dfb452">initializeKeyboardLayouts</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
@@ -517,23 +501,23 @@ $(document).ready(function(){initNavTree('d7/df9/_u_b_platform_utils__win_8cpp_s
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="comment">/* . : */</span> <a class="code" href="../../d7/df9/_u_b_platform_utils__win_8cpp.html#abc6d8fdc5bb2ec297ad896db4d885018">KEYBTDECL</a>(0x2e, 0x3a, <span class="keyword">true</span>),</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="comment">/* _ - */</span> <a class="code" href="../../d7/df9/_u_b_platform_utils__win_8cpp.html#abc6d8fdc5bb2ec297ad896db4d885018">KEYBTDECL</a>(0x5f, 0x2d, <span class="keyword">false</span>)};</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="keywordtype">void</span> UBPlatformUtils::initializeKeyboardLayouts()</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a99af2394e2ff6a45db8ab05210dfb452">UBPlatformUtils::initializeKeyboardLayouts</a>()</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;{</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        nKeyboardLayouts = 5;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        keyboardLayouts = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>*[nKeyboardLayouts];</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    keyboardLayouts[0] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;English&quot;</span>), <span class="stringliteral">&quot;en&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/en.png&quot;</span>), ENGLISH_LOCALE);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    keyboardLayouts[1] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;Russian&quot;</span>), <span class="stringliteral">&quot;ru&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/ru.png&quot;</span>),RUSSIAN_LOCALE);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    keyboardLayouts[2] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;French&quot;</span>), <span class="stringliteral">&quot;fr&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/fr.png&quot;</span>), FRENCH_LOCALE);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    keyboardLayouts[3] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;Swiss French&quot;</span>), <span class="stringliteral">&quot;fr-CH&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/fr.png&quot;</span>), SWISS_FRENCH_LOCALE);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    keyboardLayouts[4] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;German&quot;</span>), <span class="stringliteral">&quot;de&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/de.png&quot;</span>), GERMAN_LOCALE);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a8dd949296944a2302a62d69c9d59e95c">nKeyboardLayouts</a> = 5;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a> = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>*[<a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a8dd949296944a2302a62d69c9d59e95c">nKeyboardLayouts</a>];</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a>[0] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;English&quot;</span>), <span class="stringliteral">&quot;en&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/en.png&quot;</span>), ENGLISH_LOCALE);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a>[1] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;Russian&quot;</span>), <span class="stringliteral">&quot;ru&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/ru.png&quot;</span>),RUSSIAN_LOCALE);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a>[2] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;French&quot;</span>), <span class="stringliteral">&quot;fr&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/fr.png&quot;</span>), FRENCH_LOCALE);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a>[3] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;Swiss French&quot;</span>), <span class="stringliteral">&quot;fr-CH&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/fr.png&quot;</span>), SWISS_FRENCH_LOCALE);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a>[4] = <span class="keyword">new</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a>(tr(<span class="stringliteral">&quot;German&quot;</span>), <span class="stringliteral">&quot;de&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">new</span> QIcon(<span class="stringliteral">&quot;:/images/flags/de.png&quot;</span>), GERMAN_LOCALE);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="keywordtype">void</span> UBPlatformUtils::destroyKeyboardLayouts()</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a2544a575dd933a78b8be0ca8fdb2f1fe">UBPlatformUtils::destroyKeyboardLayouts</a>()</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;{</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;nKeyboardLayouts; i++)</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keyword">delete</span> keyboardLayouts[i];</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keyword">delete</span> [] keyboardLayouts;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        keyboardLayouts = NULL;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a8dd949296944a2302a62d69c9d59e95c">nKeyboardLayouts</a>; i++)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keyword">delete</span> <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a>[i];</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keyword">delete</span> [] <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a>;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a69b4cf15cc77a08c874bd9f27445a255">keyboardLayouts</a> = NULL;</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;QString <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a88ed38d0cded54f10a54d9ad46f77002">UBPlatformUtils::urlFromClipboard</a>()</div>
@@ -543,15 +527,11 @@ $(document).ready(function(){initNavTree('d7/df9/_u_b_platform_utils__win_8cpp_s
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">return</span> qsRet;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li><li class="navelem"><a class="el" href="../../d7/df9/_u_b_platform_utils__win_8cpp.html">UBPlatformUtils_win.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

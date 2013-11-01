@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_d37d8428862b2ecaaadbfbbc34ddff69.html">quicktime</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBAudioQueueRecorder.cpp</div>  </div>
@@ -131,7 +115,7 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;AudioStreamBasicDescription UBAudioQueueRecorder::sAudioFormat;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;AudioStreamBasicDescription <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">UBAudioQueueRecorder::sAudioFormat</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad20c5f3b3053c2a94f079cc777038567">   30</a></span>&#160;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad20c5f3b3053c2a94f079cc777038567">UBAudioQueueRecorder::UBAudioQueueRecorder</a>(QObject* pParent)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    : QObject(pParent)</div>
@@ -139,15 +123,15 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    , mIsRecording(false)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    , mBufferLengthInMs(500)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    sAudioFormat.mSampleRate = 44100.0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    sAudioFormat.mFormatID = kAudioFormatMPEG4AAC;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    sAudioFormat.mChannelsPerFrame = 2;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mSampleRate = 44100.0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mFormatID = kAudioFormatMPEG4AAC;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mChannelsPerFrame = 2;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    sAudioFormat.mBytesPerFrame = 0;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    sAudioFormat.mBitsPerChannel = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    sAudioFormat.mBytesPerPacket = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    sAudioFormat.mFramesPerPacket = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    sAudioFormat.mFormatFlags = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mBytesPerFrame = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mBitsPerChannel = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mBytesPerPacket = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mFramesPerPacket = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mFormatFlags = 0;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
@@ -291,19 +275,19 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2af0edbe33f6bb239f4df5e1318b56b4">  186</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2af0edbe33f6bb239f4df5e1318b56b4">UBAudioQueueRecorder::init</a>(<span class="keyword">const</span> QString&amp; waveInDeviceName)</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span>(mIsRecording)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>)</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        setLastErrorMessage(<span class="stringliteral">&quot;Already recording ...&quot;</span>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(<span class="stringliteral">&quot;Already recording ...&quot;</span>);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    OSStatus err = AudioQueueNewInput (&amp;sAudioFormat, UBAudioQueueRecorder::audioQueueInputCallback,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <span class="keyword">this</span>, 0, 0, 0, &amp;mQueue);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    OSStatus err = AudioQueueNewInput (&amp;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a44801bf6a2710136c3d85901e25d9357">UBAudioQueueRecorder::audioQueueInputCallback</a>,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <span class="keyword">this</span>, 0, 0, 0, &amp;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">if</span> (err)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot acquire audio input %1&quot;</span>).arg(err));</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        mQueue = 0;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot acquire audio input %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a> = 0;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
@@ -321,10 +305,10 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                CFStringRef sr = CFStringCreateWithCString(0, deviceUID.toUtf8().constData(), kCFStringEncodingUTF8);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                err = AudioQueueSetProperty(mQueue, kAudioQueueProperty_CurrentDevice, &amp;sr, <span class="keyword">sizeof</span>(CFStringRef));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                err = AudioQueueSetProperty(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_CurrentDevice, &amp;sr, <span class="keyword">sizeof</span>(CFStringRef));</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordflow">if</span> (err)</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot set audio input %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot set audio input %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                }</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                {</div>
@@ -333,65 +317,65 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            }</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot find audio input device UID with ID %1 (%2)&quot;</span>).arg(deviceID).arg(err));</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot find audio input device UID with ID %1 (%2)&quot;</span>).arg(deviceID).arg(err));</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            }</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        }</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot find audio input with name %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot find audio input with name %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        }</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    UInt32 monitor = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    err = AudioQueueSetProperty(mQueue, kAudioQueueProperty_EnableLevelMetering , &amp;monitor, <span class="keyword">sizeof</span>(UInt32));</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    err = AudioQueueSetProperty(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_EnableLevelMetering , &amp;monitor, <span class="keyword">sizeof</span>(UInt32));</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (err)</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        qWarning() &lt;&lt; QString(<span class="stringliteral">&quot;Cannot set recording level monitoring %1&quot;</span>).arg(err);</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">int</span> nbBuffers = 6;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    mSampleBufferSize = sAudioFormat.mSampleRate *  sAudioFormat.mChannelsPerFrame</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                * 2 * mBufferLengthInMs / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0b3e2025fd2d1b36c47cc9efcba966cf">mSampleBufferSize</a> = <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mSampleRate *  <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mChannelsPerFrame</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                * 2 * <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a27e849d26428409c1bcad840b5491a27">mBufferLengthInMs</a> / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nbBuffers; i++)</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        AudioQueueBufferRef outBuffer;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        err = AudioQueueAllocateBuffer(mQueue, mSampleBufferSize, &amp;outBuffer);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        err = AudioQueueAllocateBuffer(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0b3e2025fd2d1b36c47cc9efcba966cf">mSampleBufferSize</a>, &amp;outBuffer);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">if</span> (err)</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot allocate audio buffer %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot allocate audio buffer %1&quot;</span>).arg(err));</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        mBuffers &lt;&lt; outBuffer;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a> &lt;&lt; outBuffer;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, mBuffers)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a>)</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        err = AudioQueueEnqueueBuffer(mQueue, buffer, 0, 0);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        err = AudioQueueEnqueueBuffer(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, buffer, 0, 0);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">if</span> (err)</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot enqueue audio buffer %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot enqueue audio buffer %1&quot;</span>).arg(err));</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    mMsTimeStamp = 0;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#abf89b298b514cfa80ec103e7e687969c">mMsTimeStamp</a> = 0;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    err = AudioQueueStart(mQueue, 0);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    err = AudioQueueStart(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, 0);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">if</span> (err)</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot starting audio queue %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot starting audio queue %1&quot;</span>).arg(err));</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    mIsRecording = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
@@ -401,33 +385,33 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
 <div class="line"><a name="l00296"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">  296</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">UBAudioQueueRecorder::close</a>()</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;{</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">if</span>(mIsRecording)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>)</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        mIsRecording = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        OSStatus err = AudioQueueStop(mQueue, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        OSStatus err = AudioQueueStop(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">if</span>(err)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot stop audio queue %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot stop audio queue %1&quot;</span>).arg(err));</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        }</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, mBuffers)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a>)</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        OSStatus err = AudioQueueFreeBuffer(mQueue, buffer);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        OSStatus err = AudioQueueFreeBuffer(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, buffer);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">if</span> (err)</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot free audio buffer %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot free audio buffer %1&quot;</span>).arg(err));</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    OSStatus err = AudioQueueDispose(mQueue, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    mQueue = 0;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    OSStatus err = AudioQueueDispose(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a> = 0;</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span>(err)</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot dispose audio queue %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot dispose audio queue %1&quot;</span>).arg(err));</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
@@ -435,7 +419,7 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keywordtype">void</span> UBAudioQueueRecorder::audioQueueInputCallback (<span class="keywordtype">void</span> *inUserData, AudioQueueRef inAQ,</div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a44801bf6a2710136c3d85901e25d9357">  332</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a44801bf6a2710136c3d85901e25d9357">UBAudioQueueRecorder::audioQueueInputCallback</a> (<span class="keywordtype">void</span> *inUserData, AudioQueueRef inAQ,</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                            AudioQueueBufferRef inBuffer, <span class="keyword">const</span> AudioTimeStamp *inStartTime,</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                                            UInt32 inNumberPacketDescriptions, <span class="keyword">const</span> AudioStreamPacketDescription *inPacketDescs)</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;{</div>
@@ -443,21 +427,21 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    Q_UNUSED(inStartTime)</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html">UBAudioQueueRecorder</a>* recorder = (<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html">UBAudioQueueRecorder</a>*)inUserData;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    if(recorder &amp;&amp; recorder-&gt;isRecording() &amp;&amp; inBuffer)</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">if</span>(recorder &amp;&amp; recorder-&gt;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3dc9dc46c6359f9a3dc42832cb3894a9">isRecording</a>() &amp;&amp; inBuffer)</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        recorder-&gt;emitNewWaveBuffer(inBuffer, inNumberPacketDescriptions, inPacketDescs);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        recorder-&gt;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad249b6e2dfce2f10e093ae5a7cbde0af">emitNewWaveBuffer</a>(inBuffer, inNumberPacketDescriptions, inPacketDescs);</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        OSStatus err = AudioQueueEnqueueBuffer(recorder-&gt;mQueue, inBuffer, 0, 0);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        OSStatus err = AudioQueueEnqueueBuffer(recorder-&gt;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, inBuffer, 0, 0);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">if</span>(err)</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            recorder-&gt;setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot reenqueue buffer %1&quot;</span>).arg(err));</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            recorder-&gt;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot reenqueue buffer %1&quot;</span>).arg(err));</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        }</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keywordtype">void</span> UBAudioQueueRecorder::emitNewWaveBuffer(AudioQueueBufferRef pBuffer,</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad249b6e2dfce2f10e093ae5a7cbde0af">  354</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad249b6e2dfce2f10e093ae5a7cbde0af">UBAudioQueueRecorder::emitNewWaveBuffer</a>(AudioQueueBufferRef pBuffer,</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <span class="keywordtype">int</span> inNumberPacketDescriptions, <span class="keyword">const</span> AudioStreamPacketDescription *inPacketDescs)</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    AudioStreamPacketDescription* tmpPackages = (AudioStreamPacketDescription*)malloc(inNumberPacketDescriptions *<span class="keyword">sizeof</span>(AudioStreamPacketDescription));</div>
@@ -468,12 +452,12 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    qreal level = 0;</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    UInt32 size;</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span> (noErr == AudioQueueGetPropertySize (mQueue, kAudioQueueProperty_CurrentLevelMeter, &amp;size))</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span> (noErr == AudioQueueGetPropertySize (<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_CurrentLevelMeter, &amp;size))</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    {</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        AudioQueueLevelMeterState levels[size / <span class="keyword">sizeof</span>(AudioQueueLevelMeterState)];</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        size = <span class="keyword">sizeof</span>(levels);</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">if</span> (noErr == AudioQueueGetProperty(mQueue, kAudioQueueProperty_CurrentLevelMeter, &amp;levels, &amp;size))</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">if</span> (noErr == AudioQueueGetProperty(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_CurrentLevelMeter, &amp;levels, &amp;size))</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        {</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">if</span> (size == 1)</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                level = levels[0].mAveragePower;</div>
@@ -491,15 +475,11 @@ $(document).ready(function(){initNavTree('df/d7b/_u_b_audio_queue_recorder_8cpp_
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_d37d8428862b2ecaaadbfbbc34ddff69.html">quicktime</a></li><li class="navelem"><a class="el" href="../../df/d7b/_u_b_audio_queue_recorder_8cpp.html">UBAudioQueueRecorder.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

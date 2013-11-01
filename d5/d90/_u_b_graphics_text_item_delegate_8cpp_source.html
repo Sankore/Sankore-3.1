@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegate_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBGraphicsTextItemDelegate.cpp</div>  </div>
@@ -144,29 +128,29 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d80/memcheck_8h.html">core/memcheck.h</a>&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> UBGraphicsTextItemDelegate::sMinPixelSize = 8;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> UBGraphicsTextItemDelegate::sMinPointSize = 8;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#addf015f82fcdd2fd0b225ede0e21ea64">UBGraphicsTextItemDelegate::sMinPixelSize</a> = 8;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#af57b7f2bcb2b34593b2d5178b8f4e7d5">UBGraphicsTextItemDelegate::sMinPointSize</a> = 8;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8e216ad171c1c7216732b7e266fe785e">   44</a></span>&#160;<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8e216ad171c1c7216732b7e266fe785e">UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate</a>(<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>* pDelegated, QObject * parent)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    : <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a>(pDelegated,0, parent, true)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    , mLastFontPixelSize(-1)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    , delta(5)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    delegated()-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">true</span>));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    delegated()-&gt;setPlainText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">true</span>));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setPlainText(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QTextCursor curCursor = delegated()-&gt;textCursor();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QTextCursor curCursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QTextCharFormat format;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QFont font(createDefaultFont());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QFont font(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a62afd99cbb5caf18ec6c2b47308a7df9">createDefaultFont</a>());</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    font.setPointSize(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;fontPointSize());</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    format.setFont(font);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    curCursor.mergeCharFormat(format);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    delegated()-&gt;setTextCursor(curCursor);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    delegated()-&gt;setFont(font);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(curCursor);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setFont(font);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    delegated()-&gt;adjustSize();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    delegated()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;adjustSize();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
@@ -176,7 +160,7 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;QFont UBGraphicsTextItemDelegate::createDefaultFont()</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a62afd99cbb5caf18ec6c2b47308a7df9">   73</a></span>&#160;QFont <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a62afd99cbb5caf18ec6c2b47308a7df9">UBGraphicsTextItemDelegate::createDefaultFont</a>()</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    QTextCharFormat textFormat;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
@@ -205,18 +189,18 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aed68d84ee8c86411f7b9197a4220e18f">UBGraphicsItemDelegate::buildButtons</a>();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    mFontButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/font.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    mColorButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/color.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    mDecreaseSizeButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/minus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    mIncreaseSizeButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/plus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4">mFontButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/font.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b">mColorButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/color.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681">mDecreaseSizeButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/minus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389">mIncreaseSizeButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/plus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    connect(mFontButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(pickFont()));</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    connect(mColorButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(pickColor()));</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    connect(mDecreaseSizeButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(decreaseSize()));</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    connect(mIncreaseSizeButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(increaseSize()));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4">mFontButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a292ce49af67835859e297876d3f68602">pickFont</a>()));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b">mColorButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa6d62a566b628c831f30862e1045b21e">pickColor</a>()));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681">mDecreaseSizeButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a2b8cedd28837af619724fa6fa66d8a59">decreaseSize</a>()));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389">mIncreaseSizeButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a4ed451af17738fdb339961e3d4df6655">increaseSize</a>()));</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QList&lt;QGraphicsItem*&gt; itemsOnToolBar;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    itemsOnToolBar &lt;&lt; mFontButton &lt;&lt; mColorButton &lt;&lt; mDecreaseSizeButton &lt;&lt; mIncreaseSizeButton;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    itemsOnToolBar &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4">mFontButton</a> &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b">mColorButton</a> &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681">mDecreaseSizeButton</a> &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389">mIncreaseSizeButton</a>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ac63d42d3f32525ccfc43bac7da080a29">setItemsOnToolBar</a>(itemsOnToolBar);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ab9b66d30fdfa53a2399f4f95f6ef2f15">setShifting</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a7463af65640e38f4555ddaa308a1446e">setVisibleOnBoard</a>(<span class="keyword">true</span>);</div>
@@ -225,12 +209,12 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a689f8e8c48294a231258478c3c61fe21">  119</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a689f8e8c48294a231258478c3c61fe21">UBGraphicsTextItemDelegate::contentsChanged</a>()</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a7ecdc3b3ed05e772714e7bb461de779f">positionHandles</a>();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    delegated()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// This method is used to filter the available fonts. Only the web-compliant fonts</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">// will remain in the font list.</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItemDelegate::customize(QFontDialog &amp;fontDialog)</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ace94fb205d9e2e71e843fb4da43b1286">  127</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ace94fb205d9e2e71e843fb4da43b1286">UBGraphicsTextItemDelegate::customize</a>(QFontDialog &amp;fontDialog)</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    fontDialog.setOption(QFontDialog::DontUseNativeDialog);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
@@ -282,12 +266,12 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItemDelegate::pickFont()</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a292ce49af67835859e297876d3f68602">  179</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a292ce49af67835859e297876d3f68602">UBGraphicsTextItemDelegate::pickFont</a>()</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a> &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene() &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().size() &gt; 0)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        QFontDialog fontDialog(delegated()-&gt;textCursor().charFormat().font(), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().at(0));</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        customize(fontDialog);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        QFontDialog fontDialog(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor().charFormat().font(), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().at(0));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ace94fb205d9e2e71e843fb4da43b1286">customize</a>(fontDialog);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span> (fontDialog.exec())</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        {</div>
@@ -298,27 +282,27 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a2da8021ba2c62727724f931442a58c64">setFontPointSize</a>(selectedFont.pointSize());</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">//setting format for selected item</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            QTextCursor curCursor = delegated()-&gt;textCursor();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            QTextCursor curCursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            QTextCharFormat format;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            format.setFont(selectedFont);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            curCursor.mergeCharFormat(format);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            delegated()-&gt;setTextCursor(curCursor);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            delegated()-&gt;setFont(selectedFont);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            delegated()-&gt;setSelected(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(curCursor);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setFont(selectedFont);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setSelected(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">//          disabled and replaced by the next line because of not optimum result (text splits to two lines when that is not necessary)</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">//          delegated()-&gt;adjustSize();</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            delegated()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a9a461e55837ce00341381e2f2bb642e8">resize</a>(delegated()-&gt;document()-&gt;idealWidth(), delegated()-&gt;size().height());</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            delegated()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a9a461e55837ce00341381e2f2bb642e8">resize</a>(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;document()-&gt;idealWidth(), <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;size().height());</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItemDelegate::pickColor()</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa6d62a566b628c831f30862e1045b21e">  211</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa6d62a566b628c831f30862e1045b21e">UBGraphicsTextItemDelegate::pickColor</a>()</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;{</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a> &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene() &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().size() &gt; 0)</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        QColorDialog colorDialog(delegated()-&gt;defaultTextColor(), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().at(0));</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        QColorDialog colorDialog(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;defaultTextColor(), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().at(0));</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        colorDialog.setWindowTitle(tr(<span class="stringliteral">&quot;Text Color&quot;</span>));</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;isDarkBackground())</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        {</div>
@@ -328,46 +312,46 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> (colorDialog.exec())</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        {</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            QColor selectedColor = colorDialog.selectedColor();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            delegated()-&gt;setDefaultTextColor(selectedColor);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            QTextCursor curCursor = delegated()-&gt;textCursor();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setDefaultTextColor(selectedColor);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            QTextCursor curCursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            QTextCharFormat format;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            format.setForeground(QBrush(selectedColor));</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            curCursor.mergeCharFormat(format);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            delegated()-&gt;setTextCursor(curCursor);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(curCursor);</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a2ef8e51d1f91fc24d65445826fd8b83e">UBGraphicsTextItem::lastUsedTextColor</a> = selectedColor;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            delegated()-&gt;setSelected(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            delegated()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setSelected(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        }</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItemDelegate::decreaseSize()</div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a2b8cedd28837af619724fa6fa66d8a59">  240</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a2b8cedd28837af619724fa6fa66d8a59">UBGraphicsTextItemDelegate::decreaseSize</a>()</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    ChangeTextSize(-delta, changeSize);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">ChangeTextSize</a>(-<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ae192432d9e32a369f38708e4c6022e3c">delta</a>, <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a>);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItemDelegate::increaseSize()</div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a4ed451af17738fdb339961e3d4df6655">  245</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a4ed451af17738fdb339961e3d4df6655">UBGraphicsTextItemDelegate::increaseSize</a>()</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;{</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;   ChangeTextSize(delta, changeSize);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;   <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">ChangeTextSize</a>(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ae192432d9e32a369f38708e4c6022e3c">delta</a>, <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a>);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>* UBGraphicsTextItemDelegate::delegated()</div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">  250</a></span>&#160;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>* <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">UBGraphicsTextItemDelegate::delegated</a>()</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
 <div class="line"><a name="l00254"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aafb261e96f3bf4f3e732f6e69556eb43">  254</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aafb261e96f3bf4f3e732f6e69556eb43">UBGraphicsTextItemDelegate::setEditable</a>(<span class="keywordtype">bool</span> editable)</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (editable) {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        delegated()-&gt;setTextInteractionFlags(Qt::TextEditorInteraction);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextInteractionFlags(Qt::TextEditorInteraction);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">true</span>));</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        QTextCursor cursor(delegated()-&gt;document());</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        QTextCursor cursor(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;document());</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        cursor.clearSelection();</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        delegated()-&gt;setTextCursor(cursor);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(cursor);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        delegated()-&gt;setTextInteractionFlags(Qt::NoTextInteraction);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextInteractionFlags(Qt::NoTextInteraction);</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">false</span>));</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
@@ -384,9 +368,9 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a50aee9dacc7199cbea2b7e1d1fd06a18">UBGraphicsItemDelegate::decorateMenu</a>(menu);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    mEditableAction = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Editable&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aafb261e96f3bf4f3e732f6e69556eb43">setEditable</a>(<span class="keywordtype">bool</span>)));</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    mEditableAction-&gt;setCheckable(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    mEditableAction-&gt;setChecked(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ac7b1a97796fd1c07b61d5aa900020573">isEditable</a>());</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50">mEditableAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Editable&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aafb261e96f3bf4f3e732f6e69556eb43">setEditable</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50">mEditableAction</a>-&gt;setCheckable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50">mEditableAction</a>-&gt;setChecked(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ac7b1a97796fd1c07b61d5aa900020573">isEditable</a>());</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
 <div class="line"><a name="l00286"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a63f892bf8e8b39d2f8449b0ee45f6ca4">  286</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a63f892bf8e8b39d2f8449b0ee45f6ca4">UBGraphicsTextItemDelegate::updateMenuActionState</a>()</div>
@@ -405,7 +389,7 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            qreal AntiScaleRatio = 1 / (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6f46e3fe2ffde7ca74f50f175504c229">systemScaleFactor</a>() * <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>());</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;setScale(AntiScaleRatio);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            QRectF toolBarRect = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;rect();</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            toolBarRect.setWidth(delegated()-&gt;boundingRect().width()/AntiScaleRatio);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            toolBarRect.setWidth(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;boundingRect().width()/AntiScaleRatio);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;setRect(toolBarRect);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#afb333932944e51dd53af4d61f4920d76">positionHandles</a>();</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a88a96bf42a11d028087d59eb0a897ca8">update</a>();</div>
@@ -434,9 +418,9 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordtype">void</span> UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode changeMode)</div>
+<div class="line"><a name="l00331"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">  331</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">UBGraphicsTextItemDelegate::ChangeTextSize</a>(qreal factor, <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01ef">textChangeMode</a> changeMode)</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;{</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">if</span> (scaleSize == changeMode)</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55">scaleSize</a> == changeMode)</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    {</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">if</span> (1 == factor)</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">return</span>;</div>
@@ -445,12 +429,12 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span> (0 == factor)</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a> *item = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(delegated());</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a> *item = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>());</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">if</span> (item &amp;&amp; (QString() == item-&gt;toPlainText()))</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    QTextCursor cursor = delegated()-&gt;textCursor();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    QTextCursor cursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    QTextCharFormat textFormat;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordtype">int</span> anchorPos = cursor.anchor();</div>
@@ -500,7 +484,7 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="comment">//setting new parameners</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordtype">int</span> iNewPointSize = (changeSize == changeMode) ? (iPointSize + factor) : (iPointSize * factor);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordtype">int</span> iNewPointSize = (<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a> == changeMode) ? (iPointSize + factor) : (iPointSize * factor);</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        curFont.setPointSize( (iNewPointSize &gt; 0)?iNewPointSize:1);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        textFormat.setFont(curFont);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        cursor.mergeCharFormat(textFormat);</div>
@@ -514,40 +498,36 @@ $(document).ready(function(){initNavTree('d5/d90/_u_b_graphics_text_item_delegat
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    cursor.setPosition (anchorPos, QTextCursor::MoveAnchor);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    cursor.setPosition (cursorPos, QTextCursor::KeepAnchor);</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    delegated()-&gt;setTextCursor(cursor);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(cursor);</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
 <div class="line"><a name="l00414"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a31031f4a0ecc99956015db236d973ac6">  414</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a31031f4a0ecc99956015db236d973ac6">UBGraphicsTextItemDelegate::scaleTextSize</a>(qreal multiplyer)</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;{</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    ChangeTextSize(multiplyer, scaleSize);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">ChangeTextSize</a>(multiplyer, <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55">scaleSize</a>);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;</div>
 <div class="line"><a name="l00419"></a><span class="lineno"><a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ab61402d03cd4a7cc467a21c583aa16fa">  419</a></span>&#160;QVariant <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ab61402d03cd4a7cc467a21c583aa16fa">UBGraphicsTextItemDelegate::itemChange</a>(QGraphicsItem::GraphicsItemChange change, <span class="keyword">const</span> QVariant &amp;value)</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;{</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordflow">if</span> (change == QGraphicsItem::ItemSelectedChange)</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    {</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">if</span> (delegated()-&gt;isSelected())</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;isSelected())</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        {</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            QTextCursor c = delegated()-&gt;textCursor();</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            QTextCursor c = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordflow">if</span> (c.hasSelection())</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            {</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                c.clearSelection();</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                delegated()-&gt;setTextCursor(c);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(c);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            }</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ab61402d03cd4a7cc467a21c583aa16fa">UBGraphicsItemDelegate::itemChange</a>(change, value);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../d5/d90/_u_b_graphics_text_item_delegate_8cpp.html">UBGraphicsTextItemDelegate.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:42 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:13 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>

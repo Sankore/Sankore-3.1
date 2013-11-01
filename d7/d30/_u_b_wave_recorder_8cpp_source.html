@@ -7,12 +7,6 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
-<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="../../resize.js"></script>
-<script type="text/javascript" src="../../navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +64,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.html','../../');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +78,11 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_0d766fe769df0b6d000126e79f34734f.html">windowsmedia</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UBWaveRecorder.cpp</div>  </div>
@@ -179,20 +163,20 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    WAVEFORMATEX format;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    format.cbSize = 0;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    format.wFormatTag = WAVE_FORMAT_PCM;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    format.nChannels = mNbChannels;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    format.wBitsPerSample = mBitsPerSample;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    format.nSamplesPerSec = mSampleRate;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    format.nChannels = <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a86280ccb944c78baeb84d3772e1b062b">mNbChannels</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    format.wBitsPerSample = <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a6b09ada6f588a0827be7731a2a697849">mBitsPerSample</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    format.nSamplesPerSec = <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a537d2103240b33154a5eb0230f747cbd">mSampleRate</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    format.nBlockAlign = format.nChannels * (format.wBitsPerSample / 8);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    format.nAvgBytesPerSec = format.nSamplesPerSec * format.nBlockAlign;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (waveInOpen(&amp;mWaveInDevice, deviceID, &amp;format, (DWORD)waveInProc, (DWORD_PTR)<span class="keyword">this</span>, CALLBACK_FUNCTION) != MMSYSERR_NOERROR)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (waveInOpen(&amp;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, deviceID, &amp;format, (DWORD)<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab2761c0b676e24cffb2ab6bdad9066cf">waveInProc</a>, (DWORD_PTR)<span class="keyword">this</span>, CALLBACK_FUNCTION) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        setLastErrorMessage(<span class="stringliteral">&quot;Cannot open wave in device &quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot open wave in device &quot;</span>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> nbBuffers = 6;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> sampleBufferSize = 44100 *  2 * 2 * mBufferLengthInMs / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> sampleBufferSize = 44100 *  2 * 2 * <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a2a255c57c8697a4ed2a81790a76db8de">mBufferLengthInMs</a> / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nbBuffers; i++)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
@@ -205,19 +189,19 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        buffer-&gt;dwBufferLength = sampleBufferSize;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        buffer-&gt;dwFlags = 0;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (waveInPrepareHeader(mWaveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (waveInPrepareHeader(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            setLastErrorMessage(<span class="stringliteral">&quot;Cannot prepare wave header&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot prepare wave header&quot;</span>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (waveInAddBuffer(mWaveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (waveInAddBuffer(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            setLastErrorMessage(<span class="stringliteral">&quot;Cannot add buffer&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot add buffer&quot;</span>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        mWaveBuffers &lt;&lt; buffer;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a91b419c3cba7d7f44d607e90f5813060">mWaveBuffers</a> &lt;&lt; buffer;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -226,16 +210,16 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a77eb735ea7e29eca98dcc509afcaa8b7">  121</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a77eb735ea7e29eca98dcc509afcaa8b7">UBWaveRecorder::start</a>()</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (!mIsRecording)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        mRecordingStartTime = QTime::currentTime();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        mMsTimeStamp = 0;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        mIsRecording = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a3d68406c2bedf62e0ab86e246d97b21c">mRecordingStartTime</a> = QTime::currentTime();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a> = 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (waveInStart(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (waveInStart(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        setLastErrorMessage(<span class="stringliteral">&quot;Cannot start wave in device &quot;</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot start wave in device &quot;</span>);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
@@ -245,11 +229,11 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
 <div class="line"><a name="l00140"></a><span class="lineno"><a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a2e126369041b1c024b42a040d0d9e01a">  140</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a2e126369041b1c024b42a040d0d9e01a">UBWaveRecorder::stop</a>()</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    mIsRecording = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (waveInStop(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (waveInStop(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        setLastErrorMessage(<span class="stringliteral">&quot;Cannot stop wave in device &quot;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot stop wave in device &quot;</span>);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
@@ -259,24 +243,24 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 <div class="line"><a name="l00154"></a><span class="lineno"><a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a061bf8de2624233eea17b658480b5e05">  154</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a061bf8de2624233eea17b658480b5e05">UBWaveRecorder::close</a>()</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (waveInReset(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (waveInReset(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        setLastErrorMessage(<span class="stringliteral">&quot;Cannot reset wave in device &quot;</span>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot reset wave in device &quot;</span>);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">foreach</span>(WAVEHDR* buffer, mWaveBuffers)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">foreach</span>(WAVEHDR* buffer, <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a91b419c3cba7d7f44d607e90f5813060">mWaveBuffers</a>)</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        waveInUnprepareHeader(mWaveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        waveInUnprepareHeader(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, buffer, <span class="keyword">sizeof</span>(WAVEHDR));</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">delete</span> [] buffer-&gt;lpData;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">delete</span> buffer;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    mWaveBuffers.clear();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a91b419c3cba7d7f44d607e90f5813060">mWaveBuffers</a>.clear();</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span> (waveInClose(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span> (waveInClose(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        setLastErrorMessage(<span class="stringliteral">&quot;Cannot close wave in device &quot;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot close wave in device &quot;</span>);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
@@ -284,7 +268,7 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keywordtype">void</span> CALLBACK UBWaveRecorder::waveInProc(HWAVEIN waveInDevice, UINT message, DWORD_PTR instance,</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab2761c0b676e24cffb2ab6bdad9066cf">  181</a></span>&#160;<span class="keywordtype">void</span> CALLBACK <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab2761c0b676e24cffb2ab6bdad9066cf">UBWaveRecorder::waveInProc</a>(HWAVEIN waveInDevice, UINT message, DWORD_PTR instance,</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        DWORD_PTR param1, DWORD_PTR param2)</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    Q_UNUSED(param2);</div>
@@ -296,34 +280,34 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a>* recorder = (<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a>*)instance;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        WAVEHDR *buffer = (WAVEHDR *)param1;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">if</span> (recorder &amp;&amp; buffer &amp;&amp; recorder-&gt;isRecording())</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">if</span> (recorder &amp;&amp; buffer &amp;&amp; recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a156eb0b9e6845214d6bd46829a8f3aa2">isRecording</a>())</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                waveInUnprepareHeader(waveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR));</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            recorder-&gt;emitNewWaveBuffer(buffer);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a0d79f55f2b1403e0a2dc3dd495bc2fb4">emitNewWaveBuffer</a>(buffer);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">if</span> (waveInPrepareHeader(waveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                recorder-&gt;setLastErrorMessage(<span class="stringliteral">&quot;Cannot recycle wave header&quot;</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot recycle wave header&quot;</span>);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            }</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">if</span> (waveInAddBuffer(waveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                recorder-&gt;setLastErrorMessage(<span class="stringliteral">&quot;Cannot recycle buffer&quot;</span>);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot recycle buffer&quot;</span>);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keywordtype">void</span> UBWaveRecorder::emitNewWaveBuffer(WAVEHDR * pBuffer)</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a0d79f55f2b1403e0a2dc3dd495bc2fb4">  212</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a0d79f55f2b1403e0a2dc3dd495bc2fb4">UBWaveRecorder::emitNewWaveBuffer</a>(WAVEHDR * pBuffer)</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (mIsRecording)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>)</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        emit <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a4a856b9f77365a638191857455046bf7">newWaveBuffer</a>(pBuffer, mMsTimeStamp);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        emit <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a4a856b9f77365a638191857455046bf7">newWaveBuffer</a>(pBuffer, <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a>);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordtype">long</span> bufferMs = pBuffer-&gt;dwBytesRecorded / mNbChannels / (mBitsPerSample / 8) * 1000 / mSampleRate;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordtype">long</span> bufferMs = pBuffer-&gt;dwBytesRecorded / <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a86280ccb944c78baeb84d3772e1b062b">mNbChannels</a> / (<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a6b09ada6f588a0827be7731a2a697849">mBitsPerSample</a> / 8) * 1000 / <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a537d2103240b33154a5eb0230f747cbd">mSampleRate</a>;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        mMsTimeStamp += bufferMs;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a> += bufferMs;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
@@ -364,15 +348,11 @@ $(document).ready(function(){initNavTree('d7/d30/_u_b_wave_recorder_8cpp_source.
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_0d766fe769df0b6d000126e79f34734f.html">windowsmedia</a></li><li class="navelem"><a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp.html">UBWaveRecorder.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 31 2013 13:37:43 for Open-Sankoré by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Nov 1 2013 12:10:14 for Open-Sankoré by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.1.2
+</small></address>
 </body>
 </html>
