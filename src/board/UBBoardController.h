@@ -223,6 +223,7 @@ class UBBoardController : public UBDocumentContainer
         void hideMessage();
         void setDisabled(bool disable);
         void setColorIndex(int pColorIndex);
+        QColor inferOpposite(const QColor &candidate, const char tool);
         void removeTool(UBToolWidget* toolWidget);
         void hide();
         void show();
