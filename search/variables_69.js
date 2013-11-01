@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['icon',['icon',['../d3/d63/class_u_b_keyboard_locale.html#a7aa46a7a5bcbac204a35f6ad52fcbf1d',1,'UBKeyboardLocale::icon()'],['../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c',1,'UBToolsManager::UBToolDescriptor::icon()']]],
+  ['icrosssize',['iCrossSize',['../d4/d4e/_u_b_c_f_f_constants_8h.html#ac0dee4faf3348dfc6c7f7087fd0acaab',1,'UBCFFConstants.h']]],
+  ['icrosswidth',['iCrossWidth',['../d4/d4e/_u_b_c_f_f_constants_8h.html#ad3e473f7d1e0ac86078d3515ab14651e',1,'UBCFFConstants.h']]],
+  ['id',['id',['../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f',1,'sDownloadFileDesc::id()'],['../d2/dea/class_u_b_graphics_w3_c_widget_item_1_1_metadata.html#aa71a03b257d8af4470bc35ddd16282c8',1,'UBGraphicsW3CWidgetItem::Metadata::id()'],['../d3/d63/class_u_b_keyboard_locale.html#a53ed8afa7b75cf945a31239d93493610',1,'UBKeyboardLocale::id()'],['../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea',1,'UBToolsManager::UBToolDescriptor::id()']]],
+  ['imagealias',['imageAlias',['../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a57660732bda113a1a5c182d8d77200d3',1,'UBWidgetUniboardAPI.cpp']]],
+  ['imagealiascap',['imageAliasCap',['../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a3bf5d58e8404ee513fab8703701eee2e',1,'UBWidgetUniboardAPI.cpp']]],
+  ['imagedirectory',['imageDirectory',['../d0/dd5/class_u_b_persistence_manager.html#afc92c7516c08081b8443076d1554e471',1,'UBPersistenceManager']]],
+  ['imageextentions',['imageExtentions',['../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#ab2bec949e1c5f3788f79708a7b18a04a',1,'UBWidgetUniboardAPI.cpp']]],
+  ['imagefileextensions',['imageFileExtensions',['../db/d66/class_u_b_settings.html#aafb3902650405393aa5b1fee66a59159',1,'UBSettings']]],
+  ['imagethumbnailwidth',['imageThumbnailWidth',['../db/d66/class_u_b_settings.html#a0b93ca2ce7cf596982b1611393fd900f',1,'UBSettings']]],
+  ['imgcontent',['imgContent',['../d2/d05/class_u_b_keyboard_button.html#a72d0a599d85f6cb818ff818fd101afbb',1,'UBKeyboardButton']]],
+  ['inchsize',['inchSize',['../d3/dff/class_u_b_geometry_utils.html#a1f5d4e8f0ad9766ef4325e41562b5d33',1,'UBGeometryUtils']]],
+  ['incstep',['incStep',['../d7/d85/struct_u_b_z_layer_controller_1_1_item_layer_type_data.html#a7f30123bd088950ec020984618d2dba7',1,'UBZLayerController::ItemLayerTypeData']]],
+  ['interactivecontentfileextensions',['interactiveContentFileExtensions',['../db/d66/class_u_b_settings.html#ac280e585edabc97aa1c8fc815db8a488',1,'UBSettings']]],
+  ['interactivitydata',['interactivityData',['../d8/d33/class_u_b_features_controller.html#a937e5247cebfecd14f7add2f56f35598',1,'UBFeaturesController']]],
+  ['intranetpodcastauthor',['intranetPodcastAuthor',['../db/d66/class_u_b_settings.html#a892b406d947337b92a2590fb638f4730',1,'UBSettings']]],
+  ['intranetpodcastpublishingurl',['intranetPodcastPublishingUrl',['../db/d66/class_u_b_settings.html#a999bfab8413c0310904a2ea0584104e8',1,'UBSettings']]],
+  ['isbackground',['isBackground',['../d5/d15/structs_download_file_desc.html#ad945d24ca6d26c992c66e95c0447f165',1,'sDownloadFileDesc']]],
+  ['iscusrsoralreadystored',['isCusrsorAlreadyStored',['../d4/d9d/class_u_b_magnifier.html#a26a82499d8b3bae09816e2f516226d43',1,'UBMagnifier']]],
+  ['isfirstresized',['isFirstResized',['../df/d5a/_u_b_board_palette_manager_8cpp.html#acd6e7dc9d862934bd40312dc0e1b0418',1,'UBBoardPaletteManager.cpp']]],
+  ['iwbns',['iwbNS',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a77a806a22c9e1b069f67fa000427bf50',1,'UBCFFConstants.h']]],
+  ['iwbnsprefix',['iwbNsPrefix',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a5df3733d7b37374ebadf5a7d17d0efe0',1,'UBCFFConstants.h']]]
+];

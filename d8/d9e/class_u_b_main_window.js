@@ -1,0 +1,26 @@
+var class_u_b_main_window =
+[
+    [ "UBMainWindow", "d8/d9e/class_u_b_main_window.html#a603814523782399bc82d1c7013c356c9", null ],
+    [ "~UBMainWindow", "d8/d9e/class_u_b_main_window.html#a6f4df1b80b3201a8f4fa3316b1a5d0e9", null ],
+    [ "addBoardWidget", "d8/d9e/class_u_b_main_window.html#a811b3f7960316901f2f988fafb96fdc6", null ],
+    [ "addDocumentsWidget", "d8/d9e/class_u_b_main_window.html#a621f851df90af77fbe2052327ed299dc", null ],
+    [ "addWebWidget", "d8/d9e/class_u_b_main_window.html#ab1e1c63ece4aebb590ee3af55ba1177a", null ],
+    [ "closeEvent", "d8/d9e/class_u_b_main_window.html#a05fb5c9e836b00adc97ffd42f1baec3f", null ],
+    [ "closeEvent_Signal", "d8/d9e/class_u_b_main_window.html#a14588af40d18048b05e7f4261f040134", null ],
+    [ "createPopupMenu", "d8/d9e/class_u_b_main_window.html#a4167662c4f08ffdecff083c9f7e01de3", null ],
+    [ "hideDownloadWidget", "d8/d9e/class_u_b_main_window.html#a4b99a4654dccfb65a5599c9fb8d3fb8a", null ],
+    [ "information", "d8/d9e/class_u_b_main_window.html#a653d248fb5b159abdf4d30b7cbf6e490", null ],
+    [ "keyPressEvent", "d8/d9e/class_u_b_main_window.html#a03476c76604b877356f244c1ae1dc6b5", null ],
+    [ "oneButtonMessageBox", "d8/d9e/class_u_b_main_window.html#a907ee78e907b30203375117b5af1848f", null ],
+    [ "onExportDone", "d8/d9e/class_u_b_main_window.html#ac33f900982ea29925fb2bcd088d4633c", null ],
+    [ "showDownloadWidget", "d8/d9e/class_u_b_main_window.html#ae2949414a83e39ea1e86ed36dd875cb8", null ],
+    [ "switchToBoardWidget", "d8/d9e/class_u_b_main_window.html#a1890407abe5e433cc3c85af0d1db4d23", null ],
+    [ "switchToDocumentsWidget", "d8/d9e/class_u_b_main_window.html#abf3656d99f6c694bd38bb51fe6ee4252", null ],
+    [ "switchToWebWidget", "d8/d9e/class_u_b_main_window.html#ac9cca6450d4bb9e206f61305c358a864", null ],
+    [ "warning", "d8/d9e/class_u_b_main_window.html#a626ff5fff445ccfd8feffa11390a3963", null ],
+    [ "yesNoQuestion", "d8/d9e/class_u_b_main_window.html#a4e2df10066f36d2040fca0feb192a5d8", null ],
+    [ "mBoardWidget", "d8/d9e/class_u_b_main_window.html#aa64036e9f2bb881efda179dc8456dafb", null ],
+    [ "mDocumentsWidget", "d8/d9e/class_u_b_main_window.html#ab0686e7ba525d0d7dc7fb86b707ac363", null ],
+    [ "mStackedLayout", "d8/d9e/class_u_b_main_window.html#a2c37b6336535a741661bbeb7e1375d8e", null ],
+    [ "mWebWidget", "d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea", null ]
+];
